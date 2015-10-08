@@ -361,7 +361,7 @@ public final class PlayerInstance extends Playable
 	
 	// Character Character SQL String Definitions:
 	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,raidbossPoints,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,vitality_points,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
+	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,online=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
 	private static final String UPDATE_CHARACTER_ACCESS = "UPDATE characters SET accesslevel = ? WHERE charId = ?";
 	private static final String RESTORE_CHARACTER = "SELECT * FROM characters WHERE charId=?";
 	
@@ -869,7 +869,15 @@ public final class PlayerInstance extends Playable
 		// Give 20 recommendations
 		player.setRecomLeft(20);
 		// Add the player in the characters table of the database
-		return player.createDb() ? player : null;
+		if (player.createDb())
+		{
+			if (Config.CACHE_CHAR_NAMES)
+			{
+				CharNameTable.getInstance().addName(player);
+			}
+			return player;
+		}
+		return null;
 	}
 	
 	public String getAccountName()
@@ -6553,11 +6561,11 @@ public final class PlayerInstance extends Playable
 					final int activeClassId = rset.getInt("classid");
 					final boolean female = rset.getInt("sex") != Sex.MALE.ordinal();
 					final L2PcTemplate template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
-					PcAppearance app = new PcAppearance(rset.getByte("face"), rset.getByte("hairColor"), rset.getByte("hairStyle"), female);
+					final PcAppearance app = new PcAppearance(rset.getByte("face"), rset.getByte("hairColor"), rset.getByte("hairStyle"), female);
 					
 					player = new PlayerInstance(objectId, template, rset.getString("account_name"), app);
 					player.setName(rset.getString("char_name"));
-					player._lastAccess = rset.getLong("lastAccess");
+					player.setLastAccess(rset.getLong("lastAccess"));
 					
 					player.getStat().setExp(rset.getLong("exp"));
 					player.setExpBeforeDeath(rset.getLong("expBeforeDeath"));
@@ -6648,15 +6656,15 @@ public final class PlayerInstance extends Playable
 					currentCp = rset.getDouble("curCp");
 					currentMp = rset.getDouble("curMp");
 					
-					player._classIndex = 0;
+					player.setClassIndex(0);
 					try
 					{
 						player.setBaseClass(rset.getInt("base_class"));
 					}
 					catch (Exception e)
 					{
-						// TODO: Should this be logged?
 						player.setBaseClass(activeClassId);
+						_log.warn("Exception during player.setBaseClass for player: base class: {}", player, rset.getInt("base_class"), e);
 					}
 					
 					// Restore Subclass Data (cannot be done earlier in function)
@@ -6668,7 +6676,7 @@ public final class PlayerInstance extends Playable
 							{
 								if (subClass.getClassId() == activeClassId)
 								{
-									player._classIndex = subClass.getClassIndex();
+									player.setClassIndex(subClass.getClassIndex());
 								}
 							}
 						}
@@ -7133,10 +7141,9 @@ public final class PlayerInstance extends Playable
 			statement.setString(28, getTitle());
 			statement.setInt(29, getAppearance().getTitleColor());
 			statement.setInt(30, isOnlineInt());
-			statement.setInt(31, 0); // Unused
-			statement.setInt(32, getClanPrivileges().getBitmask());
-			statement.setInt(33, getWantsPeace());
-			statement.setInt(34, getBaseClass());
+			statement.setInt(31, getClanPrivileges().getBitmask());
+			statement.setInt(32, getWantsPeace());
+			statement.setInt(33, getBaseClass());
 			
 			long totalOnlineTime = _onlineTime;
 			if (_onlineBeginTime > 0)
@@ -7144,22 +7151,20 @@ public final class PlayerInstance extends Playable
 				totalOnlineTime += (System.currentTimeMillis() - _onlineBeginTime) / 1000;
 			}
 			
-			statement.setLong(35, totalOnlineTime);
-			statement.setInt(36, 0); // Unused
-			statement.setInt(37, isNoble() ? 1 : 0);
-			statement.setInt(38, getPowerGrade());
-			statement.setInt(39, getPledgeType());
-			statement.setInt(40, getLvlJoinedAcademy());
-			statement.setLong(41, getApprentice());
-			statement.setLong(42, getSponsor());
-			statement.setLong(43, getClanJoinExpiryTime());
-			statement.setLong(44, getClanCreateExpiryTime());
-			statement.setString(45, getName());
-			statement.setLong(46, 0); // unset
-			statement.setInt(47, getBookMarkSlot());
-			statement.setInt(48, getStat().getBaseVitalityPoints());
-			statement.setString(49, getLang());
-			statement.setInt(50, getObjectId());
+			statement.setLong(34, totalOnlineTime);
+			statement.setInt(35, isNoble() ? 1 : 0);
+			statement.setInt(36, getPowerGrade());
+			statement.setInt(37, getPledgeType());
+			statement.setInt(38, getLvlJoinedAcademy());
+			statement.setLong(39, getApprentice());
+			statement.setLong(40, getSponsor());
+			statement.setLong(41, getClanJoinExpiryTime());
+			statement.setLong(42, getClanCreateExpiryTime());
+			statement.setString(43, getName());
+			statement.setInt(44, getBookMarkSlot());
+			statement.setInt(45, getStat().getBaseVitalityPoints());
+			statement.setString(46, getLang());
+			statement.setInt(47, getObjectId());
 			
 			statement.execute();
 		}
@@ -10024,6 +10029,11 @@ public final class PlayerInstance extends Playable
 		return _classIndex;
 	}
 	
+	protected void setClassIndex(int classIndex)
+	{
+		_classIndex = classIndex;
+	}
+	
 	private void setClassTemplate(int classId)
 	{
 		_activeClass = classId;
@@ -10385,6 +10395,11 @@ public final class PlayerInstance extends Playable
 		return _lastAccess;
 	}
 	
+	protected void setLastAccess(long lastAccess)
+	{
+		_lastAccess = lastAccess;
+	}
+	
 	@Override
 	public void doRevive()
 	{
@@ -10406,16 +10421,6 @@ public final class PlayerInstance extends Playable
 			{
 				instance.cancelEjectDeadPlayer(this);
 			}
-		}
-	}
-	
-	@Override
-	public void setName(String value)
-	{
-		super.setName(value);
-		if (Config.CACHE_CHAR_NAMES)
-		{
-			CharNameTable.getInstance().addName(this);
 		}
 	}
 	

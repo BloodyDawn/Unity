@@ -73,7 +73,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		"admin_setfame", // sets fame of target char to any amount. //setfame <fame>
 		"admin_character_list", // same as character_info, kept for compatibility purposes
 		"admin_character_info", // given a player name, displays an information window
-		"admin_show_characters",// list of characters
+		"admin_show_characters", // list of characters
 		"admin_find_character", // find a player by his name or a part of it (case-insensitive)
 		"admin_find_ip", // find all the player connections from a given IPv4 number
 		"admin_find_account", // list all the characters from an account (useful for GMs w/o DB access)
@@ -437,6 +437,10 @@ public class AdminEditChar implements IAdminCommandHandler
 					return false;
 				}
 				player.setName(val);
+				if (Config.CACHE_CHAR_NAMES)
+				{
+					CharNameTable.getInstance().addName(player);
+				}
 				player.storeMe();
 				
 				activeChar.sendMessage("Changed name to " + val);

@@ -22,6 +22,8 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -75,6 +77,10 @@ public final class PlayerEventHolder
 	public void restorePlayerStats()
 	{
 		_player.setName(_name);
+		if (Config.CACHE_CHAR_NAMES)
+		{
+			CharNameTable.getInstance().addName(_player);
+		}
 		_player.setTitle(_title);
 		_player.setClan(ClanTable.getInstance().getClan(_clanId));
 		_player.teleToLocation(_loc, true);
