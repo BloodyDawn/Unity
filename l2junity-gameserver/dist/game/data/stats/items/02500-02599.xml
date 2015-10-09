@@ -16,6 +16,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">232</stat>
@@ -40,6 +41,7 @@
 		<set name="price" val="21000" />
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">24</stat>
@@ -66,6 +68,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">122</stat>
@@ -149,6 +152,7 @@
 		<set name="price" val="7000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond addName="1" msgId="113">
 			<player categoryType="ALL_WOLF_GROUP" />
@@ -173,6 +177,7 @@
 		<set name="price" val="3060" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond addName="1" msgId="113">
 			<player categoryType="ALL_WOLF_GROUP" />
@@ -196,6 +201,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">5</stat>
@@ -217,6 +223,7 @@
 		<set name="weight" val="3" />
 		<set name="price" val="240" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="2509" name="Spiritshot (No-grade)" type="EtcItem">
@@ -228,6 +235,7 @@
 		<set name="price" val="15" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2047" level="1" /> <!-- Spiritshot (No-grade) -->
@@ -244,6 +252,7 @@
 		<set name="handler" val="SpiritShot" />
 		<set name="crystal_type" val="D" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2155" level="1" /> <!-- Spiritshot (D-grade) -->
@@ -260,6 +269,7 @@
 		<set name="handler" val="SpiritShot" />
 		<set name="crystal_type" val="C" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2156" level="1" /> <!-- Spiritshot (C-grade) -->
@@ -276,6 +286,7 @@
 		<set name="handler" val="SpiritShot" />
 		<set name="crystal_type" val="B" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2157" level="1" /> <!-- Spiritshot (B-grade) -->
@@ -292,6 +303,7 @@
 		<set name="handler" val="SpiritShot" />
 		<set name="crystal_type" val="A" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2158" level="1" /> <!-- Spiritshot (A-grade) -->
@@ -308,6 +320,7 @@
 		<set name="handler" val="SpiritShot" />
 		<set name="crystal_type" val="S" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2159" level="1" /> <!-- Spiritshot (S-grade) -->
@@ -326,6 +339,7 @@
 		<set name="handler" val="PetFood" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
 		<cond addName="1" msgId="113">
 			<player categoryType="ALL_WOLF_GROUP,SIN_EATER_GROUP,DEINONYCHUS_PET_GROUP" />
@@ -346,6 +360,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">73</stat>
@@ -373,6 +388,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -400,6 +416,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -427,6 +444,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -454,6 +472,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -481,6 +500,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -508,6 +528,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -535,6 +556,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">118</stat>
@@ -562,6 +584,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">130</stat>
@@ -589,6 +612,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -616,6 +640,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -643,6 +668,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -670,6 +696,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -697,6 +724,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -752,6 +780,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">124</stat>
@@ -779,6 +808,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">136</stat>
@@ -806,6 +836,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -833,6 +864,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -860,6 +892,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -887,6 +920,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -914,6 +948,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -941,6 +976,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">124</stat>
@@ -968,6 +1004,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">136</stat>
@@ -995,6 +1032,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -1022,6 +1060,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -1049,6 +1088,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -1076,6 +1116,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -1103,6 +1144,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">124</stat>
@@ -1130,6 +1172,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">136</stat>
@@ -1157,6 +1200,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -1184,6 +1228,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -1211,6 +1256,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -1238,6 +1284,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">124</stat>
@@ -1265,6 +1312,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">136</stat>
@@ -1320,6 +1368,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">118</stat>
@@ -1347,6 +1396,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">136</stat>
@@ -1374,6 +1424,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="2" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -1404,6 +1455,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">118</stat>
@@ -1431,6 +1483,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">136</stat>
@@ -1458,6 +1511,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="2" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -1488,6 +1542,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -1518,6 +1573,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="3" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -1548,6 +1604,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3045" level="4" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
@@ -1578,6 +1635,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="6" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -1608,6 +1666,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="7" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -1638,6 +1697,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -1668,6 +1728,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="7" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -1698,6 +1759,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3045" level="7" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
@@ -1728,6 +1790,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -1758,6 +1821,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -1788,6 +1852,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -1818,6 +1883,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -1848,6 +1914,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3045" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
@@ -1878,6 +1945,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -1908,6 +1976,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -1938,6 +2007,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -1968,6 +2038,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -1998,6 +2069,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -2028,6 +2100,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -2058,6 +2131,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -2088,6 +2162,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -2118,6 +2193,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -2148,6 +2224,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3045" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
@@ -2178,6 +2255,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="12" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -2208,6 +2286,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3045" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
@@ -2238,6 +2317,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -2268,6 +2348,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -2298,6 +2379,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -2328,6 +2410,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -2358,6 +2441,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -2388,6 +2472,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -2418,6 +2503,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3045" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
@@ -2448,6 +2534,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="12" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -2478,6 +2565,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -2508,6 +2596,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -2538,6 +2627,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3046" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
@@ -2568,6 +2658,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3042" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
@@ -2598,6 +2689,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
@@ -2628,6 +2720,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3044" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
@@ -2658,6 +2751,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3045" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
@@ -2688,6 +2782,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->

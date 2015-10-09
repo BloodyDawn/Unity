@@ -117,6 +117,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 	</item>
 	<item id="9206" name="Major Healing Potion (Event)" type="EtcItem">
@@ -132,6 +133,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2037" level="1" /> <!-- Major Healing Potion -->
@@ -153,6 +155,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2038" level="1" /> <!-- Quick Healing Potion -->
@@ -194,6 +197,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -229,6 +233,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -295,6 +300,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -327,6 +333,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -362,6 +369,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -397,6 +405,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -431,6 +440,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -464,6 +474,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -496,6 +507,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -531,6 +543,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -566,6 +579,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -599,6 +613,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -631,6 +646,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -666,6 +682,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -699,6 +716,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -731,6 +749,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -766,6 +785,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -799,6 +819,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -831,6 +852,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -867,6 +889,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_chance" val="10" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3026" level="1" /> <!-- Special Ability: Critical Anger -->
@@ -903,6 +926,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="1" /> <!-- Special Ability: Focus -->
@@ -939,6 +963,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
@@ -975,6 +1000,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1007,6 +1033,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3023" level="1" /> <!-- Special Ability: Critical Damage -->
@@ -1042,6 +1069,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="1" /> <!-- Special Ability: Focus -->
@@ -1077,6 +1105,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
@@ -1113,6 +1142,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1146,6 +1176,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3008" level="1" /> <!-- Special Ability: Guidance -->
@@ -1182,6 +1213,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3009" level="1" /> <!-- Special Ability: Evasion -->
@@ -1218,6 +1250,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="332" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1250,6 +1283,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -1285,6 +1319,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3007" level="2" /> <!-- Special Ability: Guidance -->
@@ -1321,6 +1356,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3018" level="2" /> <!-- Special Ability: Back Blow -->
@@ -1357,6 +1393,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3028" level="2" /> <!-- Special Ability: Rsk. Evasion -->
@@ -1393,6 +1430,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -1428,6 +1466,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="2" /> <!-- Special Ability: Focus -->
@@ -1464,6 +1503,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3023" level="2" /> <!-- Special Ability: Critical Damage -->
@@ -1500,6 +1540,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3036" level="2" /> <!-- Special Ability: Haste -->
@@ -1536,6 +1577,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -1571,6 +1613,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3023" level="2" /> <!-- Special Ability: Critical Damage -->
@@ -1608,6 +1651,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_chance" val="15" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
@@ -1644,6 +1688,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3036" level="2" /> <!-- Special Ability: Haste -->
@@ -1680,6 +1725,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -1715,6 +1761,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="2" /> <!-- Special Ability: Focus -->
@@ -1752,6 +1799,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_chance" val="35" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
@@ -1789,6 +1837,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_chance" val="15" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
@@ -1826,6 +1875,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1859,6 +1909,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3008" level="2" /> <!-- Special Ability: Guidance -->
@@ -1896,6 +1947,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reduced_soulshot" val="40,4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1929,6 +1981,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="320" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1962,6 +2015,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1995,6 +2049,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3009" level="2" /> <!-- Special Ability: Evasion -->
@@ -2032,6 +2087,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reduced_soulshot" val="40,4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2065,6 +2121,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
@@ -2100,6 +2157,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -2135,6 +2193,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3007" level="3" /> <!-- Special Ability: Guidance -->
@@ -2171,6 +2230,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
@@ -2207,6 +2267,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3023" level="3" /> <!-- Special Ability: Critical Damage -->
@@ -2243,6 +2304,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -2278,6 +2340,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
@@ -2314,6 +2377,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
@@ -2350,6 +2414,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3032" level="3" /> <!-- Special Ability: Rsk. Haste -->
@@ -2386,6 +2451,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -2421,6 +2487,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
@@ -2457,6 +2524,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3023" level="3" /> <!-- Special Ability: Critical Damage -->
@@ -2493,6 +2561,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3036" level="3" /> <!-- Special Ability: Haste -->
@@ -2529,6 +2598,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -2564,6 +2634,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
@@ -2600,6 +2671,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
@@ -2636,6 +2708,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
@@ -2672,6 +2745,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -2707,6 +2781,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3007" level="3" /> <!-- Special Ability: Guidance -->
@@ -2744,6 +2819,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_chance" val="35" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
@@ -2780,6 +2856,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
@@ -2816,6 +2893,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2848,6 +2926,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
@@ -2883,6 +2962,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
@@ -2918,6 +2998,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
@@ -2954,6 +3035,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2987,6 +3069,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3008" level="3" /> <!-- Special Ability: Guidance -->
@@ -3023,6 +3106,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3009" level="3" /> <!-- Special Ability: Evasion -->
@@ -3060,6 +3144,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reduced_soulshot" val="32,4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3092,6 +3177,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
@@ -3127,6 +3213,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
@@ -3163,6 +3250,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3023" level="4" /> <!-- Special Ability: Critical Damage -->
@@ -3199,6 +3287,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3036" level="4" /> <!-- Special Ability: Haste -->
@@ -3235,6 +3324,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3267,6 +3357,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
@@ -3302,6 +3393,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3542" level="4" /> <!-- Special Ability: Critical Damage -->
@@ -3337,6 +3429,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3037" level="4" /> <!-- Special Ability: Haste -->

@@ -490,6 +490,7 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_oly_restricted" val="true" />
 		<skills>
 			<skill id="2002" level="1" /> <!-- Healing Drug -->
@@ -511,6 +512,7 @@
 		<set name="handler" val="ManaPotion" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2003" level="1" /> <!-- Squash Seed -->
@@ -529,6 +531,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_oly_restricted" val="true" />
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -547,6 +550,7 @@
 		<set name="handler" val="ManaPotion" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -591,6 +595,7 @@
 		<set name="weight" val="120" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="handler" val="EnchantScrolls" />
 	</item>
 	<item id="732" name="Crystal Scroll: Enchant Armor (A-Grade)" type="EtcItem">
@@ -602,6 +607,7 @@
 		<set name="weight" val="120" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="handler" val="EnchantScrolls" />
 	</item>
 	<item id="733" name="Endeavor Potion" type="EtcItem">
@@ -614,6 +620,7 @@
 		<set name="price" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_oly_restricted" val="true" />
 		<skills>
 			<skill id="2010" level="1" /> <!-- Endeavor Potion -->
@@ -633,6 +640,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2011" level="1" /> <!-- Wind Walk Potion -->
@@ -655,6 +663,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2012" level="1" /> <!-- Haste Potion -->
@@ -673,6 +682,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2013" level="1" /> <!-- Scroll of Escape -->
@@ -707,6 +717,7 @@
 		<set name="price" val="2840" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
 		<stats>
 			<stat type="pAtk">12</stat>
@@ -793,6 +804,7 @@
 		<set name="price" val="5160" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
 		<stats>
 			<stat type="pAtk">14</stat>
@@ -816,6 +828,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
 			<stat type="pAtk">13</stat>
@@ -872,6 +885,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
 			<stat type="pAtk">11</stat>
@@ -928,6 +942,7 @@
 		<set name="price" val="7160" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_dropable" val="false" />
 		<stats>
 			<stat type="pAtk">21</stat>
@@ -1018,6 +1033,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
 			<stat type="pAtk">13</stat>

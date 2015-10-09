@@ -138,24 +138,28 @@
 		<!-- Delicious and simple Elven Radler. You can acquire a Dion Pilsner if you're lucky. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_lager" />
 		<set name="weight" val="100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23310" name="Dion Pilsner" name_additional="Event" type="EtcItem">
 		<!-- Very delicious Dion Pilsner. You can acquire a Dwarven Royal Blue Cocktail if you're lucky. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_lager" />
 		<set name="weight" val="100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23311" name="Dwarven Royal Blue Cocktail" name_additional="Event" type="EtcItem">
 		<!-- Extremely delicious Dwarven Royal Blue Cocktail. You can acquire an Aden White Beer if you're lucky. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_lager" />
 		<set name="weight" val="100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23312" name="Aden White Beer" name_additional="Event" type="EtcItem">
 		<!-- Aden White Beer made with the finest recipe. Take it to Queen of Hearts with the Beer Tankard to obtain the Gran Kain's Delight. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_lager" />
 		<set name="weight" val="100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23313" name="Gran Kain's Delight" name_additional="30-day (Event)" type="EtcItem">
@@ -175,16 +179,19 @@
 	<item id="23314" name="Beer Ingredient: Malt" name_additional="Event" type="EtcItem">
 		<!-- Ingredient needed for crafting beer. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_malt" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23315" name="Beer Ingredient: Hops" name_additional="Event" type="EtcItem">
 		<!-- Ingredient needed for crafting beer. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_hops" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23316" name="Beer Ingredient: Yeast" name_additional="Event" type="EtcItem">
 		<!-- Ingredient needed for crafting beer. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_yeast" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23318" name="Beer Tankard" name_additional="Event" type="EtcItem">
@@ -404,6 +411,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22707" level="2" /> <!-- Vitality Maintaining Potion -->
@@ -416,6 +424,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="shared_reuse_group" val="16" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9167" level="1" /> <!-- XP Buff 50% (1-hour) -->
@@ -428,6 +437,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="shared_reuse_group" val="16" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9169" level="1" /> <!-- XP Buff 50% (2-hour) -->
@@ -440,6 +450,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23335" name="Blessed Spiritshot Pack (R-grade)" type="EtcItem">
@@ -449,6 +460,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23336" name="Scroll: Increase Vitality (High-grade)" type="EtcItem">
@@ -458,6 +470,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23337" name="Scroll: Increase Vitality (Top-grade)" type="EtcItem">
@@ -467,6 +480,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23338" name="Scroll: Replenish Vitality" type="EtcItem">
@@ -475,6 +489,7 @@
 		<set name="weight" val="30" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22711" level="1" /> <!-- Scroll: Replenish Vitality -->
@@ -486,6 +501,7 @@
 		<set name="weight" val="30" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22711" level="2" /> <!-- Scroll: Replenish Vitality -->
@@ -497,6 +513,7 @@
 		<set name="weight" val="30" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22711" level="3" /> <!-- Scroll: Replenish Vitality -->
@@ -510,6 +527,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22712" level="1" /> <!-- Vitality Recovering Potion -->
@@ -521,6 +539,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23343" name="Heavenly Scroll: Enchant Weapon (R-grade)" type="EtcItem">
@@ -529,6 +548,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23344" name="Ancient Scroll: Enchant Armor (R-grade)" type="EtcItem">
@@ -537,6 +557,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23345" name="Heavenly Scroll: Enchant Armor (R-grade)" type="EtcItem">
@@ -545,6 +566,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23346" name="Letter Collector's Gift" type="EtcItem">
@@ -554,6 +576,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23347" name="Lucky Enchant Stone: Weapon (R-grade)" type="EtcItem">
@@ -563,6 +586,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="WEAPON_ENCHANT_STONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23348" name="Lucky Enchant Stone: Armor (R-grade)" type="EtcItem">
@@ -572,6 +596,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="ARMOR_ENCHANT_STONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23349" name="Enhanced Power Shirt Pack" type="EtcItem">
@@ -580,6 +605,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23350" name="Transformation Scroll Pack" type="EtcItem">
@@ -588,6 +614,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23351" name="Weapon Appearance Stone (R-grade)" type="EtcItem">
@@ -598,6 +625,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23352" name="Weapon Appearance Stone (S-grade)" type="EtcItem">
@@ -608,6 +636,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23353" name="Weapon Appearance Stone (A-grade)" type="EtcItem">
@@ -618,6 +647,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23354" name="Blessed Weapon Appearance Stone (R-grade)" type="EtcItem">
@@ -628,6 +658,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23355" name="Blessed Weapon Appearance Stone (S-grade)" type="EtcItem">
@@ -638,6 +669,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23356" name="Blessed Weapon Appearance Stone (A-grade)" type="EtcItem">
@@ -648,6 +680,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23357" name="Weapon Restoration Stone (R-grade)" type="EtcItem">
@@ -656,6 +689,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23358" name="Weapon Restoration Stone (S-grade)" type="EtcItem">
@@ -664,6 +698,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23359" name="Weapon Restoration Stone (A-grade)" type="EtcItem">
@@ -672,6 +707,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23360" name="Armor Appearance Stone (R-grade)" type="EtcItem">
@@ -682,6 +718,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23361" name="Armor Appearance Stone (S-grade)" type="EtcItem">
@@ -692,6 +729,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23362" name="Armor Appearance Stone (A-grade)" type="EtcItem">
@@ -702,6 +740,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23363" name="Blessed Armor Appearance Stone (R-grade)" type="EtcItem">
@@ -712,6 +751,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23364" name="Blessed Armor Appearance Stone (S-grade)" type="EtcItem">
@@ -722,6 +762,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23365" name="Blessed Armor Appearance Stone (A-grade)" type="EtcItem">
@@ -732,6 +773,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23366" name="Armor Restoration Stone (R-grade)" type="EtcItem">
@@ -740,6 +782,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23367" name="Armor Restoration Stone (S-grade)" type="EtcItem">
@@ -748,6 +791,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23368" name="Armor Restoration Stone (A-grade)" type="EtcItem">
@@ -756,6 +800,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23369" name="Hair Accessory Appearance Stone" type="EtcItem">
@@ -766,6 +811,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23370" name="Blessed Hair Accessory Appearance Stone" type="EtcItem">
@@ -776,6 +822,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23371" name="Hair Accessory Restoration Stone" type="EtcItem">
@@ -784,6 +831,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23372" name="Weapon Appearance/Restoration Stone Pack (R-grade)" type="EtcItem">
@@ -792,6 +840,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23373" name="Weapon Appearance/Restoration Stone Pack (S-grade)" type="EtcItem">
@@ -800,6 +849,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23374" name="Armor Appearance/Restoration Stone Pack (R-grade)" type="EtcItem">
@@ -808,6 +858,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23375" name="Armor Appearance/Restoration Stone Pack (S-grade)" type="EtcItem">
@@ -816,6 +867,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23376" name="Hair Accessory Appearance/Restoration Stone Pack" type="EtcItem">
@@ -824,6 +876,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23377" name="Heavenly Treasure Chest" type="EtcItem">
@@ -832,6 +885,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23378" name="Fantastical Treasure Chest" type="EtcItem">
@@ -840,6 +894,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23379" name="Glorious Treasure Chest" type="EtcItem">
@@ -848,6 +903,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23380" name="Adenian Military Underwear" type="Armor">
@@ -1014,6 +1070,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23389" name="XP Rune II (Lv. 1-95) 100% Pack (1-hour)" type="EtcItem">
@@ -1025,6 +1082,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23390" name="XP Rune II (Lv. 1-95) 100% Pack (3-hour)" type="EtcItem">
@@ -1036,6 +1094,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23391" name="XP Rune II (Lv. 1-95) 100%" name_additional="1-hour" type="EtcItem">
@@ -1079,6 +1138,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23394" name="Scroll: Seal Weapon Pack" type="EtcItem">
@@ -1090,6 +1150,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23395" name="Scroll: Seal Armor Pack" type="EtcItem">
@@ -1101,6 +1162,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23396" name="Scroll: Enchant Weapon Pack" type="EtcItem">
@@ -1112,6 +1174,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23397" name="Scroll: Enchant Armor Pack" type="EtcItem">
@@ -1123,6 +1186,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23398" name="Blessed Scroll: Enchant Weapon Pack" type="EtcItem">
@@ -1134,6 +1198,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23399" name="Blessed Scroll: Enchant Armor Pack" type="EtcItem">
@@ -1145,6 +1210,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

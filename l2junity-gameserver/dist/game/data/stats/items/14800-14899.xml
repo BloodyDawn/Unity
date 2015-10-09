@@ -9,6 +9,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="for_npc" val="true" />
 	</item>
 	<item id="14801" name="Gludio Royal Guard Earring" type="Armor">
@@ -377,6 +378,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2907" level="5" /> <!-- Elixir of Life (Battleground) -->
@@ -398,6 +400,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2908" level="5" /> <!-- Elixir of Mind (Battleground) -->
@@ -419,6 +422,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2909" level="5" /> <!-- Elixir of CP (Battleground) -->
@@ -440,6 +444,7 @@
 		<set name="handler" val="PetFood" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
 		<cond addName="1" msgId="113">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
@@ -456,6 +461,7 @@
 		<set name="handler" val="SummonItems" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -543,6 +549,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2900" level="1" /> <!-- Ancient Herb - Slayer -->
@@ -557,6 +564,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2901" level="1" /> <!-- Ancient Herb - Immortal -->
@@ -571,6 +579,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2902" level="1" /> <!-- Ancient Herb - Terminator -->
@@ -585,6 +594,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2903" level="1" /> <!-- Ancient Herb - Guide -->
@@ -610,6 +620,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14830" name="Cave Exploration Text 2 Sheet" type="EtcItem">
@@ -617,6 +628,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14831" name="Cave Exploration Text 3 Sheet" type="EtcItem">
@@ -624,6 +636,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14832" name="Growth Accelerator" type="EtcItem">
@@ -702,6 +715,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14837" name="Knowledge of the Giants Anthology, Chapter 2" type="EtcItem">
@@ -710,6 +724,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14838" name="Knowledge of the Giants Anthology, Chapter 3" type="EtcItem">
@@ -718,6 +733,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14839" name="Knowledge of the Giants Anthology, Chapter 4" type="EtcItem">
@@ -726,6 +742,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14840" name="Knowledge of the Giants Anthology, Chapter 5" type="EtcItem">
@@ -734,6 +751,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14841" name="Ancient Parchment" type="EtcItem">
@@ -744,6 +762,7 @@
 		<set name="weight" val="2" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 	</item>
 	<item id="14842" name="Wisdom of the Giants Text, Chapter 1" type="EtcItem">
@@ -752,6 +771,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14843" name="Wisdom of the Giants Text, Chapter 2" type="EtcItem">
@@ -760,6 +780,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14844" name="Wisdom of the Giants Text, Chapter 3" type="EtcItem">
@@ -768,6 +789,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14845" name="Wisdom of the Giants Text, Chapter 4" type="EtcItem">
@@ -776,6 +798,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14846" name="Wisdom of the Giants Text, Chapter 5" type="EtcItem">
@@ -784,6 +807,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14847" name="Ancient Lesser Giant Book" type="EtcItem">
@@ -794,6 +818,7 @@
 		<set name="weight" val="2" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 	</item>
 	<item id="14848" name="Guardian Soul's Pendant" type="EtcItem">
@@ -858,6 +883,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14852" name="Cave Exploration Text 2 Sheet" type="EtcItem">
@@ -866,6 +892,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14853" name="Cave Exploration Text 3 Sheet" type="EtcItem">
@@ -874,6 +901,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14854" name="Recipe: Spiteful Soul Energy" type="EtcItem">
@@ -899,6 +927,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14856" name="Spiteful Soul Vengeance" type="EtcItem">
@@ -907,6 +936,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14857" name="Shell of Monsters" type="EtcItem">

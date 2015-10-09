@@ -12,6 +12,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="is_clan_depositable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_mailable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="21580" max="1" min="1" /> <!-- Power Shirt -->
@@ -47,6 +48,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="21703" name="Olf's Thanksgiving XL Pack" type="EtcItem">
@@ -57,6 +59,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="21704" name="Honey Rice Cakes" type="EtcItem">
@@ -123,6 +126,7 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 	</item>
 	<item id="21708" name="Honey Rice Cakes" name_additional="Event" type="EtcItem">
@@ -172,6 +176,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="shared_reuse_group" val="106" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21711" name="Santa's Blessing" name_additional="Event" type="EtcItem">
@@ -184,6 +189,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="reuse_delay" val="3000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21712" name="Blessed Zaken's Earring" type="Armor">
@@ -602,6 +608,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DAGGER" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">69</stat>
@@ -629,6 +636,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -654,6 +662,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -679,6 +688,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">63</stat>
@@ -706,6 +716,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -733,6 +744,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">77</stat>
@@ -760,6 +772,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -787,6 +800,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SPEAR" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -815,6 +829,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="820" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">179</stat>
@@ -842,6 +857,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">72</stat>
@@ -869,6 +885,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">63</stat>
@@ -894,6 +911,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -919,6 +937,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -946,6 +965,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -977,6 +997,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">100</stat>
@@ -1001,6 +1022,7 @@
 		<set name="immediate_effect" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<cond addName="1" msgId="113">
 			<target levelRange="21;85" />
@@ -1014,6 +1036,7 @@
 		<set name="material" val="COTTON" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 	</item>
 	<item id="21748" name="Experienced Adventurer's Treasure Sack" type="EtcItem">
@@ -1024,6 +1047,7 @@
 		<set name="material" val="COTTON" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 	</item>
 	<item id="21749" name="Great Adventurer's Treasure Sack" type="EtcItem">
@@ -1034,6 +1058,7 @@
 		<set name="material" val="COTTON" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 	</item>
 	<item id="21750" name="Mark of Challenge" type="EtcItem">
@@ -1048,6 +1073,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21751" name="Rune Jewelry Box - Crystal" type="EtcItem">
@@ -1055,6 +1081,7 @@
 		<set name="icon" val="icon.etc_treasure_box_i07" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21752" name="Rune Jewelry Box - Talisman" type="EtcItem">
@@ -1062,6 +1089,7 @@
 		<set name="icon" val="icon.etc_treasure_box_i06" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21753" name="Pablo's Box" type="EtcItem">
@@ -1069,6 +1097,7 @@
 		<set name="icon" val="icon.etc_treasure_box_i01" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21754" name="Pencil Corps' Magic Pencil" type="Weapon">
@@ -1087,6 +1116,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="6908" level="1" /> <!-- Transform Master -->
@@ -1117,6 +1147,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21756" name="Rank 1 Scholar's Hat" type="Armor">
@@ -1134,6 +1165,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21757" name="Rank 2 Scholar's Hat" type="Armor">
@@ -1151,6 +1183,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21758" name="Rank 3 Scholar's Hat" type="Armor">
@@ -1168,6 +1201,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21759" name="Illumination - Red" type="EtcItem">
@@ -1175,6 +1209,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_red" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21760" name="Illumination - Pink" type="EtcItem">
@@ -1182,6 +1217,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_pink" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21761" name="Illumination - Rose Pink" type="EtcItem">
@@ -1189,6 +1225,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_rosepink" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21762" name="Illumination - Orange" type="EtcItem">
@@ -1196,6 +1233,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_orange" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21763" name="Illumination - Mint Green" type="EtcItem">
@@ -1203,6 +1241,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_mintgreen" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21764" name="Illumination - Green" type="EtcItem">
@@ -1210,6 +1249,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_green" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21765" name="Illumination - Sky Blue" type="EtcItem">
@@ -1217,6 +1257,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_skyblue" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21766" name="Illumination - Blue" type="EtcItem">
@@ -1224,6 +1265,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_blue" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21767" name="Illumination - Purple" type="EtcItem">
@@ -1231,6 +1273,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_purple" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21768" name="Illumination - White" type="EtcItem">
@@ -1238,6 +1281,7 @@
 		<set name="icon" val="BranchSys2.icon.g_illumination_white" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21769" name="Unrefined Ore" type="EtcItem">
@@ -1245,6 +1289,7 @@
 		<set name="icon" val="icon.etc_stone_piece_i00" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21770" name="Unrefined Jewel" type="EtcItem">
@@ -1252,6 +1297,7 @@
 		<set name="icon" val="icon.etc_vacualite_noglow_blue_i00" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21771" name="Jewel of Dusk" type="EtcItem">
@@ -1259,6 +1305,7 @@
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21772" name="Jewel of Dawn" type="EtcItem">
@@ -1266,6 +1313,7 @@
 		<set name="icon" val="BranchSys2.icon.g_dawn_gem" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21773" name="Jewel of Splendor" type="EtcItem">
@@ -1273,6 +1321,7 @@
 		<set name="icon" val="BranchSys2.icon.g_brilliance_gem" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21774" name="Giant's Jewel" type="EtcItem">
@@ -1280,6 +1329,7 @@
 		<set name="icon" val="BranchSys2.icon.g_giant_gem" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21775" name="Imperial Crusader Breastplate of Fortune" name_additional="90-day" type="Armor">
