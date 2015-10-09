@@ -14109,7 +14109,7 @@ public final class PlayerInstance extends Playable
 	 * @param clazz
 	 * @return {@code true} if player is registered on specified event, {@code false} in case events map is not initialized yet or event is not registered
 	 */
-	public boolean isOnEvent(Class<AbstractEvent<?>> clazz)
+	public boolean isOnEvent(Class<? extends AbstractEvent<?>> clazz)
 	{
 		if (_events == null)
 		{

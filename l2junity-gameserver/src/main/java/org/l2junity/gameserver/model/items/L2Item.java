@@ -747,7 +747,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			return false;
 		}
 		
-		if (isCocRestrictedItem() && (activeChar.isPlayer() && (activeChar.getActingPlayer().getEvent(CeremonyOfChaosEvent.class) != null)))
+		if (isCocRestrictedItem() && (activeChar.isPlayer() && (activeChar.getActingPlayer().isOnEvent(CeremonyOfChaosEvent.class))))
 		{
 			// TODO Find out the message
 			return false;
