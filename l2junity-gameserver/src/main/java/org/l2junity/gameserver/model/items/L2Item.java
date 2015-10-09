@@ -39,6 +39,7 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.commission.CommissionItemType;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.events.ListenersContainer;
@@ -147,6 +148,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	private boolean _freightable;
 	private boolean _allow_self_resurrection;
 	private boolean _is_oly_restricted;
+	private boolean _is_coc_restricted;
 	private boolean _for_npc;
 	private boolean _common;
 	private boolean _heroItem;
@@ -210,6 +212,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		_freightable = set.getBoolean("is_freightable", false);
 		_allow_self_resurrection = set.getBoolean("allow_self_resurrection", false);
 		_is_oly_restricted = set.getBoolean("is_oly_restricted", false);
+		_is_coc_restricted = set.getBoolean("is_coc_restricted", false);
 		_for_npc = set.getBoolean("for_npc", false);
 		
 		_immediate_effect = set.getBoolean("immediate_effect", false);
@@ -744,6 +747,12 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			return false;
 		}
 		
+		if (isCocRestrictedItem() && (activeChar.isPlayer() && (activeChar.getActingPlayer().getEvent(CeremonyOfChaosEvent.class) != null)))
+		{
+			// TODO Find out the message
+			return false;
+		}
+		
 		if (!isConditionAttached())
 		{
 			return true;
@@ -812,6 +821,14 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	public boolean isOlyRestrictedItem()
 	{
 		return _is_oly_restricted || Config.LIST_OLY_RESTRICTED_ITEMS.contains(_itemId);
+	}
+	
+	/**
+	 * @return {@code true} if item cannot be used in Ceremony of Chaos games.
+	 */
+	public boolean isCocRestrictedItem()
+	{
+		return _is_coc_restricted;
 	}
 	
 	public boolean isForNpc()
