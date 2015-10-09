@@ -43,6 +43,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -303,9 +304,14 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_DURING_A_DUEL;
 			canRegister = false;
 		}
-		else if (player.isInOlympiadMode())
+		else if (player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player))
 		{
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_WHILE_PARTICIPATING_IN_OLYMPIAD;
+			canRegister = false;
+		}
+		else if (player.isOnEvent(CeremonyOfChaosEvent.class) || (player.getBlockCheckerArena() > -1)) // TODO underground coliseum and kratei checks.
+		{
+			sm = SystemMessageId.YOU_CANNOT_REGISTER_FOR_THE_WAITING_LIST_WHILE_PARTICIPATING_IN_THE_BLOCK_CHECKER_COLISEUM_OLYMPIAD_KRATEI_S_CUBE_CEREMONY_OF_CHAOS;
 			canRegister = false;
 		}
 		else if (player.getInstanceId() > 0)
