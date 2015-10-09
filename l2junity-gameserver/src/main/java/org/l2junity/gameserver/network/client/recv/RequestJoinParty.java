@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.PartyRequest;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.AskJoinParty;
@@ -90,6 +91,12 @@ public final class RequestJoinParty implements IClientIncomingPacket
 		if (!target.isVisibleFor(requestor))
 		{
 			requestor.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+			return;
+		}
+		
+		if (requestor.isOnEvent(CeremonyOfChaosEvent.class))
+		{
+			client.sendPacket(SystemMessageId.YOU_CANNOT_INVITE_A_FRIEND_OR_PARTY_WHILE_PARTICIPATING_IN_THE_CEREMONY_OF_CHAOS);
 			return;
 		}
 		

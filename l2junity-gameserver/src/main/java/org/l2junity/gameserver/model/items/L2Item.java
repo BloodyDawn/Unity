@@ -749,7 +749,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		
 		if (isCocRestrictedItem() && (activeChar.isPlayer() && (activeChar.getActingPlayer().isOnEvent(CeremonyOfChaosEvent.class))))
 		{
-			// TODO Find out the message
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ITEM_IN_THE_TOURNAMENT);
 			return false;
 		}
 		
