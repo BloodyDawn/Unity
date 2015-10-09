@@ -130,7 +130,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="time" val="86400" />
 	</item>
 	<item id="35711" name="Santa Girl's Cloak Box" name_additional="3-day (Event)" type="EtcItem">
 		<!-- Double-click to acquire Santa Girl's Cloak (3-day). -->
@@ -139,7 +138,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="time" val="259200" />
 	</item>
 	<item id="35712" name="Refined Romantic Chapeau containing the GM's Sincerity" name_additional="Warriors Only" type="Armor">
 		<!-- Refined Romantic Chapeau containing the GM's sincerity. It uses 2 hair accessory slots. P. Atk. + 5% when equipped. -->
@@ -257,7 +255,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
-		<set name="time" val="86400" />
+		<set name="duration" val="180" />
+		<set name="time" val="1440" />
 	</item>
 	<item id="35719" name="Santa Hat" name_additional="3-day (Event)" type="Armor">
 		<!-- The hat brings Christmas cheer. -->
@@ -273,7 +272,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
-		<set name="time" val="259200" />
+		<set name="duration" val="540" />
+		<set name="time" val="4320" />
 	</item>
 	<item id="35720" name="Santa Girl's Hat Box" name_additional="1-day (Event)" type="EtcItem">
 		<!-- Double-click to acquire Santa Girl's Hat (1-day). -->
@@ -282,7 +282,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="time" val="86400" />
 	</item>
 	<item id="35721" name="Santa Girl's Hat Box" name_additional="3-day (Event)" type="EtcItem">
 		<!-- Double-click to acquire Santa Girl's Hat (3-day). -->
@@ -291,7 +290,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="time" val="259200" />
 	</item>
 	<item id="35722" name="Draco's Hat" name_additional="Event" type="Armor">
 		<!-- Draco's Hat -->
@@ -588,6 +586,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
+		<set name="time" val="10080" />
 		<set name="weight" val="10" />
 		<skills>
 			<skill id="9515" level="1" /> <!-- Draco's Warrior Hat -->
@@ -607,6 +606,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
+		<set name="time" val="10080" />
 		<set name="weight" val="10" />
 		<skills>
 			<skill id="9516" level="1" /> <!-- Draco's Hat: Wizard -->
