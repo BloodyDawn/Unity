@@ -316,6 +316,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="for_npc" val="true" />
+		<set name="reuse_delay" val="500" />
 		<set name="commissionItemType" val="POTION" />
 		<skills>
 			<skill id="9524" level="1" /> <!-- Healing Potion of Chaos -->
@@ -350,6 +351,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9528" level="1" /> <!-- Dragon Vitality Replenishing Potion -->
@@ -366,6 +368,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="60000" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="35934" name="XP Rune II (Lv. 1-95) 100%" name_additional="7-day" type="EtcItem">
@@ -1011,6 +1014,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9752" level="1" /> <!-- Dragon Vitality Replenishing Potion -->
@@ -1028,6 +1032,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="60000" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="35978" name="Mysterious Ring (7-day)" name_additional="Event" type="Armor">
@@ -1189,6 +1194,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="60000" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="35988" name="XP Rune I (Lv. 1-85) 200% Pack (1-hour)" name_additional="Event" type="EtcItem">
@@ -1202,6 +1208,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="60000" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="35989" name="Festival's Cloak" name_additional="Ceremony of Chaos" type="Armor">
@@ -1247,6 +1254,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="1000" />
+		<set name="shared_reuse_group" val="7" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9552" level="1" /> <!-- Ceremony of Chaos - Warrior's Harmony -->
@@ -1271,6 +1280,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="1000" />
+		<set name="shared_reuse_group" val="7" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9553" level="1" /> <!-- Ceremony of Chaos - Wizard's Harmony -->
@@ -1295,6 +1306,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="1000" />
+		<set name="shared_reuse_group" val="7" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9551" level="1" /> <!-- Ceremony of Chaos - Knight's Harmony -->

@@ -135,6 +135,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="for_npc" val="true" />
+		<set name="reuse_delay" val="3000" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22611" name="New Lineage II Awakening Party Cloak" type="Armor">
@@ -206,6 +207,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="3000" />
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 	</item>
 	<item id="22617" name="Jewelry Pack (B-grade)" type="EtcItem">
@@ -217,6 +219,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="3000" />
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 	</item>
 	<item id="22618" name="Jewelry Pack (C-grade)" type="EtcItem">
@@ -228,6 +231,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="3000" />
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 	</item>
 	<item id="22619" name="Dynasty Accessory of Fortune Pack (S-grade)" type="EtcItem">
@@ -269,6 +273,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="time" val="3600" />
 	</item>
 	<item id="22622" name="Blessed Scroll of Escape" name_additional="1-day" type="EtcItem">
@@ -314,6 +319,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="R" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="120000" />
+		<set name="shared_reuse_group" val="6" />
 		<set name="time" val="86400" />
 	</item>
 	<item id="22625" name="Elixir of Mind" name_additional="1-day" type="EtcItem">
@@ -331,6 +338,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="R" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="120000" />
+		<set name="shared_reuse_group" val="6" />
 		<set name="time" val="86400" />
 	</item>
 	<item id="22626" name="Elixir of CP" name_additional="1-day" type="EtcItem">
@@ -348,6 +357,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="R" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="120000" />
+		<set name="shared_reuse_group" val="7" />
 		<set name="time" val="86400" />
 	</item>
 	<item id="22627" name="Scroll: Enchant Weapon (R-grade)" type="EtcItem">

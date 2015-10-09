@@ -26,6 +26,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22302" name="Antharas' Earring" name_additional="3-day (Event)" type="Armor">
@@ -408,6 +409,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
+		<set name="equip_reuse_delay" val="30" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="8331" level="1" /> <!-- Blue Talisman - Buff Cancel -->
@@ -428,6 +430,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
+		<set name="equip_reuse_delay" val="30" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="8332" level="1" /> <!-- Blue Talisman - Buff Steal -->
@@ -447,6 +450,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="A" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="300000" />
+		<set name="shared_reuse_group" val="5" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22329" name="Superior Elixir of Mind (Battleground)" type="EtcItem">
@@ -463,6 +468,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="A" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="300000" />
+		<set name="shared_reuse_group" val="5" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22330" name="Superior Elixir of CP (Battleground)" type="EtcItem">
@@ -479,6 +486,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="A" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="300000" />
+		<set name="shared_reuse_group" val="7" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22331" name="7th Anniversary Box" type="EtcItem">
@@ -719,6 +728,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="107" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22350" name="Adventurer's Song - Eva's Protection" name_additional="R-grade" type="EtcItem">
@@ -733,6 +743,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="107" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22351" name="Auction House Fee 30% Voucher" type="EtcItem">

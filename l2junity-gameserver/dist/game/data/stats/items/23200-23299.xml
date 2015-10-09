@@ -131,6 +131,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="for_npc" val="true" />
+		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23209" name="Blue Potion of Recovery" type="EtcItem">
@@ -141,6 +142,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="for_npc" val="true" />
+		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23210" name="Transformation Scroll: Zombie" type="EtcItem">
@@ -413,6 +415,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="shared_reuse_group" val="16" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23230" name="Snack Mix" type="EtcItem">
@@ -426,6 +429,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="60000" />
+		<set name="shared_reuse_group" val="105" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23231" name="Aria's Warrior Helmet" type="Armor">
@@ -510,6 +515,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="10" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
@@ -555,6 +561,7 @@
 		<set name="bodypart" val="underwear" />
 		<set name="enchant_enabled" val="8" />
 		<set name="enchanted" val="7" />
+		<set name="equip_reuse_delay" val="30" />
 		<set name="weight" val="130" />
 		<stats>
 			<stat type="pDef">28</stat>

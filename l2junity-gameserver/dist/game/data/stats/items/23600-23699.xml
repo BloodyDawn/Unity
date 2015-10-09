@@ -161,6 +161,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="300000" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23613" name="2012 Tournament Winner's Crown - Cain" type="Armor">
@@ -191,6 +192,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="15" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22848" level="1" /> <!-- Vitality Maintaining Potion -->
@@ -275,6 +277,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22849" level="1" /> <!-- Dragon Vitality Replenishing Potion -->
@@ -293,6 +296,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="1800000" />
+		<set name="shared_reuse_group" val="15" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22850" level="1" /> <!-- Vitality Suspending Potion -->
@@ -400,6 +405,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="shared_reuse_group" val="16" />
 		<set name="time" val="3600" />
 		<skills>
 			<skill id="22853" level="1" /> <!-- Torun Gingerbread (1-hour) -->
@@ -415,6 +421,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="shared_reuse_group" val="16" />
 		<set name="time" val="18000" />
 		<skills>
 			<skill id="22854" level="1" /> <!-- Torun Gingerbread (1.5-hour) -->
@@ -427,6 +434,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="shared_reuse_group" val="16" />
 		<set name="time" val="7200" />
 		<skills>
 			<skill id="22855" level="1" /> <!-- Torun Gingerbread (2-hour) -->
@@ -442,6 +450,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="shared_reuse_group" val="16" />
 		<set name="time" val="18000" />
 		<skills>
 			<skill id="22856" level="1" /> <!-- Torun Gingerbread (2.5-hour) -->
@@ -457,6 +466,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="shared_reuse_group" val="16" />
 		<set name="time" val="10800" />
 		<skills>
 			<skill id="22857" level="1" /> <!-- Torun Gingerbread (3-hour) -->
@@ -472,6 +482,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="shared_reuse_group" val="16" />
 		<set name="time" val="14400" />
 		<skills>
 			<skill id="22858" level="1" /> <!-- Torun Gingerbread (4-hour) -->
@@ -519,6 +530,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="rear;lear" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
 		<set name="time" val="259200" />
 		<skills>
 			<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
@@ -543,6 +555,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="rear;lear" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
 		<set name="time" val="604800" />
 		<skills>
 			<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
@@ -567,6 +580,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="neck" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
 		<set name="time" val="259200" />
 		<skills>
 			<skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
@@ -591,6 +605,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="neck" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
 		<set name="time" val="604800" />
 		<skills>
 			<skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
