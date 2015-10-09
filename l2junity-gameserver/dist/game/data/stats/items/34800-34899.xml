@@ -174,6 +174,7 @@
 		<set name="weight" val="100" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34831" name="Squash Ring (Wizard)" name_additional="Event" type="Armor">
@@ -265,6 +266,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34836" name="Afro Hair Pack (7-day)" type="EtcItem">
@@ -279,6 +281,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34837" name="Magic Rope (R-grade)" type="EtcItem">
@@ -343,6 +346,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="for_npc" val="true" />
 		<set name="icon" val="" />
 	</item>
 	<item id="34845" name="Mysterious Herb" type="EtcItem">
@@ -351,6 +355,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="for_npc" val="true" />
 		<set name="icon" val="" />
 	</item>
 	<item id="34846" name="Bard's Gift" type="EtcItem">
@@ -360,6 +365,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34847" name="Pirate Elixir (2-hour)" type="EtcItem">
@@ -373,6 +379,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9403" level="1" /> <!-- Pirate Elixir -->
@@ -468,6 +475,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34856" name="Echo Crystal - Theme of Love" name_additional="Campaign" type="EtcItem">
@@ -548,6 +556,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34863" name="Contaminated Draco Egg" type="EtcItem">
@@ -561,6 +570,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34864" name="Small Draco Egg" type="EtcItem">
@@ -568,6 +578,7 @@
 		<set name="icon" val="icon.etc_ev_small_egg" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="34865" name="Large Draco Egg" type="EtcItem">
@@ -575,6 +586,7 @@
 		<set name="icon" val="icon.etc_ev_big_egg" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="34866" name="Shattered Egg Shell" type="EtcItem">
@@ -582,18 +594,21 @@
 		<set name="icon" val="icon.etc_ev_broken_egg" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="34867" name="Draco's Gift" type="EtcItem">
 		<!-- Gift from the Draco that was resurrected from a purified Draco Egg. -->
 		<set name="icon" val="icon.etc_treasure_box_i03" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34868" name="Draco's Shiny Gift" type="EtcItem">
 		<!-- Gift from the Draco that was resurrected from a purified Draco Egg. It shines for some unknown reason. -->
 		<set name="icon" val="icon.etc_treasure_box_i08" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34869" name="Agathion - Flame Spirit" type="Armor">
@@ -609,6 +624,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="15053" level="1" /> <!-- Pa'agrio's Hand -->
@@ -628,6 +644,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34871" name="Low-grade Magic Rune Clip Immortal Belt" name_additional="HP Recovery" type="Armor">
@@ -640,6 +657,8 @@
 		<set name="crystal_count" val="21" />
 		<set name="weight" val="440" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="BELT" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -655,6 +674,8 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="21" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="440" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -670,6 +691,8 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="21" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="440" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -685,6 +708,8 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="21" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="440" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -701,6 +726,8 @@
 		<set name="crystal_count" val="21" />
 		<set name="weight" val="440" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="BELT" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -716,6 +743,8 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="21" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="440" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -731,6 +760,8 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="21" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="440" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -746,6 +777,8 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="21" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="440" />
 		<stats>
 			<stat type="pDef">19</stat>
@@ -763,6 +796,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="20" />
 	</item>
 	<item id="34880" name="Mid-grade Magic Rune Clip (R-grade)" type="EtcItem">
@@ -776,6 +810,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="20" />
 	</item>
 	<item id="34881" name="High-grade Magic Rune Clip (R-grade)" type="EtcItem">
@@ -789,6 +824,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="20" />
 	</item>
 	<item id="34882" name="Top-grade Magic Rune Clip (R-grade)" type="EtcItem">
@@ -802,6 +838,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="20" />
 	</item>
 	<item id="34883" name="Bottle of Istina's Soul" type="EtcItem">
@@ -816,6 +853,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34884" name="Bottle of Octavis' Soul" type="EtcItem">
@@ -830,6 +868,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34885" name="Circlet of Earthquake Pack (60-day)" type="EtcItem">
@@ -855,6 +894,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="icon" val="icon.etc_jewel_red_i00" />
 	</item>
 	<item id="34887" name="Empty Hot Spring Water Bottle" type="EtcItem">
@@ -869,6 +909,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="20" />
 		<skills>
 			<skill id="9443" level="1" /> <!-- Empty Hot Spring Water Bottle -->
@@ -884,6 +925,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
 	</item>
 	<item id="34889" name="Durable Leather" type="EtcItem">
@@ -897,6 +939,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34890" name="Trowel" type="EtcItem">
@@ -911,6 +954,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="20" />
 		<skills>
 			<skill id="9442" level="1" /> <!-- Trowel -->
@@ -927,6 +971,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34892" name="Hard Fossil Containing Energy of Water" type="EtcItem">
@@ -940,6 +985,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="34893" name="Seed of Helping Herb" type="EtcItem">
@@ -952,6 +998,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<skills>
 			<skill id="9444" level="1" /> <!-- Helping Seed -->
@@ -967,6 +1014,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="icon" val="icon.etc_powder_orange_i00" />
 	</item>
 	<item id="34895" name="Spellbook: Clan Flag" type="EtcItem">
@@ -980,6 +1028,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="20" />
 	</item>
 	<item id="34896" name="Rabbit Ears" name_additional="Campaign" type="Armor">
@@ -995,6 +1044,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hair2" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="34897" name="Angel Circlet" name_additional="Campaign" type="Armor">
@@ -1010,6 +1060,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="34898" name="Proof of Survival" type="EtcItem">
@@ -1022,6 +1073,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="icon" val="icon.etc_fire_rune_i00" />
 	</item>
 	<item id="34899" name="Key of Darkness" type="EtcItem">
@@ -1030,6 +1082,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

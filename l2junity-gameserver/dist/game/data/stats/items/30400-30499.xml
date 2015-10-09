@@ -19,6 +19,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="1300" />
 		<skills>
 			<skill id="13154" level="1" /> <!-- Special Ability: Infinity Buster -->
@@ -51,6 +52,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="1300" />
 		<skills>
 			<skill id="13155" level="1" /> <!-- Special Ability: Infinity Caster -->
@@ -84,6 +86,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="1300" />
 		<skills>
 			<skill id="13156" level="1" /> <!-- Special Ability: Infinity Retributer -->
@@ -118,6 +121,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="1300" />
 		<skills>
 			<skill id="13157" level="1" /> <!-- Special Ability: Infinity Dualsword -->
@@ -150,6 +154,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="1300" />
 		<skills>
 			<skill id="13158" level="1" /> <!-- Special Ability: Infinity Dual Dagger -->
@@ -183,6 +188,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="1300" />
 		<skills>
 			<skill id="13159" level="1" /> <!-- Special Ability: Infinity Dual Blunt Weapon -->
@@ -208,6 +214,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30407" name="Internal test type crystal Pack" type="EtcItem">
@@ -221,6 +228,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30408" name="Dual Weapon Crafting Stamp (R-grade)" type="EtcItem">
@@ -510,12 +518,14 @@
 		<!-- Can release Harnak's soul from the seal. -->
 		<set name="icon" val="icon.etc_key_i00" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30430" name="Harnak's Prison Key" type="EtcItem">
 		<!-- Can release Harnak's soul from prison. -->
 		<set name="icon" val="icon.etc_key_i00" />
 		<set name="is_freightable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30431" name="Attribute Pack" type="EtcItem">
@@ -559,6 +569,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="2870" />
 		<stats>
 			<stat type="pDef">27</stat>
@@ -580,6 +592,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="1650" />
 		<stats>
 			<stat type="mDef">20</stat>
@@ -600,6 +614,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="1650" />
 		<stats>
 			<stat type="mDef">20</stat>
@@ -620,6 +635,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="23700" />
 		<stats>
 			<stat type="mDef">36</stat>
@@ -640,6 +656,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="47400" />
 		<stats>
 			<stat type="mDef">72</stat>
@@ -660,6 +677,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="35550" />
 		<stats>
 			<stat type="mDef">54</stat>
@@ -684,6 +702,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="3" />
 		<stats>
 			<stat type="pAtk">90</stat>
@@ -711,6 +731,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="69350" />
 		<stats>
 			<stat type="pAtk">90</stat>
@@ -737,6 +759,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="2050" />
 		<stats>
 			<stat type="sDef">128</stat>
@@ -759,6 +783,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="37415" />
 		<stats>
 			<stat type="pDef">49</stat>
@@ -780,6 +805,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="58015" />
 		<stats>
 			<stat type="pDef">52</stat>
@@ -804,6 +830,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="3" />
 		<stats>
 			<stat type="pAtk">111</stat>
@@ -832,6 +860,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="3" />
 		<skills>
 			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
@@ -863,6 +892,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="3" />
 		<skills>
 			<skill id="3048" level="1" /> <!-- Special Ability: Conversion -->
@@ -894,6 +924,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="3" />
 		<skills>
 			<skill id="3079" level="3" type="ON_MAGIC_SKILL" type_chance="5" /> <!-- Special Ability: Magic Paralyze -->
@@ -925,6 +956,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">51</stat>
@@ -953,6 +986,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="3" />
 		<stats>
 			<stat type="pAtk">135</stat>
@@ -982,6 +1017,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="3" />
 		<skills>
 			<skill id="1201" level="21" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Dryad Root -->
@@ -1014,6 +1050,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="3" />
 		<skills>
 			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Poison -->
@@ -1046,6 +1083,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="3" />
 		<skills>
 			<skill id="1164" level="9" /> <!-- Curse Weakness -->
@@ -1074,6 +1112,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="23700" />
 		<stats>
 			<stat type="mDef">36</stat>
@@ -1094,6 +1133,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="47400" />
 		<stats>
 			<stat type="mDef">72</stat>
@@ -1116,6 +1156,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="18330" />
 		<stats>
 			<stat type="pDef">90</stat>
@@ -1137,6 +1179,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="3760" />
 		<stats>
 			<stat type="pDef">29</stat>
@@ -1157,6 +1201,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="price" val="35550" />
 		<stats>
 			<stat type="mDef">54</stat>
@@ -1181,6 +1226,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
@@ -1212,6 +1259,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="3" />
 		<skills>
 			<skill id="3044" level="3" /> <!-- Special Ability: Focus -->
@@ -1243,6 +1292,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="3" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -1268,6 +1319,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="2930" />
 		<stats>
 			<stat type="pDef">37</stat>
@@ -1292,6 +1345,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<stats>
 			<stat type="pAtk">122</stat>
@@ -1321,6 +1375,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" /> <!-- Regeneration -->
@@ -1353,6 +1408,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
@@ -1385,6 +1441,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="7" /> <!-- Curse Weakness -->
@@ -1418,6 +1475,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="reuse_delay" val="400" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -1448,6 +1506,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="reuse_delay" val="400" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3008" level="6" /> <!-- Special Ability: Guidance -->
@@ -1481,6 +1540,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="reuse_delay" val="348" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -1511,6 +1571,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="reuse_delay" val="400" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
@@ -1543,6 +1604,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">40</stat>
@@ -1572,6 +1635,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<stats>
 			<stat type="pAtk">175</stat>
@@ -1601,6 +1665,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3012" level="5" /> <!-- Special Ability: Anger -->
@@ -1633,6 +1698,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
@@ -1665,6 +1731,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3027" level="5" /> <!-- Special Ability: Rsk. Focus -->
@@ -1697,6 +1764,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">49</stat>
@@ -1725,6 +1794,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="3" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -1754,6 +1825,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">103</stat>
@@ -1783,6 +1856,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="2" />
 		<skills>
 			<skill id="1044" level="1" type="ON_MAGIC_SKILL" type_chance="30" /> <!-- Regeneration -->
@@ -1815,6 +1889,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="2" />
 		<skills>
 			<skill id="1035" level="2" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
@@ -1847,6 +1922,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="2" />
 		<skills>
 			<skill id="1201" level="16" type="ON_MAGIC_SKILL" type_chance="6" /> <!-- Dryad Root -->
@@ -1879,6 +1955,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">103</stat>
@@ -1908,6 +1986,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="2" />
 		<skills>
 			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Poison -->
@@ -1940,6 +2019,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="2" />
 		<skills>
 			<skill id="1064" level="7" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Silence -->
@@ -1972,6 +2052,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="2" />
 		<skills>
 			<skill id="1222" level="4" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Chaos -->
@@ -2004,6 +2085,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="1" />
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -2032,6 +2115,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
@@ -2063,6 +2148,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
@@ -2094,6 +2181,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
@@ -2126,6 +2215,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="reuse_delay" val="400" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">51</stat>
@@ -2155,6 +2246,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">69</stat>
@@ -2181,6 +2274,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="690" />
 		<stats>
 			<stat type="mDef">16</stat>
@@ -2202,6 +2297,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="1380" />
 		<stats>
 			<stat type="mDef">32</stat>
@@ -2226,6 +2323,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -2258,6 +2356,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -2291,6 +2390,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -2325,6 +2425,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="spiritshots" val="1" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -2358,6 +2459,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">40</stat>
@@ -2388,6 +2491,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="reuse_delay" val="400" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="spiritshots" val="2" />
 		<stats>
 			<stat type="pAtk">64</stat>
