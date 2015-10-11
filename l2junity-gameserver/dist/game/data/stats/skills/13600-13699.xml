@@ -435,64 +435,128 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="13662" levels="1" name="Orichalcum Arrow - Atk. Spd.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Increases Atk. Spd. by 5%. -->
 		<set name="icon" val="icon.etc_oricalcum_quiver_i00" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13663" levels="1" name="Orichalcum Bolt - Atk. Spd.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Increases Atk. Spd. by 5%. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<using kind="CROSSBOW,TWOHANDCROSSBOW" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13664" levels="1" name="Orichalcum Arrow - P. Atk.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Increases P. Atk. by 5%. -->
 		<set name="icon" val="icon.etc_oricalcum_quiver_i00" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13665" levels="1" name="Orichalcum Bolt - P. Atk.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Increases P. Atk. by 5%. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<using kind="CROSSBOW,TWOHANDCROSSBOW" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13666" levels="1" name="Orichalcum Arrow - Additional Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 		<set name="icon" val="icon.etc_oricalcum_quiver_i00" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW" />
+		</cond>
+		<for>
+			<effect name="TriggerSkillByAttack">
+				<param minDamage="1" />
+				<param chance="21" /> <!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
+				<param skillId="13667" skillLevel="1" /> <!-- Orichalcum Arrow - Additional Hit -->
+				<param targetType="ONE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13667" levels="1" name="Orichalcum Arrow - Additional Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 		<set name="icon" val="icon.etc_oricalcum_quiver_i00" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="15000" />
+		<for>
+			<effect name="RegularAttack">
+				<param pDefMod="0.7" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13668" levels="1" name="Orichalcum Bolt - Additional Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<using kind="CROSSBOW,TWOHANDCROSSBOW" />
+		</cond>
+		<for>
+			<effect name="TriggerSkillByAttack">
+				<param minDamage="1" />
+				<param chance="21" /> <!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
+				<param skillId="13669" skillLevel="1" /> <!-- Orichalcum Bolt - Additional Hit -->
+				<param targetType="ONE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13669" levels="1" name="Orichalcum Bolt - Additional Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="15000" />
+		<for>
+			<effect name="RegularAttack">
+				<param pDefMod="0.7" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13670" levels="1" name="Special Water Resistance Necklace">
 		<!-- AUTO GENERATED SKILL -->

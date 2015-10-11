@@ -37,12 +37,14 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class RegularAttack extends AbstractEffect
 {
 	private final double _pAtkMod;
+	private final double _pDefMod;
 	
 	public RegularAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
+		_pDefMod = params.getDouble("pDefMod", 1.0);
 	}
 	
 	@Override
@@ -74,7 +76,8 @@ public final class RegularAttack extends AbstractEffect
 		final byte shld = Formulas.calcShldUse(effector, effected);
 		final boolean crit = Formulas.calcCrit(effector.getStat().getCriticalHit(), false, effector, effected);
 		int damage = (int) Formulas.calcPhysDam(effector, effected, null, 0, shld, crit, effector.isChargedShot(ShotType.SOULSHOTS));
-		damage *= _pAtkMod;
+		damage *= _pAtkMod; // TODO needs better integration within formula
+		damage /= _pDefMod; // TODO needs better integration within formula
 		damage = (int) effector.getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
 		
 		if (damage > 0)

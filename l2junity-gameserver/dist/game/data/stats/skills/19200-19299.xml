@@ -264,7 +264,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="19213" levels="1" name="Polishing Arrows: Atk. Spd.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Arrows with increased Atk. Spd. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_arrows" />
 		<set name="operateType" val="A1" />
@@ -273,9 +273,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45578" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19214" levels="1" name="Polishing Bolts: Atk. Spd.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Bolts with increased Atk. Spd. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_bolts" />
 		<set name="operateType" val="A1" />
@@ -284,9 +297,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45581" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19215" levels="1" name="Polishing Arrows: P. Atk.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Arrows with increased P. Atk. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_arrows" />
 		<set name="operateType" val="A1" />
@@ -295,9 +321,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45579" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19216" levels="1" name="Polishing Bolts: P. Atk.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Bolts with increased P. Atk. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_bolts" />
 		<set name="operateType" val="A1" />
@@ -306,9 +345,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45582" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19217" levels="1" name="Polishing Arrows: Added Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Arrows with Additional Hit. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_arrows" />
 		<set name="operateType" val="A1" />
@@ -317,9 +369,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45580" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19218" levels="1" name="Polishing Bolts: Added Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Bolts with Additional Hit. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_bolts" />
 		<set name="operateType" val="A1" />
@@ -328,6 +393,19 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45583" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19219" levels="1" name="Blessing of Tree">
 		<!-- Updated to IO -->
