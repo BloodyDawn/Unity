@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -50,13 +51,19 @@ public final class KnockBack extends AbstractEffect
 	public KnockBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_distance = params.getInt("distance", 50);
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);
 		_animationSpeed = params.getInt("animationSpeed", 0);
 		_knockDown = params.getBoolean("knockDown", false);
 		_type = params.getEnum("type", FlyType.class, _knockDown ? FlyType.PUSH_DOWN_HORIZONTAL : FlyType.PUSH_HORIZONTAL);
+	}
+	
+	@Override
+	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
+	{
+		return _knockDown || Formulas.calcEffectSuccess(effector, effected, skill);
 	}
 	
 	@Override
@@ -70,25 +77,25 @@ public final class KnockBack extends AbstractEffect
 	{
 		return L2EffectType.KNOCK;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if(!_knockDown)
+		if (!_knockDown)
 		{
 			knockBack(effector, effected);
 		}
 	}
-
+	
 	@Override
 	public void continuousInstant(Creature effector, Creature effected, Skill skill)
 	{
-		if(_knockDown)
+		if (_knockDown)
 		{
 			knockBack(effector, effected);
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{
@@ -97,7 +104,7 @@ public final class KnockBack extends AbstractEffect
 			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
 	}
-
+	
 	public void knockBack(Creature effector, Creature effected)
 	{
 		final double radians = Math.toRadians(Util.calculateAngleFrom(effector, effected));
@@ -105,7 +112,7 @@ public final class KnockBack extends AbstractEffect
 		final int y = (int) (effected.getY() + (_distance * Math.sin(radians)));
 		final int z = effected.getZ();
 		final Location loc = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
-
+		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
 		if (_knockDown)
