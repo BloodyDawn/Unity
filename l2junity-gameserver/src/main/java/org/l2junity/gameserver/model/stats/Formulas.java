@@ -1792,19 +1792,16 @@ public final class Formulas
 	
 	public static boolean calcBlowSuccess(Creature activeChar, Creature target, Skill skill, double blowChance)
 	{
-		// Apply DEX Mod.
-		double dexMod = BaseStats.DEX.calcBonus(activeChar);
 		// Apply Position Bonus (TODO: values are unconfirmed, possibly custom, remove or update when confirmed).
 		double sideMod = (activeChar.isInFrontOfTarget()) ? 1 : (activeChar.isBehindTarget()) ? 2 : 1.5;
 		// Apply all mods.
-		double baseRate = blowChance * dexMod * sideMod;
+		double baseRate = blowChance * sideMod;
 		// Apply blow rates
 		double rate = activeChar.getStat().getValue(Stats.BLOW_RATE, baseRate);
 		// Debug
 		if (activeChar.isDebug())
 		{
 			final StatsSet set = new StatsSet();
-			set.set("dexMod", dexMod);
 			set.set("blowChance", blowChance);
 			set.set("sideMod", sideMod);
 			set.set("baseRate", baseRate);
