@@ -1931,6 +1931,8 @@ public final class Formulas
 	 * DeleteHateOfMe,<br>
 	 * TransferHate,<br>
 	 * Confuse<br>
+	 * Knockback<br>
+	 * Pull<br>
 	 * @param baseChance chance from effect parameter
 	 * @param attacker
 	 * @param target
@@ -1939,7 +1941,9 @@ public final class Formulas
 	 */
 	public static boolean calcProbability(double baseChance, Creature attacker, Creature target, Skill skill)
 	{
-		return Rnd.get(100) < ((((((skill.getMagicLevel() + baseChance) - target.getLevel()) + 30) - target.getINT()) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
+		// Outdated formula: return Rnd.get(100) < ((((((skill.getMagicLevel() + baseChance) - target.getLevel()) + 30) - target.getINT()) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
+		// TODO: Find more retail-like formula
+		return Rnd.get(100) < (((((skill.getMagicLevel() + baseChance) - target.getLevel())) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
 	}
 	
 	/**

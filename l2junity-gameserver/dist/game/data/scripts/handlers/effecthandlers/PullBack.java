@@ -53,7 +53,7 @@ public final class PullBack extends AbstractEffect
 	@Override
 	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		return Formulas.calcEffectSuccess(effector, effected, skill);
+		return Formulas.calcProbability(100, effector, effected, skill);
 	}
 	
 	@Override

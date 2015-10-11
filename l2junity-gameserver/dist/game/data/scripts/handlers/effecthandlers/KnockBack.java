@@ -63,7 +63,7 @@ public final class KnockBack extends AbstractEffect
 	@Override
 	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		return _knockDown || Formulas.calcEffectSuccess(effector, effected, skill);
+		return _knockDown || Formulas.calcProbability(100, effector, effected, skill);
 	}
 	
 	@Override
