@@ -26,6 +26,8 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -43,6 +45,15 @@ public class SpeedFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = getBaseSpeed(creature, stat);
+		if (creature.isPlayer())
+		{
+			// Enchanted feet bonus
+			final ItemInstance feet = creature.getInventory().getPaperdollItemByL2ItemId(L2Item.SLOT_FEET);
+			if ((feet != null) && feet.isEnchanted())
+			{
+				baseValue += (0.6 * Math.max(feet.getEnchantLevel() - 3, 0)) + (0.6 * Math.max(feet.getEnchantLevel() - 6, 0));
+			}
+		}
 		
 		final byte speedStat = (byte) creature.getStat().getAdd(Stats.STAT_SPEED, -1);
 		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))

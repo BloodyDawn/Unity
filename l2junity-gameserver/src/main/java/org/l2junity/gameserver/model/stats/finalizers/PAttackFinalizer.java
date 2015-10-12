@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -38,6 +41,19 @@ public class PAttackFinalizer implements IStatsFunction
 		
 		double baseValue = calcWeaponBaseValue(creature, stat);
 		baseValue += calcEnchantedItemBonus(creature, stat);
+		
+		if (creature.isPlayer())
+		{
+			// Enchanted chest bonus
+			for (int slot : Arrays.asList(L2Item.SLOT_CHEST, L2Item.SLOT_FULL_ARMOR))
+			{
+				final ItemInstance chest = creature.getInventory().getPaperdollItemByL2ItemId(slot);
+				if ((chest != null) && chest.isEnchanted())
+				{
+					baseValue += (2 * Math.max(chest.getEnchantLevel() - 3, 0)) + (2 * Math.max(chest.getEnchantLevel() - 6, 0));
+				}
+			}
+		}
 		
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{

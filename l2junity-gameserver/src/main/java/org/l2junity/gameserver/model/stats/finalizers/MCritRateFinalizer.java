@@ -21,6 +21,8 @@ package org.l2junity.gameserver.model.stats.finalizers;
 import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -36,6 +38,16 @@ public class MCritRateFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = calcWeaponPlusBaseValue(creature, stat);
+		if (creature.isPlayer())
+		{
+			// Enchanted legs bonus
+			final ItemInstance legs = creature.getInventory().getPaperdollItemByL2ItemId(L2Item.SLOT_LEGS);
+			if ((legs != null) && legs.isEnchanted())
+			{
+				baseValue += (0.34 * Math.max(legs.getEnchantLevel() - 3, 0)) + (0.34 * Math.max(legs.getEnchantLevel() - 6, 0));
+			}
+		}
+		
 		final double witBonus = creature.getWIT() > 0 ? BaseStats.WIT.calcBonus(creature) : 1.;
 		baseValue *= witBonus * 10;
 		return Stats.defaultValue(creature, stat, baseValue);
