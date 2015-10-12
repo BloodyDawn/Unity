@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.items.type.CrystalType;
 
 /**
  * @author UnAfraid
@@ -39,6 +40,25 @@ public interface IStatsFunction
 		{
 			throw new IllegalArgumentException("base should not be set for " + getClass().getSimpleName());
 		}
+	}
+	
+	default double calcEnchantBodyPart(Creature creature, int... slots)
+	{
+		double value = 0;
+		for (int slot : slots)
+		{
+			final ItemInstance item = creature.getInventory().getPaperdollItemByL2ItemId(slot);
+			if ((item != null) && (item.getEnchantLevel() >= 4) && (item.getItem().getCrystalTypePlus() == CrystalType.R))
+			{
+				value += calcEnchantBodyPartBonus(item.getEnchantLevel());
+			}
+		}
+		return value;
+	}
+	
+	default double calcEnchantBodyPartBonus(int enchantLevel)
+	{
+		return 0;
 	}
 	
 	default double calcWeaponBaseValue(Creature creature, Stats stat)

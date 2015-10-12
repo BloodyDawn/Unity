@@ -27,8 +27,6 @@ import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -49,11 +47,7 @@ public class SpeedFinalizer implements IStatsFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted feet bonus
-			final ItemInstance feet = creature.getInventory().getPaperdollItemByL2ItemId(L2Item.SLOT_FEET);
-			if ((feet != null) && feet.isEnchanted() && (feet.getItem().getCrystalTypePlus() == CrystalType.R))
-			{
-				baseValue += (0.6 * Math.max(feet.getEnchantLevel() - 3, 0)) + (0.6 * Math.max(feet.getEnchantLevel() - 6, 0));
-			}
+			baseValue += calcEnchantBodyPart(creature, L2Item.SLOT_FEET);
 		}
 		
 		final byte speedStat = (byte) creature.getStat().getAdd(Stats.STAT_SPEED, -1);
@@ -65,6 +59,12 @@ public class SpeedFinalizer implements IStatsFunction
 		}
 		
 		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_RUN_SPEED);
+	}
+	
+	@Override
+	public double calcEnchantBodyPartBonus(int enchantLevel)
+	{
+		return (0.6 * Math.max(enchantLevel - 3, 0)) + (0.6 * Math.max(enchantLevel - 6, 0));
 	}
 	
 	private double getBaseSpeed(Creature creature, Stats stat)

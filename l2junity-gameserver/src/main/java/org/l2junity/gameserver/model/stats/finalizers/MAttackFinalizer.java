@@ -18,14 +18,11 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
-import java.util.Arrays;
 import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.L2Item;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -45,14 +42,7 @@ public class MAttackFinalizer implements IStatsFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted chest bonus
-			for (int slot : Arrays.asList(L2Item.SLOT_CHEST, L2Item.SLOT_FULL_ARMOR))
-			{
-				final ItemInstance chest = creature.getInventory().getPaperdollItemByL2ItemId(slot);
-				if ((chest != null) && chest.isEnchanted() && (chest.getItem().getCrystalTypePlus() == CrystalType.R))
-				{
-					baseValue += (1.4 * Math.max(chest.getEnchantLevel() - 3, 0)) + (1.4 * Math.max(chest.getEnchantLevel() - 6, 0));
-				}
-			}
+			baseValue += calcEnchantBodyPart(creature, L2Item.SLOT_CHEST, L2Item.SLOT_FULL_ARMOR);
 		}
 		
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
@@ -69,5 +59,11 @@ public class MAttackFinalizer implements IStatsFunction
 		final double intBonus = creature.getINT() > 0 ? BaseStats.INT.calcBonus(creature) : 1.;
 		baseValue *= Math.pow(intBonus, 2) * Math.pow(creature.getLevelMod(), 2) * chaMod;
 		return Stats.defaultValue(creature, stat, baseValue);
+	}
+	
+	@Override
+	public double calcEnchantBodyPartBonus(int enchantLevel)
+	{
+		return (1.4 * Math.max(enchantLevel - 3, 0)) + (1.4 * Math.max(enchantLevel - 6, 0));
 	}
 }
