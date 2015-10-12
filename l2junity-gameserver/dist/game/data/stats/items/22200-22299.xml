@@ -18,9 +18,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="47520" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="23334" level="1" /> <!-- Lantern Agathion Cute Trick -->
-			<skill id="21259" level="1" /> <!-- Release Agathion's Seal - Lantern -->
+			<skill id="21259" level="1" />
+			<skill id="21260" level="1" />
+			<skill id="23334" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="22201" name="Agathion - Lantern Pack" name_additional="Event" type="EtcItem">
@@ -47,6 +48,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22357" level="1" />
+		</skills>
 	</item>
 	<item id="22203" name="Vorpal Armor Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing a Vorpal armor. Which one could it be? -->
@@ -56,6 +60,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22358" level="1" />
+		</skills>
 	</item>
 	<item id="22204" name="Attribute Stone Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing an Attribute Ore. Which one could it be? -->
@@ -65,6 +72,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22381" level="1" />
+		</skills>
 	</item>
 	<item id="22205" name="Attribute Crystal Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing an Attribute Crystal. Which one could it be? -->
@@ -74,6 +84,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22382" level="1" />
+		</skills>
 	</item>
 	<item id="22206" name="Soul Crystal - Step 17 Box" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing a Soul Crystal - Step 17. Which one could it be? -->
@@ -83,6 +96,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22355" level="1" />
+		</skills>
 	</item>
 	<item id="22207" name="Soul Crystal - Step 18 Box" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing a Soul Crystal - Step 18. Which one could it be? -->
@@ -92,6 +108,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22356" level="1" />
+		</skills>
 	</item>
 	<item id="22208" name="Bad Bunny's Necklace Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing a 7 day or 30 day Bad Bunny's Necklace. Which one could it be? It will be automatically deleted after the regular maintenance on 2/23/2011 (Wed). -->
@@ -101,6 +120,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22377" level="1" />
+		</skills>
 	</item>
 	<item id="22209" name="Bad Bunny's Earring Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing a 7 day or 30 day Bad Bunny's Earring. Which one could it be? It will be automatically deleted after the regular maintenance on 2/23/2011 (Wed). -->
@@ -110,6 +132,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22378" level="1" />
+		</skills>
 	</item>
 	<item id="22210" name="Bad Bunny's Ring Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Box containing a 7 day or 30 day Bad Bunny's Ring. Which one could it be? It will be automatically deleted after the regular maintenance on 2/23/2011 (Wed). -->
@@ -119,6 +144,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22379" level="1" />
+		</skills>
 	</item>
 	<item id="22211" name="Bad Bunny's Necklace" name_additional="7-day (Event)" type="Armor">
 		<!-- Description: Its effects are MP+300, HP+500, CP+1035, increased P. Atk., increased M. Atk., wild magic effect, and increased Critical attack power. Can be used for 7 days. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -137,7 +165,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21261" level="1" /> <!-- Bad Bunny's Necklace -->
+			<skill id="21261" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">125</stat>
@@ -161,7 +189,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21262" level="1" /> <!-- Bad Bunny's Earring -->
+			<skill id="21262" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">94</stat>
@@ -185,7 +213,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21263" level="1" /> <!-- Bad Bunny's Ring -->
+			<skill id="21263" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">62</stat>
@@ -209,7 +237,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="21261" level="1" /> <!-- Bad Bunny's Necklace -->
+			<skill id="21261" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">125</stat>
@@ -233,7 +261,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="21262" level="1" /> <!-- Bad Bunny's Earring -->
+			<skill id="21262" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">94</stat>
@@ -257,7 +285,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="21263" level="1" /> <!-- Bad Bunny's Ring -->
+			<skill id="21263" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">62</stat>
@@ -279,6 +307,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22380" level="1" />
+		</skills>
 	</item>
 	<item id="22218" name="Destruction Enchant Scroll Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Gift box containing one Scroll: Enchant Weapon of Destruction (S-Grade). Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -320,6 +351,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22354" level="1" />
+		</skills>
 	</item>
 	<item id="22221" name="Destruction Scroll: Enchant Weapon (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Atk. by 5 for S-Grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. Increases P. Atk. by 6 for two-handed swords, two-handed blunts, dualswords, and hand-to-hand combat weapons. Increases P. Atk. by 10 for bows. Increases P. Atk. by 4 for all weapons. From +4, P. Atk. and M. Atk. increase by 2 times. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. Cannot be used on weapons that are +15 or above. -->
@@ -334,6 +368,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22359" level="1" />
+		</skills>
 	</item>
 	<item id="22222" name="Destruction Scroll: Enchant Armor (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Def. by 1 for S-Grade armor and accessories. Increases by 3 starting from +4. It can safely be enchanted up to +3. For one-piece armor, it can safely be enchanted up to +4. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. When armor is enchanted up to +4, HP increases according to the enchant value. Cannot be used on armor that are +6 or above. -->
@@ -348,6 +385,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22360" level="1" />
+		</skills>
 	</item>
 	<item id="22223" name="Destruction Scroll: Enchant Weapon (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Atk. by 4 for A-Grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. Increases P. Atk. by 5 for two-handed swords, two-handed blunts, dualswords, and hand-to-hand combat weapons. Increases P. Atk. by 8 for bows. Increases P. Atk. by 3 for all weapons. From +4, P. Atk. and M. Atk. increase by 2 times. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. Cannot be used on weapons that are +15 or above. -->
@@ -362,6 +402,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22361" level="1" />
+		</skills>
 	</item>
 	<item id="22224" name="Destruction Scroll: Enchant Armor (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Def. by 1 for A-Grade armor and accessories. Increases by 3 starting from +4. It can safely be enchanted up to +3. For one-piece armor, it can safely be enchanted up to +4. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. When armor is enchanted up to +4, HP increases according to the enchant value. Cannot be used on armor that are +6 or above. -->
@@ -376,6 +419,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22362" level="1" />
+		</skills>
 	</item>
 	<item id="22225" name="Destruction Scroll: Enchant Weapon (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Atk. by 3 for B-Grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. Increases P. Atk. by 4 for two-handed swords, two-handed blunts, dualswords, and hand-to-hand combat weapons. Increases P. Atk. by 6 for bows. Increases P. Atk. by 3 for all weapons. From +4, P. Atk. and M. Atk. increase by 2 times. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. Cannot be used on weapons that are +15 or above. -->
@@ -390,6 +436,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22363" level="1" />
+		</skills>
 	</item>
 	<item id="22226" name="Destruction Scroll: Enchant Armor (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Def. by 1 for B-Grade armor and accessories. Increases by 3 starting from +4. It can safely be enchanted up to +3. For one-piece armor, it can safely be enchanted up to +4. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. When armor is enchanted up to +4, HP increases according to the enchant value. Cannot be used on armor that are +6 or above. -->
@@ -404,6 +453,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22364" level="1" />
+		</skills>
 	</item>
 	<item id="22227" name="Destruction Scroll: Enchant Weapon (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Atk. by 3 for C-Grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. Increases P. Atk. by 4 for two-handed swords, two-handed blunts, dualswords, and hand-to-hand combat weapons. Increases P. Atk. by 6 for bows. Increases P. Atk. by 3 for all weapons. From +4, P. Atk. and M. Atk. increase by 2 times. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. Cannot be used on weapons that are +15 or above. -->
@@ -418,6 +470,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22365" level="1" />
+		</skills>
 	</item>
 	<item id="22228" name="Destruction Scroll: Enchant Armor (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Def. by 1 for C-Grade armor and accessories. Increases by 3 starting from +4. It can safely be enchanted up to +3. For one-piece armor, it can safely be enchanted up to +4. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. When armor is enchanted up to +4, HP increases according to the enchant value. Cannot be used on armor that are +6 or above. -->
@@ -432,6 +487,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22366" level="1" />
+		</skills>
 	</item>
 	<item id="22229" name="Destruction Scroll: Enchant Weapon (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Atk. by 2 for D-Grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. Increases P. Atk. by 2 for two-handed swords, two-handed blunts, dualswords, and hand-to-hand combat weapons. Increases P. Atk. by 4 for bows. Increases P. Atk. by 2 for all weapons. From +4, P. Atk. and M. Atk. increase by 2 times. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. Cannot be used on weapons that are +15 or above. -->
@@ -446,6 +504,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22367" level="1" />
+		</skills>
 	</item>
 	<item id="22230" name="Destruction Scroll: Enchant Armor (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: When enchanted, increases P. Def. by 1 for D-Grade armor and accessories. Increases by 3 starting from +4. It can safely be enchanted up to +3. For one-piece armor, it can safely be enchanted up to +4. When enchant fails, the item is not crystallized by the power of the goddess of destruction, and the existing enchant value is maintained. When armor is enchanted up to +4, HP increases according to the enchant value. Cannot be used on armor that are +6 or above. -->
@@ -460,6 +521,9 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22368" level="1" />
+		</skills>
 	</item>
 	<item id="22231" name="Mysterious Blessed Spiritshot (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: High-level spirit light is infused into a weapon, instantly and greatly increasing its magic power. Can be used on S-grade weapons. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -476,6 +540,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="default_action" val="SPIRITSHOT" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22369" level="1" />
+		</skills>
 	</item>
 	<item id="22232" name="Mysterious Soulshot Pack (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: Double-click to receive 1,000 rounds of Mysterious Soulshot (S-Grade). -->
@@ -487,6 +554,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22370" level="1" />
+		</skills>
 	</item>
 	<item id="22233" name="Mysterious Blessed Spiritshot Pack (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: Double-click to receive 1,000 rounds of Mysterious Blessed Spiritshot (S-Grade). -->
@@ -498,6 +568,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22371" level="1" />
+		</skills>
 	</item>
 	<item id="22234" name="Sweet Chocolate Box" type="EtcItem">
 		<!-- Description: Dimensional item. Gift box containing 3 Sweet Chocolates and 1 Valentine's Day Love Pouch. Cannot be dropped. Can be stored in a private warehouse. -->
@@ -525,6 +598,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22374" level="1" />
+		</skills>
 	</item>
 	<item id="22236" name="Valentine's Day Love Pouch" type="EtcItem">
 		<!-- Description: Dimensional item. When used, can receive 1 of the following: Formal Wear - 14-day limited period, Agathion Seal Bracelet - Juju (14-day limited period), Wild Rose Pig Candy - 14-day limited period, and Scroll: Enchant Hair Accessory (warrior or wizard use). Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -540,6 +616,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22375" level="1" />
+		</skills>
 	</item>
 	<item id="22237" name="Shiny Couple Ring" type="Armor">
 		<!-- Description: Dimensional item. Summons another player. Both the summoner and the one being summoned must have it equipped. Re-use waiting time is 1 hour. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -557,7 +636,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
-			<skill id="21264" level="1" /> <!-- Summon Friend -->
+			<skill id="21264" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">7</stat>
@@ -573,6 +652,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2007" level="1" />
+		</skills>
 	</item>
 	<item id="22239" name="Scroll: Hair Accessory (Wizard)" type="EtcItem">
 		<!-- Description: Dimensional item. A scroll to add the options for a Mystic to a hair accessory. Can be stored in a private warehouse. -->
@@ -584,6 +666,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2007" level="1" />
+		</skills>
 	</item>
 	<item id="22240" name="Enhanced Rose Spirit Coupon (5-hour)" name_additional="Event" type="EtcItem">
 		<!-- Description: Dimensional item. Exchange coupon that can be exchanged for a necklace (5 hour) that summons an improved rose spirit. Can be exchanged through the Dimensional Merchant. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -624,6 +709,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22376" level="1" />
+		</skills>
 	</item>
 	<item id="22243" name="(Not in Use)" name_additional="Event" type="Armor">
 		<!-- Description: Not In Use -->
@@ -640,6 +728,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="material" val="GOLD" />
+		<skills>
+			<skill id="21264" level="1" />
+		</skills>
 		<stats>
 			<stat type="mDef">7</stat>
 		</stats>
@@ -658,6 +749,9 @@
 		<set name="commissionItemType" val="SOULSHOT" />
 		<set name="default_action" val="SOULSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2151" level="1" />
+		</skills>
 	</item>
 	<item id="22245" name="Mysterious Soulshot (B-grade)" type="EtcItem">
 		<!-- Description: Dimensional item. Spirit light is infused into a weapon, instantly inflicting a powerful attack on the enemy. Can be used on B-grade weapons. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. -->
@@ -673,6 +767,9 @@
 		<set name="commissionItemType" val="SOULSHOT" />
 		<set name="default_action" val="SOULSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2152" level="1" />
+		</skills>
 	</item>
 	<item id="22246" name="Mysterious Soulshot (A-grade)" type="EtcItem">
 		<!-- Description: Dimensional item. Spirit light is infused into a weapon, instantly inflicting a powerful attack on the enemy. Can be used on A-grade weapons. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. -->
@@ -688,6 +785,9 @@
 		<set name="commissionItemType" val="SOULSHOT" />
 		<set name="default_action" val="SOULSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2153" level="1" />
+		</skills>
 	</item>
 	<item id="22247" name="Mysterious Soulshot (S-grade)" type="EtcItem">
 		<!-- Description: Dimensional item. Spirit light is infused into a weapon, instantly inflicting a powerful attack on the enemy. Can be used on S-grade weapons. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. -->
@@ -703,6 +803,9 @@
 		<set name="commissionItemType" val="SOULSHOT" />
 		<set name="default_action" val="SOULSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2154" level="1" />
+		</skills>
 	</item>
 	<item id="22248" name="Mysterious Soulshot Pack" type="EtcItem">
 		<!-- Description: Dimensional item. When used, you can obtain 10,000 each of Mysterious Soulshots C~S grades. Cannot be exchanged or dropped. Can be stored in a Private Warehouse. -->
@@ -733,6 +836,9 @@
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="default_action" val="SPIRITSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2161" level="1" />
+		</skills>
 	</item>
 	<item id="22250" name="Mysterious Blessed Spiritshot (B-grade)" type="EtcItem">
 		<!-- Description: Dimensional item. High-level spirit light is infused into a weapon, instantly and greatly increasing its magic power. Can be used on B-grade weapons. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. -->
@@ -748,6 +854,9 @@
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="default_action" val="SPIRITSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2162" level="1" />
+		</skills>
 	</item>
 	<item id="22251" name="Mysterious Blessed Spiritshot (A-grade)" type="EtcItem">
 		<!-- Description: Dimensional item. High-level spirit light is infused into a weapon, instantly and greatly increasing its magic power. Can be used on A-grade weapons. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. -->
@@ -763,6 +872,9 @@
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="default_action" val="SPIRITSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2163" level="1" />
+		</skills>
 	</item>
 	<item id="22252" name="Mysterious Blessed Spiritshot (S-grade)" type="EtcItem">
 		<!-- Description: Dimensional item. High-level spirit light is infused into a weapon, instantly and greatly increasing its magic power. Can be used on S-grade weapons. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. -->
@@ -778,6 +890,9 @@
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="default_action" val="SPIRITSHOT" />
 		<set name="is_mailable" val="false" />
+		<skills>
+			<skill id="2164" level="1" />
+		</skills>
 	</item>
 	<item id="22253" name="Mysterious Blessed Spiritshot Pack" type="EtcItem">
 		<!-- Description: Dimensional item. When used, you can obtain 10,000 each of Mysterious Blessed Spiritshots C~S grades. Cannot be exchanged or dropped. Can be stored in a Private Warehouse. -->
@@ -812,7 +927,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="21265" level="1" /> <!-- Summon Friend -->
+			<skill id="21265" level="1" />
 		</skills>
 	</item>
 	<item id="22255" name="Mysterious Friend Summon Bracelet Pack (30-day)" type="EtcItem">
@@ -1076,6 +1191,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22383" level="1" />
+		</skills>
 	</item>
 	<item id="22271" name="Pathfinder Supplies (Lv. 43)" type="EtcItem">
 		<!-- Description: Faded box of supplies. Double-click for a chance to receive an item. Cannot be exchanged or dropped. -->
@@ -1092,6 +1210,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22384" level="1" />
+		</skills>
 	</item>
 	<item id="22272" name="Pathfinder Supplies (Lv. 44)" type="EtcItem">
 		<!-- Description: Faded box of supplies. Double-click for a chance to receive an item. Cannot be exchanged or dropped. -->
@@ -1108,6 +1229,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22385" level="1" />
+		</skills>
 	</item>
 	<item id="22273" name="Infected Kanabion Tissue Research Paper" type="EtcItem">
 		<!-- Description: Research report about the infected kanabion. Deliver it to the Pathfinder in Rune Castle. -->
@@ -1138,6 +1262,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22386" level="1" />
+		</skills>
 	</item>
 	<item id="22275" name="Player Commendation - Gift Box" name_additional="Event" type="EtcItem">
 		<!-- Description: Gift that can be received after accumulating one hour worth of PC Points. Double click to receive a special gift. -->
@@ -1168,6 +1295,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22388" level="1" />
+		</skills>
 	</item>
 	<item id="22277" name="Player Commendation - Hair Accessory Pack" name_additional="Event" type="EtcItem">
 		<!-- Description: Double click to receive a hair accessory. -->
@@ -1183,6 +1313,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22389" level="1" />
+		</skills>
 	</item>
 	<item id="22278" name="Player Commendation - Luxury Gift Box" name_additional="Event" type="EtcItem">
 		<!-- Description: Double click to receive a special gift. -->
@@ -1198,6 +1331,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22390" level="1" />
+		</skills>
 	</item>
 	<item id="22279" name="PC Vitality (1-hour)" name_additional="Event" type="EtcItem">
 		<!-- Description: Upon use, for 1 hour(s), energy is replenished when Exp. is acquired through hunting. Re-use time is 60 minutes. Cannot be exchanged, dropped, or destroyed. Can be stored in a private warehouse. -->
@@ -1214,6 +1350,9 @@
 		<set name="shared_reuse_group" val="107" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22407" level="1" />
+		</skills>
 	</item>
 	<item id="22280" name="Player Commendation - Blessing (1-hour)" name_additional="Event" type="EtcItem">
 		<!-- Description: When used, HP Recovery Bonus, Max MP, and Critical Rate +20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration for 1 hour. Cannot be exchanged, dropped, or destroyed. Can be stored in a private warehouse. -->
@@ -1232,6 +1371,23 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22256" level="1" />
+			<skill id="22257" level="1" />
+			<skill id="22258" level="1" />
+			<skill id="22259" level="1" />
+			<skill id="22260" level="1" />
+			<skill id="22261" level="1" />
+			<skill id="22262" level="1" />
+			<skill id="22263" level="1" />
+			<skill id="22264" level="1" />
+			<skill id="22265" level="1" />
+			<skill id="22266" level="1" />
+			<skill id="22267" level="1" />
+			<skill id="22268" level="1" />
+			<skill id="22269" level="6" />
+			<skill id="22253" level="1" />
+		</skills>
 	</item>
 	<item id="22281" name="Sujin Transformation Stick" name_additional="7-day (Event)" type="Weapon">
 		<!-- Description: Stick that transforms you into the Blessed Child Sujin. The transformation ends when you de-equip the item. Cannot be exchanged, dropped, or sold. Can be stored in a private warehouse. Special skill re-use delay is 4 hour(s). -->
@@ -1251,7 +1407,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21196" level="1" /> <!-- Blessed Child Transformation Skill: Sujin -->
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="21196" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">1</stat>
@@ -1295,7 +1452,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21195" level="1" /> <!-- Blessed Child Transformation Skill: Trejuo -->
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="21195" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">1</stat>
@@ -1347,6 +1505,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22391" level="1" />
+		</skills>
 	</item>
 	<item id="22287" name="Agathion - Juju" name_additional="33-day (Event)" type="Armor">
 		<!-- Description: A bracelet that can summon a Juju Agathion. Requires room in the inventory and the weight limit to receive a gift from the Juju Agathion. Cannot be exchanged, dropped, or destroyed. Can be stored in a private warehouse. -->
@@ -1366,9 +1527,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="47520" />
 		<skills>
-			<skill id="23336" level="1" /> <!-- Juju Agathion Cute Trick -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21266" level="1" /> <!-- Release Agathion's Seal - Juju -->
+			<skill id="21266" level="1" />
+			<skill id="21267" level="1" />
+			<skill id="23336" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="22288" name="Agathion - Juju Pack" name_additional="Event" type="EtcItem">
@@ -1395,6 +1557,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22402" level="1" />
+		</skills>
 	</item>
 	<item id="22290" name="Recipe: Valentine Cake" name_additional="Event" type="EtcItem">
 		<!-- Description: The recipe for a Happy Cake. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->
@@ -1420,6 +1585,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22392" level="1" />
+		</skills>
 	</item>
 	<item id="22292" name="Tasty Valentine Cake" name_additional="Event" type="EtcItem">
 		<!-- Description: A sweet but yet incomplete Happy Cake. With a little more care, you might be able to make a Gorgeous Happy Cake. -->
@@ -1429,6 +1597,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22393" level="1" />
+		</skills>
 	</item>
 	<item id="22293" name="Delicious Valentine Cake" name_additional="Event" type="EtcItem">
 		<!-- Description: A sweet but yet incomplete Happy Cake. With a little more care, you might be able to make a Perfect Happy Cake. -->
@@ -1438,6 +1609,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22394" level="1" />
+		</skills>
 	</item>
 	<item id="22294" name="Decadent Valentine Cake" name_additional="Event" type="EtcItem">
 		<!-- Description: A complete Happy Cake. Take this along with Premium Cake Decorations to the Valentine Messenger Queen of Hearts to receive a Miracle Happy Cake. -->
@@ -1447,6 +1621,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22395" level="1" />
+		</skills>
 	</item>
 	<item id="22295" name="Miraculous Valentine Cake" name_additional="30-day (Event)" type="EtcItem">
 		<!-- Description: Valentine cake containing fresh energy that is received from the Valentine Messenger Queen of Hearts. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->
@@ -1463,6 +1640,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="22396" level="1" />
+		</skills>
 	</item>
 	<item id="22296" name="Cake Ingredient: Dark Chocolate" name_additional="Event" type="EtcItem">
 		<!-- Description: Ingredient for making a Happy Cake. -->

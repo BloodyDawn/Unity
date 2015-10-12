@@ -19,7 +19,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
+			<skill id="3266" level="1" />
 		</skills>
 	</item>
 	<item id="9201" name="Shadow Item: Wizard Hat" name_additional="Firework" type="Armor">
@@ -41,7 +41,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
+			<skill id="3266" level="1" />
 		</skills>
 	</item>
 	<item id="9202" name="Shadow Item: Dapper Cap" name_additional="Firework" type="Armor">
@@ -63,7 +63,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
+			<skill id="3266" level="1" />
 		</skills>
 	</item>
 	<item id="9203" name="Shadow Item: Romantic Chapeau" name_additional="Firework" type="Armor">
@@ -85,7 +85,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
+			<skill id="3266" level="1" />
 		</skills>
 	</item>
 	<item id="9204" name="Shadow Item: Iron Circlet" name_additional="Firework" type="Armor">
@@ -107,7 +107,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
+			<skill id="3266" level="1" />
 		</skills>
 	</item>
 	<item id="9205" name="Alchemist's Chest Key" type="EtcItem">
@@ -119,6 +119,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2322" level="1" />
+		</skills>
 	</item>
 	<item id="9206" name="Major Healing Potion (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_reagent_white_i00" />
@@ -136,12 +139,12 @@
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_coc_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2037" level="1" /> <!-- Major Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2037" level="1" />
+		</skills>
 	</item>
 	<item id="9207" name="Quick Healing Potion (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_gold_i00" />
@@ -159,12 +162,12 @@
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_coc_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2038" level="1" /> <!-- Quick Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2038" level="1" />
+		</skills>
 	</item>
 	<item id="9208" name="Phantom Mask (Event)" type="Armor">
 		<set name="icon" val="icon.accessary_mask_of_chaotic_i00" />
@@ -203,12 +206,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">36</stat>
 			<stat type="mAtk">26</stat>
@@ -343,12 +346,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -380,12 +383,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -417,12 +420,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -522,12 +525,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">58</stat>
 			<stat type="mAtk">39</stat>
@@ -559,12 +562,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">58</stat>
 			<stat type="mAtk">39</stat>
@@ -665,12 +668,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">72</stat>
 			<stat type="mAtk">47</stat>
@@ -771,12 +774,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">83</stat>
 			<stat type="mAtk">54</stat>
@@ -877,12 +880,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -915,13 +918,14 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3026" level="1" /> <!-- Special Ability: Critical Anger -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3025" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3026" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -953,13 +957,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="1" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -991,13 +995,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3498" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -1063,12 +1067,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3023" level="1" /> <!-- Special Ability: Critical Damage -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3023" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>
@@ -1100,12 +1104,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="1" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>
@@ -1137,12 +1141,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3498" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>
@@ -1210,12 +1214,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3008" level="1" /> <!-- Special Ability: Guidance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3008" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">135</stat>
 			<stat type="mAtk">61</stat>
@@ -1248,12 +1252,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3009" level="1" /> <!-- Special Ability: Evasion -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3009" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">135</stat>
 			<stat type="mAtk">61</stat>
@@ -1320,12 +1324,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1357,13 +1361,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3007" level="2" /> <!-- Special Ability: Guidance -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3007" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1395,13 +1399,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3018" level="2" /> <!-- Special Ability: Back Blow -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3018" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1433,13 +1437,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3028" level="2" /> <!-- Special Ability: Rsk. Evasion -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3028" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1471,12 +1475,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1508,13 +1512,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="2" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1546,13 +1550,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3023" level="2" /> <!-- Special Ability: Critical Damage -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3023" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1584,13 +1588,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3036" level="2" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3036" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1622,12 +1626,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1659,13 +1663,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3023" level="2" /> <!-- Special Ability: Critical Damage -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3023" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1698,13 +1702,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1736,13 +1740,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3036" level="2" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3036" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1774,12 +1778,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1811,13 +1815,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="2" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1850,13 +1854,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3022" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1889,13 +1893,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1963,12 +1967,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3008" level="2" /> <!-- Special Ability: Guidance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3008" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2107,12 +2111,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3009" level="2" /> <!-- Special Ability: Evasion -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3009" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2181,12 +2185,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3360" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2218,12 +2222,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2255,13 +2259,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3007" level="3" /> <!-- Special Ability: Guidance -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3007" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2293,13 +2297,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2331,13 +2335,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3023" level="3" /> <!-- Special Ability: Critical Damage -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3023" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2369,12 +2373,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2406,13 +2410,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2444,13 +2448,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2482,13 +2486,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3032" level="3" /> <!-- Special Ability: Rsk. Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3032" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2520,12 +2524,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2557,13 +2561,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2595,13 +2599,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3023" level="3" /> <!-- Special Ability: Critical Damage -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3023" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2633,13 +2637,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3036" level="3" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3036" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2671,12 +2675,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2708,13 +2712,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2746,13 +2750,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2784,13 +2788,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3498" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2822,12 +2826,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2859,13 +2863,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3007" level="3" /> <!-- Special Ability: Guidance -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3007" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2898,13 +2902,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2936,13 +2940,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -3008,12 +3012,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -3045,12 +3049,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -3082,12 +3086,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" />
+		</skills>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -3155,12 +3159,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3008" level="3" /> <!-- Special Ability: Guidance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3008" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -3193,12 +3197,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3009" level="3" /> <!-- Special Ability: Evasion -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3009" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -3266,12 +3270,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3303,13 +3307,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="4" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3341,13 +3345,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3023" level="4" /> <!-- Special Ability: Critical Damage -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3023" level="4" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3379,13 +3383,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3036" level="4" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3036" level="4" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3451,12 +3455,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3010" level="4" />
+		</skills>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -3488,12 +3492,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3542" level="4" /> <!-- Special Ability: Critical Damage -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3542" level="4" />
+		</skills>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -3525,12 +3529,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3037" level="4" /> <!-- Special Ability: Haste -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3037" level="4" />
+		</skills>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>

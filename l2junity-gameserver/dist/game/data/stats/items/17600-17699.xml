@@ -73,7 +73,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="12011" level="1" /> <!-- Glimmer Crystal -->
+			<skill id="12001" level="1" />
 		</skills>
 	</item>
 	<item id="17605" name="10,000,000 Adena" type="EtcItem">
@@ -103,6 +103,9 @@
 		<set name="time" val="60" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.gd_square_fragment" />
+		<skills>
+			<skill id="12003" level="1" />
+		</skills>
 	</item>
 	<item id="17607" name="Key to the Hall of Jewels" type="EtcItem">
 		<!-- Can open all the doors in the Coral Garden Hall. -->
@@ -112,6 +115,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_key_i00" />
+		<skills>
+			<skill id="12010" level="1" />
+		</skills>
 	</item>
 	<item id="17608" name="Energy Control Device" type="EtcItem">
 		<!-- You can control the amount of energy with this device. -->
@@ -127,7 +133,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_medicine_of_growth_i00" />
 		<skills>
-			<skill id="14224" level="1" /> <!-- Energy Control Device -->
+			<skill id="14224" level="1" />
 		</skills>
 	</item>
 	<item id="17609" name="(Not in Use) Istina's Necklace" type="Armor">
@@ -142,6 +148,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="15192000" />
+		<skills>
+			<skill id="8459" level="1" />
+		</skills>
 		<stats>
 			<stat type="mDef">125</stat>
 			<enchant stat="mDef" val="0" />
@@ -284,6 +293,9 @@
 		<set name="reuse_delay" val="30000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12004" level="1" />
+		</skills>
 	</item>
 	<item id="17620" name="Insecticide" type="EtcItem">
 		<!-- It is effective when used on the eggs of the correct type insect. -->
@@ -299,6 +311,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12005" level="1" />
+		</skills>
 	</item>
 	<item id="17621" name="Insecticide" type="EtcItem">
 		<!-- It is effective when used on the eggs of the correct type insect. -->
@@ -314,6 +329,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12006" level="1" />
+		</skills>
 	</item>
 	<item id="17622" name="Insecticide" type="EtcItem">
 		<!-- It is effective when used on the eggs of the correct type insect. -->
@@ -329,6 +347,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12007" level="1" />
+		</skills>
 	</item>
 	<item id="17623" name="Earth Wyrm Heart Ring" type="Armor">
 		<!-- MP + 38, increases Physical Attack Resistance, Mental Attack Resistance, MP Recovery Rate, P. Critical Damage, and Accuracy. Poison Resistance + 50%, Poison Atk. Rate + 50%, Knock Back, Knock Down, Pulling Resistance + 20, Atk. Spd., Casting Spd., and Wind/Water Resistance. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied when two of the same ring are equipped. -->
@@ -343,9 +364,9 @@
 		<set name="equip_reuse_delay" val="7200" />
 		<set name="commissionItemType" val="RING" />
 		<skills>
-			<skill id="13317" level="1" /> <!-- Earth Wyrm Heart Ring -->
-			<skill id="13318" level="1" /> <!-- Earth Wyrm Heart Ring -->
-			<skill id="13319" level="1" /> <!-- Earth Wyrm Heart Ring -->
+			<skill id="13318" level="1" />
+			<skill id="13319" level="1" />
+			<skill id="13317" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">108</stat>

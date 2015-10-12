@@ -829,9 +829,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3626" level="1" /> <!-- Kabokula -->
-			<skill id="3627" level="1" /> <!-- Tapirawa -->
-			<skill id="3628" level="1" /> <!-- Shabonoba -->
+			<skill id="3627" level="1" />
+			<skill id="3628" level="1" />
+			<skill id="3626" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtkSpd">379</stat>
@@ -1186,7 +1186,7 @@
 		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2305" level="1" /> <!-- Primeval Potion -->
+			<skill id="2305" level="1" />
 		</skills>
 	</item>
 	<item id="8787" name="Sprigant's Fruit" type="EtcItem">
@@ -1201,6 +1201,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2305" level="1" />
+		</skills>
 	</item>
 	<item id="8788" name="Sirra's Blade" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_sirr_blade_i01" />
@@ -1222,7 +1225,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1255,7 +1258,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1288,8 +1291,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3024" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
+			<skill id="3552" level="1" />
+			<skill id="3061" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1322,7 +1325,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1355,7 +1358,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1388,7 +1391,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1420,7 +1423,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1453,7 +1456,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1486,7 +1489,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1519,7 +1522,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1552,7 +1555,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1585,7 +1588,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3057" level="3" /> <!-- Special Ability: Anger -->
+			<skill id="3057" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>

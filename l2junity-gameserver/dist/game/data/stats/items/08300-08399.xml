@@ -644,7 +644,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
-			<skill id="3045" level="14" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
+			<skill id="3045" level="14" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">1</stat>
@@ -996,6 +996,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2239" level="1" />
+		</skills>
 	</item>
 	<item id="8380" name="Spellbook: Betray" type="EtcItem">
 		<set name="icon" val="icon.etc_spell_books_summon_i00" />

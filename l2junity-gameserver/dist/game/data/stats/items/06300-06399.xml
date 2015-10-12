@@ -97,7 +97,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3007" level="3" /> <!-- Special Ability: Guidance -->
+			<skill id="3007" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">139</stat>
@@ -130,7 +130,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">139</stat>
@@ -163,7 +163,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">139</stat>
@@ -196,7 +196,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3076" level="3" /> <!-- Special Ability: Empower -->
+			<skill id="3076" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
@@ -229,7 +229,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3077" level="3" /> <!-- Special Ability: M. Atk. -->
+			<skill id="3077" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
@@ -262,7 +262,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3078" level="3" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Special Ability: Magic Silence -->
+			<skill id="3078" level="3" type_chance="10" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
@@ -295,7 +295,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<skills>
-			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
@@ -328,7 +328,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<skills>
-			<skill id="3048" level="1" /> <!-- Special Ability: Conversion -->
+			<skill id="3048" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
@@ -361,7 +361,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3079" level="3" type="ON_MAGIC_SKILL" type_chance="5" /> <!-- Special Ability: Magic Paralyze -->
+			<skill id="3079" level="3" type_chance="5" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">111</stat>
@@ -391,6 +391,9 @@
 		<cond addName="1" msgId="113">
 			<player categoryType="STRIDER,WYVERN_GROUP" />
 		</cond>
+		<skills>
+			<skill id="2180" level="1" />
+		</skills>
 	</item>
 	<item id="6317" name="Mixing Manual" type="EtcItem">
 		<set name="icon" val="icon.etc_spellbook_red_i00" />
@@ -834,7 +837,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
+			<skill id="3010" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">190</stat>
@@ -867,7 +870,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3542" level="4" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3542" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">190</stat>
@@ -900,7 +903,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3037" level="4" /> <!-- Special Ability: Haste -->
+			<skill id="3037" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">190</stat>
@@ -1034,7 +1037,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3033" level="1" /> <!-- Special Ability: Rsk. Haste -->
+			<skill id="3033" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">94</stat>
@@ -1067,7 +1070,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3033" level="2" /> <!-- Special Ability: Rsk. Haste -->
+			<skill id="3033" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">107</stat>
@@ -1100,7 +1103,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="DAGGER" />
 		<skills>
-			<skill id="3043" level="4" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3043" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">136</stat>
@@ -1133,7 +1136,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="DAGGER" />
 		<skills>
-			<skill id="3043" level="6" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3043" level="6" />
 		</skills>
 		<stats>
 			<stat type="pAtk">170</stat>
@@ -1393,7 +1396,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -1797,7 +1800,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2179" level="1" /> <!-- Blessed Scroll of Resurrection (Pet) -->
+			<skill id="2179" level="1" />
 		</skills>
 	</item>
 	<item id="6388" name="Lord's Certificate of Approval" type="EtcItem">
@@ -1817,6 +1820,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2003" level="1" />
+		</skills>
 	</item>
 	<item id="6390" name="Large Squash Seed" type="EtcItem">
 		<set name="icon" val="icon.etc_gourd_i01" />
@@ -1827,6 +1833,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2004" level="1" />
+		</skills>
 	</item>
 	<item id="6391" name="Nectar" type="EtcItem">
 		<set name="icon" val="icon.etc_nectar_i00" />
@@ -1838,7 +1847,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2005" level="1" /> <!-- Nectar -->
+			<skill id="2005" level="1" />
 		</skills>
 	</item>
 	<item id="6392" name="Event - Medal" type="EtcItem">

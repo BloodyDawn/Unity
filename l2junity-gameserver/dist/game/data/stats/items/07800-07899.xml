@@ -11,6 +11,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2228" level="3" />
+		</skills>
 	</item>
 	<item id="7801" name="Black Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
@@ -23,6 +26,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2228" level="4" />
+		</skills>
 	</item>
 	<item id="7802" name="Black Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
@@ -35,6 +41,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2228" level="5" />
+		</skills>
 	</item>
 	<item id="7803" name="Black Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
@@ -47,6 +56,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2228" level="6" />
+		</skills>
 	</item>
 	<item id="7804" name="Large Black Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
@@ -59,6 +71,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2228" level="7" />
+		</skills>
 	</item>
 	<item id="7805" name="Large Black Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
@@ -71,6 +86,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2228" level="8" />
+		</skills>
 	</item>
 	<item id="7806" name="Large Black Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
@@ -83,6 +101,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2228" level="9" />
+		</skills>
 	</item>
 	<item id="7807" name="Corroded Green Bait (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bait_i00" />
@@ -143,7 +164,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3014" level="1" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">86</stat>
@@ -177,7 +198,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="1201" level="18" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Dryad Root -->
+			<skill id="1201" level="18" type_chance="10" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">86</stat>
@@ -211,7 +232,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Special Ability: Magic Silence -->
+			<skill id="3074" level="2" type_chance="10" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">86</stat>
@@ -245,7 +266,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" /> <!-- Regeneration -->
+			<skill id="1044" level="3" type_chance="30" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">122</stat>
@@ -279,7 +300,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
+			<skill id="1035" level="4" type_chance="50" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">122</stat>
@@ -313,7 +334,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Weakness -->
+			<skill id="1164" level="11" type_chance="7" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">122</stat>
@@ -877,12 +898,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-		</skills>
 		<cond msgId="1685">
 			<player pkCount="0" />
 		</cond>
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">51</stat>
 			<stat type="mAtk">32</stat>

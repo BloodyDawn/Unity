@@ -80,6 +80,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22251" level="1" />
+		</skills>
 	</item>
 	<item id="21705" name="Honey Rice Cakes Pack" type="EtcItem">
 		<!-- Description: Gift box containing 3 delicious honey rice cakes. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -132,6 +135,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22254" level="1" />
+		</skills>
 	</item>
 	<item id="21708" name="Honey Rice Cakes" name_additional="Event" type="EtcItem">
 		<!-- Description: Delicious honey rice cakes. When used, instantly recovers Max MP by 50%. Reuse time is 5 minutes. Cannot be exchanged, dropped, or destroyed. Can be stored in a private warehouse. -->
@@ -149,6 +155,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22255" level="1" />
+		</skills>
 	</item>
 	<item id="21709" name="Agathion - Rudolph" name_additional="Event" type="Armor">
 		<!-- Description: Bracelet that can summon a cute Rudolph Agathion. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -167,9 +176,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21245" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
-			<skill id="21246" level="1" /> <!-- Rudolph's Vitality -->
+			<skill id="21245" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="21710" name="Vitality Replenishing Potion" name_additional="Event" type="EtcItem">
@@ -184,6 +192,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22252" level="1" />
+		</skills>
 	</item>
 	<item id="21711" name="Santa's Blessing" name_additional="Event" type="EtcItem">
 		<!-- Description: When used, HP Recovery Bonus, Max MP, and Critical Atk. Rate +20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration for 1 hour. Cannot be destroyed. Can be stored in a private warehouse. -->
@@ -198,6 +209,23 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22256" level="1" />
+			<skill id="22257" level="1" />
+			<skill id="22258" level="1" />
+			<skill id="22259" level="1" />
+			<skill id="22260" level="1" />
+			<skill id="22261" level="1" />
+			<skill id="22262" level="1" />
+			<skill id="22263" level="1" />
+			<skill id="22264" level="1" />
+			<skill id="22265" level="1" />
+			<skill id="22266" level="1" />
+			<skill id="22267" level="1" />
+			<skill id="22268" level="1" />
+			<skill id="22269" level="6" />
+			<skill id="22253" level="1" />
+		</skills>
 	</item>
 	<item id="21712" name="Blessed Zaken's Earring" type="Armor">
 		<!-- Description: MP+37, Resistance to Bleed +30%, Bleed attack rate +30%, heal amount +15%, vampiric rage effect, Resistance to Shock/Mental attacks +30%, Shock/Mental attack rate +30%, and Resistance to Dark +15. Only one effect is applied even when the same two earrings are worn. If it is equipped together with a standard Earring of Zaken, only the effect of Blessed Earring of Zaken will be applied. -->
@@ -214,7 +242,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
 		<skills>
-			<skill id="3559" level="2" /> <!-- Blessed Zaken's Earring -->
+			<skill id="3559" level="2" />
 		</skills>
 		<stats>
 			<stat type="mDef">94</stat>
@@ -264,12 +292,12 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
-		<skills>
-			<skill id="21242" level="1" /> <!-- Zaken's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
+		<skills>
+			<skill id="21242" level="1" />
+		</skills>
 		<stats>
 			<stat type="darkRes">15</stat>
 			<stat type="earthRes">5</stat>
@@ -292,12 +320,12 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
-		<skills>
-			<skill id="21243" level="1" /> <!-- Freya's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
+		<skills>
+			<skill id="21243" level="1" />
+		</skills>
 		<stats>
 			<stat type="darkRes">10</stat>
 			<stat type="earthRes">10</stat>
@@ -320,12 +348,12 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
-		<skills>
-			<skill id="21244" level="1" /> <!-- Frintezza's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
+		<skills>
+			<skill id="21244" level="1" />
+		</skills>
 		<stats>
 			<stat type="darkRes">15</stat>
 			<stat type="earthRes">15</stat>
@@ -353,12 +381,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="21242" level="1" /> <!-- Zaken's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
+		<skills>
+			<skill id="21242" level="1" />
+		</skills>
 		<stats>
 			<stat type="darkRes">10</stat>
 			<stat type="earthRes">5</stat>
@@ -386,12 +414,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="21243" level="1" /> <!-- Freya's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
+		<skills>
+			<skill id="21243" level="1" />
+		</skills>
 		<stats>
 			<stat type="darkRes">5</stat>
 			<stat type="earthRes">5</stat>
@@ -419,12 +447,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="21244" level="1" /> <!-- Frintezza's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
+		<skills>
+			<skill id="21244" level="1" />
+		</skills>
 		<stats>
 			<stat type="darkRes">10</stat>
 			<stat type="earthRes">10</stat>
@@ -519,6 +547,23 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22256" level="1" />
+			<skill id="22257" level="1" />
+			<skill id="22258" level="1" />
+			<skill id="22259" level="1" />
+			<skill id="22260" level="1" />
+			<skill id="22261" level="1" />
+			<skill id="22262" level="1" />
+			<skill id="22263" level="1" />
+			<skill id="22264" level="1" />
+			<skill id="22265" level="1" />
+			<skill id="22266" level="1" />
+			<skill id="22267" level="1" />
+			<skill id="22268" level="1" />
+			<skill id="22269" level="6" />
+			<skill id="22253" level="1" />
+		</skills>
 	</item>
 	<item id="21727" name="Agathion - Zinyanzi (3-day)" name_additional="3-day" type="Armor">
 		<!-- Description: Bracelet skill that let's you summon Zinenze for 3 days. Upon using the skill name, instantly recovers Exp, HP, MP, and CP, and makes you invincible for 5 seconds. (But can only be used when HP is below 30%.). Cool time is 12 hour(s). Can be stored in a private warehouse. But cannot be exchange, dropped, or sold in shops. -->
@@ -539,10 +584,10 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="4320" />
 		<skills>
-			<skill id="23305" level="1" /> <!-- Zinyanzi Agathion - Yunbokhwan -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21248" level="1" /> <!-- Release Agathion's Seal - Zinyanzi -->
-			<skill id="23306" level="1" /> <!-- Zinyanzi Agathion Cute Trick -->
+			<skill id="21248" level="1" />
+			<skill id="23306" level="1" />
+			<skill id="23305" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="21728" name="Agathion - Zinyanzi (7-day)" name_additional="7-day" type="Armor">
@@ -564,10 +609,10 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="23305" level="1" /> <!-- Zinyanzi Agathion - Yunbokhwan -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21248" level="1" /> <!-- Release Agathion's Seal - Zinyanzi -->
-			<skill id="23306" level="1" /> <!-- Zinyanzi Agathion Cute Trick -->
+			<skill id="21248" level="1" />
+			<skill id="23306" level="1" />
+			<skill id="23305" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="21729" name="Agathion - Yanzi" name_additional="Permanent" type="Armor">
@@ -586,9 +631,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21249" level="1" /> <!-- Release Agathion's Seal - Yanzi -->
-			<skill id="23307" level="1" /> <!-- Yanzi Agathion Cute Trick -->
+			<skill id="21249" level="1" />
+			<skill id="23307" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="21730" name="Letter Collector's Gift" name_additional="Event" type="EtcItem">
@@ -603,6 +648,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="22270" level="1" />
+		</skills>
 	</item>
 	<item id="21731" name="Maingauche" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Maingauche of Memory -->
@@ -819,6 +867,9 @@
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">79</stat>
 			<stat type="mAtk">47</stat>
@@ -878,6 +929,9 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">72</stat>
 			<stat type="mAtk">47</stat>
@@ -1051,6 +1105,9 @@
 		<cond addName="1" msgId="113">
 			<target levelRange="21;85" />
 		</cond>
+		<skills>
+			<skill id="22271" level="1" />
+		</skills>
 	</item>
 	<item id="21747" name="Novice Explorer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
@@ -1062,6 +1119,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22272" level="1" />
+		</skills>
 	</item>
 	<item id="21748" name="Experienced Adventurer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
@@ -1073,6 +1133,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22273" level="1" />
+		</skills>
 	</item>
 	<item id="21749" name="Great Adventurer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
@@ -1084,6 +1147,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="22274" level="1" />
+		</skills>
 	</item>
 	<item id="21750" name="Mark of Challenge" type="EtcItem">
 		<!-- Description: Token received by adventurers for their service to the Elmore king. If you bring it to Captain Mathias in Rune, you will receive a reward. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1108,6 +1174,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22275" level="1" />
+		</skills>
 	</item>
 	<item id="21752" name="Rune Jewelry Box - Talisman" type="EtcItem">
 		<!-- Description: Jewelry box containing the precious treasure of Rune. When used, you can obtain a Talisman with a certain rate of chance. -->
@@ -1117,6 +1186,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22276" level="1" />
+		</skills>
 	</item>
 	<item id="21753" name="Pablo's Box" type="EtcItem">
 		<!-- Description: Box containing the precious treasure of Elmore's renowned scholar Pablo. When used, you can obtain a hat with a certain rate of chance. -->
@@ -1126,6 +1198,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22277" level="1" />
+		</skills>
 	</item>
 	<item id="21754" name="Pencil Corps' Magic Pencil" type="Weapon">
 		<!-- Description: Magic pencil with a sharp tip. Item that can be used only on the server Ziggi. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1147,7 +1222,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
-			<skill id="6908" level="1" /> <!-- Transform Master -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">1</stat>

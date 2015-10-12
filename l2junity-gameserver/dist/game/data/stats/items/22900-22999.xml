@@ -12,6 +12,9 @@
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22603" level="1" />
+		</skills>
 	</item>
 	<item id="22901" name="Expand Inventory Lv. 2" type="EtcItem">
 		<!-- A spellbook for Expand Inventory skill Lv. 2. Expand Inventory Lv. 1 is a prerequisite. -->
@@ -25,6 +28,9 @@
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22603" level="2" />
+		</skills>
 	</item>
 	<item id="22902" name="Spellbook: Expand Warehouse Lv. 1" type="EtcItem">
 		<!-- A spellbook for Expand Warehouse skill Lv. 1. Cannot be acquired if you have already learned Expand Warehouse skills. -->
@@ -38,6 +44,9 @@
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22604" level="1" />
+		</skills>
 	</item>
 	<item id="22903" name="Spellbook: Expand Warehouse Lv. 2" type="EtcItem">
 		<!-- A spellbook for Expand Warehouse skill Lv. 2. Expand Warehouse Lv. 1 is a prerequisite. -->
@@ -51,6 +60,9 @@
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22604" level="2" />
+		</skills>
 	</item>
 	<item id="22904" name="Scroll: Enchant Power Shirt" type="EtcItem">
 		<!-- Enchant Scroll exclusive to Power Shirts.\nIncreases the Power Shirt P. Def. and M. Def. by 1. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3 and can be enchanted up to a max of + 10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from + 4. At + 5, + 7, + 8, and + 9, additional bonuses are also applied. -->
@@ -63,6 +75,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22605" level="1" />
+		</skills>
 	</item>
 	<item id="22905" name="Blessed Scroll: Enchant Power Shirt" type="EtcItem">
 		<!-- Enchant scroll exclusive to Power Shirts.\nIncreases the Power Shirt P. Def. and M. Def. by 1. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3 and can be enchanted up to a max of + 10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from + 4. At + 5, + 7, + 8, and + 9, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0. -->
@@ -75,6 +90,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22606" level="1" />
+		</skills>
 	</item>
 	<item id="22906" name="XP Rune III (Lv. 1-100+) 50% Pack (1-hour)" type="EtcItem">
 		<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (1-hour). Cannot be exchanged once opened. -->
@@ -221,6 +239,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22613" level="1" />
+		</skills>
 	</item>
 	<item id="22916" name="Salvation Bow" type="Weapon">
 		<!-- Shoots a heart with love. Can use the 'Heart Shot' active skill. \nNote: If you use this skill against a monster, you can be attacked by another player. -->
@@ -240,7 +261,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="3261" level="1" /> <!-- Forgiveness -->
+			<skill id="3261" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">1</stat>
@@ -295,6 +316,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2329" level="1" />
+		</skills>
 	</item>
 	<item id="22920" name="Water Stone" type="EtcItem">
 		<!-- When used with your weapon, Water + 5. When used with your armor, Water + 6 with increased resistance against Fire. Attribute Lv. 1-3 only. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -308,6 +332,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2330" level="1" />
+		</skills>
 	</item>
 	<item id="22921" name="Earth Stone" type="EtcItem">
 		<!-- When used with your weapon, Earth + 5. When used with your armor, Earth + 6 with increased resistance against Wind. Attribute Lv. 1-3 only. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -321,6 +348,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2332" level="1" />
+		</skills>
 	</item>
 	<item id="22922" name="Wind Stone" type="EtcItem">
 		<!-- When used with your weapon, Fire + 5. When used with your armor, Fire + 6 with increased resistance against Water. Attribute Lv. 1-3 only. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -334,6 +364,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2331" level="1" />
+		</skills>
 	</item>
 	<item id="22923" name="Dark Stone" type="EtcItem">
 		<!-- When used with your weapon, Dark + 5. When used with your armor, Dark + 6 with increased resistance against Holy. Attribute Lv. 1-3 only. Additional Elemental attributes cannot be bestowed. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -347,6 +380,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2334" level="1" />
+		</skills>
 	</item>
 	<item id="22924" name="Holy Stone" type="EtcItem">
 		<!-- When used with your weapon, Holy + 5. When used with your armor, Holy + 6 with increased resistance against Dark. Attribute Lv. 1-3 only. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -360,6 +396,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2333" level="1" />
+		</skills>
 	</item>
 	<item id="22925" name="Fire Crystal" type="EtcItem">
 		<!-- When used with your weapon, Fire + 5. When used with your armor, Fire + 6 with increased resistance against Water. Attribute Lv. 1-6 only; any further would break the crystal's power. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -373,6 +412,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2329" level="2" />
+		</skills>
 	</item>
 	<item id="22926" name="Water Crystal" type="EtcItem">
 		<!-- When used with your weapon, Water + 5. When used with your armor, Water + 6 with increased resistance against Fire. Attribute Lv. 1-6 only; any further would break the crystal's power. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -386,6 +428,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2330" level="2" />
+		</skills>
 	</item>
 	<item id="22927" name="Earth Crystal" type="EtcItem">
 		<!-- When used with your weapon, Earth + 5. When used with your armor, Earth + 6 with increased resistance against Wind. Attribute Lv. 1-6 only; any further would break the crystal's power. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -399,6 +444,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2332" level="2" />
+		</skills>
 	</item>
 	<item id="22928" name="Wind Crystal" type="EtcItem">
 		<!-- When used with your weapon, Wind + 5. When used with your armor, Wind + 6 with increased resistance against Earth. Attribute Lv. 1-6 only; any further would break the crystal's power. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -412,6 +460,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2331" level="2" />
+		</skills>
 	</item>
 	<item id="22929" name="Dark Crystal" type="EtcItem">
 		<!-- When used with your weapon, Dark + 5. When used with your armor, Dark + 6 with increased resistance against Holy. Attribute Lv. 1-6 only; any further would break the crystal's power. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -425,6 +476,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2334" level="2" />
+		</skills>
 	</item>
 	<item id="22930" name="Holy Crystal" type="EtcItem">
 		<!-- When used with your weapon, Holy + 5. When used with your armor, Holy + 6 with increased resistance against Dark. Attribute Lv. 1-6 only; any further would break the crystal's power. Armor can have up to 3 unopposing attributes bestowed. -->
@@ -438,6 +492,9 @@
 		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2333" level="2" />
+		</skills>
 	</item>
 	<item id="22931" name="Warrior's Helmet" type="Armor">
 		<!-- Helmet of a brave ancient warrior. Uses 2 hair accessory slots. -->
@@ -466,6 +523,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<skills>
+			<skill id="22607" level="1" />
+		</skills>
 	</item>
 	<item id="22933" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo" type="EtcItem">
 		<!-- Kartia's Labyrinth Entrance Pass given to adventurers by Kartia Research Center. You can reset the instance timer of the level 90 solo dungeon. Can be used only once a day. -->
@@ -478,6 +538,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<skills>
+			<skill id="22608" level="1" />
+		</skills>
 	</item>
 	<item id="22934" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo" type="EtcItem">
 		<!-- Kartia's Labyrinth Entrance Pass given to adventurers by Kartia Research Center. You can reset the instance timer of the level 95 solo dungeon. Can be used only once a day. -->
@@ -490,6 +553,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<skills>
+			<skill id="22609" level="1" />
+		</skills>
 	</item>
 	<item id="22935" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party" type="EtcItem">
 		<!-- Kartia's Labyrinth Entrance Pass given to adventurers by Kartia Research Center. You can reset the instance timer of the level 85 party dungeon. Can be used only once a day. -->
@@ -502,6 +568,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<skills>
+			<skill id="22610" level="1" />
+		</skills>
 	</item>
 	<item id="22936" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party" type="EtcItem">
 		<!-- Kartia's Labyrinth Entrance Pass given to adventurers by Kartia Research Center. You can reset the instance timer of the level 90 party dungeon. Can be used only once a day. -->
@@ -514,6 +583,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<skills>
+			<skill id="22611" level="1" />
+		</skills>
 	</item>
 	<item id="22937" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party" type="EtcItem">
 		<!-- Kartia's Labyrinth Entrance Pass given to adventurers by Kartia Research Center. You can reset the instance timer of the level 95 party dungeon. Can be used only once a day. -->
@@ -526,6 +598,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<skills>
+			<skill id="22612" level="1" />
+		</skills>
 	</item>
 	<item id="22938" name="Castle Siege Equipment Repair Tool - Aden Castle" type="Armor">
 		<!-- Repairs the Broken Ballista outside the Aden battleground. Can use the Siege Equipment Repair skill. -->
@@ -543,7 +618,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21287" level="1" /> <!-- Emergency Ballista Repair -->
+			<skill id="21287" level="1" />
 		</skills>
 	</item>
 	<item id="22939" name="Castle Siege Equipment Repair Tool - Rune Castle" type="Armor">
@@ -562,7 +637,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21288" level="1" /> <!-- Emergency Ballista Repair -->
+			<skill id="21288" level="1" />
 		</skills>
 	</item>
 	<item id="22940" name="Corrosive Chemical Container - Aden Castle" type="Armor">
@@ -581,7 +656,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21289" level="1" /> <!-- Throw Corrosive Acid -->
+			<skill id="21289" level="1" />
 		</skills>
 	</item>
 	<item id="22941" name="Corrosive Chemical Container - Rune Castle" type="Armor">
@@ -600,7 +675,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21290" level="1" /> <!-- Throw Corrosive Acid -->
+			<skill id="21290" level="1" />
 		</skills>
 	</item>
 	<item id="22942" name="Engraving Activation Stone - Aden Castle" type="Armor">
@@ -619,7 +694,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21291" level="1" /> <!-- Relic Engraving Activation -->
+			<skill id="21291" level="1" />
 		</skills>
 	</item>
 	<item id="22943" name="Engraving Activation Stone - Rune Castle" type="Armor">
@@ -638,7 +713,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21292" level="1" /> <!-- Relic Engraving Activation -->
+			<skill id="21292" level="1" />
 		</skills>
 	</item>
 	<item id="22944" name="XP Rune III (Lv. 1-100+) 50%" name_additional="1-hour" type="EtcItem">
@@ -654,6 +729,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="60" />
+		<skills>
+			<skill id="26046" level="5" />
+		</skills>
 	</item>
 	<item id="22945" name="Honeymoon Ticket (7-day)" name_additional="7-day" type="EtcItem">
 		<!-- Honeymoon ticket given to the bride and groom as a gift. When used, Vitality is maintained for 1 hour. Vitality item with limited usage. -->
@@ -668,6 +746,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="22615" level="1" />
+		</skills>
 	</item>
 	<item id="22946" name="Big Wedding Cake" type="EtcItem">
 		<!-- A scroll that summons a large 3-layer wedding cake, a must-have at any wedding. -->
@@ -682,6 +763,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22616" level="1" />
+		</skills>
 	</item>
 	<item id="22947" name="Agathion - Singer and Dancer" name_additional="30-day" type="Armor">
 		<!-- Can summon Singer and Dancer that gleefully sings and dances when equipped. -->
@@ -699,9 +783,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21233" level="1" /> <!-- Release Agathion's Seal - Singer and Dancer -->
-			<skill id="21234" level="1" /> <!-- Release Agathion's Seal - Zaken's Spirit Swords -->
+			<skill id="21233" level="1" />
+			<skill id="23234" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="22948" name="Mount - Black Bear" name_additional="30-day" type="Armor">
@@ -720,7 +804,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="21271" level="1" /> <!-- Ride Black Bear -->
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="21271" level="1" />
 		</skills>
 	</item>
 	<item id="22949" name="Black Gem Mask" name_additional="30-day" type="Armor">
@@ -801,9 +886,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21109" level="1" /> <!-- Release Agathion's Seal - Uthanka -->
-			<skill id="23087" level="1" /> <!-- Uthanka Agathion Cute Trick -->
+			<skill id="21109" level="1" />
+			<skill id="23087" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="22954" name="Agathion - Cheerleader Orodriel" name_additional="30-day" type="Armor">
@@ -822,10 +907,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21214" level="1" /> <!-- Release Agathion's Seal - Cheerleader Orodriel -->
-			<skill id="23220" level="1" /> <!-- Cheerleader Orodriel Agathion Cute Trick -->
-			<skill id="23221" level="1" /> <!-- Cheerleader Orodriel Agathion Special Skill: Joy of Cheering -->
+			<skill id="21214" level="1" />
+			<skill id="23220" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="22955" name="Mount - Tame Princess Ant" name_additional="30-day" type="Armor">
@@ -844,7 +928,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="21270" level="1" /> <!-- Ride Tame Princess Ant -->
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="21270" level="1" />
 		</skills>
 	</item>
 	<item id="22956" name="Agathion - Dryad" name_additional="30-day" type="Armor">
@@ -863,9 +948,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="23054" level="1" /> <!-- Agathion Cute Trick - Dryad -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21048" level="1" /> <!-- Release Agathion's Seal - Dryad -->
+			<skill id="21048" level="1" />
+			<skill id="23054" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="22957" name="Pink Paper Mask Set" name_additional="Blessed Soul (30-day)" type="Armor">
@@ -884,7 +969,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="21154" level="1" /> <!-- Blessed Soul -->
+			<skill id="21154" level="1" />
 		</skills>
 	</item>
 	<item id="22958" name="Arrow-pierced Apple" name_additional="30-day" type="Armor">
@@ -916,7 +1001,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="60" />
 		<skills>
-			<skill id="22040" level="2" /> <!-- SP Rune 50% -->
+			<skill id="26047" level="5" />
 		</skills>
 	</item>
 	<item id="22960" name="XP Rune I (Lv. 1-85) 100%" name_additional="1-hour" type="EtcItem">
@@ -932,7 +1017,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="60" />
 		<skills>
-			<skill id="9240" level="1" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="1" />
 		</skills>
 	</item>
 	<item id="22961" name="XP Rune I (Lv. 1-85) 200%" name_additional="1-hour" type="EtcItem">
@@ -948,7 +1033,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="60" />
 		<skills>
-			<skill id="9240" level="2" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="2" />
 		</skills>
 	</item>
 	<item id="22962" name="Fancy Flower Hat" type="Armor">
@@ -979,7 +1064,8 @@
 		<set name="bodypart" val="lbracelet" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="21232" level="1" /> <!-- Shiny Platform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="21232" level="1" />
 		</skills>
 	</item>
 	<item id="22964" name="Pink Paper Mask Set" type="Armor">
@@ -1025,7 +1111,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="22848" level="1" /> <!-- Vitality Maintaining Potion -->
+			<skill id="22617" level="1" />
 		</skills>
 	</item>
 	<item id="22967" name="Agathion - Singer and Dancer Pack (30-day)" type="EtcItem">

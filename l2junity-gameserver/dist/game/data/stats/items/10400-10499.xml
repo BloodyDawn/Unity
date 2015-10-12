@@ -98,6 +98,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2504" level="1" />
+		</skills>
 	</item>
 	<item id="10409" name="A Bottle of Souls" type="EtcItem">
 		<set name="icon" val="icon.blank_glass_bottle_i00" />
@@ -118,7 +121,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2498" level="1" /> <!-- Bottle of Empty Soul -->
+			<skill id="2498" level="1" />
 		</skills>
 	</item>
 	<item id="10410" name="Full Bottle of Souls - 5 Souls" type="EtcItem">
@@ -138,7 +141,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2499" level="1" /> <!-- Full Bottle of Souls -->
+			<skill id="2499" level="1" />
 		</skills>
 	</item>
 	<item id="10411" name="Full Bottle of Souls - 5 Souls (Battleground)" type="EtcItem">
@@ -161,6 +164,9 @@
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2499" level="1" />
+		</skills>
 	</item>
 	<item id="10412" name="Full Bottle of Souls - 10 Souls" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i11" />
@@ -221,7 +227,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3411" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" />
+			<skill id="3411" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -253,7 +260,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3428" level="1" /> <!-- Blue Talisman - Explosion -->
+			<skill id="3428" level="1" />
 		</skills>
 	</item>
 	<item id="10417" name="Blue Talisman - Magic Explosion" type="Armor">
@@ -275,7 +282,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3437" level="1" /> <!-- Blue Talisman - Magic Explosion -->
+			<skill id="3437" level="1" />
 		</skills>
 	</item>
 	<item id="10418" name="White Talisman - Storm" type="Armor">
@@ -297,7 +304,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3431" level="1" /> <!-- White Talisman - Storm -->
+			<skill id="3431" level="1" />
 		</skills>
 	</item>
 	<item id="10419" name="White Talisman - Darkness" type="Armor">
@@ -319,7 +326,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3430" level="1" /> <!-- White Talisman - Darkness -->
+			<skill id="3430" level="1" />
 		</skills>
 	</item>
 	<item id="10420" name="White Talisman - Water" type="Armor">
@@ -341,7 +348,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3432" level="1" /> <!-- White Talisman - Water -->
+			<skill id="3432" level="1" />
 		</skills>
 	</item>
 	<item id="10421" name="White Talisman - Fire" type="Armor">
@@ -363,7 +370,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3433" level="1" /> <!-- White Talisman - Fire -->
+			<skill id="3433" level="1" />
 		</skills>
 	</item>
 	<item id="10422" name="White Talisman - Light" type="Armor">
@@ -385,7 +392,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3435" level="1" /> <!-- White Talisman - Light -->
+			<skill id="3435" level="1" />
 		</skills>
 	</item>
 	<item id="10423" name="Blue Talisman - Self-destruction" type="Armor">
@@ -406,7 +413,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3436" level="1" /> <!-- Blue Talisman - Self-destruction -->
+			<skill id="3436" level="1" />
 		</skills>
 	</item>
 	<item id="10424" name="Blue Talisman - Greater Healing" type="Armor">
@@ -428,7 +435,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3438" level="1" /> <!-- Blue Talisman - Greater Healing -->
+			<skill id="3438" level="1" />
 		</skills>
 	</item>
 	<item id="10425" name="Improved Baby Pet Food" type="EtcItem">
@@ -449,6 +456,9 @@
 		<cond addName="1" msgId="113">
 			<player categoryType="UPGRADE_BABY_PET_GROUP" />
 		</cond>
+		<skills>
+			<skill id="2361" level="1" />
+		</skills>
 	</item>
 	<item id="10426" name="Fenrir Necklace" type="EtcItem">
 		<set name="icon" val="icon.etc_summon_wolf_r_01" />
@@ -464,6 +474,9 @@
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
 	</item>
 	<item id="10427" name="Tully's Platinum Medal" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_silver_i00" />
@@ -552,6 +565,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2485" level="1" />
+		</skills>
 	</item>
 	<item id="10433" name="Kertang's Herb of Mana" type="EtcItem">
 		<set name="immediate_effect" val="true" />
@@ -565,6 +581,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2486" level="1" />
+		</skills>
 	</item>
 	<item id="10434" name="Icarus Sawsword" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_sowsword_i01" />
@@ -587,7 +606,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<skills>
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -621,7 +640,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -655,8 +674,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3498" level="1" />
+			<skill id="3552" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -690,7 +709,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -724,7 +743,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -758,8 +777,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3498" level="1" />
+			<skill id="3552" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -793,7 +812,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -827,7 +846,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -861,7 +880,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -897,8 +916,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="3552" level="1" />
+			<skill id="8312" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -935,7 +954,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
+			<skill id="3573" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -972,7 +991,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -1006,7 +1025,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="DAGGER" />
 		<skills>
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -1040,8 +1059,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3009" level="8" /> <!-- Special Ability: Evasion -->
+			<skill id="3552" level="1" />
+			<skill id="3009" level="8" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -1075,7 +1094,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3066" level="4" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3066" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -1109,7 +1128,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3600" level="10" /> <!-- Special Ability: Anger -->
+			<skill id="3600" level="10" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1143,8 +1162,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1178,8 +1197,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3498" level="1" />
+			<skill id="3552" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1213,7 +1232,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
+			<skill id="3057" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1247,7 +1266,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1281,7 +1300,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
+			<skill id="3027" level="7" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1316,7 +1335,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1351,7 +1370,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1386,7 +1405,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<skills>
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1420,7 +1439,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3069" level="1" /> <!-- Special Ability: Rsk. Evasion -->
+			<skill id="3552" level="1" />
+			<skill id="3069" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1454,7 +1474,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3565" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3565" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1488,7 +1508,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3564" level="2" /> <!-- Special Ability: Haste -->
+			<skill id="3564" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1522,13 +1542,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3566" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1561,13 +1581,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1600,14 +1620,14 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1640,12 +1660,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3566" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1678,12 +1698,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1716,13 +1736,13 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3498" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1756,13 +1776,13 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3360" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -1796,12 +1816,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3573" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -1835,12 +1855,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3567" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -1932,6 +1952,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="2490" level="1" />
+		</skills>
 	</item>
 	<item id="10474" name="Shadow Item: Apprentice's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
@@ -2145,6 +2168,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
+		<skills>
+			<skill id="2096" level="1" />
+		</skills>
 	</item>
 	<item id="10481" name="Blue Soul Crystal - Stage 15" type="EtcItem">
 		<set name="icon" val="icon.etc_soul_stone_i01" />
@@ -2158,6 +2184,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
+		<skills>
+			<skill id="2096" level="1" />
+		</skills>
 	</item>
 	<item id="10482" name="Green Soul Crystal - Stage 15" type="EtcItem">
 		<set name="icon" val="icon.etc_soul_stone_i02" />
@@ -2171,6 +2200,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
+		<skills>
+			<skill id="2096" level="1" />
+		</skills>
 	</item>
 	<item id="10483" name="Life Stone - Lv. 82" type="EtcItem">
 		<set name="icon" val="icon.etc_mineral_general_i03" />
@@ -2334,7 +2366,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3439" level="1" type="ON_ENCHANT" /> <!-- Silk Shirt -->
+			<skill id="3439" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">17</stat>
@@ -2355,7 +2387,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3440" level="1" type="ON_ENCHANT" /> <!-- Silk Shirt -->
+			<skill id="3440" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">17</stat>
@@ -2376,7 +2408,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3441" level="1" type="ON_ENCHANT" /> <!-- Silk Shirt -->
+			<skill id="3441" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">17</stat>
@@ -2397,7 +2429,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3445" level="1" type="ON_ENCHANT" /> <!-- Thin Leather Shirt -->
+			<skill id="3445" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">21</stat>
@@ -2418,7 +2450,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3446" level="1" type="ON_ENCHANT" /> <!-- Thin Leather Shirt -->
+			<skill id="3446" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">21</stat>
@@ -2439,7 +2471,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3447" level="1" type="ON_ENCHANT" /> <!-- Thin Leather Shirt -->
+			<skill id="3447" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">21</stat>
@@ -2460,7 +2492,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3451" level="1" type="ON_ENCHANT" /> <!-- Scale Shirt -->
+			<skill id="3451" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">23</stat>
@@ -2481,7 +2513,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3452" level="1" type="ON_ENCHANT" /> <!-- Scale Shirt -->
+			<skill id="3452" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">23</stat>
@@ -2502,7 +2534,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3453" level="1" type="ON_ENCHANT" /> <!-- Scale Shirt -->
+			<skill id="3453" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pDef">23</stat>

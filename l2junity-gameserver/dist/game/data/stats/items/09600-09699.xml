@@ -86,14 +86,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="5414" level="1" /> <!-- Agathion Cute Trick - Rainbow Clan Hall -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3269" level="1" /> <!-- Release Agathion's Seal - Rainbow Clan Hall -->
-		</skills>
 		<cond msgId="1518">
 			<player clanHall="62" />
 		</cond>
+		<skills>
+			<skill id="5414" level="1" />
+			<skill id="3269" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9606" name="Agathion - Wild Beast Reserve" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -111,14 +111,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="5413" level="1" /> <!-- Agathion Cute Trick - Beast Farm -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3270" level="1" /> <!-- Release Agathion's Seal - Beast Farm -->
-		</skills>
 		<cond msgId="1518">
 			<player clanHall="63" />
 		</cond>
+		<skills>
+			<skill id="5413" level="1" />
+			<skill id="3270" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9607" name="Agathion - Gludio" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -137,14 +137,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="1" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9608" name="Agathion - Dion" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -163,14 +163,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="2" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9609" name="Agathion - Giran" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -189,14 +189,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="3" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9610" name="Agathion - Oren" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -215,14 +215,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="4" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9611" name="Agathion - Aden" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -241,14 +241,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="5" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9612" name="Agathion - Innadril" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -267,14 +267,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{6}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="6" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9613" name="Agathion - Goddard" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -293,14 +293,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{7}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="7" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9614" name="Agathion - Rune" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -319,14 +319,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{8}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="8" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9615" name="Agathion - Schuttgart" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -345,14 +345,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{9}}}" />
-		<skills>
-			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="9" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" />
+			<skill id="3268" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="9616" name="Dynasty Sword Piece" type="EtcItem">
 		<set name="icon" val="icon.etc_sword_body_i00" />
@@ -875,12 +875,12 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2214" level="6" /> <!-- Scroll of Escape: Kamael Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2213" level="22" />
+		</skills>
 	</item>
 	<item id="9648" name="Transformation Sealbook: Onyx Beast" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
@@ -1273,6 +1273,9 @@
 		<cond addName="1" msgId="113">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
+		<skills>
+			<skill id="2361" level="1" />
+		</skills>
 	</item>
 	<item id="9669" name="Native Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1290,6 +1293,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+		</skills>
 		<stats>
 			<stat type="pDef">33</stat>
 			<enchant stat="pDef" val="0" />
@@ -1312,6 +1318,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+		</skills>
 		<stats>
 			<stat type="pDef">53</stat>
 			<enchant stat="pDef" val="0" />
@@ -1334,6 +1343,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+		</skills>
 		<stats>
 			<stat type="pDef">29</stat>
 			<enchant stat="pDef" val="0" />
@@ -1358,7 +1370,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2359" level="1" /> <!-- Magic Bottle -->
+			<skill id="2359" level="1" />
 		</skills>
 	</item>
 	<item id="9673" name="Holy Water" type="EtcItem">
@@ -1379,6 +1391,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2358" level="1" />
+		</skills>
 	</item>
 	<item id="9674" name="Darion's Badge" type="EtcItem">
 		<set name="icon" val="icon.etc_hs_agit_war_joining_certificate_i00" />
@@ -1428,7 +1443,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3319" level="1" /> <!-- Divine Protection of Ring -->
+			<skill id="3319" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">36</stat>
@@ -1521,6 +1536,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2354" level="1" />
+		</skills>
 	</item>
 	<item id="9686" name="Gate Key: Destruction" type="EtcItem">
 		<set name="icon" val="icon.etc_old_key_i03" />
@@ -1531,6 +1549,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2355" level="1" />
+		</skills>
 	</item>
 	<item id="9687" name="Gate Key: Blood" type="EtcItem">
 		<set name="icon" val="icon.etc_old_key_i03" />
@@ -1541,6 +1562,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2356" level="1" />
+		</skills>
 	</item>
 	<item id="9688" name="Ballista Bomb" type="EtcItem">
 		<set name="icon" val="icon.etc_dynamite_i00" />
@@ -1554,12 +1578,12 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2342" level="1" /> <!-- Ballista Bomb -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2342" level="1" />
+		</skills>
 	</item>
 	<item id="9689" name="Spirit of the Lake" type="EtcItem">
 		<set name="icon" val="icon.etc_talisman_i01" />
@@ -1575,7 +1599,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2368" level="1" /> <!-- Spirit of the Lake -->
+			<skill id="2368" level="1" />
 		</skills>
 	</item>
 	<item id="9690" name="Contaminated Crystal" type="EtcItem">
@@ -1611,7 +1635,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2369" level="1" /> <!-- Water Dragon Scale -->
+			<skill id="2369" level="1" />
 		</skills>
 	</item>
 	<item id="9692" name="Red Coral" type="EtcItem">
@@ -1647,6 +1671,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="2065" level="8" />
+		</skills>
 	</item>
 	<item id="9695" name="Blue Crystal" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_cave_crystal_i02" />
@@ -1708,6 +1735,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="2366" level="1" />
+		</skills>
 	</item>
 	<item id="9699" name="Red Coral Key" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_cave_key_i02" />
@@ -1724,5 +1754,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="2367" level="1" />
+		</skills>
 	</item>
 </list>

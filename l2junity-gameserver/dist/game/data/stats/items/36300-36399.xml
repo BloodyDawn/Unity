@@ -66,7 +66,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="POTION" />
 		<skills>
-			<skill id="9763" level="1" /> <!-- Healing Potion (Battleground) -->
+			<skill id="9763" level="1" />
 		</skills>
 	</item>
 	<item id="36310" name="Battleground Scroll: Remove Invincibility" type="EtcItem">
@@ -80,7 +80,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="9766" level="1" /> <!-- Battleground Scroll: Remove Invincibility -->
+			<skill id="9766" level="1" />
 		</skills>
 	</item>
 	<item id="36311" name="Battleground Scroll: Damage Reflect Resistance" type="EtcItem">
@@ -94,7 +94,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9764" level="1" /> <!-- Battleground Scroll: Damage Reflect Resistance -->
+			<skill id="9764" level="1" />
 		</skills>
 	</item>
 	<item id="36312" name="Battleground Scroll: Buffs" type="EtcItem">
@@ -108,6 +108,14 @@
 		<set name="is_coc_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9758" level="1" />
+			<skill id="9759" level="1" />
+			<skill id="9760" level="1" />
+			<skill id="9761" level="1" />
+			<skill id="9762" level="1" />
+			<skill id="9757" level="1" />
+		</skills>
 	</item>
 	<item id="36313" name="Battleground Scroll: Sleep" type="EtcItem">
 		<!-- Inflicts Sleep on the target for 10 sec. Battleground only. -->
@@ -120,7 +128,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9765" level="1" /> <!-- Battleground Scroll: Sleep -->
+			<skill id="9765" level="1" />
 		</skills>
 	</item>
 	<item id="36314" name="Small Draco Egg x 10" type="EtcItem">
@@ -132,6 +140,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9767" level="1" />
+		</skills>
 	</item>
 	<item id="36315" name="Small Draco Egg x 50" type="EtcItem">
 		<!-- Draco Egg that has been purified of evil energy. Double-click to summon a Small Draco Egg. When the egg's temperature rises, it can be hatched. The rewards from successful or failed hatching of this egg are 50 times greater than those from a normal Small Draco Egg. -->
@@ -142,6 +153,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9768" level="1" />
+		</skills>
 	</item>
 	<item id="36316" name="Draco's Hat: STR Pendant" type="EtcItem">
 		<!-- Combine it with Draco's Hat to create Draco's Hat: STR. -->
@@ -194,6 +208,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9770" level="1" />
+		</skills>
 	</item>
 	<item id="36323" name="Lyn Draco's Gift" type="EtcItem">
 		<!-- Gift from a Lyn Draco that hatched unexpectedly from a purified Draco Egg. It looks like an awesome gift. -->
@@ -203,6 +220,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9769" level="1" />
+		</skills>
 	</item>
 	<item id="36324" name="Draco's Shiny Accessory Pack" name_additional="Event" type="EtcItem">
 		<!-- Double-click to receive one of the following: Antharas' Earring, Valakas' Necklace, Earth Wyrm Heart Ring, Bottle of Antharas' Soul, Bottle of Valakas' Soul, Istina's Earring/Necklace/Ring, and Octavis' Earring/Necklace/Ring. -->
@@ -213,6 +233,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9773" level="1" />
+		</skills>
 	</item>
 	<item id="36325" name="Draco's Gift" name_additional="Event" type="EtcItem">
 		<!-- Gift from a Lyn Draco that hatched from a purified Draco Egg. -->
@@ -222,6 +245,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="9771" level="1" />
+		</skills>
 	</item>
 	<item id="36326" name="Draco's Shiny Gift" name_additional="Event" type="EtcItem">
 		<!-- Gift from a Draco that hatched from a purified Draco Egg. It shines. -->
@@ -231,6 +257,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="9772" level="1" />
+		</skills>
 	</item>
 	<item id="36327" name="Birthday Vitality Potion" name_additional="1-hour" type="EtcItem">
 		<!-- Upon use, for 1 hour, Vitality is recovered when XP is acquired through hunting. Vitality item with limited usage. -->

@@ -276,10 +276,10 @@
 	<xs:complexType name="itemType">
 		<xs:sequence maxOccurs="1" minOccurs="1">
 			<xs:element name="set" maxOccurs="unbounded" minOccurs="1" type="setType" />
-			<xs:element name="skills" minOccurs="0" type="skillsType" />
 			<xs:element name="unequip_skills" minOccurs="0" type="skillsType" />
 			<xs:element name="capsuled_items" minOccurs="0" type="capsuledItemsType" />
 			<xs:element name="cond" maxOccurs="2" minOccurs="0" type="condType" />
+			<xs:element name="skills" minOccurs="0" type="skillsType" />
 			<xs:element name="stats" maxOccurs="1" minOccurs="0" type="forType" />
 		</xs:sequence>
 		<xs:attribute name="id" use="required">

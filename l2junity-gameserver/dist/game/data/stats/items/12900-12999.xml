@@ -24,11 +24,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3883" level="1" /> <!-- Fist Weapon of Critical Damage -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3883" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3571" level="1" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -69,10 +69,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="reduced_mp_consume" val="26,1" />
 		<skills>
-			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3867" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">581</stat>
@@ -112,10 +111,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
+			<skill id="3867" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">581</stat>
@@ -155,10 +154,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3867" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">581</stat>
@@ -196,10 +195,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
+			<skill id="3894" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3569" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -237,10 +236,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3894" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -278,10 +277,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
+			<skill id="3894" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3568" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -318,16 +317,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3833" level="1" /> <!-- Rapier of Critical Chance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3564" level="1" />
+			<skill id="3833" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">132</stat>
@@ -363,16 +362,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3833" level="1" /> <!-- Rapier of Critical Chance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="3" />
+			<skill id="3833" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">132</stat>
@@ -408,16 +407,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3833" level="1" /> <!-- Rapier of Critical Chance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3566" level="1" />
+			<skill id="3833" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">132</stat>
@@ -454,10 +453,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3888" level="1" /> <!-- Blunt Weapon of Guidance -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
+			<skill id="3888" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3568" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -495,10 +494,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3888" level="1" /> <!-- Blunt Weapon of Guidance -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3888" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -536,10 +535,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3888" level="1" /> <!-- Blunt Weapon of Guidance -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
+			<skill id="3888" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3569" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -577,15 +576,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3360" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3872" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">356</stat>
 			<stat type="mAtk">132</stat>
@@ -622,15 +621,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3872" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">356</stat>
 			<stat type="mAtk">132</stat>
@@ -667,15 +666,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3872" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" />
+		</skills>
 		<stats>
 			<stat type="pAtk">356</stat>
 			<stat type="mAtk">132</stat>
@@ -712,10 +711,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3878" level="1" /> <!-- Polearm of Might -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="4" /> <!-- Special Ability: Health -->
+			<skill id="3878" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -753,10 +752,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3878" level="1" /> <!-- Polearm of Might -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3602" level="9" /> <!-- Special Ability: Guidance -->
+			<skill id="3878" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3602" level="9" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -794,10 +793,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3878" level="1" /> <!-- Polearm of Might -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3601" level="9" /> <!-- Special Ability: Haste -->
+			<skill id="3878" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3601" level="9" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -836,10 +835,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3890" level="1" /> <!-- Blunt Weapon of Mana Boost -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3890" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">225</stat>
@@ -878,10 +877,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3890" level="1" /> <!-- Blunt Weapon of Mana Boost -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3576" level="1" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="3890" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3576" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">225</stat>
@@ -920,10 +919,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3890" level="1" /> <!-- Blunt Weapon of Mana Boost -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3890" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">225</stat>
@@ -961,10 +960,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3862" level="1" /> <!-- Dagger of Guidance -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3572" level="1" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3862" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3572" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">246</stat>
@@ -1002,10 +1002,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3862" level="1" /> <!-- Dagger of Guidance -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
+			<skill id="3862" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3568" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">246</stat>
@@ -1043,10 +1044,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3862" level="1" /> <!-- Dagger of Guidance -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
+			<skill id="3862" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">246</stat>
@@ -1085,10 +1087,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3575" level="1" /> <!-- Special Ability: Empower -->
-			<skill id="3901" level="2" /> <!-- Staff of Mana Boost -->
+			<skill id="3901" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3575" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">274</stat>
@@ -1127,10 +1129,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3576" level="1" /> <!-- Special Ability: MP Regeneration -->
-			<skill id="3901" level="2" /> <!-- Staff of Mana Boost -->
+			<skill id="3901" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3576" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">274</stat>
@@ -1169,10 +1171,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3577" level="1" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
-			<skill id="3901" level="2" /> <!-- Staff of Mana Boost -->
+			<skill id="3901" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3577" level="1" type_chance="20" type="ON_MAGIC_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">274</stat>
@@ -1210,10 +1212,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3656" level="1" /> <!-- PvP Weapon - Decrease Range -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3570" level="1" /> <!-- Special Ability: Robust Health -->
-			<skill id="3838" level="1" /> <!-- Dual-blade Weapon of Critical Chance -->
+			<skill id="3838" level="1" />
+			<skill id="3656" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3570" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -1250,10 +1252,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3828" level="1" /> <!-- Sword of Critical Chance -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
+			<skill id="3828" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -1290,10 +1292,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3828" level="1" /> <!-- Sword of Critical Chance -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3828" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -1330,10 +1332,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3828" level="1" /> <!-- Sword of Critical Chance -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
+			<skill id="3828" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -1370,10 +1372,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3844" level="1" /> <!-- Two-handed Sword of Critical Damage -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
+			<skill id="3844" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -1410,10 +1412,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3844" level="1" /> <!-- Two-handed Sword of Critical Damage -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3844" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -1450,10 +1452,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3844" level="1" /> <!-- Two-handed Sword of Critical Damage -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
+			<skill id="3844" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -1489,15 +1491,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3846" level="2" /> <!-- Ancient Sword of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3846" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1533,15 +1535,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3846" level="2" /> <!-- Ancient Sword of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3846" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1577,15 +1579,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3846" level="2" /> <!-- Ancient Sword of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3846" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1622,10 +1624,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3859" level="2" /> <!-- Dagger of Haste -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3859" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">291</stat>
@@ -1663,11 +1666,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3859" level="2" /> <!-- Dagger of Haste -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3009" level="8" /> <!-- Special Ability: Evasion -->
+			<skill id="3009" level="8" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3859" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">291</stat>
@@ -1705,10 +1708,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3859" level="2" /> <!-- Dagger of Haste -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3066" level="4" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3859" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3066" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">291</stat>
@@ -1746,10 +1750,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3656" level="1" /> <!-- PvP Weapon - Decrease Range -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3411" level="1" /> <!-- Special Ability: Focus -->
-			<skill id="3836" level="2" /> <!-- Dual-blade Weapon of Boost HP -->
+			<skill id="3836" level="2" />
+			<skill id="3656" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3411" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -1785,16 +1789,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3831" level="2" /> <!-- Rapier of Boost HP -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3566" level="2" />
+			<skill id="3831" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">302</stat>
 			<stat type="mAtk">151</stat>
@@ -1830,16 +1834,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3831" level="2" /> <!-- Rapier of Boost HP -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="3" />
+			<skill id="3831" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">302</stat>
 			<stat type="mAtk">151</stat>
@@ -1875,16 +1879,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3831" level="2" /> <!-- Rapier of Boost HP -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3831" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">302</stat>
 			<stat type="mAtk">151</stat>
@@ -1922,10 +1926,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3891" level="2" /> <!-- Blunt Weapon of Boost HP -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3891" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">267</stat>
@@ -1964,11 +1968,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3891" level="2" /> <!-- Blunt Weapon of Boost HP -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3891" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">267</stat>
@@ -2007,10 +2010,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3891" level="2" /> <!-- Blunt Weapon of Boost HP -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3891" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">267</stat>
@@ -2048,11 +2051,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3880" level="2" /> <!-- Fist Weapon of Haste -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3069" level="1" /> <!-- Special Ability: Rsk. Evasion -->
+			<skill id="3069" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3880" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2090,10 +2093,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3880" level="2" /> <!-- Fist Weapon of Haste -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3565" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3880" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3565" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2131,10 +2135,11 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3880" level="2" /> <!-- Fist Weapon of Haste -->
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3564" level="2" /> <!-- Special Ability: Haste -->
+			<skill id="3880" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2174,10 +2179,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3864" level="2" /> <!-- Bow of Haste -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="3864" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="8312" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">654</stat>
@@ -2217,10 +2222,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3864" level="2" /> <!-- Bow of Haste -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
+			<skill id="3864" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3573" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">654</stat>
@@ -2260,10 +2265,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3864" level="2" /> <!-- Bow of Haste -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3864" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">654</stat>
@@ -2301,10 +2306,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3840" level="2" /> <!-- Two-handed Sword of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3840" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2341,10 +2346,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3840" level="2" /> <!-- Two-handed Sword of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3840" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2381,10 +2386,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3840" level="2" /> <!-- Two-handed Sword of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3653" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+			<skill id="3840" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2421,10 +2426,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3826" level="2" /> <!-- Sword of Boost HP -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3826" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -2461,10 +2466,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3826" level="2" /> <!-- Sword of Boost HP -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3826" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -2501,10 +2506,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3826" level="2" /> <!-- Sword of Boost HP -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3650" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+			<skill id="3826" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -2542,10 +2547,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
-			<skill id="3900" level="2" /> <!-- Staff of Divine Power -->
+			<skill id="3900" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">325</stat>
@@ -2584,11 +2589,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
-			<skill id="3900" level="2" /> <!-- Staff of Divine Power -->
+			<skill id="3900" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">325</stat>
@@ -2627,10 +2631,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
-			<skill id="3900" level="2" /> <!-- Staff of Divine Power -->
+			<skill id="3900" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">325</stat>
@@ -2668,10 +2672,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3885" level="2" /> <!-- Blunt Weapon of Stun -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
+			<skill id="3885" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3057" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -2709,10 +2713,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3885" level="2" /> <!-- Blunt Weapon of Stun -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3885" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -2750,10 +2754,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3885" level="2" /> <!-- Blunt Weapon of Stun -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
+			<skill id="3885" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3027" level="7" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -2791,10 +2795,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3896" level="2" /> <!-- Two-handed Blunt Weapon of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
+			<skill id="3896" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3057" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2832,10 +2836,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3896" level="2" /> <!-- Two-handed Blunt Weapon of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3896" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2873,10 +2877,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3896" level="2" /> <!-- Two-handed Blunt Weapon of Haste -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
+			<skill id="3896" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3027" level="7" />
 		</skills>
 		<stats>
 			<stat type="pAtk">405</stat>
@@ -2914,15 +2918,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3869" level="2" /> <!-- Crossbow of Haste -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3360" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3869" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">401</stat>
 			<stat type="mAtk">151</stat>
@@ -2959,15 +2963,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3869" level="2" /> <!-- Crossbow of Haste -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3869" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3573" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">401</stat>
 			<stat type="mAtk">151</stat>
@@ -3004,15 +3008,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3869" level="2" /> <!-- Crossbow of Haste -->
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3869" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">401</stat>
 			<stat type="mAtk">151</stat>
@@ -3050,10 +3054,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3852" level="2" /> <!-- Sword of Mana Boost -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3852" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">267</stat>
@@ -3091,10 +3095,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3852" level="2" /> <!-- Sword of Mana Boost -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3852" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">267</stat>
@@ -3132,11 +3136,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3852" level="2" /> <!-- Sword of Mana Boost -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3852" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">267</stat>
@@ -3173,10 +3176,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3877" level="2" /> <!-- Polearm of Boost HP -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3600" level="10" /> <!-- Special Ability: Anger -->
+			<skill id="3877" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3600" level="10" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -3214,10 +3217,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3877" level="2" /> <!-- Polearm of Boost HP -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3877" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="4" />
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -3255,10 +3258,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3877" level="2" /> <!-- Polearm of Boost HP -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3552" level="4" />
+			<skill id="3498" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3877" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">333</stat>
@@ -3286,7 +3289,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="8233" level="1" /> <!-- Zubei's Helmet -->
+			<skill id="8233" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">62</stat>
@@ -3306,12 +3309,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="8234" level="1" /> <!-- Zubei's Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="8234" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">62</stat>
 			<enchant stat="pDef" val="0" />
@@ -3331,7 +3334,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3688" level="1" /> <!-- Avadon Circlet -->
+			<skill id="3688" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">62</stat>
@@ -3351,12 +3354,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3692" level="1" /> <!-- Avadon Circlet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3692" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">62</stat>
 			<enchant stat="pDef" val="0" />
@@ -3376,7 +3379,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3704" level="1" /> <!-- Doom Helmet -->
+			<skill id="3704" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">66</stat>
@@ -3396,12 +3399,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3709" level="1" /> <!-- Doom Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3709" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">66</stat>
 			<enchant stat="pDef" val="0" />
@@ -3421,7 +3424,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3718" level="1" /> <!-- Blue Wolf Helmet -->
+			<skill id="3718" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">66</stat>
@@ -3441,12 +3444,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3723" level="1" /> <!-- Blue Wolf Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3723" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">66</stat>
 			<enchant stat="pDef" val="0" />
@@ -3466,7 +3469,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3733" level="1" /> <!-- Dark Crystal Helmet -->
+			<skill id="3733" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">69</stat>
@@ -3486,12 +3489,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3738" level="1" /> <!-- Dark Crystal Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3738" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">69</stat>
 			<enchant stat="pDef" val="0" />
@@ -3511,7 +3514,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3746" level="1" /> <!-- Tallum Helmet -->
+			<skill id="3746" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">69</stat>
@@ -3531,12 +3534,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3751" level="1" /> <!-- Tallum Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3751" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">69</stat>
 			<enchant stat="pDef" val="0" />
@@ -3556,7 +3559,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3759" level="1" /> <!-- Majestic Circlet -->
+			<skill id="3759" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">73</stat>
@@ -3576,12 +3579,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3763" level="1" /> <!-- Majestic Circlet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3763" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">73</stat>
 			<enchant stat="pDef" val="0" />
@@ -3601,7 +3604,7 @@
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="8235" level="1" /> <!-- Helm of Nightmare -->
+			<skill id="8235" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">73</stat>
@@ -3621,12 +3624,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="8236" level="1" /> <!-- Helm of Nightmare -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="8236" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">73</stat>
 			<enchant stat="pDef" val="0" />

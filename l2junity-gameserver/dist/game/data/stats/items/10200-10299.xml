@@ -11,6 +11,9 @@
 		<set name="handler" val="Seed" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
 	<item id="10201" name="Seed: Alternative Golden Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -23,6 +26,9 @@
 		<set name="handler" val="Seed" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
 	<item id="10202" name="Seed: Golden Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -35,6 +41,9 @@
 		<set name="handler" val="Seed" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
 	<item id="10203" name="Spellbook: Empowering Echo" type="EtcItem">
 		<set name="icon" val="icon.etc_spell_books_element_i00" />
@@ -67,6 +76,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2420" level="1" />
+		</skills>
 	</item>
 	<item id="10206" name="Black Seed of Evil Lump" type="EtcItem">
 		<set name="icon" val="icon.etc_poison_pouch_i00" />
@@ -79,6 +91,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2421" level="1" />
+		</skills>
 	</item>
 	<item id="10207" name="Enhanced Striped Scale Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_a_i04" />
@@ -113,7 +128,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3419" level="1" /> <!-- Magic Immunity -->
+			<skill id="3419" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">30</stat>
@@ -135,7 +150,7 @@
 		<set name="commissionItemType" val="BRACELET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3324" level="1" /> <!-- Steel Bracelet -->
+			<skill id="3324" level="1" />
 		</skills>
 		<stats>
 			<stat type="maxMp">60</stat>
@@ -154,7 +169,7 @@
 		<set name="commissionItemType" val="BRACELET" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3325" level="1" /> <!-- Mithril Bracelet -->
+			<skill id="3325" level="1" />
 		</skills>
 		<stats>
 			<stat type="maxMp">120</stat>
@@ -179,7 +194,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3409" level="1" /> <!-- Blessed Ring of Resurrection -->
+			<skill id="3409" level="1" />
 		</skills>
 		<stats>
 			<stat type="mDef">24</stat>
@@ -393,7 +408,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -555,12 +570,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1215,6 +1230,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2422" level="1" />
+		</skills>
 	</item>
 	<item id="10255" name="2nd Place Treasure Sack" name_additional="Event" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_sack_2_i00" />
@@ -1225,6 +1243,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2423" level="2" />
+		</skills>
 	</item>
 	<item id="10256" name="3rd Place Treasure Sack" name_additional="Event" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_sack_3_i00" />
@@ -1235,6 +1256,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2424" level="3" />
+		</skills>
 	</item>
 	<item id="10257" name="4th Place Treasure Sack" name_additional="Event" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_sack_4_i00" />
@@ -1245,6 +1269,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2425" level="4" />
+		</skills>
 	</item>
 	<item id="10258" name="5th Place Treasure Sack" name_additional="Event" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_sack_5_i00" />
@@ -1255,6 +1282,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2426" level="5" />
+		</skills>
 	</item>
 	<item id="10259" name="6th Place Treasure Sack" name_additional="Event" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_sack_6_i00" />
@@ -1265,6 +1295,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2427" level="6" />
+		</skills>
 	</item>
 	<item id="10260" name="Haste Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i00" />
@@ -1281,12 +1314,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2429" level="1" /> <!-- Haste Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2429" level="1" />
+		</skills>
 	</item>
 	<item id="10261" name="Accuracy Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i01" />
@@ -1303,12 +1336,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2430" level="1" /> <!-- Accuracy Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2430" level="1" />
+		</skills>
 	</item>
 	<item id="10262" name="Critical Damage Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i02" />
@@ -1325,12 +1358,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2431" level="1" /> <!-- Critical Damage Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2431" level="1" />
+		</skills>
 	</item>
 	<item id="10263" name="Critical Rate Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i03" />
@@ -1347,12 +1380,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2432" level="1" /> <!-- Critical Rate Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2432" level="1" />
+		</skills>
 	</item>
 	<item id="10264" name="Casting Spd. Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i04" />
@@ -1369,12 +1402,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2433" level="1" /> <!-- Casting Spd. Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2433" level="1" />
+		</skills>
 	</item>
 	<item id="10265" name="Evasion Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
@@ -1391,12 +1424,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2434" level="1" /> <!-- Evasion Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2434" level="1" />
+		</skills>
 	</item>
 	<item id="10266" name="M. Atk. Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i06" />
@@ -1413,12 +1446,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2435" level="1" /> <!-- M. Atk. Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2435" level="1" />
+		</skills>
 	</item>
 	<item id="10267" name="P. Atk. Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
@@ -1435,12 +1468,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2436" level="1" /> <!-- P. Atk. Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2436" level="1" />
+		</skills>
 	</item>
 	<item id="10268" name="Wind Walk Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
@@ -1457,12 +1490,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2437" level="1" /> <!-- Wind Walk Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2437" level="1" />
+		</skills>
 	</item>
 	<item id="10269" name="P. Def. Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i09" />
@@ -1479,12 +1512,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2438" level="1" /> <!-- P. Def. Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2438" level="1" />
+		</skills>
 	</item>
 	<item id="10270" name="MP Consumption Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i10" />
@@ -1500,12 +1533,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2439" level="1" /> <!-- MP Consumption Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2439" level="1" />
+		</skills>
 	</item>
 	<item id="10271" name="Marvelous Fruit Juice #12" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i11" />
@@ -1545,8 +1578,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3421" level="1" /> <!-- Ride Wolf -->
-			<skill id="3422" level="1" /> <!-- Dismount Wolf -->
+			<skill id="3421" level="1" />
+			<skill id="3422" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="10274" name="Transformation Scroll: Rabbit" type="EtcItem">
@@ -1565,12 +1598,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2428" level="1" /> <!-- Transformation Scroll: Rabbit -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2428" level="1" />
+		</skills>
 	</item>
 	<item id="10275" name="Battle Manual - Warp" type="EtcItem">
 		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
@@ -1608,7 +1641,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">24</stat>

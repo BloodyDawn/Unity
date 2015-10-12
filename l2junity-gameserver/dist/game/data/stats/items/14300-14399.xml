@@ -45,6 +45,9 @@
 		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3046" level="8" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">83</stat>
@@ -97,6 +100,9 @@
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3043" level="4" />
+		</skills>
 		<stats>
 			<stat type="pAtk">136</stat>
 			<stat type="mAtk">83</stat>
@@ -209,6 +215,9 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -323,6 +332,9 @@
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">194</stat>
 			<stat type="mAtk">99</stat>
@@ -515,6 +527,9 @@
 		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3045" level="14" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">236</stat>
 			<stat type="mAtk">99</stat>
@@ -541,6 +556,9 @@
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3043" level="6" />
+		</skills>
 		<stats>
 			<stat type="pAtk">170</stat>
 			<stat type="mAtk">99</stat>
@@ -679,6 +697,9 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">99</stat>
@@ -900,6 +921,9 @@
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
 			<stat type="mAtk">121</stat>
@@ -1066,6 +1090,9 @@
 		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3045" level="17" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
 			<stat type="mAtk">121</stat>
@@ -1095,6 +1122,9 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">228</stat>
 			<stat type="mAtk">121</stat>
@@ -1537,9 +1567,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3651" level="1" />
+			<skill id="3552" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1576,10 +1605,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3650" level="1" />
+			<skill id="3552" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -1618,10 +1645,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1658,9 +1684,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3654" level="1" />
+			<skill id="3552" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1697,9 +1722,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3552" level="3" />
+			<skill id="3653" level="1" />
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1737,9 +1762,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3653" level="1" />
+			<skill id="3552" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1777,10 +1801,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3650" level="1" />
+			<skill id="3552" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1819,10 +1841,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1862,9 +1883,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3654" level="1" />
+			<skill id="3552" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -1901,15 +1921,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1945,15 +1964,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3656" level="1" /> <!-- PvP Weapon - Decrease Range -->
-			<skill id="3657" level="1" /> <!-- PvP Weapon - Decrease Resist -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3656" level="1" />
+			<skill id="3657" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1990,14 +2008,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3653" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -2034,9 +2051,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3656" level="1" /> <!-- PvP Weapon - Decrease Range -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3411" level="1" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="3" />
+			<skill id="3656" level="1" />
+			<skill id="3411" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -2073,9 +2090,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2112,9 +2129,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2151,9 +2168,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3552" level="3" />
+			<skill id="3650" level="1" />
+			<skill id="3498" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2190,9 +2207,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -2229,9 +2246,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -2268,9 +2285,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3552" level="3" />
+			<skill id="3653" level="1" />
+			<skill id="3498" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -2308,9 +2325,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -2348,9 +2365,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -2388,10 +2405,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -2430,9 +2446,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+			<skill id="8312" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -2472,9 +2488,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
+			<skill id="3552" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3573" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -2514,9 +2530,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -2554,10 +2570,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -2595,10 +2611,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3009" level="8" /> <!-- Special Ability: Evasion -->
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3009" level="8" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -2636,10 +2652,10 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
-			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3066" level="4" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3552" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3066" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -2677,9 +2693,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3600" level="10" /> <!-- Special Ability: Anger -->
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3600" level="10" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2717,9 +2733,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="4" />
+			<skill id="3653" level="1" />
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2757,9 +2773,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
-			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3552" level="4" />
+			<skill id="3653" level="1" />
+			<skill id="3498" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2797,9 +2813,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3057" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2837,9 +2853,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2877,9 +2893,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3027" level="7" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -2918,9 +2934,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -2959,10 +2975,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -3001,9 +3016,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>

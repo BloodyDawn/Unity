@@ -508,12 +508,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_oly_restricted" val="true" />
-		<skills>
-			<skill id="2002" level="1" /> <!-- Healing Drug -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2002" level="1" /> <!-- Healing Drug -->
+		</skills>
 	</item>
 	<item id="726" name="Mana Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_blue_i00" />
@@ -530,12 +530,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2003" level="1" /> <!-- Squash Seed -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2003" level="1" />
+		</skills>
 	</item>
 	<item id="727" name="Healing Potion" type="EtcItem">
 		<set name="icon" val="icon.item_system03" />
@@ -586,6 +586,9 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<skills>
+			<skill id="2006" level="1" />
+		</skills>
 	</item>
 	<item id="730" name="Scroll: Enchant Armor (A-Grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i04" />
@@ -601,6 +604,9 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="2007" level="1" />
+		</skills>
 	</item>
 	<item id="731" name="Crystal Scroll: Enchant Weapon (A-Grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i01" />
@@ -658,12 +664,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2011" level="1" /> <!-- Wind Walk Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2011" level="1" />
+		</skills>
 	</item>
 	<item id="735" name="Haste Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_reagent_green_i00" />
@@ -681,12 +687,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2012" level="1" /> <!-- Haste Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2012" level="1" />
+		</skills>
 	</item>
 	<item id="736" name="Scroll of Escape" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -701,7 +707,7 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2013" level="1" /> <!-- Scroll of Escape -->
+			<skill id="2013" level="1" />
 		</skills>
 	</item>
 	<item id="737" name="Scroll of Resurrection" type="EtcItem">
@@ -718,7 +724,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2014" level="1" /> <!-- Scroll of Resurrection -->
+			<skill id="2014" level="1" />
 		</skills>
 	</item>
 	<item id="738" name="Sword of Solidarity" type="Weapon">

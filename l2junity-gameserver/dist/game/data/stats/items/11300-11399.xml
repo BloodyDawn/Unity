@@ -20,8 +20,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3411" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
-			<skill id="3835" level="3" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3552" level="1" />
+			<skill id="3835" level="3" />
+			<skill id="3411" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -54,7 +55,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="3" /> <!-- Dagger of Avoid -->
+			<skill id="3858" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -88,8 +89,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="3" /> <!-- Dagger of Avoid -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3858" level="3" />
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -123,9 +124,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="3" /> <!-- Dagger of Avoid -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3009" level="8" /> <!-- Special Ability: Evasion -->
+			<skill id="3552" level="1" />
+			<skill id="3858" level="3" />
+			<skill id="3009" level="8" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -159,8 +160,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="3" /> <!-- Dagger of Avoid -->
-			<skill id="3066" level="4" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3858" level="3" />
+			<skill id="3066" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -195,7 +196,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="3" /> <!-- Sword of Might -->
+			<skill id="3825" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -229,8 +230,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="3" /> <!-- Sword of Might -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3825" level="3" />
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -264,8 +265,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="3" /> <!-- Sword of Might -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3825" level="3" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -299,9 +300,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="3" /> <!-- Sword of Might -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3498" level="1" />
+			<skill id="3825" level="3" />
+			<skill id="3552" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -335,12 +336,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3868" level="3" /> <!-- Crossbow of Guidance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3868" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -374,14 +375,13 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3868" level="3" /> <!-- Crossbow of Guidance -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3360" level="1" />
+			<skill id="3868" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -415,13 +415,13 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3868" level="3" /> <!-- Crossbow of Guidance -->
-			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3868" level="3" />
+			<skill id="3573" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -455,13 +455,13 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3868" level="3" /> <!-- Crossbow of Guidance -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3868" level="3" />
+			<skill id="3567" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -494,13 +494,13 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-			<skill id="3830" level="3" /> <!-- Rapier of Might -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3830" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -533,14 +533,14 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3830" level="3" /> <!-- Rapier of Might -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3566" level="2" />
+			<skill id="3830" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -573,14 +573,14 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3830" level="3" /> <!-- Rapier of Might -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3013" level="3" />
+			<skill id="3830" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -613,15 +613,15 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
-			<skill id="3830" level="3" /> <!-- Rapier of Might -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+			<skill id="3830" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -655,7 +655,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3852" level="3" /> <!-- Sword of Mana Boost -->
+			<skill id="3852" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -689,8 +689,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3852" level="3" /> <!-- Sword of Mana Boost -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3852" level="3" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -724,8 +724,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3852" level="3" /> <!-- Sword of Mana Boost -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3852" level="3" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -759,8 +759,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3852" level="3" /> <!-- Sword of Mana Boost -->
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3852" level="3" />
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -796,7 +796,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="3" /> <!-- Bow of Guidance -->
+			<skill id="3863" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -833,9 +833,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="3" /> <!-- Bow of Guidance -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="3863" level="3" />
+			<skill id="3552" level="1" />
+			<skill id="8312" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -872,8 +872,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="3" /> <!-- Bow of Guidance -->
-			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
+			<skill id="3863" level="3" />
+			<skill id="3573" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -910,8 +910,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="3" /> <!-- Bow of Guidance -->
-			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3863" level="3" />
+			<skill id="3567" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">689</stat>
@@ -945,12 +945,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3851" level="2" /> <!-- Ancient Sword of Critical Chance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3851" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -983,13 +983,13 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3851" level="2" /> <!-- Ancient Sword of Critical Chance -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3851" level="2" />
+			<skill id="3566" level="2" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1022,13 +1022,13 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3851" level="2" /> <!-- Ancient Sword of Critical Chance -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3851" level="2" />
+			<skill id="3013" level="3" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1061,14 +1061,14 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3851" level="2" /> <!-- Ancient Sword of Critical Chance -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3498" level="1" />
+			<skill id="3851" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1101,8 +1101,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3873" level="2" /> <!-- Polearm of Critical Damage -->
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3873" level="2" />
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1136,8 +1136,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3873" level="2" /> <!-- Polearm of Critical Damage -->
-			<skill id="3600" level="10" /> <!-- Special Ability: Anger -->
+			<skill id="3873" level="2" />
+			<skill id="3600" level="10" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1171,9 +1171,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3873" level="2" /> <!-- Polearm of Critical Damage -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3873" level="2" />
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1207,9 +1207,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3873" level="2" /> <!-- Polearm of Critical Damage -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3498" level="1" />
+			<skill id="3873" level="2" />
+			<skill id="3552" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1243,7 +1243,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="3" /> <!-- Blunt Weapon of Boost HP -->
+			<skill id="3884" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1277,8 +1277,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="3" /> <!-- Blunt Weapon of Boost HP -->
-			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
+			<skill id="3884" level="3" />
+			<skill id="3057" level="4" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1312,8 +1312,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="3" /> <!-- Blunt Weapon of Boost HP -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3884" level="3" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1347,8 +1347,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="3" /> <!-- Blunt Weapon of Boost HP -->
-			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
+			<skill id="3884" level="3" />
+			<skill id="3027" level="7" />
 		</skills>
 		<stats>
 			<stat type="pAtk">363</stat>
@@ -1382,7 +1382,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="3" /> <!-- Fist Weapon of Might -->
+			<skill id="3879" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1416,8 +1416,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="3" /> <!-- Fist Weapon of Might -->
-			<skill id="3069" level="1" /> <!-- Special Ability: Rsk. Evasion -->
+			<skill id="3552" level="1" />
+			<skill id="3879" level="3" />
+			<skill id="3069" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1451,8 +1452,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="3" /> <!-- Fist Weapon of Might -->
-			<skill id="3565" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3879" level="3" />
+			<skill id="3565" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1486,8 +1487,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="3" /> <!-- Fist Weapon of Might -->
-			<skill id="3564" level="2" /> <!-- Special Ability: Haste -->
+			<skill id="3879" level="3" />
+			<skill id="3564" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1522,7 +1523,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3845" level="2" /> <!-- Two-handed Sword of Critical Chance -->
+			<skill id="3845" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1556,8 +1557,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3845" level="2" /> <!-- Two-handed Sword of Critical Chance -->
-			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3845" level="2" />
+			<skill id="3566" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1591,8 +1592,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3845" level="2" /> <!-- Two-handed Sword of Critical Chance -->
-			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3845" level="2" />
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1626,9 +1627,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3845" level="2" /> <!-- Two-handed Sword of Critical Chance -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3498" level="1" />
+			<skill id="3845" level="2" />
+			<skill id="3552" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">442</stat>
@@ -1662,7 +1663,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="3" /> <!-- Blunt Weapon of Empower -->
+			<skill id="3889" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1697,8 +1698,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="3" /> <!-- Blunt Weapon of Empower -->
-			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3889" level="3" />
+			<skill id="3014" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1733,8 +1734,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="3" /> <!-- Blunt Weapon of Empower -->
-			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3889" level="3" />
+			<skill id="3048" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1769,8 +1770,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="3" /> <!-- Blunt Weapon of Empower -->
-			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3889" level="3" />
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">290</stat>
@@ -1876,7 +1877,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3668" level="1" /> <!-- Zubei's Leather Gaiters -->
+			<skill id="3668" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">73</stat>
@@ -1899,7 +1900,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3669" level="1" /> <!-- Zubei's Leather Shirt -->
+			<skill id="3669" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">117</stat>
@@ -1921,12 +1922,12 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3672" level="1" /> <!-- Zubei's Gaiters -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3672" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
@@ -1946,12 +1947,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3673" level="1" /> <!-- Zubei's Gauntlets -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3673" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -1972,7 +1973,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3670" level="1" /> <!-- Zubei's Gauntlets -->
+			<skill id="3670" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
@@ -1993,12 +1994,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3679" level="1" /> <!-- Zubei's Gauntlets -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3679" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -2018,12 +2019,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3674" level="1" /> <!-- Zubei's Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3674" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -2044,7 +2045,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3671" level="1" /> <!-- Zubei's Boots -->
+			<skill id="3671" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
@@ -2065,12 +2066,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3680" level="1" /> <!-- Zubei's Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3680" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -2090,12 +2091,12 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3681" level="1" /> <!-- Zubei's Shield -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3681" level="1" />
+		</skills>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -2116,12 +2117,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3675" level="1" /> <!-- Zubei's Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3675" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">62</stat>
 			<enchant stat="pDef" val="0" />
@@ -2142,12 +2143,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3676" level="1" /> <!-- Zubei's Breastplate -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3676" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">157</stat>
 			<enchant stat="pDef" val="0" />
@@ -2167,12 +2168,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3682" level="1" /> <!-- Avadon Gloves -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3682" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -2193,7 +2194,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3689" level="1" /> <!-- Avadon Gloves -->
+			<skill id="3689" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
@@ -2214,12 +2215,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3693" level="1" /> <!-- Avadon Gloves -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3693" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -2241,7 +2242,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3690" level="1" /> <!-- Avadon Leather Armor -->
+			<skill id="3690" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">191</stat>
@@ -2263,12 +2264,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3694" level="1" /> <!-- Avadon Robe -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3694" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">127</stat>
 			<stat type="maxMp">561</stat>
@@ -2289,12 +2290,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3683" level="1" /> <!-- Avadon Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3683" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -2315,7 +2316,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3691" level="1" /> <!-- Avadon Boots -->
+			<skill id="3691" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
@@ -2336,12 +2337,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3695" level="1" /> <!-- Avadon Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3695" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
@@ -2360,12 +2361,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3684" level="1" /> <!-- Avadon Circlet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3684" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">62</stat>
 			<enchant stat="pDef" val="0" />
@@ -2385,12 +2386,12 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3687" level="1" /> <!-- Avadon Shield -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3687" level="1" />
+		</skills>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -2413,12 +2414,12 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3685" level="1" /> <!-- Avadon Gaiters -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3685" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
@@ -2439,12 +2440,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3686" level="1" /> <!-- Avadon Breastplate -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3686" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">157</stat>
 			<enchant stat="pDef" val="0" />
@@ -2465,12 +2466,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3677" level="1" /> <!-- Tunic of Zubei -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3677" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">78</stat>
 			<stat type="maxMp">345</stat>
@@ -2492,12 +2493,12 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3678" level="1" /> <!-- Stockings of Zubei -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3678" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">49</stat>
 			<stat type="maxMp">216</stat>
@@ -2518,12 +2519,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3696" level="1" /> <!-- Doom Gloves -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3696" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -2544,7 +2545,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3702" level="1" /> <!-- Doom Gloves -->
+			<skill id="3702" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
@@ -2565,12 +2566,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3705" level="1" /> <!-- Doom Gloves -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3705" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -2590,12 +2591,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3697" level="1" /> <!-- Doom Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3697" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -2616,7 +2617,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3703" level="1" /> <!-- Doom Boots -->
+			<skill id="3703" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
@@ -2637,12 +2638,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3706" level="1" /> <!-- Doom Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3706" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -2662,12 +2663,12 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3700" level="1" /> <!-- Doom Shield -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3700" level="1" />
+		</skills>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -2690,12 +2691,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3698" level="1" /> <!-- Doom Plate Armor -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3698" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">270</stat>
 			<enchant stat="pDef" val="0" />
@@ -2714,12 +2715,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3699" level="1" /> <!-- Doom Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3699" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">66</stat>
 			<enchant stat="pDef" val="0" />
@@ -2741,7 +2742,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3701" level="1" /> <!-- Leather Armor of Doom -->
+			<skill id="3701" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">202</stat>
@@ -2839,12 +2840,12 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3707" level="1" /> <!-- Tunic of Doom -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3707" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">83</stat>
 			<stat type="maxMp">377</stat>
@@ -2866,12 +2867,12 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3711" level="1" /> <!-- Blue Wolf Gaiters -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3711" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">104</stat>
 			<enchant stat="pDef" val="0" />
@@ -2893,7 +2894,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3715" level="1" /> <!-- Blue Wolf Leather Armor -->
+			<skill id="3715" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">202</stat>
@@ -2914,12 +2915,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3712" level="1" /> <!-- Blue Wolf Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3712" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -2940,7 +2941,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3716" level="1" /> <!-- Blue Wolf Boots -->
+			<skill id="3716" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
@@ -2961,12 +2962,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3719" level="1" /> <!-- Blue Wolf Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3719" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -2986,12 +2987,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3713" level="1" /> <!-- Blue Wolf Gloves -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="3713" level="1" />
+		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />

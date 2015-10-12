@@ -97,6 +97,9 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9200" level="1" />
+		</skills>
 	</item>
 	<item id="34007" name="Harp Melody Scroll" name_additional="Event" type="EtcItem">
 		<!-- For 30 minutes, increases P. Accuracy by 5, P. Evasion and M. Evasion by 5, and Speed by 34. Decreases received Critical Damage by 30%. -->
@@ -109,6 +112,9 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9203" level="1" />
+		</skills>
 	</item>
 	<item id="34008" name="Drum Melody Scroll" name_additional="Event" type="EtcItem">
 		<!-- For 30 minutes, increases Max MP by 20%, HP Recovery Bonus by 20%, M. Critical Rate by 2, Critical Damage during a standard attack by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Increases P. Def. when receiving a Critical Attack. Decreases Speed by 15%, and additionally increases Critical Damage during a normal attack when receiving more than a certain amount of damage. -->
@@ -121,6 +127,9 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9199" level="1" />
+		</skills>
 	</item>
 	<item id="34009" name="Pipe Organ Melody Scroll" name_additional="Event" type="EtcItem">
 		<!-- For 30 minutes, increases Max HP by 37%, Max MP by 37%, Max CP by 37%, and HP Recovery Bonus by 20%. -->
@@ -133,6 +142,9 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9201" level="1" />
+		</skills>
 	</item>
 	<item id="34010" name="Guitar Melody Scroll" name_additional="Event" type="EtcItem">
 		<!-- For 30 minutes, increases P. Critical Rate by 32%, P. Critical Damage by 35%, and M. Critical Rate by 2. Decreases MP consumption by 20% for physical skills and by 10% for magic skills. -->
@@ -145,6 +157,9 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9202" level="1" />
+		</skills>
 	</item>
 	<item id="34011" name="Horn Melody Scroll" name_additional="Event" type="EtcItem">
 		<!-- For 30 minutes, P. Atk. + 17%, P. Def. by 15%, M. Atk. by 79%, and M. Def. by 30%. -->
@@ -157,6 +172,9 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9198" level="1" />
+		</skills>
 	</item>
 	<item id="34012" name="Elixir of Life - Tersi event" name_additional="Event" type="EtcItem">
 		<!-- Recovers HP. Only characters level 85 or above can use on themselves. Cooldown 2 min. -->
@@ -172,6 +190,9 @@
 		<set name="is_coc_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2860" level="7" />
+		</skills>
 	</item>
 	<item id="34013" name="Elixir of Mind - Tersi event" name_additional="Event" type="EtcItem">
 		<!-- Recovers MP. Only characters level 85 or above can use on themselves. Cooldown 2 min. -->
@@ -187,6 +208,9 @@
 		<set name="is_coc_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2861" level="7" />
+		</skills>
 	</item>
 	<item id="34014" name="Elixir of CP - Tersi event" name_additional="Event" type="EtcItem">
 		<!-- Recovers CP. Only characters level 85 or above can use on themselves. Cooldown 2 min. -->
@@ -202,6 +226,9 @@
 		<set name="is_coc_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2862" level="7" />
+		</skills>
 	</item>
 	<item id="34015" name="Scroll: Seal Weapon (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
@@ -535,7 +562,7 @@
 		<set name="time" val="180" />
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<skills>
-			<skill id="9240" level="1" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="1" />
 		</skills>
 	</item>
 	<item id="34036" name="XP Rune I (Lv. 1-85) 100% (5-hour)" type="EtcItem">
@@ -552,7 +579,7 @@
 		<set name="time" val="300" />
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<skills>
-			<skill id="9240" level="1" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="1" />
 		</skills>
 	</item>
 	<item id="34037" name="XP Rune I (Lv. 1-85) 100% (7-day)" type="EtcItem">
@@ -569,7 +596,7 @@
 		<set name="time" val="10080" />
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<skills>
-			<skill id="9240" level="1" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="1" />
 		</skills>
 	</item>
 	<item id="34038" name="XP Rune I (Lv. 1-85) 200% (3-hour)" type="EtcItem">
@@ -586,7 +613,7 @@
 		<set name="time" val="180" />
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<skills>
-			<skill id="9240" level="2" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="2" />
 		</skills>
 	</item>
 	<item id="34039" name="XP Rune I (Lv. 1-85) 200% (5-hour)" type="EtcItem">
@@ -603,7 +630,7 @@
 		<set name="time" val="300" />
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<skills>
-			<skill id="9240" level="2" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="2" />
 		</skills>
 	</item>
 	<item id="34040" name="XP Rune I (Lv. 1-85) 200% (7-day)" type="EtcItem">
@@ -620,7 +647,7 @@
 		<set name="time" val="10080" />
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<skills>
-			<skill id="9240" level="2" /> <!-- XP Rune I (Lv. 1-85) -->
+			<skill id="9240" level="2" />
 		</skills>
 	</item>
 	<item id="34041" name="XP Rune I (Lv. 1-85) 100% Pack (3-hour)" type="EtcItem">
@@ -915,6 +942,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9241" level="1" />
+		</skills>
 	</item>
 	<item id="34063" name="Bound Box" name_additional="Event" type="EtcItem">
 		<!-- Double-click for a chance to acquire a Bind Removing Scroll, Enchant Stone, and Superior Giant's Codex. -->
@@ -929,6 +959,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9242" level="1" />
+		</skills>
 	</item>
 	<item id="34064" name="Box of Destruction" name_additional="Event" type="EtcItem">
 		<!-- Double-click for a chance to acquire Destruction or Regular Enchant scrolls, Soul Crystal Change Stone, or Attribute Change Crystal. -->
@@ -943,6 +976,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9243" level="1" />
+		</skills>
 	</item>
 	<item id="34065" name="Echo Crystal - To the Brilliant You" type="EtcItem">
 		<!-- Echo Crystal that plays Gi-sung Bae's 'To the Brilliant You.' Disappears after 1 use. -->
@@ -955,6 +991,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="16032" level="1" />
+		</skills>
 	</item>
 	<item id="34066" name="Scroll: Enchant Weapon (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Atk. + 4 for one-handed swords/ blunts, daggers, spears, etc. (A-grade). P. Atk. + 5 for two-handed swords/ blunts, dualswords, and two-handed fist weapons. P. Atk. + 8 for bows. M. Atk. + 3 for all weapons. P. Atk./M. Atk. Increase doubles starting at + 4. -->
@@ -971,6 +1010,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9263" level="1" />
+		</skills>
 	</item>
 	<item id="34067" name="Scroll: Enchant Armor (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for armor and accessories (A-grade). Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
@@ -987,6 +1029,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9264" level="1" />
+		</skills>
 	</item>
 	<item id="34068" name="Scroll: Enchant Weapon (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Atk. + 3 for one-handed swords/ blunts, daggers, spears, etc. (B-grade). P. Atk. + 4 for two-handed swords/ blunts, dualswords, and two-handed fist weapons. P. Atk. + 6 for bows. M. Atk. + 3 for all weapons. P. Atk./M. Atk. Increase doubles starting at + 4. -->
@@ -1003,6 +1048,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9261" level="1" />
+		</skills>
 	</item>
 	<item id="34069" name="Scroll: Enchant Armor (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for armor and accessories (B-grade). Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
@@ -1019,6 +1067,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9262" level="1" />
+		</skills>
 	</item>
 	<item id="34070" name="Scroll: Enchant Weapon (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Atk. + 3 for one-handed swords/ blunts, daggers, spears, etc. (C-grade). P. Atk. + 4 for two-handed swords/ blunts, dualswords, and two-handed fist weapons. P. Atk. + 6 for bows. M. Atk. + 3 for all weapons. P. Atk./M. Atk. Increase doubles starting at + 4. -->
@@ -1035,6 +1086,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9259" level="1" />
+		</skills>
 	</item>
 	<item id="34071" name="Scroll: Enchant Armor (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for armor and accessories (C-grade). Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
@@ -1051,6 +1105,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9260" level="1" />
+		</skills>
 	</item>
 	<item id="34072" name="Scroll: Enchant Weapon (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Atk. + 2 for all weapons (D-grade) except bows, and P. Atk. + 4 for bows. M. Atk. + 2 for all weapons. P. Atk./M. Atk. Increase doubles starting at + 4. -->
@@ -1067,6 +1124,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9257" level="1" />
+		</skills>
 	</item>
 	<item id="34073" name="Scroll: Enchant Armor (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for armor and accessories (D-grade). Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
@@ -1083,6 +1143,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9258" level="1" />
+		</skills>
 	</item>
 	<item id="34074" name="Scroll: Enchant Weapon (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Atk. + 5 for one-handed swords/ blunts, daggers, spears, etc. (S-grade). P. Atk. + 6 for two-handed swords/ blunts, dualswords, and two-handed fist weapons. P. Atk. + 10 for bows. M. Atk. + 4 for all weapons. P. Atk./M. Atk. Increase doubles starting at + 4. -->
@@ -1099,6 +1162,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9265" level="1" />
+		</skills>
 	</item>
 	<item id="34075" name="Scroll: Enchant Armor (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for armor and accessories (S-grade). Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
@@ -1115,6 +1181,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9266" level="1" />
+		</skills>
 	</item>
 	<item id="34076" name="Scroll: Enchant Weapon (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears and other weapons. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases starting at +4. All stats will increase more for blessed weapons. -->
@@ -1131,6 +1200,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9267" level="1" />
+		</skills>
 	</item>
 	<item id="34077" name="Scroll: Enchant Armor (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at +4. Can be safely enchanted to +3. When enchanted to +4 or more, HP also increases according to the enchant value. -->
@@ -1147,6 +1219,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9268" level="1" />
+		</skills>
 	</item>
 	<item id="34078" name="Improved Giant's Box" name_additional="Event" type="EtcItem">
 		<!-- Double-click for a chance to acquire an R-grade Scroll: Enchant Weapon or Armor, Scroll: Enchant Hair Accessory, and Life Stone - Hair Accessory. -->
@@ -1161,6 +1236,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9269" level="1" />
+		</skills>
 	</item>
 	<item id="34079" name="Improved Bound Box" name_additional="Event" type="EtcItem">
 		<!-- Double-click for a chance to acquire an R-grade Unbind Scroll, R-grade Lucky Enchant Stone (Weapon or Armor), Superior Giant's Codex, and R-grade Scroll: Enchant Weapon or Armor. -->
@@ -1175,6 +1253,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9270" level="1" />
+		</skills>
 	</item>
 	<item id="34080" name="Improved Box of Destruction" name_additional="Event" type="EtcItem">
 		<!-- Has a chance of obtaining Scroll: Enchant Destruction (R-grade), Soul Crystal Change Stone (R-grade), Attribute Change Crystal (R-grade), and Scroll: Enchant Weapon/Armor (R-grade). Double-click to use. -->
@@ -1189,6 +1270,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9271" level="1" />
+		</skills>
 	</item>
 	<item id="34081" name="Mentor's Surprise Box" name_additional="Event" type="EtcItem">
 		<!-- Double-click for a chance to acquire an Improved Giant's Box, Improved Bound Box, and Improved Box of Destruction. -->
@@ -1203,6 +1287,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9272" level="1" />
+		</skills>
 	</item>
 	<item id="34082" name="Heavenly Cocktail" type="EtcItem">
 		<!-- For 60 minutes, receives the following Lv. 2 effects: Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, and Drum Melody. Cooldown is 60 min. -->
@@ -1215,6 +1302,14 @@
 		<set name="reuse_delay" val="3600000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9281" level="2" />
+			<skill id="9282" level="2" />
+			<skill id="9283" level="2" />
+			<skill id="9284" level="2" />
+			<skill id="9285" level="2" />
+			<skill id="9280" level="2" />
+		</skills>
 	</item>
 	<item id="34083" name="Player Commendation - Grand Épée (Earth)" name_additional="PC-exclusive" type="Weapon">
 		<!-- Grand ￉p￩e (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
@@ -1239,8 +1334,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="144" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -1275,8 +1369,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="144" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -1311,8 +1404,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="144" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -1347,8 +1439,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="144" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -1383,8 +1474,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="144" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -1419,8 +1509,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="144" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">83</stat>
@@ -1455,8 +1544,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="205" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">92</stat>
@@ -1491,8 +1579,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="205" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">92</stat>
@@ -1527,8 +1614,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="205" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">92</stat>
@@ -1563,8 +1649,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="205" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">92</stat>
@@ -1599,8 +1684,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="205" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">92</stat>
@@ -1635,8 +1719,7 @@
 		<set name="time" val="21600" />
 		<set name="weight" val="205" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">92</stat>
@@ -1670,9 +1753,6 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="weight" val="106" />
-		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-		</skills>
 		<stats>
 			<stat type="pAtk">80</stat>
 			<stat type="mAtk">54</stat>
@@ -1705,9 +1785,6 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="weight" val="106" />
-		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-		</skills>
 		<stats>
 			<stat type="pAtk">80</stat>
 			<stat type="mAtk">54</stat>
@@ -1740,9 +1817,6 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="weight" val="106" />
-		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-		</skills>
 		<stats>
 			<stat type="pAtk">80</stat>
 			<stat type="mAtk">54</stat>
@@ -1775,9 +1849,6 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="weight" val="106" />
-		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-		</skills>
 		<stats>
 			<stat type="pAtk">80</stat>
 			<stat type="mAtk">54</stat>
@@ -1810,9 +1881,6 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="weight" val="106" />
-		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-		</skills>
 		<stats>
 			<stat type="pAtk">80</stat>
 			<stat type="mAtk">54</stat>

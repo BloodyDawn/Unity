@@ -17,9 +17,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="58" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">66</stat>
 			<enchant stat="pDef" val="0" />
@@ -44,9 +41,6 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="550" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">202</stat>
 			<enchant stat="pDef" val="0" />
@@ -70,9 +64,6 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="59" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -96,9 +87,6 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="113" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -121,9 +109,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="58" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">66</stat>
 			<enchant stat="pDef" val="0" />
@@ -148,9 +133,6 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="192" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">83</stat>
 			<enchant stat="pDef" val="0" />
@@ -175,9 +157,6 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="92" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">52</stat>
 			<enchant stat="pDef" val="0" />
@@ -201,9 +180,6 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="59" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -227,9 +203,6 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="113" />
-		<skills>
-			<skill id="13336" level="1" /> <!-- Bestow Water/Earth/Holy Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">44</stat>
 			<enchant stat="pDef" val="0" />
@@ -256,8 +229,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="93" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3066" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">220</stat>
@@ -290,8 +262,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -323,8 +294,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="82" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -356,9 +326,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3068" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">228</stat>
@@ -391,8 +360,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -424,8 +392,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">272</stat>
@@ -459,8 +426,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">570</stat>
@@ -494,8 +460,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -528,8 +493,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="155" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -562,8 +526,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="151" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -596,8 +559,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -630,8 +592,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="88" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -664,10 +625,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -700,8 +659,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="133" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -734,8 +692,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13329" level="1" /> <!-- Bestow Fire Weapon -->
-			<skill id="3045" level="17" /> <!-- Special Ability: Haste -->
+			<skill id="3552" level="1" />
+			<skill id="3045" level="17" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -767,8 +725,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="93" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3066" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">220</stat>
@@ -801,8 +758,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -834,8 +790,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="82" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -867,9 +822,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3068" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">228</stat>
@@ -902,8 +856,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -935,8 +888,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">272</stat>
@@ -970,8 +922,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">570</stat>
@@ -1005,8 +956,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -1039,8 +989,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="155" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1073,8 +1022,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="151" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -1107,8 +1055,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1141,8 +1088,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="88" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -1175,10 +1121,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1211,8 +1155,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="133" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1245,8 +1188,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13330" level="1" /> <!-- Bestow Water Weapon -->
-			<skill id="3045" level="17" /> <!-- Special Ability: Haste -->
+			<skill id="3552" level="1" />
+			<skill id="3045" level="17" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1278,8 +1221,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="93" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3066" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">220</stat>
@@ -1312,8 +1254,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1345,8 +1286,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="82" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -1378,9 +1318,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3068" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">228</stat>
@@ -1413,8 +1352,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1446,8 +1384,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">272</stat>
@@ -1481,8 +1418,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">570</stat>
@@ -1516,8 +1452,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -1550,8 +1485,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="155" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1584,8 +1518,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="151" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -1618,8 +1551,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1652,8 +1584,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="88" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -1686,10 +1617,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1722,8 +1651,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="133" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1756,8 +1684,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13331" level="1" /> <!-- Bestow Wind Weapon -->
-			<skill id="3045" level="17" /> <!-- Special Ability: Haste -->
+			<skill id="3552" level="1" />
+			<skill id="3045" level="17" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1789,8 +1717,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="93" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3066" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">220</stat>
@@ -1823,8 +1750,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -1856,8 +1782,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="82" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -1889,9 +1814,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3068" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">228</stat>
@@ -1924,8 +1848,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -1957,8 +1880,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">272</stat>
@@ -1992,8 +1914,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">570</stat>
@@ -2027,8 +1948,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -2061,8 +1981,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="155" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -2095,8 +2014,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="151" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -2129,8 +2047,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2163,8 +2080,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="88" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -2197,10 +2113,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -2233,8 +2147,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="133" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2267,8 +2180,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13332" level="1" /> <!-- Bestow Earth Weapon -->
-			<skill id="3045" level="17" /> <!-- Special Ability: Haste -->
+			<skill id="3552" level="1" />
+			<skill id="3045" level="17" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2300,8 +2213,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="93" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3066" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">220</stat>
@@ -2334,8 +2246,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -2367,8 +2278,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="82" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -2400,9 +2310,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3068" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">228</stat>
@@ -2435,8 +2344,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2468,8 +2376,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">272</stat>
@@ -2503,8 +2410,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">570</stat>
@@ -2538,8 +2444,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -2572,8 +2477,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="155" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -2606,8 +2510,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="151" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -2640,8 +2543,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2674,8 +2576,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="88" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -2708,10 +2609,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -2744,8 +2643,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="133" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2778,8 +2676,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13333" level="1" /> <!-- Bestow Holy Weapon -->
-			<skill id="3045" level="17" /> <!-- Special Ability: Haste -->
+			<skill id="3552" level="1" />
+			<skill id="3045" level="17" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2811,8 +2709,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="93" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3066" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">220</stat>
@@ -2845,8 +2742,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -2878,8 +2774,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="82" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -2911,9 +2806,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3068" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">228</stat>
@@ -2946,8 +2840,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -2979,8 +2872,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">272</stat>
@@ -3014,8 +2906,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">570</stat>
@@ -3049,8 +2940,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="164" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">318</stat>
@@ -3083,8 +2973,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="155" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3050" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -3117,8 +3006,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="151" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+			<skill id="3014" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">202</stat>
@@ -3151,8 +3039,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="5" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -3185,8 +3072,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="88" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">245</stat>
@@ -3219,10 +3105,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="182" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3552" level="2" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" />
 		</skills>
 		<stats>
 			<stat type="pAtk">251</stat>
@@ -3255,8 +3139,7 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="133" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="3068" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -3289,8 +3172,8 @@
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="189" />
 		<skills>
-			<skill id="13334" level="1" /> <!-- Bestow Darkness Weapon -->
-			<skill id="3045" level="17" /> <!-- Special Ability: Haste -->
+			<skill id="3552" level="1" />
+			<skill id="3045" level="17" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">305</stat>
@@ -3318,9 +3201,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="6" />
 		<set name="weight" val="55" />
-		<skills>
-			<skill id="13335" level="1" /> <!-- Bestow Fire/Wind/Darkness Armor -->
-		</skills>
 		<stats>
 			<stat type="pDef">73</stat>
 			<enchant stat="pDef" val="0" />

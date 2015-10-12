@@ -55,8 +55,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 		<skills>
-			<skill id="8262" level="1" /> <!-- Ride Gold Maned Lion -->
-			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8262" level="1" />
 		</skills>
 	</item>
 	<item id="20503" name="Mount - Gold Maned Lion" name_additional="30-day" type="Armor">
@@ -78,8 +78,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="8262" level="1" /> <!-- Ride Gold Maned Lion -->
-			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8262" level="1" />
 		</skills>
 	</item>
 	<item id="20504" name="Mount - Steam Beetle" name_additional="30-day" type="Armor">
@@ -101,8 +101,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="8261" level="1" /> <!-- Ride Steam Beetle -->
-			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8261" level="1" />
 		</skills>
 	</item>
 	<item id="20505" name="Agathion - Pomona Pack" type="EtcItem">
@@ -331,6 +331,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22071" level="1" />
+		</skills>
 	</item>
 	<item id="20516" name="Huge Fortuna Cube" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_fortuna_cube_s_i00" />
@@ -348,6 +351,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22072" level="1" />
+		</skills>
 	</item>
 	<item id="20517" name="Scroll: Enchant Weapon (S-Grade)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_scrl_of_ench_wp_s_i00" />
@@ -366,6 +372,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22073" level="1" />
+		</skills>
 	</item>
 	<item id="20518" name="Scroll: Enchant Armor (S-Grade)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_scrl_of_ench_am_s_i00" />
@@ -384,6 +393,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22074" level="1" />
+		</skills>
 	</item>
 	<item id="20519" name="Ancient Scroll: Enchant Weapon (S-grade)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_wp_s_i00" />
@@ -402,6 +414,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22075" level="1" />
+		</skills>
 	</item>
 	<item id="20520" name="Ancient Scroll: Enchant Armor (S-grade)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_am_s_i00" />
@@ -420,6 +435,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22076" level="1" />
+		</skills>
 	</item>
 	<item id="20521" name="Heavenly Scroll: Enchant Weapon (S-grade)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_wp_s_i00" />
@@ -438,6 +456,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22077" level="1" />
+		</skills>
 	</item>
 	<item id="20522" name="Heavenly Scroll: Enchant Armor (S-grade)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_am_s_i00" />
@@ -456,6 +477,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22078" level="1" />
+		</skills>
 	</item>
 	<item id="20523" name="Scroll: Water Resistance" type="EtcItem">
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
@@ -477,7 +501,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22079" level="1" /> <!-- Water Resistance -->
+			<skill id="22079" level="1" />
 		</skills>
 	</item>
 	<item id="20524" name="Scroll: Wind Resistance" type="EtcItem">
@@ -500,7 +524,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22080" level="1" /> <!-- Wind Resistance -->
+			<skill id="22080" level="1" />
 		</skills>
 	</item>
 	<item id="20525" name="Scroll: Fire Resistance" type="EtcItem">
@@ -523,7 +547,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22081" level="1" /> <!-- Fire Resistance -->
+			<skill id="22081" level="1" />
 		</skills>
 	</item>
 	<item id="20526" name="Scroll: Holy Resistance" type="EtcItem">
@@ -546,7 +570,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22082" level="1" /> <!-- Holy Attack Resistance -->
+			<skill id="22082" level="1" />
 		</skills>
 	</item>
 	<item id="20527" name="Scroll: Dark Resistance" type="EtcItem">
@@ -569,7 +593,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22083" level="1" /> <!-- Dark Attack Resistance -->
+			<skill id="22083" level="1" />
 		</skills>
 	</item>
 	<item id="20528" name="Scroll: Mental Shield" type="EtcItem">
@@ -592,7 +616,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22084" level="1" /> <!-- Mental Shield -->
+			<skill id="22084" level="1" />
 		</skills>
 	</item>
 	<item id="20529" name="Scroll: Focus" type="EtcItem">
@@ -615,7 +639,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22085" level="1" /> <!-- Focus -->
+			<skill id="22085" level="1" />
 		</skills>
 	</item>
 	<item id="20530" name="Scroll: Concentration" type="EtcItem">
@@ -638,7 +662,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22086" level="1" /> <!-- Concentration -->
+			<skill id="22086" level="1" />
 		</skills>
 	</item>
 	<item id="20531" name="Scroll: Blessed Shield" type="EtcItem">
@@ -661,7 +685,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22087" level="1" /> <!-- Blessed Shield -->
+			<skill id="22087" level="1" />
 		</skills>
 	</item>
 	<item id="20532" name="Scroll: Agility" type="EtcItem">
@@ -684,7 +708,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22088" level="1" /> <!-- Agility -->
+			<skill id="22088" level="1" />
 		</skills>
 	</item>
 	<item id="20533" name="Scroll: Regeneration" type="EtcItem">
@@ -707,7 +731,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22089" level="1" /> <!-- Regeneration -->
+			<skill id="22089" level="1" />
 		</skills>
 	</item>
 	<item id="20534" name="Scroll: Advanced Block" type="EtcItem">
@@ -730,7 +754,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="22090" level="1" /> <!-- Advanced Block -->
+			<skill id="22090" level="1" />
 		</skills>
 	</item>
 	<item id="20535" name="Mount - Steam Beetle" name_additional="30-day" type="Armor">
@@ -751,7 +775,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="8261" level="1" /> <!-- Ride Steam Beetle -->
+			<skill id="8261" level="1" />
+			<skill id="839" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="20536" name="Mount - Gold Maned Lion" name_additional="30-day" type="Armor">
@@ -772,7 +797,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="8262" level="1" /> <!-- Ride Gold Maned Lion -->
+			<skill id="8262" level="1" />
+			<skill id="839" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="20537" name="Afro Hair" name_additional="Vitality (7-day)" type="Armor">
@@ -794,7 +820,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21011" level="1" /> <!-- Maintain Vitality -->
+			<skill id="21011" level="1" />
 		</skills>
 	</item>
 	<item id="20538" name="Horn-rimmed Glasses" name_additional="Vitality (7-day)" type="Armor">
@@ -816,7 +842,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21012" level="1" /> <!-- Maintain Vitality -->
+			<skill id="21012" level="1" />
 		</skills>
 	</item>
 	<item id="20539" name="Assassin's Bamboo Hat" name_additional="Vitality (7-day)" type="Armor">
@@ -838,7 +864,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21013" level="1" /> <!-- Maintain Vitality -->
+			<skill id="21013" level="1" />
 		</skills>
 	</item>
 	<item id="20540" name="Mount - Steam Beetle Pack (30-day)" type="EtcItem">
@@ -961,12 +987,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2429" level="1" /> <!-- Haste Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2429" level="1" />
+		</skills>
 	</item>
 	<item id="20546" name="Critical Rate Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i03" />
@@ -988,12 +1014,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2432" level="1" /> <!-- Critical Rate Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2432" level="1" />
+		</skills>
 	</item>
 	<item id="20547" name="Wind Walk Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
@@ -1015,12 +1041,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2437" level="1" /> <!-- Wind Walk Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2437" level="1" />
+		</skills>
 	</item>
 	<item id="20548" name="XP Rune III (Lv. 1-100+) 30% Pack (5-hour)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
@@ -1420,7 +1446,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<skills>
-			<skill id="21087" level="1" /> <!-- Berserker Spirit -->
+			<skill id="21087" level="1" />
 		</skills>
 	</item>
 	<item id="20568" name="Eva's Circlet" name_additional="7-day" type="Armor">
@@ -1442,7 +1468,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21087" level="1" /> <!-- Berserker Spirit -->
+			<skill id="21087" level="1" />
 		</skills>
 	</item>
 	<item id="20569" name="Eva's Circlet" type="Armor">
@@ -1483,7 +1509,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="300" />
 		<skills>
-			<skill id="22091" level="1" /> <!-- Eva's Rune -->
+			<skill id="22091" level="1" />
 		</skills>
 	</item>
 	<item id="20571" name="Eva's Rune (Event)" name_additional="3-day" type="EtcItem">
@@ -1505,7 +1531,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<skills>
-			<skill id="22091" level="1" /> <!-- Eva's Rune -->
+			<skill id="22091" level="1" />
 		</skills>
 	</item>
 	<item id="20572" name="XP Rune III (Lv. 1-100+) 30%" name_additional="3-hour" type="EtcItem">
@@ -1527,7 +1553,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
 		<skills>
-			<skill id="22039" level="1" /> <!-- XP Rune III (Lv. 1-100+) 30% -->
+			<skill id="26046" level="3" />
 		</skills>
 	</item>
 	<item id="20573" name="Small Scroll Chest (Event)" type="EtcItem">
@@ -1546,6 +1572,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="22092" level="1" />
+		</skills>
 	</item>
 	<item id="20574" name="Large Scroll Chest (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
@@ -1709,12 +1738,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2436" level="1" /> <!-- P. Atk. Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2436" level="1" />
+		</skills>
 	</item>
 	<item id="20583" name="Blessed Scroll of Escape (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -1727,7 +1756,7 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
-			<skill id="22103" level="1" /> <!-- Blessed Scroll of Escape (Event) -->
+			<skill id="22103" level="1" />
 		</skills>
 	</item>
 	<item id="20584" name="Blessed Scroll of Resurrection (Event)" type="EtcItem">
@@ -1741,7 +1770,7 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
-			<skill id="22104" level="1" /> <!-- Blessed Scroll of Resurrection (Event) -->
+			<skill id="22104" level="1" />
 		</skills>
 	</item>
 	<item id="20585" name="Seed of Fire (Event)" type="EtcItem">
@@ -1755,7 +1784,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
-			<skill id="22095" level="1" /> <!-- Summon Fire Spirit -->
+			<skill id="22095" level="1" />
 		</skills>
 	</item>
 	<item id="20586" name="Explosive Seed of Fire (Event)" type="EtcItem">
@@ -1769,7 +1798,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
-			<skill id="22096" level="1" /> <!-- Summon Reckless Fire Spirit -->
+			<skill id="22096" level="1" />
 		</skills>
 	</item>
 	<item id="20587" name="Agathion - Weaver Pack" type="EtcItem">
@@ -1860,9 +1889,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21091" level="1" /> <!-- Release Agathion's Seal - Weaver -->
-			<skill id="23076" level="1" /> <!-- Weaver Agathion Cute Trick -->
+			<skill id="21091" level="1" />
+			<skill id="23076" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="20592" name="Agathion - Weaver" name_additional="Power of the Golden Calf (24-hour)" type="Armor">
@@ -1884,7 +1913,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1440" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="21091" level="1" />
+			<skill id="23077" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="20593" name="Agathion - Weaver" name_additional="Power of the Golden Calf (3-day)" type="Armor">
@@ -1906,7 +1937,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="21091" level="1" />
+			<skill id="23077" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="20594" name="Summon of Love Bracelet (Event)" name_additional="24-hour" type="Armor">
@@ -1926,7 +1959,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1440" />
 		<skills>
-			<skill id="21088" level="1" /> <!-- Summon Friend -->
+			<skill id="21088" level="1" />
 		</skills>
 	</item>
 	<item id="20595" name="Girl's Gift of Gratitude" type="EtcItem">
@@ -1944,7 +1977,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="22097" level="1" /> <!-- Girl's Gift of Gratitude -->
+			<skill id="22097" level="1" />
 		</skills>
 	</item>
 	<item id="20596" name="Boy's Gift of Gratitude" type="EtcItem">
@@ -1962,7 +1995,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="22098" level="1" /> <!-- Boy's Gift of Gratitude -->
+			<skill id="22098" level="1" />
 		</skills>
 	</item>
 	<item id="20597" name="Girl's Soulstone" type="EtcItem">

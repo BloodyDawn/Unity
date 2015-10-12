@@ -17,6 +17,17 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="9410" level="1" />
+			<skill id="9415" level="1" />
+			<skill id="9647" level="1" />
+			<skill id="9648" level="1" />
+			<skill id="9649" level="1" />
+			<skill id="9650" level="1" />
+			<skill id="9651" level="1" />
+			<skill id="9652" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="36101" name="Star Agathion - Cute Shinyoung" type="Armor">
 		<!-- Bracelet for summoning Agathion - Cute Shinyoung (7-day)\n(Used Skill)\n1. Blessing of Star Agathion\nIncreases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)\n2. Star Agathion Teleport\nLets you teleport to various strongholds. (cooldown 30 minutes)\n3. Gift of Star Agathion\nCan get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours) -->
@@ -35,6 +46,17 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="9411" level="1" />
+			<skill id="9416" level="1" />
+			<skill id="9653" level="1" />
+			<skill id="9654" level="1" />
+			<skill id="9655" level="1" />
+			<skill id="9656" level="1" />
+			<skill id="9657" level="1" />
+			<skill id="9658" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
 	<item id="36102" name="Star Agathion Pack" type="EtcItem">
 		<!-- You can randomly acquire 1 Star Agathion Summoning Bracelet (7-day). -->
@@ -50,6 +72,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9632" level="1" />
+		</skills>
 	</item>
 	<item id="36103" name="Transformation Scroll Pack" type="EtcItem">
 		<!-- You can get 1 Transformation Scroll: Zaken, Gordon, Ranku, and Kechi at a certain probability. -->
@@ -65,6 +90,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="weight" val="100" />
+		<skills>
+			<skill id="9633" level="1" />
+		</skills>
 	</item>
 	<item id="36104" name="Bronze Key Guild Badge" type="EtcItem">
 		<!-- Badge that symbolizes the Bronze Key Guild. You can get it after completing a clan request. Take it to the Clan Request Manager in any village. -->
@@ -122,6 +150,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9616" level="1" />
+		</skills>
 	</item>
 	<item id="36108" name="Clan Request - 7 Members" type="EtcItem">
 		<!-- Contains details about clan requests. If you get disconnected after summoning the Clan Request Manager, you cannot start any clan request. (Can be used only once a-day) -->
@@ -137,6 +168,9 @@
 		<set name="time" val="1440" />
 		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="icon" val="icon.item_normal20" />
+		<skills>
+			<skill id="9615" level="1" />
+		</skills>
 	</item>
 	<item id="36109" name="Kaliel's Treasure Chest (Low-grade)" type="EtcItem">
 		<!-- Kaliel's Treasure Chest (Low-grade). Double-click to receive a gift. -->
@@ -295,7 +329,7 @@
 		<set name="bodypart" val="back" />
 		<set name="price" val="10000000" />
 		<skills>
-			<skill id="13404" level="1" /> <!-- Clan Cloak (Clan Hall - Contestable) -->
+			<skill id="13404" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">50</stat>
@@ -319,7 +353,7 @@
 		<set name="time" val="4320" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13396" level="1" /> <!-- Rabbit Ears: STR -->
+			<skill id="13396" level="1" />
 		</skills>
 	</item>
 	<item id="36122" name="Rabbit Ears: DEX (3-day)" name_additional="Campaign" type="Armor">
@@ -339,7 +373,7 @@
 		<set name="time" val="4320" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13397" level="1" /> <!-- Rabbit Ears: DEX -->
+			<skill id="13397" level="1" />
 		</skills>
 	</item>
 	<item id="36123" name="Rabbit Ears: WIT (3-day)" name_additional="Campaign" type="Armor">
@@ -359,7 +393,7 @@
 		<set name="time" val="4320" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13398" level="1" /> <!-- Rabbit Ears: WIT -->
+			<skill id="13398" level="1" />
 		</skills>
 	</item>
 	<item id="36124" name="Rabbit Ears: INT (3-day)" name_additional="Campaign" type="Armor">
@@ -379,7 +413,7 @@
 		<set name="time" val="4320" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13399" level="1" /> <!-- Rabbit Ears: INT -->
+			<skill id="13399" level="1" />
 		</skills>
 	</item>
 	<item id="36125" name="Angel Circlet - STR (7-day)" name_additional="Campaign" type="Armor">
@@ -399,7 +433,7 @@
 		<set name="time" val="10080" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13400" level="1" /> <!-- Angel Circlet - STR -->
+			<skill id="13400" level="1" />
 		</skills>
 	</item>
 	<item id="36126" name="Angel Circlet - DEX (7-day)" name_additional="Campaign" type="Armor">
@@ -419,7 +453,7 @@
 		<set name="time" val="10080" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13401" level="1" /> <!-- Angel Circlet - DEX -->
+			<skill id="13401" level="1" />
 		</skills>
 	</item>
 	<item id="36127" name="Angel Circlet - WIT (7-day)" name_additional="Campaign" type="Armor">
@@ -439,7 +473,7 @@
 		<set name="time" val="10080" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13402" level="1" /> <!-- Angel Circlet - WIT -->
+			<skill id="13402" level="1" />
 		</skills>
 	</item>
 	<item id="36128" name="Angel Circlet - INT (7-day)" name_additional="Campaign" type="Armor">
@@ -459,7 +493,7 @@
 		<set name="time" val="10080" />
 		<set name="weight" val="10" />
 		<skills>
-			<skill id="13403" level="1" /> <!-- Angel Circlet - INT -->
+			<skill id="13403" level="1" />
 		</skills>
 	</item>
 	<item id="36129" name="Clan Request - 14 Members" type="EtcItem">
@@ -476,6 +510,9 @@
 		<set name="time" val="1440" />
 		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="icon" val="icon.item_normal20" />
+		<skills>
+			<skill id="9668" level="1" />
+		</skills>
 	</item>
 	<item id="36130" name="Scroll: Enchant Armor (R-grade) 5-unit Pack" type="EtcItem">
 		<!-- Double-click to receive 5 Scrolls: Enchant Armor (R-grade). -->
@@ -496,6 +533,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9669" level="1" />
+		</skills>
 	</item>
 	<item id="36132" name="INT/WIT Pendant Pack" type="EtcItem">
 		<!-- Double-click to receive 1 Pendant of INT or 1 Pendant of WIT. -->
@@ -506,6 +546,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9670" level="1" />
+		</skills>
 	</item>
 	<item id="36133" name="STR/DEX Pendant Pack" type="EtcItem">
 		<!-- Double-click to receive 1 Pendant of STR or 1 Pendant of DEX. -->
@@ -516,6 +559,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9671" level="1" />
+		</skills>
 	</item>
 	<item id="36134" name="P. Def./P. Evasion Pendant Pack" type="EtcItem">
 		<!-- Double-click to receive one of the following: P. Def. Pendant, M. Def. Pendant and P. Evasion Pendant. -->
@@ -526,6 +572,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9672" level="1" />
+		</skills>
 	</item>
 	<item id="36135" name="P. Atk./P. Accuracy Pendant Pack" type="EtcItem">
 		<!-- Double-click to receive one of the following: P. Atk. Pendant, M. Atk. Pendant and Accuracy Pendant. -->
@@ -536,6 +585,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9673" level="1" />
+		</skills>
 	</item>
 	<item id="36136" name="Critical Pendant Pack" type="EtcItem">
 		<!-- Double-click to receive 1 Critical Rate Pendant or 1 Critical Damage Pendant. -->
@@ -546,6 +598,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9674" level="1" />
+		</skills>
 	</item>
 	<item id="36137" name="Lv. 5 Legendary MEN Dye 10-unit Pack" type="EtcItem">
 		<!-- Double-click to receive 10 units of Lv. 5 Legendary MEN Dye. -->
@@ -616,6 +671,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9675" level="1" />
+		</skills>
 	</item>
 	<item id="36144" name="Double Crystal Enhancement Reward: Amaranthine Box (Magical)" type="EtcItem">
 		<!-- Double-click to receive one of the following: Double Crystal Amaranthine Buster, Caster, and Retributer. -->
@@ -626,6 +684,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9676" level="1" />
+		</skills>
 	</item>
 	<item id="36145" name="Double Crystal Enhancement Reward: Amaranthine Box (Dual Weapons)" type="EtcItem">
 		<!-- Double-click to receive one of the following: Double Crystal Amaranthine Dualsword, Dual Dagger, and Dual Blunt. -->
@@ -636,6 +697,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9677" level="1" />
+		</skills>
 	</item>
 	<item id="36146" name="Bloody Amaranthine Weapon Pack" type="EtcItem">
 		<!-- Double-click to receive one of the Bloody Amaranthine Weapons. -->
@@ -646,6 +710,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9678" level="1" />
+		</skills>
 	</item>
 	<item id="36147" name="Dark Amaranthine Weapon Pack" type="EtcItem">
 		<!-- Double-click to receive one of the Dark Amaranthine Weapons. -->
@@ -656,6 +723,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9679" level="1" />
+		</skills>
 	</item>
 	<item id="36148" name="Kaliel's Scroll of Escape Pack" type="EtcItem">
 		<!-- Double-click to receive a Scroll of Escape: Ruins of Ye Sagira, Isle of Souls Harbor, Guillotine Fortress, Bloody Swampland, Crystal Caverns, and Seal of Shilen. -->
@@ -687,6 +757,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9685" level="1" />
+		</skills>
 	</item>
 	<item id="36151" name="Kaliel's Training Scroll" type="EtcItem">
 		<!-- Increases XP and SP obtained through hunting by 100% for 30 min. Can be used only by characters of level 90 or lower. Temporary event item. -->
@@ -697,6 +770,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9686" level="1" />
+		</skills>
 	</item>
 	<item id="36152" name="Kaliel's Energy Box" type="EtcItem">
 		<!-- Box containing Kaliel's Energy that prevents Seed Talismans from weakening when they fail to be enchanted. Double-click to receive one of the following: Kaliel's Energy - Annihilation/Hellfire/Desire. -->
@@ -707,6 +783,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9704" level="1" />
+		</skills>
 	</item>
 	<item id="36153" name="Kaliel's Attribute Stone Pack" type="EtcItem">
 		<!-- Double-click to receive 6 stones. -->
@@ -727,6 +806,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9680" level="1" />
+		</skills>
 	</item>
 	<item id="36155" name="Enhanced Kaliel's Attribute Stone Pack" type="EtcItem">
 		<!-- Double-click to receive one of the super-150 Attribute Stones. -->
@@ -737,6 +819,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9681" level="1" />
+		</skills>
 	</item>
 	<item id="36156" name="Enhanced Kaliel's Attribute Crystal Pack" type="EtcItem">
 		<!-- Double-click to receive one of the super-150 Attribute Crystals. -->
@@ -747,6 +832,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="9682" level="1" />
+		</skills>
 	</item>
 	<item id="36157" name="Scroll: Enchant Hair Accessory Pack" type="EtcItem">
 		<!-- Double-click to receive 1 Scroll: Enchant Hair Accessory. The obtained scroll cannot be exchanged, dropped, or sold in a store. -->
@@ -810,6 +898,9 @@
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9687" level="1" />
+		</skills>
 	</item>
 	<item id="36164" name="Giant's Scroll: Enchant Armor (R-grade)" type="EtcItem">
 		<!-- P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value. Randomly adds between + 1 and + 3 enchant value. -->
@@ -821,6 +912,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="9688" level="1" />
+		</skills>
 	</item>
 	<item id="36165" name="Kaliel's Soul Box" type="EtcItem">
 		<!-- Double-click to receive various items with Kaliel's Blessing that are helpful for obtaining XP and hunting. Temporary event item. -->
@@ -832,6 +926,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9683" level="1" />
+		</skills>
 	</item>
 	<item id="36166" name="Kaliel's Gift Box" type="EtcItem">
 		<!-- Double-click to receive various valuable items with Kaliel's Blessing. Temporary event item. -->
@@ -843,6 +940,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9684" level="1" />
+		</skills>
 	</item>
 	<item id="36167" name="Nurka's Belt" type="Armor">
 		<!-- Belt that contains the power of Bloody Lord Nurka of the Fortress of Resistance. Increases damage by 5% and decreases received damage by 5%. Increases weight by 12800 and the number of inventory slots by 18. -->
@@ -856,7 +956,7 @@
 		<set name="commissionItemType" val="BELT" />
 		<set name="weight" val="440" />
 		<skills>
-			<skill id="13406" level="1" /> <!-- Nurka's Belt -->
+			<skill id="13406" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">25</stat>
@@ -875,7 +975,7 @@
 		<set name="commissionItemType" val="BELT" />
 		<set name="weight" val="440" />
 		<skills>
-			<skill id="13407" level="1" /> <!-- Lidia's Belt -->
+			<skill id="13407" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">25</stat>
@@ -894,7 +994,7 @@
 		<set name="commissionItemType" val="BELT" />
 		<set name="weight" val="440" />
 		<skills>
-			<skill id="13408" level="1" /> <!-- Gustav's Belt -->
+			<skill id="13408" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">25</stat>
@@ -913,7 +1013,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9690" level="1" /> <!-- Scroll of Escape: Fog of Blood Region -->
+			<skill id="9690" level="1" />
 		</skills>
 	</item>
 	<item id="36171" name="Scroll of Escape: Isle of Souls Harbor" type="EtcItem">
@@ -928,7 +1028,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9691" level="1" /> <!-- Scroll of Escape: Isle of Souls Harbor -->
+			<skill id="9691" level="1" />
 		</skills>
 	</item>
 	<item id="36172" name="Scroll of Escape: Ruins of Ye Sagira" type="EtcItem">
@@ -943,7 +1043,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="9692" level="1" /> <!-- Scroll of Escape: Ruins of Ye Sagira -->
+			<skill id="9692" level="1" />
 		</skills>
 	</item>
 	<item id="36173" name="Scroll of Escape: Guillotine Fortress" type="EtcItem">
@@ -958,7 +1058,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="9693" level="1" /> <!-- Scroll of Escape: Guillotine Fortress -->
+			<skill id="9693" level="1" />
 		</skills>
 	</item>
 	<item id="36174" name="Scroll of Escape: Parnassus" type="EtcItem">
@@ -973,7 +1073,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9694" level="1" /> <!-- Scroll of Escape: Parnassus -->
+			<skill id="9694" level="1" />
 		</skills>
 	</item>
 	<item id="36175" name="Scroll of Escape: Seal of Shilen" type="EtcItem">
@@ -988,7 +1088,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9695" level="1" /> <!-- Scroll of Escape: Seal of Shilen -->
+			<skill id="9695" level="1" />
 		</skills>
 	</item>
 	<item id="36176" name="2012 World Olympiad Hero's Accessory" name_additional="Sigel Knight" type="Armor">
@@ -1007,7 +1107,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9696" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9696" level="1" />
 		</skills>
 	</item>
 	<item id="36177" name="2012 World Olympiad Hero's Accessory" name_additional="Yul Archer" type="Armor">
@@ -1026,7 +1126,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9697" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9697" level="1" />
 		</skills>
 	</item>
 	<item id="36178" name="2012 World Olympiad Hero's Accessory" name_additional="Tyrr Warrior" type="Armor">
@@ -1045,7 +1145,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9698" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9698" level="1" />
 		</skills>
 	</item>
 	<item id="36179" name="2012 World Olympiad Hero's Accessory" name_additional="Othell Rogue" type="Armor">
@@ -1064,7 +1164,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9699" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9699" level="1" />
 		</skills>
 	</item>
 	<item id="36180" name="2012 World Olympiad Hero's Accessory" name_additional="Iss Enchanter" type="Armor">
@@ -1083,7 +1183,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9700" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9700" level="1" />
 		</skills>
 	</item>
 	<item id="36181" name="2012 World Olympiad Hero's Accessory" name_additional="Wynn Summoner" type="Armor">
@@ -1102,7 +1202,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9701" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9701" level="1" />
 		</skills>
 	</item>
 	<item id="36182" name="2012 World Olympiad Hero's Accessory" name_additional="Aeore Healer" type="Armor">
@@ -1121,7 +1221,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9702" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9702" level="1" />
 		</skills>
 	</item>
 	<item id="36183" name="2012 World Olympiad Hero's Accessory" name_additional="Feoh Wizard" type="Armor">
@@ -1140,7 +1240,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="9703" level="1" /> <!-- 2012 World Olympiad Hero -->
+			<skill id="9703" level="1" />
 		</skills>
 	</item>
 	<item id="36184" name="Kaliel's Energy" name_additional="Annihilation" type="EtcItem">
@@ -1185,7 +1285,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13409" level="1" /> <!-- Rising Shirt -->
+			<skill id="13409" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">38</stat>
@@ -1206,7 +1306,7 @@
 		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="weight" val="130" />
 		<skills>
-			<skill id="13410" level="1" /> <!-- Blaze Shirt -->
+			<skill id="13410" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">38</stat>
@@ -1228,7 +1328,7 @@
 		<set name="commissionItemType" val="BELT" />
 		<set name="weight" val="440" />
 		<skills>
-			<skill id="13411" level="1" /> <!-- Rising Belt -->
+			<skill id="13411" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">25</stat>
@@ -1250,7 +1350,7 @@
 		<set name="commissionItemType" val="BELT" />
 		<set name="weight" val="440" />
 		<skills>
-			<skill id="13412" level="1" /> <!-- Blaze Belt -->
+			<skill id="13412" level="1" />
 		</skills>
 		<stats>
 			<stat type="pDef">25</stat>
@@ -1271,6 +1371,9 @@
 		<set name="reuse_delay" val="60000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9705" level="1" />
+		</skills>
 	</item>
 	<item id="36192" name="Kaliel's Wish Pouch" type="EtcItem">
 		<!-- Double-click to receive 3 Kaliel's Wishes. Temporary event item. -->
@@ -1288,6 +1391,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9706" level="1" />
+		</skills>
 	</item>
 	<item id="36193" name="Shaper Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
@@ -1309,8 +1415,8 @@
 		<set name="time" val="1440" />
 		<set name="weight" val="500" />
 		<skills>
-			<skill id="13413" level="1" /> <!-- Shaper Sealed with Heroes' Power -->
-			<skill id="9707" level="1" /> <!-- Heroes' Power -->
+			<skill id="9707" level="1" />
+			<skill id="13413" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">685</stat>
@@ -1342,8 +1448,8 @@
 		<set name="time" val="1440" />
 		<set name="weight" val="500" />
 		<skills>
-			<skill id="13414" level="1" /> <!-- Cutter Sealed with Heroes' Power -->
-			<skill id="9708" level="1" /> <!-- Heroes' Power -->
+			<skill id="9708" level="1" />
+			<skill id="13414" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">752</stat>
@@ -1374,8 +1480,8 @@
 		<set name="time" val="1440" />
 		<set name="weight" val="500" />
 		<skills>
-			<skill id="9709" level="1" /> <!-- Heroes' Power -->
-			<skill id="13415" level="1" /> <!-- Slasher Sealed with Heroes' Power -->
+			<skill id="9709" level="1" />
+			<skill id="13415" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">916</stat>
@@ -1406,8 +1512,8 @@
 		<set name="time" val="1440" />
 		<set name="weight" val="500" />
 		<skills>
-			<skill id="13416" level="1" /> <!-- Avenger Sealed with Heroes' Power -->
-			<skill id="9710" level="1" /> <!-- Heroes' Power -->
+			<skill id="9710" level="1" />
+			<skill id="13416" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">752</stat>
@@ -1439,8 +1545,8 @@
 		<set name="time" val="1440" />
 		<set name="weight" val="500" />
 		<skills>
-			<skill id="13417" level="1" /> <!-- Fighter Sealed with Heroes' Power -->
-			<skill id="9711" level="1" /> <!-- Heroes' Power -->
+			<skill id="9711" level="1" />
+			<skill id="13417" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">916</stat>
@@ -1472,9 +1578,8 @@
 		<set name="time" val="1440" />
 		<set name="weight" val="500" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13418" level="1" /> <!-- Stormer Sealed with Heroes' Power -->
-			<skill id="9712" level="1" /> <!-- Heroes' Power -->
+			<skill id="9712" level="1" />
+			<skill id="13418" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">752</stat>
@@ -1507,8 +1612,8 @@
 		<set name="time" val="1440" />
 		<set name="weight" val="500" />
 		<skills>
-			<skill id="13419" level="1" /> <!-- Thrower Sealed with Heroes' Power -->
-			<skill id="9713" level="1" /> <!-- Heroes' Power -->
+			<skill id="9713" level="1" />
+			<skill id="13419" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">1481</stat>

@@ -22,7 +22,7 @@
 		<set name="enchanted" val="4" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
+			<skill id="3013" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">482</stat>
@@ -56,7 +56,7 @@
 		<set name="enchanted" val="4" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+			<skill id="3047" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">317</stat>
@@ -90,7 +90,7 @@
 		<set name="enchanted" val="4" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3076" level="3" /> <!-- Special Ability: Empower -->
+			<skill id="3575" level="2" />
 		</skills>
 		<stats>
 			<stat type="pAtk">386</stat>
@@ -125,7 +125,7 @@
 		<set name="enchanted" val="4" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3567" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3567" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">724</stat>
@@ -159,8 +159,8 @@
 		<set name="enchanted" val="4" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3566" level="3" /> <!-- Special Ability: Focus -->
-			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3566" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">359</stat>
@@ -195,7 +195,7 @@
 		<set name="enchanted" val="4" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3567" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3567" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">444</stat>
@@ -229,7 +229,7 @@
 		<set name="enchanted" val="4" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3566" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3566" level="3" />
 		</skills>
 		<stats>
 			<stat type="pAtk">429</stat>
@@ -814,8 +814,8 @@
 		<set name="commissionItemType" val="RING" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21294" level="1" type="ON_EQUIP" /> <!-- Transformed: Uthanka -->
-			<skill id="21295" level="1" /> <!-- Un-equip Uthanka's Ring -->
+			<skill id="21294" level="1" type="ON_EQUIP" />
+			<skill id="21295" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23137" name="Extra Pass: Ancient Kartia's Labyrinth" type="EtcItem">
@@ -832,6 +832,9 @@
 		<set name="time" val="1440" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<skills>
+			<skill id="22626" level="1" />
+		</skills>
 	</item>
 	<item id="23138" name="Vesper Dualsword of Fortune" name_additional="90-day" type="Weapon">
 		<!-- Dualswords, as with Two-handed Swords, Two-handed Blunts and Fist Weapons, increase in P. Atk. when enchanted compared to standard One-handed Swords. When enchanted to + 4 or above, Critical + 109 and Max HP + 10%. Increases damage inflicted during PvP. -->
@@ -855,7 +858,8 @@
 		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="3411" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" />
+			<skill id="3411" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">482</stat>
@@ -888,7 +892,8 @@
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="time" val="129600" />
 		<skills>
-			<skill id="8298" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" />
+			<skill id="8298" level="1" type="ON_ENCHANT" />
 		</skills>
 		<stats>
 			<stat type="pAtk">360</stat>
@@ -1012,7 +1017,10 @@
 		<set name="time" val="30" />
 		<set name="weight" val="1" />
 		<skills>
-			<skill id="21296" level="1" /> <!-- Exorcist's Punishment -->
+			<skill id="21324" level="1" />
+			<skill id="21320" level="1" />
+			<skill id="21321" level="1" />
+			<skill id="21296" level="1" />
 		</skills>
 	</item>
 	<item id="23146" name="Nevit's Holy Water Flask" name_additional="Event" type="Armor">
@@ -1032,7 +1040,8 @@
 		<set name="time" val="30" />
 		<set name="weight" val="1" />
 		<skills>
-			<skill id="21297" level="1" /> <!-- Nevit's Touch -->
+			<skill id="21323" level="1" />
+			<skill id="21297" level="1" />
 		</skills>
 	</item>
 	<item id="23147" name="Ghost Potion" name_additional="Event" type="EtcItem">
@@ -1046,6 +1055,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="22630" level="1" />
+		</skills>
 	</item>
 	<item id="23148" name="Exorcist's Mark" name_additional="Event" type="EtcItem">
 		<!-- Mark given to those who fought as zombies or against zombies in the zombie invasion of the village.\nCan be exchanged for various items through Exorcist Seira or Zombie Shaman Alestina. -->
@@ -1068,6 +1080,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22627" level="1" />
+		</skills>
 	</item>
 	<item id="23150" name="Einhasad's Gift" name_additional="Event" type="EtcItem">
 		<!-- Use this to receive an item more valuable than the gift itself. -->
@@ -1077,6 +1092,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22628" level="1" />
+		</skills>
 	</item>
 	<item id="23151" name="Shilen's Gift" name_additional="Event" type="EtcItem">
 		<!-- Use this to receive an item more valuable than the gift itself. -->
@@ -1086,6 +1104,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22629" level="1" />
+		</skills>
 	</item>
 	<item id="23152" name="Soul Avatar - Lancet" type="Armor">
 		<!-- Bracelet that summons the image of Lancet as a Soul Avatar through the red Dimensional Door.\nIncreases 6 defense attributes by 10. Effective for M. Def. Cannot use the Olympiad. -->
@@ -1103,12 +1124,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21315" level="1" /> <!-- Soul Protection -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21298" level="1" /> <!-- Release Agathion's Seal - Lancet -->
-			<skill id="23141" level="1" /> <!-- Lancet Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21298" level="1" />
+			<skill id="23141" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21315" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23153" name="Soul Avatar - Liposa" type="Armor">
@@ -1127,12 +1148,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21315" level="1" /> <!-- Soul Protection -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21299" level="1" /> <!-- Release Agathion's Seal - Liposa -->
-			<skill id="23142" level="1" /> <!-- Liposa Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21299" level="1" />
+			<skill id="23142" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21315" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23154" name="Soul Avatar - Velarin" type="Armor">
@@ -1151,12 +1172,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21317" level="1" /> <!-- Sagacious Soul -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21300" level="1" /> <!-- Release Agathion's Seal - Velarin -->
-			<skill id="23143" level="1" /> <!-- Velarin Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21300" level="1" />
+			<skill id="23143" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21317" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23155" name="Soul Avatar - Dulcinel" type="Armor">
@@ -1175,12 +1196,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21317" level="1" /> <!-- Sagacious Soul -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21301" level="1" /> <!-- Release Agathion's Seal - Dulcinel -->
-			<skill id="23144" level="1" /> <!-- Dulcinel Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21301" level="1" />
+			<skill id="23144" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21317" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23156" name="Soul Avatar - Chimeros" type="Armor">
@@ -1199,12 +1220,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21314" level="1" /> <!-- Soul Seduction -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21302" level="1" /> <!-- Release Agathion's Seal - Chimeros -->
-			<skill id="23145" level="1" /> <!-- Chimeros Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21302" level="1" />
+			<skill id="23145" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21314" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23157" name="Soul Avatar - Niveri" type="Armor">
@@ -1223,12 +1244,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21314" level="1" /> <!-- Soul Seduction -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21303" level="1" /> <!-- Release Agathion's Seal - Niveri -->
-			<skill id="23146" level="1" /> <!-- Niveri Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21303" level="1" />
+			<skill id="23146" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21314" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23158" name="Soul Avatar - Hamell" type="Armor">
@@ -1247,12 +1268,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21313" level="1" /> <!-- Soul Shroud -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21304" level="1" /> <!-- Release Agathion's Seal - Hamell -->
-			<skill id="23147" level="1" /> <!-- Hamell Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21304" level="1" />
+			<skill id="23147" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21313" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23159" name="Soul Avatar - Joriya" type="Armor">
@@ -1271,12 +1292,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21313" level="1" /> <!-- Soul Shroud -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21305" level="1" /> <!-- Release Agathion's Seal - Joriya -->
-			<skill id="23148" level="1" /> <!-- Joriya Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21305" level="1" />
+			<skill id="23148" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21313" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23160" name="Soul Avatar - Ralmak" type="Armor">
@@ -1295,12 +1316,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21312" level="1" /> <!-- Indomitable Spirit -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21306" level="1" /> <!-- Release Agathion's Seal - Ralmak -->
-			<skill id="23149" level="1" /> <!-- Ralmak Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21306" level="1" />
+			<skill id="23149" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21312" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23161" name="Soul Avatar - Goras" type="Armor">
@@ -1319,12 +1340,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21312" level="1" /> <!-- Indomitable Spirit -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21307" level="1" /> <!-- Release Agathion's Seal - Goras -->
-			<skill id="23150" level="1" /> <!-- Goras Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21307" level="1" />
+			<skill id="23150" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21312" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23162" name="Soul Avatar - Vensar" type="Armor">
@@ -1343,12 +1364,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21316" level="1" /> <!-- Intelligent Soul -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21308" level="1" /> <!-- Release Agathion's Seal - Vensar -->
-			<skill id="23151" level="1" /> <!-- Vensar Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21308" level="1" />
+			<skill id="23151" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21316" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23163" name="Soul Avatar - Kiela" type="Armor">
@@ -1367,12 +1388,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="150" />
 		<skills>
-			<skill id="21316" level="1" /> <!-- Intelligent Soul -->
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21309" level="1" /> <!-- Release Agathion's Seal - Kiela -->
-			<skill id="23152" level="1" /> <!-- Kiela Agathion Cute Trick -->
-			<skill id="21311" level="1" /> <!-- Reinforced Authority -->
-			<skill id="21310" level="1" /> <!-- Soul's Shield -->
+			<skill id="21309" level="1" />
+			<skill id="23152" level="1" />
+			<skill id="21311" level="1" />
+			<skill id="21310" level="1" />
+			<skill id="21316" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 		</skills>
 	</item>
 	<item id="23164" name="Soul Avatar's Large Placid" type="EtcItem">
@@ -1389,7 +1410,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="22634" level="1" /> <!-- Soul Avatar's Large Placid -->
+			<skill id="22634" level="1" />
 		</skills>
 	</item>
 	<item id="23165" name="Chocolate for Summer Slushie" name_additional="Event" type="EtcItem">
@@ -1429,6 +1450,9 @@
 		<set name="reuse_delay" val="3600000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22631" level="1" />
+		</skills>
 	</item>
 	<item id="23170" name="Fantastic Summer Slushie" name_additional="Event" type="EtcItem">
 		<!-- Summer Slushie made by Herina. Use this top-quality slushie to change into an Alluring Swimsuit. For 1 hr., Atk. Spd. + 10%, Casting Spd. + 10%, Speed. + 10, and Max HP/MP + 10%. Cooldown is 1 hr. -->
@@ -1444,6 +1468,9 @@
 		<set name="reuse_delay" val="3600000" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22631" level="2" />
+		</skills>
 	</item>
 	<item id="23171" name="Beach Swimsuit" name_additional="Event" type="Armor">
 		<!-- Swimsuit for the beach. -->
@@ -1475,6 +1502,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22632" level="1" />
+		</skills>
 	</item>
 	<item id="23173" name="Alluring Swimsuit" type="Armor">
 		<!-- Alluring swimsuit with exquisite prints. -->
@@ -1504,6 +1534,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22633" level="1" />
+		</skills>
 	</item>
 	<item id="23175" name="Brilliant Beach Sun Cap" name_additional="30-day (Event)" type="Armor">
 		<!-- Fancy cap that completely blocks the sun. Uses 2 hair accessory slots. 30-day. -->
@@ -1721,6 +1754,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22635" level="1" />
+		</skills>
 	</item>
 	<item id="23190" name="Ninja Pants Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of a bottom to that of a Ninja outfit. Abilities do not change after modification. Can be used regardless of material. -->
@@ -1736,6 +1772,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22636" level="1" />
+		</skills>
 	</item>
 	<item id="23191" name="Ninja Gloves Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of gloves to that of a Ninja outfit. Abilities do not change after modification. -->
@@ -1751,6 +1790,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22637" level="1" />
+		</skills>
 	</item>
 	<item id="23192" name="Ninja Shoes Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of shoes to that of a Ninja outfit. Abilities do not change after modification. -->
@@ -1766,6 +1808,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22638" level="1" />
+		</skills>
 	</item>
 	<item id="23193" name="Ninja Hair Accessory Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of a hair accessory to that of a Ninja outfit. Can only be used on hair accessories that use 2 slots.\n\nWarning: The appearance resets if you bestow a pendant on the appearance-modified hair accessory. -->
@@ -1781,6 +1826,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22643" level="1" />
+		</skills>
 	</item>
 	<item id="23194" name="Tribal Warrior Top Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of a top to that of a Traditional Taiwanese outfit. Abilities do not change after modification. Can be used regardless of material. -->
@@ -1796,6 +1844,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22639" level="1" />
+		</skills>
 	</item>
 	<item id="23195" name="Tribal Warrior Pants Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of a bottom to that of a Traditional Taiwanese outfit. Abilities do not change after modification. Can be used regardless of material. -->
@@ -1811,6 +1862,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22640" level="1" />
+		</skills>
 	</item>
 	<item id="23196" name="Tribal Warrior Gloves Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of gloves to that of a Traditional Taiwanese outfit. Abilities do not change after modification. -->
@@ -1826,6 +1880,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22641" level="1" />
+		</skills>
 	</item>
 	<item id="23197" name="Tribal Warrior Shoes Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of shoes to that of a Traditional Taiwanese outfit. Abilities do not change after modification. -->
@@ -1841,6 +1898,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22642" level="1" />
+		</skills>
 	</item>
 	<item id="23198" name="Tribal Warrior Hair Accessory Appearance Stone" type="EtcItem">
 		<!-- Changes the appearance of a hair accessory to that of a Traditional Taiwanese outfit. Can only be used on hair accessories that use 2 slots. -->
@@ -1856,6 +1916,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22644" level="1" />
+		</skills>
 	</item>
 	<item id="23199" name="Ninja Outfit Appearance Stone Pack" type="EtcItem">
 		<!-- Wrapped Pack containing Ninja Top/Pants/Gloves/Shoes/Hair Accessory Appearance Stone. -->

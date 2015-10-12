@@ -128,7 +128,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="9075" level="1" /> <!-- Awful Soup -->
+			<skill id="9075" level="1" />
 		</skills>
 	</item>
 	<item id="15508" name="Sel Mahum Training Diary" type="EtcItem">
@@ -665,6 +665,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
+		<skills>
+			<skill id="2096" level="1" />
+		</skills>
 	</item>
 	<item id="15542" name="Blue Soul Crystal - Stage 17" type="EtcItem">
 		<set name="icon" val="icon.etc_soul_stone_i01" />
@@ -678,6 +681,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
+		<skills>
+			<skill id="2096" level="1" />
+		</skills>
 	</item>
 	<item id="15543" name="Green Soul Crystal - Stage 17" type="EtcItem">
 		<set name="icon" val="icon.etc_soul_stone_i02" />
@@ -691,6 +697,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
+		<skills>
+			<skill id="2096" level="1" />
+		</skills>
 	</item>
 	<item id="15544" name="Eternal Core Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_incessantcore_sword_i00" />
@@ -898,7 +907,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">437</stat>
@@ -1062,12 +1071,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">396</stat>
 			<stat type="mAtk">192</stat>
@@ -1357,7 +1366,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3599" level="1" />
 		</skills>
 		<stats>
 			<stat type="pAtk">415</stat>
@@ -1520,12 +1529,12 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" />
+		</skills>
 		<stats>
 			<stat type="pAtk">376</stat>
 			<stat type="mAtk">183</stat>
