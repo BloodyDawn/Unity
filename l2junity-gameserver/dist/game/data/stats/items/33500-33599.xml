@@ -40,6 +40,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33503" name="Hero's Blessed Buff Scroll" type="EtcItem">
@@ -56,6 +57,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="reuse_delay" val="3600000" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33504" name="Hero's Blessed Buff Scroll 5-unit Pack" type="EtcItem">
@@ -70,6 +72,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33505" name="Scroll: Noblesse Blessing" type="EtcItem">
@@ -85,6 +88,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33506" name="Scroll: Noblesse Blessing 5-unit Pack" type="EtcItem">
@@ -99,6 +103,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33507" name="Scroll: Mount Kukuru" type="EtcItem">
@@ -114,6 +119,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33508" name="Scroll: Mount Kukuru 30-unit Pack" type="EtcItem">
@@ -128,6 +134,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33509" name="Returning Hero's Shirt" type="Armor">
@@ -187,6 +194,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33513" name="Returning Hero's Vitality Replenishing Juice 5-unit Pack" type="EtcItem">
@@ -200,6 +208,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33514" name="Hero's Gift Box" type="EtcItem">
@@ -273,6 +282,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22502" level="1" /> <!-- Blessed Scroll of Resurrection -->
@@ -291,6 +301,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33520" name="Scroll: Enchant Armor (R-grade)" name_additional="Campaign" type="EtcItem">
@@ -306,6 +317,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33521" name="Wig Box" name_additional="Campaign" type="EtcItem">
@@ -313,6 +325,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 	</item>
 	<item id="33522" name="Attribute Pack" name_additional="Campaign" type="EtcItem">
@@ -320,6 +333,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 	</item>
 	<item id="33523" name="Talisman - M. Critical (Passive)" name_additional="Campaign" type="Armor">
@@ -766,6 +780,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 	</item>
 	<item id="33545" name="Bound Tallum Blade*Damascus" name_additional="Event" type="Weapon">
@@ -805,6 +820,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 	</item>
 	<item id="33547" name="Bound Dynasty Sword" name_additional="Focus (Event)" type="Weapon">

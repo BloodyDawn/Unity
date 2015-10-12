@@ -49,6 +49,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="21703" name="Olf's Thanksgiving XL Pack" type="EtcItem">
@@ -60,6 +61,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="21704" name="Honey Rice Cakes" type="EtcItem">
@@ -76,6 +78,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21705" name="Honey Rice Cakes Pack" type="EtcItem">
@@ -91,6 +94,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21706" name="Power Shirt" name_additional="Event" type="Armor">
@@ -143,6 +147,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21709" name="Agathion - Rudolph" name_additional="Event" type="Armor">
@@ -177,6 +182,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="shared_reuse_group" val="106" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21711" name="Santa's Blessing" name_additional="Event" type="EtcItem">
@@ -190,6 +196,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="reuse_delay" val="3000" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21712" name="Blessed Zaken's Earring" type="Armor">
@@ -510,6 +517,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="reuse_delay" val="3000" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21727" name="Agathion - Zinyanzi (3-day)" name_additional="3-day" type="Armor">
@@ -593,6 +601,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="21731" name="Maingauche" name_additional="Event" type="Weapon">
@@ -1046,7 +1055,7 @@
 	<item id="21747" name="Novice Explorer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
 		<set name="icon" val="BranchSys2.icon.etc_ancient_treasure_sack_i00" />
-		<set name="default_action" val="CAPSULE" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="immediate_effect" val="false" />
 		<set name="material" val="COTTON" />
 		<set name="is_stackable" val="true" />
@@ -1057,7 +1066,7 @@
 	<item id="21748" name="Experienced Adventurer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
 		<set name="icon" val="BranchSys2.icon.etc_ancient_treasure_sack_i00" />
-		<set name="default_action" val="CAPSULE" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="immediate_effect" val="false" />
 		<set name="material" val="COTTON" />
 		<set name="is_stackable" val="true" />
@@ -1068,7 +1077,7 @@
 	<item id="21749" name="Great Adventurer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
 		<set name="icon" val="BranchSys2.icon.etc_ancient_treasure_sack_i00" />
-		<set name="default_action" val="CAPSULE" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="immediate_effect" val="false" />
 		<set name="material" val="COTTON" />
 		<set name="is_stackable" val="true" />
@@ -1097,6 +1106,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21752" name="Rune Jewelry Box - Talisman" type="EtcItem">
@@ -1105,6 +1115,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21753" name="Pablo's Box" type="EtcItem">
@@ -1113,6 +1124,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21754" name="Pencil Corps' Magic Pencil" type="Weapon">
@@ -1509,6 +1521,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="time" val="129600" />
 	</item>
 	<item id="21782" name="Draconic Leather Armor of Fortune" name_additional="90-day" type="Armor">
@@ -1612,6 +1625,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="time" val="129600" />
 	</item>
 	<item id="21787" name="Major Arcana Robe of Fortune" name_additional="90-day" type="Armor">
@@ -1743,6 +1757,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="time" val="129600" />
 	</item>
 	<item id="21793" name="Dynasty Breastplate of Fortune" name_additional="90-day" type="Armor">
@@ -1902,6 +1917,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="time" val="129600" />
 	</item>
 </list>

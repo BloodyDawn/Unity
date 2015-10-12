@@ -759,6 +759,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="8059" name="Research Report" type="EtcItem">
@@ -781,7 +782,7 @@
 	</item>
 	<item id="8060" name="Key of Enigma" type="EtcItem">
 		<set name="icon" val="icon.etc_key_i00" />
-		<set name="default_action" val="CALL_SKILL" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
