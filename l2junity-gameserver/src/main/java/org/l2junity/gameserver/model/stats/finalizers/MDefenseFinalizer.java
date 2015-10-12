@@ -49,6 +49,7 @@ public class MDefenseFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		baseValue += calcEnchantedItemBonus(creature, stat);
 		
 		final Transform transform = creature.getTransformation();
 		if (creature.isPlayer())

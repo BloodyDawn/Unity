@@ -174,6 +174,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	private float _compoundChance;
 	
 	private boolean _isAppearanceable;
+	private boolean _isBlessed;
 	
 	/**
 	 * Constructor of the L2Item that fill class variables.<BR>
@@ -217,6 +218,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		_is_coc_restricted = set.getBoolean("is_coc_restricted", false);
 		_for_npc = set.getBoolean("for_npc", false);
 		_isAppearanceable = set.getBoolean("isAppearanceable", false);
+		_isBlessed = set.getBoolean("blessed", false);
 		
 		_immediate_effect = set.getBoolean("immediate_effect", false);
 		_ex_immediate_effect = set.getBoolean("ex_immediate_effect", false);
@@ -842,6 +844,14 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	public boolean isAppearanceable()
 	{
 		return _isAppearanceable;
+	}
+	
+	/**
+	 * @return {@code true} if the item is blessed, {@code false} otherwise.
+	 */
+	public final boolean isBlessed()
+	{
+		return _isBlessed;
 	}
 	
 	/**

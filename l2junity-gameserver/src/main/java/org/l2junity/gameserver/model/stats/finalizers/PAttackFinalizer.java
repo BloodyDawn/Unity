@@ -37,6 +37,8 @@ public class PAttackFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = calcWeaponBaseValue(creature, stat);
+		baseValue += calcEnchantedItemBonus(creature, stat);
+		
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
 			baseValue *= Config.L2JMOD_CHAMPION_ATK;
