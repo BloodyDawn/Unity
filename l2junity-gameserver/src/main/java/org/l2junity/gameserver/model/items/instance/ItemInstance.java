@@ -2197,9 +2197,4 @@ public final class ItemInstance extends WorldObject
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_RESTORED_TO_ITS_PREVIOUS_APPEARANCE_AS_ITS_TEMPORARY_MODIFICATION_HAS_EXPIRED).addItemName(this));
 		}
 	}
-	
-	public boolean isAppearanceable()
-	{
-		return isWeapon() || isArmor();
-	}
 }

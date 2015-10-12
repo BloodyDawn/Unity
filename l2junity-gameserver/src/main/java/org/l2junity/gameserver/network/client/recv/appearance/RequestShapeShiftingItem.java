@@ -93,7 +93,7 @@ public class RequestShapeShiftingItem implements IClientIncomingPacket
 			return;
 		}
 		
-		if (!targetItem.isAppearanceable())
+		if (!targetItem.getItem().isAppearanceable())
 		{
 			client.sendPacket(ExShapeShiftingResult.FAILED);
 			player.removeRequest(ShapeShiftingItemRequest.class);
@@ -269,7 +269,7 @@ public class RequestShapeShiftingItem implements IClientIncomingPacket
 				return;
 			}
 			
-			if (!extracItem.isAppearanceable())
+			if (!targetItem.getItem().isAppearanceable())
 			{
 				client.sendPacket(ExShapeShiftingResult.FAILED);
 				player.removeRequest(ShapeShiftingItemRequest.class);

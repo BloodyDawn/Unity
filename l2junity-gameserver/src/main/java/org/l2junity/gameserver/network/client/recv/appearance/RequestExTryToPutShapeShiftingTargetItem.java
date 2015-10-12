@@ -79,7 +79,7 @@ public class RequestExTryToPutShapeShiftingTargetItem implements IClientIncoming
 			return;
 		}
 		
-		if (!targetItem.isAppearanceable())
+		if (!targetItem.getItem().isAppearanceable())
 		{
 			client.sendPacket(ExPutShapeShiftingTargetItemResult.FAILED);
 			player.removeRequest(ShapeShiftingItemRequest.class);
