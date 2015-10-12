@@ -22,6 +22,8 @@ import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -64,6 +66,13 @@ public class PEvasionRateFinalizer implements IStatsFunction
 			if (level > 97)
 			{
 				baseValue += 1;
+			}
+			
+			// Enchanted helm bonus
+			final ItemInstance helmet = creature.getInventory().getPaperdollItemByL2ItemId(L2Item.SLOT_HEAD);
+			if ((helmet != null) && helmet.isEnchanted())
+			{
+				baseValue += (0.2 * Math.max(helmet.getEnchantLevel() - 3, 0)) + (0.2 * Math.max(helmet.getEnchantLevel() - 6, 0));
 			}
 		}
 		else

@@ -38,7 +38,6 @@ public class ShotsBonusFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = 1;
-		
 		final PlayerInstance player = creature.getActingPlayer();
 		if (player != null)
 		{
@@ -48,7 +47,6 @@ public class ShotsBonusFinalizer implements IStatsFunction
 				baseValue += (weapon.getEnchantLevel() * 0.7) / 100;
 			}
 		}
-		
 		return CommonUtil.constrain(baseValue, 1.0, 1.21);
 	}
 }
