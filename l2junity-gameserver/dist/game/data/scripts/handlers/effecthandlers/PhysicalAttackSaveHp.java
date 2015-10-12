@@ -180,7 +180,8 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		}
 		
 		// Add soulshot boost.
-		int ssBoost = ss ? 2 : 1;
+		final double shotsBonus = effector.getStat().getValue(Stats.SHOTS_BONUS);
+		double ssBoost = ss ? 2 * shotsBonus : 1;
 		damage = (damage * ssBoost) + _power;
 		damage = (70 * damage) / (defence); // Calculate defence modifier.
 		damage *= Formulas.calcAttackTraitBonus(effector, effected); // Calculate Weapon resists

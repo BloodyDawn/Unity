@@ -132,7 +132,8 @@ public final class EnergyAttack extends AbstractEffect
 			damageMultiplier *= (1 - (effected.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 			
 			boolean ss = skill.useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
-			double ssBoost = ss ? 2 : 1.0;
+			final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
+			double ssBoost = ss ? 2 * shotsBonus : 1.0;
 			
 			double weaponTypeBoost;
 			Weapon weapon = attacker.getActiveWeaponItem();

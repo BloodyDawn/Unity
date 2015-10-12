@@ -77,20 +77,21 @@ public final class HpCpHeal extends AbstractEffect
 		
 		double amount = _power;
 		double staticShotBonus = 0;
-		int mAtkMul = 1;
+		double mAtkMul = 1;
 		boolean sps = skill.isMagic() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.isMagic() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		final double shotsBonus = effector.getStat().getValue(Stats.SHOTS_BONUS);
 		
 		if (((sps || bss) && (effector.isPlayer() && effector.getActingPlayer().isMageClass())) || effector.isSummon())
 		{
 			staticShotBonus = skill.getMpConsume(); // static bonus for spiritshots
-			mAtkMul = bss ? 4 : 2;
+			mAtkMul = bss ? 4 * shotsBonus : 2 * shotsBonus;
 			staticShotBonus *= bss ? 2.4 : 1.0;
 		}
 		else if ((sps || bss) && effector.isNpc())
 		{
 			staticShotBonus = 2.4 * skill.getMpConsume(); // always blessed spiritshots
-			mAtkMul = 4;
+			mAtkMul = 4 * shotsBonus;
 		}
 		else
 		{

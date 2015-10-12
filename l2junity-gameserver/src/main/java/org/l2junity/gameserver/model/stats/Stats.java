@@ -44,6 +44,7 @@ import org.l2junity.gameserver.model.stats.finalizers.PDefenseFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PEvasionRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PRangeFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RandomDamageFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.ShotsBonusFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.VampiricChanceFinalizer;
 import org.slf4j.Logger;
@@ -288,7 +289,8 @@ public enum Stats
 	
 	// Which base stat ordinal should alter skill critical formula.
 	STAT_SKILLCRITICAL("statSkillCritical"),
-	STAT_SPEED("statSpeed");
+	STAT_SPEED("statSpeed"),
+	SHOTS_BONUS("shotBonus", new ShotsBonusFinalizer());
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(Stats.class);
 	public static final int NUM_STATS = values().length;

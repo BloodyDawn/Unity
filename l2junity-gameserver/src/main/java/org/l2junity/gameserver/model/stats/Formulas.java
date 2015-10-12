@@ -373,7 +373,8 @@ public final class Formulas
 		}
 		
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		final double ssboost = ss ? 2 : 1;
+		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
+		final double ssboost = ss ? 2 * shotsBonus : 1;
 		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
 		double damage = 0;
 		double pvpBonus = 1;
@@ -473,7 +474,8 @@ public final class Formulas
 		boolean isPvP = attacker.isPlayable() && target.isPlayer();
 		double damage = 0;
 		double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed)
-		double ssboost = ss ? 2 : 1;
+		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
+		double ssboost = ss ? 2 * shotsBonus : 1;
 		double pvpBonus = 1;
 		
 		if (isPvP)
@@ -589,7 +591,8 @@ public final class Formulas
 		}
 		
 		// Add soulshot boost.
-		int ssBoost = ss ? 2 : 1;
+		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
+		double ssBoost = ss ? 2 * shotsBonus : 1;
 		damage = (skill != null) ? ((damage * ssBoost) + power) : (damage * ssBoost);
 		
 		if (crit)
@@ -752,7 +755,8 @@ public final class Formulas
 		}
 		
 		// Bonus Spirit shot
-		mAtk *= bss ? 4 : sps ? 2 : 1;
+		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
+		mAtk *= bss ? 4 * shotsBonus : sps ? 2 * shotsBonus : 1;
 		// MDAM Formula.
 		double damage = ((91 * Math.sqrt(mAtk)) / mDef) * power;
 		
@@ -1403,7 +1407,8 @@ public final class Formulas
 		}
 		
 		// Bonus Spiritshot
-		mAtk *= bss ? 4 : sps ? 2 : 1;
+		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
+		mAtk *= bss ? 4 * shotsBonus : sps ? 2 * shotsBonus : 1;
 		
 		double damage = (Math.sqrt(mAtk) * power * (mp / 97)) / mDef;
 		damage *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
@@ -2124,11 +2129,12 @@ public final class Formulas
 		
 		final Weapon weapon = attacker.getActiveWeaponItem();
 		final boolean isBow = (weapon != null) && weapon.isBowOrCrossBow();
+		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
 		
 		double cAtk = 1;
 		double cAtkAdd = 0;
 		double critMod = 0;
-		double ssBonus = ss ? 2 : 1; // TODO: There are items that increase ss damage, including enchant.
+		double ssBonus = ss ? 2 * shotsBonus : 1;
 		double attack = attacker.getPAtk(target);
 		double random_damage = attacker.getRandomDamageMultiplier();
 		attack *= random_damage;

@@ -758,8 +758,6 @@ public class PcStat extends PlayableStat
 			{
 				item.getAugmentation().applyStats(player);
 			}
-			
-			// TODO: Apply enchanted items stats
 		}
 		
 		// Upon master stats recalculation trigger pet/servitor recalculation too
