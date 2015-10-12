@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -63,7 +64,25 @@ public class PAccuracyFinalizer implements IStatsFunction
 		{
 			baseValue += 1;
 		}
+		
+		if (creature.isPlayer())
+		{
+			// Enchanted gloves bonus
+			baseValue += calcEnchantBodyPart(creature, L2Item.SLOT_GLOVES);
+		}
+		
 		return Stats.defaultValue(creature, stat, baseValue);
+	}
+	
+	@Override
+	public double calcEnchantBodyPartBonus(int enchantLevel, boolean isBlessed)
+	{
+		if (isBlessed)
+		{
+			return (0.3 * Math.max(enchantLevel - 3, 0)) + (0.3 * Math.max(enchantLevel - 6, 0));
+		}
+		
+		return (0.2 * Math.max(enchantLevel - 3, 0)) + (0.2 * Math.max(enchantLevel - 6, 0));
 	}
 	
 }

@@ -62,8 +62,13 @@ public class SpeedFinalizer implements IStatsFunction
 	}
 	
 	@Override
-	public double calcEnchantBodyPartBonus(int enchantLevel)
+	public double calcEnchantBodyPartBonus(int enchantLevel, boolean isBlessed)
 	{
+		if (isBlessed)
+		{
+			return (1 * Math.max(enchantLevel - 3, 0)) + (1 * Math.max(enchantLevel - 6, 0));
+		}
+		
 		return (0.6 * Math.max(enchantLevel - 3, 0)) + (0.6 * Math.max(enchantLevel - 6, 0));
 	}
 	
