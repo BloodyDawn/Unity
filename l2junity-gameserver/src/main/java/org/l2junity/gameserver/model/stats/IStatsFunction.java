@@ -74,7 +74,7 @@ public interface IStatsFunction
 		}
 		
 		double value = 0;
-		for (ItemInstance item : creature.getInventory().getItems(ItemInstance::isEquipped, ItemInstance::isEnchanted))
+		for (ItemInstance item : creature.getInventory().getPaperdollItems(ItemInstance::isEquipped, ItemInstance::isEnchanted))
 		{
 			if (item.getItem().getStats(stat, 0) <= 0)
 			{
