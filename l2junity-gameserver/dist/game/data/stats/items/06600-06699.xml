@@ -20,7 +20,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3602" level="9" />
+			<skill id="3602" level="9" /> <!-- Special Ability: Guidance -->
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -54,7 +54,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3601" level="9" />
+			<skill id="3601" level="9" /> <!-- Special Ability: Haste -->
 		</skills>
 		<stats>
 			<stat type="pAtk">281</stat>
@@ -88,7 +88,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3565" level="1" />
+			<skill id="3565" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -122,7 +122,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -156,8 +156,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3571" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3571" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -192,7 +192,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3564" level="1" />
+			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -226,7 +226,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -260,7 +260,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<skills>
-			<skill id="3566" level="1" />
+			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<stats>
 			<stat type="pAtk">342</stat>
@@ -294,7 +294,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<skills>
-			<skill id="3047" level="2" />
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 		</skills>
 		<stats>
 			<stat type="pAtk">225</stat>
@@ -329,7 +329,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3576" level="1" />
+			<skill id="3576" level="1" /> <!-- Special Ability: MP Regeneration -->
 		</skills>
 		<stats>
 			<stat type="pAtk">225</stat>
@@ -364,7 +364,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3014" level="2" />
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<stats>
 			<stat type="pAtk">225</stat>
@@ -405,9 +405,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3578" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3579" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3578" level="1" /> <!-- Special Ability: Infinity Blade -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3579" level="1" type="ON_CRITICAL_SKILL" /> <!-- Decrease P. Def. -->
 		</skills>
 		<stats>
 			<stat type="pAtk">524</stat>
@@ -446,8 +446,8 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="8524" level="1" />
-			<skill id="3582" level="1" />
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3582" level="1" /> <!-- Special Ability: Infinity Cleaver -->
 		</skills>
 		<stats>
 			<stat type="pAtk">638</stat>
@@ -486,9 +486,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3580" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3581" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3580" level="1" /> <!-- Special Ability: Infinity Axe -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3581" level="1" type="ON_CRITICAL_SKILL" /> <!-- Discord -->
 		</skills>
 		<stats>
 			<stat type="pAtk">524</stat>
@@ -528,9 +528,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3598" level="1" type_chance="3" type="ON_MAGIC_SKILL" />
-			<skill id="8524" level="1" />
-			<skill id="3597" level="1" />
+			<skill id="3598" level="1" type_chance="3" type="ON_MAGIC_SKILL" /> <!-- Full Recovery -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3597" level="1" /> <!-- Special Ability: Infinity Rod -->
 		</skills>
 		<stats>
 			<stat type="pAtk">420</stat>
@@ -570,9 +570,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3583" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3584" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3583" level="1" /> <!-- Special Ability: Infinity Crusher -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3584" level="1" type="ON_CRITICAL_SKILL" /> <!-- Stun -->
 		</skills>
 		<stats>
 			<stat type="pAtk">638</stat>
@@ -612,9 +612,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3596" level="1" type_chance="3" type="ON_MAGIC_SKILL" />
-			<skill id="8525" level="1" />
-			<skill id="3595" level="1" />
+			<skill id="3596" level="1" type_chance="3" type="ON_MAGIC_SKILL" /> <!-- Full Recovery -->
+			<skill id="8525" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3595" level="1" /> <!-- Special Ability: Infinity Scepter -->
 		</skills>
 		<stats>
 			<stat type="pAtk">511</stat>
@@ -654,9 +654,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3589" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3590" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3589" level="1" /> <!-- Special Ability: Infinity Stinger -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3590" level="1" type="ON_CRITICAL_SKILL" /> <!-- Restrain Magic Skills -->
 		</skills>
 		<stats>
 			<stat type="pAtk">458</stat>
@@ -696,9 +696,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3587" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3588" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3587" level="1" /> <!-- Special Ability: Infinity Fang -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3588" level="1" type="ON_CRITICAL_SKILL" /> <!-- Stun -->
 		</skills>
 		<stats>
 			<stat type="pAtk">638</stat>
@@ -740,9 +740,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3593" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3594" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3593" level="1" /> <!-- Special Ability: Infinity Bow -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3594" level="1" type="ON_CRITICAL_SKILL" /> <!-- Decrease Speed -->
 		</skills>
 		<stats>
 			<stat type="pAtk">952</stat>
@@ -782,9 +782,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3585" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3586" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3585" level="1" /> <!-- Special Ability: Infinity Wing -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3586" level="1" type="ON_CRITICAL_SKILL" /> <!-- Restrain Physical Skills -->
 		</skills>
 		<stats>
 			<stat type="pAtk">638</stat>
@@ -823,9 +823,9 @@
 			<player isHero="true" />
 		</cond>
 		<skills>
-			<skill id="3591" level="1" />
-			<skill id="8524" level="1" />
-			<skill id="3592" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3591" level="1" /> <!-- Special Ability: Infinity Spear -->
+			<skill id="8524" level="1" /> <!-- Hero's Holy Attack -->
+			<skill id="3592" level="1" type="ON_CRITICAL_SKILL" /> <!-- Dispel -->
 		</skills>
 		<stats>
 			<stat type="pAtk">524</stat>
@@ -1100,7 +1100,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2188" level="1" />
+			<skill id="2188" level="1" /> <!-- Golden Spice -->
 		</skills>
 	</item>
 	<item id="6644" name="Old Crystal Spice" type="EtcItem">
@@ -1115,7 +1115,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2189" level="1" />
+			<skill id="2189" level="1" /> <!-- Crystal Spice -->
 		</skills>
 	</item>
 	<item id="6645" name="Beast Soulshot" type="EtcItem">
@@ -1133,7 +1133,7 @@
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2033" level="1" />
+			<skill id="2033" level="1" /> <!-- Item - Beast Soul Shot -->
 		</skills>
 	</item>
 	<item id="6646" name="Beast Spiritshot" type="EtcItem">
@@ -1151,7 +1151,7 @@
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2008" level="1" />
+			<skill id="2008" level="1" /> <!-- Item - Beast Spirit Shot -->
 		</skills>
 	</item>
 	<item id="6647" name="Blessed Beast Spiritshot" type="EtcItem">
@@ -1169,7 +1169,7 @@
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2009" level="1" />
+			<skill id="2009" level="1" /> <!-- Item - Beast Blessed Spirit Shot -->
 		</skills>
 	</item>
 	<item id="6648" name="Baby Buffalo Panpipe" type="EtcItem">
@@ -1188,7 +1188,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 	</item>
 	<item id="6649" name="Baby Cougar Chime" type="EtcItem">
@@ -1207,7 +1207,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 	</item>
 	<item id="6650" name="Baby Kookaburra Ocarina" type="EtcItem">
@@ -1226,7 +1226,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 	</item>
 	<item id="6651" name="Noblesse Gate Pass" type="EtcItem">
@@ -1250,7 +1250,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2231" level="1" />
+			<skill id="2231" level="1" /> <!-- Amulet: Protection of Valakas -->
 		</skills>
 	</item>
 	<item id="6653" name="Amulet: Flames of Valakas" type="EtcItem">
@@ -1275,7 +1275,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2233" level="1" />
+			<skill id="2233" level="1" /> <!-- Amulet: Flames of Valakas -->
 		</skills>
 	</item>
 	<item id="6655" name="Amulet: Slay Valakas" type="EtcItem">
@@ -1290,7 +1290,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2232" level="1" />
+			<skill id="2232" level="1" /> <!-- Amulet: Slay Valakas -->
 		</skills>
 	</item>
 	<item id="6656" name="Antharas' Earring" type="Armor">
@@ -1307,7 +1307,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
 		<skills>
-			<skill id="3558" level="1" />
+			<skill id="3558" level="1" /> <!-- Antharas' Earring -->
 		</skills>
 		<stats>
 			<stat type="mDef">94</stat>
@@ -1329,7 +1329,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="NECKLACE" />
 		<skills>
-			<skill id="3557" level="1" />
+			<skill id="3557" level="1" /> <!-- Valakas' Necklace -->
 		</skills>
 		<stats>
 			<stat type="mDef">125</stat>
@@ -1351,7 +1351,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RING" />
 		<skills>
-			<skill id="3561" level="1" />
+			<skill id="3561" level="1" /> <!-- Baium's Ring -->
 		</skills>
 		<stats>
 			<stat type="mDef">48</stat>
@@ -1373,7 +1373,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
 		<skills>
-			<skill id="3559" level="1" />
+			<skill id="3559" level="1" /> <!-- Zaken's Earring -->
 		</skills>
 		<stats>
 			<stat type="mDef">71</stat>
@@ -1395,7 +1395,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RING" />
 		<skills>
-			<skill id="3562" level="1" />
+			<skill id="3562" level="1" /> <!-- Queen Ant's Ring -->
 		</skills>
 		<stats>
 			<stat type="mDef">48</stat>
@@ -1417,7 +1417,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
 		<skills>
-			<skill id="3560" level="1" />
+			<skill id="3560" level="1" /> <!-- Orfen's Earring -->
 		</skills>
 		<stats>
 			<stat type="mDef">71</stat>
@@ -1439,7 +1439,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RING" />
 		<skills>
-			<skill id="3563" level="1" />
+			<skill id="3563" level="1" /> <!-- Ring of Core -->
 		</skills>
 		<stats>
 			<stat type="mDef">48</stat>
@@ -1477,7 +1477,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="1" />
+			<skill id="2229" level="1" /> <!-- Deluxe Chest Key - Grade 1 -->
 		</skills>
 	</item>
 	<item id="6666" name="Deluxe Chest Key - Grade 2" type="EtcItem">
@@ -1490,7 +1490,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="2" />
+			<skill id="2229" level="2" /> <!-- Deluxe Chest Key - Grade 2 -->
 		</skills>
 	</item>
 	<item id="6667" name="Deluxe Chest Key - Grade 3" type="EtcItem">
@@ -1503,7 +1503,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="3" />
+			<skill id="2229" level="3" /> <!-- Deluxe Chest Key - Grade 3 -->
 		</skills>
 	</item>
 	<item id="6668" name="Deluxe Chest Key - Grade 4" type="EtcItem">
@@ -1516,7 +1516,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="4" />
+			<skill id="2229" level="4" /> <!-- Deluxe Chest Key - Grade 4 -->
 		</skills>
 	</item>
 	<item id="6669" name="Deluxe Chest Key - Grade 5" type="EtcItem">
@@ -1529,7 +1529,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="5" />
+			<skill id="2229" level="5" /> <!-- Deluxe Chest Key - Grade 5 -->
 		</skills>
 	</item>
 	<item id="6670" name="Deluxe Chest Key - Grade 6" type="EtcItem">
@@ -1542,7 +1542,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="6" />
+			<skill id="2229" level="6" /> <!-- Deluxe Chest Key - Grade 6 -->
 		</skills>
 	</item>
 	<item id="6671" name="Deluxe Chest Key - Grade 7" type="EtcItem">
@@ -1555,7 +1555,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="7" />
+			<skill id="2229" level="7" /> <!-- Deluxe Chest Key - Grade 7 -->
 		</skills>
 	</item>
 	<item id="6672" name="Deluxe Chest Key - Grade 8" type="EtcItem">
@@ -1568,7 +1568,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2229" level="8" />
+			<skill id="2229" level="8" /> <!-- Deluxe Chest Key - Grade 8 -->
 		</skills>
 	</item>
 	<item id="6673" name="Festival Adena" type="EtcItem">

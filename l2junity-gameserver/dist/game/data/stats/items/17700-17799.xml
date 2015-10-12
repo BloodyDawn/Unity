@@ -166,8 +166,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="spiritshots" val="1" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3411" level="1" type="ON_ENCHANT" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3411" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<stats>
 			<stat type="pAtk">532</stat>
@@ -199,9 +199,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="spiritshots" val="1" />
 		<skills>
-			<skill id="3552" level="3" />
-			<skill id="3656" level="1" />
-			<skill id="3411" level="1" type="ON_ENCHANT" />
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3656" level="1" /> <!-- PvP Weapon - Decrease Range -->
+			<skill id="3411" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<stats>
 			<stat type="pAtk">532</stat>
@@ -303,7 +303,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="12008" level="1" />
+			<skill id="12008" level="1" /> <!-- Orbis' Reflect Shield -->
 		</skills>
 	</item>
 	<item id="17724" name="Orbis Ancient Hero's Shield" type="EtcItem">
@@ -345,7 +345,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9191" level="1" />
+			<skill id="9191" level="1" /> <!-- Scroll of Escape: Cruma Tower -->
 		</skills>
 	</item>
 	<item id="17727" name="Scroll of Escape: Tower of Insolence" type="EtcItem">
@@ -364,7 +364,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="9192" level="1" />
+			<skill id="9192" level="1" /> <!-- Scroll of Escape: Tower of Insolence -->
 		</skills>
 	</item>
 	<item id="17728" name="Mertes Core" type="EtcItem">
@@ -741,7 +741,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="SOULSHOT" />
 		<skills>
-			<skill id="9193" level="1" />
+			<skill id="9193" level="1" /> <!-- Soulshot (R-grade) -->
 		</skills>
 	</item>
 	<item id="17755" name="Human Male Wig - A" type="Armor">

@@ -18,7 +18,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2631" level="1" />
+			<skill id="2631" level="1" /> <!-- Transformation Scroll: Frog -->
 		</skills>
 	</item>
 	<item id="13801" name="Transformation Scroll: Young Child" type="EtcItem">
@@ -39,7 +39,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2632" level="1" />
+			<skill id="2632" level="1" /> <!-- Transformation Scroll: Young Child -->
 		</skills>
 	</item>
 	<item id="13802" name="Native's Hood" type="Armor">
@@ -62,8 +62,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8277" level="1" />
-			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<stats>
 			<stat type="pDef">33</stat>
@@ -90,8 +90,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8277" level="1" />
-			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<stats>
 			<stat type="pDef">53</stat>
@@ -118,8 +118,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8277" level="1" />
-			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<stats>
 			<stat type="pDef">29</stat>
@@ -145,8 +145,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8278" level="1" />
-			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<stats>
 			<stat type="pDef">33</stat>
@@ -173,8 +173,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8278" level="1" />
-			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<stats>
 			<stat type="pDef">53</stat>
@@ -201,8 +201,8 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8278" level="1" />
-			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<stats>
 			<stat type="pDef">29</stat>
@@ -226,7 +226,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2633" level="1" />
+			<skill id="2633" level="1" /> <!-- Elmoreden's Holy Water -->
 		</skills>
 	</item>
 	<item id="13809" name="Court Wizard's Magic Staff" type="EtcItem">
@@ -247,7 +247,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2634" level="1" />
+			<skill id="2634" level="1" /> <!-- Court Wizard's Blessing -->
 		</skills>
 	</item>
 	<item id="13810" name="High Priest Orven's Letter" type="EtcItem">
@@ -822,7 +822,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2630" level="1" />
+			<skill id="2630" level="1" /> <!-- Presentation - Collect Items -->
 		</skills>
 	</item>
 	<item id="13845" name="Attribute Master Yin's Sword" name_additional="10-minute" type="Weapon">
@@ -985,7 +985,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2615" level="1" />
+			<skill id="2615" level="1" /> <!-- Shards of Broken Darkness -->
 		</skills>
 	</item>
 	<item id="13854" name="Shards of Broken Light" type="EtcItem">
@@ -1022,7 +1022,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2839" level="1" />
+			<skill id="2839" level="1" /> <!-- Sacred Light Fragment -->
 		</skills>
 	</item>
 	<item id="13856" name="Rider's Badge" type="EtcItem">
@@ -1413,7 +1413,7 @@
 		<set name="is_questitem" val="true" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_non_transform}}}" />
 		<skills>
-			<skill id="5822" level="1" />
+			<skill id="5822" level="1" /> <!-- Bait for Drakes -->
 		</skills>
 	</item>
 	<item id="13880" name="Variant Drake Wing Horns" type="EtcItem">
@@ -1433,7 +1433,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="5822" level="1" />
+			<skill id="5822" level="1" /> <!-- Bait for Drakes -->
 		</skills>
 	</item>
 	<item id="13881" name="Attribute Master Yang's Sword" name_additional="10-minute" type="Weapon">
@@ -1496,8 +1496,8 @@
 			</and>
 		</cond>
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="8295" level="1" type="ON_ENCHANT" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8295" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<stats>
 			<stat type="pAtk">304</stat>
@@ -1537,8 +1537,8 @@
 			</and>
 		</cond>
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="8296" level="1" type="ON_ENCHANT" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8296" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<stats>
 			<stat type="pAtk">332</stat>
@@ -1578,8 +1578,8 @@
 			</and>
 		</cond>
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="8298" level="1" type="ON_ENCHANT" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8298" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<stats>
 			<stat type="pAtk">360</stat>
