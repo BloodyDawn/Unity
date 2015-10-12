@@ -50,7 +50,7 @@ public interface IStatsFunction
 			final ItemInstance item = creature.getInventory().getPaperdollItemByL2ItemId(slot);
 			if ((item != null) && (item.getEnchantLevel() >= 4) && (item.getItem().getCrystalTypePlus() == CrystalType.R))
 			{
-				value += calcEnchantBodyPartBonus(item.getEnchantLevel());
+				value += calcEnchantBodyPartBonus(item.getEnchantLevel()) * (item.getItem().isBlessed() ? 1.5 : 1);
 			}
 		}
 		return value;
