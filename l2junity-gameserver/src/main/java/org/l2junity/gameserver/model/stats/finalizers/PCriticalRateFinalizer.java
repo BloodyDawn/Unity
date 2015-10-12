@@ -24,6 +24,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -43,7 +44,7 @@ public class PCriticalRateFinalizer implements IStatsFunction
 		{
 			// Enchanted legs bonus
 			final ItemInstance legs = creature.getInventory().getPaperdollItemByL2ItemId(L2Item.SLOT_LEGS);
-			if ((legs != null) && legs.isEnchanted())
+			if ((legs != null) && legs.isEnchanted() && (legs.getItem().getCrystalTypePlus() == CrystalType.R))
 			{
 				baseValue += (0.34 * Math.max(legs.getEnchantLevel() - 3, 0)) + (0.34 * Math.max(legs.getEnchantLevel() - 6, 0));
 			}

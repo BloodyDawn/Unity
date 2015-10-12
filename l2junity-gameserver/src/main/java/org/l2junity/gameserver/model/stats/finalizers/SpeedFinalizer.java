@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -49,7 +50,7 @@ public class SpeedFinalizer implements IStatsFunction
 		{
 			// Enchanted feet bonus
 			final ItemInstance feet = creature.getInventory().getPaperdollItemByL2ItemId(L2Item.SLOT_FEET);
-			if ((feet != null) && feet.isEnchanted())
+			if ((feet != null) && feet.isEnchanted() && (feet.getItem().getCrystalTypePlus() == CrystalType.R))
 			{
 				baseValue += (0.6 * Math.max(feet.getEnchantLevel() - 3, 0)) + (0.6 * Math.max(feet.getEnchantLevel() - 6, 0));
 			}

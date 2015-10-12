@@ -25,6 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -48,7 +49,7 @@ public class PAttackFinalizer implements IStatsFunction
 			for (int slot : Arrays.asList(L2Item.SLOT_CHEST, L2Item.SLOT_FULL_ARMOR))
 			{
 				final ItemInstance chest = creature.getInventory().getPaperdollItemByL2ItemId(slot);
-				if ((chest != null) && chest.isEnchanted())
+				if ((chest != null) && chest.isEnchanted() && (chest.getItem().getCrystalTypePlus() == CrystalType.R))
 				{
 					baseValue += (2 * Math.max(chest.getEnchantLevel() - 3, 0)) + (2 * Math.max(chest.getEnchantLevel() - 6, 0));
 				}
