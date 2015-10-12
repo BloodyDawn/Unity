@@ -298,7 +298,7 @@ public final class L2TrapInstance extends Npc
 	}
 	
 	@Override
-	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
 		if (miss || (_owner == null))
 		{

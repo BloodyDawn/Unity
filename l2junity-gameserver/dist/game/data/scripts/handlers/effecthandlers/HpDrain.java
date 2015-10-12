@@ -35,7 +35,7 @@ public final class HpDrain extends AbstractEffect
 {
 	private final double _power;
 	private final double _percentage;
-
+	
 	public HpDrain(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -55,7 +55,7 @@ public final class HpDrain extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -100,7 +100,7 @@ public final class HpDrain extends AbstractEffect
 				effected.breakAttack();
 				effected.breakCast();
 			}
-			effector.sendDamageMessage(effected, damage, mcrit, false, false);
+			effector.sendDamageMessage(effected, skill, damage, mcrit, false);
 			effected.reduceCurrentHp(damage, effector, skill);
 			effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
 		}

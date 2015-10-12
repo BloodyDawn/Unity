@@ -111,7 +111,7 @@ public final class MagicalAttack extends AbstractEffect
 			{
 				effected.reduceCurrentHp(damage, effector, skill);
 				effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-				effector.sendDamageMessage(effected, damage, mcrit, false, false);
+				effector.sendDamageMessage(effected, skill, damage, mcrit, false);
 			}
 		}
 	}

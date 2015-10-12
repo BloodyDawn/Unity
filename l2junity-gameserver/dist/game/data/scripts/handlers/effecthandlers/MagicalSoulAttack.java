@@ -36,11 +36,11 @@ import org.l2junity.gameserver.model.stats.Stats;
 public final class MagicalSoulAttack extends AbstractEffect
 {
 	private final double _power;
-
+	
 	public MagicalSoulAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 	}
 	
@@ -55,7 +55,7 @@ public final class MagicalSoulAttack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -101,7 +101,7 @@ public final class MagicalSoulAttack extends AbstractEffect
 			{
 				effected.reduceCurrentHp(damage, effector, skill);
 				effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-				effector.sendDamageMessage(effected, damage, mcrit, false, false);
+				effector.sendDamageMessage(effected, skill, damage, mcrit, false);
 			}
 		}
 	}

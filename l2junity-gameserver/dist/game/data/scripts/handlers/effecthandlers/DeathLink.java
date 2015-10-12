@@ -36,11 +36,11 @@ import org.l2junity.gameserver.model.stats.Stats;
 public final class DeathLink extends AbstractEffect
 {
 	private final double _power;
-
+	
 	public DeathLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 	}
 	
@@ -55,7 +55,7 @@ public final class DeathLink extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -63,19 +63,19 @@ public final class DeathLink extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-
+		
 		if (effected.isPlayer() && effected.getActingPlayer().isFakeDeath())
 		{
 			effected.stopFakeDeath(true);
 		}
-
+		
 		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected);
 		final byte shld = Formulas.calcShldUse(effector, effected, skill);
 		int damage = (int) Formulas.calcMagicDam(effector, effected, skill, _power * (-((effector.getCurrentHp() * 2) / effector.getMaxHp()) + 2), shld, sps, bss, mcrit);
-
+		
 		if (damage > 0)
 		{
 			// Manage attack or cast break of the target (calculating rate, sending message...)
@@ -84,7 +84,7 @@ public final class DeathLink extends AbstractEffect
 				effected.breakAttack();
 				effected.breakCast();
 			}
-
+			
 			// Shield Deflect Magic: Reflect all damage on caster.
 			if (effected.getStat().getValue(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
 			{
@@ -95,10 +95,10 @@ public final class DeathLink extends AbstractEffect
 			{
 				effected.reduceCurrentHp(damage, effector, skill);
 				effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-				effector.sendDamageMessage(effected, damage, mcrit, false, false);
+				effector.sendDamageMessage(effected, skill, damage, mcrit, false);
 			}
 		}
-
+		
 		if (skill.isSuicideAttack())
 		{
 			effected.doDie(effected);

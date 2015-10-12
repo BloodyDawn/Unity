@@ -4580,7 +4580,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		// Send message about damage/crit or miss
-		sendDamageMessage(target, damage, false, crit, miss);
+		sendDamageMessage(target, null, damage, crit, miss);
 		
 		// Check Raidboss attack
 		// Character will be petrified if attacking a raid that's more
@@ -4659,7 +4659,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// When killing blow is made, the target doesn't reflect.
 			if ((reflectedDamage > 0) && !target.isDead())
 			{
-				target.sendDamageMessage(this, reflectedDamage, false, false, false);
+				target.sendDamageMessage(this, null, reflectedDamage, false, false);
 				reduceCurrentHp(reflectedDamage, target, true, false, null);
 				notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
 			}
@@ -6168,12 +6168,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/**
 	 * Send system message about damage.
 	 * @param target
+	 * @param skill
 	 * @param damage
-	 * @param mcrit
-	 * @param pcrit
+	 * @param crit
 	 * @param miss
 	 */
-	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
 	
 	}

@@ -759,7 +759,7 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
 		if (miss || (getOwner() == null))
 		{
@@ -769,7 +769,7 @@ public abstract class Summon extends Playable
 		// Prevents the double spam of system messages, if the target is the owning player.
 		if (target.getObjectId() != getOwner().getObjectId())
 		{
-			if (pcrit || mcrit)
+			if (crit)
 			{
 				if (isServitor())
 				{

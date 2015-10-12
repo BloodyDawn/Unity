@@ -44,7 +44,7 @@ public final class StaticDamage extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -52,13 +52,13 @@ public final class StaticDamage extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		effected.reduceCurrentHp(_power, effector, skill);
 		effected.notifyDamageReceived(_power, effector, skill, false, false, false);
 		
 		if (effector.isPlayer())
 		{
-			effector.sendDamageMessage(effected, _power, false, false, false);
+			effector.sendDamageMessage(effected, skill, _power, false, false);
 		}
 	}
 }

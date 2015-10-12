@@ -11838,35 +11838,49 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public final void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
 		// Check if hit is missed
 		if (miss)
 		{
-			if (target.isPlayer())
+			if (skill == null)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_EVADED_C2_S_ATTACK);
-				sm.addPcName(target.getActingPlayer());
-				sm.addCharName(this);
-				target.sendPacket(sm);
+				if (target.isPlayer())
+				{
+					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_EVADED_C2_S_ATTACK);
+					sm.addPcName(target.getActingPlayer());
+					sm.addCharName(this);
+					target.sendPacket(sm);
+				}
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ATTACK_WENT_ASTRAY);
+				sm.addPcName(this);
+				sendPacket(sm);
 			}
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ATTACK_WENT_ASTRAY);
-			sm.addPcName(this);
-			sendPacket(sm);
+			else
+			{
+				sendPacket(new ExMagicAttackInfo(getObjectId(), target.getObjectId(), ExMagicAttackInfo.EVADED));
+			}
 			return;
 		}
 		
 		// Check if hit is critical
-		if (pcrit)
+		if (crit)
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LANDED_A_CRITICAL_HIT);
-			sm.addPcName(this);
-			sendPacket(sm);
-		}
-		if (mcrit)
-		{
-			sendPacket(SystemMessageId.M_CRITICAL);
-			sendPacket(new ExMagicAttackInfo(getObjectId(), target.getObjectId(), ExMagicAttackInfo.CRITICAL));
+			if (skill == null || !skill.isMagic())
+			{
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LANDED_A_CRITICAL_HIT);
+				sm.addPcName(this);
+				sendPacket(sm);
+			}
+			else
+			{
+				sendPacket(SystemMessageId.M_CRITICAL);
+			}
+			
+			if (skill != null)
+			{
+				sendPacket(new ExMagicAttackInfo(getObjectId(), target.getObjectId(), ExMagicAttackInfo.CRITICAL));
+			}
 		}
 		
 		if (isInOlympiadMode() && target.isPlayer() && target.getActingPlayer().isInOlympiadMode() && (target.getActingPlayer().getOlympiadGameId() == getOlympiadGameId()))

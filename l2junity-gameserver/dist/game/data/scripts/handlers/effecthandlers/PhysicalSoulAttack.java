@@ -124,7 +124,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			{
 				damage = Math.min(damage, damageCap);
 			}
-			effector.sendDamageMessage(effected, (int)damage, false, crit, false);
+			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 			effected.reduceCurrentHp(damage, effector, skill);
 			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		}

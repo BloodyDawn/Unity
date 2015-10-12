@@ -58,7 +58,7 @@ public final class MagicalAttackRange extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -66,7 +66,7 @@ public final class MagicalAttackRange extends AbstractEffect
 		{
 			effected.stopFakeDeath(true);
 		}
-
+		
 		final double power = _power + CommonUtil.map(effector.calculateDistance(effected, false, false), 0, skill.getCastRange(), _powerRange, 0);
 		
 		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
@@ -94,7 +94,7 @@ public final class MagicalAttackRange extends AbstractEffect
 			{
 				effected.reduceCurrentHp(damage, effector, skill);
 				effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-				effector.sendDamageMessage(effected, damage, mcrit, false, false);
+				effector.sendDamageMessage(effected, skill, damage, mcrit, false);
 			}
 		}
 		

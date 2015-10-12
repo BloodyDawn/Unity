@@ -140,6 +140,6 @@ public final class FatalBlow extends AbstractEffect
 			effected.breakCast();
 		}
 		
-		effector.sendDamageMessage(effected, (int) damage, false, true, false);
+		effector.sendDamageMessage(effected, skill, (int) damage, true, false);
 	}
 }

@@ -112,7 +112,7 @@ public final class Backstab extends AbstractEffect
 		if (effector.isPlayer())
 		{
 			PlayerInstance activePlayer = effector.getActingPlayer();
-			activePlayer.sendDamageMessage(effected, (int) damage, false, true, false);
+			activePlayer.sendDamageMessage(effected, skill, (int) damage, true, false);
 		}
 	}
 }
