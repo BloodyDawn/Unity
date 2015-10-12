@@ -11853,7 +11853,6 @@ public final class PlayerInstance extends Playable
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ATTACK_WENT_ASTRAY);
 			sm.addPcName(this);
 			sendPacket(sm);
-			sendPacket(new ExMagicAttackInfo(getObjectId(), target.getObjectId(), ExMagicAttackInfo.EVADED));
 			return;
 		}
 		
@@ -11863,7 +11862,6 @@ public final class PlayerInstance extends Playable
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LANDED_A_CRITICAL_HIT);
 			sm.addPcName(this);
 			sendPacket(sm);
-			sendPacket(new ExMagicAttackInfo(getObjectId(), target.getObjectId(), ExMagicAttackInfo.CRITICAL));
 		}
 		if (mcrit)
 		{
