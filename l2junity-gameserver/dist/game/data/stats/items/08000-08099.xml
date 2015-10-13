@@ -764,6 +764,9 @@
 		<set name="is_questitem" val="true" />
 		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="is_stackable" val="true" />
+		<createItems>
+			<item id="8059" count="1" chance="100" />
+		</createItems>
 	</item>
 	<item id="8059" name="Research Report" type="EtcItem">
 		<set name="icon" val="icon.etc_magic_book_blue_i00" />
@@ -799,6 +802,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
+		<createItems>
+			<item id="8059" count="1" chance="100" />
+		</createItems>
 		<skills>
 			<skill id="2260" level="1" /> <!-- Key of Enigma -->
 		</skills>
