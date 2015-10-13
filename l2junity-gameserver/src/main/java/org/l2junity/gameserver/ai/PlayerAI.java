@@ -67,8 +67,8 @@ public class PlayerAI extends PlayableAI
 		final Object localArg0 = args.length > 0 ? args[0] : null;
 		final Object localArg1 = args.length > 1 ? args[1] : null;
 		
-		final Object globalArg0 = _intentionArgs.length > 0 ? _intentionArgs[0] : null;
-		final Object globalArg1 = _intentionArgs.length > 1 ? _intentionArgs[1] : null;
+		final Object globalArg0 = (_intentionArgs != null) && (_intentionArgs.length > 0) ? _intentionArgs[0] : null;
+		final Object globalArg1 = (_intentionArgs != null) && (_intentionArgs.length > 1) ? _intentionArgs[1] : null;
 		
 		// do nothing unless CAST intention
 		// however, forget interrupted actions when starting to use an offensive skill
