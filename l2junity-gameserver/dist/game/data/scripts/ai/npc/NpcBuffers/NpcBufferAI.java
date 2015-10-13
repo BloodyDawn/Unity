@@ -130,7 +130,7 @@ public class NpcBufferAI implements Runnable
 						{
 							if (isFriendly(player, target) && !target.isDead())
 							{
-								skill.applyEffects(_npc, target);
+								skill.applyEffects(player, target);
 							}
 							break;
 						}
@@ -143,7 +143,7 @@ public class NpcBufferAI implements Runnable
 								{
 									player.updatePvPStatus(target);
 								}
-								skill.applyEffects(_npc, target);
+								skill.applyEffects(player, target);
 							}
 							break;
 						}
