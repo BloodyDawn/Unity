@@ -72,6 +72,7 @@ public final class EffectMasterHandler
 		CpHeal.class,
 		CpHealOverTime.class,
 		CpHealPercent.class,
+		CreateItemRandom.class,
 		CrystalGradeModify.class,
 		CubicMastery.class,
 		DamOverTime.class,

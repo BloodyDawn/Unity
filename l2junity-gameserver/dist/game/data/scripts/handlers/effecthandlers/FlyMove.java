@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
@@ -64,7 +65,7 @@ public class FlyMove extends AbstractEffect
 	}
 
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		final Creature target = _selfPos ? effector : effected;
 		

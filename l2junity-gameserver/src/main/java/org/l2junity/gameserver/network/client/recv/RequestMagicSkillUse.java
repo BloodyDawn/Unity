@@ -117,6 +117,6 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, activeChar.getLocation());
 		}
 		
-		activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
+		activeChar.useMagic(skill, null, _ctrlPressed, _shiftPressed);
 	}
 }

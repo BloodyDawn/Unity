@@ -189,11 +189,12 @@
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="icon" val="icon.weapon_dynasty_dagger_i00" />
+		<set name="handler" val="ItemSkills" />
 		<createItems>
-			<item id="9446" count="1" chance="10" />
-			<item id="33559" count="1" chance="30" />
-			<item id="33560" count="1" chance="30" />
-			<item id="33561" count="1" chance="30" />
+			<item id="9446" count="1" chance="10" /> <!-- Dynasty Knife -->
+			<item id="33559" count="1" chance="30" /> <!-- Bound Dynasty Knife - Focus (Event) -->
+			<item id="33560" count="1" chance="30" /> <!-- Bound Dynasty Knife - Evasion (Event) -->
+			<item id="33561" count="1" chance="30" /> <!-- Bound Dynasty Knife - Critical Damage (Event) -->
 		</createItems>
 		<skills>
 			<skill id="12900" level="1" /> <!-- Check Item -->

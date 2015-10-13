@@ -21,6 +21,7 @@ package org.l2junity.gameserver.ai;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -78,7 +79,7 @@ public abstract class PlayableAI extends CharacterAI
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
 	{
 		if ((target.isPlayable()) && skill.isBad())
 		{
@@ -110,7 +111,7 @@ public abstract class PlayableAI extends CharacterAI
 				return;
 			}
 		}
-		super.onIntentionCast(skill, target);
+		super.onIntentionCast(skill, target, item);
 	}
 	
 }

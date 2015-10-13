@@ -63,7 +63,7 @@ public final class HpCpHeal extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isInvul())
 		{

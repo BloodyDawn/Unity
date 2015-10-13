@@ -30,6 +30,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 public class SummonAI extends PlayableAI implements Runnable
@@ -72,7 +73,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	}
 	
 	@Override
-	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
+	synchronized void changeIntention(CtrlIntention intention, Object... args)
 	{
 		switch (intention)
 		{
@@ -84,7 +85,7 @@ public class SummonAI extends PlayableAI implements Runnable
 				stopAvoidTask();
 		}
 		
-		super.changeIntention(intention, arg0, arg1);
+		super.changeIntention(intention, args);
 	}
 	
 	private void thinkAttack()
@@ -119,7 +120,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		summon.setFollowStatus(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill);
+		_actor.doCast(_skill, _item);
 	}
 	
 	private void thinkPickUp()
@@ -299,7 +300,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
@@ -309,7 +310,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			_lastAttack = null;
 		}
-		super.onIntentionCast(skill, target);
+		super.onIntentionCast(skill, target, item);
 	}
 	
 	private void startAvoidTask()

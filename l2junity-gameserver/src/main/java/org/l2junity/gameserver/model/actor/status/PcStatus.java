@@ -302,9 +302,9 @@ public class PcStatus extends PlayableStatus
 				final Summon pet = getActiveChar().getPet();
 				if (pet != null)
 				{
-					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				}
-				getActiveChar().getServitors().values().forEach(s -> s.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null));
+				getActiveChar().getServitors().values().forEach(s -> s.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE));
 				return;
 			}
 			

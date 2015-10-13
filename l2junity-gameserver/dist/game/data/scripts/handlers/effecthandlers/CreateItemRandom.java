@@ -18,50 +18,74 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.UserInfo;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Item Effect: Increase/decrease PK count permanently.
- * @author Nik
+ * @author UnAfraid
  */
-public class PkCount extends AbstractEffect
+public class CreateItemRandom extends AbstractEffect
 {
-	private final int _amount;
+	private static final Logger LOGGER = LoggerFactory.getLogger(CreateItemRandom.class);
 	
-	public PkCount(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public CreateItemRandom(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		
-		_amount = params.getInt("amount", 0);
 	}
 	
 	@Override
 	public boolean isInstant()
 	{
-		return true;
+		return Boolean.TRUE;
 	}
 	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		PlayerInstance player = effected.getActingPlayer();
+		final PlayerInstance player = effected.getActingPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
-		if (player.getPkKills() > 0)
+		else if (item == null)
 		{
-			final int newPkCount = Math.max(player.getPkKills() + _amount, 0);
-			player.setPkKills(newPkCount);
-			player.sendPacket(new UserInfo(player));
+			LOGGER.warn("{} Attempting to cast skill: {} without item defined!", player, skill);
+			return;
 		}
+		else if (item.getItem().getCreateItems().isEmpty())
+		{
+			LOGGER.warn("{} Attempting to cast skill: {} with item {} without createItems defined!", player, skill, item);
+			return;
+		}
+		
+		ItemChanceHolder selectedItem = null;
+		final double random = Rnd.nextDouble() * 100;
+		double comulativeChance = 0;
+		for (ItemChanceHolder holder : item.getItem().getCreateItems())
+		{
+			if ((comulativeChance += holder.getChance()) >= random)
+			{
+				selectedItem = holder;
+				break;
+			}
+		}
+		
+		if (selectedItem == null)
+		{
+			player.sendPacket(SystemMessageId.THERE_WAS_NOTHING_FOUND_INSIDE);
+			return;
+		}
+		
+		player.addItem("CreateItems", selectedItem.getId(), selectedItem.getCount(), player, true);
 	}
 }

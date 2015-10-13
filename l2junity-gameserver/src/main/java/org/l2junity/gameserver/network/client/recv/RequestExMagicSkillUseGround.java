@@ -84,7 +84,7 @@ public final class RequestExMagicSkillUseGround implements IClientIncomingPacket
 			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), _x, _y));
 			Broadcast.toKnownPlayers(activeChar, new ValidateLocation(activeChar));
 			
-			activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
+			activeChar.useMagic(skill, null, _ctrlPressed, _shiftPressed);
 		}
 		else
 		{

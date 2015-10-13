@@ -1948,7 +1948,7 @@ public final class PlayerInstance extends Playable
 			{
 				if (object.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 				{
-					object.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+					object.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				}
 			});
 		}
@@ -8157,7 +8157,7 @@ public final class PlayerInstance extends Playable
 	 * @param dontMove used to prevent movement, if not in range
 	 */
 	@Override
-	public boolean useMagic(Skill skill, boolean forceUse, boolean dontMove)
+	public boolean useMagic(Skill skill, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Check if the skill is active
 		if (skill.isPassive())
@@ -8242,7 +8242,7 @@ public final class PlayerInstance extends Playable
 		
 		// Notify the AI with AI_INTENTION_CAST and target
 		setIsCastingNow(true);
-		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
+		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item);
 		return true;
 	}
 	
@@ -11866,7 +11866,7 @@ public final class PlayerInstance extends Playable
 		// Check if hit is critical
 		if (crit)
 		{
-			if (skill == null || !skill.isMagic())
+			if ((skill == null) || !skill.isMagic())
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LANDED_A_CRITICAL_HIT);
 				sm.addPcName(this);

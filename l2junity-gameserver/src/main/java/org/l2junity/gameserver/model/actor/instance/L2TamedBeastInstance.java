@@ -465,7 +465,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 					
 					// emulate a call to the owner using food, but bypass all checks for range, etc
 					// this also causes a call to the AI tasks handling feeding, which may call onReceiveFood as required.
-					owner.callSkill(SkillData.getInstance().getSkill(foodTypeSkillId, 1), targets);
+					owner.callSkill(SkillData.getInstance().getSkill(foodTypeSkillId, 1), null, targets);
 					owner.setTarget(oldTarget);
 				}
 				else

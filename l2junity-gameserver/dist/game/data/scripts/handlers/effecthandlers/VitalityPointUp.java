@@ -22,6 +22,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.UserInfo;
@@ -54,7 +55,7 @@ public final class VitalityPointUp extends AbstractEffect
 	}
 
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		effected.getActingPlayer().updateVitalityPoints(_value, false, false);
 		effected.getActingPlayer().sendPacket(new UserInfo(effected.getActingPlayer()));

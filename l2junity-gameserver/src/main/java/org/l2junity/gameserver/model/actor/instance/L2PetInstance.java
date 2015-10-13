@@ -674,7 +674,7 @@ public class L2PetInstance extends Summon
 		{
 			setRunning();
 		}
-		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 	}
 	
 	@Override

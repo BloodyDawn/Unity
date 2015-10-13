@@ -100,12 +100,14 @@ public class CharacterAI extends AbstractAI
 		private final Creature _activeChar;
 		private final WorldObject _target;
 		private final Skill _skill;
+		private final ItemInstance _item;
 		
-		public CastTask(Creature actor, Skill skill, WorldObject target)
+		public CastTask(Creature actor, Skill skill, WorldObject target, ItemInstance item)
 		{
 			_activeChar = actor;
 			_target = target;
 			_skill = skill;
+			_item = item;
 		}
 		
 		@Override
@@ -115,7 +117,7 @@ public class CharacterAI extends AbstractAI
 			{
 				_activeChar.abortAttack();
 			}
-			_activeChar.getAI().changeIntentionToCast(_skill, _target);
+			_activeChar.getAI().changeIntentionToCast(_skill, _target, _item);
 		}
 	}
 	
@@ -153,7 +155,7 @@ public class CharacterAI extends AbstractAI
 	protected void onIntentionIdle()
 	{
 		// Set the AI Intention to AI_INTENTION_IDLE
-		changeIntention(AI_INTENTION_IDLE, null, null);
+		changeIntention(AI_INTENTION_IDLE);
 		
 		// Init cast and attack target
 		setCastTarget(null);
@@ -185,7 +187,7 @@ public class CharacterAI extends AbstractAI
 		if (getIntention() != AI_INTENTION_ACTIVE)
 		{
 			// Set the AI Intention to AI_INTENTION_ACTIVE
-			changeIntention(AI_INTENTION_ACTIVE, null, null);
+			changeIntention(AI_INTENTION_ACTIVE);
 			
 			// Init cast and attack target
 			setCastTarget(null);
@@ -284,7 +286,7 @@ public class CharacterAI extends AbstractAI
 		else
 		{
 			// Set the Intention of this AbstractAI to AI_INTENTION_ATTACK
-			changeIntention(AI_INTENTION_ATTACK, target, null);
+			changeIntention(AI_INTENTION_ATTACK, target);
 			
 			// Set the AI attack target
 			setAttackTarget(target);
@@ -309,7 +311,7 @@ public class CharacterAI extends AbstractAI
 	 * </ul>
 	 */
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
 	{
 		if ((getIntention() == AI_INTENTION_REST) && skill.isMagic())
 		{
@@ -320,22 +322,27 @@ public class CharacterAI extends AbstractAI
 		
 		if (_actor.getAttackEndTime() > GameTimeController.getInstance().getGameTicks())
 		{
-			ThreadPoolManager.getInstance().scheduleGeneral(new CastTask(_actor, skill, target), _actor.getAttackEndTime() - System.currentTimeMillis());
+			ThreadPoolManager.getInstance().scheduleGeneral(new CastTask(_actor, skill, target, item), _actor.getAttackEndTime() - System.currentTimeMillis());
 		}
 		else
 		{
-			changeIntentionToCast(skill, target);
+			changeIntentionToCast(skill, target, item);
 		}
 	}
 	
-	protected void changeIntentionToCast(Skill skill, WorldObject target)
+	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item)
 	{
 		// Set the AI cast target
 		setCastTarget((Creature) target);
+		
 		// Set the AI skill used by INTENTION_CAST
 		_skill = skill;
+		
+		// Set the AI item that triggered this skill
+		_item = item;
+		
 		// Change the Intention of this AbstractAI to AI_INTENTION_CAST
-		changeIntention(AI_INTENTION_CAST, skill, target);
+		changeIntention(AI_INTENTION_CAST, skill);
 		
 		// Launch the Think Event
 		notifyEvent(CtrlEvent.EVT_THINK, null);
@@ -368,7 +375,7 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_MOVE_TO
-		changeIntention(AI_INTENTION_MOVE_TO, loc, null);
+		changeIntention(AI_INTENTION_MOVE_TO, loc);
 		
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
 		clientStopAutoAttack();
@@ -431,7 +438,7 @@ public class CharacterAI extends AbstractAI
 		clientStopAutoAttack();
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_FOLLOW
-		changeIntention(AI_INTENTION_FOLLOW, target, null);
+		changeIntention(AI_INTENTION_FOLLOW, target);
 		
 		// Create and Launch an AI Follow Task to execute every 1s
 		startFollow(target);
@@ -472,7 +479,7 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_PICK_UP
-		changeIntention(AI_INTENTION_PICK_UP, object, null);
+		changeIntention(AI_INTENTION_PICK_UP, object);
 		
 		// Set the AI pick up target
 		setTarget(object);
@@ -519,7 +526,7 @@ public class CharacterAI extends AbstractAI
 		if (getIntention() != AI_INTENTION_INTERACT)
 		{
 			// Set the Intention of this AbstractAI to AI_INTENTION_INTERACT
-			changeIntention(AI_INTENTION_INTERACT, object, null);
+			changeIntention(AI_INTENTION_INTERACT, object);
 			
 			// Set the AI interact target
 			setTarget(object);
@@ -809,7 +816,7 @@ public class CharacterAI extends AbstractAI
 			clientStopMoving(null);
 			
 			// Set the Intention of this AbstractAI to AI_INTENTION_IDLE
-			changeIntention(AI_INTENTION_IDLE, null, null);
+			changeIntention(AI_INTENTION_IDLE);
 		}
 	}
 	

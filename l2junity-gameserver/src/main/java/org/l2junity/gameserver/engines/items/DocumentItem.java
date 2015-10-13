@@ -30,6 +30,7 @@ import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.model.ExtractableProduct;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -173,6 +174,20 @@ public final class DocumentItem extends DocumentBase implements IGameXmlReader
 						final int max = parseInteger(b.getAttributes(), "max");
 						final double chance = parseDouble(b.getAttributes(), "chance");
 						_currentItem.item.addCapsuledItem(new ExtractableProduct(id, min, max, chance));
+					}
+				}
+			}
+			else if ("createItems".equalsIgnoreCase(n.getNodeName()))
+			{
+				makeItem();
+				for (Node b = n.getFirstChild(); b != null; b = b.getNextSibling())
+				{
+					if ("item".equals(b.getNodeName()))
+					{
+						final int id = parseInteger(b.getAttributes(), "id");
+						final int count = parseInteger(b.getAttributes(), "count");
+						final double chance = parseDouble(b.getAttributes(), "chance");
+						_currentItem.item.addCreateItem(new ItemChanceHolder(id, chance, count));
 					}
 				}
 			}

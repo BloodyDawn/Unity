@@ -43,6 +43,7 @@ import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.commission.CommissionItemType;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.events.ListenersContainer;
+import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
@@ -71,7 +72,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class L2Item extends ListenersContainer implements IIdentifiable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2Item.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(L2Item.class);
 	
 	public static final int TYPE1_WEAPON_RING_EARRING_NECKLACE = 0;
 	public static final int TYPE1_SHIELD_ARMOR = 1;
@@ -164,6 +165,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	protected List<FuncTemplate> _funcTemplates;
 	protected List<Condition> _preConditions;
 	private List<ItemSkillHolder> _skills;
+	private List<ItemChanceHolder> _createItems;
 	
 	private int _useSkillDisTime;
 	private int _reuseDelay;
@@ -729,6 +731,20 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			_skills = new ArrayList<>();
 		}
 		_skills.add(holder);
+	}
+	
+	public List<ItemChanceHolder> getCreateItems()
+	{
+		return _createItems != null ? _createItems : Collections.emptyList();
+	}
+	
+	public void addCreateItem(ItemChanceHolder item)
+	{
+		if (_createItems == null)
+		{
+			_createItems = new ArrayList<>();
+		}
+		_createItems.add(item);
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object, boolean sendMessage)

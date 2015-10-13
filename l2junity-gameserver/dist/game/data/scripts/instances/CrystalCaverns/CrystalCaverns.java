@@ -18,8 +18,6 @@
  */
 package instances.CrystalCaverns;
 
-import instances.AbstractInstance;
-
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -62,6 +60,8 @@ import org.l2junity.gameserver.network.client.send.ValidateLocation;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+
+import instances.AbstractInstance;
 
 /**
  * Crystal Caverns instance zone.<br>
@@ -1413,7 +1413,7 @@ public final class CrystalCaverns extends AbstractInstance
 				if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE)
 				{
 					cancelQuestTimers("backFood");
-					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					world.crystalGolems.get(npc).foodItem = null;
 					startQuestTimer("autoFood", 2000, npc, null);
 				}
@@ -1434,7 +1434,7 @@ public final class CrystalCaverns extends AbstractInstance
 				{
 					World.getInstance().removeVisibleObject(cryGolem.foodItem, cryGolem.foodItem.getWorldRegion());
 					World.getInstance().removeObject(cryGolem.foodItem);
-					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					cryGolem.foodItem = null;
 					dx = npc.getX() - 142999;
 					dy = npc.getY() - 151671;

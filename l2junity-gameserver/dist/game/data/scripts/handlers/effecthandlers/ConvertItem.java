@@ -48,106 +48,106 @@ public final class ConvertItem extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effected.isAlikeDead() || !effected.isPlayer())
 		{
 			return;
 		}
-
+		
 		final PlayerInstance player = effected.getActingPlayer();
 		if (player.hasItemRequest())
 		{
 			return;
 		}
-
+		
 		final Weapon weaponItem = player.getActiveWeaponItem();
 		if (weaponItem == null)
 		{
 			return;
 		}
-
+		
 		ItemInstance wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (wpn == null)
 		{
 			wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		}
-
+		
 		if ((wpn == null) || wpn.isAugmented() || (weaponItem.getChangeWeaponId() == 0))
 		{
 			return;
 		}
-
+		
 		final int newItemId = weaponItem.getChangeWeaponId();
 		if (newItemId == -1)
 		{
 			return;
 		}
-
+		
 		final int enchantLevel = wpn.getEnchantLevel();
 		final AttributeHolder elementals = wpn.getAttributes() == null ? null : wpn.getAttackAttribute();
 		final ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getItem().getBodyPart());
 		final InventoryUpdate iu = new InventoryUpdate();
-		for (ItemInstance item : unequiped)
+		for (ItemInstance unequippedItem : unequiped)
 		{
-			iu.addModifiedItem(item);
+			iu.addModifiedItem(unequippedItem);
 		}
 		player.sendInventoryUpdate(iu);
-
+		
 		if (unequiped.length <= 0)
 		{
 			return;
 		}
 		byte count = 0;
-		for (ItemInstance item : unequiped)
+		for (ItemInstance unequippedItem : unequiped)
 		{
-			if (!(item.getItem() instanceof Weapon))
+			if (!(unequippedItem.getItem() instanceof Weapon))
 			{
 				count++;
 				continue;
 			}
-
+			
 			final SystemMessage sm;
 			if (item.getEnchantLevel() > 0)
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_EQUIPMENT_S1_S2_HAS_BEEN_REMOVED);
 				sm.addInt(item.getEnchantLevel());
-				sm.addItemName(item);
+				sm.addItemName(unequippedItem);
 			}
 			else
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_UNEQUIPPED);
-				sm.addItemName(item);
+				sm.addItemName(unequippedItem);
 			}
 			player.sendPacket(sm);
 		}
-
+		
 		if (count == unequiped.length)
 		{
 			return;
 		}
-
+		
 		final ItemInstance destroyItem = player.getInventory().destroyItem("ChangeWeapon", wpn, player, null);
 		if (destroyItem == null)
 		{
 			return;
 		}
-
+		
 		final ItemInstance newItem = player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
 		if (newItem == null)
 		{
 			return;
 		}
-
+		
 		if (elementals != null)
 		{
 			newItem.setAttribute(elementals);
 		}
 		newItem.setEnchantLevel(enchantLevel);
 		player.getInventory().equipItem(newItem);
-
+		
 		final SystemMessage msg;
 		if (newItem.getEnchantLevel() > 0)
 		{
@@ -161,12 +161,12 @@ public final class ConvertItem extends AbstractEffect
 			msg.addItemName(newItem);
 		}
 		player.sendPacket(msg);
-
+		
 		final InventoryUpdate u = new InventoryUpdate();
 		u.addRemovedItem(destroyItem);
 		u.addItem(newItem);
 		player.sendInventoryUpdate(u);
-
+		
 		player.broadcastUserInfo();
 	}
 }

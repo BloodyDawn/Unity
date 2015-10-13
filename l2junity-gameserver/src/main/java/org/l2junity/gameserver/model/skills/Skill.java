@@ -57,6 +57,7 @@ import org.l2junity.gameserver.model.holders.AlterSkillHolder;
 import org.l2junity.gameserver.model.holders.AttachSkillHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -1244,14 +1245,14 @@ public final class Skill implements IIdentifiable
 				{
 					if (applyInstantEffects && effect.calcSuccess(info.getEffector(), info.getEffected(), info.getSkill()))
 					{
-						effect.instant(info.getEffector(), info.getEffected(), info.getSkill());
+						effect.instant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
 					}
 				}
 				else if (addContinuousEffects)
 				{
 					if (applyInstantEffects)
 					{
-						effect.continuousInstant(info.getEffector(), info.getEffected(), info.getSkill());
+						effect.continuousInstant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
 					}
 					
 					if (effect.canStart(info))
@@ -1264,18 +1265,30 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int)}.<br>
+	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int, ItemInstance)}.<br>
 	 * Simplify the calls.
 	 * @param effector the caster of the skill
 	 * @param effected the target of the effect
 	 */
 	public void applyEffects(Creature effector, Creature effected)
 	{
-		applyEffects(effector, effected, false, false, true, 0);
+		applyEffects(effector, effected, false, false, true, 0, null);
 	}
 	
 	/**
-	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int)}.<br>
+	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int, ItemInstance)}.<br>
+	 * Simplify the calls.
+	 * @param effector the caster of the skill
+	 * @param effected the target of the effect
+	 * @param item
+	 */
+	public void applyEffects(Creature effector, Creature effected, ItemInstance item)
+	{
+		applyEffects(effector, effected, false, false, true, 0, item);
+	}
+	
+	/**
+	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int, ItemInstance)}.<br>
 	 * Simplify the calls, allowing abnormal time time customization.
 	 * @param effector the caster of the skill
 	 * @param effected the target of the effect
@@ -1284,7 +1297,7 @@ public final class Skill implements IIdentifiable
 	 */
 	public void applyEffects(Creature effector, Creature effected, boolean instant, int abnormalTime)
 	{
-		applyEffects(effector, effected, false, false, instant, abnormalTime);
+		applyEffects(effector, effected, false, false, instant, abnormalTime, null);
 	}
 	
 	/**
@@ -1295,8 +1308,9 @@ public final class Skill implements IIdentifiable
 	 * @param passive if {@code true} passive effects will be applied to the effector
 	 * @param instant if {@code true} instant effects will be applied to the effected
 	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
+	 * @param item
 	 */
-	public void applyEffects(Creature effector, Creature effected, boolean self, boolean passive, boolean instant, int abnormalTime)
+	public void applyEffects(Creature effector, Creature effected, boolean self, boolean passive, boolean instant, int abnormalTime, ItemInstance item)
 	{
 		// null targets cannot receive any effects.
 		if (effected == null)
@@ -1325,7 +1339,7 @@ public final class Skill implements IIdentifiable
 		boolean addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isContinuous() && Formulas.calcEffectSuccess(effector, effected, this)));
 		if (!self && !passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effected, this, !instant);
+			final BuffInfo info = new BuffInfo(effector, effected, this, !instant, item);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1365,7 +1379,7 @@ public final class Skill implements IIdentifiable
 		{
 			addContinuousEffects = !passive && (_operateType.isToggle() || ((_operateType.isContinuous() || _operateType.isSelfContinuous()) && Formulas.calcEffectSuccess(effector, effector, this)));
 			
-			final BuffInfo info = new BuffInfo(effector, effector, this, !instant);
+			final BuffInfo info = new BuffInfo(effector, effector, this, !instant, item);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1389,7 +1403,7 @@ public final class Skill implements IIdentifiable
 		
 		if (passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effector, this, true);
+			final BuffInfo info = new BuffInfo(effector, effector, this, true, item);
 			applyEffectScope(EffectScope.PASSIVE, info, false, true);
 			effector.getEffectList().add(info);
 		}
@@ -1406,22 +1420,34 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
+	 * Activates a skill for the given creature and targets.
+	 * @param caster the caster
+	 * @param item
+	 * @param targets the targets
+	 */
+	public void activateSkill(Creature caster, ItemInstance item, Creature... targets)
+	{
+		activateSkill(caster, null, item, targets);
+	}
+	
+	/**
 	 * Activates a skill for the given cubic and targets.
 	 * @param cubic the cubic
 	 * @param targets the targets
 	 */
 	public void activateSkill(L2CubicInstance cubic, Creature... targets)
 	{
-		activateSkill(cubic.getOwner(), cubic, targets);
+		activateSkill(cubic.getOwner(), cubic, null, targets);
 	}
 	
 	/**
 	 * Activates the skill to the targets.
 	 * @param caster the caster
 	 * @param cubic the cubic that cast the skill, can be {@code null}
+	 * @param item
 	 * @param targets the targets
 	 */
-	public final void activateSkill(Creature caster, L2CubicInstance cubic, Creature... targets)
+	public final void activateSkill(Creature caster, L2CubicInstance cubic, ItemInstance item, Creature... targets)
 	{
 		// TODO: replace with AI
 		switch (getId())
@@ -1468,7 +1494,7 @@ public final class Skill implements IIdentifiable
 						// and continuous effects on caster
 						applyEffects(target, caster, false, 0);
 						
-						final BuffInfo info = new BuffInfo(caster, target, this, false);
+						final BuffInfo info = new BuffInfo(caster, target, this, false, item);
 						applyEffectScope(EffectScope.GENERAL, info, true, false);
 						
 						EffectScope pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE : caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;
@@ -1478,7 +1504,7 @@ public final class Skill implements IIdentifiable
 					}
 					else
 					{
-						applyEffects(caster, target);
+						applyEffects(caster, target, item);
 					}
 				}
 				break;
@@ -1492,7 +1518,7 @@ public final class Skill implements IIdentifiable
 			{
 				caster.stopSkillEffects(true, getId());
 			}
-			applyEffects(caster, caster, true, false, true, 0);
+			applyEffects(caster, caster, true, false, true, 0, item);
 		}
 		
 		if (cubic == null)

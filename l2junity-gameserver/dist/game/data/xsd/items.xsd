@@ -18,6 +18,12 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="createItemsType">
+		<xs:sequence>
+			<xs:element name="item" type="createItemType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:complexType name="skillType">
 		<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 		<xs:attribute name="level" type="xs:positiveInteger" use="required" />
@@ -41,6 +47,12 @@
 		<xs:attribute name="id" type="xs:positiveInteger" />
 		<xs:attribute name="min" type="xs:positiveInteger" />
 		<xs:attribute name="max" type="xs:positiveInteger" />
+		<xs:attribute name="chance" type="xs:double" />
+	</xs:complexType>
+
+	<xs:complexType name="createItemType">
+		<xs:attribute name="id" type="xs:positiveInteger" />
+		<xs:attribute name="count" type="xs:positiveInteger" />
 		<xs:attribute name="chance" type="xs:double" />
 	</xs:complexType>
 
@@ -284,6 +296,7 @@
 			<xs:element name="set" maxOccurs="unbounded" minOccurs="1" type="setType" />
 			<xs:element name="unequip_skills" minOccurs="0" type="skillsType" />
 			<xs:element name="capsuled_items" minOccurs="0" type="capsuledItemsType" />
+			<xs:element name="createItems" minOccurs="0" type="createItemsType" />
 			<xs:element name="cond" maxOccurs="2" minOccurs="0" type="condType" />
 			<xs:element name="skills" minOccurs="0" type="skillsType" />
 			<xs:element name="stats" maxOccurs="1" minOccurs="0" type="forType" />

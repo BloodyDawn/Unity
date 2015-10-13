@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -53,7 +54,7 @@ public class Feed extends AbstractEffect
 	}
 
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effected.isPet())
 		{

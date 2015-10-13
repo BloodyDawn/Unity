@@ -1594,12 +1594,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void doCast(Skill skill)
 	{
-		beginCast(skill, false);
+		beginCast(skill, false, null);
+	}
+	
+	public void doCast(Skill skill, ItemInstance item)
+	{
+		beginCast(skill, false, item);
 	}
 	
 	public void doSimultaneousCast(Skill skill)
 	{
-		beginCast(skill, true);
+		beginCast(skill, true, null);
+	}
+	
+	public void doSimultaneousCast(Skill skill, ItemInstance item)
+	{
+		beginCast(skill, true, item);
 	}
 	
 	public void doCast(Skill skill, Creature target, Creature[] targets)
@@ -1622,7 +1632,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// Recharge AutoSoulShot
 		// this method should not used with L2Playable
 		
-		beginCast(skill, false, target, targets);
+		beginCast(skill, false, target, targets, null);
 	}
 	
 	public void doSimultaneousCast(Skill skill, Creature target, Creature[] targets)
@@ -1634,10 +1644,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		stopEffectsOnAction();
 		
-		beginCast(skill, true, target, targets);
+		beginCast(skill, true, target, targets, null);
 	}
 	
-	private void beginCast(Skill skill, boolean simultaneously)
+	private void beginCast(Skill skill, boolean simultaneously, ItemInstance item)
 	{
 		if (!checkDoCastConditions(skill))
 		{
@@ -1728,10 +1738,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					target = (Creature) getTarget();
 				}
 		}
-		beginCast(skill, simultaneously, target, targets);
+		beginCast(skill, simultaneously, target, targets, item);
 	}
 	
-	private void beginCast(Skill skill, boolean simultaneously, Creature target, Creature[] targets)
+	private void beginCast(Skill skill, boolean simultaneously, Creature target, Creature[] targets, ItemInstance item)
 	{
 		if (target == null)
 		{
@@ -1923,11 +1933,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// reduce talisman mana on skill use
 			if ((skill.getReferenceItemId() > 0) && (ItemTable.getInstance().getTemplate(skill.getReferenceItemId()).getBodyPart() == L2Item.SLOT_DECO))
 			{
-				for (ItemInstance item : getInventory().getItemsByItemId(skill.getReferenceItemId()))
+				for (ItemInstance referenceItem : getInventory().getItemsByItemId(skill.getReferenceItemId()))
 				{
-					if (item.isEquipped())
+					if (referenceItem.isEquipped())
 					{
-						item.decreaseMana(false, item.useSkillDisTime());
+						referenceItem.decreaseMana(false, referenceItem.useSkillDisTime());
 						break;
 					}
 				}
@@ -1969,7 +1979,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		if (skill.hasEffects(EffectScope.START))
 		{
-			skill.applyEffectScope(EffectScope.START, new BuffInfo(this, target, skill, false), true, false);
+			skill.applyEffectScope(EffectScope.START, new BuffInfo(this, target, skill, false, item), true, false);
 		}
 		
 		// Before start AI Cast Broadcast Fly Effect is Need
@@ -1978,7 +1988,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			ThreadPoolManager.getInstance().scheduleEffect(new FlyToLocationTask(this, target, skill), 50);
 		}
 		
-		MagicUseTask mut = new MagicUseTask(this, targets, skill, skillTime, simultaneously);
+		MagicUseTask mut = new MagicUseTask(this, targets, skill, skillTime, simultaneously, item);
 		
 		// launch the magic in skillTime milliseconds
 		if (skillTime > 0)
@@ -4983,7 +4993,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			if (newSkill.isPassive())
 			{
-				newSkill.applyEffects(this, this, false, true, false, 0);
+				newSkill.applyEffects(this, this, false, true, false, 0, null);
 			}
 		}
 		return oldSkill;
@@ -5321,7 +5331,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// Launch the magic skill in order to calculate its effects
-			callSkill(mut.getSkill(), mut.getTargets());
+			callSkill(mut.getSkill(), mut.getItem(), mut.getTargets());
 		}
 		catch (NullPointerException e)
 		{
@@ -5416,7 +5426,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				// DON'T USE : Recursive call to useMagic() method
 				// currPlayer.useMagic(queuedSkill.getSkill(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
-				ThreadPoolManager.getInstance().executeGeneral(new QueuedMagicUseTask(currPlayer, queuedSkill.getSkill(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed()));
+				ThreadPoolManager.getInstance().executeGeneral(new QueuedMagicUseTask(currPlayer, queuedSkill.getSkill(), mut.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed()));
 			}
 		}
 		
@@ -5435,9 +5445,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/**
 	 * Launch the magic skill and calculate its effects on each target contained in the targets table.
 	 * @param skill The L2Skill to use
+	 * @param item
 	 * @param targets The table of L2Object targets
 	 */
-	public void callSkill(Skill skill, Creature... targets)
+	public void callSkill(Skill skill, ItemInstance item, Creature... targets)
 	{
 		try
 		{
@@ -5511,7 +5522,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// Launch the magic skill and calculate its effects
-			skill.activateSkill(this, targets);
+			skill.activateSkill(this, item, targets);
 			
 			PlayerInstance player = getActingPlayer();
 			if (player != null)

@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
@@ -307,7 +308,7 @@ public abstract class Playable extends Creature
 	
 	public abstract int getReputation();
 	
-	public abstract boolean useMagic(Skill skill, boolean forceUse, boolean dontMove);
+	public abstract boolean useMagic(Skill skill, ItemInstance item, boolean forceUse, boolean dontMove);
 	
 	public abstract void storeMe();
 	

@@ -299,11 +299,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 	 * Set the Intention of this L2CharacterAI and create an AI Task executed every 1s (call onEvtThink method) for this L2Attackable.<br>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : If actor _knowPlayer isn't EMPTY, AI_INTENTION_IDLE will be change in AI_INTENTION_ACTIVE</B></FONT>
 	 * @param intention The new Intention to set to the AI
-	 * @param arg0 The first parameter of the Intention
-	 * @param arg1 The second parameter of the Intention
+	 * @param args The first parameter of the Intention
 	 */
 	@Override
-	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
+	synchronized void changeIntention(CtrlIntention intention, Object... args)
 	{
 		if ((intention == AI_INTENTION_IDLE) || (intention == AI_INTENTION_ACTIVE))
 		{
@@ -334,7 +333,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			if (intention == AI_INTENTION_IDLE)
 			{
 				// Set the Intention of this L2AttackableAI to AI_INTENTION_IDLE
-				super.changeIntention(AI_INTENTION_IDLE, null, null);
+				super.changeIntention(AI_INTENTION_IDLE);
 				
 				stopAITask();
 				
@@ -346,7 +345,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		
 		// Set the Intention of this L2AttackableAI to intention
-		super.changeIntention(intention, arg0, arg1);
+		super.changeIntention(intention, args);
 		
 		// If not idle - create an AI task (schedule onEvtThink repeatedly)
 		startAITask();
@@ -399,7 +398,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		clientStopMoving(null);
 		setIntention(AI_INTENTION_ACTIVE);
-		_actor.doCast(_skill);
+		_actor.doCast(_skill, _item);
 	}
 	
 	/**

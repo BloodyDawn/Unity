@@ -60,7 +60,7 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		{
 			return false;
 		}
-
+		
 		final Skill skill = _skill.getSkill();
 		if (skill != null)
 		{
@@ -72,7 +72,7 @@ public final class CallSkillOnActionTime extends AbstractEffect
 			{
 				if (skill.checkCondition(info.getEffector(), target))
 				{
-					info.getEffector().callSkill(skill, target);
+					info.getEffector().callSkill(skill, null, target);
 				}
 			}
 		}

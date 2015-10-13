@@ -57,9 +57,9 @@ public final class SummonPet extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead())
 		{
@@ -81,21 +81,21 @@ public final class SummonPet extends AbstractEffect
 			return;
 		}
 		
-		final ItemInstance item = holder.getItem();
-		if (player.getInventory().getItemByObjectId(item.getObjectId()) != item)
+		final ItemInstance collar = holder.getItem();
+		if (player.getInventory().getItemByObjectId(collar.getObjectId()) != collar)
 		{
 			_log.warn("Player: " + player + " is trying to summon pet from item that he doesn't owns.");
 			return;
 		}
 		
-		final PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
+		final PetData petData = PetDataTable.getInstance().getPetDataByItemId(collar.getId());
 		if ((petData == null) || (petData.getNpcId() == -1))
 		{
 			return;
 		}
 		
 		final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
-		final L2PetInstance pet = L2PetInstance.spawnPet(npcTemplate, player, item);
+		final L2PetInstance pet = L2PetInstance.spawnPet(npcTemplate, player, collar);
 		
 		pet.setShowSummonAnimation(true);
 		if (!pet.isRespawned())
@@ -113,7 +113,7 @@ public final class SummonPet extends AbstractEffect
 			pet.storeMe();
 		}
 		
-		item.setEnchantLevel(pet.getLevel());
+		collar.setEnchantLevel(pet.getLevel());
 		player.setPet(pet);
 		pet.spawnMe(player.getX() + 50, player.getY() + 100, player.getZ());
 		pet.startFeed();

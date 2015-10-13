@@ -4,6 +4,9 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
+		<set name="magicLevel" val="1" />
+		<set name="itemConsumeId" val="33608" /> <!-- Unidentified Dynasty Knife -->
+		<set name="itemConsumeCount" val="1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
@@ -11,6 +14,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="CreateItemRandom" />
+		</for>
 	</skill>
 	<skill id="12901" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->

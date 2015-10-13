@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.MoveToLocation;
 
@@ -94,7 +95,7 @@ public class DoppelgangerAI extends CharacterAI
 		getActor().followSummoner(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill);
+		_actor.doCast(_skill, _item);
 	}
 	
 	private void thinkInteract()
@@ -173,7 +174,7 @@ public class DoppelgangerAI extends CharacterAI
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
@@ -183,7 +184,7 @@ public class DoppelgangerAI extends CharacterAI
 		{
 			_lastAttack = null;
 		}
-		super.onIntentionCast(skill, target);
+		super.onIntentionCast(skill, target, item);
 	}
 	
 	@Override

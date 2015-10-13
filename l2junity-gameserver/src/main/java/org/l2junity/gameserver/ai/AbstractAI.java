@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.AutoAttackStart;
@@ -78,9 +79,7 @@ public abstract class AbstractAI implements Ctrl
 	/** Current long-term intention */
 	protected CtrlIntention _intention = AI_INTENTION_IDLE;
 	/** Current long-term intention parameter */
-	protected Object _intentionArg0 = null;
-	/** Current long-term intention parameter */
-	protected Object _intentionArg1 = null;
+	protected Object[] _intentionArgs = null;
 	
 	/** Flags about client's state, in order to know which messages to send */
 	protected volatile boolean _clientMoving;
@@ -97,6 +96,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	/** The skill we are currently casting by INTENTION_CAST */
 	Skill _skill;
+	ItemInstance _item;
 	
 	/** Different internal state flags */
 	protected int _moveToPawnTimeout;
@@ -160,14 +160,12 @@ public abstract class AbstractAI implements Ctrl
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is USED by AI classes</B></FONT><B><U><br> Overridden in </U> : </B><BR> <B>L2AttackableAI</B> : Create an AI Task executed every 1s (if necessary)<BR> <B>L2PlayerAI</B> : Stores the current AI intention parameters to later restore it if
 	 * necessary.
 	 * @param intention The new Intention to set to the AI
-	 * @param arg0 The first parameter of the Intention
-	 * @param arg1 The second parameter of the Intention
+	 * @param args The first parameter of the Intention
 	 */
-	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
+	synchronized void changeIntention(CtrlIntention intention, Object... args)
 	{
 		_intention = intention;
-		_intentionArg0 = arg0;
-		_intentionArg1 = arg1;
+		_intentionArgs = args;
 	}
 	
 	/**
@@ -185,16 +183,11 @@ public abstract class AbstractAI implements Ctrl
 	 * Launch the L2CharacterAI onIntention method corresponding to the new Intention.<br>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Stop the FOLLOW mode if necessary</B></FONT>
 	 * @param intention The new Intention to set to the AI
-	 * @param arg0 The first parameter of the Intention (optional target)
+	 * @param args The first parameters of the Intention (optional target)
 	 */
 	@Override
-	public final void setIntention(CtrlIntention intention, Object arg0)
-	{
-		setIntention(intention, arg0, null);
-	}
-	
-	@Override
-	public final void setIntention(CtrlIntention intention, Object arg0, Object arg1)
+	@SafeVarargs
+	public final void setIntention(CtrlIntention intention, Object... args)
 	{
 		// Stop the follow mode if necessary
 		if ((intention != AI_INTENTION_FOLLOW) && (intention != AI_INTENTION_ATTACK))
@@ -215,22 +208,22 @@ public abstract class AbstractAI implements Ctrl
 				onIntentionRest();
 				break;
 			case AI_INTENTION_ATTACK:
-				onIntentionAttack((Creature) arg0);
+				onIntentionAttack((Creature) args[0]);
 				break;
 			case AI_INTENTION_CAST:
-				onIntentionCast((Skill) arg0, (WorldObject) arg1);
+				onIntentionCast((Skill) args[0], (WorldObject) args[1], args.length > 2 ? (ItemInstance) args[2] : null);
 				break;
 			case AI_INTENTION_MOVE_TO:
-				onIntentionMoveTo((Location) arg0);
+				onIntentionMoveTo((Location) args[0]);
 				break;
 			case AI_INTENTION_FOLLOW:
-				onIntentionFollow((Creature) arg0);
+				onIntentionFollow((Creature) args[0]);
 				break;
 			case AI_INTENTION_PICK_UP:
-				onIntentionPickUp((WorldObject) arg0);
+				onIntentionPickUp((WorldObject) args[0]);
 				break;
 			case AI_INTENTION_INTERACT:
-				onIntentionInteract((WorldObject) arg0);
+				onIntentionInteract((WorldObject) args[0]);
 				break;
 		}
 		
@@ -358,7 +351,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	protected abstract void onIntentionAttack(Creature target);
 	
-	protected abstract void onIntentionCast(Skill skill, WorldObject target);
+	protected abstract void onIntentionCast(Skill skill, WorldObject target, ItemInstance item);
 	
 	protected abstract void onIntentionMoveTo(Location destination);
 	

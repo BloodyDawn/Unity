@@ -365,7 +365,7 @@ public final class UseItem implements IClientIncomingPacket
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 			if (handler == null)
 			{
-				if (etcItem != null && etcItem.getHandlerName() != null)
+				if ((etcItem != null) && (etcItem.getHandlerName() != null))
 				{
 					_log.warn("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
 				}

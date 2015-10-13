@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -56,7 +57,7 @@ public final class Plunder extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effector.isPlayer())
 		{
@@ -81,19 +82,18 @@ public final class Plunder extends AbstractEffect
 		if (monster.isSweepActive())
 		{
 			final Collection<ItemHolder> items = monster.takeSweep();
-			
 			if (items != null)
 			{
-				for (ItemHolder item : items)
+				for (ItemHolder sweepedItem : items)
 				{
-					Party party = effector.getParty();
+					final Party party = effector.getParty();
 					if (party != null)
 					{
-						party.distributeItem(player, item, true, monster);
+						party.distributeItem(player, sweepedItem, true, monster);
 					}
 					else
 					{
-						player.addItem("Sweeper", item, effected, true);
+						player.addItem("Sweeper", sweepedItem, effected, true);
 					}
 				}
 			}

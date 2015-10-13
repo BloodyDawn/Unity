@@ -110,7 +110,7 @@ public final class Synergy extends AbstractEffect
 				
 				final Creature[] targets = targetHandler.getTargetList(partyBuffSkill, info.getEffector(), false, info.getEffected());
 				
-				info.getEffector().callSkill(partyBuffSkill, targets);
+				info.getEffector().callSkill(partyBuffSkill, null, targets);
 			}
 			else
 			{

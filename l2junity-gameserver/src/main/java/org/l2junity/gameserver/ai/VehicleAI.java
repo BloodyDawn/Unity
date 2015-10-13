@@ -21,6 +21,7 @@ package org.l2junity.gameserver.ai;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Vehicle;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -43,7 +44,7 @@ public abstract class VehicleAI extends CharacterAI
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
 	{
 	}
 	

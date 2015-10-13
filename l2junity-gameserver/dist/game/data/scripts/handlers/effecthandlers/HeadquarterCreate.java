@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -56,7 +57,7 @@ public final class HeadquarterCreate extends AbstractEffect
 	}
 
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		final PlayerInstance player = effector.getActingPlayer();
 		if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))

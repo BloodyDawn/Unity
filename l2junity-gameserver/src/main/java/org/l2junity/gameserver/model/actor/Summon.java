@@ -481,7 +481,7 @@ public abstract class Summon extends Playable
 		}
 		else
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		}
 	}
 	
@@ -588,7 +588,7 @@ public abstract class Summon extends Playable
 	 * @param dontMove used to prevent movement, if not in range
 	 */
 	@Override
-	public boolean useMagic(Skill skill, boolean forceUse, boolean dontMove)
+	public boolean useMagic(Skill skill, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Null skill, dead summon or null owner are reasons to prevent casting.
 		if ((skill == null) || isDead() || (getOwner() == null))
@@ -966,7 +966,7 @@ public abstract class Summon extends Playable
 	{
 		if (!isMovementDisabled())
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
 	}
 	

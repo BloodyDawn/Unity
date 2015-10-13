@@ -33,6 +33,7 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectTaskInfo;
 import org.l2junity.gameserver.model.effects.EffectTickTask;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -67,6 +68,7 @@ public final class BuffInfo
 	/** If {@code true} then this effect is in use (or has been stop because an Herb took place). */
 	private boolean _isInUse = true;
 	private final boolean _hideStartMessage;
+	private final ItemInstance _item;
 	
 	/**
 	 * Buff Info constructor.
@@ -74,8 +76,9 @@ public final class BuffInfo
 	 * @param effected the effected
 	 * @param skill the skill
 	 * @param hideStartMessage hides start message
+	 * @param item
 	 */
-	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage)
+	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage, ItemInstance item)
 	{
 		_effector = effector;
 		_effected = effected;
@@ -83,6 +86,7 @@ public final class BuffInfo
 		_abnormalTime = Formulas.calcEffectAbnormalTime(effector, effected, skill);
 		_periodStartTicks = GameTimeController.getInstance().getGameTicks();
 		_hideStartMessage = hideStartMessage;
+		_item = item;
 	}
 	
 	/**
@@ -168,6 +172,14 @@ public final class BuffInfo
 	public int getPeriodStartTicks()
 	{
 		return _periodStartTicks;
+	}
+	
+	/**
+	 * @return the item that triggered this skill
+	 */
+	public ItemInstance getItem()
+	{
+		return _item;
 	}
 	
 	/**

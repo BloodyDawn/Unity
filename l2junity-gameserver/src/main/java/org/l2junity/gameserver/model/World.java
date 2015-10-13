@@ -295,7 +295,7 @@ public final class World
 						{
 							if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 							{
-								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 							}
 						}
 					}
@@ -315,7 +315,7 @@ public final class World
 						{
 							if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 							{
-								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 							}
 						}
 					}
@@ -530,7 +530,7 @@ public final class World
 								{
 									if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 									{
-										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 									}
 								}
 							}
@@ -550,7 +550,7 @@ public final class World
 								{
 									if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 									{
-										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 									}
 								}
 							}
