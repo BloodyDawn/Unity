@@ -1371,27 +1371,23 @@
 	</skill>
 	<skill id="2260" levels="1" name="Key of Enigma">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			8059,1,100
-		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="8058" /> <!-- Lockup Research Report -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="8058" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
-				<player weight="80" />
+				<player weight="90" />
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" />
+			<effect name="CreateItemRandom" />
 		</for>
 	</skill>
 	<skill id="2261" levels="9" name="Small Green Nimble Fish (High-grade)">
