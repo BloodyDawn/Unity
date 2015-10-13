@@ -1620,6 +1620,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<capsuled_items>
+			<item id="36221" min="5" max="5" chance="100" />
+			<item id="36234" min="1" max="1" chance="100" />
+			<item id="22279" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="36283" name="Blessed Scroll: Enchant Weapon (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons. In case of failed enchantment, this item does not get crystallized but the enchant value will be reset to 0. -->

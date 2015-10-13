@@ -94,6 +94,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33503" min="5" max="5" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33505" name="Scroll: Noblesse Blessing" type="EtcItem">
 		<!-- For 60 minutes, maintains buffs upon death. -->
@@ -128,6 +131,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33505" min="5" max="5" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33507" name="Scroll: Mount Kukuru" type="EtcItem">
 		<!-- Scroll for mounting a kukuru. When used by a character who is level 40 or above, he/she can mount a Kukuru. -->
@@ -162,6 +168,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33507" min="30" max="30" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33509" name="Returning Hero's Shirt" type="Armor">
 		<!-- T-shirt for a returning hero. When equipped, STR + 1 and Int + 1. -->
@@ -245,6 +254,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33512" min="5" max="5" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33514" name="Hero's Gift Box" type="EtcItem">
 		<!-- Can acquire a 5-unit Hero's Blessing Buff Scroll pack, a 3-unit Minion Coupon pack, a 5-unit Noblesse Blessing buff scroll pack, a 30-unit Kukuru mounting scroll pack, and a 3-unit Feather of Blessing pack. -->
@@ -368,6 +380,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="PEEL" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<capsuled_items>
+			<item id="17304" min="1" max="1" chance="100" />
+			<item id="17305" min="1" max="1" chance="100" />
+			<item id="17306" min="1" max="1" chance="100" />
+			<item id="17307" min="1" max="1" chance="100" />
+			<item id="17308" min="1" max="1" chance="100" />
+			<item id="17309" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33522" name="Attribute Pack" name_additional="Campaign" type="EtcItem">
 		<!-- Box containing attribute stones, attribute crystals, and attribute changing crystals. -->
@@ -376,6 +396,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="PEEL" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<capsuled_items>
+			<item id="17310" min="1" max="1" chance="100" />
+			<item id="17311" min="1" max="1" chance="100" />
+			<item id="17312" min="1" max="1" chance="100" />
+			<item id="17313" min="1" max="1" chance="100" />
+			<item id="17314" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33523" name="Talisman - M. Critical (Passive)" name_additional="Campaign" type="Armor">
 		<!-- M. Critical Rate + 2% when equipped. Shadow weapon. -->

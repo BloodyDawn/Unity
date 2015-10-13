@@ -1537,6 +1537,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="22181" min="60" max="60" chance="100" />
+			<item id="22182" min="15" max="15" chance="100" />
+			<item id="22176" min="1" max="1" chance="100" />
+			<item id="22178" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="22181" name="Event - Cupid's Fatigue Relief Potion" type="EtcItem">
 		<!-- Description: Recovers energy when used on a Bunny. -->
@@ -1643,9 +1649,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="22188" max="3" min="3" /> <!-- Birthday Vitality Potion -->
-			<item chance="100.0" id="21595" max="1" min="1" /> <!-- Birthday Cake -->
-			<item chance="100.0" id="21594" max="1" min="1" /> <!-- Birthday Hat -->
+			<item id="22188" min="3" max="3" chance="100" />
+			<item id="21594" min="1" max="1" chance="100" />
+			<item id="21595" min="1" max="1" chance="100" />
 		</capsuled_items>
 	</item>
 	<item id="22188" name="Birthday Vitality Potion" type="EtcItem">

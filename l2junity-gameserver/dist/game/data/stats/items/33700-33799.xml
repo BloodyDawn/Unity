@@ -1074,6 +1074,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33649" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33749" name="Big Kukurin Pouch" type="EtcItem">
 		<!-- Can acquire a Kukurin Feather Helm and a Kukurin Bracelet. -->
@@ -1089,6 +1092,10 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33649" min="1" max="1" chance="100" />
+			<item id="33642" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33750" name="Test - old requiem weapon" type="Weapon">
 		<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
@@ -1656,6 +1663,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="9570" min="1" max="1" chance="100" />
+			<item id="57" min="5000000" max="5000000" chance="100" />
+			<item id="6622" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33772" name="Aden Hero's Reward Box" type="EtcItem">
 		<!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
@@ -1672,6 +1684,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="9571" min="1" max="1" chance="100" />
+			<item id="57" min="5000000" max="5000000" chance="100" />
+			<item id="6622" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33773" name="Aden Hero's Reward Box" type="EtcItem">
 		<!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
@@ -1688,6 +1705,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="9572" min="1" max="1" chance="100" />
+			<item id="57" min="5000000" max="5000000" chance="100" />
+			<item id="6622" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33774" name="Soulshot (No-grade)" name_additional="Event" type="EtcItem">
 		<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on no-grade weapons. -->
@@ -2077,6 +2099,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33512" min="3" max="3" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33796" name="Returning Hero's Gold Chest" name_additional="Event" type="EtcItem">
 		<!-- Gift box that contains 250 Returning Hero's Marks, 1 Returning Hero's Potion Pack, and 1 Returning Hero's Support Box. -->
@@ -2092,6 +2117,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33511" min="250" max="250" chance="100" />
+			<item id="36021" min="1" max="1" chance="100" />
+			<item id="36023" min="1" max="1" chance="100" />
+		</capsuled_items>
 	</item>
 	<item id="33797" name="Agathion - Tersi's Light" name_additional="Event" type="Armor">
 		<!-- Bracelet that can summon Tersi's Light, which was distributed by the temple to oppose Shilen's darkness. Requires room in the inventory and the weight limit to receive the Specter of Light. -->
