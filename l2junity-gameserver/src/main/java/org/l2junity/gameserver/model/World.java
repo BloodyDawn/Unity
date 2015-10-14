@@ -720,7 +720,15 @@ public final class World
 	
 	public WorldRegion getRegion(int x, int y, int z)
 	{
-		return _worldRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y][(z >> SHIFT_BY_Z) + OFFSET_Z];
+		try
+		{
+			return _worldRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y][(z >> SHIFT_BY_Z) + OFFSET_Z];
+		}
+		catch (ArrayIndexOutOfBoundsException e)
+		{
+			_log.warn("Incorrect world region X: {} Y: {} Z: {} for coordinates x: {} y: {} z: {}", ((x >> SHIFT_BY) + OFFSET_X), ((y >> SHIFT_BY) + OFFSET_Y), ((z >> SHIFT_BY_Z) + OFFSET_Z), x, y, z);
+			return null;
+		}
 	}
 	
 	/**
