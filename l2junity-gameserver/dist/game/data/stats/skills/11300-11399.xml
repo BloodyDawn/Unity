@@ -287,6 +287,9 @@
 			<effect name="DispelByCategory">
 				<param slot="debuff" rate="100" max="10" />
 			</effect>
+			<effect name="Buff">
+				<set stat="debuffImmunity" val="1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11310" levels="2" name="Mass Servitor Blessing">

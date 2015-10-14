@@ -143,8 +143,6 @@ import quests.Q00618_IntoTheFlame.Q00618_IntoTheFlame;
 import quests.Q00621_EggDelivery.Q00621_EggDelivery;
 import quests.Q00622_SpecialtyLiquorDelivery.Q00622_SpecialtyLiquorDelivery;
 import quests.Q00623_TheFinestFood.Q00623_TheFinestFood;
-import quests.Q00624_TheFinestIngredientsPart1.Q00624_TheFinestIngredientsPart1;
-import quests.Q00625_TheFinestIngredientsPart2.Q00625_TheFinestIngredientsPart2;
 import quests.Q00626_ADarkTwilight.Q00626_ADarkTwilight;
 import quests.Q00627_HeartInSearchOfPower.Q00627_HeartInSearchOfPower;
 import quests.Q00631_DeliciousTopChoiceMeat.Q00631_DeliciousTopChoiceMeat;
@@ -159,10 +157,6 @@ import quests.Q00652_AnAgedExAdventurer.Q00652_AnAgedExAdventurer;
 import quests.Q00655_AGrandPlanForTamingWildBeasts.Q00655_AGrandPlanForTamingWildBeasts;
 import quests.Q00662_AGameOfCards.Q00662_AGameOfCards;
 import quests.Q00688_DefeatTheElrokianRaiders.Q00688_DefeatTheElrokianRaiders;
-import quests.Q00699_GuardianOfTheSkies.Q00699_GuardianOfTheSkies;
-import quests.Q00700_CursedLife.Q00700_CursedLife;
-import quests.Q00701_ProofOfExistence.Q00701_ProofOfExistence;
-import quests.Q00702_ATrapForRevenge.Q00702_ATrapForRevenge;
 import quests.Q00761_AssistingTheGoldenRamArmy.Q00761_AssistingTheGoldenRamArmy;
 import quests.Q00762_AnOminousRequest.Q00762_AnOminousRequest;
 import quests.Q00763_ADauntingTask.Q00763_ADauntingTask;
@@ -432,8 +426,6 @@ public class QuestMasterHandler
 		Q00621_EggDelivery.class,
 		Q00622_SpecialtyLiquorDelivery.class,
 		Q00623_TheFinestFood.class,
-		Q00624_TheFinestIngredientsPart1.class,
-		Q00625_TheFinestIngredientsPart2.class,
 		Q00626_ADarkTwilight.class,
 		Q00627_HeartInSearchOfPower.class,
 		Q00631_DeliciousTopChoiceMeat.class,
@@ -448,10 +440,6 @@ public class QuestMasterHandler
 		Q00655_AGrandPlanForTamingWildBeasts.class,
 		Q00662_AGameOfCards.class,
 		Q00688_DefeatTheElrokianRaiders.class,
-		Q00699_GuardianOfTheSkies.class,
-		Q00700_CursedLife.class,
-		Q00701_ProofOfExistence.class,
-		Q00702_ATrapForRevenge.class,
 		Q00761_AssistingTheGoldenRamArmy.class,
 		Q00762_AnOminousRequest.class,
 		Q00763_ADauntingTask.class,
