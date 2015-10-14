@@ -106,6 +106,12 @@ public enum Movie
 	SC_BLOODVEIN_OPENING(109, false),
 	ERT_QUEST_A(110, false),
 	ERT_QUEST_B(111, false),
+	EPIC_FREYA_SLIDE(112, false), // TODO: Escapable need be confirmed!
+	EPIC_KELBIM_SLIDE(113, false), // TODO: Escapable need be confirmed!
+	EPIC_TAUTI_SLIDE(114, false), // TODO: Escapable need be confirmed!
+	EPIC_FREYA_SCENE(115, false), // TODO: Escapable need be confirmed!
+	EPIC_KELBIM_SCENE(116, false), // TODO: Escapable need be confirmed!
+	EPIC_TAUTI_SCENE(117, false), // TODO: Escapable need be confirmed!
 	LAND_KSERTH_A(1000, true),
 	LAND_KSERTH_B(1001, true),
 	LAND_UNDEAD_A(1002, true),
