@@ -76,6 +76,8 @@ public class ItemInfo
 	};
 	
 	private int[] _option;
+	private int[] _soulCrystalOptions;
+	private int[] _soulCrystalSpecialOptions;
 	private int _visualId;
 	private long _visualExpiration;
 	
@@ -151,6 +153,8 @@ public class ItemInfo
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_option = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
 		_visualId = item.getVisualId();
 	}
 	
@@ -387,6 +391,16 @@ public class ItemInfo
 	public int getVisualId()
 	{
 		return _visualId;
+	}
+	
+	public int[] getSoulCrystalOptions()
+	{
+		return _soulCrystalOptions;
+	}
+	
+	public int[] getSoulCrystalSpecialOptions()
+	{
+		return _soulCrystalSpecialOptions;
 	}
 	
 	public long getVisualExpiration()

@@ -118,6 +118,20 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			packet.writeD(item.getVisualId()); // Item remodel visual ID
 		}
+		if (containsMask(mask, ItemListType.SOUL_CRYSTAL))
+		{
+			packet.writeC(item.getSoulCrystalOptions().length); // Size of regular soul crystal options.
+			for (int ensoulId : item.getSoulCrystalOptions())
+			{
+				packet.writeD(ensoulId); // Regular Soul Crystal Ability ID.
+			}
+			
+			packet.writeC(item.getSoulCrystalSpecialOptions().length); // Size of special soul crystal options.
+			for (int ensoulId : item.getSoulCrystalSpecialOptions())
+			{
+				packet.writeD(ensoulId); // Special Soul Crystal Ability ID.
+			}
+		}
 	}
 	
 	protected static int calculateMask(ItemInfo item)
@@ -160,6 +174,12 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			mask |= ItemListType.VISUAL_ID.getMask();
 		}
+		
+		if ((item.getSoulCrystalOptions().length > 0) || (item.getSoulCrystalSpecialOptions().length > 0))
+		{
+			mask |= ItemListType.SOUL_CRYSTAL.getMask();
+		}
+		
 		return mask;
 	}
 	

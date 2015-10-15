@@ -157,6 +157,7 @@ public final class ItemInstance extends WorldObject
 	
 	//@formatter:off
 	public static final int[] DEFAULT_ENCHANT_OPTIONS = new int[] { 0, 0, 0 };
+	public static final int[] DEFAULT_SOUL_CRYSTAL_OPTIONS = new int[0];
 	//@formatter:on
 	
 	private int _lastChange = 2; // 1 ??, 2 modified, 3 removed
@@ -2047,6 +2048,22 @@ public final class ItemInstance extends WorldObject
 			return op.getOptions();
 		}
 		return DEFAULT_ENCHANT_OPTIONS;
+	}
+	
+	/**
+	 * @return Array of regular Soul Crystal option IDs (Special Abilities).
+	 */
+	public int[] getSoulCrystalOptions()
+	{
+		return DEFAULT_SOUL_CRYSTAL_OPTIONS;
+	}
+	
+	/**
+	 * @return Array of Special Soul Crystal option IDs (Special Abilities).
+	 */
+	public int[] getSoulCrystalSpecialOptions()
+	{
+		return DEFAULT_SOUL_CRYSTAL_OPTIONS;
 	}
 	
 	/**
