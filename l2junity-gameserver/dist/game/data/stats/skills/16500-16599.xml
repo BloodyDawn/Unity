@@ -434,4 +434,490 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 	</skill>
+	<skill id="16545" levels="1" name="Geork's Hammer">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Geork swings his hammer, dealing physical damage to enemies around and knocking them back. -->
+		<set name="icon" val="icon.skill0922" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="600" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<skill id="16546" levels="1" name="Banished Captive">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Banished from battle for 60 minutes by Geork. -->
+		<set name="icon" val="icon.skill11273" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="78" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="16547" levels="10" name="Danger Zone Attack Resistance">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Has slight resistance to Danger Zone. -->
+		<set name="icon" val="icon.skill0289" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="16548" levels="1" name="Eternal Blizzard">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.skill6274" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="7000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16549" levels="1" name="Freeze - Eternal Ice">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Frozen solid and unable to move. -->
+		<set name="icon" val="icon.skill6274" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16550" levels="1" name="Zellaka's Quake">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Inflicts ranged physical damage and knocks them back for 2 seconds. -->
+		<set name="icon" val="icon.skill1172" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="2500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="30000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16551" levels="1" name="Ice Attack">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.skill11017" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="19" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1080" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<skill id="16552" levels="1" name="Ice Fist">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Freeze the opponent along with the damage from your first. -->
+		<set name="icon" val="icon.skill11017" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="19" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16553" levels="1" name="Ice Breath">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Freeze enemies in front of you with your breath. -->
+		<set name="icon" val="icon.skill11017" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="10" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16554" levels="1" name="Spinning Slash">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Inflicts damage and stuns enemies around. -->
+		<set name="icon" val="icon.skill0036" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="13" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16555" levels="1" name="Kelbim Deadly Blow">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Tries to inflict a powerful vital spot attack. -->
+		<set name="icon" val="icon.skill0263" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="33" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<skill id="16556" levels="1" name="Kelbim Bluff">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Makes the target show their back and inflicts damage. -->
+		<set name="icon" val="icon.skill0358" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="35" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16557" levels="1" name="Dancing Blade">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Inflicts great damage to enemies within range and makes them bleed. -->
+		<set name="icon" val="icon.skill0096" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="30000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16558" levels="1" name="Kelbim Mortality">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases success rate of vital spot attacks. -->
+		<set name="icon" val="icon.skill0410" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="27" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="150000" />
+	</skill>
+	<skill id="16559" levels="1" name="Dragonclaw Shield Stun">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Make an attack with a shield, stunning the target. -->
+		<set name="icon" val="icon.skill0092" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="10" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="3000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16560" levels="1" name="Dragonclaw Ultimate Defense">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Def. -->
+		<set name="icon" val="icon.skill0110" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="900000" />
+	</skill>
+	<skill id="16561" levels="1" name="Dragonclaw Hurricane">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Creates a whirlwind, inflicting wind damage on the enemy. -->
+		<set name="icon" val="icon.skill1239" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="34" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="16562" levels="1" name="Dragonclaw Curse Fear">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Frightens the enemy and causes him to flee. -->
+		<set name="icon" val="icon.skill1169" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="35" />
+		<set name="castRange" val="600" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16563" levels="1" name="Dragonclaw Iron Punch">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Attacks the enemy with great power. -->
+		<set name="icon" val="icon.skill0029" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="10" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1604" />
+		<set name="coolTime" val="296" />
+		<set name="reuseDelay" val="4000" />
+	</skill>
+	<skill id="16564" levels="1" name="Dragonclaw Soul Breaker">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Hurls an iron-fist, stunning the enemy. -->
+		<set name="icon" val="icon.skill0281" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="35" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1360" />
+		<set name="coolTime" val="440" />
+		<set name="reuseDelay" val="3000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16565" levels="1" name="Dragonclaw Divine Flash">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Detonate holy energy to inflict damage on nearby enemies. -->
+		<set name="icon" val="icon.skill1528" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="57" />
+		<set name="castRange" val="500" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="16566" levels="1" name="Dragonclaw Battle Heal">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Restores the target's HP very fast. -->
+		<set name="icon" val="icon.skill1015" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="25" />
+		<set name="castRange" val="600" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="16567" levels="1" name="Dragonclaw Blaze Quake">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Ignites nearby enemies. -->
+		<set name="icon" val="icon.skill1101" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="50" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16568" levels="1" name="Dragonclaw Power Smash">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Attacks the enemy with great power. -->
+		<set name="icon" val="icon.skill0255" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="19" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1080" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<skill id="16569" levels="1" name="Dragonclaw Power Shot">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Attacks long-range enemies. -->
+		<set name="icon" val="icon.skill0056" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="17" />
+		<set name="castRange" val="700" />
+		<set name="hitTime" val="3200" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+	</skill>
+	<skill id="16570" levels="1" name="Dragonclaw Blaze">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Ignites flames on your body, inflicting fire damage on the enemy. -->
+		<set name="icon" val="icon.skill1220" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="18" />
+		<set name="castRange" val="750" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="16571" levels="1" name="Decrease P. Def.">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P. Def. is decreased. -->
+		<set name="icon" val="icon.skill11276" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="600000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16572" levels="1" name="Seal Archangel's Wrath">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Unable to move due to Seal Archangel's wrath. -->
+		<set name="icon" val="icon.skill4111" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="400" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16573" levels="1" name="Kelbim Petrify">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Petrified and unable to move temporarily. -->
+		<set name="icon" val="icon.skill4111" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16574" levels="4" name="Shield of Infinity">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P./M. Def. + 15%%. -->
+		<set name="icon" val="icon.skill0110" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="240000" />
+	</skill>
+	<skill id="16575" levels="1" name="Eternal Blizzard">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.skill6274" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16576" levels="1" name="Freeze - Eternal Ice">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Frozen solid and unable to move. -->
+		<set name="icon" val="icon.skill6274" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16577" levels="1" name="Dragonclaw Bluff">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Tricks the enemy. Make the enemy show their back and stun them for 9 seconds. -->
+		<set name="icon" val="icon.skill0358" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16578" levels="1" name="Dragonclaw Crush">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Inflicts damage to enemies around and stuns them. -->
+		<set name="icon" val="icon.skill0000" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="10000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16579" levels="1" name="Dragonclaw Vortex">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Stirs up a vortex connecting to the dimension of Fire and inflicts Fire damage on the enemy for 30 seconds. Decreases Speed by 10%%, Atk. Spd. by 30%%, Casting Spd. by 10%%, and Fire Resistance by 20. -->
+		<set name="icon" val="icon.skill1339" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="6000" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16580" levels="1" name="Dragonclaw Aggression Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Provokes nearby enemies to attack. -->
+		<set name="icon" val="icon.skill0018" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="50" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="40000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16581" levels="3" name="Growth Accelerator">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Turns aggressive due to hunger. -->
+		<set name="icon" val="icon.skill0083" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="200" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="16582" levels="1" name="Let the Dogs Out!">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Typhoon summons his guardians. -->
+		<set name="icon" val="icon.skill0000" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="1500" />
+		<set name="hitTime" val="5000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="16583" levels="1" name="Pounce">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Pounces on the enemy and knocks them out. -->
+		<set name="icon" val="icon.skill0121" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="600" />
+		<set name="hitTime" val="660" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="7000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16584" levels="1" name="Mass Fear">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Inflicted with Fear and moving against own will momentarily. -->
+		<set name="icon" val="icon.skill1092" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="1" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16585" levels="1" name="Dragonclaw Cannon">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Bombards enemies around the target. -->
+		<set name="icon" val="icon.skill0000" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="2500" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="16586" levels="1" name="Dragonclaw Siege Attack">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Deal a powerful attack on the enemy. -->
+		<set name="icon" val="icon.skill_transform_etc" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="100" />
+		<set name="castRange" val="80" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="16587" levels="1" name="Dragonclaw Siege Punch">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Attacks the target with great power, knocking them back. -->
+		<set name="icon" val="icon.skill_transform_debuff" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="100" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16588" levels="1" name="Time Bomb Explosion">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- On fire due to the explosion. Received Damage + 50%%. -->
+		<set name="icon" val="icon.skill1383" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="2000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="16589" levels="1" name="Teleport">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.skill0000" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="1500" />
+	</skill>
 </list>

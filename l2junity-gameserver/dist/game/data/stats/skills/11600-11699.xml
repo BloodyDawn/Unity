@@ -613,4 +613,27 @@
 			</effect>
 		</for>
 	</skill>
+	<skill id="11620" levels="10" name="Superior Shield Mastery">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Shield Defense Success Rate + $s1, Shield Defense + $s2. -->
+		<set name="icon" val="icon.skill10003" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="11621" levels="1" name="Blessing Barrier">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Has a chance to create a barrier that absorbs damage. -->
+		<set name="icon" val="icon.skill11621" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="11622" levels="1" name="Blessing Barrier">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Protected by a barrier. It absorbs 20000 damage for 10 seconds. -->
+		<set name="icon" val="icon.skill11621" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="30000" />
+		<set name="isMagic" val="4" />
+	</skill>
 </list>
