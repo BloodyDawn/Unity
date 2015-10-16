@@ -60,8 +60,8 @@
 		<!-- You can start a campfire by using this flint. The warmth of the bonfire will decrease Skill Cooldown by 10%, increase PVE Damage by 10%, and bestow the Vampirig Rage effect. It will be effective only when the fire is started at a certain distance away from the village. Does not stack with the Christmas Tree effect. -->
 		<set name="icon" val="BranchSys2.icon.g_campfire_flint" />
 		<set name="price" val="1" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
+
+
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -69,10 +69,11 @@
 	<item id="26305" name="Kotatsu" type="EtcItem">
 		<!-- Increases Speed by 20, and reduces Skill MP Consumption by 20% and PvE Damage by 10%. It will be effective only when summoned at a certain distance away from the village. Does not stack with the Christmas Tree effect. -->
 		<set name="icon" val="BranchSys.icon.br_kotatsu_i00" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
-		<set name="is_dropable" val="false" />
+
+
+
 		<set name="is_commissionable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26306" name="Offering Test Recipe 1" type="EtcItem">
@@ -400,6 +401,7 @@
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
 		<set name="recipe_id" val="5000" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="26343" name="Recipe: Talisman - Abundance Lv. 2 (High-grade)" type="EtcItem">
@@ -411,6 +413,7 @@
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
 		<set name="recipe_id" val="5001" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="26344" name="Recipe: Talisman - Abundance Lv. 3 (High-grade)" type="EtcItem">
@@ -422,6 +425,7 @@
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
 		<set name="recipe_id" val="5002" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="26345" name="Recipe: Talisman - Abundance Lv. 4 (High-grade)" type="EtcItem">
@@ -433,6 +437,7 @@
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
 		<set name="recipe_id" val="5003" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="26346" name="Kaliel's Wish Pouch" type="EtcItem">
