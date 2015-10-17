@@ -109,8 +109,8 @@
 			<xs:extension base="xs:string">
 				<xs:attribute type="xs:short" name="mindistance" use="optional" />
 				<xs:attribute type="xs:string" name="abnormalType" use="optional" />
-				<xs:attribute type="xs:short" name="active_effect_id" use="optional" />
-				<xs:attribute type="xs:short" name="active_skill_id" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="active_effect_id" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="active_skill_id" use="optional" />
 				<xs:attribute type="xs:string" name="class_id_restriction" use="optional" />
 				<xs:attribute type="xs:string" name="myPartyExceptMe" use="optional" />
 				<xs:attribute type="xs:string" name="race" use="optional" />
@@ -231,7 +231,7 @@
 				<xs:attribute type="xs:byte" name="maxAttackerLevel" use="optional" />
 				<xs:attribute type="xs:boolean" name="isCritical" use="optional" />
 				<xs:attribute type="xs:string" name="minDamage" use="optional" />
-				<xs:attribute type="xs:short" name="castSkillId" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="castSkillId" use="optional" />
 				<xs:attribute type="xs:byte" name="blockedActions" use="optional" />
 				<xs:attribute type="xs:string" name="skillId" use="optional" />
 				<xs:attribute type="xs:string" name="skillLevel" use="optional" />
@@ -244,7 +244,7 @@
 				<xs:attribute type="xs:string" name="expNeeded" use="optional" />
 				<xs:attribute type="xs:string" name="itemId" use="optional" />
 				<xs:attribute type="xs:string" name="itemCount" use="optional" />
-				<xs:attribute type="xs:short" name="id" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="id" use="optional" />
 				<xs:attribute type="xs:string" name="transformationId" use="optional" />
 				<xs:attribute type="xs:string" name="amount" use="optional" />
 				<xs:attribute type="xs:string" name="mode" use="optional" />
@@ -269,11 +269,11 @@
 				<xs:attribute type="xs:string" name="TURN_STONE" use="optional" />
 				<xs:attribute type="xs:string" name="FIST" use="optional" />
 				<xs:attribute type="xs:byte" name="randomOffset" use="optional" />
-				<xs:attribute type="xs:short" name="skillId1" use="optional" />
-				<xs:attribute type="xs:short" name="skillId2" use="optional" />
-				<xs:attribute type="xs:short" name="skillId3" use="optional" />
-				<xs:attribute type="xs:short" name="skillId4" use="optional" />
-				<xs:attribute type="xs:short" name="skillId5" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="skillId1" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="skillId2" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="skillId3" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="skillId4" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="skillId5" use="optional" />
 				<xs:attribute type="xs:byte" name="skillLvl1" use="optional" />
 				<xs:attribute type="xs:byte" name="skillLvl2" use="optional" />
 				<xs:attribute type="xs:byte" name="skillLvl3" use="optional" />
@@ -322,7 +322,7 @@
 				<xs:attribute type="xs:string" name="percentage" use="optional" />
 				<xs:attribute type="xs:string" name="requiredSlots" use="optional" />
 				<xs:attribute type="xs:string" name="optionalSlots" use="optional" />
-				<xs:attribute type="xs:short" name="partyBuffSkillId" use="optional" />
+				<xs:attribute type="xs:unsignedShort" name="partyBuffSkillId" use="optional" />
 				<xs:attribute type="xs:string" name="allowedSkills" use="optional" />
 				<xs:attribute type="xs:string" name="party" use="optional" />
 				<xs:attribute type="xs:string" name="stat" use="optional" />
@@ -513,7 +513,7 @@
 		<xs:attribute type="xs:string" name="triggeredId" use="optional" />
 		<xs:attribute type="xs:string" name="triggeredLevel" use="optional" />
 		<xs:attribute type="xs:string" name="activationMinDamage" use="optional" />
-		<xs:attribute type="xs:short" name="activationSkills" use="optional" />
+		<xs:attribute type="xs:unsignedShort" name="activationSkills" use="optional" />
 	</xs:complexType>
 	<xs:complexType name="forType" mixed="true">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
@@ -574,7 +574,7 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:choice>
-		<xs:attribute type="xs:short" name="id" use="optional" />
+		<xs:attribute type="xs:unsignedShort" name="id" use="optional" />
 		<xs:attribute type="xs:byte" name="levels" use="optional" />
 		<xs:attribute type="xs:string" name="name" use="optional" />
 	</xs:complexType>
