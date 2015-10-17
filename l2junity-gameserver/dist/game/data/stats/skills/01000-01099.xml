@@ -473,7 +473,7 @@
 		</for>
 	</skill>
 	<skill id="1020" levels="27" name="Vitalize">
-		<table name="#amount"> 440 454 467 494 508 521 548 562 575 588 602 615 627 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
+		<table name="#amount"> 440 454 467 494 508 521 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
 		<table name="#dispelAbnormals"> POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 </table>
 		<table name="#effectPoints"> 528 544 561 593 609 626 658 674 690 706 722 737 753 768 783 798 812 826 840 854 867 879 892 904 915 926 936 </table>
 		<table name="#magicLvl"> 46 47 48 50 51 52 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
@@ -503,6 +503,7 @@
 		</for>
 	</skill>
 	<skill id="1027" levels="15" name="Group Heal">
+		<table name="#power"> 66 76 86 97 108 121 141 148 156 179 188 196 222 231 241 </table>
 		<table name="#effectPoints"> 66 76 86 97 108 121 141 148 156 179 188 196 222 231 241 </table>
 		<table name="#magicLvl"> 10 12 14 16 18 20 23 24 25 28 29 30 33 34 35 </table>
 		<table name="#mpConsume"> 26 30 34 38 42 47 52 55 57 66 69 70 76 79 82 </table>
@@ -522,7 +523,7 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Heal">
-				<param power="#effectPoints" />
+				<param power="#power" />
 			</effect>
 		</for>
 	</skill>
