@@ -25,6 +25,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
+		<set name="abnormalTime" val="20" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
@@ -477,7 +478,7 @@
 		<table name="#mpConsume"> 84 90 95 102 111 122 133 143 </table>
 		<table name="#mpInitialConsume"> 21 22 24 25 28 31 33 36 </table>
 		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="300" />
+		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="CP_UP" />
 		<set name="affectLimit" val="50-100" />
 		<set name="affectRange" val="1000" />
@@ -1649,7 +1650,7 @@
 	</skill>
 	<skill id="1454" levels="1" name="Diamond Dust">
 		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="30" />
+		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="6-12" />

@@ -160,6 +160,7 @@
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-115" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23614" levels="1" name="Timber Burst">
@@ -205,6 +206,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23619" levels="3" name="Silence Bomb">
+		<table name="#abnormalTime"> 7 10 14 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Katura's darkness seeps in to inflict Silence and magic damage for 7sec. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up. -->
 		<set name="icon" val="icon.skill1064" />
@@ -215,6 +217,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23620" levels="1" name="Soul Burn">
@@ -236,6 +239,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23622" levels="3" name="Quaking Earth">
+		<table name="#abnormalTime"> 5 7 10 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The wrath of the earth inflicts Stun for 5sec. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up. -->
 		<set name="icon" val="icon.skill0100" />
@@ -245,6 +249,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="-10000" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23623" levels="1" name="Sweeping Quake">
@@ -622,6 +627,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-200" />
+		<set name="abnormalTime" val="15" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23654" levels="1" name="Earth Breaker">

@@ -1764,6 +1764,7 @@
 		</for>
 	</skill>
 	<skill id="11299" levels="1" name="Servitor Balance Life">
+		<table name="#abnormalTime"> 0 15 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Balances you and your servitor's HP. -->
 		<set name="icon" val="icon.skill11299" />
@@ -1780,6 +1781,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="RebalanceHP" />
