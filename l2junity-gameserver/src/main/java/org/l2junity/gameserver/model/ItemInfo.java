@@ -211,6 +211,8 @@ public class ItemInfo
 		}
 		
 		_option = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalOptions = item.getSoulCrystalSpecialOptions();
 		_visualId = item.getVisualId();
 	}
 	
@@ -251,6 +253,9 @@ public class ItemInfo
 		_time = -9999;
 		
 		_location = 0;
+		
+		_soulCrystalOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
+		_soulCrystalSpecialOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
 	}
 	
 	public ItemInfo(WarehouseItem item)
@@ -301,6 +306,8 @@ public class ItemInfo
 			_elemDefAttr[i] = item.getElementDefAttr(i);
 		}
 		_option = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalOptions = item.getSoulCrystalSpecialOptions();
 	}
 	
 	public int getObjectId()
