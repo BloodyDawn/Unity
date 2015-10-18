@@ -401,19 +401,7 @@ public final class Formulas
 		final double weaponMod = attacker.getRandomDamageMultiplier();
 		final double damageResMod = 1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100);
 		
-		double penaltyMod = 1;
-		if (target.isAttackable() && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
-		{
-			int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
-			if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-			{
-				penaltyMod *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-			}
-			else
-			{
-				penaltyMod *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
-			}
-		}
+		double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
 		
 		damage = (baseMod * criticalMod * criticalVulnMod * proximityBonus * pvpBonus) + criticalAddMod + criticalAddVuln;
 		damage *= weaponTraitMod;
@@ -499,20 +487,7 @@ public final class Formulas
 		double weaponMod = attacker.getRandomDamageMultiplier();
 		final double damageResMod = 1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100);
 		
-		double penaltyMod = 1;
-		if (target.isAttackable() && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
-		{
-			int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
-			if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-			{
-				penaltyMod *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-			}
-			else
-			{
-				penaltyMod *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
-			}
-			
-		}
+		double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
 		
 		damage = (baseMod * criticalMod * criticalVulnMod * proximityBonus * pvpBonus) + criticalAddMod + criticalAddVuln;
 		damage *= generalTraitMod;
@@ -656,61 +631,27 @@ public final class Formulas
 		damage *= calcAttributeBonus(attacker, target, skill);
 		damage *= (1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 		
-		if (target.isAttackable())
+		if (target.isAttackable() || attacker.isAttackable())
 		{
-			final Weapon weapon = attacker.getActiveWeaponItem();
-			if ((weapon != null) && weapon.isBowOrCrossBow())
+			damage *= calcPveDamagePenalty(attacker, target, skill, crit);
+			
+			if (skill != null)
 			{
-				if (skill != null)
+				damage *= attacker.getStat().getValue(Stats.PVE_PHYS_SKILL_DMG, 1) * target.getStat().getValue(Stats.PVE_PHYS_SKILL_DEF, 1);
+				if (attacker.isRaid())
 				{
-					damage *= attacker.getStat().getValue(Stats.PVE_BOW_SKILL_DMG, 1);
-				}
-				else
-				{
-					damage *= attacker.getStat().getValue(Stats.PVE_BOW_DMG, 1);
+					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYS_SKILL_DEF, 1);
 				}
 			}
 			else
 			{
-				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1);
-			}
-			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
-			{
-				int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
-				if (skill != null)
+				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_DEF, 1);
+				if (attacker.isRaid())
 				{
-					if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-					{
-						damage *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-					}
-					else
-					{
-						damage *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
-					}
-				}
-				else if (crit)
-				{
-					if (lvlDiff >= Config.NPC_CRIT_DMG_PENALTY.size())
-					{
-						damage *= Config.NPC_CRIT_DMG_PENALTY.get(Config.NPC_CRIT_DMG_PENALTY.size() - 1);
-					}
-					else
-					{
-						damage *= Config.NPC_CRIT_DMG_PENALTY.get(lvlDiff);
-					}
-				}
-				else
-				{
-					if (lvlDiff >= Config.NPC_DMG_PENALTY.size())
-					{
-						damage *= Config.NPC_DMG_PENALTY.get(Config.NPC_DMG_PENALTY.size() - 1);
-					}
-					else
-					{
-						damage *= Config.NPC_DMG_PENALTY.get(lvlDiff);
-					}
+					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_DEF, 1);
 				}
 			}
+			
 		}
 		return damage;
 	}
@@ -819,20 +760,14 @@ public final class Formulas
 		// Critical damage resistance
 		damage *= target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
 		
-		if (target.isAttackable())
+		// PvE Bonuses.
+		if (target.isAttackable() || attacker.isAttackable())
 		{
-			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_DMG, 1);
-			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
+			damage *= calcPveDamagePenalty(attacker, target, skill, mcrit);
+			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_DEF, 1);
+			if (attacker.isRaid())
 			{
-				int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
-				if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-				}
-				else
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
-				}
+				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_DEF, 1);
 			}
 		}
 		return damage;
@@ -907,18 +842,7 @@ public final class Formulas
 		if (target.isAttackable())
 		{
 			damage *= attacker.getOwner().getStat().getValue(Stats.PVE_MAGICAL_DMG, 1);
-			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getOwner() != null) && ((target.getLevel() - attacker.getOwner().getLevel()) >= 2))
-			{
-				int lvlDiff = target.getLevel() - attacker.getOwner().getLevel() - 1;
-				if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-				}
-				else
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
-				}
-			}
+			damage *= calcPveDamagePenalty(attacker.getOwner(), target, skill, mcrit);
 		}
 		return damage;
 	}
@@ -1413,20 +1337,14 @@ public final class Formulas
 		double damage = (Math.sqrt(mAtk) * power * (mp / 97)) / mDef;
 		damage *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		
-		if (target.isAttackable())
+		// PvE Bonuses.
+		if (target.isAttackable() || attacker.isAttackable())
 		{
-			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_DMG, 1);
-			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
+			damage *= calcPveDamagePenalty(attacker, target, skill, mcrit);
+			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_DEF, 1);
+			if (attacker.isRaid())
 			{
-				int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
-				if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-				}
-				else
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
-				}
+				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_DEF, 1);
 			}
 		}
 		
@@ -2167,41 +2085,13 @@ public final class Formulas
 		}
 		
 		// PvE Bonus
-		if (target.isAttackable())
+		if (target.isAttackable() || attacker.isAttackable())
 		{
-			if (isBow)
+			damage *= calcPveDamagePenalty(attacker, target, null, crit);
+			damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_DEF, 1);
+			if (attacker.isRaid())
 			{
-				damage *= attacker.getStat().getValue(Stats.PVE_BOW_DMG, 1);
-			}
-			else
-			{
-				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1);
-			}
-			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
-			{
-				int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
-				if (crit)
-				{
-					if (lvlDiff >= Config.NPC_CRIT_DMG_PENALTY.size())
-					{
-						damage *= Config.NPC_CRIT_DMG_PENALTY.get(Config.NPC_CRIT_DMG_PENALTY.size() - 1);
-					}
-					else
-					{
-						damage *= Config.NPC_CRIT_DMG_PENALTY.get(lvlDiff);
-					}
-				}
-				else
-				{
-					if (lvlDiff >= Config.NPC_DMG_PENALTY.size())
-					{
-						damage *= Config.NPC_DMG_PENALTY.get(Config.NPC_DMG_PENALTY.size() - 1);
-					}
-					else
-					{
-						damage *= Config.NPC_DMG_PENALTY.get(lvlDiff);
-					}
-				}
+				damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_DEF, 1);
 			}
 		}
 		
@@ -2232,5 +2122,42 @@ public final class Formulas
 				return 0;
 			}
 		}
+	}
+	
+	public static double calcPveDamagePenalty(Creature attacker, Creature target, Skill skill, boolean crit)
+	{
+		if (target.isAttackable() && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
+		{
+			int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
+			if (skill != null)
+			{
+				if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
+				{
+					return Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
+				}
+				
+				return Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
+			}
+			else if (crit)
+			{
+				if (lvlDiff >= Config.NPC_CRIT_DMG_PENALTY.size())
+				{
+					return Config.NPC_CRIT_DMG_PENALTY.get(Config.NPC_CRIT_DMG_PENALTY.size() - 1);
+				}
+				
+				return Config.NPC_CRIT_DMG_PENALTY.get(lvlDiff);
+			}
+			else
+			{
+				if (lvlDiff >= Config.NPC_DMG_PENALTY.size())
+				{
+					return Config.NPC_DMG_PENALTY.get(Config.NPC_DMG_PENALTY.size() - 1);
+				}
+				
+				return Config.NPC_DMG_PENALTY.get(lvlDiff);
+			}
+		}
+		
+		return 1.0;
 	}
 }

@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -219,28 +218,14 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		damage *= Formulas.calcAttributeBonus(effector, effected, skill);
 		damage *= (1 - (effected.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 		
-		if (effected.isAttackable())
+		// PvE Bonuses.
+		if (effected.isAttackable() || effector.isAttackable())
 		{
-			final Weapon weapon = effector.getActiveWeaponItem();
-			if ((weapon != null) && weapon.isBowOrCrossBow())
+			damage *= Formulas.calcPveDamagePenalty(effector, effected, skill, false);
+			damage *= effector.getStat().getValue(Stats.PVE_PHYS_SKILL_DMG, 1) * effected.getStat().getValue(Stats.PVE_PHYS_SKILL_DEF, 1);
+			if (effector.isRaid())
 			{
-				damage *= effector.getStat().getValue(Stats.PVE_BOW_SKILL_DMG, 1);
-			}
-			else
-			{
-				damage *= effector.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1);
-			}
-			if (!effected.isRaid() && !effected.isRaidMinion() && (effected.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (effector.getActingPlayer() != null) && ((effected.getLevel() - effector.getActingPlayer().getLevel()) >= 2))
-			{
-				int lvlDiff = effected.getLevel() - effector.getActingPlayer().getLevel() - 1;
-				if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-				}
-				else
-				{
-					damage *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
-				}
+				damage *= effected.getStat().getValue(Stats.PVE_RAID_PHYS_SKILL_DEF, 1);
 			}
 		}
 		

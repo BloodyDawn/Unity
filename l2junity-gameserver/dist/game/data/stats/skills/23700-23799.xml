@@ -890,36 +890,84 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 8%% and Vitality Consumption Speed - 3%% for 3 hours. -->
 		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.08" />
+				<mul stat="bonusSp" val="1.08" />
+				<mul stat="vitalityConsumeRate" val="0.97" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23775" levels="1" name="Clan Teamwork - Stage 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 16%%, PvE Damage + 2%%, and Vitality Consumption Speed - 3%% for 3 hours. -->
 		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.16" />
+				<mul stat="bonusSp" val="1.16" />
+				<mul stat="vitalityConsumeRate" val="0.97" />
+				<mul stat="pvePhysDmg" val="1.02" />
+				<mul stat="pvePhysSkillsDmg" val="1.02" />
+				<mul stat="pveMagicalDmg" val="1.02" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23776" levels="1" name="Clan Teamwork - Stage 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 24%%, PvE Damage + 5%%, and Vitality Consumption Speed - 5%% for 3 hours. -->
 		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.24" />
+				<mul stat="bonusSp" val="1.24" />
+				<mul stat="vitalityConsumeRate" val="0.95" />
+				<mul stat="pvePhysDmg" val="1.05" />
+				<mul stat="pvePhysSkillsDmg" val="1.05" />
+				<mul stat="pveMagicalDmg" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23777" levels="1" name="Clan Teamwork - Stage 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 35%%, PvE Damage + 8%%, Vitality Consumption Speed - 3%%, and Damage Received from Raid/Boss Monsters - 8%% for 3 hours. -->
 		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.35" />
+				<mul stat="bonusSp" val="1.35" />
+				<mul stat="vitalityConsumeRate" val="0.95" />
+				<mul stat="pvePhysDmg" val="1.08" />
+				<mul stat="pvePhysSkillsDmg" val="1.08" />
+				<mul stat="pveMagicalDmg" val="1.08" />
+				<mul stat="pveRaidPhysDef" val="1.08" />
+				<mul stat="pveRaidPhysSkillsDef" val="1.08" />
+				<mul stat="pveRaidMagicalDef" val="1.08" />
+			</effect>
+		</for>
 	</skill>
 </list>
