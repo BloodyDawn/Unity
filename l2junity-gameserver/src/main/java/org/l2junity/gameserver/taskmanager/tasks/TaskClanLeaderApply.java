@@ -64,7 +64,7 @@ public class TaskClanLeaderApply extends Task
 						clan.setNewLeader(member);
 					}
 				}
-				_log.info("Clan leaders has been updated");
+				LOGGER.info("Clan leaders has been updated");
 			}
 		}
 	}

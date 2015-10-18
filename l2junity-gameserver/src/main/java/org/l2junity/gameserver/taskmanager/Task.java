@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class Task
 {
-	protected final Logger _log = LoggerFactory.getLogger(getClass());
+	protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	public void initializate()
 	{

@@ -46,7 +46,7 @@ public class TaskScript extends Task
 		}
 		catch (Exception e)
 		{
-			_log.warn("Script execution failed!", e);
+			LOGGER.warn("Script execution failed!", e);
 		}
 	}
 }
