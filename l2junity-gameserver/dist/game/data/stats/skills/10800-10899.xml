@@ -107,7 +107,7 @@
 	<skill id="10803" levels="4" name="Time Bomb">
 		<!-- Glory Days confirmed -->
 		<!-- Boom! -->
-		<table name="#power"> 30000 33546 35088 36630</table>
+		<table name="#power"> 30000 33546 35088 36630 </table>
 		<set name="icon" val="icon.skill0099" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -335,6 +335,7 @@
 		</for>
 	</skill>
 	<skill id="10812" levels="3" name="Sneak Shot">
+		<table name="#power"> 29176 30726 32277 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- NOT USED ANYMORE ? -->
 		<!-- Attacks distant target with 29176 Power added to P. Atk. Inflicts Stun when attacking from behind. Requires a bow/crossbow. Over-hit. Critical. -->
@@ -359,6 +360,7 @@
 		<set name="castRange" val="1100" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-70" />
+		<set name="abnormalTime" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10856" levels="4" name="Rapid Fire Position">
@@ -410,6 +412,7 @@
 		</for>
 	</skill>
 	<skill id="10858" levels="3" name="Retreating Shot">
+		<table name="#power"> 29176 30726 32277 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- NOT USED ANYMORE ? -->
 		<!-- Attacks target with 29176 Power added to P. Atk., cancels their targeting, and retreats 400 grids backward. -->

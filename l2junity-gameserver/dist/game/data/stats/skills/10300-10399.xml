@@ -320,6 +320,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-341" />
+		<set name="abnormalTime" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10315" levels="2" name="Superior Polearm Mastery">
@@ -519,7 +520,7 @@
 	<skill id="10322" levels="1" name="Wolf's Cry">
 		<!-- Shouts loudly to invoke the power of the Wolf. For 5 minutes, P. Def. and M. Def. + 50%, Max HP + 25%, and Spd. + 20. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. -->
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="330" />
+		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
 		<set name="icon" val="icon.skll10320" />
 		<set name="operateType" val="A2" />
@@ -591,9 +592,11 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="673" />
+		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10327" levels="7" name="Momentum Flash">
+		<table name="#power"> 17348 20033 22717 25700 27419 28665 29911 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 17348 Power added to P. Atk. Requires a sword/dagger/blunt weapon/fist weapon. Damage increases when using Momentum, which you can use up to 3. Over-hit. Critical. -->
 		<table name="#effectPoint"> -183 -188 -193 -198 -193 -193 -198 </table>
@@ -656,7 +659,7 @@
 		<table name="#mpConsumes"> 92 96 101 105 109 113 117 </table>
 		<table name="#power"> 18005 22505 27005 30605 32405 34205 36005 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="60" /> <!-- Guessed -->
@@ -708,6 +711,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="673" />
+		<set name="abnormalTime" val="60" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10333" levels="1" name="Winged Spear">
@@ -885,6 +889,7 @@
 		</for>
 	</skill>
 	<skill id="10340" levels="3" name="Blade Slasher">
+		<table name="#power"> 48641 51282 53878 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks enemies in front with 16214 Power added to P. Atk. If the target is stunned, attacks with 48641 power. Can be used while a sword or blunt weapon is equipped. Consumes 1 Soulstone. -->
 		<table name="#icons"> icon.skill10340 icon.skill0526 icon.skill0526 </table>

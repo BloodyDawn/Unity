@@ -101,6 +101,7 @@ public final class PledgeShowMemberListUpdate implements IClientOutgoingPacket
 			packet.writeD(0);
 		}
 		packet.writeD(_hasSponsor);
+		packet.writeC(_isOnline ? 0x01 : 0x00);
 		return true;
 	}
 }
