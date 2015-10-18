@@ -40,6 +40,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.taskmanager.tasks.TaskBirthday;
 import org.l2junity.gameserver.taskmanager.tasks.TaskClanLeaderApply;
 import org.l2junity.gameserver.taskmanager.tasks.TaskCleanUp;
+import org.l2junity.gameserver.taskmanager.tasks.TaskDailyClanBonusReset;
 import org.l2junity.gameserver.taskmanager.tasks.TaskDailySkillReuseClean;
 import org.l2junity.gameserver.taskmanager.tasks.TaskDailyWorldChatPointReset;
 import org.l2junity.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
@@ -187,6 +188,7 @@ public final class TaskManager
 		registerTask(new TaskBirthday());
 		registerTask(new TaskClanLeaderApply());
 		registerTask(new TaskCleanUp());
+		registerTask(new TaskDailyClanBonusReset());
 		registerTask(new TaskDailySkillReuseClean());
 		registerTask(new TaskDailyWorldChatPointReset());
 		registerTask(new TaskGlobalVariablesSave());

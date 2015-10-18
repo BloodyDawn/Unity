@@ -51,6 +51,7 @@ import org.l2junity.gameserver.model.AbsorberInfo;
 import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.DamageDoneInfo;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Seed;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
@@ -538,6 +539,17 @@ public class Attackable extends Npc
 								attacker.addExpAndSp(addexp, addsp, useVitalityRate());
 								if (addexp > 0)
 								{
+									final L2Clan clan = attacker.getClan();
+									if (clan != null)
+									{
+										long finalExp = addexp;
+										if (useVitalityRate())
+										{
+											finalExp *= attacker.getStat().getExpBonusMultiplier();
+										}
+										clan.addHuntingPoints(attacker, this, finalExp);
+									}
+									
 									attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), addexp), true, false);
 								}
 							}

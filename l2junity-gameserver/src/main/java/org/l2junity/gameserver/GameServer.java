@@ -46,6 +46,7 @@ import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
 import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
+import org.l2junity.gameserver.data.xml.impl.ClanRewardData;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
@@ -191,6 +192,7 @@ public class GameServer
 		SecondaryAuthData.getInstance();
 		AbilityPointsData.getInstance();
 		SayuneData.getInstance();
+		ClanRewardData.getInstance();
 		
 		printSection("Skills");
 		EffectHandler.getInstance().executeScript();

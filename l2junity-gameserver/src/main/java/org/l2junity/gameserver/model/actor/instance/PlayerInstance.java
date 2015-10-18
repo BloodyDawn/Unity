@@ -540,6 +540,8 @@ public final class PlayerInstance extends Playable
 	/** Recommendation Two Hours bonus **/
 	protected boolean _recoTwoHoursGiven = false;
 	
+	private ScheduledFuture<?> _onlineTimeUpdateTask;
+	
 	private final PcInventory _inventory = new PcInventory(this);
 	private final PcFreight _freight = new PcFreight(this);
 	private PcWarehouse _warehouse;
@@ -5501,6 +5503,7 @@ public final class PlayerInstance extends Playable
 		stopChargeTask();
 		stopFameTask();
 		stopRecoGiveTask();
+		stopOnlineTimeUpdateTask();
 	}
 	
 	@Override
@@ -6805,6 +6808,7 @@ public final class PlayerInstance extends Playable
 			
 			player.loadRecommendations();
 			player.startRecoGiveTask();
+			player.startOnlineTimeUpdateTask();
 			
 			player.setOnlineStatus(true, false);
 		}
@@ -14160,5 +14164,33 @@ public final class PlayerInstance extends Playable
 			return MoveType.SITTING;
 		}
 		return super.getMoveType();
+	}
+	
+	private void startOnlineTimeUpdateTask()
+	{
+		if (_onlineTimeUpdateTask != null)
+		{
+			stopOnlineTimeUpdateTask();
+		}
+		
+		_onlineTimeUpdateTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this::updateOnlineTime, 60 * 1000L, 60 * 1000L);
+	}
+	
+	private void updateOnlineTime()
+	{
+		final L2Clan clan = getClan();
+		if (clan != null)
+		{
+			clan.addMemberOnlineTime(this);
+		}
+	}
+	
+	private void stopOnlineTimeUpdateTask()
+	{
+		if (_onlineTimeUpdateTask != null)
+		{
+			_onlineTimeUpdateTask.cancel(true);
+			_onlineTimeUpdateTask = null;
+		}
 	}
 }

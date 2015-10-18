@@ -35,28 +35,13 @@ public final class PledgeShowMemberListUpdate implements IClientOutgoingPacket
 	private final int _level;
 	private final int _classId;
 	private final int _objectId;
-	private final boolean _isOnline;
+	private final int _onlineStatus;
 	private final int _race;
 	private final int _sex;
 	
 	public PledgeShowMemberListUpdate(PlayerInstance player)
 	{
-		_pledgeType = player.getPledgeType();
-		if (_pledgeType == L2Clan.SUBUNIT_ACADEMY)
-		{
-			_hasSponsor = player.getSponsor() != 0 ? 1 : 0;
-		}
-		else
-		{
-			_hasSponsor = 0;
-		}
-		_name = player.getName();
-		_level = player.getLevel();
-		_classId = player.getClassId().getId();
-		_race = player.getRace().ordinal();
-		_sex = player.getAppearance().getSex() ? 1 : 0;
-		_objectId = player.getObjectId();
-		_isOnline = player.isOnline();
+		this(player.getClan().getClanMember(player.getObjectId()));
 	}
 	
 	public PledgeShowMemberListUpdate(ClanMember member)
@@ -65,10 +50,10 @@ public final class PledgeShowMemberListUpdate implements IClientOutgoingPacket
 		_level = member.getLevel();
 		_classId = member.getClassId();
 		_objectId = member.getObjectId();
-		_isOnline = member.isOnline();
 		_pledgeType = member.getPledgeType();
 		_race = member.getRaceOrdinal();
 		_sex = member.getSex() ? 1 : 0;
+		_onlineStatus = member.getOnlineStatus();
 		if (_pledgeType == L2Clan.SUBUNIT_ACADEMY)
 		{
 			_hasSponsor = member.getSponsor() != 0 ? 1 : 0;
@@ -89,7 +74,7 @@ public final class PledgeShowMemberListUpdate implements IClientOutgoingPacket
 		packet.writeD(_classId);
 		packet.writeD(_sex);
 		packet.writeD(_race);
-		if (_isOnline)
+		if (_onlineStatus > 0)
 		{
 			packet.writeD(_objectId);
 			packet.writeD(_pledgeType);
@@ -101,7 +86,7 @@ public final class PledgeShowMemberListUpdate implements IClientOutgoingPacket
 			packet.writeD(0);
 		}
 		packet.writeD(_hasSponsor);
-		packet.writeC(_isOnline ? 0x01 : 0x00);
+		packet.writeC(_onlineStatus);
 		return true;
 	}
 }

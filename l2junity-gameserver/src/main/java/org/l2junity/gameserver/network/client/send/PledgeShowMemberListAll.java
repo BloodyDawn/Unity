@@ -99,7 +99,7 @@ public class PledgeShowMemberListAll implements IClientOutgoingPacket
 			packet.writeS(m.getName());
 			packet.writeD(m.getLevel());
 			packet.writeD(m.getClassId());
-			PlayerInstance player = m.getPlayerInstance();
+			final PlayerInstance player = m.getPlayerInstance();
 			if (player != null)
 			{
 				packet.writeD(player.getAppearance().getSex() ? 1 : 0); // no visible effect
@@ -112,7 +112,7 @@ public class PledgeShowMemberListAll implements IClientOutgoingPacket
 			}
 			packet.writeD(m.isOnline() ? m.getObjectId() : 0); // objectId = online 0 = offline
 			packet.writeD(m.getSponsor() != 0 ? 1 : 0);
-			packet.writeC(m.isOnline() ? 0x01 : 0x00);
+			packet.writeC(m.getOnlineStatus());
 		}
 		return true;
 	}

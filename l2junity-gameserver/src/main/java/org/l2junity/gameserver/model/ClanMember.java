@@ -23,9 +23,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.enums.ClanRewardType;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +52,7 @@ public class ClanMember
 	private int _pledgeType;
 	private int _apprentice;
 	private int _sponsor;
+	private long _onlineTime;
 	
 	/**
 	 * Used to restore a clan member from the database.
@@ -760,5 +764,49 @@ public class ClanMember
 		{
 			_log.warn("Could not save apprentice/sponsor: " + e.getMessage(), e);
 		}
+	}
+	
+	public long getOnlineTime()
+	{
+		return _onlineTime;
+	}
+	
+	public void setOnlineTime(long onlineTime)
+	{
+		_onlineTime = onlineTime;
+	}
+	
+	private PlayerVariables getVariables()
+	{
+		final PlayerInstance player = getPlayerInstance();
+		return player != null ? player.getVariables() : new PlayerVariables(_objectId);
+	}
+	
+	public void resetBonus()
+	{
+		_onlineTime = 0;
+		final PlayerVariables vars = getVariables();
+		vars.set("CLAIMED_CLAN_REWARDS", 0);
+		vars.storeMe();
+	}
+	
+	public int getOnlineStatus()
+	{
+		return !isOnline() ? 0 : _onlineTime > (Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS) ? 2 : 1;
+	}
+	
+	public boolean isRewardClaimed(ClanRewardType type)
+	{
+		final PlayerVariables vars = getVariables();
+		final int claimedRewards = vars.getInt("CLAIMED_CLAN_REWARDS", ClanRewardType.getDefaultMask());
+		return (claimedRewards & type.getMask()) == type.getMask();
+	}
+	
+	public void setRewardClaimed(ClanRewardType type)
+	{
+		final PlayerVariables vars = getVariables();
+		int claimedRewards = vars.getInt("CLAIMED_CLAN_REWARDS", ClanRewardType.getDefaultMask());
+		claimedRewards |= type.getMask();
+		vars.set("CLAIMED_CLAN_REWARDS", claimedRewards);
 	}
 }

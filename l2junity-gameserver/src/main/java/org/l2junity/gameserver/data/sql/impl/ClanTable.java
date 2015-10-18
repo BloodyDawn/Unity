@@ -492,11 +492,11 @@ public class ClanTable
 		return clanAllies;
 	}
 	
-	public void storeClanScore()
+	public void shutdown()
 	{
 		for (L2Clan clan : _clans.values())
 		{
-			clan.updateClanScoreInDB();
+			clan.updateInDB();
 		}
 	}
 	

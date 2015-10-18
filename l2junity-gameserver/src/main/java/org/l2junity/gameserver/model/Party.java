@@ -863,6 +863,16 @@ public class Party extends AbstractPlayerGroup
 				addexp = calculateExpSpPartyCutoff(member.getActingPlayer(), topLvl, addexp, addsp, target.useVitalityRate());
 				if (addexp > 0)
 				{
+					final L2Clan clan = member.getClan();
+					if (clan != null)
+					{
+						long finalExp = addexp;
+						if (target.useVitalityRate())
+						{
+							finalExp *= member.getStat().getExpBonusMultiplier();
+						}
+						clan.addHuntingPoints(member, target, finalExp);
+					}
 					member.updateVitalityPoints(target.getVitalityPoints(member.getLevel(), addexp), true, false);
 				}
 			}

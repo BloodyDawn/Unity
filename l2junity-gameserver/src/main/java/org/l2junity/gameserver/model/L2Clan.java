@@ -32,16 +32,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.communitybbs.BB.Forum;
 import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.sql.impl.CrestTable;
 import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.ClanRewardType;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerClanJoin;
@@ -52,7 +55,9 @@ import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.itemcontainer.ClanWarehouse;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
+import org.l2junity.gameserver.model.pledge.ClanRewardBonus;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.variables.ClanVariables;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.ExSubPledgeSkillAdd;
@@ -150,6 +155,11 @@ public class L2Clan implements IIdentifiable, INamable
 	private final AtomicInteger _siegeKills = new AtomicInteger();
 	private final AtomicInteger _siegeDeaths = new AtomicInteger();
 	
+	private ClanRewardBonus _lastMembersOnlineBonus = null;
+	private ClanRewardBonus _lastHuntingBonus = null;
+	
+	private volatile ClanVariables _vars;
+	
 	/**
 	 * Called if a clan is referenced only by id. In this case all other data needs to be fetched from db
 	 * @param clanId A valid clan Id to create and restore
@@ -160,6 +170,18 @@ public class L2Clan implements IIdentifiable, INamable
 		initializePrivs();
 		restore();
 		getWarehouse().restore();
+		
+		final ClanRewardBonus availableOnlineBonus = ClanRewardType.MEMBERS_ONLINE.getAvailableBonus(this);
+		if ((_lastMembersOnlineBonus == null) && (availableOnlineBonus != null))
+		{
+			_lastMembersOnlineBonus = availableOnlineBonus;
+		}
+		
+		final ClanRewardBonus availableHuntingBonus = ClanRewardType.HUNTING_MONSTERS.getAvailableBonus(this);
+		if ((_lastHuntingBonus == null) && (availableHuntingBonus != null))
+		{
+			_lastHuntingBonus = availableHuntingBonus;
+		}
 	}
 	
 	/**
@@ -800,7 +822,7 @@ public class L2Clan implements IIdentifiable, INamable
 	 */
 	public boolean isMember(int id)
 	{
-		return (id != 0 && _members.containsKey(id));
+		return ((id != 0) && _members.containsKey(id));
 	}
 	
 	/**
@@ -891,11 +913,9 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 	}
 	
-	/**
-	 * Store in database current clan's reputation.
-	 */
-	public void updateClanScoreInDB()
+	public void updateInDB()
 	{
+		// Update reputation
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET reputation_score=? WHERE clan_id=?"))
 		{
@@ -906,6 +926,12 @@ public class L2Clan implements IIdentifiable, INamable
 		catch (Exception e)
 		{
 			_log.warn("Exception on updateClanScoreInDb(): " + e.getMessage(), e);
+		}
+		
+		// Update variables at database
+		if (_vars != null)
+		{
+			_vars.storeMe();
 		}
 	}
 	
@@ -2118,7 +2144,7 @@ public class L2Clan implements IIdentifiable, INamable
 		broadcastToOnlineMembers(new PledgeShowInfoUpdate(this));
 		if (save)
 		{
-			updateClanScoreInDB();
+			updateInDB();
 		}
 	}
 	
@@ -2588,7 +2614,7 @@ public class L2Clan implements IIdentifiable, INamable
 					increaseClanLevel = true;
 				}
 				break;
-			
+				
 			case 6:
 				// Upgrade to 7
 				if ((getReputationScore() >= Config.CLAN_LEVEL_7_COST) && (getMembersCount() >= Config.CLAN_LEVEL_7_REQUIREMENT))
@@ -2996,5 +3022,141 @@ public class L2Clan implements IIdentifiable, INamable
 	public ClanWar getWarWith(int clanId)
 	{
 		return _atWarWith.get(clanId);
+	}
+	
+	public synchronized void addMemberOnlineTime(PlayerInstance player)
+	{
+		final ClanMember clanMember = getClanMember(player.getObjectId());
+		if (clanMember != null)
+		{
+			clanMember.setOnlineTime(clanMember.getOnlineTime() + (60 * 1000));
+			if (clanMember.getOnlineTime() == (30 * 60 * 1000))
+			{
+				broadcastToOnlineMembers(new PledgeShowMemberListUpdate(clanMember));
+			}
+		}
+		
+		final ClanRewardBonus availableBonus = ClanRewardType.MEMBERS_ONLINE.getAvailableBonus(this);
+		if (availableBonus != null)
+		{
+			if (_lastMembersOnlineBonus == null)
+			{
+				_lastMembersOnlineBonus = availableBonus;
+				broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_LOGIN_BONUS_LV_S1).addByte(availableBonus.getLevel()));
+			}
+			else if (_lastMembersOnlineBonus.getLevel() < availableBonus.getLevel())
+			{
+				_lastMembersOnlineBonus = availableBonus;
+				broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_LOGIN_BONUS_LV_S1).addByte(availableBonus.getLevel()));
+			}
+		}
+		
+		final int currentMaxOnline = (int) _members.values().stream().filter(member -> member.getOnlineTime() > Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS).count();
+		if (getMaxOnlineMembers() < currentMaxOnline)
+		{
+			getVariables().set("MAX_ONLINE_MEMBERS", currentMaxOnline);
+		}
+	}
+	
+	/**
+	 * @param activeChar
+	 * @param target
+	 * @param value
+	 */
+	public synchronized void addHuntingPoints(PlayerInstance activeChar, Npc target, long value)
+	{
+		// TODO: Figure out the retail formula
+		final int points = (int) value / 29600;
+		if (points > 0)
+		{
+			getVariables().set("HUNTING_POINTS", getHuntingPoints() + points);
+			final ClanRewardBonus availableBonus = ClanRewardType.HUNTING_MONSTERS.getAvailableBonus(this);
+			if (availableBonus != null)
+			{
+				if (_lastHuntingBonus == null)
+				{
+					_lastHuntingBonus = availableBonus;
+					broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_HUNTING_BONUS_LV_S1).addByte(availableBonus.getLevel()));
+				}
+				else if (_lastHuntingBonus.getLevel() < availableBonus.getLevel())
+				{
+					_lastHuntingBonus = availableBonus;
+					broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_HUNTING_BONUS_LV_S1).addByte(availableBonus.getLevel()));
+				}
+			}
+		}
+	}
+	
+	public int getMaxOnlineMembers()
+	{
+		return getVariables().getInt("MAX_ONLINE_MEMBERS", 0);
+	}
+	
+	public int getHuntingPoints()
+	{
+		return getVariables().getInt("HUNTING_POINTS", 0);
+	}
+	
+	public int getPreviousMaxOnlinePlayers()
+	{
+		return getVariables().getInt("PREVIOUS_MAX_ONLINE_PLAYERS", 0);
+	}
+	
+	public int getPreviousHuntingPoints()
+	{
+		return getVariables().getInt("PREVIOUS_HUNTING_POINTS", 0);
+	}
+	
+	public boolean canClaimBonusReward(PlayerInstance player, ClanRewardType type)
+	{
+		final ClanMember clanMember = getClanMember(player.getObjectId());
+		return (clanMember != null) && (type.getAvailableBonus(this) != null) && !clanMember.isRewardClaimed(type);
+	}
+	
+	public void resetClanBonus()
+	{
+		// Save current state
+		getVariables().set("PREVIOUS_MAX_ONLINE_PLAYERS", getMaxOnlineMembers());
+		getVariables().set("PREVIOUS_HUNTING_POINTS", getHuntingPoints());
+		
+		// Reset
+		getMembers().forEach(ClanMember::resetBonus);
+		getVariables().remove("HUNTING_POINTS");
+		
+		// force store
+		getVariables().storeMe();
+	}
+	
+	public ClanVariables getVariables()
+	{
+		if (_vars == null)
+		{
+			synchronized (this)
+			{
+				if (_vars == null)
+				{
+					_vars = new ClanVariables(getId());
+					if (Config.CLAN_VARIABLES_STORE_INTERVAL > 0)
+					{
+						ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::storeVariables, Config.CLAN_VARIABLES_STORE_INTERVAL, Config.CLAN_VARIABLES_STORE_INTERVAL);
+					}
+				}
+			}
+		}
+		return _vars;
+	}
+	
+	public boolean hasVariables()
+	{
+		return _vars != null;
+	}
+	
+	private void storeVariables()
+	{
+		final ClanVariables vars = _vars;
+		if (vars != null)
+		{
+			vars.storeMe();
+		}
 	}
 }

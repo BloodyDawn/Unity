@@ -216,6 +216,7 @@ public final class Config
 	public static int ALT_MAX_NUM_OF_CLANS_IN_ALLY;
 	public static int ALT_CLAN_MEMBERS_FOR_WAR;
 	public static boolean ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH;
+	public static long ALT_CLAN_MEMBERS_TIME_FOR_BONUS;
 	public static boolean REMOVE_CASTLE_CIRCLETS;
 	public static int ALT_PARTY_MAX_MEMBERS;
 	public static int ALT_PARTY_RANGE;
@@ -467,7 +468,8 @@ public final class Config
 	public static List<Integer> LIST_PROTECTED_ITEMS;
 	public static boolean DATABASE_CLEAN_UP;
 	public static long CONNECTION_CLOSE_TIME;
-	public static int CHAR_STORE_INTERVAL;
+	public static int CHAR_DATA_STORE_INTERVAL;
+	public static int CLAN_VARIABLES_STORE_INTERVAL;
 	public static boolean LAZY_ITEMS_UPDATE;
 	public static boolean UPDATE_ITEMS_ON_CHAR_STORE;
 	public static boolean DESTROY_DROPPED_PLAYER_ITEM;
@@ -1506,6 +1508,7 @@ public final class Config
 			ALT_MAX_NUM_OF_CLANS_IN_ALLY = Character.getInt("AltMaxNumOfClansInAlly", 3);
 			ALT_CLAN_MEMBERS_FOR_WAR = Character.getInt("AltClanMembersForWar", 15);
 			ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = Character.getBoolean("AltMembersCanWithdrawFromClanWH", false);
+			ALT_CLAN_MEMBERS_TIME_FOR_BONUS = Character.getDuration("AltClanMembersTimeForBonus", "30mins").toMillis();
 			REMOVE_CASTLE_CIRCLETS = Character.getBoolean("RemoveCastleCirclets", true);
 			ALT_PARTY_MAX_MEMBERS = Character.getInt("AltPartyMaxMembers", 7);
 			ALT_PARTY_RANGE = Character.getInt("AltPartyRange", 1600);
@@ -1676,7 +1679,8 @@ public final class Config
 			}
 			DATABASE_CLEAN_UP = General.getBoolean("DatabaseCleanUp", true);
 			CONNECTION_CLOSE_TIME = General.getLong("ConnectionCloseTime", 60000);
-			CHAR_STORE_INTERVAL = General.getInt("CharacterDataStoreInterval", 15);
+			CHAR_DATA_STORE_INTERVAL = General.getInt("CharacterDataStoreInterval", 15) * 60 * 1000;
+			CLAN_VARIABLES_STORE_INTERVAL = General.getInt("ClanVariablesStoreInterval", 15) * 60 * 1000;
 			LAZY_ITEMS_UPDATE = General.getBoolean("LazyItemsUpdate", false);
 			UPDATE_ITEMS_ON_CHAR_STORE = General.getBoolean("UpdateItemsOnCharStore", false);
 			DESTROY_DROPPED_PLAYER_ITEM = General.getBoolean("DestroyPlayerDroppedItem", false);
