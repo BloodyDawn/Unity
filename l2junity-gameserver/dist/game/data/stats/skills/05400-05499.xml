@@ -151,6 +151,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5412" levels="1" name="Presentation - Baylor 12">
@@ -171,6 +172,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16026" />
@@ -185,6 +187,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16027" />
@@ -199,6 +202,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16028" />
@@ -243,6 +247,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5420" levels="1" name="Invincibility">
@@ -360,6 +365,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -383,6 +389,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="affectRange" val="1000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -407,6 +414,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -432,6 +440,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -491,6 +500,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="400" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5432" levels="2" name="Weapon Supply">
@@ -507,6 +518,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="900" />
+		<set name="castRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5434" levels="1" name="Gust">
@@ -870,6 +882,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -912,6 +926,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -978,6 +993,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1007,6 +1023,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16029" />
@@ -1029,6 +1046,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="PARALYZE" />
 	</skill>
 	<skill id="5460" levels="1" name="Fear">
@@ -1048,6 +1066,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5461" levels="12" name="Power Shot">
@@ -1266,6 +1285,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5482" levels="1" name="Transformation Penalty">
@@ -1283,6 +1303,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5483" levels="1" name="Counter Aggression">
@@ -1293,6 +1314,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5484" levels="1" name="Endurance Defense Up">
@@ -1348,6 +1370,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1000" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5488" levels="1" name="Counter Critical Damage Up">
@@ -1364,6 +1387,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5489" levels="1" name="Counter Critical Rate Up">
@@ -1380,6 +1404,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5490" levels="1" name="Weakened Life">
@@ -1521,6 +1546,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">

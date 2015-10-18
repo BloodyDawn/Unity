@@ -377,6 +377,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="900" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="castRange" val="400" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -412,6 +413,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="affectRange" val="500" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -500,6 +502,7 @@
 		<set name="effectRange" val="550" />
 		<set name="deleteAbnormalOnLeave" val="true" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" />
@@ -514,6 +517,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="550" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23024" levels="1" name="Love Agathion Special Skill: Vitality Recovery Ability">
@@ -523,7 +527,7 @@
 		<set name="abnormalType" val="VP_UP" />
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="1000" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-3" />
@@ -678,7 +682,7 @@
 		<set name="abnormalType" val="VP_UP" />
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="1000" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
@@ -752,7 +756,7 @@
 		<set name="abnormalType" val="VP_UP" />
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="1000" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
@@ -1236,7 +1240,7 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="1000" />
+		<set name="reuseDelay" val="1500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
@@ -1307,7 +1311,7 @@
 		<set name="abnormalType" val="VP_UP" />
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="1000" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-3" />
@@ -1337,7 +1341,7 @@
 		<set name="abnormalType" val="VP_UP" />
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="1000" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-3" />
@@ -1445,6 +1449,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="1527" />
@@ -1505,6 +1510,9 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="7000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23071" levels="1" name="Blue Flame">
@@ -1525,6 +1533,9 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="7000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23072" levels="1" name="Eva's Wrath">
@@ -1567,6 +1578,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="500" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23074" levels="1" name="Icy Air Explosion">
@@ -1586,6 +1599,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="500" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23075" levels="1" name="Flame Shock">
@@ -1598,6 +1613,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23076" levels="1" name="Weaver Agathion Cute Trick">
@@ -2003,6 +2020,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="500" />
+		<set name="castRange" val="600" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="23092" levels="1" name="Jack O'Lantern Card">
@@ -2014,6 +2033,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23093" levels="1" name="Rotten Jack O'Lantern Card">
@@ -2025,6 +2045,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23094" levels="1" name="Jack O'Lantern Card - Confirm Skill">
@@ -2038,6 +2059,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="500" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23095" levels="1" name="Rotten Jack O'Lantern Card - Confirm Skill">
@@ -2051,6 +2073,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="500" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23096" levels="1" name="Halloween Defeat">
@@ -2063,6 +2086,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="500" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23097" levels="1" name="First win">
@@ -2075,6 +2099,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="550" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23098" levels="1" name="2nd Consecutive Win">
@@ -2087,6 +2112,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="550" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23099" levels="1" name="3rd Consecutive Win">
@@ -2099,6 +2125,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="550" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 </list>

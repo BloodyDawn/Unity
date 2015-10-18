@@ -1055,6 +1055,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<player checkAbnormal="SEED_OF_CRITICAL,#abnormalLvl" />
@@ -1104,7 +1105,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
-		<set name="hitTime" val="3100" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1184" />
 		<set name="magicLvl" val="61" />
 		<set name="mpConsume" val="61" />
@@ -1702,7 +1703,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="effectPoint" val="-100" />
 		<set name="fanRange" val="0,0,150,90" />
-		<set name="hitTime" val="100" />
+		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0092" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
@@ -1714,6 +1715,8 @@
 		<set name="effectRange" val="400" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="120" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="40" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="8277" levels="1" name="Transform Native">
@@ -1769,7 +1772,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="hitTime" val="100" />
+		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="25" />
 		<set name="operateType" val="A2" />
@@ -1783,7 +1786,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="hitTime" val="100" />
+		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="25" />
 		<set name="operateType" val="A2" />
@@ -2023,7 +2026,7 @@
 	</skill>
 	<skill id="8295" levels="1" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
-		<set name="icon" val="icon.skill1077" />
+		<set name="icon" val="icon.ensoul_big_old" />
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />

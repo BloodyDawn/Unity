@@ -388,6 +388,7 @@
 	<skill id="26027" levels="6" name="Secret medicine of Will">
 		<!-- Confirmed CT2.5 -->
 		<!-- Level 1 doesn't exist in client. -->
+		<table name="#reuseDelay"> 0 600000 600000 600000 600000 600000 </table>
 		<table name="#amount"> 0 350 600 800 1000 1200 </table>
 		<table name="#levelRange"> 0;0 20;39 40;51 52;60 61;75 76;85 </table>
 		<set name="blockedInOlympiad" val="true" />
@@ -396,6 +397,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="reuseDelay" val="#reuseDelay" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
@@ -409,6 +411,7 @@
 	<skill id="26028" levels="6" name="Secret medicine of Life">
 		<!-- Confirmed CT2.5 -->
 		<!-- Level 1 doesn't exist in client. -->
+		<table name="#reuseDelay"> 0 600000 600000 600000 600000 600000 </table>
 		<table name="#amount"> 0 650 1100 1500 1900 2300 </table>
 		<table name="#levelRange"> 0;0 20;39 40;51 52;60 61;75 76;85 </table>
 		<set name="blockedInOlympiad" val="true" />
@@ -417,6 +420,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="reuseDelay" val="#reuseDelay" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />

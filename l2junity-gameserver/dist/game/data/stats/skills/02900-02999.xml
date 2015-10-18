@@ -14,6 +14,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="100" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player level="78" />
@@ -36,6 +37,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="100" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player level="78" />
@@ -58,6 +60,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="100" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player level="78" />
@@ -82,6 +85,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="100" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player level="78" />
@@ -104,6 +108,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2905" levels="1" name="Growth Accelerator">
@@ -119,6 +124,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="120" />
+		<set name="castRange" val="120" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<target npcId="18793,18794,18795,18796,18797,18798" />
@@ -132,6 +138,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2907" levels="5" name="Battlefield Use Secret Medicine of Life">
@@ -230,6 +237,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2914" levels="3" name="Equipment Set Pack (10-day)">
@@ -2209,6 +2218,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitTime" val="100" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2994" levels="1" name="Transformation Harp: Aqua Elf">

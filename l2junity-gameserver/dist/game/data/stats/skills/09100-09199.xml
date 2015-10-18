@@ -1378,6 +1378,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9166" levels="1" name="Vitality Recovering Potion">
@@ -1399,6 +1400,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9167" levels="1" name="Nevit's Hourglass - 1 hour(s)">
@@ -1412,6 +1414,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9168" levels="1" name="Nevit's Hourglass - 1.5 hour(s)">
@@ -1425,6 +1429,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5400" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9169" levels="1" name="Nevit's Hourglass - 2 hour(s)">
@@ -1438,6 +1444,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9170" levels="1" name="Nevit's Hourglass - 2.5 hour(s)">
@@ -1451,6 +1459,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9000" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9171" levels="1" name="Nevit's Hourglass - 3 hour(s)">
@@ -1464,6 +1474,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10800" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9172" levels="1" name="Nevit's Hourglass - 4 hour(s)">
@@ -1477,6 +1489,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="14400" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9173" levels="1" name="Nevit's Voice">
@@ -1486,6 +1500,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9174" levels="1" name="500,000 SP scroll">
@@ -1496,7 +1511,7 @@
 		<set name="itemConsumeId" val="17184" /> <!-- 500,000 SP scroll -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
@@ -1515,7 +1530,7 @@
 		<set name="itemConsumeId" val="17185" /> <!-- 1,000,000 SP scroll -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
@@ -1533,6 +1548,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9177" levels="1" name="Olympiad Reward Box">
@@ -1550,6 +1567,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -1568,6 +1586,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9179" levels="1" name="Antharas's Blood Crystal">
@@ -1606,7 +1626,7 @@
 		<set name="itemConsumeId" val="#itemConsumeId" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
@@ -1629,6 +1649,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="14400" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9182" levels="1" name="Nevit's Hourglass - 4 hour(s)">
@@ -1643,6 +1665,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="14400" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9183" levels="1" name="Freya's Refreshing Breeze - 4 hour(s)">
@@ -1658,6 +1682,9 @@
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="14400" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_I.etc_hot_spring_mineral_i00" />
+		<set name="reuseDelay" val="3600000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9184" levels="1" name="Freya's Refreshing Breeze - 4 hour(s)">
@@ -1673,6 +1700,9 @@
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="14400" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_I.etc_hot_spring_mineral_i00" />
+		<set name="reuseDelay" val="3600000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9185" levels="1" name="Scroll: Enchant Weapon (R-grade)">

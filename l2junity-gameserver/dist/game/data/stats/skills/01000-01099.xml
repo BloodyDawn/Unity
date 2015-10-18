@@ -425,7 +425,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" />
-		<set name="hitTime" val="6000" />
+		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1016" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
@@ -435,6 +435,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="PC_BODY" />
 		<cond>
 			<player canResurrect="true" />
@@ -997,7 +998,7 @@
 		<table name="#mpInitialConsume"> 21 31 </table>
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="#hitTime" />
-		<set name="icon" val="icon.skill1050" />
+		<set name="icon" val="Icon.skill1050" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />

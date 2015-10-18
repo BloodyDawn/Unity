@@ -259,6 +259,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1000" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6120" levels="1" name="Santa Claus' Reward">
@@ -457,6 +458,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="40" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="6130" levels="1" name="Mutant Curse">
@@ -480,6 +483,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
 		<set name="affectRange" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="6131" levels="1" name="Decrease Speed">
@@ -500,6 +505,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="1.5" />
 		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6132" levels="1" name="Decrease Atk. Spd">
@@ -519,6 +526,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6133" levels="1" name="Mysterious Effect">
@@ -538,6 +547,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="900" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="6134" levels="1" name="Mutant Curse">
@@ -557,6 +568,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6135" levels="1" name="Mutant Curse">
@@ -578,6 +591,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="6136" levels="1" name="Agathion Cute Trick - Juju">
@@ -658,6 +673,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6141" levels="1" name="Swamp's Wish">
@@ -672,6 +688,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6142" levels="3" name="Tar Trap">
@@ -721,6 +738,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6144" levels="1" name="Ancient Beam">
@@ -732,6 +751,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6145" levels="1" name="Earthworm's Evil Aura">
@@ -760,6 +781,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="1.5" />
+		<set name="hitTime" val="2000" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6147" levels="1" name="Kasha's Divine Protection">
@@ -869,6 +892,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -890,6 +914,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="2000" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6152" levels="4" name="Kasha's Yearning">
@@ -914,6 +940,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -935,6 +962,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="2000" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6154" levels="4" name="Kasha's Despair">
@@ -961,6 +990,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="Debuff">
@@ -984,6 +1014,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="BLEED" />
 	</skill>
 	<skill id="6166" levels="1" name="Hold">
@@ -1006,6 +1038,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
 		<set name="affectRange" val="500" />
+		<set name="hitTime" val="1000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="6167" levels="12" name="Stun">
@@ -1026,6 +1061,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="150" />
+		<set name="hitTime" val="1000" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="6168" levels="12" name="Stun">
@@ -1046,6 +1083,9 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="200" />
+		<set name="hitTime" val="1000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="40" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="6169" levels="1" name="Shyeed's Fury">
@@ -1331,6 +1371,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6188" levels="1" name="Presentation - Lilith's Steward Battle1">
@@ -1358,6 +1399,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="6190" levels="1" name="Presentation - Lilith's Bodyguards Battle1">
@@ -1372,6 +1414,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="6191" levels="1" name="Presentation - Anakim Battle">
@@ -1460,6 +1503,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6197" levels="1" name="Agathion Cute Trick - Oink Oink">
@@ -1484,6 +1528,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6199" levels="7" name="Tail Strike">

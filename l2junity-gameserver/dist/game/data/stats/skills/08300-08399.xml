@@ -551,6 +551,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
+		<set name="hitTime" val="10000" />
 		<set name="targetType" val="NONE" />
 		<cond msgId="113" addName="1">
 			<not>
@@ -1064,6 +1065,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="StaticDamage">
@@ -1219,6 +1221,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
+		<set name="castRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8370" levels="1" name="Rotten Pumpkin Card">
@@ -1232,6 +1235,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
+		<set name="castRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8371" levels="1" name="Transform Halloween Pumpkin">
@@ -1270,6 +1274,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8373" levels="1" name="Silent Scream's Mask">
@@ -1287,6 +1292,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8374" levels="1" name="Wrathful Spirit's Mask">
@@ -1304,6 +1310,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8375" levels="1" name="Unrotten Corpse's Mask">
@@ -1321,6 +1328,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8376" levels="1" name="Planet X235 Alien Mask's Effect">
@@ -1338,6 +1346,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8377" levels="1" name="Golden Jack O'Lantern Mask's Effect">
@@ -1355,6 +1364,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8378" levels="1" name="Beast Training - Release All">

@@ -123,7 +123,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="600" />
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20584" /> <!-- Blessed Scroll of Resurrection (event) -->
@@ -131,6 +131,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="PC_BODY" />
 		<cond>
 			<player canResurrect="true" />
@@ -712,6 +713,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -752,6 +755,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="reuseDelay" val="14400000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22131" levels="1" name="Red Fireworks">
@@ -919,6 +923,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="VitalityPointUp">
@@ -938,6 +943,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="VitalityPointUp">
@@ -1391,6 +1397,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-3" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1877,7 +1884,7 @@
 		<!-- Birthday Skill -->
 		<set name="canBeDispelled" val="false" />
 		<set name="operateType" val="A2" /> <!-- FIXME: value unconfirmed -->
-		<set name="reuseDelay" val="3600000" />
+		<set name="reuseDelay" val="43200000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="effectPoint" val="100" />
@@ -1888,6 +1895,9 @@
 		<set name="magicLvl" val="-2" />
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="43200" />
+		<set name="icon" val="icon.etc_potion_blue_i00" />
+		<set name="hitTime" val="100" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1908,6 +1918,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="26" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skilltransform1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -1928,6 +1939,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="26" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skilltransform1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -1947,6 +1959,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys.icon.br_firecracker_red_i00" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22186" levels="1" name="Echo Crystal - Theme of Celebration">
@@ -1956,6 +1970,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.item_normal16" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22187" levels="1" name="Honeymoon Ticket - Joy of Vitality">
@@ -1970,6 +1986,10 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys2.Icon.br_weddin_ticket_i00" />
+		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="2000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22188" levels="1" name="Summon Big Wedding Cake">
@@ -1988,6 +2008,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.item_normal16" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22190" levels="1" name="Transformation Scroll: Treasure Hunter">

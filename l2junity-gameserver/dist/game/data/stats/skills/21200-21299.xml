@@ -7,7 +7,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
-		<set name="icon" val="BranchSys.icon.br_spirit_skill_i00" />
+		<set name="icon" val="BranchSys.Icon.br_spirit_skill_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20977" /> <!-- Proof of Friendship -->
@@ -20,6 +20,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21201" levels="1" name="Haste">
@@ -40,6 +41,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21202" levels="1" name="Release Agathion's Seal - Ball Trapping Gnosian">
@@ -368,6 +370,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="600" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21222" levels="1" name="Elemental Resistance">
@@ -382,6 +386,9 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_polar_bear_cap_i00" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="14400000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21223" levels="1" name="Ultimate Defense">
@@ -395,6 +402,9 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="30" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_polar_bear_wp_i00" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21224" levels="1" name="Soul of an Adventurer of Immortality's Ability">
@@ -409,6 +419,9 @@
 		<set name="abnormalTime" val="300" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_stagbeetle_cap_i00" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21225" levels="1" name="Soul of a Strong Warrior's Ability">
@@ -423,6 +436,9 @@
 		<set name="abnormalTime" val="300" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_hornbeetle_cap_i00" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21226" levels="1" name="Soul of a Wise Magician's Ability">
@@ -437,6 +453,9 @@
 		<set name="abnormalTime" val="300" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_ladybug_cap_i00" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21227" levels="1" name="Ability of Prominent Adventure's Soul">
@@ -451,6 +470,9 @@
 		<set name="abnormalTime" val="300" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_mantis_cap_i00" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21228" levels="1" name="Soul of a Brave Warrior's Ability">
@@ -465,6 +487,9 @@
 		<set name="abnormalTime" val="300" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_locust_cap_i00" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21229" levels="1" name="Blood Awakening">
@@ -479,6 +504,10 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_close_helmet_i00" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="14400000" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21230" levels="1" name="Improve Magic">
@@ -493,6 +522,10 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_navy_cap_i00" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="14400000" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21231" levels="1" name="Improve Critical Attack">
@@ -507,6 +540,10 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys2.icon.br_gold_eyeglass_i00" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="14400000" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21232" levels="1" name="Shiny Platform">
@@ -525,6 +562,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="icon" val="icon.skilltransform3" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -542,6 +580,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -558,6 +597,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -570,6 +610,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="BranchSys2.icon.7anni_shirt_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -587,6 +628,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="Icon.skill1050" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -617,6 +659,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="BranchSys2.icon.7anni_shirt_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Invincible" />
@@ -636,6 +679,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="icon" val="icon.skilltransform3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21239" levels="1" name="Release Agathion's Seal - Cow">
@@ -647,6 +691,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -663,6 +708,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -686,7 +732,7 @@
 	<skill id="21242" levels="1" name="Zaken's Call">
 		<!-- Can move to near Zaken's Headquarters. Reuse delay 30 minutes. -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="20000" />
+		<set name="hitTime" val="10000" />
 		<set name="icon" val="BranchSys2.Icon.br_zaken_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -712,7 +758,7 @@
 	<skill id="21243" levels="1" name="Freya's Call">
 		<!-- Can move to near Freya's Headquarters. Reuse delay 30 minutes. -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="20000" />
+		<set name="hitTime" val="10000" />
 		<set name="icon" val="BranchSys2.Icon.br_freya_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -738,7 +784,7 @@
 	<skill id="21244" levels="1" name="Frintezza's Call">
 		<!-- Can move to near Frintezza's Headquarters. Reuse delay 30 minutes. -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="20000" />
+		<set name="hitTime" val="10000" />
 		<set name="icon" val="BranchSys2.Icon.br_frintessa_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -770,6 +816,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -789,6 +836,9 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+		<set name="reuseDelay" val="1800000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21247" levels="1" name="Santa's Gift">
@@ -798,6 +848,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21248" levels="1" name="Release Agathion's Seal - Zinyanzi">
@@ -809,6 +860,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -825,6 +877,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -836,7 +889,7 @@
 		<!-- Can acquire additional 10% XP. The death XP penalty decreases by 50%. Can only be used by characters at Lv.s 1~84. -->
 		<set name="icon" val="icon.accessory_academy_i00" />
 		<set name="abnormalTime" val="7200" />
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="magicCriticalRate" val="5" />
@@ -866,6 +919,9 @@
 		<set name="magicLvl" val="1" />
 		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="1200" />
+		<set name="icon" val="BranchSys.icon.br_party_hat_gold_i00" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="1200000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21252" levels="1" name="Hellblade">
@@ -990,6 +1046,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skilltransform3" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -1006,6 +1063,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1020,6 +1078,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill5239" />
+		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21261" levels="1" name="Bad Bunny's Necklace">
@@ -1027,6 +1087,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="branchsys2.icon2.g_accessory_event_necklace" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21262" levels="1" name="Bad Bunny's Earring">
@@ -1034,6 +1095,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="branchsys2.icon2.g_accessory_event_earring" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21263" levels="1" name="Bad Bunny's Ring">
@@ -1041,6 +1103,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="branchsys2.icon2.g_accessory_event_ring" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21264" levels="1" name="Summon Friend">
@@ -1051,6 +1114,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
+		<set name="hitTime" val="10000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21265" levels="1" name="Summon Friend">
@@ -1061,6 +1127,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
+		<set name="hitTime" val="10000" />
+		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21266" levels="1" name="Release Agathion's Seal - Juju">
@@ -1072,6 +1141,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1086,6 +1156,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill5239" />
+		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21268" levels="1" name="Jack O'Lantern Crush">

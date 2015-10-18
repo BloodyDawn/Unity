@@ -16,6 +16,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
+		<set name="icon" val="icon.skill0773" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -29,6 +31,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="Icon.skill1050" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23302" levels="1" name="Dimensional Door B">
@@ -37,6 +42,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="Icon.skill1050" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23303" levels="1" name="Teleport">
@@ -47,6 +55,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2000" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23304" levels="1" name="Teleport">
@@ -57,6 +68,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2000" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23305" levels="1" name="Zinyanzi Agathion - Yunbokhwan">
@@ -72,6 +86,9 @@
 		<set name="abnormalLvl" val="82" />
 		<set name="abnormalTime" val="5" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="hitTime" val="200" />
+		<set name="reuseDelay" val="43200000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23306" levels="1" name="Zinyanzi Agathion Cute Trick">
@@ -81,6 +98,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23307" levels="1" name="Yanzi Agathion Cute Trick">
@@ -90,6 +109,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23308" levels="1" name="Totem's Energy - Body">
@@ -106,6 +127,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -128,6 +150,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -149,6 +172,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -170,6 +194,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -215,6 +240,8 @@
 		<set name="magicLvl" val="-3" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="icon" val="icon.skill0386" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
@@ -230,6 +257,8 @@
 		<set name="magicLvl" val="-3" />
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="icon" val="icon.skill0388" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23315" levels="5" name="Paralysis Immunity Enhance">
@@ -244,6 +273,7 @@
 		<set name="magicLvl" val="-3" />
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="2" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23316" levels="5" name="Enhance Petrification Immunity">
@@ -258,6 +288,7 @@
 		<set name="magicLvl" val="-3" />
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="2" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23317" levels="5" name="Fear Immunity Enhance">
@@ -272,6 +303,7 @@
 		<set name="magicLvl" val="-3" />
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="2" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23318" levels="1" name="Cat the Ranger Boost">
@@ -288,6 +320,10 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys2.icon.action5016" />
+		<set name="reuseDelay" val="600000" />
+		<set name="isMagic" val="1" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23319" levels="1" name="Blood Seeker">
@@ -412,6 +448,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
+		<set name="icon" val="BranchSys2.icon.br_wp_astarot_i00" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -442,6 +479,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="BranchSys2.icon.br_wp_tirbing_i00" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="BlockActions">
@@ -482,6 +520,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23326" levels="1" name="Reduce - Luckpy">
@@ -490,6 +529,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23327" levels="1" name="Boss Test - Weaken">
@@ -504,6 +544,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="648000" />
+		<set name="castRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23328" levels="1" name="Boss Test - Strengthen">
@@ -518,6 +559,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="648000" />
+		<set name="castRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23329" levels="1" name="Lantern Agathion's Gift1">
@@ -526,6 +568,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23330" levels="1" name="Lantern Agathion's Gift2">
@@ -534,6 +578,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23331" levels="1" name="Lantern Agathion's Gift3">
@@ -542,6 +588,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23332" levels="1" name="Lantern Agathion's Gift4">
@@ -550,6 +598,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23333" levels="1" name="Agathion's New Year's Wish">
@@ -565,6 +615,10 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="1000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23334" levels="1" name="Lantern Agathion Cute Trick">
@@ -574,6 +628,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23335" levels="1" name="Agathion's New Year's Wish">
@@ -589,6 +645,10 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="1000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23336" levels="1" name="Juju Agathion Cute Trick">
@@ -598,6 +658,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23337" levels="1" name="Juju Agathion's Gift 1">
@@ -606,6 +668,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23338" levels="1" name="Juju Agathion's Gift 2">
@@ -614,6 +678,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23339" levels="1" name="Juju Agathion's Gift 3">
@@ -622,6 +688,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23340" levels="1" name="Juju Agathion's Gift 4">
@@ -630,6 +698,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23341" levels="1" name="Norhand's Flint">

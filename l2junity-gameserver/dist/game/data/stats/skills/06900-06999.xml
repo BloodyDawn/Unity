@@ -79,6 +79,9 @@
 		<set name="magicLvl" val="-2" />
 		<set name="abnormalLvl" val="1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skilltransform1" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -93,6 +96,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skilltransform1" />
+		<set name="hitTime" val="2700" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6910" levels="1" name="Dance">
@@ -102,6 +107,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skilltransform2" />
+		<set name="hitTime" val="4800" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6911" levels="1" name="Greeting">
@@ -111,6 +118,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skilltransform3" />
+		<set name="hitTime" val="3200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6912" levels="1" name="Stigma Aftermath">
@@ -127,6 +136,9 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="affectRange" val="100" />
+		<set name="icon" val="icon.skill5860" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="1200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6913" levels="1" name="Challenge of Faith">
@@ -145,6 +157,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="affectRange" val="1000" />
+		<set name="reuseDelay" val="60000" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -164,6 +178,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="600" />
+		<set name="icon" val="icon.skill1086" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6915" levels="10" name="Acumen">
@@ -177,6 +193,9 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
+		<set name="icon" val="icon.skill1085" />
+		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6916" levels="1" name="Antharas's Cute Tricks">
@@ -186,6 +205,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6917" levels="1" name="Kanna's Splendor">
@@ -195,6 +216,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6918" levels="1" name="Kallesin's Splendor">
@@ -204,6 +227,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6919" levels="1" name="Challenge Acceptance">
@@ -218,6 +243,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6920" levels="1" name="Collector's Fortune">
@@ -235,6 +261,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="abnormalLvl" val="1" />
+		<set name="isMagic" val="4" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -263,6 +290,9 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="80" />
 		<set name="abnormalLvl" val="3" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6922" levels="3" name="Adventurer's Might">

@@ -140,9 +140,9 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="10" />
-		<set name="castRange" val="500" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="15000" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
@@ -155,21 +155,21 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="180000" />
+		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16521" levels="1" name="Embryo's Call">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily increases P. Atk. And Atk. Spd. by 50%. -->
-		<set name="icon" val="icon.skill0000" />
+		<set name="icon" val="icon.skill1147" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="350" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="60000" />
+		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
@@ -196,6 +196,7 @@
 		<set name="castRange" val="350" />
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="800" />
+		<set name="isDebuff" val="true" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="16524" levels="4" name="Full Swing Crusher">
@@ -209,6 +210,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="isDebuff" val="true" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="16525" levels="1" name="Spirit of Master">
@@ -270,6 +272,7 @@
 		<set name="mpConsume" val="46" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="867" />
+		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16531" levels="1" name="Barton's Potential Force">
@@ -378,7 +381,7 @@
 	<skill id="16539" levels="1" name="Eliyah's Elemental Detonation">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Aden Vanguard Eliyah appears and launches an Elemental bomb to Commander Burnstein. Decrease Burnstein's HP by 200% and Resistance to all elements by 30% for 30 seconds. Can only be used inside the Command Post. -->
-		<set name="icon" val="icon.skill11570" />
+		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="45" />
@@ -386,6 +389,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-100" />
+		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16540" levels="1" name="Revolutionaries' Petrification">
@@ -400,7 +404,7 @@
 	<skill id="16541" levels="1" name="Burstein's Stigma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stigma that proves that Commander Burnstein in Atelia Fortress' 3rd floor has withdrawn. -->
-		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="icon" val="icon.skill0015" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="50" />
@@ -423,7 +427,7 @@
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="15000" />
+		<set name="hitTime" val="10000" />
 		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="1" />
 	</skill>

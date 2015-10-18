@@ -830,6 +830,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="2" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -954,6 +955,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player insideZoneId="2239" />
@@ -2086,6 +2088,7 @@
 	</skill>
 	<skill id="2288" levels="7" name="Elixir of Mind (No-grade)">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
+		<table name="#reuseDelay"> 600000 600000 600000 600000 600000 600000 120000 </table>
 		<table name="#amount"> 60 140 220 290 360 420 480 </table>
 		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 76;84 85;99 </table>
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -2094,6 +2097,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="reuseDelay" val="#reuseDelay" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
@@ -2106,6 +2110,7 @@
 	</skill>
 	<skill id="2289" levels="7" name="Elixir of CP (No-grade)">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
+		<table name="#reuseDelay"> 600000 600000 600000 600000 600000 600000 120000 </table>
 		<table name="#amount"> 150 350 600 800 1000 1200 1400 </table>
 		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 76;84 85;99 </table>
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -2114,6 +2119,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="reuseDelay" val="#reuseDelay" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />

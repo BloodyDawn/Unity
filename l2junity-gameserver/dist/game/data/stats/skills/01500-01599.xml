@@ -316,7 +316,7 @@
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="effectPoint" val="-679" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="2110" />
 		<set name="icon" val="icon.skill1509" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -325,9 +325,11 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="120000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -984,7 +986,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpConsume_Init" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="1000" />
+		<set name="reuseDelay" val="1200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
@@ -1298,6 +1300,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
+		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="BlockActions">
@@ -1687,6 +1690,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AREA" />
 		<pveEffects>
 			<effect name="MagicalAttack">
@@ -1719,6 +1723,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<pveEffects>
 			<effect name="MagicalAttack">

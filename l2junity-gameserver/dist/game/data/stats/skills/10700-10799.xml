@@ -638,7 +638,7 @@
 		<set name="coolTime" val="250" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
-		<set name="reuseDelay" val="7000" />
+		<set name="reuseDelay" val="5000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1341,6 +1341,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="isDebuff" val="true" />
 		<set name="reuseDelay" val="20000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
