@@ -1848,8 +1848,6 @@
 		<set name="affectRange" val="150" />
 		<set name="activateRate" val="150" />
 		<set name="basicProperty" val="NONE" />
-		<set name="flyCourse" val="0" /> <!-- Back -->
-		<set name="flyRadius" val="600" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
@@ -1871,7 +1869,9 @@
 			<effect name="TargetCancel" />
 		</for>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="0" range="600" /> <!-- Teleport to Back -->
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="11058" levels="6" name="Shadow Snare">
@@ -2730,8 +2730,6 @@
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="6-12" />
 		<set name="basicProperty" val="NONE" />
-		<set name="flyCourse" val="180" /> <!-- Front -->
-		<set name="flyRadius" val="400" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
@@ -2753,7 +2751,9 @@
 			<effect name="TargetCancel" />
 		</for>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="180" range="400" /> <!-- Teleport to Front -->
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="11095" levels="1" name="Devil's Sway">

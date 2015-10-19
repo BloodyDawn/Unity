@@ -48,13 +48,25 @@ import org.l2junity.gameserver.util.Util;
  */
 public final class Blink extends AbstractEffect
 {
+	private final int _flyCourse;
+	private final int _flyRadius;
+	
 	private final FlyType _flyType;
+	private final int _flySpeed;
+	private final int _flyDelay;
+	private final int _animationSpeed;
 	
 	public Blink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_flyCourse = params.getInt("angle", 0);
+		_flyRadius = params.getInt("range", 0);
+		
 		_flyType = params.getEnum("flyType", FlyType.class, FlyType.DUMMY);
+		_flySpeed = params.getInt("speed", 0);
+		_flyDelay = params.getInt("delay", 0);
+		_animationSpeed = params.getInt("animationSpeed", 0);
 	}
 	
 	@Override
@@ -73,12 +85,11 @@ public final class Blink extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		final int radius = skill.getFlyRadius();
 		final double angle = Util.convertHeadingToDegree(effected.getHeading());
 		final double radian = Math.toRadians(angle);
-		final double course = Math.toRadians(skill.getFlyCourse());
-		final int x1 = (int) (Math.cos(Math.PI + radian + course) * radius);
-		final int y1 = (int) (Math.sin(Math.PI + radian + course) * radius);
+		final double course = Math.toRadians(_flyCourse);
+		final int x1 = (int) (Math.cos(Math.PI + radian + course) * _flyRadius);
+		final int y1 = (int) (Math.sin(Math.PI + radian + course) * _flyRadius);
 		
 		int x = effected.getX() + x1;
 		int y = effected.getY() + y1;
@@ -87,7 +98,7 @@ public final class Blink extends AbstractEffect
 		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocation(effected, destination, _flyType));
+		effected.broadcastPacket(new FlyToLocation(effected, destination, _flyType, _flySpeed, _flyDelay, _animationSpeed));
 		effected.abortAttack();
 		effected.abortCast();
 		effected.setXYZ(destination);

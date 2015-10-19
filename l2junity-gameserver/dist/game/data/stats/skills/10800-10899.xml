@@ -150,8 +150,6 @@
 		<table name="#magicLvl"> 89 92 95 98 </table>
 		<table name="#mpConsumes"> 41 44 46 48 </table>
 		<set name="icon" val="icon.skill10805" />
-		<set name="flyCourse" val="180" /> <!-- Teleport to Front -->
-		<set name="flyRadius" val="#castRanges" />
 		<set name="operateType" val="DA1" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -168,7 +166,8 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Blink">
-				<param flyType="WARP_FORWARD" />
+				<param flyType="CHARGE" animationSpeed="333" />
+				<param angle="180" range="#castRanges" /> <!-- Teleport to Front -->
 			</effect>
 		</for>
 	</skill>

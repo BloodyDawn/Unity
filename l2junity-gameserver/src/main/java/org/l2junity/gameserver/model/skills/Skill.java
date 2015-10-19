@@ -171,7 +171,6 @@ public final class Skill implements IIdentifiable
 	// Flying support
 	private final FlyType _flyType;
 	private final int _flyRadius;
-	private final float _flyCourse;
 	
 	private final boolean _isDebuff;
 	
@@ -367,7 +366,6 @@ public final class Skill implements IIdentifiable
 		
 		_flyType = set.getEnum("flyType", FlyType.class, null);
 		_flyRadius = set.getInt("flyRadius", 0);
-		_flyCourse = set.getFloat("flyCourse", 0);
 		
 		_canBeDispelled = set.getBoolean("canBeDispelled", true);
 		
@@ -971,11 +969,6 @@ public final class Skill implements IIdentifiable
 	public int getFlyRadius()
 	{
 		return _flyRadius;
-	}
-	
-	public float getFlyCourse()
-	{
-		return _flyCourse;
 	}
 	
 	public boolean isStayAfterDeath()

@@ -1331,8 +1331,6 @@
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="coolTime" val="200" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="300" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
@@ -1350,7 +1348,9 @@
 			<effect name="BlockActions" />
 		</for>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="0" range="400" /> <!-- Teleport to Back -->
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="7079" levels="1" name="Test - Party Damage Absorb">

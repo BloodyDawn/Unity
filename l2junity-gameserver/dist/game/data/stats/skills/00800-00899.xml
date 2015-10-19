@@ -2087,9 +2087,6 @@
 		<set name="affectRange" val="150" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-659" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="500" />
-		<set name="flyType" val="DUMMY" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="isDebuff" val="true" />
@@ -2107,7 +2104,9 @@
 			<effect name="BlockActions" />
 		</for>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="0" range="500" /> <!-- Teleport to Back -->
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="886" levels="11" name="Air Shock Bomb">

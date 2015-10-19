@@ -1478,8 +1478,6 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-575" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="300" />
 		<set name="icon" val="icon.skill1448" />
 		<set name="isDebuff" val="true" />
@@ -1502,7 +1500,9 @@
 			<effect name="BlockActions" />
 		</for>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="0" range="400" /> <!-- Teleport to Back -->
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="1449" levels="1" name="Transfer Soul">
