@@ -349,7 +349,7 @@ public enum ExIncomingPackets implements IIncomingPackets<L2GameClient>
 	REQUEST_CAPTCHA_ANSWER(0x10D, null, ConnectionState.IN_GAME),
 	REQUEST_REFRESH_CAPTCHA_IMAGE(0x10E, null, ConnectionState.IN_GAME),
 	REQUEST_TODO_LIST(0x10F, null, ConnectionState.IN_GAME),
-	UNKNOWN(0x110, null, ConnectionState.IN_GAME),
+	REQUEST_TODO_LIST_HTML(0x110, null, ConnectionState.IN_GAME),
 	REQUEST_ONE_DAY_REWARD_RECEIVE(0x111, null, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_BONUS_OPEN(0x112, RequestPledgeBonusOpen::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_BONUS_REWARD_LIST(0x113, RequestPledgeBonusRewardList::new, ConnectionState.IN_GAME),
