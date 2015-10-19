@@ -72,6 +72,7 @@ import org.l2junity.gameserver.network.client.send.PledgeSkillList.SubPledgeSkil
 import org.l2junity.gameserver.network.client.send.PledgeSkillListAdd;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
+import org.l2junity.gameserver.network.client.send.pledgebonus.ExPledgeBonusMarkReset;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.EnumIntBitmask;
 import org.l2junity.gameserver.util.Util;
@@ -3125,6 +3126,9 @@ public class L2Clan implements IIdentifiable, INamable
 		
 		// force store
 		getVariables().storeMe();
+		
+		// Send Packet
+		broadcastToOnlineMembers(ExPledgeBonusMarkReset.STATIC_PACKET);
 	}
 	
 	public ClanVariables getVariables()
