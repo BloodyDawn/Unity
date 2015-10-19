@@ -9106,7 +9106,7 @@ public final class PlayerInstance extends Playable
 		if (_activeSoulShots.contains(itemId))
 		{
 			removeAutoSoulShot(itemId);
-			sendPacket(new ExAutoSoulShot(itemId, 0));
+			sendPacket(new ExAutoSoulShot(itemId, false, 0));
 			
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_DEACTIVATED);
 			sm.addItemName(itemId);
@@ -9123,7 +9123,7 @@ public final class PlayerInstance extends Playable
 	{
 		for (int itemId : _activeSoulShots)
 		{
-			sendPacket(new ExAutoSoulShot(itemId, 0));
+			sendPacket(new ExAutoSoulShot(itemId, false, 0));
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_DEACTIVATED);
 			sm.addItemName(itemId);
 			sendPacket(sm);

@@ -36,13 +36,17 @@ import org.l2junity.network.PacketReader;
 public final class RequestAutoSoulShot implements IClientIncomingPacket
 {
 	private int _itemId;
-	private int _type; // 1 = on : 0 = off;
+	private boolean _enable;
+	private int _type;
 	
 	@Override
 	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_itemId = packet.readD();
+		_enable = packet.readD() == 1 ? true : false;
 		_type = packet.readD();
+		
+		System.out.println(_itemId + " - " + _enable + " - " + _type);
 		return true;
 	}
 	
@@ -63,7 +67,7 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 				return;
 			}
 			
-			if (_type == 1)
+			if (_enable)
 			{
 				if (!activeChar.getInventory().canManipulateWithItemId(item.getId()))
 				{
@@ -116,7 +120,7 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 						
 						// Activate shots
 						activeChar.addAutoSoulShot(_itemId);
-						client.sendPacket(new ExAutoSoulShot(_itemId, _type));
+						client.sendPacket(new ExAutoSoulShot(_itemId, _enable, _type));
 						
 						// Send message
 						final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_ACTIVATED);
@@ -152,7 +156,7 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 					
 					// Activate shots
 					activeChar.addAutoSoulShot(_itemId);
-					client.sendPacket(new ExAutoSoulShot(_itemId, _type));
+					client.sendPacket(new ExAutoSoulShot(_itemId, _enable, _type));
 					
 					// Send message
 					final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_ACTIVATED);
@@ -163,11 +167,11 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 					activeChar.rechargeShots(isSoulshot, isSpiritshot, isFishingshot);
 				}
 			}
-			else if (_type == 0)
+			else
 			{
 				// Cancel auto shots
 				activeChar.removeAutoSoulShot(_itemId);
-				client.sendPacket(new ExAutoSoulShot(_itemId, _type));
+				client.sendPacket(new ExAutoSoulShot(_itemId, _enable, _type));
 				
 				// Send message
 				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_DEACTIVATED);

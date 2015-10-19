@@ -51,6 +51,7 @@ import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -58,6 +59,7 @@ import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.Die;
 import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
 import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
+import org.l2junity.gameserver.network.client.send.ExAutoSoulShot;
 import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 import org.l2junity.gameserver.network.client.send.ExBeautyItemList;
 import org.l2junity.gameserver.network.client.send.ExCastleState;
@@ -573,6 +575,9 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
 		activeChar.sendPacket(new ExWorldChatCnt(activeChar));
+		
+		System.out.println(activeChar.getInventory().getItems(ItemInstance::isEtcItem, i -> i.getItemType() == EtcItemType.SOULSHOT).size());
+		activeChar.getInventory().getItems(ItemInstance::isEtcItem, i -> i.getItemType() == EtcItemType.SOULSHOT).forEach(i -> activeChar.sendPacket(new ExAutoSoulShot(i.getId(), false, 0)));
 	}
 	
 	/**
