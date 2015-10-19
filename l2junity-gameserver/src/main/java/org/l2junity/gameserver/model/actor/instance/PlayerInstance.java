@@ -14234,6 +14234,14 @@ public final class PlayerInstance extends Playable
 					}
 					break;
 				}
+				case FISHINGSHOT:
+				{
+					if ((weapon != null) && (weapon.getItemType() == WeaponType.FISHINGROD) && (weapon.getItem().getCrystalType() == i.getItem().getCrystalType()))
+					{
+						sendPacket(new ExAutoSoulShot(i.getId(), false, 1));
+					}
+					break;
+				}
 			}
 		});
 	}
