@@ -60,20 +60,17 @@
 		<!-- You can start a campfire by using this flint. The warmth of the bonfire will decrease Skill Cooldown by 10%, increase PVE Damage by 10%, and bestow the Vampirig Rage effect. It will be effective only when the fire is started at a certain distance away from the village. Does not stack with the Christmas Tree effect. -->
 		<set name="icon" val="BranchSys2.icon.g_campfire_flint" />
 		<set name="price" val="1" />
-
-
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26305" name="Kotatsu" type="EtcItem">
 		<!-- Increases Speed by 20, and reduces Skill MP Consumption by 20% and PvE Damage by 10%. It will be effective only when summoned at a certain distance away from the village. Does not stack with the Christmas Tree effect. -->
 		<set name="icon" val="BranchSys.icon.br_kotatsu_i00" />
-
-
-
 		<set name="is_commissionable" val="false" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26306" name="Offering Test Recipe 1" type="EtcItem">
@@ -81,6 +78,7 @@
 		<set name="icon" val="icon.etc_recipe_white_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26307" name="Offering Test Recipe 2" type="EtcItem">
@@ -88,6 +86,7 @@
 		<set name="icon" val="icon.etc_recipe_white_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26308" name="Offering Test Recipe 3" type="EtcItem">
@@ -95,6 +94,7 @@
 		<set name="icon" val="icon.etc_recipe_white_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26309" name="Offering Test Recipe 4" type="EtcItem">
@@ -102,6 +102,7 @@
 		<set name="icon" val="icon.etc_recipe_white_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26310" name="Offering Test Recipe 5" type="EtcItem">
@@ -109,6 +110,7 @@
 		<set name="icon" val="icon.etc_recipe_white_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26311" name="Offering Test Ingredient 1" type="EtcItem">
@@ -121,6 +123,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26312" name="Offering Test Ingredient  2" type="Weapon">
@@ -158,6 +161,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="price" val="1000" />
 	</item>
 	<item id="26314" name="Offering Test Ingredient  4" type="EtcItem">
@@ -165,12 +169,14 @@
 		<set name="icon" val="icon.etc_crystal_ball_silver_i00" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26315" name="Offering Test Ingredient  5" type="EtcItem">
 		<!-- Price is 0, but can be sold in the shop. -->
 		<set name="icon" val="icon.etc_crystal_ball_silver_i00" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26316" name="Offering Test Ingredient  6" type="EtcItem">
@@ -179,6 +185,7 @@
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26317" name="Offering Test Ingredient  7" type="EtcItem">
@@ -186,6 +193,7 @@
 		<set name="icon" val="icon.etc_crystal_ball_silver_i00" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26318" name="Dragon Scales" type="EtcItem">
@@ -194,6 +202,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26319" name="Venir's Talisman Stage 1 Pack" type="EtcItem">
@@ -322,6 +331,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26333" name="Lineage II Baseball Cap Appearance Stone" type="EtcItem">
@@ -330,6 +340,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26334" name="School Uniform A Appearance Stone" type="EtcItem">
@@ -338,6 +349,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26335" name="School Uniform Hair A Appearance Stone" type="EtcItem">
@@ -346,6 +358,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26336" name="School Uniform B Appearance Stone" type="EtcItem">
@@ -354,6 +367,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26337" name="School Uniform Hair B Appearance Stone" type="EtcItem">
@@ -362,6 +376,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26338" name="Talisman - Abundance Lv. 1 (High-grade)" type="Armor">
@@ -490,6 +505,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26351" name="Scroll: Enchant Armor (A-grade)" type="EtcItem">
@@ -504,6 +520,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26352" name="Scroll: Enchant Weapon (S-grade)" type="EtcItem">
@@ -518,6 +535,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26353" name="Scroll: Enchant Armor (S-grade)" type="EtcItem">
@@ -532,6 +550,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26354" name="Gem" type="EtcItem">
@@ -575,6 +594,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26358" name="Pirate Crew Appeareance Stone" type="EtcItem">
@@ -583,6 +603,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26359" name="Automatic Appearance Stone: Tears Weapon" name_additional="30-day" type="EtcItem">
@@ -624,6 +645,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26362" name="Metal Suit Top Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -633,6 +655,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26363" name="Metal Suit Pants Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -642,6 +665,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26364" name="Metal Suit Gloves Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -651,6 +675,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26365" name="Metal Suit Shoes Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -660,6 +685,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26366" name="Ninja Hair Accessory Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -673,6 +699,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26367" name="Ninja Top Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -682,6 +709,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26368" name="Ninja Pants Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -691,6 +719,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26369" name="Ninja Gloves Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -700,6 +729,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26370" name="Ninja Shoes Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -709,6 +739,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26371" name="Tribal Warrior Hair Accessory Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -722,6 +753,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26372" name="Tribal Warrior Top Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -731,6 +763,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26373" name="Tribal Warrior Pants Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -740,6 +773,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26374" name="Tribal Warrior Gloves Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -749,6 +783,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26375" name="Tribal Warrior Shoes Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -758,6 +793,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26376" name="Military Hair Accessory Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -771,6 +807,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26377" name="Military Top Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -780,6 +817,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26378" name="Military Pants Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -789,6 +827,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26379" name="Military Gloves Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -798,6 +837,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26380" name="Military Shoes Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -807,6 +847,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26381" name="Samurai Hair Accessory Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -820,6 +861,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26382" name="Samurai Outfit Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -833,6 +875,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26383" name="Vampire Top Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -846,6 +889,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26384" name="Vampire Pants Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -859,6 +903,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26385" name="Vampire Gloves Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -872,6 +917,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26386" name="Vampire Shoes Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -885,6 +931,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26387" name="Vampire Hair Accessory Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -898,6 +945,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26388" name="Anakim Outfit Appearance Stone" name_additional="30-day" type="EtcItem">
@@ -911,6 +959,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="26389" name="Agathion - Anakim" name_additional="30-day" type="Armor">
@@ -933,6 +982,7 @@
 		<set name="icon" val="icon.etc_reagent_white_i00" />
 		<set name="weight" val="5" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26391" name="Rune of Feather Pack (7-day)" type="EtcItem">
@@ -954,6 +1004,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="26393" name="Transformation Scroll: Rose (F)" type="EtcItem">
