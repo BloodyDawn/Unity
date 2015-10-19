@@ -14193,4 +14193,48 @@ public final class PlayerInstance extends Playable
 			_onlineTimeUpdateTask = null;
 		}
 	}
+	
+	public void handleAutoShots()
+	{
+		final ItemInstance weapon = getActiveWeaponInstance();
+		
+		getInventory().getItems(ItemInstance::isEtcItem, i -> i.getItemType() == EtcItemType.SOULSHOT).forEach(i ->
+		{
+			switch (i.getEtcItem().getDefaultAction())
+			{
+				case SOULSHOT:
+				{
+					if ((weapon != null) && (weapon.getItem().getCrystalType() == i.getItem().getCrystalType()))
+					{
+						sendPacket(new ExAutoSoulShot(i.getId(), false, 1));
+					}
+					break;
+				}
+				case SPIRITSHOT:
+				{
+					if ((weapon != null) && (weapon.getItem().getCrystalType() == i.getItem().getCrystalType()))
+					{
+						sendPacket(new ExAutoSoulShot(i.getId(), false, 2));
+					}
+					break;
+				}
+				case SUMMON_SOULSHOT:
+				{
+					if (hasSummon())
+					{
+						sendPacket(new ExAutoSoulShot(i.getId(), false, 3));
+					}
+					break;
+				}
+				case SUMMON_SPIRITSHOT:
+				{
+					if (hasSummon())
+					{
+						sendPacket(new ExAutoSoulShot(i.getId(), false, 4));
+					}
+					break;
+				}
+			}
+		});
+	}
 }

@@ -573,6 +573,7 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
 		activeChar.sendPacket(new ExWorldChatCnt(activeChar));
+		activeChar.handleAutoShots();
 	}
 	
 	/**

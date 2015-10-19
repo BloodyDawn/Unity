@@ -1024,10 +1024,6 @@ public abstract class Inventory extends ItemContainer
 					listener.notifyUnequiped(slot, old, this);
 				}
 				old.updateDatabase();
-				if (getOwner().isPlayer())
-				{
-					getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
-				}
 			}
 			// Add new item in slot of paperdoll
 			if (item != null)
@@ -1046,10 +1042,11 @@ public abstract class Inventory extends ItemContainer
 					listener.notifyEquiped(slot, item, this);
 				}
 				item.updateDatabase();
-				if (getOwner().isPlayer())
-				{
-					getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
-				}
+			}
+			
+			if (getOwner().isPlayer())
+			{
+				getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
 			}
 		}
 		return old;

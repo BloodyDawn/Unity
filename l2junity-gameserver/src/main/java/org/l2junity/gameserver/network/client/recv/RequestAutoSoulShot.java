@@ -45,8 +45,6 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 		_itemId = packet.readD();
 		_enable = packet.readD() == 1 ? true : false;
 		_type = packet.readD();
-		
-		System.out.println(_itemId + " - " + _enable + " - " + _type);
 		return true;
 	}
 	
