@@ -55,7 +55,7 @@ public final class MultiSellList implements IClientOutgoingPacket
 		
 		packet.writeD(_list.getListId()); // list id
 		packet.writeC(0x00); // GOD Unknown
-		packet.writeH(1 + (_index / PAGE_SIZE)); // page started from 1
+		packet.writeD(1 + (_index / PAGE_SIZE)); // page started from 1
 		packet.writeD(_finished ? 0x01 : 0x00); // finished
 		packet.writeD(PAGE_SIZE); // size of pages
 		packet.writeD(_size); // list length
