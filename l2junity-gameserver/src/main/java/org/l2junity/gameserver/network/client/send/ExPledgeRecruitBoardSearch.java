@@ -61,7 +61,7 @@ public class ExPledgeRecruitBoardSearch implements IClientOutgoingPacket
 		for (int i = _startIndex; i < _endIndex; i++)
 		{
 			packet.writeD(_clanList.get(i).getClanId());
-			packet.writeD(0x00); // find me
+			packet.writeD(_clanList.get(i).getClan().getAllyId());
 		}
 		for (int i = _startIndex; i < _endIndex; i++)
 		{
