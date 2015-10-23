@@ -361,7 +361,7 @@ public final class PlayerInstance extends Playable
 	private static final String DELETE_ITEM_REUSE_SAVE = "DELETE FROM character_item_reuse_save WHERE charId=?";
 	
 	// Character Character SQL String Definitions:
-	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,raidbossPoints,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,vitality_points,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,raidbossPoints,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,online,clan_privs,wantspeace,base_class,nobless,power_grade,vitality_points,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,online=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
 	private static final String UPDATE_CHARACTER_ACCESS = "UPDATE characters SET accesslevel = ? WHERE charId = ?";
 	private static final String RESTORE_CHARACTER = "SELECT * FROM characters WHERE charId=?";
@@ -865,6 +865,8 @@ public final class PlayerInstance extends Playable
 		PlayerInstance player = new PlayerInstance(template, accountName, app);
 		// Set the name of the L2PcInstance
 		player.setName(name);
+		// Set access level
+		player.setAccessLevel(0, false, false);
 		// Set Character's create time
 		player.setCreateDate(Calendar.getInstance());
 		// Set the base class ID to that of the actual class ID.
@@ -6517,17 +6519,14 @@ public final class PlayerInstance extends Playable
 			statement.setInt(26, hasDwarvenCraft() ? 1 : 0);
 			statement.setString(27, getTitle());
 			statement.setInt(28, getAppearance().getTitleColor());
-			statement.setInt(29, getAccessLevel().getLevel());
-			statement.setInt(30, isOnlineInt());
-			statement.setInt(31, 0); // Unused
-			statement.setInt(32, getClanPrivileges().getBitmask());
-			statement.setInt(33, getWantsPeace());
-			statement.setInt(34, getBaseClass());
-			statement.setInt(35, 0); // Unused
-			statement.setInt(36, isNoble() ? 1 : 0);
-			statement.setLong(37, 0);
-			statement.setInt(38, PcStat.MIN_VITALITY_POINTS);
-			statement.setDate(39, new Date(getCreateDate().getTimeInMillis()));
+			statement.setInt(29, isOnlineInt());
+			statement.setInt(30, getClanPrivileges().getBitmask());
+			statement.setInt(31, getWantsPeace());
+			statement.setInt(32, getBaseClass());
+			statement.setInt(33, isNoble() ? 1 : 0);
+			statement.setLong(34, 0);
+			statement.setInt(35, PcStat.MIN_VITALITY_POINTS);
+			statement.setDate(36, new Date(getCreateDate().getTimeInMillis()));
 			statement.executeUpdate();
 		}
 		catch (Exception e)
