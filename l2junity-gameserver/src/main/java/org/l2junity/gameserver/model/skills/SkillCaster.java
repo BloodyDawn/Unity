@@ -39,6 +39,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.character.FlyToLocationTask;
 import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
@@ -118,16 +119,15 @@ public class SkillCaster implements Runnable
 	{
 		Objects.requireNonNull(skill);
 		
-		if (!_isCasting.compareAndSet(false, true))
+		// Casting failed due conditions...
+		if (!checkDoCastConditions(_caster, skill))
 		{
-			_log.warn("Character: {} is attempting to cast {} on {} but he is already casting {} on {}!", _caster, skill, target, _skill, _target);
 			return false;
 		}
 		
-		// Casting failed due conditions... stop casting.
-		if (!checkDoCastConditions(_caster, skill))
+		if (!_isCasting.compareAndSet(false, true))
 		{
-			_isCasting.set(false);
+			_log.warn("Character: {} is attempting to cast {} on {} but he is already casting {} on {}!", _caster, skill, target, _skill, _target);
 			return false;
 		}
 		
@@ -754,6 +754,17 @@ public class SkillCaster implements Runnable
 			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			caster.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
+		}
+		
+		// Check if creature is already casting
+		if (caster.isCastingNow(SkillCaster::isNormalType))
+		{
+			// Check if unable to double cast or both casting slots are taken.
+			if (!caster.isAffected(EffectFlag.DOUBLE_CAST) || !skill.canDoubleCast() || (caster.getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isNormalType) == null))
+			{
+				caster.sendPacket(ActionFailed.STATIC_PACKET);
+				return false;
+			}
 		}
 		
 		// Check if the caster has enough MP
