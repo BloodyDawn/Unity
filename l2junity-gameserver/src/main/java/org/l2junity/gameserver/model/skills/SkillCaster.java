@@ -523,7 +523,6 @@ public class SkillCaster implements Runnable
 			{
 				PlayerInstance currPlayer = _caster.getActingPlayer();
 				SkillUseHolder queuedSkill = currPlayer.getQueuedSkill();
-				currPlayer.setCurrentSkill(null, false, false);
 				
 				if (queuedSkill != null)
 				{

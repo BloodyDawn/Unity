@@ -739,9 +739,6 @@ public final class PlayerInstance extends Playable
 	private Forum _forumMail;
 	private Forum _forumMemo;
 	
-	/** Current skill in use. Note that L2Character has _lastSkillCast, but this has the button presses */
-	private SkillUseHolder _currentSkill;
-	
 	/** Skills queued because a skill is already in progress */
 	private SkillUseHolder _queuedSkill;
 	
@@ -8203,10 +8200,6 @@ public final class PlayerInstance extends Playable
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
-		// Create a new SkillDat object and set the player _currentSkill
-		// This is used mainly to save & queue the button presses, since L2Character has
-		// _lastSkillCast which could otherwise replace it
-		setCurrentSkill(skill, forceUse, dontMove);
 		
 		if (getQueuedSkill() != null)
 		{
@@ -8240,7 +8233,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// Notify the AI with AI_INTENTION_CAST and target
-		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item);
+		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item, forceUse, dontMove);
 		return true;
 	}
 	
@@ -11515,30 +11508,6 @@ public final class PlayerInstance extends Playable
 	public int getMountObjectID()
 	{
 		return _mountObjectID;
-	}
-	
-	/**
-	 * @return the current skill in use or return null.
-	 */
-	public SkillUseHolder getCurrentSkill()
-	{
-		return _currentSkill;
-	}
-	
-	/**
-	 * Create a new SkillDat object and set the player _currentSkill.
-	 * @param currentSkill
-	 * @param ctrlPressed
-	 * @param shiftPressed
-	 */
-	public void setCurrentSkill(Skill currentSkill, boolean ctrlPressed, boolean shiftPressed)
-	{
-		if (currentSkill == null)
-		{
-			_currentSkill = null;
-			return;
-		}
-		_currentSkill = new SkillUseHolder(currentSkill, ctrlPressed, shiftPressed);
 	}
 	
 	public SkillUseHolder getQueuedSkill()

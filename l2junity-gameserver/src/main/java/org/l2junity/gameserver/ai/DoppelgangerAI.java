@@ -100,7 +100,7 @@ public class DoppelgangerAI extends CharacterAI
 		getActor().followSummoner(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill, _item);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	private void thinkInteract()
@@ -179,7 +179,7 @@ public class DoppelgangerAI extends CharacterAI
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
@@ -189,7 +189,7 @@ public class DoppelgangerAI extends CharacterAI
 		{
 			_lastAttack = null;
 		}
-		super.onIntentionCast(skill, target, item);
+		super.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
 	
 	@Override

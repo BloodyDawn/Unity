@@ -125,7 +125,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		summon.setFollowStatus(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill, _item);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	private void thinkPickUp()
@@ -305,7 +305,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
@@ -315,7 +315,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			_lastAttack = null;
 		}
-		super.onIntentionCast(skill, target, item);
+		super.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
 	
 	private void startAvoidTask()

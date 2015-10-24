@@ -100,13 +100,17 @@ public class CharacterAI extends AbstractAI
 		private final WorldObject _target;
 		private final Skill _skill;
 		private final ItemInstance _item;
+		private final boolean _forceUse;
+		private final boolean _dontMove;
 		
-		public CastTask(Creature actor, Skill skill, WorldObject target, ItemInstance item)
+		public CastTask(Creature actor, Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 		{
 			_activeChar = actor;
 			_target = target;
 			_skill = skill;
 			_item = item;
+			_forceUse = forceUse;
+			_dontMove = dontMove;
 		}
 		
 		@Override
@@ -116,7 +120,7 @@ public class CharacterAI extends AbstractAI
 			{
 				_activeChar.abortAttack();
 			}
-			_activeChar.getAI().changeIntentionToCast(_skill, _target, _item);
+			_activeChar.getAI().changeIntentionToCast(_skill, _target, _item, _forceUse, _dontMove);
 		}
 	}
 	
@@ -310,7 +314,7 @@ public class CharacterAI extends AbstractAI
 	 * </ul>
 	 */
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		if ((getIntention() == AI_INTENTION_REST) && skill.isMagic())
 		{
@@ -321,15 +325,15 @@ public class CharacterAI extends AbstractAI
 		
 		if (_actor.getAttackEndTime() > GameTimeController.getInstance().getGameTicks())
 		{
-			ThreadPoolManager.getInstance().scheduleGeneral(new CastTask(_actor, skill, target, item), _actor.getAttackEndTime() - System.currentTimeMillis());
+			ThreadPoolManager.getInstance().scheduleGeneral(new CastTask(_actor, skill, target, item, forceUse, dontMove), _actor.getAttackEndTime() - System.currentTimeMillis());
 		}
 		else
 		{
-			changeIntentionToCast(skill, target, item);
+			changeIntentionToCast(skill, target, item, forceUse, dontMove);
 		}
 	}
 	
-	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item)
+	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Set the AI cast target
 		setCastTarget((Creature) target);
@@ -339,6 +343,10 @@ public class CharacterAI extends AbstractAI
 		
 		// Set the AI item that triggered this skill
 		_item = item;
+		
+		// Set the ctrl/shift pressed parameters
+		_forceUse = forceUse;
+		_dontMove = dontMove;
 		
 		// Change the Intention of this AbstractAI to AI_INTENTION_CAST
 		changeIntention(AI_INTENTION_CAST, skill);

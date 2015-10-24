@@ -398,7 +398,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return;
 		}
 		setIntention(AI_INTENTION_ACTIVE);
-		_actor.doCast(_skill, _item);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	/**

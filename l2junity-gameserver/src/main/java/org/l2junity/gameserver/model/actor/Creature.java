@@ -1568,7 +1568,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public void doCast(Skill skill)
 	{
-		doCast(skill, null);
+		doCast(skill, null, false, false);
 	}
 	
 	/**
@@ -1585,19 +1585,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * </ul>
 	 * @param skill The L2Skill to use
 	 * @param item the referenced item of this skill cast
+	 * @param ctrlPressed if the player has pressed ctrl key during casting, aka force use.
+	 * @param shiftPressed if the player has pressed shift key during casting, aka dont move.
 	 */
-	public void doCast(Skill skill, ItemInstance item)
+	public void doCast(Skill skill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
 	{
 		SkillCaster skillCaster;
-		boolean ctrlPressed = false;
-		boolean shiftPressed = false;
-		
-		// TODO: Make AI call doCast with ctrl and shift click pressed to avoid this.
-		if (isPlayer() && (getActingPlayer().getCurrentSkill() != null))
-		{
-			ctrlPressed = getActingPlayer().getCurrentSkill().isCtrlPressed();
-			shiftPressed = getActingPlayer().getCurrentSkill().isShiftPressed();
-		}
 		
 		if (skill.isSimultaneousCast())
 		{

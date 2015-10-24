@@ -301,7 +301,7 @@ public class PlayerAI extends PlayableAI
 			}
 		}
 		
-		_actor.doCast(_skill, _item);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	private void thinkPickUp()
