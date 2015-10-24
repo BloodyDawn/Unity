@@ -8511,20 +8511,12 @@ public final class PlayerInstance extends Playable
 				{
 					if (!isInsideRadius(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
 					{
-						// Send a System Message to the caster
-						sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
-						
-						// Send a Server->Client packet ActionFailed to the L2PcInstance
 						sendPacket(ActionFailed.STATIC_PACKET);
 						return false;
 					}
 				}
 				else if ((skill.getCastRange() > 0) && !isInsideRadius(target, skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
 				{
-					// Send a System Message to the caster
-					sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
-					
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
 					sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}
