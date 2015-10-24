@@ -2183,7 +2183,7 @@
 	</skill>
 	<skill id="1279" levels="9" name="Summon Binding Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicPower"> 282 377 497 644 820 1026 1264 1530 1822 </table>
+		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#itemConsumeCount"> 4 5 6 7 7 7 9 10 11 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 60 64 68 72 </table>
 		<table name="#mpConsume"> 28 31 35 38 41 44 48 51 53 </table>
@@ -2203,13 +2203,13 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="6" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="12" cubicPower="#cubicPower" />
+				<param cubicId="6" cubicLvl="#cubicLvl" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1280" levels="9" name="Summon Aqua Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicPower"> 282 377 497 644 820 1141 1394 1673 1975 </table>
+		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#itemConsumeCount"> 2 2 2 3 3 4 5 5 6 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 62 66 70 74 </table>
 		<table name="#mpConsume"> 28 31 35 38 41 46 49 52 55 </table>
@@ -2229,13 +2229,13 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="7" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="30" cubicPower="#cubicPower" />
+				<param cubicId="7" cubicLvl="#cubicLvl" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1281" levels="9" name="Summon Spark Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicPower"> 282 377 497 644 820 1026 1264 1530 1822 </table>
+		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#itemConsumeCount"> 4 5 6 7 7 7 9 10 11 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 60 64 68 72 </table>
 		<table name="#mpConsume"> 28 31 35 38 41 44 48 51 53 </table>
@@ -2255,7 +2255,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="8" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="12" cubicPower="#cubicPower" />
+				<param cubicId="8" cubicLvl="#cubicLvl" />
 			</effect>
 		</for>
 	</skill>

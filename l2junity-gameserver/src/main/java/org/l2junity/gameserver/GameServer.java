@@ -48,6 +48,7 @@ import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.data.xml.impl.ClanRewardData;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
+import org.l2junity.gameserver.data.xml.impl.CubicData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemGroupsData;
@@ -232,6 +233,7 @@ public class GameServer
 		CharNameTable.getInstance();
 		AdminData.getInstance();
 		PetDataTable.getInstance();
+		CubicData.getInstance();
 		CharSummonTable.getInstance().init();
 		BeautyShopData.getInstance();
 		MentorManager.getInstance();

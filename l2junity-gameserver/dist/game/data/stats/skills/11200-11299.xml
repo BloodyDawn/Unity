@@ -844,10 +844,9 @@
 	<skill id="11268" levels="11" name="Summon Avenging Cubic">
 		<!-- Updated to IO -->
 		<!-- Summons an Avenging cubic. The summoned cubic cancels the summoner's debuffs. Additionally, it cancels the buffs of the summoner's target and inflicts Hold. -->
-		<!-- The cubic casts a skill every 15 seconds. -->
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 70 72 75 78 81 84 87 91 84 87 91 </table>
-		<table name="#cubicPower"> 3000 4000 5000 6000 7000 8000 9000 10000 10000 10000 10000 </table> <!-- TODO -->
+		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
 		<set name="icon" val="icon.skill11268" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -861,7 +860,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="15" cubicDelay="15" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="100" cubicPower="#cubicPower" /> <!-- Guessed -->
+				<param cubicId="15" cubicLvl="#cubicLvl" />
 			</effect>
 		</for>
 	</skill>
