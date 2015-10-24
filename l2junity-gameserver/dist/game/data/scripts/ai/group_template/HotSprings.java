@@ -96,7 +96,7 @@ public final class HotSprings extends AbstractNpcAI
 		final int skillLevel = (info == null) ? 1 : (info.getSkill().getLevel() < 10) ? info.getSkill().getLevel() + 1 : 10;
 		final Skill skill = SkillData.getInstance().getSkill(diseaseId, skillLevel);
 		
-		if ((skill != null) && !npc.isCastingNow(SkillCaster::isNormalType) && npc.checkDoCastConditions(skill))
+		if ((skill != null) && !npc.isCastingNow(SkillCaster::isNormalType) && SkillCaster.checkDoCastConditions(npc, skill))
 		{
 			npc.setTarget(player);
 			npc.doCast(skill);

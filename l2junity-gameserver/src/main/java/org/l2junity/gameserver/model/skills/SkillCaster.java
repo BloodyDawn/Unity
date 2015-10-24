@@ -253,8 +253,8 @@ public class SkillCaster implements Runnable
 			_caster.setHeading(Util.calculateHeadingFrom(_caster, _target));
 			_caster.broadcastPacket(new ExRotation(_caster.getObjectId(), _caster.getHeading()));
 			
-			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it on second casting, because that will screw up animation... some fucked up stuff, right?
-			if (_caster.isPlayer() && (_castingType == SkillCastingType.NORMAL))
+			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it while (double) casting, because that will screw up animation... some fucked up stuff, right?
+			if (_caster.isPlayer() && !_caster.isCastingNow())
 			{
 				_caster.sendPacket(new MoveToPawn(_caster, _target, (int) _caster.calculateDistance(_target, false, false)));
 				_caster.sendPacket(ActionFailed.STATIC_PACKET);

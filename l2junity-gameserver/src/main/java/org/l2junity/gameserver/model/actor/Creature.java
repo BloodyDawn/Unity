@@ -127,7 +127,6 @@ import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.model.skills.SkillChannelized;
 import org.l2junity.gameserver.model.skills.SkillChannelizer;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.MoveType;
@@ -151,7 +150,6 @@ import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.StopMove;
 import org.l2junity.gameserver.network.client.send.StopRotation;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.TeleportToLocation;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -1647,145 +1645,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 			}
 		}
-	}
-	
-	/**
-	 * Check if casting of skill is possible
-	 * @param skill
-	 * @return True if casting is possible
-	 */
-	public boolean checkDoCastConditions(Skill skill)
-	{
-		if ((skill == null) || isSkillDisabled(skill) || (((skill.getFlyRadius() > 0) || (skill.getFlyType() != null)) && isMovementDisabled()))
-		{
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Check if the caster has enough MP
-		if (getCurrentMp() < (getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill)))
-		{
-			// Send a System Message to the caster
-			sendPacket(SystemMessageId.NOT_ENOUGH_MP);
-			
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Check if the caster has enough HP
-		if (getCurrentHp() <= skill.getHpConsume())
-		{
-			// Send a System Message to the caster
-			sendPacket(SystemMessageId.NOT_ENOUGH_HP);
-			
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Skill mute checks.
-		if (!skill.isStatic())
-		{
-			// Check if the skill is a magic spell and if the L2Character is not muted
-			if (skill.isMagic())
-			{
-				if (isMuted())
-				{
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-			}
-			else
-			{
-				// Check if the skill is physical and if the L2Character is not physical_muted
-				if (isPhysicalMuted())
-				{
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-			}
-		}
-		
-		// prevent casting signets to peace zone
-		if (skill.isChanneling() && (skill.getChannelingSkillId() > 0))
-		{
-			final ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(this);
-			boolean canCast = true;
-			if ((skill.getTargetType() == L2TargetType.GROUND) && isPlayer())
-			{
-				Location wp = getActingPlayer().getCurrentSkillWorldPosition();
-				if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, wp.getX(), wp.getY(), wp.getZ()))
-				{
-					canCast = false;
-				}
-			}
-			else if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, getX(), getY(), getZ()))
-			{
-				canCast = false;
-			}
-			if (!canCast)
-			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-				sm.addSkillName(skill);
-				sendPacket(sm);
-				return false;
-			}
-		}
-		
-		// Check if the caster's weapon is limited to use only its own skills
-		final Weapon weapon = getActiveWeaponItem();
-		if ((weapon != null) && weapon.useWeaponSkillsOnly() && !isGM() && (weapon.getSkills(ItemSkillType.NORMAL) != null))
-		{
-			boolean found = false;
-			for (SkillHolder sh : weapon.getSkills(ItemSkillType.NORMAL))
-			{
-				if (sh.getSkillId() == skill.getId())
-				{
-					found = true;
-				}
-			}
-			
-			if (!found)
-			{
-				if (getActingPlayer() != null)
-				{
-					sendPacket(SystemMessageId.THAT_WEAPON_CANNOT_USE_ANY_OTHER_SKILL_EXCEPT_THE_WEAPON_S_SKILL);
-				}
-				return false;
-			}
-		}
-		
-		// Check if the spell consumes an Item
-		// TODO: combine check and consume
-		if ((skill.getItemConsumeId() > 0) && (getInventory() != null))
-		{
-			// Get the L2ItemInstance consumed by the spell
-			ItemInstance requiredItems = getInventory().getItemByItemId(skill.getItemConsumeId());
-			
-			// Check if the caster owns enough consumed Item to cast
-			if ((requiredItems == null) || (requiredItems.getCount() < skill.getItemConsumeCount()))
-			{
-				// Checked: when a summon skill failed, server show required consume item count
-				if (skill.hasEffectType(L2EffectType.SUMMON))
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.SUMMONING_A_SERVITOR_COSTS_S2_S1);
-					sm.addItemName(skill.getItemConsumeId());
-					sm.addInt(skill.getItemConsumeCount());
-					sendPacket(sm);
-				}
-				else
-				{
-					// Send a System Message to the caster
-					sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_NECESSARY_ITEMS_TO_USE_THE_SKILL);
-				}
-				return false;
-			}
-		}
-		return true;
 	}
 	
 	/**

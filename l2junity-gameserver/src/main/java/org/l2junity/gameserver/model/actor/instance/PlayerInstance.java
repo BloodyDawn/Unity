@@ -3995,42 +3995,6 @@ public final class PlayerInstance extends Playable
 		removeTimeStamp(skill);
 	}
 	
-	@Override
-	public boolean checkDoCastConditions(Skill skill)
-	{
-		if (!super.checkDoCastConditions(skill))
-		{
-			return false;
-		}
-		
-		if (inObserverMode())
-		{
-			return false;
-		}
-		
-		if (isInOlympiadMode() && skill.isBlockedInOlympiad())
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_THAT_SKILL_IN_A_OLYMPIAD_MATCH);
-			return false;
-		}
-		
-		if (isInsideZone(ZoneId.SAYUNE))
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILLS_IN_THE_CORRESPONDING_REGION);
-			return false;
-		}
-		
-		// Check if not in AirShip
-		if (isInAirShip() && !skill.hasEffectType(L2EffectType.REFUEL_AIRSHIP))
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-			sm.addSkillName(skill);
-			sendPacket(sm);
-			return false;
-		}
-		return true;
-	}
-	
 	/**
 	 * Returns true if cp update should be done, false if not
 	 * @return boolean

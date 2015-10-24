@@ -641,7 +641,7 @@ public final class Antharas extends AbstractNpcAI
 			
 			if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTH_ANTI_STRIDER.getSkillId()))
 			{
-				if (npc.checkDoCastConditions(ANTH_ANTI_STRIDER.getSkill()))
+				if (SkillCaster.checkDoCastConditions(npc, ANTH_ANTI_STRIDER.getSkill()))
 				{
 					npc.setTarget(attacker);
 					npc.doCast(ANTH_ANTI_STRIDER.getSkill());
@@ -1040,7 +1040,7 @@ public final class Antharas extends AbstractNpcAI
 				skillToCast = ANTH_NORM_ATTACK;
 			}
 			
-			if ((skillToCast != null) && npc.checkDoCastConditions(skillToCast.getSkill()))
+			if ((skillToCast != null) && SkillCaster.checkDoCastConditions(npc, skillToCast.getSkill()))
 			{
 				npc.doCast(skillToCast.getSkill());
 			}
