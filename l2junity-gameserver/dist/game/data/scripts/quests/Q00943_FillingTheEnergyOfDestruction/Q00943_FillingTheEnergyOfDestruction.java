@@ -108,11 +108,6 @@ public final class Q00943_FillingTheEnergyOfDestruction extends Quest
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (npc.getId() == SEED_TALISMAN)
 		{
 			switch (st.getState())
