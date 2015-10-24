@@ -146,7 +146,6 @@ import handlers.bypasshandlers.OlympiadObservation;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
 import handlers.bypasshandlers.QuestLink;
-import handlers.bypasshandlers.ReceivePremium;
 import handlers.bypasshandlers.ReleaseAttribute;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.TerritoryStatus;
@@ -407,7 +406,6 @@ public class MasterHandler
 			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
-			ReceivePremium.class,
 			ReleaseAttribute.class,
 			SkillList.class,
 			TerritoryStatus.class,
