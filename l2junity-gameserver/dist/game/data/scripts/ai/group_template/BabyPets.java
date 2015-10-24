@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -108,9 +109,8 @@ public final class BabyPets extends AbstractNpcAI
 		final boolean previousFollowStatus = summon.getFollowStatus();
 		final PlayerInstance owner = summon.getOwner();
 		
-		if (!owner.isDead() && (((owner.getCurrentHp() / owner.getMaxHp()) * 100) < maxHpPer) && !summon.isHungry() && !summon.isCastingNow() && summon.checkDoCastConditions(skill.getSkill()))
+		if (!owner.isDead() && (((owner.getCurrentHp() / owner.getMaxHp()) * 100) < maxHpPer) && !summon.isHungry() && !summon.isCastingNow(SkillCaster::isNormalType) && summon.checkDoCastConditions(skill.getSkill()))
 		{
-			owner.setCurrentPetSkill(skill.getSkill(), false, false);
 			summon.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill.getSkill(), owner);
 			summon.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_USES_S1).addSkillName(skill.getSkill()));
 			

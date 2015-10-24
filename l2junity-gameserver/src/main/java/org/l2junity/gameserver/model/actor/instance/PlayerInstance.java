@@ -245,6 +245,8 @@ import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
+import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
@@ -739,7 +741,6 @@ public final class PlayerInstance extends Playable
 	
 	/** Current skill in use. Note that L2Character has _lastSkillCast, but this has the button presses */
 	private SkillUseHolder _currentSkill;
-	private SkillUseHolder _currentPetSkill;
 	
 	/** Skills queued because a skill is already in progress */
 	private SkillUseHolder _queuedSkill;
@@ -3865,7 +3866,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// We cannot put a Weapon with Augmention in WH while casting (Possible Exploit)
-		if (item.isAugmented() && (isCastingNow() || isCastingSimultaneouslyNow()))
+		if (item.isAugmented() && isCastingNow())
 		{
 			return null;
 		}
@@ -8179,18 +8180,19 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// ************************************* Check Casting in Progress *******************************************
+		if (!checkUseMagicConditions(skill, forceUse, dontMove))
+		{
+			return false;
+		}
+		
+		boolean doubleCast = isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast();
 		
 		// If a skill is currently being used, queue this one if this is not the same
-		if (isCastingNow())
+		// In case of double casting, check if both slots are occupied, then queue skill.
+		if ((!doubleCast && isCastingNow(SkillCaster::isNormalType)) || (isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL) && isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL_SECOND)))
 		{
-			SkillUseHolder currentSkill = getCurrentSkill();
 			// Check if new skill different from current skill in progress
-			if ((currentSkill != null) && (skill.getId() == currentSkill.getSkillId()))
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			else if (isSkillDisabled(skill))
+			if (isSkillDisabled(skill))
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
@@ -8209,12 +8211,6 @@ public final class PlayerInstance extends Playable
 		if (getQueuedSkill() != null)
 		{
 			setQueuedSkill(null, false, false);
-		}
-		
-		if (!checkUseMagicConditions(skill, forceUse, dontMove))
-		{
-			setIsCastingNow(false);
-			return false;
 		}
 		
 		// Check if the target is correct and Notify the AI with AI_INTENTION_CAST and target
@@ -8244,7 +8240,6 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// Notify the AI with AI_INTENTION_CAST and target
-		setIsCastingNow(true);
 		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item);
 		return true;
 	}
@@ -8675,7 +8670,7 @@ public final class PlayerInstance extends Playable
 				return false;
 			}
 			
-			final boolean isCtrlPressed = (getCurrentSkill() != null) && getCurrentSkill().isCtrlPressed();
+			final boolean isCtrlPressed = getSkillCaster(s -> s.getSkill() == skill, SkillCaster::isCtrlPressed) != null;
 			
 			// Pece Zone
 			if (target.isInsideZone(ZoneId.PEACE))
@@ -11546,30 +11541,6 @@ public final class PlayerInstance extends Playable
 		_currentSkill = new SkillUseHolder(currentSkill, ctrlPressed, shiftPressed);
 	}
 	
-	/**
-	 * @return the current pet skill in use or return null.
-	 */
-	public SkillUseHolder getCurrentPetSkill()
-	{
-		return _currentPetSkill;
-	}
-	
-	/**
-	 * Create a new SkillDat object and set the player _currentPetSkill.
-	 * @param currentSkill
-	 * @param ctrlPressed
-	 * @param shiftPressed
-	 */
-	public void setCurrentPetSkill(Skill currentSkill, boolean ctrlPressed, boolean shiftPressed)
-	{
-		if (currentSkill == null)
-		{
-			_currentPetSkill = null;
-			return;
-		}
-		_currentPetSkill = new SkillUseHolder(currentSkill, ctrlPressed, shiftPressed);
-	}
-	
 	public SkillUseHolder getQueuedSkill()
 	{
 		return _queuedSkill;
@@ -12579,7 +12550,7 @@ public final class PlayerInstance extends Playable
 		{
 			return false;
 		}
-		if (isCastingNow() || isCastingSimultaneouslyNow())
+		if (isCastingNow())
 		{
 			return false;
 		}
@@ -13077,7 +13048,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean canMakeSocialAction()
 	{
-		return ((getPrivateStoreType() == PrivateStoreType.NONE) && (getActiveRequester() == null) && !isAlikeDead() && !isAllSkillsDisabled() && !isCastingNow() && !isCastingSimultaneouslyNow() && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE));
+		return ((getPrivateStoreType() == PrivateStoreType.NONE) && (getActiveRequester() == null) && !isAlikeDead() && !isAllSkillsDisabled() && !isCastingNow() && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE));
 	}
 	
 	public void setMultiSocialAction(int id, int targetId)

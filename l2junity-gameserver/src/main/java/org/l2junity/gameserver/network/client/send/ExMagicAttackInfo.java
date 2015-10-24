@@ -34,6 +34,7 @@ public class ExMagicAttackInfo implements IClientOutgoingPacket
 	public final static int BLOCKED = 5;
 	public final static int RESISTED = 6;
 	public final static int IMMUNE = 7;
+	public final static int IMMUNE2 = 8;
 	
 	private final int _caster;
 	private final int _target;

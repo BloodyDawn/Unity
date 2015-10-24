@@ -36,6 +36,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.PlaySound;
@@ -166,7 +167,7 @@ public final class QueenAnt extends AbstractNpcAI
 			final boolean queenNeedHeal = (_queen != null) && (_queen.getCurrentHp() < _queen.getMaxHp());
 			for (L2MonsterInstance nurse : _nurses)
 			{
-				if ((nurse == null) || nurse.isDead() || nurse.isCastingNow())
+				if ((nurse == null) || nurse.isDead() || nurse.isCastingNow(SkillCaster::isNormalType))
 				{
 					continue;
 				}
@@ -258,7 +259,7 @@ public final class QueenAnt extends AbstractNpcAI
 			return super.onFactionCall(npc, caller, attacker, isSummon);
 		}
 		
-		if (!npc.isCastingNow() && (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST))
+		if (!npc.isCastingNow(SkillCaster::isNormalType) && (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST))
 		{
 			if (caller.getCurrentHp() < caller.getMaxHp())
 			{

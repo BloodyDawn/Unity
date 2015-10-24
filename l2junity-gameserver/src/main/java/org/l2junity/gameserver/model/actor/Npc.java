@@ -438,7 +438,7 @@ public class Npc extends Creature
 	
 	public boolean canInteract(PlayerInstance player)
 	{
-		if (player.isCastingNow() || player.isCastingSimultaneouslyNow())
+		if (player.isCastingNow())
 		{
 			return false;
 		}
@@ -1100,7 +1100,7 @@ public class Npc extends Creature
 	}
 	
 	@Override
-	protected final void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
+	public final void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
 		if ((target != null) && target.isPlayable())
 		{

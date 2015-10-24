@@ -54,6 +54,7 @@ import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.CastleZone;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
@@ -913,7 +914,7 @@ public final class Formulas
 		
 		double init = 0;
 		
-		if (Config.ALT_GAME_CANCEL_CAST && target.isCastingNow())
+		if (Config.ALT_GAME_CANCEL_CAST && target.isCastingNow(SkillCaster::canAbortCast))
 		{
 			init = 15;
 		}
@@ -1152,8 +1153,7 @@ public final class Formulas
 				resisted = true;
 			}
 			
-			final Skill targetCastingSkill = target.isCastingNow() ? target.getLastSkillCast() : null;
-			resisted |= (targetCastingSkill != null) && targetCastingSkill.getAbnormalResists().contains(skill.getAbnormalType());
+			resisted |= target.isCastingNow(s -> s.getSkill().getAbnormalResists().contains(skill.getAbnormalType()));
 			
 			if (resisted)
 			{

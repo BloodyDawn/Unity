@@ -39,6 +39,7 @@ import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.zone.type.NoRestartZone;
 import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
@@ -818,7 +819,7 @@ public final class Antharas extends AbstractNpcAI
 	
 	private void manageSkills(Npc npc)
 	{
-		if (npc.isCastingNow() || npc.isCoreAIDisabled() || !npc.isInCombat())
+		if (npc.isCastingNow(SkillCaster::isNormalType) || npc.isCoreAIDisabled() || !npc.isInCombat())
 		{
 			return;
 		}

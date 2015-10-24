@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 
 import ai.npc.AbstractNpcAI;
 
@@ -95,7 +96,7 @@ public final class HotSprings extends AbstractNpcAI
 		final int skillLevel = (info == null) ? 1 : (info.getSkill().getLevel() < 10) ? info.getSkill().getLevel() + 1 : 10;
 		final Skill skill = SkillData.getInstance().getSkill(diseaseId, skillLevel);
 		
-		if ((skill != null) && !npc.isCastingNow() && npc.checkDoCastConditions(skill))
+		if ((skill != null) && !npc.isCastingNow(SkillCaster::isNormalType) && npc.checkDoCastConditions(skill))
 		{
 			npc.setTarget(player);
 			npc.doCast(skill);

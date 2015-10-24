@@ -448,7 +448,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 							
 							WorldObject OldTarget = _actor.getTarget();
 							_actor.setTarget(cha);
-							clientStopMoving(null);
 							_actor.doCast(sk);
 							_actor.setTarget(OldTarget);
 							return;
@@ -507,7 +506,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 						
 						WorldObject OldTarget = _actor.getTarget();
 						_actor.setTarget(npc);
-						clientStopMoving(null);
 						_actor.doCast(sk);
 						_actor.setTarget(OldTarget);
 						return;
@@ -605,7 +603,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 						}
 					}
 					
-					clientStopMoving(null);
 					_actor.doCast(sk);
 					_actor.setTarget(OldTarget);
 					return;
@@ -748,7 +745,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 							}
 						}
 						
-						clientStopMoving(null);
 						_actor.doCast(sk);
 						_actor.setTarget(OldTarget);
 						return;
@@ -770,7 +766,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		// setIntention(AI_INTENTION_IDLE);
 		
 		// Check if the actor can't use skills and if a thinking action isn't already in progress
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

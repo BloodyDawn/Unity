@@ -41,7 +41,6 @@ import org.l2junity.gameserver.network.client.send.Die;
 import org.l2junity.gameserver.network.client.send.MoveToLocation;
 import org.l2junity.gameserver.network.client.send.MoveToPawn;
 import org.l2junity.gameserver.network.client.send.StopMove;
-import org.l2junity.gameserver.network.client.send.StopRotation;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -297,14 +296,14 @@ public abstract class AbstractAI implements Ctrl
 				onEvtEvaded((Creature) arg0);
 				break;
 			case EVT_READY_TO_ACT:
-				if (!_actor.isCastingNow() && !_actor.isCastingSimultaneouslyNow())
+				if (!_actor.isCastingNow())
 				{
 					onEvtReadyToAct();
 				}
 				break;
 			case EVT_ARRIVED:
 				// happens e.g. from stopmove but we don't process it if we're casting
-				if (!_actor.isCastingNow() && !_actor.isCastingSimultaneouslyNow())
+				if (!_actor.isCastingNow())
 				{
 					onEvtArrived();
 				}
@@ -414,18 +413,6 @@ public abstract class AbstractAI implements Ctrl
 	 */
 	protected void moveToPawn(WorldObject pawn, int offset)
 	{
-		moveToPawn(pawn, offset, false);
-	}
-	
-	/**
-	 * Move the actor to Pawn server side AND client side by sending Server->Client packet MoveToPawn <I>(broadcast)</I>.<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT>
-	 * @param pawn
-	 * @param offset
-	 * @param forcePacketSend force sending the MoveToPawn packet regardless the need of moving. Force sending is required because makes the blue bubbles red.
-	 */
-	protected void moveToPawn(WorldObject pawn, int offset, boolean forcePacketSend)
-	{
 		// Check if actor can move
 		if (!_actor.isMovementDisabled())
 		{
@@ -445,7 +432,7 @@ public abstract class AbstractAI implements Ctrl
 					{
 						return;
 					}
-					sendPacket = forcePacketSend;
+					sendPacket = false;
 				}
 				else if (_actor.isOnGeodataPath())
 				{
@@ -536,7 +523,7 @@ public abstract class AbstractAI implements Ctrl
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT>
 	 * @param loc
 	 */
-	protected void clientStopMoving(Location loc)
+	public void clientStopMoving(Location loc)
 	{
 		// Stop movement of the L2Character
 		if (_actor.isMoving())
@@ -545,20 +532,7 @@ public abstract class AbstractAI implements Ctrl
 		}
 		
 		_clientMovingToPawnOffset = 0;
-		
-		if (_clientMoving || (loc != null))
-		{
-			_clientMoving = false;
-			
-			// Send a Server->Client packet StopMove to the actor and all L2PcInstance in its _knownPlayers
-			_actor.broadcastPacket(new StopMove(_actor));
-			
-			if (loc != null)
-			{
-				// Send a Server->Client packet StopRotation to the actor and all L2PcInstance in its _knownPlayers
-				_actor.broadcastPacket(new StopRotation(_actor.getObjectId(), loc.getHeading(), 0));
-			}
-		}
+		_clientMoving = false;
 	}
 	
 	/**

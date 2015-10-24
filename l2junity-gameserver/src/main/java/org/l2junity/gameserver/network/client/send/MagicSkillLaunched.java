@@ -23,6 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -35,13 +36,15 @@ public class MagicSkillLaunched implements IClientOutgoingPacket
 	private final int _charObjId;
 	private final int _skillId;
 	private final int _skillLevel;
+	private final SkillCastingType _castingType;
 	private final List<WorldObject> _targets;
 	
-	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel, WorldObject... targets)
+	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel, SkillCastingType castingType, WorldObject... targets)
 	{
 		_charObjId = cha.getObjectId();
 		_skillId = skillId;
 		_skillLevel = skillLevel;
+		_castingType = castingType;
 		
 		//@formatter:off
 		if (targets == null)
@@ -54,7 +57,7 @@ public class MagicSkillLaunched implements IClientOutgoingPacket
 	
 	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel)
 	{
-		this(cha, skillId, skillId, cha);
+		this(cha, skillId, skillId, SkillCastingType.NORMAL, cha);
 	}
 	
 	@Override
@@ -62,7 +65,7 @@ public class MagicSkillLaunched implements IClientOutgoingPacket
 	{
 		OutgoingPackets.MAGIC_SKILL_LAUNCHED.writeId(packet);
 		
-		packet.writeD(0x00); // TODO: Find me!
+		packet.writeD(_castingType.getClientBarId()); // MagicSkillUse castingType
 		packet.writeD(_charObjId);
 		packet.writeD(_skillId);
 		packet.writeD(_skillLevel);

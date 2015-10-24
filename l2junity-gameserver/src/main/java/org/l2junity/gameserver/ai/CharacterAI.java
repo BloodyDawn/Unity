@@ -53,7 +53,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.AutoAttackStop;
-import org.l2junity.gameserver.network.client.send.MoveToPawn;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.slf4j.Logger;
@@ -256,7 +255,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isControlBlocked())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isControlBlocked())
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -316,7 +315,7 @@ public class CharacterAI extends AbstractAI
 		if ((getIntention() == AI_INTENTION_REST) && skill.isMagic())
 		{
 			clientActionFailed();
-			_actor.setIsCastingNow(false);
+			_actor.abortCast();
 			return;
 		}
 		
@@ -367,7 +366,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -406,7 +405,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -463,7 +462,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -513,7 +512,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -969,10 +968,9 @@ public class CharacterAI extends AbstractAI
 	 * </ul>
 	 * @param target The targeted L2Object
 	 * @param offset The Interact area radius
-	 * @param forcePacketSend force sending the MoveToPawn packet regardless the need of moving. Force sending is required because makes the blue bubbles red.
 	 * @return True if a movement must be done
 	 */
-	protected boolean maybeMoveToPawn(WorldObject target, int offset, boolean forcePacketSend)
+	protected boolean maybeMoveToPawn(WorldObject target, int offset)
 	{
 		// Get the distance between the current position of the L2Character and the target (x,y)
 		if (target == null)
@@ -1003,11 +1001,6 @@ public class CharacterAI extends AbstractAI
 					return true;
 				}
 				stopFollow();
-				
-				if (forcePacketSend)
-				{
-					_actor.broadcastPacket(new MoveToPawn(_actor, (Creature) target, offset));
-				}
 				return false;
 			}
 			
@@ -1057,7 +1050,7 @@ public class CharacterAI extends AbstractAI
 			else
 			{
 				// Move the actor to Pawn server side AND client side by sending Server->Client packet MoveToPawn (broadcast)
-				moveToPawn(target, offset, forcePacketSend);
+				moveToPawn(target, offset);
 			}
 			return true;
 		}
@@ -1069,10 +1062,6 @@ public class CharacterAI extends AbstractAI
 		
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 		// clientStopMoving(null);
-		if (forcePacketSend)
-		{
-			_actor.broadcastPacket(new MoveToPawn(_actor, (Creature) target, offset));
-		}
 		return false;
 	}
 	
