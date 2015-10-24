@@ -100,6 +100,7 @@ public final class Q00490_DutyOfTheSurvivor extends Quest
 			{
 				st.startQuest();
 				htmltext = event;
+				break;
 			}
 		}
 		return htmltext;
