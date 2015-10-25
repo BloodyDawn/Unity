@@ -975,7 +975,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isStayAfterDeath()
 	{
-		return _stayAfterDeath || isIrreplacableBuff();
+		return _stayAfterDeath || isIrreplacableBuff() || isNecessaryToggle();
 	}
 	
 	public boolean isBad()
