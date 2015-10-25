@@ -133,6 +133,7 @@ import handlers.bypasshandlers.Buy;
 import handlers.bypasshandlers.BuyShadowItem;
 import handlers.bypasshandlers.ChatLink;
 import handlers.bypasshandlers.ClanWarehouse;
+import handlers.bypasshandlers.EnsoulWindow;
 import handlers.bypasshandlers.EventEngine;
 import handlers.bypasshandlers.Freight;
 import handlers.bypasshandlers.ItemAuctionLink;
@@ -393,6 +394,7 @@ public class MasterHandler
 			BuyShadowItem.class,
 			ChatLink.class,
 			ClanWarehouse.class,
+			EnsoulWindow.class,
 			EventEngine.class,
 			Freight.class,
 			ItemAuctionLink.class,
