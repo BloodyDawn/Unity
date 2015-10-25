@@ -221,7 +221,7 @@ public class PlayerAI extends PlayableAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAttackingNow())
 		{
 			clientActionFailed();
 			saveNextIntention(AI_INTENTION_MOVE_TO, loc, null);
@@ -263,7 +263,7 @@ public class PlayerAI extends PlayableAI
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange(), false))
+		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
@@ -274,11 +274,11 @@ public class PlayerAI extends PlayableAI
 	private void thinkCast()
 	{
 		Creature target = getCastTarget();
-		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor.isPlayer()))
+		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor instanceof PlayerInstance))
 		{
 			if (maybeMoveToPosition(((PlayerInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
 			{
-				_actor.setIsCastingNow(false);
+				_actor.abortCast();
 				return;
 			}
 		}
@@ -291,27 +291,22 @@ public class PlayerAI extends PlayableAI
 					// Notify the target
 					setCastTarget(null);
 				}
-				_actor.setIsCastingNow(false);
+				_actor.abortCast();
 				return;
 			}
-			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill), true))
+			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 			{
-				_actor.setIsCastingNow(false);
+				_actor.abortCast();
 				return;
 			}
 		}
 		
-		if ((_skill.getHitTime() > 50) && !_skill.isSimultaneousCast())
-		{
-			clientStopMoving(null);
-		}
-		
-		_actor.doCast(_skill, _item);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	private void thinkPickUp()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			return;
 		}
@@ -320,7 +315,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		if (maybeMoveToPawn(target, 36, false))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
@@ -330,7 +325,7 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkInteract()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			return;
 		}
@@ -339,7 +334,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		if (maybeMoveToPawn(target, 36, false))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}

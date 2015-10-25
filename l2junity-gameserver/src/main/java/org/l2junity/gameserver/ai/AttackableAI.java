@@ -55,6 +55,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableFacti
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.util.Util;
@@ -366,7 +367,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			for (Skill buff : getActiveChar().getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				if (checkSkillCastConditions(getActiveChar(), buff))
+				if (SkillCaster.checkDoCastConditions(getActiveChar(), buff))
 				{
 					if (!_actor.isAffectedBySkill(buff.getId()))
 					{
@@ -392,13 +393,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 			setCastTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill), false))
+		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
-		clientStopMoving(null);
 		setIntention(AI_INTENTION_ACTIVE);
-		_actor.doCast(_skill, _item);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	/**
@@ -642,7 +642,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void thinkAttack()
 	{
 		final Attackable npc = getActiveChar();
-		if (npc.isCastingNow())
+		if (npc.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			return;
 		}
@@ -900,7 +900,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								continue;
 							}
-							if (!checkSkillCastConditions(npc, healSkill))
+							if (!SkillCaster.checkDoCastConditions(npc, healSkill))
 							{
 								continue;
 							}
@@ -911,7 +911,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 							}
 							if (GeoData.getInstance().canSeeTarget(npc, leader))
 							{
-								clientStopMoving(null);
 								final WorldObject target = npc.getTarget();
 								npc.setTarget(leader);
 								npc.doCast(healSkill);
@@ -926,11 +925,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : aiHealSkills)
 					{
-						if (!checkSkillCastConditions(npc, sk))
+						if (!SkillCaster.checkDoCastConditions(npc, sk))
 						{
 							continue;
 						}
-						clientStopMoving(null);
 						final WorldObject target = npc.getTarget();
 						npc.setTarget(npc);
 						npc.doCast(sk);
@@ -941,7 +939,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				for (Skill sk : aiHealSkills)
 				{
-					if (!checkSkillCastConditions(npc, sk))
+					if (!SkillCaster.checkDoCastConditions(npc, sk))
 					{
 						continue;
 					}
@@ -963,7 +961,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								if (GeoData.getInstance().canSeeTarget(npc, targets))
 								{
-									clientStopMoving(null);
 									final WorldObject target = npc.getTarget();
 									npc.setTarget(targets);
 									npc.doCast(sk);
@@ -976,7 +973,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					if (isParty(sk))
 					{
-						clientStopMoving(null);
 						npc.doCast(sk);
 						return;
 					}
@@ -998,7 +994,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								continue;
 							}
-							if (!checkSkillCastConditions(npc, sk))
+							if (!SkillCaster.checkDoCastConditions(npc, sk))
 							{
 								continue;
 							}
@@ -1009,7 +1005,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 							}
 							if (GeoData.getInstance().canSeeTarget(npc, leader))
 							{
-								clientStopMoving(null);
 								final WorldObject target = npc.getTarget();
 								npc.setTarget(leader);
 								npc.doCast(sk);
@@ -1022,7 +1017,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				for (Skill sk : aiResSkills)
 				{
-					if (!checkSkillCastConditions(npc, sk))
+					if (!SkillCaster.checkDoCastConditions(npc, sk))
 					{
 						continue;
 					}
@@ -1043,7 +1038,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								if (GeoData.getInstance().canSeeTarget(npc, targets))
 								{
-									clientStopMoving(null);
 									final WorldObject target = npc.getTarget();
 									npc.setTarget(targets);
 									npc.doCast(sk);
@@ -1056,7 +1050,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					if (isParty(sk))
 					{
-						clientStopMoving(null);
 						final WorldObject target = npc.getTarget();
 						npc.setTarget(npc);
 						npc.doCast(sk);
@@ -1093,9 +1086,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getShortRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
-			if (checkSkillCastConditions(npc, shortRangeSkill))
+			if (SkillCaster.checkDoCastConditions(npc, shortRangeSkill))
 			{
-				clientStopMoving(null);
 				npc.doCast(shortRangeSkill);
 				LOGGER.debug("{} used short range skill {} on {}", this, shortRangeSkill, npc.getTarget());
 				return;
@@ -1105,9 +1097,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getLongRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().size()));
-			if (checkSkillCastConditions(npc, longRangeSkill))
+			if (SkillCaster.checkDoCastConditions(npc, longRangeSkill))
 			{
-				clientStopMoving(null);
 				npc.doCast(longRangeSkill);
 				LOGGER.debug("{} used long range skill {} on {}", this, longRangeSkill, npc.getTarget());
 				return;
@@ -1150,7 +1141,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		final Attackable caster = getActiveChar();
 		
-		if (!checkSkillCastConditions(caster, sk))
+		if (!SkillCaster.checkDoCastConditions(caster, sk))
 		{
 			return false;
 		}
@@ -1182,7 +1173,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if (!caster.isAffectedBySkill(sk.getId()))
 				{
-					clientStopMoving(null);
 					caster.setTarget(caster);
 					caster.doCast(sk);
 					_actor.setTarget(attackTarget);
@@ -1199,7 +1189,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					Creature target = effectTargetReconsider(sk, true);
 					if (target != null)
 					{
-						clientStopMoving(null);
 						caster.setTarget(target);
 						caster.doCast(sk);
 						caster.setTarget(attackTarget);
@@ -1208,7 +1197,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				if (canParty(sk))
 				{
-					clientStopMoving(null);
 					caster.setTarget(caster);
 					caster.doCast(sk);
 					caster.setTarget(attackTarget);
@@ -1221,7 +1209,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					if (!attackTarget.isAffectedBySkill(sk.getId()))
 					{
-						clientStopMoving(null);
 						caster.doCast(sk);
 						return true;
 					}
@@ -1230,13 +1217,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 					{
-						clientStopMoving(null);
 						caster.doCast(sk);
 						return true;
 					}
 					if (((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA)) && GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 					{
-						clientStopMoving(null);
 						caster.doCast(sk);
 						return true;
 					}
@@ -1246,7 +1231,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					Creature target = effectTargetReconsider(sk, false);
 					if (target != null)
 					{
-						clientStopMoving(null);
 						caster.doCast(sk);
 						return true;
 					}
@@ -1260,14 +1244,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if ((attackTarget.getEffectList().getFirstEffect(L2EffectType.BUFF) != null) && GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
 				Creature target = effectTargetReconsider(sk, false);
 				if (target != null)
 				{
-					clientStopMoving(null);
 					caster.setTarget(target);
 					caster.doCast(sk);
 					caster.setTarget(attackTarget);
@@ -1279,13 +1261,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA)) && GeoData.getInstance().canSeeTarget(caster, attackTarget))
 				
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
 				else if (((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA)) && GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1306,7 +1286,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					if (GeoData.getInstance().canSeeTarget(caster, leader))
 					{
-						clientStopMoving(null);
 						caster.setTarget(leader);
 						caster.doCast(sk);
 						caster.setTarget(attackTarget);
@@ -1316,7 +1295,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			if (Rnd.get(100) < ((100 - percentage) / 3))
 			{
-				clientStopMoving(null);
 				caster.setTarget(caster);
 				caster.doCast(sk);
 				caster.setTarget(attackTarget);
@@ -1342,7 +1320,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (GeoData.getInstance().canSeeTarget(caster, obj))
 						{
-							clientStopMoving(null);
 							caster.setTarget(obj);
 							caster.doCast(sk);
 							caster.setTarget(attackTarget);
@@ -1359,7 +1336,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if ((obj.getCurrentHp() < obj.getMaxHp()) && (Rnd.get(100) <= 20))
 						{
-							clientStopMoving(null);
 							caster.setTarget(caster);
 							caster.doCast(sk);
 							caster.setTarget(attackTarget);
@@ -1376,7 +1352,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if (GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1384,7 +1359,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 				Creature target = skillTargetReconsider(sk);
 				if (target != null)
 				{
-					clientStopMoving(null);
 					caster.setTarget(target);
 					caster.doCast(sk);
 					caster.setTarget(attackTarget);
@@ -1393,7 +1367,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			else
 			{
-				clientStopMoving(null);
 				caster.doCast(sk);
 				return true;
 			}
@@ -1409,7 +1382,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (!attackTarget.isAffectedBySkill(sk.getId()))
 						{
-							clientStopMoving(null);
 							caster.doCast(sk);
 							return true;
 						}
@@ -1419,7 +1391,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 				Creature target = effectTargetReconsider(sk, false);
 				if (target != null)
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1428,13 +1399,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
 				if (((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA)) && GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1447,7 +1416,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if (!attackTarget.isAffectedBySkill(sk.getId()))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1456,13 +1424,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
 				if (((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA)) && GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1472,7 +1438,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 				Creature target = effectTargetReconsider(sk, false);
 				if (target != null)
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1485,7 +1450,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if (!attackTarget.isAffectedBySkill(sk.getId()))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1494,13 +1458,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
 				if (((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA)) && GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1510,7 +1472,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 				Creature target = effectTargetReconsider(sk, false);
 				if (target != null)
 				{
-					clientStopMoving(null);
 					caster.doCast(sk);
 					return true;
 				}
@@ -1535,7 +1496,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 						}
 						if (GeoData.getInstance().canSeeTarget(caster, leader))
 						{
-							clientStopMoving(null);
 							caster.setTarget(leader);
 							caster.doCast(sk);
 							caster.setTarget(attackTarget);
@@ -1560,7 +1520,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (GeoData.getInstance().canSeeTarget(caster, obj))
 						{
-							clientStopMoving(null);
 							caster.setTarget(obj);
 							caster.doCast(sk);
 							caster.setTarget(attackTarget);
@@ -1582,7 +1541,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if ((obj.getCurrentHp() < obj.getMaxHp()) && (Rnd.get(100) <= 20))
 						{
-							clientStopMoving(null);
 							caster.setTarget(caster);
 							caster.doCast(sk);
 							caster.setTarget(attackTarget);
@@ -1598,7 +1556,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			if (GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() && (dist2 <= srange))
 			{
-				clientStopMoving(null);
 				caster.doCast(sk);
 				return true;
 			}
@@ -1606,7 +1563,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			Creature target = skillTargetReconsider(sk);
 			if (target != null)
 			{
-				clientStopMoving(null);
 				caster.setTarget(target);
 				caster.doCast(sk);
 				caster.setTarget(attackTarget);
@@ -1615,7 +1571,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		else
 		{
-			clientStopMoving(null);
 			caster.doCast(sk);
 			return true;
 		}
@@ -1665,7 +1620,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1675,7 +1630,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 						}
 						if (!attackTarget.isAffectedBySkill(sk.getId()))
 						{
-							clientStopMoving(null);
 							// L2Object target = attackTarget;
 							// _actor.setTarget(_actor);
 							npc.doCast(sk);
@@ -1690,7 +1644,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.COT))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1700,7 +1654,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 						}
 						if (!attackTarget.isAffectedBySkill(sk.getId()))
 						{
-							clientStopMoving(null);
 							// L2Object target = attackTarget;
 							// _actor.setTarget(_actor);
 							npc.doCast(sk);
@@ -1714,7 +1667,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.DEBUFF))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1724,7 +1677,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 						}
 						if (!attackTarget.isAffectedBySkill(sk.getId()))
 						{
-							clientStopMoving(null);
 							// L2Object target = attackTarget;
 							// _actor.setTarget(_actor);
 							npc.doCast(sk);
@@ -1739,7 +1691,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.NEGATIVE))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1749,7 +1701,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 						}
 						if (attackTarget.getEffectList().getFirstEffect(L2EffectType.BUFF) != null)
 						{
-							clientStopMoving(null);
 							// L2Object target = attackTarget;
 							// _actor.setTarget(_actor);
 							npc.doCast(sk);
@@ -1764,7 +1715,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.ATTACK))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1772,7 +1723,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 						{
 							continue;
 						}
-						clientStopMoving(null);
 						// L2Object target = attackTarget;
 						// _actor.setTarget(_actor);
 						npc.doCast(sk);
@@ -1845,36 +1795,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			LOGGER.warn("{} - failed executing movementDisable()", this, e);
 			return;
 		}
-	}
-	
-	/**
-	 * @param caster the caster
-	 * @param skill the skill to check.
-	 * @return {@code true} if the skill is available for casting {@code false} otherwise.
-	 */
-	private boolean checkSkillCastConditions(Attackable caster, Skill skill)
-	{
-		if (caster.isCastingNow() && !skill.isSimultaneousCast())
-		{
-			return false;
-		}
-		
-		// Not enough MP.
-		if (skill.getMpConsume() >= getActiveChar().getCurrentMp())
-		{
-			return false;
-		}
-		// Character is in "skill disabled" mode.
-		if (getActiveChar().isSkillDisabled(skill))
-		{
-			return false;
-		}
-		// If is a static skill and magic skill and character is muted or is a physical skill muted and character is physically muted.
-		if (!skill.isStatic() && ((skill.isMagic() && getActiveChar().isMuted()) || getActiveChar().isPhysicalMuted()))
-		{
-			return false;
-		}
-		return true;
 	}
 	
 	private Creature effectTargetReconsider(Skill sk, boolean positive)

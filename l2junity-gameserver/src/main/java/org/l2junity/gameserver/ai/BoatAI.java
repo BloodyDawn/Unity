@@ -52,7 +52,7 @@ public class BoatAI extends VehicleAI
 	}
 	
 	@Override
-	protected void clientStopMoving(Location loc)
+	public void clientStopMoving(Location loc)
 	{
 		if (_actor.isMoving())
 		{

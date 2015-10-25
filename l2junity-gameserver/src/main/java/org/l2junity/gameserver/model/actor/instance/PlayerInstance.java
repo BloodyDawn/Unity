@@ -246,6 +246,8 @@ import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
+import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
@@ -737,10 +739,6 @@ public final class PlayerInstance extends Playable
 	
 	private Forum _forumMail;
 	private Forum _forumMemo;
-	
-	/** Current skill in use. Note that L2Character has _lastSkillCast, but this has the button presses */
-	private SkillUseHolder _currentSkill;
-	private SkillUseHolder _currentPetSkill;
 	
 	/** Skills queued because a skill is already in progress */
 	private SkillUseHolder _queuedSkill;
@@ -3866,7 +3864,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// We cannot put a Weapon with Augmention in WH while casting (Possible Exploit)
-		if (item.isAugmented() && (isCastingNow() || isCastingSimultaneouslyNow()))
+		if (item.isAugmented() && isCastingNow())
 		{
 			return null;
 		}
@@ -3996,42 +3994,6 @@ public final class PlayerInstance extends Playable
 	{
 		super.enableSkill(skill);
 		removeTimeStamp(skill);
-	}
-	
-	@Override
-	public boolean checkDoCastConditions(Skill skill)
-	{
-		if (!super.checkDoCastConditions(skill))
-		{
-			return false;
-		}
-		
-		if (inObserverMode())
-		{
-			return false;
-		}
-		
-		if (isInOlympiadMode() && skill.isBlockedInOlympiad())
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_THAT_SKILL_IN_A_OLYMPIAD_MATCH);
-			return false;
-		}
-		
-		if (isInsideZone(ZoneId.SAYUNE))
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILLS_IN_THE_CORRESPONDING_REGION);
-			return false;
-		}
-		
-		// Check if not in AirShip
-		if (isInAirShip() && !skill.hasEffectType(L2EffectType.REFUEL_AIRSHIP))
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-			sm.addSkillName(skill);
-			sendPacket(sm);
-			return false;
-		}
-		return true;
 	}
 	
 	/**
@@ -8176,18 +8138,19 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// ************************************* Check Casting in Progress *******************************************
+		if (!checkUseMagicConditions(skill, forceUse, dontMove))
+		{
+			return false;
+		}
+		
+		boolean doubleCast = isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast();
 		
 		// If a skill is currently being used, queue this one if this is not the same
-		if (isCastingNow())
+		// In case of double casting, check if both slots are occupied, then queue skill.
+		if ((!doubleCast && isCastingNow(SkillCaster::isNormalType)) || (isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL) && isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL_SECOND)))
 		{
-			SkillUseHolder currentSkill = getCurrentSkill();
 			// Check if new skill different from current skill in progress
-			if ((currentSkill != null) && (skill.getId() == currentSkill.getSkillId()))
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			else if (isSkillDisabled(skill))
+			if (isSkillDisabled(skill))
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
@@ -8198,20 +8161,10 @@ public final class PlayerInstance extends Playable
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
-		// Create a new SkillDat object and set the player _currentSkill
-		// This is used mainly to save & queue the button presses, since L2Character has
-		// _lastSkillCast which could otherwise replace it
-		setCurrentSkill(skill, forceUse, dontMove);
 		
 		if (getQueuedSkill() != null)
 		{
 			setQueuedSkill(null, false, false);
-		}
-		
-		if (!checkUseMagicConditions(skill, forceUse, dontMove))
-		{
-			setIsCastingNow(false);
-			return false;
 		}
 		
 		// Check if the target is correct and Notify the AI with AI_INTENTION_CAST and target
@@ -8241,8 +8194,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// Notify the AI with AI_INTENTION_CAST and target
-		setIsCastingNow(true);
-		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item);
+		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item, forceUse, dontMove);
 		return true;
 	}
 	
@@ -8520,20 +8472,12 @@ public final class PlayerInstance extends Playable
 				{
 					if (!isInsideRadius(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
 					{
-						// Send a System Message to the caster
-						sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
-						
-						// Send a Server->Client packet ActionFailed to the L2PcInstance
 						sendPacket(ActionFailed.STATIC_PACKET);
 						return false;
 					}
 				}
 				else if ((skill.getCastRange() > 0) && !isInsideRadius(target, skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
 				{
-					// Send a System Message to the caster
-					sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
-					
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
 					sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}
@@ -8672,7 +8616,7 @@ public final class PlayerInstance extends Playable
 				return false;
 			}
 			
-			final boolean isCtrlPressed = (getCurrentSkill() != null) && getCurrentSkill().isCtrlPressed();
+			final boolean isCtrlPressed = getSkillCaster(s -> s.getSkill() == skill, SkillCaster::isCtrlPressed) != null;
 			
 			// Pece Zone
 			if (target.isInsideZone(ZoneId.PEACE))
@@ -11503,54 +11447,6 @@ public final class PlayerInstance extends Playable
 		return _mountObjectID;
 	}
 	
-	/**
-	 * @return the current skill in use or return null.
-	 */
-	public SkillUseHolder getCurrentSkill()
-	{
-		return _currentSkill;
-	}
-	
-	/**
-	 * Create a new SkillDat object and set the player _currentSkill.
-	 * @param currentSkill
-	 * @param ctrlPressed
-	 * @param shiftPressed
-	 */
-	public void setCurrentSkill(Skill currentSkill, boolean ctrlPressed, boolean shiftPressed)
-	{
-		if (currentSkill == null)
-		{
-			_currentSkill = null;
-			return;
-		}
-		_currentSkill = new SkillUseHolder(currentSkill, ctrlPressed, shiftPressed);
-	}
-	
-	/**
-	 * @return the current pet skill in use or return null.
-	 */
-	public SkillUseHolder getCurrentPetSkill()
-	{
-		return _currentPetSkill;
-	}
-	
-	/**
-	 * Create a new SkillDat object and set the player _currentPetSkill.
-	 * @param currentSkill
-	 * @param ctrlPressed
-	 * @param shiftPressed
-	 */
-	public void setCurrentPetSkill(Skill currentSkill, boolean ctrlPressed, boolean shiftPressed)
-	{
-		if (currentSkill == null)
-		{
-			_currentPetSkill = null;
-			return;
-		}
-		_currentPetSkill = new SkillUseHolder(currentSkill, ctrlPressed, shiftPressed);
-	}
-	
 	public SkillUseHolder getQueuedSkill()
 	{
 		return _queuedSkill;
@@ -12560,7 +12456,7 @@ public final class PlayerInstance extends Playable
 		{
 			return false;
 		}
-		if (isCastingNow() || isCastingSimultaneouslyNow())
+		if (isCastingNow())
 		{
 			return false;
 		}
@@ -13058,7 +12954,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean canMakeSocialAction()
 	{
-		return ((getPrivateStoreType() == PrivateStoreType.NONE) && (getActiveRequester() == null) && !isAlikeDead() && !isAllSkillsDisabled() && !isCastingNow() && !isCastingSimultaneouslyNow() && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE));
+		return ((getPrivateStoreType() == PrivateStoreType.NONE) && (getActiveRequester() == null) && !isAlikeDead() && !isAllSkillsDisabled() && !isCastingNow() && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE));
 	}
 	
 	public void setMultiSocialAction(int id, int targetId)

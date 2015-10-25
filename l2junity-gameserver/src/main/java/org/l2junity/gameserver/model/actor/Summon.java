@@ -52,6 +52,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
@@ -604,13 +605,10 @@ public abstract class Summon extends Playable
 		}
 		
 		// If a skill is currently being used
-		if (isCastingNow())
+		if (isCastingNow(SkillCaster::isNormalType))
 		{
 			return false;
 		}
-		
-		// Set current pet skill
-		getOwner().setCurrentPetSkill(skill, forceUse, dontMove);
 		
 		// Get the target for the skill
 		WorldObject target = null;

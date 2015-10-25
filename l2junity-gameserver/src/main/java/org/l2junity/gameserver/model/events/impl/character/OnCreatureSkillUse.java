@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.model.events.impl.character;
 
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
@@ -34,15 +33,13 @@ public class OnCreatureSkillUse implements IBaseEvent
 	private final Skill _skill;
 	private final boolean _simultaneously;
 	private final Creature _target;
-	private final WorldObject[] _targets;
 	
-	public OnCreatureSkillUse(Creature caster, Skill skill, boolean simultaneously, Creature target, WorldObject[] targets)
+	public OnCreatureSkillUse(Creature caster, Skill skill, boolean simultaneously, Creature target)
 	{
 		_caster = caster;
 		_skill = skill;
 		_simultaneously = simultaneously;
 		_target = target;
-		_targets = targets;
 	}
 	
 	public final Creature getCaster()
@@ -63,11 +60,6 @@ public class OnCreatureSkillUse implements IBaseEvent
 	public final Creature getTarget()
 	{
 		return _target;
-	}
-	
-	public WorldObject[] getTargets()
-	{
-		return _targets;
 	}
 	
 	@Override

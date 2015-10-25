@@ -72,6 +72,7 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -198,7 +199,7 @@ public class Attackable extends Npc
 	 */
 	public void useMagic(Skill skill)
 	{
-		if ((skill == null) || isAlikeDead() || skill.isPassive() || isCastingNow() || isSkillDisabled(skill))
+		if ((skill == null) || isAlikeDead() || skill.isPassive() || isCastingNow(SkillCaster::isNormalType) || isSkillDisabled(skill))
 		{
 			return;
 		}

@@ -345,7 +345,7 @@ public final class UseItem implements IClientIncomingPacket
 				}
 			}
 			
-			if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
+			if (activeChar.isCastingNow())
 			{
 				// Create and Bind the next action to the AI
 				activeChar.getAI().setNextAction(new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () -> activeChar.useEquippableItem(item, true)));

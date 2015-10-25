@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 
 public class SummonAI extends PlayableAI implements Runnable
 {
@@ -95,7 +96,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange(), false))
+		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
@@ -106,21 +107,25 @@ public class SummonAI extends PlayableAI implements Runnable
 	private void thinkCast()
 	{
 		Summon summon = (Summon) _actor;
+		if (summon.isCastingNow(SkillCaster::isNormalType))
+		{
+			return;
+		}
+		
 		if (checkTargetLost(getCastTarget()))
 		{
 			setCastTarget(null);
 			return;
 		}
 		boolean val = _startFollow;
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill), true))
+		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
-		clientStopMoving(null);
 		summon.setFollowStatus(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill, _item);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	private void thinkPickUp()
@@ -129,7 +134,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36, false))
+		if (maybeMoveToPawn(getTarget(), 36))
 		{
 			return;
 		}
@@ -143,7 +148,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36, false))
+		if (maybeMoveToPawn(getTarget(), 36))
 		{
 			return;
 		}
@@ -153,7 +158,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}
@@ -229,7 +234,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	private void avoidAttack(Creature attacker)
 	{
 		// Don't move while casting. It breaks casting animation, but still casts the skill... looks so bugged.
-		if (_actor.isCastingNow())
+		if (_actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			return;
 		}
@@ -245,7 +250,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	public void defendAttack(Creature attacker)
 	{
 		// Cannot defend while attacking or casting.
-		if (_actor.isAttackingNow() || _actor.isCastingNow())
+		if (_actor.isAttackingNow() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			return;
 		}
@@ -300,7 +305,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
@@ -310,7 +315,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			_lastAttack = null;
 		}
-		super.onIntentionCast(skill, target, item);
+		super.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
 	
 	private void startAvoidTask()

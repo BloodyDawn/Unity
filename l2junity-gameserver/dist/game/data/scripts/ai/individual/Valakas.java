@@ -38,6 +38,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SocialAction;
@@ -462,7 +463,7 @@ public final class Valakas extends AbstractNpcAI
 	
 	private void callSkillAI(Npc npc)
 	{
-		if (npc.isInvul() || npc.isCastingNow())
+		if (npc.isInvul() || npc.isCastingNow(SkillCaster::isNormalType))
 		{
 			return;
 		}
@@ -499,14 +500,12 @@ public final class Valakas extends AbstractNpcAI
 		if (Util.checkIfInRange((skill.getCastRange() < 600) ? 600 : skill.getCastRange(), npc, _actualVictim, true))
 		{
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			npc.setIsCastingNow(true);
 			npc.setTarget(_actualVictim);
 			npc.doCast(skill);
 		}
 		else
 		{
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _actualVictim, null);
-			npc.setIsCastingNow(false);
 		}
 	}
 	

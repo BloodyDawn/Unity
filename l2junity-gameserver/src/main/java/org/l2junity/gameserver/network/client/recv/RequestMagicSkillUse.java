@@ -19,14 +19,12 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -109,12 +107,6 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 		if (skill.isToggle() && activeChar.isMounted())
 		{
 			return;
-		}
-		
-		// Stop if use self-buff (except if on AirShip or Boat).
-		if ((skill.isContinuous() && !skill.isDebuff() && (skill.getTargetType() == L2TargetType.SELF)) && (!activeChar.isInAirShip() || !activeChar.isInBoat()))
-		{
-			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, activeChar.getLocation());
 		}
 		
 		activeChar.useMagic(skill, null, _ctrlPressed, _shiftPressed);
