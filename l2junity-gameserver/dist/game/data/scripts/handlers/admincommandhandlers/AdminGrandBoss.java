@@ -278,6 +278,11 @@ public class AdminGrandBoss implements IAdminCommandHandler
 						text = "Dead";
 						break;
 					}
+					default:
+					{
+						textColor = "FFFFFF"; // White
+						text = "Unk " + bossStatus;
+					}
 				}
 			}
 			else
@@ -296,6 +301,11 @@ public class AdminGrandBoss implements IAdminCommandHandler
 						textColor = "FF0000"; // Red
 						text = "Dead";
 						break;
+					}
+					default:
+					{
+						textColor = "FFFFFF"; // White
+						text = "Unk " + bossStatus;
 					}
 				}
 			}

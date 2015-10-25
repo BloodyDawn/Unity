@@ -1027,11 +1027,10 @@ public class Duel
 		else
 		// teleport the player back & delete his PlayerCondition record
 		{
-			final PlayerCondition cond = _playerConditions.get(player.getObjectId());
+			final PlayerCondition cond = _playerConditions.remove(player.getObjectId());
 			if (cond != null)
 			{
 				cond.teleportBack();
-				_playerConditions.remove(cond);
 			}
 			player.setIsInDuel(0);
 		}

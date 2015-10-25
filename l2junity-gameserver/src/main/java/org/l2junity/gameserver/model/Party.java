@@ -1143,14 +1143,4 @@ public class Party extends AbstractPlayerGroup
 	{
 		return _members;
 	}
-	
-	/**
-	 * Check whether the leader of this party is the same as the leader of the specified party (which essentially means they're the same group).
-	 * @param party the other party to check against
-	 * @return {@code true} if this party equals the specified party, {@code false} otherwise
-	 */
-	public boolean equals(Party party)
-	{
-		return (party != null) && (getLeaderObjectId() == party.getLeaderObjectId());
-	}
 }

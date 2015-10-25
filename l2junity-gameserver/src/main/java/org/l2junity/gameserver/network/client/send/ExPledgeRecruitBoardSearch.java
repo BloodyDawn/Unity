@@ -43,7 +43,7 @@ public class ExPledgeRecruitBoardSearch implements IClientOutgoingPacket
 	{
 		_clanList = clanList;
 		_currentPage = currentPage;
-		_totalNumberOfPage = (int) Math.ceil(_clanList.size() / CLAN_PER_PAGE);
+		_totalNumberOfPage = (int) Math.ceil((double) _clanList.size() / CLAN_PER_PAGE);
 		_startIndex = (_currentPage - 1) * CLAN_PER_PAGE;
 		_endIndex = (_startIndex + CLAN_PER_PAGE) > _clanList.size() ? _clanList.size() : _startIndex + CLAN_PER_PAGE;
 		_clanOnCurrentPage = _endIndex - _startIndex;

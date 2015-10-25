@@ -176,4 +176,23 @@ public abstract class AbstractPlayerGroup
 		}
 		return true;
 	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		
+		if (obj instanceof AbstractPlayerGroup)
+		{
+			if (getLeaderObjectId() == ((AbstractPlayerGroup) obj).getLeaderObjectId())
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
