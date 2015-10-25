@@ -749,9 +749,13 @@ public class SkillCaster implements Runnable
 	
 	public static boolean checkDoCastConditions(Creature caster, Skill skill)
 	{
+		if (caster == null)
+		{
+			return false;
+		}
+		
 		if ((skill == null) || caster.isSkillDisabled(skill) || (((skill.getFlyRadius() > 0) || (skill.getFlyType() != null)) && caster.isMovementDisabled()))
 		{
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			caster.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -770,10 +774,7 @@ public class SkillCaster implements Runnable
 		// Check if the caster has enough MP
 		if (caster.getCurrentMp() < (caster.getStat().getMpConsume(skill) + caster.getStat().getMpInitialConsume(skill)))
 		{
-			// Send a System Message to the caster
 			caster.sendPacket(SystemMessageId.NOT_ENOUGH_MP);
-			
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			caster.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -781,10 +782,7 @@ public class SkillCaster implements Runnable
 		// Check if the caster has enough HP
 		if (caster.getCurrentHp() <= skill.getHpConsume())
 		{
-			// Send a System Message to the caster
 			caster.sendPacket(SystemMessageId.NOT_ENOUGH_HP);
-			
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			caster.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -797,7 +795,6 @@ public class SkillCaster implements Runnable
 			{
 				if (caster.isMuted())
 				{
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
 					caster.sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}
@@ -807,7 +804,6 @@ public class SkillCaster implements Runnable
 				// Check if the skill is physical and if the L2Character is not physical_muted
 				if (caster.isPhysicalMuted())
 				{
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
 					caster.sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}

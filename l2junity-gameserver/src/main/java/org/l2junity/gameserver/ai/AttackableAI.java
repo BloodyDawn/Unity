@@ -367,7 +367,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			for (Skill buff : getActiveChar().getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				if (checkSkillCastConditions(getActiveChar(), buff))
+				if (SkillCaster.checkDoCastConditions(getActiveChar(), buff))
 				{
 					if (!_actor.isAffectedBySkill(buff.getId()))
 					{
@@ -900,7 +900,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								continue;
 							}
-							if (!checkSkillCastConditions(npc, healSkill))
+							if (!SkillCaster.checkDoCastConditions(npc, healSkill))
 							{
 								continue;
 							}
@@ -925,7 +925,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : aiHealSkills)
 					{
-						if (!checkSkillCastConditions(npc, sk))
+						if (!SkillCaster.checkDoCastConditions(npc, sk))
 						{
 							continue;
 						}
@@ -939,7 +939,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				for (Skill sk : aiHealSkills)
 				{
-					if (!checkSkillCastConditions(npc, sk))
+					if (!SkillCaster.checkDoCastConditions(npc, sk))
 					{
 						continue;
 					}
@@ -994,7 +994,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								continue;
 							}
-							if (!checkSkillCastConditions(npc, sk))
+							if (!SkillCaster.checkDoCastConditions(npc, sk))
 							{
 								continue;
 							}
@@ -1017,7 +1017,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				for (Skill sk : aiResSkills)
 				{
-					if (!checkSkillCastConditions(npc, sk))
+					if (!SkillCaster.checkDoCastConditions(npc, sk))
 					{
 						continue;
 					}
@@ -1086,7 +1086,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getShortRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
-			if (checkSkillCastConditions(npc, shortRangeSkill))
+			if (SkillCaster.checkDoCastConditions(npc, shortRangeSkill))
 			{
 				npc.doCast(shortRangeSkill);
 				LOGGER.debug("{} used short range skill {} on {}", this, shortRangeSkill, npc.getTarget());
@@ -1097,7 +1097,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getLongRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().size()));
-			if (checkSkillCastConditions(npc, longRangeSkill))
+			if (SkillCaster.checkDoCastConditions(npc, longRangeSkill))
 			{
 				npc.doCast(longRangeSkill);
 				LOGGER.debug("{} used long range skill {} on {}", this, longRangeSkill, npc.getTarget());
@@ -1141,7 +1141,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		final Attackable caster = getActiveChar();
 		
-		if (!checkSkillCastConditions(caster, sk))
+		if (!SkillCaster.checkDoCastConditions(caster, sk))
 		{
 			return false;
 		}
@@ -1620,7 +1620,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1644,7 +1644,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.COT))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1667,7 +1667,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.DEBUFF))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1691,7 +1691,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.NEGATIVE))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1715,7 +1715,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.ATTACK))
 					{
-						if (!checkSkillCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1795,36 +1795,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			LOGGER.warn("{} - failed executing movementDisable()", this, e);
 			return;
 		}
-	}
-	
-	/**
-	 * @param caster the caster
-	 * @param skill the skill to check.
-	 * @return {@code true} if the skill is available for casting {@code false} otherwise.
-	 */
-	private boolean checkSkillCastConditions(Attackable caster, Skill skill)
-	{
-		if (caster.isCastingNow(SkillCaster::isNormalType))
-		{
-			return false;
-		}
-		
-		// Not enough MP.
-		if (skill.getMpConsume() >= getActiveChar().getCurrentMp())
-		{
-			return false;
-		}
-		// Character is in "skill disabled" mode.
-		if (getActiveChar().isSkillDisabled(skill))
-		{
-			return false;
-		}
-		// If is a static skill and magic skill and character is muted or is a physical skill muted and character is physically muted.
-		if (!skill.isStatic() && ((skill.isMagic() && getActiveChar().isMuted()) || getActiveChar().isPhysicalMuted()))
-		{
-			return false;
-		}
-		return true;
 	}
 	
 	private Creature effectTargetReconsider(Skill sk, boolean positive)
