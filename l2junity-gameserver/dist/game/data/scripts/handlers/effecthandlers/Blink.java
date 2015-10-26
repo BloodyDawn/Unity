@@ -79,7 +79,7 @@ public final class Blink extends AbstractEffect
 	public boolean canStart(BuffInfo info)
 	{
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
-		return super.canStart(info) && !info.getEffected().cannotEscape();
+		return !info.getEffected().cannotEscape();
 	}
 	
 	@Override
@@ -99,8 +99,6 @@ public final class Blink extends AbstractEffect
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, destination, _flyType, _flySpeed, _flyDelay, _animationSpeed));
-		effected.abortAttack();
-		effected.abortCast();
 		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocation(effected));
 	}
