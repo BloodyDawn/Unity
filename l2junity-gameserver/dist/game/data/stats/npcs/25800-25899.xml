@@ -55,7 +55,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
-		<ai type="BALANCED" clanHelpRange="300" />
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="32" />
@@ -105,7 +105,7 @@
 			<skill id="6268" level="1" /> <!-- Jump Attack -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<status targetable="false" showName="false" />
 		<collision>
 			<radius normal="90" />
@@ -144,6 +144,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="600" />
 		<collision>
 			<radius normal="42" />
 			<height normal="73" />
@@ -182,6 +183,7 @@
 			<skill id="14099" level="1" /> <!-- Lachik Front Foot Attack -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="20" />
@@ -222,6 +224,7 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="20" />
@@ -260,6 +263,7 @@
 			<skill id="14099" level="1" /> <!-- Lachik Front Foot Attack -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="20" />
@@ -299,6 +303,7 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="20" />
@@ -338,6 +343,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="14108" level="1" /> <!-- Lachik Ball -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="20" />
@@ -377,6 +383,7 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="20" />
@@ -406,6 +413,11 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="2.961">
@@ -453,6 +465,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="11" grown="13" />
 			<height normal="25" grown="31" />
@@ -482,6 +499,11 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="0.6">
@@ -530,6 +552,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="31.68" />
 			<height normal="60.72" />
@@ -560,6 +587,11 @@
 			<skill id="14423" level="1" /> <!-- Byron's Darkness Attack -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="0.6">
@@ -605,6 +637,11 @@
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="14" />
 			<height normal="40" />
@@ -635,6 +672,11 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="1.5">
@@ -683,6 +725,11 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="1.5">
@@ -731,6 +778,11 @@
 			<skill id="4415" level="9" /> <!-- Bows -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="30" />
 			<height normal="33" />
@@ -760,6 +812,11 @@
 			<skill id="14431" level="1" /> <!-- Strike -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="3.949">
@@ -807,6 +864,11 @@
 			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="11" grown="13" />
 			<height normal="38.5" grown="46.5" />
@@ -836,6 +898,11 @@
 			<skill id="14431" level="1" /> <!-- Strike -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="1.5">
@@ -882,6 +949,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="30" />
 			<height normal="33" />
@@ -921,7 +993,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="15" />
 			<height normal="40" />
@@ -960,7 +1036,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="15" />
 			<height normal="40" />
@@ -1015,7 +1095,11 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="4172" level="12" /> <!-- Stun -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="40" />
 			<height normal="77" />
@@ -1061,7 +1145,11 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="12" /> <!-- Stun -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="26" />
 			<height normal="62" />
@@ -1100,6 +1188,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="28" />
 			<height normal="41" />
@@ -1131,6 +1224,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="14264" level="1" /> <!-- Poison Cloud -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="20" grown="25" />
 			<height normal="35" grown="41.5" />
@@ -1162,6 +1256,7 @@
 			<skill id="14286" level="1" /> <!-- Teleport -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="500" />
 		<drop_lists>
 			<death>
 				<group chance="12.935">
@@ -1215,6 +1310,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="86" />
 			<height normal="133.5" />
@@ -1244,6 +1340,7 @@
 			<skill id="14276" level="1" /> <!-- Particle Repair -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="20" grown="25" />
 			<height normal="35" grown="41.5" />
@@ -1275,6 +1372,7 @@
 			<skill id="14159" level="1" /> <!-- Fist Bump -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="24" />
 			<height normal="29" />
@@ -1307,6 +1405,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="9" />
 			<height normal="22" />
@@ -1348,6 +1447,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="51" />
@@ -1389,6 +1489,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="54" />
@@ -1429,6 +1530,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="35" />
 			<height normal="54" />
@@ -1470,6 +1572,7 @@
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 			<skill id="14009" level="1" /> <!-- Electric Shock -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="56" />
@@ -1521,7 +1624,7 @@
 			<skill id="14623" level="1" /> <!-- Mutation Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="22.629">
@@ -1608,7 +1711,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="24.786">
@@ -1677,7 +1780,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4073" level="12" /> <!-- Stun -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="3.3">
@@ -1768,7 +1871,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="4.5">
@@ -1854,7 +1957,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14357" level="1" /> <!-- Black Lotus -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="1.5">
@@ -1928,6 +2031,7 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="24" />
 			<height normal="35" />
@@ -1979,7 +2083,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="84" />
@@ -2033,7 +2137,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="84" />
@@ -2077,7 +2181,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="35" />
 			<height normal="93" />
@@ -2132,7 +2236,7 @@
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 			<skill id="14618" level="1" /> <!-- Knock Back Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="1.8">
@@ -2207,6 +2311,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>EMBRYO_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="24" />
 			<height normal="60" />
@@ -2257,6 +2366,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>EMBRYO_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="24" />
 			<height normal="60" />
@@ -2296,6 +2410,7 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.6">
@@ -2345,6 +2460,7 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="1.05">
@@ -2405,6 +2521,11 @@
 			<skill id="4191" level="1" /> <!-- Wind Strike -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>FLINT_BOSS</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="10.185">
@@ -2471,6 +2592,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>FLINT_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="21.12" />
 			<height normal="40.48" />
@@ -2517,6 +2643,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>FLINT_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="21.12" />
 			<height normal="40.48" />
@@ -2567,6 +2698,11 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>HALF_BOSS</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="5.112">
@@ -2630,6 +2766,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>HALF_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="18" />
 			<height normal="27.5" />
@@ -2677,6 +2818,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>HALF_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="20" />
 			<height normal="34" />
@@ -2714,6 +2860,7 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="500" />
 		<collision>
 			<radius normal="24" />
 			<height normal="53" />
@@ -2754,6 +2901,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="800" />
 		<collision>
 			<radius normal="35" />
 			<height normal="93" />
@@ -2807,7 +2955,7 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="2000" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="40" />
 			<height normal="81" />
@@ -2862,7 +3010,7 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="2000" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="40" />
 			<height normal="81" />
@@ -2916,6 +3064,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="40" />
 			<height normal="81" />
@@ -2952,6 +3101,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4175" level="1" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="7" />
 			<height normal="30" />
@@ -2988,6 +3138,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="4175" level="1" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.9">
@@ -3042,6 +3193,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="2000" />
 		<collision>
 			<radius normal="13" />
 			<height normal="55" />
@@ -3076,6 +3228,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="2000" />
 		<collision>
 			<radius normal="25" />
 			<height normal="60" />
@@ -3110,6 +3263,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="2000" />
 		<collision>
 			<radius normal="10" />
 			<height normal="40" />
@@ -3152,6 +3306,7 @@
 			<skill id="14645" level="1" /> <!-- Dark Arrow -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="1.2">
@@ -3226,6 +3381,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>EMBRYO_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="24" />
 			<height normal="60" />
@@ -3276,6 +3436,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>EMBRYO_BOSS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="24" />
 			<height normal="60" />
@@ -3314,6 +3479,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="38" />
@@ -3353,6 +3519,7 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="24" />
 			<height normal="80" />
@@ -3405,6 +3572,7 @@
 			<skill id="4494" level="1" /> <!-- Raid Boss -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="80" />
 			<height normal="91" />
@@ -3446,6 +3614,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>EMAMVIPY</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="13" />
 			<height normal="55" />
@@ -3568,7 +3741,11 @@
 				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
-		<ai aggroRange="1000" isAggressive="true" />
+		<ai aggroRange="450" isAggressive="true" clanHelpRange="600">
+			<clan_list>
+				<clan>UNDEAD</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="30" />
 			<height normal="54" />
@@ -3616,7 +3793,11 @@
 			<skill id="14953" level="1" /> <!-- Phantom Blow -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
-		<ai aggroRange="1000" isAggressive="true" />
+		<ai aggroRange="450" isAggressive="true" clanHelpRange="600">
+			<clan_list>
+				<clan>DEMONIC</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="39.076">
@@ -3739,7 +3920,11 @@
 			<skill id="14958" level="1" /> <!-- Apparition Blow -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
-		<ai aggroRange="1000" isAggressive="true" />
+		<ai aggroRange="450" isAggressive="true" clanHelpRange="600">
+			<clan_list>
+				<clan>DRAGON</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="39.121">
@@ -3862,6 +4047,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="1100" aggroRange="300">
+			<clan_list>
+				<clan>ZOMBIE_ZOMBIE</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="23" />
 			<height normal="64" />
@@ -3909,6 +4099,7 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="55.043">
@@ -4036,6 +4227,7 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="55.202">
@@ -4163,6 +4355,7 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="58" />
@@ -4210,6 +4403,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>ZOMBIE_ZOMBIE</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="24" />
 			<height normal="29" />
@@ -4256,6 +4454,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>ZOMBIE_ZOMBIE</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="18" />
 			<height normal="63" />
@@ -4302,6 +4505,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>ZOMBIE_ZOMBIE</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="21" />
 			<height normal="54" />
@@ -4346,6 +4554,11 @@
 			<skill id="14617" level="1" /> <!-- Knock Down Resistance -->
 			<skill id="14619" level="1" /> <!-- Disarm Resistance -->
 		</skill_list>
+		<ai clanHelpRange="1100" aggroRange="300">
+			<clan_list>
+				<clan>ZOMBIE_ZOMBIE</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="5.043">
@@ -4431,7 +4644,11 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>ZOMBIE_ZOMBIE</clan>
+			</clan_list>
+		</ai>
 		<skill_list>
 			<skill id="5467" level="1" /> <!-- Dark Attack -->
 			<skill id="4416" level="1" /> <!-- Undead -->
@@ -4490,7 +4707,7 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
 			<skill id="14621" level="1" /> <!-- Pulling Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="54" />
@@ -4521,6 +4738,7 @@
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="22" />
@@ -4551,6 +4769,7 @@
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai aggroRange="300" />
 		<collision>
 			<radius normal="35" />
 			<height normal="37" />
@@ -4581,6 +4800,7 @@
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="50" />
@@ -4612,7 +4832,7 @@
 			<skill id="15599" level="1" /> <!-- Cyclone -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="400" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="60" />
 			<height normal="50" />
@@ -4644,6 +4864,7 @@
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="350" />
 			<height normal="210" />

@@ -35,7 +35,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="450" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="14" />
 			<height normal="32.5" />
@@ -76,7 +76,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="450" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="14" />
 			<height normal="27.5" />
@@ -117,7 +117,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="450" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="40" />
@@ -158,7 +158,7 @@
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="9" />
 			<height normal="25.8" />
@@ -199,7 +199,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="28.5" />
@@ -240,7 +240,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="28.5" />
@@ -281,7 +281,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="13" />
 			<height normal="26" />
@@ -322,7 +322,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="13" />
 			<height normal="26" />
@@ -363,7 +363,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="32.5" />
@@ -404,7 +404,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="13" />
 			<height normal="44" />
@@ -439,7 +439,7 @@
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -514,7 +514,7 @@
 			<skill id="4035" level="2" /> <!-- Poison -->
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -589,7 +589,11 @@
 			<skill id="4416" level="1" /> <!-- Undead -->
 			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>SKELETON</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -667,7 +671,7 @@
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 			<skill id="4001" level="1" /> <!-- Gust -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -734,7 +738,11 @@
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>SCROPIO</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -805,7 +813,11 @@
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>SCROPIO</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -872,7 +884,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -947,7 +959,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="37" />
@@ -987,7 +999,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="35" />
 			<height normal="36" />
@@ -1027,7 +1039,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="32" />
 			<height normal="42" />
@@ -1066,7 +1078,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="37" />
@@ -1106,7 +1118,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="35" />
 			<height normal="36" />
@@ -1146,7 +1158,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="32" />
 			<height normal="42" />
@@ -1187,7 +1199,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="600" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>ISTINA</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1266,7 +1282,11 @@
 			<skill id="14232" level="1" /> <!-- Yoke of Thorns -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="600" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>ISTINA</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1345,7 +1365,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="600" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>ISTINA</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1423,7 +1447,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="600" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>ISTINA</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1501,7 +1529,11 @@
 			<skill id="14232" level="1" /> <!-- Yoke of Thorns -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="600" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>ISTINA</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1581,7 +1613,7 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="14202" level="1" /> <!-- Garden Malice -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1640,7 +1672,7 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="14202" level="1" /> <!-- Garden Malice -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1699,7 +1731,7 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="14202" level="1" /> <!-- Garden Malice -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1759,7 +1791,7 @@
 			<skill id="4415" level="12" /> <!-- Spear -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="600" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1824,7 +1856,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1879,7 +1915,11 @@
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1936,7 +1976,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -1994,7 +2038,11 @@
 			<skill id="4415" level="7" /> <!-- Dagger -->
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2049,7 +2097,11 @@
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2107,7 +2159,11 @@
 			<skill id="4415" level="13" /> <!-- Two-handed Sword -->
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2163,7 +2219,11 @@
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2219,7 +2279,11 @@
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2275,7 +2339,11 @@
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2330,7 +2398,11 @@
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2387,7 +2459,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2442,7 +2518,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2497,7 +2577,11 @@
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2554,7 +2638,11 @@
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2611,7 +2699,11 @@
 			<skill id="4415" level="7" /> <!-- Dagger -->
 			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2667,7 +2759,11 @@
 			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
 			<skill id="4415" level="9" /> <!-- Bows -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2723,7 +2819,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2780,7 +2880,11 @@
 			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2836,7 +2940,11 @@
 			<skill id="4408" level="13" /> <!-- HP Increase (5x) -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2893,7 +3001,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2949,7 +3061,11 @@
 			<skill id="4415" level="11" /> <!-- Spears -->
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3006,7 +3122,11 @@
 			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
 			<skill id="4415" level="4" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3062,7 +3182,11 @@
 			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
 			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3119,7 +3243,11 @@
 			<skill id="4408" level="13" /> <!-- HP Increase (5x) -->
 			<skill id="4415" level="11" /> <!-- Spears -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3175,7 +3303,11 @@
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3231,7 +3363,11 @@
 			<skill id="4415" level="19" /> <!-- Dualsword -->
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3287,7 +3423,11 @@
 			<skill id="4415" level="19" /> <!-- Dualsword -->
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3342,7 +3482,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3398,7 +3542,11 @@
 			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
 			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3454,7 +3602,11 @@
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3509,7 +3661,11 @@
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3564,7 +3720,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>OMAN</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3626,7 +3786,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="14176" level="1" /> <!-- Exorcism -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="28" />
 			<height normal="41.5" />
@@ -3666,7 +3830,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="12" />
 			<height normal="27" />
@@ -3708,7 +3872,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="14178" level="1" /> <!-- Exorcism -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="20" />
 			<height normal="39" />
@@ -3749,7 +3917,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="13" />
 			<height normal="26" />
@@ -3787,7 +3955,11 @@
 			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="24" />
 			<height normal="48" />
@@ -3830,7 +4002,7 @@
 			<skill id="14260" level="1" /> <!-- HP Drain -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="39" />
@@ -3874,7 +4046,11 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="14177" level="1" /> <!-- Exorcism -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="28" />
 			<height normal="41.5" />
@@ -3916,7 +4092,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="12" />
 			<height normal="27" />
@@ -3961,7 +4137,11 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="14178" level="1" /> <!-- Exorcism -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>FORTUNA</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="20" />
 			<height normal="39" />
@@ -4004,7 +4184,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="900" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="13" />
 			<height normal="26" />
@@ -4047,7 +4227,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="5549" level="1" /> <!-- Melee Attack Vulnerability -->
 		</skill_list>
-		<ai aggroRange="1500" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="35" />
 			<height normal="67" />
@@ -4087,7 +4267,7 @@
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="14037" level="1" /> <!-- Front Foot Attack -->
 		</skill_list>
-		<ai aggroRange="1500" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="40" />
 			<height normal="26" />
@@ -4131,7 +4311,7 @@
 			<skill id="5549" level="1" /> <!-- Melee Attack Vulnerability -->
 			<skill id="14009" level="1" /> <!-- Electric Shock -->
 		</skill_list>
-		<ai aggroRange="1500" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="36.5" />
@@ -4172,7 +4352,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<collision>
 			<radius normal="18" />
 			<height normal="46" />
@@ -4212,7 +4392,11 @@
 			<skill id="6513" level="1" /> <!-- Unholy Attack -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>GD_BONUS</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4268,7 +4452,11 @@
 			<skill id="6513" level="1" /> <!-- Unholy Attack -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>GD_BONUS</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4324,7 +4512,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>GD_BONUS</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4377,7 +4569,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>GD_BONUS</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4431,7 +4627,7 @@
 			<skill id="4035" level="1" /> <!-- Poison -->
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4504,7 +4700,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4035" level="1" /> <!-- Poison -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4577,7 +4773,11 @@
 			<skill id="4416" level="11" /> <!-- Giants -->
 			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>BUGBEAR</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4653,7 +4853,11 @@
 			<skill id="4416" level="1" /> <!-- Undead -->
 			<skill id="4415" level="9" /> <!-- Bows -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>SKELETON</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4730,7 +4934,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4247" level="1" /> <!-- Wind Strike -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4804,7 +5008,11 @@
 			<skill id="4035" level="1" /> <!-- Poison -->
 			<skill id="4415" level="1" /> <!-- Bare Hands -->
 		</skill_list>
-		<ai aggroRange="300" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>ANT</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">

@@ -46,7 +46,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai type="MAGE" aggroRange="600" clanHelpRange="500" isAggressive="true">
+		<ai type="MAGE" aggroRange="300" clanHelpRange="500" isAggressive="true">
 			<clan_list>
 				<clan>N_DIVINE</clan>
 			</clan_list>
@@ -136,7 +136,7 @@
 			<skill id="6597" level="1" /> <!-- Earth Attack -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -214,7 +214,7 @@
 			<skill id="6597" level="1" /> <!-- Earth Attack -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -290,7 +290,7 @@
 			<skill id="6597" level="1" /> <!-- Earth Attack -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -370,7 +370,7 @@
 			<skill id="6599" level="9" /> <!-- NPC earth attack -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -447,7 +447,7 @@
 			<skill id="6599" level="9" /> <!-- NPC earth attack -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -522,7 +522,7 @@
 			<skill id="6599" level="9" /> <!-- NPC earth attack -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -600,7 +600,7 @@
 			<skill id="6610" level="9" /> <!-- NPC earth magic -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -679,7 +679,7 @@
 			<skill id="6597" level="9" /> <!-- NPC earth attack -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai clanHelpRange="300">
+		<ai clanHelpRange="300" aggroRange="300">
 			<clan_list>
 				<clan>GOLEM_P</clan>
 			</clan_list>
@@ -749,7 +749,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="400" clanHelpRange="300" isAggressive="true">
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>GOLEM_P</clan>
 			</clan_list>
@@ -815,7 +815,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="400" clanHelpRange="300" isAggressive="true">
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>GOLEM_P</clan>
 			</clan_list>
@@ -878,7 +878,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="400" clanHelpRange="300" isAggressive="true">
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>GOLEM_P</clan>
 			</clan_list>
@@ -940,7 +940,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="400" clanHelpRange="300" isAggressive="true">
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>GOLEM_P</clan>
 			</clan_list>
@@ -2558,7 +2558,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
-		<ai aggroRange="400" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2647,6 +2651,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2734,6 +2743,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2820,6 +2834,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2909,6 +2928,11 @@
 			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -2999,6 +3023,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3091,6 +3120,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3180,6 +3214,11 @@
 			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3267,7 +3306,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
-		<ai aggroRange="400" isAggressive="true" />
+		<ai aggroRange="300" isAggressive="true" clanHelpRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3353,6 +3396,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3437,6 +3485,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3520,6 +3573,11 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3605,6 +3663,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3692,6 +3755,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3781,6 +3849,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3866,6 +3939,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="6914" level="3" /> <!-- Haste -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -3947,6 +4025,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4033,6 +4116,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4118,6 +4206,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4202,6 +4295,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4289,6 +4387,11 @@
 			<skill id="4412" level="4" /> <!-- Extremely Weak P. Def. -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4376,6 +4479,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4466,6 +4574,11 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4554,6 +4667,11 @@
 			<skill id="4412" level="4" /> <!-- Extremely Weak P. Def. -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4642,6 +4760,11 @@
 			<skill id="14048" level="1" /> <!-- Fairy Acumen -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4731,6 +4854,11 @@
 			<skill id="14048" level="1" /> <!-- Fairy Acumen -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4819,6 +4947,11 @@
 			<skill id="14048" level="1" /> <!-- Fairy Acumen -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4906,6 +5039,11 @@
 			<skill id="14048" level="1" /> <!-- Fairy Acumen -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -4997,6 +5135,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="20">
@@ -5070,6 +5213,11 @@
 			<skill id="14048" level="1" /> <!-- Fairy Acumen -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -5163,6 +5311,11 @@
 			<skill id="14048" level="1" /> <!-- Fairy Acumen -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -5254,6 +5407,11 @@
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -5341,6 +5499,11 @@
 			<skill id="14047" level="3" /> <!-- Fairy Curse Poison -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -5429,6 +5592,11 @@
 			<skill id="14047" level="3" /> <!-- Fairy Curse Poison -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -5516,6 +5684,11 @@
 			<skill id="14047" level="3" /> <!-- Fairy Curse Poison -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -5602,6 +5775,11 @@
 			<skill id="14047" level="3" /> <!-- Fairy Curse Poison -->
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">
@@ -5691,6 +5869,11 @@
 			<skill id="14047" level="4" /> <!-- Fairy Curse Poison -->
 			<skill id="14765" level="3" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clan_list>
+				<clan>M_FAIRY</clan>
+			</clan_list>
+		</ai>
 		<drop_lists>
 			<death>
 				<group chance="70">

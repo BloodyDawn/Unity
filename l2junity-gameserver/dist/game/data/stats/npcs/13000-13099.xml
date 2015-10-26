@@ -32,7 +32,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="17" />
 			<height normal="120" />
@@ -70,7 +70,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="7" />
 			<height normal="35" />
@@ -108,7 +108,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="7" />
 			<height normal="35" />
@@ -146,7 +146,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="7" />
 			<height normal="35" />
@@ -184,7 +184,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="7" />
 			<height normal="35" />
@@ -223,7 +223,7 @@
 			<skill id="4416" level="8" /> <!-- Angels -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="0.01" />
 			<height normal="0.01" />
@@ -262,7 +262,7 @@
 			<skill id="4416" level="8" /> <!-- Angels -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="0.01" />
 			<height normal="0.01" />
@@ -302,7 +302,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300">
+		<ai clanHelpRange="300" aggroRange="450">
 			<clan_list>
 				<clan>FIRE</clan>
 			</clan_list>
@@ -343,6 +343,11 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
+		<ai aggroRange="450">
+			<clan_list>
+				<clan>ANDREAS</clan>
+			</clan_list>
+		</ai>
 		<collision>
 			<radius normal="16" />
 			<height normal="18.5" />
@@ -380,7 +385,7 @@
 			<skill id="4441" level="5" /> <!-- Greater Resist Mental Derangement -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="450" />
 		<collision>
 			<radius normal="23" />
 			<height normal="25" />
@@ -418,7 +423,7 @@
 			<skill id="4441" level="5" /> <!-- Greater Resist Mental Derangement -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="450" />
 		<collision>
 			<radius normal="34" />
 			<height normal="40" />
@@ -1015,7 +1020,7 @@
 			<skill id="5206" level="1" /> <!-- Decrease Speed -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="1000">
+		<ai clanHelpRange="1000" aggroRange="300">
 			<clan_list>
 				<clan>PIG</clan>
 			</clan_list>
@@ -1056,7 +1061,7 @@
 			<skill id="4416" level="4" /> <!-- Animals -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="1000">
+		<ai clanHelpRange="1000" aggroRange="300">
 			<clan_list>
 				<clan>PIG</clan>
 			</clan_list>
@@ -1097,7 +1102,7 @@
 			<skill id="4416" level="4" /> <!-- Animals -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="1000">
+		<ai clanHelpRange="1000" aggroRange="300">
 			<clan_list>
 				<clan>PIG</clan>
 			</clan_list>
@@ -1139,7 +1144,7 @@
 			<skill id="5206" level="1" /> <!-- Decrease Speed -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="1000">
+		<ai clanHelpRange="1000" aggroRange="300">
 			<clan_list>
 				<clan>PIG</clan>
 			</clan_list>
@@ -1181,7 +1186,7 @@
 			<skill id="5206" level="1" /> <!-- Decrease Speed -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="1000">
+		<ai clanHelpRange="1000" aggroRange="300">
 			<clan_list>
 				<clan>PIG</clan>
 			</clan_list>
@@ -1266,7 +1271,7 @@
 			<skill id="5267" level="1" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1308,7 +1313,7 @@
 			<skill id="5267" level="2" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1350,7 +1355,7 @@
 			<skill id="5267" level="3" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1392,7 +1397,7 @@
 			<skill id="5267" level="4" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1434,7 +1439,7 @@
 			<skill id="5267" level="5" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1476,7 +1481,7 @@
 			<skill id="5267" level="6" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1518,7 +1523,7 @@
 			<skill id="5267" level="7" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1560,7 +1565,7 @@
 			<skill id="5267" level="8" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1602,7 +1607,7 @@
 			<skill id="5267" level="9" /> <!-- Trap Explosion -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1644,7 +1649,7 @@
 			<skill id="5268" level="1" /> <!-- Poison -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1686,7 +1691,7 @@
 			<skill id="5268" level="2" /> <!-- Poison -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1728,7 +1733,7 @@
 			<skill id="5268" level="3" /> <!-- Poison -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1770,7 +1775,7 @@
 			<skill id="5268" level="4" /> <!-- Poison -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1812,7 +1817,7 @@
 			<skill id="5268" level="5" /> <!-- Poison -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1854,7 +1859,7 @@
 			<skill id="5268" level="6" /> <!-- Poison -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1896,7 +1901,7 @@
 			<skill id="5270" level="1" /> <!-- Flash Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1938,7 +1943,7 @@
 			<skill id="5270" level="2" /> <!-- Flash Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1980,7 +1985,7 @@
 			<skill id="5270" level="3" /> <!-- Flash Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2022,7 +2027,7 @@
 			<skill id="5270" level="4" /> <!-- Flash Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2064,7 +2069,7 @@
 			<skill id="5270" level="5" /> <!-- Flash Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2106,7 +2111,7 @@
 			<skill id="5271" level="1" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2148,7 +2153,7 @@
 			<skill id="5271" level="2" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2190,7 +2195,7 @@
 			<skill id="5271" level="3" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2232,7 +2237,7 @@
 			<skill id="5271" level="4" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2274,7 +2279,7 @@
 			<skill id="5271" level="5" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2316,7 +2321,7 @@
 			<skill id="5271" level="6" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2358,7 +2363,7 @@
 			<skill id="5271" level="7" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2400,7 +2405,7 @@
 			<skill id="5271" level="8" /> <!-- Hold -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2442,7 +2447,7 @@
 			<skill id="5269" level="1" /> <!-- Slow Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2484,7 +2489,7 @@
 			<skill id="5269" level="2" /> <!-- Slow Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2526,7 +2531,7 @@
 			<skill id="5269" level="3" /> <!-- Slow Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2568,7 +2573,7 @@
 			<skill id="5269" level="4" /> <!-- Slow Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2610,7 +2615,7 @@
 			<skill id="5269" level="5" /> <!-- Slow Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -2652,7 +2657,7 @@
 			<skill id="5269" level="6" /> <!-- Slow Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" />
+		<ai type="BALANCED" aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
