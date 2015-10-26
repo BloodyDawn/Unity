@@ -498,8 +498,11 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Cancel the task and unset it.
-		_task.cancel(false);
-		_task = null;
+		if (_task != null)
+		{
+			_task.cancel(false);
+			_task = null;
+		}
 		
 		if (!isSimultaneousType())
 		{
