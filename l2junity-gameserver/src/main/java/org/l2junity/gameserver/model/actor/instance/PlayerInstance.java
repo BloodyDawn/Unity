@@ -14080,7 +14080,7 @@ public final class PlayerInstance extends Playable
 			{
 				case SOULSHOT:
 				{
-					if ((weapon != null) && (weapon.getItem().getCrystalType() == i.getItem().getCrystalType()))
+					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == i.getItem().getCrystalType()))
 					{
 						sendPacket(new ExAutoSoulShot(i.getId(), false, 1));
 					}
@@ -14088,7 +14088,7 @@ public final class PlayerInstance extends Playable
 				}
 				case SPIRITSHOT:
 				{
-					if ((weapon != null) && (weapon.getItem().getCrystalType() == i.getItem().getCrystalType()))
+					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == i.getItem().getCrystalType()))
 					{
 						sendPacket(new ExAutoSoulShot(i.getId(), false, 2));
 					}
