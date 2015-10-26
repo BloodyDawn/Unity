@@ -41,7 +41,7 @@ import quests.Q10409_ASuspiciousVagabondInTheSwamp.Q10409_ASuspiciousVagabondInT
  */
 public final class Q10410_EmbryoInTheSwampOfScreams extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int DOKARA = 33847;
 	private static final int EMBRYO = 27508;
 	private static final int[] MONSTERS =

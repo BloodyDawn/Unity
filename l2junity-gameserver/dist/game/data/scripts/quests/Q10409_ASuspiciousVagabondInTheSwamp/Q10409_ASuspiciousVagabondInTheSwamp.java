@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.quest.State;
  */
 public final class Q10409_ASuspiciousVagabondInTheSwamp extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int DOKARA = 33847;
 	private static final int VAGABOND = 33848; // Critically-injured Suspicious Vagabond
 	// Items

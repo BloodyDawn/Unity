@@ -62,7 +62,6 @@ public final class Q10336_DividedSakumKanilov extends Quest
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
-		
 		if (st == null)
 		{
 			return null;
@@ -100,15 +99,10 @@ public final class Q10336_DividedSakumKanilov extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		
-		if (st == null)
-		{
-			return htmltext;
-		}
 		
 		switch (st.getState())
 		{
@@ -130,8 +124,11 @@ public final class Q10336_DividedSakumKanilov extends Quest
 					{
 						if (npc.getId() == ZENATH)
 						{
-							st.setCond(3);
-							giveItems(player, SAKUM_SKETCH, 1);
+							if (!isSimulated)
+							{
+								st.setCond(3);
+								giveItems(player, SAKUM_SKETCH, 1);
+							}
 							htmltext = "33509-05.htm";
 						}
 						else

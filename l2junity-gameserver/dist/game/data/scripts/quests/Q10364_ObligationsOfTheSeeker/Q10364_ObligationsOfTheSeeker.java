@@ -34,11 +34,10 @@ import quests.Q10363_RequestOfTheSeeker.Q10363_RequestOfTheSeeker;
  */
 public final class Q10364_ObligationsOfTheSeeker extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int CELIN = 33451;
 	private static final int WALTER = 33452;
 	private static final int DEP = 33453;
-	// Mobs
 	private static final int KRAPHER = 22996;
 	private static final int AVIAN = 22994;
 	// Items

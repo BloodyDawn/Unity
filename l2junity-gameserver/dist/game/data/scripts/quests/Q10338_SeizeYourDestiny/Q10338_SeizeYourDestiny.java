@@ -131,6 +131,7 @@ public final class Q10338_SeizeYourDestiny extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
+		
 		switch (npc.getId())
 		{
 			case CELLPHINE:

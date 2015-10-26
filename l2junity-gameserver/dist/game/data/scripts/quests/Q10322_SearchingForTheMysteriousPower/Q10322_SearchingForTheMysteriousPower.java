@@ -152,7 +152,7 @@ public final class Q10322_SearchingForTheMysteriousPower extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;
@@ -233,20 +233,23 @@ public final class Q10322_SearchingForTheMysteriousPower extends Quest
 						}
 						case 6:
 						{
+							if (!isSimulated)
+							{
+								showOnScreenMsg(player, NpcStringId.WEAPONS_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
+								giveItems(player, WOODEN_ARROW, 500);
+								giveItems(player, ADENA, 70);
+								giveItems(player, HEALING_POTION, 50);
+								giveItems(player, APPRENTICE_ADVENTURERS_STAFF, 1);
+								giveItems(player, APPRENTICE_ADVENTURERS_BONE_CLUB, 1);
+								giveItems(player, APPRENTICE_ADVENTURERS_KNIFE, 1);
+								giveItems(player, APPRENTICE_ADVENTURERS_CESTUS, 1);
+								giveItems(player, APPRENTICE_ADVENTURERS_BOW, 1);
+								giveItems(player, APPRENTICE_ADVENTURERS_LONG_SWORD, 1);
+								addExpAndSp(player, 300, 5);
+								npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THERE_S_THE_NEXT_TRAINING_STEP);
+								qs.exitQuest(false, true);
+							}
 							htmltext = "33464-06.htm";
-							showOnScreenMsg(player, NpcStringId.WEAPONS_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
-							giveItems(player, WOODEN_ARROW, 500);
-							giveItems(player, ADENA, 70);
-							giveItems(player, HEALING_POTION, 50);
-							giveItems(player, APPRENTICE_ADVENTURERS_STAFF, 1);
-							giveItems(player, APPRENTICE_ADVENTURERS_BONE_CLUB, 1);
-							giveItems(player, APPRENTICE_ADVENTURERS_KNIFE, 1);
-							giveItems(player, APPRENTICE_ADVENTURERS_CESTUS, 1);
-							giveItems(player, APPRENTICE_ADVENTURERS_BOW, 1);
-							giveItems(player, APPRENTICE_ADVENTURERS_LONG_SWORD, 1);
-							addExpAndSp(player, 300, 5);
-							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THERE_S_THE_NEXT_TRAINING_STEP);
-							qs.exitQuest(false, true);
 							break;
 						}
 					}

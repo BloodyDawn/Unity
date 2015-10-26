@@ -158,7 +158,7 @@ public final class Q10323_TrainLikeItsReal extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;
@@ -201,14 +201,20 @@ public final class Q10323_TrainLikeItsReal extends Quest
 						}
 						case 4:
 						{
+							if (!isSimulated)
+							{
+								qs.setCond(6, true);
+							}
 							htmltext = "33194-06.htm";
-							qs.setCond(6, true);
 							break;
 						}
 						case 5:
 						{
+							if (!isSimulated)
+							{
+								qs.setCond(7, true);
+							}
 							htmltext = "33194-06.htm";
-							qs.setCond(7, true);
 							break;
 						}
 						case 8:

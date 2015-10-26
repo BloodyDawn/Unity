@@ -41,17 +41,9 @@ import quests.Q10362_CertificationOfTheSeeker.Q10362_CertificationOfTheSeeker;
  */
 public final class Q10363_RequestOfTheSeeker extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int NAGEL = 33450;
 	private static final int CELIN = 33451;
-	// Items
-	private static final int WOODEN_HELMET = 43;
-	private static final int HEALING_POTION = 1060;
-	// Misc
-	private static final int MIN_LEVEL = 12;
-	private static final int MAX_LEVEL = 20;
-	private static final int SOCIAL_SORROW = 13;
-	// Mobs
 	private static final int STALKER = 22992;
 	private static final int CRAWLER = 22991;
 	private static final int[] CORPSES =
@@ -61,6 +53,13 @@ public final class Q10363_RequestOfTheSeeker extends Quest
 		32963,
 		32964,
 	};
+	// Items
+	private static final int WOODEN_HELMET = 43;
+	private static final int HEALING_POTION = 1060;
+	// Misc
+	private static final int MIN_LEVEL = 12;
+	private static final int MAX_LEVEL = 20;
+	private static final int SOCIAL_SORROW = 13;
 	
 	public Q10363_RequestOfTheSeeker()
 	{

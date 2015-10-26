@@ -39,10 +39,9 @@ import quests.Q10361_RolesOfTheSeeker.Q10361_RolesOfTheSeeker;
  */
 public final class Q10362_CertificationOfTheSeeker extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int CHESHA = 33449;
 	private static final int NAGEL = 33450;
-	// Mobs
 	private static final int STALKER = 22992;
 	private static final int CRAWLER = 22991;
 	// Items
@@ -146,7 +145,7 @@ public final class Q10362_CertificationOfTheSeeker extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;
@@ -174,8 +173,11 @@ public final class Q10362_CertificationOfTheSeeker extends Quest
 						}
 						case 2:
 						{
-							showOnScreenMsg(player, NpcStringId.USE_THE_YE_SAGIRA_TELEPORT_DEVICE_TO_GO_TO_EXPLORATION_AREA_2, ExShowScreenMessage.TOP_CENTER, 4500);
-							qs.setCond(3, true);
+							if (!isSimulated)
+							{
+								showOnScreenMsg(player, NpcStringId.USE_THE_YE_SAGIRA_TELEPORT_DEVICE_TO_GO_TO_EXPLORATION_AREA_2, ExShowScreenMessage.TOP_CENTER, 4500);
+								qs.setCond(3, true);
+							}
 							htmltext = "33449-05.htm";
 							break;
 						}
