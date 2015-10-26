@@ -642,7 +642,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void thinkAttack()
 	{
 		final Attackable npc = getActiveChar();
-		if (npc.isCastingNow(s -> !s.isWithoutAction()))
+		if (npc.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			return;
 		}

@@ -766,7 +766,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		// setIntention(AI_INTENTION_IDLE);
 		
 		// Check if the actor can't use skills and if a thinking action isn't already in progress
-		if (_thinking || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

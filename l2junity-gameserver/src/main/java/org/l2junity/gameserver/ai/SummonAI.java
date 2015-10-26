@@ -158,7 +158,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}
@@ -234,7 +234,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	private void avoidAttack(Creature attacker)
 	{
 		// Don't move while casting. It breaks casting animation, but still casts the skill... looks so bugged.
-		if (_actor.isCastingNow(s -> !s.isWithoutAction()))
+		if (_actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			return;
 		}
@@ -250,7 +250,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	public void defendAttack(Creature attacker)
 	{
 		// Cannot defend while attacking or casting.
-		if (_actor.isAttackingNow() || _actor.isCastingNow(s -> !s.isWithoutAction()))
+		if (_actor.isAttackingNow() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			return;
 		}

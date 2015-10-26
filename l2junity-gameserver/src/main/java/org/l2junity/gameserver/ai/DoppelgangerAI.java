@@ -119,7 +119,7 @@ public class DoppelgangerAI extends CharacterAI
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

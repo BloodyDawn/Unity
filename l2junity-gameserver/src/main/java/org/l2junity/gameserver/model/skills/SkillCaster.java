@@ -89,7 +89,6 @@ public class SkillCaster implements Runnable
 	private int _castTime;
 	private int _reuseDelay;
 	private int _castInterruptTime;
-	private boolean _withoutAction;
 	private boolean _skillMastery;
 	
 	private volatile ScheduledFuture<?> _task = null;
@@ -145,7 +144,7 @@ public class SkillCaster implements Runnable
 			return false;
 		}
 		
-		final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillUse(_caster, skill, skill.isSimultaneousCast(), (Creature) target), _caster, TerminateReturn.class);
+		final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillUse(_caster, skill, skill.isWithoutAction(), (Creature) target), _caster, TerminateReturn.class);
 		if ((term != null) && term.terminate())
 		{
 			_isCasting.set(false);
@@ -173,7 +172,6 @@ public class SkillCaster implements Runnable
 		_shiftPressed = shiftPressed;
 		_castTime = getCastTime(_caster, _skill);
 		_reuseDelay = getReuseTime(_caster, _skill);
-		_withoutAction = skill.isWithoutAction() || skill.isSimultaneousCast();
 		_skillMastery = Formulas.calcSkillMastery(_caster, _skill);
 		_castInterruptTime = -2 + GameTimeController.getInstance().getGameTicks() + (_castTime / GameTimeController.MILLIS_IN_TICK);
 		
@@ -211,7 +209,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Stop movement when casting. Exception are cases where skill doesn't stop movement.
-		if (!isWithoutAction() && _caster.isMoving())
+		if (!isSimultaneousType())
 		{
 			_caster.getAI().clientStopMoving(null);
 		}
@@ -468,7 +466,7 @@ public class SkillCaster implements Runnable
 			// Launch the magic skill in order to calculate its effects
 			_caster.callSkill(skill, item, targets);
 			
-			EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(_caster, skill, skill.isSimultaneousCast(), target, targets), _caster);
+			EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(_caster, skill, skill.isWithoutAction(), target, targets), _caster);
 			
 			// Notify DP Scripts
 			_caster.notifyQuestEventSkillFinished(skill, target);
@@ -562,7 +560,6 @@ public class SkillCaster implements Runnable
 		_castTime = 0;
 		_reuseDelay = 0;
 		_castInterruptTime = 0;
-		_withoutAction = false;
 		_skillMastery = false;
 		
 		if (!_isCasting.compareAndSet(true, false))
@@ -635,14 +632,6 @@ public class SkillCaster implements Runnable
 		return _castingType;
 	}
 	
-	/**
-	 * @return {@code true} if this casting is without action, therefore not blocking attack, movement and other actions.
-	 */
-	public boolean isWithoutAction()
-	{
-		return _withoutAction;
-	}
-	
 	public boolean isNormalType()
 	{
 		return (_castingType == SkillCastingType.NORMAL) || (_castingType == SkillCastingType.NORMAL_SECOND);
@@ -676,11 +665,6 @@ public class SkillCaster implements Runnable
 	public void setCastInterruptTime(int castInterruptTime)
 	{
 		_castInterruptTime = castInterruptTime;
-	}
-	
-	public void setWithoutAction(boolean withoutAction)
-	{
-		_withoutAction = withoutAction;
 	}
 	
 	public void setSkillMastery(boolean skillMastery)

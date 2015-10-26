@@ -178,7 +178,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _canBeDispelled;
 	
 	private final boolean _excludedFromCheck;
-	private final boolean _simultaneousCast;
+	private final boolean _withoutAction;
 	
 	private ExtractableSkill _extractableItems = null;
 	
@@ -204,7 +204,6 @@ public final class Skill implements IIdentifiable
 	private final boolean _deleteAbnormalOnLeave;
 	private final boolean _irreplacableBuff; // Stays after death, on subclass change, cant be canceled.
 	private final boolean _blockActionUseSkill; // Blocks the use skill client action and is not showed on skill list.
-	private final boolean _withoutAction; // Skill doesnt stop movement, attack and whatever else that is action.
 	
 	private final int _toggleGroupId;
 	private final int _attachToggleGroupId;
@@ -371,7 +370,7 @@ public final class Skill implements IIdentifiable
 		_canBeDispelled = set.getBoolean("canBeDispelled", true);
 		
 		_excludedFromCheck = set.getBoolean("excludedFromCheck", false);
-		_simultaneousCast = set.getBoolean("simultaneousCast", false);
+		_withoutAction = set.getBoolean("withoutAction", false);
 		
 		String capsuled_items = set.getString("capsuled_items_skill", null);
 		if (capsuled_items != null)
@@ -402,7 +401,6 @@ public final class Skill implements IIdentifiable
 		_deleteAbnormalOnLeave = set.getBoolean("deleteAbnormalOnLeave", false);
 		_irreplacableBuff = set.getBoolean("irreplacableBuff", false);
 		_blockActionUseSkill = set.getBoolean("blockActionUseSkill", false);
-		_withoutAction = set.getBoolean("withoutAction", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
@@ -1603,9 +1601,9 @@ public final class Skill implements IIdentifiable
 		return _excludedFromCheck;
 	}
 	
-	public boolean isSimultaneousCast()
+	public boolean isWithoutAction()
 	{
-		return _simultaneousCast;
+		return _withoutAction;
 	}
 	
 	/**
@@ -1815,7 +1813,7 @@ public final class Skill implements IIdentifiable
 		}
 		
 		// Default toggle group ID, assume nothing attached.
-		if (getAttachToggleGroupId() <= 0)
+		if ((getAttachToggleGroupId() <= 0) || (getAttachSkills() == null))
 		{
 			return null;
 		}
@@ -1885,11 +1883,6 @@ public final class Skill implements IIdentifiable
 	public boolean isBlockActionUseSkill()
 	{
 		return _blockActionUseSkill;
-	}
-	
-	public boolean isWithoutAction()
-	{
-		return _withoutAction;
 	}
 	
 	public int getToggleGroupId()

@@ -259,7 +259,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isControlBlocked())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isControlBlocked())
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -374,7 +374,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -413,7 +413,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -470,7 +470,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -520,7 +520,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();

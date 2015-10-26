@@ -733,7 +733,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		// setIntention(AI_INTENTION_IDLE);
 		
 		// Check if the thinking action is already in progress
-		if (_thinking || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

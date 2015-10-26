@@ -1590,7 +1590,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		SkillCaster skillCaster;
 		
-		if (skill.isSimultaneousCast())
+		if (skill.isWithoutAction())
 		{
 			skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isSimultaneousType);
 		}
