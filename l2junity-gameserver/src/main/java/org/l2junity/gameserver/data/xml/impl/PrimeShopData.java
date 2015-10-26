@@ -130,7 +130,7 @@ public class PrimeShopData implements IGameXmlReader
 			return;
 		}
 		
-		player.sendPacket(new ExBRProductInfo(item));
+		player.sendPacket(new ExBRProductInfo(item, player));
 	}
 	
 	public PrimeShopGroup getItem(int brId)
