@@ -24,6 +24,12 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.Id;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -66,7 +72,6 @@ public final class MuseumDungeon extends AbstractInstance
 		addFirstTalkId(DESK);
 		addTalkId(PANTHEON, TOYRON);
 		addAttackId(THIEF);
-		addKillId(THIEF);
 	}
 	
 	@Override
@@ -210,6 +215,25 @@ public final class MuseumDungeon extends AbstractInstance
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
+	}
+	
+	@RegisterEvent(EventType.ON_CREATURE_KILL)
+	@RegisterType(ListenerRegisterType.NPC)
+	@Id(THIEF)
+	public void onCreatureKill(OnCreatureKill event)
+	{
+		final Npc npc = (Npc) event.getTarget();
+		
+		final Instance world = npc.getInstanceWorld();
+		if (world != null)
+		{
+			final PlayerInstance player = world.getFirstPlayer();
+			final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
+			if ((qs != null) && qs.isCond(2) && world.getAliveNpcs(THIEF).isEmpty())
+			{
+				qs.setCond(3, true);
+			}
+		}
 	}
 	
 	@Override
