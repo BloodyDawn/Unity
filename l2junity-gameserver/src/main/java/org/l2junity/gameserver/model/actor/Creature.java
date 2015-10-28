@@ -1978,12 +1978,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public boolean doDie(Creature killer)
 	{
-		final TerminateReturn returnBack = EventDispatcher.getInstance().notifyEvent(new OnCreatureKill(killer, this), this, TerminateReturn.class);
-		if ((returnBack != null) && returnBack.terminate())
-		{
-			return false;
-		}
-		
 		// killing is only possible one time
 		synchronized (this)
 		{
@@ -1996,6 +1990,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			setCurrentHp(0);
 			setIsDead(true);
 		}
+		
+		EventDispatcher.getInstance().notifyEvent(new OnCreatureKill(killer, this), this);
 		
 		// Set target to null and cancel Attack or Cast
 		setTarget(null);
