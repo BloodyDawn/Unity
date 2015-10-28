@@ -31,7 +31,6 @@ import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.poly.ObjectPoly;
 import org.l2junity.gameserver.model.events.ListenersContainer;
@@ -151,20 +150,15 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	@Override
 	public boolean decayMe()
 	{
-		WorldRegion reg = getWorldRegion();
-		
+		final WorldRegion reg = getWorldRegion();
 		synchronized (this)
 		{
 			_isSpawned = false;
 			setWorldRegion(null);
 		}
 		
-		// this can synchronize on others instances, so it's out of
-		// synchronized, to avoid deadlocks
-		// Remove the L2Object from the world
 		World.getInstance().removeVisibleObject(this, reg);
 		World.getInstance().removeObject(this);
-		
 		return true;
 	}
 	
@@ -768,49 +762,27 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 * Sets instance where current object belongs.
 	 * @param newInstance new instance world for object
 	 */
-	public void setInstance(Instance newInstance)
+	public synchronized void setInstance(Instance newInstance)
 	{
-		synchronized (this)
+		// Check if new and old instances are identical
+		if (_instance == newInstance)
 		{
-			// Check if new and old instances are identical
-			if (_instance == newInstance)
-			{
-				return;
-			}
-			
-			// Leave old instance
-			if (_instance != null)
-			{
-				_instance.onInstanceChange(this, false);
-			}
-			
-			// Set new instance
-			_instance = newInstance;
-			
-			// Enter into new instance
-			if (newInstance != null)
-			{
-				newInstance.onInstanceChange(this, true);
-			}
+			return;
 		}
 		
-		// Change instance for servitors too
-		if (isPlayer())
+		// Leave old instance
+		if (_instance != null)
 		{
-			final PlayerInstance player = getActingPlayer();
-			final Summon pet = player.getPet();
-			if (pet != null)
-			{
-				pet.setInstance(newInstance);
-			}
-			player.getServitors().values().forEach(s -> s.setInstance(newInstance));
+			_instance.onInstanceChange(this, false);
 		}
-		// Delete and respawn object to remove object from other objects in previous instance and add it to objects in newly set instance world.
-		// This should not affect player since players are usually teleported
-		else if (_isSpawned)
+		
+		// Set new instance
+		_instance = newInstance;
+		
+		// Enter into new instance
+		if (newInstance != null)
 		{
-			decayMe();
-			spawnMe();
+			newInstance.onInstanceChange(this, true);
 		}
 	}
 	

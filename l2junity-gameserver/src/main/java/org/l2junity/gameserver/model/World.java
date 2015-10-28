@@ -242,18 +242,18 @@ public final class World
 	}
 	
 	/**
-	 * Add a L2Object in the world. <B><U> Concept</U> :</B> L2Object (including L2PcInstance) are identified in <B>_visibleObjects</B> of his current L2WorldRegion and in <B>_knownObjects</B> of other surrounding L2Characters <BR>
-	 * L2PcInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current L2WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B>
+	 * Add a L2Object in the world. <B><U> Concept</U> :</B> L2Object (including PlayerInstance) are identified in <B>_visibleObjects</B> of his current WorldRegion and in <B>_knownObjects</B> of other surrounding L2Characters <BR>
+	 * PlayerInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B>
 	 * <li>Add the L2Object object in _allPlayers* of L2World</li>
 	 * <li>Add the L2Object object in _gmList** of GmListTable</li>
-	 * <li>Add object in _knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters</li><BR>
-	 * <li>If object is a L2Character, add all surrounding L2Object in its _knownObjects and all surrounding L2PcInstance in its _knownPlayer</li><BR>
-	 * <I>* only if object is a L2PcInstance</I><BR>
-	 * <I>** only if object is a GM L2PcInstance</I>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object in _visibleObjects and _allPlayers* of L2WorldRegion (need synchronisation)</B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects and _allPlayers* of L2World (need
-	 * synchronisation)</B></FONT> <B><U> Example of use </U> :</B> <li>Drop an Item</li> <li>Spawn a L2Character</li> <li>Apply Death Penalty of a L2PcInstance</li>
+	 * <li>Add object in _knownObjects and _knownPlayer* of all surrounding WorldRegion L2Characters</li><BR>
+	 * <li>If object is a L2Character, add all surrounding L2Object in its _knownObjects and all surrounding PlayerInstance in its _knownPlayer</li><BR>
+	 * <I>* only if object is a PlayerInstance</I><BR>
+	 * <I>** only if object is a GM PlayerInstance</I>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object in _visibleObjects and _allPlayers* of WorldRegion (need synchronisation)</B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects and _allPlayers* of L2World (need
+	 * synchronisation)</B></FONT> <B><U> Example of use </U> :</B> <li>Drop an Item</li> <li>Spawn a L2Character</li> <li>Apply Death Penalty of a PlayerInstance</li>
 	 * @param object L2object to add in the world
-	 * @param newRegion L2WorldRegion in wich the object will be add (not used)
+	 * @param newRegion WorldRegion in wich the object will be add (not used)
 	 */
 	public void addVisibleObject(WorldObject object, WorldRegion newRegion)
 	{
@@ -353,17 +353,17 @@ public final class World
 	}
 	
 	/**
-	 * Remove a L2Object from the world. <B><U> Concept</U> :</B> L2Object (including L2PcInstance) are identified in <B>_visibleObjects</B> of his current L2WorldRegion and in <B>_knownObjects</B> of other surrounding L2Characters <BR>
-	 * L2PcInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current L2WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B>
+	 * Remove a L2Object from the world. <B><U> Concept</U> :</B> L2Object (including PlayerInstance) are identified in <B>_visibleObjects</B> of his current WorldRegion and in <B>_knownObjects</B> of other surrounding L2Characters <BR>
+	 * PlayerInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B>
 	 * <li>Remove the L2Object object from _allPlayers* of L2World</li>
-	 * <li>Remove the L2Object object from _visibleObjects and _allPlayers* of L2WorldRegion</li>
+	 * <li>Remove the L2Object object from _visibleObjects and _allPlayers* of WorldRegion</li>
 	 * <li>Remove the L2Object object from _gmList** of GmListTable</li>
-	 * <li>Remove object from _knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters</li><BR>
-	 * <li>If object is a L2Character, remove all L2Object from its _knownObjects and all L2PcInstance from its _knownPlayer</li>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World</B></FONT> <I>* only if object is a L2PcInstance</I><BR> <I>** only if object is a GM L2PcInstance</I> <B><U> Example of use </U> :</B> <li>Pickup an Item</li> <li>Decay a
+	 * <li>Remove object from _knownObjects and _knownPlayer* of all surrounding WorldRegion L2Characters</li><BR>
+	 * <li>If object is a L2Character, remove all L2Object from its _knownObjects and all PlayerInstance from its _knownPlayer</li>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World</B></FONT> <I>* only if object is a PlayerInstance</I><BR> <I>** only if object is a GM PlayerInstance</I> <B><U> Example of use </U> :</B> <li>Pickup an Item</li> <li>Decay a
 	 * L2Character</li>
 	 * @param object L2object to remove from the world
-	 * @param oldRegion L2WorldRegion in which the object was before removing
+	 * @param oldRegion WorldRegion in which the object was before removing
 	 */
 	public void removeVisibleObject(WorldObject object, WorldRegion oldRegion)
 	{
@@ -374,11 +374,9 @@ public final class World
 		
 		if (oldRegion != null)
 		{
-			// Remove the object from the L2ObjectHashSet(L2Object) _visibleObjects of L2WorldRegion
-			// If object is a L2PcInstance, remove it from the L2ObjectHashSet(L2PcInstance) _allPlayers of this L2WorldRegion
 			oldRegion.removeVisibleObject(object);
 			
-			// Go through all surrounding L2WorldRegion L2Characters
+			// Go through all surrounding WorldRegion Creatures
 			oldRegion.forEachSurroundingRegion(w ->
 			{
 				for (WorldObject wo : w.getVisibleObjects().values())
@@ -431,7 +429,6 @@ public final class World
 				return true;
 			});
 			
-			// If selected L2Object is a L2PcIntance, remove it from L2ObjectHashSet(L2PcInstance) _allPlayers of L2World
 			if (object.isPlayer())
 			{
 				final PlayerInstance player = object.getActingPlayer();
@@ -707,7 +704,7 @@ public final class World
 	}
 	
 	/**
-	 * Calculate the current L2WorldRegions of the object according to its position (x,y). <B><U> Example of use </U> :</B>
+	 * Calculate the current WorldRegions of the object according to its position (x,y). <B><U> Example of use </U> :</B>
 	 * <li>Set position of a new L2Object (drop, spawn...)</li>
 	 * <li>Update position of a L2Object after a movement</li><BR>
 	 * @param point position of the object
@@ -741,12 +738,12 @@ public final class World
 	}
 	
 	/**
-	 * Check if the current L2WorldRegions of the object is valid according to its position (x,y). <B><U> Example of use </U> :</B>
-	 * <li>Init L2WorldRegions</li><BR>
+	 * Check if the current WorldRegions of the object is valid according to its position (x,y). <B><U> Example of use </U> :</B>
+	 * <li>Init WorldRegions</li><BR>
 	 * @param x X position of the object
 	 * @param y Y position of the object
 	 * @param z Z position of the object
-	 * @return True if the L2WorldRegion is valid
+	 * @return True if the WorldRegion is valid
 	 */
 	public static boolean validRegion(int x, int y, int z)
 	{

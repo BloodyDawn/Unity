@@ -10564,6 +10564,7 @@ public final class PlayerInstance extends Playable
 			pet.teleToLocation(getLocation(), false);
 			((SummonAI) pet.getAI()).setStartFollowController(true);
 			pet.setFollowStatus(true);
+			pet.setInstanceById(getInstanceId());
 			pet.updateAndBroadcastStatus(0);
 		}
 		
@@ -10573,6 +10574,7 @@ public final class PlayerInstance extends Playable
 			s.teleToLocation(getLocation(), false);
 			((SummonAI) s.getAI()).setStartFollowController(true);
 			s.setFollowStatus(true);
+			s.setInstanceById(getInstanceId());
 			s.updateAndBroadcastStatus(0);
 		});
 	}
