@@ -236,30 +236,6 @@ public final class MuseumDungeon extends AbstractInstance
 		}
 	}
 	
-	@Override
-	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
-	{
-		final Instance world = npc.getInstanceWorld();
-		if (world != null)
-		{
-			final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
-			if ((qs != null) && qs.isCond(2))
-			{
-				final int killedThiefs = world.getParameters().getInt("killed", 0);
-				if (killedThiefs >= 1)
-				{
-					qs.setCond(3, true);
-					showOnScreenMsg(player, NpcStringId.TALK_TO_TOYRON_TO_RETURN_TO_THE_MUSEUM_LOBBY, ExShowScreenMessage.TOP_CENTER, 4500);
-				}
-				else
-				{
-					world.setParameter("killed", killedThiefs + 1);
-				}
-			}
-		}
-		return super.onKill(npc, player, isSummon);
-	}
-	
 	public static void main(String[] args)
 	{
 		new MuseumDungeon();
