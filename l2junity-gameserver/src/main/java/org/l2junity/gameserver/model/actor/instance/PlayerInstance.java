@@ -565,6 +565,7 @@ public final class PlayerInstance extends Playable
 	
 	private boolean _noble = false;
 	private boolean _hero = false;
+	private boolean _trueHero = false;
 	
 	/** The L2FolkInstance corresponding to the last Folk which one the player talked. */
 	private Npc _lastFolkNpc = null;
@@ -14118,5 +14119,15 @@ public final class PlayerInstance extends Playable
 	public GroupType getGroupType()
 	{
 		return isInParty() ? (getParty().isInCommandChannel() ? GroupType.COMMAND_CHANNEL : GroupType.PARTY) : GroupType.NONE;
+	}
+	
+	public boolean isTrueHero()
+	{
+		return _trueHero;
+	}
+	
+	public void setTrueHero(boolean val)
+	{
+		_trueHero = val;
 	}
 }

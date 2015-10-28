@@ -351,7 +351,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			packet.writeH(9);
 			packet.writeD(0x00);
 			packet.writeH(0x00);
-			packet.writeC(0x00); // CoC True Hero Aura (value == 100)
+			packet.writeC(_activeChar.isTrueHero() ? 100 : 0x00);
 		}
 		
 		return true;

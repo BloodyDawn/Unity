@@ -66,6 +66,7 @@ public class AdminAdmin implements IAdminCommandHandler
 		"admin_set_mod",
 		"admin_saveolymp",
 		"admin_sethero",
+		"admin_settruehero",
 		"admin_givehero",
 		"admin_endolympiad",
 		"admin_setconfig",
@@ -138,6 +139,18 @@ public class AdminAdmin implements IAdminCommandHandler
 			
 			final PlayerInstance target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
 			target.setHero(!target.isHero());
+			target.broadcastUserInfo();
+		}
+		else if (command.startsWith("admin_settruehero"))
+		{
+			if (activeChar.getTarget() == null)
+			{
+				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+				return false;
+			}
+			
+			final PlayerInstance target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
+			target.setTrueHero(!target.isTrueHero());
 			target.broadcastUserInfo();
 		}
 		else if (command.startsWith("admin_givehero"))
