@@ -114,7 +114,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			}
 			
 			// Check if maximum world count limit is exceeded
-			if (manager.getWorldCount(templateId) >= template.getMaxWorlds())
+			if ((template.getMaxWorlds() != -1) && (manager.getWorldCount(templateId) >= template.getMaxWorlds()))
 			{
 				player.sendPacket(SystemMessageId.THE_NUMBER_OF_INSTANT_ZONES_THAT_CAN_BE_CREATED_HAS_BEEN_EXCEEDED_PLEASE_TRY_AGAIN_LATER);
 				return;
