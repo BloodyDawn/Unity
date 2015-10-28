@@ -509,7 +509,7 @@ public final class World
 			{
 				for (WorldObject wo : w.getVisibleObjects().values())
 				{
-					if ((wo == object) || (wo.getInstanceWorld() != object.getInstanceWorld()))
+					if (wo == object)
 					{
 						continue;
 					}
