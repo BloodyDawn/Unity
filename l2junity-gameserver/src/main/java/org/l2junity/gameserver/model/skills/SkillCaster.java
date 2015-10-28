@@ -491,8 +491,7 @@ public class SkillCaster implements Runnable
 		// Verify for same status.
 		if (!isCasting())
 		{
-			_log.warn("Character: " + _caster + " is attempting to stop casting skill but he is not casting!");
-			return;
+			_log.warn("Character: " + _caster + " is attempting to stop casting skill but he is not casting!", new IllegalStateException());
 		}
 		
 		// Cancel the task and unset it.
@@ -502,7 +501,7 @@ public class SkillCaster implements Runnable
 			_task = null;
 		}
 		
-		if (!isSimultaneousType())
+		if ((_skill != null) && (_caster != null) && !isSimultaneousType())
 		{
 			// Attack target after skill use
 			if ((_skill.nextActionIsAttack()) && (_caster.getTarget() instanceof Creature) && (_caster.getTarget() != _caster) && (_target != null) && (_caster.getTarget() == _target) && _target.canBeAttacked())
@@ -564,7 +563,7 @@ public class SkillCaster implements Runnable
 		
 		if (!_isCasting.compareAndSet(true, false))
 		{
-			_log.warn("Character: {} is finishing cast, but he has already finished.", _caster);
+			_log.warn("Character: {} is finishing cast of skill {}, but he has already finished.", _caster, _skill);
 		}
 	}
 	
