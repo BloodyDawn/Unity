@@ -5,8 +5,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S80" />
@@ -21,21 +19,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15301" name="Transparent Pole (NPC)" type="Weapon">
 		<set name="icon" val="icon.weapon_long_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S80" />
@@ -50,22 +49,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="15302" name="Transparent Bow (NPC)" type="Weapon">
 		<set name="icon" val="icon.weapon_long_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S80" />
@@ -82,22 +82,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="114" />
-			<set stat="mAtk" val="35" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
+		<stats>
+			<stat type="pAtk">114</stat>
+			<stat type="mAtk">35</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="15303" name="Transparent Claw (NPC)" type="Weapon">
 		<set name="icon" val="icon.weapon_foxs_nail_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S80" />
@@ -113,22 +114,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="376" />
-			<set stat="mAtk" val="119" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">376</stat>
+			<stat type="mAtk">119</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15304" name="Transparent Crossbow (NPC)" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S80" />
@@ -144,25 +146,26 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="15305" name="Transparent Rapier (NPC)" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="40" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S80" />
@@ -177,25 +180,26 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="36" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">36</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15306" name="Transparent Dual Dagger (NPC)" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S80" />
@@ -211,6 +215,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -218,13 +223,15 @@
 				<player categoryType="DAGGER_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<set stat="pAtk" val="304" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15307" name="Holy Pomander - Cardinal" type="EtcItem">
 		<set name="icon" val="icon.etc_saint_pomander_bishop_i00" />
@@ -276,8 +283,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -294,18 +299,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="7200" />
-		<skills>
-			<skill id="8357" level="1" /> <!-- Einhasad's Strike -->
-		</skills>
 		<cond msgId="1518">
 			<player instanceId="112" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="7" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<skills>
+			<skill id="8357" level="1" /> <!-- Einhasad's Strike -->
+		</skills>
+		<stats>
+			<stat type="pAtk">7</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15311" name="Delusion Chamber Invitation" type="EtcItem">
 		<set name="icon" val="icon.etc_magic_coin_gold_i01" />
@@ -320,7 +327,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-
 	</item>
 	<item id="15312" name="Dawn's Bracelet" type="Armor">
 		<set name="icon" val="icon.accessory_lbracelet_of_dawn" />
@@ -348,8 +354,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -372,20 +376,20 @@
 		<skills>
 			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15314" name="Player Commendation - Basalt Battlehammer" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -408,21 +412,21 @@
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15315" name="Player Commendation - Imperial Staff" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -446,21 +450,21 @@
 		<skills>
 			<skill id="3576" level="1" /> <!-- Special Ability: MP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="274" />
-			<set stat="mAtk" val="193" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">274</stat>
+			<stat type="mAtk">193</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15316" name="Player Commendation - Angel Slayer" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -483,21 +487,21 @@
 		<skills>
 			<skill id="3572" level="1" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="246" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">246</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15317" name="Player Commendation - Dragon Hunter Axe" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -520,21 +524,21 @@
 		<skills>
 			<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15318" name="Player Commendation - Saint Spear" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -557,21 +561,21 @@
 		<skills>
 			<skill id="3013" level="4" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="15319" name="Player Commendation - Demon Splinter" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_demon_splinter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -594,21 +598,21 @@
 		<skills>
 			<skill id="3565" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15320" name="Player Commendation - Heaven's Divider" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -631,20 +635,20 @@
 		<skills>
 			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15321" name="Player Commendation - Arcana Mace" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_arcana_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -668,21 +672,21 @@
 		<skills>
 			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="225" />
-			<set stat="mAtk" val="175" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">225</stat>
+			<stat type="mAtk">175</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15322" name="Player Commendation - Draconic Bow" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -707,21 +711,21 @@
 		<skills>
 			<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="15323" name="Player Commendation - Laevateinn" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="40" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -741,28 +745,28 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="255" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<skills>
+			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">255</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15324" name="Player Commendation - Gram" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -782,27 +786,27 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<skills>
-			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="304" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<skills>
+			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15325" name="Player Commendation - Sarunga" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -823,27 +827,27 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<skills>
-			<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="356" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<skills>
+			<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">356</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="15326" name="Player Commendation - Tallum Blade*Dark Legion's Edge" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -864,14 +868,16 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3570" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Robust Health -->
+			<skill id="3570" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Robust Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15327" name="Seed: Sea Coba" type="EtcItem">
 		<set name="icon" val="icon.etc_sea_coba_seed_i00" />
@@ -882,6 +888,7 @@
 		<set name="price" val="900" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -896,6 +903,7 @@
 		<set name="price" val="900" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -910,6 +918,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -924,6 +933,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -938,6 +948,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -952,6 +963,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -966,6 +978,7 @@
 		<set name="price" val="1200" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -980,6 +993,7 @@
 		<set name="price" val="900" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -994,6 +1008,7 @@
 		<set name="price" val="900" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1008,6 +1023,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1022,6 +1038,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1036,6 +1053,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1050,6 +1068,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1064,6 +1083,7 @@
 		<set name="price" val="1200" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1073,6 +1093,7 @@
 		<set name="icon" val="icon.etc_leaf_green_i00" />
 		<set name="material" val="PAPER" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="15342" name="Aqua Elf Transformation Harp" name_additional="60-day" type="Weapon">
@@ -1080,8 +1101,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1089,7 +1108,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="2994-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1097,14 +1115,17 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="86400" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="2994" level="1" /> <!-- Transformation Harp: Aqua Elf -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15343" name="Aqua Elf Transformation Harp Pack (60-day)" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i02" />
@@ -1123,7 +1144,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15342" max="1" min="1" /> <!-- Aqua Elf Transformation Harp 60-day -->
+			<item id="15342" min="1" max="1" chance="100" /> <!-- Aqua Elf Transformation Harp - 60-day -->
 		</capsuled_items>
 	</item>
 	<item id="15344" name="Aqua Elf Transformation Harp (Event)" name_additional="60-day" type="Weapon">
@@ -1131,8 +1152,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1140,7 +1159,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="2994-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1148,14 +1166,17 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="86400" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="2994" level="1" /> <!-- Transformation Harp: Aqua Elf -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="15345" name="Aqua Elf Transformation Harp Pack (60-day) (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i02" />
@@ -1174,7 +1195,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15344" max="1" min="1" /> <!-- Aqua Elf Transformation Harp (Event) 60-day -->
+			<item id="15344" min="1" max="1" chance="100" /> <!-- Aqua Elf Transformation Harp (Event) - 60-day -->
 		</capsuled_items>
 	</item>
 	<item id="15346" name="Player Commendation - Scroll: Enchant Weapon (S-grade)" type="EtcItem">
@@ -1304,10 +1325,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 			<skill id="8358" level="1" /> <!-- Release Agathion's Seal - Towbat -->
 			<skill id="8359" level="1" /> <!-- Notifier -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="15352" name="Proof of Time and Space" type="EtcItem">
@@ -1396,7 +1416,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="9011" level="1" /> <!-- Might -->
 			<skill id="9012" level="1" /> <!-- Shield -->
 			<skill id="9013" level="1" /> <!-- Wind Walk -->
 			<skill id="9014" level="1" /> <!-- Focus -->
@@ -1407,6 +1426,7 @@
 			<skill id="9019" level="1" /> <!-- Haste -->
 			<skill id="9020" level="1" /> <!-- Vampiric Rage -->
 			<skill id="9021" level="1" /> <!-- Berserker Spirit -->
+			<skill id="9011" level="1" /> <!-- Might -->
 		</skills>
 	</item>
 	<item id="15357" name="Fresh Concentrated Fruit Cocktail" type="EtcItem">
@@ -1431,7 +1451,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="9021" level="1" /> <!-- Berserker Spirit -->
 			<skill id="9022" level="1" /> <!-- Magic Barrier -->
 			<skill id="9023" level="1" /> <!-- Blessed Soul -->
 			<skill id="9024" level="1" /> <!-- Empower -->
@@ -1440,6 +1459,7 @@
 			<skill id="9013" level="1" /> <!-- Wind Walk -->
 			<skill id="9018" level="1" /> <!-- Blessed Body -->
 			<skill id="9012" level="1" /> <!-- Shield -->
+			<skill id="9021" level="1" /> <!-- Berserker Spirit -->
 		</skills>
 	</item>
 	<item id="15358" name="Player Commendation Instant Lottery Ticket" name_additional="30-day" type="EtcItem">
@@ -1548,6 +1568,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9010" level="1" /> <!-- Cool Pack -->
@@ -1562,6 +1583,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9028" level="1" /> <!-- Lucky Cool Pack -->
@@ -1574,6 +1596,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9029" level="1" /> <!-- Watermelon Seed -->
@@ -1586,6 +1609,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9030" level="1" /> <!-- Honey Watermelon Seed -->
@@ -1647,7 +1671,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15372" max="1" min="1" /> <!-- Special July 7th Parcel -->
+			<item id="15372" min="1" max="1" chance="100" /> <!-- Special July 7th Parcel -->
 		</capsuled_items>
 	</item>
 	<item id="15371" name="July 7th Package" type="EtcItem">
@@ -1668,7 +1692,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15373" max="1" min="1" /> <!-- July 7th Parcel -->
+			<item id="15373" min="1" max="1" chance="100" /> <!-- July 7th Parcel -->
 		</capsuled_items>
 	</item>
 	<item id="15372" name="Special July 7th Parcel" type="EtcItem">
@@ -1704,7 +1728,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15379" max="1" min="1" /> <!-- Steamed Rice Cake -->
+			<item id="15379" min="1" max="1" chance="100" /> <!-- Steamed Rice Cake -->
 		</capsuled_items>
 	</item>
 	<item id="15374" name="Special July 7th Package (Event)" type="EtcItem">
@@ -1725,7 +1749,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15376" max="1" min="1" /> <!-- Special July 7th Parcel (Event) -->
+			<item id="15376" min="1" max="1" chance="100" /> <!-- Special July 7th Parcel (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="15375" name="July 7th Package (Event)" type="EtcItem">
@@ -1746,7 +1770,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15377" max="1" min="1" /> <!-- July 7th Parcel (Event) -->
+			<item id="15377" min="1" max="1" chance="100" /> <!-- July 7th Parcel (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="15376" name="Special July 7th Parcel (Event)" type="EtcItem">
@@ -1782,7 +1806,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15380" max="1" min="1" /> <!-- Steamed Rice Cake (Event) -->
+			<item id="15380" min="1" max="1" chance="100" /> <!-- Steamed Rice Cake (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="15378" name="July 7th Gift Box" type="EtcItem">
@@ -1803,7 +1827,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15383" max="1" min="1" /> <!-- Weaver's Colorful Dress 7-day -->
+			<item id="15383" min="1" max="1" chance="100" /> <!-- Weaver's Colorful Dress - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="15379" name="Steamed Rice Cake" type="EtcItem">
@@ -1811,8 +1835,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="3600000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1832,8 +1855,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="3600000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1859,6 +1881,7 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9033" level="1" /> <!-- Herdsman's Love Scroll -->
@@ -1875,6 +1898,7 @@
 		<set name="handler" val="EnchantScrolls" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9034" level="1" /> <!-- Scroll: Enchant Vitality Belt -->

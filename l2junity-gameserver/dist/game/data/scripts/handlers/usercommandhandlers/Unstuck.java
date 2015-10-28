@@ -18,19 +18,16 @@
  */
 package handlers.usercommandhandlers;
 
+import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
+
 import org.l2junity.Config;
-import org.l2junity.gameserver.GameTimeController;
-import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
-import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.MagicSkillUse;
-import org.l2junity.gameserver.network.client.send.SetupGauge;
+import org.l2junity.gameserver.model.skills.SkillCaster;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.Broadcast;
 
 /**
  * Unstuck user command.
@@ -59,12 +56,10 @@ public class Unstuck implements IUserCommandHandler
 			return false;
 		}
 		
-		if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() || activeChar.inObserverMode() || activeChar.isCombatFlagEquipped())
+		if (activeChar.isCastingNow(SkillCaster::isNormalType) || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() || activeChar.inObserverMode() || activeChar.isCombatFlagEquipped())
 		{
 			return false;
 		}
-		
-		activeChar.forceIsCasting(GameTimeController.getInstance().getGameTicks() + (unstuckTimer / GameTimeController.MILLIS_IN_TICK));
 		
 		Skill escape = SkillData.getInstance().getSkill(2099, 1); // 5 minutes escape
 		Skill GM_escape = SkillData.getInstance().getSkill(2100, 1); // 1 second escape
@@ -84,6 +79,23 @@ public class Unstuck implements IUserCommandHandler
 		}
 		else
 		{
+			SkillCaster skillCaster = activeChar.getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isNormalType);
+			if (skillCaster == null)
+			{
+				return false;
+			}
+			
+			if (skillCaster.prepareCasting(activeChar, escape, null, false, false))
+			{
+				skillCaster.setCastTime(unstuckTimer);
+				skillCaster.startCasting();
+			}
+			else
+			{
+				activeChar.sendPacket(ActionFailed.get(skillCaster.getCastingType()));
+				activeChar.getAI().setIntention(AI_INTENTION_ACTIVE);
+			}
+			
 			if (Config.UNSTUCK_INTERVAL > 100)
 			{
 				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 60000) + " minutes.");
@@ -93,44 +105,7 @@ public class Unstuck implements IUserCommandHandler
 				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 1000) + " seconds.");
 			}
 		}
-		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		// SoE Animation section
-		activeChar.setTarget(activeChar);
-		activeChar.disableAllSkills();
-		
-		MagicSkillUse msk = new MagicSkillUse(activeChar, 1050, 1, unstuckTimer, 0);
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, msk, 900);
-		SetupGauge sg = new SetupGauge(activeChar.getObjectId(), 0, unstuckTimer);
-		activeChar.sendPacket(sg);
-		// End SoE Animation section
-		
-		// continue execution later
-		activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleGeneral(new EscapeFinalizer(activeChar), unstuckTimer));
-		
 		return true;
-	}
-	
-	private static class EscapeFinalizer implements Runnable
-	{
-		private final PlayerInstance _activeChar;
-		
-		protected EscapeFinalizer(PlayerInstance activeChar)
-		{
-			_activeChar = activeChar;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (_activeChar.isDead())
-			{
-				return;
-			}
-			
-			_activeChar.enableAllSkills();
-			_activeChar.setIsCastingNow(false);
-			_activeChar.teleToLocation(TeleportWhereType.TOWN, null);
-		}
 	}
 	
 	@Override

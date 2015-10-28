@@ -143,11 +143,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10251" levels="7" name="Superior Weapon Mastery">
+	<skill id="10251" levels="10" name="Superior Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, additional P. Atk. + 1689, Atk. Spd + 25%, P. Accuracy + 8 when a sword, blunt, or spear is equipped. Increases the number of possible targets during a spear attack. STR + 2. Depending on your STR, the Cooldown resets or the duration increases by 2 times. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#pAtk"> 1689 1958 2270 2555 2895 3071 3258 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#pAtk"> 1689 1958 2270 2555 2895 3071 3258 3457 3667 3890 </table>
 		<set name="icon" val="icon.skill10251" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
@@ -173,11 +173,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10252" levels="7" name="Superior Dual Weapon Mastery">
+	<skill id="10252" levels="10" name="Superior Dual Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, additional P. Atk. + 1689, Atk. Spd. + 25%, and P. Accuracy + 8 when using a dualsword, dual blunt, or fist weapon. STR + 2. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#pAtk"> 1689 1958 2270 2555 2895 3071 3258 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#pAtk"> 1689 1958 2270 2555 2895 3071 3258 3457 3667 3890 </table>
 		<set name="icon" val="icon.skill10252" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
@@ -199,11 +199,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10253" levels="7" name="Superior Heavy Armor Mastery">
+	<skill id="10253" levels="10" name="Superior Heavy Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 5368 and P. Def. + 1731 when equipped with Heavy Armor. STR + 2. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#pDef"> 1731 1901 2088 2252 2524 2619 2718 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#pDef"> 1731 1901 2088 2252 2524 2619 2718 2821 2940 3052 </table>
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -221,11 +221,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10254" levels="7" name="Superior Light Armor Mastery">
+	<skill id="10254" levels="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2. Max HP + 5368, P. Def. + 1271, P. Accuracy + 3, P. Evasion + 6, Spd. + 10, and Atk. Spd. + 10% when equipped with Light Armor. Chance of receiving a critical attack - 35%. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#pDef"> 1506 1654 1817 1959 2196 2279 2365 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#pDef"> 1506 1654 1817 1959 2196 2279 2365 2455 2558 2655 </table>
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -260,11 +260,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10255" levels="7" name="Superior Momentum Mastery">
+	<skill id="10255" levels="10" name="Superior Momentum Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Absorbs Momentum by 20% during a normal physical attack and 40% during a critical attack. Can absorb up to 10 Momentum levels. -->
-		<table name="#chance"> 20 22 24 26 30 32 34 </table>
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#chance"> 20 22 24 26 30 32 34 36 38 40 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<set name="icon" val="icon.skill10255" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
@@ -292,14 +292,14 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10256" levels="7" name="Superior HP Mastery">
+	<skill id="10256" levels="10" name="Superior HP Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 606, Max CP + 296, HP Recovery Bonus + 12, MP Recovery Bonus + 6. When HP falls below 60%, P. Atk. + 1027. STR + 2. When receiving damage, has a chance of recovering 10% of Max HP. -->
 		<!-- TODO: Find trigger for When receiving damage, has a chance of recovering 10% of Max HP. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#maxCp"> 296 296 411 489 533 596 660 </table>
-		<table name="#maxHp"> 606 606 843 1002 1092 1222 1352 </table>
-		<table name="#pAtk"> 1027 1027 1381 1554 1761 1869 1982 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#maxCp"> 296 296 411 489 533 596 660 723 787 850 </table>
+		<table name="#maxHp"> 606 606 843 1002 1092 1222 1352 1482 1612 1742 </table>
+		<table name="#pAtk"> 1027 1027 1381 1554 1761 1869 1982 2103 2231 2367 </table>
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -318,7 +318,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10257" levels="1" name="Superior Spirit Mastery">
+	<skill id="10257" levels="1" name="Self Heal (Warrior)">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<set name="operateType" val="P" />
@@ -345,7 +345,7 @@
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 50 52 53 54 57 59 60 62 64 66 68 </table>
-		<table name="#power"> 11159 11932 12547 13206 14101 14995 15873 16601 20595 21599 22603 </table>
+		<table name="#power"> 11159 11936 12714 13491 14269 15046 15824 16601 20595 21599 22603 </table>
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="PD_DOWN" />
@@ -367,8 +367,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<alterSkill>
-			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
-			<skill id="10249" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
+			<skill id="10500" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="10499" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
@@ -432,7 +432,7 @@
 		<table name="#mpConsumes"> 84 89 93 98 102 105 108 111 114 </table>
 		<table name="#power"> 20483 22595 24708 26821 28934 30343 32981 34497 36013 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
+		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="activateRate" val="120" />
@@ -527,7 +527,7 @@
 		<table name="#effectPoints"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<table name="#mpConsumes"> 122 124 129 133 137 142 146 151 156 161 166 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#power"> 11557 11956 12754 13533 14351 15155 15948 16747 17896 18622 19348 </table>
+		<table name="#power"> 11557 11956 12754 13553 14351 15150 15948 16747 17896 18622 19348 </table>
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="STUN" />
@@ -1133,16 +1133,16 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10286" levels="7" name="Superior Resistance">
+	<skill id="10286" levels="10" name="Superior Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776, and Fire/Water/Wind/Earth Resistance + 20. STR + 2. -->
-		<table name="#magicLevel"> 85 90 95 99 100 102 104 </table>
-		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 </table>
-		<table name="#res"> 20 22 24 26 30 32 34 </table>
-		<set name="icon" val="icon.skill10005" />
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 1434 1507 1583 </table>
+		<table name="#res"> 20 22 24 26 30 32 34 36 38 40 </table>
+		<set name="icon" val="icon.skill10257" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLevel" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1271,7 +1271,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Shouts loudly to invoke the power of the Bear. Increases P. Atk. And Critical Damage by 30% for 5 minutes 30 seconds. -->
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="330" />
+		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
 		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />

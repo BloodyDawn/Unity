@@ -21,10 +21,13 @@ package ai.npc.LaVieEnRose;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
+import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.network.client.send.ExResponseBeautyList;
 import org.l2junity.gameserver.network.client.send.ExResponseResetList;
 import org.l2junity.gameserver.network.client.send.ExShowBeautyMenu;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import ai.npc.AbstractNpcAI;
 
@@ -63,26 +66,35 @@ public final class LaVieEnRose extends AbstractNpcAI
 			}
 			case "restore_appearance":
 			{
-				if (player.getVariables().hasVariable("visualHairId") || player.getVariables().hasVariable("visualFaceId") || player.getVariables().hasVariable("visualHairColorId"))
+				if (canUseBeautyShop(player))
 				{
-					htmltext = "33825-2.html";
-				}
-				else
-				{
-					htmltext = "33825-norestore.html";
+					if (player.getVariables().hasVariable("visualHairId") || player.getVariables().hasVariable("visualFaceId") || player.getVariables().hasVariable("visualHairColorId"))
+					{
+						htmltext = "33825-2.html";
+					}
+					else
+					{
+						htmltext = "33825-norestore.html";
+					}
 				}
 				break;
 			}
 			case "beauty-change":
 			{
-				player.sendPacket(new ExShowBeautyMenu(player, ExShowBeautyMenu.MODIFY_APPEARANCE));
-				player.sendPacket(new ExResponseBeautyList(player, ExResponseBeautyList.SHOW_FACESHAPE));
+				if (canUseBeautyShop(player))
+				{
+					player.sendPacket(new ExShowBeautyMenu(player, ExShowBeautyMenu.MODIFY_APPEARANCE));
+					player.sendPacket(new ExResponseBeautyList(player, ExResponseBeautyList.SHOW_FACESHAPE));
+				}
 				break;
 			}
 			case "beauty-restore":
 			{
-				player.sendPacket(new ExShowBeautyMenu(player, ExShowBeautyMenu.RESTORE_APPEARANCE));
-				player.sendPacket(new ExResponseResetList(player));
+				if (canUseBeautyShop(player))
+				{
+					player.sendPacket(new ExShowBeautyMenu(player, ExShowBeautyMenu.RESTORE_APPEARANCE));
+					player.sendPacket(new ExResponseResetList(player));
+				}
 				break;
 			}
 			case "SPAM_TEXT":
@@ -109,6 +121,26 @@ public final class LaVieEnRose extends AbstractNpcAI
 			}
 		}
 		return htmltext;
+	}
+	
+	private boolean canUseBeautyShop(PlayerInstance player)
+	{
+		if (player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_REGISTERED_IN_THE_OLYMPIAD);
+			return false;
+		}
+		
+		if (player.isOnEvent(CeremonyOfChaosEvent.class))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_REGISTERED_IN_THE_CEREMONY_OF_CHAOS);
+			return false;
+		}
+		
+		// player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_BEAUTY_SHOP_AS_THE_NPC_SERVER_IS_CURRENTLY_NOT_IN_FUNCTION);
+		// player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_USING_THE_AUTOMATIC_REPLACEMENT);
+		
+		return true;
 	}
 	
 	@Override

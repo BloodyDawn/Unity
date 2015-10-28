@@ -1332,18 +1332,33 @@
 			<height normal="25" grown="31" />
 		</collision>
 	</npc>
-	<npc id="15154" level="85" type="L2Servitor" name="Mother Tree" title="">
+	<npc id="15154" level="101" type="L2Servitor" name="Mother Tree" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
-		<sex>FEMALE</sex>
+		<parameters>
+			<skill name="s_tree_heal" id="19219" level="1" />
+		</parameters>
+		<race>PLANT</race>
+		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="36700" hpRegen="7.5" mp="1794" mpRegen="2.7" />
+			<vitals hp="36700" hpRegen="9" mp="1794" mpRegen="6.5" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
+			<attack physical="1" magical="1" critical="4" attackSpeed="253" range="40" type="FIST" distance="0" width="0" random="10" accuracy="4.75" />
+			<defence physical="962" magical="568" />
+			<attribute>
+				<defence fire="200" water="200" wind="200" earth="200" holy="200" dark="200" />
+			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" canMove="false" targetable="false" />
+		<skill_list>
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
 		<collision>
 			<radius normal="18" />
 			<height normal="78" />

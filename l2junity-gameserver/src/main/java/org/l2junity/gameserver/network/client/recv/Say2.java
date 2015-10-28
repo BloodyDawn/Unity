@@ -24,6 +24,7 @@ import org.l2junity.gameserver.handler.ChatHandler;
 import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChat;
@@ -169,6 +170,12 @@ public final class Say2 implements IClientIncomingPacket
 		if (activeChar.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(activeChar))
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_CHAT_WHILE_PARTICIPATING_IN_THE_OLYMPIAD);
+			return;
+		}
+		
+		if (activeChar.isOnEvent(CeremonyOfChaosEvent.class))
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_CHAT_IN_THE_CEREMONY_OF_CHAOS);
 			return;
 		}
 		

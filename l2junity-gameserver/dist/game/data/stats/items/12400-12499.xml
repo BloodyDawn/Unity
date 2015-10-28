@@ -2,7 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="12400" name="Foundation Kaim Vanul's Bones" type="EtcItem">
 		<set name="icon" val="icon.weapon_bone_of_kaim_vanul_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="weight" val="1570" />
@@ -10,18 +9,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12401" name="Foundation Colichemarde" type="EtcItem">
 		<set name="icon" val="icon.weapon_colichemarde_i00" />
-		<set name="random_damage" val="40" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1350" />
@@ -29,21 +29,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="176" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">176</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+		</stats>
 	</item>
 	<item id="12402" name="Foundation Wizard's Tear" type="EtcItem">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="1350" />
@@ -51,17 +52,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12403" name="Foundation Bow of Peril" type="EtcItem">
 		<set name="icon" val="icon.weapon_hazard_bow_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BLOOD_STEEL" />
 		<set name="weight" val="1700" />
@@ -70,18 +72,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="mp_consume" val="4" />
-		<for>
-			<set stat="pAtk" val="400" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">400</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12404" name="Foundation Hell Hound" type="EtcItem">
 		<set name="icon" val="icon.weapon_hell_hound_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1700" />
@@ -89,21 +92,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12405" name="Foundation Dasparion's Staff" type="EtcItem">
 		<set name="icon" val="icon.weapon_dasparions_staff_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="920" />
@@ -111,18 +115,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12406" name="Foundation Doomchanter" type="EtcItem">
 		<set name="icon" val="icon.weapon_doom_singer_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1670" />
@@ -130,21 +135,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="270" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">270</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12407" name="Foundation White Lightning" type="EtcItem">
 		<set name="icon" val="icon.weapon_lightning_blaze_i00" />
-		<set name="random_damage" val="40" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1330" />
@@ -152,21 +158,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="193" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">193</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+		</stats>
 	</item>
 	<item id="12408" name="Foundation Meteor Shower" type="EtcItem">
 		<set name="icon" val="icon.weapon_meteor_shower_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1600" />
@@ -174,18 +181,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12409" name="Foundation Blood Tornado" type="EtcItem">
 		<set name="icon" val="icon.weapon_blood_tornado_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BLOOD_STEEL" />
 		<set name="weight" val="1370" />
@@ -193,18 +201,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12410" name="Foundation Bloody Orchid" type="EtcItem">
 		<set name="icon" val="icon.weapon_bloody_orchid_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BLOOD_STEEL" />
 		<set name="weight" val="960" />
@@ -212,18 +221,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="DAGGER" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12411" name="Foundation Elemental Sword" type="EtcItem">
 		<set name="icon" val="icon.weapon_elemental_sword_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="830" />
@@ -231,17 +241,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12412" name="Foundation Spiritual Eye" type="EtcItem">
 		<set name="icon" val="icon.weapon_eye_of_soul_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="weight" val="1550" />
@@ -249,18 +260,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12413" name="Foundation Infernal Master" type="EtcItem">
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1900" />
@@ -268,17 +280,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12414" name="Foundation Carnage Bow" type="EtcItem">
 		<set name="icon" val="icon.weapon_carnium_bow_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="DAMASCUS" />
 		<set name="weight" val="1670" />
@@ -287,18 +300,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="mp_consume" val="4" />
-		<for>
-			<set stat="pAtk" val="440" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">440</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12415" name="Foundation Tallum Blade" type="EtcItem">
 		<set name="icon" val="icon.weapon_tallum_blade_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1330" />
@@ -306,17 +320,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12416" name="Foundation Destroyer Hammer" type="EtcItem">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1910" />
@@ -324,18 +339,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12417" name="Foundation Divine Pain" type="EtcItem">
 		<set name="icon" val="icon.weapon_pain_of_godness_i00" />
-		<set name="random_damage" val="15" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1900" />
@@ -343,21 +359,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="231" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">231</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+		</stats>
 	</item>
 	<item id="12418" name="Foundation Halberd" type="EtcItem">
 		<set name="icon" val="icon.weapon_halbard_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="1900" />
@@ -365,18 +382,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="SPEAR" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12419" name="Foundation Lacerator" type="EtcItem">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
-		<set name="random_damage" val="40" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1320" />
@@ -384,21 +402,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="210" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+		</stats>
 	</item>
 	<item id="12420" name="Foundation Dark Legion's Edge" type="EtcItem">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1320" />
@@ -406,17 +425,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12421" name="Foundation Undertaker" type="EtcItem">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
-		<set name="random_damage" val="15" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1840" />
@@ -424,21 +444,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+		</stats>
 	</item>
 	<item id="12422" name="Foundation Doom Crusher" type="EtcItem">
 		<set name="icon" val="icon.weapon_doom_crusher_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1900" />
@@ -446,18 +467,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12423" name="Foundation Dragon Grinder" type="EtcItem">
 		<set name="icon" val="icon.weapon_dragon_grinder_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1350" />
@@ -465,18 +487,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12424" name="Foundation Dragon Slayer" type="EtcItem">
 		<set name="icon" val="icon.weapon_dragon_slayer_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="weight" val="1840" />
@@ -484,17 +507,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12425" name="Foundation Flaming Dragon Skull" type="EtcItem">
 		<set name="icon" val="icon.weapon_dragon_flame_head_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1530" />
@@ -502,18 +526,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12426" name="Foundation Branch of the Mother Tree" type="EtcItem">
 		<set name="icon" val="icon.weapon_worldtrees_branch_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="900" />
@@ -521,18 +546,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12427" name="Foundation Sword of Miracles" type="EtcItem">
 		<set name="icon" val="icon.weapon_sword_of_miracle_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="840" />
@@ -540,17 +566,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12428" name="Foundation Reaper" type="EtcItem">
 		<set name="icon" val="icon.weapon_soul_shooter_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1660" />
@@ -558,21 +585,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="294" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">294</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12429" name="Foundation Soul Separator" type="EtcItem">
 		<set name="icon" val="icon.weapon_soul_separator_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="950" />
@@ -580,18 +608,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="DAGGER" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="203" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">203</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12430" name="Foundation Elysian" type="EtcItem">
 		<set name="icon" val="icon.weapon_elysian_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="1580" />
@@ -599,18 +628,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12431" name="Foundation Soul Bow" type="EtcItem">
 		<set name="icon" val="icon.weapon_soul_bow_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="1660" />
@@ -619,18 +649,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="mp_consume" val="5" />
-		<for>
-			<set stat="pAtk" val="528" />
-			<set stat="mAtk" val="125" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
+		<stats>
+			<stat type="pAtk">528</stat>
+			<stat type="mAtk">125</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12432" name="Foundation Tallum Glaive" type="EtcItem">
 		<set name="icon" val="icon.weapon_tallum_glaive_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CHRYSOLITE" />
 		<set name="weight" val="1840" />
@@ -638,18 +669,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="SPEAR" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12433" name="Foundation Naga Storm" type="EtcItem">
 		<set name="icon" val="icon.weapon_naga_storm_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="930" />
@@ -657,18 +689,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="DAGGER" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12434" name="Foundation Daimon Crystal" type="EtcItem">
 		<set name="icon" val="icon.weapon_crystal_of_deamon_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="880" />
@@ -676,18 +709,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12435" name="Foundation Barakiel's Axe" type="EtcItem">
 		<set name="icon" val="icon.weapon_barakiel_axe_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="1550" />
@@ -695,18 +729,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12436" name="Foundation Screaming Vengeance" type="EtcItem">
 		<set name="icon" val="icon.weapon_soul_shooter_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1640" />
@@ -714,21 +749,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="318" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">318</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12437" name="Foundation Behemoth' Tuning Fork" type="EtcItem">
 		<set name="icon" val="icon.weapon_tuning_fork_of_behemoth_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1890" />
@@ -736,18 +772,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12438" name="Foundation Durendal" type="EtcItem">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
-		<set name="random_damage" val="15" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1820" />
@@ -755,21 +792,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="272" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">272</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+		</stats>
 	</item>
 	<item id="12439" name="Foundation Shyeed's Bow" type="EtcItem">
 		<set name="icon" val="icon.weapon_shyid_bow_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="weight" val="1640" />
@@ -778,18 +816,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="mp_consume" val="5" />
-		<for>
-			<set stat="pAtk" val="571" />
-			<set stat="mAtk" val="133" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
+		<stats>
+			<stat type="pAtk">571</stat>
+			<stat type="mAtk">133</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12440" name="Foundation Sword of Ipos" type="EtcItem">
 		<set name="icon" val="icon.weapon_sword_of_ipos_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="weight" val="1820" />
@@ -797,17 +836,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12441" name="Foundation Sobekk's Hurricane" type="EtcItem">
 		<set name="icon" val="icon.weapon_sobekk_hurricane_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1330" />
@@ -815,18 +855,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12442" name="Foundation Sirra's Blade" type="EtcItem">
 		<set name="icon" val="icon.weapon_sirr_blade_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1300" />
@@ -834,17 +875,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12443" name="Foundation Éclair Bijou" type="EtcItem">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
-		<set name="random_damage" val="40" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1300" />
@@ -852,21 +894,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="228" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">228</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+		</stats>
 	</item>
 	<item id="12444" name="Foundation Tiphon's Spear" type="EtcItem">
 		<set name="icon" val="icon.weapon_tiphon_spear_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CHRYSOLITE" />
 		<set name="weight" val="1820" />
@@ -874,18 +917,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="SPEAR" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12445" name="Foundation Themis' Tongue" type="EtcItem">
 		<set name="icon" val="icon.weapon_tongue_of_themis_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="820" />
@@ -893,17 +937,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12446" name="Foundation Cabrio's Hand" type="EtcItem">
 		<set name="icon" val="icon.weapon_hand_of_cabrio_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1510" />
@@ -911,18 +956,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12447" name="Foundation Gram" type="EtcItem">
 		<set name="icon" val="icon.weapon_gram_i00" />
-		<set name="random_damage" val="15" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1800" />
@@ -930,21 +976,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="304" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+		</stats>
 	</item>
 	<item id="12448" name="Foundation Demon Splinter" type="EtcItem">
 		<set name="icon" val="icon.weapon_demon_splinter_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1350" />
@@ -952,18 +999,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12449" name="Foundation Draconic Bow" type="EtcItem">
 		<set name="icon" val="icon.weapon_draconic_bow_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1650" />
@@ -972,18 +1020,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="mp_consume" val="6" />
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12450" name="Foundation Dragon Hunter Axe" type="EtcItem">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1820" />
@@ -991,18 +1040,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12451" name="Foundation Laevateinn" type="EtcItem">
 		<set name="icon" val="icon.weapon_leavatein_i00" />
-		<set name="random_damage" val="40" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1300" />
@@ -1010,21 +1060,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="255" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">255</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+		</stats>
 	</item>
 	<item id="12452" name="Foundation Basalt Battlehammer" type="EtcItem">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1570" />
@@ -1032,18 +1083,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12453" name="Foundation Sarunga" type="EtcItem">
 		<set name="icon" val="icon.weapon_sarnga_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1600" />
@@ -1051,21 +1103,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="356" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">356</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12454" name="Foundation Saint Spear" type="EtcItem">
 		<set name="icon" val="icon.weapon_saint_spear_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1800" />
@@ -1073,18 +1126,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="SPEAR" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12455" name="Foundation Arcana Mace" type="EtcItem">
 		<set name="icon" val="icon.weapon_arcana_mace_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1300" />
@@ -1092,18 +1146,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12456" name="Foundation Angel Slayer" type="EtcItem">
 		<set name="icon" val="icon.weapon_angel_slayer_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="950" />
@@ -1111,18 +1166,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="DAGGER" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="246" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">246</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12457" name="Foundation Imperial Staff" type="EtcItem">
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="910" />
@@ -1130,18 +1186,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12458" name="Foundation Forgotten Blade" type="EtcItem">
 		<set name="icon" val="icon.weapon_forgotten_blade_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1300" />
@@ -1149,17 +1206,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12459" name="Foundation Heaven's Divider" type="EtcItem">
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1380" />
@@ -1167,17 +1225,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12460" name="Foundation Dynasty Ancient Sword" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i00" />
-		<set name="random_damage" val="15" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1800" />
@@ -1185,21 +1244,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="361" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">361</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+		</stats>
 	</item>
 	<item id="12461" name="Foundation Dynasty Knife" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_dagger_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1207,18 +1267,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="DAGGER" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="291" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">291</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12462" name="Foundation Dynasty Rapier" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i00" />
-		<set name="random_damage" val="40" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1280" />
@@ -1226,21 +1287,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="302" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">302</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+		</stats>
 	</item>
 	<item id="12463" name="Foundation Dynasty Mace" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_staff_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="1080" />
@@ -1248,18 +1310,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12464" name="Foundation Dynasty Bagh-Nakh" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_jamadhr_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1550" />
@@ -1267,18 +1330,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12465" name="Foundation Dynasty Bow" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_bow_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1287,18 +1351,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="mp_consume" val="6" />
-		<for>
-			<set stat="pAtk" val="654" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">654</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12466" name="Foundation Dynasty Blade" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1740" />
@@ -1306,17 +1371,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12467" name="Foundation Dynasty Sword" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_blade_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1324,17 +1390,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12468" name="Foundation Dynasty Staff" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="1080" />
@@ -1342,18 +1409,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12469" name="Foundation Dynasty Cudgel" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_hammer_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1740" />
@@ -1361,18 +1429,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12470" name="Foundation Dynasty Crusher" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_crusher_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1740" />
@@ -1380,18 +1449,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12471" name="Foundation Dynasty Crossbow" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1580" />
@@ -1399,21 +1469,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="401" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">401</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12472" name="Foundation Dynasty Phantom" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_magic_sword_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1421,17 +1492,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12473" name="Foundation Dynasty Halberd" type="EtcItem">
 		<set name="icon" val="icon.weapon_dynasty_spear_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="2010" />
@@ -1439,18 +1511,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="SPEAR" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12474" name="Foundation Icarus Disperser" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_disperser_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1458,18 +1531,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="DAGGER" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="318" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">318</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12475" name="Foundation Icarus Sawsword" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_sowsword_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1477,17 +1551,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12476" name="Foundation Icarus Shooter" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_shooter_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1580" />
@@ -1495,21 +1570,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="422" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12477" name="Foundation Icarus Stinger" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_stinger_i00" />
-		<set name="random_damage" val="40" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1280" />
@@ -1517,21 +1593,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="329" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">329</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+		</stats>
 	</item>
 	<item id="12478" name="Foundation Icarus Spirit" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_spirits_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1539,17 +1616,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12479" name="Foundation Icarus Spitter" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_spiter_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1520" />
@@ -1558,18 +1636,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="BOW" />
 		<set name="mp_consume" val="6" />
-		<for>
-			<set stat="pAtk" val="689" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">689</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12480" name="Foundation Icarus Wingblade" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_wing_blade_i00" />
-		<set name="random_damage" val="15" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1800" />
@@ -1577,21 +1656,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="393" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">393</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+		</stats>
 	</item>
 	<item id="12481" name="Foundation Icarus Trident" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_trident_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="2010" />
@@ -1599,18 +1679,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="SPEAR" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12482" name="Foundation Icarus Hammer" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_hammer_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1740" />
@@ -1618,18 +1699,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12483" name="Foundation Icarus Hand" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_knuckle_i00" />
-		<set name="random_damage" val="5" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1550" />
@@ -1637,18 +1719,19 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
 	</item>
 	<item id="12484" name="Foundation Icarus Heavy Arms" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_heavy_arms_i00" />
-		<set name="random_damage" val="10" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1740" />
@@ -1656,17 +1739,18 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
 	</item>
 	<item id="12485" name="Foundation Icarus Hall" type="EtcItem">
 		<set name="icon" val="icon.weapon_icarus_stick_i00" />
-		<set name="random_damage" val="20" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="1080" />
@@ -1674,14 +1758,16 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
 	</item>
 	<item id="12486" name="Foundation Sealed Zubei's Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t64_g_i02" />
@@ -1690,10 +1776,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12487" name="Foundation Sealed Zubei's Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t64_b_i02" />
@@ -1702,10 +1789,11 @@
 		<set name="weight" val="1180" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12488" name="Foundation Sealed Avadon Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t66_g_i02" />
@@ -1714,10 +1802,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12489" name="Foundation Sealed Avadon Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t66_b_i02" />
@@ -1726,10 +1815,11 @@
 		<set name="weight" val="1170" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12490" name="Foundation Zubei's Leather Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t65_l_i00" />
@@ -1738,10 +1828,11 @@
 		<set name="weight" val="1480" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="748300" />
-		<for>
-			<add order="0" stat="pDef" val="73" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="12491" name="Foundation Zubei's Leather Shirt" type="EtcItem">
 		<set name="icon" val="icon.armor_t65_u_i00" />
@@ -1750,10 +1841,11 @@
 		<set name="weight" val="4330" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="1197000" />
-		<for>
-			<add order="0" stat="pDef" val="117" />
-		</for>
+		<stats>
+			<stat type="pDef">117</stat>
+		</stats>
 	</item>
 	<item id="12492" name="Foundation Zubei's Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t64_l_i00" />
@@ -1762,13 +1854,14 @@
 		<set name="weight" val="3570" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="997700" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="98" />
-		</for>
+		<stats>
+			<stat type="pDef">98</stat>
+		</stats>
 	</item>
 	<item id="12493" name="Foundation Zubei's Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t64_g_i00" />
@@ -1777,13 +1870,14 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12494" name="Foundation Zubei's Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t65_g_i00" />
@@ -1792,10 +1886,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12495" name="Foundation Zubei's Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t56_g_i00" />
@@ -1804,13 +1899,14 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12496" name="Foundation Zubei's Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t64_b_i00" />
@@ -1819,13 +1915,14 @@
 		<set name="weight" val="1180" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12497" name="Foundation Zubei's Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t65_b_i00" />
@@ -1834,10 +1931,11 @@
 		<set name="weight" val="1180" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12498" name="Foundation Zubei's Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t56_b_i00" />
@@ -1846,13 +1944,14 @@
 		<set name="weight" val="1180" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12499" name="Foundation Zubei's Shield" type="EtcItem">
 		<set name="icon" val="icon.shield_shrnoens_shield_i00" />
@@ -1861,14 +1960,15 @@
 		<set name="weight" val="1210" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="419000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">216</stat>
+		</stats>
 	</item>
 </list>

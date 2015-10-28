@@ -13,7 +13,7 @@
 
 	<xs:complexType name="selectorType">
 		<xs:sequence>
-			<xs:element name="choise" maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="choice" maxOccurs="unbounded" minOccurs="0">
 				<xs:complexType>
 					<xs:group ref="mapSequenceGroup" />
 					<xs:attributeGroup ref="locationAttrGroup" />

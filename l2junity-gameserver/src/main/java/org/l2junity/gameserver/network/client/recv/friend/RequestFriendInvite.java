@@ -21,6 +21,7 @@ package org.l2junity.gameserver.network.client.recv.friend;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -68,6 +69,14 @@ public final class RequestFriendInvite implements IClientIncomingPacket
 			activeChar.sendPacket(SystemMessageId.A_USER_CURRENTLY_PARTICIPATING_IN_THE_OLYMPIAD_CANNOT_SEND_PARTY_AND_FRIEND_INVITATIONS);
 			return;
 		}
+		
+		// Cannot request friendship in Ceremony of Chaos event.
+		if (activeChar.isOnEvent(CeremonyOfChaosEvent.class))
+		{
+			client.sendPacket(SystemMessageId.YOU_CANNOT_INVITE_A_FRIEND_OR_PARTY_WHILE_PARTICIPATING_IN_THE_CEREMONY_OF_CHAOS);
+			return;
+		}
+		
 		// Target blocked active player.
 		if (BlockList.isBlocked(friend, activeChar))
 		{

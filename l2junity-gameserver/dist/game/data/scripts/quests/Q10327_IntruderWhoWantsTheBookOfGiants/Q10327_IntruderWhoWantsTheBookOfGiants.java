@@ -34,7 +34,7 @@ import quests.Q10326_RespectYourElders.Q10326_RespectYourElders;
  */
 public final class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int PANTHEON = 32972;
 	// Items
 	private static final int THE_WAR_OF_GODS_AND_GIANTS = 17575;

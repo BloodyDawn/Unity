@@ -98,13 +98,9 @@
 				<mul stat="regCp" val="#regCp" />
 				<sub stat="debuffVuln" val="#debuffVuln" />
 				<add stat="accCombat" val="#accCombat" />
-				<add stat="absorbDam" val="#absorbDam" />
-				<set stat="STR" val="40" />
-				<set stat="DEX" val="30" />
-				<set stat="CON" val="43" />
-				<set stat="INT" val="21" />
-				<set stat="WIT" val="15" />
-				<set stat="MEN" val="21" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -276,17 +272,15 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
+			<effect name="StatByMoveType">
+				<param stat="REGENERATE_MP_RATE" type="STANDING" value="1.518" />
+			</effect>
+			<effect name="StatByMoveType">
+				<param stat="REGENERATE_MP_RATE" type="SITTING" value="1.518" />
+			</effect>
 			<effect name="Buff">
 				<add stat="pDef" val="25">
 					<using kind="HEAVY" />
-				</add>
-				<add stat="regMp" val="1.518">
-					<and>
-						<player resting="true" />
-						<or>
-							<player standing="true" />
-						</or>
-					</and>
 				</add>
 			</effect>
 		</for>
@@ -660,13 +654,9 @@
 				<mul stat="regCp" val="#regCp" />
 				<sub stat="debuffVuln" val="#debuffVuln" />
 				<add stat="accCombat" val="#accCombat" />
-				<add stat="absorbDam" val="#absorbDam" />
-				<set stat="STR" val="40" />
-				<set stat="DEX" val="30" />
-				<set stat="CON" val="43" />
-				<set stat="INT" val="21" />
-				<set stat="WIT" val="15" />
-				<set stat="MEN" val="21" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>

@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.L2EffectPointInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -33,6 +32,7 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -73,7 +73,7 @@ public final class SummonNpc extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effected.isPlayer() || effected.isAlikeDead() || effected.getActingPlayer().inObserverMode())
 		{
@@ -156,16 +156,6 @@ public final class SummonNpc extends AbstractEffect
 				{
 					effectPoint.scheduleDespawn(_despawnDelay);
 				}
-				break;
-			}
-			case "Doppelganger":
-			{
-				final DoppelgangerInstance clone = new DoppelgangerInstance(npcTemplate, player);
-				clone.setCurrentHp(clone.getMaxHp());
-				clone.setCurrentMp(clone.getMaxMp());
-				clone.setSummoner(player);
-				clone.spawnMe(x, y, z);
-				clone.scheduleDespawn(_despawnDelay);
 				break;
 			}
 			default:

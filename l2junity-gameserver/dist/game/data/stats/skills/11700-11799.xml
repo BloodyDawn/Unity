@@ -16,8 +16,6 @@
 			<effect name="Buff">
 				<mul stat="pvePhysDmg" val="#pveDamage" />
 				<mul stat="pvePhysSkillsDmg" val="#pveDamage" />
-				<mul stat="pveBowDmg" val="#pveDamage" />
-				<mul stat="pveBowSkillsDmg" val="#pveDamage" />
 				<mul stat="pveMagicalDmg" val="#pveDamage" />
 				<mul stat="MagicalMpConsumeRate" val="1.30" />
 			</effect>
@@ -108,11 +106,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11751" levels="7" name="Superior Magic Weapon Mastery">
+	<skill id="11751" levels="10" name="Superior Magic Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- M. Atk. + 24%, Additional M. Atk. + 981, M. Critical Rate + 6%. INT + 2. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#mAtk"> 981 1138 1319 1458 1682 1785 1893 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#mAtk"> 981 1138 1319 1458 1682 1785 1893 2009 2131 2261 </table>
 		<set name="icon" val="icon.skill11251" />
 		<set name="magicLevel" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -173,7 +171,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
-		<set name="abnormalTime" val="10" />
+		<set name="abnormalTime" val="15" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="operateType" val="A4" />
@@ -218,6 +216,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -228,8 +227,7 @@
 				<param targetType="SELF" />
 			</effect>
 			<effect name="SummonCubic">
-				<param cubicId="17" cubicDelay="5" cubicDuration="60" cubicMaxCount="20" cubicSkillChance="0" />
-				<param cubicSkill1Chance="33" />
+				<param cubicId="17" cubicLvl="#effectLvl" />
 			</effect>
 		</for>
 	</skill>
@@ -612,6 +610,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
+		<alterSkill>
+			<skill id="12000" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="11999" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+		</alterSkill>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -1234,12 +1237,13 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11787" levels="7" name="Superior Armor Mastery">
+	<skill id="11787" levels="10" name="Superior Armor Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4299, P. Def. + 1212, M. Def + 10%, HP Recovery Bonus + 2.8, MP Recovery Bonus + 3.6 when equipped with a Robe/Light Armor. INT + 2.. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 </table>
-		<table name="#regHp"> 2.8 3.4 4 4.6 5.4 6.2 7.8 </table>
-		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7 8.6 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
+		<table name="#regHp"> 2.8 3.4 4 4.6 5.4 6.2 7.8 7.8 8.6 9.4 </table>
+		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7 8.6 8.6 9.4 10.2 </table>
 		<set name="icon" val="icon.skill11787" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1262,10 +1266,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11788" levels="7" name="Superior Casting Mastery">
+	<skill id="11788" levels="10" name="Superior Casting Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- Max MP + 313, Casting Spd. + 23%, MP Consumption for magic skills - 15%, and Cooldown - 25%. INT + 2. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#maxMp"> 313 374 435 517 566 635 704 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#maxMp"> 313 374 435 517 566 635 704 773 842 911 </table>
 		<set name="icon" val="icon.skill11788" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1281,10 +1286,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11789" levels="7" name="Superior Anti Magic">
+	<skill id="11789" levels="10" name="Superior Anti Magic">
+		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 862, Attack Magic Resistance + 35%. INT + 2. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1298,10 +1304,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11790" levels="7" name="Superior Elemental Resistance">
+	<skill id="11790" levels="10" name="Superior Elemental Resistance">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2. Increases Fire/Water/Wind/Earth Resistance by 20. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#res"> 20 22 24 26 30 32 34 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
+		<table name="#res"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<set name="icon" val="icon.skill10044" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1318,6 +1325,7 @@
 		</for>
 	</skill>
 	<skill id="11791" levels="1" name="Superior Sigil Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2. Increases MP Recovery Bonus by 20 and power of recovery skills by 40 when equipped with a Sigil. -->
 		<set name="icon" val="icon.skill11791" />
 		<set name="operateType" val="P" />
@@ -1326,16 +1334,19 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="INT" val="2" /> <!-- INT is increased regardless of equipped sigil. -->
+				<add stat="INT" val="2" />
 				<add stat="regMp" val="20">
 					<using kind="SIGIL" />
 				</add>
-				<!-- TODO power of recovery skills by 40 -->
+				<add stat="healEffect" val="40">
+					<using kind="SIGIL" />
+				</add>
 			</effect>
 		</for>
 	</skill>
 	<skill id="11792" levels="10" name="Superior Mental Attack Resistance">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2. Resistance + 20 to Hold, Sleep, Paralysis, Mental attacks, Poison, Bleed, and Stun. In addition, has a chance of reflecting debuffs back to the attacker. -->
 		<table name="#traits"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
@@ -1363,22 +1374,23 @@
 	</skill>
 	<skill id="11793" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
 		<table name="#mpConsumes"> 48 0 0 </table>
-		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
-		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
-		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
-		<set name="icon" val="icon.skill1217" />
+		<table name="#power"> 1.10 1.20 1.30 </table>
+		<table name="#hotValue"> 103 138 174 </table>
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
+		<set name="icon" val="icon.skill1217" />
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="1000" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="87" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1392,27 +1404,27 @@
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11794" skillLevel="1" skillLevelScaleTo="3" />
+				<param skillId="11794" skillLevel="1" skillLevelScaleTo="3" /> <!-- Sustain -->
 			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="11794" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
-		<table name="#abnormalLevel"> 1 2 3 </table>
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="87" />
-		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">

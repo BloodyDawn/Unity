@@ -468,6 +468,7 @@
 		<set name="recipe_id" val="925" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="13724" name="Design: High-quality HP MP Recovery Stone" type="EtcItem">
@@ -481,6 +482,7 @@
 		<set name="recipe_id" val="926" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="13725" name="Design: Recovery Stone" type="EtcItem">
@@ -494,6 +496,7 @@
 		<set name="recipe_id" val="927" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="13726" name="Design: Energy Star Stone" type="EtcItem">
@@ -507,6 +510,7 @@
 		<set name="recipe_id" val="928" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="13727" name="Design: High-quality Energy Star Stone" type="EtcItem">
@@ -520,6 +524,7 @@
 		<set name="recipe_id" val="929" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="13728" name="Expert Text - Star Stone Extraction Skill. Lv. 1" type="EtcItem">
@@ -565,13 +570,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="1" /> <!-- Scroll of Escape: Gludin Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="9621" level="1" /> <!-- Blessed Scroll of Escape: Gludio -->
+		</skills>
 	</item>
 	<item id="13732" name="Blessed Scroll of Escape: Dion" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -581,13 +588,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="2" /> <!-- Scroll of Escape: Town of Dion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="2" /> <!-- Scroll of Escape: Town of Dion -->
+		</skills>
 	</item>
 	<item id="13733" name="Blessed Scroll of Escape: Giran" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -597,13 +606,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="3" /> <!-- Scroll of Escape: Town of Giran -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="3" /> <!-- Scroll of Escape: Town of Giran -->
+		</skills>
 	</item>
 	<item id="13734" name="Blessed Scroll of Escape: Oren" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -613,13 +624,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="5" /> <!-- Scroll of Escape: Town of Oren -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="5" /> <!-- Scroll of Escape: Town of Oren -->
+		</skills>
 	</item>
 	<item id="13735" name="Blessed Scroll of Escape: Aden" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -629,13 +642,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="6" /> <!-- Scroll of Escape: Town of Aden -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="6" /> <!-- Scroll of Escape: Town of Aden -->
+		</skills>
 	</item>
 	<item id="13736" name="Blessed Scroll of Escape: Innadril" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -645,13 +660,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="4" /> <!-- Scroll of Escape: Heine -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="4" /> <!-- Scroll of Escape: Heine -->
+		</skills>
 	</item>
 	<item id="13737" name="Blessed Scroll of Escape: Goddard" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -661,13 +678,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="7" /> <!-- Scroll of Escape: Town of Goddard -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="7" /> <!-- Scroll of Escape: Town of Goddard -->
+		</skills>
 	</item>
 	<item id="13738" name="Blessed Scroll of Escape: Rune" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -677,13 +696,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="8" /> <!-- Scroll of Escape: Town of Rune -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="8" /> <!-- Scroll of Escape: Town of Rune -->
+		</skills>
 	</item>
 	<item id="13739" name="Blessed Scroll of Escape: Schuttgart" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -693,13 +714,15 @@
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2649" level="9" /> <!-- Scroll of Escape: Town of Schuttgart -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2649" level="9" /> <!-- Scroll of Escape: Town of Schuttgart -->
+		</skills>
 	</item>
 	<item id="13740" name="Gludio Water Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -718,12 +741,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="waterRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="waterRes">26</stat>
+		</stats>
 	</item>
 	<item id="13741" name="Dion Holy Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -742,12 +764,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="holyRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="holyRes">26</stat>
+		</stats>
 	</item>
 	<item id="13742" name="Giran Wind Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -766,12 +787,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="windRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="windRes">26</stat>
+		</stats>
 	</item>
 	<item id="13743" name="Oren Dark Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -790,12 +810,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="darkRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="darkRes">26</stat>
+		</stats>
 	</item>
 	<item id="13744" name="Aden Earth Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -814,12 +833,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="earthRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="earthRes">26</stat>
+		</stats>
 	</item>
 	<item id="13745" name="Innadril Water Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -838,12 +856,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="waterRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="waterRes">26</stat>
+		</stats>
 	</item>
 	<item id="13746" name="Goddard Fire Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -862,12 +879,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="fireRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="fireRes">26</stat>
+		</stats>
 	</item>
 	<item id="13747" name="Rune Fire Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -886,12 +902,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="fireRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="fireRes">26</stat>
+		</stats>
 	</item>
 	<item id="13748" name="Schuttgart Wind Resistance Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -910,12 +925,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<add stat="windRes" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+			<stat type="windRes">26</stat>
+		</stats>
 	</item>
 	<item id="13749" name="Emery Piece" type="EtcItem">
 		<set name="icon" val="icon.piece_of_emery_i00" />
@@ -952,13 +966,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2592" level="1" /> <!-- Quick Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2592" level="1" /> <!-- Quick Healing Potion -->
+		</skills>
 	</item>
 	<item id="13751" name="Warrior's T-shirt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_a_i04" />
@@ -978,12 +993,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="8324" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Warrior's Shirt -->
+			<skill id="8324" level="1" type="ON_ENCHANT" /> <!-- Warrior's Shirt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="28" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="13752" name="Olympiad Warrior's Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_hero_i00" />
@@ -1005,10 +1019,10 @@
 		<skills>
 			<skill id="8292" level="1" /> <!-- Olympiad Warrior's Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="42" />
-			<add stat="maxMp" val="21" />
-		</for>
+		<stats>
+			<stat type="mDef">42</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
 	</item>
 	<item id="13753" name="Olympiad Warrior's Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_hero_i00" />
@@ -1030,10 +1044,10 @@
 		<skills>
 			<skill id="8294" level="1" /> <!-- Olympiad Warrior's Necklace -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="26" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">26</stat>
+		</stats>
 	</item>
 	<item id="13754" name="Olympiad Warrior's Earring" type="Armor">
 		<set name="icon" val="icon.accessory_earring_of_hero_i00" />
@@ -1055,18 +1069,16 @@
 		<skills>
 			<skill id="8293" level="1" /> <!-- Olympiad Warrior's Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="31" />
-		</for>
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">31</stat>
+		</stats>
 	</item>
 	<item id="13755" name="Olympiad Warrior's Weapon (undetermined)" type="Weapon">
 		<set name="icon" val="icon.weapon_mon_gracia_soldier_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
@@ -1080,13 +1092,16 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13756" name="Agathion - Knight" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -1104,9 +1119,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 			<skill id="8275" level="1" /> <!-- Release Agathion's Seal - Knight -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="13757" name="Gludio Territory Badge" type="EtcItem">
@@ -1305,15 +1319,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2622" level="1" /> <!-- Summon Life-size Decoy -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<and>
 				<player instanceId="120" />
 				<player categoryType="WARSMITH_GROUP" />
 			</and>
 		</cond>
+		<skills>
+			<skill id="2622" level="1" /> <!-- Summon Life-size Decoy -->
+		</skills>
 	</item>
 	<item id="13770" name="Shadow Item: Shield of Yehan Miakesh" type="Armor">
 		<set name="icon" val="icon.immo_branded_shield_i00" />
@@ -1333,20 +1347,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<skills>
-			<skill id="8276" level="1" /> <!-- Shield Branding -->
-		</skills>
 		<cond msgId="1518">
 			<and>
 				<player instanceId="115,116,119,120,121,122" />
 				<player categoryType="SHIELD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="101" />
-		</for>
+		<skills>
+			<skill id="8276" level="1" /> <!-- Shield Branding -->
+		</skills>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">101</stat>
+		</stats>
 	</item>
 	<item id="13771" name="Strong Alkaline Ointment" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_of_acumen2_i00" />
@@ -1360,13 +1374,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2623" level="1" /> <!-- Alkaline Therapy -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="119,120" />
 		</cond>
+		<skills>
+			<skill id="2623" level="1" /> <!-- Alkaline Therapy -->
+		</skills>
 	</item>
 	<item id="13772" name="Life Aid Bandage" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_of_cloth_white_i00" />
@@ -1380,13 +1395,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2624" level="1" /> <!-- Life Aid Banding -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
 		</cond>
+		<skills>
+			<skill id="2624" level="1" /> <!-- Life Aid Banding -->
+		</skills>
 	</item>
 	<item id="13773" name="Scent of Preservation" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_red_i00" />
@@ -1398,13 +1414,14 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2625" level="1" /> <!-- Embalming -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
 		</cond>
+		<skills>
+			<skill id="2625" level="1" /> <!-- Embalming -->
+		</skills>
 	</item>
 	<item id="13774" name="Scent of Exorcism" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_grail_i00" />
@@ -1416,13 +1433,14 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2626" level="1" /> <!-- Lighting Incense -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
 		</cond>
+		<skills>
+			<skill id="2626" level="1" /> <!-- Lighting Incense -->
+		</skills>
 	</item>
 	<item id="13775" name="Miracle Cure of Resuscitation" type="EtcItem">
 		<set name="icon" val="icon.etc_cp_potion_i01" />
@@ -1434,13 +1452,14 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2627" level="1" /> <!-- Elixir Miracle -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
 		</cond>
+		<skills>
+			<skill id="2627" level="1" /> <!-- Elixir Miracle -->
+		</skills>
 	</item>
 	<item id="13776" name="Structure Scarab" type="EtcItem">
 		<set name="icon" val="icon.etc_beetle_i00" />
@@ -1459,12 +1478,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2628" level="1" /> <!-- Structure Scarab -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
 		</cond>
+		<skills>
+			<skill id="2628" level="1" /> <!-- Structure Scarab -->
+		</skills>
 	</item>
 	<item id="13777" name="Jewel Ornamented Duel Supplies" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
@@ -1675,6 +1694,7 @@
 		<set name="weight" val="180" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2616" level="1" /> <!-- Bond Sealant -->
@@ -1689,6 +1709,7 @@
 		<set name="weight" val="180" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2617" level="1" /> <!-- Stun Planter -->
@@ -1699,8 +1720,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="705" />
@@ -1710,27 +1729,27 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="5852" level="1" /> <!-- Flip Block -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13790" name="Blue Boing Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_bbyong_hammer_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="705" />
@@ -1740,27 +1759,27 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="5853" level="1" /> <!-- Flip Block -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13791" name="Small Red Boing Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_bbyong_hammer_c_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="705" />
@@ -1770,24 +1789,24 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13792" name="Small Blue Boing Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_bbyong_hammer_d_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="705" />
@@ -1797,16 +1816,18 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13793" name="Scroll: Hide Kratei's Cube Name" type="EtcItem">
 		<set name="icon" val="icon.transform_towu_scroll_i00" />
@@ -1883,6 +1904,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="60" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13798" name="Restless Soul" type="EtcItem">
@@ -1908,11 +1930,12 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<capsuled_items>
-			<item chance="60.0" id="9628" max="2" min="1" /> <!-- Corroded Leonard -->
-			<item chance="30.0" id="9629" max="2" min="1" /> <!-- Corroded Adamantine -->
-			<item chance="35.0" id="9630" max="2" min="1" /> <!-- Corroded Orichalcum -->
+			<item id="9628" min="1" max="2" chance="60" /> <!-- Corroded Leonard -->
+			<item id="9629" min="1" max="2" chance="30" /> <!-- Corroded Adamantine -->
+			<item id="9630" min="1" max="2" chance="35" /> <!-- Corroded Orichalcum -->
 		</capsuled_items>
 	</item>
 </list>

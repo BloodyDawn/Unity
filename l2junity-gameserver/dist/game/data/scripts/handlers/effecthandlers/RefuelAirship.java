@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -54,7 +55,7 @@ public final class RefuelAirship extends AbstractEffect
 	}
 
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		final L2AirShipInstance ship = effector.getActingPlayer().getAirShip();
 		ship.setFuel(ship.getFuel() + _value);

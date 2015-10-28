@@ -22,6 +22,7 @@ import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -35,7 +36,7 @@ public class PEvasionRateFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		double baseValue = calcWeaponPlusBaseValue(creature, stat);
 		final int level = creature.getLevel();
 		if (creature.isPlayer())
 		{
@@ -65,6 +66,9 @@ public class PEvasionRateFinalizer implements IStatsFunction
 			{
 				baseValue += 1;
 			}
+			
+			// Enchanted helm bonus
+			baseValue += calcEnchantBodyPart(creature, L2Item.SLOT_HEAD);
 		}
 		else
 		{
@@ -75,6 +79,18 @@ public class PEvasionRateFinalizer implements IStatsFunction
 				baseValue += (level - 69) + 2;
 			}
 		}
+		
 		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_EVASION);
+	}
+	
+	@Override
+	public double calcEnchantBodyPartBonus(int enchantLevel, boolean isBlessed)
+	{
+		if (isBlessed)
+		{
+			return (0.3 * Math.max(enchantLevel - 3, 0)) + (0.3 * Math.max(enchantLevel - 6, 0));
+		}
+		
+		return (0.2 * Math.max(enchantLevel - 3, 0)) + (0.2 * Math.max(enchantLevel - 6, 0));
 	}
 }

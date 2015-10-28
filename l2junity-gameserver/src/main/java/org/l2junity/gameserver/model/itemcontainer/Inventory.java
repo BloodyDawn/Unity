@@ -447,6 +447,9 @@ public abstract class Inventory extends ItemContainer
 				}
 			});
 			
+			// Apply skill, if weapon have "skills on equip"
+			item.getItem().forEachSkill(ItemSkillType.ON_EQUIP, holder -> holder.getSkill().activateSkill(player, player));
+			
 			if (update.get())
 			{
 				player.sendSkillList();
@@ -564,7 +567,7 @@ public abstract class Inventory extends ItemContainer
 				// Remove all skills that doesn't matches the conditions
 				for (ArmorsetSkillHolder holder : armorSet.getSkills())
 				{
-					if (holder.validateConditions(player, armorSet, idProvider))
+					if (!holder.validateConditions(player, armorSet, idProvider))
 					{
 						final Skill itemSkill = holder.getSkill();
 						if (itemSkill == null)
@@ -1021,10 +1024,6 @@ public abstract class Inventory extends ItemContainer
 					listener.notifyUnequiped(slot, old, this);
 				}
 				old.updateDatabase();
-				if (getOwner().isPlayer())
-				{
-					getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
-				}
 			}
 			// Add new item in slot of paperdoll
 			if (item != null)
@@ -1043,10 +1042,11 @@ public abstract class Inventory extends ItemContainer
 					listener.notifyEquiped(slot, item, this);
 				}
 				item.updateDatabase();
-				if (getOwner().isPlayer())
-				{
-					getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
-				}
+			}
+			
+			if (getOwner().isPlayer())
+			{
+				getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
 			}
 		}
 		return old;

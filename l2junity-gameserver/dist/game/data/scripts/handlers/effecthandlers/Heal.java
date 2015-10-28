@@ -61,9 +61,9 @@ public final class Heal extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isInvul())
 		{
@@ -77,20 +77,20 @@ public final class Heal extends AbstractEffect
 		
 		double amount = _power;
 		double staticShotBonus = 0;
-		int mAtkMul = 1;
+		double mAtkMul = 1;
 		boolean sps = skill.isMagic() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.isMagic() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		
+		final double shotsBonus = effector.getStat().getValue(Stats.SHOTS_BONUS);
 		if (((sps || bss) && (effector.isPlayer() && effector.getActingPlayer().isMageClass())) || effector.isSummon())
 		{
 			staticShotBonus = skill.getMpConsume(); // static bonus for spiritshots
-			mAtkMul = bss ? 4 : 2;
+			mAtkMul = bss ? 4 * shotsBonus : 2 * shotsBonus;
 			staticShotBonus *= bss ? 2.4 : 1.0;
 		}
 		else if ((sps || bss) && effector.isNpc())
 		{
 			staticShotBonus = 2.4 * skill.getMpConsume(); // always blessed spiritshots
-			mAtkMul = 4;
+			mAtkMul = 4 * shotsBonus;
 		}
 		else
 		{
@@ -108,7 +108,7 @@ public final class Heal extends AbstractEffect
 		if (!skill.isStatic())
 		{
 			amount += staticShotBonus + Math.sqrt(mAtkMul * effector.getMAtk(effector, null));
-			amount = effected.calcStat(Stats.HEAL_EFFECT, amount, null, null);
+			amount = effected.getStat().getValue(Stats.HEAL_EFFECT, amount);
 			// Heal critic, since CT2.3 Gracia Final
 			if (skill.isMagic() && Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected))
 			{
@@ -123,7 +123,7 @@ public final class Heal extends AbstractEffect
 		}
 		
 		// Adding healer's heal power
-		amount = effector.calcStat(Stats.HEAL_POWER, amount, null, null);
+		amount = effector.getStat().getValue(Stats.HEAL_POWER, amount);
 		
 		// Prevents overheal and negative amount
 		amount = Math.max(Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp()), 0);

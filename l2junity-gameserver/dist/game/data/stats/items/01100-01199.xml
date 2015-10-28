@@ -9,14 +9,16 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="2120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="374" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="21" />
-			<add stat="maxMp" val="38" />
-		</for>
+		<stats>
+			<stat type="pDef">21</stat>
+			<stat type="maxMp">38</stat>
+		</stats>
 	</item>
 	<item id="1101" name="Tunic of Devotion" type="Armor">
 		<set name="icon" val="icon.armor_t55_u_i00" />
@@ -27,14 +29,16 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="2090" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="3120" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="30" />
-			<add stat="maxMp" val="67" />
-		</for>
+		<stats>
+			<stat type="pDef">30</stat>
+			<stat type="maxMp">67</stat>
+		</stats>
 	</item>
 	<item id="1102" name="Tunic of Magic" type="Armor">
 		<set name="icon" val="icon.armor_t58_u_i00" />
@@ -45,14 +49,16 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="2080" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="5680" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="34" />
-			<add stat="maxMp" val="86" />
-		</for>
+		<stats>
+			<stat type="pDef">34</stat>
+			<stat type="maxMp">86</stat>
+		</stats>
 	</item>
 	<item id="1103" name="Cotton Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t50_l_i00" />
@@ -63,14 +69,16 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="1060" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="234" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="13" />
-			<add stat="maxMp" val="23" />
-		</for>
+		<stats>
+			<stat type="pDef">13</stat>
+			<stat type="maxMp">23</stat>
+		</stats>
 	</item>
 	<item id="1104" name="Stockings of Devotion" type="Armor">
 		<set name="icon" val="icon.armor_t55_l_i00" />
@@ -81,14 +89,16 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="1040" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="1954" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="19" />
-			<add stat="maxMp" val="42" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+			<stat type="maxMp">42</stat>
+		</stats>
 	</item>
 	<item id="1105" name="Stockings of Magic" type="Armor">
 		<set name="icon" val="icon.armor_t58_l_i00" />
@@ -99,14 +109,16 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="1030" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="3540" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="21" />
-			<add stat="maxMp" val="54" />
-		</for>
+		<stats>
+			<stat type="pDef">21</stat>
+			<stat type="maxMp">54</stat>
+		</stats>
 	</item>
 	<item id="1106" name="Norman's Letter" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_gray_i00" />
@@ -324,10 +336,12 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="660" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="94" />
-		<for>
-			<add order="0" stat="pDef" val="11" />
-		</for>
+		<stats>
+			<stat type="pDef">11</stat>
+		</stats>
 	</item>
 	<item id="1120" name="Pa'agrio Hand" type="Armor">
 		<set name="icon" val="icon.armor_short_leather_gloves_i00" />
@@ -340,11 +354,12 @@
 		<set name="weight" val="1600" />
 		<set name="price" val="24780" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="34" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">34</stat>
+		</stats>
 	</item>
 	<item id="1121" name="Apprentice's Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t01_b_i00" />
@@ -354,10 +369,12 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="5" />
-		<for>
-			<add order="0" stat="pDef" val="8" />
-		</for>
+		<stats>
+			<stat type="pDef">8</stat>
+		</stats>
 	</item>
 	<item id="1122" name="Cotton Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t50_b_i00" />
@@ -367,10 +384,12 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="94" />
-		<for>
-			<add order="0" stat="pDef" val="11" />
-		</for>
+		<stats>
+			<stat type="pDef">11</stat>
+		</stats>
 	</item>
 	<item id="1123" name="Blue Buckskin Boots" type="Armor">
 		<set name="icon" val="icon.armor_t18_b_i00" />
@@ -383,11 +402,12 @@
 		<set name="weight" val="1300" />
 		<set name="price" val="5120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="22" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">22</stat>
+		</stats>
 	</item>
 	<item id="1124" name="Boots of Strength" type="Armor">
 		<set name="icon" val="icon.armor_t40_b_i00" />
@@ -400,11 +420,12 @@
 		<set name="weight" val="1250" />
 		<set name="price" val="11480" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="1125" name="Assault Boots" type="Armor">
 		<set name="icon" val="icon.armor_t44_b_i00" />
@@ -417,11 +438,12 @@
 		<set name="weight" val="1240" />
 		<set name="price" val="15040" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="1126" name="Crimson Boots" type="Armor">
 		<set name="icon" val="icon.armor_t57_b_i00" />
@@ -434,11 +456,12 @@
 		<set name="weight" val="1210" />
 		<set name="price" val="24780" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="34" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">34</stat>
+		</stats>
 	</item>
 	<item id="1127" name="Forgotten Boots" type="Armor">
 		<set name="icon" val="icon.armor_iron_boots_i00" />
@@ -451,11 +474,12 @@
 		<set name="weight" val="4000" />
 		<set name="price" val="37760" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="36" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">36</stat>
+		</stats>
 	</item>
 	<item id="1128" name="Adamantite Boots" type="Armor">
 		<set name="icon" val="icon.armor_iron_boots_i00" />
@@ -468,11 +492,12 @@
 		<set name="weight" val="4000" />
 		<set name="price" val="55020" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="39" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
 	</item>
 	<item id="1129" name="Crude Leather Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t04_b_i00" />
@@ -482,10 +507,12 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="94" />
-		<for>
-			<add order="0" stat="pDef" val="11" />
-		</for>
+		<stats>
+			<stat type="pDef">11</stat>
+		</stats>
 	</item>
 	<item id="1130" name="Cobendell's Medicine" type="EtcItem">
 		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
@@ -670,6 +697,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1142" name="Rusted Bronze Sword" type="Weapon">
@@ -677,8 +705,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -692,13 +718,17 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="18" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">18</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="1143" name="Simplon's Letter" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_gray_i00" />
@@ -739,6 +769,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1146" name="Squire's Shirt" type="Armor">
@@ -757,10 +788,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="33" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="1147" name="Squire's Pants" type="Armor">
 		<set name="icon" val="icon.armor_t01_l_i00" />
@@ -778,10 +810,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="1148" name="Durable Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -791,10 +824,11 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="640" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="2840" />
-		<for>
-			<add order="0" stat="pDef" val="26" />
-		</for>
+		<stats>
+			<stat type="pDef">26</stat>
+		</stats>
 	</item>
 	<item id="1149" name="Shining Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -809,10 +843,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="54" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">54</stat>
+		</stats>
 	</item>
 	<item id="1150" name="Spellbook: Wind Strike" type="EtcItem">
 		<set name="icon" val="icon.etc_spell_books_blue_i00" />
@@ -821,6 +854,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1151" name="Spellbook: Self Heal" type="EtcItem">
@@ -830,6 +864,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1152" name="Spellbook: Heal" type="EtcItem">
@@ -839,6 +874,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1153" name="Jenna's Letter" type="EtcItem">
@@ -1294,8 +1330,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1312,22 +1346,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="45" />
-			<set stat="mAtk" val="16" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">45</stat>
+			<stat type="mAtk">16</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="1182" name="Neti's Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_knife_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1342,14 +1377,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="19" />
-			<set stat="mAtk" val="16" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">19</stat>
+			<stat type="mAtk">16</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="1183" name="Spartoi's Bones" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_bone_black_i00" />

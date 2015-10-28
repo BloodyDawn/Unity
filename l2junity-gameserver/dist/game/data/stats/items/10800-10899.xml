@@ -18,11 +18,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="249" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">249</stat>
+		</stats>
 	</item>
 	<item id="10801" name="Major Arcana Robe {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t90_ul_i00" />
@@ -42,15 +42,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="166" />
-			<add stat="maxMp" val="866" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">166</stat>
+			<stat type="maxMp">866</stat>
+		</stats>
 	</item>
 	<item id="10802" name="Dynasty Breastplate {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
@@ -70,14 +70,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10803" name="Dynasty Breastplate {PvP}" name_additional="Shield Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
@@ -97,6 +97,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -104,10 +105,9 @@
 				<player categoryType="SHIELD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10804" name="Dynasty Breastplate {PvP}" name_additional="Weapon Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uw_i00" />
@@ -127,6 +127,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -134,10 +135,9 @@
 				<player categoryType="WEAPON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10805" name="Dynasty Breastplate {PvP}" name_additional="Force Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uf_i00" />
@@ -157,6 +157,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -164,10 +165,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10806" name="Dynasty Breastplate {PvP}" name_additional="Bard" type="Armor">
 		<set name="icon" val="icon.armor_t91_uke_i00" />
@@ -187,6 +187,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -194,10 +195,9 @@
 				<player categoryType="BARD" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10807" name="Dynasty Leather Armor {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -217,11 +217,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10808" name="Dynasty Leather Armor {PvP}" name_additional="Dagger Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -241,14 +241,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10809" name="Dynasty Leather Armor {PvP}" name_additional="Bow Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -268,14 +268,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BOW_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10810" name="Dynasty Tunic {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
@@ -295,15 +295,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10811" name="Dynasty Tunic {PvP}" name_additional="Healer" type="Armor">
 		<set name="icon" val="icon.armor_t93_uh_i00" />
@@ -323,6 +323,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -330,11 +331,10 @@
 				<player categoryType="HEAL_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10812" name="Dynasty Tunic {PvP}" name_additional="Enchanter" type="Armor">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
@@ -354,6 +354,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -361,11 +362,10 @@
 				<player categoryType="BUFF_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10813" name="Dynasty Tunic {PvP}" name_additional="Summoner" type="Armor">
 		<set name="icon" val="icon.armor_t93_us_i00" />
@@ -385,6 +385,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -392,11 +393,10 @@
 				<player categoryType="SUMMON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10814" name="Dynasty Tunic {PvP}" name_additional="Wizard" type="Armor">
 		<set name="icon" val="icon.armor_t93_uw_i00" />
@@ -416,6 +416,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -423,11 +424,10 @@
 				<player categoryType="WIZARD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10815" name="Dynasty Leather Armor {PvP}" name_additional="Force Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -447,6 +447,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -454,10 +455,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10816" name="Dynasty Leather Armor {PvP}" name_additional="Weapon Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -477,14 +477,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10817" name="Dynasty Leather Armor {PvP}" name_additional="Enchanter" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -504,14 +504,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10818" name="Dynasty Leather Armor {PvP}" name_additional="Summoner" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -531,14 +531,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10819" name="Dynasty Platinum Plate {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
@@ -558,14 +558,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10820" name="Dynasty Platinum Plate {PvP}" name_additional="Shield Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
@@ -585,6 +585,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -592,10 +593,9 @@
 				<player categoryType="SHIELD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10821" name="Dynasty Platinum Plate {PvP}" name_additional="Weapon Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uw_i00" />
@@ -615,6 +615,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -622,10 +623,9 @@
 				<player categoryType="WEAPON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10822" name="Dynasty Platinum Plate {PvP}" name_additional="Force Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uf_i00" />
@@ -645,6 +645,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -652,10 +653,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10823" name="Dynasty Platinum Plate {PvP}" name_additional="Bard" type="Armor">
 		<set name="icon" val="icon.armor_t91_uke_i00" />
@@ -675,6 +675,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -682,10 +683,9 @@
 				<player categoryType="BARD" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10824" name="Dynasty Jewel Leather Armor {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -705,11 +705,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10825" name="Dynasty Jewel Leather Armor {PvP}" name_additional="Dagger Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -729,14 +729,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10826" name="Dynasty Jewel Leather Armor {PvP}" name_additional="Bow Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -756,14 +756,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BOW_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10827" name="Dynasty Silver Satin Tunic {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
@@ -783,15 +783,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10828" name="Dynasty Silver Satin Tunic {PvP}" name_additional="Healer" type="Armor">
 		<set name="icon" val="icon.armor_t93_uh_i00" />
@@ -811,6 +811,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -818,11 +819,10 @@
 				<player categoryType="HEAL_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10829" name="Dynasty Silver Satin Tunic {PvP}" name_additional="Enchanter" type="Armor">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
@@ -842,6 +842,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -849,11 +850,10 @@
 				<player categoryType="BUFF_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10830" name="Dynasty Silver Satin Tunic {PvP}" name_additional="Summoner" type="Armor">
 		<set name="icon" val="icon.armor_t93_us_i00" />
@@ -873,6 +873,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -880,11 +881,10 @@
 				<player categoryType="SUMMON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10831" name="Dynasty Silver Satin Tunic {PvP}" name_additional="Wizard" type="Armor">
 		<set name="icon" val="icon.armor_t93_uw_i00" />
@@ -904,6 +904,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -911,11 +912,10 @@
 				<player categoryType="WIZARD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10832" name="Dynasty Jewel Leather Armor {PvP}" name_additional="Force Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -935,14 +935,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="FORCE_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10833" name="Dynasty Jewel Leather Armor {PvP}" name_additional="Weapon Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -962,14 +962,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10834" name="Dynasty Jewel Leather Armor {PvP}" name_additional="Enchanter" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -989,14 +989,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10835" name="Dynasty Jewel Leather Armor {PvP}" name_additional="Summoner" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -1016,14 +1016,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10836" name="Pathfinder Supplies (Lv. 2)" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i02" />
@@ -1694,8 +1694,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1707,26 +1705,26 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3845" level="1" /> <!-- Two-handed Sword of Critical Chance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10871" name="Great Sword - Lightning" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_great_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1738,27 +1736,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3845" level="1" /> <!-- Two-handed Sword of Critical Chance -->
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10872" name="Great Sword - Lightning" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_great_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1770,27 +1768,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3845" level="1" /> <!-- Two-handed Sword of Critical Chance -->
 			<skill id="3023" level="5" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10873" name="Great Sword - Lightning" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_great_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1802,27 +1800,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3845" level="1" /> <!-- Two-handed Sword of Critical Chance -->
 			<skill id="3010" level="5" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10874" name="Great Axe - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_great_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1833,28 +1831,28 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3873" level="1" /> <!-- Polearm of Critical Damage -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="10875" name="Great Axe - Thunder" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_great_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1865,28 +1863,28 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3873" level="1" /> <!-- Polearm of Critical Damage -->
 			<skill id="3600" level="5" /> <!-- Special Ability: Anger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="10876" name="Great Axe - Thunder" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_great_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1897,29 +1895,29 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_skill" val="3016-5" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3873" level="1" /> <!-- Polearm of Critical Damage -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3873" level="1" /> <!-- Polearm of Critical Damage -->
+			<skill id="3016" level="5" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="10877" name="Great Axe - Thunder" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_great_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1930,29 +1928,29 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 			<skill id="3873" level="1" /> <!-- Polearm of Critical Damage -->
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="10878" name="Ultimate Sword*Ultimate Sword - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1963,27 +1961,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3042" level="11" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Critical Damage -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3042" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10879" name="Ultimate Sword*Sword of Delusion - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -1994,27 +1992,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Health -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10880" name="Ultimate Sword*Sword of Nightmare - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2025,27 +2023,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3044" level="11" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3044" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10881" name="Ultimate Sword*Tsurugi - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2056,27 +2054,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3045" level="11" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Haste -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3045" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10882" name="Innominate Victory - Lightning" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2088,30 +2086,30 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3851" level="1" /> <!-- Ancient Sword of Critical Chance -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3851" level="1" /> <!-- Ancient Sword of Critical Chance -->
+		</skills>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10883" name="Innominate Victory - Lightning" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2123,31 +2121,31 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<cond msgId="1518">
+			<player races="KAMAEL" />
+		</cond>
 		<skills>
 			<skill id="3851" level="1" /> <!-- Ancient Sword of Critical Chance -->
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 		</skills>
-		<cond msgId="1518">
-			<player races="KAMAEL" />
-		</cond>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10884" name="Innominate Victory - Lightning" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2159,31 +2157,31 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<cond msgId="1518">
+			<player races="KAMAEL" />
+		</cond>
 		<skills>
 			<skill id="3851" level="1" /> <!-- Ancient Sword of Critical Chance -->
 			<skill id="3023" level="5" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<cond msgId="1518">
-			<player races="KAMAEL" />
-		</cond>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10885" name="Innominate Victory - Lightning" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2195,31 +2193,31 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
+		<cond msgId="1518">
+			<player races="KAMAEL" />
+		</cond>
 		<skills>
 			<skill id="3851" level="1" /> <!-- Ancient Sword of Critical Chance -->
 			<skill id="3010" level="5" /> <!-- Special Ability: Focus -->
 		</skills>
-		<cond msgId="1518">
-			<player races="KAMAEL" />
-		</cond>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10886" name="Dark Elven Longbow - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_elven_long_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2233,27 +2231,27 @@
 		<set name="mp_consume" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3863" level="1" /> <!-- Bow of Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="397" />
-			<set stat="mAtk" val="100" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">397</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="10887" name="Dark Elven Longbow - Concentration" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_elven_long_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2267,28 +2265,28 @@
 		<set name="mp_consume" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3863" level="1" /> <!-- Bow of Guidance -->
 			<skill id="3009" level="5" /> <!-- Special Ability: Evasion -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="397" />
-			<set stat="mAtk" val="100" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">397</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="10888" name="Dark Elven Longbow - Concentration" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_elven_long_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2302,28 +2300,28 @@
 		<set name="mp_consume" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
-		<set name="oncrit_skill" val="3021-5" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3863" level="1" /> <!-- Bow of Guidance -->
+			<skill id="3021" level="5" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="397" />
-			<set stat="mAtk" val="100" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">397</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="10889" name="Dark Elven Longbow - Concentration" name_additional="Miser" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_elven_long_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2338,27 +2336,27 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="reduced_soulshot" val="19,2" />
 		<skills>
 			<skill id="3863" level="1" /> <!-- Bow of Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="397" />
-			<set stat="mAtk" val="100" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">397</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="10890" name="Sword of Delusion*Sword of Delusion - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2369,27 +2367,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3046" level="11" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Guidance -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3046" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10891" name="Sword of Delusion*Sword of Nightmare - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2400,27 +2398,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3042" level="11" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Critical Damage -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3042" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10892" name="Sword of Delusion*Tsurugi - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2431,27 +2429,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Health -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10893" name="Sword of Valhalla - Nature" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2463,26 +2461,26 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3852" level="1" /> <!-- Sword of Mana Boost -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10894" name="Sword of Valhalla - Nature" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2494,27 +2492,27 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3852" level="1" /> <!-- Sword of Mana Boost -->
 			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10895" name="Sword of Valhalla - Nature" name_additional="Magic Weakness" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2526,27 +2524,27 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_skill" val="1164-11" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3852" level="1" /> <!-- Sword of Mana Boost -->
+			<skill id="1164" level="11" type_chance="7" type="ON_MAGIC_SKILL" /> <!-- Curse Weakness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10896" name="Sword of Valhalla - Nature" name_additional="Magic Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2558,27 +2556,27 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_skill" val="1044-3" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3852" level="1" /> <!-- Sword of Mana Boost -->
+			<skill id="1044" level="3" type_chance="30" type="ON_MAGIC_SKILL" /> <!-- Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10897" name="Stormbringer*Samurai Long Sword - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2589,27 +2587,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3046" level="11" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Guidance -->
 			<skill id="3835" level="1" /> <!-- Dual-blade Weapon of Might -->
+			<skill id="3046" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10898" name="Spell Breaker - Tidal Wave" type="Weapon">
 		<set name="icon" val="icon.weapon_spell_breaker_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2621,27 +2619,27 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3889" level="1" /> <!-- Blunt Weapon of Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10899" name="Spell Breaker - Tidal Wave" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_spell_breaker_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -2653,19 +2651,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3889" level="1" /> <!-- Blunt Weapon of Empower -->
 			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 </list>

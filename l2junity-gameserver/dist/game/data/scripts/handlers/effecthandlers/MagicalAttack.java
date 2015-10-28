@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -62,7 +63,7 @@ public final class MagicalAttack extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		// TODO: Unhardcode Cubic Skill to avoid double damage
 		if (effector.isAlikeDead() || (skill.getId() == 4049))
@@ -102,7 +103,7 @@ public final class MagicalAttack extends AbstractEffect
 			}
 			
 			// Shield Deflect Magic: Reflect all damage on caster.
-			if (effected.getStat().calcStat(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0, effected, skill) > Rnd.get(100))
+			if (effected.getStat().getValue(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
 			{
 				effector.reduceCurrentHp(damage, effected, skill);
 				effector.notifyDamageReceived(damage, effected, skill, mcrit, false, true);
@@ -111,7 +112,7 @@ public final class MagicalAttack extends AbstractEffect
 			{
 				effected.reduceCurrentHp(damage, effector, skill);
 				effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-				effector.sendDamageMessage(effected, damage, mcrit, false, false);
+				effector.sendDamageMessage(effected, skill, damage, mcrit, false);
 			}
 		}
 	}

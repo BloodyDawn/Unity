@@ -147,6 +147,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -190,6 +191,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="BlockActions" />
@@ -370,6 +372,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="BLEED" />
 		<pveEffects>
 			<effect name="PhysicalAttack">
@@ -808,6 +811,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
@@ -838,6 +842,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="720" />
 		<set name="trait" val="DEATH" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALDAGGER" />
@@ -1436,7 +1441,7 @@
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-266" />
 		<set name="effectRange" val="400" />
-		<set name="hitTime" val="10800" />
+		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill00954" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="30" />
@@ -1786,6 +1791,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1809,6 +1815,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="900" />
+		<set name="castRange" val="400" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1866,7 +1873,7 @@
 				<add stat="accCombat" val="6">
 					<using kind="BOW" />
 				</add>
-				<mul stat="rCrit" val="1.2">
+				<mul stat="rCrit" val="0.2">
 					<using kind="BOW" />
 				</mul>
 				<add stat="pAtkRange" val="200">
@@ -2013,7 +2020,7 @@
 		<table name="#elementPower"> 25 30 35 40 45 50 </table>
 		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 58 58 59 59 60 60 </table>
-		<table name="#power"> 93 94 95 96 97 97 </table>
+		<table name="#power"> 93 94 95 96 97 98 </table>
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SPEED_DOWN" />
@@ -2242,6 +2249,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -2274,6 +2282,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
+		<set name="coolTime" val="200" />
+		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
@@ -2302,6 +2312,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT,DAGGER,POLE,DUAL,DUALBLUNT" />
@@ -2331,6 +2342,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -2411,6 +2423,7 @@
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -2615,6 +2628,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="activateRate" val="70" />
+		<set name="icon" val="icon.skill0485" />
 		<set name="trait" val="DISARM" />
 		<for>
 			<effect name="Disarm">
@@ -2644,6 +2658,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="lvlBonusRate" val="30" />
 		<set name="abnormalLvl" val="3" />
+		<set name="coolTime" val="500" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />

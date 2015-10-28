@@ -287,8 +287,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="9" chance="80" />
 			</effect>
 		</for>
 	</skill>
@@ -564,6 +564,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="icon" val="icon.skill1062" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -589,6 +590,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="icon" val="icon.skill1427" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Invincible" />
@@ -618,12 +620,13 @@
 		<table name="#power"> 100756 213631 </table>
 		<set name="affectRange" val="300" />
 		<set name="effectPoint" val="-100" />
-		<set name="hitTime" val="2500" />
+		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="187" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -640,11 +643,11 @@
 		<!-- Baylor Skills -->
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="-100" />
-		<set name="hitTime" val="2500" />
+		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="373" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="1000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
@@ -672,7 +675,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="flyRadius" val="300" />
 		<set name="flyType" val="THROW_UP" />
-		<set name="hitTime" val="2800" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
@@ -682,6 +685,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="5000" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1038,6 +1042,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="5244" levels="1" name="Physical Up">
@@ -1163,7 +1168,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
-		<set name="hitTime" val="3300" />
+		<set name="hitTime" val="500" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
@@ -1388,6 +1393,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttackMp">
@@ -1456,6 +1462,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttackMp">
@@ -1542,6 +1549,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -1683,6 +1692,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Debuff">

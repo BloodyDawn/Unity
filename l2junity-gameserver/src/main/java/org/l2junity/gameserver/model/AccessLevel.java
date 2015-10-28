@@ -25,19 +25,29 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
  */
 public class AccessLevel
 {
-	/** The access level<br> */
+	/**
+	 * The access level<br>
+	 */
 	private int _accessLevel = 0;
-	/** The access level name<br> */
+	/**
+	 * The access level name<br>
+	 */
 	private String _name = null;
 	/** Child access levels */
 	AccessLevel _childsAccessLevel = null;
 	/** Child access levels */
 	private int _child = 0;
-	/** The name color for the access level<br> */
+	/**
+	 * The name color for the access level<br>
+	 */
 	private int _nameColor = 0;
-	/** The title color for the access level<br> */
+	/**
+	 * The title color for the access level<br>
+	 */
 	private int _titleColor = 0;
-	/** Flag to determine if the access level has gm access<br> */
+	/**
+	 * Flag to determine if the access level has gm access<br>
+	 */
 	private boolean _isGm = false;
 	/** Flag for peace zone attack */
 	private boolean _allowPeaceAttack = false;
@@ -224,6 +234,6 @@ public class AccessLevel
 			
 			_childsAccessLevel = AdminData.getInstance().getAccessLevel(_child);
 		}
-		return ((_childsAccessLevel.getLevel() == accessLevel.getLevel()) || _childsAccessLevel.hasChildAccess(accessLevel));
+		return (_childsAccessLevel != null) && ((_childsAccessLevel.getLevel() == accessLevel.getLevel()) || _childsAccessLevel.hasChildAccess(accessLevel));
 	}
 }

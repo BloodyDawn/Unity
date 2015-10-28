@@ -65,6 +65,9 @@ import org.l2junity.gameserver.network.client.recv.mentoring.RequestMenteeAdd;
 import org.l2junity.gameserver.network.client.recv.mentoring.RequestMenteeWaitingList;
 import org.l2junity.gameserver.network.client.recv.mentoring.RequestMentorCancel;
 import org.l2junity.gameserver.network.client.recv.mentoring.RequestMentorList;
+import org.l2junity.gameserver.network.client.recv.pledgebonus.RequestPledgeBonusOpen;
+import org.l2junity.gameserver.network.client.recv.pledgebonus.RequestPledgeBonusReward;
+import org.l2junity.gameserver.network.client.recv.pledgebonus.RequestPledgeBonusRewardList;
 import org.l2junity.gameserver.network.client.recv.primeshop.RequestBRBuyProduct;
 import org.l2junity.gameserver.network.client.recv.primeshop.RequestBRGamePoint;
 import org.l2junity.gameserver.network.client.recv.primeshop.RequestBRProductInfo;
@@ -334,7 +337,24 @@ public enum ExIncomingPackets implements IIncomingPackets<L2GameClient>
 	REQUEST_ALCHEMY_CONVERSION(0x101, RequestAlchemyConversion::new, ConnectionState.IN_GAME),
 	SEND_EXECUTED_UI_EVENTS_COUNT(0x102, null, ConnectionState.IN_GAME),
 	EX_SEND_CLIENT_INI(0x103, null, ConnectionState.IN_GAME),
-	REQUEST_EX_AUTO_FISH(0x104, ExRequestAutoFish::new, ConnectionState.IN_GAME);
+	REQUEST_EX_AUTO_FISH(0x104, ExRequestAutoFish::new, ConnectionState.IN_GAME),
+	REQUEST_VIP_ATTENDANCE_ITEM_LIST(0x105, null, ConnectionState.IN_GAME),
+	REQUEST_VIP_ATTENDANCE_CHECK(0x106, null, ConnectionState.IN_GAME),
+	REQUEST_ITEM_ENSOUL(0x107, null, ConnectionState.IN_GAME),
+	REQUEST_VIP_PRODUCT_LIST(0x108, null, ConnectionState.IN_GAME),
+	REQUEST_VIP_LUCKY_GAME_INFO(0x109, null, ConnectionState.IN_GAME),
+	REQUEST_VIP_LUCKY_GAME_ITEM_LIST(0x10A, null, ConnectionState.IN_GAME),
+	REQUEST_VIP_LUCKY_GAME_BONUS(0x10B, null, ConnectionState.IN_GAME),
+	EXREQUEST_VIPINFO(0x10C, null, ConnectionState.IN_GAME),
+	REQUEST_CAPTCHA_ANSWER(0x10D, null, ConnectionState.IN_GAME),
+	REQUEST_REFRESH_CAPTCHA_IMAGE(0x10E, null, ConnectionState.IN_GAME),
+	REQUEST_TODO_LIST(0x10F, null, ConnectionState.IN_GAME),
+	REQUEST_TODO_LIST_HTML(0x110, null, ConnectionState.IN_GAME),
+	REQUEST_ONE_DAY_REWARD_RECEIVE(0x111, null, ConnectionState.IN_GAME),
+	REQUEST_PLEDGE_BONUS_OPEN(0x112, RequestPledgeBonusOpen::new, ConnectionState.IN_GAME),
+	REQUEST_PLEDGE_BONUS_REWARD_LIST(0x113, RequestPledgeBonusRewardList::new, ConnectionState.IN_GAME),
+	REQUEST_PLEDGE_BONUS_REWARD(0x114, RequestPledgeBonusReward::new, ConnectionState.IN_GAME),
+	REQUEST_SSO_AUTHN_TOKEN(0x115, null, ConnectionState.IN_GAME);
 	
 	public static final ExIncomingPackets[] PACKET_ARRAY;
 	

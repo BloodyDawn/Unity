@@ -22,6 +22,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -44,21 +45,21 @@ public final class StaticDamage extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effector.isAlikeDead())
 		{
 			return;
 		}
-
+		
 		effected.reduceCurrentHp(_power, effector, skill);
 		effected.notifyDamageReceived(_power, effector, skill, false, false, false);
 		
 		if (effector.isPlayer())
 		{
-			effector.sendDamageMessage(effected, _power, false, false, false);
+			effector.sendDamageMessage(effected, skill, _power, false, false);
 		}
 	}
 }

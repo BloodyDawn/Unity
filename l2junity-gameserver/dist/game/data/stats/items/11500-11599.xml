@@ -12,14 +12,15 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="55" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="11501" name="Sealed Imperial Crusader Boots" type="Armor">
 		<set name="icon" val="icon.armor_t88_b_i02" />
@@ -33,14 +34,15 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="55" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="11502" name="Sealed Imperial Crusader Shield" type="Armor">
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i02" />
@@ -53,16 +55,18 @@
 		<set name="weight" val="1170" />
 		<set name="price" val="3355000" />
 		<set name="is_freightable" val="false" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SHIELD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="276" />
-			<enchant stat="sDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">276</stat>
+		</stats>
 	</item>
 	<item id="11503" name="Sealed Imperial Crusader Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -76,14 +80,14 @@
 		<set name="price" val="4793000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="83" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="11504" name="Sealed Imperial Crusader Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t88_u_i02" />
@@ -98,14 +102,15 @@
 		<set name="price" val="12781000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="193" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">193</stat>
+		</stats>
 	</item>
 	<item id="11505" name="Imperial Crusader Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t88_l_i00" />
@@ -120,17 +125,18 @@
 		<set name="price" val="7988000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3783" level="1" /> <!-- Imperial Crusader Gaiters -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="128" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3783" level="1" /> <!-- Imperial Crusader Gaiters -->
+		</skills>
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
 	</item>
 	<item id="11506" name="Imperial Crusader Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t88_g_i00" />
@@ -144,17 +150,18 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3784" level="1" /> <!-- Imperial Crusader Gauntlets -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="55" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3784" level="1" /> <!-- Imperial Crusader Gauntlets -->
+		</skills>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="11507" name="Imperial Crusader Boots" type="Armor">
 		<set name="icon" val="icon.armor_t88_b_i00" />
@@ -168,17 +175,18 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3785" level="1" /> <!-- Imperial Crusader Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="55" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3785" level="1" /> <!-- Imperial Crusader Boots -->
+		</skills>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="11508" name="Imperial Crusader Shield" type="Armor">
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i00" />
@@ -191,19 +199,21 @@
 		<set name="weight" val="1170" />
 		<set name="price" val="3355000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SHIELD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3786" level="1" /> <!-- Imperial Crusader Shield -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="290" />
-			<enchant stat="sDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3786" level="1" /> <!-- Imperial Crusader Shield -->
+		</skills>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">290</stat>
+		</stats>
 	</item>
 	<item id="11509" name="Imperial Crusader Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -217,17 +227,17 @@
 		<set name="price" val="4793000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3787" level="1" /> <!-- Imperial Crusader Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="83" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3787" level="1" /> <!-- Imperial Crusader Helmet -->
+		</skills>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="11510" name="Imperial Crusader Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t88_u_i00" />
@@ -242,17 +252,18 @@
 		<set name="price" val="12781000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3788" level="1" /> <!-- Imperial Crusader Breastplate -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="205" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3788" level="1" /> <!-- Imperial Crusader Breastplate -->
+		</skills>
+		<stats>
+			<stat type="pDef">205</stat>
+		</stats>
 	</item>
 	<item id="11511" name="Great Wolf Orichalcum Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -262,14 +273,16 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="160" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="171" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">171</stat>
+		</stats>
 	</item>
 	<item id="11512" name="Dynasty Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t91_l_i00" />
@@ -284,17 +297,18 @@
 		<set name="price" val="15248000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3790" level="1" /> <!-- Dynasty Gaiters -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="141" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3790" level="1" /> <!-- Dynasty Gaiters -->
+		</skills>
+		<stats>
+			<stat type="pDef">141</stat>
+		</stats>
 	</item>
 	<item id="11513" name="Dynasty Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t91_g_i00" />
@@ -308,17 +322,18 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3791" level="1" /> <!-- Dynasty Gauntlets -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3791" level="1" /> <!-- Dynasty Gauntlets -->
+		</skills>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11514" name="Dynasty Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t93_g_i00" />
@@ -332,17 +347,18 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3801" level="1" /> <!-- Dynasty Gloves -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3801" level="1" /> <!-- Dynasty Gloves -->
+		</skills>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11515" name="Dynasty Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t92_g_i00" />
@@ -356,14 +372,15 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3866" level="1" /> <!-- Dynasty Leather Gloves -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11516" name="Dynasty Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t92_l_i00" />
@@ -378,14 +395,15 @@
 		<set name="price" val="11436000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3796" level="1" /> <!-- Dynasty Leather Leggings -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="106" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">106</stat>
+		</stats>
 	</item>
 	<item id="11517" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -400,14 +418,15 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3795" level="1" /> <!-- Dynasty Leather Armor -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11518" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -422,14 +441,15 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11519" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -444,14 +464,15 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="BOW_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11520" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -466,6 +487,8 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -473,10 +496,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11521" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -491,6 +513,8 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -498,10 +522,9 @@
 				<player categoryType="WEAPON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11522" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -516,14 +539,15 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11523" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -538,14 +562,15 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11524" name="Dynasty Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t92_b_i00" />
@@ -559,14 +584,15 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3797" level="1" /> <!-- Dynasty Leather Boots -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11525" name="Dynasty Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -580,14 +606,14 @@
 		<set name="price" val="9149000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3798" level="1" /> <!-- Dynasty Leather Helmet -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="11526" name="Dynasty Boots" type="Armor">
 		<set name="icon" val="icon.armor_t91_b_i00" />
@@ -601,17 +627,18 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3792" level="1" /> <!-- Dynasty Boots -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3792" level="1" /> <!-- Dynasty Boots -->
+		</skills>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11527" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
@@ -626,17 +653,18 @@
 		<set name="price" val="24398000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3789" level="1" /> <!-- Dynasty Breastplate -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3789" level="1" /> <!-- Dynasty Breastplate -->
+		</skills>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11528" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
@@ -651,6 +679,8 @@
 		<set name="price" val="24398000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -658,10 +688,9 @@
 				<player categoryType="SHIELD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11529" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uw_i00" />
@@ -676,6 +705,8 @@
 		<set name="price" val="24398000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -683,10 +714,9 @@
 				<player categoryType="WEAPON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11530" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uf_i00" />
@@ -701,6 +731,8 @@
 		<set name="price" val="24398000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -708,10 +740,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11531" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uke_i00" />
@@ -726,6 +757,8 @@
 		<set name="price" val="24398000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -733,10 +766,9 @@
 				<player categoryType="BARD" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11532" name="Dynasty Shield" type="Armor">
 		<set name="icon" val="icon.shield_dynasty_shield_i00" />
@@ -749,19 +781,21 @@
 		<set name="weight" val="1390" />
 		<set name="price" val="6404000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SHIELD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3793" level="1" /> <!-- Dynasty Shield -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="321" />
-			<enchant stat="sDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3793" level="1" /> <!-- Dynasty Shield -->
+		</skills>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">321</stat>
+		</stats>
 	</item>
 	<item id="11533" name="Dynasty Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t93_b_i00" />
@@ -775,17 +809,18 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3802" level="1" /> <!-- Dynasty Shoes -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3802" level="1" /> <!-- Dynasty Shoes -->
+		</skills>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11534" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
@@ -800,18 +835,19 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3804" level="1" /> <!-- Dynasty Silver Satin Tunic -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3804" level="1" /> <!-- Dynasty Silver Satin Tunic -->
+		</skills>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11535" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uh_i00" />
@@ -826,6 +862,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -833,11 +871,10 @@
 				<player categoryType="HEAL_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11536" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
@@ -852,6 +889,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -859,11 +898,10 @@
 				<player categoryType="BUFF_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11537" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_us_i00" />
@@ -878,6 +916,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -885,11 +925,10 @@
 				<player categoryType="SUMMON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11538" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uw_i00" />
@@ -904,6 +943,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -911,11 +952,10 @@
 				<player categoryType="WIZARD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11539" name="Dynasty Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -929,17 +969,17 @@
 		<set name="price" val="9149000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3803" level="1" /> <!-- Dynasty Circlet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3803" level="1" /> <!-- Dynasty Circlet -->
+		</skills>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="11540" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -954,14 +994,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3805" level="1" /> <!-- Dynasty Jewel Leather Armor -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11541" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -976,14 +1017,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11542" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -998,14 +1040,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="BOW_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11543" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -1020,14 +1063,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="FORCE_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11544" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -1042,14 +1086,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11545" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -1064,14 +1109,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11546" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -1086,14 +1132,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="11547" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
@@ -1108,18 +1155,19 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3799" level="1" /> <!-- Dynasty Tunic -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3799" level="1" /> <!-- Dynasty Tunic -->
+		</skills>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11548" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uh_i00" />
@@ -1134,6 +1182,8 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1141,11 +1191,10 @@
 				<player categoryType="HEAL_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11549" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
@@ -1160,6 +1209,8 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1167,11 +1218,10 @@
 				<player categoryType="BUFF_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11550" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_us_i00" />
@@ -1186,6 +1236,8 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1193,11 +1245,10 @@
 				<player categoryType="SUMMON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11551" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uw_i00" />
@@ -1212,6 +1263,8 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1219,11 +1272,10 @@
 				<player categoryType="WIZARD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11552" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
@@ -1238,17 +1290,18 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3806" level="1" /> <!-- Dynasty Platinum Plate -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3806" level="1" /> <!-- Dynasty Platinum Plate -->
+		</skills>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11553" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
@@ -1263,6 +1316,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1270,10 +1325,9 @@
 				<player categoryType="SHIELD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11554" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uw_i00" />
@@ -1288,6 +1342,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1295,10 +1351,9 @@
 				<player categoryType="WEAPON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11555" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uf_i00" />
@@ -1313,6 +1368,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1320,10 +1377,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11556" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uke_i00" />
@@ -1338,6 +1394,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -1345,10 +1403,9 @@
 				<player categoryType="BARD" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="11557" name="Dynasty Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1362,17 +1419,17 @@
 		<set name="price" val="9149000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3794" level="1" /> <!-- Dynasty Helmet -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3794" level="1" /> <!-- Dynasty Helmet -->
+		</skills>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="11558" name="Dynasty Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t93_l_i00" />
@@ -1387,18 +1444,19 @@
 		<set name="price" val="11436000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3800" level="1" /> <!-- Dynasty Stockings -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="71" />
-			<add stat="maxMp" val="370" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="3800" level="1" /> <!-- Dynasty Stockings -->
+		</skills>
+		<stats>
+			<stat type="pDef">71</stat>
+			<stat type="maxMp">370</stat>
+		</stats>
 	</item>
 	<item id="11559" name="Sealed Dynasty Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t91_l_i02" />
@@ -1413,14 +1471,15 @@
 		<set name="price" val="15248000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="134" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">134</stat>
+		</stats>
 	</item>
 	<item id="11560" name="Sealed Dynasty Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t91_g_i02" />
@@ -1434,14 +1493,15 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11561" name="Sealed Dynasty Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t93_g_i02" />
@@ -1455,14 +1515,15 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11562" name="Sealed Dynasty Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t92_g_i02" />
@@ -1476,11 +1537,12 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11563" name="Sealed Dynasty Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t92_l_i02" />
@@ -1495,11 +1557,12 @@
 		<set name="price" val="11436000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">100</stat>
+		</stats>
 	</item>
 	<item id="11564" name="Sealed Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i02" />
@@ -1514,11 +1577,12 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="161" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">161</stat>
+		</stats>
 	</item>
 	<item id="11565" name="Sealed Dynasty Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t92_b_i02" />
@@ -1532,11 +1596,12 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11566" name="Sealed Dynasty Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -1550,11 +1615,11 @@
 		<set name="price" val="9149000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="11567" name="Sealed Dynasty Boots" type="Armor">
 		<set name="icon" val="icon.armor_t91_b_i02" />
@@ -1568,14 +1633,15 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11568" name="Sealed Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i02" />
@@ -1590,14 +1656,15 @@
 		<set name="price" val="24398000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="214" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">214</stat>
+		</stats>
 	</item>
 	<item id="11569" name="Sealed Dynasty Shield" type="Armor">
 		<set name="icon" val="icon.shield_dynasty_shield_i01" />
@@ -1610,16 +1677,18 @@
 		<set name="weight" val="1370" />
 		<set name="price" val="6404000" />
 		<set name="is_freightable" val="false" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SHIELD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="305" />
-			<enchant stat="sDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">305</stat>
+		</stats>
 	</item>
 	<item id="11570" name="Sealed Dynasty Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t93_b_i02" />
@@ -1633,14 +1702,15 @@
 		<set name="price" val="6099000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="11571" name="Sealed Dynasty Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i02" />
@@ -1654,14 +1724,14 @@
 		<set name="price" val="9149000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="11572" name="Sealed Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i02" />
@@ -1676,15 +1746,16 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="107" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">107</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="11573" name="Sealed Dynasty Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -1698,14 +1769,14 @@
 		<set name="price" val="9149000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="11574" name="Sealed Dynasty Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t93_l_i02" />
@@ -1720,15 +1791,16 @@
 		<set name="price" val="11436000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="67" />
-			<add stat="maxMp" val="370" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">67</stat>
+			<stat type="maxMp">370</stat>
+		</stats>
 	</item>
 	<item id="11575" name="Adamantite Earring" type="Armor">
 		<set name="icon" val="icon.accessary_adamantite_earing_i00" />
@@ -1741,14 +1813,14 @@
 		<set name="weight" val="150" />
 		<set name="price" val="93180" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3807" level="1" /> <!-- Adamantite Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="51" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">51</stat>
+		</stats>
 	</item>
 	<item id="11576" name="Adamantite Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_adamantite_necklace_i00" />
@@ -1761,14 +1833,14 @@
 		<set name="weight" val="150" />
 		<set name="price" val="124240" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3808" level="1" /> <!-- Adamantite Necklace -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="68" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">68</stat>
+		</stats>
 	</item>
 	<item id="11577" name="Adamantite Ring" type="Armor">
 		<set name="icon" val="icon.accessary_adamantite_ring_i00" />
@@ -1781,14 +1853,14 @@
 		<set name="weight" val="150" />
 		<set name="price" val="62120" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3809" level="1" /> <!-- Adamantite Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="34" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">34</stat>
+		</stats>
 	</item>
 	<item id="11578" name="Black Ore Earring" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
@@ -1801,14 +1873,14 @@
 		<set name="weight" val="150" />
 		<set name="price" val="142200" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3810" level="1" /> <!-- Black Ore Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="54" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">54</stat>
+		</stats>
 	</item>
 	<item id="11579" name="Black Ore Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
@@ -1821,14 +1893,14 @@
 		<set name="weight" val="150" />
 		<set name="price" val="189600" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3811" level="1" /> <!-- Black Ore Necklace -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="72" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">72</stat>
+		</stats>
 	</item>
 	<item id="11580" name="Black Ore Ring" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
@@ -1841,14 +1913,14 @@
 		<set name="weight" val="150" />
 		<set name="price" val="94800" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3812" level="1" /> <!-- Black Ore Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="36" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">36</stat>
+		</stats>
 	</item>
 	<item id="11581" name="Sealed Phoenix Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_necklace_i02" />
@@ -1861,11 +1933,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1340000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="76" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">76</stat>
+		</stats>
 	</item>
 	<item id="11582" name="Sealed Phoenix Ring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_ring_i02" />
@@ -1878,11 +1950,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="670000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RING" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="38" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">38</stat>
+		</stats>
 	</item>
 	<item id="11583" name="Sealed Phoenix Earring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_earing_i02" />
@@ -1895,11 +1967,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1005000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="57" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">57</stat>
+		</stats>
 	</item>
 	<item id="11584" name="Phoenix Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_necklace_i00" />
@@ -1912,15 +1984,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1340000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3813" level="1" /> <!-- Phoenix Necklace -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="80" />
-			<add stat="maxMp" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">80</stat>
+			<stat type="maxMp">26</stat>
+		</stats>
 	</item>
 	<item id="11585" name="Phoenix Ring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_ring_i00" />
@@ -1933,15 +2005,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="670000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3814" level="1" /> <!-- Phoenix Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="40" />
-			<add stat="maxMp" val="13" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">40</stat>
+			<stat type="maxMp">13</stat>
+		</stats>
 	</item>
 	<item id="11586" name="Phoenix Earring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_earing_i00" />
@@ -1954,15 +2026,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1005000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3815" level="1" /> <!-- Phoenix Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="60" />
-			<add stat="maxMp" val="20" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">60</stat>
+			<stat type="maxMp">20</stat>
+		</stats>
 	</item>
 	<item id="11587" name="Majestic Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -1975,15 +2047,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1998000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3816" level="1" /> <!-- Majestic Necklace -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
+		</stats>
 	</item>
 	<item id="11588" name="Majestic Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
@@ -1996,15 +2068,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="999000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3817" level="1" /> <!-- Majestic Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="42" />
-			<add stat="maxMp" val="17" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">42</stat>
+			<stat type="maxMp">17</stat>
+		</stats>
 	</item>
 	<item id="11589" name="Majestic Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -2017,15 +2089,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1498000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3818" level="1" /> <!-- Majestic Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+		</stats>
 	</item>
 	<item id="11590" name="Sealed Majestic Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i02" />
@@ -2038,11 +2110,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1998000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="80" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">80</stat>
+		</stats>
 	</item>
 	<item id="11591" name="Sealed Majestic Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i02" />
@@ -2055,11 +2127,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="999000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RING" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="40" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="11592" name="Sealed Majestic Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i02" />
@@ -2072,11 +2144,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1498000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="60" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">60</stat>
+		</stats>
 	</item>
 	<item id="11593" name="Sealed Tateossian Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_necklace_i02" />
@@ -2089,11 +2161,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="4361000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="91" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">91</stat>
+		</stats>
 	</item>
 	<item id="11594" name="Sealed Tateossian Ring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_ring_i02" />
@@ -2106,11 +2178,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="2180000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RING" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="46" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">46</stat>
+		</stats>
 	</item>
 	<item id="11595" name="Sealed Tateossian Earring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_earring_i02" />
@@ -2123,11 +2195,11 @@
 		<set name="weight" val="150" />
 		<set name="price" val="3270000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="68" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">68</stat>
+		</stats>
 	</item>
 	<item id="11596" name="Tateossian Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_necklace_i00" />
@@ -2140,15 +2212,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="4361000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3819" level="1" /> <!-- Tateossian Necklace -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="95" />
-			<add stat="maxMp" val="42" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">95</stat>
+			<stat type="maxMp">42</stat>
+		</stats>
 	</item>
 	<item id="11597" name="Tateossian Ring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_ring_i00" />
@@ -2161,15 +2233,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="2180000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3820" level="1" /> <!-- Tateossian Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="48" />
-			<add stat="maxMp" val="21" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
 	</item>
 	<item id="11598" name="Tateossian Earring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_earring_i00" />
@@ -2182,15 +2254,15 @@
 		<set name="weight" val="150" />
 		<set name="price" val="3270000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3821" level="1" /> <!-- Tateossian Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
+		</stats>
 	</item>
 	<item id="11599" name="Dynasty Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_necklace_i00" />
@@ -2203,14 +2275,14 @@
 		<set name="weight" val="150" />
 		<set name="price" val="7942000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3822" level="1" /> <!-- Dynasty Necklace -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="106" />
-			<add stat="maxMp" val="46" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">106</stat>
+			<stat type="maxMp">46</stat>
+		</stats>
 	</item>
 </list>

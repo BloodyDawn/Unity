@@ -33,7 +33,6 @@ public final class EtcItem extends L2Item
 {
 	private String _handler;
 	private EtcItemType _type;
-	private boolean _isBlessed;
 	private List<ExtractableProduct> _extractableItems;
 	private boolean _isInfinite;
 	
@@ -64,7 +63,6 @@ public final class EtcItem extends L2Item
 		}
 		
 		_handler = set.getString("handler", null); // ! null !
-		_isBlessed = set.getBoolean("blessed", false);
 		_isInfinite = set.getBoolean("is_infinite", false);
 	}
 	
@@ -92,14 +90,6 @@ public final class EtcItem extends L2Item
 	public String getHandlerName()
 	{
 		return _handler;
-	}
-	
-	/**
-	 * @return {@code true} if the item is blessed, {@code false} otherwise.
-	 */
-	public final boolean isBlessed()
-	{
-		return _isBlessed;
 	}
 	
 	/**

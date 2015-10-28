@@ -533,7 +533,7 @@ public class Shutdown extends Thread
 		
 		Hero.getInstance().shutdown();
 		LOGGER.info("Hero System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
-		ClanTable.getInstance().storeClanScore();
+		ClanTable.getInstance().shutdown();
 		LOGGER.info("Clan System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save Cursed Weapons data before closing.

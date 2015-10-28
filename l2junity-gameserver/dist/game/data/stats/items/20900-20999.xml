@@ -34,8 +34,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20900" max="1" min="1" /> <!-- Santa Hat 14-day -->
-			<item chance="100.0" id="14611" max="1" min="1" /> <!-- Rudolph's Nose -->
+			<item id="20900" min="1" max="1" chance="100" /> <!-- Santa Hat - 14-day -->
+			<item id="14611" min="1" max="1" chance="100" /> <!-- Rudolph's Nose -->
 		</capsuled_items>
 	</item>
 	<item id="20902" name="Queen Ant's Ring Pack (7-day)" type="EtcItem">
@@ -55,7 +55,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20205" max="1" min="1" /> <!-- Queen Ant's Ring (Event) 7-day -->
+			<item id="20205" min="1" max="1" chance="100" /> <!-- Queen Ant's Ring (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="20903" name="Rose Petal" type="EtcItem">
@@ -68,6 +68,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22158" level="1" /> <!-- Rose Petal -->
@@ -90,6 +91,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="20906" name="One Blue Rose Bud" type="EtcItem">
@@ -98,6 +100,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="20907" name="One White Rose Bud" type="EtcItem">
@@ -106,6 +109,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="20908" name="Desheloph Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
@@ -126,12 +130,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20909" name="Hyum Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
@@ -151,12 +155,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20910" name="Lekang Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
@@ -176,12 +180,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20911" name="Lilias Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
@@ -201,12 +205,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20912" name="Lapham Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
@@ -226,12 +230,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20913" name="Mafum Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
@@ -251,12 +255,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20914" name="Enhanced Rose Spirit Coupon (5-hour)" type="EtcItem">
 		<set name="icon" val="icon.etc_ticket_red_i00" />
@@ -292,12 +296,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20916" name="Enhanced Rose Necklace: Hyum" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
@@ -318,12 +322,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20917" name="Enhanced Rose Necklace: Lekang" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
@@ -344,12 +348,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20918" name="Enhanced Rose Necklace: Lilias" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
@@ -370,12 +374,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20919" name="Enhanced Rose Necklace: Lapham" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
@@ -396,12 +400,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20920" name="Enhanced Rose Necklace: Mafum" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
@@ -422,12 +426,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20921" name="Rose Spirit Test Report" name_additional="24-hour" type="EtcItem">
 		<set name="icon" val="icon.etc_royal_membership_i00" />
@@ -454,6 +458,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="20923" name="Vesper Slasher" type="EtcItem">
@@ -579,6 +586,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20930" name="Vesper Royal Circlet" type="Armor">
@@ -596,6 +605,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20931" name="Vesper Noble Mask" type="Armor">
@@ -613,6 +624,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20932" name="Vesper Royal Crown" name_additional="30-day" type="Armor">
@@ -682,6 +695,9 @@
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20936" name="Vesper Royal Circlet" type="Armor">
@@ -694,6 +710,9 @@
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20937" name="Vesper Noble Mask" type="Armor">
@@ -706,6 +725,9 @@
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20938" name="Mount - Jet Bike" name_additional="7-day" type="Armor">
@@ -720,7 +742,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21171-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -728,7 +749,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="21171" level="1" /> <!-- Ride Jet Bike -->
 		</skills>
 	</item>
 	<item id="20939" name="Mount - Jet Bike" name_additional="30-day" type="Armor">
@@ -743,7 +765,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21171-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -751,7 +772,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="21171" level="1" /> <!-- Ride Jet Bike -->
 		</skills>
 	</item>
 	<item id="20940" name="Agathion - Phoenix" name_additional="Nirvana Rebirth (7-day)" type="Armor">
@@ -766,7 +788,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21191-1;23171-1;23172-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -774,6 +795,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21191" level="1" /> <!-- Release Agathion's Seal - Phoenix -->
+			<skill id="23171" level="1" /> <!-- Agathion Cute Trick - Phoenix -->
+			<skill id="23172" level="1" /> <!-- Phoenix Agathion Special Skill: Nirvana Cycle -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -789,7 +813,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21191-1;23171-1;23173-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -797,6 +820,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21191" level="1" /> <!-- Release Agathion's Seal - Phoenix -->
+			<skill id="23171" level="1" /> <!-- Agathion Cute Trick - Phoenix -->
+			<skill id="23173" level="1" /> <!-- Phoenix Agathion Special Skill: Mountain Echoes -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -815,6 +841,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20943" name="Fox Mask" name_additional="Silent Move (7-day)" type="Armor">
@@ -854,6 +882,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20945" name="Paiwan Hat" name_additional="Power of Guardian Deity (7-day)" type="Armor">
@@ -895,7 +925,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20938" max="1" min="1" /> <!-- Mount - Jet Bike 7-day -->
+			<item id="20938" min="1" max="1" chance="100" /> <!-- Mount - Jet Bike - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="20947" name="Jet Bike Pack (30-day)" type="EtcItem">
@@ -915,7 +945,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20939" max="1" min="1" /> <!-- Mount - Jet Bike 30-day -->
+			<item id="20939" min="1" max="1" chance="100" /> <!-- Mount - Jet Bike - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="20948" name="Agathion - Phoenix Pack (7-day)" name_additional="Nirvana Rebirth" type="EtcItem">
@@ -935,7 +965,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20940" max="1" min="1" /> <!-- Agathion - Phoenix Nirvana Rebirth (7-day) -->
+			<item id="20940" min="1" max="1" chance="100" /> <!-- Agathion - Phoenix - Nirvana Rebirth (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20949" name="Agathion - Phoenix Pack (7-day)" name_additional="Mountain Echoes" type="EtcItem">
@@ -955,7 +985,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20941" max="1" min="1" /> <!-- Agathion - Phoenix Mountain Echoes (7-day) -->
+			<item id="20941" min="1" max="1" chance="100" /> <!-- Agathion - Phoenix - Mountain Echoes (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20950" name="Fox Mask Pack" type="EtcItem">
@@ -975,7 +1005,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20942" max="1" min="1" /> <!-- Fox Mask -->
+			<item id="20942" min="1" max="1" chance="100" /> <!-- Fox Mask -->
 		</capsuled_items>
 	</item>
 	<item id="20951" name="Fox Mask Pack (7-day)" name_additional="Silent Move" type="EtcItem">
@@ -995,7 +1025,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20943" max="1" min="1" /> <!-- Fox Mask Silent Move (7-day) -->
+			<item id="20943" min="1" max="1" chance="100" /> <!-- Fox Mask - Silent Move (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20952" name="Paiwan Hat Pack" type="EtcItem">
@@ -1015,7 +1045,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20944" max="1" min="1" /> <!-- Paiwan Hat -->
+			<item id="20944" min="1" max="1" chance="100" /> <!-- Paiwan Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20953" name="Paiwan Hat Pack (7-day)" name_additional="Power of Guardian Deity" type="EtcItem">
@@ -1035,7 +1065,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20945" max="1" min="1" /> <!-- Paiwan Hat Power of Guardian Deity (7-day) -->
+			<item id="20945" min="1" max="1" chance="100" /> <!-- Paiwan Hat - Power of Guardian Deity (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20954" name="Small Placid" type="EtcItem">
@@ -1088,7 +1118,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21133-1;23117-1;23175-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1096,6 +1125,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21133" level="1" /> <!-- Release Agathion's Seal - Zombie -->
+			<skill id="23117" level="1" /> <!-- Zombie Agathion Cute Trick -->
+			<skill id="23175" level="1" /> <!-- Soul Stealth -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1116,7 +1148,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20956" max="1" min="1" /> <!-- Agathion - Zombie Soul Stealth (7-day) -->
+			<item id="20956" min="1" max="1" chance="100" /> <!-- Agathion - Zombie - Soul Stealth (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20958" name="April Fools' Day Special Gift (Event)" type="EtcItem">
@@ -1129,6 +1161,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22167" level="1" /> <!-- April Fool's Day Vesper Weapon Gift -->
@@ -1151,7 +1184,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20929" max="1" min="1" /> <!-- Vesper Royal Crown -->
+			<item id="20929" min="1" max="1" chance="100" /> <!-- Vesper Royal Crown -->
 		</capsuled_items>
 	</item>
 	<item id="20960" name="Vesper Royal Circlet Pack" type="EtcItem">
@@ -1171,7 +1204,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20930" max="1" min="1" /> <!-- Vesper Royal Circlet -->
+			<item id="20930" min="1" max="1" chance="100" /> <!-- Vesper Royal Circlet -->
 		</capsuled_items>
 	</item>
 	<item id="20961" name="Vesper Noble Mask Pack" type="EtcItem">
@@ -1191,7 +1224,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20931" max="1" min="1" /> <!-- Vesper Noble Mask -->
+			<item id="20931" min="1" max="1" chance="100" /> <!-- Vesper Noble Mask -->
 		</capsuled_items>
 	</item>
 	<item id="20962" name="Vesper Royal Crown Pack (30-day)" type="EtcItem">
@@ -1211,7 +1244,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20932" max="1" min="1" /> <!-- Vesper Royal Crown 30-day -->
+			<item id="20932" min="1" max="1" chance="100" /> <!-- Vesper Royal Crown - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="20963" name="Vesper Royal Circlet Pack (30-day)" type="EtcItem">
@@ -1231,7 +1264,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20933" max="1" min="1" /> <!-- Vesper Royal Circlet 30-day -->
+			<item id="20933" min="1" max="1" chance="100" /> <!-- Vesper Royal Circlet - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="20964" name="Vesper Noble Mask Pack (30-day)" type="EtcItem">
@@ -1251,7 +1284,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20934" max="1" min="1" /> <!-- Vesper Noble Mask 30-day -->
+			<item id="20934" min="1" max="1" chance="100" /> <!-- Vesper Noble Mask - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="20965" name="Vesper Royal Crown Pack" type="EtcItem">
@@ -1271,7 +1304,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20935" max="1" min="1" /> <!-- Vesper Royal Crown -->
+			<item id="20935" min="1" max="1" chance="100" /> <!-- Vesper Royal Crown -->
 		</capsuled_items>
 	</item>
 	<item id="20966" name="Vesper Royal Circlet Pack" type="EtcItem">
@@ -1291,7 +1324,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20936" max="1" min="1" /> <!-- Vesper Royal Circlet -->
+			<item id="20936" min="1" max="1" chance="100" /> <!-- Vesper Royal Circlet -->
 		</capsuled_items>
 	</item>
 	<item id="20967" name="Vesper Noble Mask Pack" type="EtcItem">
@@ -1311,7 +1344,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20937" max="1" min="1" /> <!-- Vesper Noble Mask -->
+			<item id="20937" min="1" max="1" chance="100" /> <!-- Vesper Noble Mask -->
 		</capsuled_items>
 	</item>
 	<item id="20968" name="Agathion - Guangong" type="Armor">
@@ -1330,10 +1363,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21142" level="1" /> <!-- Release Agathion's Seal - Guangong -->
 			<skill id="23123" level="1" /> <!-- Guangong Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20969" name="Agathion - Guangong Pack" type="EtcItem">
@@ -1353,7 +1385,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20968" max="1" min="1" /> <!-- Agathion - Guangong -->
+			<item id="20968" min="1" max="1" chance="100" /> <!-- Agathion - Guangong -->
 		</capsuled_items>
 	</item>
 	<item id="20970" name="Agathion - Three-headed Dragon" name_additional="Premium" type="Armor">
@@ -1375,11 +1407,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21194" level="1" /> <!-- Release Agathion's Seal - Three-headed Dragon -->
 			<skill id="23181" level="1" /> <!-- Three-headed Dragon Agathion Cute Trick -->
 			<skill id="23182" level="1" /> <!-- Three-headed Dragon Agathion Special Skill: Wind Walk -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20971" name="Trejuo Transformation Stick" name_additional="Blessed Child Transformation" type="Weapon">
@@ -1387,8 +1418,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1400,25 +1429,26 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 			<skill id="21195" level="1" /> <!-- Blessed Child Transformation Skill: Trejuo -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="20972" name="Sujin Transformation Stick" name_additional="Blessed Child Transformation" type="Weapon">
 		<set name="icon" val="BranchSys2.icon.br_blessed_taigirl_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1430,17 +1460,20 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 			<skill id="21196" level="1" /> <!-- Blessed Child Transformation Skill: Sujin -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="20973" name="Opera Mask - Liu Bei" name_additional="Buff of Virtue, Age of the Three Kingdoms" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_mask_a_i00" />
@@ -1457,10 +1490,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="21197" level="1" /> <!-- Induk's Buff -->
 			<skill id="21200" level="1" /> <!-- Age of Three Kingdoms -->
+			<skill id="21197" level="1" /> <!-- Induk's Buff -->
 		</skills>
 	</item>
 	<item id="20974" name="Opera Mask - Guan Yu" name_additional="Silence of Fidelity, Age of the Three Kingdoms" type="Armor">
@@ -1478,10 +1513,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="21198" level="1" /> <!-- Silence of Loyalty -->
 			<skill id="21200" level="1" /> <!-- Age of Three Kingdoms -->
+			<skill id="21198" level="1" /> <!-- Silence of Loyalty -->
 		</skills>
 	</item>
 	<item id="20975" name="Opera Mask - Zhang Fei" name_additional="Vitality of Courage, Age of the Three Kingdoms" type="Armor">
@@ -1499,10 +1536,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="21199" level="1" /> <!-- Vitality of Courage -->
 			<skill id="21200" level="1" /> <!-- Age of Three Kingdoms -->
+			<skill id="21199" level="1" /> <!-- Vitality of Courage -->
 		</skills>
 	</item>
 	<item id="20976" name="Warrior's Mark" name_additional="30-day" type="EtcItem">
@@ -1609,6 +1648,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20982" name="Dragon Boat" name_additional="Haste (7-day)" type="Armor">
@@ -1650,12 +1691,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21202" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Gnosian -->
 			<skill id="23201" level="1" /> <!-- Ball Trapping Gnosian Agathion Cute Trick -->
 			<skill id="23183" level="1" /> <!-- Ball Trapping Gnosian Agathion Special Skill: Buff of Cheering -->
 			<skill id="23184" level="1" /> <!-- Ball Trapping Gnosian Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20984" name="Agathion - Ball Trapping Orodriel" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1675,12 +1715,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21203" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Orodriel -->
 			<skill id="23202" level="1" /> <!-- Ball Trapping Orodriel Agathion Cute Trick -->
 			<skill id="23185" level="1" /> <!-- Ball Trapping Orodriel Agathion Special Skill: Buff of Cheering -->
 			<skill id="23186" level="1" /> <!-- Ball Trapping Orodriel Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20985" name="Agathion - Penalty Kick" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1700,12 +1739,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21204" level="1" /> <!-- Release Agathion's Seal - Penalty Kick -->
 			<skill id="23203" level="1" /> <!-- Penalty Kick Agathion Cute Trick -->
 			<skill id="23187" level="1" /> <!-- Penalty Kick Agathion Special Skill: Buff of Cheering -->
 			<skill id="23188" level="1" /> <!-- Penalty Kick Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20986" name="Agathion - Ball Trapping Gnosian" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1725,12 +1763,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21205" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Gnosian -->
 			<skill id="23204" level="1" /> <!-- Ball Trapping Gnosian Agathion Cute Trick -->
 			<skill id="23189" level="1" /> <!-- Ball Trapping Gnosian Agathion Special Skill: Buff of Cheering -->
 			<skill id="23190" level="1" /> <!-- Ball Trapping Gnosian Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20987" name="Agathion - Ball Trapping Orodriel" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1750,12 +1787,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21206" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Orodriel -->
 			<skill id="23205" level="1" /> <!-- Ball Trapping Orodriel Agathion Cute Trick -->
 			<skill id="23191" level="1" /> <!-- Ball Trapping Orodriel Agathion Special Skill: Buff of Cheering -->
 			<skill id="23192" level="1" /> <!-- Ball Trapping Orodriel Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20988" name="Agathion - Penalty Kick" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1775,12 +1811,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21207" level="1" /> <!-- Release Agathion's Seal - Penalty Kick -->
 			<skill id="23206" level="1" /> <!-- Penalty Kick Agathion Cute Trick -->
 			<skill id="23193" level="1" /> <!-- Penalty Kick Agathion Special Skill: Buff of Cheering -->
 			<skill id="23194" level="1" /> <!-- Penalty Kick Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20989" name="Agathion - Ball Trapping Gnosian" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1800,12 +1835,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21208" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Gnosian -->
 			<skill id="23207" level="1" /> <!-- Ball Trapping Gnosian Agathion Cute Trick -->
 			<skill id="23195" level="1" /> <!-- Ball Trapping Gnosian Agathion Special Skill: Buff of Cheering -->
 			<skill id="23196" level="1" /> <!-- Ball Trapping Gnosian Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20990" name="Agathion - Ball Trapping Orodriel" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1825,12 +1859,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21209" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Orodriel -->
 			<skill id="23208" level="1" /> <!-- Ball Trapping Orodriel Agathion Cute Trick -->
 			<skill id="23197" level="1" /> <!-- Ball Trapping Orodriel Agathion Special Skill: Buff of Cheering -->
 			<skill id="23198" level="1" /> <!-- Ball Trapping Orodriel Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20991" name="Agathion - Penalty Kick" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
@@ -1850,12 +1883,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21210" level="1" /> <!-- Release Agathion's Seal - Penalty Kick -->
 			<skill id="23209" level="1" /> <!-- Penalty Kick Agathion Cute Trick -->
 			<skill id="23199" level="1" /> <!-- Penalty Kick Agathion Special Skill: Buff of Cheering -->
 			<skill id="23200" level="1" /> <!-- Penalty Kick Agathion Special Skill: Soccer Ball of Cheering -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20992" name="Thirst for Victory Quenching Juice" type="EtcItem">
@@ -1916,7 +1948,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20970" max="1" min="1" /> <!-- Agathion - Three-headed Dragon Premium -->
+			<item id="20970" min="1" max="1" chance="100" /> <!-- Agathion - Three-headed Dragon - Premium -->
 		</capsuled_items>
 	</item>
 	<item id="20995" name="Liu Bei Opera Mask Pack" name_additional="Buff of Virtue, Age of the Three Kingdoms" type="EtcItem">
@@ -1936,7 +1968,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20973" max="1" min="1" /> <!-- Opera Mask - Liu Bei Buff of Virtue, Age of the Three Kingdoms -->
+			<item id="20973" min="1" max="1" chance="100" /> <!-- Opera Mask - Liu Bei - Buff of Virtue, Age of the Three Kingdoms -->
 		</capsuled_items>
 	</item>
 	<item id="20996" name="Guan Yu Opera Mask Pack" name_additional="Silence of Fidelity, Age of the Three Kingdoms" type="EtcItem">
@@ -1956,7 +1988,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20974" max="1" min="1" /> <!-- Opera Mask - Guan Yu Silence of Fidelity, Age of the Three Kingdoms -->
+			<item id="20974" min="1" max="1" chance="100" /> <!-- Opera Mask - Guan Yu - Silence of Fidelity, Age of the Three Kingdoms -->
 		</capsuled_items>
 	</item>
 	<item id="20997" name="Zhang Fei Opera Mask Pack" name_additional="Vitality of Courage, Age of the Three Kingdoms" type="EtcItem">
@@ -1976,7 +2008,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20975" max="1" min="1" /> <!-- Opera Mask - Zhang Fei Vitality of Courage, Age of the Three Kingdoms -->
+			<item id="20975" min="1" max="1" chance="100" /> <!-- Opera Mask - Zhang Fei - Vitality of Courage, Age of the Three Kingdoms -->
 		</capsuled_items>
 	</item>
 	<item id="20998" name="Dragon Boat Pack" type="EtcItem">
@@ -1996,7 +2028,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20981" max="1" min="1" /> <!-- Dragon Boat -->
+			<item id="20981" min="1" max="1" chance="100" /> <!-- Dragon Boat -->
 		</capsuled_items>
 	</item>
 	<item id="20999" name="Dragon Boat Pack (7-day)" name_additional="Haste" type="EtcItem">
@@ -2016,7 +2048,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20982" max="1" min="1" /> <!-- Dragon Boat Haste (7-day) -->
+			<item id="20982" min="1" max="1" chance="100" /> <!-- Dragon Boat - Haste (7-day) -->
 		</capsuled_items>
 	</item>
 </list>

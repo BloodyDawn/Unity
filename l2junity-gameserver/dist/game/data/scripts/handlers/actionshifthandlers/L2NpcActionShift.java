@@ -18,8 +18,6 @@
  */
 package handlers.actionshifthandlers;
 
-import handlers.bypasshandlers.NpcViewMod;
-
 import java.util.Set;
 
 import org.l2junity.Config;
@@ -37,6 +35,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+
+import handlers.bypasshandlers.NpcViewMod;
 
 public class L2NpcActionShift implements IActionShiftHandler
 {
@@ -123,8 +123,8 @@ public class L2NpcActionShift implements IActionShiftHandler
 				}
 				
 				html.replace("%spawn%", npc.getSpawn().getX() + " " + npc.getSpawn().getY() + " " + npc.getSpawn().getZ());
-				html.replace("%loc2d%", String.valueOf((int) target.calculateDistance(npc.getSpawn().getLocation(target), false, false)));
-				html.replace("%loc3d%", String.valueOf((int) target.calculateDistance(npc.getSpawn().getLocation(target), true, false)));
+				html.replace("%loc2d%", String.valueOf((int) npc.calculateDistance(npc.getSpawn().getLocation(), false, false)));
+				html.replace("%loc3d%", String.valueOf((int) npc.calculateDistance(npc.getSpawn().getLocation(), true, false)));
 				if (npc.getSpawn().getRespawnMinDelay() == 0)
 				{
 					html.replace("%resp%", "None");

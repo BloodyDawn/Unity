@@ -577,15 +577,73 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8864" levels="7" name="Talisman - Infinity">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases Max HP/MP/CP by 100, P. Accuracy and M. Accuracy by 1, P. Evasion and M. Evasion by 1, Vampiric Rage by 2%, and Atk. Spd. And Casting Spd. By 10 when equipped. -->
 		<table name="#icons"> icon.r85_talisman_pa_up_passive icon.r85_talisman_pa_up_passive icon.r85_talisman_pa_up_passive icon.r85_talisman_pa_up_passive icon.r85_talisman_pa_up_passive icon.r85_talisman_pa_up_passive icon.accessory_punishment_talisman_i01 </table>
+		<table name="#bonus"> 100 100 300 400 500 600 800 </table>
+		<table name="#inc"> 1 2 2 2 2 2 2 </table>
+		<table name="#amount"> 2 2 3 3 3 3 5 </table>
+		<table name="#atkSpd"> 10 10 20 30 40 50 60 </table>
+		<table name="#rCrit"> 0 30 30 30 30 30 30 </table>
+		<table name="#mCritRate"> 0 10 10 10 10 10 10 </table>
+		<table name="#pAtk"> 0 0 103 103 203 303 638 </table>
+		<table name="#mAtk"> 0 0 156 156 256 356 742 </table>
+		<table name="#physicalSkillPower"> 1 1 1.02 1.03 1.04 1.05 1.05 </table>
+		<table name="#reflectDamDef"> 0 0 0 10 20 30 30 </table>
+		<table name="#pDef"> 0 0 0 20 40 60 563 </table>
+		<table name="#mDef"> 0 0 0 20 40 60 368 </table>
+		<table name="#mpConsumeRate"> 1 1 1 1 0.99 0.97 0.97 </table>
+		<table name="#stat"> 0 0 0 0 0 2 2 </table>
+		<table name="#newstat"> 0 0 0 0 0 0 2 </table>
+		<table name="#fixedDamageRes"> 0 0 0 0 0 0 10 </table>
+		<table name="#reuse"> 1 1 1 1 1 1 0.97 </table>
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="3" />
+		<for>
+			<effect name="Buff">
+				<add stat="maxMp" val="#bonus" />
+				<add stat="maxCp" val="#bonus" />
+				<add stat="accCombat" val="#inc" />
+				<add stat="accMagic" val="#inc" />
+				<add stat="rEvas" val="#inc" />
+				<add stat="mEvas" val="#inc" />
+				<add stat="pAtkSpd" val="#atkSpd" />
+				<add stat="mAtkSpd" val="#atkSpd" />
+				<add stat="rCrit" val="#rCrit" />
+				<add stat="mCritRate" val="#mCritRate" />
+				<add stat="pAtk" val="#pAtk" />
+				<add stat="mAtk" val="#mAtk" />
+				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
+				<add stat="reflectDamDef" val="#reflectDamDef" />
+				<add stat="pDef" val="#pDef" />
+				<add stat="mDef" val="#mDef" />
+				<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
+				<mul stat="MagicalMpConsumeRate" val="#mpConsumeRate" />
+				<mul stat="DanceMpConsumeRate" val="#mpConsumeRate" />
+				<add stat="STR" val="#stat" />
+				<add stat="INT" val="#stat" />
+				<add stat="CON" val="#stat" />
+				<add stat="MEN" val="#stat" />
+				<add stat="DEX" val="#stat" />
+				<add stat="WIT" val="#stat" />
+				<add stat="LUC" val="#newstat" />
+				<add stat="CHA" val="#newstat" />
+				<add stat="fixedDamageRes" val="#fixedDamageRes" />
+				<mul stat="pReuse" val="#reuse" />
+				<mul stat="mReuse" val="#reuse" />
+				<mul stat="dReuse" val="#reuse" />
+			</effect>
+			<effect name="MaxHp">
+				<param amount="#bonus" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#amount" chance="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8870" levels="1" name="Tauti's Ring">
 		<!-- AUTO GENERATED SKILL -->

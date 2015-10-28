@@ -155,7 +155,7 @@ public class PcStatus extends PlayableStatus
 			final Summon summon = getActiveChar().getFirstServitor();
 			if ((summon != null) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
-				tDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null)) / 100;
+				tDmg = ((int) value * (int) getActiveChar().getStat().getValue(Stats.TRANSFER_DAMAGE_PERCENT, 0)) / 100;
 				
 				// Only transfer dmg up to current HP, it should not be killed
 				tDmg = Math.min((int) summon.getCurrentHp() - 1, tDmg);
@@ -167,7 +167,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			mpDam = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.MANA_SHIELD_PERCENT, 0, null, null)) / 100;
+			mpDam = ((int) value * (int) getActiveChar().getStat().getValue(Stats.MANA_SHIELD_PERCENT, 0)) / 100;
 			
 			if (mpDam > 0)
 			{
@@ -194,7 +194,7 @@ public class PcStatus extends PlayableStatus
 			{
 				int transferDmg = 0;
 				
-				transferDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null)) / 100;
+				transferDmg = ((int) value * (int) getActiveChar().getStat().getValue(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0)) / 100;
 				transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
 				if (transferDmg > 0)
 				{
@@ -245,36 +245,26 @@ public class PcStatus extends PlayableStatus
 			
 			if ((fullValue > 0) && !isDOT)
 			{
-				SystemMessage smsg;
 				// Send a System Message to the L2PcInstance
-				smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
+				SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 				smsg.addString(getActiveChar().getName());
 				smsg.addCharName(attacker);
 				smsg.addInt(fullValue);
 				getActiveChar().sendPacket(smsg);
 				
-				if ((tDmg > 0) && (summon != null))
+				if ((tDmg > 0) && (summon != null) && (attackerPlayer != null))
 				{
-					smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
-					smsg.addString(summon.getName());
-					smsg.addCharName(attacker);
+					smsg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_DEALT_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_THE_SERVITOR);
+					smsg.addInt(fullValue);
 					smsg.addInt(tDmg);
-					getActiveChar().sendPacket(smsg);
-					
-					if (attackerPlayer != null)
-					{
-						smsg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_DEALT_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_THE_SERVITOR);
-						smsg.addInt(fullValue);
-						smsg.addInt(tDmg);
-						attackerPlayer.sendPacket(smsg);
-					}
+					attackerPlayer.sendPacket(smsg);
 				}
 			}
 		}
 		
 		if (value > 0)
 		{
-			final double hpLockMin = getActiveChar().calcStat(Stats.HP_LOCK_MIN, 0);
+			final double hpLockMin = getActiveChar().getStat().getValue(Stats.HP_LOCK_MIN, 0);
 			value = Math.max(getCurrentHp() - value, hpLockMin);
 			if (value <= 0)
 			{
@@ -312,9 +302,9 @@ public class PcStatus extends PlayableStatus
 				final Summon pet = getActiveChar().getPet();
 				if (pet != null)
 				{
-					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				}
-				getActiveChar().getServitors().values().forEach(s -> s.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null));
+				getActiveChar().getServitors().values().forEach(s -> s.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE));
 				return;
 			}
 			

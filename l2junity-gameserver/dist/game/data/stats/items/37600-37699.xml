@@ -205,6 +205,7 @@
 		<set name="icon" val="icon.card_devil_frintessa" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="CARD_EVENT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37626" name="Mysterious Blessed Spiritshot Pack (R-grade)" type="EtcItem">
@@ -236,6 +237,7 @@
 	<item id="37628" name="Cupid's Arrow" type="Weapon">
 		<!-- Throws a love-filled heart. Can use the active skill 'Heart Shot.' \nWarning: When using on a monster, you can receive another player's attack. -->
 		<set name="icon" val="icon.bm_krono_bow" />
+		<set name="weapon_type" val="BOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -247,16 +249,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="900" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="37629" name="Pig Lollipop" type="Weapon">
 		<!-- Magic lollipop with a cute piggy drawing on it. It makes a piggy squeal upon a strike. Can transform into a cute piggy for a certain amount of time. -->
 		<set name="icon" val="icon.bm_pig_candy" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_tradable" val="false" />
@@ -265,16 +270,18 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37630" name="Mysterious Shaper" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_dagger_of_hero" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -288,16 +295,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="881.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">881</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37631" name="Mysterious Cutter" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_sword_of_hero" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -311,16 +321,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37632" name="Mysterious Slasher" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_two_handed_sword_of_hero" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -334,16 +346,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37633" name="Mysterious Avenger" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_axe_of_hero" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -357,17 +371,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37634" name="Mysterious Fighter" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_fist_of_hero" />
+		<set name="weapon_type" val="DUALFIST" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -381,17 +397,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37635" name="Mysterious Stormer" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_pole_of_hero" />
+		<set name="weapon_type" val="POLE" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -405,16 +423,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="37636" name="Mysterious Thrower" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_bow_of_hero" />
+		<set name="weapon_type" val="BOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -428,16 +449,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1983.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1983</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="37637" name="Mysterious Shooter" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_infinity_shooter" />
+		<set name="weapon_type" val="TWOHANDCROSSBOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -451,16 +475,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1786.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1786</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="37638" name="Mysterious Buster" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_infinity_sword" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -474,16 +501,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="805.0" />
-			<set stat="mAtk" val="696.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">805</stat>
+			<stat type="mAtk">696</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37639" name="Mysterious Caster" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_mace_of_hero" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -497,17 +526,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="805.0" />
-			<set stat="mAtk" val="696.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">805</stat>
+			<stat type="mAtk">696</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37640" name="Mysterious Retributer" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_staff_of_hero" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -521,18 +552,20 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="981.0" />
-			<set stat="mAtk" val="765.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">981</stat>
+			<stat type="mAtk">765</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37641" name="Mysterious Dualsword" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_r_dualsword" />
+		<set name="weapon_type" val="DUAL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -546,16 +579,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37642" name="Mysterious Dual Dagger" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_r_dualdagger" />
+		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -569,16 +604,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37643" name="Mysterious Dual Blunt" name_additional="7-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_r_dualblunt" />
+		<set name="weapon_type" val="DUALBLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -592,17 +630,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37644" name="Mysterious Shaper" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_dagger_of_hero" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -616,16 +656,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="881.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">881</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37645" name="Mysterious Cutter" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_sword_of_hero" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -639,16 +682,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37646" name="Mysterious Slasher" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_two_handed_sword_of_hero" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -662,16 +707,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37647" name="Mysterious Avenger" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_axe_of_hero" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -685,17 +732,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37648" name="Mysterious Fighter" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_fist_of_hero" />
+		<set name="weapon_type" val="DUALFIST" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -709,17 +758,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37649" name="Mysterious Stormer" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_pole_of_hero" />
+		<set name="weapon_type" val="POLE" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -733,16 +784,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="37650" name="Mysterious Thrower" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_bow_of_hero" />
+		<set name="weapon_type" val="BOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -756,16 +810,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1983.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1983</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="37651" name="Mysterious Shooter" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_infinity_shooter" />
+		<set name="weapon_type" val="TWOHANDCROSSBOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -779,16 +836,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1786.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1786</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="37652" name="Mysterious Buster" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_infinity_sword" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -802,16 +862,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="805.0" />
-			<set stat="mAtk" val="696.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">805</stat>
+			<stat type="mAtk">696</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37653" name="Mysterious Caster" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_mace_of_hero" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -825,17 +887,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="805.0" />
-			<set stat="mAtk" val="696.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">805</stat>
+			<stat type="mAtk">696</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37654" name="Mysterious Retributer" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_the_staff_of_hero" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -849,18 +913,20 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="981.0" />
-			<set stat="mAtk" val="765.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">981</stat>
+			<stat type="mAtk">765</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37655" name="Mysterious Dualsword" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_r_dualsword" />
+		<set name="weapon_type" val="DUAL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -874,16 +940,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37656" name="Mysterious Dual Dagger" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_r_dualdagger" />
+		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -897,16 +965,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1007</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37657" name="Mysterious Dual Blunt" name_additional="30-day" type="Weapon">
 		<!-- Weapon infused with mysterious power. Must use No-grade Soulshot/Spiritshot/Blessed Spiritshot. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.bm_r_dualblunt" />
+		<set name="weapon_type" val="DUALBLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
 		<set name="is_clan_depositable" val="false" />
@@ -920,13 +991,14 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1225</stat>
+			<stat type="mAtk">521</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37658" name="Mysterious Healthy Juice Pack (HP/CP)" type="EtcItem">
 		<!-- Double click to acquire 3 Mysterious Healthy Juices (HP/CP). -->
@@ -951,11 +1023,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37660" name="Magmeld's Instrument" type="Weapon">
 		<!-- Magmeld's special instrument. Can play lively music. -->
 		<set name="icon" val="icon.bm_magmeld" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_tradable" val="false" />
@@ -964,13 +1038,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37661" name="Refined Romantic Chapeau: Blue" type="Armor">
 		<!-- Refined blue romantic chapeau. Uses 2 hair accessory slots. -->
@@ -1065,10 +1140,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
-		<for>
-			<add stat="mDef" val="170.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">170</stat>
+		</stats>
 	</item>
 	<item id="37668" name="Blessed Valakas' Necklace" name_additional="30-day" type="Armor">
 		<!-- HP +625, MP +79, Sleep Resistance 50% increase, Sleep Attack Rate 50% increase, physical/magic skill cooldown decrease, Wild Magic Effect, damage shield effect, fire resistance 30 increase, Dark Resistance 20 increase, STR +3, INT +3. P. Skill Atk. 5% increase, P. Atk. 10% increase, M. Atk. 20% increase, hold resistance skill use. Hold resistance 100% increase momentarily. Cannot be used in the Olympiad. -->
@@ -1086,10 +1160,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
-		<for>
-			<add stat="mDef" val="226.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">226</stat>
+		</stats>
 	</item>
 	<item id="37669" name="Tauti's Ring" name_additional="30-day" type="Armor">
 		<!-- Tauti's Ring. Fire/Dark Resistance 25 increase, MP 38 increase, Critical Damage 15% increase, skill attack 5% increase, damage inflicted during PvP 5% increase, paralysis/yoke/exile resistance 10 increase, damage reflect resistance 5 increase, HP drain resistance 5 increase, damage received during PvP 5% decrease. Critical 54 increase when equipped with a blunt. Only one effect is applied even when the same two rings are worn (excluding attributes/M. Def.) Cannot be used in the Olympiad. -->
@@ -1107,10 +1180,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
-		<for>
-			<add stat="mDef" val="108.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">108</stat>
+		</stats>
 	</item>
 	<item id="37670" name="Earth Wyrm Heart Ring" name_additional="30-day" type="Armor">
 		<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
@@ -1128,10 +1200,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
-		<for>
-			<add stat="mDef" val="108.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">108</stat>
+		</stats>
 	</item>
 	<item id="37671" name="Heavenly Recovery Potion" type="EtcItem">
 		<!-- When used, recovers 2500 HP and the remaining power is recovered as CP. There is no duration. Cannot be used in an auction house or the Olympiad. Can be shared within the same account through the Dimensional Merchant. -->
@@ -1140,6 +1211,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37672" name="Mysterious Friend Summon Bracelet" name_additional="30-day" type="Armor">
@@ -1174,6 +1246,7 @@
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37675" name="Scroll: Modify Blood Sword Akamanah" type="EtcItem">
@@ -1182,6 +1255,7 @@
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37676" name="Coin of Knowledge" type="EtcItem">
@@ -1209,6 +1283,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37678" name="GM's Buff Scroll" name_additional="P. Atk." type="EtcItem">
@@ -1223,6 +1298,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37679" name="GM's Buff Scroll" name_additional="M. Atk." type="EtcItem">
@@ -1237,6 +1313,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37680" name="Transformation Scroll: Makeshift Bat" type="EtcItem">
@@ -1245,6 +1322,7 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37681" name="Theamo's Talisman" name_additional="Not in Use" type="Armor">
@@ -1270,11 +1348,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 	</item>
 	<item id="37683" name="Demonic Sword Zariche" name_additional="Appearance Modification" type="Weapon">
 		<!-- Demonic Sword Zariche skin. -->
 		<set name="icon" val="icon.weapon_unique_zariche_i00" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lrhand" />
 		<set name="crystal_type" val="D" />
@@ -1289,12 +1369,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="10" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="mAtk" val="10.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37684" name="Blood Sword Akamanah" name_additional="Appearance Modification" type="Weapon">
 		<!-- Blood Sword Akamanah skin. -->
@@ -1314,12 +1395,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="mAtk" val="10.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37685" name="Transformation Scroll: Lady Tow" type="EtcItem">
 		<!-- Can change into the appearance of a Lady Tow for 30 minutes.\nPlease note that a Tow is extremely cute. -->
@@ -1327,6 +1409,7 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37686" name="Transformation Scroll: Angry Tow" type="EtcItem">
@@ -1335,6 +1418,7 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37687" name="Transformation Scroll: Sleepy Tow" type="EtcItem">
@@ -1343,11 +1427,13 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37688" name="Valentine Dagger" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1360,16 +1446,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="685.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">685</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37689" name="Valentine One-handed Sword" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1382,16 +1471,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37690" name="Valentine Two-handed Sword" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1404,16 +1495,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37691" name="Valentine One-handed Blunt Weapon" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1426,17 +1519,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37692" name="Valentine Fist Weapon" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="DUALFIST" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1449,17 +1544,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37693" name="Valentine Spear" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="POLE" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1472,16 +1569,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="37694" name="Valentine Bow" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="BOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1494,16 +1594,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="1481.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1481</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="37695" name="Valentine Crossbow" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="TWOHANDCROSSBOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1516,16 +1619,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="1333.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1333</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="37696" name="Valentine One-handed Magic Sword" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1538,16 +1644,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="602.0" />
-			<set stat="mAtk" val="486.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">602</stat>
+			<stat type="mAtk">486</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37697" name="Valentine One-handed Magic Blunt Weapon" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1560,17 +1668,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="602.0" />
-			<set stat="mAtk" val="486.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">602</stat>
+			<stat type="mAtk">486</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37698" name="Valentine Two-handed Magic Blunt Weapon" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1583,17 +1693,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="733.0" />
-			<set stat="mAtk" val="535.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">733</stat>
+			<stat type="mAtk">535</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37699" name="Valentine Dualsword" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="DUAL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1606,11 +1718,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 </list>

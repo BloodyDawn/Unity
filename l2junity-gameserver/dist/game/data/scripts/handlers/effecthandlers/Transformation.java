@@ -63,7 +63,7 @@ public final class Transformation extends AbstractEffect
 	{
 		return info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
@@ -72,7 +72,7 @@ public final class Transformation extends AbstractEffect
 			TransformData.getInstance().transformPlayer(_id.get(Rnd.get(_id.size())), effected.getActingPlayer());
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

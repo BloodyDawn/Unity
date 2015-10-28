@@ -1025,6 +1025,8 @@
 		<!-- Max HP/MP/CP + 800, P./M. Accuracy + 2, P./M. Evasion + 2, Atk./Casting Spd. + 60, P. Critical Rate + 30, M. Critical Rate + 10, P. Atk. + 638, M. Atk. + 742, Skill Power + 5%, Damage Reflect Resistance + 30, P. Def. + 563, M. Def. + 368, Fixed Damage Resistance + 10%, Vampiric Rage + 5, STR/INT/CON/MEN/DEX/WIT/CHA/LUC + 2. Skill MP Consumption - 3%, Skill Cooldown - 3%. -->
 		<set name="icon" val="icon.accessory_punishment_talisman_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1035,6 +1037,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="8864" level="7" /> <!-- Talisman - Insanity -->
+			<skill id="13384" level="1" type="ON_EQUIP" /> <!-- Equip Talisman - Infinity -->
+			<skill id="13390" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Infinity -->
+		</skills>
 	</item>
 	<item id="39573" name="Sealed Talisman - Insanity" type="EtcItem">
 		<!-- Double-click to obtain a Talisman - Insanity. Cannot be exchanged, dropped, or sold in a private store once open. Lv. 85 or above. -->
@@ -1058,12 +1065,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17949" level="1" /> <!-- Scroll of Escape: Town of Oren -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17949" level="1" /> <!-- Scroll of Escape: Town of Oren -->
+		</skills>
 	</item>
 	<item id="39575" name="Scroll of Escape: Sea of Spores" type="EtcItem">
 		<!-- Teleports you to Sea of Spores. -->
@@ -1080,12 +1087,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17950" level="1" /> <!-- Scroll of Escape: Sea of Spores -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17950" level="1" /> <!-- Scroll of Escape: Sea of Spores -->
+		</skills>
 	</item>
 	<item id="39576" name="Scroll of Escape: Town of Aden" type="EtcItem">
 		<!-- Teleports you to Town of Aden. -->
@@ -1102,12 +1109,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17951" level="1" /> <!-- Scroll of Escape: Town of Aden -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17951" level="1" /> <!-- Scroll of Escape: Town of Aden -->
+		</skills>
 	</item>
 	<item id="39577" name="Scroll of Escape: Forsaken Plains" type="EtcItem">
 		<!-- Teleports you to Forsaken Plains. -->
@@ -1124,12 +1131,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17952" level="1" /> <!-- Scroll of Escape: Forsaken Plains -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17952" level="1" /> <!-- Scroll of Escape: Forsaken Plains -->
+		</skills>
 	</item>
 	<item id="39578" name="Scroll of Escape: Town of Aden" type="EtcItem">
 		<!-- Teleports you to Town of Aden. -->
@@ -1146,12 +1153,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17953" level="1" /> <!-- Scroll of Escape: Town of Aden -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17953" level="1" /> <!-- Scroll of Escape: Town of Aden -->
+		</skills>
 	</item>
 	<item id="39579" name="Scroll of Escape: Fields of Massacre" type="EtcItem">
 		<!-- Teleports you to Fields of Massacre. -->
@@ -1168,12 +1175,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17954" level="1" /> <!-- Scroll of Escape: Fields of Massacre -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17954" level="1" /> <!-- Scroll of Escape: Fields of Massacre -->
+		</skills>
 	</item>
 	<item id="39580" name="Scroll of Escape: Town of Rune" type="EtcItem">
 		<!-- Teleports you to Town of Rune. -->
@@ -1190,12 +1197,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17955" level="1" /> <!-- Scroll of Escape: Town of Rune -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17955" level="1" /> <!-- Scroll of Escape: Town of Rune -->
+		</skills>
 	</item>
 	<item id="39581" name="Scroll of Escape: Swamp of Screams" type="EtcItem">
 		<!-- Teleports you to Swamp of Screams. -->
@@ -1212,12 +1219,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17956" level="1" /> <!-- Scroll of Escape: Swamp of Screams -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17956" level="1" /> <!-- Scroll of Escape: Swamp of Screams -->
+		</skills>
 	</item>
 	<item id="39582" name="Scroll of Escape: Town of Rune" type="EtcItem">
 		<!-- Teleports you to Town of Rune. -->
@@ -1234,12 +1241,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17957" level="1" /> <!-- Scroll of Escape: Town of Rune -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17957" level="1" /> <!-- Scroll of Escape: Town of Rune -->
+		</skills>
 	</item>
 	<item id="39583" name="Scroll of Escape: Forest of the Dead" type="EtcItem">
 		<!-- Teleports you to Forest of the Dead. -->
@@ -1256,12 +1263,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17958" level="1" /> <!-- Scroll of Escape: Forest of the Dead -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17958" level="1" /> <!-- Scroll of Escape: Forest of the Dead -->
+		</skills>
 	</item>
 	<item id="39584" name="Scroll of Escape: Town of Goddard" type="EtcItem">
 		<!-- Teleports you to Town of Goddard. -->
@@ -1353,6 +1360,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="icon" val="icon.etc_whiteday_candy_i05" />
 	</item>
 	<item id="39591" name="Nom Nom Candy (30-day)" name_additional="Event" type="EtcItem">
@@ -1365,6 +1373,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="icon" val="icon.etc_whiteday_candy_i06" />
 	</item>
 	<item id="39592" name="Tempest Stone" type="EtcItem">
@@ -1372,6 +1381,7 @@
 		<set name="icon" val="icon.trace_of_wind2" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="GEMSTONE" />
 	</item>
 	<item id="39593" name="Scroll of Escape: Town of Dion" type="EtcItem">
@@ -1389,12 +1399,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17985" level="1" /> <!-- Scroll of Escape: Town of Dion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17985" level="1" /> <!-- Scroll of Escape: Town of Dion -->
+		</skills>
 	</item>
 	<item id="39594" name="Scroll of Escape: Cruma Tower" type="EtcItem">
 		<!-- Teleports you to Cruma Tower. -->
@@ -1411,12 +1421,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17986" level="1" /> <!-- Scroll of Escape: Cruma Tower -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17986" level="1" /> <!-- Scroll of Escape: Cruma Tower -->
+		</skills>
 	</item>
 	<item id="39595" name="Scroll of Escape: Town of Dion" type="EtcItem">
 		<!-- Teleports you to Town of Dion. -->
@@ -1433,12 +1443,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17987" level="1" /> <!-- Scroll of Escape: Town of Dion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17987" level="1" /> <!-- Scroll of Escape: Town of Dion -->
+		</skills>
 	</item>
 	<item id="39596" name="Scroll of Escape: Cruma Tower" type="EtcItem">
 		<!-- Teleports you to Cruma Tower Underground Lv. 3. -->
@@ -1455,12 +1465,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="17988" level="1" /> <!-- Scroll of Escape: Cruma Tower -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="17988" level="1" /> <!-- Scroll of Escape: Cruma Tower -->
+		</skills>
 	</item>
 	<item id="39597" name="Warp Crystal" type="EtcItem">
 		<!-- Something you'll need to enter the Dimensional Warp. -->

@@ -11,6 +11,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2337" level="1" /> <!-- Wind Resistance Potion -->
@@ -45,6 +46,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2339" level="1" /> <!-- Holy Attack Resistance Potion -->
@@ -55,8 +57,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="40" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="122" />
@@ -68,30 +68,30 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="46" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">46</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10004" name="Dynasty Dualsword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2398" />
@@ -103,28 +103,27 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3552-1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="DUALSWORD" />
 		<skills>
-			<skill id="3411" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3411" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10005" name="Shadow Item: Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="40" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -141,29 +140,27 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="90" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="46" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">46</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10006" name="Shadow Item: Military Talwar" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -183,23 +180,21 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="55" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">55</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10007" name="Shadow Item: Hand Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -220,23 +215,21 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="10008" name="Shadow Item: Blinzlasher" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="40" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -253,29 +246,27 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="120" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="126" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">126</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10009" name="Shadow Item: Immortal Edge" type="Weapon">
 		<set name="icon" val="icon.weapon_invincible_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -295,23 +286,21 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="151" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">151</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10010" name="Shadow Item: Tathlum" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -332,23 +321,21 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="176" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">176</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="10011" name="Shadow Item: War Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -365,15 +352,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10012" name="Scorpion Poison Stinger" type="EtcItem">
 		<set name="icon" val="icon.etc_claw_i00" />
@@ -382,6 +369,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10013" name="Race Stamp" type="EtcItem">
@@ -406,6 +394,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10015" name="Prison Gate Key" type="EtcItem">
@@ -421,6 +410,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="time" val="60" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="2362" level="1" /> <!-- Prison Gate Key -->
@@ -433,6 +423,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2363" level="1" /> <!-- Underground Warehouse Key -->
@@ -444,6 +435,7 @@
 		<set name="material" val="STEEL" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2400" level="1" /> <!-- Coral Treasure Chest Key -->
@@ -459,19 +451,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5458-1;3361-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player fort="-1" />
 		</cond>
+		<skills>
+			<skill id="5458" level="1" /> <!-- Agathion Cute Trick - Fortress -->
+			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="10019" name="Ring Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t12_u_i00" />
@@ -489,13 +482,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="77" />
-		</for>
+		<stats>
+			<stat type="pDef">77</stat>
+		</stats>
 	</item>
 	<item id="10020" name="Iron Plate Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t12_l_i00" />
@@ -513,13 +507,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="48" />
-		</for>
+		<stats>
+			<stat type="pDef">48</stat>
+		</stats>
 	</item>
 	<item id="10021" name="Puma Skin Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t09_u_i00" />
@@ -537,10 +532,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="58" />
-		</for>
+		<stats>
+			<stat type="pDef">58</stat>
+		</stats>
 	</item>
 	<item id="10022" name="Puma Skin Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t09_l_i00" />
@@ -558,10 +554,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="36" />
-		</for>
+		<stats>
+			<stat type="pDef">36</stat>
+		</stats>
 	</item>
 	<item id="10023" name="Cursed Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t14_u_i00" />
@@ -579,14 +576,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="39" />
-			<add stat="maxMp" val="106" />
-		</for>
+		<stats>
+			<stat type="pDef">39</stat>
+			<stat type="maxMp">106</stat>
+		</stats>
 	</item>
 	<item id="10024" name="Cursed Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t14_l_i00" />
@@ -604,14 +602,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="24" />
-			<add stat="maxMp" val="66" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+			<stat type="maxMp">66</stat>
+		</stats>
 	</item>
 	<item id="10025" name="Battle Manual - Fallen Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_kamael_skill_book_i00" />
@@ -620,6 +619,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="75" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10026" name="Battle Manual - Fallen Attack" type="EtcItem">
@@ -629,6 +629,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="75" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10027" name="Battle Manual - Detect Trap" type="EtcItem">
@@ -638,6 +639,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="550" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10028" name="Battle Manual - Defuse Trap" type="EtcItem">
@@ -647,6 +649,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="550" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10029" name="Battle Manual - Dark Strike" type="EtcItem">
@@ -656,6 +659,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10030" name="Battle Manual - Dark Smash" type="EtcItem">
@@ -665,6 +669,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2900" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10031" name="Battle Manual - Double Thrust" type="EtcItem">
@@ -674,6 +679,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10032" name="Battle Manual - Abyssal Blaze" type="EtcItem">
@@ -683,6 +689,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10033" name="Battle Manual - Dark Explosion" type="EtcItem">
@@ -692,6 +699,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10034" name="Battle Manual - Shift Target" type="EtcItem">
@@ -701,6 +709,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10035" name="Battle Manual - Change Life Stone" type="EtcItem">
@@ -710,6 +719,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10036" name="Battle Manual - Spread Wing" type="EtcItem">
@@ -719,6 +729,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10037" name="Battle Manual - Slashing Blade" type="EtcItem">
@@ -728,6 +739,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3850" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10038" name="Battle Manual - Crushing Pain" type="EtcItem">
@@ -737,6 +749,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10039" name="Battle Manual - Contagion" type="EtcItem">
@@ -746,6 +759,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7950" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10040" name="Battle Manual - Life to Soul" type="EtcItem">
@@ -755,6 +769,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10041" name="Battle Manual - Scorn" type="EtcItem">
@@ -764,6 +779,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10042" name="Battle Manual - Triple Thrust" type="EtcItem">
@@ -773,6 +789,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2900" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10043" name="Battle Manual - Shining Edge" type="EtcItem">
@@ -782,6 +799,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10044" name="Battle Manual - Checkmate" type="EtcItem">
@@ -791,6 +809,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10045" name="Battle Manual - Soul of Pain" type="EtcItem">
@@ -800,6 +819,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10046" name="Battle Manual - Dark Flame" type="EtcItem">
@@ -809,6 +829,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10047" name="Battle Manual - Annihilation Circle" type="EtcItem">
@@ -818,6 +839,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10048" name="Battle Manual - Curse of Divinity" type="EtcItem">
@@ -827,6 +849,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="8700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10049" name="Battle Manual - Steal Divinity" type="EtcItem">
@@ -836,6 +859,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10050" name="Battle Manual - Blink" type="EtcItem">
@@ -845,6 +869,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10051" name="Battle Manual - Transfer Soul" type="EtcItem">
@@ -854,6 +879,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10052" name="Battle Manual - Twin Shot" type="EtcItem">
@@ -863,6 +889,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2900" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10053" name="Battle Manual - Rising Shot" type="EtcItem">
@@ -872,6 +899,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3850" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10054" name="Battle Manual - Deadly Roulette" type="EtcItem">
@@ -881,6 +909,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="8700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10055" name="Battle Manual - Temptation" type="EtcItem">
@@ -890,6 +919,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10056" name="Battle Manual - Create Bio Potion" type="EtcItem">
@@ -899,6 +929,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10057" name="Battle Manual - Create Dark Seed" type="EtcItem">
@@ -908,6 +939,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10058" name="Battle Manual - Fire Trap" type="EtcItem">
@@ -917,6 +949,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1550" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10059" name="Battle Manual - Poison Trap" type="EtcItem">
@@ -926,6 +959,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10060" name="Battle Manual - Slow Trap" type="EtcItem">
@@ -935,6 +969,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10061" name="Battle Manual - Flash Trap" type="EtcItem">
@@ -944,6 +979,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10062" name="Battle Manual - Binding Trap" type="EtcItem">
@@ -953,6 +989,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10063" name="Battle Manual - Quiver of Bolts (A-grade)" type="EtcItem">
@@ -962,6 +999,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="8700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10064" name="Battle Manual - Quiver of Bolts (S-grade)" type="EtcItem">
@@ -971,6 +1009,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10065" name="Battle Manual - Cure Dark Seed" type="EtcItem">
@@ -980,6 +1019,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="8200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10066" name="Battle Manual - Decoy" type="EtcItem">
@@ -989,6 +1029,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10067" name="Battle Manual - Chain Lightning" type="EtcItem">
@@ -998,6 +1039,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10068" name="Battle Manual - Enuma Elish" type="EtcItem">
@@ -1007,6 +1049,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10069" name="Battle Manual - Leopold" type="EtcItem">
@@ -1016,6 +1059,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10070" name="Battle Manual - Change Weapon" type="EtcItem">
@@ -1025,6 +1069,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10071" name="Battle Manual - Quiver of Bolts (B-grade)" type="EtcItem">
@@ -1034,6 +1079,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10072" name="Battle Manual - Increase Power" type="EtcItem">
@@ -1043,6 +1089,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10073" name="Battle Manual - Rapid Attack" type="EtcItem">
@@ -1052,6 +1099,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10074" name="Battle Manual - Furious Soul" type="EtcItem">
@@ -1061,6 +1109,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10075" name="Battle Manual - Sword Shield" type="EtcItem">
@@ -1070,6 +1119,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10076" name="Battle Manual - Disarm" type="EtcItem">
@@ -1079,6 +1129,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10077" name="Battle Manual - Fast Shot" type="EtcItem">
@@ -1088,6 +1139,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2050" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10078" name="Battle Manual - Death Mark" type="EtcItem">
@@ -1097,6 +1149,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10079" name="Battle Manual - Courage" type="EtcItem">
@@ -1106,6 +1159,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10080" name="Battle Manual - Violent Temper" type="EtcItem">
@@ -1115,6 +1169,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10081" name="Battle Manual - Soul to Empower" type="EtcItem">
@@ -1124,6 +1179,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10082" name="Battle Manual - Darkness Protection" type="EtcItem">
@@ -1133,6 +1189,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10083" name="Battle Manual - Dark Weapon" type="EtcItem">
@@ -1142,6 +1199,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10084" name="Battle Manual - Pride of Kamael" type="EtcItem">
@@ -1151,6 +1209,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10085" name="Battle Manual - Surrender to Dark" type="EtcItem">
@@ -1160,6 +1219,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10086" name="Battle Manual - Bleeding Shot" type="EtcItem">
@@ -1169,6 +1229,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3350" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10087" name="Battle Manual - Sharpshooting" type="EtcItem">
@@ -1178,6 +1239,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10088" name="Battle Manual - Real Target" type="EtcItem">
@@ -1187,6 +1249,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10089" name="Battle Manual - Imbue Dark Seed" type="EtcItem">
@@ -1196,6 +1259,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10090" name="Battle Manual - Prahnah" type="EtcItem">
@@ -1205,6 +1269,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10091" name="Battle Manual - Final Form" type="EtcItem">
@@ -1214,6 +1279,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="40000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10092" name="Battle Manual - Shadow Bind" type="EtcItem">
@@ -1223,6 +1289,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10093" name="Battle Manual - Voice Bind" type="EtcItem">
@@ -1232,6 +1299,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10094" name="Battle Manual - Rush" type="EtcItem">
@@ -1241,6 +1309,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2050" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10095" name="Battle Manual - Storm Assault" type="EtcItem">
@@ -1250,6 +1319,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10096" name="Battle Manual - Wing Assault" type="EtcItem">
@@ -1259,6 +1329,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="40000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10097" name="Battle Manual - Shoulder Charge" type="EtcItem">
@@ -1268,6 +1339,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2900" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10098" name="Battle Manual - Blade Rush" type="EtcItem">
@@ -1277,6 +1349,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10099" name="Spellbook: Count of Fire" type="EtcItem">
@@ -1286,6 +1359,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

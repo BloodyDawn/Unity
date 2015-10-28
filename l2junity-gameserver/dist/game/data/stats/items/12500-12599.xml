@@ -7,10 +7,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="598600" />
-		<for>
-			<add order="0" stat="pDef" val="62" />
-		</for>
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
 	</item>
 	<item id="12501" name="Foundation Zubei's Breastplate" type="EtcItem">
 		<set name="icon" val="icon.armor_t64_u_i00" />
@@ -19,13 +20,14 @@
 		<set name="weight" val="7970" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="1596000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="157" />
-		</for>
+		<stats>
+			<stat type="pDef">157</stat>
+		</stats>
 	</item>
 	<item id="12502" name="Foundation Avadon Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t66_g_i00" />
@@ -34,13 +36,14 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12503" name="Foundation Avadon Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t67_g_i00" />
@@ -49,10 +52,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12504" name="Foundation Avadon Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t59_g_i00" />
@@ -61,13 +65,14 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12505" name="Foundation Avadon Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t67_ul_i00" />
@@ -76,10 +81,11 @@
 		<set name="weight" val="5600" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="1946000" />
-		<for>
-			<add order="0" stat="pDef" val="191" />
-		</for>
+		<stats>
+			<stat type="pDef">191</stat>
+		</stats>
 	</item>
 	<item id="12506" name="Foundation Avadon Robe" type="EtcItem">
 		<set name="icon" val="icon.armor_t59_ul_i00" />
@@ -88,14 +94,15 @@
 		<set name="weight" val="2540" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="1197000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="78" />
-			<add stat="maxMp" val="345" />
-		</for>
+		<stats>
+			<stat type="pDef">78</stat>
+			<stat type="maxMp">345</stat>
+		</stats>
 	</item>
 	<item id="12507" name="Foundation Avadon Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t66_b_i00" />
@@ -104,13 +111,14 @@
 		<set name="weight" val="1180" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12508" name="Foundation Avadon Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t67_b_i00" />
@@ -119,10 +127,11 @@
 		<set name="weight" val="1180" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12509" name="Foundation Avadon Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t59_b_i00" />
@@ -131,13 +140,14 @@
 		<set name="weight" val="1180" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="399100" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12510" name="Foundation Avadon Circlet" type="EtcItem">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -146,10 +156,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="598600" />
-		<for>
-			<add order="0" stat="pDef" val="62" />
-		</for>
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
 	</item>
 	<item id="12511" name="Foundation Avadon Shield" type="EtcItem">
 		<set name="icon" val="icon.shield_avadon_shield_i00" />
@@ -158,15 +169,16 @@
 		<set name="weight" val="1210" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="419000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">216</stat>
+		</stats>
 	</item>
 	<item id="12512" name="Foundation Avadon Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t66_l_i00" />
@@ -175,13 +187,14 @@
 		<set name="weight" val="3520" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="997700" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="98" />
-		</for>
+		<stats>
+			<stat type="pDef">98</stat>
+		</stats>
 	</item>
 	<item id="12513" name="Foundation Avadon Breastplate" type="EtcItem">
 		<set name="icon" val="icon.armor_t66_u_i00" />
@@ -190,13 +203,14 @@
 		<set name="weight" val="7920" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="1596000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="157" />
-		</for>
+		<stats>
+			<stat type="pDef">157</stat>
+		</stats>
 	</item>
 	<item id="12514" name="Foundation Tunic of Zubei" type="EtcItem">
 		<set name="icon" val="icon.armor_t56_u_i00" />
@@ -205,14 +219,15 @@
 		<set name="weight" val="1960" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="1197000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="78" />
-			<add stat="maxMp" val="345" />
-		</for>
+		<stats>
+			<stat type="pDef">78</stat>
+			<stat type="maxMp">345</stat>
+		</stats>
 	</item>
 	<item id="12515" name="Foundation Stockings of Zubei" type="EtcItem">
 		<set name="icon" val="icon.armor_t56_l_i00" />
@@ -221,14 +236,15 @@
 		<set name="weight" val="940" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="748300" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-			<add stat="maxMp" val="216" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+			<stat type="maxMp">216</stat>
+		</stats>
 	</item>
 	<item id="12516" name="Foundation Doom Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t71_g_i00" />
@@ -237,13 +253,14 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12517" name="Foundation Doom Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t72_g_i00" />
@@ -252,10 +269,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12518" name="Foundation Doom Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t73_g_i00" />
@@ -264,13 +282,14 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12519" name="Foundation Doom Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t71_b_i00" />
@@ -279,13 +298,14 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12520" name="Foundation Doom Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t72_b_i00" />
@@ -294,10 +314,11 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12521" name="Foundation Doom Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t73_b_i00" />
@@ -306,13 +327,14 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12522" name="Foundation Doom Shield" type="EtcItem">
 		<set name="icon" val="icon.shield_doom_shield_i00" />
@@ -321,15 +343,16 @@
 		<set name="weight" val="1200" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="649800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="230" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">230</stat>
+		</stats>
 	</item>
 	<item id="12523" name="Foundation Doom Plate Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t71_ul_i00" />
@@ -338,13 +361,14 @@
 		<set name="weight" val="9980" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="4022000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="270" />
-		</for>
+		<stats>
+			<stat type="pDef">270</stat>
+		</stats>
 	</item>
 	<item id="12524" name="Foundation Doom Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -353,10 +377,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="928300" />
-		<for>
-			<add order="0" stat="pDef" val="66" />
-		</for>
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
 	</item>
 	<item id="12525" name="Foundation Leather Armor of Doom" type="EtcItem">
 		<set name="icon" val="icon.armor_t72_ul_i00" />
@@ -365,10 +390,11 @@
 		<set name="weight" val="5500" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="3017000" />
-		<for>
-			<add order="0" stat="pDef" val="202" />
-		</for>
+		<stats>
+			<stat type="pDef">202</stat>
+		</stats>
 	</item>
 	<item id="12526" name="Foundation Sealed Doom Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t71_g_i02" />
@@ -377,10 +403,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12527" name="Foundation Sealed Doom Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t71_b_i02" />
@@ -389,10 +416,11 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12528" name="Foundation Sealed Blue Wolf Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t68_b_i02" />
@@ -401,10 +429,11 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12529" name="Foundation Sealed Blue Wolf Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t68_g_i02" />
@@ -413,10 +442,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12530" name="Foundation Tunic of Doom" type="EtcItem">
 		<set name="icon" val="icon.armor_t73_u_i00" />
@@ -425,14 +455,15 @@
 		<set name="weight" val="1900" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="1857000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="83" />
-			<add stat="maxMp" val="377" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+			<stat type="maxMp">377</stat>
+		</stats>
 	</item>
 	<item id="12531" name="Foundation Blue Wolf Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t68_l_i00" />
@@ -446,9 +477,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="104" />
-		</for>
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
 	</item>
 	<item id="12532" name="Foundation Blue Wolf Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t69_ul_i00" />
@@ -457,10 +488,11 @@
 		<set name="weight" val="5500" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="3017000" />
-		<for>
-			<add order="0" stat="pDef" val="202" />
-		</for>
+		<stats>
+			<stat type="pDef">202</stat>
+		</stats>
 	</item>
 	<item id="12533" name="Foundation Blue Wolf Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t68_b_i00" />
@@ -469,13 +501,14 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12534" name="Foundation Blue Wolf Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t69_b_i00" />
@@ -484,10 +517,11 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12535" name="Foundation Blue Wolf Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t70_b_i00" />
@@ -496,13 +530,14 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12536" name="Foundation Blue Wolf Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t68_g_i00" />
@@ -511,13 +546,14 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12537" name="Foundation Blue Wolf Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t69_g_i00" />
@@ -526,10 +562,11 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12538" name="Foundation Blue Wolf Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t70_g_i00" />
@@ -538,13 +575,14 @@
 		<set name="weight" val="590" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="618800" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12539" name="Foundation Blue Wolf Tunic" type="EtcItem">
 		<set name="icon" val="icon.armor_t70_u_i00" />
@@ -553,14 +591,15 @@
 		<set name="weight" val="1920" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="1857000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="83" />
-			<add stat="maxMp" val="377" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+			<stat type="maxMp">377</stat>
+		</stats>
 	</item>
 	<item id="12540" name="Foundation Blue Wolf Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -569,10 +608,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="928300" />
-		<for>
-			<add order="0" stat="pDef" val="66" />
-		</for>
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
 	</item>
 	<item id="12541" name="Foundation Blue Wolf Stockings" type="EtcItem">
 		<set name="icon" val="icon.armor_t70_l_i00" />
@@ -581,14 +621,15 @@
 		<set name="weight" val="920" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="1160300" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="52" />
-			<add stat="maxMp" val="236" />
-		</for>
+		<stats>
+			<stat type="pDef">52</stat>
+			<stat type="maxMp">236</stat>
+		</stats>
 	</item>
 	<item id="12542" name="Foundation Blue Wolf Breastplate" type="EtcItem">
 		<set name="icon" val="icon.armor_t68_u_i00" />
@@ -597,13 +638,14 @@
 		<set name="weight" val="7820" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="2475000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="166" />
-		</for>
+		<stats>
+			<stat type="pDef">166</stat>
+		</stats>
 	</item>
 	<item id="12543" name="Foundation Stockings of Doom" type="EtcItem">
 		<set name="icon" val="icon.armor_t73_l_i00" />
@@ -612,14 +654,15 @@
 		<set name="weight" val="910" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="1160300" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="52" />
-			<add stat="maxMp" val="236" />
-		</for>
+		<stats>
+			<stat type="pDef">52</stat>
+			<stat type="maxMp">236</stat>
+		</stats>
 	</item>
 	<item id="12544" name="Foundation Dark Crystal Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_l_i00" />
@@ -628,13 +671,14 @@
 		<set name="weight" val="3320" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="3562000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="171" />
-		</for>
+		<stats>
+			<stat type="pDef">171</stat>
+		</stats>
 	</item>
 	<item id="12545" name="Foundation Dark Crystal Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_g_i00" />
@@ -643,13 +687,14 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12546" name="Foundation Dark Crystal Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t75_g_i00" />
@@ -658,10 +703,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12547" name="Foundation Dark Crystal Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t76_g_i00" />
@@ -670,13 +716,14 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12548" name="Foundation Dark Crystal Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t75_u_i00" />
@@ -685,10 +732,11 @@
 		<set name="weight" val="4300" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="2671000" />
-		<for>
-			<add order="0" stat="pDef" val="128" />
-		</for>
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
 	</item>
 	<item id="12549" name="Foundation Dark Crystal Robe" type="EtcItem">
 		<set name="icon" val="icon.armor_t76_ul_i00" />
@@ -697,14 +745,15 @@
 		<set name="weight" val="2450" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="4341000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="139" />
-			<add stat="maxMp" val="665" />
-		</for>
+		<stats>
+			<stat type="pDef">139</stat>
+			<stat type="maxMp">665</stat>
+		</stats>
 	</item>
 	<item id="12550" name="Foundation Dark Crystal Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_b_i00" />
@@ -713,13 +762,14 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12551" name="Foundation Dark Crystal Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t75_b_i00" />
@@ -728,10 +778,11 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12552" name="Foundation Dark Crystal Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t76_b_i00" />
@@ -740,13 +791,14 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12553" name="Foundation Dark Crystal Shield" type="EtcItem">
 		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
@@ -755,13 +807,14 @@
 		<set name="weight" val="1190" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="1336000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="69" />
-		</for>
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
 	</item>
 	<item id="12554" name="Foundation Dark Crystal Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -770,10 +823,11 @@
 		<set name="weight" val="570" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="1336000" />
-		<for>
-			<add order="0" stat="pDef" val="69" />
-		</for>
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
 	</item>
 	<item id="12555" name="Foundation Dark Crystal Breastplate" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_u_i00" />
@@ -782,13 +836,14 @@
 		<set name="weight" val="7700" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="3562000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="171" />
-		</for>
+		<stats>
+			<stat type="pDef">171</stat>
+		</stats>
 	</item>
 	<item id="12556" name="Foundation Dark Crystal Leggings" type="EtcItem">
 		<set name="icon" val="icon.armor_t75_l_i00" />
@@ -797,10 +852,11 @@
 		<set name="weight" val="1480" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="1670000" />
-		<for>
-			<add order="0" stat="pDef" val="80" />
-		</for>
+		<stats>
+			<stat type="pDef">80</stat>
+		</stats>
 	</item>
 	<item id="12557" name="Foundation Sealed Dark Crystal Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_l_i02" />
@@ -809,13 +865,14 @@
 		<set name="weight" val="3320" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="2226000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="107" />
-		</for>
+		<stats>
+			<stat type="pDef">107</stat>
+		</stats>
 	</item>
 	<item id="12558" name="Foundation Sealed Dark Crystal Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_g_i02" />
@@ -824,10 +881,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12559" name="Foundation Sealed Dark Crystal Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t75_u_i02" />
@@ -836,10 +894,11 @@
 		<set name="weight" val="4300" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="2671000" />
-		<for>
-			<add order="0" stat="pDef" val="128" />
-		</for>
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
 	</item>
 	<item id="12560" name="Foundation Sealed Dark Crystal Robe" type="EtcItem">
 		<set name="icon" val="icon.armor_t76_ul_i02" />
@@ -848,14 +907,15 @@
 		<set name="weight" val="2450" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="4341000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="139" />
-			<add stat="maxMp" val="665" />
-		</for>
+		<stats>
+			<stat type="pDef">139</stat>
+			<stat type="maxMp">665</stat>
+		</stats>
 	</item>
 	<item id="12561" name="Foundation Sealed Dark Crystal Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_b_i02" />
@@ -864,10 +924,11 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12562" name="Foundation Sealed Dark Crystal Shield" type="EtcItem">
 		<set name="icon" val="icon.shield_dark_crystal_shield_i02" />
@@ -876,15 +937,16 @@
 		<set name="weight" val="1190" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="935000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="243" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">243</stat>
+		</stats>
 	</item>
 	<item id="12563" name="Foundation Sealed Dark Crystal Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -893,10 +955,11 @@
 		<set name="weight" val="570" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="1336000" />
-		<for>
-			<add order="0" stat="pDef" val="69" />
-		</for>
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
 	</item>
 	<item id="12564" name="Foundation Sealed Dark Crystal Breastplate" type="EtcItem">
 		<set name="icon" val="icon.armor_t74_u_i02" />
@@ -905,13 +968,14 @@
 		<set name="weight" val="7700" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="3562000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="171" />
-		</for>
+		<stats>
+			<stat type="pDef">171</stat>
+		</stats>
 	</item>
 	<item id="12565" name="Foundation Sealed Dark Crystal Leggings" type="EtcItem">
 		<set name="icon" val="icon.armor_t75_l_i02" />
@@ -920,10 +984,11 @@
 		<set name="weight" val="1480" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="2671000" />
-		<for>
-			<add order="0" stat="pDef" val="128" />
-		</for>
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
 	</item>
 	<item id="12566" name="Foundation Sealed Tallum Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t77_g_i02" />
@@ -932,10 +997,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12567" name="Foundation Sealed Tallum Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t78_ul_i02" />
@@ -944,10 +1010,11 @@
 		<set name="weight" val="5400" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="4341000" />
-		<for>
-			<add order="0" stat="pDef" val="209" />
-		</for>
+		<stats>
+			<stat type="pDef">209</stat>
+		</stats>
 	</item>
 	<item id="12568" name="Foundation Sealed Tallum Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t77_b_i02" />
@@ -956,10 +1023,11 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12569" name="Foundation Sealed Tallum Tunic" type="EtcItem">
 		<set name="icon" val="icon.armor_t79_u_i02" />
@@ -968,14 +1036,15 @@
 		<set name="weight" val="1860" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="2671000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="86" />
-			<add stat="maxMp" val="409" />
-		</for>
+		<stats>
+			<stat type="pDef">86</stat>
+			<stat type="maxMp">409</stat>
+		</stats>
 	</item>
 	<item id="12570" name="Foundation Sealed Tallum Plate Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t77_ul_i02" />
@@ -984,13 +1053,14 @@
 		<set name="weight" val="9780" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="5788000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="278" />
-		</for>
+		<stats>
+			<stat type="pDef">278</stat>
+		</stats>
 	</item>
 	<item id="12571" name="Foundation Sealed Tallum Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -999,10 +1069,11 @@
 		<set name="weight" val="570" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="1336000" />
-		<for>
-			<add order="0" stat="pDef" val="69" />
-		</for>
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
 	</item>
 	<item id="12572" name="Foundation Sealed Tallum Stockings" type="EtcItem">
 		<set name="icon" val="icon.armor_t79_l_i02" />
@@ -1011,14 +1082,15 @@
 		<set name="weight" val="920" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="1670000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="53" />
-			<add stat="maxMp" val="256" />
-		</for>
+		<stats>
+			<stat type="pDef">53</stat>
+			<stat type="maxMp">256</stat>
+		</stats>
 	</item>
 	<item id="12573" name="(Not In Use) Chaotic Holy Spirit's Cloak" type="EtcItem">
 		<set name="icon" val="icon.armor_back09" />
@@ -1027,10 +1099,11 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="1160000" />
-		<for>
-			<add order="0" stat="pDef" val="18" />
-		</for>
+		<stats>
+			<stat type="pDef">18</stat>
+		</stats>
 	</item>
 	<item id="12574" name="Foundation Tallum Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t77_g_i00" />
@@ -1039,13 +1112,14 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12575" name="Foundation Tallum Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t78_g_i00" />
@@ -1054,10 +1128,11 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12576" name="Foundation Tallum Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_t79_g_i00" />
@@ -1066,13 +1141,14 @@
 		<set name="weight" val="580" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12577" name="Foundation Tallum Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t78_ul_i00" />
@@ -1081,10 +1157,11 @@
 		<set name="weight" val="5400" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="4341000" />
-		<for>
-			<add order="0" stat="pDef" val="209" />
-		</for>
+		<stats>
+			<stat type="pDef">209</stat>
+		</stats>
 	</item>
 	<item id="12578" name="Foundation Tallum Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t77_b_i00" />
@@ -1093,13 +1170,14 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12579" name="Foundation Tallum Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t78_b_i00" />
@@ -1108,10 +1186,11 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12580" name="Foundation Tallum Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t79_b_i00" />
@@ -1120,13 +1199,14 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="890000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12581" name="Foundation Tallum Tunic" type="EtcItem">
 		<set name="icon" val="icon.armor_t79_u_i00" />
@@ -1135,14 +1215,15 @@
 		<set name="weight" val="1860" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="2671000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="86" />
-			<add stat="maxMp" val="409" />
-		</for>
+		<stats>
+			<stat type="pDef">86</stat>
+			<stat type="maxMp">409</stat>
+		</stats>
 	</item>
 	<item id="12582" name="Foundation Tallum Plate Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t77_ul_i00" />
@@ -1151,13 +1232,14 @@
 		<set name="weight" val="9780" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="5788000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="278" />
-		</for>
+		<stats>
+			<stat type="pDef">278</stat>
+		</stats>
 	</item>
 	<item id="12583" name="Foundation Tallum Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1166,10 +1248,11 @@
 		<set name="weight" val="570" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="1336000" />
-		<for>
-			<add order="0" stat="pDef" val="69" />
-		</for>
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
 	</item>
 	<item id="12584" name="Foundation Tallum Stockings" type="EtcItem">
 		<set name="icon" val="icon.armor_t79_l_i00" />
@@ -1178,14 +1261,15 @@
 		<set name="weight" val="920" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="1670000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="53" />
-			<add stat="maxMp" val="256" />
-		</for>
+		<stats>
+			<stat type="pDef">53</stat>
+			<stat type="maxMp">256</stat>
+		</stats>
 	</item>
 	<item id="12585" name="Foundation Majestic Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t83_g_i00" />
@@ -1194,13 +1278,14 @@
 		<set name="weight" val="540" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="1355000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12586" name="Foundation Majestic Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t84_g_i00" />
@@ -1209,10 +1294,11 @@
 		<set name="weight" val="540" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="1355000" />
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12587" name="Foundation Majestic Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t85_g_i00" />
@@ -1221,13 +1307,14 @@
 		<set name="weight" val="540" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="1355000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12588" name="Foundation Majestic Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t84_ul_i00" />
@@ -1236,10 +1323,11 @@
 		<set name="weight" val="5350" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="6603000" />
-		<for>
-			<add order="0" stat="pDef" val="220" />
-		</for>
+		<stats>
+			<stat type="pDef">220</stat>
+		</stats>
 	</item>
 	<item id="12589" name="Foundation Majestic Robe" type="EtcItem">
 		<set name="icon" val="icon.armor_t85_ul_i00" />
@@ -1248,14 +1336,15 @@
 		<set name="weight" val="2330" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="6603000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="147" />
-			<add stat="maxMp" val="718" />
-		</for>
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
 	</item>
 	<item id="12590" name="Foundation Majestic Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t83_b_i00" />
@@ -1264,13 +1353,14 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="1355000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12591" name="Foundation Majestic Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t84_b_i00" />
@@ -1279,10 +1369,11 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="1355000" />
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12592" name="Foundation Majestic Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t85_b_i00" />
@@ -1291,13 +1382,14 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="1355000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12593" name="Foundation Majestic Circlet" type="EtcItem">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1306,10 +1398,11 @@
 		<set name="weight" val="550" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="2032000" />
-		<for>
-			<add order="0" stat="pDef" val="73" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="12594" name="Foundation Majestic Plate Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t83_ul_i00" />
@@ -1318,13 +1411,14 @@
 		<set name="weight" val="9200" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="8804000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="293" />
-		</for>
+		<stats>
+			<stat type="pDef">293</stat>
+		</stats>
 	</item>
 	<item id="12595" name="Foundation Sealed Majestic Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t83_g_i02" />
@@ -1333,10 +1427,11 @@
 		<set name="weight" val="540" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="1355000" />
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12596" name="Foundation Sealed Majestic Leather Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t84_ul_i02" />
@@ -1345,10 +1440,11 @@
 		<set name="weight" val="5350" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="6603000" />
-		<for>
-			<add order="0" stat="pDef" val="220" />
-		</for>
+		<stats>
+			<stat type="pDef">220</stat>
+		</stats>
 	</item>
 	<item id="12597" name="Foundation Sealed Majestic Robe" type="EtcItem">
 		<set name="icon" val="icon.armor_t85_ul_i02" />
@@ -1357,14 +1453,15 @@
 		<set name="weight" val="2330" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="6603000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="147" />
-			<add stat="maxMp" val="718" />
-		</for>
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
 	</item>
 	<item id="12598" name="Foundation Sealed Majestic Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t83_b_i02" />
@@ -1373,10 +1470,11 @@
 		<set name="weight" val="1110" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="1355000" />
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="12599" name="Foundation Sealed Majestic Circlet" type="EtcItem">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -1385,9 +1483,10 @@
 		<set name="weight" val="550" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="2032000" />
-		<for>
-			<add order="0" stat="pDef" val="73" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 </list>

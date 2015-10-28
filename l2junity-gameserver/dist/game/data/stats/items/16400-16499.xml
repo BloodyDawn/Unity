@@ -16,11 +16,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 			<skill id="8458" level="1" /> <!-- Bracelet Weight Gauge Add -->
 			<skill id="8260" level="1" /> <!-- Release Agathion's Seal - Teddy Girl -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="5959" level="1" /> <!-- Agathion Cute Trick - Teddy Girl -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="16401" name="Teddy Boy Summon Bracelet (Event)" name_additional="Permanent" type="Armor">
@@ -39,11 +38,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 			<skill id="8458" level="1" /> <!-- Bracelet Weight Gauge Add -->
 			<skill id="8259" level="1" /> <!-- Release Agathion's Seal - Teddy Boy -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="5958" level="1" /> <!-- Agathion Cute Trick - Teddy Boy -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="16402" name="Teddy Girl Summon Bracelet (Event)" name_additional="Permanent" type="Armor">
@@ -62,11 +60,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 			<skill id="8458" level="1" /> <!-- Bracelet Weight Gauge Add -->
 			<skill id="8260" level="1" /> <!-- Release Agathion's Seal - Teddy Girl -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="5959" level="1" /> <!-- Agathion Cute Trick - Teddy Girl -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="16403" name="Holiday Cake" type="EtcItem">
@@ -74,8 +71,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="3600000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -112,8 +108,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="3600000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -168,7 +163,7 @@
 		<set name="icon" val="icon.mysterious_wedding_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
 		<set name="reuse_delay" val="3000" />
@@ -177,6 +172,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="9079" level="1" /> <!-- Scroll: Santa's Buff -->

@@ -23,6 +23,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23902" name="Mysterious Holy Resistance Dye" name_additional="Holy Resistance, 7-day" type="EtcItem">
@@ -35,6 +36,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23903" name="Mysterious Fire Resistance Dye" name_additional="Fire Resistance, 7-day" type="EtcItem">
@@ -47,6 +49,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23904" name="Mysterious Water Resistance Dye" name_additional="Water Resistance, 7-day" type="EtcItem">
@@ -59,6 +62,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23905" name="Mysterious Wind Resistance Dye" name_additional="Wind Resistance, 7-day" type="EtcItem">
@@ -71,6 +75,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23906" name="Mysterious Earth Resistance Dye" name_additional="Earth Resistance, 7-day" type="EtcItem">
@@ -83,6 +88,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23907" name="Mysterious Abnormal State Resistance Dye" name_additional="Abnormal State/ Buff Cancellation Resistance, Abnormal State Reflect, 7-day" type="EtcItem">
@@ -95,6 +101,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23908" name="Mysterious Invincibility Boost Dye" name_additional="Invincibility Duration Increase, 7-day" type="EtcItem">
@@ -107,6 +114,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23909" name="Mysterious World Boss Defense Dye" name_additional="P. Def., M. Def., 7-day" type="EtcItem">
@@ -119,6 +127,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23910" name="Mysterious Antharas Defense Dye" name_additional="P. Def., M. Def., 7-day" type="EtcItem">
@@ -131,6 +140,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23911" name="Mysterious Valakas Defense Dye" name_additional="P. Def., M. Def., 7-day" type="EtcItem">
@@ -143,6 +153,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23912" name="Mysterious Lindvior Defense Dye" name_additional="P. Def., M. Def., 7-day" type="EtcItem">
@@ -155,6 +166,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23913" name="Tears One-handed Sword" type="Weapon">
@@ -173,12 +185,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="144" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23914" name="Tears Dagger" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Dagger type. Weapon Appearance Basic. -->
@@ -196,12 +209,14 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="106" />
-		<for>
-			<set stat="pAtk" val="80.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">80</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23915" name="Tears Two-handed Sword" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Two-handed sword type. Weapon Appearance Basic. -->
@@ -219,12 +234,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="209" />
-		<for>
-			<set stat="pAtk" val="112.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23916" name="Tears Fist Weapon" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Fist weapon type. Weapon Appearance Basic. -->
@@ -242,13 +258,14 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="152" />
-		<for>
-			<set stat="pAtk" val="112.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23917" name="Tears Spear" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Spear type. Weapon Appearance Basic. -->
@@ -266,12 +283,14 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="205" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="23918" name="Tears Bow" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Bow type. Weapon Appearance Basic. -->
@@ -289,12 +308,14 @@
 		<set name="soulshots" val="6" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="181" />
-		<for>
-			<set stat="pAtk" val="191.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">191</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="23919" name="Tears Crossbow" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Crossbow type. Weapon Appearance Basic. -->
@@ -312,12 +333,14 @@
 		<set name="soulshots" val="6" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="181" />
-		<for>
-			<set stat="pAtk" val="117.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">117</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="23920" name="Tears One-handed Blunt Weapon" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. One-handed blunt weapon type. Weapon Appearance Basic. -->
@@ -335,12 +358,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="172" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23921" name="Tears Magic Sword" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. One-handed magic sword type. Weapon Appearance Basic. -->
@@ -358,12 +382,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="101" />
-		<for>
-			<set stat="pAtk" val="90.0" />
-			<set stat="mAtk" val="79.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23922" name="Tears One-handed Magic Blunt Weapon" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. One-handed magic blunt weapon type. Weapon Appearance Basic. -->
@@ -381,12 +406,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="172" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23923" name="Tears Two-handed Magic Blunt Weapon" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Two-handed magic blunt weapon type. Weapon Appearance Basic. -->
@@ -404,12 +430,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="101" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23924" name="Tears Dualsword" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Dualsword type. Weapon Appearance Basic. -->
@@ -427,12 +454,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="247" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="51.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23925" name="Tears Dual Dagger" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Dual Dagger type. Weapon Appearance Basic. -->
@@ -450,12 +478,14 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="205" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="181.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">181</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23926" name="Tears Dual Blunt Weapon" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Dual Blunt Weapon type. Weapon Appearance Basic. -->
@@ -473,12 +503,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="250" />
-		<for>
-			<set stat="pAtk" val="125.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="23927" name="Tears Shield" type="Weapon">
 		<!-- Russia's weapon crafting contest finalist. Shield type. Weapon Appearance Basic. -->
@@ -493,14 +524,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="200" />
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">25</stat>
+		</stats>
 	</item>
 	<item id="23928" name="Tears Sigil" type="Armor">
 		<!-- Russia's weapon crafting contest finalist. Sigil type. Weapon Appearance Basic. -->
 		<set name="icon" val="BranchSys3.iconWeapon.g_tears_sigil_i00" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
 		<set name="crystal_type" val="D" />
@@ -511,10 +542,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="100" />
-		<for>
-			<add stat="sDef" val="47.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">47</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="23929" name="Tears One-handed Sword Appearance Stone" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of a one-handed sword to that of a Tears One-handed Sword. 7-day. -->
@@ -529,6 +561,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23930" name="Tears Dagger Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -544,6 +577,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23931" name="Tears Two-handed Sword Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -559,6 +593,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23932" name="Tears Fist Weapon Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -574,6 +609,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23933" name="Tears Spear Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -589,6 +625,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23934" name="Tears Bow Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -604,6 +641,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23935" name="Tears Crossbow Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -619,6 +657,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23936" name="Tears One-handed Blunt Weapon Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -634,6 +673,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23937" name="Tears Magic Sword Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -649,6 +689,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23938" name="Tears One-handed Magic Blunt Weapon Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -664,6 +705,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23939" name="Tears Two-handed Magic Blunt Weapon Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -679,6 +721,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23940" name="Tears Dualsword Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -694,6 +737,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23941" name="Tears Dual Dagger Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -709,6 +753,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23942" name="Tears Dual Blunt Weapon Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -724,6 +769,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23943" name="Tears Shield Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -739,6 +785,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23944" name="Tears Sigil Appearance Stone" name_additional="7-day" type="EtcItem">
@@ -754,6 +801,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="23945" name="Prestige Rune 100% Pack" name_additional="3-hour" type="EtcItem">
@@ -883,7 +931,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23957" name="Illusion 1" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -896,7 +944,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23958" name="Illusion 2" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -909,7 +957,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23959" name="Illusion 3" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -922,7 +970,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23960" name="Illusion 4" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -935,7 +983,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23961" name="Illusion 5" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -948,7 +996,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23962" name="Illusion 6" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -961,7 +1009,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23963" name="Illusion 7" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -974,7 +1022,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23964" name="Illusion 8" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -987,7 +1035,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23965" name="Illusion 9" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1000,7 +1048,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23966" name="Illusion 10" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1013,7 +1061,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23967" name="Illusion 11" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1026,7 +1074,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23968" name="Illusion 12" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1039,7 +1087,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23969" name="Illusion 13" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1052,7 +1100,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23970" name="Illusion 14" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1065,7 +1113,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23971" name="Illusion 15" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1078,7 +1126,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23972" name="Illusion 16" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1091,7 +1139,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23973" name="Illusion 17" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1104,7 +1152,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23974" name="Illusion 18" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1117,7 +1165,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23975" name="Illusion 19" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1130,7 +1178,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23976" name="Illusion 20" type="EtcItem">
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1169,6 +1217,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="handler" val="Appearance" />
 	</item>
 	<item id="23980" name="Vampire Pants Appearance Stone" type="EtcItem">
@@ -1178,6 +1227,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="handler" val="Appearance" />
 	</item>
 	<item id="23981" name="Vampire Gloves Appearance Stone" type="EtcItem">
@@ -1187,6 +1237,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="handler" val="Appearance" />
 	</item>
 	<item id="23982" name="Vampire Shoes Appearance Stone" type="EtcItem">
@@ -1196,6 +1247,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="handler" val="Appearance" />
 	</item>
 	<item id="23983" name="Vampire Hair Accessory Appearance Stone" type="EtcItem">
@@ -1205,6 +1257,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_HAIRACC_FIXED" />
 		<set name="handler" val="Appearance" />
 	</item>
 	<item id="23984" name="Traces of Ancient Kartia's Labyrinth" type="EtcItem">
@@ -1259,6 +1312,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="icon" val="icon.ev_charge_run" />
 	</item>
 	<item id="23988" name="Wondrous Wind Scroll" type="EtcItem">
@@ -1272,6 +1326,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23989" name="Agathion - Virgo" name_additional="Stage 1" type="Armor">

@@ -112,9 +112,9 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	{
 		_objectId = IdFactory.getInstance().getNextId();
 		_crypt = new Crypt(this);
-		if (Config.CHAR_STORE_INTERVAL > 0)
+		if (Config.CHAR_DATA_STORE_INTERVAL > 0)
 		{
-			_autoSaveInDB = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, (Config.CHAR_STORE_INTERVAL * 60000L));
+			_autoSaveInDB = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, Config.CHAR_DATA_STORE_INTERVAL);
 		}
 		else
 		{
@@ -603,7 +603,10 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	
 	public void close(IOutgoingPacket packet)
 	{
-		_channel.writeAndFlush(packet);
+		if (packet != null)
+		{
+			_channel.writeAndFlush(packet);
+		}
 		_channel.close();
 	}
 	

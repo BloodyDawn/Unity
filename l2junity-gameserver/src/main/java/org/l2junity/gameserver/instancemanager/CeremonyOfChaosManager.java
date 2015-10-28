@@ -20,6 +20,7 @@ package org.l2junity.gameserver.instancemanager;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.l2junity.commons.util.Rnd;
@@ -42,6 +43,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -58,10 +60,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	protected static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosManager.class);
 	
 	public static final String INITIAL_BUFF_KEY = "initial_buff";
-	public static final String ITEMS_KEY = "items";
+	public static final String INITIAL_ITEMS_KEY = "initial_items";
 	public static final String MAX_PLAYERS_KEY = "max_players";
 	public static final String MAX_ARENAS_KEY = "max_arenas";
 	public static final String INSTANCE_TEMPLATES_KEY = "instance_templates";
+	public static final String INSTANCE_ZONES_KEY = "instance_zones";
 	public static final String END_BUFFS_KEYH = "end_buffs";
 	
 	protected CeremonyOfChaosManager()
@@ -157,14 +160,21 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		final List<PlayerInstance> players = getRegisteredPlayers().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
 		final int maxPlayers = getVariables().getInt(MAX_PLAYERS_KEY, 18);
 		final List<Integer> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, Integer.class);
+		final Map<String, Integer> zones = CeremonyOfChaosManager.getInstance().getVariables().getMap(INSTANCE_ZONES_KEY, String.class, Integer.class);
+		if (zones == null)
+		{
+			LOGGER.warn("Couldn't find zones map");
+			return;
+		}
+		
 		for (PlayerInstance player : players)
 		{
 			if (player.isOnline() && canRegister(player, true))
 			{
 				if ((event == null) || (event.getMembers().size() >= maxPlayers))
 				{
-					
-					event = new CeremonyOfChaosEvent(eventId++, templates.get(Rnd.get(templates.size())));
+					final int template = templates.get(Rnd.get(templates.size()));
+					event = new CeremonyOfChaosEvent(eventId++, InstanceManager.getInstance().getInstanceTemplate(template), zones.get(template));
 					position = 1;
 					getEvents().add(event);
 				}
@@ -294,9 +304,14 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_DURING_A_DUEL;
 			canRegister = false;
 		}
-		else if (player.isInOlympiadMode())
+		else if (player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player))
 		{
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_WHILE_PARTICIPATING_IN_OLYMPIAD;
+			canRegister = false;
+		}
+		else if (player.isOnEvent(CeremonyOfChaosEvent.class) || (player.getBlockCheckerArena() > -1)) // TODO underground coliseum and kratei checks.
+		{
+			sm = SystemMessageId.YOU_CANNOT_REGISTER_FOR_THE_WAITING_LIST_WHILE_PARTICIPATING_IN_THE_BLOCK_CHECKER_COLISEUM_OLYMPIAD_KRATEI_S_CUBE_CEREMONY_OF_CHAOS;
 			canRegister = false;
 		}
 		else if (player.isInInstance())
@@ -312,6 +327,16 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		else if (player.isInsideZone(ZoneId.SIEGE))
 		{
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_WHILE_BEING_INSIDE_OF_A_BATTLEGROUND_CASTLE_SIEGE_FORTRESS_SIEGE;
+			canRegister = false;
+		}
+		else if (player.isTransformed() && player.isFlying())
+		{
+			sm = SystemMessageId.YOU_CANNOT_PARTICIPATE_IN_THE_CEREMONY_OF_CHAOS_AS_A_FLYING_TRANSFORMED_OBJECT;
+			canRegister = false;
+		}
+		else if (player.isFishing())
+		{
+			sm = SystemMessageId.YOU_CANNOT_PARTICIPATE_IN_THE_CEREMONY_OF_CHAOS_WHILE_FISHING;
 			canRegister = false;
 		}
 		

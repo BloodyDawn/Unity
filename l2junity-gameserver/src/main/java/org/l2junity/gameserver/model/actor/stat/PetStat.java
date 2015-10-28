@@ -20,9 +20,7 @@ package org.l2junity.gameserver.model.actor.stat;
 
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
@@ -157,37 +155,37 @@ public class PetStat extends SummonStat
 	@Override
 	public int getMaxHp()
 	{
-		return (int) calcStat(Stats.MAX_HP, getActiveChar().getPetLevelData().getPetMaxHP(), null, null);
+		return (int) getValue(Stats.MAX_HP, getActiveChar().getPetLevelData().getPetMaxHP());
 	}
 	
 	@Override
 	public int getMaxMp()
 	{
-		return (int) calcStat(Stats.MAX_MP, getActiveChar().getPetLevelData().getPetMaxMP(), null, null);
+		return (int) getValue(Stats.MAX_MP, getActiveChar().getPetLevelData().getPetMaxMP());
 	}
 	
 	@Override
-	public int getMAtk(Creature target, Skill skill)
+	public int getMAtk()
 	{
-		return (int) calcStat(Stats.MAGIC_ATTACK, getActiveChar().getPetLevelData().getPetMAtk(), target, skill);
+		return (int) getValue(Stats.MAGIC_ATTACK, getActiveChar().getPetLevelData().getPetMAtk());
 	}
 	
 	@Override
-	public int getMDef(Creature target, Skill skill)
+	public int getMDef()
 	{
-		return (int) calcStat(Stats.MAGIC_DEFENCE, getActiveChar().getPetLevelData().getPetMDef(), target, skill);
+		return (int) getValue(Stats.MAGIC_DEFENCE, getActiveChar().getPetLevelData().getPetMDef());
 	}
 	
 	@Override
-	public int getPAtk(Creature target)
+	public int getPAtk()
 	{
-		return (int) calcStat(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null);
+		return (int) getValue(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk());
 	}
 	
 	@Override
-	public int getPDef(Creature target)
+	public int getPDef()
 	{
-		return (int) calcStat(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef(), target, null);
+		return (int) getValue(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef());
 	}
 	
 	@Override

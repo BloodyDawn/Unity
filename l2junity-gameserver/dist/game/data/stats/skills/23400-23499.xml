@@ -420,6 +420,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23420" levels="3" name="Borna Heal">
+		<table name="#power"> 1191 1210 1230 </table>
 		<table name="#magicLvl"> 85 89 93 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Heals self and surrounding party members with 1191 power. If HP is full, CP is restored with the remaining power. -->
@@ -1063,7 +1064,7 @@
 		<set name="affectRange" val="1000" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
-	<skill id="23453" levels="1" name="(Superior Aggression)">
+	<skill id="23453" levels="3" name="(Superior Aggression)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes the target and forcefully changes their target to make them attack you. -->
 		<set name="icon" val="icon.skill10026" />
@@ -1121,12 +1122,13 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23456" levels="3" name="(Fairy of Life)">
-		<table name="#magicLvl"> 85 90 95 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a fairy that follows target around for 1 min. and restores HP. Also has a chance of restoring HP when attacked. -->
+		<table name="#magicLvl"> 85 90 95 </table>
+		<table name="#level"> 1 3 5 </table>
 		<set name="icon" val="icon.skill11754" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE_FRIENDLY" />
 		<set name="mpConsume" val="43" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2200" />
@@ -1142,6 +1144,19 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="60" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="SummonCubic">
+				<param cubicId="17" cubicLvl="#level" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="10" />
+				<param chance="60" />
+				<param skillId="11827" skillLevel="#level" /> <!-- Fairy Blessing -->
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23457" levels="3" name="(Sustain)">
 		<table name="#magicLvl"> 85 90 95 </table>

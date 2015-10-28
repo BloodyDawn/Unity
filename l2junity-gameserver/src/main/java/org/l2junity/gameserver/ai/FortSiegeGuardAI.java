@@ -179,11 +179,10 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	 * Set the Intention of this L2CharacterAI and create an AI Task executed every 1s (call onEvtThink method) for this L2Attackable.<br>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : If actor _knowPlayer isn't EMPTY, AI_INTENTION_IDLE will be change in AI_INTENTION_ACTIVE</B></FONT>
 	 * @param intention The new Intention to set to the AI
-	 * @param arg0 The first parameter of the Intention
-	 * @param arg1 The second parameter of the Intention
+	 * @param args The first parameter of the Intention
 	 */
 	@Override
-	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
+	synchronized void changeIntention(CtrlIntention intention, Object... args)
 	{
 		if (intention == AI_INTENTION_IDLE /* || intention == AI_INTENTION_ACTIVE */) // active becomes idle if only a summon is present
 		{
@@ -206,7 +205,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 			if (intention == AI_INTENTION_IDLE)
 			{
 				// Set the Intention of this L2AttackableAI to AI_INTENTION_IDLE
-				super.changeIntention(AI_INTENTION_IDLE, null, null);
+				super.changeIntention(AI_INTENTION_IDLE);
 				
 				// Stop AI task and detach AI from NPC
 				if (_aiTask != null)
@@ -223,7 +222,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		}
 		
 		// Set the Intention of this L2AttackableAI to intention
-		super.changeIntention(intention, arg0, arg1);
+		super.changeIntention(intention, args);
 		
 		// If not idle - create an AI task (schedule onEvtThink repeatedly)
 		if (_aiTask == null)
@@ -449,7 +448,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 							
 							WorldObject OldTarget = _actor.getTarget();
 							_actor.setTarget(cha);
-							clientStopMoving(null);
 							_actor.doCast(sk);
 							_actor.setTarget(OldTarget);
 							return;
@@ -508,7 +506,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 						
 						WorldObject OldTarget = _actor.getTarget();
 						_actor.setTarget(npc);
-						clientStopMoving(null);
 						_actor.doCast(sk);
 						_actor.setTarget(OldTarget);
 						return;
@@ -606,7 +603,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 						}
 					}
 					
-					clientStopMoving(null);
 					_actor.doCast(sk);
 					_actor.setTarget(OldTarget);
 					return;
@@ -749,7 +745,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 							}
 						}
 						
-						clientStopMoving(null);
 						_actor.doCast(sk);
 						_actor.setTarget(OldTarget);
 						return;
@@ -771,7 +766,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		// setIntention(AI_INTENTION_IDLE);
 		
 		// Check if the actor can't use skills and if a thinking action isn't already in progress
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

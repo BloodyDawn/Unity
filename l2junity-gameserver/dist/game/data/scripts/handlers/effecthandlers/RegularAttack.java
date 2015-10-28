@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -37,12 +38,14 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class RegularAttack extends AbstractEffect
 {
 	private final double _pAtkMod;
+	private final double _pDefMod;
 	
 	public RegularAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
+		_pDefMod = params.getDouble("pDefMod", 1.0);
 	}
 	
 	@Override
@@ -62,9 +65,9 @@ public final class RegularAttack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effector.isAlikeDead())
 		{
@@ -72,14 +75,15 @@ public final class RegularAttack extends AbstractEffect
 		}
 		
 		final byte shld = Formulas.calcShldUse(effector, effected);
-		final boolean crit = Formulas.calcCrit(effector.getStat().getCriticalHit(effected, null), false, effector, effected);
+		final boolean crit = Formulas.calcCrit(effector.getStat().getCriticalHit(), false, effector, effected);
 		int damage = (int) Formulas.calcPhysDam(effector, effected, null, 0, shld, crit, effector.isChargedShot(ShotType.SOULSHOTS));
-		damage *= _pAtkMod;
-		damage = (int) effector.calcStat(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
-
+		damage *= _pAtkMod; // TODO needs better integration within formula
+		damage /= _pDefMod; // TODO needs better integration within formula
+		damage = (int) effector.getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
+		
 		if (damage > 0)
 		{
-			effector.sendDamageMessage(effected, damage, false, crit, false);
+			effector.sendDamageMessage(effected, skill, damage, crit, false);
 			effected.reduceCurrentHp(damage, effector, skill);
 			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			
@@ -87,17 +91,15 @@ public final class RegularAttack extends AbstractEffect
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			if (!isBow && !effected.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
 			{
-				int reflectedDamage = 0;
-				
 				// quick fix for no drop from raid if boss attack high-level char with damage reflection
 				if (!effected.isRaid() || (effector.getActingPlayer() == null) || (effector.getActingPlayer().getLevel() <= (effected.getLevel() + 8)))
 				{
 					// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-					double reflectPercent = effected.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
+					double reflectPercent = effected.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0) - effector.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT_DEFENSE, 0);
 					
 					if (reflectPercent > 0)
 					{
-						reflectedDamage = (int) ((reflectPercent / 100.) * damage);
+						int reflectedDamage = (int) ((reflectPercent / 100.) * damage);
 						
 						if (reflectedDamage > effected.getMaxHp())
 						{

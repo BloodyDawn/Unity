@@ -630,17 +630,22 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
-			<vitals hp="80" hpRegen="5" mp="69" mpRegen="4" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="80.17319" hpRegen="2" mp="69.6" mpRegen="0.9" />
+			<attack physical="12.34006" magical="8.42666" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="51.60553" magical="37.76269" />
 			<speed>
 				<walk ground="39" />
 				<run ground="170" />
 			</speed>
+			<hit_time>320</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
 			<skill id="4416" level="7" /> <!-- Spirits -->
 		</skill_list>
+		<ex_crt_effect>false</ex_crt_effect>
 		<drop_lists>
 			<death>
 				<group chance="100">
@@ -660,12 +665,16 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
-			<vitals hp="801731" hpRegen="5" mp="69" mpRegen="4" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="80.17319" hpRegen="2" mp="69.6" mpRegen="0.9" />
+			<attack physical="12.34006" magical="8.42666" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="51.60553" magical="37.76269" />
 			<speed>
 				<walk ground="39" />
 				<run ground="170" />
 			</speed>
+			<hit_time>320</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -778,19 +787,33 @@
 	</npc>
 	<npc id="27532" level="3" type="L2Monster" name="Training Golem" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
-		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="78">
-			<vitals hp="57" hpRegen="2" mp="54" mpRegen="0.9" />
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire expRate="14.666666666667" sp="2" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="57.54874" hpRegen="2" mp="54.64" mpRegen="0.9" />
+			<attack physical="10.24492" magical="6.99595" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="47.91652" magical="35.06323" />
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
+			<hit_time>370</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" />
+		<status undying="false" canBeSown="true" />
 		<skill_list>
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="10" /> <!-- Slightly Weak P. Def. -->
+			<skill id="4413" level="10" /> <!-- Slightly Weak M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
+		<ex_crt_effect>false</ex_crt_effect>
 		<collision>
 			<radius normal="10" />
 			<height normal="20" />

@@ -11,14 +11,16 @@
 		<set name="price" val="283000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="38" />
-			<add order="0" stat="pDef" val="43" />
-		</for>
+		<stats>
+			<stat type="mDef">38</stat>
+			<stat type="pDef">43</stat>
+		</stats>
 	</item>
 	<item id="3901" name="Wolf's Mithril Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i02" />
@@ -31,22 +33,22 @@
 		<set name="price" val="412500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="41" />
-			<add order="0" stat="pDef" val="47" />
-		</for>
+		<stats>
+			<stat type="mDef">41</stat>
+			<stat type="pDef">47</stat>
+		</stats>
 	</item>
 	<item id="3902" name="Ghost Canine" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -54,24 +56,26 @@
 		<set name="price" val="30500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="11" />
-			<add stat="mAtk" val="10" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">11</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3903" name="Mithril Canine" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -79,24 +83,26 @@
 		<set name="price" val="50000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="16" />
-			<add stat="mAtk" val="14" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">16</stat>
+			<stat type="mAtk">14</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3904" name="Sylvan Canine" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -104,24 +110,26 @@
 		<set name="price" val="80000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="23" />
-			<add stat="mAtk" val="18" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">23</stat>
+			<stat type="mAtk">18</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3905" name="Oriharukon Canine" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -129,24 +137,26 @@
 		<set name="price" val="120000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="31" />
-			<add stat="mAtk" val="24" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">24</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3906" name="Fang of Saltydog" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -154,24 +164,26 @@
 		<set name="price" val="175000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="40" />
-			<add stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">30</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3907" name="Fang of Cerberus" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -179,24 +191,26 @@
 		<set name="price" val="225000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="49" />
-			<add stat="mAtk" val="36" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">49</stat>
+			<stat type="mAtk">36</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3908" name="Fang of Coyote" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -204,24 +218,26 @@
 		<set name="price" val="285000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="58" />
-			<add stat="mAtk" val="42" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">58</stat>
+			<stat type="mAtk">42</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3909" name="Crystallized Ice Canine" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -229,24 +245,26 @@
 		<set name="price" val="360000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="69" />
-			<add stat="mAtk" val="50" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">69</stat>
+			<stat type="mAtk">50</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3910" name="Fang of the Blue Wolf" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -254,24 +272,26 @@
 		<set name="price" val="550000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="80" />
-			<add stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">80</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3911" name="Fang of Fenril" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -279,16 +299,20 @@
 		<set name="price" val="750000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="93" />
-			<add stat="mAtk" val="66" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">93</stat>
+			<stat type="mAtk">66</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3912" name="Hatchling's Soft Leather" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -301,14 +325,16 @@
 		<set name="price" val="58500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="26" />
-			<add order="0" stat="pDef" val="26" />
-		</for>
+		<stats>
+			<stat type="mDef">26</stat>
+			<stat type="pDef">26</stat>
+		</stats>
 	</item>
 	<item id="3913" name="Hatchling's Scale Mail" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -321,14 +347,16 @@
 		<set name="price" val="86000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="29" />
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="mDef">29</stat>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="3914" name="Hatchling's Brigandine" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -341,14 +369,16 @@
 		<set name="price" val="113000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="31" />
-			<add order="0" stat="pDef" val="31" />
-		</for>
+		<stats>
+			<stat type="mDef">31</stat>
+			<stat type="pDef">31</stat>
+		</stats>
 	</item>
 	<item id="3915" name="Hatchling's Bronze Coat" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i04" />
@@ -361,14 +391,16 @@
 		<set name="price" val="145500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="33" />
-			<add order="0" stat="pDef" val="33" />
-		</for>
+		<stats>
+			<stat type="mDef">33</stat>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="3916" name="Hatchling's Steel Coat" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i04" />
@@ -381,14 +413,16 @@
 		<set name="price" val="186000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="36" />
-			<add order="0" stat="pDef" val="36" />
-		</for>
+		<stats>
+			<stat type="mDef">36</stat>
+			<stat type="pDef">36</stat>
+		</stats>
 	</item>
 	<item id="3917" name="Hatchling's Shadowplate" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i04" />
@@ -401,14 +435,16 @@
 		<set name="price" val="283000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="38" />
-			<add order="0" stat="pDef" val="38" />
-		</for>
+		<stats>
+			<stat type="mDef">38</stat>
+			<stat type="pDef">38</stat>
+		</stats>
 	</item>
 	<item id="3918" name="Hatchling's Mithril Coat" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i04" />
@@ -421,22 +457,22 @@
 		<set name="price" val="412500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="41" />
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="mDef">41</stat>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="3919" name="Serpent Fang" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i03" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -444,24 +480,26 @@
 		<set name="price" val="100000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="8" />
-			<add stat="mAtk" val="7" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">8</stat>
+			<stat type="mAtk">7</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3920" name="Viperbite" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i03" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -469,24 +507,26 @@
 		<set name="price" val="155000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="9" />
-			<add stat="mAtk" val="10" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">9</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3921" name="Shadow Fang" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i03" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -494,24 +534,26 @@
 		<set name="price" val="210000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="10" />
-			<add stat="mAtk" val="11" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="mAtk">11</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3922" name="Alya Fang" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i04" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -519,24 +561,26 @@
 		<set name="price" val="285000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="12" />
-			<add stat="mAtk" val="13" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">12</stat>
+			<stat type="mAtk">13</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3923" name="Torturer" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i04" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -544,24 +588,26 @@
 		<set name="price" val="380000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="13" />
-			<add stat="mAtk" val="16" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">13</stat>
+			<stat type="mAtk">16</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3924" name="Unuk Alhay Fang" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i04" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -569,24 +615,26 @@
 		<set name="price" val="550000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="15" />
-			<add stat="mAtk" val="18" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">15</stat>
+			<stat type="mAtk">18</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3925" name="Antiplague" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i04" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -594,16 +642,20 @@
 		<set name="price" val="800000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="17" />
-			<add stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">17</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="3926" name="Scroll: Guidance" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -616,13 +668,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2050" level="1" /> <!-- Scroll: Guidance -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2050" level="1" /> <!-- Scroll: Guidance -->
+		</skills>
 	</item>
 	<item id="3927" name="Scroll: Death Whisper" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -635,13 +688,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2051" level="1" /> <!-- Scroll: Death Whisper -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2051" level="1" /> <!-- Scroll: Death Whisper -->
+		</skills>
 	</item>
 	<item id="3928" name="Scroll: Focus" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -654,13 +708,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2052" level="1" /> <!-- Scroll: Focus -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2052" level="1" /> <!-- Scroll: Focus -->
+		</skills>
 	</item>
 	<item id="3929" name="Scroll: Greater Acumen" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -673,13 +728,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2053" level="1" /> <!-- Scroll: Acumen -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2053" level="1" /> <!-- Scroll: Acumen -->
+		</skills>
 	</item>
 	<item id="3930" name="Scroll: Haste" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -692,13 +748,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2054" level="1" /> <!-- Scroll: Haste -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2054" level="1" /> <!-- Scroll: Haste -->
+		</skills>
 	</item>
 	<item id="3931" name="Scroll: Agility" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -711,13 +768,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2055" level="1" /> <!-- Scroll: Agility -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2055" level="1" /> <!-- Scroll: Agility -->
+		</skills>
 	</item>
 	<item id="3932" name="Scroll: Mystic Empower" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -730,13 +788,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2056" level="1" /> <!-- Scroll: Empower -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2056" level="1" /> <!-- Scroll: Empower -->
+		</skills>
 	</item>
 	<item id="3933" name="Scroll: Might" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -749,13 +808,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2057" level="1" /> <!-- Scroll: Might -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2057" level="1" /> <!-- Scroll: Might -->
+		</skills>
 	</item>
 	<item id="3934" name="Scroll: Wind Walk" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -768,13 +828,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2058" level="1" /> <!-- Scroll: Wind Walk -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2058" level="1" /> <!-- Scroll: Wind Walk -->
+		</skills>
 	</item>
 	<item id="3935" name="Scroll: Shield" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -787,13 +848,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2059" level="1" /> <!-- Scroll: Shield -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2059" level="1" /> <!-- Scroll: Shield -->
+		</skills>
 	</item>
 	<item id="3936" name="Blessed Scroll of Resurrection" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
@@ -817,8 +879,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="101" />
@@ -830,27 +890,27 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="50" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="3938" name="Monster Only (Lesser Giant Wizard's Weapon)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="101" />
@@ -862,27 +922,27 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="50" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="3939" name="Monster Only (Bensh)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="101" />
@@ -894,19 +954,21 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="50" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="3940" name="Blueprint: Summon Siege Golem" type="EtcItem">
 		<set name="icon" val="icon.etc_plan_i00" />
@@ -915,6 +977,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="3941" name="Spellbook: Mass Resurrection" type="EtcItem">
@@ -924,6 +987,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="3942" name="Spellbook: Party Return" type="EtcItem">
@@ -933,6 +997,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="3943" name="Amulet: Pa'agrio's Heart" type="EtcItem">
@@ -942,6 +1007,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3850" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="3944" name="Spellbook: Decrease Weight" type="EtcItem">
@@ -951,6 +1017,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2450" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="3945" name="Boat Ticket: Talking Island to Giran" type="EtcItem">
@@ -960,6 +1027,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="3946" name="Boat Ticket: Giran to Talking Island" type="EtcItem">
@@ -969,6 +1037,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="3947" name="Blessed Spiritshot (No-grade)" type="EtcItem">
@@ -980,6 +1049,8 @@
 		<set name="price" val="35" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="BlessedSpiritShot" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2061" level="1" /> <!-- Blessed Spiritshot (No-grade) -->
@@ -992,10 +1063,12 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="4" />
 		<set name="price" val="28" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="BlessedSpiritShot" />
 		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2160" level="1" /> <!-- Blessed Spiritshot (D-grade) -->
@@ -1008,10 +1081,12 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="42" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="BlessedSpiritShot" />
 		<set name="crystal_type" val="C" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SPIRITSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2161" level="1" /> <!-- Blessed Spiritshot (C-grade) -->
@@ -1024,11 +1099,12 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="245" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="BlessedSpiritShot" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="enchant_enabled" val="1" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<skills>
 			<skill id="2162" level="1" /> <!-- Blessed Spiritshot (B-grade) -->
@@ -1041,11 +1117,12 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="price" val="290" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="BlessedSpiritShot" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="enchant_enabled" val="1" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<skills>
 			<skill id="2163" level="1" /> <!-- Blessed Spiritshot (A-grade) -->
@@ -1058,11 +1135,12 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="price" val="350" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="BlessedSpiritShot" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="enchant_enabled" val="1" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<skills>
 			<skill id="2164" level="1" /> <!-- Blessed Spiritshot (S-grade) -->
@@ -1079,6 +1157,7 @@
 		<set name="recipe_id" val="323" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="3954" name="Recipe: Blessed Spiritshot (C-grade)" type="EtcItem">
@@ -1092,6 +1171,7 @@
 		<set name="recipe_id" val="324" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="3955" name="Recipe: Blessed Spiritshot (B-grade)" type="EtcItem">
@@ -1105,6 +1185,7 @@
 		<set name="recipe_id" val="325" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="3956" name="Recipe: Blessed Spiritshot (A-grade)" type="EtcItem">
@@ -1118,6 +1199,7 @@
 		<set name="recipe_id" val="326" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="3957" name="Recipe: Blessed Spiritshot (S-grade)" type="EtcItem">
@@ -1131,6 +1213,7 @@
 		<set name="recipe_id" val="327" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="3958" name="Blessed Scroll of Escape" type="EtcItem">
@@ -1142,6 +1225,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2036" level="2" /> <!-- Blessed Scroll of Escape -->
@@ -1156,6 +1240,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2062" level="1" /> <!-- Blessed Scroll of Resurrection -->
@@ -1169,6 +1254,7 @@
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3961" name="Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
@@ -1179,6 +1265,7 @@
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3962" name="Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
@@ -1189,6 +1276,7 @@
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3963" name="Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
@@ -1199,6 +1287,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3964" name="Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
@@ -1209,6 +1298,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3965" name="Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
@@ -1219,6 +1309,7 @@
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3966" name="Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
@@ -1229,6 +1320,7 @@
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3967" name="Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
@@ -1239,6 +1331,7 @@
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3968" name="Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
@@ -1249,6 +1342,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3969" name="Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
@@ -1259,6 +1353,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3970" name="Mercenary Posting Ticket (Teleporter1)" type="EtcItem">
@@ -1269,6 +1364,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3971" name="Mercenary Posting Ticket (Teleporter2)" type="EtcItem">
@@ -1279,6 +1375,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3972" name="Mercenary Posting Ticket (Teleporter3)" type="EtcItem">
@@ -1289,6 +1386,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3973" name="Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
@@ -1299,6 +1397,7 @@
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3974" name="Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
@@ -1309,6 +1408,7 @@
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3975" name="Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
@@ -1319,6 +1419,7 @@
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3976" name="Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
@@ -1329,6 +1430,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3977" name="Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
@@ -1339,6 +1441,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3978" name="Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
@@ -1349,6 +1452,7 @@
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3979" name="Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
@@ -1359,6 +1463,7 @@
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3980" name="Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
@@ -1369,6 +1474,7 @@
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3981" name="Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
@@ -1379,6 +1485,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3982" name="Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
@@ -1389,6 +1496,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3983" name="Mercenary Posting Ticket (Teleporter1)" type="EtcItem">
@@ -1399,6 +1507,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3984" name="Mercenary Posting Ticket (Teleporter2)" type="EtcItem">
@@ -1409,6 +1518,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3985" name="Mercenary Posting Ticket (Teleporter3)" type="EtcItem">
@@ -1419,6 +1529,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3986" name="Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
@@ -1429,6 +1540,7 @@
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3987" name="Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
@@ -1439,6 +1551,7 @@
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3988" name="Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
@@ -1449,6 +1562,7 @@
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3989" name="Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
@@ -1459,6 +1573,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3990" name="Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
@@ -1469,6 +1584,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3991" name="Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
@@ -1479,6 +1595,7 @@
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3992" name="Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
@@ -1489,6 +1606,7 @@
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3993" name="Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
@@ -1499,6 +1617,7 @@
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3994" name="Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
@@ -1509,6 +1628,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3995" name="Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
@@ -1519,6 +1639,7 @@
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3996" name="Mercenary Posting Ticket (Teleporter1)" type="EtcItem">
@@ -1529,6 +1650,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3997" name="Mercenary Posting Ticket (Teleporter2)" type="EtcItem">
@@ -1539,6 +1661,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3998" name="Mercenary Posting Ticket (Teleporter3)" type="EtcItem">
@@ -1549,6 +1672,7 @@
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 	<item id="3999" name="Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
@@ -1559,6 +1683,7 @@
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="MercTicket" />
 	</item>
 </list>

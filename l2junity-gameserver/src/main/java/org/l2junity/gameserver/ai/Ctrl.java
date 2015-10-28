@@ -72,17 +72,9 @@ public interface Ctrl
 	/**
 	 * Sets the intention.
 	 * @param intention the intention
-	 * @param arg0 the arg0
+	 * @param args
 	 */
-	void setIntention(CtrlIntention intention, Object arg0);
-	
-	/**
-	 * Sets the intention.
-	 * @param intention the intention
-	 * @param arg0 the arg0
-	 * @param arg1 the arg1
-	 */
-	void setIntention(CtrlIntention intention, Object arg0, Object arg1);
+	void setIntention(CtrlIntention intention, Object... args);
 	
 	/**
 	 * Event, that notifies about previous step result, or user command, that does not change current general intention.

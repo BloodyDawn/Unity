@@ -62,7 +62,6 @@ public final class Q10394_MutualBenefit extends Quest
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
-		
 		if (st == null)
 		{
 			return null;
@@ -107,11 +106,6 @@ public final class Q10394_MutualBenefit extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		
-		if (st == null)
-		{
-			return htmltext;
-		}
 		
 		switch (st.getState())
 		{

@@ -61,9 +61,9 @@ public final class HpCpHeal extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isInvul())
 		{
@@ -77,20 +77,21 @@ public final class HpCpHeal extends AbstractEffect
 		
 		double amount = _power;
 		double staticShotBonus = 0;
-		int mAtkMul = 1;
+		double mAtkMul = 1;
 		boolean sps = skill.isMagic() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.isMagic() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		final double shotsBonus = effector.getStat().getValue(Stats.SHOTS_BONUS);
 		
 		if (((sps || bss) && (effector.isPlayer() && effector.getActingPlayer().isMageClass())) || effector.isSummon())
 		{
 			staticShotBonus = skill.getMpConsume(); // static bonus for spiritshots
-			mAtkMul = bss ? 4 : 2;
+			mAtkMul = bss ? 4 * shotsBonus : 2 * shotsBonus;
 			staticShotBonus *= bss ? 2.4 : 1.0;
 		}
 		else if ((sps || bss) && effector.isNpc())
 		{
 			staticShotBonus = 2.4 * skill.getMpConsume(); // always blessed spiritshots
-			mAtkMul = 4;
+			mAtkMul = 4 * shotsBonus;
 		}
 		else
 		{
@@ -108,7 +109,7 @@ public final class HpCpHeal extends AbstractEffect
 		if (!skill.isStatic())
 		{
 			amount += staticShotBonus + Math.sqrt(mAtkMul * effector.getMAtk(effector, null));
-			amount = effected.calcStat(Stats.HEAL_EFFECT, amount, null, null);
+			amount = effected.getStat().getValue(Stats.HEAL_EFFECT, amount);
 			// Heal critic, since CT2.3 Gracia Final
 			if (skill.isMagic() && Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected))
 			{
@@ -136,25 +137,18 @@ public final class HpCpHeal extends AbstractEffect
 		
 		if (effected.isPlayer())
 		{
-			if (skill.getId() == 4051)
+			if (effector.isPlayer() && (effector != effected))
 			{
-				effected.sendPacket(SystemMessageId.REJUVENATING_HP);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
+				sm.addString(effector.getName());
+				sm.addInt((int) healAmount);
+				effected.sendPacket(sm);
 			}
 			else
 			{
-				if (effector.isPlayer() && (effector != effected))
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
-					sm.addString(effector.getName());
-					sm.addInt((int) healAmount);
-					effected.sendPacket(sm);
-				}
-				else
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
-					sm.addInt((int) healAmount);
-					effected.sendPacket(sm);
-				}
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
+				sm.addInt((int) healAmount);
+				effected.sendPacket(sm);
 			}
 			
 			amount = Math.max(Math.min(amount - healAmount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);

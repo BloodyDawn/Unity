@@ -810,11 +810,11 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14542" levels="1" name="Decrease Accuracy">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Accuracy is decreased. -->
 		<set name="icon" val="icon.skill1222" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
@@ -832,6 +832,11 @@
 		<set name="abnormalTime" val="60" />
 		<set name="affectRange" val="400" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<sub stat="accCombat" val="6" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14543" levels="1" name="Poison Sweep">
 		<!-- AUTO GENERATED SKILL -->
@@ -1410,6 +1415,7 @@
 		<set name="specialLevel" val="-2" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="-2" />
+		<set name="isMagic" val="1" />
 		<set name="irreplacableBuff" val="true" />
 		<for>
 			<effect name="Debuff">

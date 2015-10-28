@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.conditions;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -60,6 +61,11 @@ public class ConditionPlayerCanSwitchSubclass extends Condition
 		else if (player.getWeightPenalty() >= 2)
 		{
 			player.sendPacket(SystemMessageId.A_SUBCLASS_CANNOT_BE_CREATED_OR_CHANGED_WHILE_YOU_ARE_OVER_YOUR_WEIGHT_LIMIT);
+			canSwitchSub = false;
+		}
+		else if (player.isOnEvent(CeremonyOfChaosEvent.class))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_YOUR_SUBCLASS_WHILE_REGISTERED_IN_THE_CEREMONY_OF_CHAOS);
 			canSwitchSub = false;
 		}
 		else if (player.isAllSkillsDisabled())

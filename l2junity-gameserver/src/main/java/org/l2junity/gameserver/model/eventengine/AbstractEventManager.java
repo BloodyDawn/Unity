@@ -19,14 +19,17 @@
 package org.l2junity.gameserver.model.eventengine;
 
 import java.nio.file.Path;
-import java.util.LinkedHashSet;
+import java.util.Collections;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.atomic.AtomicReference;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.eventengine.drop.IEventDrop;
 import org.l2junity.gameserver.model.events.AbstractScript;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
@@ -40,33 +43,60 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout
  */
 public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends AbstractScript
 {
-	private final StatsSet _variables = new StatsSet();
-	private final Set<EventScheduler> _schedulers = new LinkedHashSet<>();
+	private volatile StatsSet _variables = StatsSet.EMPTY_STATSET;
+	private volatile Set<EventScheduler> _schedulers = Collections.emptySet();
+	private volatile Map<String, IEventDrop> _rewards = Collections.emptyMap();
+	
 	private final Set<T> _events = ConcurrentHashMap.newKeySet();
 	private final Queue<PlayerInstance> _registeredPlayers = new ConcurrentLinkedDeque<>();
-	private IEventState _state;
+	private final AtomicReference<IEventState> _state = new AtomicReference<>();
 	
 	public abstract void onInitialized();
+	
+	/* ********************** */
 	
 	public StatsSet getVariables()
 	{
 		return _variables;
 	}
 	
+	public void setVariables(StatsSet variables)
+	{
+		_variables = new StatsSet(Collections.unmodifiableMap(variables.getSet()));
+	}
+	
+	/* ********************** */
+	
 	public EventScheduler getScheduler(String name)
 	{
 		return _schedulers.stream().filter(scheduler -> scheduler.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
 	}
 	
-	public Set<EventScheduler> getSchedulers()
+	public void setSchedulers(Set<EventScheduler> schedulers)
 	{
-		return _schedulers;
+		_schedulers = Collections.unmodifiableSet(schedulers);
 	}
+	
+	/* ********************** */
+	
+	public IEventDrop getRewards(String name)
+	{
+		return _rewards.get(name);
+	}
+	
+	public void setRewards(Map<String, IEventDrop> rewards)
+	{
+		_rewards = Collections.unmodifiableMap(rewards);
+	}
+	
+	/* ********************** */
 	
 	public Set<T> getEvents()
 	{
 		return _events;
 	}
+	
+	/* ********************** */
 	
 	public void startScheduler()
 	{
@@ -78,15 +108,31 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		_schedulers.forEach(EventScheduler::stopScheduler);
 	}
 	
+	/* ********************** */
+	
 	public IEventState getState()
 	{
-		return _state;
+		return _state.get();
 	}
 	
-	public void setState(IEventState state)
+	public void setState(IEventState newState)
 	{
-		_state = state;
+		final IEventState previousState = _state.get();
+		_state.set(newState);
+		onStateChange(previousState, newState);
 	}
+	
+	public boolean setState(IEventState previousState, IEventState newState)
+	{
+		if (_state.compareAndSet(previousState, newState))
+		{
+			onStateChange(previousState, newState);
+			return true;
+		}
+		return false;
+	}
+	
+	/* ********************** */
 	
 	public final boolean registerPlayer(PlayerInstance player)
 	{
@@ -113,6 +159,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		return _registeredPlayers;
 	}
 	
+	/* ********************** */
+	
 	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	private void onPlayerLogout(OnPlayerLogout event)
@@ -124,6 +172,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		}
 	}
 	
+	/* ********************** */
+	
 	/**
 	 * Triggered when a player is automatically removed from the event manager because he disconnected
 	 * @param player
@@ -132,6 +182,18 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	{
 	
 	}
+	
+	/**
+	 * Triggered when state is changed
+	 * @param previousState
+	 * @param newState
+	 */
+	protected void onStateChange(IEventState previousState, IEventState newState)
+	{
+	
+	}
+	
+	/* ********************** */
 	
 	@Override
 	public String getScriptName()

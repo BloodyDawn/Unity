@@ -74,8 +74,14 @@ public final class AdventurersGuide extends AbstractNpcAI
 			case "guide-02.html":
 			case "guide-03.html":
 			case "guide-04.html":
+			case "guide-05.html":
 			{
 				htmltext = event;
+				break;
+			}
+			case "index":
+			{
+				htmltext = npc.getId() + ".html";
 				break;
 			}
 			case "weakenBreath":

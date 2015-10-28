@@ -7,6 +7,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10101" name="Spellbook: Throne of Ice" type="EtcItem">
@@ -16,6 +17,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10102" name="Spellbook: Throne of Wind" type="EtcItem">
@@ -25,6 +27,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10103" name="Spellbook: Divine Power" type="EtcItem">
@@ -34,6 +37,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10104" name="Spellbook: Mana Gain" type="EtcItem">
@@ -43,6 +47,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10105" name="Amulet: Chant of Protection" type="EtcItem">
@@ -52,6 +57,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10106" name="Amulet: Seal of Blockade" type="EtcItem">
@@ -61,6 +67,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10107" name="Spellbook: Fire Vortex Buster" type="EtcItem">
@@ -70,6 +77,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10108" name="Spellbook: Ice Vortex Crusher" type="EtcItem">
@@ -79,6 +87,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10109" name="Spellbook: Wind Vortex Slug" type="EtcItem">
@@ -88,25 +97,36 @@
 		<set name="weight" val="120" />
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10110" name="Forgotten Scroll: Meteor" type="EtcItem">
 		<set name="icon" val="BranchSys2.Icon.br_spell_books_magic_i01" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="price" val="120000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22372" level="1" /> <!-- Meteor -->
+		</skills>
 	</item>
 	<item id="10111" name="Forgotten Scroll: Star Fall" type="EtcItem">
 		<set name="icon" val="BranchSys2.Icon.br_spell_books_magic_i01" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="price" val="120000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22373" level="1" /> <!-- Starfall -->
+		</skills>
 	</item>
 	<item id="10112" name="Dark Seed" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_i08" />
@@ -146,6 +166,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="53777" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10115" name="Recipe: Sealed Dynasty Sigil (60%)" type="EtcItem">
@@ -159,6 +180,7 @@
 		<set name="recipe_id" val="913" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10116" name="Recipe: Sealed Dynasty Sigil" type="EtcItem">
@@ -171,6 +193,7 @@
 		<set name="price" val="262000" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10117" name="Foundation Sealed Dynasty Sigil" type="EtcItem">
@@ -180,15 +203,16 @@
 		<set name="weight" val="1370" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="SIGIL" />
 		<set name="price" val="6404000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="305" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">305</stat>
+		</stats>
 	</item>
 	<item id="10118" name="Foundation Dynasty Sigil" type="EtcItem">
 		<set name="icon" val="icon.dynasty_sigil_i00" />
@@ -197,15 +221,16 @@
 		<set name="weight" val="1390" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="SIGIL" />
 		<set name="price" val="6404000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="321" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">321</stat>
+		</stats>
 	</item>
 	<item id="10119" name="Dynasty Sigil" type="Armor">
 		<set name="icon" val="icon.dynasty_sigil_i00" />
@@ -219,18 +244,19 @@
 		<set name="weight" val="930" />
 		<set name="price" val="6404000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="SIGIL" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="8311" level="1" /> <!-- Dynasty Sigil -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="15" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8311" level="1" /> <!-- Dynasty Sigil -->
+		</skills>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">15</stat>
+		</stats>
 	</item>
 	<item id="10120" name="Sealed Dynasty Sigil" type="Armor">
 		<set name="icon" val="icon.armor_dynasty_sigil_i01" />
@@ -244,15 +270,16 @@
 		<set name="weight" val="930" />
 		<set name="price" val="6404000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SIGIL" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="15" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">15</stat>
+		</stats>
 	</item>
 	<item id="10121" name="Sealed Arcana Sigil" type="Armor">
 		<set name="icon" val="icon.arcana_sigil_i01" />
@@ -267,15 +294,15 @@
 		<set name="price" val="3355000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SIGIL" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="13" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">13</stat>
+		</stats>
 	</item>
 	<item id="10122" name="Red Crescent" type="Armor">
 		<set name="icon" val="icon.accessary_red_cresent_earing_i00" />
@@ -293,9 +320,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="24" />
-		</for>
+		<stats>
+			<stat type="mDef">24</stat>
+		</stats>
 	</item>
 	<item id="10123" name="Necklace of Devotion" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_devotion_i00" />
@@ -313,9 +340,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="32" />
-		</for>
+		<stats>
+			<stat type="mDef">32</stat>
+		</stats>
 	</item>
 	<item id="10124" name="Ring of Devotion" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_devotion_i00" />
@@ -333,17 +360,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="16" />
-		</for>
+		<stats>
+			<stat type="mDef">16</stat>
+		</stats>
 	</item>
 	<item id="10125" name="Shadow Item: War Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -360,15 +385,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="300" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10126" name="Dynasty Leather Armor" name_additional="Force Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -383,6 +408,8 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -390,10 +417,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10127" name="Dynasty Leather Armor" name_additional="Weapon Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -408,22 +434,21 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10128" name="For Monster only (Crossbow)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
@@ -431,13 +456,17 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10129" name="Scroll of Escape: Fortress" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_castle_i00" />
@@ -452,12 +481,12 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2365" level="1" /> <!-- Scroll of Escape: Fortress -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2365" level="1" /> <!-- Scroll of Escape: Fortress -->
+		</skills>
 	</item>
 	<item id="10130" name="Blessed Scroll of Escape: Fortress" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_castle_i01" />
@@ -469,13 +498,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2364" level="1" /> <!-- Blessed Scroll of Escape: Fortress -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2364" level="1" /> <!-- Blessed Scroll of Escape: Fortress -->
+		</skills>
 	</item>
 	<item id="10131" name="Transformation Scroll: Onyx Beast" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -598,6 +628,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2378" level="1" /> <!-- Transformation Scroll: Dragon Bomber -->
@@ -614,7 +645,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5414-1;3269-1;3267-1" />
 		<set name="duration" val="700" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -623,6 +653,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
+			<skill id="5414" level="1" /> <!-- Agathion Cute Trick - Rainbow Clan Hall -->
+			<skill id="3269" level="1" /> <!-- Release Agathion's Seal - Rainbow Clan Hall -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -648,10 +680,9 @@
 		<skills>
 			<skill id="3408" level="1" /> <!-- Blessed Ring of Escape -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="24" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">24</stat>
+		</stats>
 	</item>
 	<item id="10141" name="Grey Talisman - Yeti Transform" type="Armor">
 		<set name="icon" val="icon.etc_talisman_i07" />
@@ -665,7 +696,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3335-1" />
 		<set name="duration" val="70" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -675,6 +705,7 @@
 		<set name="useSkillDisTime" val="3" />
 		<skills>
 			<skill id="3499" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="3335" level="1" /> <!-- Transform Yeti -->
 		</skills>
 	</item>
 	<item id="10142" name="Grey Talisman - Buffalo Transform" type="Armor">
@@ -689,7 +720,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3336-1" />
 		<set name="duration" val="70" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -699,6 +729,7 @@
 		<set name="useSkillDisTime" val="3" />
 		<skills>
 			<skill id="3499" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="3336" level="1" /> <!-- Transform Buffalo -->
 		</skills>
 	</item>
 	<item id="10143" name="Battleground Scroll: Shield Master" type="EtcItem">
@@ -712,17 +743,18 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
+		<cond addName="1" msgId="113">
+			<player SiegeZone="126" />
+		</cond>
 		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
 			<skill id="2380" level="1" /> <!-- Shield -->
 			<skill id="2381" level="1" /> <!-- Magic Barrier -->
 			<skill id="2382" level="1" /> <!-- Blessed Shield -->
 			<skill id="2383" level="1" /> <!-- Haste -->
+			<skill id="2379" level="1" /> <!-- Wind -->
 		</skills>
-		<cond addName="1" msgId="113">
-			<player SiegeZone="126" />
-		</cond>
 	</item>
 	<item id="10144" name="Battleground Scroll: Wizard" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -735,17 +767,18 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
+		<cond addName="1" msgId="113">
+			<player SiegeZone="126" />
+		</cond>
 		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
 			<skill id="2380" level="1" /> <!-- Shield -->
 			<skill id="2381" level="1" /> <!-- Magic Barrier -->
 			<skill id="2384" level="1" /> <!-- Acumen -->
 			<skill id="2385" level="1" /> <!-- Empower -->
+			<skill id="2379" level="1" /> <!-- Wind -->
 		</skills>
-		<cond addName="1" msgId="113">
-			<player SiegeZone="126" />
-		</cond>
 	</item>
 	<item id="10145" name="Battleground Scroll: Healer" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -758,17 +791,18 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
+		<cond addName="1" msgId="113">
+			<player SiegeZone="126" />
+		</cond>
 		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
 			<skill id="2380" level="1" /> <!-- Shield -->
 			<skill id="2381" level="1" /> <!-- Magic Barrier -->
 			<skill id="2384" level="1" /> <!-- Acumen -->
 			<skill id="2386" level="1" /> <!-- Divine Power -->
+			<skill id="2379" level="1" /> <!-- Wind -->
 		</skills>
-		<cond addName="1" msgId="113">
-			<player SiegeZone="126" />
-		</cond>
 	</item>
 	<item id="10146" name="Battleground Scroll: Dagger Master" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -781,17 +815,18 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
+		<cond addName="1" msgId="113">
+			<player SiegeZone="126" />
+		</cond>
 		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
 			<skill id="2387" level="1" /> <!-- Might -->
 			<skill id="2381" level="1" /> <!-- Magic Barrier -->
 			<skill id="2388" level="1" /> <!-- Focus -->
 			<skill id="2383" level="1" /> <!-- Haste -->
+			<skill id="2379" level="1" /> <!-- Wind -->
 		</skills>
-		<cond addName="1" msgId="113">
-			<player SiegeZone="126" />
-		</cond>
 	</item>
 	<item id="10147" name="Battleground Scroll: Bow Master" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -804,17 +839,18 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
+		<cond addName="1" msgId="113">
+			<player SiegeZone="126" />
+		</cond>
 		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
 			<skill id="2387" level="1" /> <!-- Might -->
 			<skill id="2381" level="1" /> <!-- Magic Barrier -->
 			<skill id="2389" level="1" /> <!-- Guidance -->
 			<skill id="2383" level="1" /> <!-- Haste -->
+			<skill id="2379" level="1" /> <!-- Wind -->
 		</skills>
-		<cond addName="1" msgId="113">
-			<player SiegeZone="126" />
-		</cond>
 	</item>
 	<item id="10148" name="Battleground Scroll: Berserker" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -827,33 +863,35 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2390" level="1" /> <!-- Berserker Spirit -->
-			<skill id="2391" level="1" /> <!-- Clarity -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2391" level="1" /> <!-- Clarity -->
+			<skill id="2390" level="1" /> <!-- Berserker Spirit -->
+		</skills>
 	</item>
 	<item id="10149" name="Blessed Scroll of Escape (Battleground)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2392" level="1" /> <!-- Blessed Scroll of Escape (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2392" level="1" /> <!-- Blessed Scroll of Escape (Battleground) -->
+		</skills>
 	</item>
 	<item id="10150" name="Blessed Scroll of Resurrection (Battleground)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_resurrection_i00" />
@@ -864,32 +902,34 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2393" level="1" /> <!-- Blessed Scroll of Resurrection (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2393" level="1" /> <!-- Blessed Scroll of Resurrection (Battleground) -->
+		</skills>
 	</item>
 	<item id="10151" name="Transformation Scroll (Battleground)" type="EtcItem">
 		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2394" level="1" /> <!-- Transformation Scroll (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2394" level="1" /> <!-- Transformation Scroll (Battleground) -->
+		</skills>
 	</item>
 	<item id="10152" name="Healing Potion (Battleground)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_hp_potion_i00" />
@@ -906,12 +946,12 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2395" level="1" /> <!-- Healing Potion (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2395" level="1" /> <!-- Healing Potion (Battleground) -->
+		</skills>
 	</item>
 	<item id="10153" name="Mana Recovery Potion (Battleground)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_mp_potion_i00" />
@@ -925,13 +965,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2401" level="1" /> <!-- Mana Recovery Potion (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2401" level="1" /> <!-- Mana Recovery Potion (Battleground) -->
+		</skills>
 	</item>
 	<item id="10154" name="CP Recovery Potion (Battleground)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_cp_potion_i00" />
@@ -948,12 +989,12 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2402" level="1" /> <!-- CP Recovery Potion (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2402" level="1" /> <!-- CP Recovery Potion (Battleground) -->
+		</skills>
 	</item>
 	<item id="10155" name="Mental Strengthening Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
@@ -965,13 +1006,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2396" level="1" /> <!-- Mental Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2396" level="1" /> <!-- Mental Potion -->
+		</skills>
 	</item>
 	<item id="10156" name="Medusa's Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
@@ -985,13 +1027,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2397" level="1" /> <!-- Medusa Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2397" level="1" /> <!-- Medusa Potion -->
+		</skills>
 	</item>
 	<item id="10157" name="Quick Haste Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
@@ -1003,13 +1046,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2398" level="1" /> <!-- Quick Haste Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2398" level="1" /> <!-- Quick Haste Potion -->
+		</skills>
 	</item>
 	<item id="10158" name="Grey Talisman - High-grade Fishing" type="Armor">
 		<set name="icon" val="icon.etc_talisman_i07" />
@@ -1042,13 +1086,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2399" level="1" /> <!-- Capture Rope -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2399" level="1" /> <!-- Capture Rope -->
+		</skills>
 	</item>
 	<item id="10160" name="Cursed Red Soul Crystal - Stage 14" type="EtcItem">
 		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
@@ -1059,10 +1104,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SOUL_CRYSTAL" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2096" level="1" /> <!-- Soul Crystal -->
-		</skills>
 	</item>
 	<item id="10161" name="Cursed Blue Soul Crystal - Stage 14" type="EtcItem">
 		<set name="icon" val="icon.etc_broken_crystal_blue_i00" />
@@ -1073,10 +1116,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SOUL_CRYSTAL" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2096" level="1" /> <!-- Soul Crystal -->
-		</skills>
 	</item>
 	<item id="10162" name="Cursed Green Soul Crystal - Stage 14" type="EtcItem">
 		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
@@ -1087,10 +1128,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SOUL_CRYSTAL" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2096" level="1" /> <!-- Soul Crystal -->
-		</skills>
 	</item>
 	<item id="10163" name="Wolf Collar" type="EtcItem">
 		<set name="icon" val="icon.etc_prefect_belt_i00" />
@@ -1102,13 +1141,15 @@
 		<set name="handler" val="SummonItems" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="enchanted" val="15" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10164" name="Animal Slayer's List" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_white_i00" />
@@ -1154,6 +1195,8 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2403" level="1" /> <!-- Hot Springs CP Potion -->
@@ -1164,8 +1207,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1176,17 +1217,20 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 			<skill id="3418" level="1" /> <!-- Active Skill: Transform Pig -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10168" name="Dynasty Leather Armor" name_additional="Enchanter" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -1201,14 +1245,15 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10169" name="Enchanter Circlet (Kamael only)" type="Armor">
 		<set name="icon" val="icon.accessary_weapon_master_circlet_i00" />
@@ -1217,6 +1262,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 		<cond msgId="1518">
 			<and>
@@ -1236,13 +1284,13 @@
 		<set name="weight" val="150" />
 		<set name="price" val="12185000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
-			<add stat="darkRes" val="30" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="10171" name="Seed: Dark Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -1253,6 +1301,7 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -1267,6 +1316,7 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -1281,6 +1331,7 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -1295,6 +1346,7 @@
 		<set name="price" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -1314,6 +1366,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="10176" name="White Half Mask" type="Armor">
@@ -1330,6 +1384,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="10177" name="Black Half Mask (Event)" type="Armor">
@@ -1346,6 +1402,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="10178" name="Sweet Fruit Cocktail" type="EtcItem">
@@ -1370,7 +1428,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2404" level="1" /> <!-- Might -->
 			<skill id="2405" level="1" /> <!-- Shield -->
 			<skill id="2406" level="1" /> <!-- Wind Walk -->
 			<skill id="2407" level="1" /> <!-- Focus -->
@@ -1380,6 +1437,7 @@
 			<skill id="2411" level="1" /> <!-- Blessed Body -->
 			<skill id="2412" level="1" /> <!-- Haste -->
 			<skill id="2413" level="1" /> <!-- Vampiric Rage -->
+			<skill id="2404" level="1" /> <!-- Might -->
 		</skills>
 	</item>
 	<item id="10179" name="Fresh Fruit Cocktail" type="EtcItem">
@@ -1404,7 +1462,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2414" level="1" /> <!-- Berserker Spirit -->
 			<skill id="2415" level="1" /> <!-- Magic Barrier -->
 			<skill id="2416" level="1" /> <!-- Blessed Soul -->
 			<skill id="2417" level="1" /> <!-- Empower -->
@@ -1413,6 +1470,7 @@
 			<skill id="2406" level="1" /> <!-- Wind Walk -->
 			<skill id="2411" level="1" /> <!-- Blessed Body -->
 			<skill id="2405" level="1" /> <!-- Shield -->
+			<skill id="2414" level="1" /> <!-- Berserker Spirit -->
 		</skills>
 	</item>
 	<item id="10180" name="Battle Manual - Penetrating Shot" type="EtcItem">
@@ -1422,6 +1480,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10181" name="Battle Manual - Erase Mark" type="EtcItem">
@@ -1431,6 +1490,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1050" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10182" name="Battle Manual - Ultimate Escape" type="EtcItem">
@@ -1440,6 +1500,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10183" name="Battle Manual - Create Special Bolt" type="EtcItem">
@@ -1449,6 +1510,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10184" name="Battle Manual - Restoration Impact" type="EtcItem">
@@ -1458,6 +1520,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10185" name="Battle Manual - Appetite for Destruction" type="EtcItem">
@@ -1467,6 +1530,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10186" name="Battle Manual - Restoration" type="EtcItem">
@@ -1476,6 +1540,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10187" name="Battle Manual - Oblivion" type="EtcItem">
@@ -1485,6 +1550,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10188" name="Battle Manual - Thin Skin" type="EtcItem">
@@ -1494,6 +1560,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10189" name="Battle Manual - Protection Instinct" type="EtcItem">
@@ -1503,6 +1570,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10190" name="Battle Manual - Vampiric Impulse" type="EtcItem">
@@ -1512,6 +1580,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10191" name="Battle Manual - Magic Impulse" type="EtcItem">
@@ -1521,6 +1590,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10192" name="Battle Manual - Enervation" type="EtcItem">
@@ -1530,6 +1600,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10193" name="Battle Manual - Weak Constitution" type="EtcItem">
@@ -1539,6 +1610,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10194" name="Battle Manual - Spite" type="EtcItem">
@@ -1548,6 +1620,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="8700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10195" name="Battle Manual - Mental Impoverish" type="EtcItem">
@@ -1557,6 +1630,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10196" name="Battle Manual - Soul Harmony" type="EtcItem">
@@ -1566,6 +1640,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="9300" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10197" name="Seed: Alternative Dark Coda" type="EtcItem">
@@ -1577,6 +1652,7 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -1591,6 +1667,7 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -1605,6 +1682,7 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->

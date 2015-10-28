@@ -562,7 +562,7 @@ public class PcStat extends PlayableStat
 	
 	public double getVitalityExpBonus()
 	{
-		return (getVitalityPoints() > 0) ? calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER) : 1.0;
+		return (getVitalityPoints() > 0) ? getValue(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER) : 1.0;
 	}
 	
 	public void setVitalityPoints(int value)
@@ -633,7 +633,7 @@ public class PcStat extends PlayableStat
 			
 			if (points < 0) // vitality consumed
 			{
-				int stat = (int) calcStat(Stats.VITALITY_CONSUME_RATE, 1, getActiveChar(), null);
+				int stat = (int) getValue(Stats.VITALITY_CONSUME_RATE, 1);
 				
 				if (stat == 0)
 				{
@@ -684,7 +684,7 @@ public class PcStat extends PlayableStat
 		vitality = getVitalityExpBonus();
 		
 		// Bonus exp from skills
-		bonusExp = 1 + (calcStat(Stats.BONUS_EXP, 0, null, null) / 100);
+		bonusExp = 1 + (getValue(Stats.BONUS_EXP, 0) / 100);
 		
 		if (vitality > 1.0)
 		{
@@ -716,7 +716,7 @@ public class PcStat extends PlayableStat
 		vitality = getVitalityExpBonus();
 		
 		// Bonus sp from skills
-		bonusSp = 1 + (calcStat(Stats.BONUS_SP, 0, null, null) / 100);
+		bonusSp = 1 + (getValue(Stats.BONUS_SP, 0) / 100);
 		
 		if (vitality > 1.0)
 		{
@@ -744,7 +744,7 @@ public class PcStat extends PlayableStat
 	 */
 	public int getBroochJewelSlots()
 	{
-		return (int) calcStat(Stats.BROOCH_JEWELS, 0);
+		return (int) getValue(Stats.BROOCH_JEWELS, 0);
 	}
 	
 	@Override
@@ -758,8 +758,6 @@ public class PcStat extends PlayableStat
 			{
 				item.getAugmentation().applyStats(player);
 			}
-			
-			// TODO: Apply enchanted items stats
 		}
 		
 		// Upon master stats recalculation trigger pet/servitor recalculation too

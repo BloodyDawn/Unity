@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -49,7 +50,7 @@ public final class Harvesting extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effector.isPlayer() || !effected.isMonster() || !effected.isDead())
 		{
@@ -66,24 +67,24 @@ public final class Harvesting extends AbstractEffect
 		{
 			if (calcSuccess(player, monster))
 			{
-				final ItemHolder item = monster.takeHarvest();
-				if (item != null)
+				final ItemHolder harvestedItem = monster.takeHarvest();
+				if (harvestedItem != null)
 				{
 					// Add item
-					player.getInventory().addItem("Harvesting", item.getId(), item.getCount(), player, monster);
+					player.getInventory().addItem("Harvesting", harvestedItem.getId(), harvestedItem.getCount(), player, monster);
 					
 					// Send system msg
 					SystemMessage sm = null;
 					if (item.getCount() == 1)
 					{
 						sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1);
-						sm.addItemName(item.getId());
+						sm.addItemName(harvestedItem.getId());
 					}
 					else
 					{
 						sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S2_S1);
 						sm.addItemName(item.getId());
-						sm.addLong(item.getCount());
+						sm.addLong(harvestedItem.getCount());
 					}
 					player.sendPacket(sm);
 					
@@ -95,14 +96,14 @@ public final class Harvesting extends AbstractEffect
 						{
 							sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HARVESTED_S2);
 							sm.addString(player.getName());
-							sm.addItemName(item.getId());
+							sm.addItemName(harvestedItem.getId());
 						}
 						else
 						{
 							sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HARVESTED_S3_S2_S);
 							sm.addString(player.getName());
-							sm.addLong(item.getCount());
-							sm.addItemName(item.getId());
+							sm.addLong(harvestedItem.getCount());
+							sm.addItemName(harvestedItem.getId());
 						}
 						party.broadcastToPartyMembers(player, sm);
 					}

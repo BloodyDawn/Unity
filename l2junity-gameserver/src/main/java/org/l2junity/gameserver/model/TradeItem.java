@@ -45,6 +45,8 @@ public class TradeItem
 		0
 	};
 	private final int[] _enchantOptions;
+	private final int[] _soulCrystalOptions;
+	private final int[] _soulCrystalSpecialOptions;
 	private int _visualId;
 	private int _augmentId;
 	
@@ -65,6 +67,8 @@ public class TradeItem
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
 		_visualId = item.getVisualId();
 		_augmentId = item.isAugmented() ? item.getAugmentation().getId() : 0;
 	}
@@ -83,6 +87,8 @@ public class TradeItem
 		_elemAtkType = Elementals.NONE;
 		_elemAtkPower = 0;
 		_enchantOptions = ItemInstance.DEFAULT_ENCHANT_OPTIONS;
+		_soulCrystalOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
+		_soulCrystalSpecialOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
 	}
 	
 	public TradeItem(TradeItem item, long count, long price)
@@ -103,6 +109,8 @@ public class TradeItem
 			_elemDefAttr[i] = item.getElementDefAttr(i);
 		}
 		_enchantOptions = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
 		_visualId = item.getVisualId();
 	}
 	
@@ -189,6 +197,16 @@ public class TradeItem
 	public int[] getEnchantOptions()
 	{
 		return _enchantOptions;
+	}
+	
+	public int[] getSoulCrystalOptions()
+	{
+		return _soulCrystalOptions;
+	}
+	
+	public int[] getSoulCrystalSpecialOptions()
+	{
+		return _soulCrystalSpecialOptions;
 	}
 	
 	public int getAugmentId()

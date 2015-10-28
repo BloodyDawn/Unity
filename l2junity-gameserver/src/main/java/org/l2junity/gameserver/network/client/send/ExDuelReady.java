@@ -26,11 +26,14 @@ import org.l2junity.network.PacketWriter;
  */
 public class ExDuelReady implements IClientOutgoingPacket
 {
-	private final int _result;
+	public static final ExDuelReady PLAYER_DUEL = new ExDuelReady(false);
+	public static final ExDuelReady PARTY_DUEL = new ExDuelReady(true);
 	
-	public ExDuelReady(int result)
+	private final int _partyDuel;
+	
+	public ExDuelReady(boolean isPartyDuel)
 	{
-		_result = result;
+		_partyDuel = isPartyDuel ? 1 : 0;
 	}
 	
 	@Override
@@ -38,7 +41,7 @@ public class ExDuelReady implements IClientOutgoingPacket
 	{
 		OutgoingPackets.EX_DUEL_READY.writeId(packet);
 		
-		packet.writeD(_result);
+		packet.writeD(_partyDuel);
 		return true;
 	}
 }

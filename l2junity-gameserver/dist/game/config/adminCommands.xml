@@ -22,10 +22,10 @@
 	<admin command="admin_set_mod" accessLevel="7" />
 	<admin command="admin_saveolymp" accessLevel="7" />
 	<admin command="admin_sethero" accessLevel="7" />
-	<admin command="admin_givehero" accessLevel="7" confirmDlg="true" />
-	<admin command="admin_endolympiad" accessLevel="7" confirmDlg="true" />
-	<admin command="admin_setconfig" accessLevel="7" />
-	<admin command="admin_config_server" accessLevel="7" />
+	<admin command="admin_givehero" accessLevel="8" confirmDlg="true" />
+	<admin command="admin_endolympiad" accessLevel="8" confirmDlg="true" />
+	<admin command="admin_setconfig" accessLevel="8" />
+	<admin command="admin_config_server" accessLevel="8" />
 	<admin command="admin_gmon" accessLevel="7" />
 	<admin command="admin_worldchat" accessLevel="7" />
 	<admin command="admin_zones" accessLevel="7"/>
@@ -35,12 +35,12 @@
 	<admin command="admin_announce" accessLevel="7" />
 	<admin command="admin_announce_crit" accessLevel="7" />
 	<admin command="admin_announce_screen" accessLevel="7" />
-	<admin command="admin_announces" accessLevel="7" />
+	<admin command="admin_announces" accessLevel="8" />
 
 	<!-- ADMIN BAN -->
-	<admin command="admin_punishment" accessLevel="7" />
-	<admin command="admin_punishment_add" accessLevel="7" confirmDlg="true" />
-	<admin command="admin_punishment_remove" accessLevel="7" confirmDlg="true" />
+	<admin command="admin_punishment" accessLevel="8" />
+	<admin command="admin_punishment_add" accessLevel="8" confirmDlg="true" />
+	<admin command="admin_punishment_remove" accessLevel="8" confirmDlg="true" />
 
 	<!-- ADMIN BBS -->
 	<admin command="admin_bbs" accessLevel="7" />
@@ -58,7 +58,7 @@
 	<admin command="admin_camera" accessLevel="7" />
 
 	<!-- ADMIN CHANGE ACCESS LEVEL -->
-	<admin command="admin_changelvl" accessLevel="7" />
+	<admin command="admin_changelvl" accessLevel="8" />
 
 	<!-- ADMIN CH SIEGE -->
 	<admin command="admin_chsiege_siegablehall" accessLevel="7" />
@@ -96,7 +96,7 @@
 	<admin command="admin_debug" accessLevel="7" />
 
 	<!-- ADMIN DELETE -->
-	<admin command="admin_delete" accessLevel="7" />
+	<admin command="admin_delete" accessLevel="8" />
 
 	<!-- ADMIN DISCONNECT -->
 	<admin command="admin_character_disconnect" accessLevel="7" />
@@ -331,7 +331,7 @@
 	<admin command="admin_setundying" accessLevel="7" />
 
 	<!-- ADMIN KICK -->
-	<admin command="admin_kick" accessLevel="7" confirmDlg="true" />
+	<admin command="admin_kick" accessLevel="8" confirmDlg="true" />
 	<admin command="admin_kick_non_gm" accessLevel="7" />
 
 	<!-- ADMIN KILL -->
@@ -428,15 +428,15 @@
 	<admin command="admin_primepoints" accessLevel="7" />
 
 	<!-- ADMIN QUEST -->
-	<admin command="admin_quest_reload" accessLevel="7" />
-	<admin command="admin_script_load" accessLevel="7" />
-	<admin command="admin_script_unload" accessLevel="7" />
-	<admin command="admin_script_dir" accessLevel="7" />
+	<admin command="admin_quest_reload" accessLevel="8" />
+	<admin command="admin_script_load" accessLevel="8" />
+	<admin command="admin_script_unload" accessLevel="8" />
+	<admin command="admin_script_dir" accessLevel="8" />
 	<admin command="admin_show_quests" accessLevel="7" />
 	<admin command="admin_quest_info" accessLevel="7" />
 
 	<!-- ADMIN RELOAD -->
-	<admin command="admin_reload" accessLevel="7" confirmDlg="true" />
+	<admin command="admin_reload" accessLevel="8" confirmDlg="true" />
 
 	<!-- ADMIN REPAIR CHAR -->
 	<admin command="admin_restore" accessLevel="7" />
@@ -466,9 +466,9 @@
 	<admin command="admin_setcharquest" accessLevel="7" />
 
 	<!-- ADMIN SHUTDOWN -->
-	<admin command="admin_server_shutdown" accessLevel="7" confirmDlg="true" />
-	<admin command="admin_server_restart" accessLevel="7" confirmDlg="true" />
-	<admin command="admin_server_abort" accessLevel="7" />
+	<admin command="admin_server_shutdown" accessLevel="8" confirmDlg="true" />
+	<admin command="admin_server_restart" accessLevel="8" confirmDlg="true" />
+	<admin command="admin_server_abort" accessLevel="8" />
 
 	<!-- ADMIN CLAN HALL -->
 	<admin command="admin_clanhall" accessLevel="7" />
@@ -501,22 +501,22 @@
 	<admin command="admin_castnow" accessLevel="7" />
 
 	<!-- ADMIN SPAWN -->
-	<admin command="admin_show_spawns" accessLevel="7" />
-	<admin command="admin_spawn" accessLevel="7" />
-	<admin command="admin_spawn_monster" accessLevel="7" />
-	<admin command="admin_spawn_index" accessLevel="7" />
-	<admin command="admin_unspawnall" accessLevel="7" />
-	<admin command="admin_respawnall" accessLevel="7" />
-	<admin command="admin_spawn_reload" accessLevel="7" />
-	<admin command="admin_npc_index" accessLevel="7" />
-	<admin command="admin_spawn_once" accessLevel="7" />
-	<admin command="admin_show_npcs" accessLevel="7" />
-	<admin command="admin_instance_spawns" accessLevel="7" />
-	<admin command="admin_list_spawns" accessLevel="7" />
-	<admin command="admin_list_positions" accessLevel="7" />
-	<admin command="admin_spawn_debug_menu" accessLevel="7" />
-	<admin command="admin_spawn_debug_print" accessLevel="7" />
-	<admin command="admin_spawn_debug_print_menu" accessLevel="7" />
+	<admin command="admin_show_spawns" accessLevel="8" />
+	<admin command="admin_spawn" accessLevel="8" />
+	<admin command="admin_spawn_monster" accessLevel="8" />
+	<admin command="admin_spawn_index" accessLevel="8" />
+	<admin command="admin_unspawnall" accessLevel="8" />
+	<admin command="admin_respawnall" accessLevel="8" />
+	<admin command="admin_spawn_reload" accessLevel="8" />
+	<admin command="admin_npc_index" accessLevel="8" />
+	<admin command="admin_spawn_once" accessLevel="8" />
+	<admin command="admin_show_npcs" accessLevel="8" />
+	<admin command="admin_instance_spawns" accessLevel="8" />
+	<admin command="admin_list_spawns" accessLevel="8" />
+	<admin command="admin_list_positions" accessLevel="8" />
+	<admin command="admin_spawn_debug_menu" accessLevel="8" />
+	<admin command="admin_spawn_debug_print" accessLevel="8" />
+	<admin command="admin_spawn_debug_print_menu" accessLevel="8" />
 
 	<!-- ADMIN SUMMON -->
 	<admin command="admin_summon" accessLevel="7" />
@@ -570,7 +570,7 @@
 	<admin command="admin_tvt_advance" accessLevel="7" />
 
 	<!-- ADMIN UNBLOCK IP -->
-	<admin command="admin_unblockip" accessLevel="7" />
+	<admin command="admin_unblockip" accessLevel="8" />
 
 	<!-- ADMIN VITALITY -->
 	<admin command="admin_set_vitality" accessLevel="7" />

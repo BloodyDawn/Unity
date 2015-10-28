@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send.primeshop;
 
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.primeshop.PrimeShopGroup;
 import org.l2junity.gameserver.model.primeshop.PrimeShopItem;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
@@ -30,10 +31,14 @@ import org.l2junity.network.PacketWriter;
 public class ExBRProductInfo implements IClientOutgoingPacket
 {
 	private final PrimeShopGroup _item;
+	private final int _charPoints;
+	private final long _charAdena;
 	
-	public ExBRProductInfo(PrimeShopGroup item)
+	public ExBRProductInfo(PrimeShopGroup item, PlayerInstance player)
 	{
 		_item = item;
+		_charPoints = player.getPrimePoints();
+		_charAdena = player.getAdena();
 	}
 	
 	@Override
@@ -51,6 +56,9 @@ public class ExBRProductInfo implements IClientOutgoingPacket
 			packet.writeD(item.getWeight());
 			packet.writeD(item.isTradable());
 		}
+		packet.writeQ(_charAdena);
+		packet.writeQ(_charPoints);
+		packet.writeQ(0x00); // Hero coins
 		return true;
 	}
 }

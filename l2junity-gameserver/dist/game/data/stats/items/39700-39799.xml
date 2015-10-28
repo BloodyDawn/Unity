@@ -88,9 +88,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="weight" val="10" />
-		<for>
-			<add stat="mDef" val="87.0" />
-		</for>
+		<stats>
+			<stat type="mDef">87</stat>
+		</stats>
 	</item>
 	<item id="39711" name="Shining Mysterious Fragment" type="EtcItem">
 		<!-- Found from the magical creatures of Cruma Tower Underground Lv. 3. It emits a mysterious light. -->
@@ -208,13 +208,14 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="152" />
-		<for>
-			<set stat="pAtk" val="112.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="39718" name="Boxing Glove" type="Weapon">
 		<!-- Monster weapon. -->
@@ -236,13 +237,14 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="152" />
-		<for>
-			<set stat="pAtk" val="112.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="39719" name="Monster Only: Crook's Staff" type="Weapon">
 		<!-- Monster weapon. -->
@@ -264,12 +266,14 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="205" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="39720" name="Maphr's Luck Potion" type="EtcItem">
 		<!-- For 15 sec., LUC + 5. -->
@@ -278,6 +282,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="39721" name="Wind Spirit Fragment" type="EtcItem">
@@ -372,6 +377,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="39727" name="Emissary's Reward Box (Mid-grade)" type="EtcItem">
@@ -387,6 +393,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="39728" name="Emissary's Reward Box (High-grade)" type="EtcItem">
@@ -402,6 +409,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="39729" name="Emissary's Reward Box (Top-grade)" type="EtcItem">
@@ -417,6 +425,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="39730" name="Stakato Chitin" type="EtcItem">

@@ -63,12 +63,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13304" name="Fairy Princess Minion Necklace (Event)" type="EtcItem">
 		<set name="icon" val="icon.pet_controler_i00" />
@@ -88,12 +88,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13305" name="Wild Beast Fighter Minion Necklace (Event)" type="EtcItem">
 		<set name="icon" val="icon.pet_controler_i01" />
@@ -113,12 +113,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13306" name="Fox Shaman Minion Necklace (Event)" type="EtcItem">
 		<set name="icon" val="icon.pet_controler_i01" />
@@ -138,12 +138,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13307" name="Color Title (Event)" type="EtcItem">
 		<set name="icon" val="icon.color_name_i00" />
@@ -172,7 +172,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8247-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -180,7 +179,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="8247" level="1" /> <!-- Ride Darkmane Pacer -->
 		</skills>
 	</item>
 	<item id="13309" name="Agathion - Love (Event)" name_additional="30-day" type="Armor">
@@ -194,7 +194,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="5763-1;8245-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -202,6 +201,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="5763" level="1" /> <!-- Wink -->
+			<skill id="8245" level="1" /> <!-- Release Agathion's Seal - Love -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -372,8 +373,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -387,20 +386,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13320" name="X Stick (Event)" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_x_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -414,20 +413,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13321" name="Scissors Stick (Event)" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_scissors_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -441,20 +440,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13322" name="Rock Stick (Event)" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_rock_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -468,20 +467,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13323" name="Paper Stick (Event)" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_diver_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -495,20 +494,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13324" name="Pumpkin Transformation Stick (Event)" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_pumpkin_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -516,7 +515,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8246-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -525,13 +523,16 @@
 		<set name="time" val="43200" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="8246" level="1" /> <!-- Transform Pumpkin Ghost -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13325" name="Kat the Cat Hat (Event)" name_additional="7-day" type="Armor">
 		<set name="icon" val="icon.accessory_cat_the_cat_cap_i00" />
@@ -700,8 +701,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -715,20 +714,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13335" name="X Stick (Event)" name_additional="7-day" type="Weapon">
 		<set name="icon" val="icon.weapon_x_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -742,20 +741,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13336" name="Scissors Stick (Event)" name_additional="7-day" type="Weapon">
 		<set name="icon" val="icon.weapon_scissors_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -769,20 +768,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13337" name="Rock Stick (Event)" name_additional="7-day" type="Weapon">
 		<set name="icon" val="icon.weapon_rock_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -796,20 +795,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13338" name="Paper Stick (Event)" name_additional="7-day" type="Weapon">
 		<set name="icon" val="icon.weapon_diver_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -823,20 +822,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13339" name="Pumpkin Transformation Stick (Event)" name_additional="7-day" type="Weapon">
 		<set name="icon" val="icon.weapon_pumpkin_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -844,7 +843,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8246-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -853,13 +851,16 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="8246" level="1" /> <!-- Transform Pumpkin Ghost -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13340" name="Agathion - Love (Event)" name_additional="7-day" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -872,7 +873,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="5763-1;8245-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -880,6 +880,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="5763" level="1" /> <!-- Wink -->
+			<skill id="8245" level="1" /> <!-- Release Agathion's Seal - Love -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -901,7 +903,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13301" max="1" min="1" /> <!-- My Teleport Book (Event) -->
+			<item id="13301" min="1" max="1" chance="100" /> <!-- My Teleport Book (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13342" name="My Teleport Scroll 30-unit Pack (Event)" type="EtcItem">
@@ -922,7 +924,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13302" max="30" min="30" /> <!-- My Teleport Scroll (Event) -->
+			<item id="13302" min="30" max="30" chance="100" /> <!-- My Teleport Scroll (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13343" name="Feather of Blessing 3-unit Pack (Event)" type="EtcItem">
@@ -943,7 +945,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13300" max="3" min="3" /> <!-- Feather of Blessing (Event) -->
+			<item id="13300" min="3" max="3" chance="100" /> <!-- Feather of Blessing (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13344" name="Agathion - Love Pack (30-day) (Event)" type="EtcItem">
@@ -964,7 +966,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13309" max="1" min="1" /> <!-- Agathion - Love (Event) 30-day -->
+			<item id="13309" min="1" max="1" chance="100" /> <!-- Agathion - Love (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13345" name="Pumpkin Transformation Stick Pack (30-day) (Event)" type="EtcItem">
@@ -985,7 +987,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13324" max="1" min="1" /> <!-- Pumpkin Transformation Stick (Event) 30-day -->
+			<item id="13324" min="1" max="1" chance="100" /> <!-- Pumpkin Transformation Stick (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13346" name="Entrance Pass: Kamaloka 3-unit Pack (Event)" type="EtcItem">
@@ -1006,9 +1008,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13297" max="5" min="5" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) (Event) -->
-			<item chance="100.0" id="13298" max="5" min="5" /> <!-- Extra Pass: Near Kamaloka (Event) -->
-			<item chance="100.0" id="13299" max="5" min="5" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) (Event) -->
+			<item id="13297" min="5" max="5" chance="100" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) (Event) -->
+			<item id="13298" min="5" max="5" chance="100" /> <!-- Extra Pass: Near Kamaloka (Event) -->
+			<item id="13299" min="5" max="5" chance="100" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13347" name="Kat the Cat Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1029,7 +1031,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13310" max="1" min="1" /> <!-- Kat the Cat Hat (Event) 30-day -->
+			<item id="13310" min="1" max="1" chance="100" /> <!-- Kat the Cat Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13348" name="Feline Queen Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1050,7 +1052,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13311" max="1" min="1" /> <!-- Feline Queen Hat (Event) 30-day -->
+			<item id="13311" min="1" max="1" chance="100" /> <!-- Feline Queen Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13349" name="Monster Eye Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1071,7 +1073,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13312" max="1" min="1" /> <!-- Monster Eye Hat (Event) 30-day -->
+			<item id="13312" min="1" max="1" chance="100" /> <!-- Monster Eye Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13350" name="Brown Bear Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1092,7 +1094,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13313" max="1" min="1" /> <!-- Brown Bear Hat (Event) 30-day -->
+			<item id="13313" min="1" max="1" chance="100" /> <!-- Brown Bear Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13351" name="Fungus Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1113,7 +1115,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13314" max="1" min="1" /> <!-- Fungus Hat (Event) 30-day -->
+			<item id="13314" min="1" max="1" chance="100" /> <!-- Fungus Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13352" name="Skull Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1134,7 +1136,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13315" max="1" min="1" /> <!-- Skull Hat (Event) 30-day -->
+			<item id="13315" min="1" max="1" chance="100" /> <!-- Skull Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13353" name="Ornithomimus Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1155,7 +1157,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13316" max="1" min="1" /> <!-- Ornithomimus Hat (Event) 30-day -->
+			<item id="13316" min="1" max="1" chance="100" /> <!-- Ornithomimus Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13354" name="Feline King Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1176,7 +1178,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13317" max="1" min="1" /> <!-- Feline King Hat (Event) 30-day -->
+			<item id="13317" min="1" max="1" chance="100" /> <!-- Feline King Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13355" name="Kai the Cat Hat Pack (30-day) (Event)" type="EtcItem">
@@ -1197,7 +1199,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13318" max="1" min="1" /> <!-- Kai the Cat Hat (Event) 30-day -->
+			<item id="13318" min="1" max="1" chance="100" /> <!-- Kai the Cat Hat (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13356" name="OX Stick Pack (30-day) (Event)" type="EtcItem">
@@ -1218,8 +1220,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13319" max="1" min="1" /> <!-- O Stick (Event) 30-day -->
-			<item chance="100.0" id="13320" max="1" min="1" /> <!-- X Stick (Event) 30-day -->
+			<item id="13319" min="1" max="1" chance="100" /> <!-- O Stick (Event) - 30-day -->
+			<item id="13320" min="1" max="1" chance="100" /> <!-- X Stick (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13357" name="Rock-Paper-Scissors Stick Pack (30-day) (Event)" type="EtcItem">
@@ -1240,9 +1242,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13321" max="1" min="1" /> <!-- Scissors Stick (Event) 30-day -->
-			<item chance="100.0" id="13322" max="1" min="1" /> <!-- Rock Stick (Event) 30-day -->
-			<item chance="100.0" id="13323" max="1" min="1" /> <!-- Paper Stick (Event) 30-day -->
+			<item id="13321" min="1" max="1" chance="100" /> <!-- Scissors Stick (Event) - 30-day -->
+			<item id="13322" min="1" max="1" chance="100" /> <!-- Rock Stick (Event) - 30-day -->
+			<item id="13323" min="1" max="1" chance="100" /> <!-- Paper Stick (Event) - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13358" name="Darkmane Pacer Pack (7-day) (Event)" type="EtcItem">
@@ -1263,7 +1265,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13308" max="1" min="1" /> <!-- Mount - Darkmane Pacer (Event) 7-day -->
+			<item id="13308" min="1" max="1" chance="100" /> <!-- Mount - Darkmane Pacer (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13359" name="Color Title 3-unit Pack (Event)" type="EtcItem">
@@ -1284,7 +1286,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13307" max="3" min="3" /> <!-- Color Title (Event) -->
+			<item id="13307" min="3" max="3" chance="100" /> <!-- Color Title (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13360" name="Color Title Pack (Event)" type="EtcItem">
@@ -1305,7 +1307,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13307" max="1" min="1" /> <!-- Color Title (Event) -->
+			<item id="13307" min="1" max="1" chance="100" /> <!-- Color Title (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13361" name="My Teleport Scroll 10-unit Pack (Event)" type="EtcItem">
@@ -1326,7 +1328,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13016" max="10" min="10" /> <!-- My Teleport Scroll -->
+			<item id="13016" min="10" max="10" chance="100" /> <!-- My Teleport Scroll -->
 		</capsuled_items>
 	</item>
 	<item id="13362" name="Kamaloka (Hall of the Abyss) 15-unit Pack (Event)" type="EtcItem">
@@ -1347,7 +1349,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13297" max="15" min="15" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) (Event) -->
+			<item id="13297" min="15" max="15" chance="100" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13363" name="Near Kamaloka 15-unit Pack (Event)" type="EtcItem">
@@ -1368,7 +1370,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13298" max="15" min="15" /> <!-- Extra Pass: Near Kamaloka (Event) -->
+			<item id="13298" min="15" max="15" chance="100" /> <!-- Extra Pass: Near Kamaloka (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13364" name="Kamaloka (Labyrinth of the Abyss) 15-unit Pack (Event)" type="EtcItem">
@@ -1389,7 +1391,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13299" max="15" min="15" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) (Event) -->
+			<item id="13299" min="15" max="15" chance="100" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13365" name="Kamaloka (Hall of the Abyss) 5-unit Pack (Event)" type="EtcItem">
@@ -1410,7 +1412,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13297" max="5" min="5" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) (Event) -->
+			<item id="13297" min="5" max="5" chance="100" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13366" name="Near Kamaloka 5-unit Pack (Event)" type="EtcItem">
@@ -1431,7 +1433,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13298" max="5" min="5" /> <!-- Extra Pass: Near Kamaloka (Event) -->
+			<item id="13298" min="5" max="5" chance="100" /> <!-- Extra Pass: Near Kamaloka (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13367" name="Kamaloka (Labyrinth of the Abyss) 5-unit Pack (Event)" type="EtcItem">
@@ -1452,7 +1454,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13299" max="5" min="5" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) (Event) -->
+			<item id="13299" min="5" max="5" chance="100" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13368" name="Feather of Blessing Pack (Event)" type="EtcItem">
@@ -1473,7 +1475,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13300" max="1" min="1" /> <!-- Feather of Blessing (Event) -->
+			<item id="13300" min="1" max="1" chance="100" /> <!-- Feather of Blessing (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13369" name="Agathion - Love Pack (7-day) (Event)" type="EtcItem">
@@ -1494,7 +1496,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13340" max="1" min="1" /> <!-- Agathion - Love (Event) 7-day -->
+			<item id="13340" min="1" max="1" chance="100" /> <!-- Agathion - Love (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13370" name="Pumpkin Transformation Stick Pack (7-day) (Event)" type="EtcItem">
@@ -1515,7 +1517,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13339" max="1" min="1" /> <!-- Pumpkin Transformation Stick (Event) 7-day -->
+			<item id="13339" min="1" max="1" chance="100" /> <!-- Pumpkin Transformation Stick (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13371" name="Kat the Cat Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1536,7 +1538,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13325" max="1" min="1" /> <!-- Kat the Cat Hat (Event) 7-day -->
+			<item id="13325" min="1" max="1" chance="100" /> <!-- Kat the Cat Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13372" name="Feline Queen Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1557,7 +1559,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13326" max="1" min="1" /> <!-- Feline Queen Hat (Event) 7-day -->
+			<item id="13326" min="1" max="1" chance="100" /> <!-- Feline Queen Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13373" name="Monster Eye Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1578,7 +1580,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13327" max="1" min="1" /> <!-- Monster Eye Hat (Event) 7-day -->
+			<item id="13327" min="1" max="1" chance="100" /> <!-- Monster Eye Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13374" name="Brown Bear Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1599,7 +1601,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13328" max="1" min="1" /> <!-- Brown Bear Hat (Event) 7-day -->
+			<item id="13328" min="1" max="1" chance="100" /> <!-- Brown Bear Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13375" name="Fungus Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1620,7 +1622,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13329" max="1" min="1" /> <!-- Fungus Hat (Event) 7-day -->
+			<item id="13329" min="1" max="1" chance="100" /> <!-- Fungus Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13376" name="Skull Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1641,7 +1643,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13330" max="1" min="1" /> <!-- Skull Hat (Event) 7-day -->
+			<item id="13330" min="1" max="1" chance="100" /> <!-- Skull Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13377" name="Ornithomimus Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1662,7 +1664,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13331" max="1" min="1" /> <!-- Ornithomimus Hat (Event) 7-day -->
+			<item id="13331" min="1" max="1" chance="100" /> <!-- Ornithomimus Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13378" name="Feline King Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1683,7 +1685,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13332" max="1" min="1" /> <!-- Feline King Hat (Event) 7-day -->
+			<item id="13332" min="1" max="1" chance="100" /> <!-- Feline King Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13379" name="Kai the Cat Hat Pack (7-day) (Event)" type="EtcItem">
@@ -1704,7 +1706,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13333" max="1" min="1" /> <!-- Kai the Cat Hat (Event) 7-day -->
+			<item id="13333" min="1" max="1" chance="100" /> <!-- Kai the Cat Hat (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13380" name="OX Stick Pack (7-day) (Event)" type="EtcItem">
@@ -1725,8 +1727,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13334" max="1" min="1" /> <!-- O Stick (Event) 7-day -->
-			<item chance="100.0" id="13335" max="1" min="1" /> <!-- X Stick (Event) 7-day -->
+			<item id="13334" min="1" max="1" chance="100" /> <!-- O Stick (Event) - 7-day -->
+			<item id="13335" min="1" max="1" chance="100" /> <!-- X Stick (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13381" name="Rock-Paper-Scissors Stick Pack (7-day) (Event)" type="EtcItem">
@@ -1747,9 +1749,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13336" max="1" min="1" /> <!-- Scissors Stick (Event) 7-day -->
-			<item chance="100.0" id="13337" max="1" min="1" /> <!-- Rock Stick (Event) 7-day -->
-			<item chance="100.0" id="13338" max="1" min="1" /> <!-- Paper Stick (Event) 7-day -->
+			<item id="13336" min="1" max="1" chance="100" /> <!-- Scissors Stick (Event) - 7-day -->
+			<item id="13337" min="1" max="1" chance="100" /> <!-- Rock Stick (Event) - 7-day -->
+			<item id="13338" min="1" max="1" chance="100" /> <!-- Paper Stick (Event) - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13382" name="Gran Kain's Gift Box (Event)" name_additional="30-day" type="EtcItem">
@@ -1806,7 +1808,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13383" max="3" min="3" /> <!-- Minion Coupon (5-hour) (Event) -->
+			<item id="13383" min="3" max="3" chance="100" /> <!-- Minion Coupon (5-hour) (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13385" name="Minion Coupon Pack (Event)" type="EtcItem">
@@ -1827,7 +1829,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13383" max="1" min="1" /> <!-- Minion Coupon (5-hour) (Event) -->
+			<item id="13383" min="1" max="1" chance="100" /> <!-- Minion Coupon (5-hour) (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="13386" name="Blue Crystal of Fantasy" type="EtcItem">
@@ -1914,12 +1916,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3453" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Scale Shirt -->
+			<skill id="3453" level="1" type="ON_ENCHANT" /> <!-- Scale Shirt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">23</stat>
+		</stats>
 	</item>
 	<item id="13390" name="Kratei Mithril Shirt" name_additional="CP" type="Armor">
 		<set name="icon" val="icon.etc_shirts_s_i05" />
@@ -1939,12 +1940,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3459" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Mithril Shirt -->
+			<skill id="3459" level="1" type="ON_ENCHANT" /> <!-- Mithril Shirt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="28" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="13391" name="Kratei Striped Scale Shirt" name_additional="CP" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_a_i04" />
@@ -1964,12 +1964,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3477" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Striped Scale Shirt -->
+			<skill id="3477" level="1" type="ON_ENCHANT" /> <!-- Striped Scale Shirt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="26" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">26</stat>
+		</stats>
 	</item>
 	<item id="13392" name="Kratei Striped Mithril Shirt" name_additional="CP" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_s_i05" />
@@ -1989,12 +1988,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3483" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Striped Mithril Shirt -->
+			<skill id="3483" level="1" type="ON_ENCHANT" /> <!-- Striped Mithril Shirt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="30" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">30</stat>
+		</stats>
 	</item>
 	<item id="13393" name="Shadow Item: Monkey Hat" type="Armor">
 		<set name="icon" val="icon.monkey_cap_i00" />
@@ -2044,13 +2042,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2609" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2609" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
+		</skills>
 	</item>
 	<item id="13396" name="Scroll of Escape: Elven Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -2066,13 +2065,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2609" level="2" /> <!-- Scroll of Escape: Elven Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2609" level="2" /> <!-- Scroll of Escape: Elven Village -->
+		</skills>
 	</item>
 	<item id="13397" name="Scroll of Escape: Dark Elf Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -2088,13 +2088,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2609" level="3" /> <!-- Scroll of Escape: Dark Elf Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2609" level="3" /> <!-- Scroll of Escape: Dark Elf Village -->
+		</skills>
 	</item>
 	<item id="13398" name="Scroll of Escape: Orc Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -2110,13 +2111,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2609" level="4" /> <!-- Scroll of Escape: Orc Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2609" level="4" /> <!-- Scroll of Escape: Orc Village -->
+		</skills>
 	</item>
 	<item id="13399" name="Scroll of Escape: Dwarven Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -2132,12 +2134,13 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2609" level="5" /> <!-- Scroll of Escape: Dwarven Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2609" level="5" /> <!-- Scroll of Escape: Dwarven Village -->
+		</skills>
 	</item>
 </list>

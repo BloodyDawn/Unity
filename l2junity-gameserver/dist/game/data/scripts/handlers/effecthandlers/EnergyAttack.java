@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -76,9 +77,9 @@ public final class EnergyAttack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effector.isPlayer())
 		{
@@ -87,7 +88,7 @@ public final class EnergyAttack extends AbstractEffect
 		
 		final PlayerInstance attacker = effector.getActingPlayer();
 		
-		final int charge = Math.max(_chargeConsume, attacker.getCharges());
+		final int charge = Math.min(_chargeConsume, attacker.getCharges());
 		
 		if (!attacker.decreaseCharges(charge))
 		{
@@ -96,7 +97,7 @@ public final class EnergyAttack extends AbstractEffect
 			attacker.sendPacket(sm);
 			return;
 		}
-
+		
 		double attack = attacker.getPAtk(effected);
 		int defence = effected.getPDef(attacker);
 		
@@ -129,9 +130,11 @@ public final class EnergyAttack extends AbstractEffect
 		if (defence != -1)
 		{
 			double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, effected) * Formulas.calcAttributeBonus(attacker, effected, skill) * Formulas.calcGeneralTraitBonus(attacker, effected, skill.getTraitType(), true);
+			damageMultiplier *= (1 - (effected.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 			
 			boolean ss = skill.useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
-			double ssBoost = ss ? 2 : 1.0;
+			final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
+			double ssBoost = ss ? 2 * shotsBonus : 1.0;
 			
 			double weaponTypeBoost;
 			Weapon weapon = attacker.getActiveWeaponItem();
@@ -157,9 +160,9 @@ public final class EnergyAttack extends AbstractEffect
 			damage *= damageMultiplier;
 			if (effected instanceof PlayerInstance)
 			{
-				damage *= attacker.getStat().calcStat(Stats.PVP_PHYS_SKILL_DMG, 1.0);
-				damage *= effected.getStat().calcStat(Stats.PVP_PHYS_SKILL_DEF, 1.0);
-				damage = attacker.getStat().calcStat(Stats.PHYSICAL_SKILL_POWER, damage);
+				damage *= attacker.getStat().getValue(Stats.PVP_PHYS_SKILL_DMG, 1.0);
+				damage *= effected.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1.0);
+				damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 			}
 			
 			critical = (BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100);
@@ -174,8 +177,12 @@ public final class EnergyAttack extends AbstractEffect
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(attacker, effected, skill, critical);
 			
-			damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
-			attacker.sendDamageMessage(effected, (int) damage, false, critical, false);
+			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+			if (damageCap > 0)
+			{
+				damage = Math.min(damage, damageCap);
+			}
+			attacker.sendDamageMessage(effected, skill, (int) damage, critical, false);
 			effected.reduceCurrentHp(damage, attacker, skill);
 			effected.notifyDamageReceived(damage, attacker, skill, critical, false, false);
 		}

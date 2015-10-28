@@ -6,7 +6,12 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="ARMOR_ENCHANT_STONE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9208" level="1" /> <!-- Lucky Clover (R-grade) -->
+		</skills>
 	</item>
 	<item id="23601" name="Player Commendation - Gift Box" name_additional="Event" type="EtcItem">
 		<!-- Gift given after accumulating 1-hr worth of PC Points. Double-click to use. -->
@@ -20,7 +25,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="23490" min="1" max="1" chance="100" /> <!-- PC Vitality (1-hour) - Event -->
+			<item id="22280" min="1" max="1" chance="100" /> <!-- Player Commendation - Blessing (1-hour) - Event -->
+		</capsuled_items>
 	</item>
 	<item id="23602" name="Hussar's Wing" type="Armor">
 		<!-- Special armor used first by the Polish army between the 16th - 18th century. Equip on cloak slot. -->
@@ -32,7 +42,17 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="back" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="weight" val="220" />
+		<stats>
+			<stat type="fireRes">7</stat>
+			<stat type="waterRes">7</stat>
+			<stat type="windRes">7</stat>
+			<stat type="earthRes">7</stat>
+			<stat type="holyRes">7</stat>
+			<stat type="darkRes">7</stat>
+		</stats>
 	</item>
 	<item id="23603" name="Automatic Appearance: Emerald Weapon" type="EtcItem">
 		<!-- Changes the appearance of all weapons into those of Emerald Weapons of corresponding types. Can be used on shields and sigils.\n\nNote: Appearance may reset when the Change Weapon skill is used. -->
@@ -46,6 +66,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23604" name="Automatic Appearance: Japanese Weapon" type="EtcItem">
@@ -60,6 +81,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23605" name="SP Rune 50% Pack (1-hour)" type="EtcItem">
@@ -68,7 +90,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="22959" min="1" max="1" chance="100" /> <!-- SP Rune 50% - 1-hour -->
+		</capsuled_items>
 	</item>
 	<item id="23606" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Solo" type="EtcItem">
 		<!-- Double-click to reset cooldown to Lv. 85 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
@@ -77,7 +104,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22842" level="1" /> <!-- Extra Pass: Kartia's Labyrinth Lv. 85 Solo -->
+		</skills>
 	</item>
 	<item id="23607" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo" type="EtcItem">
 		<!-- Double-click to reset cooldown to Lv. 90 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
@@ -86,7 +118,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22843" level="1" /> <!-- Extra Pass: Kartia's Labyrinth Lv. 90 Solo -->
+		</skills>
 	</item>
 	<item id="23608" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo" type="EtcItem">
 		<!-- Double-click to reset cooldown to Lv. 95 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
@@ -95,7 +132,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22844" level="1" /> <!-- Extra Pass: Kartia's Labyrinth Lv. 95 Solo -->
+		</skills>
 	</item>
 	<item id="23609" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party" type="EtcItem">
 		<!-- Double-click to reset cooldown to Lv. 85 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
@@ -104,7 +146,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22845" level="1" /> <!-- Extra Pass: Kartia's Labyrinth Lv. 85 Party -->
+		</skills>
 	</item>
 	<item id="23610" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party" type="EtcItem">
 		<!-- Double-click to reset cooldown to Lv. 90 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
@@ -113,7 +160,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22846" level="1" /> <!-- Extra Pass: Kartia's Labyrinth Lv. 90 Party -->
+		</skills>
 	</item>
 	<item id="23611" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party" type="EtcItem">
 		<!-- Double-click to reset cooldown to Lv. 95 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
@@ -122,7 +174,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22847" level="1" /> <!-- Extra Pass: Kartia's Labyrinth Lv. 95 Party -->
+		</skills>
 	</item>
 	<item id="23612" name="Elixir of Life (Novice)" type="EtcItem">
 		<!-- Recovers HP by 50%. Only for Lv. 84 or below to use on themselves. Cooldown is 5 min. -->
@@ -135,7 +192,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="300000" />
+		<set name="is_coc_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22044" level="7" /> <!-- Elixir of Life (Novice) -->
+		</skills>
 	</item>
 	<item id="23613" name="2012 Tournament Winner's Crown - Cain" type="Armor">
 		<!-- Crown bestowed upon the winner of the tournament. The hero's name will be forever engraved in server history. -->
@@ -148,6 +213,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="hairall" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23614" name="Vitality Maintaining Potion (10-minute)" name_additional="No Weekly Usage Limit" type="EtcItem">
@@ -162,7 +229,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="15" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22848" level="1" /> <!-- Vitality Maintaining Potion -->
+		</skills>
 	</item>
 	<item id="23615" name="Black Gem Mask" name_additional="Vitality (7-day) (No Weekly Usage Limit)" type="Armor">
 		<!-- Black gem mask made of luxurious metal. -->
@@ -177,7 +251,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="604800" />
+		<set name="bodypart" val="hair" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="21353" level="1" /> <!-- Vitality Recovery -->
+		</skills>
 	</item>
 	<item id="23616" name="Artisan's Goggles" name_additional="Vitality (7-day) (No Weekly Usage Limit)" type="Armor">
 		<!-- Large round goggles to protect your eyes. Uses 2 accessory slots. -->
@@ -192,7 +271,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="604800" />
+		<set name="bodypart" val="hairall" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="21354" level="1" /> <!-- Vitality Recovery -->
+		</skills>
 	</item>
 	<item id="23617" name="Vitality Maintaining Potion Pack" name_additional="No Weekly Usage Limit" type="EtcItem">
 		<!-- Wrapped Pack containing Vitality Maintaining Potion with no weekly usage limit. -->
@@ -201,7 +285,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="23614" min="1" max="1" chance="100" /> <!-- Vitality Maintaining Potion (10-minute) - No Weekly Usage Limit -->
+		</capsuled_items>
 	</item>
 	<item id="23618" name="Black Gem Mask Pack (7-day)" name_additional="Vitality (No Weekly Usage Limit)" type="EtcItem">
 		<!-- Wrapped Pack containing Black Gem Mask (7-day). -->
@@ -210,7 +299,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="23615" min="1" max="1" chance="100" /> <!-- Black Gem Mask - Vitality (7-day) (No Weekly Usage Limit) -->
+		</capsuled_items>
 	</item>
 	<item id="23619" name="Artisan's Goggles Pack (7-day)" name_additional="Vitality (No Weekly Usage Limit)" type="EtcItem">
 		<!-- Wrapped Pack containing Artisan's Goggles (7-day). -->
@@ -219,7 +313,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="23616" min="1" max="1" chance="100" /> <!-- Artisan's Goggles - Vitality (7-day) (No Weekly Usage Limit) -->
+		</capsuled_items>
 	</item>
 	<item id="23620" name="Dragon Vitality Replenishing Potion" name_additional="No Weekly Usage Limit" type="EtcItem">
 		<!-- Replenishes a certain amount of Vitality. Cooldown is 1 min. No weekly usage limit. -->
@@ -232,7 +331,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="shared_reuse_group" val="106" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22849" level="1" /> <!-- Dragon Vitality Replenishing Potion -->
+		</skills>
 	</item>
 	<item id="23621" name="Vitality Suspending Potion (30-minute)" name_additional="No Weekly Usage Limit" type="EtcItem">
 		<!-- Stops Vitality consumption and bonuses for 30 min. Cooldown is 60 min. No weekly usage limit. -->
@@ -246,7 +352,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="1800000" />
+		<set name="shared_reuse_group" val="15" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22850" level="1" /> <!-- Vitality Suspending Potion -->
+		</skills>
 	</item>
 	<item id="23622" name="Name Change Ticket" type="EtcItem">
 		<!-- To change your character's name, follow these steps:\n1. Create a new character with the desired name on your Account.\n2. Submit a ticket to Support with 'Rename Character' in the title and indicate the new nickname.\n3. The character with the item in the inventory will be renamed. -->
@@ -261,6 +375,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23623" name="Gender Change Ticket" type="EtcItem">
@@ -276,6 +391,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23624" name="Gorale Hat" type="Armor">
@@ -289,6 +405,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="hairall" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23625" name="Fancy Hat" type="Armor">
@@ -302,6 +420,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="hairall" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23626" name="Hat of Cheers" type="Armor">
@@ -315,6 +435,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="hairall" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23627" name="Chocolate Doughnut" type="EtcItem">
@@ -323,7 +445,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22851" level="2" /> <!-- Chocolate Doughnut - Maintain Vitality -->
+		</skills>
 	</item>
 	<item id="23628" name="Piroscki" type="EtcItem">
 		<!-- Famous Polish dish. Restores vitality upon XP gain through hunting for 30 min. Vitality item with limited usage. -->
@@ -331,7 +458,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22852" level="1" /> <!-- Piroscki - Replenish Vitality -->
+		</skills>
 	</item>
 	<item id="23629" name="Torun Gingerbread" name_additional="1-hour" type="EtcItem">
 		<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
@@ -340,7 +473,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="3600" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="shared_reuse_group" val="16" />
+		<skills>
+			<skill id="22853" level="1" /> <!-- Torun Gingerbread (1-hour) -->
+		</skills>
 	</item>
 	<item id="23630" name="Torun Gingerbread" name_additional="1.5-hour" type="EtcItem">
 		<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
@@ -352,7 +490,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="18000" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="shared_reuse_group" val="16" />
+		<skills>
+			<skill id="22854" level="1" /> <!-- Torun Gingerbread (1.5-hour) -->
+		</skills>
 	</item>
 	<item id="23631" name="Torun Gingerbread" name_additional="2-hour" type="EtcItem">
 		<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
@@ -361,7 +505,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="7200" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="shared_reuse_group" val="16" />
+		<skills>
+			<skill id="22855" level="1" /> <!-- Torun Gingerbread (2-hour) -->
+		</skills>
 	</item>
 	<item id="23632" name="Torun Gingerbread" name_additional="2.5-hour" type="EtcItem">
 		<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
@@ -373,7 +522,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="18000" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="shared_reuse_group" val="16" />
+		<skills>
+			<skill id="22856" level="1" /> <!-- Torun Gingerbread (2.5-hour) -->
+		</skills>
 	</item>
 	<item id="23633" name="Torun Gingerbread" name_additional="3-hour" type="EtcItem">
 		<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
@@ -385,7 +540,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="10800" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="shared_reuse_group" val="16" />
+		<skills>
+			<skill id="22857" level="1" /> <!-- Torun Gingerbread (3-hour) -->
+		</skills>
 	</item>
 	<item id="23634" name="Torun Gingerbread" name_additional="4-hour" type="EtcItem">
 		<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
@@ -397,14 +558,28 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="14400" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="shared_reuse_group" val="16" />
+		<skills>
+			<skill id="22858" level="1" /> <!-- Torun Gingerbread (4-hour) -->
+		</skills>
 	</item>
 	<item id="23635" name="Flint" type="EtcItem">
 		<!-- Creates a campfire that lasts for 30 min. The warmth of the bonfire reduces the amount of MP consumption during skill use, and increases HP/MP/CP Recovery Rate. The closer you sit to the fire, the better the effect. All members. -->
 		<set name="icon" val="BranchSys2.icon.g_campfire_flint" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_coc_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22860" level="1" /> <!-- Summon Roaring Campfire -->
+		</skills>
 	</item>
 	<item id="23636" name="Cloak (Poland)" type="Armor">
 		<!-- Cloak for Poland only. Elaborately embroidered. -->
@@ -416,10 +591,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="back" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
-		</for>
+		<stats>
+			<stat type="pDef">25</stat>
+			<stat type="fireRes">7</stat>
+			<stat type="waterRes">7</stat>
+			<stat type="windRes">7</stat>
+			<stat type="earthRes">7</stat>
+			<stat type="holyRes">7</stat>
+			<stat type="darkRes">7</stat>
+		</stats>
 	</item>
 	<item id="23637" name="Blessed Antharas' Earring" name_additional="3-day" type="Armor">
 		<!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 3-day. Equipping two will only give the effect of one. -->
@@ -434,10 +617,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="259200" />
-		<for>
-			<add stat="mDef" val="170.0" />
-		</for>
+		<set name="bodypart" val="rear;lear" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
+		<set name="time" val="4320" />
+		<skills>
+			<skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
+			<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">170</stat>
+		</stats>
 	</item>
 	<item id="23638" name="Blessed Antharas' Earring" name_additional="7-day" type="Armor">
 		<!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 7-day. Equipping two will only give the effect of one. -->
@@ -452,10 +642,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="170.0" />
-		</for>
+		<set name="bodypart" val="rear;lear" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
+			<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">170</stat>
+		</stats>
 	</item>
 	<item id="23639" name="Blessed Valakas' Necklace" name_additional="3-day" type="Armor">
 		<!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Attack Rate + 50%, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Attack + 5%, P. Atk. + 10%, M. Atk. + 20%. Wild Magic Effect, and Damage Shield effect. Decreases P. Skill cooldown and M. Skill cooldown. Can use Cancel Hold skill, and Hold Resistance + 100% momentarily. 3-day. -->
@@ -470,10 +667,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="259200" />
-		<for>
-			<add stat="mDef" val="226.0" />
-		</for>
+		<set name="bodypart" val="neck" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
+		<set name="time" val="4320" />
+		<skills>
+			<skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
+			<skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+		</skills>
+		<stats>
+			<stat type="mDef">226</stat>
+		</stats>
 	</item>
 	<item id="23640" name="Blessed Valakas' Necklace" name_additional="7-day" type="Armor">
 		<!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Attack Rate + 50%, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Attack + 5%, P. Atk. + 10%, M. Atk. + 20%. Wild Magic Effect, and Damage Shield effect. Decreases P. Skill cooldown and M. Skill cooldown. Can use Cancel Hold skill, and Hold Resistance + 100% temporarily. 7-day. -->
@@ -488,10 +692,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="226.0" />
-		</for>
+		<set name="bodypart" val="neck" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="equip_reuse_delay" val="7200" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
+			<skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+		</skills>
+		<stats>
+			<stat type="mDef">226</stat>
+		</stats>
 	</item>
 	<item id="23641" name="Star Agathion Pack" type="EtcItem">
 		<!-- Double-click to obtain a random Star Agathion (7-day). -->
@@ -501,7 +712,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9632" level="1" /> <!-- Star Agathion Pack -->
+		</skills>
 	</item>
 	<item id="23642" name="Vitality Replenishing Star Candy" type="EtcItem">
 		<!-- Replenishes an amount of Vitality. Can be used more than 5 times a week. -->
@@ -510,7 +726,12 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9629" level="1" /> <!-- Vitality Replenishing Star Candy -->
+		</skills>
 	</item>
 	<item id="23643" name="Vitality Recovering Star Candy" type="EtcItem">
 		<!-- Replenishes Vitality for 10 min. Can be used more than 5 times a week. -->
@@ -520,7 +741,13 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9630" level="1" /> <!-- Vitality Recovering Star Candy -->
+		</skills>
 	</item>
 	<item id="23644" name="Vitality Maintaining Star Candy" type="EtcItem">
 		<!-- Replenishes Vitality for 10 min. Can be used more than 5 times a week. -->
@@ -530,7 +757,13 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9631" level="1" /> <!-- Vitality Maintaining Star Candy -->
+		</skills>
 	</item>
 	<item id="23645" name="MP Recovery Potion" type="EtcItem">
 		<!-- Restores 50% of Max MP. -->
@@ -540,7 +773,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_coc_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22214" level="1" /> <!-- MP Recovery Potion -->
+		</skills>
 	</item>
 	<item id="23646" name="High-grade Lucky Enchant Stone: Weapon (R-grade)" type="EtcItem">
 		<!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
@@ -551,7 +791,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9573" level="1" /> <!-- High-grade Lucky Enchant Stone: Weapon (R-grade) -->
+		</skills>
 	</item>
 	<item id="23647" name="High-grade Lucky Enchant Stone: Armor (R-grade)" type="EtcItem">
 		<!-- Enchant success rate + 30% for armor (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
@@ -562,7 +807,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9574" level="1" /> <!-- High-grade Lucky Enchant Stone: Armor (R-grade) -->
+		</skills>
 	</item>
 	<item id="23648" name="Knighthood's Fortune Box" type="EtcItem">
 		<!-- Wrapped Pack containing supplies used by knights, such as various XP Rune Packs, Vitailty Star Candies, firecrackers, etc. -->
@@ -570,7 +820,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22861" level="1" /> <!-- Knighthood's Fortune Box -->
+		</skills>
 	</item>
 	<item id="23649" name="Royal Guard's Fortune Box" type="EtcItem">
 		<!-- Wrapped Pack containing supplies used by royal guards, such as Blessed Scrolls, Unbind Scrolls, Enchant Scrolls, and Enchant Stones of various levels and types. -->
@@ -578,7 +834,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22862" level="1" /> <!-- Royal Guard's Fortune Box -->
+		</skills>
 	</item>
 	<item id="23650" name="Blessed Weapon Appearance Stone (R-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -589,7 +850,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22863" level="1" /> <!-- Blessed Weapon Appearance Stone (R-grade) -->
+		</skills>
 	</item>
 	<item id="23651" name="Blessed Weapon Appearance Stone (S-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -600,7 +867,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22864" level="1" /> <!-- Blessed Weapon Appearance Stone (S-grade) -->
+		</skills>
 	</item>
 	<item id="23652" name="Blessed Weapon Appearance Stone (A-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -611,7 +884,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22865" level="1" /> <!-- Blessed Weapon Appearance Stone (A-grade) -->
+		</skills>
 	</item>
 	<item id="23653" name="Blessed Weapon Appearance Stone (B-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -622,7 +901,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22866" level="1" /> <!-- Blessed Weapon Appearance Stone (B-grade) -->
+		</skills>
 	</item>
 	<item id="23654" name="Blessed Weapon Appearance Stone (C-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -633,7 +918,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22867" level="1" /> <!-- Blessed Weapon Appearance Stone (C-grade) -->
+		</skills>
 	</item>
 	<item id="23655" name="Blessed Weapon Appearance Stone (D-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -644,7 +935,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22868" level="1" /> <!-- Blessed Weapon Appearance Stone (D-grade) -->
+		</skills>
 	</item>
 	<item id="23656" name="Blessed Weapon Appearance Stone (R-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -655,7 +952,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22869" level="1" /> <!-- Blessed Weapon Appearance Stone (R-grade) -->
+		</skills>
 	</item>
 	<item id="23657" name="Blessed Weapon Appearance Stone (S-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -666,7 +969,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22870" level="1" /> <!-- Blessed Weapon Appearance Stone (S-grade) -->
+		</skills>
 	</item>
 	<item id="23658" name="Blessed Weapon Appearance Stone (A-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -677,7 +986,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22871" level="1" /> <!-- Blessed Weapon Appearance Stone (A-grade) -->
+		</skills>
 	</item>
 	<item id="23659" name="Blessed Weapon Appearance Stone (B-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -688,7 +1003,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22872" level="1" /> <!-- Blessed Weapon Appearance Stone (B-grade) -->
+		</skills>
 	</item>
 	<item id="23660" name="Blessed Weapon Appearance Stone (C-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -699,7 +1020,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22873" level="1" /> <!-- Blessed Weapon Appearance Stone (C-grade) -->
+		</skills>
 	</item>
 	<item id="23661" name="Blessed Weapon Appearance Stone (D-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -710,7 +1037,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22874" level="1" /> <!-- Blessed Weapon Appearance Stone (D-grade) -->
+		</skills>
 	</item>
 	<item id="23662" name="Blessed Weapon Appearance Stone (R-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -721,7 +1054,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22875" level="1" /> <!-- Blessed Weapon Appearance Stone (R-grade) -->
+		</skills>
 	</item>
 	<item id="23663" name="Blessed Weapon Appearance Stone (S-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -732,7 +1071,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22876" level="1" /> <!-- Blessed Weapon Appearance Stone (S-grade) -->
+		</skills>
 	</item>
 	<item id="23664" name="Blessed Weapon Appearance Stone (A-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -743,7 +1088,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22877" level="1" /> <!-- Blessed Weapon Appearance Stone (A-grade) -->
+		</skills>
 	</item>
 	<item id="23665" name="Blessed Weapon Appearance Stone (B-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -754,7 +1105,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22878" level="1" /> <!-- Blessed Weapon Appearance Stone (B-grade) -->
+		</skills>
 	</item>
 	<item id="23666" name="Blessed Weapon Appearance Stone (C-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -765,7 +1122,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22879" level="1" /> <!-- Blessed Weapon Appearance Stone (C-grade) -->
+		</skills>
 	</item>
 	<item id="23667" name="Blessed Weapon Appearance Stone (D-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -776,7 +1139,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22880" level="1" /> <!-- Blessed Weapon Appearance Stone (D-grade) -->
+		</skills>
 	</item>
 	<item id="23668" name="Blessed Armor Appearance Stone (R-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -787,7 +1156,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22881" level="1" /> <!-- Blessed Scroll: Modify Armor (R-grade) -->
+		</skills>
 	</item>
 	<item id="23669" name="Blessed Armor Appearance Stone (S-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -798,7 +1172,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22882" level="1" /> <!-- Blessed Scroll: Modify Armor (S-grade) -->
+		</skills>
 	</item>
 	<item id="23670" name="Blessed Armor Appearance Stone (A-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -809,7 +1188,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22883" level="1" /> <!-- Blessed Scroll: Modify Armor (A-grade) -->
+		</skills>
 	</item>
 	<item id="23671" name="Blessed Armor Appearance Stone (B-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -820,7 +1204,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22884" level="1" /> <!-- Blessed Scroll: Modify Armor (B-grade) -->
+		</skills>
 	</item>
 	<item id="23672" name="Blessed Armor Appearance Stone (C-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -831,7 +1220,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22885" level="1" /> <!-- Blessed Scroll: Modify Armor (C-grade) -->
+		</skills>
 	</item>
 	<item id="23673" name="Blessed Armor Appearance Stone (D-grade)" name_additional="1-day" type="EtcItem">
 		<!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
@@ -842,7 +1236,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="86400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22886" level="1" /> <!-- Blessed Scroll: Modify Armor (D-grade) -->
+		</skills>
 	</item>
 	<item id="23674" name="Blessed Armor Appearance Stone (R-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -853,7 +1252,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22887" level="1" /> <!-- Blessed Scroll: Modify Armor (R-grade) -->
+		</skills>
 	</item>
 	<item id="23675" name="Blessed Armor Appearance Stone (S-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -864,7 +1268,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22888" level="1" /> <!-- Blessed Scroll: Modify Armor (S-grade) -->
+		</skills>
 	</item>
 	<item id="23676" name="Blessed Armor Appearance Stone (A-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -875,7 +1284,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22889" level="1" /> <!-- Blessed Scroll: Modify Armor (A-grade) -->
+		</skills>
 	</item>
 	<item id="23677" name="Blessed Armor Appearance Stone (B-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -886,7 +1300,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22890" level="1" /> <!-- Blessed Scroll: Modify Armor (B-grade) -->
+		</skills>
 	</item>
 	<item id="23678" name="Blessed Armor Appearance Stone (C-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -897,7 +1316,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22891" level="1" /> <!-- Blessed Scroll: Modify Armor (C-grade) -->
+		</skills>
 	</item>
 	<item id="23679" name="Blessed Armor Appearance Stone (D-grade)" name_additional="7-day" type="EtcItem">
 		<!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
@@ -908,7 +1332,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="604800" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22892" level="1" /> <!-- Blessed Scroll: Modify Armor (D-grade) -->
+		</skills>
 	</item>
 	<item id="23680" name="Blessed Armor Appearance Stone (R-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -919,7 +1348,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22893" level="1" /> <!-- Blessed Scroll: Modify Armor (R-grade) -->
+		</skills>
 	</item>
 	<item id="23681" name="Blessed Armor Appearance Stone (S-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -930,7 +1364,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22894" level="1" /> <!-- Blessed Scroll: Modify Armor (S-grade) -->
+		</skills>
 	</item>
 	<item id="23682" name="Blessed Armor Appearance Stone (A-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -941,7 +1380,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22895" level="1" /> <!-- Blessed Scroll: Modify Armor (A-grade) -->
+		</skills>
 	</item>
 	<item id="23683" name="Blessed Armor Appearance Stone (B-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -952,7 +1396,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22896" level="1" /> <!-- Blessed Scroll: Modify Armor (B-grade) -->
+		</skills>
 	</item>
 	<item id="23684" name="Blessed Armor Appearance Stone (C-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -963,7 +1412,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22897" level="1" /> <!-- Blessed Scroll: Modify Armor (C-grade) -->
+		</skills>
 	</item>
 	<item id="23685" name="Blessed Armor Appearance Stone (D-grade)" name_additional="30-day" type="EtcItem">
 		<!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
@@ -974,7 +1428,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="time" val="2592000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="22898" level="1" /> <!-- Blessed Scroll: Modify Armor (D-grade) -->
+		</skills>
 	</item>
 	<item id="23686" name="Dimension Traveler's Red Vitality Potion" type="EtcItem">
 		<!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores some Vitality. -->
@@ -983,6 +1442,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23687" name="Dimension Traveler's Blue Vitality Potion" type="EtcItem">
@@ -992,6 +1452,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23688" name="Dimension Traveler's Gold Vitality Potion" type="EtcItem">
@@ -1001,6 +1462,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23689" name="Dimension Protector's Red Vitality Potion" type="EtcItem">
@@ -1010,6 +1472,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23690" name="Dimension Protector's Blue Vitality Potion" type="EtcItem">
@@ -1019,6 +1482,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23691" name="Dimension Protector's Gold Vitality Potion" type="EtcItem">
@@ -1028,6 +1492,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23692" name="Ninja Top" name_additional="Modified Set" type="Armor">
@@ -1040,6 +1505,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="chest" />
+		<set name="isAppearanceable" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23693" name="Ninja Pants" name_additional="Modified Set" type="Armor">
@@ -1052,6 +1519,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="legs" />
+		<set name="isAppearanceable" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23694" name="Ninja Gloves" name_additional="Modified Set" type="Armor">
@@ -1064,6 +1533,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="gloves" />
+		<set name="isAppearanceable" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23695" name="Ninja Shoes" name_additional="Modified Set" type="Armor">
@@ -1076,6 +1547,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="feet" />
+		<set name="isAppearanceable" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23696" name="Ninja Top Appearance Stone" name_additional="Modified Set" type="EtcItem">
@@ -1086,7 +1559,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22900" level="1" /> <!-- Ninja Top Appearance Stone -->
+		</skills>
 	</item>
 	<item id="23697" name="Ninja Pants Appearance Stone" name_additional="Modified Set" type="EtcItem">
 		<!-- Changes the appearance of pants to that of a Ninja outfit. An appearance-modified item has no change in abilities. All armor types. Modifying the full set creates a new skill. -->
@@ -1096,7 +1575,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22901" level="1" /> <!-- Ninja Pants Appearance Stone -->
+		</skills>
 	</item>
 	<item id="23698" name="Ninja Gloves Appearance Stone" name_additional="Modified Set" type="EtcItem">
 		<!-- Changes the appearance of gloves to that of a Ninja outfit. An appearance-modified item has no change in abilities. Modifying the full set creates a new skill. -->
@@ -1106,7 +1591,13 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22902" level="1" /> <!-- Ninja Gloves Appearance Stone -->
+		</skills>
 	</item>
 	<item id="23699" name="Ninja Shoes Appearance Stone" name_additional="Modified Set" type="EtcItem">
 		<!-- Changes the appearance of shoes to that of a Ninja outfit. An appearance-modified item has no change in abilities. Modifying the full set creates a new skill. -->
@@ -1116,6 +1607,12 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22903" level="1" /> <!-- Ninja Shoes Appearance Stone -->
+		</skills>
 	</item>
 </list>

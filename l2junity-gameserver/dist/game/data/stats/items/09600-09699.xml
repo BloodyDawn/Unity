@@ -86,15 +86,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5414" level="1" /> <!-- Agathion Cute Trick - Rainbow Clan Hall -->
-			<skill id="3269" level="1" /> <!-- Release Agathion's Seal - Rainbow Clan Hall -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player clanHall="62" />
 		</cond>
+		<skills>
+			<skill id="5414" level="1" /> <!-- Agathion Cute Trick - Rainbow Clan Hall -->
+			<skill id="3269" level="1" /> <!-- Release Agathion's Seal - Rainbow Clan Hall -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9606" name="Agathion - Wild Beast Reserve" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -112,15 +111,14 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5413" level="1" /> <!-- Agathion Cute Trick - Beast Farm -->
-			<skill id="3270" level="1" /> <!-- Release Agathion's Seal - Beast Farm -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player clanHall="63" />
 		</cond>
+		<skills>
+			<skill id="5413" level="1" /> <!-- Agathion Cute Trick - Beast Farm -->
+			<skill id="3270" level="1" /> <!-- Release Agathion's Seal - Beast Farm -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9607" name="Agathion - Gludio" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -133,19 +131,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="1" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9608" name="Agathion - Dion" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -158,19 +157,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="2" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9609" name="Agathion - Giran" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -183,19 +183,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="3" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9610" name="Agathion - Oren" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -208,19 +209,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="4" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9611" name="Agathion - Aden" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -233,19 +235,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="5" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9612" name="Agathion - Innadril" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -258,19 +261,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{6}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="6" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9613" name="Agathion - Goddard" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -283,19 +287,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{7}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="7" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9614" name="Agathion - Rune" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -308,19 +313,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{8}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="8" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9615" name="Agathion - Schuttgart" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -333,19 +339,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="5415-1;3268-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{9}}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-		</skills>
 		<cond msgId="1518">
 			<player castle="9" />
 		</cond>
+		<skills>
+			<skill id="5415" level="1" /> <!-- Agathion Cute Trick - Castle -->
+			<skill id="3268" level="1" /> <!-- Release Agathion's Seal - Castle -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="9616" name="Dynasty Sword Piece" type="EtcItem">
 		<set name="icon" val="icon.etc_sword_body_i00" />
@@ -355,6 +362,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="239800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9617" name="Dynasty Blade Piece" type="EtcItem">
@@ -365,6 +373,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="239800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9618" name="Dynasty Phantom Piece" type="EtcItem">
@@ -375,6 +384,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="239800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9619" name="Dynasty Bow Piece" type="EtcItem">
@@ -385,6 +395,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="238200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9620" name="Dynasty Knife Piece" type="EtcItem">
@@ -395,6 +406,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="240000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9621" name="Dynasty Halberd Piece" type="EtcItem">
@@ -405,6 +417,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="238700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9622" name="Dynasty Cudgel Piece" type="EtcItem">
@@ -415,6 +428,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="247700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9623" name="Dynasty Mace Piece" type="EtcItem">
@@ -425,6 +439,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="247700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9624" name="Dynasty Bagh-Nakh Piece" type="EtcItem">
@@ -435,6 +450,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="247700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9625" name="Lesser Giant's Codex - Oblivion" type="EtcItem">
@@ -443,6 +459,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9626" name="Lesser Giant's Codex - Discipline" type="EtcItem">
@@ -451,6 +468,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9627" name="Lesser Giant's Codex - Mastery" type="EtcItem">
@@ -470,6 +488,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="25500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9629" name="Corroded Adamantine" type="EtcItem">
@@ -480,6 +499,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="46000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9630" name="Corroded Orichalcum" type="EtcItem">
@@ -490,6 +510,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="38000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9631" name="Exquisite Leather" type="EtcItem">
@@ -500,6 +521,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="90000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9632" name="Wooden Bolt" type="EtcItem">
@@ -512,6 +534,7 @@
 		<set name="weight" val="6" />
 		<set name="price" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9633" name="Bone Bolt" type="EtcItem">
@@ -523,9 +546,10 @@
 		<set name="material" val="BONE" />
 		<set name="weight" val="5" />
 		<set name="price" val="3" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9634" name="Steel Bolt" type="EtcItem">
@@ -537,9 +561,10 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="4" />
 		<set name="price" val="5" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9635" name="Silver Bolt" type="EtcItem">
@@ -551,9 +576,10 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="4" />
 		<set name="price" val="7" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9636" name="Mithril Bolt" type="EtcItem">
@@ -565,9 +591,10 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="3" />
 		<set name="price" val="8" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9637" name="Bolt of Light" type="EtcItem">
@@ -579,9 +606,10 @@
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="3" />
 		<set name="price" val="10" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9638" name="Tears r1" type="Weapon">
@@ -589,8 +617,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;300;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -601,24 +627,24 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9639" name="Tears r2" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;300;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -629,24 +655,24 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9640" name="Tears r3" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;300;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -657,24 +683,24 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9641" name="Tears l1" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;300;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -685,24 +711,24 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9642" name="Tears l2" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;300;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -713,24 +739,24 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9643" name="Tears l3" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;300;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -741,24 +767,24 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9644" name="For NPC (Crossbow)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
@@ -766,21 +792,23 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9645" name="For NPC (Sword)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
@@ -788,21 +816,23 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9646" name="For NPC (Rapier)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
@@ -810,13 +840,17 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9647" name="Scroll of Escape: Kamael Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -827,13 +861,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2213" level="22" /> <!-- Scroll of Escape: Kamael Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2213" level="22" /> <!-- Scroll of Escape: Kamael Village -->
+		</skills>
 	</item>
 	<item id="9648" name="Transformation Sealbook: Onyx Beast" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
@@ -852,6 +887,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="18000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9650" name="Transformation Sealbook: Grail Apostle" type="EtcItem">
@@ -871,6 +907,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="21600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9652" name="Transformation Sealbook: Lilim Knight" type="EtcItem">
@@ -918,8 +955,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -927,24 +962,26 @@
 		<set name="price" val="1838000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="233" />
-			<add stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">233</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9657" name="Reinforced Coyote Fang" type="Weapon">
 		<set name="icon" val="icon.etc_wolf_r_d_01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -952,24 +989,26 @@
 		<set name="price" val="3404500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="289" />
-			<add stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">289</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9658" name="Reinforced Saltydog Fang" type="Weapon">
 		<set name="icon" val="icon.etc_wolf_r_d_01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -977,24 +1016,26 @@
 		<set name="price" val="6379000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="350" />
-			<add stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">350</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9659" name="Reinforced Cerberus Fang" type="Weapon">
 		<set name="icon" val="icon.etc_wolf_r_d_01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1002,24 +1043,26 @@
 		<set name="price" val="10579500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="413" />
-			<add stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">413</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9660" name="Orichalcum Fang" type="Weapon">
 		<set name="icon" val="icon.etc_wolf_r_d_01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1027,24 +1070,26 @@
 		<set name="price" val="18876000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="477" />
-			<add stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">477</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9661" name="Reinforced Fenril Fang" type="Weapon">
 		<set name="icon" val="icon.etc_wolf_r_d_01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1052,16 +1097,20 @@
 		<set name="price" val="34319000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="537" />
-			<add stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">537</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9662" name="Great Wolf Scale Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -1074,14 +1123,16 @@
 		<set name="price" val="938500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="112" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">112</stat>
+		</stats>
 	</item>
 	<item id="9663" name="Great Wolf Bronze Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -1094,14 +1145,16 @@
 		<set name="price" val="1810000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="124" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">124</stat>
+		</stats>
 	</item>
 	<item id="9664" name="Great Wolf Plate Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -1114,14 +1167,16 @@
 		<set name="price" val="3563000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="136" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">136</stat>
+		</stats>
 	</item>
 	<item id="9665" name="Great Wolf Mithril Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -1134,14 +1189,16 @@
 		<set name="price" val="6281500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="148" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">148</stat>
+		</stats>
 	</item>
 	<item id="9666" name="Great Wolf Oriharukon Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -1154,14 +1211,16 @@
 		<set name="price" val="12118000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="160" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">160</stat>
+		</stats>
 	</item>
 	<item id="9667" name="Great Wolf Orichalcum Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -1174,14 +1233,16 @@
 		<set name="price" val="24439500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="171" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">171</stat>
+		</stats>
 	</item>
 	<item id="9668" name="Great Wolf Food" type="EtcItem">
 		<set name="icon" val="icon.etc_pouch_yellow_i00" />
@@ -1195,13 +1256,14 @@
 		<set name="handler" val="PetFood" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2361" level="1" /> <!-- Evolving Wolf Food -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
+		<skills>
+			<skill id="2361" level="1" /> <!-- Evolving Wolf Food -->
+		</skills>
 	</item>
 	<item id="9669" name="Native Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1210,7 +1272,6 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="70" />
-		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1218,14 +1279,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="33" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="9670" name="Native Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t34_u_i00" />
@@ -1242,14 +1303,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="53" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">53</stat>
+		</stats>
 	</item>
 	<item id="9671" name="Native Pants" type="Armor">
 		<set name="icon" val="icon.armor_t34_l_i00" />
@@ -1266,14 +1327,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="29" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="9672" name="Magic Bottle" type="EtcItem">
 		<set name="icon" val="icon.etc_magical_bottle_i00" />
@@ -1326,6 +1387,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9675" name="Prayer Fragment" type="EtcItem">
@@ -1335,6 +1397,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="1500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9676" name="Mark of Betrayal" type="EtcItem">
@@ -1344,6 +1407,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="3000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9677" name="Ring of Wind Mastery" type="Armor">
@@ -1366,10 +1430,9 @@
 		<skills>
 			<skill id="3319" level="1" /> <!-- Divine Protection of Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="36" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">36</stat>
+		</stats>
 	</item>
 	<item id="9678" name="Magic Gem" type="EtcItem">
 		<set name="icon" val="icon.etc_magical_stone_i00" />
@@ -1408,6 +1471,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9681" name="Life Force" type="EtcItem">
@@ -1416,6 +1480,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9682" name="Contained Life Force" type="EtcItem">
@@ -1424,6 +1489,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9683" name="Sand Worm Tooth" type="EtcItem">
@@ -1432,6 +1498,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9684" name="Native's Treasure" type="EtcItem">
@@ -1441,6 +1508,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="20000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9685" name="Gate Key: Darkness" type="EtcItem">
@@ -1450,6 +1518,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2354" level="1" /> <!-- Gate Key: Darkness -->
@@ -1462,6 +1531,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2355" level="1" /> <!-- Gate Key: Destruction -->
@@ -1474,6 +1544,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2356" level="1" /> <!-- Gate Key: Blood -->
@@ -1489,13 +1560,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2342" level="1" /> <!-- Ballista Bomb -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
+		<skills>
+			<skill id="2342" level="1" /> <!-- Ballista Bomb -->
+		</skills>
 	</item>
 	<item id="9689" name="Spirit of the Lake" type="EtcItem">
 		<set name="icon" val="icon.etc_talisman_i01" />
@@ -1508,6 +1580,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2368" level="1" /> <!-- Spirit of the Lake -->
@@ -1555,6 +1628,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9693" name="Crystal Fragment" type="EtcItem">
@@ -1563,6 +1637,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9694" name="Secret Key" type="EtcItem">

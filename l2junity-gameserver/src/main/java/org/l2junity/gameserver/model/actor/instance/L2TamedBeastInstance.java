@@ -36,6 +36,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.NpcInfo;
 import org.l2junity.gameserver.network.client.send.SocialAction;
@@ -348,7 +349,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		}
 		
 		// if the tamed beast is currently in the middle of casting, let it complete its skill...
-		if (isCastingNow())
+		if (isCastingNow(SkillCaster::isNormalType))
 		{
 			return;
 		}
@@ -465,7 +466,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 					
 					// emulate a call to the owner using food, but bypass all checks for range, etc
 					// this also causes a call to the AI tasks handling feeding, which may call onReceiveFood as required.
-					owner.callSkill(SkillData.getInstance().getSkill(foodTypeSkillId, 1), targets);
+					owner.callSkill(SkillData.getInstance().getSkill(foodTypeSkillId, 1), null, targets);
 					owner.setTarget(oldTarget);
 				}
 				else
@@ -523,7 +524,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				return;
 			}
 			// if the tamed beast is currently casting a spell, do not interfere (do not attempt to cast anything new yet).
-			if (isCastingNow())
+			if (isCastingNow(SkillCaster::isNormalType))
 			{
 				return;
 			}

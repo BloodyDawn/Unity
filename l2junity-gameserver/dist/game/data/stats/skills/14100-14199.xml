@@ -1128,6 +1128,7 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14156" levels="1" name="Snake">
+		<!-- Glory Days confirmed -->
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="-64" />
 		<set name="rideState" val="NONE" />
@@ -1135,21 +1136,43 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="8" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<set name="mpConsume" val="11" />
+		<set name="castRange" val="150" />
+		<set name="hitTime" val="1500" />
+		<set name="icon" val="icon.skill0006" />
+		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="115" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14157" levels="1" name="Long Snake">
+		<!-- Glory Days confirmed -->
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="-64" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="8" />
 		<set name="affectRange" val="250" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<set name="mpConsume" val="11" />
+		<set name="hitTime" val="2000" />
+		<set name="icon" val="icon.skill0006" />
+		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="115" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14158" levels="2" name="Crawler Spear">
-		<!-- TODO: Auto level parse, Requires manual update -->
+		<!-- Glory Days confirmed -->
+		<!-- Both level are identical -->
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="-76" />
 		<set name="rideState" val="NONE" />
@@ -1158,13 +1181,24 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="12" />
 		<set name="affectRange" val="200" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<set name="mpConsume" val="15" />
+		<set name="castRange" val="200" />
+		<set name="hitTime" val="2000" />
+		<set name="icon" val="icon.skill0006" />
+		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14159" levels="1" name="Fist Bump">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
+		<set name="fanRange" val="0;0;90;400" />
 		<set name="mpConsume" val="13" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="3000" />
@@ -1175,12 +1209,17 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="10" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="200" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14160" levels="1" name="Fist Slasher">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="13" />
 		<set name="castRange" val="800" />
 		<set name="hitTime" val="3000" />
@@ -1192,12 +1231,17 @@
 		<set name="magicLvl" val="10" />
 		<set name="affectRange" val="400" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="200" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14161" levels="1" name="Gash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="16" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="3000" />
@@ -1208,13 +1252,18 @@
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="14" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="150" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14162" levels="1" name="Sweep">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Speed is decreased. -->
 		<set name="icon" val="icon.skill1160" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="2000" />
@@ -1233,13 +1282,18 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14163" levels="1" name="Howl">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. is decreased. -->
 		<set name="icon" val="icon.skill0115" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="2500" />
@@ -1259,8 +1313,14 @@
 		<set name="abnormalTime" val="30" />
 		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.77" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14164" levels="1" name="Arcane Jet">
+		<!-- Glory Days confirmed -->
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="-104" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1268,9 +1328,22 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="800" />
 		<set name="magicLvl" val="20" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<set name="isMagic" val="1" />
+		<set name="mpInitialConsume" val="4" />
+		<set name="mpConsume" val="13" />
+		<set name="castRange" val="300" />
+		<set name="hitTime" val="2500" />
+		<set name="icon" val="icon.skill1275" />
+		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="4" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14165" levels="1" name="Arcane Bust">
+		<!-- Glory Days confirmed -->
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="-104" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1278,14 +1351,28 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="800" />
 		<set name="magicLvl" val="20" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="FRONT_AREA" />
+		<set name="fanRange" val="0;0;90;250" />
+		<set name="isMagic" val="1" />
+		<set name="mpInitialConsume" val="4" />
+		<set name="mpConsume" val="16" />
+		<set name="castRange" val="300" />
+		<set name="hitTime" val="2500" />
+		<set name="icon" val="icon.skill1275" />
+		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="4" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14166" levels="1" name="Baelz">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<set name="icon" val="icon.skill1168" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
+		<set name="fanRange" val="0;0;90;250" />
 		<set name="mpConsume" val="15" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="2500" />
@@ -1305,8 +1392,14 @@
 		<set name="abnormalTime" val="20" />
 		<set name="trait" val="POISON" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14167" levels="1" name="Black Powder">
+		<!-- Glory Days confirmed -->
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="-96" />
 		<set name="rideState" val="NONE" />
@@ -1314,9 +1407,20 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="18" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<set name="castRange" val="400" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="icon" val="icon.skill0006" />
+		<set name="mpConsume" val="18" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="150" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14168" levels="1" name="Throw Grenade">
+		<!-- Glory Days confirmed -->
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="-96" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1325,13 +1429,25 @@
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="18" />
 		<set name="affectRange" val="400" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<set name="isMagic" val="1" />
+		<set name="mpInitialConsume" val="4" />
+		<set name="mpConsume" val="15" />
+		<set name="castRange" val="400" />
+		<set name="hitTime" val="1500" />
+		<set name="icon" val="icon.skill1275" />
+		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="4" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14169" levels="1" name="Dirty Fighting">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="18" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1500" />
@@ -1342,13 +1458,18 @@
 		<set name="effectRange" val="300" />
 		<set name="magicLvl" val="18" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="120" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14170" levels="1" name="Grappling Web">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Speed is decreased. -->
 		<set name="icon" val="icon.skill1160" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="19" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
@@ -1366,12 +1487,17 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14171" levels="1" name="Steady Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill1275" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="19" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
@@ -1384,13 +1510,18 @@
 		<set name="magicLvl" val="18" />
 		<set name="affectRange" val="300" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="12" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14172" levels="1" name="Ray of Pain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. is decreased. -->
 		<set name="icon" val="icon.skill0115" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="20" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="1500" />
@@ -1410,12 +1541,18 @@
 		<set name="abnormalTime" val="30" />
 		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.95" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14173" levels="1" name="Assault">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0484" />
 		<set name="operateType" val="DA1" />
-		<set name="targetType" val="SELF" />
+		<set name="flyType" val="CHARGE" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="20" />
 		<set name="castRange" val="350" />
 		<set name="hitTime" val="1500" />
@@ -1426,12 +1563,18 @@
 		<set name="effectRange" val="600" />
 		<set name="magicLvl" val="20" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="5" />
+			</effect>
+			<effect name="EnemyCharge" />
+		</for>
 	</skill>
 	<skill id="14174" levels="1" name="Black Powder Eruption">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill1181" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="20" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
@@ -1440,12 +1583,17 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="300" />
+		<set name="effectRange" val="300 " />
 		<set name="magicLvl" val="20" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="400" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14175" levels="1" name="Cannon Blast">
 		<!-- AUTO GENERATED SKILL -->

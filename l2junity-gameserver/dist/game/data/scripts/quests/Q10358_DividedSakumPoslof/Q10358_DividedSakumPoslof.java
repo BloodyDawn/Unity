@@ -64,7 +64,6 @@ public final class Q10358_DividedSakumPoslof extends Quest
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
-		
 		if (st == null)
 		{
 			return null;
@@ -101,15 +100,10 @@ public final class Q10358_DividedSakumPoslof extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		
-		if (st == null)
-		{
-			return htmltext;
-		}
 		
 		switch (st.getState())
 		{
@@ -131,8 +125,11 @@ public final class Q10358_DividedSakumPoslof extends Quest
 					{
 						if (npc.getId() == LEF)
 						{
-							st.setCond(3);
-							giveItems(player, SAKUM_SKETCH, 1);
+							if (!isSimulated)
+							{
+								st.setCond(3);
+								giveItems(player, SAKUM_SKETCH, 1);
+							}
 							htmltext = "33510-05.htm";
 						}
 						else if (npc.getId() == ADVENTURER_GUIDE)
@@ -194,7 +191,7 @@ public final class Q10358_DividedSakumPoslof extends Quest
 					}
 				}
 				
-				if ((killedZombies == 15) && (killedVeelans == 23))
+				if ((killedZombies == 20) && (killedVeelans == 23))
 				{
 					st.setCond(2, true);
 				}

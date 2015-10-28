@@ -8,10 +8,12 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="60" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="6" />
-		<for>
-			<add order="0" stat="pDef" val="9" />
-		</for>
+		<stats>
+			<stat type="pDef">9</stat>
+		</stats>
 	</item>
 	<item id="1001" name="Book of Aklantoth - Part 4" type="EtcItem">
 		<set name="icon" val="icon.item_normal07" />
@@ -755,6 +757,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="price" val="100" />
 	</item>
 	<item id="1048" name="Spellbook: Might" type="EtcItem">
@@ -764,6 +767,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1049" name="Spellbook: Ice Bolt" type="EtcItem">
@@ -773,6 +777,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1050" name="Spellbook: Battle Heal" type="EtcItem">
@@ -782,6 +787,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1051" name="Spellbook: Vampiric Touch" type="EtcItem">
@@ -791,6 +797,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1052" name="Spellbook: Flame Strike" type="EtcItem">
@@ -800,6 +807,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1053" name="Spellbook: Cure Poison" type="EtcItem">
@@ -809,6 +817,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1054" name="Spellbook: Group Heal" type="EtcItem">
@@ -818,6 +827,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1055" name="Spellbook: Curse Poison" type="EtcItem">
@@ -827,6 +837,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1056" name="Spellbook: Curse Weakness" type="EtcItem">
@@ -836,6 +847,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1057" name="Spellbook: Summon Meal" type="EtcItem">
@@ -844,6 +856,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="price" val="500" />
 	</item>
 	<item id="1058" name="Spellbook: Shield" type="EtcItem">
@@ -853,6 +866,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1059" name="Spellbook: Know Enemy" type="EtcItem">
@@ -861,6 +875,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="price" val="500" />
 	</item>
 	<item id="1060" name="Healing Potion" type="EtcItem">
@@ -877,13 +892,15 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2031" level="1" /> <!-- Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2031" level="1" /> <!-- Healing Potion -->
+		</skills>
 	</item>
 	<item id="1061" name="Major Healing Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_scarlet_i00" />
@@ -899,13 +916,15 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2032" level="1" /> <!-- Greater Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2032" level="1" /> <!-- Greater Healing Potion -->
+		</skills>
 	</item>
 	<item id="1062" name="Haste Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_reagent_green_i00" />
@@ -919,6 +938,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
 	</item>
 	<item id="1063" name="Tutorial Parchment" type="EtcItem">
@@ -1094,6 +1114,8 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="2031" level="1" /> <!-- Healing Potion -->
@@ -1106,6 +1128,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1075" name="Boat Ticket: Gludin to Talking Island" type="EtcItem">
@@ -1115,6 +1138,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1076" name="Carlon's Letter" type="EtcItem">
@@ -1428,6 +1452,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="75" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1096" name="Spellbook: Elemental Heal" type="EtcItem">
@@ -1437,6 +1462,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="550" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1097" name="Spellbook: Drain Energy" type="EtcItem">
@@ -1446,6 +1472,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="550" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1098" name="Spellbook: Wind Walk" type="EtcItem">
@@ -1455,6 +1482,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1099" name="Spellbook: Wind Shackle" type="EtcItem">
@@ -1464,6 +1492,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

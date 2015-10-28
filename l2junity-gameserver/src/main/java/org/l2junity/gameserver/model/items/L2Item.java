@@ -39,9 +39,11 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.commission.CommissionItemType;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.events.ListenersContainer;
+import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
@@ -70,7 +72,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class L2Item extends ListenersContainer implements IIdentifiable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2Item.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(L2Item.class);
 	
 	public static final int TYPE1_WEAPON_RING_EARRING_NECKLACE = 0;
 	public static final int TYPE1_SHIELD_ARMOR = 1;
@@ -147,6 +149,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	private boolean _freightable;
 	private boolean _allow_self_resurrection;
 	private boolean _is_oly_restricted;
+	private boolean _is_coc_restricted;
 	private boolean _for_npc;
 	private boolean _common;
 	private boolean _heroItem;
@@ -162,6 +165,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	protected List<FuncTemplate> _funcTemplates;
 	protected List<Condition> _preConditions;
 	private List<ItemSkillHolder> _skills;
+	private List<ItemChanceHolder> _createItems;
 	
 	private int _useSkillDisTime;
 	private int _reuseDelay;
@@ -170,6 +174,9 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	private CommissionItemType _commissionItemType;
 	private int _compoundItem;
 	private float _compoundChance;
+	
+	private boolean _isAppearanceable;
+	private boolean _isBlessed;
 	
 	/**
 	 * Constructor of the L2Item that fill class variables.<BR>
@@ -210,7 +217,10 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		_freightable = set.getBoolean("is_freightable", false);
 		_allow_self_resurrection = set.getBoolean("allow_self_resurrection", false);
 		_is_oly_restricted = set.getBoolean("is_oly_restricted", false);
+		_is_coc_restricted = set.getBoolean("is_coc_restricted", false);
 		_for_npc = set.getBoolean("for_npc", false);
+		_isAppearanceable = set.getBoolean("isAppearanceable", false);
+		_isBlessed = set.getBoolean("blessed", false);
 		
 		_immediate_effect = set.getBoolean("immediate_effect", false);
 		_ex_immediate_effect = set.getBoolean("ex_immediate_effect", false);
@@ -723,6 +733,20 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		_skills.add(holder);
 	}
 	
+	public List<ItemChanceHolder> getCreateItems()
+	{
+		return _createItems != null ? _createItems : Collections.emptyList();
+	}
+	
+	public void addCreateItem(ItemChanceHolder item)
+	{
+		if (_createItems == null)
+		{
+			_createItems = new ArrayList<>();
+		}
+		_createItems.add(item);
+	}
+	
 	public boolean checkCondition(Creature activeChar, WorldObject object, boolean sendMessage)
 	{
 		if (activeChar.canOverrideCond(PcCondOverride.ITEM_CONDITIONS) && !Config.GM_ITEM_RESTRICTION)
@@ -741,6 +765,12 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			{
 				activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_THAT_ITEM_IN_A_OLYMPIAD_MATCH);
 			}
+			return false;
+		}
+		
+		if (isCocRestrictedItem() && (activeChar.isPlayer() && (activeChar.getActingPlayer().isOnEvent(CeremonyOfChaosEvent.class))))
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ITEM_IN_THE_TOURNAMENT);
 			return false;
 		}
 		
@@ -814,9 +844,30 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		return _is_oly_restricted || Config.LIST_OLY_RESTRICTED_ITEMS.contains(_itemId);
 	}
 	
+	/**
+	 * @return {@code true} if item cannot be used in Ceremony of Chaos games.
+	 */
+	public boolean isCocRestrictedItem()
+	{
+		return _is_coc_restricted;
+	}
+	
 	public boolean isForNpc()
 	{
 		return _for_npc;
+	}
+	
+	public boolean isAppearanceable()
+	{
+		return _isAppearanceable;
+	}
+	
+	/**
+	 * @return {@code true} if the item is blessed, {@code false} otherwise.
+	 */
+	public final boolean isBlessed()
+	{
+		return _isBlessed;
 	}
 	
 	/**

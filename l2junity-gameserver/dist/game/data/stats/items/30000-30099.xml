@@ -12,13 +12,28 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="882.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13061" level="1" /> <!-- Special Ability: Long Blow -->
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13289" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">882</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30001" name="Blessed Requiem Shooter" name_additional="Focus + Critical Slow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5 and has a chance of casting Slow during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -32,13 +47,29 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="794.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30002" name="Blessed Requiem Shooter" name_additional="Critical Slow + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a chance of casting Slow on the target during a Critical Attack. Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -52,13 +83,29 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="794.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30003" name="Blessed Requiem Shooter" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 79.5. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -73,13 +120,27 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="CROSSBOW" />
-		<for>
-			<set stat="pAtk" val="794.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30004" name="Blessed Requiem Buster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -93,13 +154,27 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="358.0" />
-			<set stat="mAtk" val="260.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">358</stat>
+			<stat type="mAtk">260</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30005" name="Blessed Requiem Buster" name_additional="Magic Hold + Mana Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -113,13 +188,27 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="358.0" />
-			<set stat="mAtk" val="260.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">358</stat>
+			<stat type="mAtk">260</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30006" name="Blessed Requiem Buster" name_additional="Mana Up + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30% and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -133,13 +222,26 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="358.0" />
-			<set stat="mAtk" val="260.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">358</stat>
+			<stat type="mAtk">260</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30007" name="Blessed Requiem Caster" name_additional="Empower + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 296 and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -153,14 +255,27 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="358.0" />
-			<set stat="mAtk" val="260.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="5" /> <!-- Special Ability: Empower -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13296" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">358</stat>
+			<stat type="mAtk">260</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30008" name="Blessed Requiem Caster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -174,14 +289,28 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="358.0" />
-			<set stat="mAtk" val="260.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13296" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">358</stat>
+			<stat type="mAtk">260</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30009" name="Blessed Requiem Caster" name_additional="Magic Hold + Empower" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -195,14 +324,28 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="358.0" />
-			<set stat="mAtk" val="260.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3575" level="5" /> <!-- Special Ability: Empower -->
+			<skill id="13296" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">358</stat>
+			<stat type="mAtk">260</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30010" name="Blessed Requiem Retributer" name_additional="MP Regeneration + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases MP Recovery Rate and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -216,15 +359,28 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="436.0" />
-			<set stat="mAtk" val="286.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3576" level="5" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13301" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">436</stat>
+			<stat type="mAtk">286</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30011" name="Blessed Requiem Retributer" name_additional="Acumen + Empower" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -238,15 +394,28 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="436.0" />
-			<set stat="mAtk" val="286.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3575" level="5" /> <!-- Special Ability: Empower -->
+			<skill id="13301" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">436</stat>
+			<stat type="mAtk">286</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30012" name="Blessed Requiem Retributer" name_additional="Empower + MP Regeneration" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 296 and MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -260,15 +429,28 @@
 		<set name="price" val="87108470" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="436.0" />
-			<set stat="mAtk" val="286.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="5" /> <!-- Special Ability: Empower -->
+			<skill id="3576" level="5" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="13301" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">436</stat>
+			<stat type="mAtk">286</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30013" name="Blessed Requiem Dualsword" name_additional="Haste + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15% and P. Atk. by 288. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -282,13 +464,26 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="545.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13274" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">545</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30014" name="Blessed Requiem Dualsword" name_additional="Damage Up + Health" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 415 and Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -302,13 +497,26 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="545.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="13274" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">545</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30015" name="Blessed Requiem Dualsword" name_additional="Health + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25% and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -322,13 +530,26 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="545.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13274" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">545</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30016" name="Blessed Requiem Dual Dagger" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 332. Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -342,13 +563,27 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="448.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="3567" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13284" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">448</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30017" name="Blessed Requiem Dual Dagger" name_additional="Focus + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5 and Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -362,13 +597,27 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="448.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3567" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="3573" level="4" /> <!-- Special Ability: Guidance -->
+			<skill id="13284" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">448</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30018" name="Blessed Requiem Dual Dagger" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.8 and P. Atk. by 288. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -382,13 +631,27 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="448.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="4" /> <!-- Special Ability: Guidance -->
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13284" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">448</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30019" name="Blessed Requiem Dual Blunt Weapon" name_additional="Focus + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5 and Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -402,14 +665,27 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="545.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="3573" level="4" /> <!-- Special Ability: Guidance -->
+			<skill id="13269" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">545</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30020" name="Blessed Requiem Dual Blunt Weapon" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.7 and P. Atk. by 288. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -423,14 +699,27 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="545.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="4" /> <!-- Special Ability: Guidance -->
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13269" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">545</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30021" name="Blessed Requiem Dual Blunt Weapon" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 377. Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -444,14 +733,27 @@
 		<set name="price" val="108885587" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="545.0" />
-			<set stat="mAtk" val="195.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13269" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">545</stat>
+			<stat type="mAtk">195</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30022" name="Apocalypse Shaper" name_additional="Guidance + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.9 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -462,16 +764,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="441.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13280" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">441</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30023" name="Apocalypse Shaper" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 82.3. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -482,17 +797,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="DAGGER" />
-		<for>
-			<set stat="pAtk" val="441.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3567" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13280" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">441</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30024" name="Apocalypse Shaper" name_additional="Focus + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 82.3 and Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -503,16 +830,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="441.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3567" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13280" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">441</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30025" name="Apocalypse Cutter" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -523,16 +863,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30026" name="Apocalypse Cutter" name_additional="Focus + Health" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.2 and Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -543,17 +895,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30027" name="Apocalypse Cutter" name_additional="Health + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25% and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -564,17 +927,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30028" name="Apocalypse Slasher" name_additional="Focus + Damage" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 78.9 and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -585,17 +959,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1740" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13259" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30029" name="Apocalypse Slasher" name_additional="Damage Up + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 415 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -606,17 +991,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1740" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13259" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30030" name="Apocalypse Slasher" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -627,16 +1023,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1740" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13259" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30031" name="Apocalypse Avenger" name_additional="Haste + Critical Damage" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15% and P. Atk. by 1158 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -647,17 +1055,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1740" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3572" level="6" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13254" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30032" name="Apocalypse Avenger" name_additional="Critical Damage + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 1158 during a Critical Attack. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -668,18 +1088,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1740" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3572" level="6" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13254" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30033" name="Apocalypse Avenger" name_additional="Focus + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.2 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -690,17 +1121,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1740" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13254" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30034" name="Apocalypse Fighter" name_additional="Focus + Damage" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 78.9 and P. Atk. by 332. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -711,18 +1154,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1550" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3565" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13265" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30035" name="Apocalypse Fighter" name_additional="Damage Up + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 415 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -733,17 +1187,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1550" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13265" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30036" name="Apocalypse Fighter" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 76. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -754,18 +1220,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1550" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3565" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13265" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30037" name="Apocalypse Stormer" name_additional="HP Drain + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nAbsorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -776,16 +1253,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="2010" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="30038" name="Apocalypse Stormer" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.7 and P. Atk. by 332. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -796,16 +1287,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="2010" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="30039" name="Apocalypse Stormer" name_additional="Damage Up + HP Drain" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -816,16 +1321,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="2010" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="30040" name="Apocalypse Thrower" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 332. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -836,17 +1355,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="992.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13290" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">992</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30041" name="Apocalypse Thrower" name_additional="Focus + Long Blow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.2. Increases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -857,16 +1389,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="992.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13061" level="1" /> <!-- Special Ability: Long Blow -->
+			<skill id="13290" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">992</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30042" name="Apocalypse Thrower" name_additional="Long Blow + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases the attack range and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -877,16 +1423,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="992.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13061" level="1" /> <!-- Special Ability: Long Blow -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13290" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">992</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30043" name="Apocalypse Shooter" name_additional="Focus + Critical Slow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.2 and has a chance of casting Slow during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -897,16 +1457,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1580" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="894.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">894</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30044" name="Apocalypse Shooter" name_additional="Critical Slow + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a chance of casting Slow on the target during a Critical Attack. Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -917,16 +1492,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1580" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="894.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">894</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30045" name="Apocalypse Shooter" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -937,17 +1527,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1580" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="CROSSBOW" />
-		<for>
-			<set stat="pAtk" val="894.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">894</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30046" name="Apocalypse Buster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -958,16 +1561,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30047" name="Apocalypse Buster" name_additional="Magic Hold + Mana Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -978,16 +1594,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30048" name="Apocalypse Buster" name_additional="Mana Up + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30% and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -998,17 +1627,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1520" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30049" name="Apocalypse Caster" name_additional="Empower + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 322 and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1019,18 +1659,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1080" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13297" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30050" name="Apocalypse Caster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1041,17 +1692,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1080" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13297" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30051" name="Apocalypse Caster" name_additional="Magic Hold + Empower" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1062,17 +1726,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1080" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="13297" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30052" name="Apocalypse Retributer" name_additional="MP Regeneration + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases MP Recovery Rate and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1083,18 +1760,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1080" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="491.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3576" level="6" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13302" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">491</stat>
+			<stat type="mAtk">322</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30053" name="Apocalypse Retributer" name_additional="Acumen + Empower" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1105,19 +1794,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1080" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="491.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="13302" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">491</stat>
+			<stat type="mAtk">322</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30054" name="Apocalypse Retributer" name_additional="Empower + MP Regeneration" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 296 and MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1128,18 +1828,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4256" />
 		<set name="weight" val="1080" />
-		<set name="price" val="199521449" />
+		<set name="price" val="153478038" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="491.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="3576" level="6" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="13302" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">491</stat>
+			<stat type="mAtk">322</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30055" name="Apocalypse Dualsword" name_additional="Haste + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15% and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -1150,17 +1862,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="1520" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13275" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30056" name="Apocalypse Dualsword" name_additional="Damage Up + Health" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 332 and Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -1171,17 +1894,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="1520" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="13275" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30057" name="Apocalypse Dualsword" name_additional="Health + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25% and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -1192,17 +1926,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="1520" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13275" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30058" name="Apocalypse Dual Dagger" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 332. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -1213,17 +1958,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="2050" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3567" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13285" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30059" name="Apocalypse Dual Dagger" name_additional="Focus + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5 and Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -1234,16 +1991,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="2050" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3567" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13285" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30060" name="Apocalypse Dual Dagger" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.8 and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -1254,16 +2024,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="2050" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13285" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30061" name="Apocalypse Dual Blunt Weapon" name_additional="Focus + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 76.3. Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -1274,17 +2057,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="1740" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13270" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30062" name="Apocalypse Dual Blunt Weapon" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.7 and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -1295,17 +2090,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="1740" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUAL_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13270" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30063" name="Apocalypse Dual Blunt Weapon" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 377. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -1316,18 +2123,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="5320" />
 		<set name="weight" val="1740" />
-		<set name="price" val="249401811" />
+		<set name="price" val="191847547" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="DUAL_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13270" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30064" name="Blessed Apocalypse Shaper" name_additional="Guidance + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.9 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1338,16 +2156,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="454.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13280" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">454</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30065" name="Blessed Apocalypse Shaper" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 82.3. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1358,16 +2190,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="454.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3567" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13280" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">454</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30066" name="Blessed Apocalypse Shaper" name_additional="Focus + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 82.3 and Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1378,16 +2224,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="454.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3567" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13280" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">454</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30067" name="Blessed Apocalypse Cutter" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -1398,16 +2258,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30068" name="Blessed Apocalypse Cutter" name_additional="Focus + Health" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.2 and Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -1418,16 +2291,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30069" name="Blessed Apocalypse Cutter" name_additional="Health + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25% and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -1438,17 +2324,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30070" name="Blessed Apocalypse Slasher" name_additional="Focus + Damage" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 78.9 and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -1459,16 +2357,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1740" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13259" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30071" name="Blessed Apocalypse Slasher" name_additional="Damage Up + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 415 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -1479,16 +2390,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1740" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13259" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30072" name="Blessed Apocalypse Slasher" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -1499,16 +2423,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1740" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13259" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30073" name="Blessed Apocalypse Avenger" name_additional="Haste + Critical Damage" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15% and P. Atk. by 1158 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1519,17 +2456,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1740" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3572" level="6" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13254" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30074" name="Blessed Apocalypse Avenger" name_additional="Critical Damage + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 1158 during a Critical Attack. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1540,17 +2490,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1740" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3572" level="6" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13254" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30075" name="Blessed Apocalypse Avenger" name_additional="Focus + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.2 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1561,17 +2524,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1740" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13254" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30076" name="Blessed Apocalypse Fighter" name_additional="Focus + Damage" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 78.9 and P. Atk. by 332. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -1582,17 +2558,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1550" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3565" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13265" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30077" name="Blessed Apocalypse Fighter" name_additional="Damage Up + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 415 and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -1603,17 +2592,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1550" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13265" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30078" name="Blessed Apocalypse Fighter" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 76. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -1624,18 +2626,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1550" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3565" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13265" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30079" name="Blessed Apocalypse Stormer" name_additional="HP Drain + Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nAbsorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -1646,16 +2660,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="2010" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="30080" name="Blessed Apocalypse Stormer" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.7 and P. Atk. by 332. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -1666,16 +2695,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="2010" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3573" level="5" /> <!-- Special Ability: Guidance -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="30081" name="Blessed Apocalypse Stormer" name_additional="Damage Up + HP Drain" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -1686,17 +2730,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="2010" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="commissionItemType" val="SPEAR" />
-		<for>
-			<set stat="pAtk" val="519.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">519</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="30082" name="Blessed Apocalypse Thrower" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 332. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -1707,17 +2765,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="1022.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13290" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1022</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30083" name="Blessed Apocalypse Thrower" name_additional="Focus + Long Blow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases by Critical by 79.2. Increases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -1728,16 +2800,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="1022.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13061" level="1" /> <!-- Special Ability: Long Blow -->
+			<skill id="13290" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1022</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30084" name="Blessed Apocalypse Thrower" name_additional="Long Blow + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases the attack range and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -1748,16 +2835,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="1022.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13061" level="1" /> <!-- Special Ability: Long Blow -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13290" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1022</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30085" name="Blessed Apocalypse Shooter" name_additional="Focus + Critical Slow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.2. Has a chance of casting Slow during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -1768,16 +2870,32 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1580" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="920.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">920</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30086" name="Blessed Apocalypse Shooter" name_additional="Critical Slow + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a chance of casting Slow on the target during a Critical Attack. Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -1788,16 +2906,32 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1580" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="920.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">920</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30087" name="Blessed Apocalypse Shooter" name_additional="Haste + Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -1808,16 +2942,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1580" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="920.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="3566" level="7" /> <!-- Special Ability: Focus -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">920</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30088" name="Blessed Apocalypse Buster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -1828,16 +2977,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="415.0" />
-			<set stat="mAtk" val="301.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">301</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30089" name="Blessed Apocalypse Buster" name_additional="Magic Hold + Mana Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -1848,16 +3011,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="415.0" />
-			<set stat="mAtk" val="301.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">301</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30090" name="Blessed Apocalypse Buster" name_additional="Mana Up + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30% and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -1868,17 +3045,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1520" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="415.0" />
-			<set stat="mAtk" val="301.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">301</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30091" name="Blessed Apocalypse Caster" name_additional="Empower + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 322 and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1889,17 +3078,30 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1080" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="415.0" />
-			<set stat="mAtk" val="301.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13297" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">301</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30092" name="Blessed Apocalypse Caster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1910,17 +3112,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1080" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="415.0" />
-			<set stat="mAtk" val="301.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13297" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">301</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30093" name="Blessed Apocalypse Caster" name_additional="Magic Hold + Empower" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1931,17 +3147,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1080" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="415.0" />
-			<set stat="mAtk" val="301.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="13297" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">301</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30094" name="Blessed Apocalypse Retributer" name_additional="MP Regeneration + Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases MP Recovery Rate and Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1952,18 +3182,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1080" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="505.0" />
-			<set stat="mAtk" val="332.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3576" level="6" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13302" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">332</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30095" name="Blessed Apocalypse Retributer" name_additional="Acumen + Empower" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1974,18 +3217,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1080" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="505.0" />
-			<set stat="mAtk" val="332.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="13302" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">332</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30096" name="Blessed Apocalypse Retributer" name_additional="Empower + MP Regeneration" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 296 and MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1996,18 +3252,31 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="4840" />
 		<set name="weight" val="1080" />
-		<set name="price" val="226912837" />
+		<set name="price" val="174548336" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="505.0" />
-			<set stat="mAtk" val="332.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="6" /> <!-- Special Ability: Empower -->
+			<skill id="3576" level="6" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="13302" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">332</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30097" name="Blessed Apocalypse Dualsword" name_additional="Haste + Damage Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15% and P. Atk. by 332. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -2018,16 +3287,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="6051" />
 		<set name="weight" val="1520" />
-		<set name="price" val="283641045" />
+		<set name="price" val="218185419" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="13275" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30098" name="Blessed Apocalypse Dualsword" name_additional="Damage Up + Health" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 457 and Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -2038,16 +3320,29 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="6051" />
 		<set name="weight" val="1520" />
-		<set name="price" val="283641045" />
+		<set name="price" val="218185419" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="2" /> <!-- Special Ability: Damage Up -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="13275" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30099" name="Blessed Apocalypse Dualsword" name_additional="Health + Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25% and Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -2058,16 +3353,28 @@
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="6051" />
 		<set name="weight" val="1520" />
-		<set name="price" val="283641045" />
+		<set name="price" val="218185419" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<for>
-			<set stat="pAtk" val="632.0" />
-			<set stat="mAtk" val="226.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13275" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">632</stat>
+			<stat type="mAtk">226</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 </list>

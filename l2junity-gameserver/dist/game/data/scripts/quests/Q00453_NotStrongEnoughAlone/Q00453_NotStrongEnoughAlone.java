@@ -44,47 +44,33 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 	private static final int KLEMIS = 32734;
 	private static final int[] MONSTER1 =
 	{
-		22746,
-		22747,
-		22748,
-		22749,
-		22750,
-		22751,
-		22752,
-		22753
+		22746, // Bgurent
+		22747, // Brakian
+		22748, // Groikan
+		22749, // Treykan
+		22750, // Elite Bgurent
+		22751, // Elite Brakian
+		22752, // Elite Groikan
+		22753, // Elite Treykan
 	};
 	private static final int[] MONSTER2 =
 	{
-		22754,
-		22755,
-		22756,
-		22757,
-		22758,
-		22759
+		22754, // Turtlelian
+		22755, // Krajian
+		22756, // Tardyon
+		22757, // Elite Turtlelian
+		22758, // Elite Krajian
+		22759, // Elite Tardyon
 	};
 	private static final int[] MONSTER3 =
 	{
-		22760,
-		22761,
-		22762,
-		22763,
-		22764,
-		22765
+		22760, // Kanibi
+		22761, // Kiriona
+		22762, // Kaiona
+		22763, // Elite Kanibi
+		22764, // Elite Kiriona
+		22765, // Elite Kaiona
 	};
-	// Reward
-	private static final int POUCH = 34861; // Ingredient and Hardener Pouch (R-grade)
-	private static final int EWR = 17526; // Scroll: Enchant Weapon (R-Grade)
-	private static final int EAR = 17527; // Scroll: Enchant Armor (R-Grade)
-	// @formatter:off
-	private static final int[] ATT_STONES =
-	{
-		9546, 9547, 9548, 9549, 9550, 9551,
-	};
-	private static final int[] ATT_CRYSTALS =
-	{
-		9552, 9553, 9554, 9555, 5956, 9557,
-	};
-	// @formatter:on
 	
 	// Misc
 	private static final int MIN_LV = 85;
@@ -210,19 +196,16 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 			case "32734-07.html":
 			{
 				st.setCond(2, true);
-				sendNpcLogList(player);
 				break;
 			}
 			case "32734-08.html":
 			{
 				st.setCond(3, true);
-				sendNpcLogList(player);
 				break;
 			}
 			case "32734-09.html":
 			{
 				st.setCond(4, true);
-				sendNpcLogList(player);
 				break;
 			}
 		}
@@ -251,10 +234,6 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		
 		switch (st.getState())
 		{
@@ -291,20 +270,79 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 					{
 						if (!isSimulated)
 						{
-							final int random = getRandom(100);
-							if (random < 10)
+							final int random = getRandom(1000);
+							if (random < 34)
 							{
-								giveItems(player, POUCH, getRandom(1, 4));
+								giveItems(player, 34861, 1); // Ingredient and Hardener Pouch (R-grade)
 							}
-							else if (random < 20)
+							else if (random < 52)
 							{
-								giveItems(player, (getRandom(100) < 25 ? EWR : EAR), 1);
+								giveItems(player, 34861, 2); // Ingredient and Hardener Pouch (R-grade)
 							}
-							else
+							else if (random < 64)
 							{
-								giveItems(player, (getRandom(100) < 15 ? ATT_CRYSTALS[getRandom(ATT_CRYSTALS.length)] : ATT_STONES[getRandom(ATT_STONES.length)]), 1);
+								giveItems(player, 34861, 3); // Ingredient and Hardener Pouch (R-grade)
 							}
-							
+							else if (random < 73)
+							{
+								giveItems(player, 34861, 4); // Ingredient and Hardener Pouch (R-grade)
+							}
+							else if (random < 77)
+							{
+								giveItems(player, 17526, 1); // Scroll: Enchant Weapon (R-grade)
+							}
+							else if (random < 124)
+							{
+								giveItems(player, 17527, 1); // Scroll: Enchant Armor (R-grade)
+							}
+							else if (random < 153)
+							{
+								giveItems(player, 9552, 1); // Fire Crystal
+							}
+							else if (random < 182)
+							{
+								giveItems(player, 9553, 1); // Water Crystal
+							}
+							else if (random < 211)
+							{
+								giveItems(player, 9554, 1); // Earth Crystal
+							}
+							else if (random < 240)
+							{
+								giveItems(player, 9555, 1); // Wind Crystal
+							}
+							else if (random < 269)
+							{
+								giveItems(player, 9556, 1); // Dark Crystal
+							}
+							else if (random < 298)
+							{
+								giveItems(player, 9557, 1); // Holy Crystal
+							}
+							else if (random < 415)
+							{
+								giveItems(player, 9546, 1); // Fire Stone
+							}
+							else if (random < 532)
+							{
+								giveItems(player, 9547, 1); // Water Stone
+							}
+							else if (random < 649)
+							{
+								giveItems(player, 9548, 1); // Earth Stone
+							}
+							else if (random < 766)
+							{
+								giveItems(player, 9549, 1); // Wind Stone
+							}
+							else if (random < 883)
+							{
+								giveItems(player, 9550, 1); // Dark Stone
+							}
+							else if (random < 1000)
+							{
+								giveItems(player, 9551, 1); // Holy Stone
+							}
 							st.exitQuest(QuestType.DAILY, true);
 						}
 						htmltext = "32734-14.html";

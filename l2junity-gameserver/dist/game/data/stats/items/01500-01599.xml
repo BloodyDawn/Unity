@@ -8,6 +8,7 @@
 		<set name="price" val="11000" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1501" name="Maraku Werewolf Totem" type="EtcItem">
@@ -18,6 +19,7 @@
 		<set name="price" val="1200" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1502" name="Grandma's Pearl" type="EtcItem">
@@ -28,6 +30,7 @@
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1503" name="Grandma's Mirror" type="EtcItem">
@@ -38,6 +41,7 @@
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1504" name="Grandma's Necklace" type="EtcItem">
@@ -48,6 +52,7 @@
 		<set name="price" val="600" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1505" name="Grandma's Hairpin" type="EtcItem">
@@ -58,6 +63,7 @@
 		<set name="price" val="200" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1506" name="Necklace of Courage" type="Armor">
@@ -68,10 +74,11 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="11" />
-		<for>
-			<add order="0" stat="mDef" val="15" />
-		</for>
+		<stats>
+			<stat type="mDef">15</stat>
+		</stats>
 	</item>
 	<item id="1507" name="Necklace of Valor" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_valor_i00" />
@@ -81,10 +88,11 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="720" />
-		<for>
-			<add order="0" stat="mDef" val="21" />
-		</for>
+		<stats>
+			<stat type="mDef">21</stat>
+		</stats>
 	</item>
 	<item id="1508" name="Ring of Raccoon" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_raccoon_i00" />
@@ -94,10 +102,11 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="360" />
-		<for>
-			<add order="0" stat="mDef" val="11" />
-		</for>
+		<stats>
+			<stat type="mDef">11</stat>
+		</stats>
 	</item>
 	<item id="1509" name="Ring of Firefly" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_firefly_i00" />
@@ -107,18 +116,17 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="360" />
-		<for>
-			<add order="0" stat="mDef" val="11" />
-		</for>
+		<stats>
+			<stat type="mDef">11</stat>
+		</stats>
 	</item>
 	<item id="1510" name="Butcher's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -126,21 +134,23 @@
 		<set name="price" val="3900" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="13" />
-			<set stat="mAtk" val="10" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">13</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="1511" name="Silversmith Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_iron_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -148,14 +158,18 @@
 		<set name="price" val="3900" />
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="13" />
-			<set stat="mAtk" val="10" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">13</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="1512" name="Spellbook: Confusion" type="EtcItem">
 		<set name="icon" val="icon.etc_spell_books_defighter_i00" />
@@ -164,6 +178,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1513" name="Spellbook: Charm" type="EtcItem">
@@ -173,6 +188,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1514" name="Spellbook: Resurrection" type="EtcItem">
@@ -182,6 +198,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1515" name="Spellbook: Eva's Kiss" type="EtcItem">
@@ -191,6 +208,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1516" name="Spellbook: Corpse Life Drain" type="EtcItem">
@@ -200,6 +218,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1517" name="Spellbook: Body To Mind" type="EtcItem">
@@ -209,6 +228,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1518" name="Amulet: Chant of Flame" type="EtcItem">
@@ -218,6 +238,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1519" name="Amulet: Pa'agrio's Gift" type="EtcItem">
@@ -227,6 +248,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1520" name="Amulet: Pa'agrio's Blessing" type="EtcItem">
@@ -236,6 +258,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2450" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1521" name="Amulet: Chant of Fire" type="EtcItem">
@@ -245,6 +268,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1522" name="Amulet: Chant of Battle" type="EtcItem">
@@ -254,6 +278,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1523" name="Amulet: Chant of Shielding" type="EtcItem">
@@ -263,6 +288,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1524" name="Amulet: Soul Shield" type="EtcItem">
@@ -272,6 +298,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1525" name="Amulet: Life Drain" type="EtcItem">
@@ -281,6 +308,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1526" name="Amulet: Fear" type="EtcItem">
@@ -290,6 +318,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1527" name="Amulet: Venom" type="EtcItem">
@@ -299,6 +328,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1528" name="Amulet: Seal of Chaos" type="EtcItem">
@@ -308,6 +338,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1529" name="Amulet: Dreaming Spirit" type="EtcItem">
@@ -317,6 +348,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1530" name="Amulet: Seal of Slow" type="EtcItem">
@@ -326,6 +358,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2450" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1531" name="Amulet: Chill Flame" type="EtcItem">
@@ -335,6 +368,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1532" name="Amulet: Blaze Quake" type="EtcItem">
@@ -344,6 +378,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1533" name="Amulet: Aura Sink" type="EtcItem">
@@ -353,6 +388,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1534" name="Amulet: Madness" type="EtcItem">
@@ -362,6 +398,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1535" name="Amulet: Frost Flame" type="EtcItem">
@@ -371,6 +408,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1536" name="Amulet: Seal of Binding" type="EtcItem">
@@ -380,6 +418,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="1250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1537" name="Amulet: Seal of Poison" type="EtcItem">
@@ -389,6 +428,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="800" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1538" name="Blessed Scroll of Escape" type="EtcItem">
@@ -422,13 +462,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="for_npc" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2037" level="1" /> <!-- Major Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2037" level="1" /> <!-- Major Healing Potion -->
+		</skills>
 	</item>
 	<item id="1540" name="Quick Healing Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_gold_i00" />
@@ -444,13 +485,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="for_npc" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2038" level="1" /> <!-- Quick Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2038" level="1" /> <!-- Quick Healing Potion -->
+		</skills>
 	</item>
 	<item id="1541" name="Honey Khandar" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_gold_i00" />

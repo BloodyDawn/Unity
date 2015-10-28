@@ -90,7 +90,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -258,8 +258,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="80" />
+			<effect name="VampiricAttack">
+				<param amount="80" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -309,14 +309,14 @@
 		<table name="#mpInitialConsume"> 18 26 50 56 61 66 72 77 82 </table>
 		<table name="#power"> 0.8 0.7 0.6 0.5 0.4 0.3 0.4 0.4 0.3 </table>
 		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="300" />
+		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="LIMIT" />
 		<set name="activateRate" val="60" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="effectPoint" val="-679" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="2110" />
 		<set name="icon" val="icon.skill1509" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -325,9 +325,11 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="120000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -478,7 +480,7 @@
 		<table name="#mpInitialConsume"> 5 5 6 6 6 7 7 </table>
 		<table name="#res"> 10 15 20 30 35 40 45 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
+		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_BOW" />
 		<set name="effectPoint" val="150" />
 		<set name="hitTime" val="1000" />
@@ -608,7 +610,7 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -640,7 +642,6 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -648,6 +649,9 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="VAMPIRIC_ATTACK;ATTACK_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -750,8 +754,7 @@
 		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 28 29 30 30 31 32 33 33 34 35 36 36 37 38 39 39 40 41 42 42 43 44 44 45 46 46 47 48 48 49 49 50 50 51 51 52 52 53 53 53 54 54 </table>
 		<table name="#mpInitialConsume"> 7 8 8 8 8 8 9 9 9 9 9 9 10 10 10 10 10 11 11 11 11 11 11 12 12 12 12 12 12 13 13 13 13 13 13 13 13 14 14 14 14 14 </table>
-		<table name="#pvePower"> 51 52 54 55 57 58 60 61 63 64 66 68 69 71 72 74 75 77 78 80 81 83 85 86 88 89 90 92 93 95 96 97 99 100 101 102 103 105 106 107 108 109 </table>
-		<table name="#pvpPower"> 31 32 33 33 34 35 36 37 38 39 40 41 42 43 44 44 45 46 47 48 49 50 51 52 53 54 54 55 56 57 58 59 59 60 61 62 62 63 64 64 65 65 </table>
+		<table name="#power"> 52 58 64 71 74 77 80 83 86 89 92 95 97 100 102 105 107 109 78 80 81 83 85 86 88 89 90 92 93 95 96 97 99 100 101 102 103 105 106 107 108 109 </table>
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1250" />
@@ -768,16 +771,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
-		<pveEffects>
+		<for>
 			<effect name="MagicalAttack">
-				<param power="#pvePower" />
+				<param power="#power" />
 			</effect>
-		</pveEffects>
-		<pvpEffects>
-			<effect name="MagicalAttack">
-				<param power="#pvpPower" />
-			</effect>
-		</pvpEffects>
+		</for>
 	</skill>
 	<skill id="1524" levels="42" name="Surrender to Holy">
 		<!-- Confirmed CT2.5 -->
@@ -899,8 +897,7 @@
 		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 45 47 48 49 50 52 53 54 55 56 58 59 60 61 63 64 65 66 68 69 70 71 72 74 75 76 77 78 79 80 81 82 83 84 84 85 86 87 87 88 89 89 </table>
 		<table name="#mpInitialConsume"> 12 12 12 13 13 13 14 14 14 14 15 15 15 16 16 16 17 17 17 18 18 18 18 19 19 19 20 20 20 20 21 21 21 21 21 22 22 22 22 22 23 23 </table>
-		<table name="#pvePower"> 29 29 30 31 32 33 33 34 35 36 37 38 39 39 40 41 42 43 44 45 45 46 47 48 49 50 50 51 52 53 54 54 55 56 56 57 58 58 59 60 60 61 </table>
-		<table name="#pvpPower"> 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 29 29 30 30 30 31 31 32 32 33 33 34 34 34 35 35 36 36 36 37 </table>
+		<table name="#power"> 29 33 36 39 41 43 45 46 48 50 51 53 54 56 57 58 60 61 44 45 45 46 47 48 49 50 50 51 52 53 54 54 55 56 56 57 58 58 59 60 60 61 </table>
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
 		<set name="castRange" val="500" />
@@ -919,16 +916,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AREA" />
-		<pveEffects>
+		<for>
 			<effect name="MagicalAttack">
-				<param power="#pvePower" />
+				<param power="#power" />
 			</effect>
-		</pveEffects>
-		<pvpEffects>
-			<effect name="MagicalAttack">
-				<param power="#pvpPower" />
-			</effect>
-		</pvpEffects>
+		</for>
 	</skill>
 	<skill id="1529" levels="7" name="Soul Web">
 		<!-- Confirmed CT2.5 -->
@@ -982,7 +974,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpConsume_Init" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="1000" />
+		<set name="reuseDelay" val="1200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
@@ -1194,7 +1186,7 @@
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1296,6 +1288,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
+		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="BlockActions">
@@ -1488,7 +1481,7 @@
 		<table name="#mpInitialConsume"> 8 12 13 </table>
 		<table name="#pAtkSpd"> 1.02 1.05 1.07 </table>
 		<table name="#physicalSkillPower"> 1.05 1.07 1.1 </table>
-		<table name="#rCrit"> 1.05 1.07 1.1 </table>
+		<table name="#rCrit"> 0.05 0.07 0.1 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="SPIRIT_SHARING" />
@@ -1685,6 +1678,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AREA" />
 		<pveEffects>
 			<effect name="MagicalAttack">
@@ -1717,6 +1711,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<pveEffects>
 			<effect name="MagicalAttack">
@@ -1844,7 +1839,7 @@
 		<!-- Glory Days confirmed -->
 		<table name="#cAtkAdd"> 177 295 384 </table>
 		<table name="#magicLvl"> 28 40 49 </table>
-		<table name="#rCrit"> 1.2 1.3 1.4 </table>
+		<table name="#rCrit"> 0.2 0.3 0.4 </table>
 		<set name="icon" val="icon.skill1559" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -2302,27 +2297,37 @@
 		<for>
 			<effect name="Buff">
 				<add stat="cAtkAdd" val="#cAtkAdd" />
-				<!-- add stat="mCAtkAdd" val="#mCAtkAdd" / -->
+				<!-- TODO : add stat="mCAtkAdd" val="#mCAtkAdd" / -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="1578" levels="3" name="Sub - Physical Attribute Resistance Increase">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases resistance to physical attributes by 1. -->
+		<table name="#abnormalResPhysical"> 1 2 3 </table>
 		<set name="icon" val="icon.skill4084" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="abnormalResPhysical" val="#abnormalResPhysical" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1579" levels="3" name="Sub - Mental Attribute Resistance Increase">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases Mental Attack Resistance by 1. -->
+		<table name="#abnormalResMagical"> 1 2 3 </table>
 		<set name="icon" val="icon.skill4116" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="abnormalResMagical" val="#abnormalResMagical" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1580" levels="3" name="Sub - Physical Ability Increase">
 		<!-- Max CP + 41, Max HP + 51, and Max MP + 36. -->
@@ -2398,7 +2403,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
-				<mul stat="rCrit" val="2" />
+				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="SONG_OF_HUNTER" />
@@ -2430,7 +2435,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
-				<mul stat="rCrit" val="2" />
+				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="SONG_OF_HUNTER" />
@@ -2669,8 +2674,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<!-- TODO: When vampiric effect type are reworked {p_vampiric_attack;8;30} -->
-				<add stat="absorbDam" val="8" />
 				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
@@ -2678,6 +2681,9 @@
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param slot="SONG_OF_VENGEANCE" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="8" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -2702,7 +2708,6 @@
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="8" />
 				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
@@ -2710,6 +2715,9 @@
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param slot="SONG_OF_VENGEANCE" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="8" chance="30" />
 			</effect>
 		</for>
 	</skill>

@@ -834,9 +834,6 @@ public class Party extends AbstractPlayerGroup
 			sqLevelSum += (member.getLevel() * member.getLevel());
 		}
 		
-		final int vitalityPoints = (int) ((target.getVitalityPoints(partyDmg) * Config.RATE_PARTY_XP) / validMembers.size());
-		final boolean useVitalityRate = target.useVitalityRate();
-		
 		for (PlayerInstance member : rewardedMembers)
 		{
 			if (member.isDead())
@@ -860,13 +857,23 @@ public class Party extends AbstractPlayerGroup
 				final double preCalculation = (sqLevel / sqLevelSum) * penalty;
 				
 				// Add the XP/SP points to the requested party member
-				long addexp = Math.round(member.calcStat(Stats.EXPSP_RATE, xpReward * preCalculation, null, null));
-				int addsp = (int) member.calcStat(Stats.EXPSP_RATE, spReward * preCalculation, null, null);
+				long addexp = Math.round(member.getStat().getValue(Stats.EXPSP_RATE, xpReward * preCalculation));
+				int addsp = (int) member.getStat().getValue(Stats.EXPSP_RATE, spReward * preCalculation);
 				
-				addexp = calculateExpSpPartyCutoff(member.getActingPlayer(), topLvl, addexp, addsp, useVitalityRate);
+				addexp = calculateExpSpPartyCutoff(member.getActingPlayer(), topLvl, addexp, addsp, target.useVitalityRate());
 				if (addexp > 0)
 				{
-					member.updateVitalityPoints(vitalityPoints, true, false);
+					final L2Clan clan = member.getClan();
+					if (clan != null)
+					{
+						long finalExp = addexp;
+						if (target.useVitalityRate())
+						{
+							finalExp *= member.getStat().getExpBonusMultiplier();
+						}
+						clan.addHuntingPoints(member, target, finalExp);
+					}
+					member.updateVitalityPoints(target.getVitalityPoints(member.getLevel(), addexp), true, false);
 				}
 			}
 			else
@@ -1135,15 +1142,5 @@ public class Party extends AbstractPlayerGroup
 	public List<PlayerInstance> getMembers()
 	{
 		return _members;
-	}
-	
-	/**
-	 * Check whether the leader of this party is the same as the leader of the specified party (which essentially means they're the same group).
-	 * @param party the other party to check against
-	 * @return {@code true} if this party equals the specified party, {@code false} otherwise
-	 */
-	public boolean equals(Party party)
-	{
-		return (party != null) && (getLeaderObjectId() == party.getLeaderObjectId());
 	}
 }

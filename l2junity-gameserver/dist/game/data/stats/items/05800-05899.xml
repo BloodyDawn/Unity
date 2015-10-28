@@ -5,8 +5,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -17,23 +15,23 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="5801" name="For NPC (Dusk)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -44,23 +42,23 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="5802" name="For NPC (Dawn)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -71,15 +69,17 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="5803" name="Lucky Charm (D-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_charm_of_luck_i00" />
@@ -92,13 +92,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2168" level="2" /> <!-- Lucky Charm -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2168" level="2" /> <!-- Lucky Charm -->
+		</skills>
 	</item>
 	<item id="5804" name="Lucky Charm (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_charm_of_luck_i00" />
@@ -111,13 +112,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2168" level="3" /> <!-- Lucky Charm -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2168" level="3" /> <!-- Lucky Charm -->
+		</skills>
 	</item>
 	<item id="5805" name="Lucky Charm (B-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_charm_of_luck_i00" />
@@ -130,13 +132,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2168" level="4" /> <!-- Lucky Charm -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2168" level="4" /> <!-- Lucky Charm -->
+		</skills>
 	</item>
 	<item id="5806" name="Lucky Charm (A-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_charm_of_luck_i00" />
@@ -149,13 +152,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2168" level="5" /> <!-- Lucky Charm -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2168" level="5" /> <!-- Lucky Charm -->
+		</skills>
 	</item>
 	<item id="5807" name="Lucky Charm (S-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_charm_of_luck_i00" />
@@ -168,13 +172,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2168" level="6" /> <!-- Lucky Charm -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2168" level="6" /> <!-- Lucky Charm -->
+		</skills>
 	</item>
 	<item id="5808" name="Party Mask" type="Armor">
 		<set name="icon" val="icon.etc_party_mask_i00" />
@@ -185,6 +190,8 @@
 		<set name="weight" val="10" />
 		<set name="price" val="50000" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="5809" name="Spellbook: Aqua Splash" type="EtcItem">
@@ -194,6 +201,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5810" name="Spellbook: Rain of Fire" type="EtcItem">
@@ -203,6 +211,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5811" name="Spellbook: Mass Slow" type="EtcItem">
@@ -212,6 +221,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5812" name="Spellbook: Servitor Empowerment" type="EtcItem">
@@ -221,6 +231,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="5400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5813" name="Spellbook: Servitor Cure" type="EtcItem">
@@ -230,6 +241,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5814" name="Spellbook: Servitor Blessing" type="EtcItem">
@@ -239,6 +251,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5815" name="Spellbook: Wild Magic" type="EtcItem">
@@ -248,6 +261,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="7700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5816" name="Spellbook: Advanced Block" type="EtcItem">
@@ -257,6 +271,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5817" name="Chrono Campana" type="Weapon">
@@ -264,23 +279,25 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_dropable" val="false" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="5818" name="Alternative Dark Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_i08" />
@@ -289,6 +306,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5819" name="Alternative Red Coda" type="EtcItem">
@@ -298,6 +316,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5820" name="Alternative Chilly Coda" type="EtcItem">
@@ -307,6 +326,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5821" name="Alternative Blue Coda" type="EtcItem">
@@ -316,6 +336,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5822" name="Alternative Golden Coda" type="EtcItem">
@@ -325,6 +346,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5823" name="Alternative Lute Coda" type="EtcItem">
@@ -334,6 +356,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="300" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5824" name="Alternative Desert Coda" type="EtcItem">
@@ -343,6 +366,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5825" name="Alternative Red Cobol" type="EtcItem">
@@ -352,6 +376,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5826" name="Alternative Chilly Cobol" type="EtcItem">
@@ -361,6 +386,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5827" name="Alternative Blue Cobol" type="EtcItem">
@@ -370,6 +396,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5828" name="Alternative Thorn Cobol" type="EtcItem">
@@ -379,6 +406,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5829" name="Alternative Golden Cobol" type="EtcItem">
@@ -388,6 +416,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5830" name="Alternative Great Cobol" type="EtcItem">
@@ -397,6 +426,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5831" name="Alternative Red Codran" type="EtcItem">
@@ -406,6 +436,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5832" name="Alternative Sea Codran" type="EtcItem">
@@ -415,6 +446,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5833" name="Alternative Chilly Codran" type="EtcItem">
@@ -424,6 +456,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5834" name="Alternative Blue Codran" type="EtcItem">
@@ -433,6 +466,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5835" name="Alternative Twin Codran" type="EtcItem">
@@ -442,6 +476,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5836" name="Alternative Great Codran" type="EtcItem">
@@ -451,6 +486,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5837" name="Alternative Desert Codran" type="EtcItem">
@@ -460,6 +496,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5838" name="Mature Alternative Dark Coda" type="EtcItem">
@@ -469,6 +506,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5839" name="Mature Alternative Red Coda" type="EtcItem">
@@ -478,6 +516,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5840" name="Mature Alternative Chilly Coda" type="EtcItem">
@@ -487,6 +526,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="50" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5841" name="Mature Alternative Blue Coda" type="EtcItem">
@@ -496,6 +536,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5842" name="Mature Alternative Golden Coda" type="EtcItem">
@@ -505,6 +546,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5843" name="Mature Alternative Lute Coda" type="EtcItem">
@@ -514,6 +556,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="300" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5844" name="Mature Alternative Desert Coda" type="EtcItem">
@@ -523,6 +566,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5845" name="Mature Alternative Red Cobol" type="EtcItem">
@@ -532,6 +576,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5846" name="Mature Alternative Chilly Cobol" type="EtcItem">
@@ -541,6 +586,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5847" name="Mature Alternative Blue Cobol" type="EtcItem">
@@ -550,6 +596,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5848" name="Mature Alternative Thorn Cobol" type="EtcItem">
@@ -559,6 +606,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5849" name="Mature Alternative Golden Cobol" type="EtcItem">
@@ -568,6 +616,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5850" name="Mature Alternative Great Cobol" type="EtcItem">
@@ -577,6 +626,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5851" name="Mature Alternative Red Codran" type="EtcItem">
@@ -586,6 +636,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5852" name="Mature Alternative Sea Codran" type="EtcItem">
@@ -595,6 +646,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5853" name="Mature Alternative Chilly Codran" type="EtcItem">
@@ -604,6 +656,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="400" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5854" name="Mature Alternative Blue Codran" type="EtcItem">
@@ -613,6 +666,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5855" name="Mature Alternative Twin Codran" type="EtcItem">
@@ -622,6 +676,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5856" name="Mature Alternative Great Codran" type="EtcItem">
@@ -631,6 +686,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="750" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5857" name="Mature Alternative Desert Codran" type="EtcItem">
@@ -640,6 +696,7 @@
 		<set name="weight" val="1" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="5858" name="Blessed Scroll of Escape: Clan Hall" type="EtcItem">
@@ -655,12 +712,12 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2177" level="1" /> <!-- Blessed Scroll of Escape: Clan Hall -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2177" level="1" /> <!-- Blessed Scroll of Escape: Clan Hall -->
+		</skills>
 	</item>
 	<item id="5859" name="Blessed Scroll of Escape: Castle" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_castle_i01" />
@@ -672,13 +729,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2178" level="1" /> <!-- Blessed Scroll of Escape: Castle -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2178" level="1" /> <!-- Blessed Scroll of Escape: Castle -->
+		</skills>
 	</item>
 	<item id="5860" name="Lienrik Egg" type="EtcItem">
 		<set name="icon" val="icon.etc_dragon_egg_i02" />

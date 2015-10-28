@@ -18,17 +18,24 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="createItemsType">
+		<xs:sequence>
+			<xs:element name="item" type="createItemType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:complexType name="skillType">
 		<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 		<xs:attribute name="level" type="xs:positiveInteger" use="required" />
 		<xs:attribute name="type">
 			<xs:simpleType>
 				<xs:restriction base="xs:token">
-					<xs:enumeration value="NORMAL"></xs:enumeration>
-					<xs:enumeration value="ON_ENCHANT"></xs:enumeration>
-					<xs:enumeration value="ON_UNEQUIP"></xs:enumeration>
-					<xs:enumeration value="ON_CRITICAL_SKILL"></xs:enumeration>
-					<xs:enumeration value="ON_MAGIC_SKILL"></xs:enumeration>
+					<xs:enumeration value="NORMAL" />
+					<xs:enumeration value="ON_ENCHANT" />
+					<xs:enumeration value="ON_EQUIP" />
+					<xs:enumeration value="ON_UNEQUIP" />
+					<xs:enumeration value="ON_CRITICAL_SKILL" />
+					<xs:enumeration value="ON_MAGIC_SKILL" />
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -40,6 +47,12 @@
 		<xs:attribute name="id" type="xs:positiveInteger" />
 		<xs:attribute name="min" type="xs:positiveInteger" />
 		<xs:attribute name="max" type="xs:positiveInteger" />
+		<xs:attribute name="chance" type="xs:double" />
+	</xs:complexType>
+
+	<xs:complexType name="createItemType">
+		<xs:attribute name="id" type="xs:positiveInteger" />
+		<xs:attribute name="count" type="xs:positiveInteger" />
 		<xs:attribute name="chance" type="xs:double" />
 	</xs:complexType>
 
@@ -78,6 +91,8 @@
 					<xs:enumeration value="is_freightable" />
 					<xs:enumeration value="is_magic_weapon" />
 					<xs:enumeration value="is_oly_restricted" />
+					<xs:enumeration value="is_coc_restricted" />
+					<xs:enumeration value="isAppearanceable" />
 					<xs:enumeration value="is_premium" />
 					<xs:enumeration value="is_questitem" />
 					<xs:enumeration value="is_sellable" />
@@ -239,6 +254,13 @@
 			<xs:enumeration value="moveSpeed" />
 			<xs:enumeration value="broochJewels" />
 			<xs:enumeration value="inventoryLimit" />
+			<xs:enumeration value="randomDamage" />
+			<xs:enumeration value="firePower" />
+			<xs:enumeration value="waterPower" />
+			<xs:enumeration value="windPower" />
+			<xs:enumeration value="earthPower" />
+			<xs:enumeration value="holyPower" />
+			<xs:enumeration value="darkPower" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="condType">
@@ -253,18 +275,17 @@
 		<xs:attribute type="xs:byte" name="addName" use="optional" />
 		<xs:attribute type="xs:string" name="msg" use="optional" />
 	</xs:complexType>
-	<xs:complexType name="addType">
-		<xs:attribute name="order" type="xs:byte" use="optional" />
-		<xs:attribute name="stat" type="statType" use="required" />
-		<xs:attribute name="val" type="xs:decimal" use="required" />
-	</xs:complexType>
 	<xs:complexType name="forType" mixed="true">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
-			<xs:element name="add" type="addType" />
-			<xs:element name="mul" type="addType" />
-			<xs:element name="sub" type="addType" />
-			<xs:element name="basemul" type="addType" />
-			<xs:element name="set" type="addType" />
+			<xs:element name="stat" maxOccurs="unbounded" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute type="statType" name="type" use="required" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="enchant" maxOccurs="2" minOccurs="0" type="enchantType" />
 		</xs:choice>
 		<xs:attribute type="xs:string" name="name" use="optional" />
@@ -273,11 +294,12 @@
 	<xs:complexType name="itemType">
 		<xs:sequence maxOccurs="1" minOccurs="1">
 			<xs:element name="set" maxOccurs="unbounded" minOccurs="1" type="setType" />
-			<xs:element name="skills" minOccurs="0" type="skillsType" />
 			<xs:element name="unequip_skills" minOccurs="0" type="skillsType" />
 			<xs:element name="capsuled_items" minOccurs="0" type="capsuledItemsType" />
+			<xs:element name="createItems" minOccurs="0" type="createItemsType" />
 			<xs:element name="cond" maxOccurs="2" minOccurs="0" type="condType" />
-			<xs:element name="for" maxOccurs="1" minOccurs="0" type="forType" />
+			<xs:element name="skills" minOccurs="0" type="skillsType" />
+			<xs:element name="stats" maxOccurs="1" minOccurs="0" type="forType" />
 		</xs:sequence>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>

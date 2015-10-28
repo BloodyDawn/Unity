@@ -267,10 +267,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="rEvas" val="#evas">
-					<player running="true" />
-				</add>
+			<effect name="StatByMoveType">
+				<param stat="EVASION_RATE" type="RUNNING" value="#evas" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="-11" />
@@ -1112,7 +1110,7 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="2" />
+				<mul stat="rCrit" val="1" />
 			</effect>
 		</for>
 	</skill>
@@ -1325,7 +1323,7 @@
 	</skill>
 	<skill id="278" levels="6" name="Summon Viper Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicPower"> 531 773 1026 1264 1530 1822 </table>
+		<table name="#cubicLvl"> 1 2 3 4 5 6 </table>
 		<table name="#itemConsumeCount"> 2 3 4 5 5 5 </table>
 		<table name="#magicLvl"> 49 55 60 64 68 72 </table>
 		<table name="#mpConsume"> 35 40 44 48 51 53 </table>
@@ -1345,7 +1343,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#cubicPower" />
+				<param cubicId="4" cubicLvl="#cubicLvl" />
 			</effect>
 		</for>
 	</skill>
@@ -1354,8 +1352,8 @@
 		<table name="#effectPoints"> -828 -877 -921 -958 -987 -987 -987 -987 -987 -987 -828 -828 -828 -828 -828 -828 -828 </table> <!-- Guessed -->
 		<table name="#magicLvl"> 58 62 66 70 74 75 77 79 81 83 85 90 95 99 101 103 105 </table> <!-- Confirmed -->
 		<table name="#mpConsume"> 64 69 74 78 82 83 85 87 89 91 93 95 103 110 117 124 131 </table> <!-- Confirmed -->
-		<table name="#power"> 2927 3444 3990 4553 5114 5131 5334 5662 5991 6318 17140 20255 23370 25862 27018 28354 29600 </table> <!-- Confirmed -->
-		<set name="abnormalTime" val="15" />
+		<table name="#power"> 2927 3444 3990 4553 5114 5131 5334 5662 5991 6318 17140 20255 23370 25862 27108 28354 29600 </table> <!-- Confirmed -->
+		<set name="abnormalTime" val="5" />
 		<set name="activateRate" val="40" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="400" />
@@ -1413,6 +1411,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -1429,7 +1428,7 @@
 	<skill id="281" levels="37" name="Soul Breaker">
 		<table name="#coolTime"> 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 391 </table>
 		<table name="#effectPoints"> -183 -188 -193 -198 -203 -208 -213 -218 -223 -228 -233 -237 -242 -247 -252 -257 -261 -266 -271 -275 -279 -284 -288 -292 -296 -300 -304 -307 -311 -314 -317 -320 -323 -326 -328 -331 -333 </table>
-		<table name="#hitTime"> 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 </table>
+		<table name="#hitTime"> 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1360 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 1409 </table>
 		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 35 36 37 37 38 39 40 42 43 44 45 46 47 48 49 50 51 52 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 </table>
 		<table name="#power"> 487 518 550 583 618 655 693 732 773 816 860 905 952 1001 1051 1102 1155 1210 1265 1322 1380 1440 1500 1561 1624 1687 1751 1816 1881 1947 2013 2080 2146 2213 2279 2345 2411 </table>

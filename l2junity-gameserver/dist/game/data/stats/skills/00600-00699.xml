@@ -476,7 +476,7 @@
 		<!-- Confirmed CT2.5 -->
 		<table name="#cAtk"> 111 177 253 317 </table>
 		<table name="#magicLvl"> 43 52 60 66 </table>
-		<table name="#rCrit"> 1.1 1.15 1.2 1.25 </table>
+		<table name="#rCrit"> 0.1 0.15 0.2 0.25 </table>
 		<set name="icon" val="icon.skill0312" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -533,8 +533,6 @@
 	<skill id="628" levels="1" name="Warp">
 		<!-- Confirmed CT2.5 -->
 		<set name="coolTime" val="200" />
-		<set name="flyCourse" val="180" /> <!-- Teleport to Front -->
-		<set name="flyRadius" val="500" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill0484" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -544,11 +542,12 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="simultaneousCast" val="true" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="180" range="500" /><!-- Teleport to Front -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="629" levels="1" name="Rabbit Magic Eye">
@@ -2072,6 +2071,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">

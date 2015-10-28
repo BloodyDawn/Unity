@@ -149,6 +149,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7610" name="Wind Bait" type="EtcItem">
@@ -161,6 +162,7 @@
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7611" name="Icy Air Bait" type="EtcItem">
@@ -173,6 +175,7 @@
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7612" name="Earth Bait" type="EtcItem">
@@ -185,6 +188,7 @@
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7613" name="Flaming Bait" type="EtcItem">
@@ -197,6 +201,7 @@
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7614" name="Chest Caught with Wind Bait" type="EtcItem">
@@ -205,6 +210,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7615" name="Chest Caught with Icy Air Bait" type="EtcItem">
@@ -213,6 +219,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7616" name="Chest Caught with Earth Bait" type="EtcItem">
@@ -221,6 +228,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7617" name="Chest Caught with Flaming Bait" type="EtcItem">
@@ -229,6 +237,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7618" name="Scroll of Escape: Ketra Orc Village" type="EtcItem">
@@ -240,13 +249,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2213" level="20" /> <!-- Scroll of Escape: Ketra Orc Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2213" level="20" /> <!-- Scroll of Escape: Ketra Orc Village -->
+		</skills>
 	</item>
 	<item id="7619" name="Scroll of Escape: Varka Silenos Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -257,13 +267,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2213" level="21" /> <!-- Scroll of Escape: Varka Silenos Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2213" level="21" /> <!-- Scroll of Escape: Varka Silenos Village -->
+		</skills>
 	</item>
 	<item id="7620" name="Trash" type="EtcItem">
 		<set name="icon" val="icon.etc_dragons_blood_i01" />
@@ -418,6 +429,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2217" level="1" /> <!-- Looted Goods - White Cargo Box -->
@@ -432,6 +444,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2217" level="2" /> <!-- Looted Goods - Blue Cargo Box -->
@@ -446,6 +459,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2217" level="3" /> <!-- Looted Goods - Yellow Cargo Box -->
@@ -460,6 +474,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2217" level="4" /> <!-- Looted Goods - Red Document Box -->
@@ -474,6 +489,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2217" level="5" /> <!-- Looted Goods - Purple Document Box -->
@@ -488,6 +504,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2219" level="1" /> <!-- Looted Goods - Brown Pouch -->
@@ -502,6 +519,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2219" level="2" /> <!-- Looted Goods - Grey Pouch -->
@@ -516,6 +534,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2218" level="1" /> <!-- Booty - Yellow Pouch -->
@@ -530,6 +549,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2218" level="2" /> <!-- Booty - Brown Pouch -->
@@ -542,6 +562,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7639" name="Spellbook: Mass Summon Aqua Cubic" type="EtcItem">
@@ -551,6 +572,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7640" name="Spellbook: Mass Summon Phantom Cubic" type="EtcItem">
@@ -560,6 +582,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7641" name="Spellbook: Summon Feline Queen" type="EtcItem">
@@ -569,6 +592,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7642" name="Spellbook: Summon Seraphim the Unicorn" type="EtcItem">
@@ -578,6 +602,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7643" name="Spellbook: Summon Nightshade" type="EtcItem">
@@ -587,6 +612,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7644" name="Spellbook: Summon Cursed Man" type="EtcItem">
@@ -596,6 +622,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7645" name="Spellbook: Balance Life" type="EtcItem">
@@ -605,6 +632,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7646" name="Spellbook: Curse of Doom" type="EtcItem">
@@ -614,6 +642,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7647" name="Spellbook: Curse of Abyss" type="EtcItem">
@@ -623,6 +652,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7648" name="Spellbook: Arcane Chaos" type="EtcItem">
@@ -632,6 +662,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7649" name="Spellbook: Fire Vortex" type="EtcItem">
@@ -641,6 +672,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7650" name="Spellbook: Ice Vortex" type="EtcItem">
@@ -650,6 +682,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7651" name="Spellbook: Wind Vortex" type="EtcItem">
@@ -659,6 +692,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7652" name="Spellbook: Light Vortex" type="EtcItem">
@@ -668,6 +702,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7653" name="Spellbook: Dark Vortex" type="EtcItem">
@@ -677,6 +712,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7654" name="Spellbook: Mass Warrior Bane" type="EtcItem">
@@ -686,6 +722,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7655" name="Spellbook: Mass Mage Bane" type="EtcItem">
@@ -695,6 +732,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7656" name="Spellbook: Warrior Servitor" type="EtcItem">
@@ -704,6 +742,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7657" name="Spellbook: Wizard Servitor" type="EtcItem">
@@ -713,6 +752,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7658" name="Spellbook: Assassin Servitor" type="EtcItem">
@@ -722,6 +762,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7659" name="Spellbook: Final Servitor" type="EtcItem">
@@ -731,6 +772,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7660" name="Spellbook: Warrior Bane" type="EtcItem">
@@ -740,6 +782,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7661" name="Spellbook: Mage Bane" type="EtcItem">
@@ -749,6 +792,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7662" name="Spellbook: Elemental Resistance" type="EtcItem">
@@ -758,6 +802,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7663" name="Spellbook: Divine Protection" type="EtcItem">
@@ -767,6 +812,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7664" name="Spellbook: Arcane Protection" type="EtcItem">
@@ -776,6 +822,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7665" name="Spellbook: Prophecy of Water" type="EtcItem">
@@ -785,6 +832,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7666" name="Spellbook: Prophecy of Fire" type="EtcItem">
@@ -794,6 +842,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7667" name="Spellbook: Prophecy of Wind" type="EtcItem">
@@ -803,6 +852,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7668" name="Spellbook: Block Shield" type="EtcItem">
@@ -812,6 +862,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7669" name="Spellbook: Block Wind Walk" type="EtcItem">
@@ -821,6 +872,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7670" name="Spellbook: Mass Block Shield" type="EtcItem">
@@ -830,6 +882,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7671" name="Spellbook: Mass Block Wind Walk" type="EtcItem">
@@ -839,6 +892,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7672" name="Amulet: Chant of Spirit" type="EtcItem">
@@ -848,6 +902,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7673" name="Amulet: Chant of Victory" type="EtcItem">
@@ -857,6 +912,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7674" name="Amulet: Pa'agrio's Eye" type="EtcItem">
@@ -866,6 +922,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7675" name="Amulet: Pa'agrio's Soul" type="EtcItem">
@@ -875,6 +932,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7676" name="Amulet: Seal of Despair" type="EtcItem">
@@ -884,6 +942,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7677" name="Virgil's Letter" type="EtcItem">
@@ -946,6 +1005,8 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="7681" name="Outlaw's Eyepatch" type="Armor">
@@ -957,6 +1018,8 @@
 		<set name="weight" val="10" />
 		<set name="price" val="50000" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="7682" name="Maiden's Hairpin" type="Armor">
@@ -967,6 +1030,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="50000" />
 		<cond msgId="1518">
 			<player sex="1" />
@@ -981,6 +1047,8 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="7684" name="Raccoon Ear Fabric" type="EtcItem">
@@ -991,6 +1059,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7685" name="Outlaw's Eyepatch Strap" type="EtcItem">
@@ -1001,6 +1070,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7686" name="Maiden's Hairpin Fragment" type="EtcItem">
@@ -1011,6 +1081,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7687" name="Rabbit Ear Fabric" type="EtcItem">
@@ -1021,6 +1092,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7688" name="Cat Ear Fabric" type="EtcItem">
@@ -1031,6 +1103,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="1000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7689" name="Recipe: Raccoon Ears" type="EtcItem">
@@ -1044,6 +1117,7 @@
 		<set name="recipe_id" val="776" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="7690" name="Recipe: Outlaw's Eyepatch" type="EtcItem">
@@ -1057,6 +1131,7 @@
 		<set name="recipe_id" val="777" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="7691" name="Recipe: Maiden's Hairpin" type="EtcItem">
@@ -1070,6 +1145,7 @@
 		<set name="recipe_id" val="778" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="7692" name="Recipe: Rabbit Ears" type="EtcItem">
@@ -1083,6 +1159,7 @@
 		<set name="recipe_id" val="779" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="7693" name="Recipe: Cat Ears" type="EtcItem">
@@ -1096,6 +1173,7 @@
 		<set name="recipe_id" val="780" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="7694" name="Noblesse Tiara" type="Armor">
@@ -1112,6 +1190,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_nobless;1}}" />
 	</item>
 	<item id="7695" name="Forget-me-not Hairpin" type="Armor">
@@ -1122,6 +1203,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="50000" />
 		<cond msgId="1518">
 			<player sex="1" />
@@ -1135,6 +1219,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="50000" />
 		<cond msgId="1518">
 			<player sex="1" />
@@ -1148,6 +1235,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7698" name="Piece of Daisy Hairpin" type="EtcItem">
@@ -1158,6 +1246,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7699" name="Recipe: Forget-me-not Hairpin" type="EtcItem">
@@ -1171,6 +1260,7 @@
 		<set name="recipe_id" val="781" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 </list>

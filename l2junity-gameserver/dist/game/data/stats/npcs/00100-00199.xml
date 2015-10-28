@@ -32,7 +32,7 @@
 			<skill id="23018" level="1" /> <!-- Stupid Turkey's Mistake -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="1000" />
+		<ai clanHelpRange="1000" aggroRange="300" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
@@ -106,7 +106,7 @@
 			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="8" />
 			<height normal="16.5" />
@@ -145,7 +145,7 @@
 		</skill_list>
 		<corpse_time>3</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -184,7 +184,7 @@
 		</skill_list>
 		<corpse_time>3</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -223,7 +223,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="0.01" />
 			<height normal="50" />
@@ -262,7 +262,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -313,7 +313,7 @@
 		</skill_list>
 		<corpse_time>12</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="16" />
 			<height normal="22" />
@@ -364,7 +364,7 @@
 		</skill_list>
 		<corpse_time>12</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="26" />
 			<height normal="35" />
@@ -402,7 +402,7 @@
 			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="8" />
 			<height normal="26.5" />
@@ -441,7 +441,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="40" />
 			<height normal="120" />
@@ -734,6 +734,7 @@
 		</skill_list>
 		<shots soul="2" spirit="2" />
 		<ex_crt_effect>true</ex_crt_effect>
+		<ai aggroRange="450" />
 		<collision>
 			<radius normal="10" />
 			<height normal="16" />
@@ -773,6 +774,7 @@
 		</skill_list>
 		<corpse_time>12</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
+		<ai aggroRange="450" />
 		<collision>
 			<radius normal="10" />
 			<height normal="14" />
@@ -812,6 +814,7 @@
 		</skill_list>
 		<corpse_time>12</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
+		<ai aggroRange="450" />
 		<collision>
 			<radius normal="10" />
 			<height normal="16" />
@@ -851,6 +854,7 @@
 		</skill_list>
 		<corpse_time>12</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="4.2" />
 			<height normal="5" />
@@ -890,7 +894,7 @@
 		</skill_list>
 		<corpse_time>10</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="4.2" />
 			<height normal="5" />
@@ -930,7 +934,7 @@
 		</skill_list>
 		<corpse_time>10</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="4.2" />
 			<height normal="5" />
@@ -970,7 +974,7 @@
 		</skill_list>
 		<corpse_time>10</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="4.2" />
 			<height normal="5" />
@@ -1088,6 +1092,7 @@
 		</skill_list>
 		<shots soul="2" spirit="2" />
 		<ex_crt_effect>false</ex_crt_effect>
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1126,7 +1131,7 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="11" />
 			<height normal="12.5" />
@@ -1165,7 +1170,7 @@
 			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai clanHelpRange="300" />
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1433,6 +1438,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="12" />
 			<height normal="25" />
@@ -1489,6 +1495,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="450" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1735,6 +1742,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<ai clanHelpRange="300" aggroRange="1000" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1763,6 +1771,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
 		<status targetable="false" showName="false" />
+		<ai clanHelpRange="300" aggroRange="300" />
 		<collision>
 			<radius normal="29" />
 			<height normal="30.5" />

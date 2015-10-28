@@ -21,14 +21,17 @@ package org.l2junity.gameserver.model.actor.stat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -36,6 +39,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.stats.functions.FuncAdd;
@@ -57,9 +61,12 @@ public class CharStat
 	private final int[] _traitsInvul = new int[TraitType.values().length];
 	/** Creature's maximum buff count. */
 	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
+	private int _vampiricSum = 0;
 	
 	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
 	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
+	private final Map<Stats, Map<MoveType, Double>> _moveTypeStats = new ConcurrentHashMap<>();
+	
 	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
 	
 	public CharStat(Creature activeChar)
@@ -67,29 +74,6 @@ public class CharStat
 		_activeChar = activeChar;
 		Arrays.fill(_attackTraits, 1.0f);
 		Arrays.fill(_defenceTraits, 1.0f);
-	}
-	
-	public final double calcStat(Stats stat, double init)
-	{
-		return calcStat(stat, init, null, null);
-	}
-	
-	/**
-	 * Calculate the new value of the state with modifiers that will be applied on the targeted L2Character.<BR>
-	 * <B><U> Concept</U> :</B><BR A L2Character owns a table of Calculators called <B>_calculators</B>. Each Calculator (a calculator per state) own a table of Func object. A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
-	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR>
-	 * When the calc method of a calculator is launched, each mathematical function is called according to its priority <B>_order</B>.<br>
-	 * Indeed, Func with lowest priority order is executed firsta and Funcs with the same order are executed in unspecified order.<br>
-	 * The result of the calculation is stored in the value property of an Env class instance.<br>
-	 * @param stat The stat to calculate the new value with modifiers
-	 * @param initVal The initial value of the stat before applying modifiers
-	 * @param target The L2Charcater whose properties will be used in the calculation (ex : CON, INT...)
-	 * @param skill The L2Skill whose properties will be used in the calculation (ex : Level...)
-	 * @return
-	 */
-	public final double calcStat(Stats stat, double initVal, Creature target, Skill skill)
-	{
-		return getValue(stat, initVal);
 	}
 	
 	/**
@@ -130,21 +114,18 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @param init
 	 * @return the Critical Damage rate (base+modifier) of the L2Character.
 	 */
-	public final double getCriticalDmg(Creature target, double init)
+	public final double getCriticalDmg(double init)
 	{
-		return calcStat(Stats.CRITICAL_DAMAGE, init, target, null);
+		return getValue(Stats.CRITICAL_DAMAGE, init);
 	}
 	
 	/**
-	 * @param target
-	 * @param skill
 	 * @return the Critical Hit rate (base+modifier) of the L2Character.
 	 */
-	public int getCriticalHit(Creature target, Skill skill)
+	public int getCriticalHit()
 	{
 		return (int) getValue(Stats.CRITICAL_RATE);
 	}
@@ -152,7 +133,8 @@ public class CharStat
 	public double getSkillCriticalRateBonus()
 	{
 		// There is a chance that activeChar has altered base stat for skill critical.
-		byte skillCritRateStat = (byte) _activeChar.calcStat(Stats.STAT_SKILLCRITICAL, -1);
+		double init = -1;
+		byte skillCritRateStat = (byte) _activeChar.getStat().getValue(Stats.STAT_SKILLCRITICAL, init);
 		if ((skillCritRateStat >= 0) && (skillCritRateStat < BaseStats.values().length))
 		{
 			return BaseStats.values()[skillCritRateStat].calcBonus(_activeChar);
@@ -171,19 +153,17 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @return the Attack Evasion rate (base+modifier) of the L2Character.
 	 */
-	public int getEvasionRate(Creature target)
+	public int getEvasionRate()
 	{
 		return (int) getValue(Stats.EVASION_RATE);
 	}
 	
 	/**
-	 * @param target
 	 * @return the Attack Evasion rate (base+modifier) of the L2Character.
 	 */
-	public int getMagicEvasionRate(Creature target)
+	public int getMagicEvasionRate()
 	{
 		return (int) getValue(Stats.MAGIC_EVASION_RATE);
 	}
@@ -237,7 +217,7 @@ public class CharStat
 	
 	public int getMaxRecoverableCp()
 	{
-		return (int) calcStat(Stats.MAX_RECOVERABLE_CP, getMaxCp());
+		return (int) getValue(Stats.MAX_RECOVERABLE_CP, getMaxCp());
 	}
 	
 	public int getMaxHp()
@@ -247,7 +227,7 @@ public class CharStat
 	
 	public int getMaxRecoverableHp()
 	{
-		return (int) calcStat(Stats.MAX_RECOVERABLE_HP, getMaxHp());
+		return (int) getValue(Stats.MAX_RECOVERABLE_HP, getMaxHp());
 	}
 	
 	public int getMaxMp()
@@ -257,17 +237,15 @@ public class CharStat
 	
 	public int getMaxRecoverableMp()
 	{
-		return (int) calcStat(Stats.MAX_RECOVERABLE_MP, getMaxMp());
+		return (int) getValue(Stats.MAX_RECOVERABLE_MP, getMaxMp());
 	}
 	
 	/**
 	 * Return the MAtk (base+modifier) of the L2Character.<br>
 	 * <B><U>Example of use</U>: Calculate Magic damage
-	 * @param target The L2Character targeted by the skill
-	 * @param skill The L2Skill used against the target
 	 * @return
 	 */
-	public int getMAtk(Creature target, Skill skill)
+	public int getMAtk()
 	{
 		return (int) getValue(Stats.MAGIC_ATTACK);
 	}
@@ -281,22 +259,18 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
-	 * @param skill
 	 * @return the Magic Critical Hit rate (base+modifier) of the L2Character.
 	 */
-	public final int getMCriticalHit(Creature target, Skill skill)
+	public final int getMCriticalHit()
 	{
 		return (int) getValue(Stats.MCRITICAL_RATE);
 	}
 	
 	/**
 	 * <B><U>Example of use </U>: Calculate Magic damage.
-	 * @param target The L2Character targeted by the skill
-	 * @param skill The L2Skill used against the target
 	 * @return the MDef (base+modifier) of the L2Character against a skill in function of abnormal effects in progress.
 	 */
-	public int getMDef(Creature target, Skill skill)
+	public int getMDef()
 	{
 		return (int) getValue(Stats.MAGIC_DEFENCE);
 	}
@@ -378,19 +352,17 @@ public class CharStat
 	}
 	
 	/**
-	 * @param skill
 	 * @return the MReuse rate (base+modifier) of the L2Character.
 	 */
-	public final double getMReuseRate(Skill skill)
+	public final double getMReuseRate()
 	{
-		return calcStat(Stats.MAGIC_REUSE_RATE, 1, null, skill);
+		return getValue(Stats.MAGIC_REUSE_RATE, 1);
 	}
 	
 	/**
-	 * @param target
 	 * @return the PAtk (base+modifier) of the L2Character.
 	 */
-	public int getPAtk(Creature target)
+	public int getPAtk()
 	{
 		return (int) getValue(Stats.POWER_ATTACK);
 	}
@@ -404,10 +376,9 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @return the PDef (base+modifier) of the L2Character.
 	 */
-	public int getPDef(Creature target)
+	public int getPDef()
 	{
 		return (int) getValue(Stats.POWER_DEFENCE);
 	}
@@ -431,12 +402,11 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @return the weapon reuse modifier.
 	 */
-	public final double getWeaponReuseModifier(Creature target)
+	public final double getWeaponReuseModifier()
 	{
-		return calcStat(Stats.ATK_REUSE, 1, target, null);
+		return getValue(Stats.ATK_REUSE, 1);
 	}
 	
 	/**
@@ -444,7 +414,7 @@ public class CharStat
 	 */
 	public final int getShldDef()
 	{
-		return (int) calcStat(Stats.SHIELD_DEFENCE, 0);
+		return (int) getValue(Stats.SHIELD_DEFENCE, 0);
 	}
 	
 	public long getSp()
@@ -493,19 +463,19 @@ public class CharStat
 			}
 		}
 		
-		mpConsume = calcStat(Stats.MP_CONSUME, mpConsume, null, skill);
+		mpConsume = getValue(Stats.MP_CONSUME, mpConsume);
 		
 		if (skill.isDance())
 		{
-			return (int) calcStat(Stats.DANCE_MP_CONSUME_RATE, mpConsume);
+			return (int) getValue(Stats.DANCE_MP_CONSUME_RATE, mpConsume);
 		}
 		else if (skill.isMagic())
 		{
-			return (int) calcStat(Stats.MAGICAL_MP_CONSUME_RATE, mpConsume);
+			return (int) getValue(Stats.MAGICAL_MP_CONSUME_RATE, mpConsume);
 		}
 		else
 		{
-			return (int) calcStat(Stats.PHYSICAL_MP_CONSUME_RATE, mpConsume);
+			return (int) getValue(Stats.PHYSICAL_MP_CONSUME_RATE, mpConsume);
 		}
 	}
 	
@@ -520,7 +490,7 @@ public class CharStat
 			return 1;
 		}
 		
-		return (int) calcStat(Stats.MP_CONSUME, skill.getMpInitialConsume(), null, skill);
+		return (int) getValue(Stats.MP_CONSUME, skill.getMpInitialConsume());
 	}
 	
 	public AttributeType getAttackElement()
@@ -680,7 +650,7 @@ public class CharStat
 	 */
 	public void mergeAdd(Stats stat, double val)
 	{
-		_statsAdd.merge(stat, val, stat::add);
+		_statsAdd.merge(stat, val, stat::functionAdd);
 	}
 	
 	/**
@@ -690,7 +660,7 @@ public class CharStat
 	 */
 	public void mergeMul(Stats stat, double val)
 	{
-		_statsMul.merge(stat, val, stat::mul);
+		_statsMul.merge(stat, val, stat::functionMul);
 	}
 	
 	/**
@@ -766,9 +736,29 @@ public class CharStat
 		return stat.finalize(_activeChar, Optional.empty());
 	}
 	
+	protected void resetStats()
+	{
+		_statsAdd.clear();
+		_statsMul.clear();
+		_vampiricSum = 0;
+		
+		// Initialize default values
+		for (Stats stat : Stats.values())
+		{
+			if (stat.getResetAddValue() != null)
+			{
+				_statsAdd.put(stat, stat.getResetAddValue());
+			}
+			if (stat.getResetMulValue() != null)
+			{
+				_statsMul.put(stat, stat.getResetMulValue());
+			}
+		}
+	}
+	
 	/**
 	 * Locks and resets all stats and recalculates all
-	 * @param broadcast TODO
+	 * @param broadcast
 	 */
 	public final void recalculateStats(boolean broadcast)
 	{
@@ -776,12 +766,11 @@ public class CharStat
 		try
 		{
 			// Copy old data before wiping it out
-			final Map<Stats, Double> adds = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsAdd);
-			final Map<Stats, Double> muls = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsMul);
+			final Map<Stats, Double> adds = !broadcast ? Collections.emptyMap() : new HashMap<>(_statsAdd);
+			final Map<Stats, Double> muls = !broadcast ? Collections.emptyMap() : new HashMap<>(_statsMul);
 			
 			// Wipe all the data
-			_statsAdd.clear();
-			_statsMul.clear();
+			resetStats();
 			
 			// Collect all necessary effects
 			final CharEffectList effectList = _activeChar.getEffectList();
@@ -804,11 +793,11 @@ public class CharStat
 				final Set<Stats> changed = new HashSet<>();
 				for (Stats stat : Stats.values())
 				{
-					if (_statsAdd.getOrDefault(stat, 0d) != adds.getOrDefault(stat, 0d))
+					if (_statsAdd.getOrDefault(stat, stat.getResetAddValue()) != adds.getOrDefault(stat, stat.getResetAddValue()))
 					{
 						changed.add(stat);
 					}
-					else if (_statsMul.getOrDefault(stat, 1d) != muls.getOrDefault(stat, 1d))
+					else if (_statsMul.getOrDefault(stat, stat.getResetMulValue()) != muls.getOrDefault(stat, stat.getResetMulValue()))
 					{
 						changed.add(stat);
 					}
@@ -855,6 +844,34 @@ public class CharStat
 			processStats(effected, funcClass, Stats.SWIM_WALK_SPEED, value);
 			processStats(effected, funcClass, Stats.FLY_RUN_SPEED, value);
 			processStats(effected, funcClass, Stats.FLY_WALK_SPEED, value);
+		}
+	}
+	
+	public double getMoveTypeValue(Stats stat, MoveType type)
+	{
+		return _moveTypeStats.getOrDefault(stat, Collections.emptyMap()).getOrDefault(type, 0d);
+	}
+	
+	public void mergeMoveTypeValue(Stats stat, MoveType type, double value)
+	{
+		_moveTypeStats.computeIfAbsent(stat, key -> new ConcurrentHashMap<>()).merge(type, value, MathUtil::add);
+	}
+	
+	public void addToVampiricSum(int sum)
+	{
+		_vampiricSum += sum;
+	}
+	
+	public int getVampiricSum()
+	{
+		_lock.readLock().lock();
+		try
+		{
+			return _vampiricSum;
+		}
+		finally
+		{
+			_lock.readLock().unlock();
 		}
 	}
 }

@@ -90,19 +90,21 @@ public class NpcBufferAI implements Runnable
 		
 		final PlayerInstance player = _npc.getSummoner().getActingPlayer();
 		
+		final Skill skill = getSkill(player);
+		if (skill == null)
+		{
+			return;
+		}
+		
 		switch (_skillData.getAffectScope())
 		{
 			case PARTY:
 			{
-				if (player.isInParty())
+				final Party party = player.getParty();
+				if (party != null)
 				{
-					for (PlayerInstance member : player.getParty().getMembers())
+					for (PlayerInstance member : party.getMembers())
 					{
-						final Skill skill = getSkill(player);
-						if (skill == null)
-						{
-							return;
-						}
 						if (Util.checkIfInRange(skill.getAffectRange(), _npc, member, true) && !member.isDead())
 						{
 							skill.applyEffects(player, member);
@@ -111,11 +113,6 @@ public class NpcBufferAI implements Runnable
 				}
 				else
 				{
-					final Skill skill = getSkill(player);
-					if (skill == null)
-					{
-						return;
-					}
 					if (Util.checkIfInRange(skill.getAffectRange(), _npc, player, true) && !player.isDead())
 					{
 						skill.applyEffects(player, player);
@@ -133,12 +130,7 @@ public class NpcBufferAI implements Runnable
 						{
 							if (isFriendly(player, target) && !target.isDead())
 							{
-								final Skill skill = getSkill(player);
-								if (skill == null)
-								{
-									return;
-								}
-								skill.applyEffects(target, target);
+								skill.applyEffects(player, target);
 							}
 							break;
 						}
@@ -151,13 +143,7 @@ public class NpcBufferAI implements Runnable
 								{
 									player.updatePvPStatus(target);
 								}
-								
-								final Skill skill = getSkill(player);
-								if (skill == null)
-								{
-									return;
-								}
-								skill.applyEffects(target, target);
+								skill.applyEffects(player, target);
 							}
 							break;
 						}
@@ -167,6 +153,7 @@ public class NpcBufferAI implements Runnable
 			}
 		}
 		ThreadPoolManager.getInstance().scheduleGeneral(this, _skillData.getDelay());
+		
 	}
 	
 	/**

@@ -52,6 +52,7 @@ public class PDefenseFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		baseValue += calcEnchantedItemBonus(creature, stat);
 		
 		final Transform transform = creature.getTransformation();
 		final Inventory inv = creature.getInventory();
@@ -65,9 +66,9 @@ public class PDefenseFinalizer implements IStatsFunction
 			final PlayerInstance player = creature.getActingPlayer();
 			for (int slot : SLOTS)
 			{
-				if (!inv.isPaperdollSlotEmpty(slot) || ((slot == Inventory.PAPERDOLL_CHEST) && (inv.getPaperdollItem(slot).getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)))
+				if (!inv.isPaperdollSlotEmpty(slot) || ((slot == Inventory.PAPERDOLL_LEGS) && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) && (inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)))
 				{
-					baseValue -= player.getTemplate().getBaseDefBySlot(transform != null ? transform.getBaseDefBySlot(player, slot) : slot);
+					baseValue -= transform != null ? transform.getBaseDefBySlot(player, slot) : player.getTemplate().getBaseDefBySlot(slot);
 				}
 			}
 			baseValue *= BaseStats.CHA.calcBonus(player);

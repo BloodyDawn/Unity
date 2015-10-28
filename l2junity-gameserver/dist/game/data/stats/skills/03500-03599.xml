@@ -517,11 +517,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.04" /> <!-- M. Def. +4% -->
-				<add stat="absorbDam" val="3" /> <!-- Restores 3% of melee damage inflicted on the enemy to oneself -->
 			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="70" />
 				<param HOLD="70" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -834,7 +836,6 @@
 				<mul stat="healEffect" val="1.1" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
-				<add stat="absorbDam" val="4" /> <!-- absorb 4% HP from damage inflicted on enemies -->
 			</effect>
 			<effect name="AttackTrait">
 				<param BLEED="40" />
@@ -845,6 +846,9 @@
 				<param BLEED="40" />
 				<param SHOCK="30" />
 				<param DERANGEMENT="30" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="4" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -863,7 +867,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="healEffect" val="#healEffect" />
-				<add stat="absorbDam" val="4" />
 				<add stat="darkRes" val="#darkRes" />
 			</effect>
 			<effect name="AttackTrait">
@@ -875,6 +878,9 @@
 				<param BLEED="30" />
 				<param SHOCK="#traits" />
 				<param DERANGEMENT="#traits" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="4" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -966,10 +972,10 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3564" levels="3" name="Special Ability: Haste">
+	<skill id="3564" levels="8" name="Special Ability: Haste">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 75 80 84 85 90 94 97 99 </table>
-		<table name="#pAtkSpd"> 1.07 1.1 1.11 </table>
+		<table name="#pAtkSpd"> 1.07 1.1 1.11 1.11 1.11 1.11 1.11 1.11 </table>
 		<set name="icon" val="icon.skill1086" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -984,10 +990,10 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3565" levels="5" name="Special Ability: Focus">
+	<skill id="3565" levels="10" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 75 80 84 85 86 85 90 94 97 99 </table>
-		<table name="#rCrit"> 80.6 107 123.5 129 129 </table>
+		<table name="#rCrit"> 80.6 107 123.5 129 129 129 129 129 129 129 </table>
 		<set name="icon" val="icon.skill1077" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -1002,10 +1008,10 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3566" levels="5" name="Special Ability: Focus">
+	<skill id="3566" levels="10" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 75 80 84 85 86 85 90 94 97 99 </table>
-		<table name="#rCrit"> 84.3 111.5 133.3 134.4 134.4 </table>
+		<table name="#rCrit"> 84.3 111.5 133.3 134.4 134.4 134.4 134.4 134.4 134.4 134.4 </table>
 		<set name="icon" val="icon.skill1077" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -1020,10 +1026,10 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3567" levels="5" name="Special Ability: Focus">
+	<skill id="3567" levels="10" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 75 80 84 85 86 85 90 94 97 99 </table>
-		<table name="#rCrit"> 88.1 116 133.9 139.9 139.9 </table>
+		<table name="#rCrit"> 88.1 116 133.9 139.9 139.9 139.9 139.9 139.9 139.9 139.9 </table>
 		<set name="icon" val="icon.skill1077" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -1042,24 +1048,26 @@
 		<!-- Confirmed CT2.5 -->
 		<table name="#absorbDam"> 3 4 </table>
 		<table name="#magicLvl"> 75 84 </table>
-		<set name="icon" val="icon.skill1268" />
+		<set name="icon" val="icon.ensoul_big_old" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="#absorbDam" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
+			</effect>
 		</for>
 	</skill>
-	<skill id="3569" levels="4" name="Special Ability: HP Regeneration">
+	<skill id="3569" levels="9" name="Special Ability: HP Regeneration">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 75 84 84 84 84 84 84 84 84 </table>
-		<table name="#regHp"> 2.04 4.92 5.15 5.18 </table>
+		<table name="#regHp"> 2.04 4.92 5.15 5.18 5.18 5.18 5.18 5.18 5.18 </table>
 		<set name="icon" val="icon.skill1044" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -1076,7 +1084,7 @@
 	</skill>
 	<skill id="3570" levels="1" name="Special Ability: Robust Health">
 		<!-- Confirmed CT2.5 -->
-		<set name="icon" val="icon.skill1311" />
+		<set name="icon" val="icon.ensoul_big_old" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
@@ -1118,9 +1126,9 @@
 			<effect name="BlockActions" />
 		</for>
 	</skill>
-	<skill id="3572" levels="4" name="Special Ability: Critical Damage">
+	<skill id="3572" levels="9" name="Special Ability: Critical Damage">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cAtkAdd"> 265 906 999 1059 </table>
+		<table name="#cAtkAdd"> 265 906 999 1059 1059 1059 1059 1059 1059 </table>
 		<table name="#magicLvl"> 75 84 85 86 85 90 94 97 99 </table>
 		<set name="icon" val="icon.skill0193" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1136,9 +1144,9 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3573" levels="3" name="Special Ability: Guidance">
+	<skill id="3573" levels="8" name="Special Ability: Guidance">
 		<!-- Confirmed CT2.5 -->
-		<table name="#accCombat"> 5.27 5.32 7.5 </table>
+		<table name="#accCombat"> 5.27 5.32 7.5 7.5 7.5 7.5 7.5 7.5 </table>
 		<table name="#magicLvl"> 75 80 84 85 90 95 97 99 </table>
 		<set name="icon" val="icon.skill1240" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1181,10 +1189,10 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3575" levels="4" name="Special Ability: Empower">
+	<skill id="3575" levels="9" name="Special Ability: Empower">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 75 84 85 86 86 86 86 86 86 </table>
-		<table name="#mAtk"> 60.09 151.09 166.54 176.53 </table>
+		<table name="#mAtk"> 60.09 151.09 166.54 176.53 176.53 176.53 176.53 176.53 176.53 </table>
 		<set name="icon" val="icon.skill1059" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -1199,10 +1207,10 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3576" levels="4" name="Special Ability: MP Regeneration">
+	<skill id="3576" levels="9" name="Special Ability: MP Regeneration">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 75 84 85 86 86 86 86 86 86 </table>
-		<table name="#regMp"> 0.54 1.95 2.04 2.05 </table>
+		<table name="#regMp"> 0.54 1.95 2.04 2.05 2.05 2.05 2.05 2.05 2.05 </table>
 		<set name="icon" val="icon.skill1047" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
@@ -1217,7 +1225,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="3577" levels="2" name="Special Ability: Magic Hold">
+	<skill id="3577" levels="3" name="Special Ability: Magic Hold">
 		<table name="#magicLvl"> 75 84 85 </table>
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="1" />
@@ -1497,14 +1505,15 @@
 				<mul stat="maxCp" val="1.5" /> <!-- CP +50% -->
 				<mul stat="pAtkSpd" val="1.03" /> <!-- Atk. Spd. +3% -->
 				<add stat="regMp" val="0.51" /> <!-- MP regen per tick +0.51 -->
-				<mul stat="rCrit" val="1.22"> <!-- Critical +22% from behind target -->
+				<mul stat="rCrit" val="0.22"> <!-- Critical +22% from behind target -->
 					<player behind="true" />
 				</mul>
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<add stat="absorbDam" val="2" /> <!-- absorb 2% HP from damage inflicted on enemies -->
+				<mul stat="pvpPhysDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<mul stat="pvpMagicalDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<mul stat="pvpPhysSkillsDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="2" chance="30" />
 			</effect>
 		</for>
 	</skill>

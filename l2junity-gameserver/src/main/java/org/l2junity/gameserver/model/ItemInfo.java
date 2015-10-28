@@ -76,6 +76,8 @@ public class ItemInfo
 	};
 	
 	private int[] _option;
+	private int[] _soulCrystalOptions;
+	private int[] _soulCrystalSpecialOptions;
 	private int _visualId;
 	private long _visualExpiration;
 	
@@ -151,6 +153,8 @@ public class ItemInfo
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_option = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
 		_visualId = item.getVisualId();
 	}
 	
@@ -207,6 +211,8 @@ public class ItemInfo
 		}
 		
 		_option = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalOptions = item.getSoulCrystalSpecialOptions();
 		_visualId = item.getVisualId();
 	}
 	
@@ -247,6 +253,9 @@ public class ItemInfo
 		_time = -9999;
 		
 		_location = 0;
+		
+		_soulCrystalOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
+		_soulCrystalSpecialOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
 	}
 	
 	public ItemInfo(WarehouseItem item)
@@ -297,6 +306,8 @@ public class ItemInfo
 			_elemDefAttr[i] = item.getElementDefAttr(i);
 		}
 		_option = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalOptions = item.getSoulCrystalSpecialOptions();
 	}
 	
 	public int getObjectId()
@@ -387,6 +398,16 @@ public class ItemInfo
 	public int getVisualId()
 	{
 		return _visualId;
+	}
+	
+	public int[] getSoulCrystalOptions()
+	{
+		return _soulCrystalOptions;
+	}
+	
+	public int[] getSoulCrystalSpecialOptions()
+	{
+		return _soulCrystalSpecialOptions;
 	}
 	
 	public long getVisualExpiration()

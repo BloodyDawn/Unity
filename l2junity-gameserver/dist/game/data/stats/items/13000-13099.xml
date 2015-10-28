@@ -11,11 +11,11 @@
 		<set name="weight" val="560" />
 		<set name="price" val="2032000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="73" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="13001" name="Sealed Helm of Nightmare" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -28,14 +28,14 @@
 		<set name="weight" val="560" />
 		<set name="price" val="2032000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="73" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="13002" name="Essence of Kamaloka" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_blue_i00" />
@@ -54,8 +54,8 @@
 	</item>
 	<item id="13003" name="Pathfinder's Reward (D-Grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_ball_silver_i00" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
@@ -74,8 +74,8 @@
 	</item>
 	<item id="13004" name="Pathfinder's Reward (C-Grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_ball_green_i00" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
@@ -94,8 +94,8 @@
 	</item>
 	<item id="13005" name="Pathfinder's Reward (B-Grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_bead_green_i00" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
@@ -114,8 +114,8 @@
 	</item>
 	<item id="13006" name="Pathfinder's Reward (A-Grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_bead_red_i00" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
@@ -134,8 +134,8 @@
 	</item>
 	<item id="13007" name="Pathfinder's Reward (S-Grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_bead_silver_i00" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
@@ -159,6 +159,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="3650" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13009" name="Inventory3" type="EtcItem">
@@ -242,6 +243,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13014" name="Freight Chest's Seal" type="EtcItem">
@@ -254,6 +256,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="13015" name="My Teleport Book" type="EtcItem">
@@ -280,6 +283,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="TELEPORTBOOKMARK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13017" name="White Weasel Minion Necklace" type="EtcItem">
@@ -301,12 +305,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13018" name="Fairy Princess Minion Necklace" type="EtcItem">
 		<set name="icon" val="icon.pet_controler_i00" />
@@ -327,12 +331,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13019" name="Wild Beast Fighter Minion Necklace" type="EtcItem">
 		<set name="icon" val="icon.pet_controler_i01" />
@@ -353,12 +357,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13020" name="Fox Shaman Minion Necklace" type="EtcItem">
 		<set name="icon" val="icon.pet_controler_i01" />
@@ -379,12 +383,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="13021" name="Color Title" type="EtcItem">
 		<set name="icon" val="icon.color_name_i00" />
@@ -410,7 +414,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8247-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -418,7 +421,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="8247" level="1" /> <!-- Ride Darkmane Pacer -->
 		</skills>
 	</item>
 	<item id="13023" name="Agathion - Love" name_additional="30-day" type="Armor">
@@ -432,7 +436,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="5763-1;8245-1;3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -440,6 +443,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="5763" level="1" /> <!-- Wink -->
+			<skill id="8245" level="1" /> <!-- Release Agathion's Seal - Love -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -454,7 +459,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8257-1;3267-1;5956-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -462,6 +466,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="8257" level="1" /> <!-- Release Agathion's Seal - Angry Devil -->
+			<skill id="5956" level="1" /> <!-- Agathion Cute Trick - Angry Devil -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -476,7 +482,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8256-1;3267-1;5955-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -484,6 +489,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="8256" level="1" /> <!-- Release Agathion's Seal - Joy -->
+			<skill id="5955" level="1" /> <!-- Agathion Cute Trick - Joy -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -498,7 +505,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8258-1;3267-1;5957-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -506,6 +512,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="8258" level="1" /> <!-- Release Agathion's Seal - Sorrow -->
+			<skill id="5957" level="1" /> <!-- Agathion Cute Trick - Sorrow -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -518,7 +526,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="reuse_delay" val="86400000" />
 		<!-- TODO: Manage global (main class <-> subclasses) reuse for skills. -->
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
@@ -556,6 +563,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="material" val="PAPER" />
 	</item>
 	<item id="13030" name="Vitality Replenishing Transformation Herb - Lava Golem" type="EtcItem">
@@ -565,6 +573,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="material" val="PAPER" />
 	</item>
 	<item id="13031" name="Vitality Replenishing Transformation Herb - Yeti" type="EtcItem">
@@ -574,6 +583,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="material" val="PAPER" />
 	</item>
 	<item id="13032" name="Pailaka Instant Shield" type="EtcItem">
@@ -598,12 +608,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2577" level="1" /> <!-- Instant Defense -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="43,44,45" />
 		</cond>
+		<skills>
+			<skill id="2577" level="1" /> <!-- Instant Defense -->
+		</skills>
 	</item>
 	<item id="13033" name="Quick Healing Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_red_i00" />
@@ -626,21 +636,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2592" level="1" /> <!-- Quick Healing Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="43,44,45" />
 		</cond>
+		<skills>
+			<skill id="2592" level="1" /> <!-- Quick Healing Potion -->
+		</skills>
 	</item>
 	<item id="13034" name="Spirit's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -656,24 +665,25 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_depositable" val="false" />
 		<cond msgId="1518">
 			<player instanceId="43" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="72" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13035" name="Reinforced Spirit's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -689,27 +699,28 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8237" level="1" /> <!-- Shalin Heal -->
-		</skills>
 		<cond msgId="1518">
 			<player instanceId="43" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="127" />
-			<set stat="mAtk" val="82" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8237" level="1" /> <!-- Shalin Heal -->
+		</skills>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13036" name="Sword of Ice and Fire" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -725,20 +736,23 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8238" level="1" /> <!-- Shalin Strike -->
-			<skill id="8237" level="1" /> <!-- Shalin Heal -->
-		</skills>
 		<cond msgId="1518">
 			<player instanceId="43" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="147" />
-			<set stat="mAtk" val="92" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8237" level="1" /> <!-- Shalin Heal -->
+			<skill id="8238" level="1" /> <!-- Shalin Strike -->
+		</skills>
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13037" name="Pailaka Soulshot (D-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
@@ -758,6 +772,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_questitem" val="true" />
 		<skills>
 			<skill id="2150" level="1" /> <!-- Soulshot (D-grade) -->
@@ -824,12 +839,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2335" level="1" /> <!-- Fire Resistance Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="43" />
 		</cond>
+		<skills>
+			<skill id="2335" level="1" /> <!-- Fire Resistance Potion -->
+		</skills>
 	</item>
 	<item id="13041" name="Water Attribute Enhancer" type="EtcItem">
 		<set name="icon" val="icon.etc_water_potion_i00" />
@@ -850,20 +865,18 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2336" level="1" /> <!-- Water Resistance Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="43" />
 		</cond>
+		<skills>
+			<skill id="2336" level="1" /> <!-- Water Resistance Potion -->
+		</skills>
 	</item>
 	<item id="13042" name="Ancient Legacy Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -879,27 +892,28 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8250" level="1" /> <!-- Summon Tigress -->
-		</skills>
 		<cond msgId="1518">
 			<player instanceId="44" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8250" level="1" /> <!-- Summon Tigress -->
+		</skills>
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13043" name="Reinforced Ancient Legacy Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -915,28 +929,29 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8250" level="1" /> <!-- Summon Tigress -->
-			<skill id="8242" level="1" /> <!-- Ice Ball -->
-		</skills>
 		<cond msgId="1518">
 			<player instanceId="44" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="279" />
-			<set stat="mAtk" val="153" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8242" level="1" /> <!-- Ice Ball -->
+			<skill id="8250" level="1" /> <!-- Summon Tigress -->
+		</skills>
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">153</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13044" name="Complete Ancient Legacy Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -952,21 +967,24 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8250" level="2" /> <!-- Summon Tigress -->
-			<skill id="8242" level="1" /> <!-- Ice Ball -->
-			<skill id="8243" level="1" /> <!-- Chill Strike -->
-		</skills>
 		<cond msgId="1518">
 			<player instanceId="44" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="299" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8242" level="1" /> <!-- Ice Ball -->
+			<skill id="8243" level="1" /> <!-- Chill Strike -->
+			<skill id="8250" level="2" /> <!-- Summon Tigress -->
+		</skills>
+		<stats>
+			<stat type="pAtk">299</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13045" name="Pailaka Soulshot (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
@@ -986,13 +1004,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2151" level="1" /> <!-- Soulshot (C-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="43,44,45" />
 		</cond>
+		<skills>
+			<skill id="2151" level="1" /> <!-- Soulshot (C-grade) -->
+		</skills>
 	</item>
 	<item id="13046" name="Pailaka Weapon Upgrade Stage 1" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i04" />
@@ -1055,12 +1074,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2578" level="1" /> <!-- Cure Poison Paralyze -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="44" />
 		</cond>
+		<skills>
+			<skill id="2578" level="1" /> <!-- Cure Poison Paralyze -->
+		</skills>
 	</item>
 	<item id="13049" name="Divine Soul" type="EtcItem">
 		<set name="icon" val="icon.etc_unholy_potion_i00" />
@@ -1080,12 +1099,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2340" level="1" /> <!-- Dark Attack Resistance Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="44" />
 		</cond>
+		<skills>
+			<skill id="2340" level="1" /> <!-- Dark Attack Resistance Potion -->
+		</skills>
 	</item>
 	<item id="13050" name="Tigress exclusive armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
@@ -1105,14 +1124,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="is_coc_restricted" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player instanceId="43,44,45" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="49" />
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="mDef">49</stat>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="13051" name="Hair Accessory" type="EtcItem">
 		<set name="icon" val="icon.accessory_bear_cap_i00" />
@@ -1121,6 +1142,7 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13052" name="Spear of Silenos" type="Weapon">
@@ -1128,8 +1150,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1145,31 +1165,32 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
+		<cond msgId="1518">
+			<player instanceId="45" />
+		</cond>
 		<skills>
 			<skill id="8249" level="1" type="ON_UNEQUIP" /> <!-- Cancel Critical Hit -->
 			<skill id="8239" level="1" /> <!-- Critical Up -->
 			<skill id="8240" level="1" /> <!-- Obliteration Storm -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<cond msgId="1518">
-			<player instanceId="45" />
-		</cond>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="13053" name="Reinforced Spear of Silenos" type="Weapon">
 		<set name="icon" val="icon.weapon_long_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1185,31 +1206,32 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
+		<cond msgId="1518">
+			<player instanceId="45" />
+		</cond>
 		<skills>
 			<skill id="8249" level="1" type="ON_UNEQUIP" /> <!-- Cancel Critical Hit -->
 			<skill id="8239" level="1" /> <!-- Critical Up -->
 			<skill id="8240" level="2" /> <!-- Obliteration Storm -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<cond msgId="1518">
-			<player instanceId="45" />
-		</cond>
-		<for>
-			<set stat="pAtk" val="271" />
-			<set stat="mAtk" val="171" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">271</stat>
+			<stat type="mAtk">171</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="13054" name="Complete Spear of Silenos" type="Weapon">
 		<set name="icon" val="icon.weapon_long_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1225,23 +1247,26 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
+		<cond msgId="1518">
+			<player instanceId="45" />
+		</cond>
 		<skills>
 			<skill id="8249" level="1" type="ON_UNEQUIP" /> <!-- Cancel Critical Hit -->
 			<skill id="8239" level="1" /> <!-- Critical Up -->
 			<skill id="8240" level="3" /> <!-- Obliteration Storm -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<cond msgId="1518">
-			<player instanceId="45" />
-		</cond>
-		<for>
-			<set stat="pAtk" val="291" />
-			<set stat="mAtk" val="181" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">291</stat>
+			<stat type="mAtk">181</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="13055" name="Pailaka Soulshot (A-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
@@ -1261,13 +1286,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2153" level="1" /> <!-- Soulshot (A-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="43,44,45" />
 		</cond>
+		<skills>
+			<skill id="2153" level="1" /> <!-- Soulshot (A-grade) -->
+		</skills>
 	</item>
 	<item id="13056" name="Weapon Upgrade Stage 1" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i04" />
@@ -1327,6 +1353,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="13059" name="Long-Range Defense Increasing Potion" type="EtcItem">
@@ -1351,12 +1379,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2593" level="1" /> <!-- Bow/Crossbow Attack Resistance Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="44" />
 		</cond>
+		<skills>
+			<skill id="2593" level="1" /> <!-- Bow/Crossbow Attack Resistance Potion -->
+		</skills>
 	</item>
 	<item id="13060" name="Tinplate Golem Transformation Stick" type="EtcItem">
 		<set name="icon" val="icon.etc_gateleeper_stick_i00" />
@@ -1364,6 +1392,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13061" name="Monster Only (Baroness' Employee)" type="Weapon">
@@ -1371,8 +1400,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1388,25 +1415,26 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13062" name="Monster Only (Employee's Friend)" type="Weapon">
 		<set name="icon" val="icon.weapon_mon_friend_employee_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1422,16 +1450,19 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="442" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">442</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13063" name="Unfair Joystick" type="EtcItem">
 		<set name="icon" val="icon.etc_gateleeper_stick_i00" />
@@ -1439,6 +1470,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13064" name="Unfair Naval Cannon Joystick" type="EtcItem">
@@ -1447,6 +1479,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13065" name="Treasure of the Seven Fortunes" type="EtcItem">
@@ -1455,6 +1488,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13066" name="Treasure of the Seven Fortunes" type="EtcItem">
@@ -1463,6 +1497,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13067" name="Fantasy Isle Coin" type="EtcItem">
@@ -1499,6 +1534,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13070" name="Premium Parcel Box Test" type="EtcItem">
@@ -1620,14 +1656,15 @@
 		<set name="weight" val="1170" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="SIGIL" />
 		<set name="price" val="3355000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="13078" name="Arcana Sigil" type="Armor">
 		<set name="icon" val="icon.arcana_sigil_i00" />
@@ -1642,18 +1679,18 @@
 		<set name="price" val="3355000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SIGIL" />
-		<skills>
-			<skill id="8310" level="1" /> <!-- Arcana Sigil -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="13" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8310" level="1" /> <!-- Arcana Sigil -->
+		</skills>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">13</stat>
+		</stats>
 	</item>
 	<item id="13079" name="My Teleport Book Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i01" />
@@ -1673,7 +1710,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13015" max="1" min="1" /> <!-- My Teleport Book -->
+			<item id="13015" min="1" max="1" chance="100" /> <!-- My Teleport Book -->
 		</capsuled_items>
 	</item>
 	<item id="13080" name="My Teleport Scroll 30-unit Pack" type="EtcItem">
@@ -1694,7 +1731,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13016" max="30" min="30" /> <!-- My Teleport Scroll -->
+			<item id="13016" min="30" max="30" chance="100" /> <!-- My Teleport Scroll -->
 		</capsuled_items>
 	</item>
 	<item id="13081" name="Entrance Pass: Kamaloka Pack" type="EtcItem">
@@ -1731,7 +1768,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="10649" max="3" min="3" /> <!-- Feather of Blessing -->
+			<item id="10649" min="3" max="3" chance="100" /> <!-- Feather of Blessing -->
 		</capsuled_items>
 	</item>
 	<item id="13083" name="Agathion - Love Pack (30-day)" type="EtcItem">
@@ -1752,7 +1789,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13023" max="1" min="1" /> <!-- Agathion - Love 30-day -->
+			<item id="13023" min="1" max="1" chance="100" /> <!-- Agathion - Love - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13084" name="Pumpkin Transformation Stick Pack (30-day)" type="EtcItem">
@@ -1773,7 +1810,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12800" max="1" min="1" /> <!-- Pumpkin Transformation Stick 30-day -->
+			<item id="12800" min="1" max="1" chance="100" /> <!-- Pumpkin Transformation Stick - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13085" name="Entrance Pass: Kamaloka 3-unit Pack" type="EtcItem">
@@ -1794,9 +1831,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13010" max="5" min="5" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) -->
-			<item chance="100.0" id="13011" max="5" min="5" /> <!-- Extra Pass: Near Kamaloka -->
-			<item chance="100.0" id="13012" max="5" min="5" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) -->
+			<item id="13010" min="5" max="5" chance="100" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) -->
+			<item id="13011" min="5" max="5" chance="100" /> <!-- Extra Pass: Near Kamaloka -->
+			<item id="13012" min="5" max="5" chance="100" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) -->
 		</capsuled_items>
 	</item>
 	<item id="13086" name="Kat the Cat Hat Pack (30-day)" type="EtcItem">
@@ -1817,7 +1854,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12782" max="1" min="1" /> <!-- Kat the Cat Hat 30-day -->
+			<item id="12782" min="1" max="1" chance="100" /> <!-- Kat the Cat Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13087" name="Feline Queen Hat Pack (30-day)" type="EtcItem">
@@ -1838,7 +1875,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12783" max="1" min="1" /> <!-- Feline Queen Hat 30-day -->
+			<item id="12783" min="1" max="1" chance="100" /> <!-- Feline Queen Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13088" name="Monster Eye Hat Pack (30-day)" type="EtcItem">
@@ -1859,7 +1896,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12786" max="1" min="1" /> <!-- Monster Eye Hat 30-day -->
+			<item id="12786" min="1" max="1" chance="100" /> <!-- Monster Eye Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13089" name="Brown Bear Hat Pack (30-day)" type="EtcItem">
@@ -1880,7 +1917,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12787" max="1" min="1" /> <!-- Brown Bear Hat 30-day -->
+			<item id="12787" min="1" max="1" chance="100" /> <!-- Brown Bear Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13090" name="Fungus Hat Pack (30-day)" type="EtcItem">
@@ -1901,7 +1938,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12788" max="1" min="1" /> <!-- Fungus Hat 30-day -->
+			<item id="12788" min="1" max="1" chance="100" /> <!-- Fungus Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13091" name="Skull Hat Pack (30-day)" type="EtcItem">
@@ -1922,7 +1959,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12789" max="1" min="1" /> <!-- Skull Hat 30-day -->
+			<item id="12789" min="1" max="1" chance="100" /> <!-- Skull Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13092" name="Ornithomimus Hat Pack (30-day)" type="EtcItem">
@@ -1943,7 +1980,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12790" max="1" min="1" /> <!-- Ornithomimus Hat 30-day -->
+			<item id="12790" min="1" max="1" chance="100" /> <!-- Ornithomimus Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13093" name="Feline King Hat Pack (30-day)" type="EtcItem">
@@ -1964,7 +2001,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12791" max="1" min="1" /> <!-- Feline King Hat 30-day -->
+			<item id="12791" min="1" max="1" chance="100" /> <!-- Feline King Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13094" name="Kai the Cat Hat Pack (30-day)" type="EtcItem">
@@ -1985,7 +2022,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12792" max="1" min="1" /> <!-- Kai the Cat Hat 30-day -->
+			<item id="12792" min="1" max="1" chance="100" /> <!-- Kai the Cat Hat - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13095" name="OX Stick Pack (30-day)" type="EtcItem">
@@ -2006,8 +2043,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12793" max="1" min="1" /> <!-- O Stick 30-day -->
-			<item chance="100.0" id="12794" max="1" min="1" /> <!-- X Stick 30-day -->
+			<item id="12793" min="1" max="1" chance="100" /> <!-- O Stick - 30-day -->
+			<item id="12794" min="1" max="1" chance="100" /> <!-- X Stick - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13096" name="Rock-Paper-Scissors Stick Pack (30-day)" type="EtcItem">
@@ -2028,9 +2065,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="12795" max="1" min="1" /> <!-- Scissors Stick 30-day -->
-			<item chance="100.0" id="12796" max="1" min="1" /> <!-- Rock Stick 30-day -->
-			<item chance="100.0" id="12797" max="1" min="1" /> <!-- Paper Stick 30-day -->
+			<item id="12795" min="1" max="1" chance="100" /> <!-- Scissors Stick - 30-day -->
+			<item id="12796" min="1" max="1" chance="100" /> <!-- Rock Stick - 30-day -->
+			<item id="12797" min="1" max="1" chance="100" /> <!-- Paper Stick - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="13097" name="Darkmane Pacer Bracelet Pack" type="EtcItem">
@@ -2051,7 +2088,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13022" max="1" min="1" /> <!-- Mount - Darkmane Pacer 7-day -->
+			<item id="13022" min="1" max="1" chance="100" /> <!-- Mount - Darkmane Pacer - 7-day -->
 		</capsuled_items>
 	</item>
 	<item id="13098" name="Color Title 3-unit Pack" type="EtcItem">
@@ -2072,7 +2109,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13021" max="3" min="3" /> <!-- Color Title -->
+			<item id="13021" min="3" max="3" chance="100" /> <!-- Color Title -->
 		</capsuled_items>
 	</item>
 	<item id="13099" name="Sealed Arcana Sigil Piece" type="EtcItem">
@@ -2083,6 +2120,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="14341" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

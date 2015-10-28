@@ -33,6 +33,7 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
@@ -46,9 +47,9 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
-import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -56,8 +57,9 @@ import org.l2junity.gameserver.model.holders.AlterSkillHolder;
 import org.l2junity.gameserver.model.holders.AttachSkillHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
-import org.l2junity.gameserver.model.stats.BasicProperty;
+import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -169,7 +171,6 @@ public final class Skill implements IIdentifiable
 	// Flying support
 	private final FlyType _flyType;
 	private final int _flyRadius;
-	private final float _flyCourse;
 	
 	private final boolean _isDebuff;
 	
@@ -177,7 +178,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _canBeDispelled;
 	
 	private final boolean _excludedFromCheck;
-	private final boolean _simultaneousCast;
+	private final boolean _withoutAction;
 	
 	private ExtractableSkill _extractableItems = null;
 	
@@ -202,6 +203,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _isNecessaryToggle;
 	private final boolean _deleteAbnormalOnLeave;
 	private final boolean _irreplacableBuff; // Stays after death, on subclass change, cant be canceled.
+	private final boolean _blockActionUseSkill; // Blocks the use skill client action and is not showed on skill list.
 	
 	private final int _toggleGroupId;
 	private final int _attachToggleGroupId;
@@ -364,12 +366,11 @@ public final class Skill implements IIdentifiable
 		
 		_flyType = set.getEnum("flyType", FlyType.class, null);
 		_flyRadius = set.getInt("flyRadius", 0);
-		_flyCourse = set.getFloat("flyCourse", 0);
 		
 		_canBeDispelled = set.getBoolean("canBeDispelled", true);
 		
 		_excludedFromCheck = set.getBoolean("excludedFromCheck", false);
-		_simultaneousCast = set.getBoolean("simultaneousCast", false);
+		_withoutAction = set.getBoolean("withoutAction", false);
 		
 		String capsuled_items = set.getString("capsuled_items_skill", null);
 		if (capsuled_items != null)
@@ -399,6 +400,7 @@ public final class Skill implements IIdentifiable
 		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
 		_deleteAbnormalOnLeave = set.getBoolean("deleteAbnormalOnLeave", false);
 		_irreplacableBuff = set.getBoolean("irreplacableBuff", false);
+		_blockActionUseSkill = set.getBoolean("blockActionUseSkill", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
@@ -969,19 +971,14 @@ public final class Skill implements IIdentifiable
 		return _flyRadius;
 	}
 	
-	public float getFlyCourse()
-	{
-		return _flyCourse;
-	}
-	
 	public boolean isStayAfterDeath()
 	{
-		return _stayAfterDeath || isIrreplacableBuff();
+		return _stayAfterDeath || isIrreplacableBuff() || isNecessaryToggle();
 	}
 	
 	public boolean isBad()
 	{
-		return _effectPoint < 0;
+		return (_effectPoint < 0) && (_targetType != L2TargetType.SELF);
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object)
@@ -1241,14 +1238,14 @@ public final class Skill implements IIdentifiable
 				{
 					if (applyInstantEffects && effect.calcSuccess(info.getEffector(), info.getEffected(), info.getSkill()))
 					{
-						effect.instant(info.getEffector(), info.getEffected(), info.getSkill());
+						effect.instant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
 					}
 				}
 				else if (addContinuousEffects)
 				{
 					if (applyInstantEffects)
 					{
-						effect.continuousInstant(info.getEffector(), info.getEffected(), info.getSkill());
+						effect.continuousInstant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
 					}
 					
 					if (effect.canStart(info))
@@ -1261,18 +1258,30 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int)}.<br>
+	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int, ItemInstance)}.<br>
 	 * Simplify the calls.
 	 * @param effector the caster of the skill
 	 * @param effected the target of the effect
 	 */
 	public void applyEffects(Creature effector, Creature effected)
 	{
-		applyEffects(effector, effected, false, false, true, 0);
+		applyEffects(effector, effected, false, false, true, 0, null);
 	}
 	
 	/**
-	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int)}.<br>
+	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int, ItemInstance)}.<br>
+	 * Simplify the calls.
+	 * @param effector the caster of the skill
+	 * @param effected the target of the effect
+	 * @param item
+	 */
+	public void applyEffects(Creature effector, Creature effected, ItemInstance item)
+	{
+		applyEffects(effector, effected, false, false, true, 0, item);
+	}
+	
+	/**
+	 * Method overload for {@link Skill#applyEffects(Creature, Creature, boolean, boolean, boolean, int, ItemInstance)}.<br>
 	 * Simplify the calls, allowing abnormal time time customization.
 	 * @param effector the caster of the skill
 	 * @param effected the target of the effect
@@ -1281,7 +1290,7 @@ public final class Skill implements IIdentifiable
 	 */
 	public void applyEffects(Creature effector, Creature effected, boolean instant, int abnormalTime)
 	{
-		applyEffects(effector, effected, false, false, instant, abnormalTime);
+		applyEffects(effector, effected, false, false, instant, abnormalTime, null);
 	}
 	
 	/**
@@ -1292,8 +1301,9 @@ public final class Skill implements IIdentifiable
 	 * @param passive if {@code true} passive effects will be applied to the effector
 	 * @param instant if {@code true} instant effects will be applied to the effected
 	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
+	 * @param item
 	 */
-	public void applyEffects(Creature effector, Creature effected, boolean self, boolean passive, boolean instant, int abnormalTime)
+	public void applyEffects(Creature effector, Creature effected, boolean self, boolean passive, boolean instant, int abnormalTime, ItemInstance item)
 	{
 		// null targets cannot receive any effects.
 		if (effected == null)
@@ -1322,7 +1332,7 @@ public final class Skill implements IIdentifiable
 		boolean addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isContinuous() && Formulas.calcEffectSuccess(effector, effected, this)));
 		if (!self && !passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effected, this, !instant);
+			final BuffInfo info = new BuffInfo(effector, effected, this, !instant, item);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1338,10 +1348,18 @@ public final class Skill implements IIdentifiable
 			if (addContinuousEffects)
 			{
 				effected.getEffectList().add(info);
+				
+				// Check for mesmerizing debuffs and increase resist level.
+				if (isDebuff() && (getBasicProperty() != BasicProperty.NONE) && effected.isPlayer() && effected.getActingPlayer().hasBasicPropertyResist())
+				{
+					final BasicPropertyResist resist = effected.getActingPlayer().getBasicPropertyResist(getBasicProperty());
+					resist.increaseResistLevel();
+					effected.sendDebugMessage(toString() + " has increased your " + getBasicProperty() + " debuff resistance to " + resist.getResistLevel() + " level for " + resist.getRemainTime().toMillis() + " milliseconds.");
+				}
 			}
 			
 			// Support for buff sharing feature including healing herbs.
-			if (isSharedWithSummon() && effected.isPlayer() && effected.hasServitors())
+			if (isSharedWithSummon() && effected.isPlayer() && effected.hasServitors() && !isTransformation())
 			{
 				if ((addContinuousEffects && isContinuous() && !isDebuff()) || isRecoveryHerb())
 				{
@@ -1354,7 +1372,7 @@ public final class Skill implements IIdentifiable
 		{
 			addContinuousEffects = !passive && (_operateType.isToggle() || ((_operateType.isContinuous() || _operateType.isSelfContinuous()) && Formulas.calcEffectSuccess(effector, effector, this)));
 			
-			final BuffInfo info = new BuffInfo(effector, effector, this, !instant);
+			final BuffInfo info = new BuffInfo(effector, effector, this, !instant, item);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1378,7 +1396,7 @@ public final class Skill implements IIdentifiable
 		
 		if (passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effector, this, true);
+			final BuffInfo info = new BuffInfo(effector, effector, this, true, item);
 			applyEffectScope(EffectScope.PASSIVE, info, false, true);
 			effector.getEffectList().add(info);
 		}
@@ -1395,22 +1413,34 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
+	 * Activates a skill for the given creature and targets.
+	 * @param caster the caster
+	 * @param item
+	 * @param targets the targets
+	 */
+	public void activateSkill(Creature caster, ItemInstance item, Creature... targets)
+	{
+		activateSkill(caster, null, item, targets);
+	}
+	
+	/**
 	 * Activates a skill for the given cubic and targets.
 	 * @param cubic the cubic
 	 * @param targets the targets
 	 */
-	public void activateSkill(L2CubicInstance cubic, Creature... targets)
+	public void activateSkill(CubicInstance cubic, Creature... targets)
 	{
-		activateSkill(cubic.getOwner(), cubic, targets);
+		activateSkill(cubic.getOwner(), cubic, null, targets);
 	}
 	
 	/**
 	 * Activates the skill to the targets.
 	 * @param caster the caster
 	 * @param cubic the cubic that cast the skill, can be {@code null}
+	 * @param item
 	 * @param targets the targets
 	 */
-	public final void activateSkill(Creature caster, L2CubicInstance cubic, Creature... targets)
+	public final void activateSkill(Creature caster, CubicInstance cubic, ItemInstance item, Creature... targets)
 	{
 		// TODO: replace with AI
 		switch (getId())
@@ -1457,7 +1487,7 @@ public final class Skill implements IIdentifiable
 						// and continuous effects on caster
 						applyEffects(target, caster, false, 0);
 						
-						final BuffInfo info = new BuffInfo(caster, target, this, false);
+						final BuffInfo info = new BuffInfo(caster, target, this, false, item);
 						applyEffectScope(EffectScope.GENERAL, info, true, false);
 						
 						EffectScope pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE : caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;
@@ -1467,7 +1497,7 @@ public final class Skill implements IIdentifiable
 					}
 					else
 					{
-						applyEffects(caster, target);
+						applyEffects(caster, target, item);
 					}
 				}
 				break;
@@ -1481,7 +1511,7 @@ public final class Skill implements IIdentifiable
 			{
 				caster.stopSkillEffects(true, getId());
 			}
-			applyEffects(caster, caster, true, false, true, 0);
+			applyEffects(caster, caster, true, false, true, 0, item);
 		}
 		
 		if (cubic == null)
@@ -1571,9 +1601,9 @@ public final class Skill implements IIdentifiable
 		return _excludedFromCheck;
 	}
 	
-	public boolean isSimultaneousCast()
+	public boolean isWithoutAction()
 	{
-		return _simultaneousCast;
+		return _withoutAction;
 	}
 	
 	/**
@@ -1783,7 +1813,7 @@ public final class Skill implements IIdentifiable
 		}
 		
 		// Default toggle group ID, assume nothing attached.
-		if (getAttachToggleGroupId() <= 0)
+		if ((getAttachToggleGroupId() <= 0) || (getAttachSkills() == null))
 		{
 			return null;
 		}
@@ -1845,6 +1875,14 @@ public final class Skill implements IIdentifiable
 	public boolean isIrreplacableBuff()
 	{
 		return _irreplacableBuff;
+	}
+	
+	/**
+	 * @return if skill could not be requested for use by players.
+	 */
+	public boolean isBlockActionUseSkill()
+	{
+		return _blockActionUseSkill;
 	}
 	
 	public int getToggleGroupId()

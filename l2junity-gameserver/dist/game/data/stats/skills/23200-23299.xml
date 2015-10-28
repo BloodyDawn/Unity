@@ -27,7 +27,7 @@
 		</for>
 	</skill>
 	<skill id="23201" levels="1" name="Ball Trapping Gnosian Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -41,7 +41,7 @@
 		</cond>
 	</skill>
 	<skill id="23202" levels="1" name="Ball Trapping Orodriel Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -55,7 +55,7 @@
 		</cond>
 	</skill>
 	<skill id="23203" levels="1" name="Penalty Kick Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -69,7 +69,7 @@
 		</cond>
 	</skill>
 	<skill id="23204" levels="1" name="Ball Trapping Gnosian Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -83,7 +83,7 @@
 		</cond>
 	</skill>
 	<skill id="23205" levels="1" name="Ball Trapping Orodriel Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -97,7 +97,7 @@
 		</cond>
 	</skill>
 	<skill id="23206" levels="1" name="Penalty Kick Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -111,7 +111,7 @@
 		</cond>
 	</skill>
 	<skill id="23207" levels="1" name="Ball Trapping Gnosian Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -125,7 +125,7 @@
 		</cond>
 	</skill>
 	<skill id="23208" levels="1" name="Ball Trapping Orodriel Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -139,7 +139,7 @@
 		</cond>
 	</skill>
 	<skill id="23209" levels="1" name="Penalty Kick Agathion Cute Trick">
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -164,11 +164,13 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A3" />
-		<set name="reuseDelay" val="1000" />
+		<set name="reuseDelay" val="1500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="650" />
+		<set name="hitTime" val="1000" />
+		<set name="castRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23211" levels="85" name="Prominence">
@@ -186,6 +188,8 @@
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23212" levels="85" name="Flame Strike">
@@ -205,6 +209,8 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23213" levels="2" name="Berserker Spirit">
@@ -223,6 +229,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23214" levels="1" name="Good/Bad of Life">
@@ -269,6 +276,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23217" levels="1" name="Granny Tiger Agathion Special Skill: Fundamentals">
@@ -289,6 +297,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23218" levels="1" name="Flower Fairy Spirit Agathion Cute Trick">
@@ -299,6 +308,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23219" levels="1" name="Flower Fairy Spirit Agathion Special Skill - Fairy's Blessing">
@@ -319,6 +329,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23220" levels="1" name="Cheerleader Orodriel Agathion Cute Trick">
@@ -329,6 +340,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23221" levels="1" name="Cheerleader Orodriel Agathion Special Skill: Joy of Cheering">
@@ -349,6 +361,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23222" levels="1" name="Cheerleader Lanya Agathion Cute Trick">
@@ -359,6 +372,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23223" levels="1" name="Cheerleader Lanya Agathion Special Skill: Joy of Cheering">
@@ -379,6 +393,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23224" levels="1" name="Cheerleader Naonin Agathion Cute Trick">
@@ -389,6 +404,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23225" levels="1" name="Cheerleader Naonin Agathion Special Skill: Joy of Cheering">
@@ -409,6 +425,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23226" levels="1" name="Cheerleader Mortia Agathion Cute Trick">
@@ -419,6 +436,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23227" levels="1" name="Cheerleader Mortia Agathion Special Skill: Joy of Cheering">
@@ -439,6 +457,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23228" levels="1" name="Cheerleader Kaurin Agathion Cute Trick">
@@ -449,6 +468,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23229" levels="1" name="Cheerleader Kaurin Agathion Special Skill: Joy of Cheering">
@@ -469,6 +489,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23230" levels="1" name="Cheerleader Meruril Agathion Cute Trick">
@@ -479,6 +500,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23231" levels="1" name="Cheerleader Meruril Agathion Special Skill: Joy of Cheering">
@@ -499,6 +521,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23232" levels="1" name="Handy Agathion Cute Trick">
@@ -509,6 +532,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23233" levels="1" name="Handy Agathion Special Skill - Halloween's Blessing">
@@ -530,6 +554,7 @@
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23234" levels="1" name="Singer and Dancer Agathion Cute Trick">
@@ -539,6 +564,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23235" levels="1" name="Singer and Dancer Agathion Special Skill: Hunter's Song">
@@ -553,6 +580,9 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1200000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23236" levels="1" name="Agathion Cute Trick - Zaken's Spirit Swords">
@@ -562,6 +592,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23237" levels="1" name="Swords' Song">
@@ -576,6 +608,9 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1800" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="7200000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23238" levels="1" name="Master's Blessing - Eye of Pa'agrio">
@@ -586,15 +621,16 @@
 		<set name="abnormalType" val="IMPROVE_HIT_DEFENCE_CRT_RATE_UP" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="2500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="5000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1364" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -617,15 +653,16 @@
 		<set name="abnormalType" val="IMPROVE_MA_MD_UP" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="2500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="5000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1365" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -655,6 +692,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="79" />
+		<set name="icon" val="icon.skill1413" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -685,19 +724,19 @@
 		<set name="abnormalType" val="IMPROVE_VAMPIRIC_HASTE" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1519" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -705,6 +744,9 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="VAMPIRIC_ATTACK;ATTACK_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -724,6 +766,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="49" />
+		<set name="icon" val="icon.skill0826" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -743,13 +787,15 @@
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="4000" />
+		<set name="hitTime" val="500" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="49" />
+		<set name="icon" val="icon.skill0827" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -778,6 +824,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="46" />
+		<set name="icon" val="icon.skill0829" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -806,6 +854,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="46" />
+		<set name="icon" val="icon.skill0830" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -833,6 +883,8 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1542" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -851,7 +903,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MD_UP_ATTR" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
 		<set name="operateType" val="A2" />
@@ -860,6 +912,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="76" />
+		<set name="icon" val="icon.skill1352" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -876,7 +930,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="RESIST_DEBUFF_DISPEL" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
 		<set name="operateType" val="A2" />
@@ -885,6 +939,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="82" />
+		<set name="icon" val="icon.skill1354" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -898,13 +954,15 @@
 		<!-- GM Skill -->
 		<set name="castRange" val="2000" />
 		<set name="effectRange" val="2000" />
-		<set name="hitTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="78" />
 		<set name="affectRange" val="-2" />
+		<set name="icon" val="icon.skill1429" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="CallTargetParty" />
@@ -917,6 +975,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23251" levels="1" name="Agathion Cute Trick - Makeshift Bat">
@@ -926,6 +986,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23252" levels="1" name="Agathion Cute Trick - Griffin">
@@ -935,6 +997,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill_agathion_cute" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23253" levels="1" name="Master's Blessing - Focus">
@@ -951,10 +1015,12 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.skill1077" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 			</effect>
 		</for>
 	</skill>
@@ -972,6 +1038,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="56" />
+		<set name="icon" val="icon.skill1242" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -993,6 +1061,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.skill1086" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1014,6 +1084,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="56" />
+		<set name="icon" val="icon.skill1240" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1035,6 +1107,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="72" />
+		<set name="icon" val="icon.skill1045" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MaxHp">
@@ -1056,6 +1130,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="70" />
+		<set name="icon" val="icon.skill1048" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1077,6 +1153,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.skill1087" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1098,6 +1176,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="48" />
+		<set name="icon" val="icon.skill1085" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1119,6 +1199,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.skill1257" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1140,6 +1222,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="40" />
+		<set name="icon" val="icon.skill1068" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1161,6 +1245,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="44" />
+		<set name="icon" val="icon.skill1040" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1182,6 +1268,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.skill1036" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1203,10 +1291,12 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="72" />
+		<set name="icon" val="icon.skill1268" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="9" chance="80" />
 			</effect>
 		</for>
 	</skill>
@@ -1224,6 +1314,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.skill1059" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1245,6 +1337,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="30" />
+		<set name="icon" val="icon.skill1204" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1266,6 +1360,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.skill1062" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1294,6 +1390,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="74" />
+		<set name="icon" val="icon.skill1388" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1315,6 +1413,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="74" />
+		<set name="icon" val="icon.skill1389" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1336,6 +1436,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="70" />
+		<set name="icon" val="icon.skill1303" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1357,6 +1459,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="74" />
+		<set name="icon" val="icon.skill1397" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1380,6 +1484,8 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1355" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1413,6 +1519,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="78" />
+		<set name="icon" val="icon.skill1356" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1446,10 +1554,12 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="78" />
+		<set name="icon" val="icon.skill1357" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -1459,10 +1569,12 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="moveSpeed" val="0.8" />
-				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 			</effect>
 			<effect name="MaxHp">
 				<param amount="20" mode="PER" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1480,6 +1592,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="78" />
+		<set name="icon" val="icon.skill1363" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1507,17 +1621,18 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_PA_PD_UP" />
 		<set name="affectRange" val="2000" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="70" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1499" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1539,17 +1654,18 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_MA_MD_UP" />
 		<set name="affectRange" val="2000" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1500" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1571,17 +1687,18 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_HP_MP_UP" />
 		<set name="affectRange" val="2000" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="72" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1501" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1605,21 +1722,22 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_CRT_RATE_DMG_UP" />
 		<set name="affectRange" val="2000" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1502" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1637,17 +1755,18 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_SHIELD_RATE_DEFENCE_UP" />
 		<set name="affectRange" val="2000" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="70" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1503" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1669,17 +1788,18 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_SPEED_AVOID_UP" />
 		<set name="affectRange" val="2000" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="72" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1504" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1709,13 +1829,15 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="49" />
+		<set name="icon" val="icon.skill0825" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
 				</mul>
-				<mul stat="rCrit" val="1.2">
+				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
 				</mul>
 			</effect>
@@ -1729,13 +1851,15 @@
 		<set name="abnormalType" val="DWARF_DEFENCE_BUFF" />
 		<set name="affectRange" val="2000" />
 		<set name="coolTime" val="500" />
-		<set name="hitTime" val="4000" />
+		<set name="hitTime" val="500" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="46" />
+		<set name="icon" val="icon.skill0828" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1753,13 +1877,15 @@
 		<set name="abnormalType" val="PRESERVE_ABNORMAL" />
 		<set name="affectRange" val="2000" />
 		<set name="canBeDispelled" val="false" />
-		<set name="hitTime" val="4000" />
+		<set name="hitTime" val="500" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="icon.skill1323" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="NoblesseBless" />
@@ -1776,11 +1902,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="5000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1364" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1806,11 +1933,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="5000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1365" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1839,6 +1967,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="79" />
+		<set name="icon" val="icon.skill1413" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1872,15 +2002,15 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1519" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1888,6 +2018,9 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="VAMPIRIC_ATTACK;ATTACK_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1906,6 +2039,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="49" />
+		<set name="icon" val="icon.skill0826" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1931,6 +2066,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="49" />
+		<set name="icon" val="icon.skill0827" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1958,6 +2095,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="46" />
+		<set name="icon" val="icon.skill0829" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1985,6 +2124,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="46" />
+		<set name="icon" val="icon.skill0830" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2011,6 +2152,8 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1542" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -2037,6 +2180,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="76" />
+		<set name="icon" val="icon.skill1352" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2061,6 +2206,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="82" />
+		<set name="icon" val="icon.skill1354" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2082,6 +2229,10 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="1200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="icon" val="BranchSys.icon.br_xmas_weapon_i00" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
+		<set name="reuseDelay" val="600000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23298" levels="1" name="Flame Hawk">
@@ -2099,6 +2250,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
+		<set name="icon" val="icon.skill0771" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -2122,6 +2275,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
+		<set name="icon" val="icon.skill0772" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="5">

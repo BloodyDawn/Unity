@@ -26,6 +26,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalInt;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.World;
@@ -59,7 +60,7 @@ public final class ZoneManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ZoneManager.class);
 	
-	private static final Map<String, AbstractZoneSettings> _settings = new HashMap<>();
+	private static final Map<String, AbstractZoneSettings> SETTINGS = new HashMap<>();
 	
 	public static final int SHIFT_BY = 15;
 	public static final int OFFSET_X = Math.abs(World.MAP_MIN_X >> SHIFT_BY);
@@ -104,7 +105,7 @@ public final class ZoneManager implements IGameXmlReader
 			{
 				if (zone.getSettings() != null)
 				{
-					_settings.put(zone.getName(), zone.getSettings());
+					SETTINGS.put(zone.getName(), zone.getSettings());
 				}
 			}
 		}
@@ -131,7 +132,8 @@ public final class ZoneManager implements IGameXmlReader
 				((Creature) obj).revalidateZone(true);
 			}
 		}
-		_settings.clear();
+		
+		SETTINGS.clear();
 	}
 	
 	@Override
@@ -402,6 +404,8 @@ public final class ZoneManager implements IGameXmlReader
 		parseDatapackDirectory("data/zones/npcSpawnTerritories", false);
 		LOGGER.info("Loaded {} zone classes and {} zones.", _classZones.size(), getSize());
 		LOGGER.info("Loaded {} NPC spawn territoriers.", _spawnTerritories.size());
+		final OptionalInt maxId = _classZones.values().stream().flatMap(map -> map.keySet().stream()).mapToInt(Integer.class::cast).filter(value -> value < 300000).max();
+		LOGGER.info("Last static id: {}", maxId.getAsInt());
 	}
 	
 	/**
@@ -738,7 +742,7 @@ public final class ZoneManager implements IGameXmlReader
 	 */
 	public static AbstractZoneSettings getSettings(String name)
 	{
-		return _settings.get(name);
+		return SETTINGS.get(name);
 	}
 	
 	/**

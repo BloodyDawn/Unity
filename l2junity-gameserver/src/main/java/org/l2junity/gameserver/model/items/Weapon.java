@@ -41,7 +41,6 @@ public final class Weapon extends L2Item
 {
 	private WeaponType _type;
 	private boolean _isMagicWeapon;
-	private int _rndDam;
 	private int _soulShotCount;
 	private int _spiritShotCount;
 	private int _mpConsume;
@@ -79,7 +78,6 @@ public final class Weapon extends L2Item
 		_isMagicWeapon = set.getBoolean("is_magic_weapon", false);
 		_soulShotCount = set.getInt("soulshots", 0);
 		_spiritShotCount = set.getInt("spiritshots", 0);
-		_rndDam = set.getInt("random_damage", 0);
 		_mpConsume = set.getInt("mp_consume", 0);
 		_baseAttackRange = set.getInt("attack_range", 40);
 		String[] damgeRange = set.getString("damage_range", "").split(";"); // 0?;0?;fan sector;base attack angle
@@ -165,14 +163,6 @@ public final class Weapon extends L2Item
 	public int getReducedSoulShotChance()
 	{
 		return _reducedSoulshotChance;
-	}
-	
-	/**
-	 * @return the random damage inflicted by the weapon.
-	 */
-	public int getRandomDamage()
-	{
-		return _rndDam;
 	}
 	
 	/**

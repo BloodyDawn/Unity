@@ -99,9 +99,7 @@ import quests.Q00298_LizardmensConspiracy.Q00298_LizardmensConspiracy;
 import quests.Q00300_HuntingLetoLizardman.Q00300_HuntingLetoLizardman;
 import quests.Q00307_ControlDeviceOfTheGiants.Q00307_ControlDeviceOfTheGiants;
 import quests.Q00310_OnlyWhatRemains.Q00310_OnlyWhatRemains;
-import quests.Q00326_VanquishRemnants.Q00326_VanquishRemnants;
 import quests.Q00350_EnhanceYourWeapon.Q00350_EnhanceYourWeapon;
-import quests.Q00357_WarehouseKeepersAmbition.Q00357_WarehouseKeepersAmbition;
 import quests.Q00359_ForASleeplessDeadman.Q00359_ForASleeplessDeadman;
 import quests.Q00371_ShrieksOfGhosts.Q00371_ShrieksOfGhosts;
 import quests.Q00373_SupplierOfReagents.Q00373_SupplierOfReagents;
@@ -127,6 +125,9 @@ import quests.Q00470_DivinityProtector.Q00470_DivinityProtector;
 import quests.Q00474_WaitingForTheSummer.Q00474_WaitingForTheSummer;
 import quests.Q00476_PlainMission.Q00476_PlainMission;
 import quests.Q00481_ShadowHelper.Q00481_ShadowHelper;
+import quests.Q00485_HotSpringWater.Q00485_HotSpringWater;
+import quests.Q00488_WondersOfCaring.Q00488_WondersOfCaring;
+import quests.Q00489_InThisQuietPlace.Q00489_InThisQuietPlace;
 import quests.Q00490_DutyOfTheSurvivor.Q00490_DutyOfTheSurvivor;
 import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
 import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
@@ -142,8 +143,6 @@ import quests.Q00618_IntoTheFlame.Q00618_IntoTheFlame;
 import quests.Q00621_EggDelivery.Q00621_EggDelivery;
 import quests.Q00622_SpecialtyLiquorDelivery.Q00622_SpecialtyLiquorDelivery;
 import quests.Q00623_TheFinestFood.Q00623_TheFinestFood;
-import quests.Q00624_TheFinestIngredientsPart1.Q00624_TheFinestIngredientsPart1;
-import quests.Q00625_TheFinestIngredientsPart2.Q00625_TheFinestIngredientsPart2;
 import quests.Q00626_ADarkTwilight.Q00626_ADarkTwilight;
 import quests.Q00627_HeartInSearchOfPower.Q00627_HeartInSearchOfPower;
 import quests.Q00631_DeliciousTopChoiceMeat.Q00631_DeliciousTopChoiceMeat;
@@ -158,12 +157,9 @@ import quests.Q00652_AnAgedExAdventurer.Q00652_AnAgedExAdventurer;
 import quests.Q00655_AGrandPlanForTamingWildBeasts.Q00655_AGrandPlanForTamingWildBeasts;
 import quests.Q00662_AGameOfCards.Q00662_AGameOfCards;
 import quests.Q00688_DefeatTheElrokianRaiders.Q00688_DefeatTheElrokianRaiders;
-import quests.Q00699_GuardianOfTheSkies.Q00699_GuardianOfTheSkies;
-import quests.Q00700_CursedLife.Q00700_CursedLife;
-import quests.Q00701_ProofOfExistence.Q00701_ProofOfExistence;
-import quests.Q00702_ATrapForRevenge.Q00702_ATrapForRevenge;
 import quests.Q00761_AssistingTheGoldenRamArmy.Q00761_AssistingTheGoldenRamArmy;
 import quests.Q00762_AnOminousRequest.Q00762_AnOminousRequest;
+import quests.Q00763_ADauntingTask.Q00763_ADauntingTask;
 import quests.Q00901_HowLavasaurusesAreMade.Q00901_HowLavasaurusesAreMade;
 import quests.Q00902_ReclaimOurEra.Q00902_ReclaimOurEra;
 import quests.Q00903_TheCallOfAntharas.Q00903_TheCallOfAntharas;
@@ -171,6 +167,7 @@ import quests.Q00904_DragonTrophyAntharas.Q00904_DragonTrophyAntharas;
 import quests.Q00905_RefinedDragonBlood.Q00905_RefinedDragonBlood;
 import quests.Q00906_TheCallOfValakas.Q00906_TheCallOfValakas;
 import quests.Q00907_DragonTrophyValakas.Q00907_DragonTrophyValakas;
+import quests.Q00943_FillingTheEnergyOfDestruction.Q00943_FillingTheEnergyOfDestruction;
 import quests.Q00998_FallenAngelSelect.Q00998_FallenAngelSelect;
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 import quests.Q10274_CollectingInTheAir.Q10274_CollectingInTheAir;
@@ -386,9 +383,7 @@ public class QuestMasterHandler
 		Q00300_HuntingLetoLizardman.class,
 		Q00307_ControlDeviceOfTheGiants.class,
 		Q00310_OnlyWhatRemains.class,
-		Q00326_VanquishRemnants.class,
 		Q00350_EnhanceYourWeapon.class,
-		Q00357_WarehouseKeepersAmbition.class,
 		Q00359_ForASleeplessDeadman.class,
 		Q00371_ShrieksOfGhosts.class,
 		Q00373_SupplierOfReagents.class,
@@ -414,6 +409,9 @@ public class QuestMasterHandler
 		Q00474_WaitingForTheSummer.class,
 		Q00476_PlainMission.class,
 		Q00481_ShadowHelper.class,
+		Q00485_HotSpringWater.class,
+		Q00488_WondersOfCaring.class,
+		Q00489_InThisQuietPlace.class,
 		Q00490_DutyOfTheSurvivor.class,
 		Q00501_ProofOfClanAlliance.class,
 		Q00504_CompetitionForTheBanditStronghold.class,
@@ -429,8 +427,6 @@ public class QuestMasterHandler
 		Q00621_EggDelivery.class,
 		Q00622_SpecialtyLiquorDelivery.class,
 		Q00623_TheFinestFood.class,
-		Q00624_TheFinestIngredientsPart1.class,
-		Q00625_TheFinestIngredientsPart2.class,
 		Q00626_ADarkTwilight.class,
 		Q00627_HeartInSearchOfPower.class,
 		Q00631_DeliciousTopChoiceMeat.class,
@@ -445,12 +441,9 @@ public class QuestMasterHandler
 		Q00655_AGrandPlanForTamingWildBeasts.class,
 		Q00662_AGameOfCards.class,
 		Q00688_DefeatTheElrokianRaiders.class,
-		Q00699_GuardianOfTheSkies.class,
-		Q00700_CursedLife.class,
-		Q00701_ProofOfExistence.class,
-		Q00702_ATrapForRevenge.class,
 		Q00761_AssistingTheGoldenRamArmy.class,
 		Q00762_AnOminousRequest.class,
+		Q00763_ADauntingTask.class,
 		Q00901_HowLavasaurusesAreMade.class,
 		Q00902_ReclaimOurEra.class,
 		Q00903_TheCallOfAntharas.class,
@@ -458,6 +451,7 @@ public class QuestMasterHandler
 		Q00905_RefinedDragonBlood.class,
 		Q00906_TheCallOfValakas.class,
 		Q00907_DragonTrophyValakas.class,
+		Q00943_FillingTheEnergyOfDestruction.class,
 		Q00998_FallenAngelSelect.class,
 		Q10273_GoodDayToFly.class,
 		Q10274_CollectingInTheAir.class,

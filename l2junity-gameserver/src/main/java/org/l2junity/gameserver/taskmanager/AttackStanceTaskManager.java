@@ -26,8 +26,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.AutoAttackStop;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,17 +56,17 @@ public class AttackStanceTaskManager
 	{
 		if (actor != null)
 		{
-			if (actor.isPlayable())
-			{
-				final PlayerInstance player = actor.getActingPlayer();
-				for (L2CubicInstance cubic : player.getCubics().values())
-				{
-					if (cubic.getId() != L2CubicInstance.LIFE_CUBIC)
-					{
-						cubic.doAction();
-					}
-				}
-			}
+			// if (actor.isPlayable())
+			// {
+			// final PlayerInstance player = actor.getActingPlayer();
+			// for (L2CubicInstance cubic : player.getCubics().values())
+			// {
+			// if (cubic.getId() != L2CubicInstance.LIFE_CUBIC)
+			// {
+			// cubic.doAction();
+			// }
+			// }
+			// }
 			_attackStanceTasks.put(actor, System.currentTimeMillis());
 		}
 	}

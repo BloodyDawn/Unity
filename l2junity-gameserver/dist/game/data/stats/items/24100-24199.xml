@@ -531,6 +531,7 @@
 	<item id="24133" name="Dark Assassin Suit" type="Armor">
 		<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
 		<set name="icon" val="BranchIcon.Icon.dark_assassin" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -542,9 +543,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add order="0" stat="pDef" val="400.0" />
-		</for>
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
 	</item>
 	<item id="24134" name="Appearance Stone: Dark Assassin Suit" type="EtcItem">
 		<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
@@ -554,6 +555,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="Appearance" />
 	</item>
 	<item id="24135" name="Dark Assassin Top" type="EtcItem">
@@ -561,6 +563,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="icon" val="BranchIcon.Icon.etc_dark_suit_upbody_i00" />
 	</item>
 	<item id="24136" name="Dark Assassin Pants" type="EtcItem">
@@ -568,6 +571,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="icon" val="BranchIcon.Icon.etc_dark_suit_downbody_i00" />
 	</item>
 	<item id="24137" name="Dark Assassin Gloves" type="EtcItem">
@@ -575,6 +579,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="icon" val="BranchIcon.Icon.etc_dark_suit_gloves_i00" />
 	</item>
 	<item id="24138" name="Dark Assassin Boots" type="EtcItem">
@@ -582,6 +587,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="icon" val="BranchIcon.Icon.etc_dark_suit_shoes_i00" />
 	</item>
 	<item id="24139" name="Starlight Jar" type="EtcItem">
@@ -589,6 +595,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="icon" val="BranchIcon.Icon.etc_sign_agathion_feed_yellow_i00" />
 	</item>
 	<item id="24140" name="Agathion - Three-headed Dragon" type="Armor">
@@ -1014,6 +1021,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="24188" name="Agathion - Twinkling Virgo" name_additional="Stage 1" type="Armor">

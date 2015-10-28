@@ -52,6 +52,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
@@ -129,6 +130,8 @@ public abstract class Summon extends Playable
 		setShowSummonAnimation(false); // addVisibleObject created the info packets with summon animation
 		// if someone comes into range now, the animation shouldn't show any more
 		_restoreSummon = false;
+		
+		rechargeShots(true, true, false);
 		
 		// Notify to scripts
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonSpawn(this), this);
@@ -479,7 +482,7 @@ public abstract class Summon extends Playable
 		}
 		else
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		}
 	}
 	
@@ -586,7 +589,7 @@ public abstract class Summon extends Playable
 	 * @param dontMove used to prevent movement, if not in range
 	 */
 	@Override
-	public boolean useMagic(Skill skill, boolean forceUse, boolean dontMove)
+	public boolean useMagic(Skill skill, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Null skill, dead summon or null owner are reasons to prevent casting.
 		if ((skill == null) || isDead() || (getOwner() == null))
@@ -602,13 +605,10 @@ public abstract class Summon extends Playable
 		}
 		
 		// If a skill is currently being used
-		if (isCastingNow())
+		if (isCastingNow(SkillCaster::isNormalType))
 		{
 			return false;
 		}
-		
-		// Set current pet skill
-		getOwner().setCurrentPetSkill(skill, forceUse, dontMove);
 		
 		// Get the target for the skill
 		WorldObject target = null;
@@ -757,7 +757,7 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
 		if (miss || (getOwner() == null))
 		{
@@ -767,7 +767,7 @@ public abstract class Summon extends Playable
 		// Prevents the double spam of system messages, if the target is the owning player.
 		if (target.getObjectId() != getOwner().getObjectId())
 		{
-			if (pcrit || mcrit)
+			if (crit)
 			{
 				if (isServitor())
 				{
@@ -964,7 +964,7 @@ public abstract class Summon extends Playable
 	{
 		if (!isMovementDisabled())
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
 	}
 	
@@ -1240,5 +1240,11 @@ public abstract class Summon extends Playable
 	public boolean isMovementDisabled()
 	{
 		return super.isMovementDisabled() || !getTemplate().canMove();
+	}
+	
+	@Override
+	public boolean isTargetable()
+	{
+		return super.isTargetable() && getTemplate().isTargetable();
 	}
 }

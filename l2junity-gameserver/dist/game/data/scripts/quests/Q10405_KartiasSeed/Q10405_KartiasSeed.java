@@ -73,7 +73,6 @@ public final class Q10405_KartiasSeed extends Quest
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
-		
 		if (st == null)
 		{
 			return null;

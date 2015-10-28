@@ -377,6 +377,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
+		<set name="icon" val="icon.skill0122" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -779,7 +781,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.35" />
+				<mul stat="rCrit" val="0.35" />
 			</effect>
 		</for>
 	</skill>
@@ -839,7 +841,7 @@
 		<table name="#abnormalLvl"> 7 8 9 </table>
 		<table name="#cAtk"> 1.2 1.3 1.4 </table>
 		<table name="#dot"> 0.005 0.01 0.02 </table>
-		<table name="#rCrit"> 1.2 1.5 1.75 </table>
+		<table name="#rCrit"> 0.2 0.5 0.75 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="MULTI_DEBUFF" />
@@ -888,7 +890,7 @@
 		<for>
 			<effect name="DamOverTimePercent" ticks="5">
 				<param power="0.05" />
-				<mul stat="rCrit" val="1.9">
+				<mul stat="rCrit" val="0.9">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
 				<mul stat="cAtk" val="1.5">
@@ -940,6 +942,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="6439" levels="1" name="Energy of Wisdom">
@@ -957,6 +960,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DefenceTrait">
@@ -989,6 +993,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DefenceTrait">
@@ -1021,6 +1026,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DefenceTrait">
@@ -1104,8 +1110,8 @@
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pveBowDmg" val="2.0" />
-				<mul stat="pveBowSkillsDmg" val="2.0" />
+				<mul stat="pvePhysDmg" val="2.0" />
+				<mul stat="pvePhysSkillsDmg" val="2.0" />
 			</effect>
 		</for>
 	</skill>
@@ -1356,6 +1362,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
+		<set name="castRange" val="600" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="6465" levels="1" name="Jack O'Lantern Card">
@@ -1366,6 +1374,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6466" levels="1" name="Rotten Jack O'Lantern Card">
@@ -1376,6 +1385,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6467" levels="1" name="Jack O'Lantern Card - Confirm Skill">
@@ -1388,6 +1398,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="500" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6468" levels="1" name="Rotten Jack O'Lantern Card - Confirm Skill">
@@ -1400,6 +1411,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="500" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6469" levels="1" name="Halloween Defeat">
@@ -1412,9 +1424,10 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
-	<skill id="6470" levels="1" name="First Win">
+	<skill id="6470" levels="1" name="First win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1424,6 +1437,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6471" levels="1" name="2nd Consecutive Win">
@@ -1436,6 +1450,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6472" levels="1" name="3rd Consecutive Win">
@@ -1448,6 +1463,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6473" levels="1" name="4th Consecutive Win">
@@ -1460,6 +1476,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6474" levels="1" name="5th Consecutive Win">
@@ -1472,6 +1489,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6475" levels="1" name="6th Consecutive Win">
@@ -1484,6 +1502,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6476" levels="1" name="7th Consecutive Win">
@@ -1496,6 +1515,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6477" levels="1" name="8th Consecutive Win">
@@ -1508,6 +1528,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6478" levels="1" name="9th Consecutive Win">
@@ -1520,6 +1541,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6479" levels="1" name="10th Consecutive Win">
@@ -1532,6 +1554,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6480" levels="1" name="11th Consecutive Win">
@@ -1544,6 +1567,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6481" levels="1" name="12th Consecutive Win">
@@ -1556,6 +1580,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6482" levels="1" name="13th Consecutive Win">
@@ -1568,6 +1593,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6483" levels="1" name="14th Consecutive Win">
@@ -1580,6 +1606,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6484" levels="1" name="15th Consecutive Win">
@@ -1592,6 +1619,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6485" levels="1" name="16th Consecutive Win">
@@ -1604,6 +1632,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6486" levels="1" name="17th Consecutive Win">
@@ -1616,6 +1645,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6487" levels="1" name="18th Consecutive Win">
@@ -1628,6 +1658,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6488" levels="1" name="19th Consecutive Win">
@@ -1640,6 +1671,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6489" levels="1" name="20th Consecutive Win">
@@ -1652,6 +1684,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6490" levels="1" name="Jack's game - Gauge">
@@ -1664,6 +1697,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="500" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6491" levels="1" name="Jack's game - Target">
@@ -1676,6 +1710,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6492" levels="28" name="Holy Attack">
@@ -1690,6 +1725,8 @@
 		<set name="effectRange" val="400" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6493" levels="28" name="Jack's game - Target">
@@ -1704,6 +1741,8 @@
 		<set name="effectRange" val="400" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="100" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6494" levels="28" name="Holy Attack">
@@ -1718,6 +1757,8 @@
 		<set name="effectRange" val="400" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="180" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6495" levels="28" name="Holy Attack">
@@ -1732,6 +1773,7 @@
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6496" levels="28" name="Holy Attack">
@@ -1746,6 +1788,7 @@
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="100" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6497" levels="28" name="Holy Attack">
@@ -1760,6 +1803,7 @@
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="180" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6498" levels="28" name="Holy Shot">
@@ -1774,6 +1818,8 @@
 		<set name="effectRange" val="1200" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="700" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6499" levels="28" name="Holy Shot">
@@ -1788,6 +1834,8 @@
 		<set name="effectRange" val="1200" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="100" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="700" />
 		<set name="targetType" val="NONE" />
 	</skill>
 </list>

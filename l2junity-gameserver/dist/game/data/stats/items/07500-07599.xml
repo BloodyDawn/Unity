@@ -879,12 +879,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2214" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2214" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
+		</skills>
 	</item>
 	<item id="7555" name="Scroll of Escape: Elven Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -901,12 +901,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2214" level="2" /> <!-- Scroll of Escape: Elven Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2214" level="2" /> <!-- Scroll of Escape: Elven Village -->
+		</skills>
 	</item>
 	<item id="7556" name="Scroll of Escape: Dark Elf Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -923,12 +923,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2214" level="3" /> <!-- Scroll of Escape: Dark Elf Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2214" level="3" /> <!-- Scroll of Escape: Dark Elf Village -->
+		</skills>
 	</item>
 	<item id="7557" name="Scroll of Escape: Orc Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -945,12 +945,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2214" level="4" /> <!-- Scroll of Escape: Orc Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2214" level="4" /> <!-- Scroll of Escape: Orc Village -->
+		</skills>
 	</item>
 	<item id="7558" name="Scroll of Escape: Dwarven Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -967,12 +967,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2214" level="5" /> <!-- Scroll of Escape: Dwarven Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2214" level="5" /> <!-- Scroll of Escape: Dwarven Village -->
+		</skills>
 	</item>
 	<item id="7559" name="Scroll of Escape: Town of Giran" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -989,20 +989,18 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2214" level="10" /> <!-- Scroll of Escape: Town of Giran -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2214" level="10" /> <!-- Scroll of Escape: Town of Giran -->
+		</skills>
 	</item>
 	<item id="7560" name="Monster Only (Fishing Rod)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="FISHINGROD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="1" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
@@ -1016,13 +1014,16 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="7561" name="Fishing Manual" type="EtcItem">
 		<set name="icon" val="icon.etc_spellbook_blue_i00" />
@@ -1245,8 +1246,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1368" />
@@ -1262,24 +1261,23 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="7576" name="Draconic Bow" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1368" />
@@ -1295,27 +1293,27 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="reduced_mp_consume" val="26,1" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="7577" name="Draconic Bow" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1368" />
@@ -1331,27 +1329,26 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="BOW" />
 		<skills>
 			<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="7578" name="Draconic Bow" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1368" />
@@ -1366,20 +1363,22 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
-		<set name="oncrit_skill" val="3574-1" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="7579" name="Draconic Bow Shaft" type="EtcItem">
 		<set name="icon" val="icon.etc_branch_gold_i00" />
@@ -1389,6 +1388,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="91471" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7580" name="Recipe: Draconic Bow (60%)" type="EtcItem">
@@ -1402,6 +1402,7 @@
 		<set name="recipe_id" val="774" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="7581" name="Recipe: Draconic Bow" type="EtcItem">
@@ -1415,6 +1416,7 @@
 		<set name="recipe_id" val="775" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="7582" name="Baby Spice" type="EtcItem">
@@ -1430,13 +1432,14 @@
 		<set name="handler" val="PetFood" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2048" level="1" /> <!-- Wolf Food -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player categoryType="BABY_PET_GROUP" />
 		</cond>
+		<skills>
+			<skill id="2048" level="1" /> <!-- Wolf Food -->
+		</skills>
 	</item>
 	<item id="7583" name="Pet Coupon: Buffalo" type="EtcItem">
 		<set name="icon" val="icon.etc_ticket_red_i00" />
@@ -1445,6 +1448,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="500000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7584" name="Pet Coupon: Cougar" type="EtcItem">
@@ -1454,6 +1458,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="500000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7585" name="Pet Coupon: Kookaburra" type="EtcItem">
@@ -1463,6 +1468,7 @@
 		<set name="weight" val="20" />
 		<set name="price" val="500000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="7586" name="Sweet Fluid" type="EtcItem">

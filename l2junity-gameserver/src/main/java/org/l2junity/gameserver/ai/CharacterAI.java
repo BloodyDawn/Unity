@@ -31,7 +31,9 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.Location;
@@ -97,12 +99,18 @@ public class CharacterAI extends AbstractAI
 		private final Creature _activeChar;
 		private final WorldObject _target;
 		private final Skill _skill;
+		private final ItemInstance _item;
+		private final boolean _forceUse;
+		private final boolean _dontMove;
 		
-		public CastTask(Creature actor, Skill skill, WorldObject target)
+		public CastTask(Creature actor, Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 		{
 			_activeChar = actor;
 			_target = target;
 			_skill = skill;
+			_item = item;
+			_forceUse = forceUse;
+			_dontMove = dontMove;
 		}
 		
 		@Override
@@ -112,7 +120,7 @@ public class CharacterAI extends AbstractAI
 			{
 				_activeChar.abortAttack();
 			}
-			_activeChar.getAI().changeIntentionToCast(_skill, _target);
+			_activeChar.getAI().changeIntentionToCast(_skill, _target, _item, _forceUse, _dontMove);
 		}
 	}
 	
@@ -150,7 +158,7 @@ public class CharacterAI extends AbstractAI
 	protected void onIntentionIdle()
 	{
 		// Set the AI Intention to AI_INTENTION_IDLE
-		changeIntention(AI_INTENTION_IDLE, null, null);
+		changeIntention(AI_INTENTION_IDLE);
 		
 		// Init cast and attack target
 		setCastTarget(null);
@@ -182,7 +190,7 @@ public class CharacterAI extends AbstractAI
 		if (getIntention() != AI_INTENTION_ACTIVE)
 		{
 			// Set the AI Intention to AI_INTENTION_ACTIVE
-			changeIntention(AI_INTENTION_ACTIVE, null, null);
+			changeIntention(AI_INTENTION_ACTIVE);
 			
 			// Init cast and attack target
 			setCastTarget(null);
@@ -251,7 +259,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isControlBlocked())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isControlBlocked())
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -281,7 +289,7 @@ public class CharacterAI extends AbstractAI
 		else
 		{
 			// Set the Intention of this AbstractAI to AI_INTENTION_ATTACK
-			changeIntention(AI_INTENTION_ATTACK, target, null);
+			changeIntention(AI_INTENTION_ATTACK, target);
 			
 			// Set the AI attack target
 			setAttackTarget(target);
@@ -306,26 +314,42 @@ public class CharacterAI extends AbstractAI
 	 * </ul>
 	 */
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		if ((getIntention() == AI_INTENTION_REST) && skill.isMagic())
 		{
 			clientActionFailed();
-			_actor.setIsCastingNow(false);
+			_actor.abortCast();
 			return;
 		}
 		
-		changeIntentionToCast(skill, target);
+		if (_actor.getAttackEndTime() > GameTimeController.getInstance().getGameTicks())
+		{
+			ThreadPoolManager.getInstance().scheduleGeneral(new CastTask(_actor, skill, target, item, forceUse, dontMove), _actor.getAttackEndTime() - System.currentTimeMillis());
+		}
+		else
+		{
+			changeIntentionToCast(skill, target, item, forceUse, dontMove);
+		}
 	}
 	
-	protected void changeIntentionToCast(Skill skill, WorldObject target)
+	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Set the AI cast target
 		setCastTarget((Creature) target);
+		
 		// Set the AI skill used by INTENTION_CAST
 		_skill = skill;
+		
+		// Set the AI item that triggered this skill
+		_item = item;
+		
+		// Set the ctrl/shift pressed parameters
+		_forceUse = forceUse;
+		_dontMove = dontMove;
+		
 		// Change the Intention of this AbstractAI to AI_INTENTION_CAST
-		changeIntention(AI_INTENTION_CAST, skill, target);
+		changeIntention(AI_INTENTION_CAST, skill);
 		
 		// Launch the Think Event
 		notifyEvent(CtrlEvent.EVT_THINK, null);
@@ -350,7 +374,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -358,7 +382,7 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_MOVE_TO
-		changeIntention(AI_INTENTION_MOVE_TO, loc, null);
+		changeIntention(AI_INTENTION_MOVE_TO, loc);
 		
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
 		clientStopAutoAttack();
@@ -389,7 +413,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -421,7 +445,7 @@ public class CharacterAI extends AbstractAI
 		clientStopAutoAttack();
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_FOLLOW
-		changeIntention(AI_INTENTION_FOLLOW, target, null);
+		changeIntention(AI_INTENTION_FOLLOW, target);
 		
 		// Create and Launch an AI Follow Task to execute every 1s
 		startFollow(target);
@@ -446,7 +470,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -462,7 +486,7 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_PICK_UP
-		changeIntention(AI_INTENTION_PICK_UP, object, null);
+		changeIntention(AI_INTENTION_PICK_UP, object);
 		
 		// Set the AI pick up target
 		setTarget(object);
@@ -496,7 +520,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -509,7 +533,7 @@ public class CharacterAI extends AbstractAI
 		if (getIntention() != AI_INTENTION_INTERACT)
 		{
 			// Set the Intention of this AbstractAI to AI_INTENTION_INTERACT
-			changeIntention(AI_INTENTION_INTERACT, object, null);
+			changeIntention(AI_INTENTION_INTERACT, object);
 			
 			// Set the AI interact target
 			setTarget(object);
@@ -799,7 +823,7 @@ public class CharacterAI extends AbstractAI
 			clientStopMoving(null);
 			
 			// Set the Intention of this AbstractAI to AI_INTENTION_IDLE
-			changeIntention(AI_INTENTION_IDLE, null, null);
+			changeIntention(AI_INTENTION_IDLE);
 		}
 	}
 	
@@ -1448,7 +1472,7 @@ public class CharacterAI extends AbstractAI
 	
 	public boolean canParty(Skill sk)
 	{
-		if (sk.getTargetType() == L2TargetType.PARTY)
+		if (isParty(sk))
 		{
 			int count = 0;
 			int ccount = 0;

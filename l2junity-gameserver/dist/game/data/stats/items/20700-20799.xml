@@ -17,7 +17,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20674" max="1" min="1" /> <!-- Bamboo Panda Hat -->
+			<item id="20674" min="1" max="1" chance="100" /> <!-- Bamboo Panda Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20701" name="Bamboo Panda Hat Pack (7-day)" name_additional="Great Adventurer's Soul Power" type="EtcItem">
@@ -37,7 +37,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20675" max="1" min="1" /> <!-- Bamboo Panda Hat Great Adventurer's Soul Power (7-day) -->
+			<item id="20675" min="1" max="1" chance="100" /> <!-- Bamboo Panda Hat - Great Adventurer's Soul Power (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20702" name="Sexy Panda Hat Pack" type="EtcItem">
@@ -57,7 +57,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20676" max="1" min="1" /> <!-- Sexy Panda Hat -->
+			<item id="20676" min="1" max="1" chance="100" /> <!-- Sexy Panda Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20703" name="Sexy Panda Hat (7-day)" name_additional="Blessed Resurrection" type="EtcItem">
@@ -77,7 +77,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20677" max="1" min="1" /> <!-- Sexy Panda Hat Blessed Resurrection (7-day) -->
+			<item id="20677" min="1" max="1" chance="100" /> <!-- Sexy Panda Hat - Blessed Resurrection (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20704" name="Gatekeeper Hat Pack" type="EtcItem">
@@ -97,7 +97,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20678" max="1" min="1" /> <!-- Gatekeeper Hat -->
+			<item id="20678" min="1" max="1" chance="100" /> <!-- Gatekeeper Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20705" name="Gatekeeper Hat Pack (7-day)" name_additional="Appetite for Destruction" type="EtcItem">
@@ -117,7 +117,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20679" max="1" min="1" /> <!-- Gatekeeper Hat Appetite for Destruction (7-day) -->
+			<item id="20679" min="1" max="1" chance="100" /> <!-- Gatekeeper Hat - Appetite for Destruction (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20706" name="Revita-Pop (Event)" type="EtcItem">
@@ -125,6 +125,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_oly_restricted" val="true" />
 	</item>
 	<item id="20707" name="Summon Scroll: Uldie (Event)" type="EtcItem">
@@ -135,6 +136,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="22105" level="1" /> <!-- Summon Scroll: Uldie (Event) -->
@@ -148,6 +150,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="22106" level="1" /> <!-- Summon Scroll: Belldandy (Event) -->
@@ -209,11 +212,13 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 		</skills>
 	</item>
 	<item id="20712" name="Reanimated Corpse Mask (Event)" name_additional="Skooldie's Blessing: Protection of Darkness (2-hour)" type="Armor">
@@ -234,10 +239,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="120" />
 		<skills>
-			<skill id="21122" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21122" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 		</skills>
 	</item>
 	<item id="20713" name="Shriek Mask (Event)" name_additional="Skooldie's Blessing: Protection of Darkness (2-hour)" type="Armor">
@@ -258,10 +263,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="120" />
 		<skills>
-			<skill id="21123" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21123" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 		</skills>
 	</item>
 	<item id="20714" name="Red Devil Mask (Event)" name_additional="Skooldie's Blessing: Protection of Darkness (2-hour)" type="Armor">
@@ -282,10 +287,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="120" />
 		<skills>
-			<skill id="21124" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21124" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 		</skills>
 	</item>
 	<item id="20715" name="Mummy Mask (Event)" name_additional="Skooldie's Blessing: Protection of Darkness (2-hour)" type="Armor">
@@ -306,10 +311,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="120" />
 		<skills>
-			<skill id="21125" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21125" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 		</skills>
 	</item>
 	<item id="20716" name="Alien Mask (Event)" name_additional="Skooldie's Blessing: Protection of Darkness (2-hour)" type="Armor">
@@ -330,10 +335,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="120" />
 		<skills>
-			<skill id="21126" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21126" level="1" /> <!-- Skooldie's Blessing: Protection of Darkness -->
 		</skills>
 	</item>
 	<item id="20717" name="Shiny Halloween Toy Box (Event)" type="EtcItem">
@@ -374,10 +379,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
 		<skills>
-			<skill id="21127" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21127" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20719" name="Shiny Shriek Mask (Event)" name_additional="Blessing of Halloween (4-hour)" type="Armor">
@@ -398,10 +403,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
 		<skills>
-			<skill id="21128" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21128" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20720" name="Shiny Red Devil Mask (Event)" name_additional="Blessing of Halloween (4-hour)" type="Armor">
@@ -422,10 +427,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
 		<skills>
-			<skill id="21129" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21129" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20721" name="Shiny Mummy Mask (Event)" name_additional="Blessing of Halloween (4-hour)" type="Armor">
@@ -446,10 +451,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
 		<skills>
-			<skill id="21130" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21130" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20722" name="Shiny Alien Mask (Event)" name_additional="Blessing of Halloween (4-hour)" type="Armor">
@@ -470,10 +475,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
 		<skills>
-			<skill id="21131" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
 			<skill id="21120" level="1" /> <!-- Jack O'Lantern Card -->
 			<skill id="21121" level="1" /> <!-- Rotten Jack O'Lantern Card -->
+			<skill id="21131" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20723" name="Golden Jack O'Lantern Mask" type="Armor">
@@ -491,6 +496,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 	</item>
 	<item id="20724" name="Golden Jack O'Lantern Mask" name_additional="Golden Jack O'Lantern's Authority (7-day)" type="Armor">
@@ -530,6 +537,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20726" name="Agathion - Zombie" type="Armor">
@@ -549,10 +558,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21133" level="1" /> <!-- Release Agathion's Seal - Zombie -->
 			<skill id="23117" level="1" /> <!-- Zombie Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20727" name="Agathion - Zombie" name_additional="Soul Stealth (7-day)" type="Armor">
@@ -567,7 +575,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21133-1;23117-1;23174-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -575,6 +582,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21133" level="1" /> <!-- Release Agathion's Seal - Zombie -->
+			<skill id="23117" level="1" /> <!-- Zombie Agathion Cute Trick -->
+			<skill id="23174" level="1" /> <!-- Soul Stealth -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -687,10 +697,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21134" level="1" /> <!-- Release Agathion's Seal - Bluebird -->
 			<skill id="23119" level="1" /> <!-- Bluebird Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20733" name="Agathion - Hatbird" type="Armor">
@@ -710,10 +719,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21135" level="1" /> <!-- Release Agathion's Seal - Hatbird -->
 			<skill id="23120" level="1" /> <!-- Hatbird Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20734" name="Golden Jack O'Lantern Mask Pack (7-day)" name_additional="Golden Jack O'Lantern's Authority" type="EtcItem">
@@ -733,7 +741,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20724" max="1" min="1" /> <!-- Golden Jack O'Lantern Mask Golden Jack O'Lantern's Authority (7-day) -->
+			<item id="20724" min="1" max="1" chance="100" /> <!-- Golden Jack O'Lantern Mask - Golden Jack O'Lantern's Authority (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20735" name="Agathion - Zombie Pack" type="EtcItem">
@@ -753,7 +761,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20726" max="1" min="1" /> <!-- Agathion - Zombie -->
+			<item id="20726" min="1" max="1" chance="100" /> <!-- Agathion - Zombie -->
 		</capsuled_items>
 	</item>
 	<item id="20736" name="Agathion - Zombie Pack (7-day)" name_additional="Soul Stealth" type="EtcItem">
@@ -773,7 +781,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20727" max="1" min="1" /> <!-- Agathion - Zombie Soul Stealth (7-day) -->
+			<item id="20727" min="1" max="1" chance="100" /> <!-- Agathion - Zombie - Soul Stealth (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20737" name="Agathion - Bluebird Pack" type="EtcItem">
@@ -793,7 +801,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20732" max="1" min="1" /> <!-- Agathion - Bluebird -->
+			<item id="20732" min="1" max="1" chance="100" /> <!-- Agathion - Bluebird -->
 		</capsuled_items>
 	</item>
 	<item id="20738" name="Agathion - Hatbird Pack" type="EtcItem">
@@ -813,7 +821,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20733" max="1" min="1" /> <!-- Agathion - Hatbird -->
+			<item id="20733" min="1" max="1" chance="100" /> <!-- Agathion - Hatbird -->
 		</capsuled_items>
 	</item>
 	<item id="20739" name="Transformation Scroll Pack" type="EtcItem">
@@ -852,8 +860,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20393" max="1" min="1" /> <!-- Sweet Fruit Cocktail -->
-			<item chance="100.0" id="20394" max="1" min="1" /> <!-- Fresh Fruit Cocktail -->
+			<item id="20393" min="1" max="1" chance="100" /> <!-- Sweet Fruit Cocktail -->
+			<item id="20394" min="1" max="1" chance="100" /> <!-- Fresh Fruit Cocktail -->
 		</capsuled_items>
 	</item>
 	<item id="20741" name="SP Rune 30% (Event)" name_additional="1-hour" type="EtcItem">
@@ -875,7 +883,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="60" />
 		<skills>
-			<skill id="22040" level="1" /> <!-- SP Rune 30% -->
+			<skill id="26047" level="3" /> <!-- SP Rune 30% -->
 		</skills>
 	</item>
 	<item id="20742" name="XP Rune III (Lv. 1-100+) 30% (Event)" name_additional="1-hour" type="EtcItem">
@@ -897,7 +905,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="60" />
 		<skills>
-			<skill id="22039" level="1" /> <!-- XP Rune III (Lv. 1-100+) 30% -->
+			<skill id="26046" level="3" /> <!-- XP Rune III (Lv. 1-100+) 30% -->
 		</skills>
 	</item>
 	<item id="20743" name="Shiny Reanimated Corpse Mask" name_additional="Blessing of Halloween (7-day)" type="Armor">
@@ -919,8 +927,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21137" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
+			<skill id="21137" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20744" name="Shiny Shriek Mask" name_additional="Blessing of Halloween (7-day)" type="Armor">
@@ -942,8 +950,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21138" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
+			<skill id="21138" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20745" name="Shiny Red Devil Mask" name_additional="Blessing of Halloween (7-day)" type="Armor">
@@ -965,8 +973,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21139" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
+			<skill id="21139" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20746" name="Shiny Mummy Mask" name_additional="Blessing of Halloween (7-day)" type="Armor">
@@ -988,8 +996,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21140" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
+			<skill id="21140" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20747" name="Shiny Alien Mask" name_additional="Blessing of Halloween (7-day)" type="Armor">
@@ -1011,8 +1019,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21141" level="1" /> <!-- Blessing of Halloween -->
 			<skill id="21132" level="1" /> <!-- Shadow Ability -->
+			<skill id="21141" level="1" /> <!-- Blessing of Halloween -->
 		</skills>
 	</item>
 	<item id="20748" name="Shiny Reanimated Corpse Mask Pack (7-day)" name_additional="Blessing of Halloween" type="EtcItem">
@@ -1032,7 +1040,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20743" max="1" min="1" /> <!-- Shiny Reanimated Corpse Mask Blessing of Halloween (7-day) -->
+			<item id="20743" min="1" max="1" chance="100" /> <!-- Shiny Reanimated Corpse Mask - Blessing of Halloween (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20749" name="Shiny Shriek Mask Pack (7-day)" name_additional="Blessing of Halloween" type="EtcItem">
@@ -1052,7 +1060,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20744" max="1" min="1" /> <!-- Shiny Shriek Mask Blessing of Halloween (7-day) -->
+			<item id="20744" min="1" max="1" chance="100" /> <!-- Shiny Shriek Mask - Blessing of Halloween (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20750" name="Shiny Red Devil Mask Pack (7-day)" name_additional="Blessing of Halloween" type="EtcItem">
@@ -1072,7 +1080,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20745" max="1" min="1" /> <!-- Shiny Red Devil Mask Blessing of Halloween (7-day) -->
+			<item id="20745" min="1" max="1" chance="100" /> <!-- Shiny Red Devil Mask - Blessing of Halloween (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20751" name="Shiny Mummy Mask Pack (7-day)" name_additional="Blessing of Halloween" type="EtcItem">
@@ -1092,7 +1100,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20746" max="1" min="1" /> <!-- Shiny Mummy Mask Blessing of Halloween (7-day) -->
+			<item id="20746" min="1" max="1" chance="100" /> <!-- Shiny Mummy Mask - Blessing of Halloween (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20752" name="Shiny Alien Mask Pack (7-day)" name_additional="Blessing of Halloween" type="EtcItem">
@@ -1112,7 +1120,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20747" max="1" min="1" /> <!-- Shiny Alien Mask Blessing of Halloween (7-day) -->
+			<item id="20747" min="1" max="1" chance="100" /> <!-- Shiny Alien Mask - Blessing of Halloween (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20753" name="Santa's Gift Box" type="EtcItem">
@@ -1133,9 +1141,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20756" max="1" min="1" /> <!-- Santa's Shirt Coupon 24-hour -->
-			<item chance="100.0" id="20758" max="1" min="1" /> <!-- Santa's Weapon Coupon Box -->
-			<item chance="100.0" id="5561" max="1" min="1" /> <!-- Special Holiday Tree -->
+			<item id="20756" min="1" max="1" chance="100" /> <!-- Santa's Shirt Coupon - 24-hour -->
+			<item id="20758" min="1" max="1" chance="100" /> <!-- Santa's Weapon Coupon Box -->
+			<item id="5561" min="1" max="1" chance="100" /> <!-- Special Holiday Tree -->
 		</capsuled_items>
 	</item>
 	<item id="20754" name="Santa's Gift Box - Jackpot" type="EtcItem">
@@ -1156,9 +1164,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20756" max="1" min="1" /> <!-- Santa's Shirt Coupon 24-hour -->
-			<item chance="100.0" id="20757" max="1" min="1" /> <!-- Santa's Weapon Coupon - Jackpot 24-hour -->
-			<item chance="100.0" id="5561" max="1" min="1" /> <!-- Special Holiday Tree -->
+			<item id="20756" min="1" max="1" chance="100" /> <!-- Santa's Shirt Coupon - 24-hour -->
+			<item id="20757" min="1" max="1" chance="100" /> <!-- Santa's Weapon Coupon - Jackpot - 24-hour -->
+			<item id="5561" min="1" max="1" chance="100" /> <!-- Special Holiday Tree -->
 		</capsuled_items>
 	</item>
 	<item id="20755" name="Santa's Weapon Coupon - Regular" name_additional="24-hour" type="EtcItem">
@@ -1266,12 +1274,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20761" name="Rudolph Necklace" type="EtcItem">
 		<set name="icon" val="BranchSys.br_rudolf_necklace_i01" />
@@ -1291,12 +1299,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="20762" name="Rudolph Pet Coupon" name_additional="7-day" type="EtcItem">
 		<set name="icon" val="icon.etc_ticket_red_i00" />
@@ -1336,10 +1344,9 @@
 		<set name="icon" val="BranchSys.br_rudolf_food_purple_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="14400000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1352,17 +1359,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="22137" level="1" /> <!-- Star Food -->
+			<skill id="9753" level="1" /> <!-- Star Food -->
 		</skills>
 	</item>
 	<item id="20765" name="Blue Star Candy" type="EtcItem">
 		<set name="icon" val="BranchSys.br_rudolf_food_blue_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="14400000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1375,17 +1381,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="22137" level="1" /> <!-- Star Food -->
+			<skill id="9754" level="1" /> <!-- Star Food -->
 		</skills>
 	</item>
 	<item id="20766" name="Red Star Candy" type="EtcItem">
 		<set name="icon" val="BranchSys.br_rudolf_food_red_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="14400000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1398,17 +1403,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="22137" level="1" /> <!-- Star Food -->
+			<skill id="9755" level="1" /> <!-- Star Food -->
 		</skills>
 	</item>
 	<item id="20767" name="Orange Star Candy" type="EtcItem">
 		<set name="icon" val="BranchSys.br_rudolf_food_orange_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="14400000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1421,17 +1425,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="22137" level="1" /> <!-- Star Food -->
+			<skill id="9756" level="1" /> <!-- Star Food -->
 		</skills>
 	</item>
 	<item id="20768" name="Mysterious Food" type="EtcItem">
 		<set name="icon" val="BranchSys.br_rudolf_food_unknown_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
 		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="14400000" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1477,6 +1480,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22128" level="1" /> <!-- Rudolph's Joy -->
@@ -1492,6 +1496,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22128" level="2" /> <!-- Rudolph's Joy -->
@@ -1507,6 +1512,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22128" level="3" /> <!-- Rudolph's Joy -->
@@ -1530,13 +1536,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20762" max="1" min="1" /> <!-- Rudolph Pet Coupon 7-day -->
-			<item chance="100.0" id="20739" max="1" min="1" /> <!-- Transformation Scroll Pack -->
-			<item chance="100.0" id="20764" max="1" min="1" /> <!-- Purple Star Candy -->
-			<item chance="100.0" id="20765" max="1" min="1" /> <!-- Blue Star Candy -->
-			<item chance="100.0" id="20766" max="1" min="1" /> <!-- Red Star Candy -->
-			<item chance="100.0" id="20767" max="1" min="1" /> <!-- Orange Star Candy -->
-			<item chance="100.0" id="20768" max="1" min="1" /> <!-- Mysterious Food -->
+			<item id="20762" min="1" max="1" chance="100" /> <!-- Rudolph Pet Coupon - 7-day -->
+			<item id="20739" min="1" max="1" chance="100" /> <!-- Transformation Scroll Pack -->
+			<item id="20764" min="1" max="1" chance="100" /> <!-- Purple Star Candy -->
+			<item id="20765" min="1" max="1" chance="100" /> <!-- Blue Star Candy -->
+			<item id="20766" min="1" max="1" chance="100" /> <!-- Red Star Candy -->
+			<item id="20767" min="1" max="1" chance="100" /> <!-- Orange Star Candy -->
+			<item id="20768" min="1" max="1" chance="100" /> <!-- Mysterious Food -->
 		</capsuled_items>
 	</item>
 	<item id="20774" name="Agathion - Guangong" name_additional="Aura of Fury (7-day)" type="Armor">
@@ -1551,7 +1557,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21142-1;23123-1;23124-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1559,6 +1564,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21142" level="1" /> <!-- Release Agathion's Seal - Guangong -->
+			<skill id="23123" level="1" /> <!-- Guangong Agathion Cute Trick -->
+			<skill id="23124" level="1" /> <!-- Guangong Agathion Special Skill: Aura of Fury -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1574,7 +1582,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21143-1;23125-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1582,6 +1589,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21143" level="1" /> <!-- Release Agathion's Seal - Gwanseum Nyang Nyang -->
+			<skill id="23125" level="1" /> <!-- Gwanseum Nyang Nyang Agathion Cute Trick -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1597,7 +1606,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21144-1;23127-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1605,6 +1613,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21144" level="1" /> <!-- Release Agathion's Seal - Blue Opera -->
+			<skill id="23127" level="1" /> <!-- Blue Opera Agathion Cute Trick -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1620,7 +1630,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21145-1;23127-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1628,6 +1637,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21145" level="1" /> <!-- Release Agathion's Seal - Blue Opera -->
+			<skill id="23127" level="1" /> <!-- Blue Opera Agathion Cute Trick -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1643,7 +1654,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21146-1;23130-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1651,6 +1661,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21146" level="1" /> <!-- Release Agathion's Seal - Red Opera -->
+			<skill id="23130" level="1" /> <!-- Red Opera Agathion Cute Trick -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1671,10 +1683,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21147" level="1" /> <!-- Release Agathion's Seal - Opera -->
 			<skill id="23132" level="1" /> <!-- Opera Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20780" name="Agathion - Opera" name_additional="Sword of Life (30-day)" type="Armor">
@@ -1689,7 +1700,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21147-1;23132-1;23164-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1697,6 +1707,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="21147" level="1" /> <!-- Release Agathion's Seal - Opera -->
+			<skill id="23132" level="1" /> <!-- Opera Agathion Cute Trick -->
+			<skill id="23164" level="1" /> <!-- Opera Agathion Special Skill: Sword of Life -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1712,7 +1725,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21148-1;23133-1;23134-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1720,6 +1732,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21148" level="1" /> <!-- Release Agathion's Seal - Miss Chipao -->
+			<skill id="23133" level="1" /> <!-- Miss Chipao Agathion Cute Trick -->
+			<skill id="23134" level="1" /> <!-- Miss Chipao Agathion Special Skill: Decrease Weight -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1740,10 +1755,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21149" level="1" /> <!-- Release Agathion's Seal - Nepal Snow -->
 			<skill id="23135" level="1" /> <!-- Nepal Snow Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20783" name="Agathion - Round Ball Snow" type="Armor">
@@ -1763,10 +1777,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21150" level="1" /> <!-- Release Agathion's Seal - Round Ball Snow -->
 			<skill id="23137" level="1" /> <!-- Round Ball Snow Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20784" name="Agathion - Ladder Snow" type="Armor">
@@ -1786,10 +1799,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21151" level="1" /> <!-- Release Agathion's Seal - Ladder Snow -->
 			<skill id="23139" level="1" /> <!-- Ladder Snow Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20785" name="Agathion - Nepal Snow" name_additional="Snow's Haste (7-day)" type="Armor">
@@ -1804,7 +1816,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21149-1;23135-1;23136-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1812,6 +1823,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21149" level="1" /> <!-- Release Agathion's Seal - Nepal Snow -->
+			<skill id="23135" level="1" /> <!-- Nepal Snow Agathion Cute Trick -->
+			<skill id="23136" level="1" /> <!-- Nepal Snow Agathion Special Skill: Snow's Haste -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1827,7 +1841,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21150-1;23137-1;23138-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1835,6 +1848,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21150" level="1" /> <!-- Release Agathion's Seal - Round Ball Snow -->
+			<skill id="23137" level="1" /> <!-- Round Ball Snow Agathion Cute Trick -->
+			<skill id="23138" level="1" /> <!-- Round Ball Snow Agathion Special Skill: Snow's Acumen -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1850,7 +1866,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21151-1;23139-1;23140-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1858,6 +1873,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
+			<skill id="21151" level="1" /> <!-- Release Agathion's Seal - Ladder Snow -->
+			<skill id="23139" level="1" /> <!-- Ladder Snow Agathion Cute Trick -->
+			<skill id="23140" level="1" /> <!-- Ladder Snow Agathion Special Skill: Snow's Wind Walk -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1897,6 +1915,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="21152" level="1" /> <!-- Chain Fireworks -->
@@ -1921,7 +1941,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21153" level="4" /> <!-- null -->
+			<skill id="21153" level="1" /> <!-- Blessed Body -->
 		</skills>
 	</item>
 	<item id="20791" name="Pink Paper Mask Set" name_additional="Blessed Soul (7-day)" type="Armor">
@@ -1943,7 +1963,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="21154" level="4" /> <!-- null -->
+			<skill id="21154" level="1" /> <!-- Blessed Soul -->
 		</skills>
 	</item>
 	<item id="20792" name="Flavorful Cheese Hat" type="Armor">
@@ -1961,6 +1981,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20793" name="Sweet Cheese Hat" type="Armor">
@@ -1978,6 +2000,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20794" name="Flavorful Cheese Hat" name_additional="Scent of Flavorful Cheese (7-day)" type="Armor">
@@ -2041,7 +2065,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20774" max="1" min="1" /> <!-- Agathion - Guangong Aura of Fury (7-day) -->
+			<item id="20774" min="1" max="1" chance="100" /> <!-- Agathion - Guangong - Aura of Fury (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20797" name="Agathion - Gwanseum Nyang Nyang Pack (7-day)" name_additional="Blessing of Mercy" type="EtcItem">
@@ -2061,7 +2085,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20775" max="1" min="1" /> <!-- Agathion - Gwanseum Nyang Nyang Blessing of Mercy (7-day) -->
+			<item id="20775" min="1" max="1" chance="100" /> <!-- Agathion - Gwanseum Nyang Nyang - Blessing of Mercy (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20798" name="Agathion - Blue Opera Pack (7-day)" name_additional="Sword of Recovery" type="EtcItem">
@@ -2081,7 +2105,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20776" max="1" min="1" /> <!-- Agathion - Blue Opera Sword of Recovery (7-day) -->
+			<item id="20776" min="1" max="1" chance="100" /> <!-- Agathion - Blue Opera - Sword of Recovery (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20799" name="Agathion - Blue Opera Pack (7-day)" name_additional="Sword of Lightning" type="EtcItem">
@@ -2101,7 +2125,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20777" max="1" min="1" /> <!-- Agathion - Blue Opera Sword of Lightning (7-day) -->
+			<item id="20777" min="1" max="1" chance="100" /> <!-- Agathion - Blue Opera - Sword of Lightning (7-day) -->
 		</capsuled_items>
 	</item>
 </list>

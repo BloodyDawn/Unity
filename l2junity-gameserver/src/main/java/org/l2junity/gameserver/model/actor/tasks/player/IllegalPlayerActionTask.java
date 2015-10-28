@@ -57,7 +57,7 @@ public final class IllegalPlayerActionTask implements Runnable
 			{
 				if (!_actor.isGM())
 				{
-					_actor.setAccessLevel(-1, false);
+					_actor.setAccessLevel(-1, false, true);
 					_actor.setAccountAccesslevel(-1);
 				}
 				_actor.sendMessage("You are banned for illegal action, GM informed.");

@@ -394,12 +394,16 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="18259" levels="1" name="Twinkling Zodiac Agathion Pack (30-day)">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="18260" levels="1" name="Special Bait Pack">
@@ -438,6 +442,7 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="18265" levels="5" name="Pippi's Love">
+		<table name="#abnormalTime"> 1800 1800 1800 1800 3600 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 5% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 1. (Note:) Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes. -->
 		<set name="icon" val="icon.love_mark" />
@@ -446,6 +451,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="18266" levels="1" name="Spellbook: Fate of the Exalted">

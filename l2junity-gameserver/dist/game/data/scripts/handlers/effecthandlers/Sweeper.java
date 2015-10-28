@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -48,7 +49,7 @@ public final class Sweeper extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effector.isPlayer() || !effected.isAttackable())
 		{
@@ -70,16 +71,16 @@ public final class Sweeper extends AbstractEffect
 		final Collection<ItemHolder> items = monster.takeSweep();
 		if (items != null)
 		{
-			for (ItemHolder item : items)
+			for (ItemHolder sweepedItem : items)
 			{
 				Party party = player.getParty();
 				if (party != null)
 				{
-					party.distributeItem(player, item, true, monster);
+					party.distributeItem(player, sweepedItem, true, monster);
 				}
 				else
 				{
-					player.addItem("Sweeper", item, effected, true);
+					player.addItem("Sweeper", sweepedItem, effected, true);
 				}
 			}
 		}

@@ -23,6 +23,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
@@ -51,7 +52,7 @@ public final class ManaHeal extends AbstractEffect
 	}
 
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isInvul())
 		{
@@ -67,7 +68,7 @@ public final class ManaHeal extends AbstractEffect
 		
 		if (!skill.isStatic())
 		{
-			amount = effected.calcStat(Stats.MANA_CHARGE, amount, null, null);
+			amount = effected.getStat().getValue(Stats.MANA_CHARGE, amount);
 		}
 		
 		// Prevents overheal and negative amount

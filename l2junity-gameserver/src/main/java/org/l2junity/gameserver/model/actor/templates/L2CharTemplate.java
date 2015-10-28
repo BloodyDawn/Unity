@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.BasicProperty;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -47,7 +46,6 @@ public class L2CharTemplate extends ListenersContainer
 	private double _fCollisionRadius;
 	private double _fCollisionHeight;
 	
-	private final int[] _basicProperty = new int[BasicProperty.values().length];
 	protected final Map<Stats, Double> _baseValues = new EnumMap<>(Stats.class);
 	
 	/** The creature's race. */
@@ -143,8 +141,8 @@ public class L2CharTemplate extends ListenersContainer
 		_baseAttackType = set.getEnum("baseAtkType", WeaponType.class, WeaponType.FIST);
 		
 		// Basic property
-		_basicProperty[BasicProperty.PHYSICAL.ordinal()] = set.getInt("physicalAbnormalResist", 10);
-		_basicProperty[BasicProperty.MAGIC.ordinal()] = set.getInt("magicAbnormalResist", 10);
+		_baseValues.put(Stats.ABNORMAL_RESIST_PHYSICAL, set.getDouble("physicalAbnormalResist", 10));
+		_baseValues.put(Stats.ABNORMAL_RESIST_MAGICAL, set.getDouble("magicAbnormalResist", 10));
 	}
 	
 	/**
@@ -452,12 +450,19 @@ public class L2CharTemplate extends ListenersContainer
 	}
 	
 	/**
-	 * @param property
 	 * @return base abnormal resist by basic property type.
 	 */
-	public int getBasicPropertyValue(BasicProperty property)
+	public int getBaseAbnormalResistPhysical()
 	{
-		return _basicProperty[property.ordinal()];
+		return _baseValues.getOrDefault(Stats.ABNORMAL_RESIST_PHYSICAL, 0d).intValue();
+	}
+	
+	/**
+	 * @return base abnormal resist by basic property type.
+	 */
+	public int getBaseAbnormalResistMagical()
+	{
+		return _baseValues.getOrDefault(Stats.ABNORMAL_RESIST_MAGICAL, 0d).intValue();
 	}
 	
 	/**

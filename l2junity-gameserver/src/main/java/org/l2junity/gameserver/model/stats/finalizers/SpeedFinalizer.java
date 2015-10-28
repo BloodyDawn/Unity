@@ -26,7 +26,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
+import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -44,6 +44,11 @@ public class SpeedFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = getBaseSpeed(creature, stat);
+		if (creature.isPlayer())
+		{
+			// Enchanted feet bonus
+			baseValue += calcEnchantBodyPart(creature, L2Item.SLOT_FEET);
+		}
 		
 		final byte speedStat = (byte) creature.getStat().getAdd(Stats.STAT_SPEED, -1);
 		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
@@ -56,25 +61,24 @@ public class SpeedFinalizer implements IStatsFunction
 		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_RUN_SPEED);
 	}
 	
+	@Override
+	public double calcEnchantBodyPartBonus(int enchantLevel, boolean isBlessed)
+	{
+		if (isBlessed)
+		{
+			return (1 * Math.max(enchantLevel - 3, 0)) + (1 * Math.max(enchantLevel - 6, 0));
+		}
+		
+		return (0.6 * Math.max(enchantLevel - 3, 0)) + (0.6 * Math.max(enchantLevel - 6, 0));
+	}
+	
 	private double getBaseSpeed(Creature creature, Stats stat)
 	{
-		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		double baseValue = calcWeaponPlusBaseValue(creature, stat);
 		if (creature.isPlayer())
 		{
 			final PlayerInstance player = creature.getActingPlayer();
-			if (player.isTransformed())
-			{
-				final TransformTemplate template = player.getTransformation().getTemplate(player);
-				if (template != null)
-				{
-					final double speed = template.getStats(stat);
-					if (speed > 0)
-					{
-						baseValue = speed;
-					}
-				}
-			}
-			else if (player.isMounted())
+			if (player.isMounted())
 			{
 				final PetLevelData data = PetDataTable.getInstance().getPetLevelData(player.getMountNpcId(), player.getMountLevel());
 				if (data != null)

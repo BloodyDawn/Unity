@@ -28,7 +28,9 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.MoveToLocation;
 
 public class DoppelgangerAI extends CharacterAI
@@ -80,6 +82,11 @@ public class DoppelgangerAI extends CharacterAI
 	
 	private void thinkCast()
 	{
+		if (_actor.isCastingNow(SkillCaster::isNormalType))
+		{
+			return;
+		}
+		
 		if (checkTargetLost(getCastTarget()))
 		{
 			setCastTarget(null);
@@ -90,11 +97,10 @@ public class DoppelgangerAI extends CharacterAI
 		{
 			return;
 		}
-		clientStopMoving(null);
 		getActor().followSummoner(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill);
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
 	
 	private void thinkInteract()
@@ -113,7 +119,7 @@ public class DoppelgangerAI extends CharacterAI
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}
@@ -173,7 +179,7 @@ public class DoppelgangerAI extends CharacterAI
 	}
 	
 	@Override
-	protected void onIntentionCast(Skill skill, WorldObject target)
+	protected void onIntentionCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
@@ -183,7 +189,7 @@ public class DoppelgangerAI extends CharacterAI
 		{
 			_lastAttack = null;
 		}
-		super.onIntentionCast(skill, target);
+		super.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
 	
 	@Override

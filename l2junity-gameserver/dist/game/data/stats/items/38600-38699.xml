@@ -43,14 +43,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="200" />
-		<for>
-			<add order="0" stat="pDef" val="58.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">58</stat>
+		</stats>
 	</item>
 	<item id="38603" name="Steel Full Plate Armor" type="Armor">
 		<!-- Steel Full Plate Armor. -->
 		<set name="icon" val="icon.armor_t62_ul_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="C" />
 		<set name="is_clan_depositable" val="false" />
@@ -62,10 +62,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="3493" />
-		<for>
-			<add order="0" stat="pDef" val="239.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">239</stat>
+		</stats>
 	</item>
 	<item id="38604" name="Steel Full Plate Boots" type="Armor">
 		<!-- Steel Full Plate Boots. -->
@@ -82,10 +81,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="400" />
-		<for>
-			<add order="0" stat="pDef" val="39.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
 	</item>
 	<item id="38605" name="Steel Full Plate Gauntlets" type="Armor">
 		<!-- Steel Full Plate Gauntlets. -->
@@ -102,10 +100,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="200" />
-		<for>
-			<add order="0" stat="pDef" val="39.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
 	</item>
 	<item id="38606" name="Steel Full Plate Shield" type="Weapon">
 		<!-- Steel Full Plate Shield. -->
@@ -122,14 +119,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="407" />
-		<for>
-			<add stat="sDef" val="203.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">203</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38607" name="Steel Karmian Tunic" type="Armor">
 		<!-- Steel Karmian Tunic. -->
 		<set name="icon" val="icon.armor_t53_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="C" />
@@ -142,14 +141,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="660" />
-		<for>
-			<add order="0" stat="pDef" val="60.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">60</stat>
+		</stats>
 	</item>
 	<item id="38608" name="Steel Karmian Stockings" type="Armor">
 		<!-- Steel Karmian Stockings. -->
 		<set name="icon" val="icon.armor_t53_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="C" />
@@ -162,10 +161,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="323" />
-		<for>
-			<add order="0" stat="pDef" val="37.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">37</stat>
+		</stats>
 	</item>
 	<item id="38609" name="Steel Karmian Gloves" type="Armor">
 		<!-- Steel Karmian Gloves. -->
@@ -182,10 +180,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="207" />
-		<for>
-			<add order="0" stat="pDef" val="32.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="38610" name="Steel Karmian Boots" type="Armor">
 		<!-- Steel Karmian Boots. -->
@@ -202,14 +199,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="410" />
-		<for>
-			<add order="0" stat="pDef" val="32.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="38611" name="Steel Plated Leather Armor" type="Armor">
 		<!-- Steel Plated Leather Armor. -->
 		<set name="icon" val="icon.armor_t47_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="C" />
@@ -222,14 +219,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1483" />
-		<for>
-			<add order="0" stat="pDef" val="94.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">94</stat>
+		</stats>
 	</item>
 	<item id="38612" name="Steel Plated Leather Gaiters" type="Armor">
 		<!-- Steel Plated Leather Gaiters. -->
 		<set name="icon" val="icon.armor_t47_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="C" />
@@ -242,10 +239,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="520" />
-		<for>
-			<add order="0" stat="pDef" val="59.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">59</stat>
+		</stats>
 	</item>
 	<item id="38613" name="Steel Plated Leather Boots" type="Armor">
 		<!-- Steel Plated Leather Boots. -->
@@ -262,10 +258,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="407" />
-		<for>
-			<add order="0" stat="pDef" val="32.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="38614" name="Steel Plated Leather Gloves" type="Armor">
 		<!-- Steel Plated Leather Gloves. -->
@@ -282,10 +277,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="203" />
-		<for>
-			<add order="0" stat="pDef" val="33.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="38615" name="Steel Doom Helmet" type="Armor">
 		<!-- Steel Doom Helmet. -->
@@ -302,10 +296,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="193" />
-		<for>
-			<add order="0" stat="pDef" val="66.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
 	</item>
 	<item id="38616" name="Steel Doom Gloves (Heavy Armor)" type="Armor">
 		<!-- Steel Doom Gloves (Heavy Armor). -->
@@ -322,10 +315,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="193" />
-		<for>
-			<add order="0" stat="pDef" val="44.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="38617" name="Steel Doom Boots (Heavy Armor)" type="Armor">
 		<!-- Steel Doom Boots (Heavy Armor). -->
@@ -342,14 +334,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="377" />
-		<for>
-			<add order="0" stat="pDef" val="44.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="38618" name="Steel Doom Plate Armor" type="Armor">
 		<!-- Steel Doom Plate Armor. -->
 		<set name="icon" val="icon.armor_t71_ul_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="B" />
 		<set name="is_clan_depositable" val="false" />
@@ -361,10 +353,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="3327" />
-		<for>
-			<add order="0" stat="pDef" val="270.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">270</stat>
+		</stats>
 	</item>
 	<item id="38619" name="Steel Doom Shield" type="Weapon">
 		<!-- Steel Doom Shield. -->
@@ -381,14 +372,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="400" />
-		<for>
-			<add stat="sDef" val="230.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">230</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38620" name="Steel Avadon Robe" type="Armor">
 		<!-- Steel Avadon Robe. -->
 		<set name="icon" val="icon.armor_t59_ul_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="fullarmor" />
 		<set name="crystal_type" val="B" />
@@ -401,10 +394,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="847" />
-		<for>
-			<add order="0" stat="pDef" val="127.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">127</stat>
+		</stats>
 	</item>
 	<item id="38621" name="Steel Avadon Circlet" type="Armor">
 		<!-- Steel Avadon Circlet. -->
@@ -421,10 +413,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="197" />
-		<for>
-			<add order="0" stat="pDef" val="62.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
 	</item>
 	<item id="38622" name="Steel Avadon Gloves (Robe)" type="Armor">
 		<!-- Steel Avadon Gloves (Robe). -->
@@ -441,10 +432,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="197" />
-		<for>
-			<add order="0" stat="pDef" val="41.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="38623" name="Steel Avadon Boots (Robe)" type="Armor">
 		<!-- Steel Avadon Boots (Robe). -->
@@ -461,10 +451,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="393" />
-		<for>
-			<add order="0" stat="pDef" val="41.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="38624" name="Steel Avadon Shield" type="Weapon">
 		<!-- Steel Avadon Shield. -->
@@ -481,14 +470,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="403" />
-		<for>
-			<add stat="sDef" val="216.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">216</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38625" name="Steel Leather Armor of Doom" type="Armor">
 		<!-- Steel Leather Armor of Doom. -->
 		<set name="icon" val="icon.armor_t72_ul_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="fullarmor" />
 		<set name="crystal_type" val="B" />
@@ -501,10 +492,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1833" />
-		<for>
-			<add order="0" stat="pDef" val="202.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">202</stat>
+		</stats>
 	</item>
 	<item id="38626" name="Steel Doom Gloves (Light Armor)" type="Armor">
 		<!-- Steel Doom Gloves (Light Armor). -->
@@ -521,10 +511,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="193" />
-		<for>
-			<add order="0" stat="pDef" val="44.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="38627" name="Steel Doom Boots (Light Armor)" type="Armor">
 		<!-- Steel Doom Boots (Light Armor). -->
@@ -541,14 +530,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="377" />
-		<for>
-			<add order="0" stat="pDef" val="44.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="38628" name="Steel Armor of Nightmare" type="Armor">
 		<!-- Steel Armor of Nightmare. -->
 		<set name="icon" val="icon.armor_t80_ul_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="A" />
 		<set name="is_clan_depositable" val="false" />
@@ -560,10 +549,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="3193" />
-		<for>
-			<add order="0" stat="pDef" val="293.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">293</stat>
+		</stats>
 	</item>
 	<item id="38629" name="Steel Helm of Nightmare" type="Armor">
 		<!-- Steel Helm of Nightmare. -->
@@ -580,10 +568,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="187" />
-		<for>
-			<add order="0" stat="pDef" val="73.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="38630" name="Steel Gauntlets of Nightmare (Heavy Armor)" type="Armor">
 		<!-- Steel Gauntlets of Nightmare (Heavy Armor). -->
@@ -600,10 +587,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="183" />
-		<for>
-			<add order="0" stat="pDef" val="49.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="38631" name="Steel Boots of Nightmare (Heavy Armor)" type="Armor">
 		<!-- Steel Boots of Nightmare (Heavy Armor). -->
@@ -620,10 +606,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="370" />
-		<for>
-			<add order="0" stat="pDef" val="49.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="38632" name="Steel Shield of Nightmare" type="Weapon">
 		<!-- Steel Shield of Nightmare. -->
@@ -640,14 +625,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="393" />
-		<for>
-			<add stat="sDef" val="256.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">256</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38633" name="Steel Dark Crystal Robe" type="Armor">
 		<!-- Steel Dark Crystal Robe. -->
 		<set name="icon" val="icon.armor_t76_ul_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="fullarmor" />
 		<set name="crystal_type" val="A" />
@@ -660,10 +647,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="817" />
-		<for>
-			<add order="0" stat="pDef" val="139.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">139</stat>
+		</stats>
 	</item>
 	<item id="38634" name="Steel Dark Crystal Helmet" type="Armor">
 		<!-- Steel Dark Crystal Helmet. -->
@@ -680,10 +666,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="190" />
-		<for>
-			<add order="0" stat="pDef" val="69.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
 	</item>
 	<item id="38635" name="Steel Dark Crystal Gloves (Robe)" type="Armor">
 		<!-- Steel Dark Crystal Gloves (Robe). -->
@@ -700,10 +685,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="193" />
-		<for>
-			<add order="0" stat="pDef" val="46.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="38636" name="Steel Dark Crystal Boots (Robe)" type="Armor">
 		<!-- Steel Dark Crystal Boots (Robe). -->
@@ -720,10 +704,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="370" />
-		<for>
-			<add order="0" stat="pDef" val="46.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="38637" name="Steel Dark Crystal Shield" type="Weapon">
 		<!-- Steel Dark Crystal Shield. -->
@@ -740,14 +723,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="397" />
-		<for>
-			<add stat="sDef" val="243.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">243</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38638" name="Steel Dark Crystal Leather Armor" type="Armor">
 		<!-- Steel Dark Crystal Leather Armor. -->
 		<set name="icon" val="icon.armor_t75_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="A" />
@@ -760,14 +745,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1433" />
-		<for>
-			<add order="0" stat="pDef" val="128.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
 	</item>
 	<item id="38639" name="Steel Dark Crystal Leggings" type="Armor">
 		<!-- Steel Dark Crystal Leggings. -->
 		<set name="icon" val="icon.armor_t75_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="A" />
@@ -780,10 +765,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="493" />
-		<for>
-			<add order="0" stat="pDef" val="80.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">80</stat>
+		</stats>
 	</item>
 	<item id="38640" name="Steel Dark Crystal Gloves (Light Armor)" type="Armor">
 		<!-- Steel Dark Crystal Gloves (Light Armor). -->
@@ -800,10 +784,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="193" />
-		<for>
-			<add order="0" stat="pDef" val="46.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="38641" name="Steel Dark Crystal Boots (Light Armor)" type="Armor">
 		<!-- Steel Dark Crystal Boots (Light Armor). -->
@@ -820,14 +803,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="370" />
-		<for>
-			<add order="0" stat="pDef" val="46.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="38642" name="Steel Imperial Crusader Breastplate" type="Armor">
 		<!-- Steel Imperial Crusader Breastplate. -->
 		<set name="icon" val="icon.armor_t88_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="S" />
@@ -840,14 +823,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="2540" />
-		<for>
-			<add order="0" stat="pDef" val="205.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">205</stat>
+		</stats>
 	</item>
 	<item id="38643" name="Steel Imperial Crusader Gaiters" type="Armor">
 		<!-- Steel Imperial Crusader Gaiters. -->
 		<set name="icon" val="icon.armor_t88_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="S" />
@@ -860,10 +843,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1087" />
-		<for>
-			<add order="0" stat="pDef" val="128.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
 	</item>
 	<item id="38644" name="Steel Imperial Crusader Gauntlets" type="Armor">
 		<!-- Steel Imperial Crusader Gauntlets. -->
@@ -880,10 +862,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="180" />
-		<for>
-			<add order="0" stat="pDef" val="55.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="38645" name="Steel Imperial Crusader Boots" type="Armor">
 		<!-- Steel Imperial Crusader Boots. -->
@@ -900,10 +881,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="370" />
-		<for>
-			<add order="0" stat="pDef" val="55.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="38646" name="Steel Imperial Crusader Helmet" type="Armor">
 		<!-- Steel Imperial Crusader Helmet. -->
@@ -920,10 +900,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="183" />
-		<for>
-			<add order="0" stat="pDef" val="83.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="38647" name="Steel Imperial Crusader Shield" type="Weapon">
 		<!-- Steel Imperial Crusader Shield. -->
@@ -940,14 +919,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="390" />
-		<for>
-			<add stat="sDef" val="290.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">290</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38648" name="Steel Major Arcana Robe" type="Armor">
 		<!-- Steel Major Arcana Robe. -->
 		<set name="icon" val="icon.armor_t90_ul_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="fullarmor" />
 		<set name="crystal_type" val="S" />
@@ -960,10 +941,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="767" />
-		<for>
-			<add order="0" stat="pDef" val="166.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">166</stat>
+		</stats>
 	</item>
 	<item id="38649" name="Steel Major Arcana Gloves" type="Armor">
 		<!-- Steel Major Arcana Gloves. -->
@@ -980,10 +960,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="180" />
-		<for>
-			<add order="0" stat="pDef" val="55.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="38650" name="Steel Major Arcana Boots" type="Armor">
 		<!-- Steel Major Arcana Boots. -->
@@ -1000,10 +979,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="370" />
-		<for>
-			<add order="0" stat="pDef" val="55.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="38651" name="Steel Major Arcana Circlet" type="Armor">
 		<!-- Steel Major Arcana Circlet. -->
@@ -1020,14 +998,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="183" />
-		<for>
-			<add order="0" stat="pDef" val="83.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="38652" name="Steel Arcana Sigil" type="Armor">
 		<!-- Steel Arcana Sigil. -->
 		<set name="icon" val="icon.arcana_sigil_i00" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
 		<set name="crystal_type" val="S" />
@@ -1040,14 +1018,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="940" />
-		<for>
-			<add order="0" stat="pDef" val="13.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">13</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38653" name="Steel Draconic Leather Armor" type="Armor">
 		<!-- Steel Draconic Leather Armor. -->
 		<set name="icon" val="icon.armor_t89_ul_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="fullarmor" />
 		<set name="crystal_type" val="S" />
@@ -1060,10 +1039,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1650" />
-		<for>
-			<add order="0" stat="pDef" val="249.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">249</stat>
+		</stats>
 	</item>
 	<item id="38654" name="Steel Draconic Leather Gloves" type="Armor">
 		<!-- Steel Draconic Leather Gloves. -->
@@ -1080,10 +1058,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="180" />
-		<for>
-			<add order="0" stat="pDef" val="55.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="38655" name="Steel Draconic Leather Boots" type="Armor">
 		<!-- Steel Draconic Leather Boots. -->
@@ -1100,10 +1077,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="370" />
-		<for>
-			<add order="0" stat="pDef" val="55.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="38656" name="Steel Draconic Leather Helmet" type="Armor">
 		<!-- Steel Draconic Leather Helmet. -->
@@ -1120,14 +1096,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="183" />
-		<for>
-			<add order="0" stat="pDef" val="83.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="38657" name="Steel Dynasty Breastplate" type="Armor">
 		<!-- Steel Dynasty Breastplate. -->
 		<set name="icon" val="icon.armor_t91_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="S" />
@@ -1140,14 +1116,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="2520" />
-		<for>
-			<add order="0" stat="pDef" val="226.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="38658" name="Steel Dynasty Gaiters" type="Armor">
 		<!-- Steel Dynasty Gaiters. -->
 		<set name="icon" val="icon.armor_t91_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="S" />
@@ -1160,10 +1136,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="141.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">141</stat>
+		</stats>
 	</item>
 	<item id="38659" name="Steel Dynasty Helmet" type="Armor">
 		<!-- Steel Dynasty Helmet. -->
@@ -1180,10 +1155,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="180" />
-		<for>
-			<add order="0" stat="pDef" val="92.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="38660" name="Steel Dynasty Gauntlets" type="Armor">
 		<!-- Steel Dynasty Gauntlets. -->
@@ -1200,10 +1174,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="170" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="38661" name="Steel Dynasty Boots" type="Armor">
 		<!-- Steel Dynasty Boots. -->
@@ -1220,10 +1193,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="360" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="38662" name="Steel Dynasty Shield" type="Weapon">
 		<!-- Steel Dynasty Shield. -->
@@ -1240,14 +1212,16 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="380" />
-		<for>
-			<add stat="sDef" val="321.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">321</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38663" name="Steel Dynasty Tunic" type="Armor">
 		<!-- Steel Dynasty Tunic. -->
 		<set name="icon" val="icon.armor_t93_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="S" />
@@ -1260,14 +1234,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="590" />
-		<for>
-			<add order="0" stat="pDef" val="113.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+		</stats>
 	</item>
 	<item id="38664" name="Steel Dynasty Stockings" type="Armor">
 		<!-- Steel Dynasty Stockings. -->
 		<set name="icon" val="icon.armor_t93_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="S" />
@@ -1280,10 +1254,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="290" />
-		<for>
-			<add order="0" stat="pDef" val="71.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">71</stat>
+		</stats>
 	</item>
 	<item id="38665" name="Steel Dynasty Circlet" type="Armor">
 		<!-- Steel Dynasty Circlet. -->
@@ -1300,10 +1273,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="180" />
-		<for>
-			<add order="0" stat="pDef" val="92.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="38666" name="Steel Dynasty Gloves" type="Armor">
 		<!-- Steel Dynasty Gloves. -->
@@ -1320,10 +1292,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="170" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="38667" name="Steel Dynasty Shoes" type="Armor">
 		<!-- Steel Dynasty Shoes. -->
@@ -1340,14 +1311,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="360" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="38668" name="Steel Dynasty Sigil" type="Armor">
 		<!-- Steel Dynasty Sigil. -->
 		<set name="icon" val="icon.dynasty_sigil_i00" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
 		<set name="crystal_type" val="S" />
@@ -1360,14 +1331,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="310" />
-		<for>
-			<add order="0" stat="pDef" val="15.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">15</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="38669" name="Steel Dynasty Leather Armor" type="Armor">
 		<!-- Steel Dynasty Leather Armor. -->
 		<set name="icon" val="icon.armor_t92_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="S" />
@@ -1380,14 +1352,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1390" />
-		<for>
-			<add order="0" stat="pDef" val="170.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="38670" name="Steel Dynasty Leather Leggings" type="Armor">
 		<!-- Steel Dynasty Leather Leggings. -->
 		<set name="icon" val="icon.armor_t92_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="S" />
@@ -1400,10 +1372,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="460" />
-		<for>
-			<add order="0" stat="pDef" val="106.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">106</stat>
+		</stats>
 	</item>
 	<item id="38671" name="Steel Dynasty Leather Helmet" type="Armor">
 		<!-- Steel Dynasty Leather Helmet. -->
@@ -1420,10 +1391,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="180" />
-		<for>
-			<add order="0" stat="pDef" val="92.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="38672" name="Steel Dynasty Leather Gloves" type="Armor">
 		<!-- Steel Dynasty Leather Gloves. -->
@@ -1440,10 +1410,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="170" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="38673" name="Steel Dynasty Leather Boots" type="Armor">
 		<!-- Steel Dynasty Leather Boots. -->
@@ -1460,10 +1429,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="360" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="38674" name="Steel Moonstone Earring" type="Armor">
 		<!-- Steel Moonstone Earring. -->
@@ -1480,10 +1448,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="39.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">39</stat>
+		</stats>
 	</item>
 	<item id="38675" name="Steel Aquastone Necklace" type="Armor">
 		<!-- Steel Aquastone Necklace. -->
@@ -1500,10 +1467,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="52.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">52</stat>
+		</stats>
 	</item>
 	<item id="38676" name="Steel Aquastone Ring" type="Armor">
 		<!-- Steel Aquastone Ring. -->
@@ -1520,10 +1486,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="26.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">26</stat>
+		</stats>
 	</item>
 	<item id="38677" name="Steel Adamantite Earring" type="Armor">
 		<!-- Steel Adamantite Earring. -->
@@ -1540,10 +1505,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="51.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">51</stat>
+		</stats>
 	</item>
 	<item id="38678" name="Steel Adamantite Necklace" type="Armor">
 		<!-- Steel Adamantite Necklace. -->
@@ -1560,10 +1524,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="68.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">68</stat>
+		</stats>
 	</item>
 	<item id="38679" name="Steel Adamantite Ring" type="Armor">
 		<!-- Steel Adamantite Ring. -->
@@ -1580,10 +1543,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="34.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">34</stat>
+		</stats>
 	</item>
 	<item id="38680" name="Steel Phoenix Earring" type="Armor">
 		<!-- Steel Phoenix Earring. -->
@@ -1600,10 +1562,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="60.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">60</stat>
+		</stats>
 	</item>
 	<item id="38681" name="Steel Phoenix Necklace" type="Armor">
 		<!-- Steel Phoenix Necklace. -->
@@ -1620,10 +1581,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="80.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">80</stat>
+		</stats>
 	</item>
 	<item id="38682" name="Steel Phoenix Ring" type="Armor">
 		<!-- Steel Phoenix Ring. -->
@@ -1640,10 +1600,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="40.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="38683" name="Steel Tateossian Earring" type="Armor">
 		<!-- Steel Tateossian Earring. -->
@@ -1660,10 +1619,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="71.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">71</stat>
+		</stats>
 	</item>
 	<item id="38684" name="Steel Tateossian Necklace" type="Armor">
 		<!-- Steel Tateossian Necklace. -->
@@ -1680,10 +1638,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="95.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">95</stat>
+		</stats>
 	</item>
 	<item id="38685" name="Steel Tateossian Ring" type="Armor">
 		<!-- Steel Tateossian Ring. -->
@@ -1700,10 +1657,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="48.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">48</stat>
+		</stats>
 	</item>
 	<item id="38686" name="Steel Dynasty Earring" type="Armor">
 		<!-- Steel Dynasty Earring. -->
@@ -1720,10 +1676,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="38687" name="Steel Dynasty Necklace" type="Armor">
 		<!-- Steel Dynasty Necklace. -->
@@ -1740,10 +1695,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="106.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">106</stat>
+		</stats>
 	</item>
 	<item id="38688" name="Steel Dynasty Ring" type="Armor">
 		<!-- Steel Dynasty Ring. -->
@@ -1760,10 +1714,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="60.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">60</stat>
+		</stats>
 	</item>
 	<item id="38689" name="Steel Immortal Earring (30-day)" type="Armor">
 		<!-- 30-day. -->
@@ -1780,10 +1733,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="94.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">94</stat>
+		</stats>
 	</item>
 	<item id="38690" name="Steel Immortal Necklace (30-day)" type="Armor">
 		<!-- 30-day. -->
@@ -1800,10 +1752,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="126.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">126</stat>
+		</stats>
 	</item>
 	<item id="38691" name="Steel Immortal Ring (30-day)" type="Armor">
 		<!-- 30-day. -->
@@ -1820,10 +1771,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="50" />
-		<for>
-			<add stat="mDef" val="63.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">63</stat>
+		</stats>
 	</item>
 	<item id="38692" name="Steel StormBringer" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nCritical + 86. -->
@@ -1843,12 +1793,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="477" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="61.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="38693" name="Steel Yaksa Mace" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nMax HP + 25%. -->
@@ -1868,13 +1819,14 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="547" />
-		<for>
-			<set stat="pAtk" val="156.0" />
-			<set stat="mAtk" val="83.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="38694" name="Steel Saber*Sword of Revolution" type="Weapon">
 		<!-- Cannot augment. -->
@@ -1894,12 +1846,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="807" />
-		<for>
-			<set stat="pAtk" val="118.0" />
-			<set stat="mAtk" val="56.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="38695" name="Steel Mysterious Sword" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nCasting Spd. + 15%. -->
@@ -1919,12 +1872,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="477" />
-		<for>
-			<set stat="pAtk" val="85.0" />
-			<set stat="mAtk" val="81.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">85</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="38696" name="Steel Body Slasher" type="Weapon">
 		<!-- Cannot augment. \n(Soul Crystal Enhancement)\nIn a Critical attack, 34% chance of inflicting Stun. -->
@@ -1944,12 +1898,14 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="677" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="61.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="38697" name="Steel Soulfire Dirk" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nMax MP + 30%. -->
@@ -1969,12 +1925,14 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="250" />
-		<for>
-			<set stat="pAtk" val="86.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">86</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="38698" name="Steel Crystallized Ice Bow" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nAccuracy + 5. -->
@@ -1994,12 +1952,14 @@
 		<set name="soulshots" val="8" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="597" />
-		<for>
-			<set stat="pAtk" val="220.0" />
-			<set stat="mAtk" val="61.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="38699" name="Steel Schlager" type="Weapon">
 		<!-- Cannot augment. Kamael only: Convert - Flamberge\n(Soul Crystal Enhancement)\nCritical + 86. -->
@@ -2019,12 +1979,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="660" />
-		<for>
-			<set stat="pAtk" val="116.0" />
-			<set stat="mAtk" val="61.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">116</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 </list>

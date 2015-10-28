@@ -34,7 +34,6 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
-import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
@@ -53,10 +52,8 @@ import org.l2junity.gameserver.ai.AttackableAI;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
-import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -84,12 +81,8 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.actor.status.CharStatus;
-import org.l2junity.gameserver.model.actor.tasks.character.FlyToLocationTask;
 import org.l2junity.gameserver.model.actor.tasks.character.HitTask;
-import org.l2junity.gameserver.model.actor.tasks.character.MagicUseTask;
 import org.l2junity.gameserver.model.actor.tasks.character.NotifyAITask;
-import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
-import org.l2junity.gameserver.model.actor.tasks.character.UsePotionTask;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
@@ -104,8 +97,6 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageDealt;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageReceived;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleport;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleported;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSkillSee;
@@ -114,7 +105,6 @@ import org.l2junity.gameserver.model.events.returns.LocationReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.InvulSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.model.holders.SkillUseHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IDeletable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -131,13 +121,14 @@ import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.CommonSkill;
-import org.l2junity.gameserver.model.skills.EffectScope;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
+import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.model.skills.SkillChannelized;
 import org.l2junity.gameserver.model.skills.SkillChannelizer;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
@@ -145,10 +136,8 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.Attack;
 import org.l2junity.gameserver.network.client.send.ChangeMoveType;
 import org.l2junity.gameserver.network.client.send.ChangeWaitType;
-import org.l2junity.gameserver.network.client.send.ExRotation;
 import org.l2junity.gameserver.network.client.send.ExTeleportToLocationActivate;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
-import org.l2junity.gameserver.network.client.send.MagicSkillCanceld;
 import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.MoveToLocation;
@@ -159,7 +148,7 @@ import org.l2junity.gameserver.network.client.send.SetupGauge;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.StopMove;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.StopRotation;
 import org.l2junity.gameserver.network.client.send.TeleportToLocation;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -195,10 +184,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public static final Logger _log = LoggerFactory.getLogger(Creature.class);
 	
 	private volatile Set<WeakReference<Creature>> _attackByList;
-	private volatile boolean _isCastingNow = false;
-	private volatile boolean _isCastingSimultaneouslyNow = false;
-	private Skill _lastSkillCast;
-	private Skill _lastSimultaneousSkillCast;
 	
 	private boolean _isDead = false;
 	private boolean _isImmobilized = false;
@@ -278,13 +263,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private int _disableBowAttackEndTime;
 	private int _disableCrossBowAttackEndTime;
 	
-	private int _castInterruptTime;
-	
 	private volatile CharacterAI _ai = null;
 	
 	/** Future Skill Cast */
-	protected Future<?> _skillCast;
-	protected Future<?> _skillCast2;
+	protected List<SkillCaster> _skillCasters = new LinkedList<>();
 	
 	private final AtomicInteger _blockedDebuffTimes = new AtomicInteger();
 	
@@ -359,6 +341,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		setIsInvul(true);
+		
+		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL));
+		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL_SECOND));
+		_skillCasters.add(new SkillCaster(this, SkillCastingType.SIMULTANEOUS));
 	}
 	
 	public final CharEffectList getEffectList()
@@ -1031,7 +1017,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) calcStat(Stats.BOW_MP_CONSUME_RATE, mpConsume, null, null);
+							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
 							
 							if (getCurrentMp() < mpConsume)
 							{
@@ -1093,7 +1079,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) calcStat(Stats.BOW_MP_CONSUME_RATE, mpConsume, null, null);
+							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
 							
 							if (getCurrentMp() < mpConsume)
 							{
@@ -1210,28 +1196,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				abortAttack(); // Abort the attack of the L2Character and send Server->Client ActionFailed packet
 			}
-			else
+			else if (player != null)
 			{
-				// If we didn't miss the hit, discharge the shoulshots, if any
-				setChargedShot(ShotType.SOULSHOTS, false);
-				
-				if (player != null)
+				if (player.isCursedWeaponEquipped())
 				{
-					if (player.isCursedWeaponEquipped())
+					// If hit by a cursed weapon, CP is reduced to 0
+					if (!target.isInvul())
 					{
-						// If hit by a cursed weapon, CP is reduced to 0
-						if (!target.isInvul())
-						{
-							target.setCurrentCp(0);
-						}
+						target.setCurrentCp(0);
 					}
-					else if (player.isHero())
+				}
+				else if (player.isHero())
+				{
+					// If a cursed weapon is hit by a Hero, CP is reduced to 0
+					if (target.isPlayer() && target.getActingPlayer().isCursedWeaponEquipped())
 					{
-						// If a cursed weapon is hit by a Hero, CP is reduced to 0
-						if (target.isPlayer() && target.getActingPlayer().isCursedWeaponEquipped())
-						{
-							target.setCurrentCp(0);
-						}
+						target.setCurrentCp(0);
 					}
 				}
 			}
@@ -1244,8 +1224,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// Notify AI with EVT_READY_TO_ACT
-			ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(this, CtrlEvent.EVT_READY_TO_ACT), timeAtk + reuse);
+			ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(this, CtrlEvent.EVT_READY_TO_ACT), timeAtk);
 		}
+		
 	}
 	
 	/**
@@ -1294,13 +1275,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld1 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
+			damage1 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
 			
 			// Bows Ranged Damage Formula (Damage gradually decreases when 60% or lower than full hit range, and increases when 60% or higher).
 			// full hit range is 500 which is the base bow range, and the 60% of this is 800.
@@ -1377,13 +1358,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld1 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit 1 is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages of hit 1
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
+			damage1 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
 			
 			damage1 /= 2;
 		}
@@ -1395,13 +1376,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld2 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit 2 is critical
-			crit2 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit2 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages of hit 2
-			damage2 = (int) Formulas.calcPhysDam(this, target, null, 0, shld2, crit2, attack.hasSoulshot());
+			damage2 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld2, crit2, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage2 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage2);
+			damage2 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage2);
 			
 			damage2 /= 2;
 		}
@@ -1417,7 +1398,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		attack.addHit(target, damage2, miss2, crit2, shld2);
 		
 		// Launch multiple attack (if possible)
-		int attackCountMax = (int) getStat().calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null);
+		int attackCountMax = (int) getStat().getValue(Stats.ATTACK_COUNT_MAX, 1);
 		if (attackCountMax > 1)
 		{
 			attackCountMax--; // Main target has already been attacked.
@@ -1432,9 +1413,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				if (!miss)
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
-					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
-					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
+					damage = (int) Formulas.calcAutoAttackDamage(this, surroundTarget, 0, shld, crit, attack.hasSoulshot());
+					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
 				
@@ -1453,9 +1434,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				if (!miss)
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
-					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
-					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
+					damage = (int) Formulas.calcAutoAttackDamage(this, surroundTarget, 0, shld, crit, attack.hasSoulshot());
+					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
 				
@@ -1502,13 +1483,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld1 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
+			damage1 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
 		}
 		
 		// Create a new hit task with Medium priority
@@ -1518,7 +1499,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		attack.addHit(target, damage1, miss1, crit1, shld1);
 		
 		// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
-		int attackCountMax = (int) getStat().calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null);
+		int attackCountMax = (int) getStat().getValue(Stats.ATTACK_COUNT_MAX, 1);
 		if (attackCountMax > 1)
 		{
 			attackCountMax--; // Main target has already been attacked.
@@ -1532,9 +1513,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				if (!miss)
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
-					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
-					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
+					damage = (int) Formulas.calcAutoAttackDamage(this, surroundTarget, 0, shld, crit, attack.hasSoulshot());
+					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 				}
 				
 				ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, surroundTarget, damage, crit, miss, attack.hasSoulshot(), shld), sAtk);
@@ -1603,6 +1584,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return list;
 	}
 	
+	public void doCast(Skill skill)
+	{
+		doCast(skill, null, false, false);
+	}
+	
 	/**
 	 * Manage the casting task (casting and interrupt time, re-use delay...) and display the casting bar and animation on client.<br>
 	 * <B><U>Actions</U>:</B>
@@ -1616,587 +1602,69 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Create a task MagicUseTask (that will call method onMagicUseTimer) to launch the Magic Skill at the end of the casting time</li>
 	 * </ul>
 	 * @param skill The L2Skill to use
+	 * @param item the referenced item of this skill cast
+	 * @param ctrlPressed if the player has pressed ctrl key during casting, aka force use.
+	 * @param shiftPressed if the player has pressed shift key during casting, aka dont move.
 	 */
-	public void doCast(Skill skill)
+	public void doCast(Skill skill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
 	{
-		beginCast(skill, false);
+		SkillCaster skillCaster;
+		
+		if (skill.isWithoutAction())
+		{
+			skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isSimultaneousType);
+		}
+		else if (isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast())
+		{
+			skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isNormalType);
+		}
+		else
+		{
+			skillCaster = getSkillCaster(SkillCaster::isNotCasting, s -> s.getCastingType() == SkillCastingType.NORMAL);
+		}
+		
+		if (skillCaster != null)
+		{
+			if (skillCaster.prepareCasting(getTarget(), skill, item, ctrlPressed, shiftPressed))
+			{
+				skillCaster.startCasting();
+			}
+			else
+			{
+				// Send a Server->Client packet ActionFailed to the L2PcInstance
+				if (isPlayer())
+				{
+					sendPacket(ActionFailed.get(skillCaster.getCastingType()));
+					getAI().setIntention(AI_INTENTION_ACTIVE);
+				}
+			}
+		}
 	}
 	
 	public void doSimultaneousCast(Skill skill)
 	{
-		beginCast(skill, true);
+		doSimultaneousCast(skill, null);
 	}
 	
-	public void doCast(Skill skill, Creature target, Creature[] targets)
+	public void doSimultaneousCast(Skill skill, ItemInstance item)
 	{
-		if (!checkDoCastConditions(skill))
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isSimultaneousType);
+		if (skillCaster != null)
 		{
-			setIsCastingNow(false);
-			return;
-		}
-		
-		// Override casting type
-		if (skill.isSimultaneousCast())
-		{
-			doSimultaneousCast(skill, target, targets);
-			return;
-		}
-		
-		stopEffectsOnAction();
-		
-		// Recharge AutoSoulShot
-		// this method should not used with L2Playable
-		
-		beginCast(skill, false, target, targets);
-	}
-	
-	public void doSimultaneousCast(Skill skill, Creature target, Creature[] targets)
-	{
-		if (!checkDoCastConditions(skill))
-		{
-			setIsCastingSimultaneouslyNow(false);
-			return;
-		}
-		stopEffectsOnAction();
-		
-		beginCast(skill, true, target, targets);
-	}
-	
-	private void beginCast(Skill skill, boolean simultaneously)
-	{
-		if (!checkDoCastConditions(skill))
-		{
-			if (simultaneously)
+			if (skillCaster.prepareCasting(getTarget(), skill, item, false, false))
 			{
-				setIsCastingSimultaneouslyNow(false);
+				skillCaster.startCasting();
 			}
 			else
 			{
-				setIsCastingNow(false);
-			}
-			if (isPlayer())
-			{
-				getAI().setIntention(AI_INTENTION_ACTIVE);
-			}
-			return;
-		}
-		
-		// Override casting type
-		if (skill.isSimultaneousCast() && !simultaneously)
-		{
-			simultaneously = true;
-		}
-		
-		stopEffectsOnAction();
-		
-		// Set the target of the skill in function of Skill Type and Target Type
-		Creature target = null;
-		// Get all possible targets of the skill in a table in function of the skill target type
-		Creature[] targets = skill.getTargetList(this);
-		
-		boolean doit = false;
-		
-		// AURA skills should always be using caster as target
-		switch (skill.getTargetType())
-		{
-			case AREA_SUMMON: // We need it to correct facing
-				target = getServitors().values().stream().findFirst().orElse(getPet());
-				break;
-			case AURA:
-			case AURA_CORPSE_MOB:
-			case FRONT_AURA:
-			case BEHIND_AURA:
-			case GROUND:
-				target = this;
-				break;
-			case SELF:
-			case PET:
-			case SERVITOR:
-			case SUMMON:
-			case OWNER_PET:
-			case PARTY:
-			case CLAN:
-			case PARTY_CLAN:
-			case COMMAND_CHANNEL:
-				doit = true;
-			default:
-				if (targets.length == 0)
-				{
-					if (simultaneously)
-					{
-						setIsCastingSimultaneouslyNow(false);
-					}
-					else
-					{
-						setIsCastingNow(false);
-					}
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
-					if (isPlayer())
-					{
-						sendPacket(ActionFailed.STATIC_PACKET);
-						getAI().setIntention(AI_INTENTION_ACTIVE);
-					}
-					return;
-				}
-				
-				if ((skill.isContinuous() && !skill.isDebuff()) || skill.hasEffectType(L2EffectType.CPHEAL, L2EffectType.HEAL))
-				{
-					doit = true;
-				}
-				
-				if (doit)
-				{
-					target = targets[0];
-				}
-				else
-				{
-					target = (Creature) getTarget();
-				}
-		}
-		beginCast(skill, simultaneously, target, targets);
-	}
-	
-	private void beginCast(Skill skill, boolean simultaneously, Creature target, Creature[] targets)
-	{
-		if (target == null)
-		{
-			if (simultaneously)
-			{
-				setIsCastingSimultaneouslyNow(false);
-			}
-			else
-			{
-				setIsCastingNow(false);
-			}
-			if (isPlayer())
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				getAI().setIntention(AI_INTENTION_ACTIVE);
-			}
-			return;
-		}
-		
-		final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillUse(this, skill, simultaneously, target, targets), this, TerminateReturn.class);
-		if ((term != null) && term.terminate())
-		{
-			if (simultaneously)
-			{
-				setIsCastingSimultaneouslyNow(false);
-			}
-			else
-			{
-				setIsCastingNow(false);
-			}
-			if (isPlayer())
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				getAI().setIntention(AI_INTENTION_ACTIVE);
-			}
-			return;
-		}
-		
-		// TODO: Unhardcode using event listeners!
-		if (skill.hasEffectType(L2EffectType.RESURRECTION))
-		{
-			if (isResurrectionBlocked() || target.isResurrectionBlocked())
-			{
-				sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
-				target.sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
-				
-				if (simultaneously)
-				{
-					setIsCastingSimultaneouslyNow(false);
-				}
-				else
-				{
-					setIsCastingNow(false);
-				}
-				
+				// Send a Server->Client packet ActionFailed to the L2PcInstance
 				if (isPlayer())
 				{
+					sendPacket(ActionFailed.STATIC_PACKET);
 					getAI().setIntention(AI_INTENTION_ACTIVE);
-					sendPacket(ActionFailed.STATIC_PACKET);
-				}
-				return;
-			}
-		}
-		
-		// Get the Identifier of the skill
-		int magicId = skill.getId();
-		
-		// Get the Base Casting Time of the Skills.
-		int skillTime = (skill.getHitTime() + skill.getCoolTime());
-		
-		if (!skill.isChanneling() || (skill.getChannelingSkillId() == 0))
-		{
-			// Calculate the Casting Time of the "Non-Static" Skills (with caster PAtk/MAtkSpd).
-			if (!skill.isStatic())
-			{
-				skillTime = Formulas.calcAtkSpd(this, skill, skillTime);
-			}
-			// Calculate the Casting Time of Magic Skills (reduced in 40% if using SPS/BSPS)
-			if (skill.isMagic() && (isChargedShot(ShotType.SPIRITSHOTS) || isChargedShot(ShotType.BLESSED_SPIRITSHOTS)))
-			{
-				skillTime = (int) (0.6 * skillTime);
-			}
-		}
-		
-		// Avoid broken Casting Animation.
-		// Client can't handle less than 550ms Casting Animation in Magic Skills with more than 550ms base.
-		if (skill.isMagic() && ((skill.getHitTime() + skill.getCoolTime()) > 550) && (skillTime < 550))
-		{
-			skillTime = 550;
-		}
-		// Client can't handle less than 500ms Casting Animation in Physical Skills with 500ms base or more.
-		else if (!skill.isStatic() && ((skill.getHitTime() + skill.getCoolTime()) >= 500) && (skillTime < 500))
-		{
-			skillTime = 500;
-		}
-		
-		// queue herbs and potions
-		if (isCastingSimultaneouslyNow() && simultaneously)
-		{
-			ThreadPoolManager.getInstance().scheduleAi(new UsePotionTask(this, skill), 100);
-			return;
-		}
-		
-		// Set the _castInterruptTime and casting status (L2PcInstance already has this true)
-		if (simultaneously)
-		{
-			setIsCastingSimultaneouslyNow(true);
-		}
-		else
-		{
-			setIsCastingNow(true);
-		}
-		
-		if (!simultaneously)
-		{
-			_castInterruptTime = -2 + GameTimeController.getInstance().getGameTicks() + (skillTime / GameTimeController.MILLIS_IN_TICK);
-			setLastSkillCast(skill);
-		}
-		else
-		{
-			setLastSimultaneousSkillCast(skill);
-		}
-		
-		// Calculate the Reuse Time of the Skill
-		int reuseDelay;
-		if (skill.isStaticReuse() || skill.isStatic())
-		{
-			reuseDelay = skill.getReuseDelay();
-		}
-		else if (skill.isMagic())
-		{
-			reuseDelay = (int) (skill.getReuseDelay() * calcStat(Stats.MAGIC_REUSE_RATE, 1, null, null));
-		}
-		else if (skill.isPhysical())
-		{
-			reuseDelay = (int) (skill.getReuseDelay() * calcStat(Stats.P_REUSE, 1, null, null));
-		}
-		else
-		{
-			reuseDelay = (int) (skill.getReuseDelay() * calcStat(Stats.DANCE_REUSE, 1, null, null));
-		}
-		
-		boolean skillMastery = Formulas.calcSkillMastery(this, skill);
-		
-		// Skill reuse check
-		if ((reuseDelay > 30000) && !skillMastery)
-		{
-			addTimeStamp(skill, reuseDelay);
-		}
-		
-		// Check if this skill consume mp on start casting
-		int initmpcons = getStat().getMpInitialConsume(skill);
-		if (initmpcons > 0)
-		{
-			getStatus().reduceMp(initmpcons);
-			StatusUpdate su = new StatusUpdate(this);
-			su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
-			sendPacket(su);
-		}
-		
-		// Disable the skill during the re-use delay and create a task EnableSkill with Medium priority to enable it at the end of the re-use delay
-		if (reuseDelay > 10)
-		{
-			if (skillMastery)
-			{
-				reuseDelay = 100;
-				
-				if (getActingPlayer() != null)
-				{
-					getActingPlayer().sendPacket(SystemMessageId.A_SKILL_IS_READY_TO_BE_USED_AGAIN);
-				}
-			}
-			
-			disableSkill(skill, reuseDelay);
-		}
-		
-		// Make sure that char is facing selected target
-		if (target != this)
-		{
-			setHeading(Util.calculateHeadingFrom(this, target));
-			broadcastPacket(new ExRotation(getObjectId(), getHeading()));
-		}
-		
-		if (isPlayable())
-		{
-			if (skill.getItemConsumeId() > 0)
-			{
-				if (!destroyItemByItemId("Consume", skill.getItemConsumeId(), skill.getItemConsumeCount(), null, true))
-				{
-					getActingPlayer().sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT2);
-					abortCast();
-					return;
-				}
-			}
-			
-			// reduce talisman mana on skill use
-			if ((skill.getReferenceItemId() > 0) && (ItemTable.getInstance().getTemplate(skill.getReferenceItemId()).getBodyPart() == L2Item.SLOT_DECO))
-			{
-				for (ItemInstance item : getInventory().getItemsByItemId(skill.getReferenceItemId()))
-				{
-					if (item.isEquipped())
-					{
-						item.decreaseMana(false, item.useSkillDisTime());
-						break;
-					}
 				}
 			}
 		}
-		
-		final int actionId = isSummon() ? ActionData.getInstance().getSkillActionId(skill.getId()) : -1;
-		
-		// Send a Server->Client packet MagicSkillUser with target, displayId, level, skillTime, reuseDelay
-		// to the L2Character AND to all L2PcInstance in the _KnownPlayers of the L2Character
-		broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getDisplayLevel(), skillTime, reuseDelay, skill.getReuseDelayGroup(), actionId));
-		
-		// Send a system message to the player.
-		if (isPlayer() && !skill.isAbnormalInstant())
-		{
-			SystemMessage sm = null;
-			switch (magicId)
-			{
-				case 1312: // Fishing
-				{
-					// Done in L2PcInstance.startFishing()
-					break;
-				}
-				case 2046: // Wolf Collar
-				{
-					sm = SystemMessage.getSystemMessage(SystemMessageId.SUMMONING_YOUR_PET);
-					break;
-				}
-				default:
-				{
-					sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_USE_S1);
-					sm.addSkillName(skill);
-					break;
-				}
-			}
-			
-			sendPacket(sm);
-		}
-		
-		if (skill.hasEffects(EffectScope.START))
-		{
-			skill.applyEffectScope(EffectScope.START, new BuffInfo(this, target, skill, false), true, false);
-		}
-		
-		// Before start AI Cast Broadcast Fly Effect is Need
-		if (skill.getFlyType() != null)
-		{
-			ThreadPoolManager.getInstance().scheduleEffect(new FlyToLocationTask(this, target, skill), 50);
-		}
-		
-		MagicUseTask mut = new MagicUseTask(this, targets, skill, skillTime, simultaneously);
-		
-		// launch the magic in skillTime milliseconds
-		if (skillTime > 0)
-		{
-			// Send a Server->Client packet SetupGauge with the color of the gauge and the casting time
-			if (isPlayer() && !simultaneously)
-			{
-				sendPacket(new SetupGauge(getObjectId(), SetupGauge.BLUE, skillTime));
-			}
-			
-			if (skill.isChanneling() && (skill.getChannelingSkillId() > 0))
-			{
-				getSkillChannelizer().startChanneling(skill);
-			}
-			
-			if (simultaneously)
-			{
-				Future<?> future = _skillCast2;
-				if (future != null)
-				{
-					future.cancel(true);
-					_skillCast2 = null;
-				}
-				
-				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (skillTime)
-				// For client animation reasons (party buffs especially) 400 ms before!
-				_skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, skillTime - 400);
-			}
-			else
-			{
-				Future<?> future = _skillCast;
-				if (future != null)
-				{
-					future.cancel(true);
-					_skillCast = null;
-				}
-				
-				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (skillTime)
-				// For client animation reasons (party buffs especially) 400 ms before!
-				_skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, skillTime - 400);
-			}
-		}
-		else
-		{
-			mut.setSkillTime(0);
-			onMagicLaunchedTimer(mut);
-		}
-	}
-	
-	/**
-	 * Check if casting of skill is possible
-	 * @param skill
-	 * @return True if casting is possible
-	 */
-	public boolean checkDoCastConditions(Skill skill)
-	{
-		if ((skill == null) || isSkillDisabled(skill) || (((skill.getFlyRadius() > 0) || (skill.getFlyType() != null)) && isMovementDisabled()))
-		{
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Check if the caster has enough MP
-		if (getCurrentMp() < (getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill)))
-		{
-			// Send a System Message to the caster
-			sendPacket(SystemMessageId.NOT_ENOUGH_MP);
-			
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Check if the caster has enough HP
-		if (getCurrentHp() <= skill.getHpConsume())
-		{
-			// Send a System Message to the caster
-			sendPacket(SystemMessageId.NOT_ENOUGH_HP);
-			
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Skill mute checks.
-		if (!skill.isStatic())
-		{
-			// Check if the skill is a magic spell and if the L2Character is not muted
-			if (skill.isMagic())
-			{
-				if (isMuted())
-				{
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-			}
-			else
-			{
-				// Check if the skill is physical and if the L2Character is not physical_muted
-				if (isPhysicalMuted())
-				{
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-			}
-		}
-		
-		// prevent casting signets to peace zone
-		if (skill.isChanneling() && (skill.getChannelingSkillId() > 0))
-		{
-			final ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(this);
-			boolean canCast = true;
-			if ((skill.getTargetType() == L2TargetType.GROUND) && isPlayer())
-			{
-				Location wp = getActingPlayer().getCurrentSkillWorldPosition();
-				if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, wp.getX(), wp.getY(), wp.getZ()))
-				{
-					canCast = false;
-				}
-			}
-			else if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, getX(), getY(), getZ()))
-			{
-				canCast = false;
-			}
-			if (!canCast)
-			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-				sm.addSkillName(skill);
-				sendPacket(sm);
-				return false;
-			}
-		}
-		
-		// Check if the caster's weapon is limited to use only its own skills
-		final Weapon weapon = getActiveWeaponItem();
-		if ((weapon != null) && weapon.useWeaponSkillsOnly() && !isGM() && (weapon.getSkills(ItemSkillType.NORMAL) != null))
-		{
-			boolean found = false;
-			for (SkillHolder sh : weapon.getSkills(ItemSkillType.NORMAL))
-			{
-				if (sh.getSkillId() == skill.getId())
-				{
-					found = true;
-				}
-			}
-			
-			if (!found)
-			{
-				if (getActingPlayer() != null)
-				{
-					sendPacket(SystemMessageId.THAT_WEAPON_CANNOT_USE_ANY_OTHER_SKILL_EXCEPT_THE_WEAPON_S_SKILL);
-				}
-				return false;
-			}
-		}
-		
-		// Check if the spell consumes an Item
-		// TODO: combine check and consume
-		if ((skill.getItemConsumeId() > 0) && (getInventory() != null))
-		{
-			// Get the L2ItemInstance consumed by the spell
-			ItemInstance requiredItems = getInventory().getItemByItemId(skill.getItemConsumeId());
-			
-			// Check if the caster owns enough consumed Item to cast
-			if ((requiredItems == null) || (requiredItems.getCount() < skill.getItemConsumeCount()))
-			{
-				// Checked: when a summon skill failed, server show required consume item count
-				if (skill.hasEffectType(L2EffectType.SUMMON))
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.SUMMONING_A_SERVITOR_COSTS_S2_S1);
-					sm.addItemName(skill.getItemConsumeId());
-					sm.addInt(skill.getItemConsumeCount());
-					sendPacket(sm);
-				}
-				else
-				{
-					// Send a System Message to the caster
-					sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_NECESSARY_ITEMS_TO_USE_THE_SKILL);
-				}
-				return false;
-			}
-		}
-		return true;
 	}
 	
 	/**
@@ -2727,26 +2195,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 		}
 		return _attackByList;
-	}
-	
-	public final Skill getLastSimultaneousSkillCast()
-	{
-		return _lastSimultaneousSkillCast;
-	}
-	
-	public void setLastSimultaneousSkillCast(Skill skill)
-	{
-		_lastSimultaneousSkillCast = skill;
-	}
-	
-	public final Skill getLastSkillCast()
-	{
-		return _lastSkillCast;
-	}
-	
-	public void setLastSkillCast(Skill skill)
-	{
-		_lastSkillCast = skill;
 	}
 	
 	public final boolean isControlBlocked()
@@ -3727,39 +3175,16 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * @return True if the L2Character is casting.
+	 * @return True if the Creature is casting any kind of skill, including simultaneous skills like potions.
 	 */
 	public final boolean isCastingNow()
 	{
-		return _isCastingNow;
+		return _skillCasters.stream().anyMatch(SkillCaster::isCasting);
 	}
 	
-	public void setIsCastingNow(boolean value)
+	public final boolean isCastingNow(Predicate<SkillCaster> filter)
 	{
-		_isCastingNow = value;
-	}
-	
-	public final boolean isCastingSimultaneouslyNow()
-	{
-		return _isCastingSimultaneouslyNow;
-	}
-	
-	public void setIsCastingSimultaneouslyNow(boolean value)
-	{
-		_isCastingSimultaneouslyNow = value;
-	}
-	
-	/**
-	 * @return True if the cast of the L2Character can be aborted.
-	 */
-	public final boolean canAbortCast()
-	{
-		return _castInterruptTime > GameTimeController.getInstance().getGameTicks();
-	}
-	
-	public int getCastInterruptTime()
-	{
-		return _castInterruptTime;
+		return _skillCasters.stream().filter(SkillCaster::isCasting).anyMatch(filter);
 	}
 	
 	/**
@@ -3782,48 +3207,29 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Abort the cast of the L2Character and send Server->Client MagicSkillCanceld/ActionFailed packet.
+	 * Abort the cast of normal non-simultaneous skills.
+	 * @return {@code true} if a skill casting has been aborted, {@code false} otherwise.
 	 */
-	public final void abortCast()
+	public final boolean abortCast()
 	{
-		if (isCastingNow() || isCastingSimultaneouslyNow())
+		return abortCast(SkillCaster::isNormalType);
+	}
+	
+	/**
+	 * Try to break this character's casting using the given filters.
+	 * @param filter
+	 * @return {@code true} if a skill casting has been aborted, {@code false} otherwise.
+	 */
+	public final boolean abortCast(Predicate<SkillCaster> filter)
+	{
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, filter);
+		if (skillCaster != null)
 		{
-			Future<?> future = _skillCast;
-			// cancels the skill hit scheduled task
-			if (future != null)
-			{
-				future.cancel(true);
-				_skillCast = null;
-			}
-			future = _skillCast2;
-			if (future != null)
-			{
-				future.cancel(true);
-				_skillCast2 = null;
-			}
-			
-			// TODO: Handle removing spawned npc.
-			
-			if (isChanneling())
-			{
-				getSkillChannelizer().stopChanneling();
-			}
-			
-			if (_allSkillsDisabled)
-			{
-				enableAllSkills(); // this remains for forced skill use, e.g. scroll of escape
-			}
-			setIsCastingNow(false);
-			setIsCastingSimultaneouslyNow(false);
-			// safeguard for cannot be interrupt any more
-			_castInterruptTime = 0;
-			if (isPlayer())
-			{
-				getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING); // setting back previous intention
-			}
-			broadcastPacket(new MagicSkillCanceld(getObjectId())); // broadcast packet to stop animations client-side
-			sendPacket(ActionFailed.STATIC_PACKET); // send an "action failed" packet to the caster
+			skillCaster.stopCasting(true);
+			return true;
 		}
+		
+		return false;
 	}
 	
 	/**
@@ -4009,6 +3415,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			setXYZ(loc.getX(), loc.getY(), loc.getZ());
 			setHeading(loc.getHeading());
 			revalidateZone(true);
+			broadcastPacket(new StopRotation(getObjectId(), loc.getHeading(), 0));
 		}
 		broadcastPacket(new StopMove(this));
 	}
@@ -4605,9 +4012,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			notifyAttackAvoid(target, false);
 		}
+		else
+		{
+			// If we didn't miss the hit, discharge the shoulshots, if any
+			setChargedShot(ShotType.SOULSHOTS, false);
+		}
 		
 		// Send message about damage/crit or miss
-		sendDamageMessage(target, damage, false, crit, miss);
+		sendDamageMessage(target, null, damage, crit, miss);
 		
 		// Check Raidboss attack
 		// Character will be petrified if attacking a raid that's more
@@ -4647,28 +4059,34 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			int reflectedDamage = 0;
 			
-			if (!isBow && !target.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
+			if (!target.isInvul()) // Do not reflect or vampiric if target is invulnerable
 			{
-				// quick fix for no drop from raid if boss attack high-level char with damage reflection
-				if (!target.isRaid() || (getActingPlayer() == null) || (getActingPlayer().getLevel() <= (target.getLevel() + 8)))
+				if (!isBow) // No reflect if weapon is of type bow
 				{
-					// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-					double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
-					
-					if (reflectPercent > 0)
+					// quick fix for no drop from raid if boss attack high-level char with damage reflection
+					if (!target.isRaid() || (getActingPlayer() == null) || (getActingPlayer().getLevel() <= (target.getLevel() + 8)))
 					{
-						reflectedDamage = (int) ((reflectPercent / 100.) * damage);
+						// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
+						double reflectPercent = target.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0) - getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT_DEFENSE, 0);
 						
-						if (reflectedDamage > target.getMaxHp())
+						if (reflectPercent > 0)
 						{
-							reflectedDamage = target.getMaxHp();
+							reflectedDamage = (int) ((reflectPercent / 100.) * damage);
+							reflectedDamage = Math.min(reflectedDamage, target.getMaxHp());
+							reflectedDamage = Math.min(reflectedDamage, getStat().getPDef());
 						}
-						
-						// Cannot reflect more damage than your own P.Def.
-						if (reflectedDamage > getStat().getPDef(target))
-						{
-							reflectedDamage = getStat().getPDef(target);
-						}
+					}
+				}
+				
+				// Absorb HP from the damage inflicted
+				double absorbPercent = getStat().getValue(Stats.ABSORB_DAMAGE_PERCENT, 0);
+				if ((absorbPercent > 0) && (Rnd.nextDouble() < getStat().getValue(Stats.ABSORB_DAMAGE_CHANCE)))
+				{
+					int absorbDamage = (int) Math.min(absorbPercent * damage, getMaxRecoverableHp() - getCurrentHp());
+					absorbDamage = Math.min(absorbDamage, (int) target.getCurrentHp());
+					if (absorbDamage > 0)
+					{
+						setCurrentHp(getCurrentHp() + absorbDamage);
 					}
 				}
 			}
@@ -4680,51 +4098,28 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// When killing blow is made, the target doesn't reflect.
 			if ((reflectedDamage > 0) && !target.isDead())
 			{
-				target.sendDamageMessage(this, reflectedDamage, false, false, false);
+				target.sendDamageMessage(this, null, reflectedDamage, false, false);
 				reduceCurrentHp(reflectedDamage, target, true, false, null);
 				notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
 			}
 			
-			if (!isBow) // Do not absorb if weapon is of type bow
+			// Absorb MP from the damage inflicted
+			double absorbPercent = getStat().getValue(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0);
+			
+			if (absorbPercent > 0)
 			{
-				// Absorb HP from the damage inflicted
-				double absorbPercent = getStat().calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
+				int maxCanAbsorb = (int) (getMaxRecoverableMp() - getCurrentMp());
+				int absorbDamage = (int) ((absorbPercent / 100.) * damage);
 				
-				if (absorbPercent > 0)
+				if (absorbDamage > maxCanAbsorb)
 				{
-					int maxCanAbsorb = (int) (getMaxRecoverableHp() - getCurrentHp());
-					int absorbDamage = (int) ((absorbPercent / 100.) * damage);
-					
-					if (absorbDamage > maxCanAbsorb)
-					{
-						absorbDamage = maxCanAbsorb; // Can't absord more than max hp
-					}
-					
-					if (absorbDamage > 0)
-					{
-						setCurrentHp(getCurrentHp() + absorbDamage);
-					}
+					absorbDamage = maxCanAbsorb; // Can't absord more than max hp
 				}
 				
-				// Absorb MP from the damage inflicted
-				absorbPercent = getStat().calcStat(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0, null, null);
-				
-				if (absorbPercent > 0)
+				if (absorbDamage > 0)
 				{
-					int maxCanAbsorb = (int) (getMaxRecoverableMp() - getCurrentMp());
-					int absorbDamage = (int) ((absorbPercent / 100.) * damage);
-					
-					if (absorbDamage > maxCanAbsorb)
-					{
-						absorbDamage = maxCanAbsorb; // Can't absord more than max hp
-					}
-					
-					if (absorbDamage > 0)
-					{
-						setCurrentMp(getCurrentMp() + absorbDamage);
-					}
+					setCurrentMp(getCurrentMp() + absorbDamage);
 				}
-				
 			}
 			
 			// Notify AI with EVT_ATTACKED
@@ -4757,7 +4152,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					{
 						if (Rnd.get(100) < holder.getChance())
 						{
-							makeTriggerCast(holder.getSkill(), target);
+							makeTriggerCast(holder.getSkill(), target, false);
 						}
 					}
 				}
@@ -4795,11 +4190,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void breakCast()
 	{
-		// damage can only cancel magical & static skills
-		if (isCastingNow() && canAbortCast() && (getLastSkillCast() != null) && (getLastSkillCast().isMagic() || getLastSkillCast().isStatic()))
+		// Break only one skill at a time while casting.
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, SkillCaster::canAbortCast, SkillCaster::isNormalType);
+		if ((skillCaster != null) && skillCaster.getSkill().isMagic())
 		{
 			// Abort the cast of the L2Character and send Server->Client MagicSkillCanceld/ActionFailed packet.
-			abortCast();
+			skillCaster.stopCasting(true);
 			
 			if (isPlayer())
 			{
@@ -4973,7 +4369,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return 0;
 		}
 		
-		reuse *= getStat().getWeaponReuseModifier(target);
+		reuse *= getStat().getWeaponReuseModifier();
 		double atkSpd = getStat().getPAtkSpd();
 		switch (weapon.getItemType())
 		{
@@ -5019,7 +4415,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			if (newSkill.isPassive())
 			{
-				newSkill.applyEffects(this, this, false, true, false, 0);
+				newSkill.applyEffects(this, this, false, true, false, 0, null);
 			}
 		}
 		return oldSkill;
@@ -5044,20 +4440,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			
 			// Stop casting if this skill is used right now
-			if ((getLastSkillCast() != null) && isCastingNow())
-			{
-				if (oldSkill.getId() == getLastSkillCast().getId())
-				{
-					abortCast();
-				}
-			}
-			if ((getLastSimultaneousSkillCast() != null) && isCastingSimultaneouslyNow())
-			{
-				if (oldSkill.getId() == getLastSimultaneousSkillCast().getId())
-				{
-					abortCast();
-				}
-			}
+			abortCast(s -> s.getSkill().getId() == skillId);
 			
 			// Stop effects.
 			if (cancelEffect || oldSkill.isToggle() || oldSkill.isPassive())
@@ -5077,7 +4460,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final Collection<Skill> getAllSkills()
 	{
-		return new ArrayList<>(_skills.values());
+		return _skills.values();
 	}
 	
 	/**
@@ -5125,344 +4508,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return _effectList.getDanceCount();
 	}
 	
-	/**
-	 * Manage the magic skill launching task (MP, HP, Item consumation...) and display the magic skill animation on client.<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Send a Server->Client packet MagicSkillLaunched (to display magic skill animation) to all L2PcInstance of L2Charcater _knownPlayers</li>
-	 * <li>Consumme MP, HP and Item if necessary</li>
-	 * <li>Send a Server->Client packet StatusUpdate with MP modification to the L2PcInstance</li>
-	 * <li>Launch the magic skill in order to calculate its effects</li>
-	 * <li>If the skill type is PDAM, notify the AI of the target with AI_INTENTION_ATTACK</li>
-	 * <li>Notify the AI of the L2Character with EVT_FINISH_CASTING</li>
-	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: A magic skill casting MUST BE in progress</B></FONT>
-	 * @param mut
-	 */
-	public void onMagicLaunchedTimer(MagicUseTask mut)
-	{
-		final Skill skill = mut.getSkill();
-		WorldObject[] targets = mut.getTargets();
-		
-		if ((skill == null) || (targets == null))
-		{
-			abortCast();
-			return;
-		}
-		
-		if (targets.length == 0)
-		{
-			switch (skill.getTargetType())
-			{
-				// only AURA-type skills can be cast without target
-				case AURA:
-				case FRONT_AURA:
-				case BEHIND_AURA:
-				case AURA_CORPSE_MOB:
-					break;
-				default:
-					abortCast();
-					return;
-			}
-		}
-		
-		// Escaping from under skill's radius and peace zone check. First version, not perfect in AoE skills.
-		int escapeRange = 0;
-		if (skill.getEffectRange() > escapeRange)
-		{
-			escapeRange = skill.getEffectRange();
-		}
-		else if ((skill.getCastRange() < 0) && (skill.getAffectRange() > 80))
-		{
-			escapeRange = skill.getAffectRange();
-		}
-		
-		if ((targets.length > 0) && (escapeRange > 0))
-		{
-			int _skiprange = 0;
-			int _skippeace = 0;
-			List<Creature> targetList = new ArrayList<>(targets.length);
-			for (WorldObject target : targets)
-			{
-				if (target instanceof Creature)
-				{
-					if (!isInsideRadius(target.getX(), target.getY(), target.getZ(), escapeRange + getTemplate().getCollisionRadius(), true, false))
-					{
-						_skiprange++;
-						continue;
-					}
-					
-					if (skill.isBad())
-					{
-						if (isPlayer())
-						{
-							if (((Creature) target).isInsidePeaceZone(getActingPlayer()))
-							{
-								_skippeace++;
-								continue;
-							}
-						}
-						else
-						{
-							if (((Creature) target).isInsidePeaceZone(this, target))
-							{
-								_skippeace++;
-								continue;
-							}
-						}
-					}
-					targetList.add((Creature) target);
-				}
-			}
-			if (targetList.isEmpty())
-			{
-				if (isPlayer())
-				{
-					if (_skiprange > 0)
-					{
-						sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
-					}
-					else if (_skippeace > 0)
-					{
-						sendPacket(SystemMessageId.A_MALICIOUS_SKILL_CANNOT_BE_USED_IN_A_PEACE_ZONE);
-					}
-				}
-				abortCast();
-				return;
-			}
-			mut.setTargets(targetList.toArray(new Creature[targetList.size()]));
-		}
-		
-		// Ensure that a cast is in progress
-		// Check if player is using fake death.
-		// Static skills can be used while faking death.
-		if ((mut.isSimultaneous() && !isCastingSimultaneouslyNow()) || (!mut.isSimultaneous() && !isCastingNow()) || (isAlikeDead() && !skill.isStatic()))
-		{
-			// now cancels both, simultaneous and normal
-			getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
-			return;
-		}
-		
-		if (!skill.isToggle())
-		{
-			broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getDisplayLevel(), targets));
-		}
-		
-		mut.setPhase(2);
-		if (mut.getSkillTime() == 0)
-		{
-			onMagicHitTimer(mut);
-		}
-		else
-		{
-			_skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, 400);
-		}
-	}
-	
-	// Runs in the end of skill casting
-	public void onMagicHitTimer(MagicUseTask mut)
-	{
-		final Skill skill = mut.getSkill();
-		final WorldObject[] targets = mut.getTargets();
-		
-		if ((skill == null) || (targets == null))
-		{
-			abortCast();
-			return;
-		}
-		
-		try
-		{
-			// Go through targets table
-			for (WorldObject tgt : targets)
-			{
-				if (tgt.isPlayable())
-				{
-					if (isPlayer() && tgt.isSummon())
-					{
-						((Summon) tgt).updateAndBroadcastStatus(1);
-					}
-				}
-				else if (isPlayable() && tgt.isAttackable())
-				{
-					Creature target = (Creature) tgt;
-					if (skill.getEffectPoint() > 0)
-					{
-						((Attackable) target).reduceHate(this, skill.getEffectPoint());
-					}
-					else if (skill.getEffectPoint() < 0)
-					{
-						((Attackable) target).addDamageHate(this, 0, -skill.getEffectPoint());
-					}
-				}
-			}
-			
-			rechargeShots(skill.useSoulShot(), skill.useSpiritShot(), false);
-			
-			final StatusUpdate su = new StatusUpdate(this);
-			boolean isSendStatus = false;
-			
-			// Consume MP of the L2Character and Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-			double mpConsume = getStat().getMpConsume(skill);
-			
-			if (mpConsume > 0)
-			{
-				if (mpConsume > getCurrentMp())
-				{
-					sendPacket(SystemMessageId.NOT_ENOUGH_MP);
-					abortCast();
-					return;
-				}
-				
-				getStatus().reduceMp(mpConsume);
-				su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
-				isSendStatus = true;
-			}
-			
-			// Consume HP if necessary and Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-			if (skill.getHpConsume() > 0)
-			{
-				double consumeHp = skill.getHpConsume();
-				
-				if (consumeHp >= getCurrentHp())
-				{
-					sendPacket(SystemMessageId.NOT_ENOUGH_HP);
-					abortCast();
-					return;
-				}
-				
-				getStatus().reduceHp(consumeHp, this, true);
-				
-				su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-				isSendStatus = true;
-			}
-			
-			// Send a Server->Client packet StatusUpdate with MP modification to the L2PcInstance
-			if (isSendStatus)
-			{
-				sendPacket(su);
-			}
-			
-			if (isPlayer())
-			{
-				// Consume Souls if necessary
-				if (skill.getMaxSoulConsumeCount() > 0)
-				{
-					if (!getActingPlayer().decreaseSouls(skill.getMaxSoulConsumeCount(), skill))
-					{
-						abortCast();
-						return;
-					}
-				}
-			}
-			
-			// Launch the magic skill in order to calculate its effects
-			callSkill(mut.getSkill(), mut.getTargets());
-		}
-		catch (NullPointerException e)
-		{
-			_log.warn("", e);
-		}
-		
-		if (mut.getSkillTime() > 0)
-		{
-			mut.setCount(mut.getCount() + 1);
-		}
-		
-		mut.setPhase(3);
-		if (mut.getSkillTime() == 0)
-		{
-			onMagicFinalizer(mut);
-		}
-		else
-		{
-			if (mut.isSimultaneous())
-			{
-				_skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, 0);
-			}
-			else
-			{
-				_skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, 0);
-			}
-		}
-	}
-	
-	// Runs after skillTime
-	public void onMagicFinalizer(MagicUseTask mut)
-	{
-		if (mut.isSimultaneous())
-		{
-			_skillCast2 = null;
-			setIsCastingSimultaneouslyNow(false);
-			return;
-		}
-		
-		// Cleanup
-		_skillCast = null;
-		_castInterruptTime = 0;
-		
-		// Stop casting
-		setIsCastingNow(false);
-		
-		final Skill skill = mut.getSkill();
-		final WorldObject target = mut.getTargets().length > 0 ? mut.getTargets()[0] : null;
-		
-		// On each repeat recharge shots before cast.
-		if (mut.getCount() > 0)
-		{
-			rechargeShots(mut.getSkill().useSoulShot(), mut.getSkill().useSpiritShot(), false);
-		}
-		
-		// Attack target after skill use
-		if ((skill.nextActionIsAttack()) && (getTarget() instanceof Creature) && (getTarget() != this) && (target != null) && (getTarget() == target) && target.canBeAttacked())
-		{
-			if ((getAI().getNextIntention() == null) || (getAI().getNextIntention().getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO))
-			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-			}
-		}
-		
-		if (skill.isBad() && (skill.getTargetType() != L2TargetType.UNLOCKABLE))
-		{
-			getAI().clientStartAutoAttack();
-		}
-		
-		// Notify the AI of the L2Character with EVT_FINISH_CASTING
-		getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING);
-		
-		final Creature creatureTarget = ((target != null) && target.isCreature()) ? (Creature) target : null;
-		EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(this, skill, mut.isSimultaneous(), creatureTarget, mut.getTargets()), this);
-		
-		// Notify DP Scripts
-		notifyQuestEventSkillFinished(skill, target);
-		
-		// If character is a player, then wipe their current cast state and check if a skill is queued.
-		// If there is a queued skill, launch it and wipe the queue.
-		if (isPlayer())
-		{
-			PlayerInstance currPlayer = getActingPlayer();
-			SkillUseHolder queuedSkill = currPlayer.getQueuedSkill();
-			
-			currPlayer.setCurrentSkill(null, false, false);
-			
-			if (queuedSkill != null)
-			{
-				currPlayer.setQueuedSkill(null, false, false);
-				
-				// DON'T USE : Recursive call to useMagic() method
-				// currPlayer.useMagic(queuedSkill.getSkill(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
-				ThreadPoolManager.getInstance().executeGeneral(new QueuedMagicUseTask(currPlayer, queuedSkill.getSkill(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed()));
-			}
-		}
-		
-		if (isChanneling())
-		{
-			getSkillChannelizer().stopChanneling();
-		}
-	}
-	
 	// Quest event ON_SPELL_FNISHED
-	protected void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
+	public void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
 	
 	}
@@ -5470,9 +4517,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/**
 	 * Launch the magic skill and calculate its effects on each target contained in the targets table.
 	 * @param skill The L2Skill to use
+	 * @param item
 	 * @param targets The table of L2Object targets
 	 */
-	public void callSkill(Skill skill, Creature... targets)
+	public void callSkill(Skill skill, ItemInstance item, Creature... targets)
 	{
 		try
 		{
@@ -5537,7 +4585,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								if (Rnd.get(100) < holder.getChance())
 								{
-									makeTriggerCast(holder.getSkill(), target);
+									makeTriggerCast(holder.getSkill(), target, false);
 								}
 							}
 						}
@@ -5546,7 +4594,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// Launch the magic skill and calculate its effects
-			skill.activateSkill(this, targets);
+			skill.activateSkill(this, item, targets);
 			
 			PlayerInstance player = getActingPlayer();
 			if (player != null)
@@ -5585,18 +4633,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 									}
 								}
 							}
-							else if (target.isAttackable())
+							else if (target.isAttackable() && (skill.getEffectPoint() < 0))
 							{
-								switch (skill.getId())
-								{
-									case 51: // Lure
-									case 511: // Temptation
-										break;
-									default:
-										// add attacker into list
-										((Creature) target).addAttackerToAttackByList(this);
-								}
+								// Add hate to the attackable, and put it in the attack list.
+								((Attackable) target).addDamageHate(this, 0, -skill.getEffectPoint());
+								((Creature) target).addAttackerToAttackByList(this);
 							}
+							
 							// notify target AI about the attack
 							if (((Creature) target).hasAI() && !skill.hasEffectType(L2EffectType.HATE))
 							{
@@ -5615,8 +4658,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else if (target.isAttackable())
 							{
+								((Attackable) target).reduceHate(this, skill.getEffectPoint());
 								player.updatePvPStatus();
 							}
+						}
+						
+						if (target.isSummon())
+						{
+							((Summon) target).updateAndBroadcastStatus(1);
 						}
 					}
 				}
@@ -5813,22 +4862,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return ((getLevel() + 89) / 100d);
 	}
 	
-	public final void setSkillCast(Future<?> newSkillCast)
-	{
-		_skillCast = newSkillCast;
-	}
-	
-	/**
-	 * Sets _isCastingNow to true and _castInterruptTime is calculated from end time (ticks)
-	 * @param newSkillCastEndTick
-	 */
-	public final void forceIsCasting(int newSkillCastEndTick)
-	{
-		setIsCastingNow(true);
-		// for interrupt -400 ms
-		_castInterruptTime = newSkillCastEndTick - 4;
-	}
-	
 	private boolean _AIdisabled = false;
 	
 	/**
@@ -5870,17 +4903,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public abstract int getLevel();
 	
-	public final double calcStat(Stats stat, double init)
-	{
-		return getStat().calcStat(stat, init, null, null);
-	}
-	
-	// Stat - NEED TO REMOVE ONCE L2CHARSTAT IS COMPLETE
-	public final double calcStat(Stats stat, double init, Creature target, Skill skill)
-	{
-		return getStat().calcStat(stat, init, target, skill);
-	}
-	
 	public int getAccuracy()
 	{
 		return getStat().getAccuracy();
@@ -5893,7 +4915,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public int getMagicEvasionRate(Creature target)
 	{
-		return getStat().getMagicEvasionRate(target);
+		return getStat().getMagicEvasionRate();
 	}
 	
 	public final float getAttackSpeedMultiplier()
@@ -5903,17 +4925,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public final double getCriticalDmg(Creature target, double init)
 	{
-		return getStat().getCriticalDmg(target, init);
+		return getStat().getCriticalDmg(init);
 	}
 	
 	public int getCriticalHit(Creature target, Skill skill)
 	{
-		return getStat().getCriticalHit(target, skill);
+		return getStat().getCriticalHit();
 	}
 	
 	public int getEvasionRate(Creature target)
 	{
-		return getStat().getEvasionRate(target);
+		return getStat().getEvasionRate();
 	}
 	
 	public final int getMagicalAttackRange(Skill skill)
@@ -5933,7 +4955,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public int getMAtk(Creature target, Skill skill)
 	{
-		return getStat().getMAtk(target, skill);
+		return getStat().getMAtk();
 	}
 	
 	public int getMAtkSpd()
@@ -5963,22 +4985,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public final int getMCriticalHit(Creature target, Skill skill)
 	{
-		return getStat().getMCriticalHit(target, skill);
+		return getStat().getMCriticalHit();
 	}
 	
 	public int getMDef(Creature target, Skill skill)
 	{
-		return getStat().getMDef(target, skill);
+		return getStat().getMDef();
 	}
 	
 	public double getMReuseRate(Skill skill)
 	{
-		return getStat().getMReuseRate(skill);
+		return getStat().getMReuseRate();
 	}
 	
 	public int getPAtk(Creature target)
 	{
-		return getStat().getPAtk(target);
+		return getStat().getPAtk();
 	}
 	
 	public int getPAtkSpd()
@@ -5988,7 +5010,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public int getPDef(Creature target)
 	{
-		return getStat().getPDef(target);
+		return getStat().getPDef();
 	}
 	
 	public final int getPhysicalAttackRange()
@@ -6125,6 +5147,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStatus().getCurrentCp();
 	}
 	
+	public final int getCurrentCpPercent()
+	{
+		return (int) ((getCurrentCp() * 100) / getMaxCp());
+	}
+	
 	public final void setCurrentCp(double newCp)
 	{
 		getStatus().setCurrentCp(newCp);
@@ -6138,6 +5165,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public final double getCurrentHp()
 	{
 		return getStatus().getCurrentHp();
+	}
+	
+	public final int getCurrentHpPercent()
+	{
+		return (int) ((getCurrentHp() * 100) / getMaxHp());
 	}
 	
 	public final void setCurrentHp(double newHp)
@@ -6160,6 +5192,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStatus().getCurrentMp();
 	}
 	
+	public final int getCurrentMpPercent()
+	{
+		return (int) ((getCurrentMp() * 100) / getMaxMp());
+	}
+	
 	public final void setCurrentMp(double newMp)
 	{
 		getStatus().setCurrentMp(newMp);
@@ -6180,7 +5217,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Weight Limit = (CON Modifier*69000) * Skills
 			// Source http://l2p.bravehost.com/weightlimit.html (May 2007)
 			double baseLoad = Math.floor(BaseStats.CON.calcBonus(this) * 69000 * Config.ALT_WEIGHT_LIMIT);
-			return (int) calcStat(Stats.WEIGHT_LIMIT, baseLoad, this, null);
+			return (int) getStat().getValue(Stats.WEIGHT_LIMIT, baseLoad);
 		}
 		return 0;
 	}
@@ -6189,7 +5226,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		if (isPlayer() || isPet())
 		{
-			return (int) calcStat(Stats.WEIGHT_PENALTY, 1, this, null);
+			return (int) getStat().getValue(Stats.WEIGHT_PENALTY, 1);
 		}
 		return 0;
 	}
@@ -6214,12 +5251,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/**
 	 * Send system message about damage.
 	 * @param target
+	 * @param skill
 	 * @param damage
-	 * @param mcrit
-	 * @param pcrit
+	 * @param crit
 	 * @param miss
 	 */
-	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
 	
 	}
@@ -6370,7 +5407,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				// @formatter:off
-				final Creature[] targets = !ignoreTargetType ? skill.getTargetList(this, false, target) : new Creature[]{ target };
+				final Creature[] targets = ignoreTargetType ? new Creature[]{ target } : skill.getTargetList(this, false, target);
 				// @formatter:on
 				if (targets.length == 0)
 				{
@@ -6396,7 +5433,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
-				broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), targets));
+				broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), SkillCastingType.NORMAL, targets));
 				
 				// Launch the magic skill and calculate its effects
 				skill.activateSkill(this, targets);
@@ -6410,7 +5447,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public void makeTriggerCast(Skill skill, Creature target)
 	{
-		makeTriggerCast(skill, target, false);
+		makeTriggerCast(skill, target, true);
 	}
 	
 	/**
@@ -6641,6 +5678,33 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean isCreature()
 	{
 		return true;
+	}
+	
+	public List<SkillCaster> getSkillCasters()
+	{
+		return _skillCasters;
+	}
+	
+	@SafeVarargs
+	public final List<SkillCaster> getSkillCasters(Predicate<SkillCaster> filter, Predicate<SkillCaster>... filters)
+	{
+		for (Predicate<SkillCaster> additionalFilter : filters)
+		{
+			filter = filter.and(additionalFilter);
+		}
+		
+		return getSkillCasters().stream().filter(filter).collect(Collectors.toList());
+	}
+	
+	@SafeVarargs
+	public final SkillCaster getSkillCaster(Predicate<SkillCaster> filter, Predicate<SkillCaster>... filters)
+	{
+		for (Predicate<SkillCaster> additionalFilter : filters)
+		{
+			filter = filter.and(additionalFilter);
+		}
+		
+		return getSkillCasters().stream().filter(filter).findAny().orElse(null);
 	}
 	
 	/**
@@ -6882,5 +5946,18 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public CreatureContainer getSeenCreatures()
 	{
 		return _seenCreatures;
+	}
+	
+	public MoveType getMoveType()
+	{
+		if (isMoving() && isRunning())
+		{
+			return MoveType.RUNNING;
+		}
+		else if (isMoving() && !isRunning())
+		{
+			return MoveType.WALKING;
+		}
+		return MoveType.STANDING;
 	}
 }

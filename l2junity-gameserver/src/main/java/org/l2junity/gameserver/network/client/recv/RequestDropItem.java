@@ -143,23 +143,10 @@ public final class RequestDropItem implements IClientIncomingPacket
 		}
 		
 		// Cannot discard item that the skill is consuming
-		if (activeChar.isCastingNow())
+		if (activeChar.isCastingNow(s -> s.getSkill().getItemConsumeId() == item.getId()))
 		{
-			if ((activeChar.getCurrentSkill() != null) && (activeChar.getCurrentSkill().getSkill().getItemConsumeId() == item.getId()))
-			{
-				activeChar.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DESTROYED);
-				return;
-			}
-		}
-		
-		// Cannot discard item that the skill is consuming
-		if (activeChar.isCastingSimultaneouslyNow())
-		{
-			if ((activeChar.getLastSimultaneousSkillCast() != null) && (activeChar.getLastSimultaneousSkillCast().getItemConsumeId() == item.getId()))
-			{
-				activeChar.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DESTROYED);
-				return;
-			}
+			activeChar.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DESTROYED);
+			return;
 		}
 		
 		if ((L2Item.TYPE2_QUEST == item.getItem().getType2()) && !activeChar.canOverrideCond(PcCondOverride.DROP_ALL_ITEMS))

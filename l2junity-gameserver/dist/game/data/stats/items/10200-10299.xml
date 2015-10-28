@@ -9,6 +9,7 @@
 		<set name="price" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -23,6 +24,7 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -37,6 +39,7 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="1" /> <!-- Sowing -->
@@ -49,6 +52,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="40000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10204" name="Battle Manual - Soul Gathering" type="EtcItem">
@@ -58,6 +62,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="4250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10205" name="White Seed of Evil Lump" type="EtcItem">
@@ -69,6 +74,7 @@
 		<set name="price" val="30000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2420" level="1" /> <!-- White Seed of Evil Lump -->
@@ -83,6 +89,7 @@
 		<set name="price" val="21000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2421" level="1" /> <!-- Black Seed of Evil Lump -->
@@ -99,12 +106,12 @@
 		<set name="weight" val="130" />
 		<set name="price" val="880000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="26" />
-			<mul stat="magicSuccRes" val="1.15" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">26</stat>
+			<stat type="magicSuccRes">1.15</stat>
+		</stats>
 	</item>
 	<item id="10208" name="Enhanced Striped Mithril Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_s_i05" />
@@ -117,16 +124,16 @@
 		<set name="weight" val="130" />
 		<set name="price" val="2540000" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3419" level="1" /> <!-- Magic Immunity -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="30" />
-			<add stat="maxMp" val="70" />
-			<mul stat="magicSuccRes" val="1.5" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">30</stat>
+			<stat type="maxMp">70</stat>
+			<stat type="magicSuccRes">1.5</stat>
+		</stats>
 	</item>
 	<item id="10209" name="Enhanced Steel Bracelet" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_a_i02" />
@@ -138,13 +145,14 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="price" val="1144000" />
+		<set name="commissionItemType" val="BRACELET" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3324" level="1" /> <!-- Steel Bracelet -->
 		</skills>
-		<for>
-			<add stat="maxMp" val="60" />
-		</for>
+		<stats>
+			<stat type="maxMp">60</stat>
+		</stats>
 	</item>
 	<item id="10210" name="Enhanced Mithril Bracelet" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_s_i03" />
@@ -156,13 +164,14 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="price" val="3556000" />
+		<set name="commissionItemType" val="BRACELET" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3325" level="1" /> <!-- Mithril Bracelet -->
 		</skills>
-		<for>
-			<add stat="maxMp" val="120" />
-		</for>
+		<stats>
+			<stat type="maxMp">120</stat>
+		</stats>
 	</item>
 	<item id="10211" name="Blessed Ring of Resurrection" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_mana_i00" />
@@ -185,18 +194,15 @@
 		<skills>
 			<skill id="3409" level="1" /> <!-- Blessed Ring of Resurrection -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="24" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">24</stat>
+		</stats>
 	</item>
 	<item id="10212" name="For NPC (Bow)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BRONZE" />
@@ -204,13 +210,17 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10213" name="Inventory" type="EtcItem">
 		<set name="immediate_effect" val="true" />
@@ -240,22 +250,21 @@
 		<set name="price" val="18298000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10215" name="Icarus Sawsword" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_sowsword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -268,23 +277,23 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10216" name="Icarus Disperser" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_disperser_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -296,24 +305,24 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="318" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">318</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10217" name="Icarus Spirit" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spirits_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -327,23 +336,22 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="290" />
-			<set stat="mAtk" val="217" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">290</stat>
+			<stat type="mAtk">217</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10218" name="Icarus Heavy Arms" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_heavy_arms_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -357,23 +365,22 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="442" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">442</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10219" name="Icarus Trident" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_trident_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -386,27 +393,26 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="10220" name="Icarus Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -418,24 +424,24 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10221" name="Icarus Hand" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_knuckle_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -447,24 +453,24 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FIST_WEAPON" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="442" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">442</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10222" name="Icarus Hall" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -478,24 +484,23 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="290" />
-			<set stat="mAtk" val="217" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">290</stat>
+			<stat type="mAtk">217</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10223" name="Icarus Spitter" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spiter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -510,24 +515,24 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="689" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">689</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="10224" name="Icarus Stinger" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_stinger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="40" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -540,30 +545,30 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="RAPIER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="329" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">329</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10225" name="Icarus Wingblade" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_wing_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -576,27 +581,27 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ANCIENT_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="393" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">393</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10226" name="Icarus Shooter" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_shooter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3310" />
@@ -610,19 +615,21 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CROSSBOW" />
+		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="422" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="10227" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
@@ -637,14 +644,15 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10228" name="Dynasty Platinum Plate" name_additional="Shield Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
@@ -659,6 +667,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -666,10 +676,9 @@
 				<player categoryType="SHIELD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10229" name="Dynasty Platinum Plate" name_additional="Weapon Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uw_i00" />
@@ -684,6 +693,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -691,10 +702,9 @@
 				<player categoryType="WEAPON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10230" name="Dynasty Platinum Plate" name_additional="Force Master" type="Armor">
 		<set name="icon" val="icon.armor_t91_uf_i00" />
@@ -709,6 +719,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -716,10 +728,9 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10231" name="Dynasty Platinum Plate" name_additional="Bard" type="Armor">
 		<set name="icon" val="icon.armor_t91_uke_i00" />
@@ -734,6 +745,8 @@
 		<set name="price" val="33673000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -741,10 +754,9 @@
 				<player categoryType="BARD" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="10232" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
@@ -759,11 +771,12 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10233" name="Dynasty Jewel Leather Armor" name_additional="Dagger Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -778,14 +791,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10234" name="Dynasty Jewel Leather Armor" name_additional="Bow Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -800,14 +814,15 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player categoryType="BOW_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">170</stat>
+		</stats>
 	</item>
 	<item id="10235" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
@@ -822,15 +837,16 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10236" name="Dynasty Silver Satin Tunic" name_additional="Healer" type="Armor">
 		<set name="icon" val="icon.armor_t93_uh_i00" />
@@ -845,6 +861,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -852,11 +870,10 @@
 				<player categoryType="HEAL_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10237" name="Dynasty Silver Satin Tunic" name_additional="Enchanter" type="Armor">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
@@ -871,6 +888,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -878,11 +897,10 @@
 				<player categoryType="BUFF_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10238" name="Dynasty Silver Satin Tunic" name_additional="Summoner" type="Armor">
 		<set name="icon" val="icon.armor_t93_us_i00" />
@@ -897,6 +915,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -904,11 +924,10 @@
 				<player categoryType="SUMMON_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10239" name="Dynasty Silver Satin Tunic" name_additional="Wizard" type="Armor">
 		<set name="icon" val="icon.armor_t93_uw_i00" />
@@ -923,6 +942,8 @@
 		<set name="price" val="25255000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<and>
@@ -930,11 +951,10 @@
 				<player categoryType="WIZARD_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="113" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">113</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="10240" name="Bird Nest" type="Armor">
 		<set name="icon" val="icon.accessory_nest_hat_i00" />
@@ -945,6 +965,8 @@
 		<set name="weight" val="10" />
 		<set name="price" val="2000000" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="10241" name="Purple Viking Circlet" type="Armor">
@@ -955,6 +977,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10242" name="Golden Viking Circlet" type="Armor">
@@ -965,6 +990,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10243" name="Panda Hat" type="Armor">
@@ -975,6 +1003,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10244" name="White Sheep Hat" type="Armor">
@@ -985,6 +1016,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10245" name="Black Sheep Hat" type="Armor">
@@ -995,6 +1029,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10246" name="Frog Hat" type="Armor">
@@ -1006,6 +1043,8 @@
 		<set name="weight" val="10" />
 		<set name="price" val="2000000" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="10247" name="Fish Hat" type="Armor">
@@ -1016,6 +1055,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10248" name="Straw Hat" type="Armor">
@@ -1026,6 +1068,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10249" name="Chicken Hat" type="Armor">
@@ -1037,6 +1082,8 @@
 		<set name="weight" val="10" />
 		<set name="price" val="2000000" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="10250" name="Adventurer Hat (Event)" type="Armor">
@@ -1053,6 +1100,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="10251" name="Medieval Party Mask" type="Armor">
@@ -1063,6 +1112,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="10252" name="Dynasty Staff" type="Weapon">
@@ -1070,8 +1122,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2398" />
@@ -1085,24 +1135,23 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="325" />
-			<set stat="mAtk" val="222" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">325</stat>
+			<stat type="mAtk">222</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10253" name="Dynasty Crusher" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crusher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2398" />
@@ -1115,16 +1164,17 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10254" name="1st Place Treasure Sack" name_additional="Event" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_sack_1_i00" />
@@ -1133,6 +1183,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2422" level="1" /> <!-- 1st Place Treasure Sack -->
@@ -1145,6 +1196,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2423" level="2" /> <!-- 2nd Place Treasure Sack -->
@@ -1157,6 +1209,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2424" level="3" /> <!-- 3rd Place Treasure Sack -->
@@ -1169,6 +1222,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2425" level="4" /> <!-- 4th Place Treasure Sack -->
@@ -1181,6 +1235,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2426" level="5" /> <!-- 5th Place Treasure sack -->
@@ -1193,6 +1248,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2427" level="6" /> <!-- 6th Place Treasure Sack -->
@@ -1202,7 +1258,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1211,19 +1267,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2429" level="1" /> <!-- Haste Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2429" level="1" /> <!-- Haste Potion -->
+		</skills>
 	</item>
 	<item id="10261" name="Accuracy Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1232,19 +1289,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2430" level="1" /> <!-- Accuracy Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2430" level="1" /> <!-- Accuracy Juice -->
+		</skills>
 	</item>
 	<item id="10262" name="Critical Damage Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i02" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1253,19 +1311,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2431" level="1" /> <!-- Critical Damage Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2431" level="1" /> <!-- Critical Damage Juice -->
+		</skills>
 	</item>
 	<item id="10263" name="Critical Rate Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i03" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1274,19 +1333,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2432" level="1" /> <!-- Critical Rate Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2432" level="1" /> <!-- Critical Rate Juice -->
+		</skills>
 	</item>
 	<item id="10264" name="Casting Spd. Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i04" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1295,19 +1355,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2433" level="1" /> <!-- Casting Spd. Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2433" level="1" /> <!-- Casting Spd. Juice -->
+		</skills>
 	</item>
 	<item id="10265" name="Evasion Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1316,19 +1377,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2434" level="1" /> <!-- Evasion Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2434" level="1" /> <!-- Evasion Juice -->
+		</skills>
 	</item>
 	<item id="10266" name="M. Atk. Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i06" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1337,19 +1399,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2435" level="1" /> <!-- M. Atk. Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2435" level="1" /> <!-- M. Atk. Juice -->
+		</skills>
 	</item>
 	<item id="10267" name="P. Atk. Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1358,19 +1421,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2436" level="1" /> <!-- P. Atk. Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2436" level="1" /> <!-- P. Atk. Potion -->
+		</skills>
 	</item>
 	<item id="10268" name="Wind Walk Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1379,19 +1443,20 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2437" level="1" /> <!-- Wind Walk Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2437" level="1" /> <!-- Wind Walk Juice -->
+		</skills>
 	</item>
 	<item id="10269" name="P. Def. Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i09" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1400,18 +1465,19 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2438" level="1" /> <!-- P. Def. Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2438" level="1" /> <!-- P. Def. Juice -->
+		</skills>
 	</item>
 	<item id="10270" name="MP Consumption Juice" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i10" />
 		<set name="default_action" val="SKILL_REDUCE" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="3000" />
@@ -1420,13 +1486,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2439" level="1" /> <!-- MP Consumption Juice -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2439" level="1" /> <!-- MP Consumption Juice -->
+		</skills>
 	</item>
 	<item id="10271" name="Marvelous Fruit Juice #12" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i11" />
@@ -1436,6 +1503,7 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_oly_restricted" val="true" />
 	</item>
 	<item id="10272" name="Treasure Sack Piece" type="EtcItem">
@@ -1443,6 +1511,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10273" name="Wolf Summoning Bracelet" type="Armor">
@@ -1456,7 +1525,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3421-1;3422-1" />
 		<set name="duration" val="200" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1465,6 +1533,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
+			<skill id="3421" level="1" /> <!-- Ride Wolf -->
 			<skill id="3422" level="1" type="ON_UNEQUIP" /> <!-- Dismount Wolf -->
 		</skills>
 	</item>
@@ -1484,12 +1553,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2428" level="1" /> <!-- Transformation Scroll: Rabbit -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2428" level="1" /> <!-- Transformation Scroll: Rabbit -->
+		</skills>
 	</item>
 	<item id="10275" name="Battle Manual - Warp" type="EtcItem">
 		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
@@ -1498,6 +1567,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2050" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10276" name="Battle Manual - Soul Shock" type="EtcItem">
@@ -1507,6 +1577,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="2600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10277" name="Monster Only (Behamah Pole)" type="Weapon">
@@ -1514,8 +1585,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1523,25 +1592,27 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="10278" name="Monster Only (Behamah Dual)" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -1551,15 +1622,17 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="73" />
-			<set stat="mAtk" val="37" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">73</stat>
+			<stat type="mAtk">37</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="10279" name="Transformation Scroll: Onyx Beast" type="EtcItem">
 		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
@@ -1567,6 +1640,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10280" name="Certificate - Subclass" type="EtcItem">
@@ -1830,6 +1904,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10296" name="Transformation Sealbook: Anakim" type="EtcItem">
@@ -1856,6 +1931,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10299" name="Transformation Sealbook: Ranku" type="EtcItem">
@@ -1864,6 +1940,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

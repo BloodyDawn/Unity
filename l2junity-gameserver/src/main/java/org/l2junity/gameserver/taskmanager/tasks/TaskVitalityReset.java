@@ -77,9 +77,9 @@ public class TaskVitalityReset extends Task
 				}
 				catch (Exception e)
 				{
-					_log.warn("", e);
+					LOGGER.warn("", e);
 				}
-				_log.info("Vitality resetted");
+				LOGGER.info("Vitality resetted");
 				break;
 			}
 		}

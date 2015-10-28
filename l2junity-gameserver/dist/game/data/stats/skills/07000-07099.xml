@@ -99,8 +99,8 @@
 		<set name="affectRange" val="200" />
 		<set name="targetType" val="CLAN_MEMBER" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -148,6 +148,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="200" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="7008" levels="1" name="Feather of Blessing">
@@ -163,6 +164,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
+		<set name="icon" val="icon.blessed_feather_i00" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="7009" levels="1" name="not_used">
@@ -349,7 +352,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="mpConsume" val="3" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="4000" />
+		<set name="reuseDelay" val="4500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
@@ -371,7 +374,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="mpConsume" val="3" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="4000" />
+		<set name="reuseDelay" val="4500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
@@ -393,7 +396,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="mpConsume" val="3" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="4000" />
+		<set name="reuseDelay" val="4500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
@@ -460,7 +463,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="CRITICAL_PROB_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -472,10 +475,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 			</effect>
 		</for>
 	</skill>
@@ -484,7 +488,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -496,6 +500,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -508,7 +513,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -520,6 +525,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -532,7 +538,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="HIT_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -544,6 +550,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -556,7 +563,7 @@
 		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MAX_HP_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -568,6 +575,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -580,7 +588,7 @@
 		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MAX_MP_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -592,6 +600,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -604,7 +613,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="AVOID_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -616,6 +625,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -628,7 +638,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -640,6 +650,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -652,7 +663,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="DECREASE_WEIGHT_PENALTY" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -664,6 +675,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -676,7 +688,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="PA_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -688,6 +700,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -700,7 +713,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="PD_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -712,6 +725,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -724,7 +738,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MD_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -736,6 +750,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -748,7 +763,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -760,10 +775,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="9" chance="80" />
 			</effect>
 		</for>
 	</skill>
@@ -772,7 +788,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MA_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -784,6 +800,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -796,7 +813,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="SPEED_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -808,6 +825,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -820,7 +838,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="BERSERKER" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -832,6 +850,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -851,7 +870,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="PA_PD_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -863,6 +882,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -875,7 +895,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="PA_PD_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -887,6 +907,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -899,7 +920,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MAGIC_CRITICAL_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -911,6 +932,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -923,7 +945,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="CHEAP_MAGIC" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -935,6 +957,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -950,7 +973,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MULTI_BUFF" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -963,6 +986,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -987,7 +1011,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MULTI_BUFF" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -999,6 +1023,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1023,7 +1048,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MULTI_BUFF" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -1035,11 +1060,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -1049,7 +1075,9 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="moveSpeed" val="0.8" />
-				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1058,7 +1086,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MULTI_BUFF" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
@@ -1070,6 +1098,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1099,6 +1128,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
+		<set name="castRange" val="400" />
 		<set name="targetType" val="NONE" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -1121,6 +1151,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="400" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -1143,6 +1175,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="400" />
 		<set name="trait" val="BLEED" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -1158,6 +1192,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -1173,6 +1208,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -1191,6 +1227,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hpConsume" val="20" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7072" levels="1" name="Test - Basic Trap">
@@ -1228,6 +1265,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
+		<set name="castRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7075" levels="1" name="Test - Distance DD">
@@ -1242,6 +1280,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7076" levels="1" name="Test - Delay Debuff">
@@ -1262,6 +1301,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="400" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="40" />
 		<set name="trait" val="BLEED" />
 	</skill>
 	<skill id="7077" levels="1" name="Test - Delay Debuff - Call">
@@ -1276,6 +1317,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="7078" levels="1" name="Test - Blink">
@@ -1289,8 +1331,6 @@
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="coolTime" val="200" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="300" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
@@ -1308,7 +1348,9 @@
 			<effect name="BlockActions" />
 		</for>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="0" range="400" /> <!-- Teleport to Back -->
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="7079" levels="1" name="Test - Party Damage Absorb">
@@ -1338,6 +1380,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7081" levels="1" name="Effect Test - Land Shot">
@@ -1352,6 +1396,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1000" />
 		<set name="affectRange" val="200" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7082" levels="1" name="Effect Test - Chain Lightning">
@@ -1368,6 +1413,7 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="200" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7083" levels="1" name="Test - Trap Skill">
@@ -1398,7 +1444,7 @@
 		<set name="channelingTickInterval" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
-	<skill id="7085" levels="1" name="Self-Destruct Explosion">
+	<skill id="7085" levels="1" name="Self-Destruct Explosion_test">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1432,6 +1478,7 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
 		<set name="affectRange" val="600" />
+		<set name="castRange" val="500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7088" levels="1" name="Master's Blessing - Improve Combat">
@@ -1440,17 +1487,17 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_PA_PD_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1499" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="70" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1474,17 +1521,17 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_MA_MD_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1508,17 +1555,17 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_HP_MP_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1501" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="72" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1542,24 +1589,24 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_CRT_RATE_DMG_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1502" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1576,17 +1623,17 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_SHIELD_RATE_DEFENCE_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1503" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="70" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1610,17 +1657,17 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="IMPROVE_SPEED_AVOID_UP" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1504" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="72" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1643,16 +1690,16 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="DWARF_ATTACK_BUFF" />
-		<set name="castRange" val="40" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="4000" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill0825" />
 		<set name="magicLvl" val="49" />
 		<set name="mpConsume" val="2" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1662,7 +1709,7 @@
 				<mul stat="pAtk" val="1.05">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
 				</mul>
-				<mul stat="rCrit" val="1.2">
+				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
 				</mul>
 			</effect>
@@ -1673,16 +1720,16 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="DWARF_DEFENCE_BUFF" />
-		<set name="castRange" val="40" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="4000" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill0828" />
 		<set name="magicLvl" val="46" />
 		<set name="mpConsume" val="2" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1701,16 +1748,16 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="PRESERVE_ABNORMAL" />
 		<set name="canBeDispelled" val="false" />
-		<set name="castRange" val="400" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1500" />
-		<set name="hitTime" val="4000" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1323" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
 		<set name="mpConsume" val="2" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />

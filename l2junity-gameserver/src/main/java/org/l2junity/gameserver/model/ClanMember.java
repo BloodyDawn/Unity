@@ -23,9 +23,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.enums.ClanRewardType;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClanMember
 {
-	private static final Logger _log = LoggerFactory.getLogger(ClanMember.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClanMember.class);
 	
 	private final L2Clan _clan;
 	private int _objectId;
@@ -49,6 +52,7 @@ public class ClanMember
 	private int _pledgeType;
 	private int _apprentice;
 	private int _sponsor;
+	private long _onlineTime;
 	
 	/**
 	 * Used to restore a clan member from the database.
@@ -158,11 +162,7 @@ public class ClanMember
 		{
 			return false;
 		}
-		if (_player.getClient() == null)
-		{
-			return false;
-		}
-		if (_player.getClient().isDetached())
+		if ((_player.getClient() == null) || _player.getClient().isDetached())
 		{
 			return false;
 		}
@@ -175,11 +175,7 @@ public class ClanMember
 	 */
 	public int getClassId()
 	{
-		if (_player != null)
-		{
-			return _player.getClassId().getId();
-		}
-		return _classId;
+		return _player != null ? _player.getClassId().getId() : _classId;
 	}
 	
 	/**
@@ -188,11 +184,7 @@ public class ClanMember
 	 */
 	public int getLevel()
 	{
-		if (_player != null)
-		{
-			return _player.getLevel();
-		}
-		return _level;
+		return _player != null ? _player.getLevel() : _level;
 	}
 	
 	/**
@@ -201,11 +193,7 @@ public class ClanMember
 	 */
 	public String getName()
 	{
-		if (_player != null)
-		{
-			return _player.getName();
-		}
-		return _name;
+		return _player != null ? _player.getName() : _name;
 	}
 	
 	/**
@@ -214,11 +202,7 @@ public class ClanMember
 	 */
 	public int getObjectId()
 	{
-		if (_player != null)
-		{
-			return _player.getObjectId();
-		}
-		return _objectId;
+		return _player != null ? _player.getObjectId() : _objectId;
 	}
 	
 	/**
@@ -227,11 +211,7 @@ public class ClanMember
 	 */
 	public String getTitle()
 	{
-		if (_player != null)
-		{
-			return _player.getTitle();
-		}
-		return _title;
+		return _player != null ? _player.getTitle() : _title;
 	}
 	
 	/**
@@ -240,11 +220,7 @@ public class ClanMember
 	 */
 	public int getPledgeType()
 	{
-		if (_player != null)
-		{
-			return _player.getPledgeType();
-		}
-		return _pledgeType;
+		return _player != null ? _player.getPledgeType() : _pledgeType;
 	}
 	
 	/**
@@ -279,7 +255,7 @@ public class ClanMember
 		}
 		catch (Exception e)
 		{
-			_log.warn("Could not update pledge type: " + e.getMessage(), e);
+			LOGGER.warn("Could not update pledge type: " + e.getMessage(), e);
 		}
 	}
 	
@@ -328,7 +304,7 @@ public class ClanMember
 		}
 		catch (Exception e)
 		{
-			_log.warn("Could not update power _grade: " + e.getMessage(), e);
+			LOGGER.warn("Could not update power _grade: " + e.getMessage(), e);
 		}
 	}
 	
@@ -758,7 +734,52 @@ public class ClanMember
 		}
 		catch (SQLException e)
 		{
-			_log.warn("Could not save apprentice/sponsor: " + e.getMessage(), e);
+			LOGGER.warn("Could not save apprentice/sponsor: " + e.getMessage(), e);
 		}
+	}
+	
+	public long getOnlineTime()
+	{
+		return _onlineTime;
+	}
+	
+	public void setOnlineTime(long onlineTime)
+	{
+		_onlineTime = onlineTime;
+	}
+	
+	public void resetBonus()
+	{
+		_onlineTime = 0;
+		final PlayerVariables vars = getVariables();
+		vars.set("CLAIMED_CLAN_REWARDS", 0);
+		vars.storeMe();
+	}
+	
+	public int getOnlineStatus()
+	{
+		return !isOnline() ? 0 : _onlineTime >= (Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS) ? 2 : 1;
+	}
+	
+	public boolean isRewardClaimed(ClanRewardType type)
+	{
+		final PlayerVariables vars = getVariables();
+		final int claimedRewards = vars.getInt("CLAIMED_CLAN_REWARDS", ClanRewardType.getDefaultMask());
+		return (claimedRewards & type.getMask()) == type.getMask();
+	}
+	
+	public void setRewardClaimed(ClanRewardType type)
+	{
+		final PlayerVariables vars = getVariables();
+		int claimedRewards = vars.getInt("CLAIMED_CLAN_REWARDS", ClanRewardType.getDefaultMask());
+		claimedRewards |= type.getMask();
+		vars.set("CLAIMED_CLAN_REWARDS", claimedRewards);
+		vars.storeMe();
+	}
+	
+	private PlayerVariables getVariables()
+	{
+		final PlayerInstance player = getPlayerInstance();
+		return player != null ? player.getVariables() : new PlayerVariables(_objectId);
 	}
 }

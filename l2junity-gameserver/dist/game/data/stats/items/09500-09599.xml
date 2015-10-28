@@ -10,6 +10,7 @@
 		<set name="price" val="374200" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9501" name="Recipe: Sealed Dynasty Gauntlets" type="EtcItem">
@@ -22,6 +23,7 @@
 		<set name="price" val="249400" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9502" name="Recipe: Sealed Dynasty Boots" type="EtcItem">
@@ -34,6 +36,7 @@
 		<set name="price" val="249400" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9503" name="Recipe: Sealed Dynasty Leather Armor" type="EtcItem">
@@ -46,6 +49,7 @@
 		<set name="price" val="748600" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9504" name="Recipe: Sealed Dynasty Leather Leggings" type="EtcItem">
@@ -58,6 +62,7 @@
 		<set name="price" val="467800" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9505" name="Recipe: Sealed Dynasty Leather Helmet" type="EtcItem">
@@ -70,6 +75,7 @@
 		<set name="price" val="374200" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9506" name="Recipe: Sealed Dynasty Leather Gloves" type="EtcItem">
@@ -82,6 +88,7 @@
 		<set name="price" val="249400" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9507" name="Recipe: Sealed Dynasty Leather Boots" type="EtcItem">
@@ -94,6 +101,7 @@
 		<set name="price" val="249400" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9508" name="Recipe: Sealed Dynasty Tunic" type="EtcItem">
@@ -106,6 +114,7 @@
 		<set name="price" val="748600" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9509" name="Recipe: Sealed Dynasty Stockings" type="EtcItem">
@@ -118,6 +127,7 @@
 		<set name="price" val="467800" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9510" name="Recipe: Sealed Dynasty Circlet" type="EtcItem">
@@ -130,6 +140,7 @@
 		<set name="price" val="374200" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9511" name="Recipe: Sealed Dynasty Gloves" type="EtcItem">
@@ -142,6 +153,7 @@
 		<set name="price" val="249400" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9512" name="Recipe: Sealed Dynasty Shoes" type="EtcItem">
@@ -154,6 +166,7 @@
 		<set name="price" val="249400" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9513" name="Recipe: Sealed Dynasty Shield" type="EtcItem">
@@ -166,6 +179,7 @@
 		<set name="price" val="262000" />
 		<set name="recipe_id" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9514" name="Sealed Dynasty Breastplate" type="Armor">
@@ -182,14 +196,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="214" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">214</stat>
+		</stats>
 	</item>
 	<item id="9515" name="Sealed Dynasty Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t91_l_i02" />
@@ -205,14 +219,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="134" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">134</stat>
+		</stats>
 	</item>
 	<item id="9516" name="Sealed Dynasty Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -231,10 +245,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="9517" name="Sealed Dynasty Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t91_g_i02" />
@@ -249,14 +262,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="GLOVES" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="9518" name="Sealed Dynasty Boots" type="Armor">
 		<set name="icon" val="icon.armor_t91_b_i02" />
@@ -271,14 +284,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="FEET" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="9519" name="Sealed Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i02" />
@@ -294,11 +307,11 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
-		<for>
-			<add order="0" stat="pDef" val="161" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">161</stat>
+		</stats>
 	</item>
 	<item id="9520" name="Sealed Dynasty Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t92_l_i02" />
@@ -314,11 +327,11 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">100</stat>
+		</stats>
 	</item>
 	<item id="9521" name="Sealed Dynasty Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -334,10 +347,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="9522" name="Sealed Dynasty Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t92_g_i02" />
@@ -352,11 +364,11 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="9523" name="Sealed Dynasty Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t92_b_i02" />
@@ -371,11 +383,11 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="9524" name="Sealed Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i02" />
@@ -391,15 +403,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="107" />
-			<add stat="maxMp" val="592" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">107</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="9525" name="Sealed Dynasty Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t93_l_i02" />
@@ -415,15 +427,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="67" />
-			<add stat="maxMp" val="370" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">67</stat>
+			<stat type="maxMp">370</stat>
+		</stats>
 	</item>
 	<item id="9526" name="Sealed Dynasty Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i02" />
@@ -437,14 +449,14 @@
 		<set name="price" val="9149000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="9527" name="Sealed Dynasty Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t93_g_i02" />
@@ -459,14 +471,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="GLOVES" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="9528" name="Sealed Dynasty Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t93_b_i02" />
@@ -481,14 +493,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="FEET" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="9529" name="Sealed Dynasty Shield" type="Armor">
 		<set name="icon" val="icon.shield_dynasty_shield_i01" />
@@ -501,16 +513,18 @@
 		<set name="weight" val="1150" />
 		<set name="price" val="6404000" />
 		<set name="is_freightable" val="false" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SHIELD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="305" />
-			<enchant stat="sDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">305</stat>
+		</stats>
 	</item>
 	<item id="9530" name="Sealed Dynasty Breastplate Piece" type="EtcItem">
 		<set name="icon" val="icon.etc_plate_silver_i00" />
@@ -520,6 +534,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="91551" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9531" name="Sealed Dynasty Gaiters Piece" type="EtcItem">
@@ -530,6 +545,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="30951" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9532" name="Sealed Dynasty Helmet Piece" type="EtcItem">
@@ -540,6 +556,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="37081" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9533" name="Sealed Dynasty Gauntlets Piece" type="EtcItem">
@@ -550,6 +567,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="27870" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9534" name="Sealed Dynasty Boots Piece" type="EtcItem">
@@ -560,6 +578,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="27870" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9535" name="Sealed Dynasty Leather Armor Fragment" type="EtcItem">
@@ -570,6 +589,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="74529" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9536" name="Sealed Dynasty Leather Leggings Piece" type="EtcItem">
@@ -580,6 +600,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="50702" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9537" name="Sealed Dynasty Leather Helmet Piece" type="EtcItem">
@@ -590,6 +611,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="37081" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9538" name="Sealed Dynasty Leather Gloves Piece" type="EtcItem">
@@ -600,6 +622,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="27870" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9539" name="Sealed Dynasty Leather Boots Piece" type="EtcItem">
@@ -610,6 +633,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="27870" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9540" name="Sealed Dynasty Tunic Piece" type="EtcItem">
@@ -620,6 +644,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="74529" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9541" name="Sealed Dynasty Stockings Piece" type="EtcItem">
@@ -630,6 +655,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="50702" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9542" name="Sealed Dynasty Circlet Piece" type="EtcItem">
@@ -640,6 +666,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="37081" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9543" name="Sealed Dynasty Gloves Piece" type="EtcItem">
@@ -650,6 +677,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="27870" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9544" name="Sealed Dynasty Shoes Piece" type="EtcItem">
@@ -660,6 +688,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="27870" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9545" name="Sealed Dynasty Shield Fragment" type="EtcItem">
@@ -670,6 +699,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="31109" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9546" name="Fire Stone" type="EtcItem">
@@ -885,6 +915,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2329" level="3" /> <!-- Fire Jewel -->
@@ -899,6 +930,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2330" level="3" /> <!-- Water Jewel -->
@@ -913,6 +945,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2332" level="3" /> <!-- Earth Jewel -->
@@ -927,6 +960,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2331" level="3" /> <!-- Wind Jewel -->
@@ -941,6 +975,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2334" level="3" /> <!-- Dark Jewel -->
@@ -955,6 +990,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2333" level="3" /> <!-- Holy Jewel -->
@@ -969,6 +1005,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2329" level="4" /> <!-- Energy of Fire -->
@@ -983,6 +1020,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2330" level="4" /> <!-- Energy of Water -->
@@ -997,6 +1035,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2332" level="4" /> <!-- Energy of Earth -->
@@ -1011,6 +1050,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2331" level="4" /> <!-- Energy of Wind -->
@@ -1025,6 +1065,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2334" level="4" /> <!-- Dark Energy -->
@@ -1039,6 +1080,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="EnchantAttribute" />
+		<set name="commissionItemType" val="ATTRIBUTE_STONE" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2333" level="4" /> <!-- Holy Energy -->
@@ -1153,10 +1195,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="260" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="6" />
-		</for>
+		<stats>
+			<stat type="pDef">6</stat>
+		</stats>
 	</item>
 	<item id="9578" name="Linen Shirt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_d_i01" />
@@ -1169,11 +1212,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="12" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">12</stat>
+		</stats>
 	</item>
 	<item id="9579" name="Silk Shirt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_c_i02" />
@@ -1186,11 +1229,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="16000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="17" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">17</stat>
+		</stats>
 	</item>
 	<item id="9580" name="Thin Leather Shirt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_b_i03" />
@@ -1203,11 +1246,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="52000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">21</stat>
+		</stats>
 	</item>
 	<item id="9581" name="Scale Shirt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_a_i04" />
@@ -1220,11 +1263,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="588000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">23</stat>
+		</stats>
 	</item>
 	<item id="9582" name="Mithril Shirt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_s_i05" />
@@ -1237,11 +1280,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="1800000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="28" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="9583" name="Striped Cotton Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_none_i00" />
@@ -1252,10 +1295,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="1220" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="8" />
-		</for>
+		<stats>
+			<stat type="pDef">8</stat>
+		</stats>
 	</item>
 	<item id="9584" name="Striped Linen Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_d_i01" />
@@ -1270,10 +1314,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="UNDERWEAR" />
-		<for>
-			<add order="0" stat="pDef" val="14" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
 	</item>
 	<item id="9585" name="Striped Silk Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_c_i02" />
@@ -1286,11 +1329,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="36000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+		</stats>
 	</item>
 	<item id="9586" name="Thin Striped Leather Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_b_i03" />
@@ -1303,11 +1346,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="80000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="22" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">22</stat>
+		</stats>
 	</item>
 	<item id="9587" name="Striped Scale Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_a_i04" />
@@ -1320,11 +1363,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="880000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="26" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">26</stat>
+		</stats>
 	</item>
 	<item id="9588" name="Striped Mithril Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_s_i05" />
@@ -1337,11 +1380,11 @@
 		<set name="weight" val="130" />
 		<set name="price" val="2540000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="30" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">30</stat>
+		</stats>
 	</item>
 	<item id="9589" name="Iron Bracelet" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_c_i00" />
@@ -1369,6 +1412,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="price" val="480000" />
+		<set name="commissionItemType" val="BRACELET" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3323" level="1" /> <!-- Bronze Bracelet -->
@@ -1384,6 +1428,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="price" val="1144000" />
+		<set name="commissionItemType" val="BRACELET" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3324" level="1" /> <!-- Steel Bracelet -->
@@ -1399,6 +1444,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="price" val="3556000" />
+		<set name="commissionItemType" val="BRACELET" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3325" level="1" /> <!-- Mithril Bracelet -->

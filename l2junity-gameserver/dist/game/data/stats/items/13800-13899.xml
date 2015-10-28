@@ -62,12 +62,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="33" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="13803" name="Native's Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t34_u_i00" />
@@ -87,14 +87,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="53" />
-		</for>
+		<stats>
+			<stat type="pDef">53</stat>
+		</stats>
 	</item>
 	<item id="13804" name="Native's Pants" type="Armor">
 		<set name="icon" val="icon.armor_t34_l_i00" />
@@ -114,14 +115,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="13805" name="Guards of the Dawn Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -143,12 +145,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="33" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="13806" name="Guards of the Dawn Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t08_u_i00" />
@@ -168,14 +170,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="53" />
-		</for>
+		<stats>
+			<stat type="pDef">53</stat>
+		</stats>
 	</item>
 	<item id="13807" name="Guards of the Dawn Pants" type="Armor">
 		<set name="icon" val="icon.armor_t08_l_i00" />
@@ -195,14 +198,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="13808" name="Elmoreden's Holy Water" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_water_i00" />
@@ -741,8 +745,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -751,23 +753,23 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13843" name="Draconic Peltast Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_doomed_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -785,16 +787,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13844" name="Scroll: Extract Star Stone" type="EtcItem">
 		<set name="icon" val="icon.scroll_of_verification_i06" />
@@ -823,8 +826,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -842,15 +843,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="duration" val="10" />
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="120" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">120</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="firePower">10</stat>
+		</stats>
 	</item>
 	<item id="13846" name="Seal of Binding" type="EtcItem">
 		<set name="icon" val="icon.etc_royal_seal_of_lord_i04" />
@@ -910,6 +911,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="13850" name="Bloody Axe Black Epaulette" type="EtcItem">
@@ -975,6 +977,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_questitem" val="true" />
 		<skills>
 			<skill id="2615" level="1" /> <!-- Shards of Broken Darkness -->
@@ -994,6 +997,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="13855" name="Sacred Light Fragment" type="EtcItem">
@@ -1432,8 +1436,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1452,22 +1454,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="10" />
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="120" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">120</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="earthPower">10</stat>
+		</stats>
 	</item>
 	<item id="13882" name="Dynasty Dual Dagger" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2812" />
@@ -1479,34 +1480,34 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="8295" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<set stat="pAtk" val="304" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8295" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13883" name="Icarus Dual Daggers" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3896" />
@@ -1518,35 +1519,34 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3552-1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
-		<skills>
-			<skill id="8296" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
-		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="169" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8296" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">169</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13884" name="Vesper Dual Daggers" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="5488" />
@@ -1558,26 +1558,28 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="8298" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<set stat="pAtk" val="360" />
-			<set stat="mAtk" val="181" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8298" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">360</stat>
+			<stat type="mAtk">181</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="13885" name="Sealed Arcana Sigil" type="Armor">
 		<set name="icon" val="icon.arcana_sigil_i01" />
@@ -1592,15 +1594,15 @@
 		<set name="price" val="3355000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SIGIL" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="13" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">13</stat>
+		</stats>
 	</item>
 	<item id="13886" name="Sealed Dynasty Sigil" type="Armor">
 		<set name="icon" val="icon.armor_dynasty_sigil_i01" />
@@ -1614,15 +1616,16 @@
 		<set name="weight" val="930" />
 		<set name="price" val="6404000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SIGIL" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="15" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">15</stat>
+		</stats>
 	</item>
 	<item id="13887" name="Sealed Vesper Sigil" type="Armor">
 		<set name="icon" val="icon.armor_verper_sigil_i01" />
@@ -1637,15 +1640,16 @@
 		<set name="price" val="12250000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SIGIL" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="17" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">17</stat>
+		</stats>
 	</item>
 	<item id="13888" name="Sealed Lord's Cloak" type="Armor">
 		<set name="icon" val="icon.feud_load_cloak_i01" />
@@ -1656,14 +1660,14 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="2" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">2</stat>
+		</stats>
 	</item>
 	<item id="13889" name="Holy Spirit's Cloak (Kamael)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1674,6 +1678,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
 		<cond msgId="2453">
 			<and>
@@ -1681,10 +1686,10 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13890" name="Holy Spirit's Cloak" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1700,10 +1705,10 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13891" name="Holy Spirit's Cloak (Light Armor)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1714,6 +1719,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
 		<cond msgId="2453">
 			<and>
@@ -1722,10 +1728,10 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13892" name="Holy Spirit's Cloak (Robe)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1736,6 +1742,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
 		<cond msgId="2453">
 			<and>
@@ -1744,10 +1751,10 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13893" name="Sealed Holy Spirit's Cloak" type="EtcItem">
 		<set name="icon" val="icon.sealed_vesper_cloack_i01" />
@@ -1756,10 +1763,11 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="13894" name="Cloth Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i00" />
@@ -1775,10 +1783,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BELT" />
-		<for>
-			<add order="0" stat="pDef" val="10" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
 	</item>
 	<item id="13895" name="Leather Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i01" />
@@ -1792,11 +1799,11 @@
 		<set name="weight" val="480" />
 		<set name="price" val="165000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BELT" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="11" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">11</stat>
+		</stats>
 	</item>
 	<item id="13896" name="Iron Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i02" />
@@ -1810,11 +1817,11 @@
 		<set name="weight" val="460" />
 		<set name="price" val="371300" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BELT" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="12" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">12</stat>
+		</stats>
 	</item>
 	<item id="13897" name="Mithril Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i03" />
@@ -1828,17 +1835,18 @@
 		<set name="weight" val="440" />
 		<set name="price" val="1917000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="BELT" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="14" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
 	</item>
 	<item id="13898" name="Sealed Magic Pin (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.pin_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PIN" />
 		<set name="weight" val="20" />
 	</item>
 	<item id="13899" name="Sealed Magic Pin (B-grade)" type="EtcItem">
@@ -1846,6 +1854,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PIN" />
 		<set name="weight" val="20" />
 	</item>
 </list>

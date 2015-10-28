@@ -890,10 +890,10 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14949" levels="1" name="Succubus Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="-100" />
@@ -902,12 +902,17 @@
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="78" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14950" levels="1" name="Succubus Cut">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="-100" />
@@ -916,12 +921,17 @@
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="79" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14951" levels="1" name="Succubus Flash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-100" />
@@ -930,12 +940,17 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="79" />
 		<set name="coolTime" val="300" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14952" levels="1" name="Succubus Magic Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
@@ -947,12 +962,17 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="29" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14953" levels="1" name="Phantom Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="-100" />
@@ -963,12 +983,17 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14954" levels="1" name="Phantom Cut">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="-100" />
@@ -979,12 +1004,17 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14955" levels="1" name="Phantom Flash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-100" />
@@ -995,12 +1025,17 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
 		<set name="coolTime" val="300" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14956" levels="1" name="Phantom Magic Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
@@ -1012,6 +1047,11 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="29" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14957" levels="1" name="Phantom Bleed Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1167,7 +1207,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14965" levels="1" name="Judgment of Blood">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />

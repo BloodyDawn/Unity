@@ -17,9 +17,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="600" />
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="9101" name="Shadow Item: Majestic Robe" type="Armor">
 		<set name="icon" val="icon.armor_t85_ul_i00" />
@@ -42,10 +42,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="147" />
-			<add stat="maxMp" val="718" />
-		</for>
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
 	</item>
 	<item id="9102" name="Shadow Item: Majestic Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t85_g_i00" />
@@ -67,9 +67,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="9103" name="Shadow Item: Majestic Boots" type="Armor">
 		<set name="icon" val="icon.armor_t85_b_i00" />
@@ -91,9 +91,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="9104" name="Compound Bow and Wooden Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
@@ -592,9 +592,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="600" />
-		<for>
-			<add order="0" stat="pDef" val="36" />
-		</for>
+		<stats>
+			<stat type="pDef">36</stat>
+		</stats>
 	</item>
 	<item id="9129" name="Shadow Item: Shield of Nightmare" type="Armor">
 		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
@@ -616,11 +616,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="256" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">256</stat>
+		</stats>
 	</item>
 	<item id="9130" name="Item Set Pack (No-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
@@ -747,8 +747,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -758,21 +756,23 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9137" name="Sword of Valakas (2-handed)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -782,13 +782,17 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="9138" name="Santa Hat" type="Armor">
 		<set name="icon" val="icon.accessory_santas_cap_i00" />
@@ -798,6 +802,8 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="9139" name="Santa Hat" type="EtcItem">
@@ -806,6 +812,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="9140" name="Salvation Bow" type="Weapon">
@@ -813,8 +820,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="1" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -824,25 +829,26 @@
 		<set name="mp_consume" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="BOW" />
 		<skills>
 			<skill id="3261" level="1" /> <!-- Forgiveness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="9141" name="Redemption Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_krono_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="1" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -863,21 +869,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3260" level="1" /> <!-- Forgiveness -->
 			<skill id="3262" level="1" /> <!-- Pardon -->
+			<skill id="3260" level="1" /> <!-- Forgiveness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="9142" name="Apiga" type="EtcItem">
 		<set name="icon" val="icon.etc_pig_adena_i01" />
 		<set name="material" val="PAPER" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9143" name="Golden Apiga" type="EtcItem">
@@ -903,6 +912,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2309" level="1" /> <!-- Pig Chest -->
@@ -922,6 +932,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="9146" name="Scroll: Guidance (Event)" type="EtcItem">
@@ -935,13 +947,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2310" level="1" /> <!-- Scroll: Guidance (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2310" level="1" /> <!-- Scroll: Guidance (Event) -->
+		</skills>
 	</item>
 	<item id="9147" name="Scroll: Death Whisper (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -954,13 +967,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2311" level="1" /> <!-- Scroll: Death Whisper (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2311" level="1" /> <!-- Scroll: Death Whisper (Event) -->
+		</skills>
 	</item>
 	<item id="9148" name="Scroll: Focus (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -973,13 +987,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2312" level="1" /> <!-- Scroll: Focus (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2312" level="1" /> <!-- Scroll: Focus (Event) -->
+		</skills>
 	</item>
 	<item id="9149" name="Scroll: Acumen (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -992,13 +1007,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2313" level="1" /> <!-- Scroll: Acumen (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2313" level="1" /> <!-- Scroll: Acumen (Event) -->
+		</skills>
 	</item>
 	<item id="9150" name="Scroll: Haste (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -1011,13 +1027,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2314" level="1" /> <!-- Scroll: Haste (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2314" level="1" /> <!-- Scroll: Haste (Event) -->
+		</skills>
 	</item>
 	<item id="9151" name="Scroll: Agility (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -1030,13 +1047,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2315" level="1" /> <!-- Scroll: Agility (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2315" level="1" /> <!-- Scroll: Agility (Event) -->
+		</skills>
 	</item>
 	<item id="9152" name="Scroll: Empower (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -1049,13 +1067,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2316" level="1" /> <!-- Scroll: Empower (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2316" level="1" /> <!-- Scroll: Empower (Event) -->
+		</skills>
 	</item>
 	<item id="9153" name="Scroll: Might (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -1068,13 +1087,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2317" level="1" /> <!-- Scroll: Might (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2317" level="1" /> <!-- Scroll: Might (Event) -->
+		</skills>
 	</item>
 	<item id="9154" name="Scroll: Wind Walk (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -1087,13 +1107,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2318" level="1" /> <!-- Scroll: Wind Walk (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2318" level="1" /> <!-- Scroll: Wind Walk (Event) -->
+		</skills>
 	</item>
 	<item id="9155" name="Scroll: Shield (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -1106,13 +1127,14 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2319" level="1" /> <!-- Scroll: Shield (Event) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2319" level="1" /> <!-- Scroll: Shield (Event) -->
+		</skills>
 	</item>
 	<item id="9156" name="Blessed Scroll of Escape (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
@@ -1139,6 +1161,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2321" level="1" /> <!-- Blessed Scroll of Resurrection (Event) -->
@@ -1151,6 +1174,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="9159" name="Silver Circlet (Event)" type="Armor">
@@ -1161,6 +1187,8 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="9160" name="Pig Wrangler's Cap" type="Armor">
@@ -1170,6 +1198,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="9161" name="Santa's Antlers" type="EtcItem">
@@ -1178,6 +1209,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="9162" name="Red Philosopher's Stone Transmutation Circle" type="EtcItem">
@@ -1190,6 +1222,7 @@
 		<set name="recipe_id" val="866" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="9163" name="Blue Philosopher's Stone Transmutation Circle" type="EtcItem">
@@ -1202,6 +1235,7 @@
 		<set name="recipe_id" val="867" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="9164" name="Orange Philosopher's Stone Transmutation Circle" type="EtcItem">
@@ -1214,6 +1248,7 @@
 		<set name="recipe_id" val="868" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="9165" name="Black Philosopher's Stone Transmutation Circle" type="EtcItem">
@@ -1226,6 +1261,7 @@
 		<set name="recipe_id" val="869" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="9166" name="White Philosopher's Stone Transmutation Circle" type="EtcItem">
@@ -1238,6 +1274,7 @@
 		<set name="recipe_id" val="870" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="9167" name="Green Philosopher's Stone Transmutation Circle" type="EtcItem">
@@ -1250,6 +1287,7 @@
 		<set name="recipe_id" val="871" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="9168" name="Philosopher's Stone Ore" type="EtcItem">
@@ -1259,6 +1297,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9169" name="Philosopher's Stone Conversion Formula" type="EtcItem">
@@ -1268,6 +1307,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9170" name="Magic Reagents" type="EtcItem">
@@ -1277,6 +1317,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9171" name="Red Philosopher's Stone" type="EtcItem">
@@ -1287,6 +1328,7 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2323" level="1" /> <!-- Red Philosopher's Stone -->
@@ -1300,6 +1342,7 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2324" level="1" /> <!-- Blue Philosopher's Stone -->
@@ -1313,6 +1356,7 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2325" level="1" /> <!-- Orange Philosopher's Stone -->
@@ -1326,6 +1370,7 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2326" level="1" /> <!-- Black Philosopher's Stone -->
@@ -1339,6 +1384,7 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2327" level="1" /> <!-- White Philosopher's Stone -->
@@ -1352,6 +1398,7 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2328" level="1" /> <!-- Green Philosopher's Stone -->

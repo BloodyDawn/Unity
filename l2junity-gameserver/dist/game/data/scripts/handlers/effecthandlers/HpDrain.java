@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 
@@ -35,7 +36,7 @@ public final class HpDrain extends AbstractEffect
 {
 	private final double _power;
 	private final double _percentage;
-
+	
 	public HpDrain(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -55,9 +56,9 @@ public final class HpDrain extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		// TODO: Unhardcode Cubic Skill to avoid double damage
 		if (effector.isAlikeDead() || (skill.getId() == 4050))
@@ -100,7 +101,7 @@ public final class HpDrain extends AbstractEffect
 				effected.breakAttack();
 				effected.breakCast();
 			}
-			effector.sendDamageMessage(effected, damage, mcrit, false, false);
+			effector.sendDamageMessage(effected, skill, damage, mcrit, false);
 			effected.reduceCurrentHp(damage, effector, skill);
 			effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
 		}

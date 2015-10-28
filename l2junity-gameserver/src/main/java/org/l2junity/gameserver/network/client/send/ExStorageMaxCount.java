@@ -50,7 +50,7 @@ public class ExStorageMaxCount implements IClientOutgoingPacket
 		_clan = Config.WAREHOUSE_SLOTS_CLAN;
 		_receipeD = activeChar.getDwarfRecipeLimit();
 		_recipe = activeChar.getCommonRecipeLimit();
-		_inventoryExtraSlots = (int) activeChar.getStat().calcStat(Stats.INV_LIM, 0, null, null);
+		_inventoryExtraSlots = (int) activeChar.getStat().getValue(Stats.INV_LIM, 0);
 		_inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
 	

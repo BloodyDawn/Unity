@@ -21,12 +21,16 @@ package ai.npc.OlyManager;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.CompetitionType;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
@@ -46,6 +50,20 @@ public final class OlyManager extends AbstractNpcAI
 	{
 		31688,
 	};
+	// Misc
+	
+	private static final Map<CategoryType, Integer> EQUIPMENT_MULTISELL = new HashMap<>();
+	
+	{
+		EQUIPMENT_MULTISELL.put(CategoryType.SIGEL_GROUP, 917);
+		EQUIPMENT_MULTISELL.put(CategoryType.TYRR_GROUP, 918);
+		EQUIPMENT_MULTISELL.put(CategoryType.OTHELL_GROUP, 919);
+		EQUIPMENT_MULTISELL.put(CategoryType.YUL_GROUP, 920);
+		EQUIPMENT_MULTISELL.put(CategoryType.FEOH_GROUP, 921);
+		EQUIPMENT_MULTISELL.put(CategoryType.ISS_GROUP, 923);
+		EQUIPMENT_MULTISELL.put(CategoryType.WYNN_GROUP, 922);
+		EQUIPMENT_MULTISELL.put(CategoryType.AEORE_GROUP, 924);
+	}
 	
 	private OlyManager()
 	{
@@ -182,6 +200,36 @@ public final class OlyManager extends AbstractNpcAI
 				else
 				{
 					player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
+				}
+				break;
+			}
+			case "showEquipmentReward":
+			{
+				int multisellId = -1;
+				
+				if (player.getClassId() == ClassId.SAYHA_SEER)
+				{
+					multisellId = 926;
+				}
+				else if (player.getClassId() == ClassId.EVISCERATOR)
+				{
+					multisellId = 925;
+				}
+				else
+				{
+					for (CategoryType type : EQUIPMENT_MULTISELL.keySet())
+					{
+						if (player.isInCategory(type))
+						{
+							multisellId = EQUIPMENT_MULTISELL.get(type);
+							break;
+						}
+					}
+				}
+				
+				if (multisellId > 0)
+				{
+					MultisellData.getInstance().separateAndSend(multisellId, player, npc, false);
 				}
 				break;
 			}

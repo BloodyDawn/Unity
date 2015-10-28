@@ -194,13 +194,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26225" name="Steel Spirit's Staff (60-day)" type="Weapon">
 		<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
@@ -220,13 +221,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="170.0" />
-			<set stat="mAtk" val="134.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">134</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26226" name="Steel Dasparion's Staff (60-day)" type="Weapon">
 		<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
@@ -246,13 +248,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="207.0" />
-			<set stat="mAtk" val="157.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26227" name="Steel Imperial Staff (60-day)" type="Weapon">
 		<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
@@ -272,13 +275,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="274.0" />
-			<set stat="mAtk" val="193.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">274</stat>
+			<stat type="mAtk">193</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26228" name="Steel Dynasty Staff (60-day)" type="Weapon">
 		<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
@@ -298,13 +302,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="325.0" />
-			<set stat="mAtk" val="222.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">325</stat>
+			<stat type="mAtk">222</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26229" name="Fated Support Box: Ertheia Wizard (C-grade)" type="EtcItem">
 		<!-- Double-click to receive C-grade equipment items necessary for Ertheia wizard-type characters. Can be used by characters Lv. 40 - 84. -->
@@ -487,6 +492,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26242" name="Lost Boots" type="EtcItem">
@@ -502,6 +508,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26243" name="Lost Armor" type="EtcItem">
@@ -517,6 +524,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26244" name="Symbol of Courage" type="EtcItem">
@@ -532,6 +540,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26245" name="Symbol of Courage" type="EtcItem">
@@ -547,6 +556,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26246" name="Returning Hero's Support Box" type="EtcItem">
@@ -594,34 +604,32 @@
 		<set name="icon" val="icon.amor_goodness_cloak" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="26250" name="Cloak of Darkness for the Chosen" type="Armor">
 		<!-- Cloak of Darkness for those who have proven themselves as testers in Lineage II. P. Def. + 50, M. Def. + 40, and STR/MEN/DEX/WIT/INT/CON +2. Damage received during PvP decreases by 5%. Can use Blessed Escape. -->
 		<set name="icon" val="icon.amor_evilness_cloak" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="26251" name="Lilith Server Mask" type="Armor">
 		<!-- Mask for players who came from the Lilith server. Uses 2 hair accessory slots. -->
@@ -643,6 +651,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26253" name="Halloween Weapon Appearance Stone" type="EtcItem">
@@ -676,6 +685,7 @@
 	<item id="26256" name="Halloween Shaper" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -686,16 +696,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="685.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">685</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26257" name="Halloween Cutter" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -706,16 +719,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26258" name="Halloween Slasher" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -726,16 +741,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26259" name="Halloween Avenger" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -746,17 +763,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26260" name="Halloween Fighter" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUALFIST" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -767,17 +786,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26261" name="Halloween Stormer" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="POLE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -788,16 +809,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="26262" name="Halloween Thrower" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BOW" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -808,16 +832,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="1481.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1481</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="26263" name="Halloween Shooter" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="TWOHANDCROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -828,16 +855,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="1333.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1333</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="26264" name="Halloween Buster" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -848,16 +878,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="602.0" />
-			<set stat="mAtk" val="486.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">602</stat>
+			<stat type="mAtk">486</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26265" name="Halloween Caster" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -868,17 +900,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="602.0" />
-			<set stat="mAtk" val="486.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">602</stat>
+			<stat type="mAtk">486</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26266" name="Halloween Retributer" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -889,17 +923,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="733.0" />
-			<set stat="mAtk" val="535.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">733</stat>
+			<stat type="mAtk">535</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26267" name="Halloween Dualsword" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUAL" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -910,16 +946,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26268" name="Halloween Dual Dagger" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -930,16 +968,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26269" name="Halloween Dual Blunt Weapon" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUALBLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -950,13 +991,14 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26270" name="Halloween Shield" type="Weapon">
 		<!-- Halloween shield. -->
@@ -968,14 +1010,16 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1130" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add stat="sDef" val="546.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">546</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="26271" name="Halloween Sigil" type="Armor">
 		<!-- Halloween sigil. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
@@ -983,9 +1027,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="920" />
-		<for>
-			<add order="0" stat="pDef" val="150.0" />
-		</for>
+		<stats>
+			<stat type="pDef">150</stat>
+		</stats>
 	</item>
 	<item id="26272" name="Mysterious Halloween Potion" type="EtcItem">
 		<!-- Mysterious potion that changes the appearance into that of a Halloween weapon and outfit for 1 hour. -->
@@ -1001,6 +1045,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="26274" name="Halloween Weapon Appearance Stone" type="EtcItem">
@@ -1014,6 +1059,7 @@
 	<item id="26275" name="Halloween Shaper" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1024,16 +1070,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="685.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">685</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26276" name="Halloween Cutter" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1044,16 +1093,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26277" name="Halloween Slasher" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1064,16 +1115,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26278" name="Halloween Avenger" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1084,17 +1137,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26279" name="Halloween Fighter" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUALFIST" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1105,17 +1160,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26280" name="Halloween Stormer" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="POLE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1126,16 +1183,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="26281" name="Halloween Thrower" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BOW" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1146,16 +1206,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="1481.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1481</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="26282" name="Halloween Shooter" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="TWOHANDCROSSBOW" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1166,16 +1229,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="1333.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1333</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="26283" name="Halloween Buster" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1186,16 +1252,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="602.0" />
-			<set stat="mAtk" val="486.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">602</stat>
+			<stat type="mAtk">486</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26284" name="Halloween Caster" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1206,17 +1274,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="602.0" />
-			<set stat="mAtk" val="486.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">602</stat>
+			<stat type="mAtk">486</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26285" name="Halloween Retributer" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1227,17 +1297,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="733.0" />
-			<set stat="mAtk" val="535.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">733</stat>
+			<stat type="mAtk">535</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26286" name="Halloween Dualsword" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUAL" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1248,16 +1320,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26287" name="Halloween Dual Dagger" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1268,16 +1342,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26288" name="Halloween Dual Blunt Weapon" type="Weapon">
 		<!-- Halloween weapon. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="weapon_type" val="DUALBLUNT" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1288,13 +1365,14 @@
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="26289" name="Halloween Shield" type="Weapon">
 		<!-- Halloween shield. -->
@@ -1306,14 +1384,16 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1130" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add stat="sDef" val="546.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">546</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="26290" name="Halloween Sigil" type="Armor">
 		<!-- Halloween sigil. -->
 		<set name="icon" val="icon.ev_wp_halloween" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
@@ -1321,9 +1401,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="920" />
-		<for>
-			<add order="0" stat="pDef" val="150.0" />
-		</for>
+		<stats>
+			<stat type="pDef">150</stat>
+		</stats>
 	</item>
 	<item id="26291" name="Kaliel's Energy" name_additional="Longing" type="EtcItem">
 		<!-- Use Kaliel's Energy to enchant a Talisman - Desire into a Talisman - Insanity. The Talisman - Desire will remain intact even if it fails. -->

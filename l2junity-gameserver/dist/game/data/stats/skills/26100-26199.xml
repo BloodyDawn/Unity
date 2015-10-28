@@ -123,7 +123,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores entire party's HP/MP/CP with a chance to cancel debuffs. -->
 		<table name="#reuseDelays"> 2250000 2100000 1950000 1800000 1650000 1500000 1350000 1200000 1050000 900000 750000 600000 </table>
-		<set name="icon" val="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00" />
+		<set name="icon" val="icon.etc_star_scroll_baekisung" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="3000" />
@@ -135,7 +135,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teleports 600 grids forward. -->
 		<table name="#reuseDelays"> 118000 110000 102000 94000 86000 78000 70000 62000 54000 46000 38000 30000 </table>
-		<set name="icon" val="BranchIcon.Icon.accessary_sign_agathion_dec_i00" />
+		<set name="icon" val="icon.etc_star_scroll_baekisung" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
@@ -147,13 +147,14 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Equalizes entire party's HP and restores 333 HP/second for 15 sec. -->
 		<table name="#reuseDelays"> 118000 110000 102000 94000 86000 78000 70000 62000 54000 46000 38000 30000 </table>
-		<set name="icon" val="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00" />
+		<set name="icon" val="icon.etc_star_scroll_baekisung" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="#reuseDelays" />
 		<set name="effectPoint" val="1844" />
+		<set name="abnormalTime" val="15" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="26121" levels="12" name="Rocky Camouflage">
@@ -167,6 +168,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="#reuseDelays" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalTime" val="15" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="26122" levels="12" name="Mad Cow">
@@ -179,18 +181,20 @@
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="#reuseDelays" />
 	</skill>
 	<skill id="26123" levels="12" name="Maiden's Prayer">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincible for 10 sec. -->
 		<table name="#reuseDelays"> 2250000 2100000 1950000 1800000 1650000 1500000 1350000 1200000 1050000 900000 750000 600000 </table>
-		<set name="icon" val="BranchIcon.Icon.accessary_sign_agathion_april_july_i00" />
+		<set name="icon" val="icon.etc_star_scroll_baekisung" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="#reuseDelays" />
 		<set name="effectPoint" val="867" />
+		<set name="abnormalTime" val="10" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="26124" levels="12" name="Bountiful Resurrection">
@@ -208,7 +212,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. -->
 		<table name="#reuseDelays"> 118000 110000 102000 94000 86000 78000 70000 62000 54000 46000 38000 30000 </table>
-		<set name="icon" val="BranchIcon.Icon.accessary_sign_agathion_oct_i00" />
+		<set name="icon" val="icon.etc_star_scroll_baekisung" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="DEPORT" />
@@ -231,6 +235,7 @@
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="#reuseDelays" />
 		<set name="effectPoint" val="-707" />
+		<set name="abnormalTime" val="9" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="26127" levels="12" name="Slippery Scale">
@@ -242,13 +247,14 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="2" />
+		<set name="abnormalTime" val="60" />
 		<set name="reuseDelay" val="#reuseDelays" />
 	</skill>
 	<skill id="26128" levels="12" name="Archer's Call">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons all party members to you. -->
 		<table name="#reuseDelays"> 6750000 6300000 5850000 5400000 4950000 4500000 4050000 3600000 3150000 2700000 2250000 1800000 </table>
-		<set name="icon" val="BranchIcon.Icon.accessary_sign_agathion_nov_i00" />
+		<set name="icon" val="icon.etc_star_scroll_baekisung" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="15000" />

@@ -159,6 +159,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
+		<set name="hitTime" val="10000" />
 		<set name="targetType" val="NONE" />
 		<cond msgId="113" addName="1">
 			<not>
@@ -171,6 +172,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="icon" val="BranchSys2.icon.br_worldcup_hair_i02" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8512" levels="1" name="National Representative Warrior's Tenacity">
@@ -180,6 +182,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="BranchSys2.icon.br_spirit_of_brave_i00" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8513" levels="1" name="Olympic Athlete's Spell of Blessing">
@@ -189,6 +193,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="BranchSys2.icon.br_spell_of_blessing_i00" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8514" levels="1" name="Olympic Athlete's Energy of Victory">
@@ -198,6 +204,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="BranchSys2.icon.br_obsession_of_winning_i00" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8515" levels="1" name="Release Agathion's Seal - Ball Trapping Gnosian">
@@ -261,6 +269,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill5239" />
+		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8519" levels="1" name="Notifier">
@@ -270,6 +280,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill5239" />
+		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8520" levels="1" name="Notifier">
@@ -279,6 +291,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill5239" />
+		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8521" levels="1" name="Release Agathion's Seal - Antharas">
@@ -290,6 +304,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -306,6 +321,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -322,6 +338,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -334,6 +351,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="80" />
+		<set name="icon" val="icon.weapon_the_sword_of_hero_i00" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8525" levels="1" name="Hero's Holy Attack">
@@ -341,6 +359,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="80" />
+		<set name="icon" val="icon.weapon_the_staff_of_hero_i00" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8526" levels="1" name="Shiny Bracelet">
@@ -348,6 +367,7 @@
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="52" />
+		<set name="icon" val="icon.accessory_shiny_bracelet" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8527" levels="1" name="Release Agathion's Seal - Magmeld Fairy">
@@ -1144,11 +1164,11 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8573" levels="1" name="Soul Rage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Gathers souls and attacks the enemy by hurling projectiles. Possible up to Lv. 40. Critical hit and over-hit are possible. -->
 		<set name="icon" val="icon.skill0939" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hpConsume" val="25" />
 		<set name="mpConsume" val="5" />
 		<set name="castRange" val="600" />
@@ -1158,6 +1178,17 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="78" />
 		<set name="hitTime" val="1500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+				<param overHit="true" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="FocusSouls">
+				<param charge="1" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="8574" levels="1" name="Enuma Elish">
 		<!-- AUTO GENERATED SKILL -->

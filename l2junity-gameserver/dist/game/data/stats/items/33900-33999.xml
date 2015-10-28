@@ -14,15 +14,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33901" name="Immortal Tunic" name_additional="Robe (Event)" type="Armor">
 		<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t503_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -34,17 +36,23 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1750" />
-		<for>
-			<add order="0" stat="pDef" val="167.0" />
-			<add stat="mDef" val="36.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13312" level="3" type="ON_ENCHANT" /> <!-- Robe Upper Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">167</stat>
+			<stat type="mDef">36</stat>
+		</stats>
 	</item>
 	<item id="33902" name="Immortal Stockings" name_additional="Robe (Event)" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
 		<set name="icon" val="icon.armor_t503_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -56,13 +64,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="850" />
-		<for>
-			<add order="0" stat="pDef" val="104.0" />
-			<add stat="mDef" val="24.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">104</stat>
+			<stat type="mDef">24</stat>
+		</stats>
 	</item>
 	<item id="33903" name="Immortal Gloves" name_additional="Robe (Event)" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -78,11 +87,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33904" name="Immortal Shoes" name_additional="Robe (Event)" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -98,14 +109,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33905" name="Immortal Sigil" name_additional="Robe (Event)" type="Armor">
 		<set name="icon" val="icon.weapon_karyen_i00" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
 		<set name="crystal_type" val="R" />
@@ -117,11 +131,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="920" />
-		<for>
-			<add order="0" stat="pDef" val="19.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="33906" name="Immortal Necklace" name_additional="Event" type="Armor">
 		<!-- Immortal Necklace. MP + 53 effect. -->
@@ -137,11 +153,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="123.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">123</stat>
+		</stats>
 	</item>
 	<item id="33907" name="Immortal Earring" name_additional="Event" type="Armor">
 		<!-- Immortal Earring. MP + 40 effect. -->
@@ -157,11 +173,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="92.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">92</stat>
+		</stats>
 	</item>
 	<item id="33908" name="Immortal Ring" name_additional="Event" type="Armor">
 		<!-- Immortal Ring. MP + 26 effect. -->
@@ -177,11 +193,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="62.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">62</stat>
+		</stats>
 	</item>
 	<item id="33909" name="Requiem Shaper" name_additional="Guidance (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -200,13 +216,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="369.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="4" /> <!-- Special Ability: Guidance -->
+			<skill id="13279" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">369</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33910" name="Requiem Shaper" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -225,13 +252,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="369.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13279" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">369</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33911" name="Requiem Shaper" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nCritical increases by 82.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -250,13 +288,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="369.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3567" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13279" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">369</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33912" name="Requiem Cutter" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -275,13 +324,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33913" name="Requiem Cutter" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -300,13 +359,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33914" name="Requiem Cutter" name_additional="Health (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -325,13 +394,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33915" name="Requiem Slasher" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -350,13 +429,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13258" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33916" name="Requiem Slasher" name_additional="Damage Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -375,13 +464,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13258" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33917" name="Requiem Slasher" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. -->
@@ -400,13 +499,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13258" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33918" name="Requiem Avenger" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -425,14 +534,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13253" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33919" name="Requiem Avenger" name_additional="Critical Damage (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by 1108 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -451,14 +570,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3572" level="5" /> <!-- Special Ability: Critical Damage -->
+			<skill id="13253" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33920" name="Requiem Avenger" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. -->
@@ -477,14 +606,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13253" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33921" name="Requiem Fighter" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nCritical increases by 76.3. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -503,14 +642,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="weight" val="1550" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3565" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13264" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33922" name="Requiem Fighter" name_additional="Damage Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -529,14 +678,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="weight" val="1550" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13264" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33923" name="Requiem Fighter" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -555,14 +714,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="weight" val="1550" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13264" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33924" name="Requiem Stormer" name_additional="HP Drain (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nAbsorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -581,13 +750,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="weight" val="2010" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13111" level="1" /> <!-- Special Ability: HP Drain -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="33925" name="Requiem Stormer" name_additional="Guidance (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.6. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -606,13 +786,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="weight" val="2010" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13110" level="1" /> <!-- Special Ability: Guidance -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="33926" name="Requiem Stormer" name_additional="Damage Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. -->
@@ -631,13 +822,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="weight" val="2010" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13109" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="33927" name="Requiem Thrower" name_additional="Damage Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -656,13 +858,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="831.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13289" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">831</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33928" name="Requiem Thrower" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -681,13 +895,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="831.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13289" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">831</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33929" name="Requiem Thrower" name_additional="Long Blow (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. -->
@@ -706,13 +932,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="831.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13061" level="1" /> <!-- Special Ability: Long Blow -->
+			<skill id="13289" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">831</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33930" name="Requiem Shooter" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -731,13 +969,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1580" />
-		<for>
-			<set stat="pAtk" val="748.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">748</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33931" name="Requiem Shooter" name_additional="Critical Slow (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -756,13 +1006,26 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1580" />
-		<for>
-			<set stat="pAtk" val="748.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">748</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33932" name="Requiem Shooter" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. -->
@@ -781,13 +1044,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1580" />
-		<for>
-			<set stat="pAtk" val="748.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">748</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33933" name="Requiem Buster" name_additional="Acumen (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -806,13 +1081,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33934" name="Requiem Buster" name_additional="Magic Hold (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -831,13 +1116,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33935" name="Requiem Buster" name_additional="Mana Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -856,13 +1152,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33936" name="Requiem Caster" name_additional="Empower (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 296. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -881,14 +1187,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="5" /> <!-- Special Ability: Empower -->
+			<skill id="13296" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33937" name="Requiem Caster" name_additional="Acumen (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -907,14 +1223,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13296" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33938" name="Requiem Caster" name_additional="Magic Hold (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -933,14 +1259,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="13114" level="1" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Hold -->
+			<skill id="13296" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33939" name="Requiem Retributer" name_additional="MP Regeneration (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -959,15 +1296,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="411.0" />
-			<set stat="mAtk" val="270.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3576" level="5" /> <!-- Special Ability: MP Regeneration -->
+			<skill id="13301" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">411</stat>
+			<stat type="mAtk">270</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33940" name="Requiem Retributer" name_additional="Acumen (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -986,15 +1333,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="411.0" />
-			<set stat="mAtk" val="270.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="13301" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">411</stat>
+			<stat type="mAtk">270</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33941" name="Requiem Retributer" name_additional="Empower (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 296. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1013,15 +1370,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="411.0" />
-			<set stat="mAtk" val="270.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3575" level="5" /> <!-- Special Ability: Empower -->
+			<skill id="13301" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">411</stat>
+			<stat type="mAtk">270</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33942" name="Requiem Dualsword" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -1040,13 +1407,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="8" /> <!-- Special Ability: Haste -->
+			<skill id="13274" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33943" name="Requiem Dualsword" name_additional="Damage Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -1065,13 +1442,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13274" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33944" name="Requiem Dualsword" name_additional="Health (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -1090,13 +1477,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="13274" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33945" name="Requiem Dual Dagger" name_additional="Damage Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -1115,13 +1512,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="weight" val="2050" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13284" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33946" name="Requiem Dual Dagger" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -1140,13 +1548,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="weight" val="2050" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3567" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13284" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33947" name="Requiem Dual Dagger" name_additional="Guidance (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. -->
@@ -1165,13 +1584,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="weight" val="2050" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="4" /> <!-- Special Ability: Guidance -->
+			<skill id="13284" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33948" name="Requiem Dual Blunt Weapon" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power. Increases P. Atk. when enchanted to + 4. -->
@@ -1190,14 +1620,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="13269" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33949" name="Requiem Dual Blunt Weapon" name_additional="Guidance (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Skill Power. Increases P. Atk. when enchanted to + 4. -->
@@ -1216,14 +1656,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3573" level="4" /> <!-- Special Ability: Guidance -->
+			<skill id="13269" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33950" name="Requiem Dual Blunt Weapon" name_additional="Damage Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. Increases P. Skill Power. Increases P. Atk. when enchanted to + 4. -->
@@ -1242,14 +1692,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+			<skill id="13269" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33951" name="Immortal Helmet" name_additional="Attack Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1264,15 +1724,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33952" name="Immortal Breastplate" name_additional="Attack Type / Heavy (Event)" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t501_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1284,14 +1746,21 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="7520" />
-		<for>
-			<add order="0" stat="pDef" val="304.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13310" level="3" type="ON_ENCHANT" /> <!-- Heavy Armor Top Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">304</stat>
+		</stats>
 	</item>
 	<item id="33953" name="Immortal Gaiters" name_additional="Attack Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1303,11 +1772,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="3170" />
-		<for>
-			<add order="0" stat="pDef" val="190.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">190</stat>
+		</stats>
 	</item>
 	<item id="33954" name="Immortal Gauntlets" name_additional="Attack Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_g_i00" />
@@ -1322,11 +1793,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33955" name="Immortal Boots" name_additional="Attack Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_b_i00" />
@@ -1341,11 +1814,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33956" name="Immortal Shield" name_additional="Attack Type / Heavy (Event)" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -1361,11 +1836,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1130" />
-		<for>
-			<add stat="sDef" val="415.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<skills>
+			<skill id="8781" level="1" /> <!-- Equip Shield -->
+		</skills>
+		<stats>
+			<stat type="sDef">415</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="33957" name="Immortal Leather Helmet" name_additional="Assassin Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1380,15 +1861,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33958" name="Immortal Leather Armor" name_additional="Assassin Type / Light (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t502_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1400,16 +1883,23 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="4140" />
-		<for>
-			<add order="0" stat="pDef" val="243.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13311" level="3" type="ON_ENCHANT" /> <!-- Light Armor Top Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">243</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
+		</stats>
 	</item>
 	<item id="33959" name="Immortal Leather Leggings" name_additional="Assassin Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1421,13 +1911,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1320" />
-		<for>
-			<add order="0" stat="pDef" val="152.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">152</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
+		</stats>
 	</item>
 	<item id="33960" name="Immortal Leather Gloves" name_additional="Assassin Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_g_i00" />
@@ -1442,11 +1934,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33961" name="Immortal Leather Boots" name_additional="Assassin Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_b_i00" />
@@ -1461,11 +1955,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33962" name="Immortal Circlet" name_additional="Magic Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -1480,15 +1976,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33963" name="Immortal Tunic" name_additional="Magic Type / Robe (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t503_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1500,16 +1998,22 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1750" />
-		<for>
-			<add order="0" stat="pDef" val="167.0" />
-			<add stat="mDef" val="36.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13312" level="3" type="ON_ENCHANT" /> <!-- Robe Upper Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">167</stat>
+			<stat type="mDef">36</stat>
+		</stats>
 	</item>
 	<item id="33964" name="Immortal Stockings" name_additional="Magic Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1521,13 +2025,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="850" />
-		<for>
-			<add order="0" stat="pDef" val="104.0" />
-			<add stat="mDef" val="24.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">104</stat>
+			<stat type="mDef">24</stat>
+		</stats>
 	</item>
 	<item id="33965" name="Immortal Gloves" name_additional="Magic Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_g_i00" />
@@ -1542,11 +2047,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33966" name="Immortal Shoes" name_additional="Magic Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_b_i00" />
@@ -1561,11 +2068,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33967" name="Immortal Helmet" name_additional="Defense Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1580,15 +2089,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33968" name="Immortal Breastplate" name_additional="Defense Type / Heavy (Event)" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t501_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1600,14 +2111,21 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="7520" />
-		<for>
-			<add order="0" stat="pDef" val="304.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13310" level="3" type="ON_ENCHANT" /> <!-- Heavy Armor Top Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">304</stat>
+		</stats>
 	</item>
 	<item id="33969" name="Immortal Gaiters" name_additional="Defense Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1619,11 +2137,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="3170" />
-		<for>
-			<add order="0" stat="pDef" val="190.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">190</stat>
+		</stats>
 	</item>
 	<item id="33970" name="Immortal Gauntlets" name_additional="Defense Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_g_i00" />
@@ -1638,11 +2158,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33971" name="Immortal Boots" name_additional="Defense Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_b_i00" />
@@ -1657,11 +2179,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33972" name="Immortal Shield" name_additional="Defense Type / Heavy (Event)" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -1677,11 +2201,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1130" />
-		<for>
-			<add stat="sDef" val="415.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<skills>
+			<skill id="8781" level="1" /> <!-- Equip Shield -->
+		</skills>
+		<stats>
+			<stat type="sDef">415</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="33973" name="Immortal Leather Helmet" name_additional="Enchant Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1696,15 +2226,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33974" name="Immortal Leather Armor" name_additional="Enchant Type / Light (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t502_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1716,16 +2248,23 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="4140" />
-		<for>
-			<add order="0" stat="pDef" val="243.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13311" level="3" type="ON_ENCHANT" /> <!-- Light Armor Top Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">243</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
+		</stats>
 	</item>
 	<item id="33975" name="Immortal Leather Leggings" name_additional="Enchant Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1737,13 +2276,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1320" />
-		<for>
-			<add order="0" stat="pDef" val="152.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">152</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
+		</stats>
 	</item>
 	<item id="33976" name="Immortal Leather Gloves" name_additional="Enchant Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_g_i00" />
@@ -1758,11 +2299,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33977" name="Immortal Leather Boots" name_additional="Enchant Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_b_i00" />
@@ -1777,11 +2320,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33978" name="Immortal Circlet" name_additional="Recovery Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -1796,15 +2341,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33979" name="Immortal Tunic" name_additional="Recovery Type / Robe (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases M. Evasion and Resistance to Mental Attacks. -->
 		<set name="icon" val="icon.armor_t503_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1816,16 +2363,22 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1750" />
-		<for>
-			<add order="0" stat="pDef" val="167.0" />
-			<add stat="mDef" val="36.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13312" level="3" type="ON_ENCHANT" /> <!-- Robe Upper Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">167</stat>
+			<stat type="mDef">36</stat>
+		</stats>
 	</item>
 	<item id="33980" name="Immortal Stockings" name_additional="Recovery Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1837,13 +2390,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="850" />
-		<for>
-			<add order="0" stat="pDef" val="104.0" />
-			<add stat="mDef" val="24.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">104</stat>
+			<stat type="mDef">24</stat>
+		</stats>
 	</item>
 	<item id="33981" name="Immortal Gloves" name_additional="Recovery Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_g_i00" />
@@ -1858,11 +2412,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33982" name="Immortal Shoes" name_additional="Recovery Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_b_i00" />
@@ -1877,11 +2433,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33983" name="Lv. 5 Giant STR Dye" name_additional="STR + 5 / DEX + 1 (Event)" type="EtcItem">
 		<!-- Lv. 5 Giant STR Dye (Str + 5 Dex -1). If you go to the village Symbol Maker, you can imprint on your body the symbol of magic that can change abilities. In order to imprint the symbol, 10 dyes are required. Can be used by all classes after completion of the fourth class transfer. -->

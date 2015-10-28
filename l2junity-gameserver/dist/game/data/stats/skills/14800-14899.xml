@@ -255,14 +255,35 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14824" levels="1" name="Event Neutralization Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days retail confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="50" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<!-- TODO p_abnormal_rate_limit -->
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param PARALYZE="100" />
+				<param SHOCK="100" />
+				<param BOSS="100" />
+				<param PHYSICAL_BLOCKADE="100" />
+				<param KNOCKDOWN="100" />
+				<param KNOCKBACK="100" />
+				<param AIRBIND="100" />
+				<param PULL="100" />
+				<param CHANGEBODY="100" />
+				<param DISARM="100" />
+				<param DEPORT="100" />
+				<param TURN_STONE="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14825" levels="9" name="Peace Attack">
+		<table name="#power"> 1007 9992 485 1007 1857 3122 5343 8043 9992 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses the strength of peace to attack the target with 1007 power. -->
@@ -280,6 +301,7 @@
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14826" levels="9" name="Intensity Slash">
+		<table name="#power"> 831 8287 400 831 1532 2575 4430 6656 8287 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses aligned power to attack nearby targets with 831 power. -->
@@ -297,6 +319,7 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14827" levels="9" name="Lovely Fire">
+		<table name="#power"> 62 150 49 62 82 102 118 135 150 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses magic power filled with love to attack nearby targets with 62 power. -->
@@ -315,6 +338,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14828" levels="9" name="Innocence Blast">
+		<table name="#power"> 50 120 39 50 66 82 94 108 120 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses pure magic to attack enemies near the target with 50 power. -->
@@ -335,6 +359,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14829" levels="9" name="Grace Strike">
+		<table name="#power"> 1187 11821 571 1187 2188 3677 6320 9499 11821 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target with awe-inspiring blows with 1187 power. -->
@@ -352,6 +377,7 @@
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14830" levels="9" name="Gratitude Burst">
+		<table name="#power"> 985 9861 473 985 1814 3048 5269 7904 9861 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks nearby targets with a reverent heart with 985 power. -->
@@ -369,6 +395,7 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14831" levels="9" name="Mystery Bolt">
+		<table name="#power"> 69 166 54 69 91 113 130 150 166 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target with mysterious magic with 69 power. -->
@@ -387,6 +414,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14832" levels="9" name="Platonic Storm">
+		<table name="#power"> 55 133 43 55 72 91 104 120 133 </table>
 		<table name="#magicLvl"> 40 85 30 40 50 60 70 80 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses magic to attack enemies near the target using all focus with 55 power. -->

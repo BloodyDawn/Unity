@@ -62,6 +62,8 @@ public class WarehouseItem
 	};
 	
 	private final int[] _enchantOptions;
+	private final int[] _soulCrystalOptions;
+	private final int[] _soulCrystalSpecialOptions;
 	
 	private final int _time;
 	
@@ -95,6 +97,8 @@ public class WarehouseItem
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions();
+		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
 	}
 	
 	/**
@@ -282,6 +286,16 @@ public class WarehouseItem
 	public int[] getEnchantOptions()
 	{
 		return _enchantOptions;
+	}
+	
+	public int[] getSoulCrystalOptions()
+	{
+		return _soulCrystalOptions;
+	}
+	
+	public int[] getSoulCrystalSpecialOptions()
+	{
+		return _soulCrystalSpecialOptions;
 	}
 	
 	public int getTime()

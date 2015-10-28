@@ -19,14 +19,12 @@
 package org.l2junity.gameserver.model.eventengine;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -113,7 +111,6 @@ public class EventScheduler
 				try
 				{
 					notification.execute();
-					LOGGER.info("Executed {}#{}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName());
 				}
 				catch (Exception e)
 				{
@@ -126,11 +123,6 @@ public class EventScheduler
 				ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, 1000);
 			}
 		} , timeSchedule);
-		
-		for (EventMethodNotification notification : _notifications)
-		{
-			LOGGER.info("Scheduled call to {}#{} on: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName(), Util.formatDate(new Date(nextSchedule), "yyyy-MM-dd HH:mm:ss"));
-		}
 	}
 	
 	public void stopScheduler()

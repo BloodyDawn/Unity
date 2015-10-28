@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -52,15 +53,15 @@ public final class RestorationRandom extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effector.isPlayer() || !effected.isPlayer())
 		{
 			return;
 		}
-
+		
 		final ExtractableSkill exSkill = skill.getExtractableSkill();
 		if (exSkill == null)
 		{
@@ -105,13 +106,13 @@ public final class RestorationRandom extends AbstractEffect
 			return;
 		}
 		
-		for (ItemHolder item : creationList)
+		for (ItemHolder createdItem : creationList)
 		{
-			if ((item.getId() <= 0) || (item.getCount() <= 0))
+			if ((createdItem.getId() <= 0) || (createdItem.getCount() <= 0))
 			{
 				continue;
 			}
-			player.addItem("Extract", item.getId(), (long) (item.getCount() * Config.RATE_EXTRACTABLE), effector, true);
+			player.addItem("Extract", createdItem.getId(), (long) (createdItem.getCount() * Config.RATE_EXTRACTABLE), effector, true);
 		}
 	}
 }

@@ -491,7 +491,7 @@ public class NpcData implements IGameXmlReader
 									}
 									
 									List<AISkillScope> aiSkillScopes = new ArrayList<>();
-									final AISkillScope shortOrLongRangeScope = skill.getCastRange() <= 150 ? AISkillScope.SHORT_RANGE : AISkillScope.SHORT_RANGE;
+									final AISkillScope shortOrLongRangeScope = skill.getCastRange() <= 150 ? AISkillScope.SHORT_RANGE : AISkillScope.LONG_RANGE;
 									if (skill.isSuicideAttack())
 									{
 										aiSkillScopes.add(AISkillScope.SUICIDE);

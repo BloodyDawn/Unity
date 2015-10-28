@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Sweet Whisper (15)
+ * Sweet Whispers (15)
  * @author nonom
  */
 public class Q00015_SweetWhispers extends Quest
@@ -34,12 +34,15 @@ public class Q00015_SweetWhispers extends Quest
 	private static final int VLADIMIR = 31302;
 	private static final int HIERARCH = 31517;
 	private static final int M_NECROMANCER = 31518;
+	// Misc
+	private static final int MIN_LEVEL = 60;
 	
 	public Q00015_SweetWhispers()
 	{
 		super(15, Q00015_SweetWhispers.class.getSimpleName(), "Sweet Whispers");
 		addStartNpc(VLADIMIR);
 		addTalkId(VLADIMIR, HIERARCH, M_NECROMANCER);
+		addCondMinLevel(MIN_LEVEL, "31302-00a.html");
 	}
 	
 	@Override
@@ -66,7 +69,7 @@ public class Q00015_SweetWhispers extends Quest
 			case "31517-01.html":
 				if (st.isCond(2))
 				{
-					addExpAndSp(player, 350531, 28204);
+					addExpAndSp(player, 714215, 171);
 					st.exitQuest(false, true);
 				}
 				break;
@@ -87,13 +90,10 @@ public class Q00015_SweetWhispers extends Quest
 		final int npcId = npc.getId();
 		switch (st.getState())
 		{
-			case State.COMPLETED:
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
 			case State.CREATED:
 				if (npcId == VLADIMIR)
 				{
-					htmltext = (player.getLevel() >= 60) ? "31302-00.htm" : "31302-00a.html";
+					htmltext = "31302-00.htm";
 				}
 				break;
 			case State.STARTED:
@@ -123,6 +123,9 @@ public class Q00015_SweetWhispers extends Quest
 						}
 						break;
 				}
+				break;
+			case State.COMPLETED:
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 		}
 		return htmltext;

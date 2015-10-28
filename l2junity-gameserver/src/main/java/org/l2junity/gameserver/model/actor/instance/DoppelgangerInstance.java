@@ -75,7 +75,7 @@ public class DoppelgangerInstance extends Npc
 			{
 				if (summonerInfo.getAbnormalTime() > 0)
 				{
-					final BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill(), false);
+					final BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill(), false, null);
 					info.setAbnormalTime(summonerInfo.getAbnormalTime());
 					getEffectList().add(info);
 				}
@@ -98,7 +98,7 @@ public class DoppelgangerInstance extends Npc
 		{
 			if (getAI().getIntention() == CtrlIntention.AI_INTENTION_FOLLOW)
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
 		}
 	}
@@ -127,7 +127,7 @@ public class DoppelgangerInstance extends Npc
 	}
 	
 	@Override
-	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
 		if (miss || (getSummoner() == null) || !getSummoner().isPlayer())
 		{

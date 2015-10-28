@@ -22,10 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.concurrent.ScheduledFuture;
 
-import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.MailType;
@@ -41,8 +38,6 @@ public class Message
 {
 	private static final int EXPIRATION = 360; // 15 days
 	private static final int COD_EXPIRATION = 12; // 12 hours
-	
-	private static final int UNLOAD_ATTACHMENTS_INTERVAL = 900000; // 15-30 mins
 	
 	// post state
 	public static final int DELETED = 0;
@@ -61,7 +56,6 @@ public class Message
 	private final long _reqAdena;
 	private boolean _hasAttachments;
 	private Mail _attachments = null;
-	private ScheduledFuture<?> _unloadTask = null;
 	
 	private int _itemId;
 	private int _enchantLvl;
@@ -177,7 +171,6 @@ public class Message
 		_attachments = msg.getAttachments();
 		msg.removeAttachments();
 		_attachments.setNewMessageId(_messageId);
-		_unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this), UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
 	}
 	
 	public Message(int receiverId, ItemInstance item, MailType mailType)
@@ -409,7 +402,6 @@ public class Message
 		{
 			_attachments = new Mail(_senderId, _messageId);
 			_attachments.restore();
-			_unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this), UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
 		}
 		return _attachments;
 	}
@@ -441,10 +433,6 @@ public class Message
 			_attachments = null;
 			_hasAttachments = false;
 			MailManager.getInstance().removeAttachmentsInDb(_messageId);
-			if (_unloadTask != null)
-			{
-				_unloadTask.cancel(false);
-			}
 		}
 	}
 	
@@ -457,7 +445,6 @@ public class Message
 		
 		_attachments = new Mail(_senderId, _messageId);
 		_hasAttachments = true;
-		_unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this), UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
 		return _attachments;
 	}
 	
@@ -468,26 +455,6 @@ public class Message
 			_attachments.deleteMe();
 			MailManager.getInstance().removeAttachmentsInDb(_messageId);
 			_attachments = null;
-		}
-	}
-	
-	static class AttachmentsUnloadTask implements Runnable
-	{
-		private Message _msg;
-		
-		AttachmentsUnloadTask(Message msg)
-		{
-			_msg = msg;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (_msg != null)
-			{
-				_msg.unloadAttachments();
-				_msg = null;
-			}
 		}
 	}
 }

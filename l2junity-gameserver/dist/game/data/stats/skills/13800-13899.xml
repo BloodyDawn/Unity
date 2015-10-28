@@ -211,7 +211,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="#isMagics" />
 	</skill>
-	<skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (Low)">
+	<skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (High)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- All Stats + 1 with the power of Talisman. -->
 		<set name="icon" val="icon.etc_talisman_i02" />
@@ -363,6 +363,352 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- NPC Damage + 10%. -->
 		<set name="icon" val="icon.pk" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13848" levels="1" name="Blessed Resurrection">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Allows the use of Blessed Resurrection. Cooldown is 12 hours. -->
+		<set name="icon" val="icon.accessory_sheep_cap_white_i00" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="castRange" val="400" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="1" />
+		<set name="reuseDelay" val="3600000" />
+	</skill>
+	<skill id="13849" levels="1" name="Baa~">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Can obtain 2 Sheep Bait Coupons when using the skill.(Only once a day) -->
+		<set name="icon" val="branchsys2.action5016" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="-1000" />
+	</skill>
+	<skill id="13850" levels="1" name="Sheep Hat - Physical">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- STR + 3, P. Atk. + 3%% -->
+		<set name="icon" val="icon.accessory_sheep_cap_white_i00" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13851" levels="1" name="Sheep Hat - Magic">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- INT + 3, M. Atk. + 5%% -->
+		<set name="icon" val="icon.accessory_sheep_cap_white_i00" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13852" levels="1" name="Sheep Hat - Defense">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- CON + 3, P./M. Def. + 3%% -->
+		<set name="icon" val="icon.accessory_sheep_cap_white_i00" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13853" levels="1" name="Agathion Teleport: Talking Island Village">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Teleport to the Talking Island Village. -->
+		<set name="icon" val="icon.skill0000" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<skill id="13854" levels="1" name="Agathion Teleport: Town of Goddard">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Teleport to the Town of Goddard. -->
+		<set name="icon" val="icon.skill0000" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<skill id="13855" levels="1" name="Agathion Teleport: Town of Schuttgart">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Teleport to the Town of Schuttgart. -->
+		<set name="icon" val="icon.skill0000" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<skill id="13856" levels="15" name="Might">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13857" levels="15" name="Fury">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13858" levels="15" name="Focus">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13859" levels="15" name="Death">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13860" levels="15" name="Hunter">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P. Skill Critical Rate + $s1, PvP Damage + $s2 -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13861" levels="15" name="Fire">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13862" levels="15" name="Body">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13863" levels="15" name="Empower">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_m" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13864" levels="15" name="Acumen">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_m" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13865" levels="15" name="Wild">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_m" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13866" levels="15" name="Mystic">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_m" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13867" levels="15" name="Soul">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_m" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13868" levels="15" name="Speed Focus">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13869" levels="15" name="Speed Death">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13870" levels="15" name="Speed Hunter">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13871" levels="15" name="Speed Fire">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13872" levels="15" name="Speed Body">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13873" levels="15" name="Critical Death">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13874" levels="15" name="Critical Hunter">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13875" levels="15" name="Critical Fire">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13876" levels="15" name="Critical Body">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13877" levels="15" name="Acumen Wild">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_mm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13878" levels="15" name="Acumen Mystic">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Casting Spd. + $s1, M. Critical Damage + $s2 -->
+		<set name="icon" val="icon.ensoul_big_mm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13879" levels="15" name="Acumen Soul">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Casting Spd. + $s1, Max MP + $s2 -->
+		<set name="icon" val="icon.ensoul_big_mm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13880" levels="15" name="Wid. Mystic">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- M. Critical Rate + $s1, M. Critical Damage + $s2 -->
+		<set name="icon" val="icon.ensoul_big_mm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13881" levels="15" name="Wid. Soul">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- M. Critical Rate + $s1, Max MP + $s2, PvP Damage + $s3 -->
+		<set name="icon" val="icon.ensoul_big_mm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13882" levels="15" name="HP Acumen">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13883" levels="15" name="HP Wild">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13884" levels="15" name="HP Mystic">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13885" levels="15" name="HP Soul">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13886" levels="15" name="MP Fury">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13887" levels="15" name="MP Focus">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13888" levels="15" name="MP Death">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13889" levels="15" name="MP Hunter">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13890" levels="15" name="MP Fire">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.ensoul_big_pm" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13891" levels="1" name="Critical Slow">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Chance to decrease Speed and increase PvP Damage during a critical attack. -->
+		<set name="icon" val="icon.ensoul_big_old" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13892" levels="1" name="Critical Stun">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Chance to stun and increase PvP Damage during a critical attack. -->
+		<set name="icon" val="icon.ensoul_big_old" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13893" levels="1" name="Magic Hold">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Chance to activate a Dryad Root and increase PvP Damage when using a magic skill. -->
+		<set name="icon" val="icon.ensoul_big_old" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13894" levels="2" name="Magic Focus">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Chance to activate Focus and increase PvP Damage when using a magic skill. -->
+		<set name="icon" val="icon.ensoul_big_old" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13895" levels="1" name="Magic Blessed Body">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Chance to activate Blessed Body when using a magic skill. -->
+		<set name="icon" val="icon.ensoul_big_old" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13896" levels="1" name="Magic Regeneration">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Chance to activate Regeneration when using a magic skill. -->
+		<set name="icon" val="icon.ensoul_big_old" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13897" levels="2" name="Magic Mental Shield">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Chance to activate Mental Shield when using a magic skill. -->
+		<set name="icon" val="icon.ensoul_big_old" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13898" levels="2" name="Tyrr">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P. Atk. + $s1 -->
+		<set name="icon" val="icon.ensoul_big_ep" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="13899" levels="2" name="Feoh">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- M. Atk. + $s1 -->
+		<set name="icon" val="icon.ensoul_big_ep" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>

@@ -40,6 +40,7 @@ import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffec
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.OnEventTrigger;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SunRise;
@@ -49,10 +50,21 @@ import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.Util;
 
 /**
- * This class handles following admin commands: <li>invis/invisible/vis/visible = makes yourself invisible or visible <li>earthquake = causes an earthquake of a given intensity and duration around you <li>bighead/shrinkhead = changes head size <li>gmspeed = temporary Super Haste effect. <li>
- * para/unpara = paralyze/remove paralysis from target <li>para_all/unpara_all = same as para/unpara, affects the whole world. <li>polyself/unpolyself = makes you look as a specified mob. <li>changename = temporary change name <li>clearteams/setteam_close/setteam = team related commands <li>social =
- * forces an L2Character instance to broadcast social action packets. <li>effect = forces an L2Character instance to broadcast MSU packets. <li>abnormal = force changes over an L2Character instance's abnormal state. <li>play_sound/play_sounds = Music broadcasting related commands <li>atmosphere =
- * sky change related commands.
+ * This class handles following admin commands:
+ * <li>invis/invisible/vis/visible = makes yourself invisible or visible
+ * <li>earthquake = causes an earthquake of a given intensity and duration around you
+ * <li>bighead/shrinkhead = changes head size
+ * <li>gmspeed = temporary Super Haste effect.
+ * <li>para/unpara = paralyze/remove paralysis from target
+ * <li>para_all/unpara_all = same as para/unpara, affects the whole world.
+ * <li>polyself/unpolyself = makes you look as a specified mob.
+ * <li>changename = temporary change name
+ * <li>clearteams/setteam_close/setteam = team related commands
+ * <li>social = forces an L2Character instance to broadcast social action packets.
+ * <li>effect = forces an L2Character instance to broadcast MSU packets.
+ * <li>abnormal = force changes over an L2Character instance's abnormal state.
+ * <li>play_sound/play_sounds = Music broadcasting related commands
+ * <li>atmosphere = sky change related commands.
  */
 public class AdminEffects implements IAdminCommandHandler
 {
@@ -95,7 +107,8 @@ public class AdminEffects implements IAdminCommandHandler
 		"admin_atmosphere",
 		"admin_atmosphere_menu",
 		"admin_set_displayeffect",
-		"admin_set_displayeffect_menu"
+		"admin_set_displayeffect_menu",
+		"admin_event_trigger"
 	};
 	
 	@Override
@@ -637,6 +650,20 @@ public class AdminEffects implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("Usage: //set_displayeffect <id>");
+			}
+		}
+		else if (command.startsWith("admin_event_trigger"))
+		{
+			try
+			{
+				int triggerId = Integer.parseInt(st.nextToken());
+				boolean enable = Boolean.parseBoolean(st.nextToken());
+				World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, player -> player.sendPacket(new OnEventTrigger(triggerId, enable)));
+				activeChar.sendPacket(new OnEventTrigger(triggerId, enable));
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Usage: //event_trigger id [true | false]");
 			}
 		}
 		

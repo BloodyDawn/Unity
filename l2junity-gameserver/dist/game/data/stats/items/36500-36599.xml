@@ -6,8 +6,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -15,12 +13,20 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="2884" />
-			<set stat="mAtk" val="935" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<skills>
+			<skill id="8896" level="1" /> <!-- Valakas' Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8897" level="1" /> <!-- Valakas' Bite -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">2884</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36501" name="Valakas Slasher" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Valakas' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Valakas' Meteor: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -28,8 +34,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -37,12 +41,20 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="3509" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8896" level="1" /> <!-- Valakas' Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8897" level="1" /> <!-- Valakas' Bite -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">3509</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36502" name="Valakas Thrower" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Valakas' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Valakas' Meteor: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -50,8 +62,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -61,13 +71,21 @@
 		<set name="mp_consume" val="6" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="5678" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<skills>
+			<skill id="8896" level="1" /> <!-- Valakas' Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8897" level="1" /> <!-- Valakas' Bite -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">5678</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="36503" name="Valakas Buster" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Casting Speed by 1999, M. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Valakas' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Valakas' Meteor: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -75,8 +93,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -85,12 +101,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="2307" />
-			<set stat="mAtk" val="1676" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<skills>
+			<skill id="8896" level="1" /> <!-- Valakas' Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8897" level="1" /> <!-- Valakas' Bite -->
+			<skill id="8903" level="1" /> <!-- Dragon Wizard -->
+		</skills>
+		<stats>
+			<stat type="pAtk">2307</stat>
+			<stat type="mAtk">1676</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36504" name="Valakas Caster" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Casting Speed by 1999, M. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Valakas' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Valakas' Meteor: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -98,8 +122,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -108,13 +130,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="2307" />
-			<set stat="mAtk" val="1676" />
-			<set stat="rCrit" val="6" />
-			<add stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<skills>
+			<skill id="8896" level="1" /> <!-- Valakas' Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8897" level="1" /> <!-- Valakas' Bite -->
+			<skill id="8903" level="1" /> <!-- Dragon Wizard -->
+		</skills>
+		<stats>
+			<stat type="pAtk">2307</stat>
+			<stat type="mAtk">1676</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36505" name="Valakas Retributer" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Casting Speed by 1999, M. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Valakas' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Valakas' Meteor: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -122,8 +152,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
@@ -131,13 +159,22 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="2809" />
-			<set stat="mAtk" val="1843" />
-			<set stat="rCrit" val="6" />
-			<add stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8896" level="1" /> <!-- Valakas' Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8897" level="1" /> <!-- Valakas' Bite -->
+			<skill id="8903" level="1" /> <!-- Dragon Wizard -->
+		</skills>
+		<stats>
+			<stat type="pAtk">2809</stat>
+			<stat type="mAtk">1843</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36506" name="Lindvior Shaper" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Lindvior' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Lindvior's Wing Movement: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -145,8 +182,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -154,13 +189,21 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="2523" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<skills>
+			<skill id="8899" level="1" /> <!-- Lindvior's Wingbeat -->
+			<skill id="8898" level="1" /> <!-- Lindvior's Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">2523</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36507" name="Lindvior Thrower" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Lindvior' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Lindvior's Wing Movement: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -168,8 +211,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -179,13 +220,21 @@
 		<set name="mp_consume" val="6" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="5678" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<skills>
+			<skill id="8899" level="1" /> <!-- Lindvior's Wingbeat -->
+			<skill id="8898" level="1" /> <!-- Lindvior's Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">5678</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="36508" name="Lindvior Slasher" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Lindvior' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Lindvior's Wing Movement: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -193,8 +242,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -202,12 +249,20 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="3509" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<skills>
+			<skill id="8899" level="1" /> <!-- Lindvior's Wingbeat -->
+			<skill id="8898" level="1" /> <!-- Lindvior's Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">3509</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36509" name="Lindvior Caster" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1999, M. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Lindvior' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Lindvior's Wing Movement: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -215,8 +270,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -225,13 +278,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="2307" />
-			<set stat="mAtk" val="1676" />
-			<set stat="rCrit" val="6" />
-			<add stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<skills>
+			<skill id="8899" level="1" /> <!-- Lindvior's Wingbeat -->
+			<skill id="8898" level="1" /> <!-- Lindvior's Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8903" level="1" /> <!-- Dragon Wizard -->
+		</skills>
+		<stats>
+			<stat type="pAtk">2307</stat>
+			<stat type="mAtk">1676</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36510" name="Lindvior Cutter" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Lindvior' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Lindvior's Wing Movement: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -239,8 +300,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -248,12 +307,20 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="2884" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<skills>
+			<skill id="8899" level="1" /> <!-- Lindvior's Wingbeat -->
+			<skill id="8898" level="1" /> <!-- Lindvior's Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">2884</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36511" name="Lindvior Shooter" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Lindvior' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Lindvior's Wing Movement: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -261,8 +328,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="TWOHANDCROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -270,14 +335,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="reuse_delay" val="400" />
-		<for>
-			<set stat="pAtk" val="5113" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<set name="reuse_delay" val="1350" />
+		<skills>
+			<skill id="8899" level="1" /> <!-- Lindvior's Wingbeat -->
+			<skill id="8898" level="1" /> <!-- Lindvior's Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
+		</skills>
+		<stats>
+			<stat type="pAtk">5113</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="36512" name="Lindvior Dual Dagger" name_additional="Top-grade" type="Weapon">
 		<!-- Dragon's Weapon (Top-grade).\\n&lt;Passive&gt;\\nIncreases PVP damage by 30%, HP/MP by 100%, CP by 200%, Attack Speed by 1500, P. Critical Rate by 500 and additional damage on dragons by 300%.\\n&lt;Used Skill&gt;\\n1. Protection: Your movement speed increases by 100 and you become immune to all debuffs for 2 min. Using the skill requires 1 unit of Dragon Blood. Cooldown is 10 min.\\n2. Lindvior' Breath: Decreases the Attack/Casting/Movement Speed of nearby enemies by 90% and gradually makes their bodies rigid, paralyzing them for 10 seconds eventually. Using the skill requires 1 unit of Dragon Blood. Cooldown is 5 min.\\n3. Lindvior's Wing Movement: Depletes CP of all enemies nearby. Using the skill consumes 1 unit of Dragon Blood. Cooldown is 5 min.\\nCannot be worn in the Olympiad/Ceremony of Chaos. Its appearance cannot be modified. Cannot be crystallized, enchanted or assigned an attribute. -->
@@ -285,8 +358,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -295,15 +366,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8899" level="1" /> <!-- Lindvior's Wingbeat -->
+			<skill id="8898" level="1" /> <!-- Lindvior's Breath -->
+			<skill id="8890" level="1" /> <!-- Dignity -->
+			<skill id="8901" level="1" /> <!-- Dragon Knight -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="2884" />
-			<set stat="mAtk" val="1257" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">2884</stat>
+			<stat type="mAtk">1257</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="36513" name="Elcyum Powder" type="EtcItem">
 		<!-- Rare mineral discovered in the deepest part of the Spine Mine area. Take 10 units of Elcyum Powder to a Merchant of Mammon to receive an Elcyum Crystal. -->
@@ -311,6 +387,7 @@
 		<set name="price" val="1000000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="GEMSTONE" />
 	</item>
 	<item id="36514" name="Elcyum Crystal" type="EtcItem">
@@ -319,6 +396,7 @@
 		<set name="price" val="10000000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="GEMSTONE" />
 	</item>
 	<item id="36515" name="Elcyum" type="EtcItem">
@@ -327,6 +405,7 @@
 		<set name="price" val="100000000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="GEMSTONE" />
 	</item>
 	<item id="36516" name="Worn Leather" type="EtcItem">
@@ -336,6 +415,7 @@
 		<set name="price" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36517" name="Leather" type="EtcItem">
@@ -345,6 +425,7 @@
 		<set name="price" val="4574" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36518" name="Durable Leather" type="EtcItem">
@@ -354,6 +435,7 @@
 		<set name="price" val="23642" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36519" name="Quality Leather" type="EtcItem">
@@ -363,6 +445,7 @@
 		<set name="price" val="255084" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36520" name="Exquisite Leather" type="EtcItem">
@@ -371,6 +454,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="4477546" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36521" name="Iron Ore" type="EtcItem">
@@ -380,6 +464,7 @@
 		<set name="price" val="260" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36522" name="Silver" type="EtcItem">
@@ -389,6 +474,7 @@
 		<set name="price" val="11932" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36523" name="Adamantite" type="EtcItem">
@@ -398,6 +484,7 @@
 		<set name="price" val="61674" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36524" name="Orichalcum" type="EtcItem">
@@ -407,6 +494,7 @@
 		<set name="price" val="665434" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36525" name="Durandil" type="EtcItem">
@@ -416,6 +504,7 @@
 		<set name="price" val="11680552" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36526" name="Fiber" type="EtcItem">
@@ -425,6 +514,7 @@
 		<set name="price" val="92" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36527" name="Synthetic Fiber" type="EtcItem">
@@ -434,6 +524,7 @@
 		<set name="price" val="4176" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36528" name="Metallic Fiber" type="EtcItem">
@@ -443,6 +534,7 @@
 		<set name="price" val="21586" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36529" name="Quality Fiber" type="EtcItem">
@@ -452,6 +544,7 @@
 		<set name="price" val="232902" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36530" name="Exquisite Fiber" type="EtcItem">
@@ -460,6 +553,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="4088194" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36531" name="Thread" type="EtcItem">
@@ -469,6 +563,7 @@
 		<set name="price" val="300" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36532" name="Thin Braid" type="EtcItem">
@@ -478,6 +573,7 @@
 		<set name="price" val="13722" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36533" name="Synthetic Braid" type="EtcItem">
@@ -487,6 +583,7 @@
 		<set name="price" val="70924" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36534" name="Durable Braid" type="EtcItem">
@@ -496,6 +593,7 @@
 		<set name="price" val="765250" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36535" name="Quality Braid" type="EtcItem">
@@ -505,6 +603,7 @@
 		<set name="price" val="13432636" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36536" name="Worn Leather Braid" type="EtcItem">
@@ -514,6 +613,7 @@
 		<set name="price" val="400" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36537" name="Leather Braid" type="EtcItem">
@@ -522,6 +622,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="18296" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36538" name="Durable Leather Braid" type="EtcItem">
@@ -531,6 +632,7 @@
 		<set name="price" val="94566" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36539" name="Quality Leather Braid" type="EtcItem">
@@ -540,6 +642,7 @@
 		<set name="price" val="1020332" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36540" name="Exquisite Leather Braid" type="EtcItem">
@@ -548,6 +651,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="17910180" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36541" name="Steel Wire" type="EtcItem">
@@ -557,6 +661,7 @@
 		<set name="price" val="560" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36542" name="Silver Wire" type="EtcItem">
@@ -566,6 +671,7 @@
 		<set name="price" val="25656" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36543" name="Adamantite Wire" type="EtcItem">
@@ -575,6 +681,7 @@
 		<set name="price" val="132598" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36544" name="Orichalcum Wire" type="EtcItem">
@@ -584,6 +691,7 @@
 		<set name="price" val="1430684" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36545" name="Durandil Wire" type="EtcItem">
@@ -592,6 +700,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="25113188" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36546" name="Weapon Fragment (Low-grade)" type="EtcItem">
@@ -601,6 +710,7 @@
 		<set name="price" val="391" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36547" name="Weapon Fragment" type="EtcItem">
@@ -610,6 +720,7 @@
 		<set name="price" val="17899" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36548" name="Weapon Fragment (Mid-grade)" type="EtcItem">
@@ -619,6 +730,7 @@
 		<set name="price" val="92510" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36549" name="Weapon Fragment (High-grade)" type="EtcItem">
@@ -628,6 +740,7 @@
 		<set name="price" val="998152" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36550" name="Weapon Fragment (Top-grade)" type="EtcItem">
@@ -637,6 +750,7 @@
 		<set name="price" val="17520829" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36551" name="Armor Fragment (Low-grade)" type="EtcItem">
@@ -646,6 +760,7 @@
 		<set name="price" val="443" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36552" name="Armor Fragment" type="EtcItem">
@@ -655,6 +770,7 @@
 		<set name="price" val="20285" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36553" name="Armor Fragment (Mid-grade)" type="EtcItem">
@@ -664,6 +780,7 @@
 		<set name="price" val="104845" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36554" name="Armor Fragment (High-grade)" type="EtcItem">
@@ -673,6 +790,7 @@
 		<set name="price" val="1131239" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36555" name="Armor Fragment (Top-grade)" type="EtcItem">
@@ -681,6 +799,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="19856939" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36556" name="Accessory Gem (Low-grade)" type="EtcItem">
@@ -690,6 +809,7 @@
 		<set name="price" val="130" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36557" name="Accessory Gem" type="EtcItem">
@@ -699,6 +819,7 @@
 		<set name="price" val="5966" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36558" name="Accessory Gem (Mid-grade)" type="EtcItem">
@@ -708,6 +829,7 @@
 		<set name="price" val="30837" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36559" name="Accessory Gem (High-grade)" type="EtcItem">
@@ -717,6 +839,7 @@
 		<set name="price" val="332717" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36560" name="Accessory Gem (Top-grade)" type="EtcItem">
@@ -726,6 +849,7 @@
 		<set name="price" val="5840276" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36561" name="Cokes" type="EtcItem">
@@ -735,6 +859,7 @@
 		<set name="price" val="535" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36562" name="Greater Cokes" type="EtcItem">
@@ -744,6 +869,7 @@
 		<set name="price" val="24462" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36563" name="Synthetic Cokes" type="EtcItem">
@@ -753,6 +879,7 @@
 		<set name="price" val="126430" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36564" name="Greater Synthetic Cokes" type="EtcItem">
@@ -762,6 +889,7 @@
 		<set name="price" val="1364141" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36565" name="Exquisite Synthetic Cokes" type="EtcItem">
@@ -770,6 +898,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="23945133" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36566" name="Friendship Cube Pack (Yum Yum)" name_additional="Event" type="EtcItem">
@@ -809,6 +938,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="icon" val="icon.etc_pink_crystal_cube_pc_i00" />
 	</item>
 	<item id="36569" name="Yum Yum Candy Gift Box" name_additional="Event" type="EtcItem">
@@ -844,7 +974,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="icon" val="icon.etc_whiteday_candy_i05" />
+		<skills>
+			<skill id="9834" level="1" /> <!-- Yum Yum Candy -->
+		</skills>
 	</item>
 	<item id="36572" name="Nom Nom Candy (30-day)" name_additional="Event" type="EtcItem">
 		<!-- Have fun with your friends! increases additionally obtained XP/SP by 15%. When this candy and a Yum Yum Candy are used together, both of their effects apply. When this candy is used with an identical candy, their effects apply only once. -->
@@ -857,7 +991,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="icon" val="icon.etc_whiteday_candy_i06" />
+		<skills>
+			<skill id="9835" level="1" /> <!-- Nom Nom Candy -->
+		</skills>
 	</item>
 	<item id="36573" name="Friendship Summon Cube (30-day)" name_additional="Event" type="EtcItem">
 		<!-- Lineage II L-together is even better with friends! If stored in the inventory, it enables you to use the skill of summoning a friend once every 30 min. All will be deleted after the next maintenance. -->
@@ -870,7 +1008,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="icon" val="icon.etc_pink_crystal_cube_pc_i00" />
+		<skills>
+			<skill id="9836" level="1" /> <!-- Friendship Cube -->
+		</skills>
 	</item>
 	<item id="36574" name="Scroll: Modify Weapon (R-grade)" type="EtcItem">
 		<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
@@ -878,6 +1020,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36575" name="Scroll: Modify Weapon (S-grade)" type="EtcItem">
@@ -885,6 +1028,7 @@
 		<set name="icon" val="icon.weapon_change_i05" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36576" name="Scroll: Modify Weapon (A-grade)" type="EtcItem">
@@ -892,6 +1036,7 @@
 		<set name="icon" val="icon.weapon_change_i04" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36577" name="Scroll: Modify Weapon (B-grade)" type="EtcItem">
@@ -899,6 +1044,7 @@
 		<set name="icon" val="icon.weapon_change_i03" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36578" name="Scroll: Modify Weapon (C-grade)" type="EtcItem">
@@ -907,6 +1053,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36579" name="Scroll: Modify Weapon (D-grade)" type="EtcItem">
@@ -915,6 +1062,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36580" name="Blessed Scroll: Modify Weapon (R-grade)" type="EtcItem">
@@ -927,6 +1075,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36581" name="Blessed Scroll: Modify Weapon (S-grade)" type="EtcItem">
@@ -939,6 +1088,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36582" name="Blessed Scroll: Modify Weapon (A-grade)" type="EtcItem">
@@ -951,6 +1101,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36583" name="Blessed Scroll: Modify Weapon (B-grade)" type="EtcItem">
@@ -963,6 +1114,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36584" name="Blessed Scroll: Modify Weapon (C-grade)" type="EtcItem">
@@ -975,6 +1127,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36585" name="Blessed Scroll: Modify Weapon (D-grade)" type="EtcItem">
@@ -987,6 +1140,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36586" name="Scroll: Modify Armor (R-grade)" type="EtcItem">
@@ -995,6 +1149,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36587" name="Scroll: Modify Armor (S-grade)" type="EtcItem">
@@ -1002,6 +1157,7 @@
 		<set name="icon" val="icon.armor_change_i05" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36588" name="Scroll: Modify Armor (A-grade)" type="EtcItem">
@@ -1010,6 +1166,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36589" name="Scroll: Modify Armor (B-grade)" type="EtcItem">
@@ -1018,6 +1175,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="36590" name="Scroll: Modify Armor (C-grade)" type="EtcItem">
@@ -1025,6 +1183,7 @@
 		<set name="icon" val="icon.armor_change_i02" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36591" name="Scroll: Modify Armor (D-grade)" type="EtcItem">
@@ -1032,6 +1191,7 @@
 		<set name="icon" val="icon.armor_change_i01" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36592" name="Blessed Scroll: Modify Armor (R-grade)" type="EtcItem">
@@ -1044,6 +1204,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36593" name="Blessed Scroll: Modify Armor (S-grade)" type="EtcItem">
@@ -1056,6 +1217,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36594" name="Blessed Scroll: Modify Armor (A-grade)" type="EtcItem">
@@ -1068,6 +1230,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36595" name="Blessed Scroll: Modify Armor (B-grade)" type="EtcItem">
@@ -1080,6 +1243,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36596" name="Blessed Scroll: Modify Armor (C-grade)" type="EtcItem">
@@ -1092,6 +1256,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36597" name="Blessed Scroll: Modify Armor (D-grade)" type="EtcItem">
@@ -1104,6 +1269,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36598" name="Scroll: Restore Equipment (R-grade)" type="EtcItem">
@@ -1113,6 +1279,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_ALLITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="36599" name="Scroll: Restore Equipment (S-grade)" type="EtcItem">
@@ -1122,6 +1289,7 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_ALLITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

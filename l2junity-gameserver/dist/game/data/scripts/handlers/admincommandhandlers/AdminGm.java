@@ -21,8 +21,6 @@ package handlers.admincommandhandlers;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - gm = turns gm mode off
@@ -30,7 +28,6 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminGm implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminGm.class);
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_gm"
@@ -42,9 +39,8 @@ public class AdminGm implements IAdminCommandHandler
 		if (command.equals("admin_gm") && activeChar.isGM())
 		{
 			AdminData.getInstance().deleteGm(activeChar);
-			activeChar.setAccessLevel(0, true);
-			activeChar.sendMessage("You no longer have GM status.");
-			_log.info("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") turned his GM status off");
+			activeChar.setAccessLevel(0, true, false);
+			activeChar.sendMessage("You deactivated your GM access for this session, if you login again you will be GM again, in order to remove your access completely please shift yourself and set your accesslevel to 0.");
 		}
 		return true;
 	}

@@ -163,7 +163,7 @@
 		<table name="#heal"> 3274 3296 3319 3338 </table>
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -610,7 +610,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.32" />
+				<mul stat="rCrit" val="0.32" />
 				<mul stat="cAtk" val="1.35" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
@@ -650,14 +650,15 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.34" />
 				<mul stat="mAtkSpd" val="1.31" />
-				<!-- TODO 30% chance when vampiric is reworked -->
-				<add stat="absorbDam" val="9" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -692,10 +693,10 @@
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP,-1;HIT_UP,-1;T_CRIT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP_AVOID_UP,-1" />
+				<param dispel="IMPROVE_HIT_DEFENCE_CRT_RATE_UP,-1;HIT_UP,-1;T_CRT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP,-1;AVOID_UP,-1" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" />
+				<param slot="IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -1045,7 +1046,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11836" levels="0" name="Summon Lumi Power Passive">
+	<skill id="11836" levels="0" name="Dissolve">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. -->
 		<table name="#castRanges"> </table>
@@ -1256,11 +1257,11 @@
 		<set name="effectPoint" val="867" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="11859" levels="3" name="Dark Vampirism">
+	<skill id="11859" levels="6" name="Dark Vampirism">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 198 Power added to M. Atk. and recovers HP equivalent to 50% of damage inflicted. Consumes 1 Spirit Ore. -->
-		<table name="#mpConsumes"> 92 96 100 </table>
-		<table name="#power"> 198 200 203 </table>
+		<table name="#mpConsumes"> 92 96 100 103 108 112 </table>
+		<table name="#power"> 198 200 203 240 244 248 </table>
 		<set name="icon" val="icon.skill11859" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -1307,6 +1308,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">

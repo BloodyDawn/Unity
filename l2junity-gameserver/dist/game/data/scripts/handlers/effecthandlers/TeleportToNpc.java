@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
@@ -26,6 +27,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.interfaces.ILocational;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
@@ -37,14 +39,14 @@ import org.l2junity.gameserver.network.client.send.ValidateLocation;
  */
 public final class TeleportToNpc extends AbstractEffect
 {
-	private final int _npcId;
+	private final int[] _npcIds;
 	private final boolean _party;
 	
 	public TeleportToNpc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_npcId = params.getInt("npcId", 0);
+		_npcIds = params.getIntArray("npcId", ";");
 		_party = params.getBoolean("party", false);
 	}
 	
@@ -61,14 +63,14 @@ public final class TeleportToNpc extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		if (_npcId <= 0)
+		if (_npcIds.length == 0)
 		{
 			return;
 		}
 		
-		ILocational teleLocation = effector.getSummonedNpcs().stream().filter(npc -> npc.getId() == _npcId).findAny().orElse(null);
+		ILocational teleLocation = effector.getSummonedNpcs().stream().filter(npc -> CommonUtil.contains(_npcIds, npc.getId())).findAny().orElse(null);
 		if (teleLocation != null)
 		{
 			Party party = effected.getParty();

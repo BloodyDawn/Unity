@@ -210,9 +210,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2280" level="1" /> <!-- Herb of Power -->
 			<skill id="2282" level="1" /> <!-- Haste Herb -->
 			<skill id="2284" level="1" /> <!-- Herb of Critical Attack -->
+			<skill id="2280" level="1" /> <!-- Herb of Power -->
 		</skills>
 	</item>
 	<item id="8613" name="Wizard Herb" type="EtcItem">
@@ -229,8 +229,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2281" level="1" /> <!-- Herb of Magic -->
 			<skill id="2283" level="1" /> <!-- Herb of Casting Spd. -->
+			<skill id="2281" level="1" /> <!-- Herb of Magic -->
 		</skills>
 	</item>
 	<item id="8614" name="Herb of Recovery" type="EtcItem">
@@ -247,8 +247,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2278" level="3" /> <!-- Superior Herb of Life -->
 			<skill id="2279" level="3" /> <!-- Superior Herb of Mana -->
+			<skill id="2278" level="3" /> <!-- Superior Herb of Life -->
 		</skills>
 	</item>
 	<item id="8615" name="Summoning Crystal" type="EtcItem">
@@ -259,6 +259,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="35000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="8616" name="Spellbook: Summon Friend" type="EtcItem">
@@ -268,6 +269,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="6250" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="8617" name="Spellbook: Word of Invitation" type="EtcItem">
@@ -277,40 +279,60 @@
 		<set name="weight" val="120" />
 		<set name="price" val="8700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="8618" name="Ancient Book: Divine Inspiration (Modern Language Version)" type="EtcItem">
 		<set name="icon" val="icon.etc_add_buffslot_i00" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9214" level="1" /> <!-- Divine Inspiration -->
+		</skills>
 	</item>
 	<item id="8619" name="Ancient Book: Divine Inspiration (Original Language Version)" type="EtcItem">
 		<set name="icon" val="icon.etc_add_buffslot_i01" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="commissionItemType" val="SPELLBOOK" />
+		<skills>
+			<skill id="9215" level="1" /> <!-- Divine Inspiration -->
+		</skills>
 	</item>
 	<item id="8620" name="Ancient Book: Divine Inspiration (Manuscript)" type="EtcItem">
 		<set name="icon" val="icon.etc_add_buffslot_i02" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9216" level="1" /> <!-- Divine Inspiration -->
+		</skills>
 	</item>
 	<item id="8621" name="Ancient Book: Divine Inspiration (Original Version)" type="EtcItem">
 		<set name="icon" val="icon.etc_add_buffslot_i03" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9217" level="1" /> <!-- Divine Inspiration -->
+		</skills>
 	</item>
 	<item id="8622" name="Elixir of Life (No-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_hp_potion_i00" />
@@ -325,13 +347,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2287" level="1" /> <!-- Elixir of Life (No-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2287" level="1" /> <!-- Elixir of Life (No-grade) -->
+		</skills>
 	</item>
 	<item id="8623" name="Elixir of Life (D-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_hp_potion_i01" />
@@ -347,13 +370,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2287" level="2" /> <!-- Elixir of Life (D-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2287" level="2" /> <!-- Elixir of Life (D-grade) -->
+		</skills>
 	</item>
 	<item id="8624" name="Elixir of Life (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_hp_potion_i02" />
@@ -369,13 +393,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2287" level="3" /> <!-- Elixir of Life (C-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2287" level="3" /> <!-- Elixir of Life (C-grade) -->
+		</skills>
 	</item>
 	<item id="8625" name="Elixir of Life (B-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_hp_potion_i03" />
@@ -391,13 +416,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2287" level="4" /> <!-- Elixir of Life (B-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2287" level="4" /> <!-- Elixir of Life (B-grade) -->
+		</skills>
 	</item>
 	<item id="8626" name="Elixir of Life (A-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_hp_potion_i04" />
@@ -413,13 +439,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2287" level="5" /> <!-- Elixir of Life (A-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2287" level="5" /> <!-- Elixir of Life (A-grade) -->
+		</skills>
 	</item>
 	<item id="8627" name="Elixir of Life (S-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_hp_potion_i05" />
@@ -435,13 +462,15 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2287" level="6" /> <!-- Elixir of Life (S-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2287" level="6" /> <!-- Elixir of Life (S-grade) -->
+		</skills>
 	</item>
 	<item id="8628" name="Elixir of Mind (No-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_mp_potion_i00" />
@@ -456,13 +485,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2288" level="1" /> <!-- Elixir of Mind (No-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2288" level="1" /> <!-- Elixir of Mind (No-grade) -->
+		</skills>
 	</item>
 	<item id="8629" name="Elixir of Mind (D-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_mp_potion_i01" />
@@ -478,13 +508,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2288" level="2" /> <!-- Elixir of Mind (D-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2288" level="2" /> <!-- Elixir of Mind (D-grade) -->
+		</skills>
 	</item>
 	<item id="8630" name="Elixir of Mind (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_mp_potion_i02" />
@@ -500,13 +531,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2288" level="3" /> <!-- Elixir of Mind (C-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2288" level="3" /> <!-- Elixir of Mind (C-grade) -->
+		</skills>
 	</item>
 	<item id="8631" name="Elixir of Mind (B-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_mp_potion_i03" />
@@ -522,13 +554,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2288" level="4" /> <!-- Elixir of Mind (B-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2288" level="4" /> <!-- Elixir of Mind (B-grade) -->
+		</skills>
 	</item>
 	<item id="8632" name="Elixir of Mind (A-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_mp_potion_i04" />
@@ -544,13 +577,14 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2288" level="5" /> <!-- Elixir of Mind (A-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2288" level="5" /> <!-- Elixir of Mind (A-grade) -->
+		</skills>
 	</item>
 	<item id="8633" name="Elixir of Mind (S-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_mp_potion_i05" />
@@ -566,13 +600,15 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2288" level="6" /> <!-- Elixir of Mind (S-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2288" level="6" /> <!-- Elixir of Mind (S-grade) -->
+		</skills>
 	</item>
 	<item id="8634" name="Elixir of CP (No-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_cp_potion_i00" />
@@ -587,6 +623,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2289" level="1" /> <!-- Elixir of CP (No-grade) -->
@@ -606,6 +643,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2289" level="2" /> <!-- Elixir of CP (D-grade) -->
@@ -625,6 +663,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2289" level="3" /> <!-- Elixir of CP (C-grade) -->
@@ -644,6 +683,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2289" level="4" /> <!-- Elixir of CP (B-grade) -->
@@ -663,6 +703,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="POTION" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2289" level="5" /> <!-- Elixir of CP (A-grade) -->
@@ -682,6 +723,8 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2289" level="6" /> <!-- Elixir of CP (S-grade) -->
@@ -698,6 +741,7 @@
 		<set name="recipe_id" val="826" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8641" name="Recipe: Elixir of Life (D-Grade)" type="EtcItem">
@@ -711,6 +755,7 @@
 		<set name="recipe_id" val="827" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8642" name="Recipe: Elixir of Life (C-grade)" type="EtcItem">
@@ -724,6 +769,7 @@
 		<set name="recipe_id" val="828" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8643" name="Recipe: Elixir of Life (B-grade)" type="EtcItem">
@@ -737,6 +783,7 @@
 		<set name="recipe_id" val="829" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8644" name="Recipe: Elixir of Life (A-grade)" type="EtcItem">
@@ -750,6 +797,7 @@
 		<set name="recipe_id" val="830" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8645" name="Recipe: Elixir of Life (S-grade)" type="EtcItem">
@@ -763,6 +811,7 @@
 		<set name="recipe_id" val="831" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8646" name="Recipe: Elixir of Mind (No-grade)" type="EtcItem">
@@ -776,6 +825,7 @@
 		<set name="recipe_id" val="832" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8647" name="Recipe: Elixir of Mind (D-grade)" type="EtcItem">
@@ -789,6 +839,7 @@
 		<set name="recipe_id" val="833" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8648" name="Recipe: Elixir of Mind (C-grade)" type="EtcItem">
@@ -802,6 +853,7 @@
 		<set name="recipe_id" val="834" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8649" name="Recipe: Elixir of Mind (B-grade)" type="EtcItem">
@@ -815,6 +867,7 @@
 		<set name="recipe_id" val="835" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8650" name="Recipe: Elixir of Mind (A-grade)" type="EtcItem">
@@ -828,6 +881,7 @@
 		<set name="recipe_id" val="836" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8651" name="Recipe: Elixir of Mind (S-grade)" type="EtcItem">
@@ -841,6 +895,7 @@
 		<set name="recipe_id" val="837" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8652" name="Recipe: Elixir of CP (No-grade)" type="EtcItem">
@@ -854,6 +909,7 @@
 		<set name="recipe_id" val="838" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8653" name="Recipe: Elixir of CP (D-grade)" type="EtcItem">
@@ -867,6 +923,7 @@
 		<set name="recipe_id" val="839" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8654" name="Recipe: Elixir of CP (C-grade)" type="EtcItem">
@@ -880,6 +937,7 @@
 		<set name="recipe_id" val="840" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8655" name="Recipe: Elixir of CP (B-grade)" type="EtcItem">
@@ -893,6 +951,7 @@
 		<set name="recipe_id" val="841" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8656" name="Recipe: Elixir of CP (A-grade)" type="EtcItem">
@@ -906,6 +965,7 @@
 		<set name="recipe_id" val="842" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8657" name="Recipe: Elixir of CP (S-grade)" type="EtcItem">
@@ -919,6 +979,7 @@
 		<set name="recipe_id" val="843" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8658" name="Mysterious Solvent" type="EtcItem">
@@ -929,6 +990,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="100" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="8659" name="Coffer of Shadows" type="EtcItem">
@@ -938,6 +1000,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2290" level="1" /> <!-- Coffer of Shadows -->
@@ -950,6 +1013,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="8661" name="Mask of Spirits" type="Armor">
@@ -959,6 +1025,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="8662" name="Fairy Antennae (Event)" type="Armor">
@@ -975,6 +1044,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="8663" name="Mysterious Potion (Event)" type="EtcItem">
@@ -987,6 +1058,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SummonItems" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2103" level="1" /> <!-- Mysterious Potion -->
@@ -1001,6 +1074,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2291" level="1" /> <!-- Facelifting Potion -->
@@ -1015,6 +1090,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2292" level="1" /> <!-- Facelifting Potion -->
@@ -1029,6 +1106,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2293" level="1" /> <!-- Facelifting Potion -->
@@ -1043,6 +1122,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2294" level="1" /> <!-- Dye Potion -->
@@ -1057,6 +1138,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2295" level="1" /> <!-- Dye Potion -->
@@ -1071,6 +1154,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2296" level="1" /> <!-- Dye Potion -->
@@ -1085,13 +1170,15 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2297" level="1" /> <!-- Dye Potion -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
+		<skills>
+			<skill id="2297" level="1" /> <!-- Dye Potion -->
+		</skills>
 	</item>
 	<item id="8671" name="Hair Style Change Potion - A (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
@@ -1102,6 +1189,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2298" level="1" /> <!-- Hair Style Change Potion -->
@@ -1116,6 +1205,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2299" level="1" /> <!-- Hair Style Change Potion -->
@@ -1130,6 +1221,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2300" level="1" /> <!-- Hair Style Change Potion -->
@@ -1144,6 +1237,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2301" level="1" /> <!-- Hair Style Change Potion -->
@@ -1158,6 +1253,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2302" level="1" /> <!-- Hair Style Change Potion -->
@@ -1172,6 +1269,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2303" level="1" /> <!-- Hair Style Change Potion -->
@@ -1186,6 +1285,8 @@
 		<set name="reuse_delay" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2304" level="1" /> <!-- Hair Style Change Potion -->
@@ -1196,8 +1297,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1210,23 +1309,22 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8679" name="Sword of Ipos" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_ipos_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1239,23 +1337,22 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8680" name="Barakiel's Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_barakiel_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1267,24 +1364,23 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8681" name="Behemoth' Tuning Fork" type="Weapon">
 		<set name="icon" val="icon.weapon_tuning_fork_of_behemoth_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1296,24 +1392,23 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<set name="isAppearanceable" val="true" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8682" name="Naga Storm" type="Weapon">
 		<set name="icon" val="icon.weapon_naga_storm_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1325,24 +1420,23 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="DAGGER" />
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8683" name="Tiphon's Spear" type="Weapon">
 		<set name="icon" val="icon.weapon_tiphon_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1354,27 +1448,26 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="8684" name="Shyeed's Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_shyid_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1389,24 +1482,23 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="570" />
-			<set stat="mAtk" val="133" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">570</stat>
+			<stat type="mAtk">133</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="8685" name="Sobekk's Hurricane" type="Weapon">
 		<set name="icon" val="icon.weapon_sobekk_hurricane_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1418,24 +1510,23 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8686" name="Themis' Tongue" type="Weapon">
 		<set name="icon" val="icon.weapon_tongue_of_themis_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1448,23 +1539,22 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8687" name="Cabrio's Hand" type="Weapon">
 		<set name="icon" val="icon.weapon_hand_of_cabrio_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1477,24 +1567,23 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8688" name="Daimon Crystal" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_of_deamon_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1438" />
@@ -1507,24 +1596,23 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="177" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">177</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8689" name="Blood Sword Akamanah" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
@@ -1543,14 +1631,14 @@
 		<skills>
 			<skill id="3629" level="1" /> <!-- Blood Sword Akamanah -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="361" />
-			<set stat="mAtk" val="137" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1548</stat>
+			<stat type="mAtk">255</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="8690" name="Recipe: Sirra's Blade (60%)" type="EtcItem">
 		<set name="icon" val="icon.etc_recipe_violet_i00" />
@@ -1563,6 +1651,7 @@
 		<set name="recipe_id" val="844" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8691" name="Recipe: Sirra's Blade" type="EtcItem">
@@ -1576,6 +1665,7 @@
 		<set name="recipe_id" val="845" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8692" name="Recipe: Sword of Ipos (60%)" type="EtcItem">
@@ -1589,6 +1679,7 @@
 		<set name="recipe_id" val="846" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8693" name="Recipe: Sword of Ipos" type="EtcItem">
@@ -1602,6 +1693,7 @@
 		<set name="recipe_id" val="847" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8694" name="Recipe: Barakiel's Axe (60%)" type="EtcItem">
@@ -1615,6 +1707,7 @@
 		<set name="recipe_id" val="848" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8695" name="Recipe: Barakiel's Axe" type="EtcItem">
@@ -1628,6 +1721,7 @@
 		<set name="recipe_id" val="849" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8696" name="Recipe: Behemoth' Tuning Fork (60%)" type="EtcItem">
@@ -1641,6 +1735,7 @@
 		<set name="recipe_id" val="850" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8697" name="Recipe: Behemoth' Tuning Fork" type="EtcItem">
@@ -1654,6 +1749,7 @@
 		<set name="recipe_id" val="851" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8698" name="Recipe: Naga Storm (60%)" type="EtcItem">
@@ -1667,6 +1763,7 @@
 		<set name="recipe_id" val="852" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="8699" name="Recipe: Naga Storm" type="EtcItem">
@@ -1680,6 +1777,7 @@
 		<set name="recipe_id" val="853" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 </list>

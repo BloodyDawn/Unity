@@ -27,8 +27,10 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -60,6 +62,12 @@ public final class KnockBack extends AbstractEffect
 	}
 	
 	@Override
+	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
+	{
+		return _knockDown || Formulas.calcProbability(100, effector, effected, skill);
+	}
+	
+	@Override
 	public boolean isInstant()
 	{
 		return !_knockDown;
@@ -72,7 +80,7 @@ public final class KnockBack extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!_knockDown)
 		{
@@ -81,7 +89,7 @@ public final class KnockBack extends AbstractEffect
 	}
 	
 	@Override
-	public void continuousInstant(Creature effector, Creature effected, Skill skill)
+	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (_knockDown)
 		{

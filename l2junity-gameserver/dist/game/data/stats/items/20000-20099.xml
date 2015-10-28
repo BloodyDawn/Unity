@@ -10,6 +10,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22000" level="1" /> <!-- Spicy Kimchi -->
@@ -25,6 +26,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22001" level="1" /> <!-- Spicy Kimchi -->
@@ -40,6 +42,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22002" level="1" /> <!-- Spicy Kimchi -->
@@ -55,6 +58,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22003" level="1" /> <!-- Sweet-and-Sour White Kimchi -->
@@ -70,6 +74,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22004" level="1" /> <!-- Vitality Ginseng -->
@@ -84,6 +89,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="22005" level="1" /> <!-- Vitality Red Ginseng -->
@@ -105,10 +111,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21000" level="1" /> <!-- Release Agathion's Seal - Majo -->
 			<skill id="23000" level="1" /> <!-- Majo Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20007" name="Agathion - Gold Majo" type="Armor">
@@ -127,10 +132,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21001" level="1" /> <!-- Release Agathion's Seal - Gold Majo -->
 			<skill id="23001" level="1" /> <!-- Gold Majo Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20008" name="Agathion - Black Majo" type="Armor">
@@ -149,10 +153,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21002" level="1" /> <!-- Release Agathion's Seal - Black Majo -->
 			<skill id="23002" level="1" /> <!-- Black Majo Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20009" name="Agathion - Majo" name_additional="Big Head (30-day)" type="Armor">
@@ -166,7 +169,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="3267-1;21000-1;23000-1;23000-1;23004-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -174,6 +176,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="21000" level="1" /> <!-- Release Agathion's Seal - Majo -->
+			<skill id="23000" level="1" /> <!-- Majo Agathion Cute Trick -->
+			<skill id="23004" level="1" /> <!-- Majo Agathion Special Skill: Mysterious Power -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -189,7 +194,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21001-1;23001-1;23001-1;23005-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -197,6 +201,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="21001" level="1" /> <!-- Release Agathion's Seal - Gold Majo -->
+			<skill id="23001" level="1" /> <!-- Gold Majo Agathion Cute Trick -->
+			<skill id="23005" level="1" /> <!-- Gold Majo Agathion Special Skill: Blessed Resurrection -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -212,7 +219,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21002-1;23002-1;23002-1;23006-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -220,6 +226,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="21002" level="1" /> <!-- Release Agathion's Seal - Black Majo -->
+			<skill id="23002" level="1" /> <!-- Black Majo Agathion Cute Trick -->
+			<skill id="23006" level="1" /> <!-- Black Majo Agathion Special Skill: Blessed Escape -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -239,10 +248,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21003" level="1" /> <!-- Release Agathion's Seal - Plaipitak -->
 			<skill id="23003" level="1" /> <!-- Plaipitak Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20013" name="Agathion - Plaipitak" name_additional="Big Head (30-day)" type="Armor">
@@ -256,7 +264,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="3267-1;21003-1;23003-1;23007-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -264,6 +271,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="21003" level="1" /> <!-- Release Agathion's Seal - Plaipitak -->
+			<skill id="23003" level="1" /> <!-- Plaipitak Agathion Cute Trick -->
+			<skill id="23007" level="1" /> <!-- Plaipitak Agathion Special Skill: Mysterious Power -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -279,7 +289,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21003-1;23003-1;23009-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -287,6 +296,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="21003" level="1" /> <!-- Release Agathion's Seal - Plaipitak -->
+			<skill id="23003" level="1" /> <!-- Plaipitak Agathion Cute Trick -->
+			<skill id="23009" level="1" /> <!-- Plaipitak Agathion Special Skill: Blessed Resurrection -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -302,7 +314,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21003-1;23003-1;23008-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -310,6 +321,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="21003" level="1" /> <!-- Release Agathion's Seal - Plaipitak -->
+			<skill id="23003" level="1" /> <!-- Plaipitak Agathion Cute Trick -->
+			<skill id="23008" level="1" /> <!-- Plaipitak Agathion Special Skill: Blessed Escape -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -328,9 +342,11 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="21005" level="3" /> <!-- null -->
+			<skill id="21005" level="1" /> <!-- Agility -->
 		</skills>
 	</item>
 	<item id="20017" name="Afro Hair" type="Armor">
@@ -341,6 +357,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 	</item>
 	<item id="20018" name="Afro Hair" name_additional="Big Head, Firework" type="Armor">
@@ -352,10 +371,12 @@
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<skills>
-			<skill id="21006" level="1" /> <!-- Large Firecracker's Ability -->
 			<skill id="21007" level="1" /> <!-- Mysterious Ability -->
+			<skill id="21006" level="1" /> <!-- Large Firecracker's Ability -->
 		</skills>
 	</item>
 	<item id="20019" name="Afro Hair" name_additional="Wind Walk" type="Armor">
@@ -366,6 +387,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<skills>
 			<skill id="21004" level="1" /> <!-- Wind Walk -->
@@ -379,6 +403,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 	</item>
 	<item id="20021" name="Assassin's Bamboo Hat" type="Armor">
@@ -389,6 +416,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 	</item>
 	<item id="20022" name="Ruthless Tribe Mask" type="Armor">
@@ -400,6 +430,8 @@
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="20023" name="Ribbon Hairband" type="Armor">
@@ -410,6 +442,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<cond msgId="1518">
 			<player sex="1" />
@@ -423,6 +458,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<cond msgId="1518">
 			<player sex="0" />
@@ -434,6 +472,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="5" />
 		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_premium" val="true" />
 	</item>
 	<item id="20026" name="Extra Pass: Kamaloka (Hall of the Abyss)" type="EtcItem">
@@ -443,6 +482,7 @@
 		<set name="weight" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="22019" level="1" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) -->
@@ -455,6 +495,7 @@
 		<set name="weight" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="22020" level="1" /> <!-- Extra Pass: Near Kamaloka -->
@@ -467,6 +508,7 @@
 		<set name="weight" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="22021" level="1" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) -->
@@ -488,7 +530,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 			<skill id="8247" level="1" /> <!-- Ride Darkmane Pacer -->
 		</skills>
 	</item>
@@ -503,7 +545,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8247-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -511,7 +552,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="8247" level="1" /> <!-- Ride Darkmane Pacer -->
 		</skills>
 	</item>
 	<item id="20031" name="Kat the Cat Hat" type="Armor">
@@ -522,6 +564,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 	</item>
 	<item id="20032" name="Skull Hat" type="Armor">
@@ -533,6 +578,8 @@
 		<set name="weight" val="10" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
 	<item id="20033" name="My Teleport Flag" type="EtcItem">
@@ -541,16 +588,16 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="5" />
 		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_premium" val="true" />
 	</item>
 	<item id="20034" name="Revita-Pop (Event)" type="EtcItem">
 		<set name="icon" val="BranchSys.br_hallowinday_candy_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
-		<set name="immediate_effect" val="true" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="LIQUID" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="3600000" />
+		<set name="shared_reuse_group" val="106" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -581,7 +628,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20006" max="1" min="1" /> <!-- Agathion - Majo -->
+			<item id="20006" min="1" max="1" chance="100" /> <!-- Agathion - Majo -->
 		</capsuled_items>
 	</item>
 	<item id="20036" name="Agathion - Gold Majo Pack" type="EtcItem">
@@ -601,7 +648,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20007" max="1" min="1" /> <!-- Agathion - Gold Majo -->
+			<item id="20007" min="1" max="1" chance="100" /> <!-- Agathion - Gold Majo -->
 		</capsuled_items>
 	</item>
 	<item id="20037" name="Agathion - Black Majo Pack" type="EtcItem">
@@ -621,7 +668,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20008" max="1" min="1" /> <!-- Agathion - Black Majo -->
+			<item id="20008" min="1" max="1" chance="100" /> <!-- Agathion - Black Majo -->
 		</capsuled_items>
 	</item>
 	<item id="20038" name="Agathion - Majo Pack (30-day)" name_additional="Big Head" type="EtcItem">
@@ -641,7 +688,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20009" max="1" min="1" /> <!-- Agathion - Majo Big Head (30-day) -->
+			<item id="20009" min="1" max="1" chance="100" /> <!-- Agathion - Majo - Big Head (30-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20039" name="Agathion - Gold Majo Pack (30-day)" name_additional="Resurrection" type="EtcItem">
@@ -661,7 +708,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20010" max="1" min="1" /> <!-- Agathion - Gold Majo Resurrection (30-day) -->
+			<item id="20010" min="1" max="1" chance="100" /> <!-- Agathion - Gold Majo - Resurrection (30-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20040" name="Agathion - Black Majo Pack (30-day)" name_additional="Escape" type="EtcItem">
@@ -681,7 +728,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20011" max="1" min="1" /> <!-- Agathion - Black Majo Escape (30-day) -->
+			<item id="20011" min="1" max="1" chance="100" /> <!-- Agathion - Black Majo - Escape (30-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20041" name="Agathion - Plaipitak Pack" type="EtcItem">
@@ -701,7 +748,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20012" max="1" min="1" /> <!-- Agathion - Plaipitak -->
+			<item id="20012" min="1" max="1" chance="100" /> <!-- Agathion - Plaipitak -->
 		</capsuled_items>
 	</item>
 	<item id="20042" name="Agathion - Plaipitak Pack (30-day)" name_additional="Big Head" type="EtcItem">
@@ -721,7 +768,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20013" max="1" min="1" /> <!-- Agathion - Plaipitak Big Head (30-day) -->
+			<item id="20013" min="1" max="1" chance="100" /> <!-- Agathion - Plaipitak - Big Head (30-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20043" name="Agathion - Plaipitak Pack (30-day)" name_additional="Resurrection" type="EtcItem">
@@ -741,7 +788,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20014" max="1" min="1" /> <!-- Agathion - Plaipitak Resurrection (30-day) -->
+			<item id="20014" min="1" max="1" chance="100" /> <!-- Agathion - Plaipitak - Resurrection (30-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20044" name="Agathion - Plaipitak Pack (30-day)" name_additional="Escape" type="EtcItem">
@@ -761,7 +808,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20015" max="1" min="1" /> <!-- Agathion - Plaipitak Escape (30-day) -->
+			<item id="20015" min="1" max="1" chance="100" /> <!-- Agathion - Plaipitak - Escape (30-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20045" name="Horn-rimmed Glasses Pack" name_additional="Agility" type="EtcItem">
@@ -781,7 +828,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20016" max="1" min="1" /> <!-- Horn-rimmed Glasses Agility -->
+			<item id="20016" min="1" max="1" chance="100" /> <!-- Horn-rimmed Glasses - Agility -->
 		</capsuled_items>
 	</item>
 	<item id="20046" name="Afro Hair Pack" type="EtcItem">
@@ -792,10 +839,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20017" max="1" min="1" /> <!-- Afro Hair -->
+			<item id="20017" min="1" max="1" chance="100" /> <!-- Afro Hair -->
 		</capsuled_items>
 	</item>
 	<item id="20047" name="Afro Hair Pack" name_additional="Big Head, Firework" type="EtcItem">
@@ -806,10 +853,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20018" max="1" min="1" /> <!-- Afro Hair Big Head, Firework -->
+			<item id="20018" min="1" max="1" chance="100" /> <!-- Afro Hair - Big Head, Firework -->
 		</capsuled_items>
 	</item>
 	<item id="20048" name="Afro Hair Pack" name_additional="Wind Walk" type="EtcItem">
@@ -820,10 +867,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20019" max="1" min="1" /> <!-- Afro Hair Wind Walk -->
+			<item id="20019" min="1" max="1" chance="100" /> <!-- Afro Hair - Wind Walk -->
 		</capsuled_items>
 	</item>
 	<item id="20049" name="Uniform Hat Pack" type="EtcItem">
@@ -834,10 +881,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20020" max="1" min="1" /> <!-- Uniform Hat -->
+			<item id="20020" min="1" max="1" chance="100" /> <!-- Uniform Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20050" name="Assassin's Bamboo Hat Pack" type="EtcItem">
@@ -848,10 +895,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20021" max="1" min="1" /> <!-- Assassin's Bamboo Hat -->
+			<item id="20021" min="1" max="1" chance="100" /> <!-- Assassin's Bamboo Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20051" name="Ruthless Tribe Mask Pack" type="EtcItem">
@@ -862,10 +909,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20022" max="1" min="1" /> <!-- Ruthless Tribe Mask -->
+			<item id="20022" min="1" max="1" chance="100" /> <!-- Ruthless Tribe Mask -->
 		</capsuled_items>
 	</item>
 	<item id="20052" name="Ribbon Hairband Pack" type="EtcItem">
@@ -876,10 +923,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20023" max="1" min="1" /> <!-- Ribbon Hairband -->
+			<item id="20023" min="1" max="1" chance="100" /> <!-- Ribbon Hairband -->
 		</capsuled_items>
 	</item>
 	<item id="20053" name="Visor Pack" type="EtcItem">
@@ -890,10 +937,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20024" max="1" min="1" /> <!-- Visor -->
+			<item id="20024" min="1" max="1" chance="100" /> <!-- Visor -->
 		</capsuled_items>
 	</item>
 	<item id="20054" name="My Teleport Scroll Pack" type="EtcItem">
@@ -904,10 +951,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20025" max="1" min="1" /> <!-- My Teleport Scroll -->
+			<item id="20025" min="1" max="1" chance="100" /> <!-- My Teleport Scroll -->
 		</capsuled_items>
 	</item>
 	<item id="20055" name="Extra Pass: Kamaloka (Hall of the Abyss) Pack" type="EtcItem">
@@ -918,10 +965,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20026" max="1" min="1" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) -->
+			<item id="20026" min="1" max="1" chance="100" /> <!-- Extra Pass: Kamaloka (Hall of the Abyss) -->
 		</capsuled_items>
 	</item>
 	<item id="20056" name="Extra Pass: Near Kamaloka Pack" type="EtcItem">
@@ -932,10 +979,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20027" max="1" min="1" /> <!-- Extra Pass: Near Kamaloka -->
+			<item id="20027" min="1" max="1" chance="100" /> <!-- Extra Pass: Near Kamaloka -->
 		</capsuled_items>
 	</item>
 	<item id="20057" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) Pack" type="EtcItem">
@@ -946,10 +993,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20028" max="1" min="1" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) -->
+			<item id="20028" min="1" max="1" chance="100" /> <!-- Extra Pass: Kamaloka (Labyrinth of the Abyss) -->
 		</capsuled_items>
 	</item>
 	<item id="20058" name="Mount - Darkmane Pacer Pack" type="EtcItem">
@@ -969,7 +1016,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20029" max="1" min="1" /> <!-- Mount - Darkmane Pacer -->
+			<item id="20029" min="1" max="1" chance="100" /> <!-- Mount - Darkmane Pacer -->
 		</capsuled_items>
 	</item>
 	<item id="20059" name="Mount - Darkmane Pacer Pack (30-day)" type="EtcItem">
@@ -989,7 +1036,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20030" max="1" min="1" /> <!-- Mount - Darkmane Pacer 30-day -->
+			<item id="20030" min="1" max="1" chance="100" /> <!-- Mount - Darkmane Pacer - 30-day -->
 		</capsuled_items>
 	</item>
 	<item id="20060" name="Kat the Cat Hat Pack" type="EtcItem">
@@ -1000,10 +1047,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20031" max="1" min="1" /> <!-- Kat the Cat Hat -->
+			<item id="20031" min="1" max="1" chance="100" /> <!-- Kat the Cat Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20061" name="Skull Hat Pack" type="EtcItem">
@@ -1014,10 +1061,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20032" max="1" min="1" /> <!-- Skull Hat -->
+			<item id="20032" min="1" max="1" chance="100" /> <!-- Skull Hat -->
 		</capsuled_items>
 	</item>
 	<item id="20062" name="My Teleport Flag Pack" type="EtcItem">
@@ -1028,10 +1075,10 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ExtractableItems" />
-
 		<capsuled_items>
-			<item chance="100.0" id="20033" max="1" min="1" /> <!-- My Teleport Flag -->
+			<item id="20033" min="1" max="1" chance="100" /> <!-- My Teleport Flag -->
 		</capsuled_items>
 	</item>
 	<item id="20063" name="Agathion - Baby Panda" type="Armor">
@@ -1050,10 +1097,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21008" level="1" /> <!-- Release Agathion's Seal - Baby Panda -->
 			<skill id="23010" level="1" /> <!-- Baby Panda Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20064" name="Agathion - Bamboo Panda" type="Armor">
@@ -1072,10 +1118,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21009" level="1" /> <!-- Release Agathion's Seal - Bamboo Panda -->
 			<skill id="23011" level="1" /> <!-- Bamboo Panda Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20065" name="Agathion - Sexy Panda" type="Armor">
@@ -1094,10 +1139,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21010" level="1" /> <!-- Release Agathion's Seal - Sexy Panda -->
 			<skill id="23012" level="1" /> <!-- Sexy Panda Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="20066" name="Agathion - Baby Panda" name_additional="Big Head (15-day)" type="Armor">
@@ -1111,7 +1155,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="3267-1;21008-1;23013-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1119,6 +1162,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
 		<skills>
+			<skill id="21008" level="1" /> <!-- Release Agathion's Seal - Baby Panda -->
+			<skill id="23013" level="1" /> <!-- Baby Panda Agathion Special Skill: Mysterious Power -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1134,7 +1179,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21009-1;23014-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1142,6 +1186,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
 		<skills>
+			<skill id="21009" level="1" /> <!-- Release Agathion's Seal - Bamboo Panda -->
+			<skill id="23014" level="1" /> <!-- Bamboo Panda Agathion Special Skill: Blessed Resurrection -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1157,7 +1203,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="3267-1;21010-1;23015-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1165,6 +1210,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
 		<skills>
+			<skill id="21010" level="1" /> <!-- Release Agathion's Seal - Sexy Panda -->
+			<skill id="23015" level="1" /> <!-- Sexy Panda Agathion Special Skill: Blessed Escape -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1185,7 +1232,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20063" max="1" min="1" /> <!-- Agathion - Baby Panda -->
+			<item id="20063" min="1" max="1" chance="100" /> <!-- Agathion - Baby Panda -->
 		</capsuled_items>
 	</item>
 	<item id="20070" name="Agathion - Bamboo Panda Pack" type="EtcItem">
@@ -1205,7 +1252,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20064" max="1" min="1" /> <!-- Agathion - Bamboo Panda -->
+			<item id="20064" min="1" max="1" chance="100" /> <!-- Agathion - Bamboo Panda -->
 		</capsuled_items>
 	</item>
 	<item id="20071" name="Agathion - Sexy Pandan Pack" type="EtcItem">
@@ -1225,7 +1272,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20065" max="1" min="1" /> <!-- Agathion - Sexy Panda -->
+			<item id="20065" min="1" max="1" chance="100" /> <!-- Agathion - Sexy Panda -->
 		</capsuled_items>
 	</item>
 	<item id="20072" name="Agathion - Baby Panda Pack (15-day)" name_additional="Big Head" type="EtcItem">
@@ -1245,7 +1292,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20066" max="1" min="1" /> <!-- Agathion - Baby Panda Big Head (15-day) -->
+			<item id="20066" min="1" max="1" chance="100" /> <!-- Agathion - Baby Panda - Big Head (15-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20073" name="Agathion - Bamboo Panda Pack (15-day)" name_additional="Resurrection" type="EtcItem">
@@ -1265,7 +1312,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20067" max="1" min="1" /> <!-- Agathion - Bamboo Panda Resurrection (15-day) -->
+			<item id="20067" min="1" max="1" chance="100" /> <!-- Agathion - Bamboo Panda - Resurrection (15-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20074" name="Agathion - Sexy Panda Pack (15-day)" name_additional="Escape" type="EtcItem">
@@ -1285,7 +1332,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20068" max="1" min="1" /> <!-- Agathion - Sexy Panda Escape (15-day) -->
+			<item id="20068" min="1" max="1" chance="100" /> <!-- Agathion - Sexy Panda - Escape (15-day) -->
 		</capsuled_items>
 	</item>
 	<item id="20075" name="Santa's Gift - Joy" name_additional="4-hour" type="EtcItem">
@@ -1397,7 +1444,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20081" max="1" min="1" /> <!-- Good Luck Bag -->
+			<item id="20081" min="1" max="1" chance="100" /> <!-- Good Luck Bag -->
 		</capsuled_items>
 	</item>
 	<item id="20080" name="Lucky Four-leaf Clover Pack" type="EtcItem">
@@ -1417,7 +1464,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20082" max="1" min="1" /> <!-- Lucky Four-leaf Clover -->
+			<item id="20082" min="1" max="1" chance="100" /> <!-- Lucky Four-leaf Clover -->
 		</capsuled_items>
 	</item>
 	<item id="20081" name="Good Luck Bag" type="EtcItem">
@@ -1679,7 +1726,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20093" max="1" min="1" /> <!-- Holiday Miracle -->
+			<item id="20093" min="1" max="1" chance="100" /> <!-- Holiday Miracle -->
 		</capsuled_items>
 	</item>
 	<item id="20093" name="Holiday Miracle" type="EtcItem">
@@ -1714,7 +1761,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="3267-1;3425-1;5537-1;23016-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1722,6 +1768,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
+			<skill id="3425" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
+			<skill id="5537" level="1" /> <!-- Rudolph Cuteness Trick -->
+			<skill id="23016" level="1" /> <!-- Rudolph Agathion Special Skill: Ability of Vitality -->
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
@@ -1739,6 +1788,8 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="isAppearanceable" val="true" />
 		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20096" name="Mysterious Formal Wear (Event) Pack" type="EtcItem">
@@ -1758,7 +1809,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="20097" max="1" min="1" /> <!-- Mysterious Formal Wear (Event) -->
+			<item id="20097" min="1" max="1" chance="100" /> <!-- Mysterious Formal Wear (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="20097" name="Mysterious Formal Wear (Event)" type="EtcItem">

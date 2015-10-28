@@ -9,6 +9,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="7000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6701" levels="1" name="Penalty Kick Agathion Cute Trick">
@@ -20,6 +21,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="7000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6702" levels="1" name="Blessing of Cheers">
@@ -30,6 +32,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
+		<set name="reuseDelay" val="1800000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6703" levels="1" name="Blessing of Cheers">
@@ -39,6 +44,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
+		<set name="reuseDelay" val="1800000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6704" levels="1" name="Blessing of Cheers">
@@ -48,6 +56,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="55" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
+		<set name="reuseDelay" val="1800000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6705" levels="1" name="Stun">
@@ -67,6 +78,10 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="trait" val="SHOCK" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6706" levels="1" name="Piercing Attack">
@@ -82,10 +97,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="10000" />
+		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="-1349" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<!-- FIXME: Time value is unconfirmed -->
@@ -103,6 +119,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6708" levels="1" name="Self-destruction">
@@ -113,6 +131,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6709" levels="1" name="Multi Shot">
@@ -124,6 +144,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="500" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="30000" />
+		<set name="castRange" val="300" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6710" levels="1" name="Etis Haste">
@@ -138,6 +161,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="abnormalLvl" val="2" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="20000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6711" levels="3" name="Etis Power Up">
@@ -153,6 +178,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="20000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6714" levels="1" name="Wind Walk of Elcadia">
@@ -326,7 +353,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 			</effect>
 		</for>
 	</skill>
@@ -420,6 +447,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -447,6 +475,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="reuseDelay" val="20000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -496,8 +525,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="9" chance="80" />
 			</effect>
 		</for>
 	</skill>
@@ -513,6 +542,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="ManaHealByLevel">
@@ -537,6 +567,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -557,6 +588,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">
@@ -577,6 +609,7 @@
 		<set name="effectRange" val="200" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
+		<set name="castRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6732" levels="1" name="Mirage">
@@ -589,6 +622,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="-10000" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="TargetCancel" />
@@ -606,6 +640,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="icon" val="icon.skill5860" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6734" levels="1" name="Energy of Destruction">
@@ -624,6 +663,8 @@
 		<set name="trait" val="POISON" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="120" />
+		<set name="icon" val="icon.skill0129" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6735" levels="1" name="Petrify">
@@ -640,6 +681,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="affectRange" val="100" />
+		<set name="icon" val="icon.skill4111" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6736" levels="1" name="Fierce Attack">
@@ -647,11 +690,11 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="castRange" val="2000" />
 		<set name="effectRange" val="2000" />
-		<set name="hitTime" val="2000" />
+		<set name="hitTime" val="4000" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="79" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="-1000" />
 		<set name="magicCriticalRate" val="-5" />
@@ -667,7 +710,7 @@
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
 		<set name="affectRange" val="2000" />
-		<set name="hitTime" val="900" />
+		<set name="hitTime" val="90000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="130" />
@@ -675,6 +718,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="546" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="icon" val="icon.skill1401" />
+		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Heal">
@@ -696,6 +741,12 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="HOLD" />
+		<set name="icon" val="icon.skill4047" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6739" levels="1" name="Presentation - Behemoth Leader Casting Preparation">
@@ -705,6 +756,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="45000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6740" levels="1" name="Presentation - Behemoth Leader Casting">
@@ -715,6 +767,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6741" levels="1" name="Presentation - Behemoth Leader Casting Failure">
@@ -725,6 +778,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6742" levels="1" name="Presentation - Behemoth Object Channeling">
@@ -739,6 +793,8 @@
 		<set name="magicLvl" val="85" />
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="0" />
+		<set name="hitTime" val="90000" />
+		<set name="castRange" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6743" levels="1" name="Dark Wound">
@@ -762,7 +818,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="25" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="5000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -792,6 +848,12 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="120" />
 		<set name="affectRange" val="200" />
+		<set name="icon" val="icon.skill1386" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6745" levels="1" name="Dark Space">
@@ -810,6 +872,11 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="120" />
 		<set name="affectRange" val="200" />
+		<set name="icon" val="icon.skill1445" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="1" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6746" levels="1" name="Dark Space">
@@ -828,6 +895,12 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="120" />
 		<set name="affectRange" val="200" />
+		<set name="icon" val="icon.skill1445" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6747" levels="1" name="Dark Blade">
@@ -840,6 +913,10 @@
 		<set name="magicLvl" val="85" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="120" />
+		<set name="icon" val="icon.skill1445" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="60" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6748" levels="1" name="Stun Attack">
@@ -910,9 +987,10 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="33" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -932,6 +1010,10 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="120" />
 		<set name="affectRange" val="150" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6752" levels="1" name="Revival">
@@ -943,7 +1025,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="158" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="900000" />
+		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
@@ -996,7 +1078,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="100" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1073,7 +1155,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="69" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="DARK" />
@@ -1098,7 +1180,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="69" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="8000" />
+		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1109,7 +1191,7 @@
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.3" />
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 		</for>
@@ -1124,6 +1206,9 @@
 		<set name="magicLvl" val="85" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="120" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6760" levels="1" name="Dragon Strike">
@@ -1141,6 +1226,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="120" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1158,11 +1244,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="158" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="120" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1178,13 +1265,13 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="effectPoint" val="100000" />
-		<set name="hitTime" val="1500" />
+		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill1068" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="69" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="8000" />
+		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1194,7 +1281,7 @@
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.3" />
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 		</for>
@@ -1214,6 +1301,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1234,7 +1322,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="79" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
@@ -1256,6 +1344,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1400" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="HealPercent">
@@ -1296,6 +1385,8 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="120" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6768" levels="1" name="Stun Attack">
@@ -1315,7 +1406,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="158" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1374,6 +1465,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1400" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Heal">
@@ -1416,9 +1509,10 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="33" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1440,7 +1534,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="69" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="8000" />
+		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1451,7 +1545,7 @@
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.3" />
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 		</for>
@@ -1501,9 +1595,10 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1622,6 +1717,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
+		<set name="icon" val="icon.skill1170" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions" />
@@ -1675,6 +1771,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6785" levels="1" name="Presentation - Dialogue with Etis 1">
@@ -1685,6 +1782,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6786" levels="1" name="Presentation - Etis Transformation Effect">
@@ -1705,6 +1803,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="4000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6788" levels="1" name="Presentation - Etis Post-Transformation">
@@ -1715,6 +1814,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6789" levels="1" name="Presentation - Etis's Defeat">
@@ -1725,6 +1825,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="6000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6790" levels="1" name="Presentation - Etis Kneeling">
@@ -1735,6 +1836,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="30000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6791" levels="1" name="Presentation - Dialogue with Elcadia 1">
@@ -1745,6 +1847,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6792" levels="1" name="Presentation - Dialogue with Elcadia 2">
@@ -1755,6 +1858,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="30000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6793" levels="1" name="Presentation - Dialogue with Elcadia 3">
@@ -1765,6 +1869,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6794" levels="1" name="Presentation - Elcadia Casting 1">
@@ -1775,6 +1880,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="3000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6795" levels="1" name="Presentation - Elcadia Casting 2">
@@ -1785,6 +1891,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="hitTime" val="5000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6796" levels="1" name="Presentation - Meteor Effect">

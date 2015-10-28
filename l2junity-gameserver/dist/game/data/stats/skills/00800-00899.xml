@@ -140,6 +140,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -623,7 +624,7 @@
 				<mul stat="pAtk" val="1.05">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
 				</mul>
-				<mul stat="rCrit" val="1.2">
+				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
 				</mul>
 			</effect>
@@ -2086,9 +2087,6 @@
 		<set name="affectRange" val="150" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-659" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="500" />
-		<set name="flyType" val="DUMMY" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="isDebuff" val="true" />
@@ -2097,7 +2095,6 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="23000" />
 		<set name="rideState" val="NONE" />
-		<set name="simultaneousCast" val="true" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
@@ -2107,7 +2104,9 @@
 			<effect name="BlockActions" />
 		</for>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param angle="0" range="500" /> <!-- Teleport to Back -->
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="886" levels="11" name="Air Shock Bomb">

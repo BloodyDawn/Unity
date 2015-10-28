@@ -6,7 +6,7 @@
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 52 56 58 60 62 64 66 68 70 72 </table>
 		<table name="#power"> 924 1054 1146 1240 1337 1437 1538 1639 1741 1841 </table>
-		<table name="#rCrit"> 0.7 0.7 0.7 0.7 0.7 0.6 0.6 0.6 0.6 0.5 </table>
+		<table name="#rCrit"> -0.3 -0.3 -0.3 -0.3 -0.3 -0.4 -0.4 -0.4 -0.4 -0.5 </table>
 		<table name="#traits"> -12 -12 -12 -12 -12 -16 -16 -16 -16 -20 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
@@ -234,6 +234,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalTime" val="20" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
@@ -303,7 +304,7 @@
 		<table name="#effectPoints"> -523 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 78 84 87 90 93 96 99 102 105 107 </table>
-		<table name="#power"> 229 262 284 308 332 357 382 407 432 457 </table>
+		<table name="#power"> 687 784 852 923 995 1069 1144 1220 1295 1370 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="ALL_SPEED_DOWN" />
@@ -312,7 +313,7 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="hitTime" val="3000" />
+		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0407" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="20" />
@@ -701,7 +702,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="600000" />
+		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
@@ -1084,10 +1085,10 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="437" levels="7" name="Song of Silence">
+	<skill id="437" levels="10" name="Song of Silence">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#magicLvl"> 79 81 83 85 90 95 99 </table>
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 </table>
+		<table name="#magicLvl"> 79 81 83 85 90 95 99 101 103 105 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SILENCE_ALL" />
@@ -1322,7 +1323,7 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="29" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="75000" />
+		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -1343,7 +1344,7 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="29" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="75000" />
+		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -1386,7 +1387,7 @@
 	</skill>
 	<skill id="449" levels="4" name="Summon Attractive Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicPower"> 1026 1264 1530 1822 </table>
+		<table name="#cubicLvl"> 1 2 3 4 </table>
 		<table name="#itemConsumeCount"> 8 9 10 11 </table>
 		<table name="#magicLvl"> 62 66 70 74 </table>
 		<table name="#mpConsume"> 58 62 65 69 </table>
@@ -1404,8 +1405,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="9" cubicDelay="8" cubicDuration="900" cubicMaxCount="300" cubicSkillChance="50" cubicPower="#cubicPower" />
-				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
+				<param cubicId="9" cubicLvl="#cubicLvl" />
 			</effect>
 		</for>
 	</skill>
@@ -1431,6 +1431,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalTime" val="20" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<target race="DIVINE" />
@@ -2143,7 +2144,7 @@
 		<table name="#effectPoints"> 235 523 </table>
 		<table name="#magicLvl"> 24 55 </table>
 		<table name="#mpConsume"> 11 25 </table>
-		<table name="#rCrit"> 1.2 1.3 </table>
+		<table name="#rCrit"> 0.2 0.3 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="90" />
 		<set name="abnormalType" val="PA_UP_SPECIAL" />
@@ -2401,6 +2402,7 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="castRange" val="40" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalSoulAttack">
@@ -2416,7 +2418,7 @@
 		<table name="#effectRange"> 600 600 600 600 600 600 600 600 600 600 700 700 700 700 700 700 700 700 700 700 800 800 800 800 800 800 800 800 </table>
 		<table name="#magicLvl"> 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 46 47 48 50 50 51 52 53 55 56 57 58 60 61 61 62 63 65 66 67 68 69 70 71 72 73 74 75 </table>
-		<table name="#power"> 742 782 823 866 910 955 1002 1050 1100 1150 1202 1255 1309 1364 1420 1476 1531 1592 1651 1710 1770 1830 1891 1951 2012 2072 2132 2192 </table>
+		<table name="#power"> 742 782 823 866 910 955 1002 1050 1100 1150 1202 1255 1309 1364 1420 1476 1534 1592 1651 1710 1770 1830 1891 1951 2012 2072 2132 2192 </table>
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="150" />
 		<set name="castRange" val="#castRange" />

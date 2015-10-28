@@ -107,11 +107,6 @@ public final class Q10332_ToughRoad extends Quest
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (npc.getId() == KAKAI)
 		{
 			switch (st.getState())

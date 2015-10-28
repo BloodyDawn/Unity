@@ -22,6 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.AbilityPointsData;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -56,9 +57,15 @@ public class RequestChangeAbilityPoint implements IClientIncomingPacket
 			return;
 		}
 		
-		else if (activeChar.getAbilityPoints() >= Config.ABILITY_MAX_POINTS)
+		if (activeChar.getAbilityPoints() >= Config.ABILITY_MAX_POINTS)
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_ACQUIRE_ANY_MORE_ABILITY_POINTS);
+			return;
+		}
+		
+		if (activeChar.isInOlympiadMode() || activeChar.isOnEvent(CeremonyOfChaosEvent.class))
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_OR_RESET_ABILITY_POINTS_WHILE_PARTICIPATING_IN_THE_OLYMPIAD_OR_CEREMONY_OF_CHAOS);
 			return;
 		}
 		

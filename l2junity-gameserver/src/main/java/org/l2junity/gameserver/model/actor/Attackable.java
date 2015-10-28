@@ -51,6 +51,7 @@ import org.l2junity.gameserver.model.AbsorberInfo;
 import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.DamageDoneInfo;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Seed;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
@@ -71,6 +72,7 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -197,7 +199,7 @@ public class Attackable extends Npc
 	 */
 	public void useMagic(Skill skill)
 	{
-		if ((skill == null) || isAlikeDead() || skill.isPassive() || isCastingNow() || isSkillDisabled(skill))
+		if ((skill == null) || isAlikeDead() || skill.isPassive() || isCastingNow(SkillCaster::isNormalType) || isSkillDisabled(skill))
 		{
 			return;
 		}
@@ -532,13 +534,24 @@ public class Attackable extends Npc
 							// Distribute the Exp and SP between the L2PcInstance and its L2Summon
 							if (!attacker.isDead())
 							{
-								final long addexp = Math.round(attacker.calcStat(Stats.EXPSP_RATE, exp, null, null));
-								final int addsp = (int) attacker.calcStat(Stats.EXPSP_RATE, sp, null, null);
+								final long addexp = Math.round(attacker.getStat().getValue(Stats.EXPSP_RATE, exp));
+								final int addsp = (int) attacker.getStat().getValue(Stats.EXPSP_RATE, sp);
 								
 								attacker.addExpAndSp(addexp, addsp, useVitalityRate());
 								if (addexp > 0)
 								{
-									attacker.updateVitalityPoints(getVitalityPoints(damage), true, false);
+									final L2Clan clan = attacker.getClan();
+									if (clan != null)
+									{
+										long finalExp = addexp;
+										if (useVitalityRate())
+										{
+											finalExp *= attacker.getStat().getExpBonusMultiplier();
+										}
+										clan.addHuntingPoints(attacker, this, finalExp);
+									}
+									
+									attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), addexp), true, false);
 								}
 							}
 						}
@@ -695,7 +708,7 @@ public class Attackable extends Npc
 				double hateValue = (damage * 100) / (getLevel() + 7);
 				if (skill == null)
 				{
-					hateValue = attacker.calcStat(Stats.HATE_ATTACK, hateValue, this, skill);
+					hateValue = attacker.getStat().getValue(Stats.HATE_ATTACK, hateValue);
 				}
 				
 				addDamageHate(attacker, damage, (int) hateValue);
@@ -1635,29 +1648,32 @@ public class Attackable extends Npc
 		
 		if (hasAI() && (getSpawn() != null))
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().getLocation(this));
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().getLocation());
 		}
 	}
 	
 	/*
 	 * Return vitality points decrease (if positive) or increase (if negative) based on damage. Maximum for damage = maxHp.
 	 */
-	public int getVitalityPoints(int damage)
+	public int getVitalityPoints(int level, long exp)
 	{
-		// sanity check
-		if (damage <= 0)
+		if ((getLevel() <= 0) || (getExpReward() <= 0))
 		{
 			return 0;
 		}
 		
-		final float divider = (getLevel() > 0) && (getExpReward() > 0) ? (getTemplate().getBaseHpMax() * 9 * getLevel() * getLevel()) / (100 * getExpReward()) : 0;
-		if (divider == 0)
+		int points;
+		if (level < 85)
 		{
-			return 0;
+			points = (int) ((exp / 1000) * Math.max(level - getLevel(), 1));
+		}
+		else
+		{
+			// TODO Fix this formula
+			points = (int) (((9 * getLevel() * getLevel()) / exp) * 10000);
 		}
 		
-		// negative value - vitality will be consumed
-		return (int) (-Math.min(damage, getMaxHp()) / divider);
+		return -points;
 	}
 	
 	/*
@@ -1665,12 +1681,7 @@ public class Attackable extends Npc
 	 */
 	public boolean useVitalityRate()
 	{
-		if (isChampion() && !Config.L2JMOD_CHAMPION_ENABLE_VITALITY)
-		{
-			return false;
-		}
-		
-		return true;
+		return !isChampion() || Config.L2JMOD_CHAMPION_ENABLE_VITALITY;
 	}
 	
 	/** Return True if the L2Character is RaidBoss or his minion. */

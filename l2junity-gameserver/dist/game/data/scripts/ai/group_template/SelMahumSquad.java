@@ -147,12 +147,20 @@ public final class SelMahumSquad extends AbstractNpcAI
 				
 				if (!npc.isRandomWalkingEnabled())
 				{
-					npc.doCast(SkillData.getInstance().getSkill(6331, 1));
+					final Skill skill = SkillData.getInstance().getSkill(6331, 1);
+					if (!npc.isAffectedBySkill(skill.getId()))
+					{
+						npc.doCast(skill);
+					}
 					npc.setState(MAHUM_EFFECT_SLEEP);
 				}
 				if (npc.getVariables().getInt("BUSY_STATE") == 1) // Eating
 				{
-					npc.doCast(SkillData.getInstance().getSkill(6332, 1));
+					final Skill skill = SkillData.getInstance().getSkill(6332, 1);
+					if (!npc.isAffectedBySkill(skill.getId()))
+					{
+						npc.doCast(skill);
+					}
 					npc.setState(MAHUM_EFFECT_EAT);
 				}
 				

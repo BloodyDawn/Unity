@@ -22,6 +22,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
+import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.finalizers.AttributeFinalizer;
@@ -43,7 +44,11 @@ import org.l2junity.gameserver.model.stats.finalizers.PDefenseFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PEvasionRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PRangeFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RandomDamageFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.ShotsBonusFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.VampiricChanceFinalizer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Enum of basic stats.
@@ -96,9 +101,13 @@ public enum Stats
 	// PVE BONUS
 	PVE_PHYSICAL_DMG("pvePhysDmg"),
 	PVE_PHYS_SKILL_DMG("pvePhysSkillsDmg"),
-	PVE_BOW_DMG("pveBowDmg"),
-	PVE_BOW_SKILL_DMG("pveBowSkillsDmg"),
 	PVE_MAGICAL_DMG("pveMagicalDmg"),
+	PVE_PHYSICAL_DEF("pvePhysDef"),
+	PVE_PHYS_SKILL_DEF("pvePhysSkillsDef"),
+	PVE_MAGICAL_DEF("pveMagicalDef"),
+	PVE_RAID_PHYSICAL_DEF("pveRaidPhysDef"),
+	PVE_RAID_PHYS_SKILL_DEF("pveRaidPhysSkillsDef"),
+	PVE_RAID_MAGICAL_DEF("pveRaidMagicalDef"),
 	
 	// ATTACK & DEFENCE RATES
 	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
@@ -112,7 +121,7 @@ public enum Stats
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
 	SHIELD_RATE("rShld"),
-	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), Stats::defaultAdd, Stats::defaultAdd),
+	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
 	MCRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
 	BLOW_RATE("blowRate"),
 	EXPSP_RATE("rExp"),
@@ -169,6 +178,9 @@ public enum Stats
 	MAGIC_SUCCESS_RES("magicSuccRes"),
 	// BUFF_IMMUNITY("buffImmunity"), //TODO: Implement me
 	DEBUFF_IMMUNITY("debuffImmunity"),
+	ABNORMAL_RESIST_PHYSICAL("abnormalResPhysical"),
+	ABNORMAL_RESIST_MAGICAL("abnormalResMagical"),
+	FIXED_DAMAGE_RES("fixedDamageRes"), // Resistance agains fixed damage.
 	
 	// ELEMENT POWER
 	FIRE_POWER("firePower", new AttributeFinalizer(AttributeType.FIRE, true)),
@@ -182,11 +194,13 @@ public enum Stats
 	CANCEL_PROF("cancelProf"),
 	
 	REFLECT_DAMAGE_PERCENT("reflectDam"),
+	REFLECT_DAMAGE_PERCENT_DEFENSE("reflectDamDef"),
 	REFLECT_SKILL_MAGIC("reflectSkillMagic"),
 	REFLECT_SKILL_PHYSIC("reflectSkillPhysic"),
 	VENGEANCE_SKILL_MAGIC_DAMAGE("vengeanceMdam"),
 	VENGEANCE_SKILL_PHYSICAL_DAMAGE("vengeancePdam"),
 	ABSORB_DAMAGE_PERCENT("absorbDam"),
+	ABSORB_DAMAGE_CHANCE("absorbDamChance", new VampiricChanceFinalizer()),
 	TRANSFER_DAMAGE_PERCENT("transDam"),
 	MANA_SHIELD_PERCENT("manaShield"),
 	TRANSFER_DAMAGE_TO_PLAYER("transDamToPlayer"),
@@ -279,14 +293,18 @@ public enum Stats
 	
 	// Which base stat ordinal should alter skill critical formula.
 	STAT_SKILLCRITICAL("statSkillCritical"),
-	STAT_SPEED("statSpeed");
+	STAT_SPEED("statSpeed"),
+	SHOTS_BONUS("shotBonus", new ShotsBonusFinalizer());
 	
+	static final Logger LOGGER = LoggerFactory.getLogger(Stats.class);
 	public static final int NUM_STATS = values().length;
 	
 	private final String _value;
 	private final IStatsFunction _valueFinalizer;
 	private final BiFunction<Double, Double, Double> _addFunction;
 	private final BiFunction<Double, Double, Double> _mulFunction;
+	private final Double _resetAddValue;
+	private final Double _resetMulValue;
 	
 	public String getValue()
 	{
@@ -295,21 +313,23 @@ public enum Stats
 	
 	Stats(String xmlString)
 	{
-		this(xmlString, Stats::defaultValue, Stats::defaultAdd, Stats::defaultMul);
+		this(xmlString, Stats::defaultValue, MathUtil::add, MathUtil::mul, null, null);
 	}
 	
 	Stats(String xmlString, IStatsFunction valueFinalizer)
 	{
-		this(xmlString, valueFinalizer, Stats::defaultAdd, Stats::defaultMul);
+		this(xmlString, valueFinalizer, MathUtil::add, MathUtil::mul, null, null);
 		
 	}
 	
-	Stats(String xmlString, IStatsFunction valueFinalizer, BiFunction<Double, Double, Double> addFunction, BiFunction<Double, Double, Double> mulFunction)
+	Stats(String xmlString, IStatsFunction valueFinalizer, BiFunction<Double, Double, Double> addFunction, BiFunction<Double, Double, Double> mulFunction, Double resetAddValue, Double resetMulValue)
 	{
 		_value = xmlString;
 		_valueFinalizer = valueFinalizer;
 		_addFunction = addFunction;
 		_mulFunction = mulFunction;
+		_resetAddValue = resetAddValue;
+		_resetMulValue = resetMulValue;
 	}
 	
 	public static Stats valueOfXml(String name)
@@ -333,40 +353,48 @@ public enum Stats
 	 */
 	public Double finalize(Creature creature, Optional<Double> baseValue)
 	{
-		return _valueFinalizer.calc(creature, baseValue, this);
+		try
+		{
+			return _valueFinalizer.calc(creature, baseValue, this);
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn("Exception during finalization for : {} stat: {} : ", creature, toString(), e);
+			return defaultValue(creature, baseValue, this);
+		}
 	}
 	
-	public double add(double oldValue, double value)
+	public double functionAdd(double oldValue, double value)
 	{
 		return _addFunction.apply(oldValue, value);
 	}
 	
-	public double mul(double oldValue, double value)
+	public double functionMul(double oldValue, double value)
 	{
 		return _mulFunction.apply(oldValue, value);
+	}
+	
+	public Double getResetAddValue()
+	{
+		return _resetAddValue;
+	}
+	
+	public Double getResetMulValue()
+	{
+		return _resetMulValue;
 	}
 	
 	public static double defaultValue(Creature creature, Optional<Double> base, Stats stat)
 	{
 		final double mul = creature.getStat().getMul(stat);
 		final double add = creature.getStat().getAdd(stat);
-		return base.isPresent() ? defaultValue(creature, stat, base.get()) : mul * add;
+		return base.isPresent() ? defaultValue(creature, stat, base.get()) : mul * (add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()));
 	}
 	
 	public static double defaultValue(Creature creature, Stats stat, double baseValue)
 	{
 		final double mul = creature.getStat().getMul(stat);
 		final double add = creature.getStat().getAdd(stat);
-		return (baseValue * mul) + add;
-	}
-	
-	public static double defaultAdd(double oldValue, double value)
-	{
-		return oldValue + value;
-	}
-	
-	public static double defaultMul(double oldValue, double value)
-	{
-		return oldValue * value;
+		return (baseValue * mul) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 	}
 }

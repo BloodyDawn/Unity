@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -72,9 +73,9 @@ public final class SoulBlow extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effector.isAlikeDead())
 		{
@@ -85,7 +86,7 @@ public final class SoulBlow extends AbstractEffect
 		{
 			((Attackable) effected).overhitEnabled(true);
 		}
-
+		
 		boolean ss = skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(effector, effected, skill);
 		double damage = Formulas.calcBlowDamage(effector, effected, skill, _power, shld, ss);
@@ -99,7 +100,11 @@ public final class SoulBlow extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = (int) effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+		if (damageCap > 0)
+		{
+			damage = Math.min(damage, damageCap);
+		}
 		effected.reduceCurrentHp(damage, effector, skill);
 		effected.notifyDamageReceived(damage, effector, skill, false, false, false);
 		
@@ -113,7 +118,7 @@ public final class SoulBlow extends AbstractEffect
 		if (effector.isPlayer())
 		{
 			PlayerInstance activePlayer = effector.getActingPlayer();
-			activePlayer.sendDamageMessage(effected, (int) damage, false, true, false);
+			activePlayer.sendDamageMessage(effected, skill, (int) damage, true, false);
 		}
 	}
 }

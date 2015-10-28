@@ -284,6 +284,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="45000" />
+		<set name="withoutAction" val="true" />
 	</skill>
 	<skill id="9323" levels="1" name="Player Commendation - Transform Rose (Male)">
 		<!-- AUTO GENERATED SKILL -->
@@ -589,7 +590,7 @@
 		<set name="icon" val="Icon.skill1050" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="5000" />
+		<set name="hitTime" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
@@ -643,6 +644,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="45000" />
+		<set name="withoutAction" val="true" />
 	</skill>
 	<skill id="9351" levels="1" name="Pirate's Eyepatch - STR">
 		<!-- AUTO GENERATED SKILL -->
@@ -865,7 +867,7 @@
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<effect name="TeleportToNpc"> <!-- TODO on level 2 teleports party -->
-				<param npcId="13354" party="#party"/>
+				<param npcId="13354" party="#party" />
 			</effect>
 		</for>
 	</skill>

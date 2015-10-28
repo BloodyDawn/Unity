@@ -95,7 +95,7 @@ public class Seed implements IItemHandler
 		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		if (skills != null)
 		{
-			skills.forEach(holder -> activeChar.useMagic(holder.getSkill(), false, false));
+			skills.forEach(holder -> activeChar.useMagic(holder.getSkill(), item, false, false));
 		}
 		return true;
 	}

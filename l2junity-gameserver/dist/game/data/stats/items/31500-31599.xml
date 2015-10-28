@@ -18,14 +18,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="1168" level="6" type_chance="7" type="ON_MAGIC_SKILL" /> <!-- Curse Poison -->
+		</skills>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31501" name="Bound Nirvana Axe" name_additional="Magic Weakness" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 7% chance of casting Curse Weakness on the target during magic use. -->
@@ -45,14 +53,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="1164" level="9" type_chance="7" type="ON_MAGIC_SKILL" /> <!-- Curse Weakness -->
+		</skills>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31502" name="Bound Shilen Knife" type="Weapon">
 		<!-- Bound Shilen Knife. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -72,13 +88,20 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="45.0" />
-			<set stat="mAtk" val="52.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">45</stat>
+			<stat type="mAtk">52</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31503" name="Bound Knight's Sword*Sword of Revolution" type="Weapon">
 		<!-- Bound Knight's Sword*Sword of Revolution. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -98,13 +121,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="124.0" />
-			<set stat="mAtk" val="58.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31504" name="Bound Knight's Sword*Crimson Sword" type="Weapon">
 		<!-- Bound Knight's Sword*Crimson Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -124,13 +153,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="51.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31505" name="Bound Knight's Sword*Elven Sword" type="Weapon">
 		<!-- Bound Knight's Sword*Elven Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -150,13 +185,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="51.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31506" name="Bound Knight's Sword*Elven Sword" type="Weapon">
 		<!-- Bound Knight's Sword*Elven Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -174,13 +215,19 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="price" val="63785" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="51.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31507" name="Bound Knight's Sword*Elven Long Sword" type="Weapon">
 		<!-- Bound Knight's Sword*Elven Long Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -200,13 +247,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="136.0" />
-			<set stat="mAtk" val="63.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31508" name="Bound Knight's Sword*Knight's Sword" type="Weapon">
 		<!-- Bound Knight's Sword*Knight's Sword Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -226,13 +279,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="96.0" />
-			<set stat="mAtk" val="47.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31509" name="Bound Knight's Shield" type="Weapon">
 		<!-- Bound knight's Shield. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -249,11 +308,15 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="6505" />
-		<for>
-			<add stat="sDef" val="178.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">178</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="31510" name="Bound Knight's Sword" type="Weapon">
 		<!-- Bound Knight's Sword Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -273,13 +336,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="51.0" />
-			<set stat="mAtk" val="32.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31511" name="Bound Nassen's Earring" type="Armor">
 		<!-- Bound Nassen's Earring. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -296,11 +365,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="16290" />
-		<for>
-			<add stat="mDef" val="48.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">48</stat>
+		</stats>
 	</item>
 	<item id="31512" name="Bound Mace of Prayer" type="Weapon">
 		<!-- Bound Mace of Prayer. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -320,14 +390,20 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="41.0" />
-			<set stat="mAtk" val="43.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31513" name="Bound Glaive" type="Weapon">
 		<!-- Bound Glaive. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -347,13 +423,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="31514" name="Bound Ultimate Sword" type="Weapon">
 		<!-- Bound Ultimate Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -373,13 +459,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="139.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31515" name="Bound Ultimate Sword" name_additional="Guidance" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 5. -->
@@ -399,13 +491,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="139.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3007" level="3" /> <!-- Special Ability: Guidance -->
+		</skills>
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31516" name="Bound Ultimate Sword" name_additional="Critical Drain" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nAbsorbs 9 HP from the target during a Critical Attack. -->
@@ -425,13 +525,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="139.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+		</skills>
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31517" name="Bound Ultimate Sword" name_additional="Health" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. -->
@@ -451,13 +559,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="139.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
+		</skills>
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31518" name="Bound Lacerator" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Dark Legion Conversion\nBestows one of the following functions: Critical Damage, Health or Rsk. Focus.\nWhen enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
@@ -477,13 +593,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="210.0" />
-			<set stat="mAtk" val="114.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31519" name="Bound Lacerator" name_additional="Critical Damage" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Dark Legion Conversion\n(Soul Crystal Enhancement)\nP. Atk. by 326 during a Critical Attack. Increases damage inflicted during PvP.\nWhen enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
@@ -503,13 +628,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="210.0" />
-			<set stat="mAtk" val="114.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<skills>
+			<skill id="3067" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31520" name="Bound Lacerator" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Dark Legion Conversion\n(Soul Crystal Enhancement)\nIncreases Max HP by about 25%. Increases damage inflicted during PvP.\nWhen enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
@@ -529,13 +664,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="210.0" />
-			<set stat="mAtk" val="114.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31521" name="Bound Lacerator" name_additional="Rsk. Focus" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Dark Legion Conversion\n(Soul Crystal Enhancement)\nIncreases Critical by 130 when HP drops to 60% or below. Increases damage inflicted during PvP.\nWhen enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
@@ -555,13 +700,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="210.0" />
-			<set stat="mAtk" val="114.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<skills>
+			<skill id="3071" level="2" /> <!-- Special Ability: Rsk. Focus -->
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31522" name="Bound Great Pata" type="Weapon">
 		<!-- Bound Great Pata. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -581,14 +736,20 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;90" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="190.0" />
-			<set stat="mAtk" val="83.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31523" name="Bound Great Pata" name_additional="Critical Drain" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nAbsorbs 10 HP from the target during a Critical Attack. -->
@@ -608,14 +769,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;90" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="190.0" />
-			<set stat="mAtk" val="83.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3039" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+		</skills>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31524" name="Bound Great Pata" name_additional="Critical Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 14% chance of casting Poison on the target during a standard Critical Attack. -->
@@ -635,14 +804,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;90" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="190.0" />
-			<set stat="mAtk" val="83.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3040" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
+		</skills>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31525" name="Bound Great Pata" name_additional="Rsk. Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by 11% when HP drops to 60% or below. -->
@@ -662,14 +839,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;90" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="190.0" />
-			<set stat="mAtk" val="83.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3034" level="4" /> <!-- Special Ability: Rsk. Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31526" name="Bound Great Helmet" type="Armor">
 		<!-- Bound great Helmet. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -686,11 +871,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="price" val="9290" />
-		<for>
-			<add order="0" stat="pDef" val="51.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">51</stat>
+		</stats>
 	</item>
 	<item id="31527" name="Bound Great Axe" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Anger, Critical Stun, or Light. -->
@@ -710,13 +896,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="31528" name="Bound Great Axe" name_additional="Anger" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nP. Atk. + 28 and decreases Max HP by 15%. -->
@@ -736,13 +931,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3600" level="5" /> <!-- Special Ability: Anger -->
+		</skills>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="31529" name="Bound Great Axe" name_additional="Critical Stun" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 27% chance of casting Stun on the target during a Critical Attack. -->
@@ -762,13 +966,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3016" level="5" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+		</skills>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="31530" name="Bound Great Axe" name_additional="Light Armor" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Weight Gauge by 20%. -->
@@ -788,13 +1002,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="31531" name="Bound Great Sword" type="Weapon">
 		<!-- Bestows one of the following functions: Health, P. Critical Damage or Focus. -->
@@ -814,13 +1038,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31532" name="Bound Great Sword" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. -->
@@ -840,13 +1069,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
+		</skills>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31533" name="Bound Great Sword" name_additional="Critical Damage" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nP. Atk. + 247 during a Critical Attack. -->
@@ -866,13 +1103,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3023" level="5" /> <!-- Special Ability: Critical Damage -->
+		</skills>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31534" name="Bound Great Sword" name_additional="Focus" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by 68. -->
@@ -892,13 +1137,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3010" level="5" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31535" name="Bound Grace Dagger" type="Weapon">
 		<!-- Bound grace dagger. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -918,13 +1171,20 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31536" name="Bound Grace Dagger" name_additional="Evasion" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Evasion by 2. -->
@@ -944,13 +1204,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3009" level="3" /> <!-- Special Ability: Evasion -->
+		</skills>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31537" name="Bound Grace Dagger" name_additional="Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 81. -->
@@ -970,13 +1239,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3011" level="3" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31538" name="Bound Grace Dagger" name_additional="Back Blow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases P. Critical Rate by 45% when attacking the target from behind. -->
@@ -996,13 +1274,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="76.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3019" level="3" /> <!-- Special Ability: Back Blow -->
+		</skills>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31539" name="Bound Grand Épée" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Elven Sword conversion, Bound grand epee. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1022,13 +1309,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="83.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">83</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="randomDamage">40</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31540" name="Bound Gram" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Heaven's Divider Conversion\nBestows one of the following functions: Haste, Health or Focus. -->
@@ -1048,14 +1345,20 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="304.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31541" name="Bound Gram" name_additional="Haste" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Heaven's Divider Conversion\n(Soul Crystal Enhancement)\nIncreases Atk. Spd. by 7%. Increases damage inflicted during PvP. -->
@@ -1075,14 +1378,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="304.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31542" name="Bound Gram" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Heaven's Divider Conversion\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. -->
@@ -1102,14 +1414,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="304.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+		</skills>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31543" name="Bound Gram" name_additional="Focus" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Heaven's Divider Conversion\n(Soul Crystal Enhancement)\nIncreases Critical by 84. Increases damage inflicted during PvP. -->
@@ -1129,14 +1450,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="304.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31544" name="Bound Stick of Eternity" type="Weapon">
 		<!-- Bound Stick of Eternity. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1156,14 +1486,20 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31545" name="Bound Stick of Eternity" name_additional="Empower" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nM. Atk. + 24. -->
@@ -1183,14 +1519,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3076" level="3" /> <!-- Special Ability: Empower -->
+		</skills>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31546" name="Bound Stick of Eternity" name_additional="Rsk. Evasion" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Evasion by 7 when HP drops to 60% or below. -->
@@ -1210,14 +1554,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3030" level="3" /> <!-- Special Ability: Rsk. Evasion -->
+		</skills>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31547" name="Bound Stick of Eternity" name_additional="Blessed Body" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Blessed Body on the target during magic use. -->
@@ -1237,14 +1589,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="1045" level="3" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Blessed Body -->
+		</skills>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31548" name="Bound Ghoul's Staff" type="Weapon">
 		<!-- Bound Ghoul's Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1264,14 +1624,20 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31549" name="Bound Ghoul's Staff" name_additional="Rsk. Evasion" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Evasion by 6 when HP drops to 60% or below. -->
@@ -1291,14 +1657,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3031" level="4" /> <!-- Special Ability: Rsk. Evasion -->
+		</skills>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31550" name="Bound Ghoul's Staff" name_additional="Mana Up" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30%. -->
@@ -1318,14 +1692,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3014" level="1" /> <!-- Special Ability: Mana Up -->
+		</skills>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31551" name="Bound Ghoul's Staff" name_additional="Blessed Body" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 20% chance of casting Blessed Body on the target during magic use. -->
@@ -1345,14 +1727,22 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;46;120" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="1045" level="4" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Blessed Body -->
+		</skills>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31552" name="Bound Noble Elven Bow" type="Weapon">
 		<!-- Bound Noble Elven Bow. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1372,13 +1762,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="252.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">252</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="31553" name="Bound Noble Elven Bow" name_additional="Evasion" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Evasion by 2. -->
@@ -1398,13 +1796,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="252.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3009" level="2" /> <!-- Special Ability: Evasion -->
+		</skills>
+		<stats>
+			<stat type="pAtk">252</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="31554" name="Bound Noble Elven Bow" name_additional="Miser" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 59% chance of reducing the number of soulshots consumed to 7. -->
@@ -1424,13 +1832,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
+		<set name="reduced_soulshot" val="59,7" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="252.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">252</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="31555" name="Bound Noble Elven Bow" name_additional="Cheap Shot" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 47% chance of decreasing MP consumption to 1 during a standard attack. -->
@@ -1450,13 +1866,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="reduced_mp_consume" val="47,1" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="252.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">252</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="31556" name="Bound Quality Leather Gloves" type="Armor">
 		<!-- Bound Quality Leather Gloves. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1473,15 +1897,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="805" />
-		<for>
-			<add order="0" stat="pDef" val="19.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+		</stats>
 	</item>
 	<item id="31557" name="Bound Dark Stockings" type="Armor">
 		<!-- Bound Dark Stockings. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t16_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="D" />
@@ -1494,11 +1921,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="2400" />
-		<for>
-			<add order="0" stat="pDef" val="27.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="31558" name="Bound Gauntlets" type="Armor">
 		<!-- Bound Gauntlets. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1515,11 +1944,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="1955" />
-		<for>
-			<add order="0" stat="pDef" val="24.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="31559" name="Bound Reinforced Longbow" type="Weapon">
 		<!-- Bound Reinforced Longbow. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1539,13 +1970,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="820" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="179.0" />
-			<set stat="mAtk" val="51.0" />
-			<set stat="pAtkSpd" val="227.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">179</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="31560" name="Bound Reinforced Bow" type="Weapon">
 		<!-- Bound Reinforced Bow. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1565,13 +2004,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="82.0" />
-			<set stat="mAtk" val="26.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">82</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="31561" name="Bound Reinforced Mithril Gloves" type="Armor">
 		<!-- Bound Reinforced Mithril Gloves. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1588,15 +2035,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="4855" />
-		<for>
-			<add order="0" stat="pDef" val="32.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="31562" name="Bound Reinforced Mithril Shirt" type="Armor">
 		<!-- Bound Reinforced Mithril Shirt. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t47_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="C" />
@@ -1609,11 +2059,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="14550" />
-		<for>
-			<add order="0" stat="pDef" val="90.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">90</stat>
+		</stats>
 	</item>
 	<item id="31563" name="Bound Reinforced Mithril Boots" type="Armor">
 		<!-- Bound Reinforced Mithril Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1630,15 +2082,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="4855" />
-		<for>
-			<add order="0" stat="pDef" val="32.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="31564" name="Bound Reinforced Mithril Gaiters" type="Armor">
 		<!-- Bound Reinforced Mithril Gaiters. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t47_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="C" />
@@ -1651,11 +2106,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="9105" />
-		<for>
-			<add order="0" stat="pDef" val="56.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">56</stat>
+		</stats>
 	</item>
 	<item id="31565" name="Bound Reinforced Leather Gloves" type="Armor">
 		<!-- Bound Reinforced Leather Gloves. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1672,15 +2129,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="1955" />
-		<for>
-			<add order="0" stat="pDef" val="24.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="31566" name="Bound Reinforced Leather Shirt" type="Armor">
 		<!-- Bound Reinforced Leather Shirt. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t13_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="D" />
@@ -1693,11 +2153,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="5850" />
-		<for>
-			<add order="0" stat="pDef" val="73.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="31567" name="Bound Reinforced Leather Boots" type="Armor">
 		<!-- Bound Reinforced Leather Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1714,15 +2176,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="1955" />
-		<for>
-			<add order="0" stat="pDef" val="24.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="31568" name="Bound Reinforced Leather Gaiters" type="Armor">
 		<!-- Bound Reinforced Leather Gaiters. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t13_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="D" />
@@ -1735,11 +2200,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="3660" />
-		<for>
-			<add order="0" stat="pDef" val="46.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="31569" name="Bound Steel Sword" type="Weapon">
 		<!-- Bound Steel Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1759,13 +2226,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="49.0" />
-			<set stat="mAtk" val="26.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">49</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31570" name="Bound Iron Boots" type="Armor">
 		<!-- Bound Iron Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1782,11 +2255,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="1955" />
-		<for>
-			<add order="0" stat="pDef" val="24.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="31571" name="Bound Assault Boots" type="Armor">
 		<!-- Bound Assault Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1803,11 +2278,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="3760" />
-		<for>
-			<add order="0" stat="pDef" val="29.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="31572" name="Bound Leather Boots" type="Armor">
 		<!-- Bound Leather Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1824,11 +2301,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="805" />
-		<for>
-			<add order="0" stat="pDef" val="19.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+		</stats>
 	</item>
 	<item id="31573" name="Bound Leather Gauntlets" type="Armor">
 		<!-- Bound Leather Gauntlets. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1845,11 +2324,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="1280" />
-		<for>
-			<add order="0" stat="pDef" val="22.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">22</stat>
+		</stats>
 	</item>
 	<item id="31574" name="Bound Gastraphetes" type="Weapon">
 		<!-- Bound Gastraphetes. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1869,13 +2350,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="132.0" />
-			<set stat="mAtk" val="39.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">132</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="31575" name="Bound Guardian's Sword" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Critical Drain, Health or Critical Bleed. -->
@@ -1895,13 +2384,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="236.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31576" name="Bound Guardian's Sword" name_additional="Critical Drain" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nAbsorbs 8 HP from the target during a Critical Attack. -->
@@ -1921,13 +2415,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="236.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3022" level="6" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+		</skills>
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31577" name="Bound Guardian's Sword" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. -->
@@ -1947,13 +2449,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="236.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
+		</skills>
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31578" name="Bound Guardian's Sword" name_additional="Critical Bleed" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 24% chance of casting Bleed on the target during a standard Critical Attack. -->
@@ -1973,62 +2483,133 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="236.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3055" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
+		</skills>
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="31579" name="Unidentified Boots of Strength" type="EtcItem">
 		<!-- Boots of Strength in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
 		<set name="icon" val="icon.armor_t40_b_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="8323" />
+		<createItems>
+			<item id="1124" count="1" chance="2" /> <!-- Boots of Strength -->
+			<item id="30434" count="1" chance="98" /> <!-- Bound Boots of Strength -->
+		</createItems>
+		<skills>
+			<skill id="12188" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31580" name="Unidentified Black Pearl Ring" type="EtcItem">
 		<!-- Black Pearl Ring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
 		<set name="icon" val="icon.accessary_black_pearl_ring_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="RING" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="4785" />
+		<createItems>
+			<item id="880" count="1" chance="2" /> <!-- Black Pearl Ring -->
+			<item id="30435" count="1" chance="98" /> <!-- Bound Black Pearl Ring -->
+		</createItems>
+		<skills>
+			<skill id="12189" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31581" name="Unidentified Black Pearl Ring" type="EtcItem">
 		<!-- Black Pearl Ring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
 		<set name="icon" val="icon.accessary_black_pearl_ring_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="RING" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="4785" />
+		<createItems>
+			<item id="880" count="1" chance="2" /> <!-- Black Pearl Ring -->
+			<item id="30435" count="1" chance="98" /> <!-- Bound Black Pearl Ring -->
+		</createItems>
+		<skills>
+			<skill id="12190" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31582" name="Unidentified Black Ore Ring" type="EtcItem">
 		<!-- Black Ore Ring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="RING" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="68730" />
+		<createItems>
+			<item id="895" count="1" chance="2" /> <!-- Black Ore Ring -->
+			<item id="30437" count="1" chance="98" /> <!-- Bound Black Ore Ring -->
+		</createItems>
+		<skills>
+			<skill id="12191" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31583" name="Unidentified Black Ore Necklace" type="EtcItem">
 		<!-- Black Ore Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="137460" />
+		<createItems>
+			<item id="926" count="1" chance="2" /> <!-- Black Ore Necklace -->
+			<item id="30438" count="1" chance="98" /> <!-- Bound Black Ore Necklace -->
+		</createItems>
+		<skills>
+			<skill id="12192" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31584" name="Unidentified Black Ore Earring" type="EtcItem">
 		<!-- Black Ore Earring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Earring) -->
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="EARRING" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="103095" />
+		<createItems>
+			<item id="864" count="1" chance="2" /> <!-- Black Ore Earring -->
+			<item id="30439" count="1" chance="98" /> <!-- Bound Black Ore Earring -->
+		</createItems>
+		<skills>
+			<skill id="12193" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31585" name="Unidentified Ghost Staff" type="EtcItem">
 		<!-- Ghost staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="201115" />
+		<createItems>
+			<item id="188" count="1" chance="2" /> <!-- Ghost Staff -->
+			<item id="30440" count="1" chance="98" /> <!-- Bound Ghost Staff -->
+		</createItems>
+		<skills>
+			<skill id="12194" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31586" name="Unidentified Ghost Staff" type="EtcItem">
 		<!-- Ghost staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
@@ -2039,97 +2620,226 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
+		<createItems>
+			<item id="188" count="1" chance="2" /> <!-- Ghost Staff -->
+			<item id="30440" count="1" chance="98" /> <!-- Bound Ghost Staff -->
+		</createItems>
+		<skills>
+			<skill id="12195" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31587" name="Unidentified Hoplon" type="EtcItem">
 		<!-- Hoplon in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
 		<set name="icon" val="icon.shield_hoplon_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="SHIELD" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="5945" />
+		<createItems>
+			<item id="628" count="1" chance="2" /> <!-- Hoplon -->
+			<item id="30442" count="1" chance="98" /> <!-- Bound Hoplon -->
+		</createItems>
+		<skills>
+			<skill id="12196" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31588" name="Unidentified Stockings of Zubei" type="EtcItem">
 		<!-- Stockings of Zubei in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
 		<set name="icon" val="icon.armor_t56_l_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="108503" />
+		<createItems>
+			<item id="2402" count="1" chance="2" /> <!-- Stockings of Zubei -->
+			<item id="30443" count="1" chance="98" /> <!-- Bound Stockings of Zubei -->
+		</createItems>
+		<skills>
+			<skill id="12197" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31589" name="Unidentified Stockings of Doom" type="EtcItem">
 		<!-- Stockings of doom in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
 		<set name="icon" val="icon.armor_t73_l_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="168243" />
+		<createItems>
+			<item id="2404" count="1" chance="2" /> <!-- Stockings of Doom -->
+			<item id="30444" count="1" chance="98" /> <!-- Bound Stockings of Doom -->
+		</createItems>
+		<skills>
+			<skill id="12198" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31590" name="Unidentified Homunkulus' Sword" type="EtcItem">
 		<!-- Homunkulus' Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
 		<set name="icon" val="icon.weapon_homunkuluss_sword_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="479123" />
+		<createItems>
+			<item id="84" count="1" chance="2" /> <!-- Homunkulus' Sword -->
+			<item id="30446" count="1" chance="32" /> <!-- Bound Homunkulus' Sword - Acumen -->
+			<item id="30447" count="1" chance="33" /> <!-- Bound Homunkulus' Sword - Conversion -->
+			<item id="30448" count="1" chance="33" /> <!-- Bound Homunkulus' Sword - Magic Paralyze -->
+		</createItems>
+		<skills>
+			<skill id="12199" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31591" name="Unidentified Sage's Blood" type="EtcItem">
 		<!-- Sage's Blood in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / other) -->
 		<set name="icon" val="icon.weapon_blood_of_saints_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="OTHER_WEAPON" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="107807" />
+		<createItems>
+			<item id="316" count="1" chance="2" /> <!-- Sage's Blood -->
+			<item id="30449" count="1" chance="98" /> <!-- Bound Sage's Blood -->
+		</createItems>
+		<skills>
+			<skill id="12200" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31592" name="Unidentified Sage's Staff" type="EtcItem">
 		<!-- Sage's Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
 		<set name="icon" val="icon.weapon_sages_staff_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="479123" />
+		<createItems>
+			<item id="200" count="1" chance="2" /> <!-- Sage's Staff -->
+			<item id="30453" count="1" chance="32" /> <!-- Bound Sage's Staff - Magic Weakness -->
+			<item id="30451" count="1" chance="33" /> <!-- Bound Sage's Staff - Magic Hold -->
+			<item id="30452" count="1" chance="33" /> <!-- Bound Sage's Staff - Magic Poison -->
+		</createItems>
+		<skills>
+			<skill id="12201" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31593" name="Unidentified Sage's Ring" type="EtcItem">
 		<!-- Sage's Ring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
 		<set name="icon" val="icon.accessary_sages_ring_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="RING" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="68730" />
+		<createItems>
+			<item id="891" count="1" chance="2" /> <!-- Sage's Ring -->
+			<item id="30454" count="1" chance="98" /> <!-- Bound Sage's Ring -->
+		</createItems>
+		<skills>
+			<skill id="12202" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31594" name="Unidentified Sage's Necklace" type="EtcItem">
 		<!-- Sage's Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
 		<set name="icon" val="icon.accessary_sages_necklace_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="137460" />
+		<createItems>
+			<item id="922" count="1" chance="2" /> <!-- Sage's Necklace -->
+			<item id="30455" count="1" chance="98" /> <!-- Bound Sage's Necklace -->
+		</createItems>
+		<skills>
+			<skill id="12203" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31595" name="Unidentified Sage's Rags" type="EtcItem">
 		<!-- Sage's Rags in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-piece / robe) -->
 		<set name="icon" val="icon.armor_t44_ul_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="FULL_BODY" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="53157" />
+		<createItems>
+			<item id="438" count="1" chance="2" /> <!-- Sage's Rags -->
+			<item id="30456" count="1" chance="98" /> <!-- Bound Sage's Rags -->
+		</createItems>
+		<skills>
+			<skill id="12204" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31596" name="Unidentified Sage's Worn Gloves" type="EtcItem">
 		<!-- Sage's Worn Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
 		<set name="icon" val="icon.armor_t44_g_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="10904" />
+		<createItems>
+			<item id="2451" count="1" chance="2" /> <!-- Sage's Worn Gloves -->
+			<item id="30457" count="1" chance="98" /> <!-- Bound Sage's Worn Gloves -->
+		</createItems>
+		<skills>
+			<skill id="12205" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31597" name="Unidentified Sage's Earring" type="EtcItem">
 		<!-- Sage's Earring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Earring) -->
 		<set name="icon" val="icon.accessary_sages_earing_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="EARRING" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="103095" />
+		<createItems>
+			<item id="860" count="1" chance="2" /> <!-- Sage's Earring -->
+			<item id="30458" count="1" chance="98" /> <!-- Bound Sage's Earring -->
+		</createItems>
+		<skills>
+			<skill id="12206" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31598" name="Unidentified Sword of Revolution*Sword of Revolution" type="EtcItem">
 		<!-- Sword of Revolution*Sword of Revolution in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="320406" />
+		<createItems>
+			<item id="2558" count="1" chance="2" /> <!-- Sword of Revolution*Sword of Revolution -->
+			<item id="30459" count="1" chance="98" /> <!-- Bound Sword of Revolution*Sword of Revolution -->
+		</createItems>
+		<skills>
+			<skill id="12207" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 	<item id="31599" name="Unidentified Sword of Revolution*Elven Long Sword" type="EtcItem">
 		<!-- Sword of Revolution*Elven Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
 		<set name="price" val="372925" />
+		<createItems>
+			<item id="2559" count="1" chance="2" /> <!-- Sword of Revolution*Elven Long Sword -->
+			<item id="30460" count="1" chance="98" /> <!-- Bound Sword of Revolution*Elven Long Sword -->
+		</createItems>
+		<skills>
+			<skill id="12208" level="1" /> <!-- Check Item -->
+		</skills>
 	</item>
 </list>

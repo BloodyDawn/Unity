@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -90,9 +91,9 @@ public final class FatalBlow extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effector.isAlikeDead())
 		{
@@ -125,7 +126,11 @@ public final class FatalBlow extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+		if (damageCap > 0)
+		{
+			damage = Math.min(damage, damageCap);
+		}
 		effected.reduceCurrentHp(damage, effector, skill);
 		effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		
@@ -136,6 +141,6 @@ public final class FatalBlow extends AbstractEffect
 			effected.breakCast();
 		}
 		
-		effector.sendDamageMessage(effected, (int) damage, false, true, false);
+		effector.sendDamageMessage(effected, skill, (int) damage, true, false);
 	}
 }

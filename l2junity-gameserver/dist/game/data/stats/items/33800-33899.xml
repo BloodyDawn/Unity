@@ -17,7 +17,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
-		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SHOW_HTML" />
 		<set name="icon" val="icon.etc_magic_book_black_i00" />
 	</item>
 	<item id="33802" name="Mentee Certificate Pack" type="EtcItem">
@@ -30,7 +30,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="PEEL" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="33800" min="1" max="1" chance="100" /> <!-- Mentee Certificate -->
+			<item id="33801" min="1" max="1" chance="100" /> <!-- Mentoring Guidebook -->
+		</capsuled_items>
 	</item>
 	<item id="33803" name="Mentee Coupon" type="EtcItem">
 		<!-- Contains a Mentee Certificate Pack. -->
@@ -83,7 +88,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9244" level="1" /> <!-- Giant's Scroll: Enchant Weapon (D-grade) -->
+		</skills>
 	</item>
 	<item id="33807" name="Giant's Scroll: Enchant Weapon (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 3 for C-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 4 for two-handed sword, two-handed blunt, dualsword, and two-handed fist weapon. P. Atk. + 6 for bow weapons. M. Atk. + 3 for all weapons. Doubles P. Atk./M. Atk. starting at + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -97,7 +108,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9246" level="1" /> <!-- Giant's Scroll: Enchant Weapon (C-grade) -->
+		</skills>
 	</item>
 	<item id="33808" name="Giant's Scroll: Enchant Weapon (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 3 for B-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 4 for two-handed sword, two-handed blunt, dualsword, and two-handed fist weapon. P. Atk. + 6 for bow weapons. M. Atk. + 3 for all weapons. Doubles P. Atk./M. Atk. starting at + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -111,7 +128,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9248" level="1" /> <!-- Giant's Scroll: Enchant Weapon (B-grade) -->
+		</skills>
 	</item>
 	<item id="33809" name="Giant's Scroll: Enchant Weapon (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 4 for A-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 5 for two-handed sword, two-handed blunt, dualsword, and two-handed fist weapon. P. Atk. + 8 for bow weapons. M. Atk. + 3 for all weapons. Doubles P. Atk./M. Atk. starting at + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -125,7 +148,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9250" level="1" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
+		</skills>
 	</item>
 	<item id="33810" name="Giant's Scroll: Enchant Weapon (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 5 for S-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 6 for two-handed sword, two-handed blunt, dualsword, and two-handed fist weapon. P. Atk. + 10 for bow weapons. M. Atk. + 4 for all weapons. Doubles P. Atk./M. Atk. starting at + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -139,7 +168,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9252" level="1" /> <!-- Giant's Scroll: Enchant Weapon (S-grade) -->
+		</skills>
 	</item>
 	<item id="33811" name="Giant's Scroll: Enchant Weapon (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 6 for R-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 7 for two-handed sword, two-handed blunt, dualsword, two-handed fist weapon and crossbow. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. Doubles P. Atk./M. Atk. starting at + 4. Every enchant attempt has a chance of increasing the enchant value between + 1 and + 3 chosen randomly. For blessed weapons, all stats increases more than normal weapons. -->
@@ -153,7 +188,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9254" level="1" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
+		</skills>
 	</item>
 	<item id="33812" name="Giant's Scroll: Enchant Armor (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for D-grade armor and accessories. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -167,7 +208,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9245" level="1" /> <!-- Giant's Scroll: Enchant Armor (D-grade) -->
+		</skills>
 	</item>
 	<item id="33813" name="Giant's Scroll: Enchant Armor (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for C-grade armor and accessories. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -181,7 +228,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9247" level="1" /> <!-- Giant's Scroll: Enchant Armor (C-grade) -->
+		</skills>
 	</item>
 	<item id="33814" name="Giant's Scroll: Enchant Armor (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for B-grade armor and accessories. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -195,7 +248,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9249" level="1" /> <!-- Giant's Scroll: Enchant Armor (B-grade) -->
+		</skills>
 	</item>
 	<item id="33815" name="Giant's Scroll: Enchant Armor (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for A-grade armor and accessories. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -209,7 +268,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9251" level="1" /> <!-- Giant's Scroll: Enchant Armor (A-grade) -->
+		</skills>
 	</item>
 	<item id="33816" name="Giant's Scroll: Enchant Armor (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for S-grade armor and accessories. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. Between + 1 and + 3, enchanting occurs at random. -->
@@ -223,7 +288,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9253" level="1" /> <!-- Giant's Scroll: Enchant Armor (S-grade) -->
+		</skills>
 	</item>
 	<item id="33817" name="Giant's Scroll: Enchant Armor (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value. Every enchant attempt has a chance of increasing the enchant value between + 1 and + 3 chosen randomly. -->
@@ -237,7 +308,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9255" level="1" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+		</skills>
 	</item>
 	<item id="33818" name="Scroll: Enchant Hair Accessory" name_additional="Event" type="EtcItem">
 		<!-- Increases M. Def. of hair accessories by 2. It is greatly increased starting at + 4. Can be safely enchanted to + 3. -->
@@ -251,7 +328,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9234" level="1" /> <!-- Scroll: Enchant Hair Accessory -->
+		</skills>
 	</item>
 	<item id="33819" name="Life Stone: Hair Accessory" name_additional="Event" type="EtcItem">
 		<!-- Life Stone for Hair Accessories. -->
@@ -276,7 +358,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -290,7 +371,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -304,7 +384,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -318,7 +397,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -332,7 +410,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -346,7 +423,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -388,7 +464,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -402,7 +477,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -416,7 +490,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -430,7 +503,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -444,7 +516,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -460,7 +531,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12881" level="1" /> <!-- Change Attribute -->
+		</skills>
 	</item>
 	<item id="33834" name="Attribute Change Crystal (S80-grade)" name_additional="Event" type="EtcItem">
 		<!-- Can change an S80 -grade weapon's attribute. -->
@@ -473,7 +550,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12881" level="1" /> <!-- Change Attribute -->
+		</skills>
 	</item>
 	<item id="33835" name="Attribute Change Crystal (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- Can change an R-grade weapon's attribute. -->
@@ -486,7 +569,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12881" level="1" /> <!-- Change Attribute -->
+		</skills>
 	</item>
 	<item id="33836" name="Attribute Change Crystal (R95-grade)" name_additional="Event" type="EtcItem">
 		<!-- Can change an R95-grade weapon's attribute. -->
@@ -499,7 +588,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12881" level="1" /> <!-- Change Attribute -->
+		</skills>
 	</item>
 	<item id="33837" name="Attribute Change Crystal (R99-grade)" name_additional="Event" type="EtcItem">
 		<!-- Can change an R99-grade weapon's attribute. -->
@@ -512,7 +607,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12881" level="1" /> <!-- Change Attribute -->
+		</skills>
 	</item>
 	<item id="33838" name="Destruction Scroll: Enchant Weapon (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 2 for D-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 2 for two-handed swords, two-handed blunts, dualswords, and two-handed fist weapons. P. Atk. + 4 for bow weapons. M. Atk. + 2 for all weapons. P. Atk./M. Atk. Increases by double starting at + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. Cannot be used on weapons above + 15. -->
@@ -525,7 +626,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22367" level="1" /> <!-- Destruction Scroll: Enchant Weapon (D-grade) -->
+		</skills>
 	</item>
 	<item id="33839" name="Destruction Scroll: Enchant Weapon (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 3 for C-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 4 for two-handed swords, two-handed blunts, dualswords, and two-handed fist weapons. P. Atk. + 6 for bow weapons. M. Atk. + 3 for all weapons. P. Atk./M. Atk. Increases by double starting at + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. Cannot be used on weapons above + 15. -->
@@ -538,7 +644,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22365" level="1" /> <!-- Destruction Scroll: Enchant Weapon (C-grade) -->
+		</skills>
 	</item>
 	<item id="33840" name="Destruction Scroll: Enchant Weapon (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 3 for B-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 4 for two-handed swords, two-handed blunts, dualswords, and two-handed fist weapons. P. Atk. + 6 for bow weapons. M. Atk. + 3 for all weapons. P. Atk./M. Atk. Increases by double starting at + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. Cannot be used on weapons above + 15. -->
@@ -551,7 +662,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22363" level="1" /> <!-- Destruction Scroll: Enchant Weapon (B-grade) -->
+		</skills>
 	</item>
 	<item id="33841" name="Destruction Scroll: Enchant Weapon (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 4 for A-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 5 for two-handed swords, two-handed blunts, dualswords, and two-handed fist weapons. P. Atk. + 8 for bow weapons. M. Atk. + 3 for all weapons. P. Atk./M. Atk. Increases by double starting at + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. Cannot be used on weapons above + 15. -->
@@ -564,7 +680,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22361" level="1" /> <!-- Destruction Scroll: Enchant Weapon (A-grade) -->
+		</skills>
 	</item>
 	<item id="33842" name="Destruction Scroll: Enchant Weapon (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 5 for S-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 6 for two-handed swords, two-handed blunts, dualswords, and two-handed fist weapons. P. Atk. + 10 for bow weapons. M. Atk. + 4 for all weapons. P. Atk./M. Atk. Increases by double starting at + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. Cannot be used on weapons above + 15. -->
@@ -577,7 +698,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22359" level="1" /> <!-- Destruction Scroll: Enchant Weapon (S-grade) -->
+		</skills>
 	</item>
 	<item id="33843" name="Destruction Scroll: Enchant Weapon (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increase at + 4. All amounts are increased for blessed weapons. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. Cannot be used on weapons above + 15. -->
@@ -590,7 +716,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12872" level="1" /> <!-- Destruction Scroll: Enchant Weapon (R-grade) -->
+		</skills>
 	</item>
 	<item id="33844" name="Destruction Scroll: Enchant Armor (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for D-grade armor and accessories. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. HP gradually increases with each enchant level starting from + 4. Cannot be used on armor above + 6. -->
@@ -603,7 +734,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22368" level="1" /> <!-- Destruction Scroll: Enchant Armor (D-grade) -->
+		</skills>
 	</item>
 	<item id="33845" name="Destruction Scroll: Enchant Armor (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for C-grade armor and accessories when enchanted. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. HP gradually increases with each enchant level starting from + 4. Cannot be used on armor above + 6. -->
@@ -616,7 +752,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22366" level="1" /> <!-- Destruction Scroll: Enchant Armor (C-grade) -->
+		</skills>
 	</item>
 	<item id="33846" name="Destruction Scroll: Enchant Armor (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for B-grade armor and accessories when enchanted. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. HP gradually increases with each enchant level starting from + 4. Cannot be used on armor above + 6. -->
@@ -629,7 +770,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22364" level="1" /> <!-- Destruction Scroll: Enchant Armor (B-grade) -->
+		</skills>
 	</item>
 	<item id="33847" name="Destruction Scroll: Enchant Armor (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for A-grade armor and accessories when enchanted. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. HP gradually increases with each enchant level starting from + 4. Cannot be used on armor above + 6. -->
@@ -642,7 +788,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22362" level="1" /> <!-- Destruction Scroll: Enchant Armor (A-grade) -->
+		</skills>
 	</item>
 	<item id="33848" name="Destruction Scroll: Enchant Armor (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 1 for S-grade armor and accessories when enchanted. Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. If enchanting fails, the power of the Goddess of Destruction stops the item from resetting and maintains its existing enchant value. HP gradually increases with each enchant level starting from + 4. Cannot be used on armor above + 6. -->
@@ -655,7 +806,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22360" level="1" /> <!-- Destruction Scroll: Enchant Armor (S-grade) -->
+		</skills>
 	</item>
 	<item id="33849" name="Destruction Scroll: Enchant Armor (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- P. Def. + 2 for R-grade armor and accessories, and greatly increases it starting from + 4. Can be safely enchanted up to + 3. When enchanted to + 4 or more, HP also increases according to the enchantment stats. If enchanting fails, the power of the Goddess of Destruction stops the item from crystallizing, and the existing enchantment value is maintained. Cannot be used above + 6. -->
@@ -668,7 +824,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12873" level="1" /> <!-- Destruction Scroll: Enchant Armor (R-grade) -->
+		</skills>
 	</item>
 	<item id="33850" name="Lucky Enchant Stone: Weapon (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 20% for weapons (D-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. -->
@@ -682,7 +843,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2515" level="1" /> <!-- Lucky Clover (D-grade) -->
+		</skills>
 	</item>
 	<item id="33851" name="Lucky Enchant Stone: Weapon (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 18% for weapons (C-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. -->
@@ -696,7 +861,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2516" level="1" /> <!-- Lucky Clover (C-grade) -->
+		</skills>
 	</item>
 	<item id="33852" name="Lucky Enchant Stone: Weapon (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 15% for weapons (B-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. -->
@@ -710,7 +879,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2517" level="1" /> <!-- Lucky Clover (B-grade) -->
+		</skills>
 	</item>
 	<item id="33853" name="Lucky Enchant Stone: Weapon (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 12% for weapons (A-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. -->
@@ -724,7 +897,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2518" level="1" /> <!-- Lucky Clover (A-grade) -->
+		</skills>
 	</item>
 	<item id="33854" name="Lucky Enchant Stone: Weapon (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 10% for weapons (S-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. -->
@@ -738,7 +915,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2519" level="1" /> <!-- Lucky Clover (S-grade) -->
+		</skills>
 	</item>
 	<item id="33855" name="Lucky Enchant Stone: Weapon (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 10% for weapons (R-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. -->
@@ -752,7 +933,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9207" level="1" /> <!-- Lucky Clover (R-grade) -->
+		</skills>
 	</item>
 	<item id="33856" name="Lucky Enchant Stone: Armor (D-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 35% for armor (D-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
@@ -766,7 +951,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2520" level="1" /> <!-- Lucky Clover (D-grade) -->
+		</skills>
 	</item>
 	<item id="33857" name="Lucky Enchant Stone: Armor (C-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 27% for armor (C-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
@@ -780,7 +969,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2521" level="1" /> <!-- Lucky Clover (C-grade) -->
+		</skills>
 	</item>
 	<item id="33858" name="Lucky Enchant Stone: Armor (B-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 23% for armor (B-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
@@ -794,7 +987,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2522" level="1" /> <!-- Lucky Clover (B-grade) -->
+		</skills>
 	</item>
 	<item id="33859" name="Lucky Enchant Stone: Armor (A-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 18% for armor (A-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
@@ -808,7 +1005,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2523" level="1" /> <!-- Lucky Clover (A-grade) -->
+		</skills>
 	</item>
 	<item id="33860" name="Lucky Enchant Stone: Armor (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 15% for armor (S-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
@@ -822,7 +1023,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2524" level="1" /> <!-- Lucky Clover (S-grade) -->
+		</skills>
 	</item>
 	<item id="33861" name="Lucky Enchant Stone: Armor (R-grade)" name_additional="Event" type="EtcItem">
 		<!-- Enchant success rate + 15% for armor (R-grade). Can only be used with regular Enchant Scrolls. Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
@@ -836,7 +1041,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9208" level="1" /> <!-- Lucky Clover (R-grade) -->
+		</skills>
 	</item>
 	<item id="33862" name="Elixir of Blessing" name_additional="Event" type="EtcItem">
 		<!-- For 30 minutes, receives the following level 1 effects: Horn Melody, Guitar Melody, Pipe Organ Melody, Harp Melody, and Lute Melody. Can be used at level 85 or above. Cooldown is 2 min. -->
@@ -850,7 +1059,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="R" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="120000" />
+		<set name="shared_reuse_group" val="7" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9200" level="1" /> <!-- Elixir: Lute Melody -->
+			<skill id="9201" level="1" /> <!-- Elixir: Pipe Organ Melody -->
+			<skill id="9202" level="1" /> <!-- Elixir: Guitar Melody -->
+			<skill id="9203" level="1" /> <!-- Elixir: Harp Melody -->
+			<skill id="9198" level="1" /> <!-- Elixir: Horn Melody -->
+		</skills>
 	</item>
 	<item id="33863" name="Fire Stone (+ 60)" name_additional="Event" type="EtcItem">
 		<!-- Increases fire attribute by 60 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -864,7 +1086,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12875" level="3" /> <!-- Fire Stone -->
+		</skills>
 	</item>
 	<item id="33864" name="Water Stone (+ 60)" name_additional="Event" type="EtcItem">
 		<!-- Increases water attribute by 60 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -878,7 +1105,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12876" level="3" /> <!-- Water Stone -->
+		</skills>
 	</item>
 	<item id="33865" name="Earth Stone (+ 60)" name_additional="Event" type="EtcItem">
 		<!-- Increases earth attribute by 60 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -892,7 +1124,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12878" level="3" /> <!-- Earth Stone -->
+		</skills>
 	</item>
 	<item id="33866" name="Wind Stone (+ 60)" name_additional="Event" type="EtcItem">
 		<!-- Increases wind attribute by 60 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -906,7 +1143,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12877" level="3" /> <!-- Wind Stone -->
+		</skills>
 	</item>
 	<item id="33867" name="Dark Stone (+ 60)" name_additional="Event" type="EtcItem">
 		<!-- Increases dark attribute by 60 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -920,7 +1162,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12880" level="3" /> <!-- Dark Stone -->
+		</skills>
 	</item>
 	<item id="33868" name="Holy Stone (+ 60)" name_additional="Event" type="EtcItem">
 		<!-- Increases holy attribute by 60 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -934,7 +1181,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12879" level="3" /> <!-- Holy Stone -->
+		</skills>
 	</item>
 	<item id="33869" name="Fire Stone (+ 150)" name_additional="Event" type="EtcItem">
 		<!-- Increases fire attribute by 150 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -948,7 +1200,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12875" level="1" /> <!-- Fire Stone -->
+		</skills>
 	</item>
 	<item id="33870" name="Water Stone (+ 150)" name_additional="Event" type="EtcItem">
 		<!-- Increases water attribute by 150 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -962,7 +1219,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12876" level="1" /> <!-- Water Stone -->
+		</skills>
 	</item>
 	<item id="33871" name="Earth Stone (+ 150)" name_additional="Event" type="EtcItem">
 		<!-- Increases earth attribute by 150 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -976,7 +1238,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12878" level="1" /> <!-- Earth Stone -->
+		</skills>
 	</item>
 	<item id="33872" name="Wind Stone (+ 150)" name_additional="Event" type="EtcItem">
 		<!-- Increases wind attribute by 150 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -990,7 +1257,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12877" level="1" /> <!-- Wind Stone -->
+		</skills>
 	</item>
 	<item id="33873" name="Dark Stone (+ 150)" name_additional="Event" type="EtcItem">
 		<!-- Increases dark attribute by 150 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -1004,7 +1276,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12880" level="1" /> <!-- Dark Stone -->
+		</skills>
 	</item>
 	<item id="33874" name="Holy Stone (+ 150)" name_additional="Event" type="EtcItem">
 		<!-- Increases holy attribute by 150 at once. Additional Elemental attributes cannot be bestowed. 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
@@ -1018,7 +1295,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12879" level="1" /> <!-- Holy Stone -->
+		</skills>
 	</item>
 	<item id="33875" name="Requiem Shaper" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠGuidance, Haste, or Focus. When enchanted to + 4, physical Critical Damage increases. -->
@@ -1037,13 +1319,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="369.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13279" level="3" type="ON_ENCHANT" /> <!-- Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">369</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33876" name="Requiem Cutter" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠHaste, Focus, or Health. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -1062,13 +1354,22 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13252" level="3" type="ON_ENCHANT" /> <!-- One-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33877" name="Requiem Slasher" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠFocus, Damage Up, or Haste. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -1087,13 +1388,22 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13258" level="3" type="ON_ENCHANT" /> <!-- Two-handed Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33878" name="Requiem Avenger" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠHaste, Critical Damage, or Focus. When enchanted to + 4, physical Critical Damage increases. -->
@@ -1112,14 +1422,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13253" level="3" type="ON_ENCHANT" /> <!-- One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33879" name="Requiem Fighter" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠFocus, Damage Up, or Haste. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -1138,14 +1457,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="weight" val="1550" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13264" level="3" type="ON_ENCHANT" /> <!-- Fist Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33880" name="Requiem Stormer" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠHP Drain, Guidance, or Damage Up. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -1164,13 +1492,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="weight" val="2010" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="13263" level="3" type="ON_ENCHANT" /> <!-- Spear Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="33881" name="Requiem Thrower" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠDamage Up, Focus, or Long Blow. When enchanted to + 4, P. Skill Power increases. -->
@@ -1189,13 +1528,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="831.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13289" level="3" type="ON_ENCHANT" /> <!-- Bow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">831</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33882" name="Requiem Shooter" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠFocus, Critical Slow, or Haste. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -1214,13 +1564,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1580" />
-		<for>
-			<set stat="pAtk" val="748.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13294" level="3" type="ON_ENCHANT" /> <!-- Crossbow Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">748</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="33883" name="Requiem Buster" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠAcumen, Magic Hold, or Mana Up. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -1239,13 +1600,22 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13295" level="3" type="ON_ENCHANT" /> <!-- Magic Sword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33884" name="Requiem Caster" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠEmpower, Acumen, or Magic Hold. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -1264,14 +1634,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="338.0" />
-			<set stat="mAtk" val="245.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13296" level="3" type="ON_ENCHANT" /> <!-- Magic One-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">338</stat>
+			<stat type="mAtk">245</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33885" name="Requiem Retributer" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠMP Regeneration, Acumen, or Empower. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -1290,15 +1669,24 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="411.0" />
-			<set stat="mAtk" val="270.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13301" level="3" type="ON_ENCHANT" /> <!-- Magic Two-handed Blunt Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">411</stat>
+			<stat type="mAtk">270</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33886" name="Requiem Dualsword" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠHaste, Damage Up, or Health. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -1317,13 +1705,22 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13274" level="3" type="ON_ENCHANT" /> <!-- Dualsword Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33887" name="Requiem Dual Dagger" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠDamage Up, Focus, or Guidance. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -1342,13 +1739,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;44;120" />
 		<set name="weight" val="2050" />
-		<for>
-			<set stat="pAtk" val="422.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13284" level="3" type="ON_ENCHANT" /> <!-- Dual Dagger Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">422</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33888" name="Requiem Dual Blunt Weapon" name_additional="Event" type="Weapon">
 		<!-- Bestows one of the following functions:ﾠFocus, Guidance, or Damage Up. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -1367,14 +1774,23 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1740" />
-		<for>
-			<set stat="pAtk" val="514.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13269" level="3" type="ON_ENCHANT" /> <!-- Dual Blunt Weapon Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pAtk">514</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="33889" name="Immortal Helmet" name_additional="Heavy (Event)" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -1390,15 +1806,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33890" name="Immortal Breastplate" name_additional="Heavy (Event)" type="Armor">
 		<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t501_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1410,15 +1828,22 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="7520" />
-		<for>
-			<add order="0" stat="pDef" val="304.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13310" level="3" type="ON_ENCHANT" /> <!-- Heavy Armor Top Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">304</stat>
+		</stats>
 	</item>
 	<item id="33891" name="Immortal Gaiters" name_additional="Heavy (Event)" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
 		<set name="icon" val="icon.armor_t501_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1430,11 +1855,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="3170" />
-		<for>
-			<add order="0" stat="pDef" val="190.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">190</stat>
+		</stats>
 	</item>
 	<item id="33892" name="Immortal Gauntlets" name_additional="Heavy (Event)" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -1450,11 +1877,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33893" name="Immortal Boots" name_additional="Heavy (Event)" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -1470,11 +1899,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33894" name="Immortal Shield" name_additional="Heavy (Event)" type="Weapon">
 		<!-- Bestows an attack or defense type set option. -->
@@ -1490,11 +1921,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1130" />
-		<for>
-			<add stat="sDef" val="415.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">415</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="33895" name="Immortal Leather Helmet" name_additional="Light Armor (Event)" type="Armor">
 		<!-- Can bestow the assassin type or strong type set option. -->
@@ -1510,15 +1944,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="33896" name="Immortal Leather Armor" name_additional="Light Armor (Event)" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t502_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1530,17 +1966,24 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="4140" />
-		<for>
-			<add order="0" stat="pDef" val="243.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+			<skill id="13311" level="3" type="ON_ENCHANT" /> <!-- Light Armor Top Special Ability -->
+		</skills>
+		<stats>
+			<stat type="pDef">243</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
+		</stats>
 	</item>
 	<item id="33897" name="Immortal Leather Leggings" name_additional="Light Armor (Event)" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
 		<set name="icon" val="icon.armor_t502_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1552,13 +1995,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1320" />
-		<for>
-			<add order="0" stat="pDef" val="152.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">152</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
+		</stats>
 	</item>
 	<item id="33898" name="Immortal Leather Gloves" name_additional="Light Armor (Event)" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -1574,11 +2019,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="33899" name="Immortal Leather Boots" name_additional="Light Armor (Event)" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -1594,10 +2041,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 </list>

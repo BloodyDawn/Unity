@@ -60,7 +60,7 @@ public final class ServitorSkillUse implements IPlayerActionHandler
 			if (skillLevel > 0)
 			{
 				servitor.setTarget(activeChar.getTarget());
-				servitor.useMagic(SkillData.getInstance().getSkill(data.getOptionId(), skillLevel), ctrlPressed, shiftPressed);
+				servitor.useMagic(SkillData.getInstance().getSkill(data.getOptionId(), skillLevel), null, ctrlPressed, shiftPressed);
 			}
 		});
 	}

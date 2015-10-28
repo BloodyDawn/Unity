@@ -26,7 +26,7 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="19102" levels="1" name="Chaos Sympathy">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Temporarily makes a participant in the Ceremony of Chaos invincible. -->
 		<set name="icon" val="icon.skill1505" />
 		<set name="operateType" val="A2" />
@@ -41,37 +41,69 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7" />
 		<set name="coolTime" val="300" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="Buff">
+				<sub stat="cancelVuln" val="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19103" levels="1" name="Resident Power">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For clan members owning a residence, Max CP + 700, and PvP Def. + 3%. -->
 		<set name="icon" val="icon.skill0050" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="maxCp" val="700" />
+				<mul stat="pvpPhysDef" val="1.03" />
+				<mul stat="pvpMagicalDef" val="1.03" />
+				<mul stat="pvpPhysSkillsDef" val="1.03" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="19104" levels="1" name="Resident Power">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="19104" levels="2" name="Resident Power">
+		<!-- Glory Days confirmed -->
 		<!-- For clan members owning a residence, Max CP + 1000, and PvP Def. + 5%. -->
 		<set name="icon" val="icon.skill0050" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
-		<set name="isDebuff" val="false" />
+		<for>
+			<effect name="Buff">
+				<add stat="maxCp" val="1000" />
+				<mul stat="pvpPhysDef" val="1.05" />
+				<mul stat="pvpMagicalDef" val="1.05" />
+				<mul stat="pvpPhysSkillsDef" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19105" levels="1" name="Resident Advantage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For clan members level 1 - 84 owning a residence, Atk. Spd./ Casting Spd/ Speed + 13%. -->
 		<set name="icon" val="icon.skill0820" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<player levelRange="1;84" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.13" />
+				<mul stat="mAtkSpd" val="1.13" />
+				<mul stat="moveSpeed" val="1.13" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="19106" levels="1" name="Resident Advantage">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="19106" levels="2" name="Resident Advantage">
+		<!-- Glory Days confirmed -->
 		<!-- For clan members level 1 - 84 owning a residence, Atk. Spd./ Casting Spd/ Speed + 15%. -->
 		<set name="icon" val="icon.skill0820" />
 		<set name="operateType" val="P" />
@@ -79,25 +111,44 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="isDebuff" val="false" />
+		<cond msgId="113" addName="1">
+			<player levelRange="1;84" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.15" />
+				<mul stat="mAtkSpd" val="1.15" />
+				<mul stat="moveSpeed" val="1.15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19107" levels="1" name="Resident Guidance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For clan members owning a residence, acquired XP + 3%. -->
 		<set name="icon" val="icon.skill0788_3" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.03" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="19108" levels="1" name="Resident Guidance">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="19108" levels="2" name="Resident Guidance">
+		<!-- Glory Days confirmed -->
 		<!-- For clan members owning a residence, acquired XP + 5%. -->
 		<set name="icon" val="icon.skill0788_5" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
-		<set name="isDebuff" val="false" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19109" levels="4" name="Siege Golem's Spirit">
 		<!-- AUTO GENERATED SKILL -->
@@ -111,6 +162,11 @@
 		<set name="reuseDelay" val="1200000" />
 		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="300" />
+		<set name="abnormalType" val="TRANSFORM" />
 	</skill>
 	<skill id="19110" levels="5" name="Clan Resilience">
 		<!-- AUTO GENERATED SKILL -->
@@ -327,7 +383,7 @@
 	</skill>
 	<skill id="19129" levels="2" name="Noble Protection">
 		<!-- Critical rate in a normal attack - 2%. -->
-		<table name="#bonus"> 1.02 1.04 </table>
+		<table name="#bonus"> 0.02 0.04 </table>
 		<set name="icon" val="icon.skill19129" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -619,8 +675,8 @@
 		<set name="icon" val="icon.skill1268" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="#bonus" />
+			<effect name="VampiricAttack">
+				<param amount="#bonus" chance="80" />
 			</effect>
 		</for>
 	</skill>

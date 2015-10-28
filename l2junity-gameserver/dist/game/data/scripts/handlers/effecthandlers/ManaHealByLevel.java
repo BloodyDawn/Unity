@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
@@ -58,7 +59,7 @@ public final class ManaHealByLevel extends AbstractEffect
 	}
 
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isInvul())
 		{
@@ -74,7 +75,7 @@ public final class ManaHealByLevel extends AbstractEffect
 		
 		// recharged mp influenced by difference between target level and skill level
 		// if target is within 5 levels or lower then skill level there's no penalty.
-		amount = effected.calcStat(Stats.MANA_CHARGE, amount, null, null);
+		amount = effected.getStat().getValue(Stats.MANA_CHARGE, amount);
 		if (effected.getLevel() > skill.getMagicLevel())
 		{
 			int lvlDiff = effected.getLevel() - skill.getMagicLevel();

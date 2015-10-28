@@ -26,8 +26,10 @@ import org.l2junity.gameserver.model.ItemRequest;
 import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -83,6 +85,13 @@ public final class RequestPrivateStoreSell implements IClientIncomingPacket
 		if (_items == null)
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		// Cannot set private store in Ceremony of Chaos event.
+		if (player.isOnEvent(CeremonyOfChaosEvent.class))
+		{
+			client.sendPacket(SystemMessageId.YOU_CANNOT_OPEN_A_PRIVATE_STORE_OR_WORKSHOP_IN_THE_CEREMONY_OF_CHAOS);
 			return;
 		}
 		

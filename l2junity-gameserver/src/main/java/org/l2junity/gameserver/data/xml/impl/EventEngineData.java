@@ -23,14 +23,24 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.EventMethodNotification;
 import org.l2junity.gameserver.model.eventengine.EventScheduler;
+import org.l2junity.gameserver.model.eventengine.drop.EventDropGroup;
+import org.l2junity.gameserver.model.eventengine.drop.EventDropItem;
+import org.l2junity.gameserver.model.eventengine.drop.EventDrops;
+import org.l2junity.gameserver.model.eventengine.drop.GroupedDrop;
+import org.l2junity.gameserver.model.eventengine.drop.IEventDrop;
+import org.l2junity.gameserver.model.eventengine.drop.NormalDrop;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.slf4j.Logger;
@@ -42,7 +52,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public class EventEngineData implements IGameXmlReader
+public final class EventEngineData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EventEngineData.class);
 	
@@ -118,6 +128,10 @@ public class EventEngineData implements IGameXmlReader
 			{
 				parseScheduler(eventManager, innerNode);
 			}
+			else if ("rewards".equals(innerNode.getNodeName()))
+			{
+				parseRewards(eventManager, innerNode);
+			}
 		}
 		
 		// Start the scheduler
@@ -135,18 +149,23 @@ public class EventEngineData implements IGameXmlReader
 	 */
 	private void parseVariables(AbstractEventManager<?> eventManager, Node innerNode)
 	{
-		eventManager.getVariables().getSet().clear();
+		final StatsSet variables = new StatsSet(LinkedHashMap::new);
 		for (Node variableNode = innerNode.getFirstChild(); variableNode != null; variableNode = variableNode.getNextSibling())
 		{
 			if ("variable".equals(variableNode.getNodeName()))
 			{
-				eventManager.getVariables().set(parseString(variableNode.getAttributes(), "name"), parseString(variableNode.getAttributes(), "value"));
+				variables.set(parseString(variableNode.getAttributes(), "name"), parseString(variableNode.getAttributes(), "value"));
 			}
 			else if ("list".equals(variableNode.getNodeName()))
 			{
-				parseListVariables(eventManager, variableNode);
+				parseListVariables(eventManager, variables, variableNode);
+			}
+			else if ("map".equals(variableNode.getNodeName()))
+			{
+				parseMapVariables(eventManager, variables, variableNode);
 			}
 		}
+		eventManager.setVariables(variables);
 	}
 	
 	/**
@@ -155,7 +174,8 @@ public class EventEngineData implements IGameXmlReader
 	 */
 	private void parseScheduler(AbstractEventManager<?> eventManager, Node innerNode)
 	{
-		eventManager.getSchedulers().clear();
+		eventManager.stopScheduler();
+		final Set<EventScheduler> schedulers = new LinkedHashSet<>();
 		for (Node scheduleNode = innerNode.getFirstChild(); scheduleNode != null; scheduleNode = scheduleNode.getNextSibling())
 		{
 			if ("schedule".equals(scheduleNode.getNodeName()))
@@ -184,7 +204,8 @@ public class EventEngineData implements IGameXmlReader
 						{
 							if ("arg".equals(argsNode.getNodeName()))
 							{
-								final Object value = parseArg(eventManager, argsNode);
+								final String type = parseString(argsNode.getAttributes(), "type");
+								final Object value = parseObject(eventManager, type, argsNode.getTextContent());
 								if (value != null)
 								{
 									args.add(value);
@@ -202,202 +223,291 @@ public class EventEngineData implements IGameXmlReader
 						}
 					}
 				}
-				eventManager.getSchedulers().add(scheduler);
+				schedulers.add(scheduler);
 			}
 		}
+		eventManager.setSchedulers(schedulers);
 	}
 	
 	/**
 	 * @param eventManager
+	 * @param innerNode
+	 */
+	private void parseRewards(AbstractEventManager<?> eventManager, Node innerNode)
+	{
+		final Map<String, IEventDrop> rewards = new LinkedHashMap<>();
+		forEach(innerNode, IXmlReader::isNode, rewardsNode ->
+		{
+			if ("reward".equalsIgnoreCase(rewardsNode.getNodeName()))
+			{
+				final String name = parseString(rewardsNode.getAttributes(), "name");
+				final EventDrops dropType = parseEnum(rewardsNode.getAttributes(), EventDrops.class, "type");
+				switch (dropType)
+				{
+					case GROUPED:
+					{
+						final GroupedDrop droplist = dropType.newInstance();
+						forEach(rewardsNode, "group", groupsNode ->
+						{
+							final EventDropGroup group = new EventDropGroup(parseDouble(groupsNode.getAttributes(), "chance"));
+							forEach(groupsNode, "item", itemNode ->
+							{
+								final NamedNodeMap attrs = itemNode.getAttributes();
+								final int id = parseInteger(attrs, "id");
+								final int min = parseInteger(attrs, "min");
+								final int max = parseInteger(attrs, "max");
+								final double chance = parseDouble(attrs, "chance");
+								group.addItem(new EventDropItem(id, min, max, chance));
+							});
+						});
+						rewards.put(name, droplist);
+						break;
+					}
+					case NORMAL:
+					{
+						final NormalDrop droplist = dropType.newInstance();
+						forEach(rewardsNode, "item", itemNode ->
+						{
+							final NamedNodeMap attrs = itemNode.getAttributes();
+							final int id = parseInteger(attrs, "id");
+							final int min = parseInteger(attrs, "min");
+							final int max = parseInteger(attrs, "max");
+							final double chance = parseDouble(attrs, "chance");
+							droplist.addItem(new EventDropItem(id, min, max, chance));
+						});
+						rewards.put(name, droplist);
+						break;
+					}
+				}
+			}
+		});
+		eventManager.setRewards(rewards);
+	}
+	
+	/**
+	 * @param eventManager
+	 * @param variables
 	 * @param variableNode
 	 */
-	private void parseListVariables(AbstractEventManager<?> eventManager, Node variableNode)
+	@SuppressWarnings("unchecked")
+	private void parseListVariables(AbstractEventManager<?> eventManager, StatsSet variables, Node variableNode)
 	{
 		final String name = parseString(variableNode.getAttributes(), "name");
 		final String type = parseString(variableNode.getAttributes(), "type");
+		final Class<?> classType = getClassByName(eventManager, type);
+		final List<?> values = newList(classType);
 		switch (type)
 		{
 			case "Byte":
-			{
-				final List<Byte> bytes = new ArrayList<>();
-				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
-				{
-					if ("value".equals(stringNode.getNodeName()))
-					{
-						bytes.add(Byte.decode(stringNode.getTextContent()));
-					}
-				}
-				eventManager.getVariables().set(name, bytes);
-				break;
-			}
 			case "Short":
-			{
-				final List<Short> shorts = new ArrayList<>();
-				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
-				{
-					if ("value".equals(stringNode.getNodeName()))
-					{
-						shorts.add(Short.decode(stringNode.getTextContent()));
-					}
-				}
-				eventManager.getVariables().set(name, shorts);
-				break;
-			}
 			case "Integer":
-			{
-				final List<Integer> integers = new ArrayList<>();
-				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
-				{
-					if ("value".equals(stringNode.getNodeName()))
-					{
-						integers.add(Integer.decode(stringNode.getTextContent()));
-					}
-				}
-				eventManager.getVariables().set(name, integers);
-				break;
-			}
 			case "Float":
-			{
-				final List<Float> floats = new ArrayList<>();
-				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
-				{
-					if ("value".equals(stringNode.getNodeName()))
-					{
-						floats.add(Float.parseFloat(stringNode.getTextContent()));
-					}
-				}
-				eventManager.getVariables().set(name, floats);
-				break;
-			}
 			case "Long":
-			{
-				final List<Long> longs = new ArrayList<>();
-				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
-				{
-					if ("value".equals(stringNode.getNodeName()))
-					{
-						longs.add(Long.decode(stringNode.getTextContent()));
-					}
-				}
-				eventManager.getVariables().set(name, longs);
-				break;
-			}
 			case "Double":
-			{
-				final List<Double> doubles = new ArrayList<>();
-				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
-				{
-					if ("value".equals(stringNode.getNodeName()))
-					{
-						doubles.add(Double.parseDouble(stringNode.getTextContent()));
-					}
-				}
-				eventManager.getVariables().set(name, doubles);
-				break;
-			}
 			case "String":
 			{
-				final List<String> strings = new ArrayList<>();
 				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
 				{
 					if ("value".equals(stringNode.getNodeName()))
 					{
-						strings.add(stringNode.getTextContent());
+						((List<Object>) values).add(parseObject(eventManager, type, stringNode.getTextContent()));
 					}
 				}
-				eventManager.getVariables().set(name, strings);
 				break;
 			}
 			case "ItemHolder":
 			{
-				final List<ItemHolder> items = new ArrayList<>();
 				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
 				{
 					if ("item".equals(stringNode.getNodeName()))
 					{
-						items.add(new ItemHolder(parseInteger(stringNode.getAttributes(), "id"), parseLong(stringNode.getAttributes(), "count")));
+						((List<ItemHolder>) values).add(new ItemHolder(parseInteger(stringNode.getAttributes(), "id"), parseLong(stringNode.getAttributes(), "count")));
 					}
 				}
-				eventManager.getVariables().set(name, items);
 				break;
 			}
 			case "SkillHolder":
 			{
-				final List<SkillHolder> skils = new ArrayList<>();
 				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
 				{
 					if ("skill".equals(stringNode.getNodeName()))
 					{
-						skils.add(new SkillHolder(parseInteger(stringNode.getAttributes(), "id"), parseInteger(stringNode.getAttributes(), "level")));
+						((List<SkillHolder>) values).add(new SkillHolder(parseInteger(stringNode.getAttributes(), "id"), parseInteger(stringNode.getAttributes(), "level")));
 					}
 				}
-				eventManager.getVariables().set(name, skils);
 				break;
 			}
 			case "Location":
 			{
-				final List<Location> locations = new ArrayList<>();
 				for (Node stringNode = variableNode.getFirstChild(); stringNode != null; stringNode = stringNode.getNextSibling())
 				{
 					if ("location".equals(stringNode.getNodeName()))
 					{
-						locations.add(new Location(parseInteger(stringNode.getAttributes(), "x"), parseInteger(stringNode.getAttributes(), "y"), parseInteger(stringNode.getAttributes(), "z", parseInteger(stringNode.getAttributes(), "heading", 0))));
+						((List<Location>) values).add(new Location(parseInteger(stringNode.getAttributes(), "x"), parseInteger(stringNode.getAttributes(), "y"), parseInteger(stringNode.getAttributes(), "z", parseInteger(stringNode.getAttributes(), "heading", 0))));
 					}
 				}
-				eventManager.getVariables().set(name, locations);
 				break;
 			}
 			default:
 			{
 				LOGGER.info("Unhandled list case: {} for event: {}", type, eventManager.getClass().getSimpleName());
+				break;
 			}
 		}
+		variables.set(name, values);
 	}
 	
 	/**
 	 * @param eventManager
-	 * @param argsNode
-	 * @return
+	 * @param variables
+	 * @param variableNode
 	 */
-	private Object parseArg(AbstractEventManager<?> eventManager, Node argsNode)
+	@SuppressWarnings("unchecked")
+	private void parseMapVariables(AbstractEventManager<?> eventManager, StatsSet variables, Node variableNode)
 	{
-		final String type = parseString(argsNode.getAttributes(), "type");
+		final String name = parseString(variableNode.getAttributes(), "name");
+		final String keyType = parseString(variableNode.getAttributes(), "keyType");
+		final String valueType = parseString(variableNode.getAttributes(), "valueType");
+		final Class<?> keyClass = getClassByName(eventManager, keyType);
+		final Class<?> valueClass = getClassByName(eventManager, valueType);
+		final Map<?, ?> map = newMap(keyClass, valueClass);
+		forEach(variableNode, IXmlReader::isNode, stringNode ->
+		{
+			switch (stringNode.getNodeName())
+			{
+				case "entry":
+				{
+					final NamedNodeMap attrs = stringNode.getAttributes();
+					((Map<Object, Object>) map).put(parseObject(eventManager, keyType, parseString(attrs, "key")), parseObject(eventManager, valueType, parseString(attrs, "value")));
+					break;
+				}
+				case "item":
+				{
+					final NamedNodeMap attrs = stringNode.getAttributes();
+					((Map<Object, ItemHolder>) map).put(parseObject(eventManager, keyType, parseString(attrs, "key")), new ItemHolder(parseInteger(stringNode.getAttributes(), "id"), parseLong(stringNode.getAttributes(), "count")));
+					break;
+				}
+				case "skill":
+				{
+					final NamedNodeMap attrs = stringNode.getAttributes();
+					((Map<Object, SkillHolder>) map).put(parseObject(eventManager, keyType, parseString(attrs, "key")), new SkillHolder(parseInteger(stringNode.getAttributes(), "id"), parseInteger(stringNode.getAttributes(), "level")));
+					break;
+				}
+				case "location":
+				{
+					final NamedNodeMap attrs = stringNode.getAttributes();
+					((Map<Object, Location>) map).put(parseObject(eventManager, keyType, parseString(attrs, "key")), new Location(parseInteger(stringNode.getAttributes(), "x"), parseInteger(stringNode.getAttributes(), "y"), parseInteger(stringNode.getAttributes(), "z", parseInteger(stringNode.getAttributes(), "heading", 0))));
+					break;
+				}
+				default:
+				{
+					LOGGER.warn("Unhandled map case: {} {} for event: {}", name, stringNode.getNodeName(), eventManager.getClass().getSimpleName());
+				}
+			}
+		});
+		variables.set(name, map);
+	}
+	
+	private Class<?> getClassByName(AbstractEventManager<?> eventManager, String name)
+	{
+		switch (name)
+		{
+			case "Byte":
+			{
+				return Byte.class;
+			}
+			case "Short":
+			{
+				return Short.class;
+			}
+			case "Integer":
+			{
+				return Integer.class;
+			}
+			case "Float":
+			{
+				return Float.class;
+			}
+			case "Long":
+			{
+				return Long.class;
+			}
+			case "Double":
+			{
+				return Double.class;
+			}
+			case "String":
+			{
+				return String.class;
+			}
+			case "ItemHolder":
+			{
+				return ItemHolder.class;
+			}
+			case "SkillHolder":
+			{
+				return SkillHolder.class;
+			}
+			case "Location":
+			{
+				return Location.class;
+			}
+			default:
+			{
+				LOGGER.warn("Unhandled class case: {} for event: {}", name, eventManager.getClass().getSimpleName());
+				return Object.class;
+			}
+		}
+	}
+	
+	private Object parseObject(AbstractEventManager<?> eventManager, String type, String value)
+	{
 		switch (type)
 		{
 			case "Byte":
 			{
-				return Byte.decode(argsNode.getTextContent());
+				return Byte.decode(value);
 			}
 			case "Short":
 			{
-				return Short.decode(argsNode.getTextContent());
+				return Short.decode(value);
 			}
 			case "Integer":
 			{
-				return Integer.decode(argsNode.getTextContent());
+				return Integer.decode(value);
 			}
 			case "Float":
 			{
-				return Float.parseFloat(argsNode.getTextContent());
+				return Float.parseFloat(value);
 			}
 			case "Long":
 			{
-				return Long.decode(argsNode.getTextContent());
+				return Long.decode(value);
 			}
 			case "Double":
 			{
-				return Double.parseDouble(argsNode.getTextContent());
+				return Double.parseDouble(value);
 			}
 			case "String":
 			{
-				return argsNode.getTextContent();
+				return value;
 			}
 			default:
 			{
-				LOGGER.warn("Unhandled arg type: {} for event: {}", type, eventManager.getClass().getSimpleName());
+				LOGGER.warn("Unhandled object case: {} for event: {}", type, eventManager.getClass().getSimpleName());
 				return null;
 			}
 		}
+	}
+	
+	private static <T> List<T> newList(Class<T> type)
+	{
+		return new ArrayList<>();
+	}
+	
+	private static <K, V> Map<K, V> newMap(Class<K> keyClass, Class<V> valueClass)
+	{
+		return new LinkedHashMap<>();
 	}
 	
 	/**

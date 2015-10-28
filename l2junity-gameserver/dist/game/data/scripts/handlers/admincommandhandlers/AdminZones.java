@@ -30,7 +30,6 @@ import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
@@ -241,7 +240,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 	 */
 	private void setMinZ(PlayerInstance activeChar, int minZ)
 	{
-		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder()).setMinZ(minZ);
+		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder(activeChar)).setMinZ(minZ);
 	}
 	
 	/**
@@ -250,7 +249,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 	 */
 	private void setMaxZ(PlayerInstance activeChar, int maxZ)
 	{
-		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder()).setMaxZ(maxZ);
+		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder(activeChar)).setMaxZ(maxZ);
 	}
 	
 	private void buildZonesEditorWindow(PlayerInstance activeChar)
@@ -295,7 +294,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		if ((zoneType != null) && (zoneType.getZone() instanceof ZoneNPoly))
 		{
 			final ZoneNPoly zone = (ZoneNPoly) zoneType.getZone();
-			final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), val -> new ZoneNodeHolder());
+			final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), val -> new ZoneNodeHolder(activeChar));
 			holder.getNodes().clear();
 			holder.setName(zoneType.getName());
 			holder.setMinZ(zone.getLowZ());
@@ -321,7 +320,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			activeChar.sendMessage("You cannot use symbols like: < > & \" $ \\");
 			return;
 		}
-		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder()).setName(name);
+		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder(activeChar)).setName(name);
 	}
 	
 	/**
@@ -457,7 +456,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			final Location firstNode = holder.getNodes().get(0);
 			final StringJoiner sj = new StringJoiner(System.lineSeparator());
 			sj.add("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-			sj.add("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../../data/xsd/zones.xsd\">");
+			sj.add("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../data/xsd/zones.xsd\">");
 			sj.add("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (holder.getMinZ() != 0 ? holder.getMinZ() : firstNode.getZ() - 100) + "\" maxZ=\"" + (holder.getMaxZ() != 0 ? holder.getMaxZ() : firstNode.getZ() + 100) + "\">");
 			for (Location loc : holder.getNodes())
 			{
@@ -468,11 +467,11 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			sj.add(""); // new line at end of file
 			try
 			{
-				File file = new File(Config.DATAPACK_ROOT, "log/points/" + activeChar.getAccountName() + "/" + holder.getName() + ".xml");
+				File file = new File("log/points/" + activeChar.getAccountName() + "/" + holder.getName() + ".xml");
 				if (file.exists())
 				{
 					int i = 0;
-					while ((file = new File(Config.DATAPACK_ROOT, "log/points/" + activeChar.getAccountName() + "/" + holder.getName() + i + ".xml")).exists())
+					while ((file = new File("log/points/" + activeChar.getAccountName() + "/" + holder.getName() + i + ".xml")).exists())
 					{
 						i++;
 					}
@@ -482,7 +481,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 					file.getParentFile().mkdirs();
 				}
 				Files.write(file.toPath(), sj.toString().getBytes(StandardCharsets.UTF_8));
-				activeChar.sendMessage("Successfully written on: " + file.getAbsolutePath().replace(Config.DATAPACK_ROOT.getAbsolutePath(), ""));
+				activeChar.sendMessage("Successfully written on: " + file.getAbsolutePath().replace(new File(".").getCanonicalFile().getAbsolutePath(), ""));
 			}
 			catch (Exception e)
 			{
@@ -501,7 +500,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		if (activeChar.hasAction(PlayerAction.ADMIN_POINT_PICKING))
 		{
 			final Location newLocation = event.getLocation();
-			final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder());
+			final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder(activeChar));
 			final Location changeLog = holder.getChangingLoc();
 			if (changeLog != null)
 			{
@@ -565,7 +564,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 	{
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
 		msg.setFile(activeChar.getHtmlPrefix(), "data/html/admin/zone_editor_create.htm");
-		final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder());
+		final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder(activeChar));
 		final AtomicInteger position = new AtomicInteger(page * 20);
 		
 		final PageResult result = PageBuilder.newBuilder(holder.getNodes(), 20, "bypass -h admin_zones list").currentPage(page).bodyHandler((pages, loc, sb) ->
@@ -598,6 +597,12 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		private int _minZ;
 		private int _maxZ;
 		private final List<Location> _nodes = new ArrayList<>();
+		
+		public ZoneNodeHolder(PlayerInstance player)
+		{
+			_minZ = player.getZ() - 200;
+			_maxZ = player.getZ() + 200;
+		}
 		
 		public void setName(String name)
 		{

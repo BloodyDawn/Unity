@@ -437,6 +437,10 @@ public class AdminEditChar implements IAdminCommandHandler
 					return false;
 				}
 				player.setName(val);
+				if (Config.CACHE_CHAR_NAMES)
+				{
+					CharNameTable.getInstance().addName(player);
+				}
 				player.storeMe();
 				
 				activeChar.sendMessage("Changed name to " + val);

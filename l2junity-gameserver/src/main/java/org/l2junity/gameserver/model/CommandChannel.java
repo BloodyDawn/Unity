@@ -252,15 +252,4 @@ public class CommandChannel extends AbstractPlayerGroup
 		}
 		return true;
 	}
-	
-	/**
-	 * Check whether the leader of this command channel is the same as the leader of the specified command channel<br>
-	 * (which essentially means they're the same group).
-	 * @param cc the other command channel to check against
-	 * @return {@code true} if this command channel equals the specified command channel, {@code false} otherwise
-	 */
-	public boolean equals(CommandChannel cc)
-	{
-		return (cc != null) && (getLeaderObjectId() == cc.getLeaderObjectId());
-	}
 }

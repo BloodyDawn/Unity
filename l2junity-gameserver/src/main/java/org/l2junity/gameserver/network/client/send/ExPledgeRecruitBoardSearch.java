@@ -43,7 +43,7 @@ public class ExPledgeRecruitBoardSearch implements IClientOutgoingPacket
 	{
 		_clanList = clanList;
 		_currentPage = currentPage;
-		_totalNumberOfPage = (int) Math.ceil(_clanList.size() / CLAN_PER_PAGE);
+		_totalNumberOfPage = (int) Math.ceil((double) _clanList.size() / CLAN_PER_PAGE);
 		_startIndex = (_currentPage - 1) * CLAN_PER_PAGE;
 		_endIndex = (_startIndex + CLAN_PER_PAGE) > _clanList.size() ? _clanList.size() : _startIndex + CLAN_PER_PAGE;
 		_clanOnCurrentPage = _endIndex - _startIndex;
@@ -61,7 +61,7 @@ public class ExPledgeRecruitBoardSearch implements IClientOutgoingPacket
 		for (int i = _startIndex; i < _endIndex; i++)
 		{
 			packet.writeD(_clanList.get(i).getClanId());
-			packet.writeD(0x00); // find me
+			packet.writeD(_clanList.get(i).getClan().getAllyId());
 		}
 		for (int i = _startIndex; i < _endIndex; i++)
 		{

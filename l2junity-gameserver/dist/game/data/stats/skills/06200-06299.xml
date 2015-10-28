@@ -283,7 +283,7 @@
 	<skill id="6209" levels="4" name="Weapon Grade Penalty">
 		<table name="#cAtk"> 0.9 0.8 0.7 0.6 </table>
 		<table name="#icons"> icon.skill6209_1 icon.skill6209_2 icon.skill6209_3 icon.skill6209_4 </table>
-		<table name="#rCrit"> 0.9 0.8 0.7 0.6 </table>
+		<table name="#rCrit"> -0.1 -0.2 -0.3 -0.4 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
@@ -486,6 +486,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="hitTime" val="2500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6237" levels="1" name="Decrease Speed">
@@ -527,6 +528,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -578,6 +580,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="500" />
+		<set name="hitTime" val="1500" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="300" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6241" levels="1" name="Heatstroke Prevention Effect - Gludio">
@@ -748,6 +753,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="400" />
+		<set name="hitTime" val="1500" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6251" levels="1" name="Summon Sultriness">
@@ -773,6 +781,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6253" levels="1" name="Heatstroke Prevention Effect - Gludio">
@@ -946,6 +955,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="150" />
+		<set name="hitTime" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6263" levels="1" name="EMP Shock">
@@ -966,6 +976,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="100" />
+		<set name="hitTime" val="2000" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="6264" levels="1" name="Golem Boom">
@@ -977,6 +989,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="150" />
+		<set name="hitTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6265" levels="1" name="Smokescreen">
@@ -988,6 +1001,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="50" />
+		<set name="hitTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6266" levels="1" name="Stun">
@@ -1007,6 +1021,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2500" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="2500" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="6267" levels="1" name="Soul Drain">
@@ -1021,6 +1037,11 @@
 		<set name="channelingSkillId" val="14559" />
 		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="channelingTickInterval" val="2000" />
+		<set name="icon" val="icon.skill1042" />
+		<set name="hitTime" val="10000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6268" levels="1" name="Jump Attack">
@@ -1034,6 +1055,8 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="FRONT_AREA" />
 	</skill>
 	<skill id="6269" levels="1" name="Trojan Poison">
@@ -1054,6 +1077,9 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="1.5" />
 		<set name="effectRange" val="1200" />
+		<set name="hitTime" val="2500" />
+		<set name="isDebuff" val="true" />
+		<set name="castRange" val="1100" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="6270" levels="1" name="Poison Gas">
@@ -1082,6 +1108,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitTime" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6272" levels="1" name="Underbug Defense Up">
@@ -1109,6 +1136,8 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="200" />
+		<set name="hitTime" val="10000" />
+		<set name="isDebuff" val="true" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="6274" levels="1" name="Eternal Blizzard">
@@ -1128,6 +1157,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1155,6 +1185,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1181,6 +1212,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6277" levels="1" name="Summon Spirits">
@@ -1266,6 +1298,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitTime" val="500" />
 		<set name="targetType" val="ONE" />
 		<endEffects>
 			<effect name="CallSkill">
@@ -1285,6 +1318,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1308,6 +1342,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitTime" val="500" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1330,6 +1365,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1353,6 +1389,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitTime" val="1000" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1703,6 +1740,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="isDebuff" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">

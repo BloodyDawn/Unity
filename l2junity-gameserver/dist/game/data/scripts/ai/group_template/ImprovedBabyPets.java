@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -146,7 +147,7 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 			final int targetType = parameters.getInt("step" + stepNumber + "_buff_target0" + buffNumber, 0);
 			final BuffInfo skillInfo = owner.getEffectList().getBuffInfoByAbnormalType(skill.getSkill().getAbnormalType());
 			
-			if ((skillInfo == null) && summon.checkDoCastConditions(skill.getSkill()) && !summon.isCastingNow() && !owner.isDead())
+			if ((skillInfo == null) && SkillCaster.checkDoCastConditions(summon, skill.getSkill()) && !owner.isDead())
 			{
 				if (mergedSkill != null)
 				{
@@ -164,7 +165,6 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 				
 				if ((targetType >= 0) && (targetType <= 2))
 				{
-					owner.setCurrentPetSkill(skill.getSkill(), false, false);
 					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill.getSkill(), (targetType == 1) ? summon : owner);
 					summon.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_USES_S1).addSkillName(skill.getSkill()));
 					
@@ -187,7 +187,7 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 		final SkillHolder skill = parameters.getObject("step" + stepNumber + "_heal0" + healNumber, SkillHolder.class);
 		final int targetType = parameters.getInt("step" + stepNumber + "_heal_target0" + healNumber, 0);
 		
-		if ((skill != null) && (owner != null) && summon.checkDoCastConditions(skill.getSkill()) && !summon.isCastingNow() && !owner.isDead())
+		if ((skill != null) && (owner != null) && SkillCaster.checkDoCastConditions(summon, skill.getSkill()) && !owner.isDead())
 		{
 			final BuffInfo heal_info = owner.getEffectList().getBuffInfoByAbnormalType(skill.getSkill().getAbnormalType());
 			
@@ -200,7 +200,6 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 			{
 				if ((targetType >= 0) && (targetType <= 2))
 				{
-					owner.setCurrentPetSkill(skill.getSkill(), false, false);
 					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill.getSkill(), (targetType == 1) ? summon : owner);
 					summon.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_USES_S1).addSkillName(skill.getSkill()));
 					

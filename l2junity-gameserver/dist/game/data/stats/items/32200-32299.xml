@@ -8,48 +8,64 @@
 		<set name="crystal_count" val="1190" />
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="HELMET" />
+		<set name="blessed" val="true" />
 		<set name="price" val="55796000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
+		</stats>
 	</item>
 	<item id="32201" name="Blessed Twilight Leather Armor" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="3174" />
 		<set name="weight" val="4140" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="148789000" />
-		<for>
-			<add order="0" stat="pDef" val="268.0" />
-			<set stat="pAtk" val="26.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+		</skills>
+		<stats>
+			<stat type="pDef">268</stat>
+			<stat type="pAtk">26</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
+		</stats>
 	</item>
 	<item id="32202" name="Blessed Twilight Leather Leggings" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="1983" />
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="92993000" />
-		<for>
-			<add order="0" stat="pDef" val="168.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">168</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
+		</stats>
 	</item>
 	<item id="32203" name="Blessed Twilight Leather Gloves" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_g_i00" />
@@ -59,13 +75,17 @@
 		<set name="crystal_count" val="793" />
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
+		</stats>
 	</item>
 	<item id="32204" name="Blessed Twilight Leather Boots" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_b_i00" />
@@ -75,12 +95,16 @@
 		<set name="crystal_count" val="793" />
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
+		</stats>
 	</item>
 	<item id="32205" name="Blessed Twilight Circlet" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -90,48 +114,62 @@
 		<set name="crystal_count" val="1190" />
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="HELMET" />
+		<set name="blessed" val="true" />
 		<set name="price" val="55796000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
+		</stats>
 	</item>
 	<item id="32206" name="Blessed Twilight Tunic" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="3174" />
 		<set name="weight" val="1750" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="148789000" />
-		<for>
-			<add order="0" stat="pDef" val="184.0" />
-			<add stat="mDef" val="41.0" />
-			<set stat="pAtk" val="26.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+		</skills>
+		<stats>
+			<stat type="pDef">184</stat>
+			<stat type="mDef">41</stat>
+			<stat type="pAtk">26</stat>
+		</stats>
 	</item>
 	<item id="32207" name="Blessed Twilight Stockings" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="1983" />
 		<set name="weight" val="850" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="92993000" />
-		<for>
-			<add order="0" stat="pDef" val="115.0" />
-			<add stat="mDef" val="27.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">115</stat>
+			<stat type="mDef">27</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
+		</stats>
 	</item>
 	<item id="32208" name="Blessed Twilight Gloves" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_g_i00" />
@@ -141,13 +179,17 @@
 		<set name="crystal_count" val="793" />
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
+		</stats>
 	</item>
 	<item id="32209" name="Blessed Twilight Shoes" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_b_i00" />
@@ -157,12 +199,16 @@
 		<set name="crystal_count" val="793" />
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
+		<set name="blessed" val="true" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
+		</stats>
 	</item>
 	<item id="32210" name="Blessed Twilight Helmet" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -172,44 +218,57 @@
 		<set name="crystal_count" val="595" />
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="27898000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
+		</stats>
 	</item>
 	<item id="32211" name="Blessed Twilight Breastplate" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="1587" />
 		<set name="weight" val="7520" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="74394000" />
-		<for>
-			<add order="0" stat="pDef" val="335.0" />
-			<set stat="pAtk" val="26.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+		</skills>
+		<stats>
+			<stat type="pDef">335</stat>
+			<stat type="pAtk">26</stat>
+		</stats>
 	</item>
 	<item id="32212" name="Blessed Twilight Gaiters" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="991" />
 		<set name="weight" val="3170" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="46496000" />
-		<for>
-			<add order="0" stat="pDef" val="209.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">209</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
+		</stats>
 	</item>
 	<item id="32213" name="Blessed Twilight Gauntlets" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_g_i00" />
@@ -219,13 +278,16 @@
 		<set name="crystal_count" val="396" />
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
+		</stats>
 	</item>
 	<item id="32214" name="Blessed Twilight Boots" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_b_i00" />
@@ -235,12 +297,15 @@
 		<set name="crystal_count" val="396" />
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
+		</stats>
 	</item>
 	<item id="32215" name="Blessed Twilight Shield" name_additional="Defense Type" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -251,11 +316,19 @@
 		<set name="crystal_count" val="416" />
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="SHIELD" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="19528000" />
-		<for>
-			<add stat="sDef" val="458.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<skills>
+			<skill id="8782" level="1" /> <!-- Equip Shield -->
+		</skills>
+		<stats>
+			<stat type="sDef">458</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="32216" name="Blessed Twilight Leather Helmet" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -265,48 +338,61 @@
 		<set name="crystal_count" val="595" />
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="27898000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
+		</stats>
 	</item>
 	<item id="32217" name="Blessed Twilight Leather Armor" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="1587" />
 		<set name="weight" val="4140" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="74394000" />
-		<for>
-			<add order="0" stat="pDef" val="268.0" />
-			<set stat="pAtk" val="26.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+		</skills>
+		<stats>
+			<stat type="pDef">268</stat>
+			<stat type="pAtk">26</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
+		</stats>
 	</item>
 	<item id="32218" name="Blessed Twilight Leather Leggings" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="991" />
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="46496000" />
-		<for>
-			<add order="0" stat="pDef" val="168.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">168</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
+		</stats>
 	</item>
 	<item id="32219" name="Blessed Twilight Leather Gloves" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_g_i00" />
@@ -316,13 +402,16 @@
 		<set name="crystal_count" val="396" />
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
+		</stats>
 	</item>
 	<item id="32220" name="Blessed Twilight Leather Boots" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_b_i00" />
@@ -332,12 +421,15 @@
 		<set name="crystal_count" val="396" />
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
+		</stats>
 	</item>
 	<item id="32221" name="Blessed Twilight Circlet" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -347,48 +439,59 @@
 		<set name="crystal_count" val="595" />
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="27898000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
+		</stats>
 	</item>
 	<item id="32222" name="Blessed Twilight Tunic" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="1587" />
 		<set name="weight" val="1750" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="74394000" />
-		<for>
-			<add order="0" stat="pDef" val="184.0" />
-			<add stat="mDef" val="41.0" />
-			<set stat="pAtk" val="26.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
+		</skills>
+		<stats>
+			<stat type="pDef">184</stat>
+			<stat type="mDef">41</stat>
+			<stat type="pAtk">26</stat>
+		</stats>
 	</item>
 	<item id="32223" name="Blessed Twilight Stockings" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="991" />
 		<set name="weight" val="850" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="46496000" />
-		<for>
-			<add order="0" stat="pDef" val="115.0" />
-			<add stat="mDef" val="27.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">115</stat>
+			<stat type="mDef">27</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
+		</stats>
 	</item>
 	<item id="32224" name="Blessed Twilight Gloves" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_g_i00" />
@@ -398,13 +501,16 @@
 		<set name="crystal_count" val="396" />
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
+		</stats>
 	</item>
 	<item id="32225" name="Blessed Twilight Shoes" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_b_i00" />
@@ -414,12 +520,15 @@
 		<set name="crystal_count" val="396" />
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
+		</stats>
 	</item>
 	<item id="32226" name="Scroll of Escape: Talking Island Village" type="EtcItem">
 		<!-- Magical scroll that relocates you to Talking Island. -->
@@ -437,13 +546,14 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="9224" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="9224" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
+		</skills>
 	</item>
 	<item id="32227" name="Stone of Awakening" type="EtcItem">
 		<!-- Proof for awakening. -->
@@ -457,6 +567,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="icon" val="icon.destiny_stone" />
 	</item>
 	<item id="32228" name="Hardener Pouch - D" type="EtcItem">
@@ -464,91 +575,169 @@
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12808" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32229" name="Hardener Pouch - C(49)" type="EtcItem">
 		<!-- Pouch containing A-C-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12810" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32230" name="Hardener Pouch - C(52)" type="EtcItem">
 		<!-- Pouch containing A-C-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12811" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32231" name="Hardener Pouch - C(55)" type="EtcItem">
 		<!-- Pouch containing A-C-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12812" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32232" name="Hardener Pouch - B(58)" type="EtcItem">
 		<!-- Pouch containing B-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12813" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32233" name="Hardener Pouch - B(61)" type="EtcItem">
 		<!-- Pouch containing B-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12814" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32234" name="Hardener Pouch - A(64)" type="EtcItem">
 		<!-- Pouch containing A-grade Hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12815" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32235" name="Hardener Pouch - A(67)" type="EtcItem">
 		<!-- Pouch containing A-grade Hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12816" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32236" name="Hardener Pouch - A(70)" type="EtcItem">
 		<!-- Pouch containing A-grade Hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12817" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32237" name="Hardener Pouch - S(75)" type="EtcItem">
 		<!-- Pouch containing S-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12818" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32238" name="Hardener Pouch - S(80)" type="EtcItem">
 		<!-- Pouch containing S-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12819" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32239" name="Hardener Pouch - S(82)" type="EtcItem">
 		<!-- Pouch containing S-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12820" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32240" name="Hardener Pouch - S(84)" type="EtcItem">
 		<!-- Pouch containing S-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12821" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32241" name="Adventurer Support Goods" type="EtcItem">
 		<!-- Box containing support goods for adventurers. -->
@@ -561,14 +750,24 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="weight" val="600" />
+		<skills>
+			<skill id="12186" level="1" /> <!-- Adventurer Support Goods -->
+		</skills>
 	</item>
 	<item id="32242" name="Hardener Pouch - C(46)" type="EtcItem">
 		<!-- Pouch containing A-C-grade hardener. -->
 		<set name="icon" val="icon.etc_pouch_gold_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12809" level="1" /> <!-- Hardener Pouch -->
+		</skills>
 	</item>
 	<item id="32243" name="Talisman (R-grade) - P. Atk. (Passive)" type="Armor">
 		<!-- P. Atk. + 2% when equipped. -->
@@ -582,7 +781,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="deco1" />
+		<set name="useSkillDisTime" val="1" />
+		<set name="duration" val="60" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="13125" level="1" /> <!-- Special Talisman - P. Atk. -->
+		</skills>
 	</item>
 	<item id="32244" name="Talisman (R-grade) - Atk. Spd. (Passive)" type="Armor">
 		<!-- Atk. Spd. + 2% when equipped. -->
@@ -596,7 +801,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="deco1" />
+		<set name="useSkillDisTime" val="1" />
+		<set name="duration" val="60" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="13127" level="1" /> <!-- Special Talisman - Atk. Spd. -->
+		</skills>
 	</item>
 	<item id="32245" name="Talisman (R-grade) - M. Atk. (Passive)" type="Armor">
 		<!-- M. Atk. + 2% when equipped. -->
@@ -610,7 +821,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="deco1" />
+		<set name="useSkillDisTime" val="1" />
+		<set name="duration" val="60" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="13126" level="1" /> <!-- Special Talisman - M. Atk. -->
+		</skills>
 	</item>
 	<item id="32246" name="Talisman (R-grade) - Casting Spd. (Passive)" type="Armor">
 		<!-- Casting Spd. + 2% when equipped. -->
@@ -624,7 +841,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="deco1" />
+		<set name="useSkillDisTime" val="1" />
+		<set name="duration" val="60" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="13128" level="1" /> <!-- Special Talisman - Casting Spd. -->
+		</skills>
 	</item>
 	<item id="32247" name="Talisman (R-grade) - Remove Debuff (Active)" type="Armor">
 		<!-- Cancels all debuffs when used. -->
@@ -638,7 +861,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="deco1" />
+		<set name="useSkillDisTime" val="1" />
+		<set name="duration" val="60" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="8774" level="1" /> <!-- Special Talisman (R-grade) - Cancel Debuff (Active) -->
+		</skills>
 	</item>
 	<item id="32248" name="Talisman (R-grade) - Remove Debuff (Active)" type="Armor">
 		<!-- Cancels all debuffs when used. -->
@@ -652,7 +881,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="bodypart" val="deco1" />
+		<set name="useSkillDisTime" val="1" />
+		<set name="duration" val="600" />
 		<set name="weight" val="150" />
+		<skills>
+			<skill id="8774" level="1" /> <!-- Special Talisman (R-grade) - Cancel Debuff (Active) -->
+		</skills>
 	</item>
 	<item id="32249" name="Infinite Wooden Quiver" type="EtcItem">
 		<!-- Quiver containing arrows made of wood. Used with a No-grade bow. -->
@@ -660,10 +895,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="price" val="1580" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32250" name="Infinite Bone Quiver" type="EtcItem">
@@ -672,11 +908,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="price" val="7320" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32251" name="Infinite Steel Quiver" type="EtcItem">
@@ -685,11 +922,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="price" val="11490" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32252" name="Infinite Silver Quiver" type="EtcItem">
@@ -698,11 +936,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
 		<set name="price" val="34630" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32253" name="Infinite Mithril Quiver" type="EtcItem">
@@ -711,11 +950,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="price" val="364800" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32254" name="Infinite Quiver of Light" type="EtcItem">
@@ -724,11 +964,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
 		<set name="price" val="1716000" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32255" name="Infinite Orichalcum Quiver" type="EtcItem">
@@ -737,11 +978,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="price" val="4528800" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="R" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32256" name="Infinite Wooden Bolt Container" type="EtcItem">
@@ -750,10 +992,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="price" val="1580" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32257" name="Infinite Bone Bolt Container" type="EtcItem">
@@ -762,11 +1005,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="price" val="7320" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32258" name="Infinite Steel Bolt Container" type="EtcItem">
@@ -775,11 +1019,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="price" val="11490" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32259" name="Infinite Silver Bolt Container" type="EtcItem">
@@ -788,11 +1033,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
 		<set name="price" val="34630" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32260" name="Infinite Mithril Bolt Container" type="EtcItem">
@@ -801,11 +1047,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
 		<set name="price" val="364800" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32261" name="Infinite Light Bolt Container" type="EtcItem">
@@ -814,11 +1061,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="price" val="1716000" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32262" name="Infinite Orichalcum Bolt Container" type="EtcItem">
@@ -827,11 +1075,12 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="price" val="4528800" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="R" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_infinite" val="true" />
 	</item>
 	<item id="32263" name="Awakened Hero's Olympiad Treasure Chest" type="EtcItem">
@@ -846,7 +1095,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12799" level="1" /> <!-- Awakened Hero's Olympiad Reward Box -->
+		</skills>
 	</item>
 	<item id="32264" name="Abelius' Power" name_additional="Sigel Knight" type="EtcItem">
 		<!-- Chest that contains items helpful to Sigel Knights after Awakening. -->
@@ -861,12 +1115,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30310" max="1" min="1" /> <!-- Abelius Cloak Sigel Knight -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12800" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32265" name="Sapyros' Power" name_additional="Tyrr Warrior" type="EtcItem">
 		<!-- Chest that contains items helpful to Tyrr Warriors after Awakening. -->
@@ -881,12 +1140,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30311" max="1" min="1" /> <!-- Sapyros Cloak Tyrr Warrior -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12801" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32266" name="Ashagen's Power" name_additional="Othell Rogue" type="EtcItem">
 		<!-- Chest that contains items helpful to Othell Rogues after Awakening. -->
@@ -901,12 +1165,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30312" max="1" min="1" /> <!-- Ashagen Cloak Othell Rogue -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12802" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32267" name="Cranigg's Power" name_additional="Yul Archer" type="EtcItem">
 		<!-- Chest that contains items helpful to Yul Archers after Awakening. -->
@@ -921,12 +1190,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30313" max="1" min="1" /> <!-- Cranigg Cloak Yul Archer -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12803" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32268" name="Soltkreig's Power" name_additional="Feoh Wizard" type="EtcItem">
 		<!-- Chest that contains items helpful to Feoh Wizards after Awakening. -->
@@ -941,12 +1215,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30314" max="1" min="1" /> <!-- Soltkreig Cloak Feoh Wizard -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12804" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32269" name="Naviarope's Power" name_additional="Wynn Summoner" type="EtcItem">
 		<!-- Chest that contains items helpful to Wynn Summoners after Awakening. -->
@@ -961,12 +1240,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30316" max="1" min="1" /> <!-- Leister Cloak Iss Enchanter -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12806" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32270" name="Leister's Power" name_additional="Iss Enchanter" type="EtcItem">
 		<!-- Chest that contains items helpful to Iss Enchanters after Awakening. -->
@@ -981,12 +1265,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30315" max="1" min="1" /> <!-- Naviarope Cloak Wynn Summoner -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12805" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32271" name="Lakcis' Power" name_additional="Aeore Healer" type="EtcItem">
 		<!-- Chest that contains items helpful to Aeore Healers after Awakening. -->
@@ -1001,12 +1290,17 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
 			<item chance="100.0" id="30317" max="1" min="1" /> <!-- Lakcis Cloak Aeore Healer -->
 			<item chance="100.0" id="32316" max="5" min="5" /> <!-- Elixir of Blessing -->
 			<item chance="100.0" id="33502" max="1" min="1" /> <!-- Weapon Attribute Change Crystal (S-grade) -->
 		</capsuled_items>
+		<skills>
+			<skill id="12807" level="1" /> <!-- Box for the Awakened -->
+		</skills>
 	</item>
 	<item id="32272" name="Expedition Volunteer's Reward Box" type="EtcItem">
 		<!-- Reward box given to volunteers for the Antharas expedition. When the chest is opened, you can receive the Oren Lord Valtez' reward. -->
@@ -1020,13 +1314,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="12187" level="1" /> <!-- Antharas Ticket -->
+		</skills>
 	</item>
 	<item id="32273" name="Recipe: Human Male Wig" type="EtcItem">
 		<!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32274" name="Recipe: Human Female Wig" type="EtcItem">
@@ -1034,6 +1335,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32275" name="Recipe: Human Male Wizard Wig" type="EtcItem">
@@ -1041,6 +1345,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32276" name="Recipe: Human Female Wizard Wig" type="EtcItem">
@@ -1048,6 +1355,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32277" name="Recipe: Elf Male Wig" type="EtcItem">
@@ -1055,6 +1365,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32278" name="Recipe: Elf Female Wig" type="EtcItem">
@@ -1062,6 +1375,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32279" name="Recipe: Dark Elf Male Wig" type="EtcItem">
@@ -1069,6 +1385,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32280" name="Recipe: Dark Elf Female Wig" type="EtcItem">
@@ -1076,6 +1395,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32281" name="Recipe: Dwarf Male Wig" type="EtcItem">
@@ -1083,6 +1405,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32282" name="Recipe: Dwarf Female Wig" type="EtcItem">
@@ -1090,6 +1415,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32283" name="Recipe: Orc Male Wig" type="EtcItem">
@@ -1097,6 +1425,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32284" name="Recipe: Orc Female Wig" type="EtcItem">
@@ -1104,6 +1435,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32285" name="Recipe: Orc Male Shaman Wig" type="EtcItem">
@@ -1111,6 +1445,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32286" name="Recipe: Orc Female Shaman Wig" type="EtcItem">
@@ -1118,6 +1455,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32287" name="Recipe: Kamael Male Wig" type="EtcItem">
@@ -1125,6 +1465,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32288" name="Recipe: Kamael Female Wig" type="EtcItem">
@@ -1132,6 +1475,9 @@
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32289" name="Olympiad Guardian Warrior's Ring" type="Armor">
@@ -1148,11 +1494,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="time" val="43200" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="87.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">87</stat>
+		</stats>
 	</item>
 	<item id="32290" name="Olympiad Guardian Warrior's Necklace" type="Armor">
 		<!-- Olympiad Guardian Warrior's Necklace. 30-day. MP + 57. -->
@@ -1168,11 +1514,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="time" val="43200" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="174.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">174</stat>
+		</stats>
 	</item>
 	<item id="32291" name="Olympiad Guardian Warrior's Earring" type="Armor">
 		<!-- Olympiad Guardian Warrior's Earring. 30-day. MP + 42. -->
@@ -1188,11 +1534,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="time" val="43200" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="131.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">131</stat>
+		</stats>
 	</item>
 	<item id="32292" name="Recipe: Immortal Belt (60%)" type="EtcItem">
 		<!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
@@ -1201,6 +1547,8 @@
 		<set name="price" val="199900" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="32293" name="Recipe: Immortal Bracelet (60%)" type="EtcItem">
@@ -1209,6 +1557,9 @@
 		<set name="weight" val="30" />
 		<set name="price" val="355600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32294" name="Recipe: Immortal Shirt (60%)" type="EtcItem">
@@ -1217,6 +1568,9 @@
 		<set name="weight" val="30" />
 		<set name="price" val="399700" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32295" name="Recipe: Twilight Belt (60%)" type="EtcItem">
@@ -1226,6 +1580,8 @@
 		<set name="price" val="597000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="32296" name="Recipe: Twilight Bracelet (60%)" type="EtcItem">
@@ -1234,6 +1590,9 @@
 		<set name="weight" val="30" />
 		<set name="price" val="355600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="32297" name="Recipe: Twilight Shirt (60%)" type="EtcItem">
@@ -1243,6 +1602,8 @@
 		<set name="price" val="1194100" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="32298" name="Recipe: Seraph Belt (60%)" type="EtcItem">
@@ -1252,6 +1613,8 @@
 		<set name="price" val="1364800" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="32299" name="Recipe: Seraph Bracelet (60%)" type="EtcItem">
@@ -1261,6 +1624,8 @@
 		<set name="price" val="355600" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 </list>

@@ -3,6 +3,7 @@
 	<item id="37700" name="Valentine Dual Dagger" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -15,16 +16,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37701" name="Valentine Dual Blunt Weapon" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="weapon_type" val="DUALBLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -37,13 +41,14 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37702" name="Valentine Shield" type="Weapon">
 		<!-- Modifies the appearance of a shield. -->
@@ -55,14 +60,16 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="88681000" />
-		<for>
-			<add stat="sDef" val="546.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">546</stat>
+			<stat type="rShld">20</stat>
+			<stat type="rEvas">-8</stat>
+		</stats>
 	</item>
 	<item id="37703" name="Valentine Sigil" type="Armor">
 		<!-- Modifies the appearance of a sigil. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
 		<set name="crystal_type" val="R99" />
@@ -70,10 +77,9 @@
 		<set name="weight" val="920" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="88681000" />
-		<for>
-			<add order="0" stat="pDef" val="150.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">150</stat>
+		</stats>
 	</item>
 	<item id="37704" name="Love Potion" type="EtcItem">
 		<!-- Herb that modifies the appearance of weapons for Valentine's Day. -->
@@ -95,6 +101,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37706" name="Candy Heart" type="EtcItem">
@@ -108,6 +115,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37707" name="Comfort Cookie" type="EtcItem">
@@ -121,6 +129,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37708" name="Coco's Transformation Chocolate" type="EtcItem">
@@ -134,6 +143,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37709" name="Coco's Transformation Candy" type="EtcItem">
@@ -147,6 +157,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37710" name="Coco's Transformation Cookie" type="EtcItem">
@@ -160,6 +171,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37711" name="Coco's Friend Summon Chocolate" type="EtcItem">
@@ -173,6 +185,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37712" name="Coco's Friend Summon Candy" type="EtcItem">
@@ -186,6 +199,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37713" name="Coco's Friend Summon Cookie" type="EtcItem">
@@ -199,6 +213,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37714" name="Talisman - Lilith" type="Armor">
@@ -241,9 +256,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="130" />
-		<for>
-			<add order="0" stat="pDef" val="28.0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="37719" name="Pa'agrio's Special Pack" type="EtcItem">
 		<!-- Wrapped Pack containing Pa'agrio's Shirt. There is also a low chance or acquiring a Shiny Elemental Shirt. \n\nWarning: The shirt acquired after opening the box is restored to the character and cannot be moved. -->
@@ -300,6 +315,7 @@
 	<item id="37725" name="NC Dinos Uniform" type="Armor">
 		<!-- NC Dinos Uniform. When equipped, armor is removed and cannot be used. Hair accessories, weapons, and magic armor are not removed. -->
 		<set name="icon" val="icon.london_olympic_bikini" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="1000" />
@@ -346,6 +362,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37730" name="Dandy's Scroll: Passion" type="EtcItem">
@@ -358,6 +376,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37731" name="Dandy's Scroll: Challenge" type="EtcItem">
@@ -370,6 +390,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37732" name="Blessed Antharas' Earring" name_additional="7-day" type="Armor">
@@ -386,9 +408,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="170.0" />
-		</for>
+		<stats>
+			<stat type="mDef">170</stat>
+		</stats>
 	</item>
 	<item id="37733" name="Blessed Valakas' Necklace" name_additional="7-day" type="Armor">
 		<!-- HP +625, MP +79, Sleep Resistance 50% increase, Sleep Attack Rate 50% increase, physical/magic skill cooldown decrease, Wild Magic Effect, damage shield effect, fire resistance 30 increase, Dark Resistance 20 increase, STR +3, INT +3. P. Skill Atk. 5% increase, P. Atk. 10% increase, M. Atk. 20% increase, hold resistance skill use. Hold resistance 100% increase momentarily. Cannot be used in the Olympiad. -->
@@ -404,9 +426,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="226.0" />
-		</for>
+		<stats>
+			<stat type="mDef">226</stat>
+		</stats>
 	</item>
 	<item id="37734" name="Tauti's Ring" name_additional="7-day" type="Armor">
 		<!-- Tauti's Ring. Fire/Dark Resistance 25 increase, MP 38 increase, Critical Damage 15% increase, skill attack 5% increase, damage inflicted during PvP 5% increase, paralysis/yoke/exile resistance 10 increase, damage reflect resistance 5 increase, HP drain resistance 5 increase, damage received during PvP 5% decrease. Critical 54 increase when equipped with a blunt. Only one effect is applied even when the same two rings are worn (excluding attributes/M. Def.) Cannot be used in the Olympiad. -->
@@ -422,9 +444,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="108.0" />
-		</for>
+		<stats>
+			<stat type="mDef">108</stat>
+		</stats>
 	</item>
 	<item id="37735" name="Earth Wyrm Heart Ring" name_additional="7-day" type="Armor">
 		<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
@@ -440,9 +462,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="108.0" />
-		</for>
+		<stats>
+			<stat type="mDef">108</stat>
+		</stats>
 	</item>
 	<item id="37736" name="Blessed Zaken's Earring" name_additional="7-day" type="Armor">
 		<!-- MP +37, Bleed Resistance 30% increase, Bleed Attack Rate 30% increase, Heal Amount 15% increase, Vampiric Rage Effect, Stun/Mental resistance 30% increase, Stun/Mental attack rate 30% increase, Dark Resistance 15 increase. Only one effect is applied even when the same two earrings are worn. When equipped with a normal Zaken's Earring, only the effects of the Blessed Zaken's Earring are applied. Cannot be used in the Olympiad. -->
@@ -458,13 +480,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="94.0" />
-		</for>
+		<stats>
+			<stat type="mDef">94</stat>
+		</stats>
 	</item>
 	<item id="37737" name="Ruler's Authority" name_additional="7-day" type="Armor">
 		<!-- Item is given to the winner of the Ceremony of Chaos that takes place in the Mysterious Mansion. When equipped, increases Max HP, MP, and CP by 1000, weight by 25600, and damage by 8%. Decreases received damage by 9% and Damage Reflect Resistance by 5%. Increases the number of inventory slots by 36 and all Attribute Resistance by 15. Cannot be used in the Olympiad. -->
 		<set name="icon" val="icon.belt_rulers_authority" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="440" />
 		<set name="is_clan_depositable" val="false" />
@@ -475,9 +498,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+		</stats>
 	</item>
 	<item id="37738" name="Test Soulshot (D-grade)" name_additional="Not in Use" type="EtcItem">
 		<!-- Soulshot for test use. To be included in the D-grade or C-grade load effect. -->
@@ -485,6 +508,7 @@
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37739" name="Test Soulshot (C-grade)" name_additional="Not in Use" type="EtcItem">
@@ -493,6 +517,7 @@
 		<set name="weight" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="C" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37740" name="Reinforced Soulshot (No-grade)" name_additional="Not in Use" type="EtcItem">
@@ -502,6 +527,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37741" name="Reinforced Soulshot (D-grade)" name_additional="Not in Use" type="EtcItem">
@@ -511,6 +537,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37742" name="Reinforced Soulshot (C-grade)" name_additional="Not in Use" type="EtcItem">
@@ -520,6 +547,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37743" name="Reinforced Soulshot (B-grade)" name_additional="Not in Use" type="EtcItem">
@@ -529,6 +557,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37744" name="Reinforced Soulshot (A-grade)" name_additional="Not in Use" type="EtcItem">
@@ -538,6 +567,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37745" name="Reinforced Soulshot (S-grade)" name_additional="Not in Use" type="EtcItem">
@@ -547,6 +577,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37746" name="Reinforced Soulshot (R-grade)" name_additional="Not in Use" type="EtcItem">
@@ -556,6 +587,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37747" name="Reinforced Spiritshot (No-grade)" name_additional="Not in Use" type="EtcItem">
@@ -565,6 +597,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37748" name="Reinforced Spiritshot (D-grade)" name_additional="Not in Use" type="EtcItem">
@@ -574,6 +607,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37749" name="Reinforced Spiritshot (C-grade)" name_additional="Not in Use" type="EtcItem">
@@ -583,6 +617,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37750" name="Reinforced Spiritshot (B-grade)" name_additional="Not in Use" type="EtcItem">
@@ -592,6 +627,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37751" name="Reinforced Spiritshot (A-grade)" name_additional="Not in Use" type="EtcItem">
@@ -601,6 +637,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37752" name="Reinforced Spiritshot (S-grade)" name_additional="Not in Use" type="EtcItem">
@@ -610,6 +647,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37753" name="Reinforced Spiritshot (R-grade)" name_additional="Not in Use" type="EtcItem">
@@ -619,6 +657,7 @@
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37754" name="All-purpose Soulshot" name_additional="Not in Use" type="EtcItem">
@@ -627,6 +666,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37755" name="All-purpose Spiritshot" name_additional="Not in Use" type="EtcItem">
@@ -635,6 +675,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="14" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37756" name="Mysterious Fragment" type="EtcItem">
@@ -735,10 +776,10 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="20.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="37764" name="Superior CP Potion" type="EtcItem">
 		<!-- Restores 2000 CP. -->
@@ -751,6 +792,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37765" name="Elikia's Letter" type="EtcItem">
@@ -791,6 +833,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37768" name="Crane Activator" type="EtcItem">
@@ -852,6 +895,7 @@
 		<set name="price" val="526757" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="37774" name="Recipe: Scroll of Blessing: Weapon (R95-grade)" type="EtcItem">
@@ -860,6 +904,7 @@
 		<set name="weight" val="30" />
 		<set name="price" val="7063796" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37775" name="Recipe: Scroll of Blessing: Weapon (R99-grade)" type="EtcItem">
@@ -868,6 +913,7 @@
 		<set name="weight" val="30" />
 		<set name="price" val="15565904" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37776" name="Scroll of Blessing Scraps: Weapon (R-grade)" type="EtcItem">
@@ -876,6 +922,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="47408" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37777" name="Scroll of Blessing Scraps: Weapon (R95-grade)" type="EtcItem">
@@ -885,6 +932,7 @@
 		<set name="price" val="635742" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 	</item>
 	<item id="37778" name="Scroll of Blessing Scraps: Weapon (R99-grade)" type="EtcItem">
@@ -894,6 +942,7 @@
 		<set name="price" val="1400931" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 	</item>
 	<item id="37779" name="Scroll of Blessing: Armor (R-grade)" type="EtcItem">
@@ -930,6 +979,7 @@
 		<set name="price" val="137185" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="37783" name="Recipe: Scroll of Blessing: Armor (R95-grade)" type="EtcItem">
@@ -938,6 +988,7 @@
 		<set name="weight" val="30" />
 		<set name="price" val="1916298" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37784" name="Recipe: Scroll of Blessing: Armor (R99-grade)" type="EtcItem">
@@ -946,6 +997,7 @@
 		<set name="weight" val="30" />
 		<set name="price" val="4222784" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37785" name="Scroll of Blessing Scraps: Armor (R-grade)" type="EtcItem">
@@ -955,6 +1007,7 @@
 		<set name="price" val="12347" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 	</item>
 	<item id="37786" name="Scroll of Blessing Scraps: Armor (R95-grade)" type="EtcItem">
@@ -964,6 +1017,7 @@
 		<set name="price" val="172467" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 	</item>
 	<item id="37787" name="Scroll of Blessing Scraps: Armor (R99-grade)" type="EtcItem">
@@ -973,6 +1027,7 @@
 		<set name="price" val="380051" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 	</item>
 	<item id="37788" name="SP Rune (Low-grade)" name_additional="1-day" type="EtcItem">
@@ -987,6 +1042,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTRT_RUNE_SELECT" />
 		<set name="time" val="86400" />
 	</item>
 	<item id="37789" name="SP Rune (Mid-grade)" name_additional="1-day" type="EtcItem">
@@ -1001,6 +1057,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTRT_RUNE_SELECT" />
 		<set name="time" val="86400" />
 	</item>
 	<item id="37790" name="SP Rune (High-grade)" name_additional="1-day" type="EtcItem">
@@ -1015,6 +1072,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTRT_RUNE_SELECT" />
 		<set name="time" val="86400" />
 	</item>
 	<item id="37791" name="Sealed Demonic Tome" type="EtcItem">
@@ -1031,6 +1089,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i01" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37793" name="Potion of Protection: Hold" type="EtcItem">
@@ -1038,6 +1097,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i06" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37794" name="Potion of Protection: Bleed" type="EtcItem">
@@ -1045,6 +1105,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37795" name="Potion of Protection: Paralyze" type="EtcItem">
@@ -1052,6 +1113,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37796" name="Potion of Protection: Mental" type="EtcItem">
@@ -1059,6 +1121,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i04" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37797" name="Potion of Protection: Sleep" type="EtcItem">
@@ -1066,6 +1129,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37798" name="Potion of Protection: Poison" type="EtcItem">
@@ -1073,6 +1137,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i02" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37799" name="Potion of Protection: Knock Back/ Knock Down" type="EtcItem">
@@ -1080,6 +1145,7 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i10" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

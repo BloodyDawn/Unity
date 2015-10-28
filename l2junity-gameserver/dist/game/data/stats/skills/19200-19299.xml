@@ -99,7 +99,7 @@
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.25" />
+				<mul stat="rCrit" val="0.25" />
 				<mul stat="mCritRate" val="1.25" />
 				<mul stat="cAtk" val="1.25" />
 				<mul stat="mCritPower" val="1.25" />
@@ -188,6 +188,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-285" />
+		<set name="abnormalTime" val="30" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockBuffSlot">
@@ -203,14 +204,16 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="46" />
 		<set name="reuseDelay" val="180000" />
+		<set name="abnormalTime" val="30" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="19210" levels="1" name="Summon Tree of Sephiroth">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Summons an Enchanted Tree of Life that cannot be targeted. The summoned tree heals nearby party members for 30 seconds and casts a debuff canceling blessing. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill19210" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="101" />
 		<set name="mpConsume" val="243" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="5000" />
@@ -218,6 +221,21 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="1733" />
 		<set name="isMagic" val="1" />
+		<set name="effectRange" val="1000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="3" />
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="15154" lifeTime="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19211" levels="1" name="Barrer for Test">
 		<!-- AUTO GENERATED SKILL -->
@@ -229,7 +247,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="15000" />
+		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="867" />
 		<set name="isMagic" val="1" />
 	</skill>
@@ -245,10 +263,11 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="867" />
+		<set name="abnormalTime" val="30" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="19213" levels="1" name="Polishing Arrows: Atk. Spd.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Arrows with increased Atk. Spd. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_arrows" />
 		<set name="operateType" val="A1" />
@@ -257,9 +276,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45578" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19214" levels="1" name="Polishing Bolts: Atk. Spd.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Bolts with increased Atk. Spd. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_bolts" />
 		<set name="operateType" val="A1" />
@@ -268,9 +300,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45581" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19215" levels="1" name="Polishing Arrows: P. Atk.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Arrows with increased P. Atk. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_arrows" />
 		<set name="operateType" val="A1" />
@@ -279,9 +324,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45579" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19216" levels="1" name="Polishing Bolts: P. Atk.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Bolts with increased P. Atk. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_bolts" />
 		<set name="operateType" val="A1" />
@@ -290,9 +348,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45582" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19217" levels="1" name="Polishing Arrows: Added Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Arrows with Additional Hit. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_arrows" />
 		<set name="operateType" val="A1" />
@@ -301,9 +372,22 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45580" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19218" levels="1" name="Polishing Bolts: Added Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates 250 Enhanced Orichalcum Bolts with Additional Hit. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill_polishing_bolts" />
 		<set name="operateType" val="A1" />
@@ -312,20 +396,46 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="45583" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="19219" levels="1" name="Blessing of Tree">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Recovers HP and removes bad abnormal statuses. -->
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="1" />
+		<set name="magicLvl" val="101" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="affectRange" val="200" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="3338" /> <!-- Custom, value if Tree of Life level 4 -->
+			</effect>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19220" levels="1" name="Sharing Equipment">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., the ability of the equipped item transfers to your servitor. Consumes 5 Spirit Ores. -->
+		<!-- Info: Transfers PvP/PvE attack/defense from items, just as other SAs, but not augments. -->
 		<set name="icon" val="icon.skill19220" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -439,6 +549,7 @@
 		<set name="hitTime" val="8000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="19229" levels="1" name="Fate of the Exalted">
@@ -448,5 +559,43 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="100" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="LUC" val="2" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="19230" levels="30" name="MP Recovery">
+		<!-- AUTO GENERATED SKILL -->
+		<set name="icon" val="icon.skill1047" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="635" />
+		<set name="abnormalTime" val="15" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="19231" levels="1" name="Song of Wisdom">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Party's M. Atk. + 30%% for 30 seconds. Consumes 5 Spirit Ores. -->
+		<set name="icon" val="icon.skill19231" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="140" />
+		<set name="hitTime" val="8000" />
+		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
+		<set name="reuseDelay" val="600000" />
+	</skill>
+	<skill id="19232" levels="1" name="Crippling Dance">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Party's P. Skill Power + 30%% for 30 seconds. Consumes 5 Spirit Ores. -->
+		<set name="icon" val="icon.skill19232" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="140" />
+		<set name="hitTime" val="8000" />
+		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
+		<set name="reuseDelay" val="600000" />
 	</skill>
 </list>

@@ -78,6 +78,7 @@ public final class MultiSellList implements IClientOutgoingPacket
 			packet.writeH(0x00);
 			packet.writeH(0x00);
 			packet.writeH(0x00);
+			packet.writeH(0x00);
 			
 			packet.writeH(ent.getProducts().size());
 			packet.writeH(ent.getIngredients().size());
@@ -110,6 +111,7 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(ing.getItemInfo().getElementals()[3]); // earth
 					packet.writeH(ing.getItemInfo().getElementals()[4]); // holy
 					packet.writeH(ing.getItemInfo().getElementals()[5]); // dark
+					packet.writeH(0x00);
 				}
 				else
 				{
@@ -125,6 +127,7 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(0x00); // earth
 					packet.writeH(0x00); // holy
 					packet.writeH(0x00); // dark
+					packet.writeH(0x00);
 				}
 			}
 			
@@ -146,6 +149,7 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(ing.getItemInfo().getElementals()[3]); // earth
 					packet.writeH(ing.getItemInfo().getElementals()[4]); // holy
 					packet.writeH(ing.getItemInfo().getElementals()[5]); // dark
+					packet.writeH(0x00);
 				}
 				else
 				{
@@ -160,6 +164,7 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(0x00); // earth
 					packet.writeH(0x00); // holy
 					packet.writeH(0x00); // dark
+					packet.writeH(0x00);
 				}
 			}
 		}

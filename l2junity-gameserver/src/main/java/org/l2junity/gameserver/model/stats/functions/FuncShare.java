@@ -95,7 +95,7 @@ public class FuncShare extends AbstractFunction
 			}
 			default:
 			{
-				return player.calcStat(stat, 0, null, null);
+				return player.getStat().getValue(stat, 0);
 			}
 		}
 	}

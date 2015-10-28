@@ -38,6 +38,7 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
+import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -294,7 +295,7 @@ public final class World
 						{
 							if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 							{
-								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 							}
 						}
 					}
@@ -314,7 +315,7 @@ public final class World
 						{
 							if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 							{
-								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 							}
 						}
 					}
@@ -529,7 +530,7 @@ public final class World
 								{
 									if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 									{
-										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 									}
 								}
 							}
@@ -549,7 +550,7 @@ public final class World
 								{
 									if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 									{
-										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 									}
 								}
 							}
@@ -616,13 +617,53 @@ public final class World
 	
 	public <T extends WorldObject> void forEachVisibleObjectInRange(WorldObject object, Class<T> clazz, int range, Consumer<T> c)
 	{
-		forEachVisibleObject(object, clazz, (range / REGION_MIN_DIMENSION) + 1, o ->
+		if (object == null)
 		{
-			if (o.calculateDistance(object, true, false) <= range)
+			return;
+		}
+		
+		final WorldRegion centerWorldRegion = getRegion(object);
+		if (centerWorldRegion == null)
+		{
+			return;
+		}
+		
+		final int depth = (range / REGION_MIN_DIMENSION) + 1;
+		for (int x = Math.max(centerWorldRegion.getRegionX() - depth, 0); x <= Math.min(centerWorldRegion.getRegionX() + depth, REGIONS_X); x++)
+		{
+			for (int y = Math.max(centerWorldRegion.getRegionY() - depth, 0); y <= Math.min(centerWorldRegion.getRegionY() + depth, REGIONS_Y); y++)
 			{
-				c.accept(o);
+				for (int z = Math.max(centerWorldRegion.getRegionZ() - depth, 0); z <= Math.min(centerWorldRegion.getRegionZ() + depth, REGIONS_Z); z++)
+				{
+					final int x1 = (x - OFFSET_X) << SHIFT_BY;
+					final int y1 = (y - OFFSET_Y) << SHIFT_BY;
+					final int z1 = (z - OFFSET_Z) << SHIFT_BY_Z;
+					final int x2 = ((x + 1) - OFFSET_X) << SHIFT_BY;
+					final int y2 = ((y + 1) - OFFSET_Y) << SHIFT_BY;
+					final int z2 = ((z + 1) - OFFSET_Z) << SHIFT_BY_Z;
+					if (Util.cubeIntersectsSphere(x1, y1, z1, x2, y2, z2, object.getX(), object.getY(), object.getZ(), range))
+					{
+						for (WorldObject visibleObject : _worldRegions[x][y][z].getVisibleObjects().values())
+						{
+							if ((visibleObject == null) || (visibleObject == object) || !clazz.isInstance(visibleObject))
+							{
+								continue;
+							}
+							
+							if (visibleObject.getInstanceWorld() != object.getInstanceWorld())
+							{
+								continue;
+							}
+							
+							if (visibleObject.calculateDistance(object, true, false) <= range)
+							{
+								c.accept(clazz.cast(visibleObject));
+							}
+						}
+					}
+				}
 			}
-		});
+		}
 	}
 	
 	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject object, Class<T> clazz)
@@ -679,7 +720,15 @@ public final class World
 	
 	public WorldRegion getRegion(int x, int y, int z)
 	{
-		return _worldRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y][(z >> SHIFT_BY_Z) + OFFSET_Z];
+		try
+		{
+			return _worldRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y][(z >> SHIFT_BY_Z) + OFFSET_Z];
+		}
+		catch (ArrayIndexOutOfBoundsException e)
+		{
+			_log.warn("Incorrect world region X: {} Y: {} Z: {} for coordinates x: {} y: {} z: {}", ((x >> SHIFT_BY) + OFFSET_X), ((y >> SHIFT_BY) + OFFSET_Y), ((z >> SHIFT_BY_Z) + OFFSET_Z), x, y, z);
+			return null;
+		}
 	}
 	
 	/**

@@ -77,7 +77,8 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		packet.writeC(item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
 		packet.writeC(item.getCustomType1()); // Filler (always 0)
 		packet.writeQ(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
-		packet.writeH(item.getEnchant()); // Enchant level (pet level shown in control item)
+		packet.writeC(item.getEnchant()); // Enchant level (pet level shown in control item)
+		packet.writeC(0x00); // TODO : Find me
 		packet.writeH(0x00); // Equipped : 00-No, 01-yes
 		packet.writeH(item.getCustomType2());
 		writeItemElementalAndEnchant(packet, new ItemInfo(item));
@@ -96,7 +97,8 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		packet.writeC(item.getCustomType1()); // Filler (always 0)
 		packet.writeH(item.getEquipped()); // Equipped : 00-No, 01-yes
 		packet.writeQ(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
-		packet.writeH(item.getEnchant()); // Enchant level (pet level shown in control item)
+		packet.writeC(item.getEnchant()); // Enchant level (pet level shown in control item)
+		packet.writeC(0x01); // TODO : Find me
 		packet.writeD(item.getMana());
 		packet.writeD(item.getTime());
 		packet.writeC(0x01); // GOD Item enabled = 1 disabled (red) = 0
@@ -115,6 +117,20 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		if (containsMask(mask, ItemListType.VISUAL_ID))
 		{
 			packet.writeD(item.getVisualId()); // Item remodel visual ID
+		}
+		if (containsMask(mask, ItemListType.SOUL_CRYSTAL))
+		{
+			packet.writeC(item.getSoulCrystalOptions().length); // Size of regular soul crystal options.
+			for (int ensoulId : item.getSoulCrystalOptions())
+			{
+				packet.writeD(ensoulId); // Regular Soul Crystal Ability ID.
+			}
+			
+			packet.writeC(item.getSoulCrystalSpecialOptions().length); // Size of special soul crystal options.
+			for (int ensoulId : item.getSoulCrystalSpecialOptions())
+			{
+				packet.writeD(ensoulId); // Special Soul Crystal Ability ID.
+			}
 		}
 	}
 	
@@ -158,6 +174,12 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			mask |= ItemListType.VISUAL_ID.getMask();
 		}
+		
+		if ((item.getSoulCrystalOptions().length > 0) || (item.getSoulCrystalSpecialOptions().length > 0))
+		{
+			mask |= ItemListType.SOUL_CRYSTAL.getMask();
+		}
+		
 		return mask;
 	}
 	
@@ -210,7 +232,8 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		packet.writeQ(item.getCount());
 		packet.writeH(item.getItem().getType2());
 		packet.writeQ(item.getItem().getBodyPart());
-		packet.writeH(item.getEnchant());
+		packet.writeC(item.getEnchant());
+		packet.writeC(0x00); // TODO: Find me
 		packet.writeH(item.getCustomType2());
 		writeItemElementalAndEnchant(packet, item);
 		packet.writeD(item.getVisualId());

@@ -112,14 +112,14 @@ public class ItemSkillsTemplate implements IItemHandler
 					playable.sendPacket(sm);
 				}
 				
-				if (itemSkill.isSimultaneousCast() || ((item.getItem().hasImmediateEffect() || item.getItem().hasExImmediateEffect()) && itemSkill.isStatic()))
+				if (itemSkill.isWithoutAction() || ((item.getItem().hasImmediateEffect() || item.getItem().hasExImmediateEffect()) && itemSkill.isStatic()))
 				{
-					playable.doSimultaneousCast(itemSkill);
+					playable.doSimultaneousCast(itemSkill, item);
 				}
 				else
 				{
 					playable.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-					if (!playable.useMagic(itemSkill, forceUse, false))
+					if (!playable.useMagic(itemSkill, item, forceUse, false))
 					{
 						return false;
 					}
@@ -156,6 +156,7 @@ public class ItemSkillsTemplate implements IItemHandler
 		{
 			case CAPSULE:
 			case SKILL_REDUCE:
+			case SKILL_REDUCE_ON_SKILL_SUCCESS:
 			{
 				if (!hasConsumeSkill && item.getItem().hasImmediateEffect())
 				{

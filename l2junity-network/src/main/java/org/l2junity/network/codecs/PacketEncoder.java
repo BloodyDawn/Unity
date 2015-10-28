@@ -55,19 +55,26 @@ public class PacketEncoder extends MessageToByteEncoder<IOutgoingPacket>
 		{
 			out = out.order(_byteOrder);
 		}
-		
-		if (packet.write(new PacketWriter(out)))
+
+		try
 		{
-			if (out.writerIndex() > _maxPacketSize)
+			if (packet.write(new PacketWriter(out)))
 			{
-				LOGGER.warn("", new IllegalStateException("Packet (" + packet + ") size (" + out.writerIndex() + ") is bigger than the limit (" + _maxPacketSize + ")"));
+				if (out.writerIndex() > _maxPacketSize)
+				{
+					throw new IllegalStateException("Packet (" + packet + ") size (" + out.writerIndex() + ") is bigger than the limit (" + _maxPacketSize + ")");
+				}
+			}
+			else
+			{
 				// Avoid sending the packet
 				out.clear();
 			}
 		}
-		else
+		catch (Throwable e)
 		{
-			// Avoid sending the packet
+			LOGGER.warn("Failed sending Packet({})", packet, e);
+			// Avoid sending the packet if some exception happened
 			out.clear();
 		}
 	}

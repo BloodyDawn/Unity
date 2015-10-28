@@ -674,6 +674,7 @@
 	</item>
 	<item id="38382" name="Apprentice's Spellbook" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
@@ -687,12 +688,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="650" />
-		<for>
-			<set stat="pAtk" val="9.0" />
-			<set stat="mAtk" val="12.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">9</stat>
+			<stat type="mAtk">12</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="38383" name="Lady's Hairpin Pendant Pouch" type="EtcItem">
 		<!-- Double-click to obtain a Lady's Hairpin with pendant options. -->
@@ -803,6 +805,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="time" val="7200" />
 	</item>
 	<item id="38398" name="Expertise Rune Pack" name_additional="D-grade" type="EtcItem">
@@ -825,6 +828,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="time" val="7200" />
 	</item>
 </list>

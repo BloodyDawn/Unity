@@ -158,6 +158,7 @@ public final class ItemInstance extends WorldObject
 	
 	//@formatter:off
 	public static final int[] DEFAULT_ENCHANT_OPTIONS = new int[] { 0, 0, 0 };
+	public static final int[] DEFAULT_SOUL_CRYSTAL_OPTIONS = new int[0];
 	//@formatter:on
 	
 	private int _lastChange = 2; // 1 ??, 2 modified, 3 removed
@@ -871,7 +872,7 @@ public final class ItemInstance extends WorldObject
 		&& ((pet == null) || (getObjectId() != pet.getControlObjectId())) // Not Control item of currently summoned pet
 		&& !(player.isProcessingItem(getObjectId())) // Not momentarily used enchant scroll
 		&& (allowAdena || (getId() != Inventory.ADENA_ID)) // Not Adena
-		&& ((player.getCurrentSkill() == null) || (player.getCurrentSkill().getSkill().getItemConsumeId() != getId())) && (!player.isCastingSimultaneouslyNow() || (player.getLastSimultaneousSkillCast() == null) || (player.getLastSimultaneousSkillCast().getItemConsumeId() != getId())) && (allowNonTradeable || (isTradeable() && (!((getItem().getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems())))));
+		&& (!player.isCastingNow(s -> s.getSkill().getItemConsumeId() != getId())) && (allowNonTradeable || (isTradeable() && (!((getItem().getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems())))));
 	}
 	
 	/**
@@ -2048,6 +2049,22 @@ public final class ItemInstance extends WorldObject
 	}
 	
 	/**
+	 * @return Array of regular Soul Crystal option IDs (Special Abilities).
+	 */
+	public int[] getSoulCrystalOptions()
+	{
+		return DEFAULT_SOUL_CRYSTAL_OPTIONS;
+	}
+	
+	/**
+	 * @return Array of Special Soul Crystal option IDs (Special Abilities).
+	 */
+	public int[] getSoulCrystalSpecialOptions()
+	{
+		return DEFAULT_SOUL_CRYSTAL_OPTIONS;
+	}
+	
+	/**
 	 * Clears all the enchant bonuses if item is enchanted and containing bonuses for enchant value.
 	 */
 	public void clearEnchantStats()
@@ -2194,10 +2211,5 @@ public final class ItemInstance extends WorldObject
 			player.sendInventoryUpdate(iu);
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_RESTORED_TO_ITS_PREVIOUS_APPEARANCE_AS_ITS_TEMPORARY_MODIFICATION_HAS_EXPIRED).addItemName(this));
 		}
-	}
-	
-	public boolean isAppearanceable()
-	{
-		return isWeapon() || isArmor();
 	}
 }

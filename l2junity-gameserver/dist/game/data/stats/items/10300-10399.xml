@@ -6,6 +6,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10301" name="Transformation Sealbook: Demon Prince" type="EtcItem">
@@ -14,6 +15,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10302" name="Transformation Sealbook: Heretic" type="EtcItem">
@@ -49,6 +51,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10306" name="Transformation Sealbook: Doll Blader" type="EtcItem">
@@ -76,16 +79,17 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="2" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 		<cond>
 			<player clanHall="36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57" />
 		</cond>
+		<skills>
+			<skill id="2046" level="2" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10308" name="Red Wind Dragon Bugle" type="EtcItem">
 		<set name="icon" val="icon.etc_bugle_i00" />
@@ -103,16 +107,17 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="2" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 		<cond>
 			<player clanHall="36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57" />
 		</cond>
+		<skills>
+			<skill id="2046" level="2" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10309" name="Red Star Dragon Bugle" type="EtcItem">
 		<set name="icon" val="icon.etc_bugle_i00" />
@@ -130,16 +135,17 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="2" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 		<cond>
 			<player clanHall="36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57" />
 		</cond>
+		<skills>
+			<skill id="2046" level="2" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10310" name="Red Twilight Dragon Bugle" type="EtcItem">
 		<set name="icon" val="icon.etc_bugle_i00" />
@@ -157,16 +163,17 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="2" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 		<cond>
 			<player clanHall="36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57" />
 		</cond>
+		<skills>
+			<skill id="2046" level="2" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10311" name="Improved Buffalo Panpipe" type="EtcItem">
 		<set name="icon" val="icon.etc_buffalo_panpipe_i00" />
@@ -180,12 +187,12 @@
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10312" name="Improved Cougar Chime" type="EtcItem">
 		<set name="icon" val="icon.etc_cougar_chime_i00" />
@@ -199,12 +206,12 @@
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10313" name="Improved Kookaburra Ocarina" type="EtcItem">
 		<set name="icon" val="icon.etc_kukaburo_ocarina_i00" />
@@ -218,12 +225,12 @@
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
 	</item>
 	<item id="10314" name="Beleth's Ring" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_ring_i00" />
@@ -241,11 +248,10 @@
 		<skills>
 			<skill id="3649" level="1" /> <!-- Beleth' Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="48" />
-			<add stat="maxMp" val="21" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
 	</item>
 	<item id="10315" name="Shadow Item: Purple Viking Circlet" type="Armor">
 		<set name="icon" val="icon.accessory_viking_circlet_violet_i00" />
@@ -280,11 +286,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3423" level="1" /> <!-- Release Agathion's Seal - Little Angel -->
 			<skill id="5535" level="1" /> <!-- Little Angel Agathion Cute Trick -->
 			<skill id="5538" level="1" /> <!-- Little Angel Agathion Special Skill: Firecrackers -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10317" name="Agathion - Little Angel" name_additional="Big Head" type="Armor">
@@ -303,11 +308,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3423" level="1" /> <!-- Release Agathion's Seal - Little Angel -->
 			<skill id="5535" level="1" /> <!-- Little Angel Agathion Cute Trick -->
 			<skill id="5539" level="1" /> <!-- Little Angel Agathion Special Skill: Mysterious Power -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10318" name="Agathion - Little Angel" name_additional="Escape" type="Armor">
@@ -326,11 +330,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3423" level="1" /> <!-- Release Agathion's Seal - Little Angel -->
 			<skill id="5535" level="1" /> <!-- Little Angel Agathion Cute Trick -->
 			<skill id="5540" level="1" /> <!-- Little Angel Agathion Special Skill: Blessed Escape -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10319" name="Agathion - Little Angel" name_additional="Resurrection" type="Armor">
@@ -349,11 +352,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3423" level="1" /> <!-- Release Agathion's Seal - Little Angel -->
 			<skill id="5535" level="1" /> <!-- Little Angel Agathion Cute Trick -->
 			<skill id="5541" level="1" /> <!-- Little Angel Agathion Special Skill: Blessed Resurrection -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10320" name="Agathion - Little Angel" type="Armor">
@@ -372,10 +374,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3423" level="1" /> <!-- Release Agathion's Seal - Little Angel -->
 			<skill id="5535" level="1" /> <!-- Little Angel Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10321" name="Shadow Item: Golden Viking Circlet" type="Armor">
@@ -411,11 +412,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3424" level="1" /> <!-- Release Agathion's Seal - Little Devil -->
 			<skill id="5536" level="1" /> <!-- Little Devil Agathion Cute Trick -->
 			<skill id="5542" level="1" /> <!-- Little Devil Agathion Special Skill: Firecrackers -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10323" name="Agathion - Little Devil" name_additional="Big Head" type="Armor">
@@ -434,11 +434,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3424" level="1" /> <!-- Release Agathion's Seal - Little Devil -->
 			<skill id="5536" level="1" /> <!-- Little Devil Agathion Cute Trick -->
 			<skill id="5543" level="1" /> <!-- Little Devil Agathion Special Skill: Mysterious Power -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10324" name="Agathion - Little Devil" name_additional="Escape" type="Armor">
@@ -457,11 +456,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3424" level="1" /> <!-- Release Agathion's Seal - Little Devil -->
 			<skill id="5536" level="1" /> <!-- Little Devil Agathion Cute Trick -->
 			<skill id="5544" level="1" /> <!-- Little Devil Agathion Special Skill: Blessed Escape -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10325" name="Agathion - Little Devil" name_additional="Resurrection" type="Armor">
@@ -480,11 +478,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3424" level="1" /> <!-- Release Agathion's Seal - Little Devil -->
 			<skill id="5536" level="1" /> <!-- Little Devil Agathion Cute Trick -->
 			<skill id="5545" level="1" /> <!-- Little Devil Agathion Special Skill: Blessed Resurrection -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10326" name="Agathion - Little Devil" type="Armor">
@@ -503,10 +500,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3424" level="1" /> <!-- Release Agathion's Seal - Little Devil -->
 			<skill id="5536" level="1" /> <!-- Little Devil Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10327" name="Evil Weapon" type="EtcItem">
@@ -1256,6 +1252,7 @@
 		<set name="recipe_id" val="900" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10374" name="Recipe: Icarus Disperser (60%)" type="EtcItem">
@@ -1269,6 +1266,7 @@
 		<set name="recipe_id" val="901" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10375" name="Recipe: Icarus Spirit (60%)" type="EtcItem">
@@ -1282,6 +1280,7 @@
 		<set name="recipe_id" val="902" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10376" name="Recipe: Icarus Heavy Arms (60%)" type="EtcItem">
@@ -1295,6 +1294,7 @@
 		<set name="recipe_id" val="903" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10377" name="Recipe: Icarus Trident (60%)" type="EtcItem">
@@ -1308,6 +1308,7 @@
 		<set name="recipe_id" val="904" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10378" name="Recipe: Icarus Hammer (60%)" type="EtcItem">
@@ -1321,6 +1322,7 @@
 		<set name="recipe_id" val="905" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10379" name="Recipe: Icarus Hand (60%)" type="EtcItem">
@@ -1334,6 +1336,7 @@
 		<set name="recipe_id" val="906" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10380" name="Recipe: Icarus Hall (60%)" type="EtcItem">
@@ -1347,6 +1350,7 @@
 		<set name="recipe_id" val="907" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10381" name="Recipe: Icarus Spitter (60%)" type="EtcItem">
@@ -1360,6 +1364,7 @@
 		<set name="recipe_id" val="908" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10382" name="Recipe: Icarus Stinger (60%)" type="EtcItem">
@@ -1373,6 +1378,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10383" name="Recipe: Icarus Wingblade (60%)" type="EtcItem">
@@ -1386,6 +1392,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10384" name="Recipe: Icarus Shooter (60%)" type="EtcItem">
@@ -1399,6 +1406,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10385" name="Recipe: Icarus Sawsword" type="EtcItem">
@@ -1412,6 +1420,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10386" name="Recipe: Icarus Disperser" type="EtcItem">
@@ -1425,6 +1434,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10387" name="Recipe: Icarus Spirit" type="EtcItem">
@@ -1438,6 +1448,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10388" name="Recipe: Icarus Heavy Arms" type="EtcItem">
@@ -1451,6 +1462,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10389" name="Recipe: Icarus Trident" type="EtcItem">
@@ -1464,6 +1476,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10390" name="Recipe: Icarus Hammer" type="EtcItem">
@@ -1477,6 +1490,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10391" name="Recipe: Icarus Hand" type="EtcItem">
@@ -1490,6 +1504,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10392" name="Recipe: Icarus Hall" type="EtcItem">
@@ -1503,6 +1518,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10393" name="Recipe: Icarus Spitter" type="EtcItem">
@@ -1516,6 +1532,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10394" name="Recipe: Icarus Stinger" type="EtcItem">
@@ -1529,6 +1546,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10395" name="Recipe: Icarus Wingblade" type="EtcItem">
@@ -1542,6 +1560,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10396" name="Recipe: Icarus Shooter" type="EtcItem">
@@ -1555,6 +1574,7 @@
 		<set name="recipe_id" val="872" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="10397" name="Icarus Sawsword Piece" type="EtcItem">
@@ -1565,6 +1585,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="311000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10398" name="Icarus Disperser Piece" type="EtcItem">
@@ -1575,6 +1596,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="311000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="10399" name="Icarus Spirit Piece" type="EtcItem">
@@ -1585,6 +1607,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="311000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>

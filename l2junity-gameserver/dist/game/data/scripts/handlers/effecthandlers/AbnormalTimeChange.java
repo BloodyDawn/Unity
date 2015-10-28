@@ -20,14 +20,19 @@ package handlers.effecthandlers;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.AbnormalStatusUpdate;
+import org.l2junity.gameserver.network.client.send.ExAbnormalStatusUpdateFromTarget;
 
 /**
  * @author Sdw
@@ -42,7 +47,7 @@ public class AbnormalTimeChange extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
-		String abnormals = params.getString("abnormalType", null);
+		String abnormals = params.getString("slot", null);
 		if ((abnormals != null) && !abnormals.isEmpty())
 		{
 			_abnormals = new HashSet<>();
@@ -58,7 +63,7 @@ public class AbnormalTimeChange extends AbstractEffect
 		
 		_time = params.getInt("time", -1);
 		
-		switch (params.getString("mode", "diff"))
+		switch (params.getString("mode", "DEBUFF"))
 		{
 			case "DIFF":
 			{
@@ -84,19 +89,29 @@ public class AbnormalTimeChange extends AbstractEffect
 	}
 	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
+		final AbnormalStatusUpdate asu = new AbnormalStatusUpdate();
+		
 		switch (_mode)
 		{
 			case 0: // DIFF
 			{
 				if (_abnormals.isEmpty())
 				{
-					effected.getEffectList().getEffects().stream().filter(b -> b.getSkill().canBeDispelled()).forEach(b -> b.resetAbnormalTime(b.getTime() + _time));
+					effected.getEffectList().getEffects().stream().filter(b -> b.getSkill().canBeDispelled()).forEach(b ->
+					{
+						b.resetAbnormalTime(b.getTime() + _time);
+						asu.addSkill(b);
+					});
 				}
 				else
 				{
-					effected.getEffectList().getEffects().stream().filter(b -> b.getSkill().canBeDispelled() && _abnormals.contains(b.getSkill().getAbnormalType())).forEach(b -> b.resetAbnormalTime(b.getTime() + _time));
+					effected.getEffectList().getEffects().stream().filter(b -> b.getSkill().canBeDispelled() && _abnormals.contains(b.getSkill().getAbnormalType())).forEach(b ->
+					{
+						b.resetAbnormalTime(b.getTime() + _time);
+						asu.addSkill(b);
+					});
 				}
 				break;
 			}
@@ -104,14 +119,39 @@ public class AbnormalTimeChange extends AbstractEffect
 			{
 				if (_abnormals.isEmpty())
 				{
-					effected.getEffectList().getDebuffs().stream().filter(b -> b.getSkill().canBeDispelled()).forEach(b -> b.resetAbnormalTime(b.getAbnormalTime()));
+					effected.getEffectList().getDebuffs().stream().filter(b -> b.getSkill().canBeDispelled()).forEach(b ->
+					{
+						b.resetAbnormalTime(b.getAbnormalTime());
+						asu.addSkill(b);
+					});
 				}
 				else
 				{
-					effected.getEffectList().getDebuffs().stream().filter(b -> b.getSkill().canBeDispelled() && _abnormals.contains(b.getSkill().getAbnormalType())).forEach(b -> b.resetAbnormalTime(b.getAbnormalTime()));
+					effected.getEffectList().getDebuffs().stream().filter(b -> b.getSkill().canBeDispelled() && _abnormals.contains(b.getSkill().getAbnormalType())).forEach(b ->
+					{
+						b.resetAbnormalTime(b.getAbnormalTime());
+						asu.addSkill(b);
+					});
 				}
 				break;
 			}
+		}
+		
+		effected.sendPacket(asu);
+		
+		final ExAbnormalStatusUpdateFromTarget upd = new ExAbnormalStatusUpdateFromTarget(effected);
+		
+		// @formatter:off
+		effected.getStatus().getStatusListener().stream()
+			.filter(Objects::nonNull)
+			.filter(WorldObject::isPlayer)
+			.map(Creature::getActingPlayer)
+			.forEach(upd::sendTo);
+		// @formatter:on
+		
+		if (effected.isPlayer() && (effected.getTarget() == effected))
+		{
+			effected.sendPacket(upd);
 		}
 	}
 }

@@ -19,6 +19,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30302" name="Superior Giant's Codex Manuscript - Mastery" type="EtcItem">
@@ -32,6 +33,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30303" name="Superior Giant's Codex Manuscript - Discipline" type="EtcItem">
@@ -45,6 +47,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30304" name="Superior Giant's Codex Manuscript - Oblivion" type="EtcItem">
@@ -58,6 +61,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30305" name="Check Test Item" type="EtcItem">
@@ -72,6 +76,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30306" name="Essence of the Lesser Giants" type="EtcItem">
@@ -90,17 +95,19 @@
 	</item>
 	<item id="30307" name="R99 (Rare) Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i03" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="waist" />
 		<set name="crystal_type" val="R99" />
 		<set name="crystal_count" val="758" />
 		<set name="weight" val="440" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="BELT" />
 		<set name="price" val="35565000" />
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">25</stat>
+		</stats>
 	</item>
 	<item id="30308" name="R99 (Rare) Bracelet" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_s_i03" />
@@ -109,7 +116,12 @@
 		<set name="crystal_count" val="75" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="commissionItemType" val="BRACELET" />
 		<set name="price" val="3556000" />
+		<skills>
+			<skill id="3326" level="1" /> <!-- Jewelry Bracelet -->
+		</skills>
 	</item>
 	<item id="30309" name="R99 (Rare) Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_s_i05" />
@@ -118,11 +130,13 @@
 		<set name="crystal_count" val="1517" />
 		<set name="weight" val="130" />
 		<set name="is_freightable" val="false" />
+		<set name="bodypart" val="underwear" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="price" val="71131000" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+		</stats>
 	</item>
 	<item id="30310" name="Abelius Cloak" name_additional="Sigel Knight" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Abelius. M. Def. + 40. -->
@@ -143,12 +157,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="148, 149, 150, 151" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30311" name="Sapyros Cloak" name_additional="Tyrr Warrior" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Sapyros. M. Def. + 40. -->
@@ -169,12 +181,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="152, 153, 154, 155, 156, 157" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30312" name="Ashagen Cloak" name_additional="Othell Rogue" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Ashagen. M. Def. + 40. -->
@@ -195,12 +205,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="158, 159, 160, 161" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30313" name="Cranigg Cloak" name_additional="Yul Archer" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Cranigg. M. Def. + 40. -->
@@ -221,12 +229,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="162, 163, 164, 165" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30314" name="Soltkreig Cloak" name_additional="Feoh Wizard" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Soltkreig. M. Def. + 40. -->
@@ -247,12 +253,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="166, 167, 168, 169, 170" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30315" name="Naviarope Cloak" name_additional="Wynn Summoner" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Naviarope. M. Def. + 40. -->
@@ -273,12 +277,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="176, 177, 178" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30316" name="Leister Cloak" name_additional="Iss Enchanter" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Leister. M. Def. + 40. -->
@@ -299,12 +301,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="171, 172, 173, 174, 175" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30317" name="Lakcis Cloak" name_additional="Aeore Healer" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Lakcis. M. Def. + 40. -->
@@ -325,12 +325,10 @@
 		<cond msgId="1518">
 			<player class_id_restriction="179, 180, 181" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30318" name="Dusk Report" type="EtcItem">
 		<!-- Report regarding the findings of the expedition team of the Dusk that was found in the Catacomb and the Necropolis. Click to check its content. -->
@@ -344,6 +342,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SHOW_HTML" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="30319" name="Mark of Effort" type="EtcItem">
@@ -358,6 +358,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30320" name="Tamlin Orc's Badge" type="EtcItem">
@@ -372,6 +373,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30321" name="Memorial Crystal" type="EtcItem">
@@ -386,6 +388,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30322" name="Flame Ashes" type="EtcItem">
@@ -400,6 +403,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30323" name="Crystals of Experience" type="EtcItem">
@@ -414,6 +418,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30324" name="Enhanced Pailaka Ring" type="EtcItem">
@@ -442,24 +447,31 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="time" val="43200" />
 		<set name="weight" val="2" />
 	</item>
 	<item id="30326" name="Antharas' Symbol Dye" type="EtcItem">
 		<set name="icon" val="icon.dragon_dye_i01" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30327" name="Valakas' Symbol Dye" type="EtcItem">
 		<set name="icon" val="icon.dragon_dye_i01" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30328" name="Earth Wyrm's Symbol Dye" type="EtcItem">
 		<set name="icon" val="icon.etc_str_hena_i02" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="etcitem_type" val="DYE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30329" name="Envoy Weapon" type="Weapon">
@@ -473,13 +485,21 @@
 		<set name="weight" val="300" />
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
+		<set name="for_npc" val="true" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="5.0" />
-			<set stat="mAtk" val="5.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30330" name="Top-grade Gludio Water Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Gludio. Water Resistance + 30. -->
@@ -495,11 +515,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="waterRes">30</stat>
+		</stats>
 	</item>
 	<item id="30331" name="Top-grade Dion Holy Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Dion. Holy Resistance + 30. -->
@@ -515,11 +536,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="holyRes">30</stat>
+		</stats>
 	</item>
 	<item id="30332" name="Top-grade Giran Wind Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Giran. Wind Resistance + 30. -->
@@ -535,11 +557,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="windRes">30</stat>
+		</stats>
 	</item>
 	<item id="30333" name="Top-grade Oren Dark Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Oren. Dark Resistance + 30. -->
@@ -555,11 +578,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="30334" name="Top-grade Aden Earth Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Aden. Earth Resistance + 30. -->
@@ -575,11 +599,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="earthRes">30</stat>
+		</stats>
 	</item>
 	<item id="30335" name="Top-grade Innadril Water Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Innadril. Water Resistance + 30. -->
@@ -595,11 +620,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="waterRes">30</stat>
+		</stats>
 	</item>
 	<item id="30336" name="Top-grade Goddard Fire Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Goddard. Fire Resistance + 30. -->
@@ -615,11 +641,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="fireRes">30</stat>
+		</stats>
 	</item>
 	<item id="30337" name="Top-grade Rune Fire Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Rune. Fire Resistance + 30. -->
@@ -635,11 +662,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="fireRes">30</stat>
+		</stats>
 	</item>
 	<item id="30338" name="Top-grade Schuttgart Wind Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Schuttgart. Wind Resistance + 30. -->
@@ -655,17 +683,18 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="158.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">158</stat>
+			<stat type="windRes">30</stat>
+		</stats>
 	</item>
 	<item id="30339" name="Top-grade Gludio Water Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Gludio. Stun attack + 15%, Bleed Resistance + 15%, Water Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -675,17 +704,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8786" level="1" /> <!-- Top-grade Royal Guard Earring - Gludio -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30340" name="Top-grade Dion Holy Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Dion. Hold attack + 15%, Poison Resistance + 15%, Holy Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -695,17 +727,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8787" level="1" /> <!-- Top-grade Royal Guard Earring - Dion -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30341" name="Top-grade Giran Wind Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Giran. Bleed attack + 15%, Paralysis Resistance + 15%, Wind Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -715,17 +750,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8788" level="1" /> <!-- Top-grade Royal Guard Earring - Giran -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30342" name="Top-grade Oren Dark Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Oren. Paralysis attack + 15%, Hold Resistance + 15%, Dark Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -735,17 +773,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8789" level="1" /> <!-- Top-grade Royal Guard Earring - Oren -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30343" name="Top-grade Aden Earth Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Aden. Mental attack + 15%, Stun Resistance + 15%, Earth Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -755,17 +796,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8790" level="1" /> <!-- Top-grade Royal Guard Earring - Aden -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30344" name="Top-grade Innadril Water Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Innadril. Sleep attack + 15%, Stun Resistance + 15%, Water Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -775,17 +819,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8791" level="1" /> <!-- Top-grade Royal Guard Earring - Innadril -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30345" name="Top-grade Goddard Fire Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Goddard. Stun attack + 15%, Sleep Resistance + 15%, Fire Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -795,17 +842,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8792" level="1" /> <!-- Top-grade Royal Guard Earring - Goddard -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30346" name="Top-grade Rune Fire Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Rune. Poison attack + 15%, Hold Resistance + 15%, Fire Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="bodypart" val="rear;lear" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -815,16 +865,42 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8793" level="1" /> <!-- Top-grade Royal Guard Earring - Rune -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
 	</item>
 	<item id="30347" name="Top-grade Schuttgart Wind Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Schuttgart. Hold attack + 15%, Mental Resistance + 15%, Wind Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="crystal_type" val="R" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="8794" level="1" /> <!-- Top-grade Royal Guard Earring - Schuttgart -->
+		</skills>
+		<stats>
+			<stat type="mDef">118</stat>
+		</stats>
+	</item>
+	<item id="30348" name="Top-grade Gludio Earth Resistance Earring" type="Armor">
+		<!-- Ring given to the guardian of Gludio. Earth Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
@@ -835,37 +911,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="118.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="30348" name="Top-grade Gludio Earth Resistance Earring" type="Armor">
-		<!-- Ring given to the guardian of Gludio. Earth Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
-		<set name="icon" val="icon.accessary_inferno_ring_i00" />
-		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="crystal_type" val="R" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_commissionable" val="false" />
-		<set name="is_private_storeable" val="false" />
-		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8795" level="1" /> <!-- Top-grade Royal Guard Ring - Gludio -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30349" name="Top-grade Dion Water Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Dion. Water Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -875,17 +934,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8796" level="1" /> <!-- Top-grade Royal Guard Ring - Dion -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30350" name="Top-grade Giran Fire Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Giran. Fire Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -895,17 +957,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8797" level="1" /> <!-- Top-grade Royal Guard Ring - Giran -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30351" name="Top-grade Oren Earth Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Oren. Earth Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -915,17 +980,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8798" level="1" /> <!-- Top-grade Royal Guard Ring - Oren -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30352" name="Top-grade Aden Holy Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Aden. Holy Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -935,17 +1003,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8799" level="1" /> <!-- Top-grade Royal Guard Ring - Aden -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30353" name="Top-grade Innadril Holy Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Innadril. Holy Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -955,17 +1026,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8800" level="1" /> <!-- Top-grade Royal Guard Ring - Innadril -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30354" name="Top-grade Goddard Dark Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Goddard. Dark Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -975,17 +1049,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8801" level="1" /> <!-- Top-grade Royal Guard Ring - Goddard -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30355" name="Top-grade Rune Wind Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Rune. Wind Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -995,17 +1072,20 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8802" level="1" /> <!-- Top-grade Royal Guard Ring - Rune -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30356" name="Top-grade Schuttgart Dark Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Schuttgart. Dark Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="rear;lear" />
+		<set name="bodypart" val="rfinger;lfinger" />
 		<set name="crystal_type" val="R" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1015,11 +1095,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="79.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="8803" level="1" /> <!-- Top-grade Royal Guard Ring - Schuttgart -->
+		</skills>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="30357" name="Elixir of Life (R-grade)" type="EtcItem">
 		<!-- Recovers HP. Only characters level 85 or above can use on themselves. Cooldown is 2 min. -->
@@ -1037,13 +1120,14 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2287" level="7" /> <!-- Elixir of Life (R-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2287" level="7" /> <!-- Elixir of Life (R-grade) -->
+		</skills>
 	</item>
 	<item id="30358" name="Elixir of Mind (R-grade)" type="EtcItem">
 		<!-- Recovers MP. Only characters level 85 or above can use on themselves. Cooldown is 2 min. -->
@@ -1061,13 +1145,14 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2288" level="7" /> <!-- Elixir of Mind (R-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2288" level="7" /> <!-- Elixir of Mind (R-grade) -->
+		</skills>
 	</item>
 	<item id="30359" name="Elixir of CP (R-grade)" type="EtcItem">
 		<!-- Recovers CP. Only characters level 85 or above can use on themselves. Cooldown is 2 min. -->
@@ -1085,6 +1170,7 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
 		<skills>
 			<skill id="2289" level="7" /> <!-- Elixir of CP (R-grade) -->
@@ -1105,13 +1191,14 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2860" level="7" /> <!-- Superior Elixir of Life (R-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2860" level="7" /> <!-- Superior Elixir of Life (R-grade) -->
+		</skills>
 	</item>
 	<item id="30361" name="Superior Elixir of Mind (R-grade)" type="EtcItem">
 		<!-- Recovers MP. Only characters level 85 or above can use on themselves. Cooldown is 2 min. -->
@@ -1122,19 +1209,20 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="material" val="LIQUID" />
-		<set name="reuse_delay" val="300000" />
+		<set name="reuse_delay" val="120000" />
 		<set name="shared_reuse_group" val="6" />
 		<set name="weight" val="5" />
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2861" level="7" /> <!-- Superior Elixir of Mind (R-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="2861" level="7" /> <!-- Superior Elixir of Mind (R-grade) -->
+		</skills>
 	</item>
 	<item id="30362" name="Superior Elixir of CP (R-grade)" type="EtcItem">
 		<!-- Recovers CP. Only characters below level 85 can use on themselves. Cooldown is 2 min. -->
@@ -1151,6 +1239,7 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
 		<skills>
 			<skill id="2862" level="7" /> <!-- Superior Elixir of CP (R-grade) -->
@@ -1161,7 +1250,14 @@
 		<set name="icon" val="icon.etc_soul_stone_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SOUL_CRYSTAL" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="weight" val="20" />
+		<skills>
+			<skill id="2096" level="1" /> <!-- Soul Crystal -->
+		</skills>
 	</item>
 	<item id="30364" name="Life Stone" type="EtcItem">
 		<!-- Life Stone -->
@@ -1169,6 +1265,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30365" name="Headgear" type="Armor">
@@ -1186,11 +1283,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">114</stat>
+		</stats>
 	</item>
 	<item id="30366" name="Boots" type="Armor">
 		<!-- Boots crafting ingredient -->
@@ -1207,11 +1305,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="30367" name="Gloves" type="Armor">
 		<!-- Gloves crafting ingredient -->
@@ -1228,11 +1328,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="element_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">76</stat>
+		</stats>
 	</item>
 	<item id="30368" name="T-shirt" type="Armor">
 		<!-- T-shirt -->
@@ -1242,26 +1344,30 @@
 		<set name="crystal_count" val="85" />
 		<set name="weight" val="130" />
 		<set name="is_freightable" val="false" />
+		<set name="bodypart" val="underwear" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="UNDERWEAR" />
 		<set name="price" val="3997000" />
-		<for>
-			<add order="0" stat="pDef" val="38.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">38</stat>
+		</stats>
 	</item>
 	<item id="30369" name="Belt" type="Armor">
 		<!-- Belt -->
 		<set name="icon" val="icon.armor_belt_i03" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="waist" />
 		<set name="crystal_type" val="R" />
 		<set name="crystal_count" val="42" />
 		<set name="weight" val="440" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="BELT" />
 		<set name="price" val="1998000" />
-		<for>
-			<add order="0" stat="pDef" val="19.0" />
-			<enchant stat="pDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+		</stats>
 	</item>
 	<item id="30370" name="Bracelet" type="Armor">
 		<!-- Bracelet -->
@@ -1271,7 +1377,12 @@
 		<set name="crystal_count" val="75" />
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="commissionItemType" val="BRACELET" />
 		<set name="price" val="3556000" />
+		<skills>
+			<skill id="3326" level="1" /> <!-- Jewelry Bracelet -->
+		</skills>
 	</item>
 	<item id="30371" name="Box Containing Magic Power" type="EtcItem">
 		<!-- Box filled with M. Atk. It contains a useful item. -->
@@ -1285,7 +1396,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="15211" min="1" max="1" chance="100" /> <!-- Equipment Set Pack (30-day) - 30-day -->
+			<item id="13273" min="1" max="1" chance="100" /> <!-- Minion Coupon (5-hour) -->
+			<item id="15426" min="1" max="1" chance="100" /> <!-- Hero's Escape Point - Event -->
+		</capsuled_items>
+		<skills>
+			<skill id="12184" level="1" /> <!-- Box Containing Magic Power -->
+		</skills>
 	</item>
 	<item id="30372" name="Hero's Cloak" type="Armor">
 		<!-- The cloak of a sacred hero. Increases Max HP and CP. M. Def. + 80. DEX/MEN/STR/CON/WIT/INT + 2, and Attribute Resistance + 10. -->
@@ -1302,13 +1422,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="100.0" />
-			<add stat="mDef" val="80.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13136" level="1" /> <!-- Hero's Cloak -->
+		</skills>
+		<stats>
+			<stat type="pDef">100</stat>
+			<stat type="mDef">80</stat>
+		</stats>
 	</item>
 	<item id="30373" name="Glorious Cloak" type="Armor">
 		<!-- Glorious Cloak. Increases Max HP and CP. M. Def. + 50,. DEX/MEN/STR/CON/WIT/INT + 1, and Attribute Resistance + 5.\n\nNote: Item disappears when you change classes. -->
@@ -1325,13 +1447,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="60.0" />
-			<add stat="mDef" val="50.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<skills>
+			<skill id="13137" level="1" /> <!-- Glorious Cloak -->
+		</skills>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="30374" name="Magic Filled Box" type="EtcItem">
 		<!-- Box filled with M. Atk. It contains a useful item. -->
@@ -1345,85 +1469,88 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
+		<capsuled_items>
+			<item id="15211" min="1" max="1" chance="100" /> <!-- Equipment Set Pack (30-day) - 30-day -->
+			<item id="13273" min="1" max="1" chance="100" /> <!-- Minion Coupon (5-hour) -->
+			<item id="15426" min="1" max="1" chance="100" /> <!-- Hero's Escape Point - Event -->
+		</capsuled_items>
+		<skills>
+			<skill id="12185" level="1" /> <!-- Magic Filled Box -->
+		</skills>
 	</item>
 	<item id="30375" name="Infinite Orichalcum Quiver" name_additional="Additional Hit" type="EtcItem">
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="crystal_type" val="R" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="13122" level="1" /> <!-- Added Blow Quiver -->
-		</skills>
 	</item>
 	<item id="30376" name="Infinite Orichalcum Quiver" name_additional="Critical Hit" type="EtcItem">
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="crystal_type" val="R" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="13123" level="1" /> <!-- Increased Damage Quiver -->
-		</skills>
 	</item>
 	<item id="30377" name="Infinite Orichalcum Quiver" name_additional="Bleed Hit" type="EtcItem">
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="crystal_type" val="R" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="13124" level="1" /> <!-- Added Bleed Quiver -->
-		</skills>
 	</item>
 	<item id="30378" name="Infinite Orichalcum Bolt Container" name_additional="Additional Hit" type="EtcItem">
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="crystal_type" val="R" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="19095" level="1" /> <!-- Added Bleed Quiver -->
-		</skills>
 	</item>
 	<item id="30379" name="Infinite Orichalcum Bolt Container" name_additional="Critical Hit" type="EtcItem">
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="crystal_type" val="R" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="19094" level="1" /> <!-- Increased Damage Quiver -->
-		</skills>
 	</item>
 	<item id="30380" name="Infinite Orichalcum Bolt Container" name_additional="Bleed Hit" type="EtcItem">
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="ORIHARUKON" />
 		<set name="crystal_type" val="R" />
+		<set name="enchant_enabled" val="1" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="19093" level="1" /> <!-- Added Blow Quiver -->
-		</skills>
 	</item>
 	<item id="30381" name="Lucky Enchant Stone: Weapon (R-grade)" type="EtcItem">
 		<!-- Enchant success rate + 10% for weapons (R-grade). Only for items enchanted between + 3 and + 9. -->
@@ -1437,7 +1564,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9207" level="1" /> <!-- Lucky Clover (R-grade) -->
+		</skills>
 	</item>
 	<item id="30382" name="Lucky Enchant Stone: Armor (R-grade)" type="EtcItem">
 		<!-- Enchant success rate + 15% for armor (R-grade). Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
@@ -1451,7 +1582,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9208" level="1" /> <!-- Lucky Clover (R-grade) -->
+		</skills>
 	</item>
 	<item id="30383" name="Mentor Ring" type="Armor">
 		<!-- Ring received by an academy member after training with his sponsor. Produces the effect of MP + 22. -->
@@ -1467,11 +1602,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="enchant_enabled" val="1" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="55.0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="mDef">55</stat>
+		</stats>
 	</item>
 	<item id="30384" name="Certificate of Promise" type="EtcItem">
 		<!-- Proof given to those who successfully complete a mission. Can be exchanged for equipment. -->
@@ -1537,6 +1673,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30389" name="Returning Adventurer's Support Box (A-grade)" type="EtcItem">
@@ -1551,6 +1688,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30390" name="Returning Adventurer's Support Box (B-grade)" type="EtcItem">
@@ -1565,6 +1703,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30391" name="Returning Adventurer's Support Box (C-grade)" type="EtcItem">
@@ -1579,6 +1718,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="default_action" val="CAPSULE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="30392" name="Infinity Shaper" type="Weapon">
@@ -1600,13 +1740,21 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="881.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13146" level="1" /> <!-- Special Ability: Infinity Shaper -->
+		</skills>
+		<stats>
+			<stat type="pAtk">845</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30393" name="Infinity Cutter" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1627,13 +1775,20 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13147" level="1" /> <!-- Special Ability: Infinity Cutter -->
+		</skills>
+		<stats>
+			<stat type="pAtk">966</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30394" name="Infinity Slasher" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1654,13 +1809,20 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13148" level="1" /> <!-- Special Ability: Infinity Slasher -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1175</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30395" name="Infinity Avenger" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1681,14 +1843,21 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13149" level="1" /> <!-- Special Ability: Infinity Avenger -->
+		</skills>
+		<stats>
+			<stat type="pAtk">966</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30396" name="Infinity Fighter" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1709,14 +1878,21 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;32;120" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="13150" level="1" /> <!-- Special Ability: Infinity Fighter -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1175</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="30397" name="Infinity Stormer" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1737,13 +1913,21 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;66;120" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13151" level="1" /> <!-- Special Ability: Infinity Stormer -->
+		</skills>
+		<stats>
+			<stat type="pAtk">966</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="30398" name="Infinity Thrower" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1764,13 +1948,22 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;10;0" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="1983.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13152" level="1" /> <!-- Special Ability: Infinity Thrower -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1902</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="30399" name="Infinity Shooter" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1791,12 +1984,21 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1350" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1300" />
-		<for>
-			<set stat="pAtk" val="1786.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13153" level="1" /> <!-- Special Ability: Infinity Shooter -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1712</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 </list>

@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
+import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -41,12 +42,13 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	private final int _reuseGroup;
 	private final int _reuseDelay;
 	private final int _actionId; // If skill is called from RequestActionUse, use that ID.
+	private final SkillCastingType _castingType; // Defines which client bar is going to use.
 	private final Creature _activeChar;
 	private final Creature _target;
 	private final List<Integer> _unknown = Collections.emptyList();
 	private final List<Location> _groundLocations;
 	
-	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int actionId)
+	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType)
 	{
 		_activeChar = cha;
 		_target = target;
@@ -56,6 +58,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 		_reuseGroup = reuseGroup;
 		_reuseDelay = reuseDelay;
 		_actionId = actionId;
+		_castingType = castingType;
 		Location skillWorldPos = null;
 		if (cha.isPlayer())
 		{
@@ -70,12 +73,12 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	
 	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay)
 	{
-		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1, -1);
+		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1, -1, SkillCastingType.NORMAL);
 	}
 	
 	public MagicSkillUse(Creature cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
 	{
-		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1, -1);
+		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1, -1, SkillCastingType.NORMAL);
 	}
 	
 	@Override
@@ -83,7 +86,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	{
 		OutgoingPackets.MAGIC_SKILL_USE.writeId(packet);
 		
-		packet.writeD(0x00); // Casting bar type: 0 - default, 1 - default up, 2 - blue, 3 - green, 4 - red.
+		packet.writeD(_castingType.getClientBarId()); // Casting bar type: 0 - default, 1 - default up, 2 - blue, 3 - green, 4 - red.
 		packet.writeD(_activeChar.getObjectId());
 		packet.writeD(_target.getObjectId());
 		packet.writeD(_skillId);

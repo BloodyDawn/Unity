@@ -22,6 +22,7 @@ import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -37,6 +38,13 @@ public class MAttackFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = calcWeaponBaseValue(creature, stat);
+		baseValue += calcEnchantedItemBonus(creature, stat);
+		if (creature.isPlayer())
+		{
+			// Enchanted chest bonus
+			baseValue += calcEnchantBodyPart(creature, L2Item.SLOT_CHEST, L2Item.SLOT_FULL_ARMOR);
+		}
+		
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
 			baseValue *= Config.L2JMOD_CHAMPION_ATK;
@@ -51,5 +59,16 @@ public class MAttackFinalizer implements IStatsFunction
 		final double intBonus = creature.getINT() > 0 ? BaseStats.INT.calcBonus(creature) : 1.;
 		baseValue *= Math.pow(intBonus, 2) * Math.pow(creature.getLevelMod(), 2) * chaMod;
 		return Stats.defaultValue(creature, stat, baseValue);
+	}
+	
+	@Override
+	public double calcEnchantBodyPartBonus(int enchantLevel, boolean isBlessed)
+	{
+		if (isBlessed)
+		{
+			return (2 * Math.max(enchantLevel - 3, 0)) + (2 * Math.max(enchantLevel - 6, 0));
+		}
+		
+		return (1.4 * Math.max(enchantLevel - 3, 0)) + (1.4 * Math.max(enchantLevel - 6, 0));
 	}
 }

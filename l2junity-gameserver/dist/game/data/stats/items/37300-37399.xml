@@ -18,13 +18,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="360" />
-		<for>
-			<set stat="pAtk" val="348.0" />
-			<set stat="mAtk" val="252.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+		</skills>
+		<stats>
+			<stat type="pAtk">348</stat>
+			<stat type="mAtk">252</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37301" name="Steel Requiem Buster (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -44,12 +49,17 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="510" />
-		<for>
-			<set stat="pAtk" val="348.0" />
-			<set stat="mAtk" val="252.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+		</skills>
+		<stats>
+			<stat type="pAtk">348</stat>
+			<stat type="mAtk">252</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37302" name="Steel Requiem Stormer (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. -->
@@ -69,12 +79,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="670" />
-		<for>
-			<set stat="pAtk" val="435.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="13109" level="1" /> <!-- Special Ability: Damage Up -->
+		</skills>
+		<stats>
+			<stat type="pAtk">435</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
 	</item>
 	<item id="37303" name="Steel Requiem Slasher (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Attack Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -94,12 +111,17 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="580" />
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="4" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37304" name="Steel Requiem Dualsword (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Attack Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -119,12 +141,17 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="510" />
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="4" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37305" name="Steel Requiem Fighter (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Attack Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -144,13 +171,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="520" />
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="4" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37306" name="Steel Requiem Dual Blunt (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 79.5. Increases damage inflicted during PvP. -->
@@ -170,13 +202,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="580" />
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3566" level="6" /> <!-- Special Ability: Focus -->
+		</skills>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37307" name="Steel Requiem Shaper (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Attack Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -196,12 +233,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="510" />
-		<for>
-			<set stat="pAtk" val="380.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="4" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">380</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37308" name="Steel Requiem Dual Dagger (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. -->
@@ -221,12 +264,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="680" />
-		<for>
-			<set stat="pAtk" val="435.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+		</skills>
+		<stats>
+			<stat type="pAtk">435</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37309" name="Steel Requiem Thrower (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 288. Increases damage inflicted during PvP. -->
@@ -245,13 +294,20 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
 		<set name="weight" val="510" />
-		<for>
-			<set stat="pAtk" val="856.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="13062" level="1" /> <!-- Special Ability: Damage Up -->
+		</skills>
+		<stats>
+			<stat type="pAtk">856</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="37310" name="Steel Requiem Shooter (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Attack Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -270,13 +326,20 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1350" />
 		<set name="weight" val="530" />
-		<for>
-			<set stat="pAtk" val="771.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="4" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">771</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="37311" name="Steel Requiem Avenger (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Attack Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -296,13 +359,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="580" />
-		<for>
-			<set stat="pAtk" val="435.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3564" level="4" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">435</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37312" name="Steel Requiem Retributer (30-day)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -322,14 +390,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="360" />
-		<for>
-			<set stat="pAtk" val="423.0" />
-			<set stat="mAtk" val="278.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<skills>
+			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+		</skills>
+		<stats>
+			<stat type="pAtk">423</stat>
+			<stat type="mAtk">278</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="37313" name="Toma's Support Box" type="EtcItem">
 		<!-- Support Box that Master Toma arranged by himself. Double-click to receive Toma's Living Guide, Returning Hero's Support Box, and Returning Hero's Potion Pack. -->
@@ -1219,13 +1292,17 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
 		<set name="weight" val="550" />
-		<for>
-			<set stat="pAtk" val="581.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="37377" name="Steel Dynasty Bow (60-day)" type="Weapon">
 		<!-- Dynasty Bow with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60 days. -->
@@ -1244,13 +1321,17 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
 		<set name="weight" val="510" />
-		<for>
-			<set stat="pAtk" val="654.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">654</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="37378" name="Emerald Weapon Appearance Stone" type="EtcItem">
 		<set name="icon" val="BranchSys.Icon.br_spirit_skill_i00" />
@@ -1277,6 +1358,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37380" name="Blessed Scroll: Modify Weapon (S-grade)" name_additional="30-day" type="EtcItem">
@@ -1291,6 +1373,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37381" name="Blessed Scroll: Modify Weapon (A-grade)" name_additional="30-day" type="EtcItem">
@@ -1305,6 +1388,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37382" name="Blessed Scroll: Modify Weapon (B-grade)" name_additional="30-day" type="EtcItem">
@@ -1319,6 +1403,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37383" name="Blessed Scroll: Modify Weapon (C-grade)" name_additional="30-day" type="EtcItem">
@@ -1333,6 +1418,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37384" name="Blessed Scroll: Modify Weapon (D-grade)" name_additional="30-day" type="EtcItem">
@@ -1347,6 +1433,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_WP" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37385" name="Blessed Scroll: Modify Armor (R-grade)" name_additional="30-day" type="EtcItem">
@@ -1361,6 +1448,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37386" name="Blessed Scroll: Modify Armor (S-grade)" name_additional="30-day" type="EtcItem">
@@ -1375,6 +1463,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37387" name="Blessed Scroll: Modify Armor (A-grade)" name_additional="30-day" type="EtcItem">
@@ -1389,6 +1478,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37388" name="Blessed Scroll: Modify Armor (B-grade)" name_additional="30-day" type="EtcItem">
@@ -1403,6 +1493,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37389" name="Blessed Scroll: Modify Armor (C-grade)" name_additional="30-day" type="EtcItem">
@@ -1417,6 +1508,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37390" name="Blessed Scroll: Modify Armor (D-grade)" name_additional="30-day" type="EtcItem">
@@ -1431,6 +1523,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="BLESS_SHAPE_SHIFTING_AM" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37391" name="Steel Door Guild Reward Box (Low-grade)" type="EtcItem">
@@ -1500,7 +1593,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="17000" level="1" /> <!-- Scroll: 10,000,000 SP -->
+		</skills>
 	</item>
 	<item id="37396" name="Emerald Weapon Appearance Stone Pack" type="EtcItem">
 		<!-- Double-click to receive an Changes the appearance of a weapon to that of an Emerald Weapon. -->
@@ -1522,6 +1619,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37398" name="Black Anvil Guild's Dimensional Chest" type="EtcItem">

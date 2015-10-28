@@ -783,6 +783,7 @@
 	<item id="46060" name="Kelbim Dagger" type="Weapon">
 		<!-- Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. \nEnchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. -->
 		<set name="icon" val="icon.weapon_kelbim_cutter_i01" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
@@ -791,16 +792,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="647.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">707</stat>
+			<stat type="mAtk">352</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="46061" name="Kelbim Dual Dagger" type="Weapon">
 		<!-- Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. \nEnchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. -->
 		<set name="icon" val="icon.weapon_kelbim_dual_dagger_i01" />
+		<set name="weapon_type" val="DUALDAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
@@ -809,16 +813,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="2050" />
-		<for>
-			<set stat="pAtk" val="740.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">809</stat>
+			<stat type="mAtk">352</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="46062" name="Kelbim Bow" type="Weapon">
 		<!-- Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. \nEnchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. -->
 		<set name="icon" val="icon.weapon_kelbim_bow_i01" />
+		<set name="weapon_type" val="BOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
@@ -827,16 +834,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="1520" />
-		<for>
-			<set stat="pAtk" val="1457.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1592</stat>
+			<stat type="mAtk">352</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 	<item id="46063" name="Kelbim Crossbow" type="Weapon">
 		<!-- Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. \nEnchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. -->
 		<set name="icon" val="icon.weapon_kelbim_crossbow_i01" />
+		<set name="weapon_type" val="CROSSBOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="is_freightable" val="false" />
@@ -845,12 +855,14 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="1580" />
-		<for>
-			<set stat="pAtk" val="1312.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1434</stat>
+			<stat type="mAtk">352</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
 	</item>
 	<item id="46064" name="Dimensional Gludio Badge" type="EtcItem">
 		<!-- Badge bearing the mark of the Town of Gludio. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
@@ -1038,6 +1050,7 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="46078" name="Lucky Enchant Stone: Armor (R-grade)" type="EtcItem">
@@ -1046,6 +1059,7 @@
 		<set name="weight" val="120" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="46079" name="Kelbim's Atelia Fragment" type="EtcItem">
@@ -1061,6 +1075,7 @@
 		<set name="weight" val="30" />
 		<set name="price" val="1800000" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="46081" name="Recipe: Mysterious Blessed Spiritshot (R-grade)" type="EtcItem">
@@ -1069,6 +1084,7 @@
 		<set name="weight" val="30" />
 		<set name="price" val="1800000" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="46082" name="Mysterious Soulshot (R-grade)" type="EtcItem">
@@ -1078,6 +1094,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="crystal_type" val="R" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="46083" name="Mysterious Blessed Spiritshot (R-grade)" type="EtcItem">
@@ -1087,6 +1104,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="crystal_type" val="R" />
+		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="46084" name="Player Commendation Special Bait" name_additional="PC-exclusive" type="EtcItem">
@@ -1105,6 +1123,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="46085" name="Treasure Map Piece - 1" type="EtcItem">

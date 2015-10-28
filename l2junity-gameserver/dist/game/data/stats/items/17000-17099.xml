@@ -17,9 +17,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="16858" max="1" min="1" /> <!-- Black Ore Necklace of Fortune 90-day -->
-			<item chance="100.0" id="16857" max="2" min="2" /> <!-- Black Ore Earring of Fortune 90-day -->
-			<item chance="100.0" id="16859" max="2" min="2" /> <!-- Black Ore Ring of Fortune 90-day -->
+			<item id="16858" min="1" max="1" chance="100" /> <!-- Black Ore Necklace of Fortune - 90-day -->
+			<item id="16857" min="2" max="2" chance="100" /> <!-- Black Ore Earring of Fortune - 90-day -->
+			<item id="16859" min="2" max="2" chance="100" /> <!-- Black Ore Ring of Fortune - 90-day -->
 		</capsuled_items>
 	</item>
 	<item id="17001" name="Jewelry Pack (C-grade)" name_additional="90-day" type="EtcItem">
@@ -39,9 +39,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="16861" max="1" min="1" /> <!-- Sealed Necklace of Fortune 90-day -->
-			<item chance="100.0" id="16860" max="2" min="2" /> <!-- Sealed Earring of Fortune 90-day -->
-			<item chance="100.0" id="16862" max="2" min="2" /> <!-- Sealed Ring of Fortune 90-day -->
+			<item id="16861" min="1" max="1" chance="100" /> <!-- Sealed Necklace of Fortune - 90-day -->
+			<item id="16860" min="2" max="2" chance="100" /> <!-- Sealed Earring of Fortune - 90-day -->
+			<item id="16862" min="2" max="2" chance="100" /> <!-- Sealed Ring of Fortune - 90-day -->
 		</capsuled_items>
 	</item>
 	<item id="17002" name="Jewelry Pack (D-grade)" name_additional="90-day" type="EtcItem">
@@ -61,9 +61,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="16864" max="1" min="1" /> <!-- Elven Necklace of Fortune 90-day -->
-			<item chance="100.0" id="16863" max="2" min="2" /> <!-- Elven Earring of Fortune 90-day -->
-			<item chance="100.0" id="16865" max="2" min="2" /> <!-- Elven Ring of Fortune 90-day -->
+			<item id="16864" min="1" max="1" chance="100" /> <!-- Elven Necklace of Fortune - 90-day -->
+			<item id="16863" min="2" max="2" chance="100" /> <!-- Elven Earring of Fortune - 90-day -->
+			<item id="16865" min="2" max="2" chance="100" /> <!-- Elven Ring of Fortune - 90-day -->
 		</capsuled_items>
 	</item>
 	<item id="17003" name="Santa's Gift" name_additional="Event" type="EtcItem">
@@ -74,6 +74,7 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9085" level="1" /> <!-- Santa' Gift -->
@@ -95,9 +96,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 			<skill id="8464" level="1" /> <!-- Release Agathion's Seal - Kid Rudolph -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="17005" name="Santa - CP Potion" name_additional="Event" type="EtcItem">
@@ -111,6 +111,8 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9086" level="2" /> <!-- Santa - CP Potion -->
@@ -129,13 +131,15 @@
 		<set name="price" val="46668000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="236" />
-		</for>
+		<stats>
+			<stat type="pDef">236</stat>
+		</stats>
 	</item>
 	<item id="17007" name="Sealed Vesper Noble Leather Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t95_u_i02" />
@@ -150,10 +154,12 @@
 		<set name="price" val="35000000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="177" />
-		</for>
+		<stats>
+			<stat type="pDef">177</stat>
+		</stats>
 	</item>
 	<item id="17008" name="Sealed Vesper Noble Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t96_u_i02" />
@@ -168,14 +174,16 @@
 		<set name="price" val="35000000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="118" />
-			<add stat="maxMp" val="637" />
-		</for>
+		<stats>
+			<stat type="pDef">118</stat>
+			<stat type="maxMp">637</stat>
+		</stats>
 	</item>
 	<item id="17009" name="Sealed Vesper Noble Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t94_l_i02" />
@@ -190,13 +198,15 @@
 		<set name="price" val="29168000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="148" />
-		</for>
+		<stats>
+			<stat type="pDef">148</stat>
+		</stats>
 	</item>
 	<item id="17010" name="Sealed Vesper Noble Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t94_g_i02" />
@@ -210,13 +220,15 @@
 		<set name="price" val="11667000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="17011" name="Sealed Vesper Noble Boots" type="Armor">
 		<set name="icon" val="icon.armor_t94_b_i02" />
@@ -230,13 +242,15 @@
 		<set name="price" val="11667000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="17012" name="Sealed Vesper Noble Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t95_l_i02" />
@@ -251,10 +265,12 @@
 		<set name="price" val="21876000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="111" />
-		</for>
+		<stats>
+			<stat type="pDef">111</stat>
+		</stats>
 	</item>
 	<item id="17013" name="Sealed Vesper Noble Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t95_g_i02" />
@@ -268,10 +284,12 @@
 		<set name="price" val="11667000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="17014" name="Sealed Vesper Noble Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t95_b_i02" />
@@ -285,10 +303,12 @@
 		<set name="price" val="11667000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="17015" name="Sealed Vesper Noble Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t96_l_i02" />
@@ -303,14 +323,16 @@
 		<set name="price" val="21876000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="74" />
-			<add stat="maxMp" val="415" />
-		</for>
+		<stats>
+			<stat type="pDef">74</stat>
+			<stat type="maxMp">415</stat>
+		</stats>
 	</item>
 	<item id="17016" name="Sealed Vesper Noble Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t96_g_i02" />
@@ -324,13 +346,15 @@
 		<set name="price" val="11667000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="17017" name="Sealed Vesper Noble Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t96_b_i02" />
@@ -344,13 +368,15 @@
 		<set name="price" val="11667000" />
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="FEET" />
+		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="17018" name="Hot Springs Recovery Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_cp_potion_i01" />
@@ -364,6 +390,8 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_coc_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9078" level="1" /> <!-- Hot Springs Recovery Potion -->
@@ -388,9 +416,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13121" max="1" min="1" /> <!-- Darkmane Pacer Pack (7-day) -->
-			<item chance="100.0" id="14231" max="1" min="1" /> <!-- Mount - Gold Maned Lion Pack (7-day) -->
-			<item chance="100.0" id="14232" max="1" min="1" /> <!-- Mount - Steam Beetle Pack (7-day) -->
+			<item id="13121" min="1" max="1" chance="100" /> <!-- Darkmane Pacer Pack (7-day) -->
+			<item id="14231" min="1" max="1" chance="100" /> <!-- Mount - Gold Maned Lion Pack (7-day) -->
+			<item id="14232" min="1" max="1" chance="100" /> <!-- Mount - Steam Beetle Pack (7-day) -->
 		</capsuled_items>
 	</item>
 	<item id="17020" name="Fresh Milk Pack (Event)" type="EtcItem">
@@ -412,7 +440,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="14739" max="1" min="1" /> <!-- Event - Fresh Milk -->
+			<item id="14739" min="1" max="1" chance="100" /> <!-- Event - Fresh Milk -->
 		</capsuled_items>
 	</item>
 	<item id="17021" name="Dimensional Experience Pack 30 (Event)" type="EtcItem">
@@ -434,9 +462,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="14239" max="1" min="1" /> <!-- Superior Minion Coupon 2-unit Pack -->
-			<item chance="100.0" id="13082" max="1" min="1" /> <!-- Feather of Blessing 3-unit Pack -->
-			<item chance="100.0" id="13085" max="1" min="1" /> <!-- Entrance Pass: Kamaloka 3-unit Pack -->
+			<item id="14239" min="1" max="1" chance="100" /> <!-- Superior Minion Coupon 2-unit Pack -->
+			<item id="13082" min="1" max="1" chance="100" /> <!-- Feather of Blessing 3-unit Pack -->
+			<item id="13085" min="1" max="1" chance="100" /> <!-- Entrance Pass: Kamaloka 3-unit Pack -->
 		</capsuled_items>
 	</item>
 	<item id="17022" name="Varka Karm Pack (Event)" type="EtcItem">
@@ -458,7 +486,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13234" max="1" min="1" /> <!-- Varka Circlet -->
+			<item id="13234" min="1" max="1" chance="100" /> <!-- Varka Circlet -->
 		</capsuled_items>
 	</item>
 	<item id="17023" name="Ketra Karm Pack (Event)" type="EtcItem">
@@ -480,7 +508,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="13235" max="1" min="1" /> <!-- Ketra Circlet -->
+			<item id="13235" min="1" max="1" chance="100" /> <!-- Ketra Circlet -->
 		</capsuled_items>
 	</item>
 	<item id="17024" name="Vitality Maintaining Potion Pack (Event)" type="EtcItem">
@@ -501,7 +529,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="15440" max="5" min="5" /> <!-- Vitality Maintaining Potion (30-minute) -->
+			<item id="15440" min="5" max="5" chance="100" /> <!-- Vitality Maintaining Potion (30-minute) -->
 		</capsuled_items>
 	</item>
 	<item id="17025" name="PC Point Pack (700) (Event)" type="EtcItem">
@@ -523,7 +551,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="14559" max="1" min="1" /> <!-- Player Commendation Points -->
+			<item id="14559" min="1" max="1" chance="100" /> <!-- Player Commendation Points -->
 		</capsuled_items>
 	</item>
 	<item id="17026" name="First Mate Hat Pack (Event)" type="EtcItem">
@@ -545,7 +573,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="8919" max="1" min="1" /> <!-- First Mate Hat (Event) -->
+			<item id="8919" min="1" max="1" chance="100" /> <!-- First Mate Hat (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="17027" name="Straw Hat Pack (Event)" type="EtcItem">
@@ -567,7 +595,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="10616" max="1" min="1" /> <!-- Straw Hat (Event) -->
+			<item id="10616" min="1" max="1" chance="100" /> <!-- Straw Hat (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="17028" name="Phantom Mask Pack (Event)" type="EtcItem">
@@ -589,7 +617,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="9208" max="1" min="1" /> <!-- Phantom Mask (Event) -->
+			<item id="9208" min="1" max="1" chance="100" /> <!-- Phantom Mask (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="17029" name="Black Phantom Mask Pack (Event)" type="EtcItem">
@@ -611,7 +639,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="9409" max="1" min="1" /> <!-- Black Phantom Mask (Event) -->
+			<item id="9409" min="1" max="1" chance="100" /> <!-- Black Phantom Mask (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="17030" name="Forgotten Scroll: Create Item Lv. 10" type="EtcItem">
@@ -623,6 +651,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9087" level="1" /> <!-- Create Item -->
@@ -647,14 +676,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17033" max="1" min="1" /> <!-- Circlet of Ice (Event) 30-day -->
-			<item chance="100.0" id="9552" max="1" min="1" /> <!-- Fire Crystal -->
-			<item chance="100.0" id="9553" max="1" min="1" /> <!-- Water Crystal -->
-			<item chance="100.0" id="9554" max="1" min="1" /> <!-- Earth Crystal -->
-			<item chance="100.0" id="9555" max="1" min="1" /> <!-- Wind Crystal -->
-			<item chance="100.0" id="9556" max="1" min="1" /> <!-- Dark Crystal -->
-			<item chance="100.0" id="9557" max="1" min="1" /> <!-- Holy Crystal -->
-			<item chance="100.0" id="14055" max="3" min="3" /> <!-- Vitality Replenishing Potion -->
+			<item id="17033" min="1" max="1" chance="100" /> <!-- Circlet of Ice (Event) - 30-day -->
+			<item id="9552" min="1" max="1" chance="100" /> <!-- Fire Crystal -->
+			<item id="9553" min="1" max="1" chance="100" /> <!-- Water Crystal -->
+			<item id="9554" min="1" max="1" chance="100" /> <!-- Earth Crystal -->
+			<item id="9555" min="1" max="1" chance="100" /> <!-- Wind Crystal -->
+			<item id="9556" min="1" max="1" chance="100" /> <!-- Dark Crystal -->
+			<item id="9557" min="1" max="1" chance="100" /> <!-- Holy Crystal -->
+			<item id="14055" min="3" max="3" chance="100" /> <!-- Vitality Replenishing Potion -->
 		</capsuled_items>
 	</item>
 	<item id="17032" name="Hero's Treasure Chest Pack" type="EtcItem">
@@ -676,7 +705,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="16852" max="1" min="1" /> <!-- Hero's Treasure Chest -->
+			<item id="16852" min="1" max="1" chance="100" /> <!-- Hero's Treasure Chest -->
 		</capsuled_items>
 	</item>
 	<item id="17033" name="Circlet of Ice (Event)" name_additional="30-day" type="Armor">
@@ -839,7 +868,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17044" max="1" min="1" /> <!-- Love Box -->
+			<item id="17044" min="1" max="1" chance="100" /> <!-- Love Box -->
 		</capsuled_items>
 	</item>
 	<item id="17041" name="Sentiment Box Pack" type="EtcItem">
@@ -859,7 +888,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17045" max="1" min="1" /> <!-- Sentiment Box -->
+			<item id="17045" min="1" max="1" chance="100" /> <!-- Sentiment Box -->
 		</capsuled_items>
 	</item>
 	<item id="17042" name="Confession Box Pack" type="EtcItem">
@@ -879,7 +908,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17046" max="1" min="1" /> <!-- Confession Box -->
+			<item id="17046" min="1" max="1" chance="100" /> <!-- Confession Box -->
 		</capsuled_items>
 	</item>
 	<item id="17043" name="Joy Box Pack" type="EtcItem">
@@ -899,7 +928,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17047" max="1" min="1" /> <!-- Joy Box -->
+			<item id="17047" min="1" max="1" chance="100" /> <!-- Joy Box -->
 		</capsuled_items>
 	</item>
 	<item id="17044" name="Love Box" type="EtcItem">
@@ -916,9 +945,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17051" max="1" min="1" /> <!-- Talisman - STR -->
-			<item chance="100.0" id="17052" max="1" min="1" /> <!-- Talisman - DEX -->
-			<item chance="100.0" id="17053" max="1" min="1" /> <!-- Talisman - CON -->
+			<item id="17051" min="1" max="1" chance="100" /> <!-- Talisman - STR -->
+			<item id="17052" min="1" max="1" chance="100" /> <!-- Talisman - DEX -->
+			<item id="17053" min="1" max="1" chance="100" /> <!-- Talisman - CON -->
 		</capsuled_items>
 	</item>
 	<item id="17045" name="Sentiment Box" type="EtcItem">
@@ -935,9 +964,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17054" max="1" min="1" /> <!-- Talisman - WIT -->
-			<item chance="100.0" id="17055" max="1" min="1" /> <!-- Talisman - INT -->
-			<item chance="100.0" id="17056" max="1" min="1" /> <!-- Talisman - MEN -->
+			<item id="17054" min="1" max="1" chance="100" /> <!-- Talisman - WIT -->
+			<item id="17055" min="1" max="1" chance="100" /> <!-- Talisman - INT -->
+			<item id="17056" min="1" max="1" chance="100" /> <!-- Talisman - MEN -->
 		</capsuled_items>
 	</item>
 	<item id="17046" name="Confession Box" type="EtcItem">
@@ -954,10 +983,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17057" max="1" min="1" /> <!-- Talisman - Stun Resistance -->
-			<item chance="100.0" id="17058" max="1" min="1" /> <!-- Talisman - Sleep Resistance -->
-			<item chance="100.0" id="17059" max="1" min="1" /> <!-- Talisman - Hold Resistance -->
-			<item chance="100.0" id="17060" max="1" min="1" /> <!-- Talisman - Paralysis Resistance -->
+			<item id="17057" min="1" max="1" chance="100" /> <!-- Talisman - Stun Resistance -->
+			<item id="17058" min="1" max="1" chance="100" /> <!-- Talisman - Sleep Resistance -->
+			<item id="17059" min="1" max="1" chance="100" /> <!-- Talisman - Hold Resistance -->
+			<item id="17060" min="1" max="1" chance="100" /> <!-- Talisman - Paralysis Resistance -->
 		</capsuled_items>
 	</item>
 	<item id="17047" name="Joy Box" type="EtcItem">
@@ -974,11 +1003,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17044" max="1" min="1" /> <!-- Love Box -->
-			<item chance="100.0" id="17045" max="1" min="1" /> <!-- Sentiment Box -->
-			<item chance="100.0" id="17046" max="1" min="1" /> <!-- Confession Box -->
-			<item chance="100.0" id="17050" max="1" min="1" /> <!-- Shiny Couple Ring -->
-			<item chance="100.0" id="17061" max="1" min="1" /> <!-- Talisman - ALL STATS -->
+			<item id="17044" min="1" max="1" chance="100" /> <!-- Love Box -->
+			<item id="17045" min="1" max="1" chance="100" /> <!-- Sentiment Box -->
+			<item id="17046" min="1" max="1" chance="100" /> <!-- Confession Box -->
+			<item id="17050" min="1" max="1" chance="100" /> <!-- Shiny Couple Ring -->
+			<item id="17061" min="1" max="1" chance="100" /> <!-- Talisman - ALL STATS -->
 		</capsuled_items>
 	</item>
 	<item id="17048" name="Shiny Bracelet Pack" type="EtcItem">
@@ -996,7 +1025,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17049" max="1" min="1" /> <!-- Shiny Bracelet -->
+			<item id="17049" min="1" max="1" chance="100" /> <!-- Shiny Bracelet -->
 		</capsuled_items>
 	</item>
 	<item id="17049" name="Shiny Bracelet" type="Armor">
@@ -1034,6 +1063,9 @@
 		<skills>
 			<skill id="8510" level="1" /> <!-- Summon Friend -->
 		</skills>
+		<stats>
+			<stat type="mDef">7</stat>
+		</stats>
 	</item>
 	<item id="17051" name="Talisman - STR" type="Armor">
 		<set name="icon" val="icon.etc_talisman_event_i00" />
@@ -1285,6 +1317,7 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="9096" level="1" /> <!-- Event - Summon Scroll: Baby White Tiger -->
@@ -1298,6 +1331,7 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="9098" level="1" /> <!-- Event - Summon Scroll: Gloomy Baby White Tiger -->
@@ -1311,6 +1345,7 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="9097" level="1" /> <!-- Event - Summon Scroll: Baby White Tiger Captain -->
@@ -1324,6 +1359,7 @@
 		<set name="reuse_delay" val="10000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="handler" val="ItemSkills" />
 		<skills>
 			<skill id="9099" level="1" /> <!-- Event - Summon Scroll: Gloomy Baby White Tiger Captain -->
@@ -1347,10 +1383,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="17067" max="60" min="60" /> <!-- Event - Cupid's Fatigue Relief Potion -->
-			<item chance="100.0" id="17068" max="15" min="15" /> <!-- Event - Cupid's Major Fatigue Relief Potion -->
-			<item chance="100.0" id="17062" max="1" min="1" /> <!-- Event - Summon Scroll: Baby White Tiger -->
-			<item chance="100.0" id="17064" max="1" min="1" /> <!-- Event - Summon Scroll: Baby White Tiger Captain -->
+			<item id="17067" min="60" max="60" chance="100" /> <!-- Event - Cupid's Fatigue Relief Potion -->
+			<item id="17068" min="15" max="15" chance="100" /> <!-- Event - Cupid's Major Fatigue Relief Potion -->
+			<item id="17062" min="1" max="1" chance="100" /> <!-- Event - Summon Scroll: Baby White Tiger -->
+			<item id="17064" min="1" max="1" chance="100" /> <!-- Event - Summon Scroll: Baby White Tiger Captain -->
 		</capsuled_items>
 	</item>
 	<item id="17067" name="Event - Cupid's Fatigue Relief Potion" type="EtcItem">
@@ -1359,17 +1395,17 @@
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="material" val="LIQUID" />
 		<set name="shared_reuse_group" val="13" />
-		<set name="reuse_delay" val="2000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="9088" level="1" /> <!-- Cupid's Cure -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="9088" level="1" /> <!-- Cupid's Cure -->
+		</skills>
 	</item>
 	<item id="17068" name="Event - Cupid's Major Fatigue Relief Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_nutrients_of_cupid_i00" />
@@ -1377,27 +1413,28 @@
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="material" val="LIQUID" />
 		<set name="shared_reuse_group" val="14" />
-		<set name="reuse_delay" val="4000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="9089" level="1" /> <!-- Cupid's Enhanced Cure -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
+		<skills>
+			<skill id="9089" level="1" /> <!-- Cupid's Enhanced Cure -->
+		</skills>
 	</item>
 	<item id="17069" name="Vesper Weapon Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9100" level="1" /> <!-- Vesper Weapon Pack -->
@@ -1405,13 +1442,14 @@
 	</item>
 	<item id="17070" name="Icarus Weapon Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9101" level="1" /> <!-- Icarus Weapon Pack -->
@@ -1419,13 +1457,14 @@
 	</item>
 	<item id="17071" name="Dynasty Weapon Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9102" level="1" /> <!-- Dynasty Weapon Pack -->
@@ -1433,13 +1472,14 @@
 	</item>
 	<item id="17072" name="Vesper Armor Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9103" level="1" /> <!-- Vesper Armor Pack -->
@@ -1447,13 +1487,14 @@
 	</item>
 	<item id="17073" name="Moirai Armor Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9104" level="1" /> <!-- Moirai Armor Pack -->
@@ -1461,13 +1502,14 @@
 	</item>
 	<item id="17074" name="Dynasty Armor Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9105" level="1" /> <!-- Dynasty Armor Pack -->
@@ -1475,13 +1517,14 @@
 	</item>
 	<item id="17075" name="Soul Crystal - Step 14 Box" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9106" level="1" /> <!-- Soul Crystal - Step 14 Box -->
@@ -1489,13 +1532,14 @@
 	</item>
 	<item id="17076" name="Soul Crystal - Step 15 Box" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9107" level="1" /> <!-- Soul Crystal - Step 15 Box -->
@@ -1503,13 +1547,14 @@
 	</item>
 	<item id="17077" name="Soul Crystal - Step 16 Box" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9108" level="1" /> <!-- Soul Crystal - Step 16 Box -->
@@ -1517,13 +1562,14 @@
 	</item>
 	<item id="17078" name="Facelifting Potion Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9109" level="1" /> <!-- Facelifting Potion Pack -->
@@ -1531,13 +1577,14 @@
 	</item>
 	<item id="17079" name="Dye Potion Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9110" level="1" /> <!-- Dye Potion Pack -->
@@ -1545,13 +1592,14 @@
 	</item>
 	<item id="17080" name="Hairstyle Change Potion Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9111" level="1" /> <!-- Hairstyle Change Potion Pack -->
@@ -1559,13 +1607,14 @@
 	</item>
 	<item id="17081" name="Golden Apigas Box" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="CAPSULE" />
-		<set name="immediate_effect" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="false" />
 		<set name="material" val="FISH" />
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="9112" level="1" /> <!-- Golden Apigas Box -->
@@ -1590,7 +1639,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="10296" max="1" min="1" /> <!-- Transformation Sealbook: Anakim -->
+			<item id="10296" min="1" max="1" chance="100" /> <!-- Transformation Sealbook: Anakim -->
 		</capsuled_items>
 	</item>
 	<item id="17083" name="Bird Nest Pack (Event)" type="EtcItem">
@@ -1612,7 +1661,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="10613" max="1" min="1" /> <!-- Bird Nest (Event) -->
+			<item id="10613" min="1" max="1" chance="100" /> <!-- Bird Nest (Event) -->
 		</capsuled_items>
 	</item>
 	<item id="17084" name="Shadow Item: Magician Cap Pack" name_additional="Escape" type="EtcItem">
@@ -1634,7 +1683,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="9187" max="1" min="1" /> <!-- Shadow Item: Wizard Hat Escape -->
+			<item id="9187" min="1" max="1" chance="100" /> <!-- Shadow Item: Wizard Hat - Escape -->
 		</capsuled_items>
 	</item>
 	<item id="17085" name="Shadow Item: Magician Cap Pack" name_additional="Big Head" type="EtcItem">
@@ -1656,7 +1705,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="9194" max="1" min="1" /> <!-- Shadow Item: Wizard Hat Big Head -->
+			<item id="9194" min="1" max="1" chance="100" /> <!-- Shadow Item: Wizard Hat - Big Head -->
 		</capsuled_items>
 	</item>
 	<item id="17086" name="Shadow Item: Magician Cap Pack" name_additional="Firework" type="EtcItem">
@@ -1678,7 +1727,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<capsuled_items>
-			<item chance="100.0" id="9201" max="1" min="1" /> <!-- Shadow Item: Wizard Hat Firework -->
+			<item id="9201" min="1" max="1" chance="100" /> <!-- Shadow Item: Wizard Hat - Firework -->
 		</capsuled_items>
 	</item>
 	<item id="17087" name="Seed: Twin Coba" type="EtcItem">
@@ -1690,6 +1739,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1704,6 +1754,7 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1718,6 +1769,7 @@
 		<set name="price" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1732,6 +1784,7 @@
 		<set name="price" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1746,6 +1799,7 @@
 		<set name="price" val="650" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1760,6 +1814,7 @@
 		<set name="price" val="650" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2097" level="3" /> <!-- Sowing -->
@@ -1818,12 +1873,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="9115" level="1" /> <!-- XP Buff 50% (1-hour) -->
-		</skills>
 		<cond msgId="1902">
 			<player levelRange="1;19" />
 		</cond>
+		<skills>
+			<skill id="9115" level="1" /> <!-- XP Buff 50% (1-hour) -->
+		</skills>
 	</item>
 	<item id="17096" name="XP Buff 50% (1.5-hour)" name_additional="1~19" type="EtcItem">
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
@@ -1841,12 +1896,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="9116" level="1" /> <!-- XP Buff 50% (1.5-hour) -->
-		</skills>
 		<cond msgId="1902">
 			<player levelRange="1;19" />
 		</cond>
+		<skills>
+			<skill id="9116" level="1" /> <!-- XP Buff 50% (1.5-hour) -->
+		</skills>
 	</item>
 	<item id="17097" name="XP Buff 50% (2-hour)" name_additional="1~19" type="EtcItem">
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
@@ -1864,12 +1919,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="9117" level="1" /> <!-- XP Buff 50% (2-hour) -->
-		</skills>
 		<cond msgId="1902">
 			<player levelRange="1;19" />
 		</cond>
+		<skills>
+			<skill id="9117" level="1" /> <!-- XP Buff 50% (2-hour) -->
+		</skills>
 	</item>
 	<item id="17098" name="XP Buff 50% (2.5-hour)" name_additional="1~19" type="EtcItem">
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
@@ -1887,12 +1942,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="9118" level="1" /> <!-- XP Buff 50% (2.5-hour) -->
-		</skills>
 		<cond msgId="1902">
 			<player levelRange="1;19" />
 		</cond>
+		<skills>
+			<skill id="9118" level="1" /> <!-- XP Buff 50% (2.5-hour) -->
+		</skills>
 	</item>
 	<item id="17099" name="XP Buff 50% (3-hour)" name_additional="1~19" type="EtcItem">
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
@@ -1910,11 +1965,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="9119" level="1" /> <!-- XP Buff 50% (3-hour) -->
-		</skills>
 		<cond msgId="1902">
 			<player levelRange="1;19" />
 		</cond>
+		<skills>
+			<skill id="9119" level="1" /> <!-- XP Buff 50% (3-hour) -->
+		</skills>
 	</item>
 </list>

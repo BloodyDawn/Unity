@@ -18,6 +18,9 @@
  */
 package org.l2junity.gameserver.model.skills;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Abnormal type enumerate.
  * @author Zoey76
@@ -121,6 +124,9 @@ public enum AbnormalType
 	MARK_DEBUF_C(-1),
 	MARK_DEBUF_D(-1),
 	MARK_OF_LUMI(-1),
+	MARK_OF_WEAKNESS(-1),
+	MARK_OF_PLAGUE(-1),
+	MARK_OF_TRICK(-1),
 	MAX_HP_UP_K(-1),
 	MORALE_UP(-1),
 	MOTION_OF_DEFENCE(-1),
@@ -208,6 +214,7 @@ public enum AbnormalType
 	WEAPON_MASTER_SPECIAL(-1),
 	WISPERING_OF_BATTLE(-1),
 	WP_CHANGE_EVENT(-1),
+	CLAN_TEAMWORK(-1),
 	AB_HAWK_EYE(0),
 	ALL_ATTACK_DOWN(1),
 	ALL_ATTACK_UP(2),
@@ -499,6 +506,8 @@ public enum AbnormalType
 	
 	private int _clientId;
 	
+	protected static final Logger LOGGER = LoggerFactory.getLogger(AbnormalType.class);
+	
 	AbnormalType(int clientId)
 	{
 		_clientId = clientId;
@@ -517,6 +526,7 @@ public enum AbnormalType
 		}
 		catch (Exception e)
 		{
+			LOGGER.warn("Unknown AbnormalType requested : " + type);
 			return NONE;
 		}
 	}

@@ -81,7 +81,7 @@ public class RequestExTryToPutShapeShiftingEnchantSupportItem implements IClient
 			return;
 		}
 		
-		if (!extracItem.isAppearanceable())
+		if (!extracItem.getItem().isAppearanceable())
 		{
 			client.sendPacket(ExShapeShiftingResult.FAILED);
 			player.removeRequest(ShapeShiftingItemRequest.class);

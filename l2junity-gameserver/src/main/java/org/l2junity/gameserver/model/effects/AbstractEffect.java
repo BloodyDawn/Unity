@@ -28,6 +28,7 @@ import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
@@ -200,12 +201,12 @@ public abstract class AbstractEffect
 		return true;
 	}
 	
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 	
 	}
 	
-	public void continuousInstant(Creature effector, Creature effected, Skill skill)
+	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 	
 	}

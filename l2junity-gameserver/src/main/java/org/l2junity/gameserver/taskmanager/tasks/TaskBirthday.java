@@ -72,7 +72,7 @@ public class TaskBirthday extends Task
 			checkBirthday(lastExecDate.get(Calendar.YEAR), lastExecDate.get(Calendar.MONTH), lastExecDate.get(Calendar.DATE));
 		}
 		
-		_log.info("BirthdayManager: " + _count + " gifts sent. " + rangeDate);
+		LOGGER.info("BirthdayManager: " + _count + " gifts sent. " + rangeDate);
 	}
 	
 	private void checkBirthday(int year, int month, int day)
@@ -118,7 +118,7 @@ public class TaskBirthday extends Task
 		}
 		catch (SQLException e)
 		{
-			_log.warn("Error checking birthdays. ", e);
+			LOGGER.warn("Error checking birthdays. ", e);
 		}
 		
 		// If character birthday is 29-Feb and year isn't leap, send gift on 28-feb

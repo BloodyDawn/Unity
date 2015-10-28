@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="23700" levels="1" name="Contaminated Atelia Gas">
+	<skill id="23700" levels="1" name="Flame Thrower">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Contaminated gas spread throughout Atelia Fortress. Inflicts continuous damage and decreases Speed and Atk. Spd. -->
 		<set name="icon" val="icon.skill1160" />
@@ -11,7 +11,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23701" levels="1" name="Laceration">
+	<skill id="23701" levels="1" name="Contaminated Atelia Gas">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Engulfed in flames. -->
 		<set name="icon" val="icon.skill11066" />
@@ -20,7 +20,7 @@
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23702" levels="1" name="Kelbim Battle Mode">
+	<skill id="23702" levels="1" name="Laceration">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -44,7 +44,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1000" />
 	</skill>
-	<skill id="23705" levels="1" name="Kelbim Presentation Skill 4">
+	<skill id="23705" levels="1" name="Kelbim Battle Mode">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A2" />
@@ -53,35 +53,34 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="23706" levels="4" name="Dark Fire">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals great magic damage to a single target and decreases P./M. Atk. by 25% for 20 seconds. -->
 		<set name="icon" val="icon.skill4336_new" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="10" />
-		<set name="castRange" val="450" />
-		<set name="hitTime" val="2500" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-200" />
+		<set name="abnormalTime" val="20" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23707" levels="4" name="Chaos Fire">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals great magic damage to a single target and decreases P./M. Def. by 30% for 20 seconds. -->
 		<set name="icon" val="icon.skill4336_new" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="10" />
-		<set name="castRange" val="450" />
-		<set name="hitTime" val="2500" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-200" />
+		<set name="abnormalTime" val="20" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23708" levels="4" name="Dark Breaker">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals great damage to a single target and decreases P./M. Atk. by 25% for 20 seconds. -->
 		<set name="icon" val="icon.skill1443" />
@@ -93,10 +92,10 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-200" />
+		<set name="abnormalTime" val="20" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23709" levels="4" name="Chaos Breaker">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals great damage to a single target and decreases P./M. Def. by 30% for 20 seconds. -->
 		<set name="icon" val="icon.skill1443" />
@@ -108,6 +107,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-200" />
+		<set name="abnormalTime" val="20" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23710" levels="1" name="Atelia Buff Check">
@@ -885,5 +885,89 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="23774" levels="1" name="Clan Teamwork - Stage 1">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 8%% and Vitality Consumption Speed - 3%% for 3 hours. -->
+		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="100" />
+		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.08" />
+				<mul stat="bonusSp" val="1.08" />
+				<mul stat="vitalityConsumeRate" val="0.97" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="23775" levels="1" name="Clan Teamwork - Stage 2">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 16%%, PvE Damage + 2%%, and Vitality Consumption Speed - 3%% for 3 hours. -->
+		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="100" />
+		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.16" />
+				<mul stat="bonusSp" val="1.16" />
+				<mul stat="vitalityConsumeRate" val="0.97" />
+				<mul stat="pvePhysDmg" val="1.02" />
+				<mul stat="pvePhysSkillsDmg" val="1.02" />
+				<mul stat="pveMagicalDmg" val="1.02" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="23776" levels="1" name="Clan Teamwork - Stage 3">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 24%%, PvE Damage + 5%%, and Vitality Consumption Speed - 5%% for 3 hours. -->
+		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="100" />
+		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.24" />
+				<mul stat="bonusSp" val="1.24" />
+				<mul stat="vitalityConsumeRate" val="0.95" />
+				<mul stat="pvePhysDmg" val="1.05" />
+				<mul stat="pvePhysSkillsDmg" val="1.05" />
+				<mul stat="pveMagicalDmg" val="1.05" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="23777" levels="1" name="Clan Teamwork - Stage 4">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Teamwork achieved thanks to the clan activities. XP/SP + 35%%, PvE Damage + 8%%, Vitality Consumption Speed - 3%%, and Damage Received from Raid/Boss Monsters - 8%% for 3 hours. -->
+		<set name="icon" val="icon.skill19011" />
+		<set name="abnormalType" val="CLAN_TEAMWORK" />
+		<set name="abnormalTime" val="10800" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="100" />
+		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="1.35" />
+				<mul stat="bonusSp" val="1.35" />
+				<mul stat="vitalityConsumeRate" val="0.95" />
+				<mul stat="pvePhysDmg" val="1.08" />
+				<mul stat="pvePhysSkillsDmg" val="1.08" />
+				<mul stat="pveMagicalDmg" val="1.08" />
+				<mul stat="pveRaidPhysDef" val="1.08" />
+				<mul stat="pveRaidPhysSkillsDef" val="1.08" />
+				<mul stat="pveRaidMagicalDef" val="1.08" />
+			</effect>
+		</for>
 	</skill>
 </list>

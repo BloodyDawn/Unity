@@ -160,6 +160,7 @@
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-115" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23614" levels="1" name="Timber Burst">
@@ -205,6 +206,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23619" levels="3" name="Silence Bomb">
+		<table name="#abnormalTime"> 7 10 14 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Katura's darkness seeps in to inflict Silence and magic damage for 7sec. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up. -->
 		<set name="icon" val="icon.skill1064" />
@@ -215,6 +217,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23620" levels="1" name="Soul Burn">
@@ -236,6 +239,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23622" levels="3" name="Quaking Earth">
+		<table name="#abnormalTime"> 5 7 10 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The wrath of the earth inflicts Stun for 5sec. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up. -->
 		<set name="icon" val="icon.skill0100" />
@@ -245,6 +249,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="-10000" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23623" levels="1" name="Sweeping Quake">
@@ -611,7 +616,7 @@
 		<set name="effectPoint" val="-828" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23653" levels="4" name="Atelia Activation">
+	<skill id="23653" levels="4" name="Poisonous Atelia">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases target's P./M. Atk. by 20%, and decreases M. Def. by 20%. The effects increase by 5% each time the skill level increases by 1, and the duration increases by 30 seconds. -->
 		<set name="icon" val="Icon.etc_dark_astatine" />
@@ -622,6 +627,8 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-200" />
+		<set name="isDebuff" val="true" />
+		<set name="abnormalTime" val="15" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23654" levels="1" name="Earth Breaker">
@@ -772,7 +779,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="23666" levels="1" name="Dark Blast">
+	<skill id="23666" levels="1" name="Darkness Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -908,7 +915,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23677" levels="1" name="Summon Friends">
+	<skill id="23677" levels="1" name="Spirit's Evil Thoughts">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation AI. Summon NPC. -->
 		<set name="icon" val="icon.skill15283" />
@@ -917,7 +924,7 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="2000" />
 	</skill>
-	<skill id="23678" levels="1" name="Harpe Recovery">
+	<skill id="23678" levels="1" name="Summon Friends">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Harpe petrifies itself for defense, and recovers HP. -->
 		<set name="icon" val="icon.skill11539" />
@@ -927,7 +934,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="23679" levels="1" name="Harpe Stone Cancel">
+	<skill id="23679" levels="1" name="Harpe Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -947,7 +954,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
-	<skill id="23681" levels="1" name="Fatal Strike">
+	<skill id="23681" levels="1" name="Harpe Stone Cancel">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful blow on a single target. -->
 		<set name="icon" val="icon.skill0000" />
@@ -960,7 +967,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="23682" levels="1" name="Dark Cloud">
+	<skill id="23682" levels="1" name="Fatal Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to enemies within range. -->
 		<set name="icon" val="icon.skill0000" />
@@ -974,7 +981,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="23683" levels="1" name="Dancing Blade">
+	<skill id="23683" levels="1" name="Dark Cloud">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to enemies within range and makes them bleed for 10 seconds. -->
 		<set name="icon" val="icon.skill0096" />
@@ -988,7 +995,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23684" levels="1" name="Exploration Fear">
+	<skill id="23684" levels="1" name="Dancing Blade">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Fear to enemies within range for 10 seconds. -->
 		<set name="icon" val="icon.skill1092" />
@@ -1002,7 +1009,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23685" levels="1" name="Seismic Wave">
+	<skill id="23685" levels="1" name="Exploration Fear">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knocks Down enemies within range for 10 seconds. -->
 		<set name="icon" val="icon.skill0922" />
@@ -1016,7 +1023,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23686" levels="1" name="Freezing Storm">
+	<skill id="23686" levels="1" name="Seismic Wave">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases MP by 60% of enemies within a certain range of Kelim by, and decreases Spdd by 50% for 10 seconds. -->
 		<set name="icon" val="icon.skll10094" />
@@ -1029,7 +1036,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23687" levels="1" name="Reflection Armor">
+	<skill id="23687" levels="1" name="Freezing Storm">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gains Damage Reflect effect. -->
 		<set name="icon" val="icon.kelbim_reflection_armor" />
@@ -1040,7 +1047,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="23688" levels="1" name="Fury of Kelbim">
+	<skill id="23688" levels="1" name="Reflection Armor">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P./M. Atk. And Atk. Spd. by 50%. -->
 		<set name="icon" val="icon.kelbim_buff_fury" />
@@ -1051,7 +1058,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="23689" levels="1" name="Kelbim Physical Protection">
+	<skill id="23689" levels="1" name="Fury of Kelbim">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Def. -->
 		<set name="icon" val="icon.kelbim_buff_pd_up" />
@@ -1062,7 +1069,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="23690" levels="1" name="Kelbim Magic Protection">
+	<skill id="23690" levels="1" name="Kelbim Physical Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases M. Def. -->
 		<set name="icon" val="icon.kelbim_buff_md_up" />
@@ -1073,7 +1080,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="23691" levels="1" name="Kelbim Ultimate Protection">
+	<skill id="23691" levels="1" name="Kelbim Magic Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gains resistance to all damage. -->
 		<set name="icon" val="icon.kelbim_buff_ad_up" />
@@ -1084,7 +1091,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="23692" levels="1" name="Meteor Crash">
+	<skill id="23692" levels="1" name="Kelbim Ultimate Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to enemies within range. -->
 		<set name="icon" val="icon.skill0000" />
@@ -1096,7 +1103,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="23693" levels="1" name="Water Drop Shackle">
+	<skill id="23693" levels="1" name="Meteor Crash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Aerial Yoke to enemies within range for 5 seconds. -->
 		<set name="icon" val="icon.skill1042" />
@@ -1109,7 +1116,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23694" levels="1" name="Tornado Shackle">
+	<skill id="23694" levels="1" name="Water Drop Shackle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to enemies within range and blows them away. -->
 		<set name="icon" val="icon.skill10015" />
@@ -1122,7 +1129,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23695" levels="1" name="Stun Crash">
+	<skill id="23695" levels="1" name="Tornado Shackle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to a single target and stuns them for 5 seconds. -->
 		<set name="icon" val="icon.skill23695" />
@@ -1136,7 +1143,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23696" levels="1" name="Chain Snake">
+	<skill id="23696" levels="1" name="Stun Crash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls in enemies within range and stuns them for 10 seconds. -->
 		<set name="icon" val="icon.skill10015" />
@@ -1149,7 +1156,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23697" levels="1" name="Curse of Silence">
+	<skill id="23697" levels="1" name="Chain Snake">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to a single target and silences them for 5 seconds. -->
 		<set name="icon" val="icon.skill19187" />
@@ -1164,7 +1171,7 @@
 		<set name="effectPoint" val="-379" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23698" levels="1" name="Storm Rage">
+	<skill id="23698" levels="1" name="Curse of Silence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Infllicts great damage to enemies within range and blows them away. -->
 		<set name="icon" val="icon.skill0922" />
@@ -1176,7 +1183,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="23699" levels="1" name="Flame Thrower">
+	<skill id="23699" levels="1" name="Storm Rage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to enemies within range and burns them for 5 seconds. -->
 		<set name="icon" val="icon.skill11066" />

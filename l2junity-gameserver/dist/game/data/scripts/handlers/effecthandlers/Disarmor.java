@@ -65,7 +65,7 @@ public final class Disarmor extends AbstractEffect
 	}
 
 	@Override
-	public void continuousInstant(Creature effector, Creature effected, Skill skill)
+	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effected.isPlayer())
 		{

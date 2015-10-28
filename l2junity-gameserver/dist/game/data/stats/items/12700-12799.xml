@@ -7,10 +7,11 @@
 		<set name="weight" val="1090" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="6099000" />
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="12701" name="Foundation Sealed Dynasty Leather Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -19,10 +20,11 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="9149000" />
-		<for>
-			<add order="0" stat="pDef" val="92" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="12702" name="Foundation Sealed Dynasty Boots" type="EtcItem">
 		<set name="icon" val="icon.armor_t91_b_i02" />
@@ -36,9 +38,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="12703" name="Foundation Sealed Dynasty Breastplate" type="EtcItem">
 		<set name="icon" val="icon.armor_t91_u_i02" />
@@ -47,13 +49,14 @@
 		<set name="weight" val="7570" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="24398000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="214" />
-		</for>
+		<stats>
+			<stat type="pDef">214</stat>
+		</stats>
 	</item>
 	<item id="12704" name="Foundation Sealed Dynasty Shield" type="EtcItem">
 		<set name="icon" val="icon.shield_dynasty_shield_i01" />
@@ -62,15 +65,16 @@
 		<set name="weight" val="1370" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="6404000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="305" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">305</stat>
+		</stats>
 	</item>
 	<item id="12705" name="Foundation Sealed Dynasty Shoes" type="EtcItem">
 		<set name="icon" val="icon.armor_t93_b_i02" />
@@ -79,13 +83,14 @@
 		<set name="weight" val="1090" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="6099000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="12706" name="Foundation Sealed Dynasty Circlet" type="EtcItem">
 		<set name="icon" val="icon.armor_circlet_i02" />
@@ -94,13 +99,14 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="9149000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="12707" name="Foundation Sealed Dynasty Tunic" type="EtcItem">
 		<set name="icon" val="icon.armor_t93_u_i02" />
@@ -109,14 +115,15 @@
 		<set name="weight" val="1780" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="18298000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="107" />
-			<add stat="maxMp" val="592" />
-		</for>
+		<stats>
+			<stat type="pDef">107</stat>
+			<stat type="maxMp">592</stat>
+		</stats>
 	</item>
 	<item id="12708" name="Foundation Sealed Dynasty Helmet" type="EtcItem">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -125,13 +132,14 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="9149000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="92" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="12709" name="Foundation Sealed Dynasty Stockings" type="EtcItem">
 		<set name="icon" val="icon.armor_t93_l_i02" />
@@ -140,14 +148,15 @@
 		<set name="weight" val="860" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="11436000" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="67" />
-			<add stat="maxMp" val="370" />
-		</for>
+		<stats>
+			<stat type="pDef">67</stat>
+			<stat type="maxMp">370</stat>
+		</stats>
 	</item>
 	<item id="12710" name="Foundation Adamantite Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_adamantite_earing_i00" />
@@ -156,10 +165,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="465900" />
-		<for>
-			<add order="0" stat="mDef" val="51" />
-		</for>
+		<stats>
+			<stat type="mDef">51</stat>
+		</stats>
 	</item>
 	<item id="12711" name="Foundation Adamantite Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_adamantite_necklace_i00" />
@@ -168,10 +178,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="621200" />
-		<for>
-			<add order="0" stat="mDef" val="68" />
-		</for>
+		<stats>
+			<stat type="mDef">68</stat>
+		</stats>
 	</item>
 	<item id="12712" name="Foundation Adamantite Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_adamantite_ring_i00" />
@@ -180,10 +191,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="310600" />
-		<for>
-			<add order="0" stat="mDef" val="34" />
-		</for>
+		<stats>
+			<stat type="mDef">34</stat>
+		</stats>
 	</item>
 	<item id="12713" name="Foundation Black Ore Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
@@ -192,10 +204,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="711000" />
-		<for>
-			<add order="0" stat="mDef" val="54" />
-		</for>
+		<stats>
+			<stat type="mDef">54</stat>
+		</stats>
 	</item>
 	<item id="12714" name="Foundation Black Ore Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
@@ -204,10 +217,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="948000" />
-		<for>
-			<add order="0" stat="mDef" val="72" />
-		</for>
+		<stats>
+			<stat type="mDef">72</stat>
+		</stats>
 	</item>
 	<item id="12715" name="Foundation Black Ore Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
@@ -216,10 +230,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="474000" />
-		<for>
-			<add order="0" stat="mDef" val="36" />
-		</for>
+		<stats>
+			<stat type="mDef">36</stat>
+		</stats>
 	</item>
 	<item id="12716" name="Foundation Sealed Phoenix Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_phoenixs_necklace_i02" />
@@ -228,10 +243,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="1340000" />
-		<for>
-			<add order="0" stat="mDef" val="76" />
-		</for>
+		<stats>
+			<stat type="mDef">76</stat>
+		</stats>
 	</item>
 	<item id="12717" name="Foundation Sealed Phoenix Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_phoenixs_ring_i02" />
@@ -240,10 +256,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="670000" />
-		<for>
-			<add order="0" stat="mDef" val="38" />
-		</for>
+		<stats>
+			<stat type="mDef">38</stat>
+		</stats>
 	</item>
 	<item id="12718" name="Foundation Sealed Phoenix Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_phoenixs_earing_i02" />
@@ -252,10 +269,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="1005000" />
-		<for>
-			<add order="0" stat="mDef" val="57" />
-		</for>
+		<stats>
+			<stat type="mDef">57</stat>
+		</stats>
 	</item>
 	<item id="12719" name="Foundation Phoenix Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_phoenixs_necklace_i00" />
@@ -264,10 +282,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="1340000" />
-		<for>
-			<add order="0" stat="mDef" val="76" />
-		</for>
+		<stats>
+			<stat type="mDef">76</stat>
+		</stats>
 	</item>
 	<item id="12720" name="Foundation Phoenix Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_phoenixs_ring_i00" />
@@ -276,10 +295,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="670000" />
-		<for>
-			<add order="0" stat="mDef" val="38" />
-		</for>
+		<stats>
+			<stat type="mDef">38</stat>
+		</stats>
 	</item>
 	<item id="12721" name="Foundation Phoenix Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_phoenixs_earing_i00" />
@@ -288,10 +308,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="1005000" />
-		<for>
-			<add order="0" stat="mDef" val="57" />
-		</for>
+		<stats>
+			<stat type="mDef">57</stat>
+		</stats>
 	</item>
 	<item id="12722" name="Foundation Majestic Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
@@ -300,10 +321,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="1998000" />
-		<for>
-			<add order="0" stat="mDef" val="80" />
-		</for>
+		<stats>
+			<stat type="mDef">80</stat>
+		</stats>
 	</item>
 	<item id="12723" name="Foundation Majestic Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
@@ -312,10 +334,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="999000" />
-		<for>
-			<add order="0" stat="mDef" val="40" />
-		</for>
+		<stats>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="12724" name="Foundation Majestic Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -324,10 +347,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="1498000" />
-		<for>
-			<add order="0" stat="mDef" val="60" />
-		</for>
+		<stats>
+			<stat type="mDef">60</stat>
+		</stats>
 	</item>
 	<item id="12725" name="Foundation Sealed Majestic Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_necklace_i02" />
@@ -336,10 +360,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="1998000" />
-		<for>
-			<add order="0" stat="mDef" val="80" />
-		</for>
+		<stats>
+			<stat type="mDef">80</stat>
+		</stats>
 	</item>
 	<item id="12726" name="Foundation Sealed Majestic Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_ring_i02" />
@@ -348,10 +373,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="999000" />
-		<for>
-			<add order="0" stat="mDef" val="40" />
-		</for>
+		<stats>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="12727" name="Foundation Sealed Majestic Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_earing_i02" />
@@ -360,10 +386,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="1498000" />
-		<for>
-			<add order="0" stat="mDef" val="60" />
-		</for>
+		<stats>
+			<stat type="mDef">60</stat>
+		</stats>
 	</item>
 	<item id="12728" name="Foundation Sealed Tateossian Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessory_tateossian_necklace_i02" />
@@ -372,10 +399,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="4361000" />
-		<for>
-			<add order="0" stat="mDef" val="91" />
-		</for>
+		<stats>
+			<stat type="mDef">91</stat>
+		</stats>
 	</item>
 	<item id="12729" name="Foundation Sealed Tateossian Ring" type="EtcItem">
 		<set name="icon" val="icon.accessory_tateossian_ring_i02" />
@@ -384,10 +412,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="2180000" />
-		<for>
-			<add order="0" stat="mDef" val="46" />
-		</for>
+		<stats>
+			<stat type="mDef">46</stat>
+		</stats>
 	</item>
 	<item id="12730" name="Foundation Sealed Tateossian Earring" type="EtcItem">
 		<set name="icon" val="icon.accessory_tateossian_earring_i02" />
@@ -396,10 +425,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="3270000" />
-		<for>
-			<add order="0" stat="mDef" val="68" />
-		</for>
+		<stats>
+			<stat type="mDef">68</stat>
+		</stats>
 	</item>
 	<item id="12731" name="Foundation Tateossian Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessory_tateossian_necklace_i00" />
@@ -408,10 +438,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="4361000" />
-		<for>
-			<add order="0" stat="mDef" val="91" />
-		</for>
+		<stats>
+			<stat type="mDef">91</stat>
+		</stats>
 	</item>
 	<item id="12732" name="Foundation Tateossian Ring" type="EtcItem">
 		<set name="icon" val="icon.accessory_tateossian_ring_i00" />
@@ -420,10 +451,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="2180000" />
-		<for>
-			<add order="0" stat="mDef" val="46" />
-		</for>
+		<stats>
+			<stat type="mDef">46</stat>
+		</stats>
 	</item>
 	<item id="12733" name="Foundation Tateossian Earring" type="EtcItem">
 		<set name="icon" val="icon.accessory_tateossian_earring_i00" />
@@ -432,10 +464,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="3270000" />
-		<for>
-			<add order="0" stat="mDef" val="68" />
-		</for>
+		<stats>
+			<stat type="mDef">68</stat>
+		</stats>
 	</item>
 	<item id="12734" name="Foundation Dynasty Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_dynasty_necklace_i00" />
@@ -444,10 +477,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="7942000" />
-		<for>
-			<add order="0" stat="mDef" val="106" />
-		</for>
+		<stats>
+			<stat type="mDef">106</stat>
+		</stats>
 	</item>
 	<item id="12735" name="Foundation Dynasty Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_dynasty_ring_i00" />
@@ -456,10 +490,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="3971000" />
-		<for>
-			<add order="0" stat="mDef" val="53" />
-		</for>
+		<stats>
+			<stat type="mDef">53</stat>
+		</stats>
 	</item>
 	<item id="12736" name="Foundation Dynasty Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_dynasty_earing_i00" />
@@ -468,10 +503,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="5956000" />
-		<for>
-			<add order="0" stat="mDef" val="79" />
-		</for>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="12737" name="Foundation Sealed Dynasty Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_dynasty_necklace_i01" />
@@ -480,10 +516,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="NECKLACE" />
 		<set name="price" val="7942000" />
-		<for>
-			<add order="0" stat="mDef" val="106" />
-		</for>
+		<stats>
+			<stat type="mDef">106</stat>
+		</stats>
 	</item>
 	<item id="12738" name="Foundation Sealed Dynasty Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_dynasty_ring_i01" />
@@ -492,10 +529,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="RING" />
 		<set name="price" val="3971000" />
-		<for>
-			<add order="0" stat="mDef" val="53" />
-		</for>
+		<stats>
+			<stat type="mDef">53</stat>
+		</stats>
 	</item>
 	<item id="12739" name="Foundation Sealed Dynasty Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_dynasty_earing_i01" />
@@ -504,10 +542,11 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
+		<set name="commissionItemType" val="EARRING" />
 		<set name="price" val="5956000" />
-		<for>
-			<add order="0" stat="mDef" val="79" />
-		</for>
+		<stats>
+			<stat type="mDef">79</stat>
+		</stats>
 	</item>
 	<item id="12740" name="Baby Pet Scale Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -520,13 +559,15 @@
 		<set name="price" val="938500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="BABY_PET_GROUP,UPGRADE_BABY_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="112" />
-		</for>
+		<stats>
+			<stat type="pDef">112</stat>
+		</stats>
 	</item>
 	<item id="12741" name="Baby Pet Bronze Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -539,13 +580,15 @@
 		<set name="price" val="1810000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="BABY_PET_GROUP,UPGRADE_BABY_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="124" />
-		</for>
+		<stats>
+			<stat type="pDef">124</stat>
+		</stats>
 	</item>
 	<item id="12742" name="Baby Pet Plate Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -558,13 +601,15 @@
 		<set name="price" val="3563000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="BABY_PET_GROUP,UPGRADE_BABY_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="136" />
-		</for>
+		<stats>
+			<stat type="pDef">136</stat>
+		</stats>
 	</item>
 	<item id="12743" name="Baby Pet Mithril Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -577,13 +622,15 @@
 		<set name="price" val="6281500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="BABY_PET_GROUP,UPGRADE_BABY_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="148" />
-		</for>
+		<stats>
+			<stat type="pDef">148</stat>
+		</stats>
 	</item>
 	<item id="12744" name="Baby Pet Oriharukon Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -596,13 +643,15 @@
 		<set name="price" val="12118000" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="BABY_PET_GROUP,UPGRADE_BABY_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="160" />
-		</for>
+		<stats>
+			<stat type="pDef">160</stat>
+		</stats>
 	</item>
 	<item id="12745" name="Baby Pet Orichalcum Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i03" />
@@ -615,13 +664,15 @@
 		<set name="price" val="24439500" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="BABY_PET_GROUP,UPGRADE_BABY_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="171" />
-		</for>
+		<stats>
+			<stat type="pDef">171</stat>
+		</stats>
 	</item>
 	<item id="12746" name="Crystal Pendant" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_funtion_pet_i00" />
@@ -633,13 +684,14 @@
 		<set name="price" val="1932" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="22" />
-		</for>
+		<stats>
+			<stat type="mDef">22</stat>
+		</stats>
 	</item>
 	<item id="12747" name="Ruby Pendant" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_funtion_pet_i00" />
@@ -651,13 +703,14 @@
 		<set name="price" val="10091" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="30" />
-		</for>
+		<stats>
+			<stat type="mDef">30</stat>
+		</stats>
 	</item>
 	<item id="12748" name="Sapphire Pendant" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_funtion_pet_i01" />
@@ -669,13 +722,14 @@
 		<set name="price" val="31949" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="40" />
-		</for>
+		<stats>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="12749" name="Diamond Pendant" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_funtion_pet_i01" />
@@ -687,13 +741,14 @@
 		<set name="price" val="78374" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="52" />
-		</for>
+		<stats>
+			<stat type="mDef">52</stat>
+		</stats>
 	</item>
 	<item id="12750" name="Enria Pendant" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_funtion_pet_i02" />
@@ -705,13 +760,14 @@
 		<set name="price" val="231417" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="66" />
-		</for>
+		<stats>
+			<stat type="mDef">66</stat>
+		</stats>
 	</item>
 	<item id="12751" name="Thons Pendant" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_funtion_pet_i03" />
@@ -723,13 +779,14 @@
 		<set name="price" val="828490" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="80" />
-		</for>
+		<stats>
+			<stat type="mDef">80</stat>
+		</stats>
 	</item>
 	<item id="12752" name="Asofe Pendant" type="Armor">
 		<set name="icon" val="icon.accessory_necklace_of_funtion_pet_i04" />
@@ -741,13 +798,14 @@
 		<set name="price" val="2582800" />
 		<!-- H5 Price -->
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="for_npc" val="true" />
 		<cond msgId="1518">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="94" />
-		</for>
+		<stats>
+			<stat type="mDef">94</stat>
+		</stats>
 	</item>
 	<item id="12753" name="Scroll of Escape: Kamael Village" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
@@ -776,6 +834,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="46" />
@@ -788,6 +847,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="6000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="49" />
@@ -800,6 +860,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="7200" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="52" />
@@ -812,6 +873,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="8640" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="55" />
@@ -824,6 +886,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="58" />
@@ -836,6 +899,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="12000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="61" />
@@ -848,6 +912,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="15000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="64" />
@@ -873,6 +938,7 @@
 		<set name="weight" val="2" />
 		<set name="price" val="21600" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
 		<cond msgId="113">
 			<player level="70" />
@@ -929,6 +995,9 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="500000" />
 	</item>
 	<item id="12767" name="Silver Circlet" type="Armor">
@@ -939,6 +1008,9 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="enchant_enabled" val="7" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
 		<set name="price" val="500000" />
 	</item>
 	<item id="12768" name="Forgotten Scroll: Evasion Counter" type="EtcItem">
@@ -949,6 +1021,7 @@
 		<set name="price" val="12500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2526" level="1" /> <!-- Evasion Counter -->
@@ -962,6 +1035,7 @@
 		<set name="price" val="12500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2527" level="1" /> <!-- Evasion Chance -->
@@ -975,6 +1049,7 @@
 		<set name="price" val="12500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2528" level="1" /> <!-- Evasion Haste -->
@@ -988,6 +1063,7 @@
 		<set name="price" val="12500" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2529" level="1" /> <!-- Shadow Step -->
@@ -1000,6 +1076,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="12500" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="12773" name="Battle Manual - Body Reconstruction" type="EtcItem">
@@ -1009,6 +1086,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="12774" name="Battle Manual - Blood Pact" type="EtcItem">
@@ -1018,6 +1096,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="12775" name="Battle Manual - Imbue Seed of Destruction" type="EtcItem">
@@ -1027,6 +1106,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="12776" name="Battle Manual - Oblivion Trap" type="EtcItem">
@@ -1036,6 +1116,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="12777" name="Battle Manual - Painkiller" type="EtcItem">
@@ -1045,6 +1126,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="12778" name="Battle Manual - Soul Web" type="EtcItem">
@@ -1054,6 +1136,7 @@
 		<set name="weight" val="120" />
 		<set name="price" val="10000" />
 		<set name="is_freightable" val="false" />
+		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="12779" name="Agathion - Little Angel" type="Armor">
@@ -1072,10 +1155,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3423" level="1" /> <!-- Release Agathion's Seal - Little Angel -->
 			<skill id="5535" level="1" /> <!-- Little Angel Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="12780" name="Agathion - Little Devil" type="Armor">
@@ -1094,10 +1176,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="3424" level="1" /> <!-- Release Agathion's Seal - Little Devil -->
 			<skill id="5536" level="1" /> <!-- Little Devil Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="12781" name="Ol Mahum Hat" type="Armor">
@@ -1324,8 +1405,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1339,20 +1418,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="12794" name="X Stick" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_x_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1366,20 +1445,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="12795" name="Scissors Stick" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_scissors_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1393,20 +1472,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="12796" name="Rock Stick" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_rock_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1420,20 +1499,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="12797" name="Paper Stick" name_additional="30-day" type="Weapon">
 		<set name="icon" val="icon.weapon_diver_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1447,20 +1526,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="12798" name="Snowman Transformation Stick" type="Weapon">
 		<set name="icon" val="icon.etc_snow_man_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1478,20 +1557,20 @@
 		<skills>
 			<skill id="3418" level="1" /> <!-- Active Skill: Transform Pig -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="12799" name="Scarecrow Transformation Stick" type="Weapon">
 		<set name="icon" val="icon.weapon_scarescow_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1509,11 +1588,13 @@
 		<skills>
 			<skill id="3418" level="1" /> <!-- Active Skill: Transform Pig -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 </list>

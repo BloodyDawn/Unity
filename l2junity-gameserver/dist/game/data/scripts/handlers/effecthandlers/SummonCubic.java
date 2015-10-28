@@ -19,14 +19,19 @@
 package handlers.effecthandlers;
 
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.data.xml.impl.CubicData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.templates.L2CubicTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Summon Cubic effect implementation.
@@ -34,30 +39,17 @@ import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
  */
 public final class SummonCubic extends AbstractEffect
 {
-	/** Cubic ID. */
+	private static final Logger LOGGER = LoggerFactory.getLogger(SummonCubic.class);
+	
 	private final int _cubicId;
-	/** Cubic power. */
-	private final int _cubicPower;
-	/** Cubic duration. */
-	private final int _cubicDuration;
-	/** Cubic activation delay. */
-	private final int _cubicDelay;
-	/** Cubic maximum casts before going idle. */
-	private final int _cubicMaxCount;
-	/** Cubic activation chance. */
-	private final int _cubicSkillChance;
+	private final int _cubicLvl;
 	
 	public SummonCubic(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_cubicId = params.getInt("cubicId", -1);
-		// Custom AI data.
-		_cubicPower = params.getInt("cubicPower", 0);
-		_cubicDuration = params.getInt("cubicDuration", 0);
-		_cubicDelay = params.getInt("cubicDelay", 0);
-		_cubicMaxCount = params.getInt("cubicMaxCount", -1);
-		_cubicSkillChance = params.getInt("cubicSkillChance", 0);
+		_cubicLvl = params.getInt("cubicLvl", 0);
 	}
 	
 	@Override
@@ -65,9 +57,9 @@ public final class SummonCubic extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
-	public void instant(Creature effector, Creature effected, Skill skill)
+	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
 		if (!effected.isPlayer() || effected.isAlikeDead() || effected.getActingPlayer().inObserverMode())
 		{
@@ -86,23 +78,17 @@ public final class SummonCubic extends AbstractEffect
 			return;
 		}
 		
-		// Gnacik: TODO: Make better method of calculation.
-		// If skill is enchanted calculate cubic skill level based on enchant
-		// 8 at 101 (+1 Power)
-		// 12 at 130 (+30 Power)
-		// Because 12 is max 5115-5117 skills
-		int _cubicSkillLevel = skill.getLevel();
-		if (_cubicSkillLevel > 100)
-		{
-			_cubicSkillLevel = ((skill.getLevel() - 100) / 7) + 8;
-		}
-		
 		// If cubic is already present, it's replaced.
-		final L2CubicInstance cubic = player.getCubicById(_cubicId);
+		final CubicInstance cubic = player.getCubicById(_cubicId);
 		if (cubic != null)
 		{
-			cubic.stopAction();
-			cubic.cancelDisappear();
+			if (cubic.getTemplate().getLevel() > _cubicLvl)
+			{
+				// What do we do in such case?
+				return;
+			}
+			
+			cubic.deactivate();
 			player.getCubics().remove(_cubicId);
 		}
 		else
@@ -115,15 +101,21 @@ public final class SummonCubic extends AbstractEffect
 			for (int i = 0; i <= (currentCubicCount - allowedCubicCount); i++)
 			{
 				final int removedCubicId = (int) player.getCubics().keySet().toArray()[Rnd.get(currentCubicCount)];
-				final L2CubicInstance removedCubic = player.getCubicById(removedCubicId);
-				removedCubic.stopAction();
-				removedCubic.cancelDisappear();
-				player.getCubics().remove(removedCubic.getId());
+				final CubicInstance removedCubic = player.getCubicById(removedCubicId);
+				removedCubic.deactivate();
+				player.getCubics().remove(removedCubic.getTemplate().getId());
 			}
 		}
+		
+		final L2CubicTemplate template = CubicData.getInstance().getCubicTemplate(_cubicId, _cubicLvl);
+		if (template == null)
+		{
+			LOGGER.warn("Attempting to summon cubic without existing template id: {} level: {}", _cubicId, _cubicLvl);
+			return;
+		}
+		
 		// Adding a new cubic.
-
-		player.addCubic(_cubicId, _cubicSkillLevel, _cubicPower, _cubicDelay, _cubicSkillChance, _cubicMaxCount, _cubicDuration, effected != effector);
+		player.addCubic(new CubicInstance(effected, effector, template));
 		player.sendPacket(new ExUserInfoCubic(player));
 		player.broadcastCharInfo();
 	}

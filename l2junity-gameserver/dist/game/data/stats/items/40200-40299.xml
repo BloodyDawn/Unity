@@ -16,12 +16,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40201" name="Sayha's Cloak" name_additional="Sayha's Seer" type="Armor">
 		<!-- Cloak for those that carry the power of Sayha. M. Def. + 40. -->
@@ -39,12 +37,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40202" name="Supply Box (R-grade)" type="EtcItem">
 		<!-- Double-click to obtain either a normal/blessed weapon/armor/accessory (R-grade). -->
@@ -71,6 +67,7 @@
 		<set name="price" val="2000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 	</item>
 	<item id="40206" name="Specter Fragment" type="EtcItem">
@@ -80,6 +77,7 @@
 		<set name="price" val="4000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 	</item>
 	<item id="40207" name="Amaranthine Fragment" type="EtcItem">
@@ -88,6 +86,7 @@
 		<set name="weight" val="60" />
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="MATERIAL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40208" name="Throwaway Item 1" name_additional="Not in Use" type="EtcItem">
@@ -109,6 +108,7 @@
 		<set name="price" val="20000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="40211" name="Recipe: R95 (100%)" type="EtcItem">
@@ -118,6 +118,7 @@
 		<set name="price" val="40000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
 	<item id="40212" name="Recipe: R99 (100%)" type="EtcItem">
@@ -126,6 +127,7 @@
 		<set name="weight" val="30" />
 		<set name="price" val="50000" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="RECIPE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40213" name="Ertheia's Rare Accessory Pack" name_additional="7-day" type="EtcItem">
@@ -140,6 +142,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="40214" name="Blessed Antharas' Earring  Pack" name_additional="7-day" type="EtcItem">
@@ -154,6 +157,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="40215" name="Blessed Valakas' Necklace Pack" name_additional="7-day" type="EtcItem">
@@ -168,6 +172,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="40216" name="Tauti's Ring Pack" name_additional="7-day" type="EtcItem">
@@ -182,6 +187,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="40217" name="Earth Wyrm Heart Ring Pack" name_additional="7-day" type="EtcItem">
@@ -196,6 +202,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="40218" name="Blessed Zaken's Earring" name_additional="7-day" type="EtcItem">
@@ -210,6 +217,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="40219" name="Appearance Stone: Cat Fighter (Ertheia Only)" name_additional="90-day" type="EtcItem">
@@ -223,6 +231,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="7776000" />
 	</item>
 	<item id="40220" name="Appearance Stone: Cat Staff (Ertheia Only)" name_additional="90-day" type="EtcItem">
@@ -236,6 +245,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="time" val="7776000" />
 	</item>
 	<item id="40221" name="Ertheia's Attribute Stone Pack (+ 60)" type="EtcItem">
@@ -243,6 +253,7 @@
 		<set name="icon" val="icon.etc_treasure_box_i03" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40222" name="Ertheia's Attribute Stone Pack (+ 150)" type="EtcItem">
@@ -250,6 +261,7 @@
 		<set name="icon" val="icon.etc_treasure_box_i04" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40223" name="Ertheia's Attribute Crystal Pack - Super" type="EtcItem">
@@ -257,6 +269,7 @@
 		<set name="icon" val="icon.etc_treasure_box_i02" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40224" name="Minstrel's Scroll of Escape: Town of Aden" type="EtcItem">
@@ -271,6 +284,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40225" name="Scroll of Escape: Pagan Temple" type="EtcItem">
@@ -285,6 +299,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40226" name="Freya's Frozen Lamp" type="EtcItem">
@@ -294,6 +309,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40227" name="Freya's Frozen Scroll" type="EtcItem">
@@ -303,6 +319,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40228" name="Freya's Wish Box" type="EtcItem">
@@ -312,6 +329,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40229" name="Sirra's Wish Box" type="EtcItem">
@@ -321,6 +339,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40230" name="Snowman's Wish Box" type="EtcItem">
@@ -330,6 +349,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40231" name="Freya's Frozen Scroll" name_additional="Event" type="EtcItem">
@@ -343,6 +363,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40232" name="Freya's Lucky Enchant Stone: Weapon (R-grade)" type="EtcItem">
@@ -352,6 +373,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="BLESS_INC_PROP_ENCHT_WP" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40233" name="Freya's Lucky Enchant Stone: Armor (R-grade)" type="EtcItem">
@@ -361,6 +383,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="BLESS_INC_PROP_ENCHT_AM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40234" name="Giant's Energy 3-unit Pack" type="EtcItem">
@@ -370,6 +393,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40235" name="Giant's Energy 20-unit Pack" type="EtcItem">
@@ -379,6 +403,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40236" name="Giant's Energy 100-unit Pack" type="EtcItem">
@@ -388,6 +413,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40237" name="Agathion - Freya" name_additional="30-day" type="Armor">
@@ -415,6 +441,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40239" name="Freya's Heart" type="EtcItem">
@@ -434,13 +461,14 @@
 	<item id="40240" name="Dark Assassin Suit" type="Armor">
 		<!-- Dark Assassin Suit. Equipping this disables armor. Hair accessories, weapons, and magic armor remain equipped. -->
 		<set name="icon" val="icon.dark_assassin" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="chest" />
 		<!-- UNCONFIRMED -->
 		<set name="is_freightable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add order="0" stat="pDef" val="400.0" />
-		</for>
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
 	</item>
 	<item id="40241" name="Freya's Frozen Lamp" name_additional="Event" type="EtcItem">
 		<!-- Double-click to obtain a Freya's Frozen Scroll. Cannot be used in the Olympiad. -->
@@ -453,6 +481,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40242" name="Agathion - Freya Pack" type="EtcItem">
@@ -462,6 +491,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40243" name="Greater Abelius Cloak (20-day)" name_additional="Sigel Knight" type="Armor">
@@ -480,12 +510,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40244" name="Greater Sapyros Cloak (20-day)" name_additional="Tyrr Warrior" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -503,12 +531,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40245" name="Greater Ashagen Cloak (20-day)" name_additional="Othell Rogue" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -526,12 +552,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40246" name="Greater Cranigg Cloak (20-day)" name_additional="Yul Archer" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -549,12 +573,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40247" name="Greater Soltkreig Cloak (20-day)" name_additional="Feoh Wizard" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -572,12 +594,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40248" name="Greater Naviarope Cloak (20-day)" name_additional="Wynn Summoner" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -595,12 +615,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40249" name="Greater Leister Cloak (20-day)" name_additional="Iss Enchanter" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -618,12 +636,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40250" name="Greater Lakcis Cloak (20-day)" name_additional="Aeore Healer" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -641,12 +657,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40251" name="Greater Sayha Cloak (20-day)" name_additional="Eviscerator" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -664,12 +678,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40252" name="Greater Sayha Cloak (20-day)" name_additional="Sayha's Seer" type="Armor">
 		<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
@@ -687,12 +699,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="mDef" val="0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="40253" name="Potion of Protection: Stun" name_additional="Top-grade" type="EtcItem">
 		<!-- Stun Resistance + 5%, and damage received in PvP - 3%. Cannot be used in the Olympiad or Ceremony of Chaos. Does not stack with other Potions of Protection. -->
@@ -700,6 +710,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="commissionItemType" val="POTION" />
 	</item>
 	<item id="40254" name="Potion of Protection: Hold" name_additional="Top-grade" type="EtcItem">
@@ -707,6 +718,7 @@
 		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40255" name="Potion of Protection: Bleed" name_additional="Top-grade" type="EtcItem">
@@ -714,6 +726,7 @@
 		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40256" name="Potion of Protection: Paralyze" name_additional="Top-grade" type="EtcItem">
@@ -721,6 +734,7 @@
 		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40257" name="Potion of Protection: Mental" name_additional="Top-grade" type="EtcItem">
@@ -729,6 +743,7 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="commissionItemType" val="POTION" />
 	</item>
 	<item id="40258" name="Potion of Protection: Sleep" name_additional="Top-grade" type="EtcItem">
@@ -736,6 +751,7 @@
 		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40259" name="Potion of Protection: Poison" name_additional="Top-grade" type="EtcItem">
@@ -743,6 +759,7 @@
 		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40260" name="Potion of Protection: Knock Back / Knock Down" name_additional="Top-grade" type="EtcItem">
@@ -750,6 +767,7 @@
 		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40261" name="Potion of Protection: Aerial Yoke" name_additional="Top-grade" type="EtcItem">
@@ -757,6 +775,7 @@
 		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40262" name="Faeron Support Box" name_additional="Ertheia Fighter" type="EtcItem">
@@ -772,6 +791,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item chance="100.0" id="12074" max="1" min="1" /> <!-- Common Item - Salamander Skin Mail -->
@@ -793,6 +813,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item chance="100.0" id="12071" max="1" min="1" /> <!-- Common Item - Assault Boots -->
@@ -814,6 +835,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item chance="100.0" id="11691" max="1" min="1" /> <!-- Common Item - Bich'Hwa -->
@@ -836,6 +858,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item chance="100.0" id="11693" max="1" min="1" /> <!-- Common Item - Goat Head Staff -->
@@ -858,6 +881,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item chance="100.0" id="11776" max="1" min="1" /> <!-- Common Item - Knuckle Duster -->
@@ -885,6 +909,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item chance="100.0" id="11793" max="1" min="1" /> <!-- Common Item - Cursed Staff -->
@@ -910,6 +935,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40269" name="Sayha's Box" name_additional="Sayha's Seer" type="EtcItem">
@@ -924,6 +950,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40270" name="Appearance Stone: Dark Assassin Suit" type="EtcItem">
@@ -932,6 +959,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 	</item>
 	<item id="40271" name="Orc's Normal Old Box" type="EtcItem">
@@ -965,6 +993,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40274" name="Buff Helmet" type="Armor">
@@ -1098,6 +1127,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="icon" val="icon.nc_magazine" />
 	</item>
 	<item id="40290" name="Lara the Cat's Card Key Pack" name_additional="Normal" type="EtcItem">
@@ -1132,13 +1162,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="40292" name="Steel Spirit's Staff" name_additional="Magic Mental Shield" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nHas a 50% chance of inflicting Mental Shield on target when using a magical skill on them. -->
@@ -1158,13 +1189,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="170.0" />
-			<set stat="mAtk" val="134.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">134</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="40293" name="Steel Dasparion's Staff" name_additional="Acumen" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nCasting Spd. + 15%. PvP damage increased. -->
@@ -1184,13 +1216,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="207.0" />
-			<set stat="mAtk" val="157.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="40294" name="Steel Imperial Staff" name_additional="Empower" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nM. Atk. + 60. PvP damage increased. -->
@@ -1210,13 +1243,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="274.0" />
-			<set stat="mAtk" val="193.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">274</stat>
+			<stat type="mAtk">193</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="40295" name="Steel Dynasty Staff" name_additional="Acumen" type="Weapon">
 		<!-- Cannot augment.\n(Soul Crystal Enhancement)\nCasting Spd. + 15%. PvP damage increased. -->
@@ -1236,19 +1270,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="325.0" />
-			<set stat="mAtk" val="222.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">325</stat>
+			<stat type="mAtk">222</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="40296" name="Monster Weapon Appearance Stone: Turikki's Blunt Weapon" type="EtcItem">
 		<!-- Changes the appearance of a one-handed blunt weapon into that of a Turikki's Blunt Weapon. An appearance-modified item has no change in abilities. Double-click to use. -->
 		<set name="icon" val="icon.shape_shifting_blunt_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40297" name="Monster Weapon Appearance Stone: Tayga Archer's Bow" type="EtcItem">
@@ -1256,6 +1292,7 @@
 		<set name="icon" val="icon.shape_shifting_bow_i00" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="SHAPE_SHIFTING_WP_FIXED" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="40298" name="Turikki's Blunt Weapon" type="Weapon">
@@ -1274,12 +1311,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="250" />
-		<for>
-			<set stat="pAtk" val="125.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
 	</item>
 	<item id="40299" name="Tiger Bow" type="Weapon">
 		<!-- Monster weapon. -->
@@ -1297,11 +1335,12 @@
 		<set name="soulshots" val="6" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="181" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
 	</item>
 </list>
