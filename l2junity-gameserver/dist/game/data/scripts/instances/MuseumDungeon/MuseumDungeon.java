@@ -54,11 +54,7 @@ public final class MuseumDungeon extends AbstractInstance
 	private static final int THE_WAR_OF_GODS_AND_GIANTS = 17575;
 	// Misc
 	private static final int TEMPLATE_ID = 182;
-	private static final NpcStringId[] TOYRON_SHOUT =
-	{
-		NpcStringId.YOUR_NORMAL_ATTACKS_AREN_T_WORKING,
-		NpcStringId.LOOKS_LIKE_ONLY_SKILL_BASED_ATTACKS_DAMAGE_THEM
-	};
+	
 	private static final NpcStringId[] THIEF_SHOUT =
 	{
 		NpcStringId.YOU_LL_NEVER_LEAVE_WITH_THAT_BOOK,
@@ -136,6 +132,10 @@ public final class MuseumDungeon extends AbstractInstance
 							addAttackPlayerDesire(thief, player);
 							thief.broadcastSay(ChatType.NPC_GENERAL, THIEF_SHOUT[getRandom(2)]);
 						}
+						final Npc toyron = world.getNpc(TOYRON);
+						toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHEN_DID_THEY_GET_IN_HERE);
+						startQuestTimer("TOYRON_MSG_1", 2500, toyron, player);
+						startQuestTimer("SKILL_MSG", 4500, toyron, player);
 						break;
 					}
 					case "SPAWN_THIEFS_STAGE_2":
@@ -147,6 +147,16 @@ public final class MuseumDungeon extends AbstractInstance
 						}
 						break;
 					}
+					case "SKILL_MSG":
+						showOnScreenMsg(player, NpcStringId.USE_YOUR_SKILL_ATTACKS_AGAINST_THEM, ExShowScreenMessage.TOP_CENTER, 4500);
+						break;
+					case "TOYRON_MSG_1":
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOUR_NORMAL_ATTACKS_AREN_T_WORKING);
+						startQuestTimer("TOYRON_MSG_2", 2500, npc, player);
+						break;
+					case "TOYRON_MSG_2":
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.LOOKS_LIKE_ONLY_SKILL_BASED_ATTACKS_DAMAGE_THEM);
+						break;
 					case "KILL_THIEF":
 						npc.doDie(player);
 						break;
@@ -207,12 +217,6 @@ public final class MuseumDungeon extends AbstractInstance
 				startQuestTimer("KILL_THIEF", 2500, npc, attacker);
 				startQuestTimer("TOYRON_FOLLOW", 3000, toyron, attacker);
 			}
-			else
-			{
-				toyron.broadcastSay(ChatType.NPC_GENERAL, TOYRON_SHOUT[getRandom(2)]);
-				// This message should be delayed from thief spawn
-				// showOnScreenMsg(attacker, NpcStringId.USE_YOUR_SKILL_ATTACKS_AGAINST_THEM, ExShowScreenMessage.TOP_CENTER, 4500);
-			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
 	}
@@ -232,6 +236,7 @@ public final class MuseumDungeon extends AbstractInstance
 			if ((qs != null) && qs.isCond(2) && world.getAliveNpcs(THIEF).isEmpty())
 			{
 				qs.setCond(3, true);
+				showOnScreenMsg(player, NpcStringId.TALK_TO_TOYRON_TO_RETURN_TO_THE_MUSEUM_LOBBY, ExShowScreenMessage.TOP_CENTER, 4500);
 			}
 		}
 	}
