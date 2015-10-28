@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
@@ -66,7 +67,8 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	/** The identifier of the location area where L2NpcInstance can be spwaned */
 	private int _locationId;
 	/** The Location of this NPC spawn. */
-	private Location _location = new Location(0, 0, 0, 0, 0);
+	private Location _location = new Location(0, 0, 0, 0);
+	private int _instanceId = 0;
 	/** Minimum respawn delay */
 	private int _respawnMinDelay;
 	/** Maximum respawn delay */
@@ -498,7 +500,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			
 			// Call the constructor of the L2Npc
 			Npc npc = _constructor.newInstance(_template);
-			npc.setInstanceId(getInstanceId()); // Must be done before object is spawned into visible world
+			npc.setInstanceById(_instanceId); // Must be done before object is spawned into visible world
 			if (isSummonSpawn)
 			{
 				npc.setShowSummonAnimation(isSummonSpawn);
@@ -728,6 +730,13 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		{
 			oldNpc.refreshID();
 			initializeNpcInstance(oldNpc);
+			
+			// Register NPC back to instance world
+			final Instance instance = oldNpc.getInstanceWorld();
+			if (instance != null)
+			{
+				instance.addNpc(oldNpc);
+			}
 		}
 	}
 	
@@ -736,16 +745,14 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		return _template;
 	}
 	
-	@Override
 	public int getInstanceId()
 	{
-		return _location.getInstanceId();
+		return _instanceId;
 	}
 	
-	@Override
 	public void setInstanceId(int instanceId)
 	{
-		_location.setInstanceId(instanceId);
+		_instanceId = instanceId;
 	}
 	
 	@Override

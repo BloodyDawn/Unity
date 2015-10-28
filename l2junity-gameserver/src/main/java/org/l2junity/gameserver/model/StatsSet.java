@@ -732,4 +732,9 @@ public class StatsSet implements IParserAdvUtils
 		set.set(key, value);
 		return set;
 	}
+	
+	public void remove(String key)
+	{
+		_set.remove(key);
+	}
 }

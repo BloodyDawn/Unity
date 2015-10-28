@@ -31,12 +31,11 @@ import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.poly.ObjectPoly;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.ListenersContainer;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IDecayable;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -47,7 +46,6 @@ import org.l2junity.gameserver.model.interfaces.IUniqueId;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
-import org.l2junity.gameserver.network.client.send.ExSendUIEvent;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
@@ -75,7 +73,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	/** Orientation */
 	private final AtomicInteger _heading = new AtomicInteger(0);
 	/** Instance id of object. 0 - Global */
-	private final AtomicInteger _instanceId = new AtomicInteger(0);
+	private Instance _instance = null;
 	private boolean _isSpawned;
 	private boolean _isInvisible;
 	private boolean _isTargetable = true;
@@ -632,10 +630,27 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 * Gets the instance ID.
 	 * @return the instance ID
 	 */
-	@Override
 	public int getInstanceId()
 	{
-		return _instanceId.get();
+		return (_instance != null) ? _instance.getId() : 0;
+	}
+	
+	/**
+	 * Check if object is inside instance world.
+	 * @return {@code true} when object is inside any instance world, otherwise {@code false}
+	 */
+	public boolean isInInstance()
+	{
+		return _instance != null;
+	}
+	
+	/**
+	 * Get instance world where object is currently located.
+	 * @return {@link Instance} if object is inside instance world, otherwise {@code null}
+	 */
+	public Instance getInstanceWorld()
+	{
+		return _instance;
 	}
 	
 	/**
@@ -645,7 +660,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	@Override
 	public Location getLocation()
 	{
-		return new Location(getX(), getY(), getZ(), getHeading(), getInstanceId());
+		return new Location(getX(), getY(), getZ(), getHeading());
 	}
 	
 	/**
@@ -736,76 +751,66 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	}
 	
 	/**
-	 * Sets the instance ID of object.<br>
-	 * 0 - Global<br>
-	 * TODO: Add listener here.
-	 * @param instanceId the ID of the instance
+	 * Sets instance for current object by instance ID.<br>
+	 * @param id ID of instance world which should be set (0 means normal world)
 	 */
-	@Override
-	public void setInstanceId(int instanceId)
+	public void setInstanceById(int id)
 	{
-		if ((instanceId < 0) || (getInstanceId() == instanceId))
+		final Instance instance = InstanceManager.getInstance().getInstance(id);
+		if ((id != 0) && (instance == null))
 		{
 			return;
 		}
-		
-		Instance oldI = InstanceManager.getInstance().getInstance(getInstanceId());
-		Instance newI = InstanceManager.getInstance().getInstance(instanceId);
-		if (newI == null)
+		setInstance(instance);
+	}
+	
+	/**
+	 * Sets instance where current object belongs.
+	 * @param newInstance new instance world for object
+	 */
+	public void setInstance(Instance newInstance)
+	{
+		synchronized (this)
 		{
-			return;
+			// Check if new and old instances are identical
+			if (_instance == newInstance)
+			{
+				return;
+			}
+			
+			// Leave old instance
+			if (_instance != null)
+			{
+				_instance.onInstanceChange(this, false);
+			}
+			
+			// Set new instance
+			_instance = newInstance;
+			
+			// Enter into new instance
+			if (newInstance != null)
+			{
+				newInstance.onInstanceChange(this, true);
+			}
 		}
 		
+		// Change instance for servitors too
 		if (isPlayer())
 		{
 			final PlayerInstance player = getActingPlayer();
-			if ((getInstanceId() > 0) && (oldI != null))
-			{
-				oldI.removePlayer(getObjectId());
-				if (oldI.isShowTimer())
-				{
-					sendInstanceUpdate(oldI, true);
-				}
-			}
-			if (instanceId > 0)
-			{
-				newI.addPlayer(getObjectId());
-				if (newI.isShowTimer())
-				{
-					sendInstanceUpdate(newI, false);
-				}
-			}
 			final Summon pet = player.getPet();
 			if (pet != null)
 			{
-				pet.setInstanceId(instanceId);
+				pet.setInstance(newInstance);
 			}
-			player.getServitors().values().forEach(s -> s.setInstanceId(instanceId));
+			player.getServitors().values().forEach(s -> s.setInstance(newInstance));
 		}
-		else if (isNpc())
+		// Delete and respawn object to remove object from other objects in previous instance and add it to objects in newly set instance world.
+		// This should not affect player since players are usually teleported
+		else if (_isSpawned)
 		{
-			final Npc npc = (Npc) this;
-			if ((getInstanceId() > 0) && (oldI != null))
-			{
-				oldI.removeNpc(npc);
-			}
-			if (instanceId > 0)
-			{
-				newI.addNpc(npc);
-			}
-		}
-		
-		_instanceId.set(instanceId);
-		if (_isSpawned)
-		{
-			// We don't want some ugly looking disappear/appear effects, so don't update
-			// the knownlist here, but players usually enter instancezones through teleporting
-			// and the teleport will do the revalidation for us.
-			if (!isPlayer())
-			{
-				decayMe();
-				spawnMe();
-			}
+			decayMe();
+			spawnMe();
 		}
 	}
 	
@@ -820,7 +825,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		_y.set(loc.getY());
 		_z.set(loc.getZ());
 		_heading.set(loc.getHeading());
-		_instanceId.set(loc.getInstanceId());
 	}
 	
 	/**
@@ -865,25 +869,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			heading = 65535 + heading;
 		}
 		return Util.convertHeadingToDegree(heading);
-	}
-	
-	/**
-	 * Sends an instance update for player.
-	 * @param instance the instance to update
-	 * @param hide if {@code true} hide the player
-	 */
-	private void sendInstanceUpdate(Instance instance, boolean hide)
-	{
-		final int startTime = (int) ((System.currentTimeMillis() - instance.getInstanceStartTime()) / 1000);
-		final int endTime = (int) ((instance.getInstanceEndTime() - instance.getInstanceStartTime()) / 1000);
-		if (instance.isTimerIncrease())
-		{
-			sendPacket(new ExSendUIEvent(getActingPlayer(), hide, true, startTime, endTime, instance.getTimerText()));
-		}
-		else
-		{
-			sendPacket(new ExSendUIEvent(getActingPlayer(), hide, false, endTime - startTime, 0, instance.getTimerText()));
-		}
 	}
 	
 	/**

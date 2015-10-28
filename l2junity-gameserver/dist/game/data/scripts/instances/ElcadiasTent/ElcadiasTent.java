@@ -18,15 +18,11 @@
  */
 package instances.ElcadiasTent;
 
-import instances.AbstractInstance;
-
-import org.l2junity.gameserver.instancemanager.InstanceManager;
-import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 
+import instances.AbstractInstance;
 import quests.Q10292_SevenSignsGirlOfDoubt.Q10292_SevenSignsGirlOfDoubt;
 import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMonasteryOfSilence;
@@ -40,9 +36,6 @@ public final class ElcadiasTent extends AbstractInstance
 	// NPCs
 	private static final int ELCADIA = 32784;
 	private static final int GRUFF_LOOKING_MAN = 32862;
-	// Locations
-	private static final Location START_LOC = new Location(89706, -238074, -9632, 0, 0);
-	private static final Location EXIT_LOC = new Location(43316, -87986, -2832, 0, 0);
 	// Misc
 	private static final int TEMPLATE_ID = 158;
 	
@@ -63,11 +56,11 @@ public final class ElcadiasTent extends AbstractInstance
 			final QuestState ForbiddenBook = talker.getQuestState(Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class.getSimpleName());
 			final QuestState Monastery = talker.getQuestState(Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName());
 			if (((GirlOfDoubt != null) && GirlOfDoubt.isStarted()) //
-				|| ((GirlOfDoubt != null) && GirlOfDoubt.isCompleted() && (ForbiddenBook == null)) //
-				|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
-				|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)))
+			|| ((GirlOfDoubt != null) && GirlOfDoubt.isCompleted() && (ForbiddenBook == null)) //
+			|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
+			|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)))
 			{
-				enterInstance(talker, "ElcadiasTent.xml", TEMPLATE_ID);
+				enterInstance(talker, npc, TEMPLATE_ID);
 			}
 			else
 			{
@@ -76,21 +69,13 @@ public final class ElcadiasTent extends AbstractInstance
 		}
 		else
 		{
-			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(talker);
-			world.removeAllowed(talker.getObjectId());
-			talker.setInstanceId(0);
-			talker.teleToLocation(EXIT_LOC);
+			finishInstance(talker, 0);
 		}
 		return super.onTalk(npc, talker);
 	}
 	
-	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
+	public static void main(String[] args)
 	{
-		if (firstEntrance)
-		{
-			world.addAllowed(player.getObjectId());
-		}
-		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
+		new ElcadiasTent();
 	}
 }

@@ -93,7 +93,7 @@ public final class TeleportToSummon extends AbstractEffect
 		int y = (int) (py + (25 * Math.sin(ph)));
 		int z = summon.getZ();
 		
-		final Location loc = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceId());
+		final Location loc = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceWorld());
 		
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effector.broadcastPacket(new FlyToLocation(effector, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));

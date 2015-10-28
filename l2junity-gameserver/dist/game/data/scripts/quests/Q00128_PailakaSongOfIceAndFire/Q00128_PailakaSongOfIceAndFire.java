@@ -19,16 +19,15 @@
 package quests.Q00128_PailakaSongOfIceAndFire;
 
 import org.l2junity.gameserver.enums.QuestSound;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -72,7 +71,6 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 49;
 	private static final int MAX_LEVEL = 55;
-	private static final int EXIT_TIME = 5;
 	
 	public Q00128_PailakaSongOfIceAndFire()
 	{
@@ -169,9 +167,11 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 			case "298": // Orcish Glaive
 			case "71": // Flamberge
 			{
-				final Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
-				inst.setDuration(EXIT_TIME * 60000);
-				inst.setEmptyDestroyTime(0);
+				final Instance inst = npc.getInstanceWorld();
+				if (inst != null)
+				{
+					inst.finishInstance();
+				}
 				st.exitQuest(false, true);
 				giveAdena(player, 187200, true);
 				giveItems(player, Integer.parseInt(event), 1);

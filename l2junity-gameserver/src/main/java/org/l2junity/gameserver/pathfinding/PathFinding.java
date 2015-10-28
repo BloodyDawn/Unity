@@ -22,6 +22,7 @@ import java.util.List;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.pathfinding.cellnodes.CellPathFinding;
 import org.l2junity.gameserver.pathfinding.geonodes.GeoPathFinding;
 
@@ -43,7 +44,7 @@ public abstract class PathFinding
 	
 	public abstract boolean pathNodesExist(short regionoffset);
 	
-	public abstract List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable);
+	public abstract List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, Instance instance, boolean playable);
 	
 	// @formatter:off
 	/*

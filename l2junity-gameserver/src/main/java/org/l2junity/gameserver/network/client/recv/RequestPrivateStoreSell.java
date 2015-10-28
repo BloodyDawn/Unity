@@ -102,27 +102,17 @@ public final class RequestPrivateStoreSell implements IClientIncomingPacket
 		}
 		
 		final PlayerInstance storePlayer = World.getInstance().getPlayer(_storePlayerId);
-		if (storePlayer == null)
+		if ((storePlayer == null) || !player.isInsideRadius(storePlayer, INTERACTION_DISTANCE, true, false))
 		{
 			return;
 		}
 		
-		if (!player.isInsideRadius(storePlayer, INTERACTION_DISTANCE, true, false))
+		if (player.getInstanceWorld() != storePlayer.getInstanceWorld())
 		{
 			return;
 		}
 		
-		if ((player.getInstanceId() != storePlayer.getInstanceId()) && (player.getInstanceId() != -1))
-		{
-			return;
-		}
-		
-		if (storePlayer.getPrivateStoreType() != PrivateStoreType.BUY)
-		{
-			return;
-		}
-		
-		if (player.isCursedWeaponEquipped())
+		if ((storePlayer.getPrivateStoreType() != PrivateStoreType.BUY) || player.isCursedWeaponEquipped())
 		{
 			return;
 		}

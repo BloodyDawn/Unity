@@ -27,6 +27,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.idfactory.IdFactory;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.pathfinding.AbstractNode;
@@ -92,7 +93,7 @@ public class CellPathFinding extends PathFinding
 	}
 	
 	@Override
-	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable)
+	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, Instance instance, boolean playable)
 	{
 		int gx = GeoData.getInstance().getGeoX(x);
 		int gy = GeoData.getInstance().getGeoY(y);
@@ -213,7 +214,7 @@ public class CellPathFinding extends PathFinding
 				}
 				
 				AbstractNodeLoc locEnd = path.get(middlePoint.nextIndex());
-				if (GeoData.getInstance().canMove(currentX, currentY, currentZ, locEnd.getX(), locEnd.getY(), locEnd.getZ(), instanceId))
+				if (GeoData.getInstance().canMove(currentX, currentY, currentZ, locEnd.getX(), locEnd.getY(), locEnd.getZ(), instance))
 				{
 					middlePoint.remove();
 					remove = true;

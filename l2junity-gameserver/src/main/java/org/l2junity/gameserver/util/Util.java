@@ -165,11 +165,7 @@ public final class Util
 	 */
 	public static boolean checkIfInRange(int range, WorldObject obj1, WorldObject obj2, boolean includeZAxis)
 	{
-		if ((obj1 == null) || (obj2 == null))
-		{
-			return false;
-		}
-		if (obj1.getInstanceId() != obj2.getInstanceId())
+		if ((obj1 == null) || (obj2 == null) || (obj1.getInstanceWorld() != obj2.getInstanceWorld()))
 		{
 			return false;
 		}

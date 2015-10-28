@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.PacketReader;
 
@@ -118,7 +119,7 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 		Fort fort = null;
 		SiegableHall hall = null;
 		boolean isInDefense = false;
-		int instanceId = 0;
+		Instance instance = null;
 		
 		// force jail
 		if (activeChar.isJailed())
@@ -242,7 +243,7 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 				}
 				else
 				{
-					instanceId = activeChar.getInstanceId();
+					instance = activeChar.getInstanceWorld();
 					loc = new Location(activeChar);
 				}
 				break;
@@ -274,9 +275,8 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 		// Teleport and revive
 		if (loc != null)
 		{
-			activeChar.setInstanceId(instanceId);
 			activeChar.setIsPendingRevive(true);
-			activeChar.teleToLocation(loc, true);
+			activeChar.teleToLocation(loc, true, instance);
 		}
 	}
 	

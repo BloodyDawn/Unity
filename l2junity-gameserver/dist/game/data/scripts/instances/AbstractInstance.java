@@ -18,26 +18,19 @@
  */
 package instances;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
-import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
-import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
-import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import ai.npc.AbstractNpcAI;
 
@@ -47,291 +40,196 @@ import ai.npc.AbstractNpcAI;
  */
 public abstract class AbstractInstance extends AbstractNpcAI
 {
-	public final Logger _log = LoggerFactory.getLogger(getClass().getSimpleName());
-	
-	public AbstractInstance(String name, String desc)
-	{
-		super(name, desc);
-	}
-	
 	public AbstractInstance(String name)
 	{
 		super(name, "instances");
 	}
 	
-	protected void enterInstance(PlayerInstance player, String template, int templateId)
+	/**
+	 * Get instance world associated with {@code player}.<br>
+	 * @param player player who wants get instance world
+	 * @return instance world if found, otherwise null
+	 */
+	public Instance getPlayerInstance(PlayerInstance player)
 	{
-		enterInstance(player, new InstanceWorld(), template, templateId);
+		return InstanceManager.getInstance().getPlayerInstance(player, false);
 	}
 	
-	protected void enterInstance(PlayerInstance player, InstanceWorld instance, String template, int templateId)
+	/**
+	 * Show an on screen message to each player inside instance.
+	 * @param instance instance where message should be broadcasted
+	 * @param npcStringId the NPC string to display
+	 * @param position the position of the message on the screen
+	 * @param time the duration of the message in milliseconds
+	 * @param params values of parameters to replace in the NPC String (like S1, C1 etc.)
+	 */
+	public void showOnScreenMsg(Instance instance, NpcStringId npcStringId, int position, int time, String... params)
 	{
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		if (world != null)
+		instance.broadcastPacket(new ExShowScreenMessage(npcStringId, position, time, params));
+	}
+	
+	/**
+	 * Put player into instance world.<br>
+	 * If instance world doesn't found for player then try to create new one.
+	 * @param player player who wants to enter into instance
+	 * @param npc NPC which allows to enter into instance
+	 * @param templateId template ID of instance where player wants to enter
+	 */
+	protected final void enterInstance(PlayerInstance player, Npc npc, int templateId)
+	{
+		Instance instance = getPlayerInstance(player);
+		if (instance != null) // Player has already any instance active
 		{
-			if (world.getTemplateId() == templateId)
+			if (instance.getTemplateId() != templateId)
 			{
-				onEnterInstance(player, world, false);
-				
-				final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-				if (inst.isRemoveBuffEnabled())
-				{
-					handleRemoveBuffs(player, world);
-				}
+				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return;
 			}
-			player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-			return;
+			onEnter(player, instance, false);
 		}
-		
-		if (checkConditions(player, templateId))
+		else
 		{
-			instance.setInstanceId(InstanceManager.getInstance().createDynamicInstance(template));
-			instance.setTemplateId(templateId);
-			instance.setStatus(0);
-			InstanceManager.getInstance().addWorld(instance);
-			onEnterInstance(player, instance, true);
-			
-			final Instance inst = InstanceManager.getInstance().getInstance(instance.getInstanceId());
-			if (inst.getReenterType() == InstanceReenterType.ON_INSTANCE_ENTER)
+			// Get instance template
+			final InstanceManager manager = InstanceManager.getInstance();
+			final InstanceTemplate template = manager.getInstanceTemplate(templateId);
+			if (template == null)
 			{
-				handleReenterTime(instance);
+				_log.warn("Player {} ({}) wants to create instance with unknown template id {}!", player.getName(), player.getObjectId(), templateId);
+				return;
 			}
 			
-			if (inst.isRemoveBuffEnabled())
+			// Get instance enter scope
+			final List<PlayerInstance> enterGroup = template.getEnterGroup(player);
+			// When nobody can enter
+			if (enterGroup == null)
 			{
-				handleRemoveBuffs(instance);
+				_log.warn("Instance {} ({}) has invalid group size limits!", template.getName(), templateId);
+				return;
 			}
 			
-			if (Config.DEBUG_INSTANCES)
+			// Validate conditions for group
+			if (!player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS) && (!template.validateConditions(enterGroup, npc, this::showHtmlFile) || !validateConditions(enterGroup, npc, template)))
 			{
-				_log.info("Instance " + inst.getName() + " (" + instance.getTemplateId() + ") has been created by player " + player.getName());
-			}
-		}
-	}
-	
-	protected void finishInstance(InstanceWorld world)
-	{
-		finishInstance(world, Config.INSTANCE_FINISH_TIME);
-	}
-	
-	protected void finishInstance(InstanceWorld world, int duration)
-	{
-		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-		
-		if (inst.getReenterType() == InstanceReenterType.ON_INSTANCE_FINISH)
-		{
-			handleReenterTime(world);
-		}
-		
-		if (duration == 0)
-		{
-			InstanceManager.getInstance().destroyInstance(inst.getObjectId());
-		}
-		else if (duration > 0)
-		{
-			inst.setDuration(duration);
-			inst.setEmptyDestroyTime(0);
-		}
-	}
-	
-	protected void handleReenterTime(InstanceWorld world)
-	{
-		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-		final List<InstanceReenterTimeHolder> reenterData = inst.getReenterData();
-		
-		long time = -1;
-		
-		for (InstanceReenterTimeHolder data : reenterData)
-		{
-			if (data.getTime() > 0)
-			{
-				time = System.currentTimeMillis() + data.getTime();
-				break;
+				return;
 			}
 			
-			final Calendar calendar = Calendar.getInstance();
-			calendar.set(Calendar.AM_PM, data.getHour() >= 12 ? 1 : 0);
-			calendar.set(Calendar.HOUR, data.getHour());
-			calendar.set(Calendar.MINUTE, data.getMinute());
-			calendar.set(Calendar.SECOND, 0);
-			
-			if (calendar.getTimeInMillis() <= System.currentTimeMillis())
+			// Check if maximum world count limit is exceeded
+			if (manager.getWorldCount(templateId) >= template.getMaxWorlds())
 			{
-				calendar.add(Calendar.DAY_OF_MONTH, 1);
+				player.sendPacket(SystemMessageId.THE_NUMBER_OF_INSTANT_ZONES_THAT_CAN_BE_CREATED_HAS_BEEN_EXCEEDED_PLEASE_TRY_AGAIN_LATER);
+				return;
 			}
 			
-			if (data.getDay() != null)
+			// Check if any player from enter group has active instance
+			for (PlayerInstance member : enterGroup)
 			{
-				while (calendar.get(Calendar.DAY_OF_WEEK) != (data.getDay().getValue() + 1))
+				if (getPlayerInstance(member) != null)
 				{
-					calendar.add(Calendar.DAY_OF_MONTH, 1);
+					enterGroup.forEach(p -> p.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON));
+					return;
 				}
 			}
 			
-			if (time == -1)
-			{
-				time = calendar.getTimeInMillis();
-			}
-			else if (calendar.getTimeInMillis() < time)
-			{
-				time = calendar.getTimeInMillis();
-			}
-		}
-		
-		if (time > 0)
-		{
-			setReenterTime(world, time);
-		}
-	}
-	
-	protected void handleRemoveBuffs(InstanceWorld world)
-	{
-		for (Integer objId : world.getAllowed())
-		{
-			final PlayerInstance player = World.getInstance().getPlayer(objId);
+			// Create new instance for enter player group
+			instance = manager.createInstance(template);
 			
-			if (player != null)
+			// Move each player from enter group to instance
+			for (PlayerInstance member : enterGroup)
 			{
-				handleRemoveBuffs(player, world);
+				instance.addAllowed(member);
+				onEnter(member, instance, true);
+			}
+			
+			// Apply condition success effects
+			template.applyConditionEffects(enterGroup);
+			
+			// Set re-enter for instances with re-enter on start
+			if (instance.getReenterType().equals(InstanceReenterType.ON_ENTER))
+			{
+				instance.setReenterTime();
 			}
 		}
 	}
 	
-	protected abstract void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance);
+	/**
+	 * This function is called when player enter into instance trough NPC.
+	 * @param player player who enter
+	 * @param instance instance world where player enter
+	 * @param firstEnter when {@code true} player enter first time, otherwise player entered multiple times
+	 */
+	protected void onEnter(PlayerInstance player, Instance instance, boolean firstEnter)
+	{
+		teleportPlayerIn(player, instance);
+	}
 	
-	protected boolean checkConditions(PlayerInstance player, int templateId)
+	/**
+	 * This method is used to teleport player into instance by start NPC.<br>
+	 * When you override whole method, XML teleport data won't be applied.
+	 * @param player player which should be teleported
+	 * @param instance instance where player should be teleported
+	 */
+	protected void teleportPlayerIn(PlayerInstance player, Instance instance)
+	{
+		final Location loc = instance.getEnterLocation();
+		if (loc != null)
+		{
+			player.teleToLocation(loc, instance);
+		}
+		else
+		{
+			_log.warn("Missing start location for instance {} ({})", instance.getName(), instance.getId());
+		}
+	}
+	
+	/**
+	 * This method is used to teleport player from instance world by NPC.
+	 * @param player player which should be ejected
+	 * @param instance instance from player should be removed
+	 */
+	protected void teleportPlayerOut(PlayerInstance player, Instance instance)
+	{
+		instance.ejectPlayer(player);
+	}
+	
+	/**
+	 * Sets instance to finish state. <br>
+	 * See {@link Instance#finishInstance()} for more details.
+	 * @param player player used for determine current instance world
+	 */
+	protected void finishInstance(PlayerInstance player)
+	{
+		final Instance inst = player.getInstanceWorld();
+		if (inst != null)
+		{
+			inst.finishInstance();
+		}
+	}
+	
+	/**
+	 * Sets instance to finish state.<br>
+	 * See {@link Instance#finishInstance(int)} for more details.
+	 * @param player player used for determine current instance world
+	 * @param delay finish delay in minutes
+	 */
+	protected void finishInstance(PlayerInstance player, int delay)
+	{
+		final Instance inst = player.getInstanceWorld();
+		if (inst != null)
+		{
+			inst.finishInstance(delay);
+		}
+	}
+	
+	/**
+	 * This method is supposed to be used for validation of additional conditions that are too much specific to instance world (to avoid useless core conditions).<br>
+	 * These conditions are validated after conditions defined in XML template.
+	 * @param group group of players which wants to enter (first player inside list is player who make enter request)
+	 * @param npc NPC used for enter
+	 * @param template template of instance world which should be created
+	 * @return {@code true} when conditions are valid, otherwise {@code false}
+	 */
+	protected boolean validateConditions(List<PlayerInstance> group, Npc npc, InstanceTemplate template)
 	{
 		return true;
-	}
-	
-	/**
-	 * Spawns group of instance NPC's
-	 * @param groupName - name of group from XML definition to spawn
-	 * @param instanceId - ID of instance
-	 * @return list of spawned NPC's
-	 */
-	protected List<Npc> spawnGroup(String groupName, int instanceId)
-	{
-		return InstanceManager.getInstance().getInstance(instanceId).spawnGroup(groupName);
-	}
-	
-	/**
-	 * Save Reenter time for every player in InstanceWorld.
-	 * @param world - the InstanceWorld
-	 * @param time - Time in miliseconds
-	 */
-	protected void setReenterTime(InstanceWorld world, long time)
-	{
-		for (int objectId : world.getAllowed())
-		{
-			InstanceManager.getInstance().setInstanceTime(objectId, world.getTemplateId(), time);
-			final PlayerInstance player = World.getInstance().getPlayer(objectId);
-			if ((player != null) && player.isOnline())
-			{
-				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE).addString(InstanceManager.getInstance().getInstance(world.getInstanceId()).getName()));
-			}
-		}
-		
-		if (Config.DEBUG_INSTANCES)
-		{
-			_log.info("Time restrictions has been set for player in instance ID: " + world.getInstanceId() + " (" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time) + ")");
-		}
-	}
-	
-	private void handleRemoveBuffs(PlayerInstance player, InstanceWorld world)
-	{
-		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-		final List<BuffInfo> buffToRemove = new ArrayList<>();
-		
-		switch (inst.getRemoveBuffType())
-		{
-			case ALL:
-			{
-				player.stopAllEffectsExceptThoseThatLastThroughDeath();
-				
-				final Summon pet = player.getPet();
-				if (pet != null)
-				{
-					pet.stopAllEffectsExceptThoseThatLastThroughDeath();
-				}
-				
-				player.getServitors().values().forEach(Summon::stopAllEffectsExceptThoseThatLastThroughDeath);
-				break;
-			}
-			case WHITELIST:
-			{
-				for (BuffInfo info : player.getEffectList().getBuffs())
-				{
-					if (!inst.getBuffExceptionList().contains(info.getSkill().getId()))
-					{
-						buffToRemove.add(info);
-					}
-				}
-				
-				for (Summon summon : player.getServitors().values())
-				{
-					for (BuffInfo info : summon.getEffectList().getBuffs())
-					{
-						if (!inst.getBuffExceptionList().contains(info.getSkill().getId()))
-						{
-							buffToRemove.add(info);
-						}
-					}
-				}
-				
-				final Summon pet = player.getPet();
-				if (pet != null)
-				{
-					for (BuffInfo info : pet.getEffectList().getBuffs())
-					{
-						if (!inst.getBuffExceptionList().contains(info.getSkill().getId()))
-						{
-							buffToRemove.add(info);
-						}
-					}
-				}
-				break;
-			}
-			case BLACKLIST:
-			{
-				for (BuffInfo info : player.getEffectList().getBuffs())
-				{
-					if (inst.getBuffExceptionList().contains(info.getSkill().getId()))
-					{
-						buffToRemove.add(info);
-					}
-				}
-				
-				for (Summon summon : player.getServitors().values())
-				{
-					for (BuffInfo info : summon.getEffectList().getBuffs())
-					{
-						if (inst.getBuffExceptionList().contains(info.getSkill().getId()))
-						{
-							buffToRemove.add(info);
-						}
-					}
-				}
-				
-				final Summon pet = player.getPet();
-				if (pet != null)
-				{
-					for (BuffInfo info : pet.getEffectList().getBuffs())
-					{
-						if (inst.getBuffExceptionList().contains(info.getSkill().getId()))
-						{
-							buffToRemove.add(info);
-						}
-					}
-				}
-				break;
-			}
-		}
-		
-		for (BuffInfo info : buffToRemove)
-		{
-			info.getEffected().getEffectList().stopSkillEffects(true, info.getSkill());
-		}
 	}
 }

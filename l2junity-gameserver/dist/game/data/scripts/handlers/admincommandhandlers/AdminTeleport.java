@@ -350,8 +350,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				regionName = "talking_island_town";
 		}
 		
-		player.teleToLocation(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), true);
-		player.setInstanceId(0);
+		player.teleToLocation(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), true, null);
 	}
 	
 	private void teleportTo(PlayerInstance activeChar, String Coords)
@@ -359,16 +358,12 @@ public class AdminTeleport implements IAdminCommandHandler
 		try
 		{
 			StringTokenizer st = new StringTokenizer(Coords);
-			String x1 = st.nextToken();
-			int x = Integer.parseInt(x1);
-			String y1 = st.nextToken();
-			int y = Integer.parseInt(y1);
-			String z1 = st.nextToken();
-			int z = Integer.parseInt(z1);
+			final int x = Integer.parseInt(st.nextToken());
+			final int y = Integer.parseInt(st.nextToken());
+			final int z = Integer.parseInt(st.nextToken());
 			
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			activeChar.teleToLocation(x, y, z);
-			
 			activeChar.sendMessage("You have been teleported to " + Coords);
 		}
 		catch (NoSuchElementException nsee)
@@ -455,58 +450,31 @@ public class AdminTeleport implements IAdminCommandHandler
 			}
 			else
 			{
-				// Set player to same instance as GM teleporting.
-				if ((activeChar != null) && (activeChar.getInstanceId() >= 0))
-				{
-					player.setInstanceId(activeChar.getInstanceId());
-					activeChar.sendMessage("You have recalled " + player.getName());
-				}
-				else
-				{
-					player.setInstanceId(0);
-				}
+				activeChar.sendMessage("You have recalled " + player.getName());
 				player.sendMessage("Admin is teleporting you.");
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				player.teleToLocation(loc, true);
+				player.teleToLocation(loc, true, activeChar.getInstanceWorld());
 			}
 		}
 	}
 	
 	private void teleportToCharacter(PlayerInstance activeChar, WorldObject target)
 	{
-		if (target == null)
+		if ((target == null) || !target.isPlayer())
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
 		
-		PlayerInstance player = null;
-		if (target instanceof PlayerInstance)
-		{
-			player = (PlayerInstance) target;
-		}
-		else
-		{
-			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
-			return;
-		}
-		
+		final PlayerInstance player = target.getActingPlayer();
 		if (player.getObjectId() == activeChar.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
 		}
 		else
 		{
-			// move to targets instance
-			activeChar.setInstanceId(target.getInstanceId());
-			
-			int x = player.getX();
-			int y = player.getY();
-			int z = player.getZ();
-			
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			activeChar.teleToLocation(new Location(x, y, z), true);
-			
+			activeChar.teleToLocation(player, true, player.getInstanceWorld());
 			activeChar.sendMessage("You have teleported to character " + player.getName() + ".");
 		}
 	}
@@ -579,13 +547,9 @@ public class AdminTeleport implements IAdminCommandHandler
 				spawn.setAmount(1);
 				spawn.setHeading(activeChar.getHeading());
 				spawn.setRespawnDelay(respawnTime);
-				if (activeChar.getInstanceId() >= 0)
+				if (activeChar.isInInstance())
 				{
 					spawn.setInstanceId(activeChar.getInstanceId());
-				}
-				else
-				{
-					spawn.setInstanceId(0);
 				}
 				SpawnTable.getInstance().addNewSpawn(spawn, true);
 				spawn.init();

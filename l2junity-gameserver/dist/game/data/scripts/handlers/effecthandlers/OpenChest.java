@@ -44,7 +44,7 @@ public final class OpenChest extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -55,7 +55,7 @@ public final class OpenChest extends AbstractEffect
 		
 		final PlayerInstance player = effector.getActingPlayer();
 		final L2ChestInstance chest = (L2ChestInstance) effected;
-		if (chest.isDead() || (player.getInstanceId() != chest.getInstanceId()))
+		if (chest.isDead() || (player.getInstanceWorld() != chest.getInstanceWorld()))
 		{
 			return;
 		}

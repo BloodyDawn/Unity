@@ -61,6 +61,7 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.NpcLogListHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -1426,7 +1427,48 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onSummonTalk(Summon summon)
 	{
+	}
 	
+	/**
+	 * This listener is called when instance world is created.
+	 * @param instance created instance world
+	 */
+	public void onInstanceCreated(Instance instance)
+	{
+	}
+	
+	/**
+	 * This listener is called when instance being destroyed.
+	 * @param instance instance world which will be destroyed
+	 */
+	public void onInstanceDestroy(Instance instance)
+	{
+	}
+	
+	/**
+	 * This listener is called when player enter into instance.
+	 * @param player player who enter
+	 * @param instance instance where player enter
+	 */
+	public void onInstanceEnter(PlayerInstance player, Instance instance)
+	{
+	}
+	
+	/**
+	 * This listener is called when player leave instance.
+	 * @param player player who leaved
+	 * @param instance instance which player leaved
+	 */
+	public void onInstanceLeave(PlayerInstance player, Instance instance)
+	{
+	}
+	
+	/**
+	 * This listener is called when NPC {@code npc} being despawned.
+	 * @param npc NPC which will be despawned
+	 */
+	public void onNpcDespawn(Npc npc)
+	{
 	}
 	
 	/**
@@ -2031,6 +2073,24 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
+	 * Register onNpcDespawn to NPCs.
+	 * @param npcIds
+	 */
+	public void addDespawnId(int... npcIds)
+	{
+		setNpcDespawnId(event -> onNpcDespawn(event.getNpc()), npcIds);
+	}
+	
+	/**
+	 * Register onNpcDespawn to NPCs.
+	 * @param npcIds
+	 */
+	public void addDespawnId(Collection<Integer> npcIds)
+	{
+		setNpcDespawnId(event -> onNpcDespawn(event.getNpc()), npcIds);
+	}
+	
+	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for skill see events.
 	 * @param npcIds the IDs of the NPCs to register
 	 */
@@ -2333,6 +2393,78 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public void addOlympiadMatchFinishId()
 	{
 		setOlympiadMatchResult(event -> notifyOlympiadMatch(event.getWinner(), event.getLoser(), event.getCompetitionType()));
+	}
+	
+	/**
+	 * Register onInstanceCreated trigger when instance is created.
+	 * @param templateIds
+	 */
+	public void addInstanceCreatedId(int... templateIds)
+	{
+		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceCreated trigger when instance is created.
+	 * @param templateIds
+	 */
+	public void addInstanceCreatedId(Collection<Integer> templateIds)
+	{
+		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceDestroy trigger when instance is destroyed.
+	 * @param templateIds
+	 */
+	public void addInstanceDestroyId(int... templateIds)
+	{
+		setInstanceDestroyId(event -> onInstanceDestroy(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceCreate trigger when instance is destroyed.
+	 * @param templateIds
+	 */
+	public void addInstanceDestroyId(Collection<Integer> templateIds)
+	{
+		setInstanceDestroyId(event -> onInstanceDestroy(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player enter into instance.
+	 * @param templateIds
+	 */
+	public void addInstanceEnterId(int... templateIds)
+	{
+		setInstanceEnterId(event -> onInstanceEnter(event.getPlayer(), event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player enter into instance.
+	 * @param templateIds
+	 */
+	public void addInstanceEnterId(Collection<Integer> templateIds)
+	{
+		setInstanceEnterId(event -> onInstanceEnter(event.getPlayer(), event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player leave from instance.
+	 * @param templateIds
+	 */
+	public void addInstanceLeaveId(int... templateIds)
+	{
+		setInstanceLeaveId(event -> onInstanceLeave(event.getPlayer(), event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player leave from instance.
+	 * @param templateIds
+	 */
+	public void addInstanceLeaveId(Collection<Integer> templateIds)
+	{
+		setInstanceLeaveId(event -> onInstanceLeave(event.getPlayer(), event.getInstanceWorld()), templateIds);
 	}
 	
 	/**

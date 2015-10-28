@@ -83,6 +83,7 @@ import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.GroupType;
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -110,7 +111,6 @@ import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.instancemanager.MentorManager;
@@ -124,6 +124,7 @@ import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.ClanWar;
+import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.ContactList;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.Fishing;
@@ -191,7 +192,6 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Duel;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.Hero;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
@@ -215,6 +215,7 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
@@ -6261,6 +6262,16 @@ public final class PlayerInstance extends Playable
 		return _party;
 	}
 	
+	public boolean isInCommandChannel()
+	{
+		return isInParty() && getParty().isInCommandChannel();
+	}
+	
+	public CommandChannel getCommandChannel()
+	{
+		return (isInCommandChannel()) ? getParty().getCommandChannel() : null;
+	}
+	
 	/**
 	 * Return True if the L2PcInstance is a GM.
 	 */
@@ -9216,7 +9227,7 @@ public final class PlayerInstance extends Playable
 		setTarget(null);
 		setIsInvul(true);
 		setInvisible(true);
-		setInstanceId(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstanceId());
+		setInstance(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstance());
 		teleToLocation(loc, false);
 		sendPacket(new ExOlympiadMode(3));
 		
@@ -9226,8 +9237,7 @@ public final class PlayerInstance extends Playable
 	public void leaveObserverMode()
 	{
 		setTarget(null);
-		
-		setInstanceId(0);
+		setInstance(null);
 		teleToLocation(_lastLoc, false);
 		unsetLastLocation();
 		sendPacket(new ObservationReturn(getLocation()));
@@ -9259,7 +9269,7 @@ public final class PlayerInstance extends Playable
 		_observerMode = false;
 		setTarget(null);
 		sendPacket(new ExOlympiadMode(0));
-		setInstanceId(0);
+		setInstance(null);
 		teleToLocation(_lastLoc, true);
 		if (!isGM())
 		{
@@ -10343,13 +10353,12 @@ public final class PlayerInstance extends Playable
 		{
 			startFeed(_mountNpcId);
 		}
-		if (getInstanceId() > 0)
+		
+		// Notify instance
+		final Instance instance = getInstanceWorld();
+		if (instance != null)
 		{
-			final Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
-			if (instance != null)
-			{
-				instance.cancelEjectDeadPlayer(this);
-			}
+			instance.doRevive(this);
 		}
 	}
 	
@@ -10512,9 +10521,8 @@ public final class PlayerInstance extends Playable
 		
 		if (isFlyingMounted() && (loc.getZ() < -1005))
 		{
-			super.teleToLocation(loc.getX(), loc.getY(), -1005, loc.getHeading(), loc.getInstanceId());
+			super.teleToLocation(loc.getX(), loc.getY(), -1005, loc.getHeading());
 		}
-		
 		super.teleToLocation(loc, allowRandomOffset);
 	}
 	
@@ -11207,35 +11215,18 @@ public final class PlayerInstance extends Playable
 			_log.error("deleteMe()", e);
 		}
 		
-		// remove player from instance and set spawn location if any
-		try
+		// remove player from instance
+		final Instance inst = getInstanceWorld();
+		if (inst != null)
 		{
-			final int instanceId = getInstanceId();
-			if ((instanceId != 0) && !Config.RESTORE_PLAYER_INSTANCE)
+			try
 			{
-				final Instance inst = InstanceManager.getInstance().getInstance(instanceId);
-				if (inst != null)
-				{
-					inst.removePlayer(getObjectId());
-					final Location loc = inst.getSpawnLoc();
-					if (loc != null)
-					{
-						final int x = loc.getX() + Rnd.get(-30, 30);
-						final int y = loc.getY() + Rnd.get(-30, 30);
-						setXYZInvisible(x, y, loc.getZ());
-						final Summon pet = getPet();
-						if (pet != null) // dead pet
-						{
-							pet.teleToLocation(loc, true);
-							pet.setInstanceId(0);
-						}
-					}
-				}
+				inst.onPlayerLogout(this);
 			}
-		}
-		catch (Exception e)
-		{
-			_log.error("deleteMe()", e);
+			catch (Exception e)
+			{
+				_log.error("deleteMe()", e);
+			}
 		}
 		
 		// Update database with items in its inventory and remove them from the world
@@ -14120,5 +14111,10 @@ public final class PlayerInstance extends Playable
 				}
 			}
 		});
+	}
+	
+	public GroupType getGroupType()
+	{
+		return isInParty() ? (getParty().isInCommandChannel() ? GroupType.COMMAND_CHANNEL : GroupType.PARTY) : GroupType.NONE;
 	}
 }

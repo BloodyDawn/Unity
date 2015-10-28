@@ -18,17 +18,16 @@
  */
 package instances.MonasteryOfSilence1;
 
-import instances.AbstractInstance;
-
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import instances.AbstractInstance;
 
 /**
  * Monastery of Silence instance zone.
@@ -36,11 +35,6 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
  */
 public final class MonasteryOfSilence1 extends AbstractInstance
 {
-	protected static final class MoSWorld extends InstanceWorld
-	{
-		protected Npc elcadia = null;
-	}
-	
 	// NPCs
 	private static final int ELCADIA_INSTANCE = 32787;
 	private static final int ERIS_EVIL_THOUGHTS = 32792;
@@ -62,8 +56,6 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 		new SkillHolder(6730, 1), // Greater Battle Heal of Elcadia
 	};
 	// Locations
-	private static final Location START_LOC = new Location(120710, -86971, -3392);
-	private static final Location EXIT_LOC = new Location(115983, -87351, -3397, 0, 0);
 	private static final Location CENTRAL_ROOM_LOC = new Location(85794, -249788, -8320);
 	private static final Location SOUTH_WATCHERS_ROOM_LOC = new Location(85798, -246566, -8320);
 	private static final Location WEST_WATCHERS_ROOM_LOC = new Location(82531, -249405, -8320);
@@ -89,99 +81,94 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
+	protected void onEnter(PlayerInstance player, Instance instance, boolean firstEnter)
 	{
-		if (firstEntrance)
-		{
-			world.addAllowed(player.getObjectId());
-		}
-		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
-		spawnElcadia(player, (MoSWorld) world);
+		super.onEnter(player, instance, firstEnter);
+		
+		final Npc elcadia = addSpawn(ELCADIA_INSTANCE, player, false, 0, false, player.getId());
+		startQuestTimer("FOLLOW", 3000, elcadia, player);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
-		if (!(tmpworld instanceof MoSWorld))
+		final Instance world = player.getInstanceWorld();
+		if (world != null)
 		{
-			return null;
-		}
-		
-		final MoSWorld world = (MoSWorld) tmpworld;
-		switch (event)
-		{
-			case "TELE2":
+			final Npc elcadia = world.getNpc(ELCADIA_INSTANCE);
+			switch (event)
 			{
-				teleportPlayer(player, CENTRAL_ROOM_LOC, world.getInstanceId());
-				world.elcadia.teleToLocation(CENTRAL_ROOM_LOC, 0, world.getInstanceId());
-				startQuestTimer("START_MOVIE", 2000, npc, player);
-				break;
-			}
-			case "EXIT":
-			{
-				cancelQuestTimer("FOLLOW", npc, player);
-				teleportPlayer(player, EXIT_LOC, 0);
-				world.elcadia.deleteMe();
-				break;
-			}
-			case "START_MOVIE":
-			{
-				playMovie(player, Movie.SSQ2_HOLY_BURIAL_GROUND_OPENING);
-				break;
-			}
-			case "BACK":
-			{
-				teleportPlayer(player, BACK_LOC, world.getInstanceId());
-				world.elcadia.teleToLocation(BACK_LOC, 0, world.getInstanceId());
-				break;
-			}
-			case "EAST":
-			{
-				teleportPlayer(player, EAST_WATCHERS_ROOM_LOC, world.getInstanceId());
-				world.elcadia.teleToLocation(EAST_WATCHERS_ROOM_LOC, 0, world.getInstanceId());
-				break;
-			}
-			case "WEST":
-			{
-				teleportPlayer(player, WEST_WATCHERS_ROOM_LOC, world.getInstanceId());
-				world.elcadia.teleToLocation(WEST_WATCHERS_ROOM_LOC, 0, world.getInstanceId());
-				break;
-			}
-			case "NORTH":
-			{
-				teleportPlayer(player, NORTH_WATCHERS_ROOM_LOC, world.getInstanceId());
-				world.elcadia.teleToLocation(NORTH_WATCHERS_ROOM_LOC, 0, world.getInstanceId());
-				break;
-			}
-			case "SOUTH":
-			{
-				teleportPlayer(player, SOUTH_WATCHERS_ROOM_LOC, world.getInstanceId());
-				world.elcadia.teleToLocation(SOUTH_WATCHERS_ROOM_LOC, 0, world.getInstanceId());
-				break;
-			}
-			case "CENTER":
-			{
-				teleportPlayer(player, CENTRAL_ROOM_LOC, world.getInstanceId());
-				world.elcadia.teleToLocation(CENTRAL_ROOM_LOC, 0, world.getInstanceId());
-				break;
-			}
-			case "FOLLOW":
-			{
-				npc.setIsRunning(true);
-				npc.getAI().startFollow(player);
-				if (player.isInCombat())
+				case "TELE2":
 				{
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOUR_WORK_HERE_IS_DONE_SO_RETURN_TO_THE_CENTRAL_GUARDIAN);
-					npc.setTarget(player);
-					npc.doCast(BUFFS[getRandom(BUFFS.length)].getSkill());
+					player.teleToLocation(CENTRAL_ROOM_LOC);
+					elcadia.teleToLocation(CENTRAL_ROOM_LOC);
+					startQuestTimer("START_MOVIE", 2000, npc, player);
+					break;
 				}
-				else
+				case "EXIT":
 				{
-					npc.broadcastSay(ChatType.NPC_GENERAL, ELCADIA_DIALOGS[getRandom(ELCADIA_DIALOGS.length)]);
+					cancelQuestTimer("FOLLOW", npc, player);
+					world.finishInstance(0);
+					break;
 				}
-				startQuestTimer("FOLLOW", 10000, npc, player);
-				break;
+				case "START_MOVIE":
+				{
+					playMovie(player, Movie.SSQ2_HOLY_BURIAL_GROUND_OPENING);
+					break;
+				}
+				case "BACK":
+				{
+					player.teleToLocation(BACK_LOC);
+					elcadia.teleToLocation(BACK_LOC);
+					break;
+				}
+				case "EAST":
+				{
+					player.teleToLocation(EAST_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(EAST_WATCHERS_ROOM_LOC);
+					break;
+				}
+				case "WEST":
+				{
+					player.teleToLocation(WEST_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(WEST_WATCHERS_ROOM_LOC);
+					break;
+				}
+				case "NORTH":
+				{
+					player.teleToLocation(NORTH_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(NORTH_WATCHERS_ROOM_LOC);
+					break;
+				}
+				case "SOUTH":
+				{
+					player.teleToLocation(SOUTH_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(SOUTH_WATCHERS_ROOM_LOC);
+					break;
+				}
+				case "CENTER":
+				{
+					player.teleToLocation(CENTRAL_ROOM_LOC);
+					elcadia.teleToLocation(CENTRAL_ROOM_LOC);
+					break;
+				}
+				case "FOLLOW":
+				{
+					npc.setIsRunning(true);
+					npc.getAI().startFollow(player);
+					if (player.isInCombat())
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOUR_WORK_HERE_IS_DONE_SO_RETURN_TO_THE_CENTRAL_GUARDIAN);
+						npc.setTarget(player);
+						npc.doCast(BUFFS[getRandom(BUFFS.length)].getSkill());
+					}
+					else
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, ELCADIA_DIALOGS[getRandom(ELCADIA_DIALOGS.length)]);
+					}
+					startQuestTimer("FOLLOW", 10000, npc, player);
+					break;
+				}
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
@@ -192,18 +179,13 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	{
 		if (npc.getId() == ODD_GLOBE)
 		{
-			enterInstance(talker, new MoSWorld(), "MonasteryOfSilence.xml", TEMPLATE_ID);
+			enterInstance(talker, npc, TEMPLATE_ID);
 		}
 		return super.onTalk(npc, talker);
 	}
 	
-	protected void spawnElcadia(PlayerInstance player, MoSWorld world)
+	public static void main(String[] args)
 	{
-		if (world.elcadia != null)
-		{
-			world.elcadia.deleteMe();
-		}
-		world.elcadia = addSpawn(ELCADIA_INSTANCE, player.getX(), player.getY(), player.getZ(), 0, false, 0, false, player.getInstanceId());
-		startQuestTimer("FOLLOW", 3000, world.elcadia, player);
+		new MonasteryOfSilence1();
 	}
 }

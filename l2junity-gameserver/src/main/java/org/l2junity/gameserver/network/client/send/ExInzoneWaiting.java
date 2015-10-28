@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -38,9 +38,9 @@ public class ExInzoneWaiting implements IClientOutgoingPacket
 	
 	public ExInzoneWaiting(PlayerInstance activeChar)
 	{
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(activeChar);
-		_currentTemplateId = (world != null) && (world.getTemplateId() >= 0) ? world.getTemplateId() : -1;
-		_instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
+		final Instance instance = InstanceManager.getInstance().getPlayerInstance(activeChar, false);
+		_currentTemplateId = ((instance != null) && (instance.getTemplateId() >= 0)) ? instance.getTemplateId() : -1;
+		_instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar);
 	}
 	
 	@Override

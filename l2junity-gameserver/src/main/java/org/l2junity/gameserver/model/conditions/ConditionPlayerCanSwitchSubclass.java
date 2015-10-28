@@ -77,7 +77,7 @@ public class ConditionPlayerCanSwitchSubclass extends Condition
 			canSwitchSub = false;
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_THE_CLASS_BECAUSE_OF_IDENTITY_CRISIS);
 		}
-		else if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) || (player.getPvpFlag() > 0) || (player.getInstanceId() > 0) || player.isTransformed() || player.isMounted())
+		else if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) || (player.getPvpFlag() > 0) || player.isInInstance() || player.isTransformed() || player.isMounted())
 		{
 			canSwitchSub = false;
 		}

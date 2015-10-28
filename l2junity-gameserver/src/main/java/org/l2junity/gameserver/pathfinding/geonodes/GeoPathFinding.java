@@ -38,6 +38,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.pathfinding.AbstractNode;
 import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.l2junity.gameserver.pathfinding.PathFinding;
@@ -66,7 +67,7 @@ public class GeoPathFinding extends PathFinding
 	}
 	
 	@Override
-	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable)
+	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, Instance instance, boolean playable)
 	{
 		int gx = (x - World.MAP_MIN_X) >> 4;
 		int gy = (y - World.MAP_MIN_Y) >> 4;
@@ -95,14 +96,14 @@ public class GeoPathFinding extends PathFinding
 		}
 		
 		// TODO: Find closest path node we CAN access. Now only checks if we can not reach the closest
-		Location temp = GeoData.getInstance().moveCheck(x, y, z, start.getLoc().getX(), start.getLoc().getY(), start.getLoc().getZ(), instanceId);
+		Location temp = GeoData.getInstance().moveCheck(x, y, z, start.getLoc().getX(), start.getLoc().getY(), start.getLoc().getZ(), instance);
 		if ((temp.getX() != start.getLoc().getX()) || (temp.getY() != start.getLoc().getY()))
 		{
 			return null; // cannot reach closest...
 		}
 		
 		// TODO: Find closest path node around target, now only checks if final location can be reached
-		temp = GeoData.getInstance().moveCheck(tx, ty, tz, end.getLoc().getX(), end.getLoc().getY(), end.getLoc().getZ(), instanceId);
+		temp = GeoData.getInstance().moveCheck(tx, ty, tz, end.getLoc().getX(), end.getLoc().getY(), end.getLoc().getZ(), instance);
 		if ((temp.getX() != end.getLoc().getX()) || (temp.getY() != end.getLoc().getY()))
 		{
 			return null; // cannot reach closest...

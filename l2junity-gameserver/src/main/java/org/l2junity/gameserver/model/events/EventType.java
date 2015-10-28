@@ -41,6 +41,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableKill;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCanBeSeen;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcDespawn;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcEventReceived;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcManorBypass;
@@ -105,6 +106,10 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransf
 import org.l2junity.gameserver.model.events.impl.character.player.OnTrapAction;
 import org.l2junity.gameserver.model.events.impl.clan.OnClanWarFinish;
 import org.l2junity.gameserver.model.events.impl.clan.OnClanWarStart;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceLeave;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemCreate;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
@@ -181,6 +186,7 @@ public enum EventType
 	ON_NPC_TELEPORT(OnNpcTeleport.class, void.class),
 	ON_NPC_MANOR_BYPASS(OnNpcManorBypass.class, void.class),
 	ON_NPC_MENU_SELECT(OnNpcMenuSelect.class, void.class),
+	ON_NPC_DESPAWN(OnNpcDespawn.class, void.class),
 	
 	// Olympiad events
 	ON_OLYMPIAD_MATCH_RESULT(OnOlympiadMatchResult.class, void.class),
@@ -251,7 +257,13 @@ public enum EventType
 	ON_DAY_NIGHT_CHNAGE(OnDayNightChange.class, void.class),
 	
 	ON_PACKET_RECEIVED(OnPacketReceived.class, void.class),
-	ON_PACKET_SENT(OnPacketSent.class, void.class);
+	ON_PACKET_SENT(OnPacketSent.class, void.class),
+	
+	// Instance events
+	ON_INSTANCE_CREATED(OnInstanceCreated.class, void.class),
+	ON_INSTANCE_DESTROY(OnInstanceDestroy.class, void.class),
+	ON_INSTANCE_ENTER(OnInstanceEnter.class, void.class),
+	ON_INSTANCE_LEAVE(OnInstanceLeave.class, void.class);
 	
 	private final Class<? extends IBaseEvent> _eventClass;
 	private final Class<?>[] _returnClass;

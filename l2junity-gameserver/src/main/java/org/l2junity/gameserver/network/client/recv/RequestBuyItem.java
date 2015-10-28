@@ -105,7 +105,7 @@ public final class RequestBuyItem implements IClientIncomingPacket
 		Creature merchant = null;
 		if (!player.isGM())
 		{
-			if (!(target instanceof L2MerchantInstance) || (!player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)) || (player.getInstanceId() != target.getInstanceId()))
+			if (!(target instanceof L2MerchantInstance) || (!player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)) || (player.getInstanceWorld() != target.getInstanceWorld()))
 			{
 				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;

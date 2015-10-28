@@ -46,7 +46,7 @@ public class ExTeleportToLocationActivate implements IClientOutgoingPacket
 		packet.writeD(_loc.getX());
 		packet.writeD(_loc.getY());
 		packet.writeD(_loc.getZ());
-		packet.writeD(_loc.getInstanceId());
+		packet.writeD(0); // Unknown (this isn't instanceId)
 		packet.writeD(_loc.getHeading());
 		packet.writeD(0); // Unknown
 		return true;

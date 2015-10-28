@@ -250,7 +250,7 @@ public final class EnergySeeds extends AbstractNpcAI
 	@Override
 	public String onEnterZone(Creature character, ZoneType zone)
 	{
-		if (character.getInstanceId() != 0)
+		if (character.isInInstance())
 		{
 			return super.onEnterZone(character, zone);
 		}
@@ -713,7 +713,7 @@ public final class EnergySeeds extends AbstractNpcAI
 					Integer spawnId = _spawnId; // the map uses "Integer", not "int"
 					_spawnedNpcs.put(addSpawn(_npcIds[getRandom(_npcIds.length)], _loc, false, 0), spawnId);
 				}
-			}, waitTime);
+			} , waitTime);
 		}
 	}
 	

@@ -38,7 +38,6 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
@@ -47,6 +46,8 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
@@ -78,10 +79,10 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	private final Set<L2MonsterInstance> _monsters = ConcurrentHashMap.newKeySet();
 	private long _battleStartTime = 0;
 	
-	public CeremonyOfChaosEvent(int id, String instanceTemplate, int zoneId)
+	public CeremonyOfChaosEvent(int id, InstanceTemplate template, int zoneId)
 	{
 		_id = id;
-		_instance = InstanceManager.getInstance().getInstance(InstanceManager.getInstance().createDynamicInstance(instanceTemplate));
+		_instance = InstanceManager.getInstance().createInstance(template);
 		_zone = ZoneManager.getInstance().getZoneById(zoneId, RespawnZone.class);
 		if (_zone == null)
 		{
@@ -100,7 +101,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public int getInstanceId()
 	{
-		return _instance.getObjectId();
+		return _instance.getId();
 	}
 	
 	public Instance getInstance()
@@ -256,11 +257,8 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.addItem("CoC", holder, null, true);
 			}
 			
-			// Set player's instance id
-			player.setInstanceId(_instance.getObjectId());
-			
 			// Teleport player to the arena
-			player.teleToLocation(_zone.getSpawns().get(index++), _instance.getObjectId(), 200);
+			player.teleToLocation(_zone.getSpawns().get(index++), 0, _instance);
 		}
 		
 		getTimers().addTimer("match_start_countdown", StatsSet.valueOf("time", 60), 100, null, null);
@@ -358,7 +356,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.sendPacket(ExCuriousHouseObserveMode.STATIC_DISABLED);
 				
 				// Teleport player back
-				player.teleToLocation(player.getLastLocation(), 0, 0);
+				player.teleToLocation(player.getLastLocation(), null);
 				
 				// Restore player information
 				final PcAppearance app = player.getAppearance();
@@ -372,7 +370,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		}
 		
 		getMembers().clear();
-		InstanceManager.getInstance().destroyInstance(_instance.getObjectId());
+		_instance.destroy();
 	}
 	
 	private void updateLifeTime(CeremonyOfChaosMember member)

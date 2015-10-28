@@ -19,13 +19,11 @@
 package handlers.effecthandlers;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -52,40 +50,16 @@ public final class OpenDoor extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		if (!effected.isDoor())
+		if (!effected.isDoor() || (effector.getInstanceWorld() != effected.getInstanceWorld()))
 		{
 			return;
 		}
-
-		L2DoorInstance door = (L2DoorInstance) effected;
-		// Check if door in the different instance
-		if (effector.getInstanceId() != door.getInstanceId())
-		{
-			// Search for the instance
-			final Instance inst = InstanceManager.getInstance().getInstance(effector.getInstanceId());
-			if (inst == null)
-			{
-				// Instance not found
-				return;
-			}
-			final L2DoorInstance instanceDoor = inst.getDoor(door.getId());
-			if (instanceDoor != null)
-			{
-				// Door found
-				door = instanceDoor;
-			}
-			
-			// Checking instance again
-			if (effector.getInstanceId() != door.getInstanceId())
-			{
-				return;
-			}
-		}
 		
+		final L2DoorInstance door = (L2DoorInstance) effected;
 		if ((!door.isOpenableBySkill() && !_isItem) || (door.getFort() != null))
 		{
 			effector.sendPacket(SystemMessageId.THIS_DOOR_CANNOT_BE_UNLOCKED);

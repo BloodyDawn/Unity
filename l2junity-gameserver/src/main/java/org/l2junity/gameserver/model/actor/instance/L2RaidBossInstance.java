@@ -113,7 +113,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 		{
 			if (!isInsideRadius(spawnX, spawnY, spawnZ, Math.max(Config.MAX_DRIFT_RANGE, 200), true, false))
 			{
-				teleToLocation(spawnX, spawnY, spawnZ, false);
+				teleToLocation(spawnX, spawnY, spawnZ);
 			}
 		}
 	}

@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.send.ExOlympiadMatchResult;
 import org.l2junity.gameserver.network.client.send.ExOlympiadUserInfo;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
@@ -133,13 +134,13 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected final boolean portPlayersToArena(List<Location> spawns, int instanceId)
+	protected final boolean portPlayersToArena(List<Location> spawns, Instance instance)
 	{
 		boolean result = true;
 		try
 		{
-			result &= portPlayerToArena(_playerOne, spawns.get(0), _stadiumId, instanceId);
-			result &= portPlayerToArena(_playerTwo, spawns.get(spawns.size() / 2), _stadiumId, instanceId);
+			result &= portPlayerToArena(_playerOne, spawns.get(0), _stadiumId, instance);
+			result &= portPlayerToArena(_playerTwo, spawns.get(spawns.size() / 2), _stadiumId, instance);
 		}
 		catch (Exception e)
 		{

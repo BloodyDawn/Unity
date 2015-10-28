@@ -47,7 +47,7 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 	private final List<L2DoorInstance> _doors = new ArrayList<>(2);
 	private final List<L2Spawn> _buffers = new ArrayList<>(2);
 	private final List<Location> _spectatorLocations = new ArrayList<>(1);
-	private String _instanceTemplate = null;
+	private int _instanceTemplate = 0;
 	
 	public OlympiadStadiumZone(int id)
 	{
@@ -109,7 +109,7 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 	{
 		if (name.equals("instanceTemplate"))
 		{
-			_instanceTemplate = value;
+			_instanceTemplate = Integer.parseInt(value);
 		}
 		else
 		{
@@ -193,8 +193,7 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 			if (_player != null)
 			{
 				_player.getServitors().values().forEach(s -> s.unSummon(_player));
-				_player.teleToLocation(TeleportWhereType.TOWN);
-				_player.setInstanceId(0);
+				_player.teleToLocation(TeleportWhereType.TOWN, null);
 				_player = null;
 			}
 		}
@@ -219,7 +218,7 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 	 * Returns zone instanceTemplate
 	 * @return
 	 */
-	public String getInstanceTemplate()
+	public int getInstanceTemplateId()
 	{
 		return _instanceTemplate;
 	}

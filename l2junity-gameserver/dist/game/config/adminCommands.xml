@@ -313,10 +313,12 @@
 	<admin command="admin_loadhtml" accessLevel="7" />
 
 	<!-- ADMIN INSTANCE -->
-	<admin command="admin_setinstance" accessLevel="7" />
-	<admin command="admin_createinstance" accessLevel="7" />
-	<admin command="admin_destroyinstance" accessLevel="7" />
-	<admin command="admin_listinstances" accessLevel="7" />
+	<admin command="admin_instance" accessLevel="7" />
+	<admin command="admin_instances" accessLevel="7" />
+	<admin command="admin_instancelist" accessLevel="7" />
+	<admin command="admin_instancecreate" accessLevel="7" />
+	<admin command="admin_instanceteleport" accessLevel="7" />
+	<admin command="admin_instancedestroy" accessLevel="7" confirmDlg="true" />
 
 	<!-- ADMIN INSTANCE ZONE -->
 	<admin command="admin_instancezone" accessLevel="7" />

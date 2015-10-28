@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.events.impl.character;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
+import org.l2junity.gameserver.model.instancezone.Instance;
 
 /**
  * @author Nik
@@ -32,18 +33,16 @@ public class OnCreatureTeleport implements IBaseEvent
 	private final int _destY;
 	private final int _destZ;
 	private final int _destHeading;
-	private final int _destInstanceId;
-	private final int _randomOffset;
+	private final Instance _destInstance;
 	
-	public OnCreatureTeleport(Creature creature, int destX, int destY, int destZ, int destHeading, int destInstanceId, int randomOffset)
+	public OnCreatureTeleport(Creature creature, int destX, int destY, int destZ, int destHeading, Instance destInstance)
 	{
 		_creature = creature;
 		_destX = destX;
 		_destY = destY;
 		_destZ = destZ;
 		_destHeading = destHeading;
-		_destInstanceId = destInstanceId;
-		_randomOffset = randomOffset;
+		_destInstance = destInstance;
 	}
 	
 	public Creature getCreature()
@@ -71,14 +70,9 @@ public class OnCreatureTeleport implements IBaseEvent
 		return _destHeading;
 	}
 	
-	public int getDestInstanceId()
+	public Instance getDestInstance()
 	{
-		return _destInstanceId;
-	}
-	
-	public int getRandomOffset()
-	{
-		return _randomOffset;
+		return _destInstance;
 	}
 	
 	@Override

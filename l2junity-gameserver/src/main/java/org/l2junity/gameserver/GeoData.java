@@ -26,6 +26,7 @@ import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.util.GeoUtils;
 import org.l2junity.gameserver.util.LinePointIterator;
@@ -237,7 +238,7 @@ public class GeoData
 			return true;
 		}
 		
-		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), cha.getInstanceId(), target.getX(), target.getY(), target.getZ(), target.getInstanceId());
+		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), cha.getInstanceWorld(), target.getX(), target.getY(), target.getZ(), target.getInstanceWorld());
 	}
 	
 	/**
@@ -248,7 +249,7 @@ public class GeoData
 	 */
 	public boolean canSeeTarget(WorldObject cha, ILocational worldPosition)
 	{
-		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), cha.getInstanceId(), worldPosition.getX(), worldPosition.getY(), worldPosition.getZ());
+		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), cha.getInstanceWorld(), worldPosition.getX(), worldPosition.getY(), worldPosition.getZ());
 	}
 	
 	/**
@@ -256,20 +257,16 @@ public class GeoData
 	 * @param x the x coordinate
 	 * @param y the y coordinate
 	 * @param z the z coordinate
-	 * @param instanceId
+	 * @param world
 	 * @param tx the target's x coordinate
 	 * @param ty the target's y coordinate
 	 * @param tz the target's z coordinate
-	 * @param tInstanceId the target's instanceId
+	 * @param tworld the target's instanceId
 	 * @return
 	 */
-	public boolean canSeeTarget(int x, int y, int z, int instanceId, int tx, int ty, int tz, int tInstanceId)
+	public boolean canSeeTarget(int x, int y, int z, Instance world, int tx, int ty, int tz, Instance tworld)
 	{
-		if ((instanceId != tInstanceId))
-		{
-			return false;
-		}
-		return canSeeTarget(x, y, z, instanceId, tx, ty, tz);
+		return (world != tworld) ? false : canSeeTarget(x, y, z, world, tx, ty, tz);
 	}
 	
 	/**
@@ -277,15 +274,15 @@ public class GeoData
 	 * @param x the x coordinate
 	 * @param y the y coordinate
 	 * @param z the z coordinate
-	 * @param instanceId
+	 * @param instance
 	 * @param tx the target's x coordinate
 	 * @param ty the target's y coordinate
 	 * @param tz the target's z coordinate
 	 * @return {@code true} if there is line of sight between the given coordinate sets, {@code false} otherwise
 	 */
-	public boolean canSeeTarget(int x, int y, int z, int instanceId, int tx, int ty, int tz)
+	public boolean canSeeTarget(int x, int y, int z, Instance instance, int tx, int ty, int tz)
 	{
-		if (DoorData.getInstance().checkIfDoorsBetween(x, y, z, tx, ty, tz, instanceId, true))
+		if (DoorData.getInstance().checkIfDoorsBetween(x, y, z, tx, ty, tz, instance, true))
 		{
 			return false;
 		}
@@ -453,10 +450,10 @@ public class GeoData
 	 * @param tx the target's x coordinate
 	 * @param ty the target's y coordinate
 	 * @param tz the target's z coordinate
-	 * @param instanceId the instance id
+	 * @param instance the instance
 	 * @return the last Location (x,y,z) where player can walk - just before wall
 	 */
-	public Location moveCheck(int x, int y, int z, int tx, int ty, int tz, int instanceId)
+	public Location moveCheck(int x, int y, int z, int tx, int ty, int tz, Instance instance)
 	{
 		int geoX = getGeoX(x);
 		int geoY = getGeoY(y);
@@ -465,7 +462,7 @@ public class GeoData
 		int tGeoY = getGeoY(ty);
 		tz = getNearestZ(tGeoX, tGeoY, tz);
 		
-		if (DoorData.getInstance().checkIfDoorsBetween(x, y, z, tx, ty, tz, instanceId, false))
+		if (DoorData.getInstance().checkIfDoorsBetween(x, y, z, tx, ty, tz, instance, false))
 		{
 			return new Location(x, y, getHeight(x, y, z));
 		}
@@ -515,10 +512,10 @@ public class GeoData
 	 * @param toX the X coordinate to end checking at
 	 * @param toY the Y coordinate to end checking at
 	 * @param toZ the Z coordinate to end checking at
-	 * @param instanceId the instance ID
+	 * @param instance the instance
 	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
 	 */
-	public boolean canMove(int fromX, int fromY, int fromZ, int toX, int toY, int toZ, int instanceId)
+	public boolean canMove(int fromX, int fromY, int fromZ, int toX, int toY, int toZ, Instance instance)
 	{
 		int geoX = getGeoX(fromX);
 		int geoY = getGeoY(fromY);
@@ -527,7 +524,7 @@ public class GeoData
 		int tGeoY = getGeoY(toY);
 		toZ = getNearestZ(tGeoX, tGeoY, toZ);
 		
-		if (DoorData.getInstance().checkIfDoorsBetween(fromX, fromY, fromZ, toX, toY, toZ, instanceId, false))
+		if (DoorData.getInstance().checkIfDoorsBetween(fromX, fromY, fromZ, toX, toY, toZ, instance, false))
 		{
 			return false;
 		}
@@ -570,24 +567,24 @@ public class GeoData
 	
 	/**
 	 * Checks if its possible to move from one location to another.
-	 * @param from the {@code ILocational} to start checking from
+	 * @param from the {@code WorldObject} to start checking from
 	 * @param toX the X coordinate to end checking at
 	 * @param toY the Y coordinate to end checking at
 	 * @param toZ the Z coordinate to end checking at
 	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
 	 */
-	public boolean canMove(ILocational from, int toX, int toY, int toZ)
+	public boolean canMove(WorldObject from, int toX, int toY, int toZ)
 	{
-		return canMove(from.getX(), from.getY(), from.getZ(), toX, toY, toZ, from.getInstanceId());
+		return canMove(from.getX(), from.getY(), from.getZ(), toX, toY, toZ, from.getInstanceWorld());
 	}
 	
 	/**
 	 * Checks if its possible to move from one location to another.
-	 * @param from the {@code ILocational} to start checking from
-	 * @param to the {@code ILocational} to end checking at
+	 * @param from the {@code WorldObject} to start checking from
+	 * @param to the {@code WorldObject} to end checking at
 	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
 	 */
-	public boolean canMove(ILocational from, ILocational to)
+	public boolean canMove(WorldObject from, WorldObject to)
 	{
 		return canMove(from, to.getX(), to.getY(), to.getZ());
 	}

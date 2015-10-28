@@ -26,11 +26,10 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.client.send.ExOlympiadMatchEnd;
@@ -54,10 +53,8 @@ public class OlympiadStadium
 	
 	protected OlympiadStadium(OlympiadStadiumZone olyzone, int stadium)
 	{
-		final int id = InstanceManager.getInstance().createDynamicInstance(olyzone.getInstanceTemplate());
 		_zone = olyzone;
-		_instance = InstanceManager.getInstance().getInstance(id);
-		_instance.setName("Olympiad " + stadium + " - Arena " + (stadium % 4));
+		_instance = InstanceManager.getInstance().createInstance(olyzone.getInstanceTemplateId());
 		_buffers = _instance.getNpcs().stream().map(Npc::getSpawn).collect(Collectors.toList());
 		_buffers.stream().map(L2Spawn::getLastSpawn).forEach(Npc::decayMe);
 	}
@@ -77,9 +74,9 @@ public class OlympiadStadium
 		return _task;
 	}
 	
-	public int getInstanceId()
+	public Instance getInstance()
 	{
-		return _instance.getObjectId();
+		return _instance;
 	}
 	
 	public final void openDoors()
@@ -105,38 +102,29 @@ public class OlympiadStadium
 	public final void broadcastStatusUpdate(PlayerInstance player)
 	{
 		final ExOlympiadUserInfo packet = new ExOlympiadUserInfo(player);
-		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		for (PlayerInstance target : _instance.getPlayers())
 		{
-			final PlayerInstance target = World.getInstance().getPlayer(id);
-			if ((target != null) && (target.inObserverMode() || (target.getOlympiadSide() != player.getOlympiadSide())))
+			if (target.inObserverMode() || (target.getOlympiadSide() != player.getOlympiadSide()))
 			{
 				target.sendPacket(packet);
 			}
-		});
+		}
 	}
 	
 	public final void broadcastPacket(IClientOutgoingPacket packet)
 	{
-		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
-		{
-			final PlayerInstance target = World.getInstance().getPlayer(id);
-			if (target != null)
-			{
-				target.sendPacket(packet);
-			}
-		});
+		_instance.broadcastPacket(packet);
 	}
 	
 	public final void broadcastPacketToObservers(IClientOutgoingPacket packet)
 	{
-		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		for (PlayerInstance target : _instance.getPlayers())
 		{
-			final PlayerInstance target = World.getInstance().getPlayer(id);
-			if ((target != null) && (target.inObserverMode()))
+			if (target.inObserverMode())
 			{
 				target.sendPacket(packet);
 			}
-		});
+		}
 	}
 	
 	public final void updateZoneStatusForCharactersInside()
@@ -157,10 +145,9 @@ public class OlympiadStadium
 			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
 		}
 		
-		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		for (PlayerInstance player : _instance.getPlayers())
 		{
-			final PlayerInstance player = World.getInstance().getPlayer(id);
-			if ((player == null) || player.inObserverMode())
+			if (player.inObserverMode())
 			{
 				return;
 			}
@@ -176,7 +163,7 @@ public class OlympiadStadium
 				player.sendPacket(sm);
 				player.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
 			}
-		});
+		}
 	}
 	
 	public final void updateZoneInfoForObservers()
@@ -186,10 +173,9 @@ public class OlympiadStadium
 			return;
 		}
 		
-		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		for (PlayerInstance player : _instance.getPlayers())
 		{
-			final PlayerInstance player = World.getInstance().getPlayer(id);
-			if ((player == null) || !player.inObserverMode())
+			if (!player.inObserverMode())
 			{
 				return;
 			}
@@ -203,6 +189,6 @@ public class OlympiadStadium
 			}
 			final Location loc = spectatorSpawns.get(Rnd.get(spectatorSpawns.size()));
 			player.enterOlympiadObserverMode(loc, player.getOlympiadGameId());
-		});
+		}
 	}
 }

@@ -149,9 +149,7 @@ public class AdminMenu implements IAdminCommandHandler
 		{
 			try
 			{
-				String targetName = command.substring(21);
-				PlayerInstance player = World.getInstance().getPlayer(targetName);
-				activeChar.setInstanceId(player.getInstanceId());
+				final PlayerInstance player = World.getInstance().getPlayer(command.substring(21));
 				teleportToCharacter(activeChar, player);
 			}
 			catch (StringIndexOutOfBoundsException e)
@@ -281,24 +279,20 @@ public class AdminMenu implements IAdminCommandHandler
 	
 	private void teleportToCharacter(PlayerInstance activeChar, WorldObject target)
 	{
-		PlayerInstance player = null;
-		if (target instanceof PlayerInstance)
-		{
-			player = (PlayerInstance) target;
-		}
-		else
+		if (!target.isPlayer())
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
+		
+		final PlayerInstance player = target.getActingPlayer();
 		if (player.getObjectId() == activeChar.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
 		}
 		else
 		{
-			activeChar.setInstanceId(player.getInstanceId());
-			activeChar.teleToLocation(player.getLocation(), true);
+			activeChar.teleToLocation(player.getLocation(), true, player.getInstanceWorld());
 			activeChar.sendMessage("You're teleporting yourself to character " + player.getName());
 		}
 		showMainPage(activeChar);

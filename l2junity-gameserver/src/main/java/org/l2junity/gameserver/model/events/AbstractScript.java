@@ -61,7 +61,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.annotations.Id;
 import org.l2junity.gameserver.model.events.annotations.Ids;
 import org.l2junity.gameserver.model.events.annotations.NpcLevelRange;
@@ -82,6 +81,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableKill;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCanBeSeen;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcDespawn;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcEventReceived;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveFinished;
@@ -98,6 +98,10 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSkillL
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonSpawn;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonTalk;
 import org.l2junity.gameserver.model.events.impl.character.player.OnTrapAction;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceLeave;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
 import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
@@ -117,6 +121,8 @@ import org.l2junity.gameserver.model.events.timers.TimerHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
@@ -570,6 +576,30 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	protected final List<AbstractEventListener> setNpcSpawnId(Consumer<OnNpcSpawn> callback, Collection<Integer> npcIds)
 	{
 		return registerConsumer(callback, EventType.ON_NPC_SPAWN, ListenerRegisterType.NPC, npcIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when L2Npc is despawned.
+	 * @param callback
+	 * @param npcIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setNpcDespawnId(Consumer<OnNpcDespawn> callback, int... npcIds)
+	{
+		return registerConsumer(callback, EventType.ON_NPC_DESPAWN, ListenerRegisterType.NPC, npcIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when L2Npc is despawned.
+	 * @param callback
+	 * @param npcIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setNpcDespawnId(Consumer<OnNpcDespawn> callback, Collection<Integer> npcIds)
+	{
+		return registerConsumer(callback, EventType.ON_NPC_DESPAWN, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1168,6 +1198,100 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		return registerConsumer(callback, EventType.ON_PLAYER_PROFESSION_CHANGE, ListenerRegisterType.GLOBAL);
 	}
 	
+	/**
+	 * Provides instant callback operation when instance world created
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceCreatedId(Consumer<OnInstanceCreated> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_CREATED, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when instance world created
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceCreatedId(Consumer<OnInstanceCreated> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_CREATED, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when instance world destroyed
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceDestroyId(Consumer<OnInstanceDestroy> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_DESTROY, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when instance world destroyed
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceDestroyId(Consumer<OnInstanceDestroy> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_DESTROY, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when player enters into instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceEnterId(Consumer<OnInstanceEnter> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_ENTER, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when player enters into instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceEnterId(Consumer<OnInstanceEnter> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_ENTER, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when player leave from instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceLeaveId(Consumer<OnInstanceLeave> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_LEAVE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when player leave from instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceLeaveId(Consumer<OnInstanceLeave> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_LEAVE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
 	// --------------------------------------------------------------------------------------------------
 	// --------------------------------Default listener register methods---------------------------------
 	// --------------------------------------------------------------------------------------------------
@@ -1367,6 +1491,15 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 						}
 						break;
 					}
+					case INSTANCE:
+					{
+						final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
+						if (template != null)
+						{
+							listeners.add(template.addListener(action.apply(template)));
+						}
+						break;
+					}
 					default:
 					{
 						_log.warn(getClass().getSimpleName() + ": Unhandled register type: " + registerType);
@@ -1472,6 +1605,15 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 					case FORTRESS:
 					{
 						final Fort template = FortManager.getInstance().getFortById(id);
+						if (template != null)
+						{
+							listeners.add(template.addListener(action.apply(template)));
+						}
+						break;
+					}
+					case INSTANCE:
+					{
+						final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
 						if (template != null)
 						{
 							listeners.add(template.addListener(action.apply(template)));
@@ -1804,13 +1946,13 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
-	 * @param instanceId the ID of the instance to spawn the NPC in (0 - the open world)
+	 * @param instance instance where NPC should be spawned ({@code null} - normal world)
 	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean)
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
+	public static Npc addSpawn(Npc summoner, int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instance)
 	{
 		try
 		{
@@ -1839,7 +1981,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 				y += offset;
 			}
 			
-			spawn.setInstanceId(instanceId);
+			spawn.setInstanceId(instance);
 			spawn.setHeading(heading);
 			spawn.setX(x);
 			spawn.setY(y);
@@ -2688,30 +2830,6 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			}
 		}
 		return door;
-	}
-	
-	/**
-	 * Teleport a player into/out of an instance.
-	 * @param player the player to teleport
-	 * @param loc the {@link Location} object containing the destination coordinates
-	 * @param instanceId the ID of the instance to teleport the player to (0 to teleport out of an instance)
-	 */
-	public void teleportPlayer(PlayerInstance player, Location loc, int instanceId)
-	{
-		teleportPlayer(player, loc, instanceId, true);
-	}
-	
-	/**
-	 * Teleport a player into/out of an instance.
-	 * @param player the player to teleport
-	 * @param loc the {@link Location} object containing the destination coordinates
-	 * @param instanceId the ID of the instance to teleport the player to (0 to teleport out of an instance)
-	 * @param allowRandomOffset if {@code true}, will randomize the teleport coordinates by +/-Config.MAX_OFFSET_ON_TELEPORT
-	 */
-	public void teleportPlayer(PlayerInstance player, Location loc, int instanceId, boolean allowRandomOffset)
-	{
-		loc.setInstanceId(instanceId);
-		player.teleToLocation(loc, allowRandomOffset);
 	}
 	
 	/**

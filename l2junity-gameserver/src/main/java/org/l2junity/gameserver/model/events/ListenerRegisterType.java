@@ -29,6 +29,7 @@ public enum ListenerRegisterType
 	CASTLE,
 	FORTRESS,
 	OLYMPIAD,
+	INSTANCE,
 	GLOBAL,
 	GLOBAL_NPCS,
 	GLOBAL_MONSTERS,

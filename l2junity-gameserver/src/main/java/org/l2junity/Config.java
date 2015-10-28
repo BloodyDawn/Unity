@@ -507,7 +507,6 @@ public final class Config
 	public static int WEAR_PRICE;
 	public static int INSTANCE_FINISH_TIME;
 	public static boolean RESTORE_PLAYER_INSTANCE;
-	public static boolean ALLOW_SUMMON_IN_INSTANCE;
 	public static int EJECT_DEAD_PLAYER_TIME;
 	public static boolean ALLOW_LOTTERY;
 	public static boolean ALLOW_RACE;
@@ -1714,10 +1713,9 @@ public final class Config
 			ALLOW_WEAR = General.getBoolean("AllowWear", true);
 			WEAR_DELAY = General.getInt("WearDelay", 5);
 			WEAR_PRICE = General.getInt("WearPrice", 10);
-			INSTANCE_FINISH_TIME = 1000 * General.getInt("DefaultFinishTime", 300);
+			INSTANCE_FINISH_TIME = General.getInt("DefaultFinishTime", 5);
 			RESTORE_PLAYER_INSTANCE = General.getBoolean("RestorePlayerInstance", false);
-			ALLOW_SUMMON_IN_INSTANCE = General.getBoolean("AllowSummonInInstance", false);
-			EJECT_DEAD_PLAYER_TIME = 1000 * General.getInt("EjectDeadPlayerTime", 60);
+			EJECT_DEAD_PLAYER_TIME = General.getInt("EjectDeadPlayerTime", 1);
 			ALLOW_LOTTERY = General.getBoolean("AllowLottery", true);
 			ALLOW_RACE = General.getBoolean("AllowRace", true);
 			ALLOW_WATER = General.getBoolean("AllowWater", true);
@@ -2623,9 +2621,6 @@ public final class Config
 				break;
 			case "restoreplayerinstance":
 				RESTORE_PLAYER_INSTANCE = Boolean.parseBoolean(pValue);
-				break;
-			case "allowsummonininstance":
-				ALLOW_SUMMON_IN_INSTANCE = Boolean.parseBoolean(pValue);
 				break;
 			case "ejectdeadplayertime":
 				EJECT_DEAD_PLAYER_TIME = Integer.parseInt(pValue);

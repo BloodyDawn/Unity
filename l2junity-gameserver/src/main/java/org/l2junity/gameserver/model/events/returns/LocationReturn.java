@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.returns;
 
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 
 /**
@@ -30,8 +31,7 @@ public class LocationReturn extends TerminateReturn
 	private int _y;
 	private int _z;
 	private int _heading;
-	private int _instanceId;
-	private int _randomOffset;
+	private Instance _instance;
 	
 	public LocationReturn(boolean terminate, boolean overrideLocation)
 	{
@@ -39,7 +39,7 @@ public class LocationReturn extends TerminateReturn
 		_overrideLocation = overrideLocation;
 	}
 	
-	public LocationReturn(boolean terminate, boolean overrideLocation, ILocational targetLocation)
+	public LocationReturn(boolean terminate, boolean overrideLocation, ILocational targetLocation, Instance instance)
 	{
 		super(terminate, false, false);
 		_overrideLocation = overrideLocation;
@@ -50,7 +50,7 @@ public class LocationReturn extends TerminateReturn
 			setY(targetLocation.getY());
 			setZ(targetLocation.getZ());
 			setHeading(targetLocation.getHeading());
-			setInstanceId(targetLocation.getInstanceId());
+			setInstance(instance);
 		}
 	}
 	
@@ -74,14 +74,9 @@ public class LocationReturn extends TerminateReturn
 		_heading = heading;
 	}
 	
-	public void setInstanceId(int instanceId)
+	public void setInstance(Instance instance)
 	{
-		_instanceId = instanceId;
-	}
-	
-	public void setRandomOffset(int randomOffset)
-	{
-		_randomOffset = randomOffset;
+		_instance = instance;
 	}
 	
 	public boolean overrideLocation()
@@ -109,13 +104,8 @@ public class LocationReturn extends TerminateReturn
 		return _heading;
 	}
 	
-	public int getInstanceId()
+	public Instance getInstance()
 	{
-		return _instanceId;
-	}
-	
-	public int getRandomOffset()
-	{
-		return _randomOffset;
+		return _instance;
 	}
 }

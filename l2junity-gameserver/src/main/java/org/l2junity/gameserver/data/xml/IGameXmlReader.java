@@ -26,6 +26,7 @@ import java.util.Map;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.IXmlReader;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.w3c.dom.NamedNodeMap;
@@ -45,7 +46,7 @@ public interface IGameXmlReader extends IXmlReader
 	{
 		parseFile(new File(Config.DATAPACK_ROOT, path));
 	}
-
+	
 	/**
 	 * Wrapper for {@link #parseDirectory(File, boolean)}.
 	 * @param path the path to the directory where the XML files are
@@ -56,7 +57,7 @@ public interface IGameXmlReader extends IXmlReader
 	{
 		return parseDirectory(new File(Config.DATAPACK_ROOT, path), recursive);
 	}
-
+	
 	/**
 	 * @param n
 	 * @return a map of parameters
@@ -100,5 +101,15 @@ public interface IGameXmlReader extends IXmlReader
 			}
 		}
 		return parameters;
+	}
+	
+	default Location parseLocation(Node n)
+	{
+		final NamedNodeMap attrs = n.getAttributes();
+		final int x = parseInteger(attrs, "x");
+		final int y = parseInteger(attrs, "y");
+		final int z = parseInteger(attrs, "z");
+		final int heading = parseInteger(attrs, "heading", 0);
+		return new Location(x, y, z, heading);
 	}
 }

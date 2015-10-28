@@ -159,7 +159,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		CeremonyOfChaosEvent event = null;
 		final List<PlayerInstance> players = getRegisteredPlayers().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
 		final int maxPlayers = getVariables().getInt(MAX_PLAYERS_KEY, 18);
-		final List<String> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, String.class);
+		final List<Integer> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, Integer.class);
 		final Map<String, Integer> zones = CeremonyOfChaosManager.getInstance().getVariables().getMap(INSTANCE_ZONES_KEY, String.class, Integer.class);
 		if (zones == null)
 		{
@@ -173,8 +173,8 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			{
 				if ((event == null) || (event.getMembers().size() >= maxPlayers))
 				{
-					final String template = templates.get(Rnd.get(templates.size()));
-					event = new CeremonyOfChaosEvent(eventId++, template, zones.get(template));
+					final int template = templates.get(Rnd.get(templates.size()));
+					event = new CeremonyOfChaosEvent(eventId++, InstanceManager.getInstance().getInstanceTemplate(template), zones.get(template));
 					position = 1;
 					getEvents().add(event);
 				}
@@ -314,9 +314,9 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_FOR_THE_WAITING_LIST_WHILE_PARTICIPATING_IN_THE_BLOCK_CHECKER_COLISEUM_OLYMPIAD_KRATEI_S_CUBE_CEREMONY_OF_CHAOS;
 			canRegister = false;
 		}
-		else if (player.getInstanceId() > 0)
+		else if (player.isInInstance())
 		{
-			// TODO : check if there is a message for that case
+			sm = SystemMessageId.YOU_MAY_NOT_REGISTER_WHILE_USING_THE_INSTANT_ZONE;
 			canRegister = false;
 		}
 		else if (player.isInSiege())

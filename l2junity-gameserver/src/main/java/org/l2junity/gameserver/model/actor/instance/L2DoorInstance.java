@@ -32,7 +32,6 @@ import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
@@ -44,8 +43,8 @@ import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -585,7 +584,7 @@ public class L2DoorInstance extends Creature
 	@Override
 	public void reduceCurrentHp(double damage, Creature attacker, boolean awake, boolean isDOT, Skill skill)
 	{
-		if (isWall() && (getInstanceId() == 0))
+		if (isWall() && !isInInstance())
 		{
 			if (!attacker.isServitor())
 			{
@@ -660,18 +659,8 @@ public class L2DoorInstance extends Creature
 	 */
 	private L2DoorInstance getSiblingDoor(int doorId)
 	{
-		if (getInstanceId() == 0)
-		{
-			return DoorData.getInstance().getDoor(doorId);
-		}
-		
-		Instance inst = InstanceManager.getInstance().getInstance(getInstanceId());
-		if (inst != null)
-		{
-			return inst.getDoor(doorId);
-		}
-		
-		return null; // 2 late
+		final Instance inst = getInstanceWorld();
+		return (inst != null) ? inst.getDoor(doorId) : DoorData.getInstance().getDoor(doorId);
 	}
 	
 	private void startAutoCloseTask()

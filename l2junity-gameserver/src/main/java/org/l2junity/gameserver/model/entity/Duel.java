@@ -37,6 +37,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
@@ -78,7 +79,7 @@ public class Duel
 	private boolean _finished = false;
 	
 	private final Map<Integer, PlayerCondition> _playerConditions = new ConcurrentHashMap<>();
-	private int _duelInstanceId;
+	private Instance _duelInstance;
 	
 	public Duel(PlayerInstance playerA, PlayerInstance playerB, int partyDuel, int duelId)
 	{
@@ -218,7 +219,7 @@ public class Duel
 						setFinished(true);
 						playKneelAnimation();
 						ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndDuelTask(_duel, _duel.checkEndDuelCondition()), 5000);
-						InstanceManager.getInstance().destroyInstance(_duel.getDueldInstanceId());
+						getDueldInstance().destroy();
 						break;
 					}
 				}
@@ -298,9 +299,9 @@ public class Duel
 		}
 	}
 	
-	public int getDueldInstanceId()
+	public Instance getDueldInstance()
 	{
-		return _duelInstanceId;
+		return _duelInstance;
 	}
 	
 	/**
@@ -402,7 +403,7 @@ public class Duel
 			broadcastToTeam1(ExDuelStart.PARTY_DUEL);
 			broadcastToTeam2(ExDuelStart.PARTY_DUEL);
 			
-			for (L2DoorInstance door : InstanceManager.getInstance().getInstance(getDueldInstanceId()).getDoors())
+			for (L2DoorInstance door : _duelInstance.getDoors())
 			{
 				if ((door != null) && !door.getOpen())
 				{
@@ -569,9 +570,9 @@ public class Duel
 			return;
 		}
 		
-		final String instanceName = DuelManager.getInstance().getDuelArena();
+		final int instanceId = DuelManager.getInstance().getDuelArena();
 		final OlympiadStadiumZone zone = ZoneManager.getInstance().getAllZones(OlympiadStadiumZone.class) //
-		.stream().filter(z -> z.getInstanceTemplate().equals(instanceName)).findFirst().orElse(null);
+		.stream().filter(z -> z.getInstanceTemplateId() == instanceId).findFirst().orElse(null);
 		
 		if (zone == null)
 		{
@@ -579,10 +580,10 @@ public class Duel
 		}
 		
 		final List<Location> spawns = zone.getSpawns();
-		_duelInstanceId = InstanceManager.getInstance().createDynamicInstance(instanceName);
+		_duelInstance = InstanceManager.getInstance().createInstance(InstanceManager.getInstance().getInstanceTemplate(instanceId));
 		
 		// Remove Olympiad buffers
-		for (Npc buffer : InstanceManager.getInstance().getInstance(getDueldInstanceId()).getNpcs())
+		for (Npc buffer : _duelInstance.getNpcs())
 		{
 			if (buffer instanceof L2OlympiadManagerInstance)
 			{
@@ -593,13 +594,13 @@ public class Duel
 		final Location spawn1 = spawns.get(Rnd.get(spawns.size() / 2));
 		for (PlayerInstance temp : _playerA.getParty().getMembers())
 		{
-			temp.teleToLocation(spawn1.getX(), spawn1.getY(), spawn1.getZ(), 0, _duelInstanceId, 0);
+			temp.teleToLocation(spawn1.getX(), spawn1.getY(), spawn1.getZ(), 0, 0, _duelInstance);
 		}
 		
 		final Location spawn2 = spawns.get(Rnd.get(spawns.size() / 2, spawns.size()));
 		for (PlayerInstance temp : _playerB.getParty().getMembers())
 		{
-			temp.teleToLocation(spawn2.getX(), spawn2.getY(), spawn2.getZ(), 0, _duelInstanceId, 0);
+			temp.teleToLocation(spawn2.getX(), spawn2.getY(), spawn2.getZ(), 0, 0, _duelInstance);
 		}
 	}
 	

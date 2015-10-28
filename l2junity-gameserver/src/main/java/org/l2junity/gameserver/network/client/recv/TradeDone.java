@@ -92,7 +92,7 @@ public final class TradeDone implements IClientIncomingPacket
 				return;
 			}
 			
-			if ((player.getInstanceId() != trade.getPartner().getInstanceId()) && (player.getInstanceId() != -1))
+			if (player.getInstanceWorld() != trade.getPartner().getInstanceWorld())
 			{
 				player.cancelActiveTrade();
 				return;

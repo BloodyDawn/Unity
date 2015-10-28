@@ -18,17 +18,16 @@
  */
 package instances.PailakaSongOfIceAndFire;
 
-import instances.AbstractInstance;
-
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import instances.AbstractInstance;
 
 /**
  * Pailaka Song of Ice and Fire Instance zone.
@@ -66,23 +65,13 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
-			world.addAllowed(player.getObjectId());
-		}
-		teleportPlayer(player, TELEPORT, world.getInstanceId());
-	}
-	
-	@Override
 	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
 			case "enter":
 			{
-				enterInstance(player, "PailakaSongOfIceAndFire.xml", TEMPLATE_ID);
+				enterInstance(player, npc, TEMPLATE_ID);
 				return "32497-01.html";
 			}
 			case "GARGOS_LAUGH":
@@ -92,7 +81,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 			}
 			case "TELEPORT":
 			{
-				teleportPlayer(player, TELEPORT, player.getInstanceId());
+				player.teleToLocation(TELEPORT);
 				break;
 			}
 			case "DELETE":
@@ -172,7 +161,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	{
 		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((PlayerInstance) character).isOnline())
 		{
-			final InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
+			final Instance world = character.getInstanceWorld();
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 			{
 				startQuestTimer("TELEPORT", 1000, null, character.getActingPlayer());
@@ -198,5 +187,10 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 		npc.setInvisible(true);
 		startQuestTimer("BLOOM_TIMER", 1000, npc, null);
 		return super.onSpawn(npc);
+	}
+	
+	public static void main(String[] args)
+	{
+		new PailakaSongOfIceAndFire();
 	}
 }

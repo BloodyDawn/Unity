@@ -19,18 +19,35 @@
 package org.l2junity.gameserver.instancemanager;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.time.DayOfWeek;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
+import org.l2junity.gameserver.enums.InstanceReenterType;
+import org.l2junity.gameserver.enums.InstanceRemoveBuffType;
+import org.l2junity.gameserver.enums.InstanceTeleportType;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
+import org.l2junity.gameserver.model.holders.SpawnHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
+import org.l2junity.gameserver.model.instancezone.conditions.Condition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -38,177 +55,49 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 /**
- * @author evill33t, GodKratos
+ * Instance manager.
+ * @author evill33t, GodKratos, malyelfik
  */
 public final class InstanceManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(InstanceManager.class);
-	
-	private final Map<Integer, Instance> _instanceList = new ConcurrentHashMap<>();
-	private final Map<Integer, InstanceWorld> _instanceWorlds = new ConcurrentHashMap<>();
-	private int _dynamic = 300000;
-	// InstanceId Names
-	private final Map<Integer, String> _instanceIdNames = new ConcurrentHashMap<>();
-	private final Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new ConcurrentHashMap<>();
-	// SQL Queries
-	private static final String ADD_INSTANCE_TIME = "INSERT INTO character_instance_time (charId,instanceId,time) values (?,?,?) ON DUPLICATE KEY UPDATE time=?";
-	private static final String RESTORE_INSTANCE_TIMES = "SELECT instanceId,time FROM character_instance_time WHERE charId=?";
+	// Database query
 	private static final String DELETE_INSTANCE_TIME = "DELETE FROM character_instance_time WHERE charId=? AND instanceId=?";
+	
+	// Client instance names
+	private final Map<Integer, String> _instanceNames = new HashMap<>();
+	// Instance templates holder
+	private final Map<Integer, InstanceTemplate> _instanceTemplates = new HashMap<>();
+	// Created instance worlds
+	private int _currentInstanceId = 0;
+	private final Map<Integer, Instance> _instanceWorlds = new ConcurrentHashMap<>();
+	// Player reenter times
+	private final Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new ConcurrentHashMap<>();
 	
 	protected InstanceManager()
 	{
-		// Creates the multiverse.
-		_instanceList.put(-1, new Instance(-1, "multiverse"));
-		LOGGER.info("Multiverse Instance created.");
-		// Creates the universe.
-		_instanceList.put(0, new Instance(0, "universe"));
-		LOGGER.info("Universe Instance created.");
 		load();
 	}
+	
+	// --------------------------------------------------------------------
+	// Instance data loader
+	// --------------------------------------------------------------------
 	
 	@Override
 	public void load()
 	{
-		_instanceIdNames.clear();
+		// Load instance names
+		_instanceNames.clear();
 		parseDatapackFile("data/instancenames.xml");
-		LOGGER.info("Loaded {} instance names.", _instanceIdNames.size());
-	}
-	
-	/**
-	 * @param playerObjId
-	 * @param id
-	 * @return
-	 */
-	public long getInstanceTime(int playerObjId, int id)
-	{
-		if (!_playerInstanceTimes.containsKey(playerObjId))
-		{
-			restoreInstanceTimes(playerObjId);
-		}
-		if (_playerInstanceTimes.get(playerObjId).containsKey(id))
-		{
-			return _playerInstanceTimes.get(playerObjId).get(id);
-		}
-		return -1;
-	}
-	
-	/**
-	 * @param playerObjId
-	 * @return
-	 */
-	public Map<Integer, Long> getAllInstanceTimes(int playerObjId)
-	{
-		if (!_playerInstanceTimes.containsKey(playerObjId))
-		{
-			restoreInstanceTimes(playerObjId);
-		}
-		final Map<Integer, Long> instanceTimes = _playerInstanceTimes.get(playerObjId);
-		for (Entry<Integer, Long> entry : instanceTimes.entrySet())
-		{
-			if (entry.getValue() <= System.currentTimeMillis())
-			{
-				deleteInstanceTime(playerObjId, entry.getKey());
-			}
-		}
-		return instanceTimes;
-	}
-	
-	/**
-	 * @param playerObjId
-	 * @param id
-	 * @param time
-	 */
-	public void setInstanceTime(int playerObjId, int id, long time)
-	{
-		if (!_playerInstanceTimes.containsKey(playerObjId))
-		{
-			restoreInstanceTimes(playerObjId);
-		}
-		
-		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(ADD_INSTANCE_TIME))
-		{
-			ps.setInt(1, playerObjId);
-			ps.setInt(2, id);
-			ps.setLong(3, time);
-			ps.setLong(4, time);
-			ps.execute();
-			_playerInstanceTimes.get(playerObjId).put(id, time);
-		}
-		catch (Exception e)
-		{
-			LOGGER.warn("Could not insert character instance time data: ", e);
-		}
-	}
-	
-	/**
-	 * @param playerObjId
-	 * @param id
-	 */
-	public void deleteInstanceTime(int playerObjId, int id)
-	{
-		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME))
-		{
-			ps.setInt(1, playerObjId);
-			ps.setInt(2, id);
-			ps.execute();
-			_playerInstanceTimes.get(playerObjId).remove(id);
-		}
-		catch (Exception e)
-		{
-			LOGGER.warn("Could not delete character instance time data: ", e);
-		}
-	}
-	
-	/**
-	 * @param playerObjId
-	 */
-	public void restoreInstanceTimes(int playerObjId)
-	{
-		if (_playerInstanceTimes.containsKey(playerObjId))
-		{
-			return; // already restored
-		}
-		_playerInstanceTimes.put(playerObjId, new ConcurrentHashMap<>());
-		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(RESTORE_INSTANCE_TIMES))
-		{
-			ps.setInt(1, playerObjId);
-			try (ResultSet rs = ps.executeQuery())
-			{
-				while (rs.next())
-				{
-					int id = rs.getInt("instanceId");
-					long time = rs.getLong("time");
-					if (time < System.currentTimeMillis())
-					{
-						deleteInstanceTime(playerObjId, id);
-					}
-					else
-					{
-						_playerInstanceTimes.get(playerObjId).put(id, time);
-					}
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.warn("Could not delete character instance time data: ", e);
-		}
-	}
-	
-	/**
-	 * @param id
-	 * @return
-	 */
-	public String getInstanceIdName(int id)
-	{
-		if (_instanceIdNames.containsKey(id))
-		{
-			return _instanceIdNames.get(id);
-		}
-		return ("UnknownInstance");
+		LOGGER.info("Loaded {} instance names.", _instanceNames.size());
+		// Load instance templates
+		_instanceTemplates.clear();
+		parseDatapackDirectory("data/instances", true);
+		LOGGER.info("Loaded {} instance templates.", _instanceTemplates.size());
+		// Load player's reenter data
+		_playerInstanceTimes.clear();
+		restoreInstanceTimes();
+		LOGGER.info("Loaded instance reenter times for {} players.", _playerInstanceTimes.size());
 	}
 	
 	@Override
@@ -216,171 +105,548 @@ public final class InstanceManager implements IGameXmlReader
 	{
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
-			if ("list".equals(n.getNodeName()))
+			final String nodeName = n.getNodeName();
+			if (nodeName.equals("list"))
 			{
-				NamedNodeMap attrs;
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("instance".equals(d.getNodeName()))
-					{
-						attrs = d.getAttributes();
-						_instanceIdNames.put(parseInteger(attrs, "id"), attrs.getNamedItem("name").getNodeValue());
-					}
-				}
+				parseInstanceName(n);
+			}
+			else if (nodeName.equals("instance"))
+			{
+				parseInstanceTemplate(n, f);
 			}
 		}
 	}
 	
 	/**
-	 * @param world
+	 * Read instance names from XML file.
+	 * @param n starting XML tag
 	 */
-	public void addWorld(InstanceWorld world)
+	private void parseInstanceName(Node n)
 	{
-		_instanceWorlds.put(world.getInstanceId(), world);
+		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		{
+			if (d.getNodeName().equals("instance"))
+			{
+				final NamedNodeMap attrs = d.getAttributes();
+				_instanceNames.put(parseInteger(attrs, "id"), parseString(attrs, "name"));
+			}
+		}
 	}
 	
 	/**
-	 * @param instanceId
-	 * @return
+	 * Parse instance template from XML file.
+	 * @param n start XML tag
+	 * @param file currently parsed file
 	 */
-	public InstanceWorld getWorld(int instanceId)
+	private void parseInstanceTemplate(Node n, File file)
+	{
+		final InstanceTemplate template = new InstanceTemplate();
+		
+		// Parse "instance" node
+		NamedNodeMap attrs = n.getAttributes();
+		final int id = parseInteger(attrs, "id");
+		if (_instanceTemplates.containsKey(id))
+		{
+			LOGGER.warn("Instance template with ID {} already exists", id);
+			return;
+		}
+		
+		template.setId(id);
+		template.setName(parseString(attrs, "name", _instanceNames.get(id)));
+		template.setMaxWorlds(parseInteger(attrs, "maxWorlds", -1));
+		
+		// Parse "instance" node children
+		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		{
+			switch (d.getNodeName())
+			{
+				case "time":
+				{
+					attrs = d.getAttributes();
+					template.setDuration(parseInteger(attrs, "duration", -1));
+					template.setEmptyDestroyTime(parseInteger(attrs, "empty", -1));
+					template.setEjectTime(parseInteger(attrs, "eject", -1));
+					break;
+				}
+				case "misc":
+				{
+					attrs = d.getAttributes();
+					template.allowPlayerSummon(parseBoolean(attrs, "allowPlayerSummon", false));
+					template.setIsPvP(parseBoolean(attrs, "isPvP", false));
+					break;
+				}
+				case "locations":
+				{
+					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					{
+						if (e.getNodeName().equals("enter"))
+						{
+							final InstanceTeleportType type = parseEnum(e.getAttributes(), InstanceTeleportType.class, "type");
+							final List<Location> locations = new ArrayList<>();
+							for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+							{
+								if (f.getNodeName().equals("location"))
+								{
+									locations.add(parseLocation(f));
+								}
+							}
+							template.setEnterLocation(type, locations);
+						}
+						else if (e.getNodeName().equals("exit"))
+						{
+							final InstanceTeleportType type = parseEnum(e.getAttributes(), InstanceTeleportType.class, "type");
+							if (type.equals(InstanceTeleportType.ORIGIN))
+							{
+								template.setExitLocation(type, null);
+							}
+							else
+							{
+								final List<Location> locations = new ArrayList<>();
+								for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+								{
+									if (f.getNodeName().equals("location"))
+									{
+										locations.add(parseLocation(f));
+									}
+								}
+								if (locations.isEmpty())
+								{
+									LOGGER.warn("Missing exit location data for instance {} ({})!", template.getName(), template.getId());
+								}
+								else
+								{
+									template.setExitLocation(type, locations);
+								}
+							}
+						}
+					}
+					break;
+				}
+				case "spawnlist":
+				{
+					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					{
+						if (e.getNodeName().equals("group"))
+						{
+							final String groupName = parseString(e.getAttributes(), "name");
+							final List<SpawnHolder> group = new ArrayList<>();
+							for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+							{
+								if (f.getNodeName().equals("spawn"))
+								{
+									attrs = f.getAttributes();
+									final int npcId = parseInteger(attrs, "npcId");
+									final int respawn = parseInteger(attrs, "respawn", 0);
+									final Location spawnLoc = parseLocation(f);
+									group.add(new SpawnHolder(npcId, spawnLoc, respawn));
+								}
+							}
+							template.addSpawnGroup(groupName, group);
+						}
+					}
+					break;
+				}
+				case "doorlist":
+				{
+					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					{
+						if (e.getNodeName().equals("door"))
+						{
+							attrs = e.getAttributes();
+							final int doorId = parseInteger(attrs, "id");
+							final Boolean open = parseBoolean(attrs, "open", null); // Let's use some magic - null means default (door template value), true open and false close
+							template.addDoor(doorId, open);
+						}
+					}
+					break;
+				}
+				case "removeBuffs":
+				{
+					final InstanceRemoveBuffType removeBuffType = parseEnum(d.getAttributes(), InstanceRemoveBuffType.class, "type");
+					final List<Integer> exceptionBuffList = new ArrayList<>();
+					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					{
+						if (e.getNodeName().equals("skill"))
+						{
+							exceptionBuffList.add(parseInteger(e.getAttributes(), "id"));
+						}
+					}
+					template.setRemoveBuff(removeBuffType, exceptionBuffList);
+					break;
+				}
+				case "reenter":
+				{
+					final InstanceReenterType type = parseEnum(d.getAttributes(), InstanceReenterType.class, "apply", InstanceReenterType.NONE);
+					final List<InstanceReenterTimeHolder> data = new ArrayList<>();
+					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					{
+						if (e.getNodeName().equals("reset"))
+						{
+							attrs = e.getAttributes();
+							final int time = parseInteger(attrs, "time", -1);
+							if (time > 0)
+							{
+								data.add(new InstanceReenterTimeHolder(time));
+							}
+							else
+							{
+								final DayOfWeek day = parseEnum(attrs, DayOfWeek.class, "day");
+								final int hour = parseInteger(attrs, "hour", -1);
+								final int minute = parseInteger(attrs, "minute", -1);
+								data.add(new InstanceReenterTimeHolder(day, hour, minute));
+							}
+						}
+					}
+					template.setReenterData(type, data);
+					break;
+				}
+				case "parameters":
+					template.setParameters(parseParameters(d));
+					break;
+				case "conditions":
+				{
+					final List<Condition> conditions = new ArrayList<>();
+					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					{
+						if (e.getNodeName().equals("condition"))
+						{
+							attrs = e.getAttributes();
+							final String type = parseString(attrs, "type");
+							final boolean onlyLeader = parseBoolean(attrs, "onlyLeader", false);
+							// Load parameters
+							StatsSet params = null;
+							for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+							{
+								if (f.getNodeName().equals("param"))
+								{
+									if (params == null)
+									{
+										params = new StatsSet();
+									}
+									
+									attrs = f.getAttributes();
+									params.set(parseString(attrs, "name"), parseString(attrs, "value"));
+								}
+							}
+							
+							// If none parameters found then set empty StatSet
+							if (params == null)
+							{
+								params = StatsSet.EMPTY_STATSET;
+							}
+							
+							// Now when everything is loaded register condition to template
+							try
+							{
+								final Class<?> clazz = Class.forName("org.l2junity.gameserver.model.instancezone.conditions.Condition" + type);
+								final Constructor<?> constructor = clazz.getConstructor(InstanceTemplate.class, StatsSet.class, boolean.class);
+								conditions.add((Condition) constructor.newInstance(template, params, onlyLeader));
+							}
+							catch (Exception ex)
+							{
+								LOGGER.warn("Unknown condition type {} for instance {} ({})!", type, template.getName(), id);
+							}
+						}
+					}
+					template.setConditions(conditions);
+					break;
+				}
+			}
+		}
+		
+		// Save template
+		_instanceTemplates.put(id, template);
+	}
+	
+	// --------------------------------------------------------------------
+	// Instance data loader - END
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Create new instance with default template.
+	 * @return newly created default instance.
+	 */
+	public Instance createInstance()
+	{
+		return new Instance(getNewInstanceId(), new InstanceTemplate());
+	}
+	
+	/**
+	 * Create new instance from given template.
+	 * @param template template used for instance creation
+	 * @return newly created instance if success, otherwise {@code null}
+	 */
+	public Instance createInstance(InstanceTemplate template)
+	{
+		return (template != null) ? new Instance(getNewInstanceId(), template) : null;
+	}
+	
+	/**
+	 * Create new instance with template defined in datapack.
+	 * @param id template id of instance
+	 * @return newly created instance if template was found, otherwise {@code null}
+	 */
+	public Instance createInstance(int id)
+	{
+		if (!_instanceTemplates.containsKey(id))
+		{
+			LOGGER.warn("Missing template for instance with id {}!", id);
+			return null;
+		}
+		return new Instance(getNewInstanceId(), _instanceTemplates.get(id));
+	}
+	
+	/**
+	 * Get instance world with given ID.
+	 * @param instanceId ID of instance
+	 * @return instance itself if found, otherwise {@code null}
+	 */
+	public Instance getInstance(int instanceId)
 	{
 		return _instanceWorlds.get(instanceId);
 	}
 	
 	/**
-	 * Check if the player have a World Instance where it's allowed to enter.
-	 * @param player the player to check
-	 * @return the instance world
+	 * Get all active instances.
+	 * @return Collection of all instances
 	 */
-	public InstanceWorld getPlayerWorld(PlayerInstance player)
+	public Collection<Instance> getInstances()
 	{
-		for (InstanceWorld temp : _instanceWorlds.values())
+		return _instanceWorlds.values();
+	}
+	
+	/**
+	 * Get instance world for player.
+	 * @param player player who wants to get instance world
+	 * @param isInside when {@code true} find world where player is currently located, otherwise find world where player can enter
+	 * @return instance if found, otherwise {@code null}
+	 */
+	public Instance getPlayerInstance(PlayerInstance player, boolean isInside)
+	{
+		return _instanceWorlds.values().stream().filter(i -> (isInside) ? i.containsPlayer(player) : i.isAllowed(player)).findFirst().orElse(null);
+	}
+	
+	/**
+	 * Get ID for newly created instance.
+	 * @return instance id
+	 */
+	private synchronized int getNewInstanceId()
+	{
+		do
 		{
-			if ((temp != null) && (temp.isAllowed(player.getObjectId())))
+			if (_currentInstanceId == Integer.MAX_VALUE)
 			{
-				return temp;
+				if (Config.DEBUG_INSTANCES)
+				{
+					LOGGER.info("Instance id owerflow, starting from zero.");
+				}
+				_currentInstanceId = 0;
+			}
+			_currentInstanceId++;
+		}
+		while (_instanceWorlds.containsKey(_currentInstanceId));
+		return _currentInstanceId;
+	}
+	
+	/**
+	 * Register instance world.<br>
+	 * @param instance instance which should be registered
+	 */
+	public void register(Instance instance)
+	{
+		final int instanceId = instance.getId();
+		if (!_instanceWorlds.containsKey(instanceId))
+		{
+			_instanceWorlds.put(instanceId, instance);
+		}
+	}
+	
+	/**
+	 * Unregister instance world.<br>
+	 * <b><font color=red>To remove instance world properly use {@link Instance#destroy()}.</font></b>
+	 * @param instanceId ID of instance to unregister
+	 */
+	public void unregister(int instanceId)
+	{
+		if (_instanceWorlds.containsKey(instanceId))
+		{
+			_instanceWorlds.remove(instanceId);
+		}
+	}
+	
+	/**
+	 * Get instance name from file "instancenames.xml"
+	 * @param templateId template ID of instance
+	 * @return name of instance if found, otherwise {@code null}
+	 */
+	public String getInstanceName(int templateId)
+	{
+		return _instanceNames.get(templateId);
+	}
+	
+	/**
+	 * Restore instance reenter data for all players.
+	 */
+	private void restoreInstanceTimes()
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			Statement ps = con.createStatement();
+			ResultSet rs = ps.executeQuery("SELECT * FROM character_instance_time ORDER BY charId"))
+		{
+			while (rs.next())
+			{
+				// Check if instance penalty passed
+				final long time = rs.getLong("time");
+				if (time > System.currentTimeMillis())
+				{
+					// Load params
+					final int charId = rs.getInt("charId");
+					final int instanceId = rs.getInt("instanceId");
+					// Set penalty
+					setReenterPenalty(charId, instanceId, time);
+				}
 			}
 		}
-		return null;
-	}
-	
-	/**
-	 * @param instanceid
-	 */
-	public void destroyInstance(int instanceid)
-	{
-		if (instanceid <= 0)
+		catch (Exception e)
 		{
-			return;
-		}
-		final Instance temp = _instanceList.get(instanceid);
-		if (temp != null)
-		{
-			temp.removeNpcs();
-			temp.removePlayers();
-			temp.removeDoors();
-			temp.cancelTimer();
-			_instanceList.remove(instanceid);
-			if (_instanceWorlds.containsKey(instanceid))
-			{
-				_instanceWorlds.remove(instanceid);
-			}
+			LOGGER.warn("Cannot restore players instance reenter data: ", e);
 		}
 	}
 	
 	/**
-	 * @param instanceid
-	 * @return
+	 * Get all instance re-enter times for specified player.<br>
+	 * This method also removes the penalties that have already expired.
+	 * @param player instance of player who wants to get re-enter data
+	 * @return map in form templateId, penaltyEndTime
 	 */
-	public Instance getInstance(int instanceid)
+	public Map<Integer, Long> getAllInstanceTimes(PlayerInstance player)
 	{
-		return _instanceList.get(instanceid);
-	}
-	
-	/**
-	 * @return
-	 */
-	public Map<Integer, Instance> getInstances()
-	{
-		return _instanceList;
-	}
-	
-	/**
-	 * @param objectId
-	 * @return
-	 */
-	public int getPlayerInstance(int objectId)
-	{
-		for (Instance instance : _instanceList.values())
+		// When player don't have any instance penalty
+		final Map<Integer, Long> instanceTimes = _playerInstanceTimes.get(player.getObjectId());
+		if ((instanceTimes == null) || instanceTimes.isEmpty())
 		{
-			// check if the player is in any active instance
-			if (instance.containsPlayer(objectId))
-			{
-				return instance.getObjectId();
-			}
-		}
-		// 0 is default instance aka the world
-		return 0;
-	}
-	
-	/**
-	 * @param id
-	 * @return
-	 */
-	public boolean createInstance(int id)
-	{
-		if (getInstance(id) != null)
-		{
-			return false;
+			return Collections.emptyMap();
 		}
 		
-		final Instance instance = new Instance(id);
-		_instanceList.put(id, instance);
-		return true;
-	}
-	
-	/**
-	 * @param id
-	 * @param template
-	 * @return
-	 */
-	public boolean createInstanceFromTemplate(int id, String template)
-	{
-		if (getInstance(id) != null)
+		// Find passed penalty
+		final List<Integer> invalidPenalty = new ArrayList<>(instanceTimes.size());
+		for (Entry<Integer, Long> entry : instanceTimes.entrySet())
 		{
-			return false;
-		}
-		
-		final Instance instance = new Instance(id);
-		_instanceList.put(id, instance);
-		instance.loadInstanceTemplate(template);
-		return true;
-	}
-	
-	/**
-	 * Create a new instance with a dynamic instance id based on a template (or null)
-	 * @param template xml file
-	 * @return
-	 */
-	public int createDynamicInstance(String template)
-	{
-		while (getInstance(_dynamic) != null)
-		{
-			_dynamic++;
-			if (_dynamic == Integer.MAX_VALUE)
+			if (entry.getValue() <= System.currentTimeMillis())
 			{
-				LOGGER.warn("More then {} instances created", Integer.MAX_VALUE - 300000);
-				_dynamic = 300000;
+				invalidPenalty.add(entry.getKey());
 			}
 		}
-		final Instance instance = new Instance(_dynamic);
-		_instanceList.put(_dynamic, instance);
-		if (template != null)
+		
+		// Remove them
+		if (!invalidPenalty.isEmpty())
 		{
-			instance.loadInstanceTemplate(template);
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME))
+			{
+				for (Integer id : invalidPenalty)
+				{
+					ps.setInt(1, player.getObjectId());
+					ps.setInt(2, id);
+					ps.addBatch();
+				}
+				ps.executeBatch();
+				invalidPenalty.forEach(instanceTimes::remove);
+			}
+			catch (Exception e)
+			{
+				LOGGER.warn("Cannot delete instance character reenter data: ", e);
+			}
 		}
-		return _dynamic;
+		return instanceTimes;
+	}
+	
+	/**
+	 * Set re-enter penalty for specified player.<br>
+	 * <font color=red><b>This method store penalty into memory only. Use {@link Instance#setReenterTime} to set instance penalty properly.</b></font>
+	 * @param objectId object ID of player
+	 * @param id instance template id
+	 * @param time penalty time
+	 */
+	public void setReenterPenalty(int objectId, int id, long time)
+	{
+		_playerInstanceTimes.computeIfAbsent(objectId, k -> new ConcurrentHashMap<>()).put(id, time);
+	}
+	
+	/**
+	 * Get re-enter time to instance (by template ID) for player.<br>
+	 * This method also removes penalty if expired.
+	 * @param player player who wants to get re-enter time
+	 * @param id template ID of instance
+	 * @return penalty end time if penalty is found, otherwise -1
+	 */
+	public long getInstanceTime(PlayerInstance player, int id)
+	{
+		// Check if exists reenter data for player
+		final Map<Integer, Long> playerData = _playerInstanceTimes.get(player.getObjectId());
+		if ((playerData == null) || !playerData.containsKey(id))
+		{
+			return -1;
+		}
+		
+		// If reenter time is higher then current, delete it
+		final long time = playerData.get(id);
+		if (time <= System.currentTimeMillis())
+		{
+			deleteInstanceTime(player, id);
+			return -1;
+		}
+		return time;
+	}
+	
+	/**
+	 * Remove re-enter penalty for specified instance from player.
+	 * @param player player who wants to delete penalty
+	 * @param id template id of instance world
+	 */
+	public void deleteInstanceTime(PlayerInstance player, int id)
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME))
+		{
+			ps.setInt(1, player.getObjectId());
+			ps.setInt(2, id);
+			ps.execute();
+			_playerInstanceTimes.get(player.getObjectId()).remove(id);
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn("Could not delete character instance reenter data: ", e);
+		}
+	}
+	
+	/**
+	 * Get instance template by template ID.
+	 * @param id template id of instance
+	 * @return instance template if found, otherwise {@code null}
+	 */
+	public InstanceTemplate getInstanceTemplate(int id)
+	{
+		return _instanceTemplates.get(id);
+	}
+	
+	/**
+	 * Get all instances template.
+	 * @return Collection of all instance templates
+	 */
+	public Collection<InstanceTemplate> getInstanceTemplates()
+	{
+		return _instanceTemplates.values();
+	}
+	
+	/**
+	 * Get count of created instance worlds with same template ID.
+	 * @param templateId template id of instance
+	 * @return count of created instances
+	 */
+	public long getWorldCount(int templateId)
+	{
+		return _instanceWorlds.values().stream().filter(i -> i.getTemplateId() == templateId).count();
 	}
 	
 	/**

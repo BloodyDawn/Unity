@@ -22,11 +22,11 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
 
-import quests.Q10327_IntruderWhoWantsTheBookOfGiants.Q10327_IntruderWhoWantsTheBookOfGiants;
 import ai.npc.AbstractNpcAI;
+import quests.Q10327_IntruderWhoWantsTheBookOfGiants.Q10327_IntruderWhoWantsTheBookOfGiants;
 
 /**
  * Toyron AI.
@@ -53,14 +53,12 @@ public final class Toyron extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		
+		final Instance world = InstanceManager.getInstance().getPlayerInstance(player, true);
 		if (event.equals("museum_teleport"))
 		{
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 			{
-				world.removeAllowed(player.getObjectId());
-				teleportPlayer(player, MUSEUM_OUT, 0);
+				world.finishInstance(0);
 			}
 			player.teleToLocation(MUSEUM_OUT);
 		}
@@ -77,35 +75,25 @@ public final class Toyron extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
-		
+		String htmltext = "33004.html";
+		final Instance world = npc.getInstanceWorld();
 		if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 		{
+			final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
 			if (qs != null)
 			{
 				switch (qs.getCond())
 				{
 					case 1:
-					{
-						return "33004-01.html";
-					}
+						htmltext = "33004-01.html";
+						break;
 					case 2:
-					{
-						return "33004-02.html";
-					}
-					case 3:
-					{
-						return "33004.html";
-					}
+						htmltext = "33004-02.html";
+						break;
 				}
 			}
-			else
-			{
-				return "33004.html";
-			}
 		}
-		return "33004.html";
+		return htmltext;
 	}
 	
 	public static void main(String[] args)

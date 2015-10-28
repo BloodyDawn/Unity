@@ -94,21 +94,17 @@ public final class AttackRequest implements IClientIncomingPacket
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
 		else if ((!target.isTargetable() || activeChar.isTargetingDisabled()) && !activeChar.canOverrideCond(PcCondOverride.TARGET_ALL))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
 		// Players can't attack objects in the other instances
-		// except from multiverse
-		else if ((target.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))
+		else if (target.getInstanceWorld() != activeChar.getInstanceWorld())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
 		// Only GMs can directly attack invisible characters
 		else if (!target.isVisibleFor(activeChar))
 		{

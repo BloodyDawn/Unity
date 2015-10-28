@@ -138,7 +138,7 @@ public final class SummonNpc extends AbstractEffect
 				decoy.setCurrentHp(decoy.getMaxHp());
 				decoy.setCurrentMp(decoy.getMaxMp());
 				decoy.setHeading(player.getHeading());
-				decoy.setInstanceId(player.getInstanceId());
+				decoy.setInstance(player.getInstanceWorld());
 				decoy.setSummoner(player);
 				decoy.spawnMe(x, y, z);
 				break;

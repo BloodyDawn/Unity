@@ -148,7 +148,7 @@ public class L2DoormenInstance extends L2NpcInstance
 		{
 			if (!player.isAlikeDead())
 			{
-				player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ(), false);
+				player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ());
 			}
 		}
 		else

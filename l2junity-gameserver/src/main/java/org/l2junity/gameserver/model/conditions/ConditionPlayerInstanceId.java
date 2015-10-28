@@ -20,9 +20,9 @@ package org.l2junity.gameserver.model.conditions;
 
 import java.util.ArrayList;
 
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -45,22 +45,13 @@ public class ConditionPlayerInstanceId extends Condition
 	@Override
 	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
-		if (effector.getActingPlayer() == null)
+		final PlayerInstance player = effector.getActingPlayer();
+		if (player == null)
 		{
 			return false;
 		}
 		
-		final int instanceId = effector.getInstanceId();
-		if (instanceId <= 0)
-		{
-			return false; // player not in instance
-		}
-		
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(effector.getActingPlayer());
-		if ((world == null) || (world.getInstanceId() != instanceId))
-		{
-			return false; // player in the different instance
-		}
-		return _instanceIds.contains(world.getTemplateId());
+		final Instance instance = player.getInstanceWorld();
+		return (instance == null) ? false : _instanceIds.contains(instance.getTemplateId());
 	}
 }

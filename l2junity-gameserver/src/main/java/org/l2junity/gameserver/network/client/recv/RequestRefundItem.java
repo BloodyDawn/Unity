@@ -93,7 +93,7 @@ public final class RequestRefundItem implements IClientIncomingPacket
 		}
 		
 		WorldObject target = player.getTarget();
-		if (!player.isGM() && ((target == null) || !(target instanceof L2MerchantInstance) || (player.getInstanceId() != target.getInstanceId()) || !player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)))
+		if (!player.isGM() && ((target == null) || !(target instanceof L2MerchantInstance) || (player.getInstanceWorld() != target.getInstanceWorld()) || !player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)))
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
