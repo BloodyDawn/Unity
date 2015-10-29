@@ -22,7 +22,6 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
@@ -46,12 +45,10 @@ public final class TrainningSoldier extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		if (event.equals("START_ATTACK") && (npc instanceof L2QuestGuardInstance))
+		if (event.equals("START_ATTACK"))
 		{
-			final L2QuestGuardInstance soldier = (L2QuestGuardInstance) npc;
-			
 			//@formatter:off
-			final Npc dummy = World.getInstance().getVisibleObjects(soldier, Npc.class, 150)
+			final Npc dummy = World.getInstance().getVisibleObjects(npc, Npc.class, 150)
 				.stream()
 				.filter(obj -> (obj.getId() == DUMMY))
 				.findFirst()
@@ -60,11 +57,7 @@ public final class TrainningSoldier extends AbstractNpcAI
 			
 			if (dummy != null)
 			{
-				soldier.reduceCurrentHp(1, dummy, null); // TODO: Find better way for attack
-				dummy.reduceCurrentHp(1, soldier, null);
-				soldier.setCanStopAttackByTime(false);
-				soldier.setCanReturnToSpawnPoint(false);
-				soldier.setIsInvul(true);
+				addAttackDesire(npc, dummy);
 			}
 			else
 			{

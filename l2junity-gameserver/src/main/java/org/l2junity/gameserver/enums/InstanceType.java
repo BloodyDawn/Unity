@@ -42,17 +42,18 @@ public enum InstanceType
 	L2DecoyInstance(L2Decoy),
 	L2TrapInstance(L2Npc),
 	// Attackable
-	L2Attackable(L2Npc),
-	L2GuardInstance(L2Attackable),
+	Attackable(L2Npc),
+	L2GuardInstance(Attackable),
 	L2QuestGuardInstance(L2GuardInstance),
-	L2MonsterInstance(L2Attackable),
+	L2MonsterInstance(Attackable),
 	L2ChestInstance(L2MonsterInstance),
 	L2ControllableMobInstance(L2MonsterInstance),
 	L2FeedableBeastInstance(L2MonsterInstance),
 	L2TamedBeastInstance(L2FeedableBeastInstance),
-	L2FriendlyMobInstance(L2Attackable),
+	L2FriendlyMobInstance(Attackable),
 	L2RaidBossInstance(L2MonsterInstance),
 	L2GrandBossInstance(L2RaidBossInstance),
+	FriendlyNpcInstance(Attackable),
 	// FlyMobs
 	L2FlyTerrainObjectInstance(L2Npc),
 	// Sepulchers
@@ -65,7 +66,7 @@ public enum InstanceType
 	L2ShuttleInstance(L2Vehicle),
 	L2ControllableAirShipInstance(L2AirShipInstance),
 	// Siege
-	L2DefenderInstance(L2Attackable),
+	L2DefenderInstance(Attackable),
 	L2ArtefactInstance(L2NpcInstance),
 	L2ControlTowerInstance(L2Npc),
 	L2FlameTowerInstance(L2Npc),

@@ -2859,6 +2859,17 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	}
 	
 	/**
+	 * Monster is running and attacking the target.
+	 * @param npc the NPC that performs the attack
+	 * @param target the target of the attack
+	 */
+	protected void addAttackDesire(Npc npc, Creature target)
+	{
+		npc.setIsRunning(true);
+		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+	}
+	
+	/**
 	 * Adds desire to move to the given NPC.
 	 * @param npc the NPC
 	 * @param loc the location
