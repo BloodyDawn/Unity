@@ -53,10 +53,10 @@ public final class Teleport extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		effected.teleToLocation(_loc, true);
+		effected.teleToLocation(_loc, true, null);
 	}
 }
