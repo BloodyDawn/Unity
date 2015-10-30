@@ -85,7 +85,7 @@ public class CubicInstance
 					final Skill skill = cubicSkill.getSkill();
 					if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
 					{
-						_caster.broadcastPacket(new MagicSkillUse(_caster, target, skill.getDisplayId(), skill.getDisplayLevel(), 0, 0));
+						_caster.broadcastPacket(new MagicSkillUse(_caster, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
 						skill.activateSkill(_owner, target);
 					}
 					break;
