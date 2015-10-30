@@ -19,6 +19,8 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.enums.Team;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -66,5 +68,52 @@ public class L2EffectPointInstance extends Npc
 		}
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
+	}
+	
+	/**
+	 * Return the L2Party object of its L2PcInstance owner or null.
+	 */
+	@Override
+	public Party getParty()
+	{
+		if (_owner == null)
+		{
+			return null;
+		}
+		
+		return _owner.getParty();
+	}
+	
+	/**
+	 * Return True if the L2Character has a Party in progress.
+	 */
+	@Override
+	public boolean isInParty()
+	{
+		return (_owner != null) && _owner.isInParty();
+	}
+	
+	@Override
+	public int getClanId()
+	{
+		return (_owner != null) ? _owner.getClanId() : 0;
+	}
+	
+	@Override
+	public int getAllyId()
+	{
+		return (_owner != null) ? _owner.getAllyId() : 0;
+	}
+	
+	@Override
+	public final byte getPvpFlag()
+	{
+		return _owner != null ? _owner.getPvpFlag() : 0;
+	}
+	
+	@Override
+	public final Team getTeam()
+	{
+		return _owner != null ? _owner.getTeam() : Team.NONE;
 	}
 }

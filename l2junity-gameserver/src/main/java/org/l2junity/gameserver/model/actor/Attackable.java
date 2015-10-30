@@ -739,7 +739,13 @@ public class Attackable extends Npc
 			return;
 		}
 		
-		final PlayerInstance targetPlayer = attacker.getActingPlayer();
+		PlayerInstance targetPlayer = attacker.getActingPlayer();
+		final Creature summoner = attacker.getSummoner();
+		if (attacker.isNpc() && (summoner != null) && summoner.isPlayer() && !attacker.isTargetable())
+		{
+			targetPlayer = summoner.getActingPlayer();
+			attacker = summoner;
+		}
 		// Get the AggroInfo of the attacker L2Character from the _aggroList of the L2Attackable
 		final AggroInfo ai = getAggroList().computeIfAbsent(attacker, AggroInfo::new);
 		ai.addDamage(damage);

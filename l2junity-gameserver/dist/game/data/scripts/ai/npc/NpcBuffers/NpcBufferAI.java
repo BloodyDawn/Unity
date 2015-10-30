@@ -20,16 +20,10 @@ package ai.npc.NpcBuffers;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
-import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2TamedBeastInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -96,166 +90,8 @@ public class NpcBufferAI implements Runnable
 			return;
 		}
 		
-		switch (_skillData.getAffectScope())
-		{
-			case PARTY:
-			{
-				final Party party = player.getParty();
-				if (party != null)
-				{
-					for (PlayerInstance member : party.getMembers())
-					{
-						if (Util.checkIfInRange(skill.getAffectRange(), _npc, member, true) && !member.isDead())
-						{
-							skill.applyEffects(player, member);
-						}
-					}
-				}
-				else
-				{
-					if (Util.checkIfInRange(skill.getAffectRange(), _npc, player, true) && !player.isDead())
-					{
-						skill.applyEffects(player, player);
-					}
-				}
-				break;
-			}
-			case RANGE:
-			{
-				World.getInstance().forEachVisibleObjectInRange(_npc, Creature.class, _skillData.getSkill().getAffectRange(), target ->
-				{
-					switch (_skillData.getAffectObject())
-					{
-						case FRIEND:
-						{
-							if (isFriendly(player, target) && !target.isDead())
-							{
-								skill.applyEffects(player, target);
-							}
-							break;
-						}
-						case NOT_FRIEND:
-						{
-							if (isEnemy(player, target) && !target.isDead())
-							{
-								// Update PvP status
-								if (target.isPlayable())
-								{
-									player.updatePvPStatus(target);
-								}
-								skill.applyEffects(player, target);
-							}
-							break;
-						}
-					}
-				});
-				break;
-			}
-		}
-		ThreadPoolManager.getInstance().scheduleGeneral(this, _skillData.getDelay());
+		_npc.doCast(skill);
 		
-	}
-	
-	/**
-	 * Verifies if the character is an friend and can be affected by positive effect.
-	 * @param player the player
-	 * @param target the target
-	 * @return {@code true} if target can be affected by positive effect, {@code false} otherwise
-	 */
-	private boolean isFriendly(PlayerInstance player, Creature target)
-	{
-		if (target.isPlayable())
-		{
-			final PlayerInstance targetPlayer = target.getActingPlayer();
-			
-			if (player == targetPlayer)
-			{
-				return true;
-			}
-			
-			if (player.isInParty() && targetPlayer.isInParty())
-			{
-				final Party party = player.getParty();
-				
-				if (party.containsPlayer(targetPlayer))
-				{
-					return true;
-				}
-				
-				if (party.isInCommandChannel() && party.getCommandChannel().containsPlayer(targetPlayer))
-				{
-					return true;
-				}
-			}
-			
-			if ((player.getClanId() > 0) && (player.getClanId() == targetPlayer.getClanId()))
-			{
-				return true;
-			}
-			
-			if ((player.getAllyId() > 0) && (player.getAllyId() == targetPlayer.getAllyId()))
-			{
-				return true;
-			}
-			
-			if ((player.getSiegeState() > 0) && player.isInsideZone(ZoneId.SIEGE) && (player.getSiegeState() == targetPlayer.getSiegeState()) && (player.getSiegeSide() == targetPlayer.getSiegeSide()))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	/**
-	 * Verifies if the character is an enemy and can be affected by negative effect.
-	 * @param player the player
-	 * @param target the target
-	 * @return {@code true} if target can be affected by negative effect, {@code false} otherwise
-	 */
-	private boolean isEnemy(PlayerInstance player, Creature target)
-	{
-		if (isFriendly(player, target))
-		{
-			return false;
-		}
-		
-		if (target instanceof L2TamedBeastInstance)
-		{
-			return isEnemy(player, ((L2TamedBeastInstance) target).getOwner());
-		}
-		
-		if (target.isMonster())
-		{
-			return true;
-		}
-		
-		if (target.isPlayable())
-		{
-			final PlayerInstance targetPlayer = target.getActingPlayer();
-			
-			if (!isFriendly(player, targetPlayer))
-			{
-				if (targetPlayer.getPvpFlag() != 0)
-				{
-					return true;
-				}
-				
-				if (targetPlayer.getReputation() < 0)
-				{
-					return true;
-				}
-				
-				if ((player.getClan() != null) && (targetPlayer.getClan() != null) && player.getClan().isAtWarWith(targetPlayer.getClan()))
-				{
-					return true;
-				}
-				
-				if (targetPlayer.isInsideZone(ZoneId.PVP))
-				{
-					return true;
-				}
-			}
-		}
-		return false;
+		ThreadPoolManager.getInstance().scheduleGeneral(this, skill.getReuseDelay());
 	}
 }

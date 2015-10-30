@@ -151,7 +151,7 @@ public final class SummonNpc extends AbstractEffect
 				effectPoint.setIsInvul(true);
 				effectPoint.setSummoner(player);
 				effectPoint.spawnMe(x, y, z);
-				_despawnDelay = effectPoint.getParameters().getInt("despawn_time") * 1000;
+				_despawnDelay = effectPoint.getParameters().getInt("despawn_time", 0) * 1000;
 				if (_despawnDelay > 0)
 				{
 					effectPoint.scheduleDespawn(_despawnDelay);
