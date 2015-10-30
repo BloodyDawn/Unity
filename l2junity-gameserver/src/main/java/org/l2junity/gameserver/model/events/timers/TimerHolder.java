@@ -145,11 +145,11 @@ public class TimerHolder<T> implements Runnable
 	@Override
 	public void run()
 	{
-		// Notify the script that the event has been fired.
-		_script.onTimerEvent(this);
-		
 		// Notify the post executor to remove this timer from the map
 		_postExecutor.onTimerPostExecute(this);
+		
+		// Notify the script that the event has been fired.
+		_script.onTimerEvent(this);
 	}
 	
 	@Override
@@ -168,5 +168,11 @@ public class TimerHolder<T> implements Runnable
 		@SuppressWarnings("unchecked")
 		final TimerHolder<T> holder = (TimerHolder<T>) obj;
 		return isEqual(holder._event, holder._npc, holder._player);
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "event: " + _event + " params: " + _params + " time: " + _time + " npc: " + _npc + " player: " + _player + " repeating: " + _isRepeating + " script: " + _script.getClass().getSimpleName() + " postExecutor: " + _postExecutor.getClass().getSimpleName();
 	}
 }

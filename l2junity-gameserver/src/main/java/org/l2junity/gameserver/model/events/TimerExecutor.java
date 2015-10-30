@@ -50,7 +50,15 @@ public final class TimerExecutor<T>
 	 */
 	public boolean addTimer(TimerHolder<T> holder)
 	{
-		return _timers.computeIfAbsent(holder.getEvent(), key -> ConcurrentHashMap.newKeySet()).add(holder);
+		final Set<TimerHolder<T>> timers = _timers.computeIfAbsent(holder.getEvent(), key -> ConcurrentHashMap.newKeySet());
+		for (TimerHolder<T> timer : timers)
+		{
+			if (timer.equals(holder))
+			{
+				timer.cancelTimer();
+			}
+		}
+		return timers.add(holder);
 	}
 	
 	/**
@@ -257,7 +265,6 @@ public final class TimerExecutor<T>
 				return holder.cancelTimer();
 			}
 		}
-		
 		return false;
 	}
 	
