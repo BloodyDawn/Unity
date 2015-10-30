@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2CubicTemplate;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 
 /**
  * @author UnAfraid
@@ -84,6 +85,7 @@ public class CubicInstance
 					final Skill skill = cubicSkill.getSkill();
 					if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
 					{
+						_caster.broadcastPacket(new MagicSkillUse(_caster, target, skill.getDisplayId(), skill.getDisplayLevel(), 0, 0));
 						skill.activateSkill(_owner, target);
 					}
 					break;
