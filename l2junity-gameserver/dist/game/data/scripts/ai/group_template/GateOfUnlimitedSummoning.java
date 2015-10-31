@@ -21,7 +21,6 @@ package ai.group_template;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -75,7 +74,6 @@ public final class GateOfUnlimitedSummoning extends AbstractNpcAI
 	@Override
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		AdminData.getInstance().broadcastMessageToGMs("Event received: " + event);
 		if (event.equals("SKILL_CAST_SLOW"))
 		{
 			final int skillLevel = DEATH_GATE.get(npc.getId());
