@@ -116,7 +116,8 @@ import org.l2junity.gameserver.model.events.listeners.FunctionEventListener;
 import org.l2junity.gameserver.model.events.listeners.RunnableEventListener;
 import org.l2junity.gameserver.model.events.returns.AbstractEventReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
-import org.l2junity.gameserver.model.events.timers.IEventTimer;
+import org.l2junity.gameserver.model.events.timers.IEventTimerCancel;
+import org.l2junity.gameserver.model.events.timers.IEventTimerEvent;
 import org.l2junity.gameserver.model.events.timers.TimerHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
@@ -152,7 +153,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author UnAfraid
  */
-public abstract class AbstractScript extends ManagedScript implements IEventTimer<String>
+public abstract class AbstractScript extends ManagedScript implements IEventTimerEvent<String>, IEventTimerCancel<String>
 {
 	protected static final Logger _log = LoggerFactory.getLogger(AbstractScript.class);
 	private final Map<ListenerRegisterType, Set<Integer>> _registeredIds = new ConcurrentHashMap<>();
@@ -196,7 +197,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			{
 				if (_timerExecutor == null)
 				{
-					_timerExecutor = new TimerExecutor<>(this);
+					_timerExecutor = new TimerExecutor<>(this, this);
 				}
 			}
 		}

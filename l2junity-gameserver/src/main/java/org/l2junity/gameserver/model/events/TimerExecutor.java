@@ -26,7 +26,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.events.timers.IEventTimer;
+import org.l2junity.gameserver.model.events.timers.IEventTimerCancel;
+import org.l2junity.gameserver.model.events.timers.IEventTimerEvent;
 import org.l2junity.gameserver.model.events.timers.TimerHolder;
 
 /**
@@ -36,11 +37,13 @@ import org.l2junity.gameserver.model.events.timers.TimerHolder;
 public final class TimerExecutor<T>
 {
 	private final Map<T, Set<TimerHolder<T>>> _timers = new ConcurrentHashMap<>();
-	private final IEventTimer<T> _listener;
+	private final IEventTimerEvent<T> _eventListener;
+	private final IEventTimerCancel<T> _cancelListener;
 	
-	public TimerExecutor(IEventTimer<T> listener)
+	public TimerExecutor(IEventTimerEvent<T> eventListener, IEventTimerCancel<T> cancelListener)
 	{
-		_listener = listener;
+		_eventListener = eventListener;
+		_cancelListener = cancelListener;
 	}
 	
 	/**
@@ -71,9 +74,9 @@ public final class TimerExecutor<T>
 	 * @param eventTimer
 	 * @return {@code true} if timer were successfully added, {@code false} in case it exists already
 	 */
-	public boolean addTimer(T event, StatsSet params, long time, Npc npc, PlayerInstance player, IEventTimer<T> eventTimer)
+	public boolean addTimer(T event, StatsSet params, long time, Npc npc, PlayerInstance player, IEventTimerEvent<T> eventTimer)
 	{
-		return addTimer(new TimerHolder<>(event, params, time, npc, player, false, eventTimer, this));
+		return addTimer(new TimerHolder<>(event, params, time, npc, player, false, eventTimer, _cancelListener, this));
 	}
 	
 	/**
@@ -83,9 +86,9 @@ public final class TimerExecutor<T>
 	 * @param eventTimer
 	 * @return {@code true} if timer were successfully added, {@code false} in case it exists already
 	 */
-	public boolean addTimer(T event, long time, IEventTimer<T> eventTimer)
+	public boolean addTimer(T event, long time, IEventTimerEvent<T> eventTimer)
 	{
-		return addTimer(new TimerHolder<>(event, null, time, null, null, false, eventTimer, this));
+		return addTimer(new TimerHolder<>(event, null, time, null, null, false, eventTimer, _cancelListener, this));
 	}
 	
 	/**
@@ -99,7 +102,7 @@ public final class TimerExecutor<T>
 	 */
 	public boolean addTimer(T event, StatsSet params, long time, Npc npc, PlayerInstance player)
 	{
-		return addTimer(event, params, time, npc, player, _listener);
+		return addTimer(event, params, time, npc, player, _eventListener);
 	}
 	
 	/**
@@ -112,7 +115,7 @@ public final class TimerExecutor<T>
 	 */
 	public boolean addTimer(T event, long time, Npc npc, PlayerInstance player)
 	{
-		return addTimer(event, null, time, npc, player, _listener);
+		return addTimer(event, null, time, npc, player, _eventListener);
 	}
 	
 	/**
@@ -125,9 +128,9 @@ public final class TimerExecutor<T>
 	 * @param eventTimer
 	 * @return {@code true} if timer were successfully added, {@code false} in case it exists already
 	 */
-	public boolean addRepeatingTimer(T event, StatsSet params, long time, Npc npc, PlayerInstance player, IEventTimer<T> eventTimer)
+	public boolean addRepeatingTimer(T event, StatsSet params, long time, Npc npc, PlayerInstance player, IEventTimerEvent<T> eventTimer)
 	{
-		return addTimer(new TimerHolder<>(event, params, time, npc, player, true, eventTimer, this));
+		return addTimer(new TimerHolder<>(event, params, time, npc, player, true, eventTimer, _cancelListener, this));
 	}
 	
 	/**
@@ -141,7 +144,7 @@ public final class TimerExecutor<T>
 	 */
 	public boolean addRepeatingTimer(T event, StatsSet params, long time, Npc npc, PlayerInstance player)
 	{
-		return addRepeatingTimer(event, params, time, npc, player, _listener);
+		return addRepeatingTimer(event, params, time, npc, player, _eventListener);
 	}
 	
 	/**
@@ -154,11 +157,11 @@ public final class TimerExecutor<T>
 	 */
 	public boolean addRepeatingTimer(T event, long time, Npc npc, PlayerInstance player)
 	{
-		return addRepeatingTimer(event, null, time, npc, player, _listener);
+		return addRepeatingTimer(event, null, time, npc, player, _eventListener);
 	}
 	
 	/**
-	 * That method is executed right after notification to {@link IEventTimer#onTimerEvent(TimerHolder)} in order to remove the holder from the _timers map
+	 * That method is executed right after notification to {@link IEventTimerEvent#onTimerEvent(TimerHolder)} in order to remove the holder from the _timers map
 	 * @param holder
 	 */
 	public void onTimerPostExecute(TimerHolder<T> holder)
@@ -191,7 +194,7 @@ public final class TimerExecutor<T>
 		final Set<TimerHolder<T>> timers = _timers.get(timer.getEvent());
 		if ((timers != null) && timers.remove(timer))
 		{
-			_listener.onTimerEvent(timer);
+			_eventListener.onTimerEvent(timer);
 			if (timers.isEmpty())
 			{
 				_timers.remove(timer.getEvent());

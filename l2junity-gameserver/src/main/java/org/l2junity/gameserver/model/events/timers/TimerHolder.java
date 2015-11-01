@@ -40,14 +40,15 @@ public class TimerHolder<T> implements Runnable
 	private final Npc _npc;
 	private final PlayerInstance _player;
 	private final boolean _isRepeating;
-	private final IEventTimer<T> _script;
+	private final IEventTimerEvent<T> _eventScript;
+	private final IEventTimerCancel<T> _cancelScript;
 	private final TimerExecutor<T> _postExecutor;
 	private final ScheduledFuture<?> _task;
 	
-	public TimerHolder(T event, StatsSet params, long time, Npc npc, PlayerInstance player, boolean isRepeating, IEventTimer<T> script, TimerExecutor<T> postExecutor)
+	public TimerHolder(T event, StatsSet params, long time, Npc npc, PlayerInstance player, boolean isRepeating, IEventTimerEvent<T> eventScript, IEventTimerCancel<T> cancelScript, TimerExecutor<T> postExecutor)
 	{
 		Objects.requireNonNull(event, getClass().getSimpleName() + ": \"event\" cannot be null!");
-		Objects.requireNonNull(script, getClass().getSimpleName() + ": \"script\" cannot be null!");
+		Objects.requireNonNull(eventScript, getClass().getSimpleName() + ": \"script\" cannot be null!");
 		Objects.requireNonNull(postExecutor, getClass().getSimpleName() + ": \"postExecutor\" cannot be null!");
 		_event = event;
 		_params = params;
@@ -55,7 +56,8 @@ public class TimerHolder<T> implements Runnable
 		_npc = npc;
 		_player = player;
 		_isRepeating = isRepeating;
-		_script = script;
+		_eventScript = eventScript;
+		_cancelScript = cancelScript;
 		_postExecutor = postExecutor;
 		_task = _isRepeating ? ThreadPoolManager.getInstance().scheduleEventAtFixedRate(this, _time, _time) : ThreadPoolManager.getInstance().scheduleEvent(this, _time);
 	}
@@ -111,7 +113,7 @@ public class TimerHolder<T> implements Runnable
 		}
 		
 		_task.cancel(false);
-		_postExecutor.onTimerCancel(this);
+		_cancelScript.onTimerCancel(this);
 		return true;
 	}
 	
@@ -150,7 +152,7 @@ public class TimerHolder<T> implements Runnable
 		_postExecutor.onTimerPostExecute(this);
 		
 		// Notify the script that the event has been fired.
-		_script.onTimerEvent(this);
+		_eventScript.onTimerEvent(this);
 	}
 	
 	@Override
@@ -174,6 +176,6 @@ public class TimerHolder<T> implements Runnable
 	@Override
 	public String toString()
 	{
-		return "event: " + _event + " params: " + _params + " time: " + _time + " npc: " + _npc + " player: " + _player + " repeating: " + _isRepeating + " script: " + _script.getClass().getSimpleName() + " postExecutor: " + _postExecutor.getClass().getSimpleName();
+		return "event: " + _event + " params: " + _params + " time: " + _time + " npc: " + _npc + " player: " + _player + " repeating: " + _isRepeating + " script: " + _eventScript.getClass().getSimpleName() + " postExecutor: " + _postExecutor.getClass().getSimpleName();
 	}
 }

@@ -20,10 +20,8 @@ package ai.spawns;
 
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
-import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
@@ -58,22 +56,9 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 		// Spawn that comes from RaidBossSpawnManager
 		if ((npc.getSpawn() == null) || (npc.getSpawn().getNpcSpawnTemplate() == null))
 		{
-			getTimers().addTimer("delete", 1000, npc, null);
+			getTimers().addTimer("delete", 1000, event -> npc.deleteMe());
 		}
 		return super.onSpawn(npc);
-	}
-	
-	@Override
-	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
-	{
-		switch (event)
-		{
-			case "delete":
-			{
-				npc.deleteMe();
-				break;
-			}
-		}
 	}
 	
 	@Override
