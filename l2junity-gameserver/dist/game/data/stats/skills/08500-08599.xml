@@ -1064,10 +1064,11 @@
 		</for>
 	</skill>
 	<skill id="8568" levels="1" name="Maximum Sonic Focus">
+		<!-- Glory Days confirmed -->
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
 		<set name="icon" val="icon.skill0919" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hpConsume" val="80" />
 		<set name="mpConsume" val="20" />
 		<set name="hitTime" val="900" />
@@ -1089,11 +1090,11 @@
 		</for>
 	</skill>
 	<skill id="8569" levels="1" name="Sonic Rage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the enemy with a devastating momentum burst. Requires a dualsword. Possible up to stage 7. Over-hit and critical hit are possible. -->
 		<set name="icon" val="icon.skill0345" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hpConsume" val="50" />
 		<set name="mpConsume" val="5" />
 		<set name="castRange" val="600" />
@@ -1103,13 +1104,29 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="78" />
 		<set name="hitTime" val="1500" />
+		<set name="nextActionAttack" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="DUAL, DUALBLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="1" />
+				<param criticalChance="10" />
+				<param overHit="true" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="FocusMomentum">
+				<param maxCharges="7" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="8570" levels="1" name="Raging Force">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the enemy with a devastating burst of energy of wind. Requires a fist weapon. Possible up to stage 7. Over-hit and critical hit are possible. -->
 		<set name="icon" val="icon.skill0346" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hpConsume" val="50" />
 		<set name="mpConsume" val="5" />
 		<set name="castRange" val="600" />
@@ -1119,13 +1136,29 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="78" />
 		<set name="hitTime" val="1500" />
+		<set name="nextActionAttack" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="DUALFIST" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="1" />
+				<param criticalChance="10" />
+				<param overHit="true" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="FocusMomentum">
+				<param maxCharges="7" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="8571" levels="1" name="Demolition Impact">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Unleashes a stun of destruction to attack nearby enemies with 6084 Power added to P. Atk. Requires a two-handed sword/ blunt weapon. Over-hit and Critical are possible. -->
 		<set name="icon" val="icon.skill0777" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="164" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
@@ -1136,13 +1169,28 @@
 		<set name="magicLvl" val="81" />
 		<set name="affectLimit" val="5-12" />
 		<set name="reuseDelay" val="75000" />
+		<set name="affectRange" val="500" />
+		<set name="fanRange" val="0,0,500,60" />
+		<cond msgId="113" addName="1">
+			<and>
+				<using kind="SWORD,BLUNT" />
+				<using slot="lrhand" />
+			</and>
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="6084" />
+				<param criticalChance="15" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8572" levels="1" name="Armor Crush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the enemy with 3295 Power added to P. Atk. Stun the enemy for 9 seconds, and decrease their P. Def. by 30% and M. Def. by 30%. Requires a sword, blunt weapon, two-handed sword or two-handed blunt weapon. Over-hit and critical hit are possible. Ignores Shield Defense. -->
 		<set name="icon" val="icon.skill0362" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hpConsume" val="338" />
 		<set name="mpConsume" val="35" />
 		<set name="castRange" val="40" />
@@ -1162,6 +1210,16 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.7" />
+				<mul stat="mDef" val="0.7" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8573" levels="1" name="Soul Rage">
 		<!-- Glory Days Confirmed -->
@@ -1191,11 +1249,11 @@
 		</selfEffects>
 	</skill>
 	<skill id="8574" levels="1" name="Enuma Elish">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Attacks enemies in front using the mighty Sword of Creation with 6468 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible. -->
 		<set name="icon" val="icon.skill0526" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="80" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
@@ -1206,14 +1264,23 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="78" />
 		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="400" />
 		<set name="reuseDelay" val="75000" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<set name="fanRange" val="0,0,400,90" />
+		<for>
+			<effect name="PhysicalSoulAttack">
+				<param power="6468" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8575" levels="1" name="Soul Vortex">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 112 Power added to M. Atk. For 30 seconds, decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. -->
 		<set name="icon" val="icon.skill1512" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="105" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
@@ -1231,13 +1298,27 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="isDebuff" val="true" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<for>
+			<effect name="MagicalSoulAttack">
+				<param power="112" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.7" />
+				<mul stat="mAtkSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="-12" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8576" levels="1" name="Soul Vortex Extinction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Detonates an Soul Vortex to inflict non-attribute damage on the enemy with 195 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
 		<set name="icon" val="icon.skill1513" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="108" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
@@ -1248,13 +1329,25 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="79" />
 		<set name="isMagic" val="1" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="MULTI_DEBUFF_SOUL" />
+		</cond>
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_SOUL;9" />
+			</effect>
+			<effect name="MagicalSoulAttack">
+				<param power="195" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8577" levels="1" name="Wild Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Fires bolt at random to attack enemies in front with 6084 Power added to P. Atk. Requires a crossbow. Over-hit and Critical are possible. Increases Power upon the consumption of up to 5 souls. -->
 		<set name="icon" val="icon.skill0790" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="123" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -1266,13 +1359,26 @@
 		<set name="magicLvl" val="81" />
 		<set name="affectLimit" val="5-12" />
 		<set name="reuseDelay" val="75000" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<set name="affectRange" val="900" />
+		<set name="fanRange" val="0,0,900,40" />
+		<cond msgId="113" addName="1">
+			<using kind="CROSSBOW" />
+		</cond>
+		<for>
+			<effect name="PhysicalSoulAttack">
+				<param power="6468" />
+				<param criticalChance="15" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8578" levels="1" name="Multiple Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Attacks multiple enemies with 16667 Power added to P. Atk. Over-hit and Critical hit are possible. Requires a bow/crossbow. -->
 		<set name="icon" val="icon.skill0987" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="83" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
@@ -1284,13 +1390,26 @@
 		<set name="magicLvl" val="83" />
 		<set name="affectLimit" val="8-0-1" />
 		<set name="reuseDelay" val="12000" />
+		<set name="staticReuse" val="true" />
+		<set name="affectRange" val="900" />
+		<set name="fanRange" val="0,0,900,60" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW, CROSSBOW" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="16667" />
+				<param criticalChance="15" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8579" levels="1" name="Fire Vortex">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Summons a dimensional vortex that inflicts Fire damage on the enemy, supplementing user's M. Atk. with 140 Power. For 30 seconds, decreases Speed by 10%, Atk. Spd. by 30%, Casting Spd. by 10%, and Fire Resistance by 20. Consumes 12 MP every second. Over-hit is possible. -->
 		<set name="icon" val="icon.skill1339" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="105" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="6000" />
@@ -1310,13 +1429,28 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="140" />
+				<param overHit="true" />
+			</effect>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="12" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="moveSpeed" val="0.9" />
+				<mul stat="pAtkSpd" val="0.7" />
+				<mul stat="mAtkSpd" val="0.9" />
+				<sub stat="fireRes" val="20" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8580" levels="1" name="Fire Vortex Buster">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Detonates a Fire Vortex that inflicts Fire damage on the enemy with 195 Power added to user's M. Atk. -->
 		<set name="icon" val="icon.skill1451" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="108" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
@@ -1329,13 +1463,24 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="isMagic" val="1" />
+		<cond msgId="109">
+			<target abnormalType="MULTI_DEBUFF_FIRE" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="195" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_FIRE,9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8581" levels="1" name="Meteor">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Crashes down meteors to inflict continuous fire damage near the enemy with 117 Power added to M. Atk. -->
 		<set name="icon" val="icon.skill1467" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="72" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="11000" />
@@ -1353,13 +1498,21 @@
 		<set name="mpPerChanneling" val="72" />
 		<set name="channelingTickInterval" val="2000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="117" />
+			</effect>
+			<effect name="DamOverTime" ticks="3">
+				<param power="111" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8582" levels="1" name="Dark Vortex">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Stirs up a vortex connecting to the dimension of darkness and inflicts dark damage on the enemy with 139 Power added to M. Atk. Absorbs 25% as HP. For 30 seconds, decreases Accuracy by 6 and Dark Resistance by 30. Consumes 12 MP every second. -->
 		<set name="icon" val="icon.skill1343" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="105" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="6000" />
@@ -1379,9 +1532,21 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="HpDrain">
+				<param power="139" />
+				<param percentage="25" />
+			</effect>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="12" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="darkRes" val="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8583" levels="1" name="Day of Doom">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Creates a seal that casts a powerful curse that decreases all the abilities of nearby enemies. The seal's effect disappears upon leaving the area. Consumes 1 Magic Symbol. -->
 		<set name="icon" val="icon.skill1422" />
 		<set name="operateType" val="A1" />
