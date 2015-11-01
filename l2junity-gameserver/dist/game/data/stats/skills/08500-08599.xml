@@ -1562,13 +1562,21 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="DispelBySlotMyself">
+				<param dispel="MAGICAL_STANCE" />
+			</effect>
+			<effect name="SummonNpc">
+				<param npcId="13028" npcCount="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8584" levels="1" name="Ice Vortex">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Stirs up a vortex connecting to the dimension of Water and inflicts Water damage on the enemy with 140 Power added to M. Atk. For 30 seconds, decreases Speed by 30%, Atk. Spd. by 10%, Casting Spd. by 10%, and resistance against Water by 20. Consumes 12 MP every second. Over-hit is possible. -->
 		<set name="icon" val="icon.skill1340" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="105" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="6000" />
@@ -1588,13 +1596,28 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="140" />
+				<param overHit="true" />
+			</effect>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="12" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="moveSpeed" val="0.7" />
+				<mul stat="pAtkSpd" val="0.9" />
+				<mul stat="mAtkSpd" val="0.9" />
+				<sub stat="waterRes" val="20" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8585" levels="1" name="Ice Vortex Crusher">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Detonates an Ice Vortex that inflicts Water damage on the enemy with 195 Power added to user's M. Atk. -->
 		<set name="icon" val="icon.skill1453" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="108" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
@@ -1607,13 +1630,24 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="isMagic" val="1" />
+		<cond msgId="109">
+			<target abnormalType="MULTI_DEBUFF_WATER" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="195" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_WATER,9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8586" levels="1" name="Star Fall">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Crashes down meteors to inflict continuous non-type damage near the enemy with 117 Power added to M. Atk. -->
 		<set name="icon" val="icon.skill1468" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="72" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="11000" />
@@ -1629,13 +1663,18 @@
 		<set name="mpPerChanneling" val="72" />
 		<set name="channelingTickInterval" val="2000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="117" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8587" levels="1" name="Wind Vortex">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Stirs up a vortex connecting to the dimension of Wind and inflicts Wind damage on the enemy with 140 Power added to M. Atk. For 30 seconds, decreases Speed by 10%, Atk. Spd. by 10%, Casting Spd. by 30%, and resistance against Wind by 20. Consumes 12 MP every second. Over-hit is possible. -->
 		<set name="icon" val="icon.skill1341" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="105" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="6000" />
@@ -1655,13 +1694,26 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="140" />
+				<param overHit="true" />
+			</effect>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="12" />
+				<mul stat="moveSpeed" val="0.9" />
+				<mul stat="pAtkSpd" val="0.9" />
+				<mul stat="mAtkSpd" val="0.7" />
+				<sub stat="windRes" val="20" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8588" levels="1" name="Wind Vortex Slug">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Creates a powerful Wind Vortex that inflicts Wind damage on the enemy with 195 Power added to user's M. Atk. -->
 		<set name="icon" val="icon.skill1456" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="108" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
@@ -1674,6 +1726,17 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="isMagic" val="1" />
+		<cond msgId="109">
+			<target abnormalType="MULTI_DEBUFF_WIND" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="195" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_WIND,9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8589" levels="1" name="Summon Feline King">
 		<!-- AUTO GENERATED SKILL -->
