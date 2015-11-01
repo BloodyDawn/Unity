@@ -170,9 +170,19 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		onTimerEvent(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
 	}
 	
+	@Override
+	public final void onTimerCancel(TimerHolder<String> holder)
+	{
+		onTimerCancel(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
+	}
+	
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
 		_log.warn("[{}]: Timer event arrived at non overriden onTimerEvent method event: {} npc: {} player: {}", getClass().getSimpleName(), event, npc, player);
+	}
+	
+	public void onTimerCancel(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
 	}
 	
 	/**
@@ -191,6 +201,11 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			}
 		}
 		return _timerExecutor;
+	}
+	
+	public boolean hasTimers()
+	{
+		return _timerExecutor != null;
 	}
 	
 	private void initializeAnnotationListeners()

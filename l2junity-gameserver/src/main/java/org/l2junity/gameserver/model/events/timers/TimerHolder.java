@@ -111,6 +111,7 @@ public class TimerHolder<T> implements Runnable
 		}
 		
 		_task.cancel(false);
+		_postExecutor.onTimerCancel(this);
 		return true;
 	}
 	

@@ -184,6 +184,22 @@ public final class TimerExecutor<T>
 	}
 	
 	/**
+	 * @param timer
+	 */
+	public void onTimerCancel(TimerHolder<T> timer)
+	{
+		final Set<TimerHolder<T>> timers = _timers.get(timer.getEvent());
+		if ((timers != null) && timers.remove(timer))
+		{
+			_listener.onTimerEvent(timer);
+			if (timers.isEmpty())
+			{
+				_timers.remove(timer.getEvent());
+			}
+		}
+	}
+	
+	/**
 	 * Cancels and removes all timers from the _timers map
 	 */
 	public void cancelAllTimers()
@@ -254,18 +270,19 @@ public final class TimerExecutor<T>
 			final TimerHolder<T> holder = holders.next();
 			if (holder.isEqual(event, npc, player))
 			{
-				holders.remove();
-				
-				// Remove empty set
-				if (timers.isEmpty())
-				{
-					_timers.remove(event);
-				}
-				
 				return holder.cancelTimer();
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Cancel all timers of specified npc
+	 * @param npc
+	 */
+	public void cancelTimersOf(Npc npc)
+	{
+		_timers.values().forEach(timers -> timers.stream().filter(holder -> holder.getNpc() == npc).forEach(TimerHolder::cancelTimer));
 	}
 	
 	/**

@@ -64,6 +64,7 @@ import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
+import org.l2junity.gameserver.instancemanager.TimersManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.CharEffectList;
@@ -2042,6 +2043,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			getSummoner().removeSummonedNpc(getObjectId());
 		}
 		
+		// Cancel all timers related to this Creature
+		TimersManager.getInstance().cancelTimers(getObjectId());
 		return true;
 	}
 	
