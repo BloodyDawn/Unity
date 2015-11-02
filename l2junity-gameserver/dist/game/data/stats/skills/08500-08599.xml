@@ -1739,7 +1739,7 @@
 		</for>
 	</skill>
 	<skill id="8589" levels="1" name="Summon Feline King">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Summon the servitor Feline King. Requires 4 Spirit Ore and consumes 11 Spirit Ore at regular intervals up to 14 times. -->
 		<set name="icon" val="icon.skill1406" />
 		<set name="operateType" val="A1" />
@@ -1751,9 +1751,24 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="79" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="4" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="14836" />
+				<param consumeItemId="3031" consumeItemCount="11" /> <!-- Spirit Ore -->
+				<param lifeTime="3600" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8590" levels="1" name="Final Servitor">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- For 5 minutes, causes the servitor to be possessed with the spirit of an ancient hero, instantly recovering 20% of HP. Increases Max HP by 20%, Accuracy by 4, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, Critical Rate by 20%, Critical Damage by 20%, M. Def. by 20%, M. Atk. by 20%, Casting Spd. by 20%, and Debuff Resistance by 20. Decreases Speed by 20%. Consumes 20 Spirit Ore. -->
 		<set name="icon" val="icon.skill1349" />
 		<set name="operateType" val="A2" />
@@ -1772,9 +1787,29 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="20" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<for>
+			<effect name="Buff">
+				<mul stat="rCrit" val="1.2" />
+				<mul stat="pAtk" val="1.1" />
+				<mul stat="cAtk" val="1.2" />
+				<mul stat="pAtkSpd" val="1.2" />
+				<mul stat="moveSpeed" val="0.8" />
+				<add stat="accCombat" val="4" />
+				<mul stat="pDef" val="1.2" />
+				<mul stat="mDef" val="1.2" />
+				<mul stat="mAtk" val="1.2" />
+				<mul stat="mAtkSpd" val="1.2" />
+				<sub stat="debuffVuln" val="20" />
+			</effect>
+			<effect name="MaxHp">
+				<param amount="20" mode="PER" heal="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8591" levels="1" name="Summon Magnus the Unicorn">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Summons Magnus the Unicorn. Requires 4 Spirit Ore and additionally consumes 11 Spirit Ore up to 14 times. -->
 		<set name="icon" val="icon.skill1407" />
 		<set name="operateType" val="A1" />
@@ -1786,9 +1821,24 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="79" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="4" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="14837" />
+				<param consumeItemId="3031" consumeItemCount="11" />
+				<param lifeTime="3600" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8592" levels="1" name="Summon Spectral Lord">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Summon the servitor Spectral Lord. Requires 4 Spirit Ore and consumes 11 Spirit Ore at regular intervals up to 14 times. -->
 		<set name="icon" val="icon.skill1408" />
 		<set name="operateType" val="A1" />
@@ -1800,19 +1850,35 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="79" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="4" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="14838" />
+				<param consumeItemId="3031" consumeItemCount="11" />
+				<param lifeTime="3600" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8593" levels="1" name="Servitor Barrier">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Momentarily makes the servitor invincible. Consumes 5 Spirit Ore. -->
 		<set name="icon" val="icon.skill1496" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="73" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="669" />
 		<set name="abnormalType" val="INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1821,13 +1887,19 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="isMagic" val="1" />
+		<set name="removedOnAnyActionExceptMove" val="true" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<for>
+			<effect name="Invincible" />
+		</for>
 	</skill>
 	<skill id="8594" levels="1" name="Cleanse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Cancels the target's debuffs. Consumes 1 Einhasad's Holy Water. -->
 		<set name="icon" val="icon.skill1409" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="59" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="4000" />
@@ -1838,13 +1910,20 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="78" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="8874" /> <!-- Einhasad's Holy Water -->
+		<for>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8595" levels="1" name="Prophecy of Water">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- For 5 minutes, a powerful spirit acts to increase the damage caused by the targeted party member's magic damage by 2, MP Recovery Bonus by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20% and MP Consumption for skill use by 5%. Consumes 10 Spirit Ore. -->
 		<set name="icon" val="icon.skill1355" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="mpConsume" val="72" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="4000" />
@@ -1859,13 +1938,32 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<for>
+			<effect name="Buff">
+				<add stat="mCritRate" val="2" />
+				<mul stat="regMp" val="1.2" />
+				<mul stat="pAtk" val="1.1" />
+				<mul stat="pDef" val="1.2" />
+				<mul stat="pAtkSpd" val="1.2" />
+				<mul stat="mAtk" val="1.2" />
+				<mul stat="mDef" val="1.2" />
+				<mul stat="mAtkSpd" val="1.2" />
+				<sub stat="debuffVuln" val="10" />
+				<mul stat="moveSpeed" val="0.8" />
+				<mul stat="MagicalMpConsumeRate" val="0.95" />
+				<mul stat="PhysicalMpConsumeRate" val="0.95" />
+				<mul stat="DanceMpConsumeRate" val="0.95" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8596" levels="1" name="Prophecy of Wind">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- For 5 minutes, a powerful spirit acts to increase a party member's Max HP by 20%, rate of critical attack by 20%, magic damage's Critical Rate by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. Restores HP by using 5% of the damage inflicted upon the enemy with a certain probability. Consumes 10 Spirit Ore. -->
 		<set name="icon" val="icon.skill1357" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="mpConsume" val="72" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="4000" />
@@ -1880,13 +1978,35 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<for>
+			<effect name="Buff">
+				<mul stat="rCrit" val="0.2" />
+				<mul stat="mCritPower" val="1.2" />
+				<mul stat="pAtk" val="1.1" />
+				<mul stat="pDef" val="1.2" />
+				<mul stat="pAtkSpd" val="1.2" />
+				<mul stat="mAtk" val="1.2" />
+				<mul stat="mDef" val="1.2" />
+				<mul stat="mAtkSpd" val="1.2" />
+				<sub stat="debuffVuln" val="10" />
+				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="MaxHp">
+				<param amount="20" mode="PER" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8597" levels="1" name="Dance of Siren">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Increases the Critical Rate of all party members' damage attack magic by 100% for 2 minutes. Additionally increases MP Consumption when dancing while song/dance is in effect. Requires a dualsword. -->
 		<set name="icon" val="icon.skill0365" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="60" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="3000" />
@@ -1900,18 +2020,27 @@
 		<set name="abnormalTime" val="120" />
 		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="3" />
+		<cond msgId="113" addName="1">
+			<using kind="DUAL" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="mCritRate" val="2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8598" levels="1" name="Song of Silence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Weaves a mystical song that blocks all the enemy's physical and magical skills for 2 minutes. -->
 		<set name="icon" val="icon.skill0437" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="54" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="150000" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="SILENCE_ALL" />
+		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -1924,14 +2053,19 @@
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Mute" />
+			<effect name="PhysicalMute" />
+		</for>
 	</skill>
 	<skill id="8599" levels="1" name="Chain Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Recovers the target and the 10 most injured allies around the target by 30% of their Max HP. The recovery amount decreases starting from the most injured person. Requires 4 Spirit Ore. -->
 		<set name="icon" val="icon.skill1553" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="194" />
+		<set name="targetType" val="AREA_FRIENDLY" />
+		<set name="mpConsume" val="155" />
+		<set name="mpInitialConsume" val="39" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
@@ -1943,5 +2077,12 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="9-0" />
 		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="4" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
+		<for>
+			<effect name="HealPercent">
+				<param power="30" />
+			</effect>
+		</for>
 	</skill>
 </list>
