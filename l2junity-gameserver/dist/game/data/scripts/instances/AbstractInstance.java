@@ -69,6 +69,20 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	}
 	
 	/**
+	 * Show an on screen message to each player inside instance.
+	 * @param instance instance where message should be broadcasted
+	 * @param npcStringId the NPC string to display
+	 * @param position the position of the message on the screen
+	 * @param time the duration of the message in milliseconds
+	 * @param showEffect show visual effect near text
+	 * @param params values of parameters to replace in the NPC String (like S1, C1 etc.)
+	 */
+	public void showOnScreenMsg(Instance instance, NpcStringId npcStringId, int position, int time, boolean showEffect, String... params)
+	{
+		instance.broadcastPacket(new ExShowScreenMessage(npcStringId, position, time, showEffect, params));
+	}
+	
+	/**
 	 * Put player into instance world.<br>
 	 * If instance world doesn't found for player then try to create new one.
 	 * @param player player who wants to enter into instance
