@@ -8239,7 +8239,6 @@ public final class PlayerInstance extends Playable
 		if (inObserverMode())
 		{
 			sendPacket(SystemMessageId.OBSERVERS_CANNOT_PARTICIPATE);
-			abortCast();
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -12420,7 +12419,7 @@ public final class PlayerInstance extends Playable
 			return;
 		}
 		abortAttack();
-		abortCast();
+		// abortCast(); Confirmed in retail, playing a movie does not abort cast.
 		stopMove(null);
 		setMovieHolder(holder);
 		sendPacket(new ExStartScenePlayer(holder.getMovie()));

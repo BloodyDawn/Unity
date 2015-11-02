@@ -91,7 +91,6 @@ public abstract class PlayableAI extends CharacterAI
 				// Newbie Protection Buff,
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
-				_actor.abortCast();
 				return;
 			}
 			
@@ -101,7 +100,6 @@ public abstract class PlayableAI extends CharacterAI
 				// Newbie Protection Buff,
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
-				_actor.abortCast();
 				return;
 			}
 			
@@ -109,7 +107,6 @@ public abstract class PlayableAI extends CharacterAI
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
-				_actor.abortCast();
 				return;
 			}
 		}

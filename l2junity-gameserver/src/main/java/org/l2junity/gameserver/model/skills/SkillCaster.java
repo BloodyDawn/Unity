@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.skills;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ScheduledFuture;
@@ -337,7 +338,7 @@ public class SkillCaster implements Runnable
 					case AURA_CORPSE_MOB:
 						break;
 					default:
-						stopCasting(true);
+						stopCasting(true, skill, target, item);
 						return;
 				}
 			}
@@ -401,7 +402,7 @@ public class SkillCaster implements Runnable
 							_caster.sendPacket(SystemMessageId.A_MALICIOUS_SKILL_CANNOT_BE_USED_IN_A_PEACE_ZONE);
 						}
 					}
-					stopCasting(true);
+					stopCasting(true, skill, target, item);
 					return;
 				}
 			}
@@ -424,7 +425,7 @@ public class SkillCaster implements Runnable
 				if (mpConsume > _caster.getCurrentMp())
 				{
 					_caster.sendPacket(SystemMessageId.NOT_ENOUGH_MP);
-					stopCasting(true);
+					stopCasting(true, skill, target, item);
 					return;
 				}
 				
@@ -439,7 +440,7 @@ public class SkillCaster implements Runnable
 				if (consumeHp >= _caster.getCurrentHp())
 				{
 					_caster.sendPacket(SystemMessageId.NOT_ENOUGH_HP);
-					stopCasting(true);
+					stopCasting(true, skill, target, item);
 					return;
 				}
 				
@@ -458,7 +459,7 @@ public class SkillCaster implements Runnable
 			{
 				if (!_caster.getActingPlayer().decreaseSouls(skill.getMaxSoulConsumeCount(), skill))
 				{
-					stopCasting(true);
+					stopCasting(true, skill, target, item);
 					return;
 				}
 			}
@@ -474,7 +475,7 @@ public class SkillCaster implements Runnable
 			// On each repeat recharge shots before cast.
 			_caster.rechargeShots(skill.useSoulShot(), skill.useSpiritShot(), false);
 			
-			stopCasting(false);
+			stopCasting(false, skill, target, item);
 		}
 		catch (Exception e)
 		{
@@ -485,13 +486,14 @@ public class SkillCaster implements Runnable
 	/**
 	 * Stops this casting and cleans all cast parameters.<br>
 	 * @param aborted if {@code true}, server will send packets to the player, notifying him that the skill has been aborted.
+	 * @param references used for logging purposes.
 	 */
-	public void stopCasting(boolean aborted)
+	public void stopCasting(boolean aborted, Object... references)
 	{
 		// Verify for same status.
 		if (!isCasting())
 		{
-			_log.warn("Character: " + _caster + " is attempting to stop casting skill but he is not casting!", new IllegalStateException());
+			_log.warn("Character: " + _caster + " is attempting to stop casting skill {} but he is not casting!", _skill, new IllegalStateException(Arrays.toString(references)));
 		}
 		
 		// Cancel the task and unset it.
@@ -563,7 +565,7 @@ public class SkillCaster implements Runnable
 		
 		if (!_isCasting.compareAndSet(true, false))
 		{
-			_log.warn("Character: {} is finishing cast of skill {}, but he has already finished.", _caster, _skill);
+			_log.warn("Character: {} is finishing cast, but he has already finished.", _caster);
 		}
 	}
 	

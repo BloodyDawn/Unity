@@ -319,7 +319,6 @@ public class CharacterAI extends AbstractAI
 		if ((getIntention() == AI_INTENTION_REST) && skill.isMagic())
 		{
 			clientActionFailed();
-			_actor.abortCast();
 			return;
 		}
 		

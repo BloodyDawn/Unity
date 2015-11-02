@@ -278,7 +278,6 @@ public class PlayerAI extends PlayableAI
 		{
 			if (maybeMoveToPosition(((PlayerInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
 			{
-				_actor.abortCast();
 				return;
 			}
 		}
@@ -291,12 +290,10 @@ public class PlayerAI extends PlayableAI
 					// Notify the target
 					setCastTarget(null);
 				}
-				_actor.abortCast();
 				return;
 			}
 			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 			{
-				_actor.abortCast();
 				return;
 			}
 		}

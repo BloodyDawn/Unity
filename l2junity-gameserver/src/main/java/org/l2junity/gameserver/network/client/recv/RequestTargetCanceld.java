@@ -57,7 +57,7 @@ public final class RequestTargetCanceld implements IClientIncomingPacket
 		if (_unselect == 0)
 		{
 			// Try to abort cast, if that fails, then cancel target.
-			final boolean castAborted = activeChar.abortCast(s -> s.canAbortCast() && s.isNormalType());
+			final boolean castAborted = activeChar.abortCast();
 			if (!castAborted && (activeChar.getTarget() != null))
 			{
 				activeChar.setTarget(null);

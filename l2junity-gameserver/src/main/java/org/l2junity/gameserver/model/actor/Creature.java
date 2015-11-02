@@ -3221,7 +3221,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final boolean abortCast(Predicate<SkillCaster> filter)
 	{
-		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, filter);
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, SkillCaster::canAbortCast, filter);
 		if (skillCaster != null)
 		{
 			skillCaster.stopCasting(true);
@@ -4028,12 +4028,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			if (getLevel() > (target.getLevel() + 8))
 			{
 				Skill skill = CommonSkill.RAID_CURSE2.getSkill();
-				
 				if (skill != null)
 				{
-					abortAttack();
-					abortCast();
-					getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					skill.applyEffects(target, this);
 				}
 				else
@@ -4555,9 +4551,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					Skill curseSkill = curse.getSkill();
 					if (curseSkill != null)
 					{
-						abortAttack();
-						abortCast();
-						getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 						curseSkill.applyEffects(target, this);
 					}
 					else
