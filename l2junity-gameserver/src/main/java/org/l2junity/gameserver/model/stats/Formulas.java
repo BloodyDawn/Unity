@@ -948,21 +948,16 @@ public final class Formulas
 	}
 	
 	/**
-	 * Calculate delay (in milliseconds) before next ATTACK
+	 * Calculate how many milliseconds takes to make an attack.
 	 * @param attacker
 	 * @param target
 	 * @param rate
-	 * @return
+	 * @return the delay between each attack with a minimum of 50 milliseconds (max. 10000 attack speed)
 	 */
 	public static int calcPAtkSpd(Creature attacker, Creature target, double rate)
 	{
-		// measured Oct 2006 by Tank6585, formula by Sami
-		// attack speed 312 equals 1500 ms delay... (or 300 + 40 ms delay?)
-		if (rate < 2)
-		{
-			return 2700;
-		}
-		return (int) (470000 / rate);
+		// Measured Nov 2015 by Nik. Formula: atk.spd/500 = hits per second.
+		return (int) Math.max(50, (500000 / rate));
 	}
 	
 	/**
