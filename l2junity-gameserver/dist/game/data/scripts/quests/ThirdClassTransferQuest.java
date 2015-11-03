@@ -215,7 +215,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 						break;
 					}
 					
-					npc.doCast(SHOW_SKILL.getSkill());
+					addSkillCastDesire(npc, player, SHOW_SKILL.getSkill(), 23);
 					player.sendPacket(SystemMessageId.CONGRATULATIONS_YOU_VE_COMPLETED_YOUR_THIRD_CLASS_TRANSFER_QUEST);
 					player.broadcastSocialAction(3);
 					player.setBaseClass(newClassId);
