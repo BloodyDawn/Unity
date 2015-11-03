@@ -18,7 +18,11 @@
  */
 package org.l2junity.gameserver.model;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.model.ensoul.EnsoulOption;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
@@ -45,8 +49,8 @@ public class TradeItem
 		0
 	};
 	private final int[] _enchantOptions;
-	private final int[] _soulCrystalOptions;
-	private final int[] _soulCrystalSpecialOptions;
+	private final Collection<EnsoulOption> _soulCrystalOptions;
+	private final Collection<EnsoulOption> _soulCrystalSpecialOptions;
 	private int _visualId;
 	private int _augmentId;
 	
@@ -67,8 +71,8 @@ public class TradeItem
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
-		_soulCrystalOptions = item.getSoulCrystalOptions();
-		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
+		_soulCrystalOptions = item.getSpecialAbilities();
+		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();
 		_visualId = item.getVisualId();
 		_augmentId = item.isAugmented() ? item.getAugmentation().getId() : 0;
 	}
@@ -87,8 +91,8 @@ public class TradeItem
 		_elemAtkType = Elementals.NONE;
 		_elemAtkPower = 0;
 		_enchantOptions = ItemInstance.DEFAULT_ENCHANT_OPTIONS;
-		_soulCrystalOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
-		_soulCrystalSpecialOptions = ItemInstance.DEFAULT_SOUL_CRYSTAL_OPTIONS;
+		_soulCrystalOptions = Collections.emptyList();
+		_soulCrystalSpecialOptions = Collections.emptyList();
 	}
 	
 	public TradeItem(TradeItem item, long count, long price)
@@ -199,12 +203,12 @@ public class TradeItem
 		return _enchantOptions;
 	}
 	
-	public int[] getSoulCrystalOptions()
+	public Collection<EnsoulOption> getSoulCrystalOptions()
 	{
 		return _soulCrystalOptions;
 	}
 	
-	public int[] getSoulCrystalSpecialOptions()
+	public Collection<EnsoulOption> getSoulCrystalSpecialOptions()
 	{
 		return _soulCrystalSpecialOptions;
 	}

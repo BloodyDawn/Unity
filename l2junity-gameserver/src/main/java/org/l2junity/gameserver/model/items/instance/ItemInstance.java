@@ -27,9 +27,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -39,6 +41,7 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemOptionsData;
+import org.l2junity.gameserver.data.xml.impl.EnsoulData;
 import org.l2junity.gameserver.data.xml.impl.OptionData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.AttributeType;
@@ -60,6 +63,7 @@ import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ensoul.EnsoulOption;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerAugment;
@@ -158,7 +162,6 @@ public final class ItemInstance extends WorldObject
 	
 	//@formatter:off
 	public static final int[] DEFAULT_ENCHANT_OPTIONS = new int[] { 0, 0, 0 };
-	public static final int[] DEFAULT_SOUL_CRYSTAL_OPTIONS = new int[0];
 	//@formatter:on
 	
 	private int _lastChange = 2; // 1 ??, 2 modified, 3 removed
@@ -178,6 +181,8 @@ public final class ItemInstance extends WorldObject
 	private int _shotsMask = 0;
 	
 	private final List<Options> _enchantOptions = new ArrayList<>();
+	private final Map<Integer, EnsoulOption> _ensoulOptions = new LinkedHashMap<>(3);
+	private final Map<Integer, EnsoulOption> _ensoulSpecialOptions = new LinkedHashMap<>(3);
 	
 	/**
 	 * Constructor of the L2ItemInstance from the objectId and the itemId.
@@ -248,6 +253,7 @@ public final class ItemInstance extends WorldObject
 		if (isEquipable())
 		{
 			restoreAttributes();
+			restoreSpecialAbilities();
 		}
 	}
 	
@@ -2048,20 +2054,159 @@ public final class ItemInstance extends WorldObject
 		return DEFAULT_ENCHANT_OPTIONS;
 	}
 	
-	/**
-	 * @return Array of regular Soul Crystal option IDs (Special Abilities).
-	 */
-	public int[] getSoulCrystalOptions()
+	public Collection<EnsoulOption> getSpecialAbilities()
 	{
-		return DEFAULT_SOUL_CRYSTAL_OPTIONS;
+		return Collections.unmodifiableCollection(_ensoulOptions.values());
 	}
 	
-	/**
-	 * @return Array of Special Soul Crystal option IDs (Special Abilities).
-	 */
-	public int[] getSoulCrystalSpecialOptions()
+	public EnsoulOption getSpecialAbility(int index)
 	{
-		return DEFAULT_SOUL_CRYSTAL_OPTIONS;
+		return _ensoulOptions.get(index);
+	}
+	
+	public Collection<EnsoulOption> getAdditionalSpecialAbilities()
+	{
+		return Collections.unmodifiableCollection(_ensoulSpecialOptions.values());
+	}
+	
+	public EnsoulOption getAdditionalSpecialAbility(int index)
+	{
+		return _ensoulSpecialOptions.get(index);
+	}
+	
+	public void addSpecialAbility(EnsoulOption option, int position, int type, boolean updateInDB)
+	{
+		if (type == 1) // Adding regular ability
+		{
+			final EnsoulOption oldOption = _ensoulOptions.put(position, option);
+			if (oldOption != null)
+			{
+				removeSpecialAbility(oldOption);
+			}
+		}
+		else if (type == 2) // Adding special ability
+		{
+			final EnsoulOption oldOption = _ensoulSpecialOptions.put(position, option);
+			if (oldOption != null)
+			{
+				removeSpecialAbility(oldOption);
+			}
+		}
+		
+		if (updateInDB)
+		{
+			updateSpecialAbilities();
+		}
+	}
+	
+	public void applySpecialAbilities()
+	{
+		_ensoulOptions.values().forEach(this::applySpecialAbility);
+		_ensoulSpecialOptions.values().forEach(this::applySpecialAbility);
+	}
+	
+	private void removeSpecialAbility(EnsoulOption option)
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM item_special_abilities WHERE objectId = ? AND optionId = ?"))
+		{
+			ps.setInt(1, getObjectId());
+			ps.setInt(2, option.getId());
+			ps.execute();
+			
+			final Skill skill = option.getSkill();
+			if (skill != null)
+			{
+				final PlayerInstance player = getActingPlayer();
+				if (player != null)
+				{
+					player.removeSkill(skill.getId());
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			_log.warn("Couldn't remove special ability for item: {}", this, e);
+		}
+	}
+	
+	private void applySpecialAbility(EnsoulOption option)
+	{
+		final Skill skill = option.getSkill();
+		if (skill != null)
+		{
+			final PlayerInstance player = getActingPlayer();
+			if (player != null)
+			{
+				if (player.getSkillLevel(skill.getId()) != skill.getLevel())
+				{
+					player.addSkill(skill, false);
+				}
+			}
+		}
+	}
+	
+	private void restoreSpecialAbilities()
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM item_special_abilities WHERE objectId = ? ORDER BY position"))
+		{
+			ps.setInt(1, getObjectId());
+			try (ResultSet rs = ps.executeQuery())
+			{
+				while (rs.next())
+				{
+					final int optionId = rs.getInt("optionId");
+					final int type = rs.getInt("type");
+					final int position = rs.getInt("position");
+					final EnsoulOption option = EnsoulData.getInstance().getOption(optionId);
+					if (option != null)
+					{
+						addSpecialAbility(option, position, type, false);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			_log.warn("Couldn't restore special abilities for item: {}", this, e);
+		}
+	}
+	
+	private void updateSpecialAbilities()
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("INSERT INTO item_special_abilities (`objectId`, `type`, `optionId`, `position`) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE type = ?, optionId = ?, position = ?"))
+		{
+			ps.setInt(1, getObjectId());
+			for (Entry<Integer, EnsoulOption> entry : _ensoulOptions.entrySet())
+			{
+				ps.setInt(2, 1); // regular options
+				ps.setInt(3, entry.getValue().getId());
+				ps.setInt(4, entry.getKey());
+				
+				ps.setInt(5, 1); // regular options
+				ps.setInt(6, entry.getValue().getId());
+				ps.setInt(7, entry.getKey());
+				ps.execute();
+			}
+			
+			for (Entry<Integer, EnsoulOption> entry : _ensoulSpecialOptions.entrySet())
+			{
+				ps.setInt(2, 2); // special options
+				ps.setInt(3, entry.getValue().getId());
+				ps.setInt(4, entry.getKey());
+				
+				ps.setInt(5, 2); // special options
+				ps.setInt(6, entry.getValue().getId());
+				ps.setInt(7, entry.getKey());
+				ps.execute();
+			}
+		}
+		catch (Exception e)
+		{
+			_log.warn("Couldn't update item special abilities", e);
+		}
 	}
 	
 	/**

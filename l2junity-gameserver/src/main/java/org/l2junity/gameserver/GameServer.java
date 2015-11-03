@@ -55,6 +55,7 @@ import org.l2junity.gameserver.data.xml.impl.EnchantItemGroupsData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemHPBonusData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemOptionsData;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
+import org.l2junity.gameserver.data.xml.impl.EnsoulData;
 import org.l2junity.gameserver.data.xml.impl.EventEngineData;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.FishingData;
@@ -211,6 +212,7 @@ public class GameServer
 		EnchantItemOptionsData.getInstance();
 		ItemCrystalizationData.getInstance();
 		OptionData.getInstance();
+		EnsoulData.getInstance();
 		EnchantItemHPBonusData.getInstance();
 		MerchantPriceConfigTable.getInstance().loadInstances();
 		BuyListData.getInstance();

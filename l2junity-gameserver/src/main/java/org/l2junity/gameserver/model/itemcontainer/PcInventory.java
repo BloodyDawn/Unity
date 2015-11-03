@@ -1019,6 +1019,7 @@ public class PcInventory extends Inventory
 		{
 			item.giveSkillsToOwner();
 			item.applyEnchantStats();
+			item.applySpecialAbilities();
 		}
 	}
 	

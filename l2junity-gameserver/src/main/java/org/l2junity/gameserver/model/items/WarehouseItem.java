@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.model.items;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.model.ensoul.EnsoulOption;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.items.type.ItemType;
@@ -62,8 +65,8 @@ public class WarehouseItem
 	};
 	
 	private final int[] _enchantOptions;
-	private final int[] _soulCrystalOptions;
-	private final int[] _soulCrystalSpecialOptions;
+	private final Collection<EnsoulOption> _soulCrystalOptions;
+	private final Collection<EnsoulOption> _soulCrystalSpecialOptions;
 	
 	private final int _time;
 	
@@ -97,8 +100,8 @@ public class WarehouseItem
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
-		_soulCrystalOptions = item.getSoulCrystalOptions();
-		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
+		_soulCrystalOptions = item.getSpecialAbilities();
+		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();
 	}
 	
 	/**
@@ -288,12 +291,12 @@ public class WarehouseItem
 		return _enchantOptions;
 	}
 	
-	public int[] getSoulCrystalOptions()
+	public Collection<EnsoulOption> getSoulCrystalOptions()
 	{
 		return _soulCrystalOptions;
 	}
 	
-	public int[] getSoulCrystalSpecialOptions()
+	public Collection<EnsoulOption> getSoulCrystalSpecialOptions()
 	{
 		return _soulCrystalSpecialOptions;
 	}

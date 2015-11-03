@@ -91,6 +91,7 @@ public enum Stats
 	MAGIC_CRIT_DMG("mCritPower"),
 	
 	// PVP BONUS
+	PVP_DAMAGE("pvpDamage"), // TODO: Implement me
 	PVP_PHYSICAL_DMG("pvpPhysDmg"),
 	PVP_MAGICAL_DMG("pvpMagicalDmg"),
 	PVP_PHYS_SKILL_DMG("pvpPhysSkillsDmg"),

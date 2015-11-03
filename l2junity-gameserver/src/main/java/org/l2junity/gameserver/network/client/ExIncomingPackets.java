@@ -59,6 +59,7 @@ import org.l2junity.gameserver.network.client.recv.compound.RequestNewEnchantRem
 import org.l2junity.gameserver.network.client.recv.compound.RequestNewEnchantTry;
 import org.l2junity.gameserver.network.client.recv.crystalization.RequestCrystallizeEstimate;
 import org.l2junity.gameserver.network.client.recv.crystalization.RequestCrystallizeItemCancel;
+import org.l2junity.gameserver.network.client.recv.ensoul.RequestItemEnsoul;
 import org.l2junity.gameserver.network.client.recv.friend.RequestFriendDetailInfo;
 import org.l2junity.gameserver.network.client.recv.mentoring.ConfirmMenteeAdd;
 import org.l2junity.gameserver.network.client.recv.mentoring.RequestMenteeAdd;
@@ -341,7 +342,7 @@ public enum ExIncomingPackets implements IIncomingPackets<L2GameClient>
 	REQUEST_EX_AUTO_FISH(0x104, ExRequestAutoFish::new, ConnectionState.IN_GAME),
 	REQUEST_VIP_ATTENDANCE_ITEM_LIST(0x105, null, ConnectionState.IN_GAME),
 	REQUEST_VIP_ATTENDANCE_CHECK(0x106, null, ConnectionState.IN_GAME),
-	REQUEST_ITEM_ENSOUL(0x107, null, ConnectionState.IN_GAME),
+	REQUEST_ITEM_ENSOUL(0x107, RequestItemEnsoul::new, ConnectionState.IN_GAME),
 	REQUEST_VIP_PRODUCT_LIST(0x108, null, ConnectionState.IN_GAME),
 	REQUEST_VIP_LUCKY_GAME_INFO(0x109, null, ConnectionState.IN_GAME),
 	REQUEST_VIP_LUCKY_GAME_ITEM_LIST(0x10A, null, ConnectionState.IN_GAME),

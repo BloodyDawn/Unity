@@ -22,6 +22,7 @@ import org.l2junity.gameserver.enums.ItemListType;
 import org.l2junity.gameserver.model.ItemInfo;
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.buylist.Product;
+import org.l2junity.gameserver.model.ensoul.EnsoulOption;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.WarehouseItem;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -120,16 +121,16 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		}
 		if (containsMask(mask, ItemListType.SOUL_CRYSTAL))
 		{
-			packet.writeC(item.getSoulCrystalOptions().length); // Size of regular soul crystal options.
-			for (int ensoulId : item.getSoulCrystalOptions())
+			packet.writeC(item.getSoulCrystalOptions().size()); // Size of regular soul crystal options.
+			for (EnsoulOption option : item.getSoulCrystalOptions())
 			{
-				packet.writeD(ensoulId); // Regular Soul Crystal Ability ID.
+				packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
 			}
 			
-			packet.writeC(item.getSoulCrystalSpecialOptions().length); // Size of special soul crystal options.
-			for (int ensoulId : item.getSoulCrystalSpecialOptions())
+			packet.writeC(item.getSoulCrystalSpecialOptions().size()); // Size of special soul crystal options.
+			for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
 			{
-				packet.writeD(ensoulId); // Special Soul Crystal Ability ID.
+				packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
 			}
 		}
 	}
@@ -175,7 +176,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 			mask |= ItemListType.VISUAL_ID.getMask();
 		}
 		
-		if ((item.getSoulCrystalOptions().length > 0) || (item.getSoulCrystalSpecialOptions().length > 0))
+		if (!item.getSoulCrystalOptions().isEmpty() || !item.getSoulCrystalSpecialOptions().isEmpty())
 		{
 			mask |= ItemListType.SOUL_CRYSTAL.getMask();
 		}
