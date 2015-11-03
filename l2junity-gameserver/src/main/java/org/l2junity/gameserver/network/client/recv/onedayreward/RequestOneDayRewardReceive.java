@@ -23,6 +23,7 @@ import java.util.Collection;
 import org.l2junity.gameserver.data.xml.impl.OneDayRewardData;
 import org.l2junity.gameserver.model.OneDayRewardDataHolder;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.onedayreward.ExOneDayReceiveRewardList;
@@ -45,22 +46,25 @@ public class RequestOneDayRewardReceive implements IClientIncomingPacket
 	@Override
 	public void run(L2GameClient client)
 	{
-		final Collection<OneDayRewardDataHolder> reward = OneDayRewardData.getInstance().getOneDayRewardData(_id);
+		final PlayerInstance player = client.getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 		
+		final Collection<OneDayRewardDataHolder> reward = OneDayRewardData.getInstance().getOneDayRewardData(_id);
 		if (reward.isEmpty())
 		{
 			return;
 		}
 		
-		final PlayerInstance player = client.getActiveChar();
-		
 		reward.forEach(r ->
 		{
-			if (r.canBeClaimed(player) && r.isAllowedClass(player.getClassId()))
+			final PlayerVariables vars = player.getVariables();
+			if (r.canBeClaimed(player) && r.isAllowedClass(player.getClassId()) && !vars.hasOneDayReward(r.getId()))
 			{
-				player.getVariables().addOneDayReward(r.getId());
+				vars.addOneDayReward(r.getId());
 				r.getRewardsItems().forEach(i -> player.addItem("One Day Reward", i, player, true));
-				return;
 			}
 		});
 		player.sendPacket(new ExOneDayReceiveRewardList(player));
