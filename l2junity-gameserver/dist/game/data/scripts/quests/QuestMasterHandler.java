@@ -220,6 +220,7 @@ import quests.Q10364_ObligationsOfTheSeeker.Q10364_ObligationsOfTheSeeker;
 import quests.Q10365_SeekerEscort.Q10365_SeekerEscort;
 import quests.Q10366_RuinsStatusUpdate.Q10366_RuinsStatusUpdate;
 import quests.Q10368_RebellionOfMonsters.Q10368_RebellionOfMonsters;
+import quests.Q10369_NoblesseSoulTesting.Q10369_NoblesseSoulTesting;
 import quests.Q10390_KekropusLetter.Q10390_KekropusLetter;
 import quests.Q10391_ASuspiciousHelper.Q10391_ASuspiciousHelper;
 import quests.Q10392_FailureAndItsConsequences.Q10392_FailureAndItsConsequences;
@@ -510,6 +511,7 @@ public class QuestMasterHandler
 		Q10365_SeekerEscort.class,
 		Q10366_RuinsStatusUpdate.class,
 		Q10368_RebellionOfMonsters.class,
+		Q10369_NoblesseSoulTesting.class,
 		Q10390_KekropusLetter.class,
 		Q10391_ASuspiciousHelper.class,
 		Q10392_FailureAndItsConsequences.class,

@@ -511,21 +511,24 @@
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="9442" levels="1" name="Trowel">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Gathers the Flame Flower. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="99" />
 		<set name="reuseDelay" val="6000" />
+		<set name="magicLvl" val="99" />
+		<set name="effectRange" val="400" />
+		<set name="reuseDelay" val="6000" />
+		<cond>
+			<target npcId="33735" />
+		</cond>
 	</skill>
 	<skill id="9443" levels="1" name="Empty Hot Spring Water Bottle">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Gathers Water from the Hot Springs. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -535,23 +538,44 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="6000" />
+		<set name="effectRange" val="1500" />
+		<set name="itemConsumeId" val="34887" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="handler" val="ItemSkills" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player insideZoneId="12017, 12018, 12019" />
+			</and>
+		</cond>
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="27487" />
+			</effect>
+			<effect name="Restoration">
+				<param itemId="34888" itemCount="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9444" levels="1" name="Helping Seed">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons the Helping Tree. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="1" />
+		<set name="itemConsumeId" val="34961" />
+		<set name="itemConsumeCount" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="690" />
 		<set name="magicLvl" val="1" />
 		<set name="castRange" val="230" />
+		<cond>
+			<target npcId="19293" />
+		</cond>
 	</skill>
 	<skill id="9445" levels="1" name="Summoning Stone">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons Lanya. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -560,56 +584,151 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="33696" singleInstance="true" despawnDelay="180000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9446" levels="1" name="Scroll of Escape: Hot Springs">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="34978" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="155908" y="-105696" z="-2744" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9447" levels="1" name="Scroll of Escape: Forge of the Gods">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="34979" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="176206" y="-116025" z="-3784" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9448" levels="1" name="Scroll of Escape: Isle of Prayer">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="34980" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="159171" y="169261" z="-3712" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9449" levels="1" name="Scroll of Escape: Aden Battlefield">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="34981" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="146730" y="14844" z="-1368" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9450" levels="1" name="Scroll of Escape: Rune Battlefield">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="34982" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="22299" y="-49141" z="-1296" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9451" levels="1" name="Item Skill: Warp">
 		<!-- AUTO GENERATED SKILL -->

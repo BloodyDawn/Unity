@@ -50,11 +50,32 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="18007" levels="1" name="Scroll of Escape: Secret Room">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="39517" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="147416" y="-52553" z="-2733" />
+			</effect>
+		</for>		
 	</skill>
 	<skill id="18008" levels="1" name="Scroll of Escape: The Cemetary">
 		<!-- AUTO GENERATED SKILL -->

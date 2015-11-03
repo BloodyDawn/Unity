@@ -194,6 +194,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="icon" val="icon.etc_crystal_ball_white_i00" />
 		<skills>
@@ -1181,6 +1182,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9444" level="1" /> <!-- Helping Seed -->
@@ -1427,12 +1429,15 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>		
 		<skills>
 			<skill id="9446" level="1" /> <!-- Scroll of Escape: Hot Springs -->
 		</skills>
@@ -1449,12 +1454,15 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>		
 		<skills>
 			<skill id="9447" level="1" /> <!-- Scroll of Escape: Forge of the Gods -->
 		</skills>
@@ -1471,12 +1479,15 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />		
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>			
 		<skills>
 			<skill id="9448" level="1" /> <!-- Scroll of Escape: Isle of Prayer -->
 		</skills>
@@ -1493,12 +1504,15 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />		
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>			
 		<skills>
 			<skill id="9449" level="1" /> <!-- Scroll of Escape: Aden Battlefield -->
 		</skills>
@@ -1515,12 +1529,15 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />		
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_stackable" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>			
 		<skills>
 			<skill id="9450" level="1" /> <!-- Scroll of Escape: Rune Battlefield -->
 		</skills>
