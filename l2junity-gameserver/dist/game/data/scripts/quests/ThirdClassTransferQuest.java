@@ -31,11 +31,13 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Abstract class for all Third Class Transfer quests.
@@ -58,6 +60,8 @@ public abstract class ThirdClassTransferQuest extends Quest
 	private static final int STEEL_DOOR_COIN = 37045;
 	private static final int SOUL_SHOT_PACK = 22576;
 	private static final int SPIRIT_SHOT_PACK = 22607;
+	// Skills
+	private static final SkillHolder SHOW_SKILL = new SkillHolder(5103, 1);
 	// Misc
 	private final int _minLevel;
 	private final Race _race;
@@ -210,6 +214,10 @@ public abstract class ThirdClassTransferQuest extends Quest
 					{
 						break;
 					}
+					
+					npc.doCast(SHOW_SKILL.getSkill());
+					player.sendPacket(SystemMessageId.CONGRATULATIONS_YOU_VE_COMPLETED_YOUR_THIRD_CLASS_TRANSFER_QUEST);
+					player.broadcastSocialAction(3);
 					player.setBaseClass(newClassId);
 					player.setClassId(newClassId.getId());
 					player.broadcastUserInfo();
