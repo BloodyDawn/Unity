@@ -129,6 +129,7 @@ import quests.Q00485_HotSpringWater.Q00485_HotSpringWater;
 import quests.Q00488_WondersOfCaring.Q00488_WondersOfCaring;
 import quests.Q00489_InThisQuietPlace.Q00489_InThisQuietPlace;
 import quests.Q00490_DutyOfTheSurvivor.Q00490_DutyOfTheSurvivor;
+import quests.Q00493_KickingOutUnwelcomeGuests.Q00493_KickingOutUnwelcomeGuests;
 import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
 import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
 import quests.Q00508_AClansReputation.Q00508_AClansReputation;
@@ -420,6 +421,7 @@ public class QuestMasterHandler
 		Q00488_WondersOfCaring.class,
 		Q00489_InThisQuietPlace.class,
 		Q00490_DutyOfTheSurvivor.class,
+		Q00493_KickingOutUnwelcomeGuests.class,
 		Q00501_ProofOfClanAlliance.class,
 		Q00504_CompetitionForTheBanditStronghold.class,
 		Q00508_AClansReputation.class,
