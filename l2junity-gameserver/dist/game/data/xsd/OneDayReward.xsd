@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list" type="listType" />
+	<xs:complexType name="playerType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:byte" name="level" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="conditionsType">
+		<xs:sequence>
+			<xs:element type="playerType" name="player" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="itemType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:int" name="id" use="optional" />
+				<xs:attribute type="xs:byte" name="count" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="itemsType">
+		<xs:sequence>
+			<xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rewardType">
+		<xs:sequence>
+			<xs:element type="xs:short" name="classId" maxOccurs="unbounded" minOccurs="0" />
+			<xs:element type="conditionsType" name="conditions" minOccurs="0" />
+			<xs:element type="itemsType" name="items" />
+		</xs:sequence>
+		<xs:attribute type="xs:short" name="id" use="optional" />
+		<xs:attribute type="xs:short" name="reward_id" use="optional" />
+		<xs:attribute type="xs:string" name="name" use="optional" />
+		<xs:attribute type="xs:short" name="requiredCompletion" use="optional" />
+	</xs:complexType>
+	<xs:complexType name="listType">
+		<xs:sequence>
+			<xs:element type="rewardType" name="reward" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

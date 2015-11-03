@@ -66,6 +66,7 @@ import org.l2junity.gameserver.data.xml.impl.ItemCrystalizationData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.data.xml.impl.OneDayRewardData;
 import org.l2junity.gameserver.data.xml.impl.OptionData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.data.xml.impl.PlayerTemplateData;
@@ -194,6 +195,7 @@ public class GameServer
 		AbilityPointsData.getInstance();
 		SayuneData.getInstance();
 		ClanRewardData.getInstance();
+		OneDayRewardData.getInstance();
 		
 		printSection("Skills");
 		EffectHandler.getInstance().executeScript();

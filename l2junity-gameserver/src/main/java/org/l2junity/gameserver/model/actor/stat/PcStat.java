@@ -45,6 +45,7 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.ability.ExAcquireAPSkillList;
 import org.l2junity.gameserver.network.client.send.friend.L2FriendStatus;
+import org.l2junity.gameserver.network.client.send.onedayreward.ExOneDayReceiveRewardList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
@@ -309,6 +310,8 @@ public class PcStat extends PlayableStat
 		{
 			getActiveChar().sendPacket(new ExAcquireAPSkillList(getActiveChar()));
 		}
+		
+		getActiveChar().sendPacket(new ExOneDayReceiveRewardList(getActiveChar()));
 		
 		return levelIncreased;
 	}

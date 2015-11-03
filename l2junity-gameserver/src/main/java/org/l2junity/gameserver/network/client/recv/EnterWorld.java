@@ -92,6 +92,7 @@ import org.l2junity.gameserver.network.client.send.SkillList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.ability.ExAcquireAPSkillList;
 import org.l2junity.gameserver.network.client.send.friend.L2FriendList;
+import org.l2junity.gameserver.network.client.send.onedayreward.ExOneDayReceiveRewardList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
@@ -573,6 +574,7 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
 		activeChar.sendPacket(new ExWorldChatCnt(activeChar));
+		activeChar.sendPacket(new ExOneDayReceiveRewardList(activeChar));
 		activeChar.handleAutoShots();
 	}
 	

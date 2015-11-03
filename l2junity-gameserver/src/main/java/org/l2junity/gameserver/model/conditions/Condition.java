@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.conditions;
 
+import org.l2junity.gameserver.model.OneDayRewardDataHolder;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -114,6 +115,11 @@ public abstract class Condition implements ConditionListener
 	public final boolean test(Creature caster, Creature target, L2Item item)
 	{
 		return test(caster, target, null, null);
+	}
+	
+	public final boolean test(Creature caster, OneDayRewardDataHolder onewayreward)
+	{
+		return test(caster, null, null, null);
 	}
 	
 	public final boolean test(Creature caster, Creature target, Skill skill, L2Item item)

@@ -22,11 +22,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map.Entry;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,6 +50,7 @@ public class PlayerVariables extends AbstractVariables
 	public static final String HAIR_ACCESSORY_VARIABLE_NAME = "HAIR_ACCESSORY_ENABLED";
 	public static final String WORLD_CHAT_VARIABLE_NAME = "WORLD_CHAT_POINTS";
 	public static final String VITALITY_ITEMS_USED_VARIABLE_NAME = "VITALITY_ITEMS_USED";
+	private static final String ONE_DAY_REWARDS = "ONE_DAY_REWARDS";
 	
 	private final int _objectId;
 	
@@ -152,5 +157,76 @@ public class PlayerVariables extends AbstractVariables
 	public PlayerInstance getPlayer()
 	{
 		return World.getInstance().getPlayer(_objectId);
+	}
+	
+	public void addOneDayReward(int rewardId)
+	{
+		String result = getString(ONE_DAY_REWARDS, "");
+		if (result.isEmpty())
+		{
+			result = Integer.toString(rewardId);
+		}
+		else
+		{
+			result += "," + rewardId;
+		}
+		set(ONE_DAY_REWARDS, result);
+	}
+	
+	public void removeOneDayReward(int rewardId)
+	{
+		String result = "";
+		String data = getString(ONE_DAY_REWARDS, "");
+		for (String s : data.split(","))
+		{
+			if (s.equals(Integer.toString(rewardId)))
+			{
+				continue;
+			}
+			else if (result.isEmpty())
+			{
+				result = s;
+			}
+			else
+			{
+				result += "," + s;
+			}
+		}
+		set(ONE_DAY_REWARDS, result);
+	}
+	
+	public boolean hasOneDayReward(int rewardId)
+	{
+		String data = getString(ONE_DAY_REWARDS, "");
+		for (String s : data.split(","))
+		{
+			if (s.equals(Integer.toString(rewardId)))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public List<Integer> getOneDayRewards()
+	{
+		List<Integer> rewards = null;
+		String data = getString(ONE_DAY_REWARDS, "");
+		if (!data.isEmpty())
+		{
+			for (String s : getString(ONE_DAY_REWARDS, "").split(","))
+			{
+				if (Util.isDigit(s))
+				{
+					int rewardId = Integer.parseInt(s);
+					if (rewards == null)
+					{
+						rewards = new ArrayList<>();
+					}
+					rewards.add(rewardId);
+				}
+			}
+		}
+		return rewards != null ? rewards : Collections.emptyList();
 	}
 }

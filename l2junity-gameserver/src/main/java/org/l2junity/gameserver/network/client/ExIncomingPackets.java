@@ -65,6 +65,7 @@ import org.l2junity.gameserver.network.client.recv.mentoring.RequestMenteeAdd;
 import org.l2junity.gameserver.network.client.recv.mentoring.RequestMenteeWaitingList;
 import org.l2junity.gameserver.network.client.recv.mentoring.RequestMentorCancel;
 import org.l2junity.gameserver.network.client.recv.mentoring.RequestMentorList;
+import org.l2junity.gameserver.network.client.recv.onedayreward.RequestOneDayRewardReceive;
 import org.l2junity.gameserver.network.client.recv.pledgebonus.RequestPledgeBonusOpen;
 import org.l2junity.gameserver.network.client.recv.pledgebonus.RequestPledgeBonusReward;
 import org.l2junity.gameserver.network.client.recv.pledgebonus.RequestPledgeBonusRewardList;
@@ -350,7 +351,7 @@ public enum ExIncomingPackets implements IIncomingPackets<L2GameClient>
 	REQUEST_REFRESH_CAPTCHA_IMAGE(0x10E, null, ConnectionState.IN_GAME),
 	REQUEST_TODO_LIST(0x10F, null, ConnectionState.IN_GAME),
 	REQUEST_TODO_LIST_HTML(0x110, null, ConnectionState.IN_GAME),
-	REQUEST_ONE_DAY_REWARD_RECEIVE(0x111, null, ConnectionState.IN_GAME),
+	REQUEST_ONE_DAY_REWARD_RECEIVE(0x111, RequestOneDayRewardReceive::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_BONUS_OPEN(0x112, RequestPledgeBonusOpen::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_BONUS_REWARD_LIST(0x113, RequestPledgeBonusRewardList::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_BONUS_REWARD(0x114, RequestPledgeBonusReward::new, ConnectionState.IN_GAME),
