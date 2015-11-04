@@ -238,5 +238,16 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		packet.writeH(item.getCustomType2());
 		writeItemElementalAndEnchant(packet, item);
 		packet.writeD(item.getVisualId());
+		packet.writeC(item.getSoulCrystalOptions().size()); // Size of regular soul crystal options.
+		for (EnsoulOption option : item.getSoulCrystalOptions())
+		{
+			packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+		}
+		
+		packet.writeC(item.getSoulCrystalSpecialOptions().size()); // Size of special soul crystal options.
+		for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
+		{
+			packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+		}
 	}
 }
