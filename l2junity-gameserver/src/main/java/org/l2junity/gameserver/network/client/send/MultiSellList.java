@@ -78,7 +78,17 @@ public final class MultiSellList implements IClientOutgoingPacket
 			packet.writeH(0x00);
 			packet.writeH(0x00);
 			packet.writeH(0x00);
-			packet.writeH(0x00);
+			packet.writeC(0); // Size of regular soul crystal options.
+			// for (EnsoulOption option : item.getSoulCrystalOptions())
+			// {
+			// packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+			// }
+			
+			packet.writeC(0); // Size of special soul crystal options.
+			// for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
+			// {
+			// packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+			// }
 			
 			packet.writeH(ent.getProducts().size());
 			packet.writeH(ent.getIngredients().size());
@@ -111,7 +121,17 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(ing.getItemInfo().getElementals()[3]); // earth
 					packet.writeH(ing.getItemInfo().getElementals()[4]); // holy
 					packet.writeH(ing.getItemInfo().getElementals()[5]); // dark
-					packet.writeH(0x00);
+					packet.writeC(0); // Size of regular soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalOptions())
+					// {
+					// packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+					// }
+					
+					packet.writeC(0); // Size of special soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
+					// {
+					// packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+					// }
 				}
 				else
 				{
@@ -127,7 +147,17 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(0x00); // earth
 					packet.writeH(0x00); // holy
 					packet.writeH(0x00); // dark
-					packet.writeH(0x00);
+					packet.writeC(0); // Size of regular soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalOptions())
+					// {
+					// packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+					// }
+					
+					packet.writeC(0); // Size of special soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
+					// {
+					// packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+					// }
 				}
 			}
 			
@@ -149,7 +179,17 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(ing.getItemInfo().getElementals()[3]); // earth
 					packet.writeH(ing.getItemInfo().getElementals()[4]); // holy
 					packet.writeH(ing.getItemInfo().getElementals()[5]); // dark
-					packet.writeH(0x00);
+					packet.writeC(0); // Size of regular soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalOptions())
+					// {
+					// packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+					// }
+					
+					packet.writeC(0); // Size of special soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
+					// {
+					// packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+					// }
 				}
 				else
 				{
@@ -164,7 +204,17 @@ public final class MultiSellList implements IClientOutgoingPacket
 					packet.writeH(0x00); // earth
 					packet.writeH(0x00); // holy
 					packet.writeH(0x00); // dark
-					packet.writeH(0x00);
+					packet.writeC(0); // Size of regular soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalOptions())
+					// {
+					// packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+					// }
+					
+					packet.writeC(0); // Size of special soul crystal options.
+					// for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
+					// {
+					// packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+					// }
 				}
 			}
 		}
