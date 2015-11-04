@@ -18,11 +18,7 @@
  */
 package quests.Q00943_FillingTheEnergyOfDestruction;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.l2junity.gameserver.enums.QuestType;
-import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -143,34 +139,18 @@ public final class Q00943_FillingTheEnergyOfDestruction extends Quest
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final List<PlayerInstance> players = new ArrayList<>();
-		if (player.isInParty())
-		{
-			final Party party = player.getParty();
-			if (party.isInCommandChannel())
-			{
-				players.addAll(party.getCommandChannel().getMembers());
-			}
-			else
-			{
-				players.addAll(party.getMembers());
-			}
-		}
-		else
-		{
-			players.add(player);
-		}
-		
-		for (PlayerInstance member : players)
-		{
-			final QuestState st = getQuestState(member, true);
-			
-			if ((st != null) && st.isCond(1) && (npc.calculateDistance(member, false, false) <= 1500))
-			{
-				st.setCond(2, true);
-				giveItems(member, TWISTED_MAGIC, 1);
-			}
-		}
+		executeForEachPlayer(player, npc, isSummon, true, true);
 		return super.onKill(npc, player, isSummon);
+	}
+	
+	@Override
+	public void actionForEachPlayer(PlayerInstance player, Npc npc, boolean isSummon)
+	{
+		final QuestState st = getQuestState(player, true);
+		if ((st != null) && st.isCond(1) && (npc.calculateDistance(player, false, false) <= 1500))
+		{
+			st.setCond(2, true);
+			giveItems(player, TWISTED_MAGIC, 1);
+		}
 	}
 }
