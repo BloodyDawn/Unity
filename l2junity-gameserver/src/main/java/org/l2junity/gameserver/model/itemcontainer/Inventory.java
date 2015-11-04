@@ -317,6 +317,9 @@ public abstract class Inventory extends ItemContainer
 			// Clear enchant bonus
 			item.clearEnchantStats();
 			
+			// Clear SA Bonus
+			item.clearSpecialAbilities();
+			
 			it.forEachSkill(ItemSkillType.NORMAL, holder ->
 			{
 				final Skill Skill = holder.getSkill();
@@ -418,6 +421,9 @@ public abstract class Inventory extends ItemContainer
 			
 			// Apply enchant stats
 			item.applyEnchantStats();
+			
+			// Apply SA skill
+			item.applySpecialAbilities();
 			
 			item.getItem().forEachSkill(ItemSkillType.NORMAL, holder ->
 			{

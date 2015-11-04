@@ -2099,6 +2099,12 @@ public final class ItemInstance extends WorldObject
 		}
 	}
 	
+	public void clearSpecialAbilities()
+	{
+		_ensoulOptions.values().forEach(this::clearSpecialAbility);
+		_ensoulSpecialOptions.values().forEach(this::clearSpecialAbility);
+	}
+	
 	public void applySpecialAbilities()
 	{
 		_ensoulOptions.values().forEach(this::applySpecialAbility);
@@ -2142,6 +2148,19 @@ public final class ItemInstance extends WorldObject
 				{
 					player.addSkill(skill, false);
 				}
+			}
+		}
+	}
+	
+	private void clearSpecialAbility(EnsoulOption option)
+	{
+		final Skill skill = option.getSkill();
+		if (skill != null)
+		{
+			final PlayerInstance player = getActingPlayer();
+			if (player != null)
+			{
+				player.removeSkill(skill, false, true);
 			}
 		}
 	}

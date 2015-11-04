@@ -231,8 +231,11 @@ public class RequestItemEnsoul implements IClientIncomingPacket
 			iu.addModifiedItem(gemStones);
 			iu.addModifiedItem(item);
 		}
-		item.applySpecialAbilities();
 		player.sendInventoryUpdate(iu);
+		if (item.isEquipped())
+		{
+			item.applySpecialAbilities();
+		}
 		player.sendPacket(new ExEnsoulResult(success, item));
 	}
 	
