@@ -574,7 +574,7 @@ public class AdminEffects implements IAdminCommandHandler
 						activeChar.sendMessage("Incorrect page.");
 					}
 				}
-				System.out.println(page);
+				
 				final PageResult result = PageBuilder.newBuilder(AbnormalVisualEffect.values(), 100, "bypass -h admin_ave_abnormal").currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, ave, sb) ->
 				{
 					sb.append(String.format("<button action=\"bypass admin_ave_abnormal %s\" align=left icon=teleport>%s(%d)</button>", ave.name(), ave.name(), ave.getClientId()));
