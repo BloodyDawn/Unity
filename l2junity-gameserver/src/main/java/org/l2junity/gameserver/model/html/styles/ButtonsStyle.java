@@ -30,7 +30,7 @@ public class ButtonsStyle implements IHtmlStyle
 	private static final String DEFAULT_PAGER_SEPARATOR = "<td align=center> | </td>";
 	
 	public static final ButtonsStyle INSTANCE = new ButtonsStyle(40, 15, "L2UI_CT1.Button_DF", "L2UI_CT1.Button_DF");
-
+	
 	private final int _width;
 	private final int _height;
 	private final String _back;
@@ -43,15 +43,15 @@ public class ButtonsStyle implements IHtmlStyle
 		_back = back;
 		_fore = fore;
 	}
-
+	
 	@Override
 	public String applyBypass(String bypass, String name, boolean isEnabled)
 	{
 		if (isEnabled)
 		{
-			return String.format(DEFAULT_PAGE_LINK_FORMAT, bypass, name, _width, _height, _back, _fore);
+			return String.format(DEFAULT_PAGE_TEXT_FORMAT, name);
 		}
-		return String.format(DEFAULT_PAGE_TEXT_FORMAT, name);
+		return String.format(DEFAULT_PAGE_LINK_FORMAT, bypass, name, _width, _height, _back, _fore);
 	}
 	
 	@Override
