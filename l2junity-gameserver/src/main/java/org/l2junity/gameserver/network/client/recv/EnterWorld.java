@@ -63,6 +63,7 @@ import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
 import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 import org.l2junity.gameserver.network.client.send.ExBeautyItemList;
 import org.l2junity.gameserver.network.client.send.ExCastleState;
+import org.l2junity.gameserver.network.client.send.ExConnectedTimeAndGettableReward;
 import org.l2junity.gameserver.network.client.send.ExGetBookMarkInfoPacket;
 import org.l2junity.gameserver.network.client.send.ExNoticePostArrived;
 import org.l2junity.gameserver.network.client.send.ExNotifyPremiumItem;
@@ -575,6 +576,7 @@ public class EnterWorld implements IClientIncomingPacket
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
 		activeChar.sendPacket(new ExWorldChatCnt(activeChar));
 		activeChar.sendPacket(new ExOneDayReceiveRewardList(activeChar));
+		activeChar.sendPacket(ExConnectedTimeAndGettableReward.STATIC_PACKET);
 		activeChar.handleAutoShots();
 	}
 	
