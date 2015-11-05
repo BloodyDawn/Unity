@@ -144,6 +144,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 					takeItems(player, SOLDIER_TAG, -1);
 					htmltext = event;
 				}
+				break;
 			}
 			case "33165-02.html":
 			{
