@@ -435,28 +435,56 @@
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="13856" levels="15" name="Might">
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#pAtk"> 1.02 1.03 1.04 1.05 1.06 1.07 1.08 1.09 1.01 1.11 1.12 1.13 1.14 1.15 1.16 </table>
+		<table name="#pvp"> 0 0 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 </table>
 		<set name="icon" val="icon.ensoul_big_p" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+				<mul stat="pvpPhysDmg" val="#pvp" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13857" levels="15" name="Fury">
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#pAtkSpd"> 1.11 1.12 1.13 1.14 1.15 1.16 1.17 1.18 1.19 1.2 1.21 1.22 1.23 1.24 1.25 1.26 </table>
+		<table name="#pvp"> 0 0 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 </table>
 		<set name="icon" val="icon.ensoul_big_p" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+				<mul stat="pvpPhysDmg" val="#pvp" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13858" levels="15" name="Focus">
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#rCrit"> 58 64 70 76 82 88 94 100 106 112 118 124 130 136 142 </table>
+		<table name="#pvp"> 0 0 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 </table>
 		<set name="icon" val="icon.ensoul_big_p" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="rCrit" val="#rCrit" />
+				<mul stat="pvpPhysDmg" val="#pvp" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13859" levels="15" name="Death">
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#cAtk"> 1.03 1.04 1.05 1.06 1.07 1.08 1.09 1.1 1.11 1.12 1.13 1.14 1.15 1.16 1.17 </table>
+		<table name="#pvp"> 0 0 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 1.05 </table>
 		<set name="icon" val="icon.ensoul_big_p" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="pvpPhysDmg" val="#pvp" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13860" levels="15" name="Hunter">
 		<!-- AUTO GENERATED SKILL -->
