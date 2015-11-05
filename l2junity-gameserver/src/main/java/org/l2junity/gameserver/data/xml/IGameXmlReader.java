@@ -80,6 +80,11 @@ public interface IGameXmlReader extends IXmlReader
 					parameters.put(parseString(attrs, "name"), new SkillHolder(parseInteger(attrs, "id"), parseInteger(attrs, "level")));
 					break;
 				}
+				case "location":
+				{
+					parameters.put(parseString(attrs, "name"), new Location(parseInteger(attrs, "x"), parseInteger(attrs, "y"), parseInteger(attrs, "z")));
+					break;
+				}
 				case "minions":
 				{
 					final List<MinionHolder> minions = new ArrayList<>(1);

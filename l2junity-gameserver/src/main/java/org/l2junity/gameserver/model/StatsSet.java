@@ -605,6 +605,16 @@ public class StatsSet implements IParserAdvUtils
 		return (SkillHolder) obj;
 	}
 	
+	public Location getLocation(String key)
+	{
+		Object obj = _set.get(key);
+		if ((obj == null) || !(obj instanceof Location))
+		{
+			return null;
+		}
+		return (Location) obj;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<MinionHolder> getMinionList(String key)
 	{
