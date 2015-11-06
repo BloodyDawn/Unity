@@ -124,7 +124,7 @@ public class RequestItemEnsoul implements IClientIncomingPacket
 			LOGGER.warn("Player: {} attempting to ensoul item without having it!", player);
 			return;
 		}
-		else if (item.isEquipable())
+		else if (!item.isEquipable())
 		{
 			LOGGER.warn("Player: {} attempting to ensoul non equippable item: {}!", player, item);
 			return;
