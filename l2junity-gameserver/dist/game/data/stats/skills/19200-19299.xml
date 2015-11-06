@@ -540,20 +540,32 @@
 		</for>
 	</skill>
 	<skill id="19228" levels="1" name="Song of Thief">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Increases Dagger/Dual Dagger Resistance of all party members by 50% for 30 seconds. Consumes 5 Spirit Ores. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="SONG_OF_THIEF" /> <!-- TODO: confirm -->
+		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill19228" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ores -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="8000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="DefenceTrait">
+				<param DAGGER="50" />
+				<param DUALDAGGER="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19229" levels="1" name="Fate of the Exalted">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- LUC + 3. -->
 		<set name="icon" val="icon.skill19222" />
 		<set name="operateType" val="P" />
@@ -575,27 +587,49 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="19231" levels="1" name="Song of Wisdom">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Party's M. Atk. + 30%% for 30 seconds. Consumes 5 Spirit Ores. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="SONG_OF_WISDOM" /> <!-- TODO: confirm -->
+		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill19231" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ores -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="8000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.3" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19232" levels="1" name="Crippling Dance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Party's P. Skill Power + 30%% for 30 seconds. Consumes 5 Spirit Ores. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="CRIPPLING_DANCE" /> <!-- TODO: confirm -->
+		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill19232" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ores -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="8000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="physicalSkillPower" val="1.3" />
+			</effect>
+		</for>
 	</skill>
 </list>

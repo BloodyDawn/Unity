@@ -75,6 +75,7 @@ public final class EffectMasterHandler
 		CreateItemRandom.class,
 		CrystalGradeModify.class,
 		CubicMastery.class,
+		DamageShield.class,
 		DamOverTime.class,
 		DamOverTimePercent.class,
 		DeathLink.class,
