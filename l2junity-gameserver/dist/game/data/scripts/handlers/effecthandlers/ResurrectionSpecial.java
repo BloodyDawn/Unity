@@ -84,7 +84,7 @@ public final class ResurrectionSpecial extends AbstractEffect
 		
 		final PlayerInstance caster = info.getEffector().getActingPlayer();
 		
-		if (!_instanceId.isEmpty() && (!caster.isInInstance() || !_instanceId.contains(caster.getInstanceId())))
+		if (!_instanceId.isEmpty() && (!caster.isInInstance() || !_instanceId.contains(caster.getInstanceWorld().getTemplateId())))
 		{
 			return;
 		}
