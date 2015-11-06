@@ -115,7 +115,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		double damage = (int) calcPhysDam(effector, effected, skill);
+		double damage = calcPhysDam(effector, effected, skill);
 		boolean crit = Formulas.calcCrit(_criticalChance, true, effector, effected);
 		
 		if (crit)
@@ -141,8 +141,8 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 				damage = Math.min(damage, damageCap);
 			}
 			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			effected.reduceCurrentHp(damage, effector, skill);
-			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		}
 		else
 		{

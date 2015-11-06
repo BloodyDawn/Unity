@@ -58,8 +58,8 @@ public final class DamOverTime extends AbstractEffect
 					damage = info.getEffected().getCurrentHp() - 1;
 				}
 				
+				damage = info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), true, true, false);
 				info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
-				info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), true, true, false);
 			}
 		}
 	}
@@ -99,8 +99,8 @@ public final class DamOverTime extends AbstractEffect
 			}
 		}
 		
+		damage = info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true, false);
 		info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
-		info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true, false);
 		return info.getSkill().isToggle();
 	}
 }

@@ -76,16 +76,16 @@ public final class RegularAttack extends AbstractEffect
 		
 		final byte shld = Formulas.calcShldUse(effector, effected);
 		final boolean crit = Formulas.calcCrit(effector.getStat().getCriticalHit(), false, effector, effected);
-		int damage = (int) Formulas.calcPhysDam(effector, effected, null, 0, shld, crit, effector.isChargedShot(ShotType.SOULSHOTS));
+		double damage = Formulas.calcPhysDam(effector, effected, null, 0, shld, crit, effector.isChargedShot(ShotType.SOULSHOTS));
 		damage *= _pAtkMod; // TODO needs better integration within formula
 		damage /= _pDefMod; // TODO needs better integration within formula
 		damage = (int) effector.getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
 		
 		if (damage > 0)
 		{
-			effector.sendDamageMessage(effected, skill, damage, crit, false);
+			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			effected.reduceCurrentHp(damage, effector, skill);
-			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			
 			Weapon weapon = effector.getActiveWeaponItem();
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
@@ -108,8 +108,8 @@ public final class RegularAttack extends AbstractEffect
 						
 						if (reflectedDamage > 0)
 						{
+							damage = effector.notifyDamageReceived(reflectedDamage, effected, null, crit, false, true);
 							effector.reduceCurrentHp(reflectedDamage, effected, true, false, null);
-							effector.notifyDamageReceived(reflectedDamage, effected, null, crit, false, true);
 						}
 					}
 				}

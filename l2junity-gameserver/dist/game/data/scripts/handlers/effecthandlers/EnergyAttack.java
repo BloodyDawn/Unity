@@ -183,8 +183,8 @@ public final class EnergyAttack extends AbstractEffect
 				damage = Math.min(damage, damageCap);
 			}
 			attacker.sendDamageMessage(effected, skill, (int) damage, critical, false);
+			damage = effected.notifyDamageReceived(damage, attacker, skill, critical, false, false);
 			effected.reduceCurrentHp(damage, attacker, skill);
-			effected.notifyDamageReceived(damage, attacker, skill, critical, false, false);
 		}
 	}
 }

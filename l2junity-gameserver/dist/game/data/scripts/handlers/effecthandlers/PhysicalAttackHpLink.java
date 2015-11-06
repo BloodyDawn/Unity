@@ -93,9 +93,8 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		double damage = 0;
 		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
-		damage = (int) Formulas.calcPhysDam(effector, effected, skill, _power * (-((effected.getCurrentHp() * 2) / effected.getMaxHp()) + 2), shld, false, ss);
+		double damage = Formulas.calcPhysDam(effector, effected, skill, _power * (-((effected.getCurrentHp() * 2) / effected.getMaxHp()) + 2), shld, false, ss);
 		
 		if (damage > 0)
 		{
@@ -108,8 +107,8 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 				damage = Math.min(damage, damageCap);
 			}
 			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			effected.reduceCurrentHp(damage, effector, skill);
-			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		}
 		else
 		{

@@ -62,7 +62,7 @@ public final class MagicalDamOverTime extends AbstractEffect
 		}
 		
 		final byte shld = 0; // No shield block is applied since this effect acts as a debuff.
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power, shld, false, false, false); // In retail spiritshots change nothing.
+		double damage = Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power, shld, false, false, false); // In retail spiritshots change nothing.
 		damage *= getTicksMultiplier();
 		
 		if (damage >= (target.getCurrentHp() - 1))
@@ -81,12 +81,12 @@ public final class MagicalDamOverTime extends AbstractEffect
 				{
 					return info.getSkill().isToggle();
 				}
-				damage = (int) (target.getCurrentHp() - 1);
+				damage = target.getCurrentHp() - 1;
 			}
 		}
 		
+		damage = info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true, false);
 		info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
-		info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true, false);
 		return info.getSkill().isToggle();
 	}
 }

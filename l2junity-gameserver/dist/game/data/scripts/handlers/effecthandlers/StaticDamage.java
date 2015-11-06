@@ -54,12 +54,12 @@ public final class StaticDamage extends AbstractEffect
 			return;
 		}
 		
-		effected.reduceCurrentHp(_power, effector, skill);
-		effected.notifyDamageReceived(_power, effector, skill, false, false, false);
+		final double damage = effected.notifyDamageReceived(_power, effector, skill, false, false, false);
+		effected.reduceCurrentHp(damage, effector, skill);
 		
 		if (effector.isPlayer())
 		{
-			effector.sendDamageMessage(effected, skill, _power, false, false);
+			effector.sendDamageMessage(effected, skill, (int) damage, false, false);
 		}
 	}
 }

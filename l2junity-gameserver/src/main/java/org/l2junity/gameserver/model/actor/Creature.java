@@ -102,6 +102,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleport;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleported;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSkillSee;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
+import org.l2junity.gameserver.model.events.returns.DamageReturn;
 import org.l2junity.gameserver.model.events.returns.LocationReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.InvulSkillHolder;
@@ -4087,8 +4088,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// reduce targets HP
+			damage = (int) target.notifyDamageReceived(damage, this, null, crit, false, false);
 			target.reduceCurrentHp(damage, this, null);
-			target.notifyDamageReceived(damage, this, null, crit, false, false);
 			
 			// When killing blow is made, the target doesn't reflect.
 			if ((reflectedDamage > 0) && !target.isDead())
@@ -5530,11 +5531,25 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param critical
 	 * @param damageOverTime
 	 * @param reflect
+	 * @return damage
 	 */
-	public void notifyDamageReceived(double damage, Creature attacker, Skill skill, boolean critical, boolean damageOverTime, boolean reflect)
+	public double notifyDamageReceived(double damage, Creature attacker, Skill skill, boolean critical, boolean damageOverTime, boolean reflect)
 	{
-		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageReceived(attacker, this, damage, skill, critical, damageOverTime, reflect), this);
 		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageDealt(attacker, this, damage, skill, critical, damageOverTime, reflect), attacker);
+		final DamageReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureDamageReceived(attacker, this, damage, skill, critical, damageOverTime, reflect), this);
+		if (term != null)
+		{
+			if (term.terminate())
+			{
+				return 0;
+			}
+			else if (term.override())
+			{
+				damage = term.getDamage();
+			}
+		}
+		
+		return damage;
 	}
 	
 	/**

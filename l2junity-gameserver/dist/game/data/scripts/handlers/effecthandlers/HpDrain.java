@@ -70,9 +70,9 @@ public final class HpDrain extends AbstractEffect
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected);
 		byte shld = Formulas.calcShldUse(effector, effected, skill);
-		int damage = (int) Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
+		double damage = Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
 		
-		int drain = 0;
+		double drain = 0;
 		int cp = (int) effected.getCurrentCp();
 		int hp = (int) effected.getCurrentHp();
 		
@@ -101,9 +101,9 @@ public final class HpDrain extends AbstractEffect
 				effected.breakAttack();
 				effected.breakCast();
 			}
-			effector.sendDamageMessage(effected, skill, damage, mcrit, false);
+			effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
+			damage = effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
 			effected.reduceCurrentHp(damage, effector, skill);
-			effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
 		}
 	}
 }

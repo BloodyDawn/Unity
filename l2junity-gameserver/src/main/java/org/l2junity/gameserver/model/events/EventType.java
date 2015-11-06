@@ -122,6 +122,7 @@ import org.l2junity.gameserver.model.events.impl.sieges.OnCastleSiegeStart;
 import org.l2junity.gameserver.model.events.impl.sieges.OnFortSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.OnFortSiegeStart;
 import org.l2junity.gameserver.model.events.returns.ChatFilterReturn;
+import org.l2junity.gameserver.model.events.returns.DamageReturn;
 import org.l2junity.gameserver.model.events.returns.LocationReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 
@@ -149,7 +150,7 @@ public enum EventType
 	ON_CREATURE_ATTACK(OnCreatureAttack.class, void.class, TerminateReturn.class),
 	ON_CREATURE_ATTACK_AVOID(OnCreatureAttackAvoid.class, void.class, void.class),
 	ON_CREATURE_ATTACKED(OnCreatureAttacked.class, void.class, TerminateReturn.class),
-	ON_CREATURE_DAMAGE_RECEIVED(OnCreatureDamageReceived.class, void.class),
+	ON_CREATURE_DAMAGE_RECEIVED(OnCreatureDamageReceived.class, void.class, DamageReturn.class),
 	ON_CREATURE_DAMAGE_DEALT(OnCreatureDamageDealt.class, void.class),
 	ON_CREATURE_KILL(OnCreatureKill.class, void.class, TerminateReturn.class),
 	ON_CREATURE_SEE(OnCreatureSee.class, void.class),

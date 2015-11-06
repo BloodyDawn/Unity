@@ -78,7 +78,7 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected);
 		final byte shld = Formulas.calcShldUse(effector, effected, skill);
-		int damage = (int) Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
+		double damage = Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
 		
 		if (damage > 0)
 		{
@@ -92,14 +92,14 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 			// Shield Deflect Magic: Reflect all damage on caster.
 			if (effected.getStat().getValue(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
 			{
+				damage = effector.notifyDamageReceived(damage, effected, skill, mcrit, false, true);
 				effector.reduceCurrentHp(damage, effected, skill);
-				effector.notifyDamageReceived(damage, effected, skill, mcrit, false, true);
 			}
 			else
 			{
+				damage = effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
 				effected.reduceCurrentHp(damage, effector, skill);
-				effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-				effector.sendDamageMessage(effected, skill, damage, mcrit, false);
+				effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
 			}
 		}
 		
