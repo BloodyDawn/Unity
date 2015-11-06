@@ -626,7 +626,8 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 */
 	public int getInstanceId()
 	{
-		return (_instance != null) ? _instance.getId() : 0;
+		final Instance instance = _instance;
+		return (instance != null) ? instance.getId() : 0;
 	}
 	
 	/**

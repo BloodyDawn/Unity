@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -83,8 +84,8 @@ public final class ResurrectionSpecial extends AbstractEffect
 		}
 		
 		final PlayerInstance caster = info.getEffector().getActingPlayer();
-		
-		if (!_instanceId.isEmpty() && (!caster.isInInstance() || !_instanceId.contains(caster.getInstanceWorld().getTemplateId())))
+		final Instance instance = caster.getInstanceWorld();
+		if (!_instanceId.isEmpty() && ((instance == null) || !_instanceId.contains(instance.getTemplateId())))
 		{
 			return;
 		}
