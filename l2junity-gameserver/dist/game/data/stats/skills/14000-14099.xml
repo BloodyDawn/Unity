@@ -1324,11 +1324,12 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14065" levels="1" name="Wisp Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="75" />
+		<set name="targetType" val="ONE" />
+		<set name="mpInitialConsume" val="15" />
+		<set name="mpConsume" val="60" />
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="500" />
@@ -1338,6 +1339,14 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealPercent">
+				<param power="100" />
+			</effect>
+			<effect name="ManaHealPercent">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14066" levels="11" name="Blind Light">
 		<table name="#magicLvl"> 85 86 87 88 89 90 91 92 93 94 95 </table>

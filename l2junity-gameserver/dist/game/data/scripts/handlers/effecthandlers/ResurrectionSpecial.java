@@ -18,6 +18,10 @@
  */
 package handlers.effecthandlers;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -35,12 +39,27 @@ import org.l2junity.gameserver.model.skills.Skill;
 public final class ResurrectionSpecial extends AbstractEffect
 {
 	private final int _power;
+	private final Set<Integer> _instanceId;
 	
 	public ResurrectionSpecial(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getInt("power", 0);
+		
+		final String instanceIds = params.getString("instanceId", null);
+		if ((instanceIds != null) && !instanceIds.isEmpty())
+		{
+			_instanceId = new HashSet<>();
+			for (String id : instanceIds.split(";"))
+			{
+				_instanceId.add(Integer.parseInt(id));
+			}
+		}
+		else
+		{
+			_instanceId = Collections.<Integer> emptySet();
+		}
 	}
 	
 	@Override
@@ -62,18 +81,23 @@ public final class ResurrectionSpecial extends AbstractEffect
 		{
 			return;
 		}
-		PlayerInstance caster = info.getEffector().getActingPlayer();
 		
-		Skill skill = info.getSkill();
+		final PlayerInstance caster = info.getEffector().getActingPlayer();
+		
+		if (!_instanceId.isEmpty() && (!caster.isInInstance() || !_instanceId.contains(caster.getInstanceId())))
+		{
+			return;
+		}
+		
+		final Skill skill = info.getSkill();
 		
 		if (info.getEffected().isPlayer())
 		{
 			info.getEffected().getActingPlayer().reviveRequest(caster, skill, false, _power);
-			return;
 		}
-		if (info.getEffected().isPet())
+		else if (info.getEffected().isPet())
 		{
-			L2PetInstance pet = (L2PetInstance) info.getEffected();
+			final L2PetInstance pet = (L2PetInstance) info.getEffected();
 			info.getEffected().getActingPlayer().reviveRequest(pet.getActingPlayer(), skill, true, _power);
 		}
 	}

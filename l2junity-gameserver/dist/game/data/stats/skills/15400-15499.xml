@@ -20,11 +20,11 @@
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="15401" levels="1" name="Burning Blood">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Restored to full health from death. Buffs/ Debuffs remain even after death, but the Noblesse Blessing and Raid Blessing disappear. (Effect only applied at Kartia's Labyrinth - Tainted Dimension Attacker.) -->
 		<set name="icon" val="icon.skill5873" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
@@ -38,6 +38,13 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2400" />
 		<set name="reuseDelay" val="5000" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="ResurrectionSpecial">
+				<param power="100" />
+				<param instanceId="205;206;207" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15402" levels="1" name="Wisp's Blessing">
 		<!-- AUTO GENERATED SKILL -->
