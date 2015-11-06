@@ -373,6 +373,11 @@ public abstract class Inventory extends ItemContainer
 						}
 					});
 				}
+				
+				if (item.isWeapon())
+				{
+					player.handleAutoShots();
+				}
 			}
 			
 			// Apply skill, if weapon have "skills on unequip"
@@ -463,6 +468,11 @@ public abstract class Inventory extends ItemContainer
 			if (updateTimestamp.get())
 			{
 				player.sendPacket(new SkillCoolTime(player));
+			}
+			
+			if (item.isWeapon())
+			{
+				player.handleAutoShots();
 			}
 		}
 	}

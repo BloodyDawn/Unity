@@ -14066,24 +14066,28 @@ public final class PlayerInstance extends Playable
 	public void handleAutoShots()
 	{
 		final ItemInstance weapon = getActiveWeaponInstance();
+		int soulShotId = 0;
+		int spiritShotId = 0;
+		int summonSoulShotId = 0;
+		int summonSpiritShotId = 0;
 		
-		getInventory().getItems(ItemInstance::isEtcItem, i -> i.getItemType() == EtcItemType.SOULSHOT).forEach(i ->
+		for (ItemInstance item : getInventory().getItems(ItemInstance::isEtcItem, i -> i.getItemType() == EtcItemType.SOULSHOT))
 		{
-			switch (i.getEtcItem().getDefaultAction())
+			switch (item.getEtcItem().getDefaultAction())
 			{
 				case SOULSHOT:
 				{
-					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == i.getItem().getCrystalType()))
+					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == item.getItem().getCrystalType()))
 					{
-						sendPacket(new ExAutoSoulShot(i.getId(), false, 1));
+						soulShotId = item.getId();
 					}
 					break;
 				}
 				case SPIRITSHOT:
 				{
-					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == i.getItem().getCrystalType()))
+					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == item.getItem().getCrystalType()))
 					{
-						sendPacket(new ExAutoSoulShot(i.getId(), false, 2));
+						spiritShotId = item.getId();
 					}
 					break;
 				}
@@ -14091,7 +14095,7 @@ public final class PlayerInstance extends Playable
 				{
 					if (hasSummon())
 					{
-						sendPacket(new ExAutoSoulShot(i.getId(), false, 3));
+						summonSoulShotId = item.getId();
 					}
 					break;
 				}
@@ -14099,20 +14103,25 @@ public final class PlayerInstance extends Playable
 				{
 					if (hasSummon())
 					{
-						sendPacket(new ExAutoSoulShot(i.getId(), false, 4));
+						summonSpiritShotId = item.getId();
 					}
 					break;
 				}
 				case FISHINGSHOT:
 				{
-					if ((weapon != null) && (weapon.getItemType() == WeaponType.FISHINGROD) && (weapon.getItem().getCrystalType() == i.getItem().getCrystalType()))
+					if ((weapon != null) && (weapon.getItemType() == WeaponType.FISHINGROD) && (weapon.getItem().getCrystalType() == item.getItem().getCrystalType()))
 					{
-						sendPacket(new ExAutoSoulShot(i.getId(), false, 1));
+						soulShotId = item.getId();
 					}
 					break;
 				}
 			}
-		});
+		}
+		
+		sendPacket(new ExAutoSoulShot(soulShotId, true, 1));
+		sendPacket(new ExAutoSoulShot(spiritShotId, true, 2));
+		sendPacket(new ExAutoSoulShot(summonSoulShotId, true, 3));
+		sendPacket(new ExAutoSoulShot(summonSpiritShotId, true, 4));
 	}
 	
 	public GroupType getGroupType()
