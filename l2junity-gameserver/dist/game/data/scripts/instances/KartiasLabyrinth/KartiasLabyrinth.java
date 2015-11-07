@@ -98,12 +98,12 @@ public final class KartiasLabyrinth extends AbstractInstance
 	private static final int KARTIA_85_TELEPORT_2 = 12023;
 	private static final int KARTIA_85_TELEPORT_3 = 12024;
 	// Misc
-	private static final int TEMPLATE_ID_SOLO_85 = 208;
-	private static final int TEMPLATE_ID_SOLO_90 = 209;
-	private static final int TEMPLATE_ID_SOLO_95 = 210;
-	private static final int TEMPLATE_ID_GROUP_85 = 205;
-	private static final int TEMPLATE_ID_GROUP_90 = 206;
-	private static final int TEMPLATE_ID_GROUP_95 = 207;
+	private static final int TEMPLATE_ID_SOLO_85 = 205;
+	private static final int TEMPLATE_ID_SOLO_90 = 206;
+	private static final int TEMPLATE_ID_SOLO_95 = 207;
+	private static final int TEMPLATE_ID_GROUP_85 = 208;
+	private static final int TEMPLATE_ID_GROUP_90 = 209;
+	private static final int TEMPLATE_ID_GROUP_95 = 210;
 	
 	public KartiasLabyrinth()
 	{
