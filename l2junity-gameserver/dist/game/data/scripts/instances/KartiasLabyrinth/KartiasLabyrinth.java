@@ -94,6 +94,9 @@ public final class KartiasLabyrinth extends AbstractInstance
 	// Zones
 	private static final int KARTIA_85_DETECT_1 = 12020;
 	private static final int KARTIA_85_DETECT_2 = 12021;
+	private static final int KARTIA_85_TELEPORT_1 = 12022;
+	private static final int KARTIA_85_TELEPORT_2 = 12023;
+	private static final int KARTIA_85_TELEPORT_3 = 12024;
 	// Misc
 	private static final int TEMPLATE_ID_SOLO_85 = 208;
 	private static final int TEMPLATE_ID_SOLO_90 = 209;
@@ -116,7 +119,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 		addRouteFinishedId(MONSTERS);
 		setCreatureKillId(this::onCreatureKill, MONSTERS);
 		setCreatureKillId(this::onBossKill, BOSSES);
-		addEnterZoneId(KARTIA_85_DETECT_1, KARTIA_85_DETECT_2);
+		addEnterZoneId(KARTIA_85_DETECT_1, KARTIA_85_DETECT_2, KARTIA_85_TELEPORT_1, KARTIA_85_TELEPORT_2, KARTIA_85_TELEPORT_3);
 		addInstanceCreatedId(TEMPLATE_ID_SOLO_85, TEMPLATE_ID_SOLO_90, TEMPLATE_ID_SOLO_95, TEMPLATE_ID_GROUP_85, TEMPLATE_ID_GROUP_90, TEMPLATE_ID_GROUP_95);
 	}
 	
@@ -209,7 +212,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 				{
 					if (npc != null)
 					{
-						if (npc.getInstanceWorld().getParameters().getInt("room", 1) == 1)
+						if (npc.getInstanceWorld().getParameters().getInt("ROOM", 1) <= 2)
 						{
 							final Location loc = instance.getTemplateParameters().getLocation("middlePointRoom1");
 							final Location moveTo = new Location(loc.getX() + getRandom(-100, 100), loc.getY() + getRandom(-100, 100), loc.getZ());
@@ -217,7 +220,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 							addMoveToDesire(npc, moveTo, 6);
 							getTimers().addTimer("START_MOVE", 15000, npc, null);
 						}
-						else if (npc.getInstanceWorld().getParameters().getInt("room", 1) == 3)
+						else if (npc.getInstanceWorld().getParameters().getInt("ROOM", 1) == 3)
 						{
 							final Location loc = instance.getTemplateParameters().getLocation("middlePointRoom3");
 							final Location moveTo = new Location(loc.getX() + getRandom(-200, 200), loc.getY() + getRandom(-200, 200), loc.getZ());
@@ -237,7 +240,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 					instance.openCloseDoor(instance.getTemplateParameters().getInt("thirdDoorId"), false);
 					instance.getAliveNpcs(MONSTERS).forEach(n -> n.doDie(null));
 					getTimers().addTimer("CALL_PROGRESS", 1000, n -> manageProgressInInstance(instance));
-					// TODO: Activate third teleport zone
+					instance.getParameters().set("TELEPORT_3_ENABLED", true);
 					break;
 				}
 				case "MIRROR_DESPAWN":
@@ -254,7 +257,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 	public void onInstanceCreated(Instance instance)
 	{
 		instance.spawnGroup("PRISONERS");
-		
+		instance.getParameters().set("TELEPORT_1_ENABLED", true);
 		if (!isSoloKartia(instance))
 		{
 			getTimers().addTimer("CALL_PROGRESS", 2500, n -> manageProgressInInstance(instance));
@@ -275,9 +278,9 @@ public final class KartiasLabyrinth extends AbstractInstance
 				instance.setParameter("BOSS_KILL_OPEN_DOOR", true);
 				instance.openCloseDoor(instance.getTemplateParameters().getInt("thirdDoorId"), true);
 			}
-			else if (param.getBoolean("continueAfterKill", false) && instance.getAliveNpcs(MONSTERS).isEmpty())
+			else if (param.getBoolean("CONTINUE_AFTER_KILL", false) && instance.getAliveNpcs(MONSTERS).isEmpty())
 			{
-				param.set("continueAfterKill", false);
+				param.set("CONTINUE_AFTER_KILL", false);
 				getTimers().addTimer("CALL_PROGRESS", 5000, n -> manageProgressInInstance(instance));
 			}
 		}
@@ -340,27 +343,52 @@ public final class KartiasLabyrinth extends AbstractInstance
 		final Instance instance = character.getInstanceWorld();
 		if ((instance != null) && character.isPlayer())
 		{
+			final PlayerInstance player = character.getActingPlayer();
 			switch (zone.getId())
 			{
 				case KARTIA_85_DETECT_1:
 				{
-					if (instance.getParameters().getBoolean("secondRoomStarted", false))
+					if (instance.getParameters().getBoolean("SECOND_ROOM_OPENED", true))
 					{
-						instance.getParameters().set("secondRoomStarted", true);
+						instance.getParameters().set("SECOND_ROOM_OPENED", false);
 						getTimers().addTimer("CLOSE_SECOND_DOORS", 20000, n ->
 						{
 							instance.openCloseDoor(instance.getTemplateParameters().getInt("secondDoorId"), false);
-							// TODO: Activate second teleport zone
+							instance.getParameters().set("TELEPORT_2_ENABLED", true);
 						});
 					}
 					break;
 				}
 				case KARTIA_85_DETECT_2:
 				{
-					if (instance.getParameters().getBoolean("lastRoomOpened", true))
+					if (instance.getParameters().getBoolean("LAST_ROOM_OPENED", true))
 					{
-						instance.getParameters().set("lastRoomOpened", false);
+						instance.getParameters().set("LAST_ROOM_OPENED", false);
 						getTimers().addTimer("START_3RD_ROOM", 10000, null, character.getActingPlayer());
+					}
+					break;
+				}
+				case KARTIA_85_TELEPORT_1:
+				{
+					if (instance.getParameters().getBoolean("TELEPORT_1_ENABLED", false))
+					{
+						player.teleToLocation(instance.getTemplateParameters().getLocation("teleportZone1_loc"));
+					}
+					break;
+				}
+				case KARTIA_85_TELEPORT_2:
+				{
+					if (instance.getParameters().getBoolean("TELEPORT_2_ENABLED", false))
+					{
+						player.teleToLocation(instance.getTemplateParameters().getLocation("teleportZone2_loc"));
+					}
+					break;
+				}
+				case KARTIA_85_TELEPORT_3:
+				{
+					if (instance.getParameters().getBoolean("TELEPORT_3_ENABLED", false))
+					{
+						player.teleToLocation(instance.getTemplateParameters().getLocation("teleportZone3_loc"));
 					}
 					break;
 				}
@@ -427,9 +455,9 @@ public final class KartiasLabyrinth extends AbstractInstance
 	private void manageProgressInInstance(Instance instance)
 	{
 		final StatsSet param = instance.getParameters();
-		final int room = param.getInt("room", 1);
-		final int stage = param.getInt("stage", 1);
-		final int wave = param.getInt("wave", 1);
+		final int room = param.getInt("ROOM", 1);
+		final int stage = param.getInt("STAGE", 1);
+		final int wave = param.getInt("WAVE", 1);
 		
 		if (room == 1)
 		{
@@ -441,19 +469,19 @@ public final class KartiasLabyrinth extends AbstractInstance
 						case 1:
 							showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE1_WAVE1"));
-							param.set("wave", 2);
+							param.set("WAVE", 2);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 2:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE1_WAVE2"));
-							param.set("wave", 3);
+							param.set("WAVE", 3);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 3:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE1_WAVE3"));
-							param.set("wave", 1);
-							param.set("stage", 2);
-							param.set("continueAfterKill", true);
+							param.set("WAVE", 1);
+							param.set("STAGE", 2);
+							param.set("CONTINUE_AFTER_KILL", true);
 							break;
 					}
 					break;
@@ -463,19 +491,19 @@ public final class KartiasLabyrinth extends AbstractInstance
 						case 1:
 							showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE2_WAVE1"));
-							param.set("wave", 2);
+							param.set("WAVE", 2);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 2:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE2_WAVE2"));
-							param.set("wave", 3);
+							param.set("WAVE", 3);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 3:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE2_WAVE3"));
-							param.set("wave", 1);
-							param.set("stage", 3);
-							param.set("continueAfterKill", true);
+							param.set("WAVE", 1);
+							param.set("STAGE", 3);
+							param.set("CONTINUE_AFTER_KILL", true);
 							break;
 					}
 					break;
@@ -485,35 +513,35 @@ public final class KartiasLabyrinth extends AbstractInstance
 						case 1:
 							showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE3_WAVE1"));
-							param.set("wave", 2);
+							param.set("WAVE", 2);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 2:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE3_WAVE2"));
-							param.set("wave", 3);
+							param.set("WAVE", 3);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 3:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE3_WAVE3"));
 							if (isSoloKartia(instance))
 							{
-								param.set("wave", 4);
+								param.set("WAVE", 4);
 							}
 							else
 							{
-								param.set("stage", 4);
-								param.set("wave", 1);
+								param.set("STAGE", 4);
+								param.set("WAVE", 1);
 							}
-							param.set("continueAfterKill", true);
+							param.set("CONTINUE_AFTER_KILL", true);
 							break;
 						case 4:
 							showOnScreenMsg(instance, NpcStringId.THE_LIFE_PLUNDERER_S_TRUE_FORM_IS_REVEALED, ExShowScreenMessage.TOP_CENTER, 5000, true);
 							instance.spawnGroup("ROOM1_STAGE3_WAVE4");
 							instance.getAliveNpcs(BOZ_ENERGY).forEach(npc -> npc.deleteMe());
 							instance.getAliveNpcs(MIRRORS).forEach(npc -> getTimers().addTimer("MIRROR_DESPAWN", 180000, npc, null));
-							param.set("room", 2);
-							param.set("stage", 1);
-							param.set("wave", 1);
+							param.set("ROOM", 2);
+							param.set("STAGE", 1);
+							param.set("WAVE", 1);
 							break;
 					}
 					break;
@@ -523,19 +551,19 @@ public final class KartiasLabyrinth extends AbstractInstance
 						case 1:
 							showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE4_WAVE1"));
-							param.set("wave", 2);
+							param.set("WAVE", 2);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 2:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE4_WAVE2"));
-							param.set("wave", 3);
+							param.set("WAVE", 3);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 3:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE4_WAVE3"));
-							param.set("wave", 1);
-							param.set("stage", 5);
-							param.set("continueAfterKill", true);
+							param.set("WAVE", 1);
+							param.set("STAGE", 5);
+							param.set("CONTINUE_AFTER_KILL", true);
 							break;
 					}
 					break;
@@ -545,15 +573,15 @@ public final class KartiasLabyrinth extends AbstractInstance
 						case 1:
 							showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE5_WAVE1"));
-							param.set("wave", 2);
+							param.set("WAVE", 2);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
 							break;
 						case 2:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE5_WAVE2"));
-							param.set("room", 2);
-							param.set("stage", 1);
-							param.set("wave", 1);
-							param.set("continueAfterKill", true);
+							param.set("ROOM", 2);
+							param.set("STAGE", 1);
+							param.set("WAVE", 1);
+							param.set("CONTINUE_AFTER_KILL", true);
 							break;
 					}
 					break;
@@ -561,14 +589,15 @@ public final class KartiasLabyrinth extends AbstractInstance
 		}
 		else if (room == 2)
 		{
+			instance.getParameters().set("TELEPORT_1_ENABLED", false);
 			instance.setParameter("BOSS_CAN_ESCAPE", true);
 			instance.setParameter("BOSS_KILL_OPEN_DOOR", true);
 			instance.spawnGroup("ROOM2_STAGE1_WAVE1");
 			instance.openCloseDoor(instance.getTemplateParameters().getInt("secondDoorId"), true);
 			instance.getAliveNpcs(BOZ_ENERGY).forEach(npc -> npc.deleteMe());
-			param.set("room", 3);
-			param.set("stage", 1);
-			param.set("wave", 1);
+			param.set("ROOM", 3);
+			param.set("STAGE", 1);
+			param.set("WAVE", 1);
 		}
 		else if (room == 3)
 		{
@@ -577,14 +606,14 @@ public final class KartiasLabyrinth extends AbstractInstance
 				case 1:
 					showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 					moveMonsters(instance.spawnGroup("ROOM3_STAGE1_WAVE1"));
-					param.set("stage", 2);
-					param.set("continueAfterKill", true);
+					param.set("STAGE", 2);
+					param.set("CONTINUE_AFTER_KILL", true);
 					break;
 				case 2:
 					showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 					moveMonsters(instance.spawnGroup("ROOM3_STAGE2_WAVE1"));
-					param.set("stage", 3);
-					param.set("continueAfterKill", true);
+					param.set("STAGE", 3);
+					param.set("CONTINUE_AFTER_KILL", true);
 					break;
 				case 3:
 					showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
@@ -602,15 +631,15 @@ public final class KartiasLabyrinth extends AbstractInstance
 					}
 					else
 					{
-						param.set("stage", 4);
-						param.set("continueAfterKill", true);
+						param.set("STAGE", 4);
+						param.set("CONTINUE_AFTER_KILL", true);
 					}
 					break;
 				case 4:
 					showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
 					moveMonsters(instance.spawnGroup("ROOM3_STAGE4_WAVE1"));
-					param.set("stage", 5);
-					param.set("continueAfterKill", true);
+					param.set("STAGE", 5);
+					param.set("CONTINUE_AFTER_KILL", true);
 					break;
 				case 5:
 					showOnScreenMsg(instance, NpcStringId.STAGE_S1, ExShowScreenMessage.TOP_CENTER, 5000, true, Integer.toString(stage));
@@ -637,13 +666,13 @@ public final class KartiasLabyrinth extends AbstractInstance
 		{
 			if (npc.isAttackable())
 			{
-				if (npc.getInstanceWorld().getParameters().getInt("room", 1) <= 2)
+				if (npc.getInstanceWorld().getParameters().getInt("ROOM", 1) <= 2)
 				{
 					npc.setRandomWalking(false);
 					getTimers().addTimer("MOVE_TO_MIDDLE", delay, npc, null);
 					delay += 250;
 				}
-				else if (npc.getInstanceWorld().getParameters().getInt("room", 1) == 3)
+				else if (npc.getInstanceWorld().getParameters().getInt("ROOM", 1) == 3)
 				{
 					onTimerEvent("MOVE_TO_MIDDLE", null, npc, null);
 				}
