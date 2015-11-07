@@ -637,7 +637,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 		{
 			if (npc.isAttackable())
 			{
-				if (npc.getInstanceWorld().getParameters().getInt("room", 1) <= 1)
+				if (npc.getInstanceWorld().getParameters().getInt("room", 1) <= 2)
 				{
 					npc.setRandomWalking(false);
 					getTimers().addTimer("MOVE_TO_MIDDLE", delay, npc, null);
