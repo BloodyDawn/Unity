@@ -101,5 +101,6 @@ public final class TeleportToSummon extends AbstractEffect
 		effector.abortCast();
 		effector.setXYZ(loc);
 		effector.broadcastPacket(new ValidateLocation(effector));
+		effected.revalidateZone(true);
 	}
 }

@@ -86,6 +86,7 @@ public class FlyMove extends AbstractEffect
 		
 		effector.broadcastPacket(new FlyToLocation(effector, destination, _flyType, _speed, _delay, _animationSpeed));
 		effector.setXYZ(destination);
+		effected.revalidateZone(true);
 	}
 	
 	@Override

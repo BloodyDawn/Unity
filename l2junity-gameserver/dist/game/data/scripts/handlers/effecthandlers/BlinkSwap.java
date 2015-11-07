@@ -68,5 +68,6 @@ public final class BlinkSwap extends AbstractEffect
 		effected.abortCast();
 		effected.setXYZ(effectorLoc);
 		effected.broadcastPacket(new ValidateLocation(effected));
+		effected.revalidateZone(true);
 	}
 }

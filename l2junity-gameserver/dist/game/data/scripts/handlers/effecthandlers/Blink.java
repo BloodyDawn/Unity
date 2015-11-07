@@ -101,5 +101,6 @@ public final class Blink extends AbstractEffect
 		effected.broadcastPacket(new FlyToLocation(effected, destination, _flyType, _flySpeed, _flyDelay, _animationSpeed));
 		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocation(effected));
+		effected.revalidateZone(true);
 	}
 }

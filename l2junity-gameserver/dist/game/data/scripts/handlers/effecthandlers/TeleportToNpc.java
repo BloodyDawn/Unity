@@ -95,6 +95,7 @@ public final class TeleportToNpc extends AbstractEffect
 			effected.abortCast();
 			effected.setXYZ(location);
 			effected.broadcastPacket(new ValidateLocation(effected));
+			effected.revalidateZone(true);
 		}
 		else
 		{

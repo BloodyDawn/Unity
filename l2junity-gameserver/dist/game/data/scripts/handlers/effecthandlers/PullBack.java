@@ -72,6 +72,7 @@ public final class PullBack extends AbstractEffect
 			effected.broadcastPacket(new FlyToLocation(effected, effector, _type, _speed, _delay, _animationSpeed));
 			effected.setXYZ(effector);
 			effected.broadcastPacket(new ValidateLocation(effected));
+			effected.revalidateZone(true);
 		}
 	}
 }

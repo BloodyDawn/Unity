@@ -82,5 +82,6 @@ public final class TeleportToTarget extends AbstractEffect
 		effector.abortCast();
 		effector.setXYZ(loc);
 		effector.broadcastPacket(new ValidateLocation(effector));
+		effected.revalidateZone(true);
 	}
 }

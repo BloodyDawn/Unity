@@ -122,5 +122,6 @@ public final class KnockBack extends AbstractEffect
 		}
 		effected.setXYZ(loc);
 		effected.broadcastPacket(new ValidateLocation(effected));
+		effected.revalidateZone(true);
 	}
 }

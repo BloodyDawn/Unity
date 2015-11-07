@@ -109,5 +109,6 @@ public final class EnemyCharge extends AbstractEffect
 		// maybe is need force set X,Y,Z
 		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocation(effector));
+		effected.revalidateZone(true);
 	}
 }

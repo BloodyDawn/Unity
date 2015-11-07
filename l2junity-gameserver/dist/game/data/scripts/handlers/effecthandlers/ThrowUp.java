@@ -97,5 +97,6 @@ public final class ThrowUp extends AbstractEffect
 		// TODO: Review.
 		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocation(effected));
+		effected.revalidateZone(true);
 	}
 }
