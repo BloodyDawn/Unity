@@ -421,7 +421,12 @@ public final class WalkingManager implements IGameXmlReader
 				{
 					npc.sendDebugMessage("Route '" + walk.getRoute().getName() + "', arrived to node " + walk.getCurrentNodeId());
 					npc.sendDebugMessage("Done in " + ((System.currentTimeMillis() - walk.getLastAction()) / 1000) + " s");
-					walk.calculateNextNode(npc);
+					
+					if (!walk.calculateNextNode(npc))
+					{
+						return;
+					}
+					
 					walk.setBlocked(true); // prevents to be ran from walk check task, if there is delay in this node.
 					
 					if (node.getNpcString() != null)

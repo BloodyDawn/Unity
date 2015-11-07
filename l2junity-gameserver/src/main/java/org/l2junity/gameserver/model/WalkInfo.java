@@ -66,8 +66,9 @@ public class WalkInfo
 	/**
 	 * Calculate next node for this WalkInfo and send debug message from given npc
 	 * @param npc NPC to debug message to be sent from
+	 * @return
 	 */
-	public void calculateNextNode(Npc npc)
+	public boolean calculateNextNode(Npc npc)
 	{
 		// Check this first, within the bounds of random moving, we have no conception of "first" or "last" node
 		if (getRoute().getRepeatType() == WalkingManager.REPEAT_RANDOM)
@@ -102,7 +103,7 @@ public class WalkInfo
 				if (!getRoute().repeatWalk())
 				{
 					WalkingManager.getInstance().cancelMoving(npc);
-					return;
+					return false;
 				}
 				
 				switch (getRoute().getRepeatType())
@@ -133,6 +134,7 @@ public class WalkInfo
 				_forward = true;
 			}
 		}
+		return true;
 	}
 	
 	/**

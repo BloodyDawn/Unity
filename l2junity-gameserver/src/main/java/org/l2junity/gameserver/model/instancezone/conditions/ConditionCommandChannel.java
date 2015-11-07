@@ -31,9 +31,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class ConditionCommandChannel extends Condition
 {
 	
-	public ConditionCommandChannel(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionCommandChannel(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, true);
+		super(template, parameters, true, showMessageAndHtml);
 		setSystemMessage(SystemMessageId.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
 	}
 	

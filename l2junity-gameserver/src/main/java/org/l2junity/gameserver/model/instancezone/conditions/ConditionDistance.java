@@ -30,9 +30,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class ConditionDistance extends Condition
 {
-	public ConditionDistance(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionDistance(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, onlyLeader, showMessageAndHtml);
 		setSystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED, (message, player) -> message.addCharName(player));
 	}
 	

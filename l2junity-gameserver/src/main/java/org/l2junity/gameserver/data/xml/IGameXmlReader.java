@@ -82,7 +82,7 @@ public interface IGameXmlReader extends IXmlReader
 				}
 				case "location":
 				{
-					parameters.put(parseString(attrs, "name"), new Location(parseInteger(attrs, "x"), parseInteger(attrs, "y"), parseInteger(attrs, "z")));
+					parameters.put(parseString(attrs, "name"), new Location(parseInteger(attrs, "x"), parseInteger(attrs, "y"), parseInteger(attrs, "z"), parseInteger(attrs, "heading", 0)));
 					break;
 				}
 				case "minions":

@@ -32,9 +32,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class ConditionCommandChannelLeader extends Condition
 {
 	
-	public ConditionCommandChannelLeader(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionCommandChannelLeader(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, true);
+		super(template, parameters, true, showMessageAndHtml);
 		setSystemMessage(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 	}
 	

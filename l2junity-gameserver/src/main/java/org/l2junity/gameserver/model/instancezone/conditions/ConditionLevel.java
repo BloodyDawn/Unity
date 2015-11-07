@@ -33,9 +33,9 @@ public final class ConditionLevel extends Condition
 	private final int _min;
 	private final int _max;
 	
-	public ConditionLevel(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionLevel(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, onlyLeader, showMessageAndHtml);
 		// Load params
 		_min = parameters.getInt("min", 1);
 		_max = parameters.getInt("max", Integer.MAX_VALUE);

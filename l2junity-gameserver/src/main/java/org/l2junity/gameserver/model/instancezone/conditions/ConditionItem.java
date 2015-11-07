@@ -34,9 +34,9 @@ public final class ConditionItem extends Condition
 	private final long _count;
 	private final boolean _take;
 	
-	public ConditionItem(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionItem(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, onlyLeader, showMessageAndHtml);
 		// Load params
 		_itemId = parameters.getInt("id");
 		_count = parameters.getLong("count");

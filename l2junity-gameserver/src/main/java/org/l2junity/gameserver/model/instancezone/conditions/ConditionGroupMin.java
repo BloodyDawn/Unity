@@ -32,9 +32,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class ConditionGroupMin extends Condition
 {
-	public ConditionGroupMin(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionGroupMin(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, true);
+		super(template, parameters, true, showMessageAndHtml);
 		setSystemMessage(SystemMessageId.YOU_MUST_HAVE_A_MINIMUM_OF_S1_PEOPLE_TO_ENTER_THIS_INSTANCED_ZONE, (msg, player) -> msg.addInt(getLimit()));
 	}
 	

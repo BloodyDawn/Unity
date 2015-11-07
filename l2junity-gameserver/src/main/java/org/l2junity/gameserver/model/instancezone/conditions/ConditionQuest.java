@@ -33,9 +33,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class ConditionQuest extends Condition
 {
-	public ConditionQuest(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionQuest(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, onlyLeader, showMessageAndHtml);
 		// Set message
 		setSystemMessage(SystemMessageId.C1_S_QUEST_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED, (message, player) -> message.addCharName(player));
 	}

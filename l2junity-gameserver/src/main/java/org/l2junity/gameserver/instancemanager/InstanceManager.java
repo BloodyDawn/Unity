@@ -313,6 +313,7 @@ public final class InstanceManager implements IGameXmlReader
 							attrs = e.getAttributes();
 							final String type = parseString(attrs, "type");
 							final boolean onlyLeader = parseBoolean(attrs, "onlyLeader", false);
+							final boolean showMessageAndHtml = parseBoolean(attrs, "showMessageAndHtml", false);
 							// Load parameters
 							StatsSet params = null;
 							for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
@@ -339,8 +340,8 @@ public final class InstanceManager implements IGameXmlReader
 							try
 							{
 								final Class<?> clazz = Class.forName("org.l2junity.gameserver.model.instancezone.conditions.Condition" + type);
-								final Constructor<?> constructor = clazz.getConstructor(InstanceTemplate.class, StatsSet.class, boolean.class);
-								conditions.add((Condition) constructor.newInstance(template, params, onlyLeader));
+								final Constructor<?> constructor = clazz.getConstructor(InstanceTemplate.class, StatsSet.class, boolean.class, boolean.class);
+								conditions.add((Condition) constructor.newInstance(template, params, onlyLeader, showMessageAndHtml));
 							}
 							catch (Exception ex)
 							{

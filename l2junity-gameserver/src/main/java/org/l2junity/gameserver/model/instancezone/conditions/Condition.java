@@ -36,7 +36,8 @@ public abstract class Condition
 {
 	private final InstanceTemplate _template;
 	private final StatsSet _parameters;
-	private boolean _leaderOnly = true;
+	private final boolean _leaderOnly;
+	private final boolean _showMessageAndHtml;
 	private SystemMessageId _systemMsg = null;
 	private BiConsumer<SystemMessage, PlayerInstance> _systemMsgParams = null;
 	
@@ -45,12 +46,14 @@ public abstract class Condition
 	 * @param template template of instance where condition will be registered.
 	 * @param parameters parameters of current condition
 	 * @param onlyLeader flag which means if only leader should be affected (leader means player who wants to enter not group leader!)
+	 * @param showMessageAndHtml if {@code true} and HTML message is defined then both are send, otherwise only HTML or message is send
 	 */
-	public Condition(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public Condition(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
 		_template = template;
 		_parameters = parameters;
 		_leaderOnly = onlyLeader;
+		_showMessageAndHtml = showMessageAndHtml;
 	}
 	
 	/**
@@ -110,7 +113,11 @@ public abstract class Condition
 		{
 			// Send HTML only to player who make request to enter
 			htmlCallback.accept(group.get(0), html);
-			return;
+			// Stop execution if only one message is allowed
+			if (!_showMessageAndHtml)
+			{
+				return;
+			}
 		}
 		
 		// Send text message if condition has any

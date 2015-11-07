@@ -32,9 +32,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class ConditionReenter extends Condition
 {
 	
-	public ConditionReenter(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionReenter(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, onlyLeader, showMessageAndHtml);
 		setSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET, (message, player) -> message.addCharName(player));
 	}
 	

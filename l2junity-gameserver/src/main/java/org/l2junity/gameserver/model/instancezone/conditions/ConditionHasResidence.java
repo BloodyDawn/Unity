@@ -31,9 +31,9 @@ import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
  */
 public final class ConditionHasResidence extends Condition
 {
-	public ConditionHasResidence(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionHasResidence(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, onlyLeader, showMessageAndHtml);
 	}
 	
 	@Override

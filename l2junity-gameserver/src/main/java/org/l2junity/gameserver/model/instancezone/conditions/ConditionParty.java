@@ -30,9 +30,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class ConditionParty extends Condition
 {
-	public ConditionParty(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
+	public ConditionParty(InstanceTemplate template, StatsSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
-		super(template, parameters, true);
+		super(template, parameters, true, showMessageAndHtml);
 		setSystemMessage(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 	}
 	

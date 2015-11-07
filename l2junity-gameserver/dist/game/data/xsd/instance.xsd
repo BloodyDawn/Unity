@@ -102,6 +102,15 @@
 									<xs:attribute name="level" type="xs:positiveInteger" use="required" />
 								</xs:complexType>
 							</xs:element>
+							<xs:element name="location">
+								<xs:complexType>
+									<xs:attribute name="name" type="xs:token" use="required" />
+									<xs:attribute name="x" type="xs:integer" use="required" />
+									<xs:attribute name="y" type="xs:integer" use="required" />
+									<xs:attribute name="z" type="xs:integer" use="required" />
+									<xs:attribute name="heading" type="xs:integer" use="optional" />
+								</xs:complexType>
+							</xs:element>
 						</xs:choice>
 					</xs:complexType>
 				</xs:element>
@@ -137,6 +146,7 @@
 										</xs:simpleType>
 									</xs:attribute>
 									<xs:attribute name="onlyLeader" type="xs:boolean" />
+									<xs:attribute name="showMessageAndHtml" type="xs:boolean" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
