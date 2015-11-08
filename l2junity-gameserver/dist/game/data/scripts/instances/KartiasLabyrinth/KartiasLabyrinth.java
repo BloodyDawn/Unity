@@ -541,24 +541,24 @@ public final class KartiasLabyrinth extends AbstractInstance
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE3_WAVE2"));
 							param.set("WAVE", 3);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
+							
+							getTimers().addTimer("PRISONERS_ESCAPE", 5000, n ->
+							{
+								instance.getAliveNpcs(PRISONERS).forEach(prisoner ->
+								{
+									param.set("SURVIVOR_COUNT", param.getInt("SURVIVOR_COUNT", 0) + 1);
+									prisoner.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.I_AM_SAFE_THANKS_TO_YOU_I_WILL_BEGIN_SUPPORTING_AS_SOON_AS_PREPARATIONS_ARE_COMPLETE);
+									prisoner.setTargetable(false);
+									final Location loc = instance.getTemplateParameters().getLocation("prisonerEscapeLoc");
+									addMoveToDesire(prisoner, loc, 23);
+								});
+							});
 							break;
 						case 3:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE3_WAVE3"));
 							if (isSoloKartia(instance))
 							{
 								param.set("WAVE", 4);
-								
-								getTimers().addTimer("PRISONERS_ESCAPE", 5000, n ->
-								{
-									instance.getAliveNpcs(PRISONERS).forEach(prisoner ->
-									{
-										param.set("SURVIVOR_COUNT", param.getInt("SURVIVOR_COUNT", 0) + 1);
-										prisoner.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.I_AM_SAFE_THANKS_TO_YOU_I_WILL_BEGIN_SUPPORTING_AS_SOON_AS_PREPARATIONS_ARE_COMPLETE);
-										prisoner.setTargetable(false);
-										final Location loc = instance.getTemplateParameters().getLocation("prisonerEscapeLoc");
-										addMoveToDesire(prisoner, loc, 23);
-									});
-								});
 							}
 							else
 							{
