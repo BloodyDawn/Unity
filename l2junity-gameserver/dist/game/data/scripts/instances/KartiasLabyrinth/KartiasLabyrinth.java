@@ -91,6 +91,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 	// Skills
 	private static final SkillHolder MIRROR_SKILL_1 = new SkillHolder(15401, 1);
 	private static final SkillHolder MIRROR_SKILL_2 = new SkillHolder(14065, 1);
+	private static final SkillHolder BOSS_STONE = new SkillHolder(15155, 1);
 	// Zones
 	private static final int KARTIA_85_DETECT_1 = 12020;
 	private static final int KARTIA_85_DETECT_2 = 12021;
@@ -442,7 +443,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 			}
 			else if (CommonUtil.contains(BOSSES, npc.getId()))
 			{
-				// TODO: add visual effect
+				BOSS_STONE.getSkill().applyEffects(npc, npc);
 				((Attackable) npc).setCanReturnToSpawnPoint(false);
 				npc.setRandomWalking(false);
 				npc.setTargetable(false);
@@ -646,7 +647,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 					moveMonsters(instance.spawnGroup("ROOM3_STAGE4_WAVE1"));
 					instance.getAliveNpcs(BOSSES).forEach(npc ->
 					{
-						// TODO: Remove visual effect
+						npc.stopSkillEffects(BOSS_STONE.getSkill());
 						npc.setTargetable(true);
 						npc.setIsInvul(false);
 						npc.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.THE_RITUAL_IS_COMPLETE_NOW_I_WILL_SHOW_YOU_HELL);
