@@ -303,7 +303,16 @@ public final class KartiasLabyrinth extends AbstractInstance
 		{
 			if (isSoloKartia(instance))
 			{
-				// TODO: Handle XP give from solo instance
+				final StatsSet tempParam = instance.getTemplateParameters();
+				final int xp = tempParam.getInt("soloEXP");
+				final int xp_rnd = tempParam.getInt("SoloEXP_Rand");
+				final int sp = tempParam.getInt("SoloSP");
+				final int sp_rnd = tempParam.getInt("SoloSP_Rand");
+				
+				instance.getPlayers().forEach(player ->
+				{
+					addExpAndSp(player, (xp + getRandom(xp_rnd)), (sp + getRandom(sp_rnd)));
+				});
 			}
 			npc.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.NO_HOW_COULD_THIS_BE_I_CAN_T_GO_BACK_TO_NIHIL_LIKE_THIS);
 			instance.finishInstance();
