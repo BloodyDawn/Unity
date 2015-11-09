@@ -551,7 +551,7 @@ public class Attackable extends Npc
 										clan.addHuntingPoints(attacker, this, finalExp);
 									}
 									
-									attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), addexp, false), true, false);
+									attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), addexp, isRaid()), true, false);
 								}
 							}
 						}
