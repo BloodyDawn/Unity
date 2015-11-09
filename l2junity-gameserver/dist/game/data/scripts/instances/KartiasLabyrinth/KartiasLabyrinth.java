@@ -358,8 +358,8 @@ public final class KartiasLabyrinth extends AbstractInstance
 				{
 					npc.setScriptValue(1);
 					showOnScreenMsg(instance, NpcStringId.BURNING_BLOOD_S_EFFECT_IS_FELT, ExShowScreenMessage.TOP_CENTER, 5000, true);
-					MIRROR_SKILL_1.getSkill().applyEffects(npc, attacker);
-					MIRROR_SKILL_2.getSkill().applyEffects(npc, attacker);
+					MIRROR_SKILL_1.getSkill().applyEffects(attacker, attacker);
+					MIRROR_SKILL_2.getSkill().applyEffects(attacker, attacker);
 					manageProgressInInstance(instance);
 					getTimers().addTimer("SUICIDE", 5000, n -> npc.doDie(null));
 					getTimers().cancelTimer("MIRROR_DESPAWN", npc, null);
