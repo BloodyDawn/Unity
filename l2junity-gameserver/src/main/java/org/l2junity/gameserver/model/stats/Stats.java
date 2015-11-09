@@ -262,9 +262,6 @@ public enum Stats
 	// Storm Sign bonus damage
 	STORM_SIGN_BONUS("stormSignBonus"),
 	
-	// Regular attacks bonus damage
-	REGULAR_ATTACKS_DMG("regularAttacksDmg"),
-	
 	// The maximum allowed range to be damaged from.
 	DAMAGED_MAX_RANGE("damagedMaxRange"),
 	

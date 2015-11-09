@@ -79,7 +79,6 @@ public final class RegularAttack extends AbstractEffect
 		double damage = Formulas.calcPhysDam(effector, effected, null, 0, shld, crit, effector.isChargedShot(ShotType.SOULSHOTS));
 		damage *= _pAtkMod; // TODO needs better integration within formula
 		damage /= _pDefMod; // TODO needs better integration within formula
-		damage = (int) effector.getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
 		
 		if (damage > 0)
 		{
