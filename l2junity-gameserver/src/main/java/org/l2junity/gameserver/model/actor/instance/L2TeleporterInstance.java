@@ -236,7 +236,7 @@ public final class L2TeleporterInstance extends Npc
 	
 	protected boolean shouldPayFee(PlayerInstance player, TeleportType type, TeleportLocation loc)
 	{
-		return (type != TeleportType.NORMAL) || (!Config.ALT_GAME_FREE_TELEPORT && ((player.getLevel() > 76) || player.isSubClassActive()) && ((loc.getFeeId() != 0) && (loc.getFeeCount() > 0)));
+		return (!Config.ALT_GAME_FREE_TELEPORT && ((player.getLevel() > 76) || player.isSubClassActive()) && ((loc.getFeeId() != 0) && (loc.getFeeCount() > 0)));
 	}
 	
 	protected int parseNextInt(StringTokenizer st, int defaultVal)
@@ -301,6 +301,10 @@ public final class L2TeleporterInstance extends Npc
 			case MultisellData.FAME:
 			{
 				return "Fame";
+			}
+			case MultisellData.RAIDBOSS_POINTS:
+			{
+				return "Raid Points";
 			}
 		}
 		return "Unknown item: " + itemId;
