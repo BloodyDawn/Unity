@@ -98,6 +98,8 @@ public final class KartiasLabyrinth extends AbstractInstance
 	private static final SkillHolder MIRROR_SKILL_1 = new SkillHolder(15401, 1);
 	private static final SkillHolder MIRROR_SKILL_2 = new SkillHolder(14065, 1);
 	private static final SkillHolder BOSS_STONE = new SkillHolder(15155, 1);
+	private static final SkillHolder PRISONER_HOLD = new SkillHolder(14988, 1);
+	private static final SkillHolder PRISONER_CLEANSE = new SkillHolder(14992, 1);
 	// Zones
 	private static final int KARTIA_85_DETECT_1 = 12020;
 	private static final int KARTIA_85_DETECT_2 = 12021;
@@ -270,7 +272,14 @@ public final class KartiasLabyrinth extends AbstractInstance
 	@Override
 	public void onInstanceCreated(Instance instance)
 	{
-		instance.spawnGroup("PRISONERS");
+		instance.spawnGroup("PRISONERS").forEach(npc ->
+		{
+			final SkillHolder poison = npc.getParameters().getSkillHolder("poison_skill");
+			poison.getSkill().applyEffects(npc, npc);
+			PRISONER_HOLD.getSkill().applyEffects(npc, npc);
+			
+		});
+		
 		instance.getParameters().set("TELEPORT_1_ENABLED", true);
 		if (!isSoloKartia(instance))
 		{
@@ -438,7 +447,10 @@ public final class KartiasLabyrinth extends AbstractInstance
 					npc.setScriptValue(1);
 					final Location moveTo = new Location(npc.getX() + getRandom(-500, 500), npc.getY() + getRandom(-500, 500), npc.getZ());
 					addMoveToDesire(npc, moveTo, 23);
-					getTimers().addTimer("DESPAWN", 5000, n -> npc.deleteMe());
+				}
+				else
+				{
+					npc.deleteMe();
 				}
 			}
 			else // Mini bosses
@@ -562,24 +574,25 @@ public final class KartiasLabyrinth extends AbstractInstance
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE3_WAVE2"));
 							param.set("WAVE", 3);
 							getTimers().addTimer("NEXT_WAVE_DELAY", 30000, n -> manageProgressInInstance(instance));
-							
-							getTimers().addTimer("PRISONERS_ESCAPE", 5000, n ->
-							{
-								instance.getAliveNpcs(PRISONERS).forEach(prisoner ->
-								{
-									param.set("SURVIVOR_COUNT", param.getInt("SURVIVOR_COUNT", 0) + 1);
-									prisoner.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.I_AM_SAFE_THANKS_TO_YOU_I_WILL_BEGIN_SUPPORTING_AS_SOON_AS_PREPARATIONS_ARE_COMPLETE);
-									prisoner.setTargetable(false);
-									final Location loc = instance.getTemplateParameters().getLocation("prisonerEscapeLoc");
-									addMoveToDesire(prisoner, loc, 23);
-								});
-							});
 							break;
 						case 3:
 							moveMonsters(instance.spawnGroup("ROOM1_STAGE3_WAVE3"));
 							if (isSoloKartia(instance))
 							{
 								param.set("WAVE", 4);
+								
+								getTimers().addTimer("PRISONERS_ESCAPE", 5000, n ->
+								{
+									instance.getAliveNpcs(PRISONERS).forEach(prisoner ->
+									{
+										param.set("SURVIVOR_COUNT", param.getInt("SURVIVOR_COUNT", 0) + 1);
+										prisoner.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.I_AM_SAFE_THANKS_TO_YOU_I_WILL_BEGIN_SUPPORTING_AS_SOON_AS_PREPARATIONS_ARE_COMPLETE);
+										prisoner.setTargetable(false);
+										PRISONER_CLEANSE.getSkill().applyEffects(prisoner, prisoner);
+										final Location loc = instance.getTemplateParameters().getLocation("prisonerEscapeLoc");
+										addMoveToDesire(prisoner, loc, 23);
+									});
+								});
 							}
 							else
 							{
