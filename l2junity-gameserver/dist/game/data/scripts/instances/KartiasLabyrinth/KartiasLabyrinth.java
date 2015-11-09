@@ -657,6 +657,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 									param.set("SURVIVOR_COUNT", param.getInt("SURVIVOR_COUNT", 0) + 1);
 									prisoner.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.I_AM_SAFE_THANKS_TO_YOU_I_WILL_BEGIN_SUPPORTING_AS_SOON_AS_PREPARATIONS_ARE_COMPLETE);
 									prisoner.setTargetable(false);
+									PRISONER_CLEANSE.getSkill().applyEffects(prisoner, prisoner);
 									final Location loc = instance.getTemplateParameters().getLocation("prisonerEscapeLoc");
 									addMoveToDesire(prisoner, loc, 23);
 								});
