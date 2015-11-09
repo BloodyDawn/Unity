@@ -33,7 +33,6 @@ public class NextPrevPageHandler implements IPageHandler
 	@Override
 	public void apply(String bypass, int currentPage, int pages, StringBuilder sb, IBypassFormatter bypassFormatter, IHtmlStyle style)
 	{
-		System.out.println(currentPage);
 		// Beginning
 		sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, 0), "<<", (currentPage - 1) < 0));
 		
