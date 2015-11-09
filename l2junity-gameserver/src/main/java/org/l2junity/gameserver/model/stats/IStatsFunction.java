@@ -165,9 +165,7 @@ public interface IStatsFunction
 						value += ((2 * blessedBonus * enchant) + (4 * blessedBonus * overEnchant));
 						break;
 					}
-					case 4:
-					case 5:
-					case 6:
+					default:
 					{
 						value += (6 * blessedBonus * overEnchant);
 						break;
@@ -236,6 +234,10 @@ public interface IStatsFunction
 					case 7:
 					case 8:
 					case 9:
+					case 10:
+					case 11:
+					case 12:
+					case 13:
 					{
 						value += (20 * blessedBonus * (overEnchant - 1.5));
 						break;
@@ -327,6 +329,9 @@ public interface IStatsFunction
 							case 7:
 							case 8:
 							case 9:
+							case 10:
+							case 11:
+							case 12:
 							{
 								value += (48 * blessedBonus * (overEnchant - 1.5));
 								break;
@@ -373,6 +378,9 @@ public interface IStatsFunction
 							case 7:
 							case 8:
 							case 9:
+							case 10:
+							case 11:
+							case 12:
 							{
 								value += (28 * blessedBonus * (overEnchant - 1.5));
 								break;
@@ -420,6 +428,9 @@ public interface IStatsFunction
 						case 7:
 						case 8:
 						case 9:
+						case 10:
+						case 11:
+						case 12:
 						{
 							value += (24 * blessedBonus * (overEnchant - 1.5));
 							break;
