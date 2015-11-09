@@ -36,7 +36,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Avant-Garde AI.<br>
- * Sub-Class Certification system, skill learning and certification canceling.<br>
  * Transformation skill learning and transformation scroll sell.
  * @author Zoey76
  */
