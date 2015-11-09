@@ -55,7 +55,7 @@ public final class HealPercent extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -69,8 +69,8 @@ public final class HealPercent extends AbstractEffect
 		boolean full = (power == 100.0);
 		
 		amount = full ? effected.getMaxHp() : (effected.getMaxHp() * power) / 100.0;
-		// Prevents overheal and negative amount
-		amount = Math.max(Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp()), 0);
+		// Prevents overheal
+		amount = Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp());
 		if (amount != 0)
 		{
 			final double newHp = amount + effected.getCurrentHp();

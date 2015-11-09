@@ -125,8 +125,8 @@ public final class Heal extends AbstractEffect
 		// Adding healer's heal power
 		amount = effector.getStat().getValue(Stats.HEAL_POWER, amount);
 		
-		// Prevents overheal and negative amount
-		amount = Math.max(Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp()), 0);
+		// Prevents overheal
+		amount = Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp());
 		if (amount != 0)
 		{
 			final double newHp = amount + effected.getCurrentHp();
