@@ -711,6 +711,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 					{
 						instance.getAliveNpcs(BOSSES).forEach(npc ->
 						{
+							npc.stopSkillEffects(BOSS_STONE.getSkill());
 							npc.setTargetable(true);
 							npc.setIsInvul(false);
 							final Location loc = instance.getTemplateParameters().getLocation("middlePointRoom3");
