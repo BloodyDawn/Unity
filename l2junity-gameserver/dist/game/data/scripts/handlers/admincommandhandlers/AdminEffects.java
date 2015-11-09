@@ -109,7 +109,8 @@ public class AdminEffects implements IAdminCommandHandler
 		"admin_atmosphere_menu",
 		"admin_set_displayeffect",
 		"admin_set_displayeffect_menu",
-		"admin_event_trigger"
+		"admin_event_trigger",
+		"admin_settargetable"
 	};
 	
 	@Override
@@ -667,6 +668,10 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				activeChar.sendMessage("Usage: //event_trigger id [true | false]");
 			}
+		}
+		else if (command.startsWith("admin_settargetable"))
+		{
+			activeChar.setTargetable(!activeChar.isTargetable());
 		}
 		
 		if (command.contains("menu"))

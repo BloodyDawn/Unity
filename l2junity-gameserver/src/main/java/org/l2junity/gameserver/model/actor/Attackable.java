@@ -746,9 +746,11 @@ public class Attackable extends Npc
 			targetPlayer = summoner.getActingPlayer();
 			attacker = summoner;
 		}
+		
 		// Get the AggroInfo of the attacker L2Character from the _aggroList of the L2Attackable
 		final AggroInfo ai = getAggroList().computeIfAbsent(attacker, AggroInfo::new);
 		ai.addDamage(damage);
+		
 		// traps does not cause aggro
 		// making this hack because not possible to determine if damage made by trap
 		// so just check for triggered trap here
@@ -1750,5 +1752,25 @@ public class Attackable extends Npc
 	public boolean isAttackable()
 	{
 		return true;
+	}
+	
+	@Override
+	public void setTarget(WorldObject object)
+	{
+		if (object == null)
+		{
+			final WorldObject target = getTarget();
+			if (target != null)
+			{
+				getAggroList().remove(target);
+			}
+			if (getAggroList().isEmpty())
+			{
+				((AttackableAI) getAI()).setGlobalAggro(-25);
+				setWalking();
+			}
+			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+		}
+		super.setTarget(object);
 	}
 }
