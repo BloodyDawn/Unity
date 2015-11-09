@@ -873,7 +873,7 @@ public class Party extends AbstractPlayerGroup
 						}
 						clan.addHuntingPoints(member, target, finalExp);
 					}
-					member.updateVitalityPoints(target.getVitalityPoints(member.getLevel(), addexp), true, false);
+					member.updateVitalityPoints(target.getVitalityPoints(member.getLevel(), addexp, target.isRaid()), true, false);
 				}
 			}
 			else

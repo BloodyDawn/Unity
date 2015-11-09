@@ -551,7 +551,7 @@ public class Attackable extends Npc
 										clan.addHuntingPoints(attacker, this, finalExp);
 									}
 									
-									attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), addexp), true, false);
+									attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), addexp, false), true, false);
 								}
 							}
 						}
@@ -1661,7 +1661,7 @@ public class Attackable extends Npc
 	/*
 	 * Return vitality points decrease (if positive) or increase (if negative) based on damage. Maximum for damage = maxHp.
 	 */
-	public int getVitalityPoints(int level, long exp)
+	public int getVitalityPoints(int level, long exp, boolean isBoss)
 	{
 		if ((getLevel() <= 0) || (getExpReward() <= 0))
 		{
@@ -1675,8 +1675,7 @@ public class Attackable extends Npc
 		}
 		else
 		{
-			// TODO Fix this formula
-			points = (int) (((9 * getLevel() * getLevel()) / exp) * 10000);
+			points = (int) ((exp / (isBoss ? Config.VITALITY_CONSUME_BY_BOSS : Config.VITALITY_CONSUME_BY_MOB)) * Math.max(level - getLevel(), 1));
 		}
 		
 		return -points;

@@ -753,6 +753,8 @@ public final class Config
 	public static int DROP_ITEM_MIN_LEVEL_DIFFERENCE;
 	public static int DROP_ITEM_MAX_LEVEL_DIFFERENCE;
 	public static double DROP_ITEM_MIN_LEVEL_GAP_CHANCE;
+	public static int VITALITY_CONSUME_BY_MOB;
+	public static int VITALITY_CONSUME_BY_BOSS;
 	
 	// --------------------------------------------------
 	// PvP Settings
@@ -1914,6 +1916,9 @@ public final class Config
 			DROP_ITEM_MIN_LEVEL_DIFFERENCE = NPC.getInt("DropItemMinLevelDifference", 5);
 			DROP_ITEM_MAX_LEVEL_DIFFERENCE = NPC.getInt("DropItemMaxLevelDifference", 10);
 			DROP_ITEM_MIN_LEVEL_GAP_CHANCE = NPC.getDouble("DropItemMinLevelGapChance", 10);
+			
+			VITALITY_CONSUME_BY_MOB = NPC.getInt("VitalityConsumeByMob", 2250);
+			VITALITY_CONSUME_BY_BOSS = NPC.getInt("VitalityConsumeByBoss", 1125);
 			
 			// Load Rates L2Properties file (if exists)
 			final PropertiesParser RatesSettings = new PropertiesParser(RATES_CONFIG_FILE);
