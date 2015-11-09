@@ -101,14 +101,14 @@ public class PcStat extends PlayableStat
 		return true;
 	}
 	
-	public boolean addExpAndSp(long addToExp, long addToSp, boolean useBonuses)
+	public void addExpAndSp(long addToExp, long addToSp, boolean useBonuses)
 	{
 		PlayerInstance activeChar = getActiveChar();
 		
 		// Allowed to gain exp/sp?
 		if (!activeChar.getAccessLevel().canGainExp())
 		{
-			return false;
+			return;
 		}
 		
 		long baseExp = addToExp;
@@ -162,11 +162,6 @@ public class PcStat extends PlayableStat
 			addToSp = 0;
 		}
 		
-		if ((addToExp == 0) && (addToSp == 0))
-		{
-			return false;
-		}
-		
 		SystemMessage sm = null;
 		if ((addToExp == 0) && (addToSp != 0))
 		{
@@ -196,7 +191,6 @@ public class PcStat extends PlayableStat
 			}
 		}
 		activeChar.sendPacket(sm);
-		return true;
 	}
 	
 	@Override
