@@ -105,6 +105,7 @@ public enum AbnormalType
 	EVENT_TERRITORY(-1),
 	EVENT_WIN(-1),
 	EXP_BOTTLE(-1),
+	EXP_SPECIAL(-1),
 	FINAL_SECRET(-1),
 	FLAG_BUF(-1),
 	FLAG_DEBUF(-1),

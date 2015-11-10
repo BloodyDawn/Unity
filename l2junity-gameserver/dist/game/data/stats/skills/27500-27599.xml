@@ -494,4 +494,22 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 	</skill>
+	<skill id="27580" levels="1" name="Wind of Bard">
+		<!-- Updated to IO -->
+		<!-- XP/SP + 100%% for 1 hour. Cannot be stacked with Maphr's Wind Scroll. Buff remains after death. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3600" />
+		<set name="abnormalType" val="EXP_SPECIAL" />
+		<set name="icon" val="icon.skill_sing" />
+		<set name="isMagic" val="4" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="ONE" />
+		<set name="reuseDelay" val="60000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="2" />
+				<mul stat="bonusSp" val="2" />
+			</effect>
+		</for>
+	</skill>
 </list>
