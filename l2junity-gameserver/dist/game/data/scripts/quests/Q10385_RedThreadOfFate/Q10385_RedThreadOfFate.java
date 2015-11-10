@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
@@ -91,11 +90,6 @@ public final class Q10385_RedThreadOfFate extends Quest
 	private static final int FIERCEST_FLAME = 36070;
 	private static final int FONDEST_HEART = 36071;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
-	// Misc
-	private static final int MIN_LEVEL = 85;
-	private static final int SOCIAL_BOW = 7;
-	private static final String ROXXY_VAR = "roxxy_npc_check";
-	private static final String DARIN_VAR = "darin_npc_check";
 	// Location
 	private static final Location LANYA_TELEPORT = new Location(80732, 254670, -10360);
 	private static final Location LADY_OF_THE_LAKE_TELEPORT = new Location(143218, 43916, -3024);
@@ -108,6 +102,11 @@ public final class Q10385_RedThreadOfFate extends Quest
 	private static final SkillHolder BRIGHTEST_LIGHT_SKILL = new SkillHolder(9580, 1);
 	private static final SkillHolder CLEAREST_WATER_SKILL = new SkillHolder(9579, 1);
 	private static final SkillHolder SUB_PRESENTATION = new SkillHolder(18177, 1);
+	// Misc
+	private static final int MIN_LEVEL = 85;
+	private static final int SOCIAL_BOW = 7;
+	private static final String ROXXY_VAR = "roxxy_npc_check";
+	private static final String DARIN_VAR = "darin_npc_check";
 	
 	public Q10385_RedThreadOfFate()
 	{
@@ -413,7 +412,6 @@ public final class Q10385_RedThreadOfFate extends Quest
 	{
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState qs = getQuestState(player, false);
-		
 		final WorldObject target = player.getTarget();
 		
 		if ((target != null) && target.isNpc() && (target.getId() == LANYA))
@@ -660,7 +658,10 @@ public final class Q10385_RedThreadOfFate extends Quest
 			}
 			case State.COMPLETED:
 			{
-				htmltext = "33491-07.html";
+				if (npc.getId() == RAINA)
+				{
+					htmltext = "33491-07.html";
+				}
 				break;
 			}
 		}
@@ -687,12 +688,9 @@ public final class Q10385_RedThreadOfFate extends Quest
 			final PlayerInstance player = creature.getActingPlayer();
 			final QuestState qs = getQuestState(player, false);
 			
-			if (npc.getId() == INVISIBLE_ANGHEL_WATERFALL_NPC)
+			if ((npc.getId() == INVISIBLE_ANGHEL_WATERFALL_NPC) && (qs != null) && qs.isCond(7))
 			{
-				if ((qs != null) && qs.isCond(7))
-				{
-					showOnScreenMsg(player, NpcStringId.YOU_HAVE_REACHED_ANGHEL_WATERFALL_GO_INSIDE_THE_CAVE, ExShowScreenMessage.TOP_CENTER, 5000);
-				}
+				showOnScreenMsg(player, NpcStringId.YOU_HAVE_REACHED_ANGHEL_WATERFALL_GO_INSIDE_THE_CAVE, ExShowScreenMessage.TOP_CENTER, 5000);
 			}
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
@@ -701,79 +699,56 @@ public final class Q10385_RedThreadOfFate extends Quest
 	@Override
 	public String onSkillSee(Npc npc, PlayerInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
-		if (player != null)
+		final QuestState qs = getQuestState(player, false);
+		
+		if ((qs != null) && qs.isStarted() && CommonUtil.contains(targets, npc))
 		{
 			switch (npc.getId())
 			{
 				case DESERTED_DWARVEN_HOUSE:
 				{
-					if ((skill == FONDEST_HEART_SKILL.getSkill()) && (CommonUtil.contains(targets, npc)))
+					if ((skill == FONDEST_HEART_SKILL.getSkill()) && qs.isCond(14))
 					{
-						final QuestState qs = getQuestState(player, false);
-						
-						if ((qs != null) && qs.isStarted() && qs.isCond(14))
-						{
-							qs.setCond(15, true);
-						}
+						qs.setCond(15, true);
 					}
 					break;
 				}
 				case PAAGRIO_TEMPLE:
 				{
-					if ((skill == FIERCEST_FLAME_SKILL.getSkill()) && (CommonUtil.contains(targets, npc)))
+					if ((skill == FIERCEST_FLAME_SKILL.getSkill()) && qs.isCond(15))
 					{
-						final QuestState qs = getQuestState(player, false);
-						
-						if ((qs != null) && qs.isStarted() && qs.isCond(15))
-						{
-							qs.setCond(16, true);
-						}
+						qs.setCond(16, true);
 					}
 					break;
 				}
 				case ALTAR_OF_SHILEN:
 				{
-					if ((skill == BRIGHTEST_LIGHT_SKILL.getSkill()) && (CommonUtil.contains(targets, npc)))
+					if ((skill == BRIGHTEST_LIGHT_SKILL.getSkill()) && qs.isCond(16))
 					{
-						final QuestState qs = getQuestState(player, false);
-						
-						if ((qs != null) && qs.isStarted() && qs.isCond(16))
-						{
-							showOnScreenMsg(player, NpcStringId.YOU_MUST_DEFEAT_SHILEN_S_MESSENGER, ExShowScreenMessage.TOP_CENTER, 5000);
-							L2MonsterInstance monster = (L2MonsterInstance) addSpawn(SHILEN_MESSENGER, 28767, 11030, -4232, 0, false, 0, false);
-							monster.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BRIGHTEST_LIGHT_HOW_DARE_YOU_DESECRATE_THE_ALTAR_OF_SHILEN);
-							addAttackPlayerDesire(monster, player);
-						}
+						showOnScreenMsg(player, NpcStringId.YOU_MUST_DEFEAT_SHILEN_S_MESSENGER, ExShowScreenMessage.TOP_CENTER, 5000);
+						final Npc monster = addSpawn(SHILEN_MESSENGER, 28767, 11030, -4232, 0, false, 0, false);
+						monster.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BRIGHTEST_LIGHT_HOW_DARE_YOU_DESECRATE_THE_ALTAR_OF_SHILEN);
+						addAttackPlayerDesire(monster, player, 23);
 					}
 					break;
 				}
 				case CAVE_OF_SOULS:
 				{
-					if ((skill == PUREST_SOUL_SKILL.getSkill()) && (CommonUtil.contains(targets, npc)))
+					if ((skill == PUREST_SOUL_SKILL.getSkill()) && qs.isCond(17))
 					{
-						final QuestState qs = getQuestState(player, false);
-						
-						if ((qs != null) && qs.isStarted() && qs.isCond(17))
-						{
-							qs.setCond(18, true);
-						}
+						qs.setCond(18, true);
 					}
 					break;
 				}
 				case MOTHER_TREE:
 				{
-					if ((skill == CLEAREST_WATER_SKILL.getSkill()) && (CommonUtil.contains(targets, npc)))
+					if (((skill == CLEAREST_WATER_SKILL.getSkill()) && qs.isCond(18)))
 					{
-						final QuestState qs = getQuestState(player, false);
-						
-						if ((qs != null) && qs.isStarted() && qs.isCond(18))
+						qs.setCond(19, true);
+						final Quest instance = QuestManager.getInstance().getQuest(TalkingIslandPast.class.getSimpleName());
+						if (instance != null)
 						{
-							qs.setCond(19, true);
-							final Quest instance = QuestManager.getInstance().getQuest(TalkingIslandPast.class.getSimpleName());
-							if (instance != null)
-							{
-								instance.onAdvEvent("enterInstance", npc, player);
-							}
+							instance.onAdvEvent("enterInstance", npc, player);
 						}
 					}
 					break;
