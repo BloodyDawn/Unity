@@ -740,6 +740,7 @@ public final class Formulas
 		{
 			damage *= attacker.isPlayer() && target.isPlayer() ? 2 : 3;
 			damage *= attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG, 1);
+			// TODO not really a proper way... find how it works then implement. // damage += attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG_ADD, 0);
 		}
 		
 		// Weapon random damage
