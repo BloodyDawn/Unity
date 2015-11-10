@@ -55,8 +55,9 @@ import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
-import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
 import ai.npc.AbstractNpcAI;
+import quests.Q10385_RedThreadOfFate.Q10385_RedThreadOfFate;
+import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
 
 /**
  * Raina AI.
@@ -86,6 +87,7 @@ public final class Raina extends AbstractNpcAI
 	private static final Set<PlayerClass> subclasseSet4 = EnumSet.of(PlayerClass.Warlock, PlayerClass.ElementalSummoner, PlayerClass.PhantomSummoner);
 	private static final Set<PlayerClass> subclasseSet5 = EnumSet.of(PlayerClass.Sorceror, PlayerClass.Spellsinger, PlayerClass.Spellhowler);
 	private static final EnumMap<PlayerClass, Set<PlayerClass>> subclassSetMap = new EnumMap<>(PlayerClass.class);
+	
 	static
 	{
 		final Set<PlayerClass> subclasses = PlayerClass.getSet(null, THIRD);
@@ -108,7 +110,9 @@ public final class Raina extends AbstractNpcAI
 		subclassSetMap.put(PlayerClass.Spellsinger, subclasseSet5);
 		subclassSetMap.put(PlayerClass.Spellhowler, subclasseSet5);
 	}
+	
 	private static final Map<CategoryType, Integer> classCloak = new HashMap<>();
+	
 	{
 		classCloak.put(CategoryType.SIGEL_GROUP, 30310); // Abelius Cloak
 		classCloak.put(CategoryType.TYRR_GROUP, 30311); // Sapyros Cloak Grade
@@ -119,7 +123,9 @@ public final class Raina extends AbstractNpcAI
 		classCloak.put(CategoryType.WYNN_GROUP, 30316); // Leister Cloak Grade
 		classCloak.put(CategoryType.AEORE_GROUP, 30317); // Laksis Cloak Grade
 	}
+	
 	private static final List<PlayerClass> dualClassList = new ArrayList<>();
+	
 	{
 		dualClassList.addAll(Arrays.asList(PlayerClass.sigelPhoenixKnight, PlayerClass.sigelHellKnight, PlayerClass.sigelEvasTemplar, PlayerClass.sigelShilenTemplar));
 		dualClassList.addAll(Arrays.asList(PlayerClass.tyrrDuelist, PlayerClass.tyrrDreadnought, PlayerClass.tyrrTitan, PlayerClass.tyrrGrandKhavatari, PlayerClass.tyrrDoombringer));
@@ -130,6 +136,7 @@ public final class Raina extends AbstractNpcAI
 		dualClassList.addAll(Arrays.asList(PlayerClass.wynnArcanaLord, PlayerClass.wynnElementalMaster, PlayerClass.wynnSpectralMaster));
 		dualClassList.addAll(Arrays.asList(PlayerClass.aeoreCardinal, PlayerClass.aeoreEvaSaint, PlayerClass.aeoreShillienSaint));
 	}
+	
 	// @formatter:off
 	private static final int[] REAWAKEN_PRICE =
 	{
@@ -673,7 +680,7 @@ public final class Raina extends AbstractNpcAI
 	
 	private boolean haveDoneQuest(PlayerInstance player, boolean isErtheia)
 	{
-		final QuestState qs = isErtheia ? player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName()) : player.getQuestState("Q10385_RedThreadOfFate"); // TODO: Replace with class name
+		final QuestState qs = isErtheia ? player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName()) : player.getQuestState(Q10385_RedThreadOfFate.class.getSimpleName());
 		return (((qs != null) && qs.isCompleted()) || Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS);
 	}
 	

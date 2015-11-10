@@ -72,6 +72,7 @@ import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneEnter;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneExit;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableAggroRangeEnter;
@@ -817,6 +818,17 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	protected final List<AbstractEventListener> setNpcCreatureSeeId(Consumer<OnNpcCreatureSee> callback, int... npcIds)
 	{
 		return registerConsumer(callback, EventType.ON_NPC_CREATURE_SEE, ListenerRegisterType.NPC, npcIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when {@link Creature} sees another creature.
+	 * @param callback
+	 * @param npcIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setCreatureSeeId(Consumer<OnCreatureSee> callback, int... npcIds)
+	{
+		return registerConsumer(callback, EventType.ON_CREATURE_SEE, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**

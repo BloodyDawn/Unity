@@ -227,9 +227,19 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />		
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />		
 		<set name="is_stackable" val="true" />
-	</item>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>		
+		<skills>
+			<skill id="18004" level="1" /> <!-- Scroll of Escape: Valley of Saints -->
+		</skills>
+	</item>		
 	<item id="39515" name="Scroll of Escape: Forge of the Gods" type="EtcItem">
 		<!-- Teleports you to Forge of the Gods. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i05" />
@@ -242,9 +252,19 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
-		<set name="is_stackable" val="true" />
-	</item>
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />		
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />		
+		<set name="is_stackable" val="true" />	
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>		
+		<skills>
+			<skill id="18005" level="1" /> <!-- Scroll of Escape: Forge of the Gods -->
+		</skills>
+	</item>	
 	<item id="39516" name="Scroll of Escape: Ivory Tower" type="EtcItem">
 		<!-- Teleports you to Ivory Tower. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i05" />
@@ -257,9 +277,19 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
-		<set name="is_stackable" val="true" />
-	</item>
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="handler" val="ItemSkills" />		
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />		
+		<set name="is_stackable" val="true" />	
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>		
+		<skills>
+			<skill id="18006" level="1" /> <!-- Scroll of Escape: Ivory Tower -->
+		</skills>
+	</item>	
 	<item id="39517" name="Scroll of Escape: Secret Room" type="EtcItem">
 		<!-- Teleports you to Cerenas, who can let you knot Eva's Secret Room. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i04" />

@@ -81,7 +81,6 @@ public final class Q10369_NoblesseSoulTesting extends Quest
 	// TODO: Casting this skill on HELPING_TREE_SUMMON_DEVICE?? Or its AOE??
 	// private static final SkillHolder HELPING_TREE_CP_RECOVERY_RANGE = new SkillHolder(7103, 1);
 	private static final SkillHolder NOBLESSE_PRESENTATION = new SkillHolder(18176, 1);
-	
 	// Locations
 	private static final Location HELPING_TREE_LOC_1 = new Location(148223, 14869, -1368, 23);
 	private static final Location HELPING_TREE_LOC_2 = new Location(22036, -49785, -1296, 23);
