@@ -1573,4 +1573,12 @@ public class Npc extends Creature
 	{
 		return Rnd.get(100) < Rnd.get(getTemplate().getMinSkillChance(), getTemplate().getMaxSkillChance());
 	}
+	
+	/**
+	 * Initialize creature container that looks up for creatures around its owner, and notifies with onCreatureSee upon discovery.
+	 */
+	public void initSeenCreatures()
+	{
+		initSeenCreatures(getTemplate().getAggroRange());
+	}
 }

@@ -5915,6 +5915,15 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Initialize creature container that looks up for creatures around its owner, and notifies with onCreatureSee upon discovery.<br>
+	 * @param range
+	 */
+	public void initSeenCreatures(int range)
+	{
+		initSeenCreatures(range, null);
+	}
+	
+	/**
+	 * Initialize creature container that looks up for creatures around its owner, and notifies with onCreatureSee upon discovery.<br>
 	 * <i>The condition can be null</i>
 	 * @param range
 	 * @param condition
