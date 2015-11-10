@@ -47,7 +47,6 @@ public final class Q10776_TheWrathOfTheGiants extends Quest
 	// Items
 	private static final int REGENERATION_DEVICE_CORE = 39716;
 	private static final int ENCHANT_ARMOR_C = 952;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Location
 	private static final Location NARSIDES_LOC = new Location(16422, 113281, -9064);
 	private static final Location ENRAGED_NARSIDES_LOC = new Location(16422, 113281, -9064);
@@ -140,7 +139,7 @@ public final class Q10776_TheWrathOfTheGiants extends Quest
 				if (qs.isCond(4))
 				{
 					giveItems(player, ENCHANT_ARMOR_C, 4);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 20);
+					giveStoryQuestReward(player, 20);
 					addExpAndSp(player, 4838400, 1161);
 					qs.exitQuest(false, true);
 				}

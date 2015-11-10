@@ -42,7 +42,6 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 	private static final int SOE_TOWN_OF_ADEN = 37115; // Scroll of Escape: Town of Aden
 	private static final int SOE_FORSAKEN_PLAINS = 37028; // Scroll of Escape: Forsaken Plains
 	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147540, 24661, -1984);
 	// Misc
@@ -95,7 +94,7 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAB, 5);
-					giveItems(player, STEEL_COIN, 30);
+					giveStoryQuestReward(player, 30);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 731_010, 175);

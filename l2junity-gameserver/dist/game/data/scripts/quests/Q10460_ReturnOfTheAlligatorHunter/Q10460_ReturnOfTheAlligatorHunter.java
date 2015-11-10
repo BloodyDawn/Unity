@@ -46,7 +46,6 @@ public final class Q10460_ReturnOfTheAlligatorHunter extends Quest
 	private static final int LEATHER = 36710; // Alligator Leather
 	private static final int BLUE_LEATHER = 36711; // Blue Alligator Leather
 	private static final int BEJEWELED_LEATHER = 36712; // Bejeweled Alligator Leather
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
 	// Misc
 	private static final int MIN_LEVEL = 40;
@@ -93,7 +92,7 @@ public final class Q10460_ReturnOfTheAlligatorHunter extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAC, 7);
-					giveItems(player, STEEL_COIN, 26);
+					giveStoryQuestReward(player, 26);
 					addExpAndSp(player, 2795688, 670);
 					htmltext = event;
 				}

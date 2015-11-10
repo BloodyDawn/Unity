@@ -37,7 +37,6 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends LetterQuest
 	private static final int LEVIAN = 30037;
 	private static final int PIOTUR = 30597;
 	// Items
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	private static final int SOE_GLUDIN_VILLAGE = 39486;
 	private static final int SOE_ORC_BARRACKS = 39487;
 	// Location
@@ -87,7 +86,7 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends LetterQuest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 5);
+					giveStoryQuestReward(player, 5);
 					addExpAndSp(player, 242760, 58);
 					showOnScreenMsg(player, NpcStringId.TRY_TALKING_TO_VORBOS_BY_THE_WELL_NYOU_CAN_RECEIVE_QUEEN_NAVARI_S_NEXT_LETTER_AT_LV_40, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);

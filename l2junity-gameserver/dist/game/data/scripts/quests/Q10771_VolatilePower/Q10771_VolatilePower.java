@@ -46,7 +46,6 @@ public final class Q10771_VolatilePower extends Quest
 	private static final int SHINING_MYSTERIOUS_FRAGMENT = 39713;
 	private static final int NORMAL_FRAGMENT_DUST = 39714;
 	private static final int ENCHANT_ARMOR_C = 952;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 44;
 	
@@ -90,7 +89,7 @@ public final class Q10771_VolatilePower extends Quest
 				if (qs.isCond(3))
 				{
 					giveItems(player, ENCHANT_ARMOR_C, 5);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 20);
+					giveStoryQuestReward(player, 20);
 					addExpAndSp(player, 2708350, 650);
 					qs.exitQuest(false, true);
 				}

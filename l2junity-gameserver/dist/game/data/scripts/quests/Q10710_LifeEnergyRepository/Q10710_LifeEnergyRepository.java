@@ -42,7 +42,6 @@ public final class Q10710_LifeEnergyRepository extends Quest
 	// Items
 	private static final int FRAGMENT = 39512; // Shine Stone Fragment
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Locations
 	private static final Location[] EMBRYO_LOC =
 	{
@@ -117,7 +116,7 @@ public final class Q10710_LifeEnergyRepository extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAA, 2);
-					giveItems(player, STEEL_COIN, 19);
+					giveStoryQuestReward(player, 19);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 3_125_586, 750);

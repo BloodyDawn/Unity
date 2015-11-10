@@ -44,7 +44,6 @@ public final class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 	private static final int MAGIC_OWL = 33991;
 	// Items
 	private static final int ENCHANT_ARMOR_C = 952;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Location
 	private static final Location OWL_LOC = new Location(17666, 108589, -9072);
 	// Skill
@@ -114,7 +113,7 @@ public final class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_ARMOR_C, 2);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 4);
+					giveStoryQuestReward(player, 4);
 					addExpAndSp(player, 151263, 36);
 					qs.exitQuest(false, true);
 				}

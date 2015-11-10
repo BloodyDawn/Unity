@@ -46,7 +46,6 @@ public final class Q10756_AnInterdimensionalDraft extends Quest
 		23416, // Windima Resh
 	};
 	// Items
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	private static final int UNWORLDLY_WIND = 39493;
 	// Misc
 	private static final int MIN_LEVEL = 20;
@@ -90,7 +89,7 @@ public final class Q10756_AnInterdimensionalDraft extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 8);
+					giveStoryQuestReward(player, 8);
 					addExpAndSp(player, 174222, 41);
 					qs.exitQuest(false, true);
 				}

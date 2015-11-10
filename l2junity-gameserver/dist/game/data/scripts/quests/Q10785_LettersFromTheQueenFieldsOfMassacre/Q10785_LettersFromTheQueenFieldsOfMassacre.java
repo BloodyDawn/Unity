@@ -40,7 +40,6 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends LetterQues
 	private static final int SOE_ADEN = 39578;
 	private static final int SOE_FIELDS_OF_MASSACRE = 39579;
 	private static final int ENCHANT_WEAPON_A = 26350;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147446, 22761, -1984);
 	// Misc
@@ -88,7 +87,7 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends LetterQues
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_WEAPON_A, 1);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 71);
+					giveStoryQuestReward(player, 71);
 					addExpAndSp(player, 807240, 193);
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_65, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);

@@ -44,7 +44,6 @@ public final class Q10392_FailureAndItsConsequences extends Quest
 	};
 	// Items
 	private static final int FRAGMENT = 36709; // Suspicious Fragment
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
 	// Misc
 	private static final int MIN_LEVEL = 40;
@@ -103,7 +102,7 @@ public final class Q10392_FailureAndItsConsequences extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAC, 5);
-					giveItems(player, STEEL_COIN, 17);
+					giveStoryQuestReward(player, 17);
 					addExpAndSp(player, 2329740, 559);
 					htmltext = event;
 				}

@@ -55,7 +55,6 @@ public final class Q10390_KekropusLetter extends Quest
 	private static final int HAINE_SOE = 37112; // Scroll of Escape: Heine
 	private static final int ALLIGATOR_ISLAND_SOE = 37025; // Scroll of Escape: Alligator Island
 	private static final int EWC = 951; // Scroll: Enchant Weapon (C-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int MAX_LEVEL = 45;
@@ -153,7 +152,7 @@ public final class Q10390_KekropusLetter extends Quest
 				if (st.isCond(4))
 				{
 					giveItems(player, EWC, 3);
-					giveItems(player, STEEL_COIN, 21);
+					giveStoryQuestReward(player, 21);
 					addExpAndSp(player, 370440, 88);
 					st.exitQuest(false, true);
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_46, ExShowScreenMessage.TOP_CENTER, 6000);

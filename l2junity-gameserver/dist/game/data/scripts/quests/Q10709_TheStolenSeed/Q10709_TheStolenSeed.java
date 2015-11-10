@@ -45,7 +45,6 @@ public final class Q10709_TheStolenSeed extends Quest
 	private static final int FRAGMENT = 39511; // Normal Fragment
 	private static final int MEMORY_FRAGMENT = 39510; // Akum's Memory Fragment
 	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -120,7 +119,7 @@ public final class Q10709_TheStolenSeed extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAB, 5);
-					giveItems(player, STEEL_COIN, 30);
+					giveStoryQuestReward(player, 30);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 731_010, 175);

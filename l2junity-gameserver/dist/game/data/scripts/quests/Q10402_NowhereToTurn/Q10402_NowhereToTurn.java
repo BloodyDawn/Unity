@@ -52,7 +52,6 @@ public final class Q10402_NowhereToTurn extends Quest
 	};
 	// Items
 	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -97,7 +96,7 @@ public final class Q10402_NowhereToTurn extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAB, 5);
-					giveItems(player, STEEL_COIN, 34);
+					giveStoryQuestReward(player, 34);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 5_482_574, 1_315);

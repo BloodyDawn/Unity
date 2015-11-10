@@ -47,7 +47,6 @@ public final class Q10784_TheBrokenDevice extends Quest
 	// Items
 	private static final int BROKE_MAGIC_DEVICE_FRAGMENT = 39723;
 	private static final int ENCHANT_ARMOR_B = 948;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -88,7 +87,7 @@ public final class Q10784_TheBrokenDevice extends Quest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_ARMOR_B, 5);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 40);
+					giveStoryQuestReward(player, 40);
 					addExpAndSp(player, 6579090, 1578);
 					qs.exitQuest(false, true);
 				}

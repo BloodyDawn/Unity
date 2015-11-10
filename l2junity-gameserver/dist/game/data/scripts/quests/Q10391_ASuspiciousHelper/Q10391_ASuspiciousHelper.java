@@ -38,7 +38,6 @@ public final class Q10391_ASuspiciousHelper extends Quest
 	// Items
 	private static final int CARD = 36707; // Forged Identification Card
 	private static final int EXP_MATERTIAL = 36708; // Experimental Material
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
 	// Misc
 	private static final int MIN_LEVEL = 40;
@@ -98,7 +97,7 @@ public final class Q10391_ASuspiciousHelper extends Quest
 				if (st.isCond(2))
 				{
 					st.exitQuest(false, true);
-					giveItems(player, STEEL_COIN, 1);
+					giveStoryQuestReward(player, 1);
 					giveItems(player, EAC, 1);
 					addExpAndSp(player, 388290, 93);
 				}

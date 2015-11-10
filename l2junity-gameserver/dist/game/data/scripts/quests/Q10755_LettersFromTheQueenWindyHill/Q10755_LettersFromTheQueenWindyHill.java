@@ -39,7 +39,6 @@ public final class Q10755_LettersFromTheQueenWindyHill extends LetterQuest
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-79816, 150828, -3040);
 	// Item
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	private static final int SOE_GLUDIN_VILLAGE = 39491;
 	private static final int SOE_WINDY_HILL = 39492;
 	// Misc
@@ -87,7 +86,7 @@ public final class Q10755_LettersFromTheQueenWindyHill extends LetterQuest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 5);
+					giveStoryQuestReward(player, 5);
 					addExpAndSp(player, 120960, 29);
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_30, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);

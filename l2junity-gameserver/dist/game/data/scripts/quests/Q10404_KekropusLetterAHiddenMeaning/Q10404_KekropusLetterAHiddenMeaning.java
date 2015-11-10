@@ -42,7 +42,6 @@ public final class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 	private static final int SOE_TOWN_OF_ADEN = 37116; // Scroll of Escape: Town of Aden
 	private static final int SOE_FIELDS_OF_MASSACRE = 37029; // Scroll of Escape: Fields of Massacre
 	private static final int EWA = 729; // Scroll: Enchant Weapon (A-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147619, 24681, -1984);
 	// Misc
@@ -95,7 +94,7 @@ public final class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EWA, 1);
-					giveItems(player, STEEL_COIN, 71);
+					giveStoryQuestReward(player, 71);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 807_240, 193);

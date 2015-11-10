@@ -56,7 +56,6 @@ public final class Q10793_SaveTheSouls extends Quest
 	};
 	// Items
 	private static final int ENCHANT_ARMOR_A = 26351;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -97,7 +96,7 @@ public final class Q10793_SaveTheSouls extends Quest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_ARMOR_A, 3);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 3);
+					giveStoryQuestReward(player, 3);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 942690, 226);

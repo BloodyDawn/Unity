@@ -40,7 +40,6 @@ public final class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 	private static final int SOE_ADEN = 39576;
 	private static final int SOE_FORSAKEN_PLAINS = 39577;
 	private static final int ENCHANT_ARMOR_B = 948;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147446, 22761, -1984);
 	// Misc
@@ -88,7 +87,7 @@ public final class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_ARMOR_B, 10);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 60);
+					giveStoryQuestReward(player, 60);
 					addExpAndSp(player, 731010, 175);
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_61, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);

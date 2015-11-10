@@ -40,7 +40,6 @@ public final class Q10708_StrengthenTheBarrier extends Quest
 	// Items
 	private static final int KEY = 39509; // Barrier Enforcer Key
 	private static final int EWB = 947; // Scroll: Enchant Armor (B-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 57;
@@ -104,7 +103,7 @@ public final class Q10708_StrengthenTheBarrier extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EWB, 1);
-					giveItems(player, STEEL_COIN, 17);
+					giveStoryQuestReward(player, 17);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 635_250, 152);

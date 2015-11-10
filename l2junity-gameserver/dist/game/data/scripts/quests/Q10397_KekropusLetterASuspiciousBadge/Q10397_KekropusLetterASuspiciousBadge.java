@@ -42,7 +42,6 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends LetterQuest
 	private static final int SOE_TOWN_OF_OREN = 37114; // Scroll of Escape: Town of Oren
 	private static final int SOE_SEA_OF_SPORES = 37027; // Scroll of Escape: Sea of Spores
 	private static final int EWB = 947; // Scroll: Enchant Weapon (B-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
 	private static final Location TELEPORT_LOC = new Location(81013, 56413, -1552);
 	// Misc
@@ -95,7 +94,7 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends LetterQuest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EWB, 2);
-					giveItems(player, STEEL_COIN, 20);
+					giveStoryQuestReward(player, 20);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 635_250, 152);

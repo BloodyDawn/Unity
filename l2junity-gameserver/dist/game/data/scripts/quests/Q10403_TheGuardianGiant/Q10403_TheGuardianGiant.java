@@ -48,7 +48,6 @@ public final class Q10403_TheGuardianGiant extends Quest
 	// Items
 	private static final int FRAGMENT = 36713; // Guardian Giant's Nucleus Fragment
 	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -96,7 +95,7 @@ public final class Q10403_TheGuardianGiant extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAB, 5);
-					giveItems(player, STEEL_COIN, 40);
+					giveStoryQuestReward(player, 40);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 6_579_090, 1_578);

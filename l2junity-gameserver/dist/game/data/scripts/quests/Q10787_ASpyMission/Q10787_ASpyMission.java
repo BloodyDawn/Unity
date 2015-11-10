@@ -42,7 +42,6 @@ public final class Q10787_ASpyMission extends Quest
 	private static final int EMBRYO_PURIFIER = 27540;
 	// Items
 	private static final int ENCHANT_ARMOR_A = 26351;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	private static final int EMBRYO_MISSIVES = 39724;
 	// Misc
 	private static final int MIN_LEVEL = 61;
@@ -103,7 +102,7 @@ public final class Q10787_ASpyMission extends Quest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_ARMOR_A, 5);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 29);
+					giveStoryQuestReward(player, 29);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 3125586, 750);

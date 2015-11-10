@@ -41,7 +41,6 @@ public final class Q10769_LettersFromTheQueenCrumaTowerPart1 extends LetterQuest
 	private static final int SOE_CRUMA_TOWER = 39594;
 	private static final int ENCHANT_WEAPON_C = 951;
 	private static final int ENCHANT_ARMOR_C = 952;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Location
 	private static final Location TELEPORT_LOC = new Location(16014, 142326, -2688);
 	// Misc
@@ -91,7 +90,7 @@ public final class Q10769_LettersFromTheQueenCrumaTowerPart1 extends LetterQuest
 				{
 					giveItems(player, ENCHANT_WEAPON_C, 1);
 					giveItems(player, ENCHANT_ARMOR_C, 1);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 11);
+					giveStoryQuestReward(player, 11);
 					addExpAndSp(player, 370440, 88);
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_46, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);

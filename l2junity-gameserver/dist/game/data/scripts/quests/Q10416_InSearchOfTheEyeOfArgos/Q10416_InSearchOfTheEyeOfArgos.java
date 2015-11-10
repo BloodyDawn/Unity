@@ -36,7 +36,6 @@ public final class Q10416_InSearchOfTheEyeOfArgos extends Quest
 	private static final int EYE_OF_ARGOS = 31683;
 	// Items
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -80,7 +79,7 @@ public final class Q10416_InSearchOfTheEyeOfArgos extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAA, 2);
-					giveItems(player, STEEL_COIN, 2);
+					giveStoryQuestReward(player, 2);
 					if (player.getLevel() > MIN_LEVEL)
 					{
 						addExpAndSp(player, 1_088_640, 261);

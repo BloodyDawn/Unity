@@ -46,7 +46,6 @@ public final class Q10398_ASuspiciousBadge extends Quest
 	// Items
 	private static final int BADGE = 36666; // Unidentified Suspicious Badge
 	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 58;
@@ -91,7 +90,7 @@ public final class Q10398_ASuspiciousBadge extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAB, 5);
-					giveItems(player, STEEL_COIN, 36);
+					giveStoryQuestReward(player, 36);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 3_811_500, 914);

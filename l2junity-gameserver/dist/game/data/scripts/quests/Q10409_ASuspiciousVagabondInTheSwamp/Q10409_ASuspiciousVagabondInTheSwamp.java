@@ -37,7 +37,6 @@ public final class Q10409_ASuspiciousVagabondInTheSwamp extends Quest
 	private static final int VAGABOND = 33848; // Critically-injured Suspicious Vagabond
 	// Items
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -82,7 +81,7 @@ public final class Q10409_ASuspiciousVagabondInTheSwamp extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAA, 3);
-					giveItems(player, STEEL_COIN, 3);
+					giveStoryQuestReward(player, 3);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 942_690, 226);

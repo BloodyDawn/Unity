@@ -44,8 +44,6 @@ public final class Q10757_QuietingTheStorm extends Quest
 	private static final int VORTEX = 23417;
 	private static final int GIANT_WINDIMA = 23419;
 	private static final int IMMENSE_WINDIMA = 23420;
-	// Item
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 24;
 	private static final String VORTEX_COUNT_VAR = "VortexKillCount";
@@ -89,7 +87,7 @@ public final class Q10757_QuietingTheStorm extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 7);
+					giveStoryQuestReward(player, 7);
 					addExpAndSp(player, 632051, 151);
 					qs.exitQuest(false, true);
 				}

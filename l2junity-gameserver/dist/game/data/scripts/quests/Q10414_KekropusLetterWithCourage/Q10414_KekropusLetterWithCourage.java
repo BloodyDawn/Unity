@@ -42,7 +42,6 @@ public final class Q10414_KekropusLetterWithCourage extends LetterQuest
 	private static final int SOE_WALL_OF_ARGOS = 37032; // Scroll of Escape: Wall of Argos
 	private static final int SOE_TOWN_OF_GODDARD = 37119; // Scroll of Escape: Town of Goddard
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147491, -56633, -2776);
 	// Misc
@@ -96,7 +95,7 @@ public final class Q10414_KekropusLetterWithCourage extends LetterQuest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAA, 5);
-					giveItems(player, STEEL_COIN, 123);
+					giveStoryQuestReward(player, 123);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 1_088_640, 261);

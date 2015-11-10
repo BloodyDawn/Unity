@@ -39,8 +39,6 @@ public final class Q10758_TheOathOfTheWind extends Quest
 	private static final int PIO = 33963;
 	// Monster
 	private static final int WINDIMA = 27522;
-	// Item
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 28;
 	
@@ -91,7 +89,7 @@ public final class Q10758_TheOathOfTheWind extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 3);
+					giveStoryQuestReward(player, 3);
 					addExpAndSp(player, 561645, 134);
 					qs.exitQuest(false, true);
 				}

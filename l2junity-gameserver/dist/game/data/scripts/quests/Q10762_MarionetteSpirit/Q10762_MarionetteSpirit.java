@@ -38,7 +38,6 @@ public final class Q10762_MarionetteSpirit extends Quest
 	// Monster
 	private static final int MARIONETTE_SPIRIT = 23418;
 	// Items
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	private static final int MAGIC_CHAIN_KEY = 39488;
 	// Misc
 	private static final int MIN_LEVEL = 34;
@@ -80,7 +79,7 @@ public final class Q10762_MarionetteSpirit extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 5);
+					giveStoryQuestReward(player, 5);
 					addExpAndSp(player, 896996, 215);
 					qs.exitQuest(false, true);
 				}

@@ -51,8 +51,6 @@ public class Q10761_AnOrcInLove extends Quest
 		20501, // Turek Orc Priest
 		20546, // Turek Orc Elder
 	};
-	// Item
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 30;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -93,7 +91,7 @@ public class Q10761_AnOrcInLove extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 20);
+					giveStoryQuestReward(player, 20);
 					addExpAndSp(player, 354546, 85);
 					qs.exitQuest(false, true);
 				}

@@ -40,7 +40,6 @@ public final class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 	private static final int SOE_OREN = 39574;
 	private static final int SOE_SEA_OF_SPORES = 39575;
 	private static final int ENCHANT_WEAPON_B = 947;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Location
 	private static final Location TELEPORT_LOC = new Location(83633, 53064, -1456);
 	// Misc
@@ -88,7 +87,7 @@ public final class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_WEAPON_B, 3);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 37);
+					giveStoryQuestReward(player, 37);
 					addExpAndSp(player, 635250, 152);
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_58, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);

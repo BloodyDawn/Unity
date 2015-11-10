@@ -51,7 +51,6 @@ public final class Q10780_AWeakenedBarrier extends Quest
 	};
 	// Items
 	private static final int ENCHANT_ARMOR_B = 948;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 58;
@@ -93,7 +92,7 @@ public final class Q10780_AWeakenedBarrier extends Quest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_ARMOR_B, 5);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 36);
+					giveStoryQuestReward(player, 36);
 					addExpAndSp(player, 3811500, 914);
 					qs.exitQuest(false, true);
 				}

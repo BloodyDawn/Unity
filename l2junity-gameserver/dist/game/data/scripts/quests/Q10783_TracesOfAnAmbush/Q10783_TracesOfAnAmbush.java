@@ -54,7 +54,6 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 	// Items
 	private static final int MISSIVE_SCRAPS = 39722;
 	private static final int ENCHANT_ARMOR_B = 948;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Messages
 	private static final NpcStringId[] MESSAGES =
 	{
@@ -104,7 +103,7 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 			case "33866-08.html":
 			{
 				giveItems(player, ENCHANT_ARMOR_B, 5);
-				giveItems(player, STEEL_DOOR_GUILD_COIN, 34);
+				giveStoryQuestReward(player, 34);
 				addExpAndSp(player, 5482574, 1315);
 				qs.exitQuest(false, true);
 				break;

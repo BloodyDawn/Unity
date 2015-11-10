@@ -47,7 +47,6 @@ public final class Q10770_InSearchOfTheGrail extends Quest
 	private static final int MYSTERIOUS_FRAGMENT = 39711;
 	private static final int ENCHANT_WEAPON_C = 951;
 	private static final int ENCHANT_ARMOR_C = 952;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final double DROP_RATE = 0.4;
@@ -100,7 +99,7 @@ public final class Q10770_InSearchOfTheGrail extends Quest
 				{
 					giveItems(player, ENCHANT_WEAPON_C, 2);
 					giveItems(player, ENCHANT_ARMOR_C, 5);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 30);
+					giveStoryQuestReward(player, 30);
 					addExpAndSp(player, 2342300, 562);
 					qs.exitQuest(false, true);
 				}

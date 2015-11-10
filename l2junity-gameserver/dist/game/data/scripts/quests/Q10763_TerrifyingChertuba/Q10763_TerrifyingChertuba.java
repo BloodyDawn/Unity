@@ -39,7 +39,6 @@ public final class Q10763_TerrifyingChertuba extends Quest
 	private static final int CHERTUBA_MIRAGE = 23421;
 	private static final int CHERTUBA_ILLUSION = 23422;
 	// Items
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	private static final int MAGIC_CHAIN_KEY = 39489;
 	// Misc
 	private static final int MIN_LEVEL = 34;
@@ -80,7 +79,7 @@ public final class Q10763_TerrifyingChertuba extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 10);
+					giveStoryQuestReward(player, 10);
 					addExpAndSp(player, 896996, 215);
 					qs.exitQuest(false, true);
 				}

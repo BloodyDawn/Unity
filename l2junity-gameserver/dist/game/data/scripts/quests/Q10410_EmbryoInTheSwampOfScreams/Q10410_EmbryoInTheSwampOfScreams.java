@@ -59,7 +59,6 @@ public final class Q10410_EmbryoInTheSwampOfScreams extends Quest
 	};
 	// Items
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -107,7 +106,7 @@ public final class Q10410_EmbryoInTheSwampOfScreams extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAA, 5);
-					giveItems(player, STEEL_COIN, 63);
+					giveStoryQuestReward(player, 63);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 16_968_420, 4072);

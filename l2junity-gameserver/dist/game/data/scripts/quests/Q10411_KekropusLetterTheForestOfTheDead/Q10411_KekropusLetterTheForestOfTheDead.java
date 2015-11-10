@@ -42,7 +42,6 @@ public final class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 	private static final int SOE_FOREST_OF_THE_DEAD = 37031; // Scroll of Escape: Forest of the Dead
 	private static final int SOE_TOWN_OF_RUNE = 37118; // Scroll of Escape: Town of Rune
 	private static final int EWA = 729; // Scroll: Enchant Weapon (A-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
 	private static final Location TELEPORT_LOC = new Location(42682, -47986, -792);
 	// Misc
@@ -96,7 +95,7 @@ public final class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EWA, 2);
-					giveItems(player, STEEL_COIN, 91);
+					giveStoryQuestReward(player, 91);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 942_690, 226);

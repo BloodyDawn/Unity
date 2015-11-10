@@ -51,7 +51,6 @@ public final class Q10395_NotATraitor extends Quest
 	};
 	// Items
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
-	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 52;
@@ -97,7 +96,7 @@ public final class Q10395_NotATraitor extends Quest
 				{
 					st.exitQuest(false, true);
 					giveItems(player, EAC, 5);
-					giveItems(player, STEEL_COIN, 32);
+					giveStoryQuestReward(player, 32);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 3_781_574, 907);

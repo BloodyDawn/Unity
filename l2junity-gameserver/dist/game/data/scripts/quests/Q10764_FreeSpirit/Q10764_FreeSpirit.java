@@ -44,7 +44,6 @@ public final class Q10764_FreeSpirit extends Quest
 	private static final int LIBERATED_WIND_SPIRIT = 33968;
 	private static final int LIBERATED_TREE_SPIRIT = 33969;
 	// Items
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	private static final int MAGIC_CHAIN_KEY_BUNDLE = 39490;
 	private static final int LOOSENED_CHAIN = 39518;
 	// Location
@@ -90,7 +89,7 @@ public final class Q10764_FreeSpirit extends Quest
 				if (qs.isCond(2))
 				{
 					addSpawn(SYLPH, SYLPH_LOCATION, false, 4000);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 10);
+					giveStoryQuestReward(player, 10);
 					addExpAndSp(player, 1312934, 315);
 					qs.exitQuest(false, true);
 				}

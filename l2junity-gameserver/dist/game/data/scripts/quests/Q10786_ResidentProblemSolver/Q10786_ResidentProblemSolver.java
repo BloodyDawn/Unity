@@ -59,7 +59,6 @@ public final class Q10786_ResidentProblemSolver extends Quest
 	};
 	// Items
 	private static final int ENCHANT_ARMOR_A = 26351;
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 65;
@@ -99,7 +98,7 @@ public final class Q10786_ResidentProblemSolver extends Quest
 				if (qs.isCond(2))
 				{
 					giveItems(player, ENCHANT_ARMOR_A, 5);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 57);
+					giveStoryQuestReward(player, 57);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
 						addExpAndSp(player, 6251174, 1500);

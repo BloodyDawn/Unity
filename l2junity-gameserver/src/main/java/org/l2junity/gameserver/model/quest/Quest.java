@@ -61,6 +61,7 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.NpcLogListHolder;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -97,7 +98,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	private final String _name;
 	private final String _descr;
 	private final byte _initialState = State.CREATED;
-	protected boolean _onEnterWorld = false;
 	private boolean _isCustom = false;
 	
 	private int[] _questItemIds = null;
@@ -109,6 +109,9 @@ public class Quest extends AbstractScript implements IIdentifiable
 	
 	private static final int RESET_HOUR = 6;
 	private static final int RESET_MINUTES = 30;
+	
+	private static final int STEEL_DOOR_COIN = 37045; // Steel Door Guild Coin
+	private static final SkillHolder STORY_QUEST_REWARD = new SkillHolder(27580, 1);
 	
 	/**
 	 * @return the reset hour for a daily quest, could be overridden on a script.
@@ -3351,5 +3354,11 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public void onQuestAborted(PlayerInstance player)
 	{
 	
+	}
+	
+	public void giveStoryQuestReward(PlayerInstance player, int steelDoorCoinCount)
+	{
+		giveItems(player, STEEL_DOOR_COIN, steelDoorCoinCount);
+		STORY_QUEST_REWARD.getSkill().applyEffects(player, player);
 	}
 }
