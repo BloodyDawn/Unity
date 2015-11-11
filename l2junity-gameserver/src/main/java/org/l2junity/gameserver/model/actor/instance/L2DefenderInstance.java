@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.actor.instance;
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.ai.FortSiegeGuardAI;
 import org.l2junity.gameserver.ai.SiegeGuardAI;
 import org.l2junity.gameserver.ai.SpecialSiegeGuardAI;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -33,14 +32,12 @@ import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 
 public class L2DefenderInstance extends Attackable
 {
 	private Castle _castle = null; // the castle which the instance should defend
 	private Fort _fort = null; // the fortress which the instance should defend
-	private SiegableHall _hall = null; // the siegable hall which the instance should defend
 	
 	public L2DefenderInstance(L2NpcTemplate template)
 	{
@@ -51,11 +48,7 @@ public class L2DefenderInstance extends Attackable
 	@Override
 	protected CharacterAI initAI()
 	{
-		if ((getConquerableHall() == null) && (getCastle(10000) == null))
-		{
-			return new FortSiegeGuardAI(this);
-		}
-		else if (getCastle(10000) != null)
+		if (getCastle(10000) != null)
 		{
 			return new SiegeGuardAI(this);
 		}
@@ -78,9 +71,9 @@ public class L2DefenderInstance extends Attackable
 		PlayerInstance player = attacker.getActingPlayer();
 		
 		// Check if siege is in progress
-		if (((_fort != null) && _fort.getZone().isActive()) || ((_castle != null) && _castle.getZone().isActive()) || ((_hall != null) && _hall.getSiegeZone().isActive()))
+		if (((_fort != null) && _fort.getZone().isActive()) || ((_castle != null) && _castle.getZone().isActive()))
 		{
-			int activeSiegeId = (_fort != null ? _fort.getResidenceId() : (_castle != null ? _castle.getResidenceId() : (_hall != null ? _hall.getId() : 0)));
+			int activeSiegeId = (_fort != null) ? _fort.getResidenceId() : _castle.getResidenceId();
 			
 			// Check if player is an enemy of this defender npc
 			if ((player != null) && (((player.getSiegeState() == 2) && !player.isRegisteredOnThisSiegeField(activeSiegeId)) || ((player.getSiegeState() == 1)) || (player.getSiegeState() == 0)))
@@ -134,10 +127,10 @@ public class L2DefenderInstance extends Attackable
 		
 		_fort = FortManager.getInstance().getFort(getX(), getY(), getZ());
 		_castle = CastleManager.getInstance().getCastle(getX(), getY(), getZ());
-		_hall = getConquerableHall();
-		if ((_fort == null) && (_castle == null) && (_hall == null))
+		
+		if ((_fort == null) && (_castle == null))
 		{
-			_log.warn("L2DefenderInstance spawned outside of Fortress, Castle or Siegable hall Zone! NpcId: " + getId() + " x=" + getX() + " y=" + getY() + " z=" + getZ());
+			_log.warn("L2DefenderInstance spawned outside of Fortress or Castle zone!" + this);
 		}
 	}
 	
@@ -200,9 +193,9 @@ public class L2DefenderInstance extends Attackable
 			{
 				PlayerInstance player = attacker.getActingPlayer();
 				// Check if siege is in progress
-				if (((_fort != null) && _fort.getZone().isActive()) || ((_castle != null) && _castle.getZone().isActive()) || ((_hall != null) && _hall.getSiegeZone().isActive()))
+				if (((_fort != null) && _fort.getZone().isActive()) || ((_castle != null) && _castle.getZone().isActive()))
 				{
-					int activeSiegeId = (_fort != null ? _fort.getResidenceId() : (_castle != null ? _castle.getResidenceId() : (_hall != null ? _hall.getId() : 0)));
+					int activeSiegeId = (_fort != null) ? _fort.getResidenceId() : _castle.getResidenceId();
 					if ((player != null) && (((player.getSiegeState() == 2) && player.isRegisteredOnThisSiegeField(activeSiegeId)) || ((player.getSiegeState() == 1))))
 					{
 						return;

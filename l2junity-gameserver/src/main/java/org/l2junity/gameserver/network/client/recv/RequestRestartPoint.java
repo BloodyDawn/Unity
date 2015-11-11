@@ -19,9 +19,7 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.Location;
@@ -29,9 +27,7 @@ import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.PacketReader;
@@ -117,7 +113,6 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 		Location loc = null;
 		Castle castle = null;
 		Fort fort = null;
-		SiegableHall hall = null;
 		boolean isInDefense = false;
 		Instance instance = null;
 		
@@ -136,11 +131,12 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 					return;
 				}
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CLANHALL);
+				// final ClanHall ch = ClanHallData.getInstance().getClanHallByClan(activeChar.getClan());
 				
-				if ((ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()) != null) && (ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP) != null))
-				{
-					activeChar.restoreExp(ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl());
-				}
+				// if ((ch != null) && (ch.getFunction(ClanHall.FUNC_RESTORE_EXP) != null))
+				// {
+				// activeChar.restoreExp(ch.getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl());
+				// }
 				break;
 			}
 			case 2: // to castle
@@ -197,7 +193,6 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 				SiegeClan siegeClan = null;
 				castle = CastleManager.getInstance().getCastle(activeChar);
 				fort = FortManager.getInstance().getFort(activeChar);
-				hall = CHSiegeManager.getInstance().getNearbyClanHall(activeChar);
 				
 				if ((castle != null) && castle.getSiege().isInProgress())
 				{
@@ -207,23 +202,9 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 				{
 					siegeClan = fort.getSiege().getAttackerClan(activeChar.getClan());
 				}
-				else if ((hall != null) && hall.isInSiege())
-				{
-					siegeClan = hall.getSiege().getAttackerClan(activeChar.getClan());
-				}
+				
 				if (((siegeClan == null) || siegeClan.getFlag().isEmpty()))
 				{
-					// Check if clan hall has inner spawns loc
-					if (hall != null)
-					{
-						loc = hall.getSiege().getInnerSpawnLoc(activeChar);
-						
-						if (loc != null)
-						{
-							break;
-						}
-					}
-					
 					_log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
 					return;
 				}

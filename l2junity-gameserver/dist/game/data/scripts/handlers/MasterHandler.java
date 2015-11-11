@@ -59,12 +59,10 @@ import handlers.admincommandhandlers.AdminAdmin;
 import handlers.admincommandhandlers.AdminAnnouncements;
 import handlers.admincommandhandlers.AdminBBS;
 import handlers.admincommandhandlers.AdminBuffs;
-import handlers.admincommandhandlers.AdminCHSiege;
 import handlers.admincommandhandlers.AdminCamera;
 import handlers.admincommandhandlers.AdminCastle;
 import handlers.admincommandhandlers.AdminChangeAccessLevel;
 import handlers.admincommandhandlers.AdminClan;
-import handlers.admincommandhandlers.AdminClanHall;
 import handlers.admincommandhandlers.AdminCreateItem;
 import handlers.admincommandhandlers.AdminCursedWeapons;
 import handlers.admincommandhandlers.AdminDebug;
@@ -319,7 +317,6 @@ public class MasterHandler
 			AdminBuffs.class,
 			AdminCamera.class,
 			AdminChangeAccessLevel.class,
-			AdminCHSiege.class,
 			AdminClan.class,
 			AdminCastle.class,
 			AdminPcCondOverride.class,
@@ -375,7 +372,6 @@ public class MasterHandler
 			AdminShop.class,
 			AdminShowQuests.class,
 			AdminShutdown.class,
-			AdminClanHall.class,
 			AdminSkill.class,
 			AdminSpawn.class,
 			AdminSummon.class,

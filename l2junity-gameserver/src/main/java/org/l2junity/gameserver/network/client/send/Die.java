@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
@@ -30,7 +29,6 @@ import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -63,7 +61,6 @@ public class Die implements IClientOutgoingPacket
 			SiegeClan siegeClan = null;
 			final Castle castle = CastleManager.getInstance().getCastle(activeChar);
 			final Fort fort = FortManager.getInstance().getFort(activeChar);
-			final SiegableHall hall = CHSiegeManager.getInstance().getNearbyClanHall(activeChar);
 			if ((castle != null) && castle.getSiege().isInProgress())
 			{
 				siegeClan = castle.getSiege().getAttackerClan(clan);
@@ -78,7 +75,7 @@ public class Die implements IClientOutgoingPacket
 			_toVillage = activeChar.canRevive() && !activeChar.isPendingRevive();
 			_toClanHall = (clan != null) && (clan.getHideoutId() > 0);
 			_toCastle = ((clan != null) && (clan.getCastleId() > 0)) || isInCastleDefense;
-			_toOutpost = ((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty()) || ((hall != null) && hall.getSiege().checkIsAttacker(clan));
+			_toOutpost = ((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty());
 			_useFeather = activeChar.getAccessLevel().allowFixedRes();
 			_toFortress = ((clan != null) && (clan.getFortId() > 0)) || isInFortDefense;
 		}

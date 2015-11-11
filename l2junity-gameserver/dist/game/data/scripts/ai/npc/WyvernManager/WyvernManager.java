@@ -26,7 +26,6 @@ import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 
 import ai.npc.AbstractNpcAI;
 
@@ -61,6 +60,7 @@ public final class WyvernManager extends AbstractNpcAI
 	};
 	// NPCS
 	private static final Map<Integer, ManagerType> MANAGERS = new HashMap<>();
+	
 	static
 	{
 		MANAGERS.put(35101, ManagerType.CASTLE);
@@ -135,9 +135,9 @@ public final class WyvernManager extends AbstractNpcAI
 			}
 			case CLAN_HALL:
 			{
-				if ((player.getClan() != null) && (npc.getConquerableHall() != null))
+				if ((player.getClan() != null) && (npc.getClanHall() != null))
 				{
-					return (player.isClanLeader() && (player.getClanId() == npc.getConquerableHall().getOwnerId()));
+					return (player.isClanLeader() && (player.getClanId() == npc.getClanHall().getOwnerId()));
 				}
 				return false;
 			}
@@ -165,11 +165,6 @@ public final class WyvernManager extends AbstractNpcAI
 			{
 				return npc.getCastle().getZone().isActive();
 			}
-			case CLAN_HALL:
-			{
-				SiegableHall hall = npc.getConquerableHall();
-				return (hall != null) ? hall.isInSiege() : npc.getCastle().getSiege().isInProgress();
-			}
 			case FORT:
 			{
 				return npc.getFort().getZone().isActive();
@@ -191,7 +186,7 @@ public final class WyvernManager extends AbstractNpcAI
 			}
 			case CLAN_HALL:
 			{
-				return npc.getConquerableHall().getName();
+				return npc.getClanHall().getName();
 			}
 			case FORT:
 			{

@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.StatsSet;
@@ -30,7 +29,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -55,7 +53,7 @@ public final class HeadquarterCreate extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -72,7 +70,6 @@ public final class HeadquarterCreate extends AbstractEffect
 		flag.spawnMe(player.getX(), player.getY(), player.getZ() + 50);
 		final Castle castle = CastleManager.getInstance().getCastle(player);
 		final Fort fort = FortManager.getInstance().getFort(player);
-		final SiegableHall hall = CHSiegeManager.getInstance().getNearbyClanHall(player);
 		if (castle != null)
 		{
 			castle.getSiege().getFlag(player.getClan()).add(flag);
@@ -80,10 +77,6 @@ public final class HeadquarterCreate extends AbstractEffect
 		else if (fort != null)
 		{
 			fort.getSiege().getFlag(player.getClan()).add(flag);
-		}
-		else
-		{
-			hall.getSiege().getFlag(player.getClan()).add(flag);
 		}
 	}
 }

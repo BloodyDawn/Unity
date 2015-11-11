@@ -18,11 +18,11 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.Map;
+import java.util.Collection;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
-import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -42,15 +42,15 @@ public class ExShowAgitInfo implements IClientOutgoingPacket
 	{
 		OutgoingPackets.EX_SHOW_AGIT_INFO.writeId(packet);
 		
-		final Map<Integer, AuctionableHall> clannhalls = ClanHallManager.getInstance().getAllAuctionableClanHalls();
-		packet.writeD(clannhalls.size());
-		for (AuctionableHall ch : clannhalls.values())
+		final Collection<ClanHall> clanHalls = ClanHallData.getInstance().getClanHalls();
+		packet.writeD(clanHalls.size());
+		clanHalls.forEach(clanHall ->
 		{
-			packet.writeD(ch.getId());
-			packet.writeS(ch.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(ch.getOwnerId()).getName()); // owner clan name
-			packet.writeS(ch.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(ch.getOwnerId()).getLeaderName()); // leader name
-			packet.writeD(ch.getGrade() > 0 ? 0x00 : 0x01); // 0 - auction 1 - war clanhall 2 - ETC (rainbow spring clanhall)
-		}
+			packet.writeD(clanHall.getResidenceId());
+			packet.writeS(clanHall.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(clanHall.getOwnerId()).getName()); // owner clan name
+			packet.writeS(clanHall.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(clanHall.getOwnerId()).getLeaderName()); // leader name
+			packet.writeD(clanHall.isAuctionable() ? 0x00 : 0x01); // 0 - auction 1 - war clanhall 2 - ETC (rainbow spring clanhall)
+		});
 		return true;
 	}
 }

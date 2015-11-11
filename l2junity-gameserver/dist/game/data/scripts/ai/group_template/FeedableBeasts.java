@@ -33,9 +33,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
-import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
-import quests.Q00655_AGrandPlanForTamingWildBeasts.Q00655_AGrandPlanForTamingWildBeasts;
 import ai.npc.AbstractNpcAI;
+import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 
 /**
  * Growth-capable mobs: Polymorphing upon successful feeding.
@@ -77,6 +76,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	// @formatter:on
 	
 	private static final Map<Integer, Integer> MAD_COW_POLYMORPH = new HashMap<>(6);
+	
 	static
 	{
 		MAD_COW_POLYMORPH.put(21824, 21468);
@@ -436,7 +436,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 			Q00020_BringUpWithLove.checkJewelOfInnocence(player);
 			
 			// Support for A Grand Plan for Taming Wild Beasts (655) quest.
-			Q00655_AGrandPlanForTamingWildBeasts.reward(player, nextNpc);
+			// Q00655_AGrandPlanForTamingWildBeasts.reward(player, nextNpc); TODO: Replace me?
 			
 			// also, perform a rare random chat
 			if (getRandom(20) == 0)

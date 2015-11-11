@@ -516,19 +516,6 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			return;
 		}
 		
-		// never attack defenders
-		if (attackTarget instanceof PlayerInstance)
-		{
-			if ((sGuard.getConquerableHall() == null) && sGuard.getCastle().getSiege().checkIsDefender(((PlayerInstance) attackTarget).getClan()))
-			{
-				// Cancel the target
-				sGuard.stopHating(attackTarget);
-				_actor.setTarget(null);
-				setIntention(AI_INTENTION_IDLE, null, null);
-				return;
-			}
-		}
-		
 		if (!GeoData.getInstance().canSeeTarget(_actor, attackTarget))
 		{
 			// Siege guards differ from normal mobs currently:

@@ -19,15 +19,12 @@
 
 package org.l2junity.gameserver.network.client.recv;
 
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.SiegeInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
@@ -94,25 +91,6 @@ public final class RequestJoinSiege implements IClientIncomingPacket
 				castle.getSiege().removeSiegeClan(activeChar);
 			}
 			castle.getSiege().listRegisterClan(activeChar);
-		}
-		
-		SiegableHall hall = CHSiegeManager.getInstance().getSiegableHall(_castleId);
-		if (hall != null)
-		{
-			if (_isJoining == 1)
-			{
-				if (System.currentTimeMillis() < clan.getDissolvingExpiryTime())
-				{
-					client.sendPacket(SystemMessageId.YOUR_CLAN_MAY_NOT_REGISTER_TO_PARTICIPATE_IN_A_SIEGE_WHILE_UNDER_A_GRACE_PERIOD_OF_THE_CLAN_S_DISSOLUTION);
-					return;
-				}
-				CHSiegeManager.getInstance().registerClan(clan, hall, activeChar);
-			}
-			else
-			{
-				CHSiegeManager.getInstance().unRegisterClan(clan, hall);
-			}
-			client.sendPacket(new SiegeInfo(hall, activeChar));
 		}
 	}
 }

@@ -19,8 +19,6 @@
 package org.l2junity.gameserver.network.client.send;
 
 import org.l2junity.gameserver.model.entity.ClanHall;
-import org.l2junity.gameserver.model.entity.ClanHall.ClanHallFunction;
-import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.network.PacketWriter;
 
 /**
@@ -28,9 +26,9 @@ import org.l2junity.network.PacketWriter;
  */
 public class AgitDecoInfo implements IClientOutgoingPacket
 {
-	private final AuctionableHall _clanHall;
+	private final ClanHall _clanHall;
 	
-	public AgitDecoInfo(AuctionableHall ClanHall)
+	public AgitDecoInfo(ClanHall ClanHall)
 	{
 		_clanHall = ClanHall;
 	}
@@ -61,140 +59,29 @@ public class AgitDecoInfo implements IClientOutgoingPacket
 	{
 		packet.writeC(0xFD);
 		
-		packet.writeD(_clanHall.getId()); // clanhall id
+		packet.writeD(_clanHall.getResidenceId());
 		// FUNC_RESTORE_HP
-		ClanHallFunction function = _clanHall.getFunction(ClanHall.FUNC_RESTORE_HP);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-		}
-		else if (((_clanHall.getGrade() == 0) && (function.getLvl() < 220)) || ((_clanHall.getGrade() == 1) && (function.getLvl() < 160)) || ((_clanHall.getGrade() == 2) && (function.getLvl() < 260)) || ((_clanHall.getGrade() == 3) && (function.getLvl() < 300)))
-		{
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-		}
+		packet.writeC(0);
 		// FUNC_RESTORE_MP
-		function = _clanHall.getFunction(ClanHall.FUNC_RESTORE_MP);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-			packet.writeC(0);
-		}
-		else if ((((_clanHall.getGrade() == 0) || (_clanHall.getGrade() == 1)) && (function.getLvl() < 25)) || ((_clanHall.getGrade() == 2) && (function.getLvl() < 30)) || ((_clanHall.getGrade() == 3) && (function.getLvl() < 40)))
-		{
-			packet.writeC(1);
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-			packet.writeC(2);
-		}
+		packet.writeC(0);
+		packet.writeC(0);
 		// FUNC_RESTORE_EXP
-		function = _clanHall.getFunction(ClanHall.FUNC_RESTORE_EXP);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-		}
-		else if (((_clanHall.getGrade() == 0) && (function.getLvl() < 25)) || ((_clanHall.getGrade() == 1) && (function.getLvl() < 30)) || ((_clanHall.getGrade() == 2) && (function.getLvl() < 40)) || ((_clanHall.getGrade() == 3) && (function.getLvl() < 50)))
-		{
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-		}
+		packet.writeC(0);
 		// FUNC_TELEPORT
-		function = _clanHall.getFunction(ClanHall.FUNC_TELEPORT);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-		}
-		else if (function.getLvl() < 2)
-		{
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-		}
+		packet.writeC(0);
 		packet.writeC(0);
 		// CURTAINS
-		function = _clanHall.getFunction(ClanHall.FUNC_DECO_CURTAINS);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-		}
-		else if (function.getLvl() <= 1)
-		{
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-		}
+		packet.writeC(0);
 		// FUNC_ITEM_CREATE
-		function = _clanHall.getFunction(ClanHall.FUNC_ITEM_CREATE);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-		}
-		else if (((_clanHall.getGrade() == 0) && (function.getLvl() < 2)) || (function.getLvl() < 3))
-		{
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-		}
+		packet.writeC(0);
 		// FUNC_SUPPORT
-		function = _clanHall.getFunction(ClanHall.FUNC_SUPPORT);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-			packet.writeC(0);
-		}
-		else if (((_clanHall.getGrade() == 0) && (function.getLvl() < 2)) || ((_clanHall.getGrade() == 1) && (function.getLvl() < 4)) || ((_clanHall.getGrade() == 2) && (function.getLvl() < 5)) || ((_clanHall.getGrade() == 3) && (function.getLvl() < 8)))
-		{
-			packet.writeC(1);
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-			packet.writeC(2);
-		}
+		packet.writeC(0);
+		packet.writeC(0);
 		// Front Plateform
-		function = _clanHall.getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-		}
-		else if (function.getLvl() <= 1)
-		{
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-		}
+		packet.writeC(0);
 		// FUNC_ITEM_CREATE
-		function = _clanHall.getFunction(ClanHall.FUNC_ITEM_CREATE);
-		if ((function == null) || (function.getLvl() == 0))
-		{
-			packet.writeC(0);
-		}
-		else if (((_clanHall.getGrade() == 0) && (function.getLvl() < 2)) || (function.getLvl() < 3))
-		{
-			packet.writeC(1);
-		}
-		else
-		{
-			packet.writeC(2);
-		}
+		packet.writeC(0);
+		// Unknown
 		packet.writeD(0); // TODO: Find me!
 		packet.writeD(0); // TODO: Find me!
 		packet.writeD(0); // TODO: Find me!

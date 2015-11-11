@@ -16,33 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.actor.status;
+package org.l2junity.gameserver.enums;
 
-import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
-
-public class FolkStatus extends NpcStatus
+/**
+ * @author St3eT
+ */
+public enum ClanHallGrade
 {
-	public FolkStatus(Npc activeChar)
+	GRADE_S(50),
+	GRADE_A(40),
+	GRADE_B(30),
+	GRADE_C(20),
+	GRADE_D(10),
+	GRADE_NONE(0);
+	
+	private final int _gradeValue;
+	
+	private ClanHallGrade(int gradeValue)
 	{
-		super(activeChar);
+		_gradeValue = gradeValue;
 	}
 	
-	@Override
-	public final void reduceHp(double value, Creature attacker)
+	/**
+	 * @return the grade value.
+	 */
+	public int getGradeValue()
 	{
-		reduceHp(value, attacker, true, false, false);
-	}
-	
-	@Override
-	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
-	{
-	}
-	
-	@Override
-	public L2NpcInstance getActiveChar()
-	{
-		return (L2NpcInstance) super.getActiveChar();
+		return _gradeValue;
 	}
 }

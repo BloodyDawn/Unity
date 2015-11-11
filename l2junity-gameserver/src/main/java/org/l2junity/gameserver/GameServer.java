@@ -46,6 +46,7 @@ import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
 import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.data.xml.impl.ClanRewardData;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.data.xml.impl.CubicData;
@@ -96,13 +97,10 @@ import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
-import org.l2junity.gameserver.instancemanager.AuctionManager;
 import org.l2junity.gameserver.instancemanager.BoatManager;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
@@ -244,9 +242,7 @@ public class GameServer
 		
 		printSection("Clans");
 		ClanTable.getInstance();
-		CHSiegeManager.getInstance();
-		ClanHallManager.getInstance();
-		AuctionManager.getInstance();
+		ClanHallData.getInstance();
 		ClanEntryManager.getInstance();
 		
 		printSection("Geodata");

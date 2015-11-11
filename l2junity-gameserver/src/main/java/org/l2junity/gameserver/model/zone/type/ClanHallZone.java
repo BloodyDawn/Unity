@@ -18,10 +18,9 @@
  */
 package org.l2junity.gameserver.model.zone.type;
 
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.entity.ClanHall;
-import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 
@@ -42,16 +41,6 @@ public class ClanHallZone extends ResidenceZone
 		if (name.equals("clanHallId"))
 		{
 			setResidenceId(Integer.parseInt(value));
-			// Register self to the correct clan hall
-			ClanHall hall = ClanHallManager.getInstance().getClanHallById(getResidenceId());
-			if (hall == null)
-			{
-				_log.warn("L2ClanHallZone: Clan hall with id " + getResidenceId() + " does not exist!");
-			}
-			else
-			{
-				hall.setZone(this);
-			}
 		}
 		else
 		{
@@ -67,16 +56,14 @@ public class ClanHallZone extends ResidenceZone
 			// Set as in clan hall
 			character.setInsideZone(ZoneId.CLAN_HALL, true);
 			
-			AuctionableHall clanHall = ClanHallManager.getInstance().getAuctionableHallById(getResidenceId());
+			final ClanHall clanHall = ClanHallData.getInstance().getClanHallById(getResidenceId());
 			if (clanHall == null)
 			{
 				return;
 			}
 			
 			// Send decoration packet
-			AgitDecoInfo deco = new AgitDecoInfo(clanHall);
-			character.sendPacket(deco);
-			
+			character.sendPacket(new AgitDecoInfo(clanHall));
 		}
 	}
 	

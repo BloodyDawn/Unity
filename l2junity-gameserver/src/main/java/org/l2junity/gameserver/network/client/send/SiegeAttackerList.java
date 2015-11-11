@@ -18,13 +18,10 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.Collection;
-
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -52,17 +49,11 @@ import org.l2junity.network.PacketWriter;
  */
 public final class SiegeAttackerList implements IClientOutgoingPacket
 {
-	private Castle _castle;
-	private SiegableHall _hall;
+	private final Castle _castle;
 	
 	public SiegeAttackerList(Castle castle)
 	{
 		_castle = castle;
-	}
-	
-	public SiegeAttackerList(SiegableHall hall)
-	{
-		_hall = hall;
 	}
 	
 	@Override
@@ -70,80 +61,40 @@ public final class SiegeAttackerList implements IClientOutgoingPacket
 	{
 		OutgoingPackets.CASTLE_SIEGE_ATTACKER_LIST.writeId(packet);
 		
-		if (_castle != null)
+		packet.writeD(_castle.getResidenceId());
+		packet.writeD(0x00); // 0
+		packet.writeD(0x01); // 1
+		packet.writeD(0x00); // 0
+		int size = _castle.getSiege().getAttackerClans().size();
+		if (size > 0)
 		{
-			packet.writeD(_castle.getResidenceId());
-			packet.writeD(0x00); // 0
-			packet.writeD(0x01); // 1
-			packet.writeD(0x00); // 0
-			int size = _castle.getSiege().getAttackerClans().size();
-			if (size > 0)
+			L2Clan clan;
+			
+			packet.writeD(size);
+			packet.writeD(size);
+			for (SiegeClan siegeclan : _castle.getSiege().getAttackerClans())
 			{
-				L2Clan clan;
-				
-				packet.writeD(size);
-				packet.writeD(size);
-				for (SiegeClan siegeclan : _castle.getSiege().getAttackerClans())
+				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
+				if (clan == null)
 				{
-					clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-					if (clan == null)
-					{
-						continue;
-					}
-					
-					packet.writeD(clan.getId());
-					packet.writeS(clan.getName());
-					packet.writeS(clan.getLeaderName());
-					packet.writeD(clan.getCrestId());
-					packet.writeD(0x00); // signed time (seconds) (not storated by L2J)
-					packet.writeD(clan.getAllyId());
-					packet.writeS(clan.getAllyName());
-					packet.writeS(""); // AllyLeaderName
-					packet.writeD(clan.getAllyCrestId());
+					continue;
 				}
-			}
-			else
-			{
-				packet.writeD(0x00);
-				packet.writeD(0x00);
+				
+				packet.writeD(clan.getId());
+				packet.writeS(clan.getName());
+				packet.writeS(clan.getLeaderName());
+				packet.writeD(clan.getCrestId());
+				packet.writeD(0x00); // signed time (seconds) (not storated by L2J)
+				packet.writeD(clan.getAllyId());
+				packet.writeS(clan.getAllyName());
+				packet.writeS(""); // AllyLeaderName
+				packet.writeD(clan.getAllyCrestId());
 			}
 		}
 		else
 		{
-			packet.writeD(_hall.getId());
-			packet.writeD(0x00); // 0
-			packet.writeD(0x01); // 1
-			packet.writeD(0x00); // 0
-			final Collection<SiegeClan> attackers = _hall.getSiege().getAttackerClans();
-			final int size = attackers.size();
-			if (size > 0)
-			{
-				packet.writeD(size);
-				packet.writeD(size);
-				for (SiegeClan sClan : attackers)
-				{
-					final L2Clan clan = ClanTable.getInstance().getClan(sClan.getClanId());
-					if (clan == null)
-					{
-						continue;
-					}
-					
-					packet.writeD(clan.getId());
-					packet.writeS(clan.getName());
-					packet.writeS(clan.getLeaderName());
-					packet.writeD(clan.getCrestId());
-					packet.writeD(0x00); // signed time (seconds) (not storated by L2J)
-					packet.writeD(clan.getAllyId());
-					packet.writeS(clan.getAllyName());
-					packet.writeS(""); // AllyLeaderName
-					packet.writeD(clan.getAllyCrestId());
-				}
-			}
-			else
-			{
-				packet.writeD(0x00);
-				packet.writeD(0x00);
-			}
+			packet.writeD(0x00);
+			packet.writeD(0x00);
 		}
 		return true;
 	}
