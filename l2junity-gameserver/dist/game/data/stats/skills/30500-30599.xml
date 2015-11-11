@@ -90,7 +90,7 @@
 		</cond>
 		<for>
 			<effect name="KnockBack">
-				<param speed="700" distance="50" knockDown="true" /> <!-- Unconfirmed -->
+				<param speed="300" distance="50" knockDown="true" />
 			</effect>
 		</for>
 	</skill>
@@ -224,7 +224,7 @@
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 			</effect>
 			<effect name="KnockBack">
-				<param type="THROW_UP" distance="200" animationSpeed="333" />
+				<param type="THROW_UP" distance="100" animationSpeed="0" />
 			</effect>
 		</for>
 	</skill>
@@ -541,6 +541,7 @@
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectLimit" val="2-6" />
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="affectRange" val="300" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-687" />
@@ -557,11 +558,12 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack"><!-- TODO: Damage increases with the number of enemies affected. -->
+			<effect name="PhysicalAttack"><!-- TODO: Damage increases twice with each enemy affected. -->
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 			<effect name="KnockBack">
-				<param speed="700" distance="50" knockDown="true" /> <!-- Unconfirmed -->
+				<param speed="400" distance="50" knockDown="true" />
 			</effect>
 		</for>
 	</skill>
@@ -639,6 +641,7 @@
 		<for>
 			<effect name="RegularAttack">
 				<param pAtkMod="5" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -962,7 +965,7 @@
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="flyType" val="CHARGE" /> <!-- Guessed -->
+		<set name="flyType" val="CHARGE" /> <!-- Should launch flyType 3 (CHARGE) with animationSpeed 333 -->
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA2" />
 		<set name="trait" val="KNOCKDOWN" />
@@ -977,12 +980,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<cond> <!-- No Msg Here, also it calls next action attack if this condition fails -->
+		<cond msgId="113" addName="1">
 			<target mindistance="100" />
 		</cond>
 		<for>
 			<effect name="KnockBack">
-				<param speed="700" distance="50" knockDown="true" /> <!-- Unconfirmed -->
+				<param speed="600" distance="50" knockDown="true" />
 			</effect>
 		</for>
 	</skill>
