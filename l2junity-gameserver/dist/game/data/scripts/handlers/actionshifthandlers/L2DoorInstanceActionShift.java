@@ -38,7 +38,6 @@ public class L2DoorInstanceActionShift implements IActionShiftHandler
 			activeChar.setTarget(target);
 			final L2DoorInstance door = (L2DoorInstance) target;
 			final ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
-			activeChar.sendMessage("Door id je: " + door.getId());
 			activeChar.sendPacket(new StaticObject(door, activeChar.isGM()));
 			
 			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
