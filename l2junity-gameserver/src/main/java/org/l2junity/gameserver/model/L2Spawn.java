@@ -533,6 +533,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			newlocx = loc.getX();
 			newlocy = loc.getY();
 			newlocz = loc.getZ();
+			setLocation(loc);
 		}
 		else if ((getX() == 0) && (getY() == 0))
 		{
