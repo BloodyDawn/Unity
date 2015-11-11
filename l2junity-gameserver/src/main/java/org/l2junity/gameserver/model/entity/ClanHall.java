@@ -198,7 +198,8 @@ public final class ClanHall extends AbstractResidence
 	 */
 	public int getOwnerId()
 	{
-		return (_owner != null) ? _owner.getId() : 0;
+		final L2Clan owner = _owner;
+		return (owner != null) ? owner.getId() : 0;
 	}
 	
 	/**

@@ -18,11 +18,13 @@
  */
 package handlers.actionshifthandlers;
 
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.StaticObject;
 
@@ -35,6 +37,8 @@ public class L2DoorInstanceActionShift implements IActionShiftHandler
 		{
 			activeChar.setTarget(target);
 			final L2DoorInstance door = (L2DoorInstance) target;
+			final ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
+			activeChar.sendMessage("Door id je: " + door.getId());
 			activeChar.sendPacket(new StaticObject(door, activeChar.isGM()));
 			
 			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
@@ -44,6 +48,7 @@ public class L2DoorInstanceActionShift implements IActionShiftHandler
 			html.replace("%hpmax%", String.valueOf(door.getMaxHp()));
 			html.replace("%objid%", String.valueOf(target.getObjectId()));
 			html.replace("%doorid%", String.valueOf(door.getId()));
+			html.replace("%clanHall%", clanHall != null ? clanHall.getName() : "none");
 			
 			html.replace("%minx%", String.valueOf(door.getX(0)));
 			html.replace("%miny%", String.valueOf(door.getY(0)));

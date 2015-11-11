@@ -91,11 +91,11 @@ public final class ClanHallData implements IGameXmlReader
 											npcs.add(npcId);
 										}
 									}
+									params.set("npcList", npcs);
 									break;
 								}
 								case "doorlist":
 								{
-									
 									for (Node npcNode = tpNode.getFirstChild(); npcNode != null; npcNode = npcNode.getNextSibling())
 									{
 										if ("door".equals(npcNode.getNodeName()))
@@ -109,6 +109,7 @@ public final class ClanHallData implements IGameXmlReader
 											}
 										}
 									}
+									params.set("doorList", doors);
 									break;
 								}
 								case "ownerRestartPoint":
@@ -129,8 +130,6 @@ public final class ClanHallData implements IGameXmlReader
 				}
 			}
 		}
-		params.set("npcList", npcs);
-		params.set("doorList", doors);
 		_clanHalls.put(params.getInt("id"), new ClanHall(params));
 	}
 	
@@ -156,7 +155,8 @@ public final class ClanHallData implements IGameXmlReader
 	
 	public ClanHall getClanHallByDoorId(int doorId)
 	{
-		return _clanHalls.values().stream().filter(ch -> ch.getDoors().contains(doorId)).findFirst().orElse(null);
+		final L2DoorInstance door = DoorData.getInstance().getDoor(doorId);
+		return _clanHalls.values().stream().filter(ch -> ch.getDoors().contains(door)).findFirst().orElse(null);
 	}
 	
 	/**

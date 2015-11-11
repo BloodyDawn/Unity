@@ -22,6 +22,7 @@ import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionShiftHandler;
@@ -32,6 +33,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
@@ -50,8 +52,8 @@ public class L2NpcActionShift implements IActionShiftHandler
 			activeChar.setTarget(target);
 			
 			final Npc npc = (Npc) target;
-			
 			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+			final ClanHall clanHall = ClanHallData.getInstance().getClanHallByNpcId(npc.getId());
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/npcinfo.htm");
 			
 			html.replace("%objid%", String.valueOf(target.getObjectId()));
@@ -90,6 +92,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 			html.replace("%collision_radius%", String.valueOf(npc.getTemplate().getfCollisionRadius()));
 			html.replace("%collision_height%", String.valueOf(npc.getTemplate().getfCollisionHeight()));
 			html.replace("%dist%", String.valueOf((int) activeChar.calculateDistance(target, true, false)));
+			html.replace("%clanHall%", clanHall != null ? clanHall.getName() : "none");
 			
 			AttributeType attackAttribute = npc.getAttackElement();
 			html.replace("%ele_atk%", attackAttribute.name());
