@@ -125,6 +125,31 @@ public final class ClanHall extends AbstractResidence
 		}
 	}
 	
+	public void openDoors()
+	{
+		openCloseDoors(true);
+	}
+	
+	public void closeDoors()
+	{
+		openCloseDoors(false);
+	}
+	
+	public void openCloseDoors(boolean open)
+	{
+		_doors.forEach(door ->
+		{
+			if (open)
+			{
+				door.openMe();
+			}
+			else
+			{
+				door.closeMe();
+			}
+		});
+	}
+	
 	// ------------------------------------------------------------------------------
 	
 	/**
