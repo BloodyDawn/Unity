@@ -1930,7 +1930,12 @@
 		</collision>
 	</npc>
 	<npc id="23349" level="87" type="L2Monster" name="Noctum" title="Gravekeeper">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="22932" count="1" respawnTime="0" weightPoint="0" /> <!-- Krakia Carcass -->
+				<npc id="22938" count="2" respawnTime="0" weightPoint="0" /> <!-- Seknus -->
+			</minions>
+		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="269.81780948606" sp="490" />

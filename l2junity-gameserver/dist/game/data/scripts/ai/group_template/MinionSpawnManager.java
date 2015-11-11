@@ -398,6 +398,7 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		NPC.add(22958); // Moon Garden Manager
 		NPC.add(23160); // Garden Chief Priest
 		NPC.add(27470); // Shilen|s Messanger Cabrio
+		NPC.add(23349); // Nocturn
 	}
 	
 	private static final NpcStringId[] ON_ATTACK_MSG =

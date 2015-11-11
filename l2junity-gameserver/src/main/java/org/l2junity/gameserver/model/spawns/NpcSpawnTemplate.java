@@ -232,6 +232,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 				spawn.setXYZ(loc);
 				spawn.setHeading(loc.getHeading());
 				spawn.setAmount(_count);
+				spawn.setLocation(loc);
 				int respawn = 0, respawnRandom = 0;
 				if (_respawnTime != null)
 				{
