@@ -74,9 +74,6 @@ public final class AdminClanHall implements IAdminCommandHandler
 			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 			html.setFile(player.getHtmlPrefix(), "data/html/admin/clanhall_detail.htm");
 			html.replace("%clanHallId%", clanHall.getResidenceId());
-			html.replace("%clanHallName%", clanHall.getName());
-			html.replace("%clanHallDescription%", clanHall.getDescription());
-			html.replace("%clanHallLocation%", clanHall.getLocation());
 			html.replace("%clanHallOwner%", (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">Owned</font>"));
 			final String grade = clanHall.getGrade().toString().replace("GRADE_", "") + " Grade";
 			html.replace("%clanHallGrade%", grade);
@@ -178,7 +175,7 @@ public final class AdminClanHall implements IAdminCommandHandler
 			.bodyHandler((pages, clanHall, sb) ->
 		{
 			sb.append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
-			sb.append("<tr><td align=center fixwidth=\"250\"><font color=\"LEVEL\">" + clanHall.getName() + " (" + clanHall.getResidenceId() + ")</font></td></tr>");
+			sb.append("<tr><td align=center fixwidth=\"250\"><font color=\"LEVEL\">&%" + clanHall.getResidenceId() + "; (" + clanHall.getResidenceId() + ")</font></td></tr>");
 			sb.append("</table>");
 
 			sb.append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
@@ -192,7 +189,7 @@ public final class AdminClanHall implements IAdminCommandHandler
 			sb.append("<tr>");
 			sb.append("<td align=center fixwidth=\"83\">Location:</td>");
 			sb.append("<td align=center fixwidth=\"83\"></td>");
-			sb.append("<td align=center fixwidth=\"83\">" + clanHall.getLocation() + "</td>");
+			sb.append("<td align=center fixwidth=\"83\">&^" + clanHall.getResidenceId() + ";</td>");
 			sb.append("</tr>");
 			
 			sb.append("<tr>");

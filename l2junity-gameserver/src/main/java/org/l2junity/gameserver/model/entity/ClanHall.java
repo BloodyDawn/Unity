@@ -45,8 +45,6 @@ import org.slf4j.LoggerFactory;
 public final class ClanHall extends AbstractResidence
 {
 	// Static parameters
-	private final String _description;
-	private final String _location;
 	private final ClanHallGrade _grade;
 	private final ClanHallType _type;
 	private final List<L2DoorInstance> _doors;
@@ -68,8 +66,6 @@ public final class ClanHall extends AbstractResidence
 		super(params.getInt("id"));
 		// Set static parameters
 		setName(params.getString("name"));
-		_description = params.getString("description");
-		_location = params.getString("location");
 		_grade = params.getEnum("grade", ClanHallGrade.class);
 		_type = params.getEnum("type", ClanHallType.class);
 		_doors = params.getList("doorList", L2DoorInstance.class);
@@ -195,24 +191,6 @@ public final class ClanHall extends AbstractResidence
 	public List<Integer> getNpcs()
 	{
 		return _npcs;
-	}
-	
-	/**
-	 * Gets the description of clan hall
-	 * @return the description of clan hall
-	 */
-	public String getDescription()
-	{
-		return _description;
-	}
-	
-	/**
-	 * Gets the location of clan hall
-	 * @return the location of clan hall
-	 */
-	public String getLocation()
-	{
-		return _location;
 	}
 	
 	/**

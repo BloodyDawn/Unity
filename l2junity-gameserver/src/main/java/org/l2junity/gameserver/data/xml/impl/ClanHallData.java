@@ -76,8 +76,6 @@ public final class ClanHallData implements IGameXmlReader
 					{
 						params.set("id", parseInteger(clanHallNode.getAttributes(), "id"));
 						params.set("name", parseString(clanHallNode.getAttributes(), "name", "None"));
-						params.set("description", parseString(clanHallNode.getAttributes(), "description", "None"));
-						params.set("location", parseString(clanHallNode.getAttributes(), "location", "None"));
 						params.set("grade", parseEnum(clanHallNode.getAttributes(), ClanHallGrade.class, "grade", ClanHallGrade.GRADE_NONE));
 						params.set("type", parseEnum(clanHallNode.getAttributes(), ClanHallType.class, "type", ClanHallType.OTHER));
 						
