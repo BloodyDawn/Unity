@@ -18,7 +18,13 @@
  */
 package org.l2junity.gameserver.util;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -579,5 +585,21 @@ public final class Util
 	{
 		final WorldObject target = World.getInstance().findObject(targetObjId);
 		return (target != null) && (obj.calculateDistance(target, true, false) <= radius);
+	}
+	
+	public static String readAllLines(File file, Charset cs) throws IOException
+	{
+		String result = "";
+		try (final InputStream in = new FileInputStream(file);
+			final InputStreamReader reader = new InputStreamReader(in, cs);
+			final BufferedReader buffer = new BufferedReader(reader))
+		{
+			String line;
+			while ((line = buffer.readLine()) != null)
+			{
+				result += line + System.lineSeparator();
+			}
+		}
+		return result;
 	}
 }
