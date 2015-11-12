@@ -61,7 +61,7 @@ public final class ClanHall extends AbstractResidence
 	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id,ownerId,paidUntil,paid) VALUES (?,?,?,?)";
 	private static final String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
 	private static final String UPDATE_CLANHALL = "UPDATE clanhall SET ownerId=?,paidUntil=?,paid=? WHERE id=?";
-	private static final Logger _log = LoggerFactory.getLogger(ClanHallData.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClanHallData.class);
 	
 	public ClanHall(StatsSet params)
 	{
@@ -105,7 +105,7 @@ public final class ClanHall extends AbstractResidence
 					insertStatement.setString(4, "false"); // New clanhall should not have paid status
 					if (insertStatement.execute())
 					{
-						_log.info("Clan Hall " + getName() + " (" + getResidenceId() + ") was sucessfully created.");
+						LOGGER.info("Clan Hall " + getName() + " (" + getResidenceId() + ") was sucessfully created.");
 					}
 				}
 			}

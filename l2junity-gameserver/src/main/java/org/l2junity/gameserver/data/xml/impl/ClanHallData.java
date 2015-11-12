@@ -44,7 +44,7 @@ import org.w3c.dom.Node;
  */
 public final class ClanHallData implements IGameXmlReader
 {
-	private static final Logger _log = LoggerFactory.getLogger(ClanHallData.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClanHallData.class);
 	private static final Map<Integer, ClanHall> _clanHalls = new ConcurrentHashMap<>();
 	
 	protected ClanHallData()
@@ -56,7 +56,7 @@ public final class ClanHallData implements IGameXmlReader
 	public void load()
 	{
 		parseDatapackDirectory("data/clanHalls", true);
-		_log.info("Succesfully loaded {} Clan Halls.", _clanHalls.size());
+		LOGGER.info("Succesfully loaded {} Clan Halls.", _clanHalls.size());
 	}
 	
 	@Override
