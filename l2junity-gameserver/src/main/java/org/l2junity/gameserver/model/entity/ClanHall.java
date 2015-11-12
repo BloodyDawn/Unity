@@ -92,7 +92,6 @@ public final class ClanHall extends AbstractResidence
 					setOwner(rset.getInt("ownerId"));
 					setPaidUntil(rset.getLong("paidUntil"));
 					setPaid(rset.getBoolean("paid"));
-					_log.info("Clan Hall " + getName() + " (" + getResidenceId() + ") was sucessfully loaded.");
 				}
 				else
 				{

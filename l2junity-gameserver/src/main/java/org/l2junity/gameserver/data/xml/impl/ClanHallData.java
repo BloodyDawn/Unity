@@ -32,6 +32,8 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -41,6 +43,7 @@ import org.w3c.dom.Node;
  */
 public final class ClanHallData implements IGameXmlReader
 {
+	private static final Logger _log = LoggerFactory.getLogger(ClanHallData.class);
 	private static final Map<Integer, ClanHall> _clanHalls = new ConcurrentHashMap<>();
 	
 	protected ClanHallData()
@@ -52,6 +55,7 @@ public final class ClanHallData implements IGameXmlReader
 	public void load()
 	{
 		parseDatapackDirectory("data/clanHalls", true);
+		_log.info("Succesfully loaded {} Clan Halls.", _clanHalls.size());
 	}
 	
 	@Override
