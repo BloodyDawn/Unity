@@ -126,7 +126,7 @@ public final class AdminClanHall implements IAdminCommandHandler
 				}
 				case "give":
 				{
-					if ((player.getTarget() != null) || (player.getTarget().getActingPlayer() == null))
+					if ((player.getTarget() != null) && (player.getTarget().getActingPlayer() != null))
 					{
 						final L2Clan targetClan = player.getTarget().getActingPlayer().getClan();
 						if ((targetClan == null) || (targetClan.getHideoutId() != 0))

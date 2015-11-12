@@ -79,6 +79,7 @@ import org.l2junity.gameserver.network.client.send.ExWorldChatCnt;
 import org.l2junity.gameserver.network.client.send.HennaInfo;
 import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListAll;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.client.send.PledgeSkillList;
@@ -225,7 +226,6 @@ public class EnterWorld implements IClientIncomingPacket
 		if (activeChar.getClan() != null)
 		{
 			notifyClanMembers(activeChar);
-			
 			notifySponsorOrApprentice(activeChar);
 			
 			for (Siege siege : SiegeManager.getInstance().getSieges())
@@ -340,6 +340,7 @@ public class EnterWorld implements IClientIncomingPacket
 			PledgeShowMemberListAll.sendAllTo(activeChar);
 			clan.broadcastToOnlineMembers(new ExPledgeCount(clan));
 			activeChar.sendPacket(new PledgeSkillList(clan));
+			activeChar.sendPacket(new PledgeShowInfoUpdate(clan));
 		}
 		else
 		{
