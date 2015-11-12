@@ -34,15 +34,12 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
+import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public final class ClanHall extends AbstractResidence
 {
-	// SQL Querry
-	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id,ownerId,paidUntil,paid) VALUES (?,?,?,?)";
-	private static final String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
-	
 	// Static parameters
 	private final String _description;
 	private final String _location;
@@ -52,14 +49,15 @@ public final class ClanHall extends AbstractResidence
 	private final List<Integer> _npcs;
 	private final Location _ownerLocation;
 	private final Location _banishLocation;
-	
 	// Dynamic parameters
 	private L2Clan _owner = null;
 	private long _paidUntil = 0;
 	private boolean _paid = false;
-	
 	// Other
-	protected static final Logger _log = LoggerFactory.getLogger(ClanHallData.class);
+	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id,ownerId,paidUntil,paid) VALUES (?,?,?,?)";
+	private static final String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
+	private static final String UPDATE_CLANHALL = "UPDATE clanhall SET ownerId=?,paidUntil=?,paid=? WHERE id=?";
+	private static final Logger _log = LoggerFactory.getLogger(ClanHallData.class);
 	
 	public ClanHall(StatsSet params)
 	{
@@ -108,6 +106,23 @@ public final class ClanHall extends AbstractResidence
 					}
 				}
 			}
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateDB()
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(UPDATE_CLANHALL))
+		{
+			statement.setInt(1, getOwnerId());
+			statement.setLong(2, getPaidUntil());
+			statement.setBoolean(3, getPaid());
+			statement.setInt(4, getResidenceId());
+			statement.execute();
 		}
 		catch (SQLException e)
 		{
@@ -242,7 +257,36 @@ public final class ClanHall extends AbstractResidence
 	 */
 	public void setOwner(L2Clan clan)
 	{
+		final L2Clan oldClan = getOwner();
+		if ((clan == null) || (oldClan == clan))
+		{
+			return;
+		}
+		
+		if (oldClan != null) // Update old clan
+		{
+			oldClan.setHideoutId(0);
+			oldClan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(oldClan));
+		}
 		_owner = clan;
+		clan.setHideoutId(getResidenceId());
+		clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
+		updateDB();
+	}
+	
+	public void removeOwner()
+	{
+		final L2Clan clan = getOwner();
+		if (clan == null)
+		{
+			return;
+		}
+		_owner = null;
+		setPaid(false);
+		setPaidUntil(0);
+		clan.setHideoutId(0);
+		clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
+		updateDB();
 	}
 	
 	// ------------------------------------------------------------------------------

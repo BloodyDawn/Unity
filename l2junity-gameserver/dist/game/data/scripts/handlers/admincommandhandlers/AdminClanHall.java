@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
@@ -34,6 +35,7 @@ import org.l2junity.gameserver.model.html.formatters.BypassParserFormatter;
 import org.l2junity.gameserver.model.html.pagehandlers.NextPrevPageHandler;
 import org.l2junity.gameserver.model.html.styles.ButtonsStyle;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.BypassParser;
 
 /**
@@ -96,24 +98,60 @@ public final class AdminClanHall implements IAdminCommandHandler
 			{
 				case "openCloseDoors":
 				{
-					clanHall.openCloseDoors(Boolean.parseBoolean(actionVal));
+					if (actionVal != null)
+					{
+						clanHall.openCloseDoors(Boolean.parseBoolean(actionVal));
+					}
 					break;
 				}
 				case "teleport":
 				{
-					final Location loc;
-					switch (actionVal)
+					if (actionVal != null)
 					{
-						case "inside":
-							loc = clanHall.getOwnerLocation();
-							break;
-						case "outside":
-							loc = clanHall.getBanishLocation();
-							break;
-						default:
-							loc = player.getLocation();
+						final Location loc;
+						switch (actionVal)
+						{
+							case "inside":
+								loc = clanHall.getOwnerLocation();
+								break;
+							case "outside":
+								loc = clanHall.getBanishLocation();
+								break;
+							default:
+								loc = player.getLocation();
+						}
+						player.teleToLocation(loc);
 					}
-					player.teleToLocation(loc);
+					break;
+				}
+				case "give":
+				{
+					if ((player.getTarget() != null) || (player.getTarget().getActingPlayer() == null))
+					{
+						final L2Clan targetClan = player.getTarget().getActingPlayer().getClan();
+						if ((targetClan == null) || (targetClan.getHideoutId() != 0))
+						{
+							player.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+						}
+						
+						clanHall.setOwner(targetClan);
+					}
+					else
+					{
+						player.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+					}
+					break;
+				}
+				case "take":
+				{
+					if (clanHall.getOwner() != null)
+					{
+						clanHall.removeOwner();
+					}
+					else
+					{
+						player.sendMessage("You cannot take Clan Hall which don't have any owner.");
+					}
 					break;
 				}
 			}
@@ -181,7 +219,7 @@ public final class AdminClanHall implements IAdminCommandHandler
 		final String action = parser.getString("action", null);
 		final String actionVal = parser.getString("actionVal", null);
 		
-		if ((clanHallId > 0) && (action != null) && (actionVal != null))
+		if ((clanHallId > 0) && (action != null))
 		{
 			doAction(player, clanHallId, action, actionVal);
 		}
