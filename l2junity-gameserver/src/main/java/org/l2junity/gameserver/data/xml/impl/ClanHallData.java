@@ -27,6 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.ClanHallGrade;
+import org.l2junity.gameserver.enums.ClanHallType;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
@@ -78,7 +79,7 @@ public final class ClanHallData implements IGameXmlReader
 						params.set("description", parseString(clanHallNode.getAttributes(), "description", "None"));
 						params.set("location", parseString(clanHallNode.getAttributes(), "location", "None"));
 						params.set("grade", parseEnum(clanHallNode.getAttributes(), ClanHallGrade.class, "grade", ClanHallGrade.GRADE_NONE));
-						params.set("isauctionable", parseBoolean(clanHallNode.getAttributes(), "isAuctionanle", false));
+						params.set("type", parseEnum(clanHallNode.getAttributes(), ClanHallType.class, "type", ClanHallType.OTHER));
 						
 						for (Node tpNode = clanHallNode.getFirstChild(); tpNode != null; tpNode = tpNode.getNextSibling())
 						{

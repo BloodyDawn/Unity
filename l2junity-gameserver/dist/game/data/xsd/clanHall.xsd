@@ -67,7 +67,15 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>
-						<xs:attribute type="xs:boolean" name="isAuctionable" use="required" />
+						<xs:attribute name="type">
+							<xs:simpleType>
+								<xs:restriction base="xs:token">
+									<xs:enumeration value="AUCTIONABLE" />
+									<xs:enumeration value="SIEGEABLE" />
+									<xs:enumeration value="INSTANCED" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

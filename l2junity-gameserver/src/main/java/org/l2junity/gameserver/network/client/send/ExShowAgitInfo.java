@@ -49,7 +49,7 @@ public class ExShowAgitInfo implements IClientOutgoingPacket
 			packet.writeD(clanHall.getResidenceId());
 			packet.writeS(clanHall.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(clanHall.getOwnerId()).getName()); // owner clan name
 			packet.writeS(clanHall.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(clanHall.getOwnerId()).getLeaderName()); // leader name
-			packet.writeD(clanHall.isAuctionable() ? 0x00 : 0x01); // 0 - auction 1 - war clanhall 2 - ETC (rainbow spring clanhall)
+			packet.writeD(clanHall.getType().getClientVal()); // Clan hall type
 		});
 		return true;
 	}

@@ -28,6 +28,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.ClanHallGrade;
+import org.l2junity.gameserver.enums.ClanHallType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
@@ -38,13 +39,16 @@ import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author St3eT
+ */
 public final class ClanHall extends AbstractResidence
 {
 	// Static parameters
 	private final String _description;
 	private final String _location;
 	private final ClanHallGrade _grade;
-	private final boolean _isAuctionable;
+	private final ClanHallType _type;
 	private final List<L2DoorInstance> _doors;
 	private final List<Integer> _npcs;
 	private final Location _ownerLocation;
@@ -67,7 +71,7 @@ public final class ClanHall extends AbstractResidence
 		_description = params.getString("description");
 		_location = params.getString("location");
 		_grade = params.getEnum("grade", ClanHallGrade.class);
-		_isAuctionable = params.getBoolean("isauctionable");
+		_type = params.getEnum("type", ClanHallType.class);
 		_doors = params.getList("doorList", L2DoorInstance.class);
 		_npcs = params.getList("npcList", Integer.class);
 		_ownerLocation = params.getLocation("owner_loc");
@@ -212,12 +216,12 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Gets the true/false for auction list of an clan hall
-	 * @return {@code true} if the clan hall is auctionable, {@code false} otherwise.
+	 * Gets the type for this Clan Hall
+	 * @return type of this Clan Hall
 	 */
-	public boolean isAuctionable()
+	public ClanHallType getType()
 	{
-		return _isAuctionable;
+		return _type;
 	}
 	
 	// ------------------------------------------------------------------------------
