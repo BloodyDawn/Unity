@@ -19,13 +19,18 @@
 package org.l2junity.gameserver.cache;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.HTMLFilter;
+import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,7 +41,10 @@ public class HtmCache
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(HtmCache.class);
 	
-	private final HTMLFilter htmlFilter = new HTMLFilter();
+	private static final HTMLFilter HTML_FILTER = new HTMLFilter();
+	private static final Pattern EXTEND_PATTERN = Pattern.compile("<extend template=\"([a-zA-Z0-9-_./\\ ]*)\">(.*?)</extend>", Pattern.DOTALL);
+	private static final Pattern ABSTRACT_BLOCK_PATTERN = Pattern.compile("<abstract block=\"([a-zA-Z0-9-_. ]*)\" ?/>", Pattern.DOTALL);
+	private static final Pattern BLOCK_PATTERN = Pattern.compile("<block name=\"([a-zA-Z0-9-_. ]*)\">(.*?)</block>", Pattern.DOTALL);
 	
 	private final Map<String, String> _cache = Config.LAZY_CACHE ? new ConcurrentHashMap<>() : new HashMap<>();
 	
@@ -104,12 +112,12 @@ public class HtmCache
 	
 	public String loadFile(File file)
 	{
-		if (htmlFilter.accept(file))
+		if (HTML_FILTER.accept(file))
 		{
 			try
 			{
 				byte[] bytes = Files.readAllBytes(file.toPath());
-				String content = new String(bytes, "UTF-8");
+				String content = processHtml(Util.readAllLines(file, StandardCharsets.UTF_8));
 				content = content.replaceAll("(?s)<!--.*?-->", ""); // Remove html comments
 				
 				String oldContent = _cache.put(file.toURI().getPath().substring(Config.DATAPACK_ROOT.toURI().getPath().length()), content);
@@ -172,7 +180,7 @@ public class HtmCache
 		{
 			return ""; // avoid possible NPE
 		}
-
+		
 		return _cache.getOrDefault(path, Config.LAZY_CACHE ? loadFile(new File(Config.DATAPACK_ROOT, path)) : null);
 	}
 	
@@ -187,7 +195,82 @@ public class HtmCache
 	 */
 	public boolean isLoadable(String path)
 	{
-		return htmlFilter.accept(new File(Config.DATAPACK_ROOT, path));
+		return HTML_FILTER.accept(new File(Config.DATAPACK_ROOT, path));
+	}
+	
+	private String parseTemplateName(String name)
+	{
+		if (!name.startsWith("data/"))
+		{
+			if (name.startsWith("html/"))
+			{
+				return "data/" + name;
+			}
+			else if (name.startsWith("CommunityBoard/"))
+			{
+				return "data/html/" + name;
+			}
+			else if (name.startsWith("scripts/"))
+			{
+				return "data/scripts/" + name;
+			}
+		}
+		return name;
+	}
+	
+	private String processHtml(String result)
+	{
+		final Matcher extendMatcher = EXTEND_PATTERN.matcher(result);
+		if (extendMatcher.find())
+		{
+			// If extend matcher finds something, process template
+			final String templateName = parseTemplateName(extendMatcher.group(1));
+			
+			// Generate block name -> content map
+			final Map<String, String> blockMap = generateBlockMap(result);
+			
+			// Attempt to find the template
+			String template = getHtm(templateName + "-template.htm");
+			if (template != null)
+			{
+				// Attempt to find the abstract blocks
+				final Matcher blockMatcher = ABSTRACT_BLOCK_PATTERN.matcher(template);
+				while (blockMatcher.find())
+				{
+					final String name = blockMatcher.group(1);
+					if (!blockMap.containsKey(name))
+					{
+						LOGGER.warn(getClass().getSimpleName() + ": Abstract block definition [" + name + "] is not implemented!");
+						continue;
+					}
+					
+					// Replace the matched content with the block.
+					template = template.replace(blockMatcher.group(0), blockMap.get(name));
+				}
+				
+				// Replace the entire extend block
+				result = result.replace(extendMatcher.group(0), template);
+			}
+			else
+			{
+				LOGGER.warn(getClass().getSimpleName() + ": Missing template: " + templateName + "-template.htm !");
+			}
+		}
+		
+		return result;
+	}
+	
+	private Map<String, String> generateBlockMap(String data)
+	{
+		final Map<String, String> blockMap = new LinkedHashMap<>();
+		final Matcher blockMatcher = BLOCK_PATTERN.matcher(data);
+		while (blockMatcher.find())
+		{
+			final String name = blockMatcher.group(1);
+			final String content = blockMatcher.group(2);
+			blockMap.put(name, content);
+		}
+		return blockMap;
 	}
 	
 	public static HtmCache getInstance()
