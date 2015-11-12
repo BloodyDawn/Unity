@@ -202,17 +202,17 @@ public class HtmCache
 	{
 		if (!name.startsWith("data/"))
 		{
-			if (name.startsWith("html"))
+			if (name.startsWith("html/"))
 			{
-				return "data" + name;
+				return "data/" + name;
 			}
 			else if (name.startsWith("CommunityBoard/"))
 			{
 				return "data/html/" + name;
 			}
-			else if (name.startsWith("static/"))
+			else if (name.startsWith("scripts/"))
 			{
-				return "data/html/CommunityBoard/" + name;
+				return "data/scripts/" + name;
 			}
 		}
 		return name;
