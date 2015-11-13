@@ -25,9 +25,12 @@ import java.sql.SQLException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.ClanHallGrade;
@@ -38,6 +41,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.slf4j.Logger;
@@ -59,12 +63,13 @@ public final class ClanHall extends AbstractResidence
 	// Dynamic parameters
 	private L2Clan _owner = null;
 	private long _paidUntil = 0;
-	private boolean _paid = false;
 	// Other
-	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id,ownerId,paidUntil,paid) VALUES (?,?,?,?)";
+	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id, ownerId, paidUntil) VALUES (?,?,?)";
 	private static final String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
-	private static final String UPDATE_CLANHALL = "UPDATE clanhall SET ownerId=?,paidUntil=?,paid=? WHERE id=?";
+	private static final String UPDATE_CLANHALL = "UPDATE clanhall SET ownerId=?,paidUntil=? WHERE id=?";
 	private static final Logger LOGGER = LoggerFactory.getLogger(ClanHallData.class);
+	
+	protected Future<?> _checkPaymentTask = null;
 	
 	public ClanHall(StatsSet params)
 	{
@@ -97,16 +102,14 @@ public final class ClanHall extends AbstractResidence
 			{
 				if (rset.next())
 				{
-					setOwner(rset.getInt("ownerId"));
 					setPaidUntil(rset.getLong("paidUntil"));
-					setPaid(rset.getBoolean("paid"));
+					setOwner(rset.getInt("ownerId"));
 				}
 				else
 				{
 					insertStatement.setInt(1, getResidenceId());
 					insertStatement.setInt(2, 0); // New clanhall should not have owner
 					insertStatement.setInt(3, 0); // New clanhall should not have paid until
-					insertStatement.setString(4, "false"); // New clanhall should not have paid status
 					if (insertStatement.execute())
 					{
 						LOGGER.info("Clan Hall " + getName() + " (" + getResidenceId() + ") was sucessfully created.");
@@ -127,8 +130,7 @@ public final class ClanHall extends AbstractResidence
 		{
 			statement.setInt(1, getOwnerId());
 			statement.setLong(2, getPaidUntil());
-			statement.setBoolean(3, getPaid());
-			statement.setInt(4, getResidenceId());
+			statement.setInt(3, getResidenceId());
 			statement.execute();
 		}
 		catch (SQLException e)
@@ -257,54 +259,35 @@ public final class ClanHall extends AbstractResidence
 	 */
 	public void setOwner(L2Clan clan)
 	{
-		final L2Clan oldClan = getOwner();
-		if ((clan == null) || (oldClan == clan))
+		if (clan != null)
 		{
-			return;
+			_owner = clan;
+			clan.setHideoutId(getResidenceId());
+			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
+			if (getPaidUntil() == 0)
+			{
+				setPaidUntil(Instant.now().plus(Duration.ofDays(7)).toEpochMilli());
+			}
+			final long time = getCostFailDay() > 0 ? Instant.ofEpochMilli(getPaidUntil()).plus(Duration.ofDays(getCostFailDay() + 1)).toEpochMilli() : getPaidUntil();
+			_checkPaymentTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckPaymentTask(), time - System.currentTimeMillis());
 		}
-		
-		if (oldClan != null) // Update old clan
+		else
 		{
-			oldClan.setHideoutId(0);
-			oldClan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(oldClan));
+			if (_owner != null)
+			{
+				_owner.setHideoutId(0);
+				_owner.broadcastToOnlineMembers(new PledgeShowInfoUpdate(_owner));
+			}
+			_owner = null;
+			setPaidUntil(0);
+			if (_checkPaymentTask != null)
+			{
+				_checkPaymentTask.cancel(true);
+				_checkPaymentTask = null;
+			}
+			// TODO : Cancel all clan hall functions
 		}
-		_owner = clan;
-		clan.setHideoutId(getResidenceId());
-		clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 		updateDB();
-	}
-	
-	public void removeOwner()
-	{
-		final L2Clan clan = getOwner();
-		if (clan == null)
-		{
-			return;
-		}
-		_owner = null;
-		setPaid(false);
-		setPaidUntil(0);
-		clan.setHideoutId(0);
-		clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
-		updateDB();
-	}
-	
-	/**
-	 * Gets the true/false for clan hall payment
-	 * @return {@code true} if the clan hall is paid, {@code false} otherwise.
-	 */
-	public boolean getPaid()
-	{
-		return _paid;
-	}
-	
-	/**
-	 * Set the true/false if clan pay a fee for clan hall
-	 * @param val the {@code true} when clan pay a fee, {@code false} otherwise.
-	 */
-	public void setPaid(boolean val)
-	{
-		_paid = val;
 	}
 	
 	/**
@@ -345,9 +328,43 @@ public final class ClanHall extends AbstractResidence
 		return _teleports.stream().filter(holder -> holder.getMinFunctionLevel() <= functionLevel).collect(Collectors.toList());
 	}
 	
+	public long getLease()
+	{
+		return 0;
+	}
+	
 	@Override
 	public String toString()
 	{
 		return (getClass().getSimpleName() + ":" + getName() + "[" + getResidenceId() + "]");
+	}
+	
+	class CheckPaymentTask implements Runnable
+	{
+		@Override
+		public void run()
+		{
+			final L2Clan clan = getOwner();
+			if (clan != null)
+			{
+				if (clan.getWarehouse().getAdena() < getLease())
+				{
+					if (getCostFailDay() > 7)
+					{
+						setOwner(null);
+					}
+					else
+					{
+						_checkPaymentTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckPaymentTask(), 1, TimeUnit.DAYS);
+					}
+				}
+				else
+				{
+					clan.getWarehouse().destroyItem("Clan Hall Lease", Inventory.ADENA_ID, getLease(), null, null);
+					setPaidUntil(Instant.now().plus(Duration.ofDays(7)).toEpochMilli());
+					_checkPaymentTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckPaymentTask(), getPaidUntil() - System.currentTimeMillis());
+				}
+			}
+		}
 	}
 }

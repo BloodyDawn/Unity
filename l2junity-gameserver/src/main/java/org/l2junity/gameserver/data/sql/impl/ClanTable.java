@@ -32,6 +32,7 @@ import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -43,6 +44,7 @@ import org.l2junity.gameserver.model.ClanWar;
 import org.l2junity.gameserver.model.ClanWar.ClanWarState;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.Siege;
@@ -233,6 +235,12 @@ public class ClanTable
 			{
 				siege.removeAttacker(clan);
 			}
+		}
+		
+		final ClanHall hall = ClanHallData.getInstance().getClanHallByClan(clan);
+		if (hall != null)
+		{
+			hall.setOwner(null);
 		}
 		
 		ClanMember leaderMember = clan.getLeader();

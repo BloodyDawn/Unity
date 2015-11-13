@@ -141,9 +141,10 @@ public final class AdminClanHall implements IAdminCommandHandler
 				}
 				case "take":
 				{
-					if (clanHall.getOwner() != null)
+					final L2Clan clan = clanHall.getOwner();
+					if (clan != null)
 					{
-						clanHall.removeOwner();
+						clanHall.setOwner(null);
 					}
 					else
 					{
