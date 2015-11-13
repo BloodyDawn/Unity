@@ -22,6 +22,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -147,7 +149,8 @@ public final class ClanHall extends AbstractResidence
 	
 	public int getCostFailDay()
 	{
-		return 0; // TODO: Finish me!
+		final Duration failDay = Duration.between(Instant.now(), Instant.ofEpochMilli(getPaidUntil()));
+		return failDay.isNegative() ? 0 : (int) failDay.toDays();
 	}
 	
 	public void banishOthers()
