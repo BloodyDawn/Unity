@@ -44,6 +44,7 @@ public final class ClanHallDoorManager extends AbstractNpcAI
 		35581, 35583, 35585, 35587, // Schuttgart
 		35406, 35402, 35404, // Dion
 		35385, 35389, 35387, 35391, // Gludio
+		36726, 36724, 36722, 36728, // Gludio Outskirts
 		35393, 35401, 35399, 35397, 35395, // Gludin
 	};
 	// @formatter:on

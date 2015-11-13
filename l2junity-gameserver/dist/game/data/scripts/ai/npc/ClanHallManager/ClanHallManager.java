@@ -38,6 +38,7 @@ public final class ClanHallManager extends AbstractNpcAI
 	private static final int[] CLANHALL_MANAGERS =
 	{
 		35384, 35386, 35388, // Gludio
+		36725, 36723, 36721, 36727, // Gludio Outskirts
 		35455, 35453, 35451, 35457, 35459, // Giran
 		35441, 35439, 35443, 35447, 35449, 35445, // Aden
 		35467, 35465, 35463, 35461, // Goddard
