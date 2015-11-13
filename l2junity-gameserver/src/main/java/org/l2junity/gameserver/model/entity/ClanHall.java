@@ -76,6 +76,8 @@ public final class ClanHall extends AbstractResidence
 		_teleports = params.getList("teleportList", ClanHallTeleportHolder.class);
 		_ownerLocation = params.getLocation("owner_loc");
 		_banishLocation = params.getLocation("banish_loc");
+		// Init Clan Hall zone
+		initResidenceZone();
 		// Set dynamic parameters (from DB)
 		load();
 	}
@@ -150,6 +152,11 @@ public final class ClanHall extends AbstractResidence
 	
 	public void banishOthers()
 	{
+		if (getResidenceZone() == null)
+		{
+			LOGGER.info("Je to null! :(");
+			return;
+		}
 		getResidenceZone().banishForeigners(getOwnerId());
 	}
 	
