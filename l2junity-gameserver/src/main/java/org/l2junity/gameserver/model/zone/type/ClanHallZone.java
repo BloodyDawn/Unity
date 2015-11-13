@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.zone.type;
 
 import org.l2junity.gameserver.data.xml.impl.ClanHallData;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -74,5 +75,16 @@ public class ClanHallZone extends ResidenceZone
 		{
 			character.setInsideZone(ZoneId.CLAN_HALL, false);
 		}
+	}
+	
+	@Override
+	public final Location getBanishSpawnLoc()
+	{
+		final ClanHall clanHall = ClanHallData.getInstance().getClanHallById(getResidenceId());
+		if (clanHall == null)
+		{
+			return null;
+		}
+		return clanHall.getBanishLocation();
 	}
 }

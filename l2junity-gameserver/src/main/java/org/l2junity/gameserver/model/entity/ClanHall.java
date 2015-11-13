@@ -143,6 +143,16 @@ public final class ClanHall extends AbstractResidence
 		}
 	}
 	
+	public int getCostFailDay()
+	{
+		return 0; // TODO: Finish me!
+	}
+	
+	public void banishOthers()
+	{
+		getResidenceZone().banishForeigners(getOwnerId());
+	}
+	
 	public void openDoors()
 	{
 		openCloseDoors(true);
