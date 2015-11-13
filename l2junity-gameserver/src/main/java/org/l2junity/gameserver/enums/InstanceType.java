@@ -77,8 +77,6 @@ public enum InstanceType
 	L2FortLogisticsInstance(L2MerchantInstance),
 	L2FortManagerInstance(L2MerchantInstance),
 	// City NPCs
-	L2AuctioneerInstance(L2Npc),
-	L2ClanHallManagerInstance(L2MerchantInstance),
 	L2FishermanInstance(L2MerchantInstance),
 	L2ObservationInstance(L2Npc),
 	L2OlympiadManagerInstance(L2Npc),
@@ -89,7 +87,6 @@ public enum InstanceType
 	// Doormens
 	L2DoormenInstance(L2NpcInstance),
 	L2FortDoormenInstance(L2DoormenInstance),
-	L2ClanHallDoormenInstance(L2DoormenInstance),
 	// Custom
 	L2ClassMasterInstance(L2NpcInstance),
 	L2EventMobInstance(L2Npc);
