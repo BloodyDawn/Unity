@@ -23,6 +23,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -34,6 +35,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.slf4j.Logger;
@@ -47,8 +49,9 @@ public final class ClanHall extends AbstractResidence
 	// Static parameters
 	private final ClanHallGrade _grade;
 	private final ClanHallType _type;
-	private final List<L2DoorInstance> _doors;
 	private final List<Integer> _npcs;
+	private final List<L2DoorInstance> _doors;
+	private final List<ClanHallTeleportHolder> _teleports;
 	private final Location _ownerLocation;
 	private final Location _banishLocation;
 	// Dynamic parameters
@@ -68,8 +71,9 @@ public final class ClanHall extends AbstractResidence
 		setName(params.getString("name"));
 		_grade = params.getEnum("grade", ClanHallGrade.class);
 		_type = params.getEnum("type", ClanHallType.class);
-		_doors = params.getList("doorList", L2DoorInstance.class);
 		_npcs = params.getList("npcList", Integer.class);
+		_doors = params.getList("doorList", L2DoorInstance.class);
+		_teleports = params.getList("teleportList", ClanHallTeleportHolder.class);
 		_ownerLocation = params.getLocation("owner_loc");
 		_banishLocation = params.getLocation("banish_loc");
 		// Set dynamic parameters (from DB)
@@ -270,8 +274,6 @@ public final class ClanHall extends AbstractResidence
 		updateDB();
 	}
 	
-	// ------------------------------------------------------------------------------
-	
 	/**
 	 * Gets the true/false for clan hall payment
 	 * @return {@code true} if the clan hall is paid, {@code false} otherwise.
@@ -308,8 +310,6 @@ public final class ClanHall extends AbstractResidence
 		_paidUntil = paidUntil;
 	}
 	
-	// ------------------------------------------------------------------------------
-	
 	public Location getOwnerLocation()
 	{
 		return _ownerLocation;
@@ -318,6 +318,16 @@ public final class ClanHall extends AbstractResidence
 	public Location getBanishLocation()
 	{
 		return _banishLocation;
+	}
+	
+	public List<ClanHallTeleportHolder> getTeleportList()
+	{
+		return _teleports;
+	}
+	
+	public List<ClanHallTeleportHolder> getTeleportList(int functionLevel)
+	{
+		return _teleports.stream().filter(holder -> holder.getMinFunctionLevel() <= functionLevel).collect(Collectors.toList());
 	}
 	
 	@Override

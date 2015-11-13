@@ -33,6 +33,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
+import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -64,6 +65,7 @@ public final class ClanHallData implements IGameXmlReader
 	{
 		final List<L2DoorInstance> doors = new ArrayList<>();
 		final List<Integer> npcs = new ArrayList<>();
+		final List<ClanHallTeleportHolder> teleports = new ArrayList<>();
 		final StatsSet params = new StatsSet();
 		
 		for (Node listNode = doc.getFirstChild(); listNode != null; listNode = listNode.getNextSibling())
@@ -113,6 +115,25 @@ public final class ClanHallData implements IGameXmlReader
 										}
 									}
 									params.set("doorList", doors);
+									break;
+								}
+								case "teleportList":
+								{
+									for (Node npcNode = tpNode.getFirstChild(); npcNode != null; npcNode = npcNode.getNextSibling())
+									{
+										if ("teleport".equals(npcNode.getNodeName()))
+										{
+											final NamedNodeMap np = npcNode.getAttributes();
+											final int npcStringId = parseInteger(np, "npcStringId");
+											final int x = parseInteger(np, "x");
+											final int y = parseInteger(np, "y");
+											final int z = parseInteger(np, "z");
+											final int minFunctionLevel = parseInteger(np, "minFunctionLevel");
+											final int cost = parseInteger(np, "cost");
+											teleports.add(new ClanHallTeleportHolder(npcStringId, x, y, z, minFunctionLevel, cost));
+										}
+									}
+									params.set("teleportList", teleports);
 									break;
 								}
 								case "ownerRestartPoint":
