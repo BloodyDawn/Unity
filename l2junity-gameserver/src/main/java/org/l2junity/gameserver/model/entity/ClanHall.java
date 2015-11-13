@@ -152,11 +152,6 @@ public final class ClanHall extends AbstractResidence
 	
 	public void banishOthers()
 	{
-		if (getResidenceZone() == null)
-		{
-			LOGGER.info("Je to null! :(");
-			return;
-		}
 		getResidenceZone().banishForeigners(getOwnerId());
 	}
 	
