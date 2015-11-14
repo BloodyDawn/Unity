@@ -39,6 +39,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -66,13 +67,12 @@ public final class ClanHall extends AbstractResidence
 	// Dynamic parameters
 	private L2Clan _owner = null;
 	private long _paidUntil = 0;
+	protected Future<?> _checkPaymentTask = null;
 	// Other
 	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id, ownerId, paidUntil) VALUES (?,?,?)";
 	private static final String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
 	private static final String UPDATE_CLANHALL = "UPDATE clanhall SET ownerId=?,paidUntil=? WHERE id=?";
 	private static final Logger LOGGER = LoggerFactory.getLogger(ClanHallData.class);
-	
-	protected Future<?> _checkPaymentTask = null;
 	
 	public ClanHall(StatsSet params)
 	{
@@ -161,41 +161,26 @@ public final class ClanHall extends AbstractResidence
 		return failDay.isNegative() ? 0 : (int) failDay.toDays();
 	}
 	
+	/**
+	 * Teleport all non-owner players from {@link ClanHallZone} to {@link ClanHall#getBanishLocation()}.
+	 */
 	public void banishOthers()
 	{
 		getResidenceZone().banishForeigners(getOwnerId());
 	}
 	
-	public void openDoors()
-	{
-		openCloseDoors(true);
-	}
-	
-	public void closeDoors()
-	{
-		openCloseDoors(false);
-	}
-	
+	/**
+	 * Open or close all {@link L2DoorInstance} related to this {@link ClanHall}.
+	 * @param open {@code true} means open door, {@code false} means close door
+	 */
 	public void openCloseDoors(boolean open)
 	{
-		_doors.forEach(door ->
-		{
-			if (open)
-			{
-				door.openMe();
-			}
-			else
-			{
-				door.closeMe();
-			}
-		});
+		_doors.forEach(door -> door.openCloseMe(open));
 	}
 	
-	// ------------------------------------------------------------------------------
-	
 	/**
-	 * Gets the grade of clan hall
-	 * @return the grade of clan hall
+	 * Gets the grade of clan hall.
+	 * @return grade of this {@link ClanHall} in {@link ClanHallGrade} enum.
 	 */
 	public ClanHallGrade getGrade()
 	{
@@ -203,8 +188,8 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Gets the doors of clan hall
-	 * @return the doors of clan hall
+	 * Gets all {@link L2DoorInstance} related to this {@link ClanHall}.
+	 * @return all {@link L2DoorInstance} related to this {@link ClanHall}
 	 */
 	public List<L2DoorInstance> getDoors()
 	{
@@ -212,8 +197,8 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Gets the npcs of clan hall
-	 * @return the npcs of clan hall
+	 * Gets all {@link Npc} related to this {@link ClanHall}.
+	 * @return all {@link Npc} related to this {@link ClanHall}
 	 */
 	public List<Integer> getNpcs()
 	{
@@ -221,19 +206,17 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Gets the type for this Clan Hall
-	 * @return type of this Clan Hall
+	 * Gets the {@link ClanHallType} of this {@link ClanHall}.
+	 * @return {@link ClanHallType} of this {@link ClanHall} in {@link ClanHallGrade} enum.
 	 */
 	public ClanHallType getType()
 	{
 		return _type;
 	}
 	
-	// ------------------------------------------------------------------------------
-	
 	/**
-	 * Gets the owner of clan hall
-	 * @return the owner of clan hall
+	 * Gets the {@link L2Clan} which own this {@link ClanHall}.
+	 * @return {@link L2Clan} which own this {@link ClanHall}
 	 */
 	public L2Clan getOwner()
 	{
@@ -241,8 +224,8 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Gets the clan id of clan hall owner
-	 * @return the clan id of clan hall owner
+	 * Gets the {@link L2Clan} ID which own this {@link ClanHall}.
+	 * @return the {@link L2Clan} ID which own this {@link ClanHall}
 	 */
 	public int getOwnerId()
 	{
@@ -349,12 +332,6 @@ public final class ClanHall extends AbstractResidence
 		return _deposit;
 	}
 	
-	@Override
-	public String toString()
-	{
-		return (getClass().getSimpleName() + ":" + getName() + "[" + getResidenceId() + "]");
-	}
-	
 	class CheckPaymentTask implements Runnable
 	{
 		@Override
@@ -383,5 +360,11 @@ public final class ClanHall extends AbstractResidence
 				}
 			}
 		}
+	}
+	
+	@Override
+	public String toString()
+	{
+		return (getClass().getSimpleName() + ":" + getName() + "[" + getResidenceId() + "]");
 	}
 }

@@ -406,6 +406,18 @@ public class L2DoorInstance extends Creature
 		}
 	}
 	
+	public final void openCloseMe(boolean open)
+	{
+		if (open)
+		{
+			openMe();
+		}
+		else
+		{
+			closeMe();
+		}
+	}
+	
 	public final void openMe()
 	{
 		if (getGroupName() != null)
