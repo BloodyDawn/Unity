@@ -85,6 +85,14 @@ public final class ClanHallData implements IGameXmlReader
 						{
 							switch (tpNode.getNodeName())
 							{
+								case "auction":
+								{
+									final NamedNodeMap at = tpNode.getAttributes();
+									params.set("minBid", parseInteger(at, "minBid"));
+									params.set("lease", parseInteger(at, "lease"));
+									params.set("deposit", parseInteger(at, "deposit"));
+									break;
+								}
 								case "npcs":
 								{
 									for (Node npcNode = tpNode.getFirstChild(); npcNode != null; npcNode = npcNode.getNextSibling())

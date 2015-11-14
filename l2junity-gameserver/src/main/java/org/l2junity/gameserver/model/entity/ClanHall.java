@@ -55,6 +55,9 @@ public final class ClanHall extends AbstractResidence
 	// Static parameters
 	private final ClanHallGrade _grade;
 	private final ClanHallType _type;
+	private final int _minBid;
+	private final int _lease;
+	private final int _deposit;
 	private final List<Integer> _npcs;
 	private final List<L2DoorInstance> _doors;
 	private final List<ClanHallTeleportHolder> _teleports;
@@ -78,6 +81,9 @@ public final class ClanHall extends AbstractResidence
 		setName(params.getString("name"));
 		_grade = params.getEnum("grade", ClanHallGrade.class);
 		_type = params.getEnum("type", ClanHallType.class);
+		_minBid = params.getInt("minBid");
+		_lease = params.getInt("lease");
+		_deposit = params.getInt("deposit");
 		_npcs = params.getList("npcList", Integer.class);
 		_doors = params.getList("doorList", L2DoorInstance.class);
 		_teleports = params.getList("teleportList", ClanHallTeleportHolder.class);
@@ -328,9 +334,19 @@ public final class ClanHall extends AbstractResidence
 		return _teleports.stream().filter(holder -> holder.getMinFunctionLevel() <= functionLevel).collect(Collectors.toList());
 	}
 	
-	public long getLease()
+	public int getMinBid()
 	{
-		return 0;
+		return _minBid;
+	}
+	
+	public int getLease()
+	{
+		return _lease;
+	}
+	
+	public int getDeposit()
+	{
+		return _deposit;
 	}
 	
 	@Override
