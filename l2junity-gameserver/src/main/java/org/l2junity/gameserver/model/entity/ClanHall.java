@@ -379,6 +379,7 @@ public final class ClanHall extends AbstractResidence
 					clan.getWarehouse().destroyItem("Clan Hall Lease", Inventory.ADENA_ID, getLease(), null, null);
 					setPaidUntil(Instant.now().plus(Duration.ofDays(7)).toEpochMilli());
 					_checkPaymentTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckPaymentTask(), getPaidUntil() - System.currentTimeMillis());
+					updateDB();
 				}
 			}
 		}
