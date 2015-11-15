@@ -239,6 +239,11 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		return _functions.values().stream().map(ResidenceFunction::getTemplate).filter(func -> func.getType() == type).findFirst().orElse(null);
 	}
 	
+	public int getFunctionLevel(ResidenceFunctionType type)
+	{
+		return getFunction(type) != null ? getFunction(type).getLevel() : 0;
+	}
+	
 	public long getFunctionExpiration(ResidenceFunctionType type)
 	{
 		final ResidenceFunction function = _functions.values().stream().filter(func -> func.getTemplate().getType() == type).findFirst().orElse(null);

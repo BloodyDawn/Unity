@@ -20,10 +20,15 @@ package ai.npc.ClanHallManager;
 
 import java.util.StringTokenizer;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
+import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import ai.npc.AbstractNpcAI;
 
@@ -47,6 +52,38 @@ public final class ClanHallManager extends AbstractNpcAI
 		35394, 35396, 35398, 35400, 35392, // Gludin
 	};
 	// @formatter:on
+	// Misc
+	private static final int[] ALLOWED_BUFFS =
+	{
+		4342, // Wind Walk
+		4343, // Decrease Weight
+		4344, // Shield
+		4346, // Mental Shield
+		4345, // Might
+		15374, // Horn Melody
+		15375, // Drum Melody
+		4347, // Blessed Body
+		4349, // Magic Barrier
+		4350, // Resist Shock
+		4348, // Blessed Soul
+		15376, // Pipe Organ Melody
+		15377, // Guitar Melody
+		4351, // Concentration
+		4352, // Berserker Spirit
+		4353, // Blessed Shield
+		4358, // Guidance
+		4354, // Vampiric Rage
+		15378, // Harp Melody
+		15379, // Lute Melody
+		15380, // Knight's Harmony
+		15381, // Warrior's Harmony
+		15382, // Wizard's Harmony
+		4355, // Acumen
+		4356, // Empower
+		4357, // Haste
+		4359, // Focus
+		4360, // Death Whisper
+	};
 	
 	private ClanHallManager()
 	{
@@ -113,6 +150,118 @@ public final class ClanHallManager extends AbstractNpcAI
 						htmltext = "ClanHallManager-noAuthority.html";
 					}
 					break;
+				}
+				case "useFunctions":
+				{
+					if (player.hasClanPrivilege(ClanPrivilege.CH_OTHER_RIGHTS))
+					{
+						if (!st.hasMoreTokens())
+						{
+							htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-09.html");
+							htmltext = htmltext.replaceAll("%hpFunction%", String.valueOf(clanHall.getFunctionLevel(ResidenceFunctionType.HP_REGEN)));
+							htmltext = htmltext.replaceAll("%mpFunction%", String.valueOf(clanHall.getFunctionLevel(ResidenceFunctionType.MP_REGEN)));
+							htmltext = htmltext.replaceAll("%resFunction%", String.valueOf(clanHall.getFunctionLevel(ResidenceFunctionType.EXP_RESTORE)));
+						}
+						else
+						{
+							switch (st.nextToken())
+							{
+								case "teleport":
+								{
+									final int teleportLevel = clanHall.getFunctionLevel(ResidenceFunctionType.TELEPORT) - 10;
+									if (teleportLevel > 0)
+									{
+										if (!st.hasMoreTokens())
+										{
+											final StringBuilder sb = new StringBuilder();
+											htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-funcTeleport.html");
+											// Generate teleport list
+											clanHall.getTeleportList(teleportLevel).forEach(teleport ->
+											{
+												final String price = (teleport.getCost() > 0) ? (" - " + teleport.getCost() + " Adena") : "";
+												sb.append("<button align=left icon=\"teleport\" action=\"bypass -h Quest ClanHallManager useFunctions teleport " + teleport.getNpcStringId().getId() + "\" msg=\"811;F;" + teleport.getNpcStringId().getId() + "\"><fstring>" + teleport.getNpcStringId().getId() + "</fstring>" + price + "</button>");
+											});
+											htmltext = htmltext.replaceAll("%teleportList%", sb.toString());
+										}
+										else
+										{
+											final int destination = Integer.parseInt(st.nextToken());
+											final ClanHallTeleportHolder holder = clanHall.getTeleportList(teleportLevel).stream().filter(tel -> tel.getNpcStringId().getId() == destination).findFirst().orElse(null);
+											if (holder != null)
+											{
+												if (player.getAdena() >= holder.getCost())
+												{
+													player.reduceAdena("Clan Hall Teleport", holder.getCost(), npc, true);
+													player.teleToLocation(holder.getLocation());
+												}
+												else
+												{
+													player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
+												}
+											}
+											else
+											{
+												htmltext = "ClanHallManager-noFunction.html";
+											}
+										}
+									}
+									else
+									{
+										htmltext = "ClanHallManager-noFunction.html";
+									}
+									break;
+								}
+								case "buffs":
+								{
+									int buffLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF) - 14;
+									if (buffLevel > 0)
+									{
+										if (!st.hasMoreTokens())
+										{
+											htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-funcBuffs_" + buffLevel + ".html");
+											htmltext = htmltext.replaceAll("%manaLeft%", Integer.toString((int) npc.getCurrentMp()));
+										}
+										else
+										{
+											final String[] skillData = st.nextToken().split("_");
+											final SkillHolder skill = new SkillHolder(Integer.parseInt(skillData[0]), Integer.parseInt(skillData[1]));
+											if (CommonUtil.contains(ALLOWED_BUFFS, skill.getSkillId()))
+											{
+												if (npc.getCurrentMp() < (npc.getStat().getMpConsume(skill.getSkill()) + npc.getStat().getMpInitialConsume(skill.getSkill())))
+												{
+													htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-funcBuffsNoMp.html");
+												}
+												else if (npc.isSkillDisabled(skill.getSkill()))
+												{
+													htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-funcBuffsNoReuse.html");
+												}
+												else
+												{
+													castSkill(npc, player, skill);
+													htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-funcBuffsDone.html");
+												}
+												htmltext = htmltext.replaceAll("%manaLeft%", Integer.toString((int) npc.getCurrentMp()));
+											}
+										}
+									}
+									else
+									{
+										htmltext = "ClanHallManager-noFunction.html";
+									}
+									break;
+								}
+							}
+						}
+					}
+					else
+					{
+						htmltext = "ClanHallManager-noAuthority.html";
+					}
+					break;
+				}
+				case "manageFunctions":
+				{
+				
 				}
 				default:
 				{
