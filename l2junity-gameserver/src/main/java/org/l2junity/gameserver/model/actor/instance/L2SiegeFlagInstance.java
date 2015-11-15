@@ -42,7 +42,7 @@ public class L2SiegeFlagInstance extends Npc
 	private final boolean _isAdvanced;
 	private boolean _canTalk;
 	
-	public L2SiegeFlagInstance(PlayerInstance player, L2NpcTemplate template, boolean advanced, boolean outPost)
+	public L2SiegeFlagInstance(PlayerInstance player, L2NpcTemplate template, boolean advanced)
 	{
 		super(template);
 		setInstanceType(InstanceType.L2SiegeFlagInstance);

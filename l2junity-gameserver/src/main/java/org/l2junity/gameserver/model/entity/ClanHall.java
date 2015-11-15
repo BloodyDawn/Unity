@@ -43,6 +43,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.residences.AbstractResidence;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.slf4j.Logger;
@@ -91,6 +92,7 @@ public final class ClanHall extends AbstractResidence
 		_banishLocation = params.getLocation("banish_loc");
 		// Init Clan Hall zone
 		initResidenceZone();
+		initFunctions();
 		// Set dynamic parameters (from DB)
 		load();
 	}
@@ -227,6 +229,7 @@ public final class ClanHall extends AbstractResidence
 	 * Gets the {@link L2Clan} ID which own this {@link ClanHall}.
 	 * @return the {@link L2Clan} ID which own this {@link ClanHall}
 	 */
+	@Override
 	public int getOwnerId()
 	{
 		final L2Clan owner = _owner;

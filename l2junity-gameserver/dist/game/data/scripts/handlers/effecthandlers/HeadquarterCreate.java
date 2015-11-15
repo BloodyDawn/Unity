@@ -19,16 +19,12 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -63,20 +59,10 @@ public final class HeadquarterCreate extends AbstractEffect
 			return;
 		}
 		
-		final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, NpcData.getInstance().getTemplate(HQ_NPC_ID), _isAdvanced, false);
+		final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, NpcData.getInstance().getTemplate(HQ_NPC_ID), _isAdvanced);
 		flag.setTitle(player.getClan().getName());
 		flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 		flag.setHeading(player.getHeading());
 		flag.spawnMe(player.getX(), player.getY(), player.getZ() + 50);
-		final Castle castle = CastleManager.getInstance().getCastle(player);
-		final Fort fort = FortManager.getInstance().getFort(player);
-		if (castle != null)
-		{
-			castle.getSiege().getFlag(player.getClan()).add(flag);
-		}
-		else if (fort != null)
-		{
-			fort.getSiege().getFlag(player.getClan()).add(flag);
-		}
 	}
 }

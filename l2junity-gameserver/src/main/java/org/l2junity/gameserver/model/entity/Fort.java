@@ -53,6 +53,7 @@ import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.residences.AbstractResidence;
 import org.l2junity.gameserver.model.zone.type.FortZone;
 import org.l2junity.gameserver.model.zone.type.SiegeZone;
 import org.l2junity.gameserver.network.client.send.PlaySound;
@@ -249,6 +250,7 @@ public final class Fort extends AbstractResidence
 			loadFunctions();
 		}
 		initResidenceZone();
+		initFunctions();
 		initNpcs(); // load and spawn npcs (Always spawned)
 		initSiegeNpcs(); // load suspicious merchants (Despawned 10mins before siege)
 		// spawnSuspiciousMerchant();// spawn suspicious merchants
@@ -869,6 +871,13 @@ public final class Fort extends AbstractResidence
 		}
 	}
 	
+	@Override
+	public final int getOwnerId()
+	{
+		final L2Clan clan = _fortOwner;
+		return clan != null ? clan.getId() : -1;
+	}
+	
 	public final L2Clan getOwnerClan()
 	{
 		return _fortOwner;
@@ -1004,7 +1013,7 @@ public final class Fort extends AbstractResidence
 	
 	/**
 	 * @return Returns state of fortress.<BR>
-	 * <BR>
+	 *         <BR>
 	 *         0 - not decided yet<BR>
 	 *         1 - independent<BR>
 	 *         2 - contracted with castle<BR>
@@ -1015,7 +1024,8 @@ public final class Fort extends AbstractResidence
 	}
 	
 	/**
-	 * @param state <ul>
+	 * @param state
+	 *            <ul>
 	 *            <li>0 - not decided yet</li>
 	 *            <li>1 - independent</li>
 	 *            <li>2 - contracted with castle</li>

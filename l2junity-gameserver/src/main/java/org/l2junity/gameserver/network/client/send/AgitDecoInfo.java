@@ -18,69 +18,37 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import org.l2junity.gameserver.model.entity.ClanHall;
+import org.l2junity.gameserver.model.residences.AbstractResidence;
+import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
+import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
 /**
- * @author Steuf
+ * @author Steuf, UnAfraid
  */
 public class AgitDecoInfo implements IClientOutgoingPacket
 {
-	private final ClanHall _clanHall;
+	private final AbstractResidence _residense;
 	
-	public AgitDecoInfo(ClanHall ClanHall)
+	public AgitDecoInfo(AbstractResidence residense)
 	{
-		_clanHall = ClanHall;
+		_residense = residense;
 	}
 	
-	//@formatter:off
-	/*
-	  	Packet send, must be confirmed
-	 	OutgoingPackets.CAMERA_MODE.writeInto(packet);
-		packet.writeD(0); // clanhall id
-		packet.writeC(0); // FUNC_RESTORE_HP (Fireplace)
-		packet.writeC(0); // FUNC_RESTORE_MP (Carpet)
-		packet.writeC(0); // FUNC_RESTORE_MP (Statue)
-		packet.writeC(0); // FUNC_RESTORE_EXP (Chandelier)
-		packet.writeC(0); // FUNC_TELEPORT (Mirror)
-		packet.writeC(0); // Crytal
-		packet.writeC(0); // Curtain
-		packet.writeC(0); // FUNC_ITEM_CREATE (Magic Curtain)
-		packet.writeC(0); // FUNC_SUPPORT
-		packet.writeC(0); // FUNC_SUPPORT (Flag)
-		packet.writeC(0); // Front Platform
-		packet.writeC(0); // FUNC_ITEM_CREATE
-		packet.writeD(0);
-		packet.writeD(0);
-	 */
-	//@formatter:on
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		packet.writeC(0xFD);
+		OutgoingPackets.AGIT_DECO_INFO.writeId(packet);
+		packet.writeD(_residense.getResidenceId());
+		for (ResidenceFunctionType type : ResidenceFunctionType.values())
+		{
+			if (type == ResidenceFunctionType.NONE)
+			{
+				continue;
+			}
+			packet.writeC(_residense.hasFunction(type) ? 0x01 : 0x00);
+		}
 		
-		packet.writeD(_clanHall.getResidenceId());
-		// FUNC_RESTORE_HP
-		packet.writeC(0);
-		// FUNC_RESTORE_MP
-		packet.writeC(0);
-		packet.writeC(0);
-		// FUNC_RESTORE_EXP
-		packet.writeC(0);
-		// FUNC_TELEPORT
-		packet.writeC(0);
-		packet.writeC(0);
-		// CURTAINS
-		packet.writeC(0);
-		// FUNC_ITEM_CREATE
-		packet.writeC(0);
-		// FUNC_SUPPORT
-		packet.writeC(0);
-		packet.writeC(0);
-		// Front Plateform
-		packet.writeC(0);
-		// FUNC_ITEM_CREATE
-		packet.writeC(0);
 		// Unknown
 		packet.writeD(0); // TODO: Find me!
 		packet.writeD(0); // TODO: Find me!

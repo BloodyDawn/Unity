@@ -75,6 +75,7 @@ import org.l2junity.gameserver.data.xml.impl.PlayerTemplateData;
 import org.l2junity.gameserver.data.xml.impl.PlayerXpPercentLostData;
 import org.l2junity.gameserver.data.xml.impl.PrimeShopData;
 import org.l2junity.gameserver.data.xml.impl.RecipeData;
+import org.l2junity.gameserver.data.xml.impl.ResidenceFunctionsData;
 import org.l2junity.gameserver.data.xml.impl.SayuneData;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
 import org.l2junity.gameserver.data.xml.impl.ShuttleData;
@@ -242,6 +243,7 @@ public class GameServer
 		
 		printSection("Clans");
 		ClanTable.getInstance();
+		ResidenceFunctionsData.getInstance();
 		ClanHallData.getInstance();
 		ClanEntryManager.getInstance();
 		
