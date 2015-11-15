@@ -23,6 +23,7 @@ import java.util.StringTokenizer;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
@@ -213,7 +214,7 @@ public final class ClanHallManager extends AbstractNpcAI
 								}
 								case "buffs":
 								{
-									int buffLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF) - 14;
+									final int buffLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF) - 14;
 									if (buffLevel > 0)
 									{
 										if (!st.hasMoreTokens())
@@ -247,6 +248,21 @@ public final class ClanHallManager extends AbstractNpcAI
 									else
 									{
 										htmltext = "ClanHallManager-noFunction.html";
+									}
+									break;
+								}
+								case "items":
+								{
+									final int itemLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF) - 10;
+									switch (itemLevel)
+									{
+										case 1:
+										case 2:
+										case 3:
+											((L2MerchantInstance) npc).showBuyWindow(player, Integer.parseInt(npc.getId() + "0" + (itemLevel - 1)));
+											break;
+										default:
+											htmltext = "ClanHallManager-noFunction.html";
 									}
 									break;
 								}
