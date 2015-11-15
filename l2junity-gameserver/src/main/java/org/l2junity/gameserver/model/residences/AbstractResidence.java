@@ -241,7 +241,8 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	
 	public int getFunctionLevel(ResidenceFunctionType type)
 	{
-		return getFunction(type) != null ? getFunction(type).getLevel() : 0;
+		final ResidenceFunctionTemplate func = getFunction(type);
+		return func != null ? func.getLevel() : 0;
 	}
 	
 	public long getFunctionExpiration(ResidenceFunctionType type)
