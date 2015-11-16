@@ -54,6 +54,8 @@ public final class ClanHallManager extends AbstractNpcAI
 		35566, 35568, 35570, 35572, 35574, 35576, 35578, // Rune
 		35580, 35582, 35584, 35586, // Schuttgart
 		36721, 36723, 36725, 36727, // Gludio Outskirts
+		36729, 36731, 36733, 36735, // Dion Outskirts
+		36737, 36739, // Floran Village
 	};
 	// @formatter:on
 	// Misc
