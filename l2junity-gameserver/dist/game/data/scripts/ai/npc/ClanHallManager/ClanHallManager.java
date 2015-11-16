@@ -46,13 +46,14 @@ public final class ClanHallManager extends AbstractNpcAI
 	private static final int[] CLANHALL_MANAGERS =
 	{
 		35384, 35386, 35388, // Gludio
-		36721, 36723, 36725, 36727, // Gludio Outskirts
-		35451, 35453, 35455, 35457, 35459, // Giran
+		35400, 35392, 35394, 35396, 35398, // Gludin
+		35403, 35405, 35407, // Dion
 		35439, 35441, 35443, 35445, 35447, 35449, // Aden
+		35451, 35453, 35455, 35457, 35459, // Giran
 		35461, 35463, 35465, 35467, // Goddard
 		35566, 35568, 35570, 35572, 35574, 35576, 35578, // Rune
-		35403, 35405, 35407, // Dion
-		35400, 35392, 35394, 35396, 35398, // Gludin
+		35580, 35582, 35584, 35586, // Schuttgart
+		36721, 36723, 36725, 36727, // Gludio Outskirts
 	};
 	// @formatter:on
 	// Misc
