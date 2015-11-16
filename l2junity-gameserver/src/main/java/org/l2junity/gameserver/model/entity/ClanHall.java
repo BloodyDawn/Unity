@@ -260,7 +260,9 @@ public final class ClanHall extends AbstractResidence
 			{
 				setPaidUntil(Instant.now().plus(Duration.ofDays(7)).toEpochMilli());
 			}
-			final long time = getCostFailDay() > 0 ? Instant.ofEpochMilli(getPaidUntil()).plus(Duration.ofDays(getCostFailDay() + 1)).toEpochMilli() : getPaidUntil();
+			
+			final int failDays = getCostFailDay();
+			final long time = failDays > 0 ? (failDays > 8 ? Instant.now().toEpochMilli() : Instant.ofEpochMilli(getPaidUntil()).plus(Duration.ofDays(failDays + 1)).toEpochMilli()) : getPaidUntil();
 			_checkPaymentTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckPaymentTask(), time - System.currentTimeMillis());
 		}
 		else
@@ -354,7 +356,7 @@ public final class ClanHall extends AbstractResidence
 			{
 				if (clan.getWarehouse().getAdena() < getLease())
 				{
-					if (getCostFailDay() > 7)
+					if (getCostFailDay() > 8)
 					{
 						setOwner(null);
 					}
