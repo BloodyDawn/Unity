@@ -277,7 +277,7 @@ public final class ClanHall extends AbstractResidence
 				_checkPaymentTask.cancel(true);
 				_checkPaymentTask = null;
 			}
-			// TODO : Cancel all clan hall functions
+			removeFunctions();
 		}
 		updateDB();
 	}
