@@ -34,20 +34,25 @@ import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 public class ResidenceFunction
 {
 	private final int _id;
+	private final int _level;
 	private long _expiration;
 	private final int _ownerId;
 	private final AbstractResidence _residense;
 	private ScheduledFuture<?> _task;
 	
-	public ResidenceFunction(int id, long expiration, int ownerId, AbstractResidence residense)
+	public ResidenceFunction(int id, int level, long expiration, int ownerId, AbstractResidence residense)
 	{
 		_id = id;
+		_level = level;
 		_expiration = expiration;
 		_ownerId = ownerId;
 		_residense = residense;
 		init();
 	}
 	
+	/**
+	 * Initializes the function task
+	 */
 	private void init()
 	{
 		final ResidenceFunctionTemplate template = getTemplate();
@@ -57,26 +62,49 @@ public class ResidenceFunction
 		}
 	}
 	
+	/**
+	 * @return the function id
+	 */
 	public int getId()
 	{
 		return _id;
 	}
 	
+	/**
+	 * @return the function level
+	 */
+	public int getLevel()
+	{
+		return _level;
+	}
+	
+	/**
+	 * @return the expiration of this function instance
+	 */
 	public long getExpiration()
 	{
 		return _expiration;
 	}
 	
+	/**
+	 * @return the owner (clan) of this function instance
+	 */
 	public int getOwnerId()
 	{
 		return _ownerId;
 	}
 	
+	/**
+	 * @return the template of this function instance
+	 */
 	public ResidenceFunctionTemplate getTemplate()
 	{
-		return ResidenceFunctionsData.getInstance().getFunctions(_id);
+		return ResidenceFunctionsData.getInstance().getFunction(_id, _level);
 	}
 	
+	/**
+	 * The function invoked when task run, it either re-activate the function or removes it (In case clan doesn't cannot pay for it)
+	 */
 	private void onFunctionExpiration()
 	{
 		if (!reactivate())
@@ -91,6 +119,9 @@ public class ResidenceFunction
 		}
 	}
 	
+	/**
+	 * @return {@code true} if function instance is re-activated successfully, {@code false} otherwise
+	 */
 	public boolean reactivate()
 	{
 		final ResidenceFunctionTemplate template = getTemplate();
@@ -120,6 +151,9 @@ public class ResidenceFunction
 		return true;
 	}
 	
+	/**
+	 * Cancels the task to {@link #onFunctionExpiration()}
+	 */
 	public void cancelExpiration()
 	{
 		if ((_task != null) && !_task.isDone())

@@ -20,8 +20,10 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
@@ -33,12 +35,13 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 /**
+ * The residence functions data
  * @author UnAfraid
  */
 public final class ResidenceFunctionsData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ResidenceFunctionsData.class);
-	private final List<ResidenceFunctionTemplate> _functions = new ArrayList<>();
+	private final Map<Integer, List<ResidenceFunctionTemplate>> _functions = new HashMap<>();
 	
 	protected ResidenceFunctionsData()
 	{
@@ -65,13 +68,39 @@ public final class ResidenceFunctionsData implements IGameXmlReader
 				final Node node = attrs.item(i);
 				set.set(node.getNodeName(), node.getNodeValue());
 			}
-			_functions.add(new ResidenceFunctionTemplate(set));
+			forEach(func, "level", levelNode ->
+			{
+				final NamedNodeMap levelAttrs = levelNode.getAttributes();
+				final StatsSet levelSet = new StatsSet(HashMap::new);
+				levelSet.merge(set);
+				for (int i = 0; i < levelAttrs.getLength(); i++)
+				{
+					final Node node = levelAttrs.item(i);
+					levelSet.set(node.getNodeName(), node.getNodeValue());
+				}
+				final ResidenceFunctionTemplate template = new ResidenceFunctionTemplate(levelSet);
+				_functions.computeIfAbsent(template.getId(), key -> new ArrayList<>()).add(template);
+			});
 		}));
 	}
 	
-	public ResidenceFunctionTemplate getFunctions(int id)
+	/**
+	 * @param id
+	 * @param level
+	 * @return function template by id and level, null if not available
+	 */
+	public ResidenceFunctionTemplate getFunction(int id, int level)
 	{
-		return _functions.stream().filter(func -> func.getId() == id).findFirst().orElse(null);
+		return _functions.getOrDefault(id, Collections.emptyList()).stream().filter(template -> template.getLevel() == level).findAny().orElse(null);
+	}
+	
+	/**
+	 * @param id
+	 * @return function template by id, null if not available
+	 */
+	public List<ResidenceFunctionTemplate> getFunctions(int id)
+	{
+		return _functions.get(id);
 	}
 	
 	public static final ResidenceFunctionsData getInstance()

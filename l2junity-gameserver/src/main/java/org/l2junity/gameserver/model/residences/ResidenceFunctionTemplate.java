@@ -45,31 +45,49 @@ public class ResidenceFunctionTemplate
 		_value = set.getDouble("value", 0);
 	}
 	
+	/**
+	 * @return the function id
+	 */
 	public int getId()
 	{
 		return _id;
 	}
 	
+	/**
+	 * @return the function level
+	 */
 	public int getLevel()
 	{
 		return _level;
 	}
 	
+	/**
+	 * @return the function type
+	 */
 	public ResidenceFunctionType getType()
 	{
 		return _type;
 	}
 	
+	/**
+	 * @return the cost of the function
+	 */
 	public ItemHolder getCost()
 	{
 		return _cost;
 	}
 	
+	/**
+	 * @return the duration of the function
+	 */
 	public Duration getDuration()
 	{
 		return _duration;
 	}
 	
+	/**
+	 * @return value of the function
+	 */
 	public double getValue()
 	{
 		return _value;

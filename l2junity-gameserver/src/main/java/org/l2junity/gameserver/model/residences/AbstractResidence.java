@@ -127,6 +127,9 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 	}
 	
+	/**
+	 * Initializes all available functions for the current residence
+	 */
 	protected void initFunctions()
 	{
 		final L2Clan clan = ClanTable.getInstance().getClan(getOwnerId());
@@ -145,8 +148,9 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 				while (rs.next())
 				{
 					final int id = rs.getInt("id");
+					final int level = rs.getInt("level");
 					final long expiration = rs.getLong("expiration");
-					final ResidenceFunction func = new ResidenceFunction(id, expiration, getOwnerId(), this);
+					final ResidenceFunction func = new ResidenceFunction(id, level, expiration, getOwnerId(), this);
 					if ((expiration <= System.currentTimeMillis()) && !func.reactivate())
 					{
 						continue;
@@ -161,18 +165,24 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 	}
 	
+	/**
+	 * Adds new function and removes old if matches same id
+	 * @param func
+	 */
 	public void addFunction(ResidenceFunction func)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO residense_functions (id, expiration, ownerId, residenseId) VALUES (?, ?, ?, ?) ON DUPLICATE UPDATE expiration = ?, ownerId = ?"))
+			PreparedStatement ps = con.prepareStatement("INSERT INTO residense_functions (id, level, expiration, ownerId, residenseId) VALUES (?, ?, ?, ?, ?) ON DUPLICATE UPDATE level = ?, expiration = ?, ownerId = ?"))
 		{
 			ps.setInt(1, func.getId());
-			ps.setLong(2, func.getExpiration());
-			ps.setInt(3, func.getOwnerId());
-			ps.setInt(4, getResidenceId());
+			ps.setInt(2, func.getLevel());
+			ps.setLong(3, func.getExpiration());
+			ps.setInt(4, func.getOwnerId());
+			ps.setInt(5, getResidenceId());
 			
-			ps.setLong(5, func.getExpiration());
-			ps.setInt(6, func.getOwnerId());
+			ps.setInt(6, func.getLevel());
+			ps.setLong(7, func.getExpiration());
+			ps.setInt(8, func.getOwnerId());
 			ps.execute();
 		}
 		catch (Exception e)
@@ -189,6 +199,10 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 	}
 	
+	/**
+	 * Removes the specified function
+	 * @param func
+	 */
 	public void removeFunction(ResidenceFunction func)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -209,6 +223,9 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 	}
 	
+	/**
+	 * Removes all functions
+	 */
 	public void removeFunctions()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -229,22 +246,48 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 	}
 	
+	/**
+	 * @param type
+	 * @return {@code true} if function is available, {@code false} otherwise
+	 */
 	public boolean hasFunction(ResidenceFunctionType type)
 	{
 		return _functions.values().stream().map(ResidenceFunction::getTemplate).anyMatch(func -> func.getType() == type);
 	}
 	
+	/**
+	 * @param type
+	 * @return the function template by type, null if not available
+	 */
 	public ResidenceFunctionTemplate getFunction(ResidenceFunctionType type)
 	{
 		return _functions.values().stream().map(ResidenceFunction::getTemplate).filter(func -> func.getType() == type).findFirst().orElse(null);
 	}
 	
+	/**
+	 * @param id
+	 * @param level
+	 * @return the function template by id and level, null if not available
+	 */
+	public ResidenceFunctionTemplate getFunction(int id, int level)
+	{
+		return _functions.values().stream().map(ResidenceFunction::getTemplate).filter(func -> (func.getId() == id) && (func.getLevel() == level)).findFirst().orElse(null);
+	}
+	
+	/**
+	 * @param type
+	 * @return level of function, 0 if not available
+	 */
 	public int getFunctionLevel(ResidenceFunctionType type)
 	{
 		final ResidenceFunctionTemplate func = getFunction(type);
 		return func != null ? func.getLevel() : 0;
 	}
 	
+	/**
+	 * @param type
+	 * @return the expiration of function by type, -1 if not available
+	 */
 	public long getFunctionExpiration(ResidenceFunctionType type)
 	{
 		final ResidenceFunction function = _functions.values().stream().filter(func -> func.getTemplate().getType() == type).findFirst().orElse(null);
