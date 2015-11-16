@@ -68,7 +68,7 @@ public final class ResidenceFunctionsData implements IGameXmlReader
 				final Node node = attrs.item(i);
 				set.set(node.getNodeName(), node.getNodeValue());
 			}
-			forEach(func, "level", levelNode ->
+			forEach(func, "function", levelNode ->
 			{
 				final NamedNodeMap levelAttrs = levelNode.getAttributes();
 				final StatsSet levelSet = new StatsSet(HashMap::new);
