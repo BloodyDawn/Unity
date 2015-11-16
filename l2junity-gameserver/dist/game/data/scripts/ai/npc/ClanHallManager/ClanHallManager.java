@@ -18,6 +18,8 @@
  */
 package ai.npc.ClanHallManager;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.StringTokenizer;
 
 import org.l2junity.commons.util.CommonUtil;
@@ -44,13 +46,13 @@ public final class ClanHallManager extends AbstractNpcAI
 	private static final int[] CLANHALL_MANAGERS =
 	{
 		35384, 35386, 35388, // Gludio
-		36725, 36723, 36721, 36727, // Gludio Outskirts
-		35455, 35453, 35451, 35457, 35459, // Giran
-		35441, 35439, 35443, 35447, 35449, 35445, // Aden
-		35467, 35465, 35463, 35461, // Goddard
-		35578, 35576, 35574, 35566, 35572, 35570, 35568, // Rune
-		35407, 35405, 35403, // Dion
-		35394, 35396, 35398, 35400, 35392, // Gludin
+		36721, 36723, 36725, 36727, // Gludio Outskirts
+		35451, 35453, 35455, 35457, 35459, // Giran
+		35439, 35441, 35443, 35445, 35447, 35449, // Aden
+		35461, 35463, 35465, 35467, // Goddard
+		35566, 35568, 35570, 35572, 35574, 35576, 35578, // Rune
+		35403, 35405, 35407, // Dion
+		35400, 35392, 35394, 35396, 35398, // Gludin
 	};
 	// @formatter:on
 	// Misc
@@ -273,6 +275,13 @@ public final class ClanHallManager extends AbstractNpcAI
 					{
 						htmltext = "ClanHallManager-noAuthority.html";
 					}
+					break;
+				}
+				case "warehouse":
+				{
+					htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-10.html");
+					htmltext = htmltext.replaceAll("%lease%", String.valueOf(clanHall.getLease()));
+					htmltext = htmltext.replaceAll("%payDate%", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(clanHall.getPaidUntil()))); // TODO: Not really paid until, it's when server check CWH for adenas
 					break;
 				}
 				case "manageFunctions":
