@@ -265,6 +265,7 @@ public final class ClanHall extends AbstractResidence
 		}
 		else
 		{
+			removeFunctions();
 			if (_owner != null)
 			{
 				_owner.setHideoutId(0);
@@ -277,7 +278,6 @@ public final class ClanHall extends AbstractResidence
 				_checkPaymentTask.cancel(true);
 				_checkPaymentTask = null;
 			}
-			// TODO : Cancel all clan hall functions
 		}
 		updateDB();
 	}
@@ -357,7 +357,7 @@ public final class ClanHall extends AbstractResidence
 				else
 				{
 					clan.getWarehouse().destroyItem("Clan Hall Lease", Inventory.ADENA_ID, getLease(), null, null);
-					setPaidUntil(Instant.now().plus(Duration.ofDays(7)).toEpochMilli());
+					setPaidUntil(Instant.ofEpochMilli(getPaidUntil()).plus(Duration.ofDays(7)).toEpochMilli());
 					_checkPaymentTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckPaymentTask(), getPaidUntil() - System.currentTimeMillis());
 					updateDB();
 				}
