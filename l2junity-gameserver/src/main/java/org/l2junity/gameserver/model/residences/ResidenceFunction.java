@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.residences;
 
+import java.time.Instant;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -36,16 +37,24 @@ public class ResidenceFunction
 	private final int _id;
 	private final int _level;
 	private long _expiration;
-	private final int _ownerId;
 	private final AbstractResidence _residense;
 	private ScheduledFuture<?> _task;
 	
-	public ResidenceFunction(int id, int level, long expiration, int ownerId, AbstractResidence residense)
+	public ResidenceFunction(int id, int level, long expiration, AbstractResidence residense)
 	{
 		_id = id;
 		_level = level;
 		_expiration = expiration;
-		_ownerId = ownerId;
+		_residense = residense;
+		init();
+	}
+	
+	public ResidenceFunction(int id, int level, AbstractResidence residense)
+	{
+		_id = id;
+		_level = level;
+		final ResidenceFunctionTemplate template = getTemplate();
+		_expiration = Instant.now().toEpochMilli() + template.getDuration().toMillis();
 		_residense = residense;
 		init();
 	}
@@ -91,7 +100,25 @@ public class ResidenceFunction
 	 */
 	public int getOwnerId()
 	{
-		return _ownerId;
+		return _residense.getOwnerId();
+	}
+	
+	/**
+	 * @return value of the function
+	 */
+	public double getValue()
+	{
+		final ResidenceFunctionTemplate template = getTemplate();
+		return template == null ? 0 : template.getValue();
+	}
+	
+	/**
+	 * @return the type of this function instance
+	 */
+	public ResidenceFunctionType getType()
+	{
+		final ResidenceFunctionTemplate template = getTemplate();
+		return template == null ? ResidenceFunctionType.NONE : template.getType();
 	}
 	
 	/**
@@ -111,7 +138,7 @@ public class ResidenceFunction
 		{
 			_residense.removeFunction(this);
 			
-			final L2Clan clan = ClanTable.getInstance().getClan(_ownerId);
+			final L2Clan clan = ClanTable.getInstance().getClan(_residense.getOwnerId());
 			if (clan != null)
 			{
 				clan.broadcastToOnlineMembers(new AgitDecoInfo(_residense));
@@ -130,7 +157,7 @@ public class ResidenceFunction
 			return false;
 		}
 		
-		final L2Clan clan = ClanTable.getInstance().getClan(_ownerId);
+		final L2Clan clan = ClanTable.getInstance().getClan(_residense.getOwnerId());
 		if (clan == null)
 		{
 			return false;

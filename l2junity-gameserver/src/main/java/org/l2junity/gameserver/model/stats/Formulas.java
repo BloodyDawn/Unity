@@ -50,7 +50,7 @@ import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.residences.AbstractResidence;
-import org.l2junity.gameserver.model.residences.ResidenceFunctionTemplate;
+import org.l2junity.gameserver.model.residences.ResidenceFunction;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -125,10 +125,10 @@ public final class Formulas
 					final AbstractResidence residense = ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
 					if (residense != null)
 					{
-						final ResidenceFunctionTemplate template = residense.getFunction(ResidenceFunctionType.HP_REGEN);
-						if (template != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
+						if (func != null)
 						{
-							hpRegenMultiplier *= template.getValue();
+							hpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -144,10 +144,10 @@ public final class Formulas
 					final AbstractResidence residense = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
 					if (residense != null)
 					{
-						final ResidenceFunctionTemplate template = residense.getFunction(ResidenceFunctionType.HP_REGEN);
-						if (template != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
+						if (func != null)
 						{
-							hpRegenMultiplier *= template.getValue();
+							hpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -163,10 +163,10 @@ public final class Formulas
 					final AbstractResidence residense = FortManager.getInstance().getFortById(player.getClan().getCastleId());
 					if (residense != null)
 					{
-						final ResidenceFunctionTemplate template = residense.getFunction(ResidenceFunctionType.HP_REGEN);
-						if (template != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
+						if (func != null)
 						{
-							hpRegenMultiplier *= template.getValue();
+							hpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -230,10 +230,10 @@ public final class Formulas
 					final AbstractResidence residense = ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
 					if (residense != null)
 					{
-						final ResidenceFunctionTemplate template = residense.getFunction(ResidenceFunctionType.MP_REGEN);
-						if (template != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
+						if (func != null)
 						{
-							mpRegenMultiplier *= template.getValue();
+							mpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -249,10 +249,10 @@ public final class Formulas
 					final AbstractResidence residense = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
 					if (residense != null)
 					{
-						final ResidenceFunctionTemplate template = residense.getFunction(ResidenceFunctionType.MP_REGEN);
-						if (template != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
+						if (func != null)
 						{
-							mpRegenMultiplier *= template.getValue();
+							mpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -268,10 +268,10 @@ public final class Formulas
 					final AbstractResidence residense = FortManager.getInstance().getFortById(player.getClan().getCastleId());
 					if (residense != null)
 					{
-						final ResidenceFunctionTemplate template = residense.getFunction(ResidenceFunctionType.MP_REGEN);
-						if (template != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
+						if (func != null)
 						{
-							mpRegenMultiplier *= template.getValue();
+							mpRegenMultiplier *= func.getValue();
 						}
 					}
 				}

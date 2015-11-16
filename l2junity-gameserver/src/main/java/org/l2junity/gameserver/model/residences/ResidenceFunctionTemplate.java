@@ -86,6 +86,14 @@ public class ResidenceFunctionTemplate
 	}
 	
 	/**
+	 * @return the duration of the function as days
+	 */
+	public long getDurationAsDays()
+	{
+		return _duration.toDays();
+	}
+	
+	/**
 	 * @return value of the function
 	 */
 	public double getValue()

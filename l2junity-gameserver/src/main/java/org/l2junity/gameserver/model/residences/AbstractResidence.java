@@ -150,7 +150,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 					final int id = rs.getInt("id");
 					final int level = rs.getInt("level");
 					final long expiration = rs.getLong("expiration");
-					final ResidenceFunction func = new ResidenceFunction(id, level, expiration, getOwnerId(), this);
+					final ResidenceFunction func = new ResidenceFunction(id, level, expiration, this);
 					if ((expiration <= System.currentTimeMillis()) && !func.reactivate())
 					{
 						continue;
@@ -163,6 +163,11 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		{
 			LOGGER.warn("Failed to initialize functions for owner: {} residense: {}", getOwnerId(), getResidenceId(), e);
 		}
+	}
+	
+	public void addFunction(int id, int level)
+	{
+		addFunction(new ResidenceFunction(id, level, this));
 	}
 	
 	/**
@@ -259,19 +264,19 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	 * @param type
 	 * @return the function template by type, null if not available
 	 */
-	public ResidenceFunctionTemplate getFunction(ResidenceFunctionType type)
+	public ResidenceFunction getFunction(ResidenceFunctionType type)
 	{
-		return _functions.values().stream().map(ResidenceFunction::getTemplate).filter(func -> func.getType() == type).findFirst().orElse(null);
+		return _functions.values().stream().filter(func -> func.getType() == type).findFirst().orElse(null);
 	}
 	
 	/**
 	 * @param id
 	 * @param level
-	 * @return the function template by id and level, null if not available
+	 * @return the function by id and level, null if not available
 	 */
-	public ResidenceFunctionTemplate getFunction(int id, int level)
+	public ResidenceFunction getFunction(int id, int level)
 	{
-		return _functions.values().stream().map(ResidenceFunction::getTemplate).filter(func -> (func.getId() == id) && (func.getLevel() == level)).findFirst().orElse(null);
+		return _functions.values().stream().filter(func -> (func.getId() == id) && (func.getLevel() == level)).findFirst().orElse(null);
 	}
 	
 	/**
@@ -280,7 +285,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	 */
 	public int getFunctionLevel(ResidenceFunctionType type)
 	{
-		final ResidenceFunctionTemplate func = getFunction(type);
+		final ResidenceFunction func = getFunction(type);
 		return func != null ? func.getLevel() : 0;
 	}
 	
