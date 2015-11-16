@@ -282,7 +282,7 @@ public final class ClanHallManager extends AbstractNpcAI
 				{
 					htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-10.html");
 					htmltext = htmltext.replaceAll("%lease%", String.valueOf(clanHall.getLease()));
-					htmltext = htmltext.replaceAll("%payDate%", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(clanHall.getPaidUntil()))); // TODO: Not really paid until, it's when server check CWH for adenas
+					htmltext = htmltext.replaceAll("%payDate%", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(clanHall.getNextPayment()))); // TODO: Not really paid until, it's when server check CWH for adenas
 					break;
 				}
 				case "manageFunctions":

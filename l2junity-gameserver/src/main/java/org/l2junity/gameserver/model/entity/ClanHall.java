@@ -25,7 +25,7 @@ import java.sql.SQLException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
-import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -68,7 +68,7 @@ public final class ClanHall extends AbstractResidence
 	// Dynamic parameters
 	private L2Clan _owner = null;
 	private long _paidUntil = 0;
-	protected Future<?> _checkPaymentTask = null;
+	protected ScheduledFuture<?> _checkPaymentTask = null;
 	// Other
 	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id, ownerId, paidUntil) VALUES (?,?,?)";
 	private static final String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
@@ -159,7 +159,7 @@ public final class ClanHall extends AbstractResidence
 	
 	public int getCostFailDay()
 	{
-		final Duration failDay = Duration.between(Instant.now(), Instant.ofEpochMilli(getPaidUntil()));
+		final Duration failDay = Duration.between(Instant.ofEpochMilli(getPaidUntil()), Instant.now());
 		return failDay.isNegative() ? 0 : (int) failDay.toDays();
 	}
 	
@@ -265,11 +265,11 @@ public final class ClanHall extends AbstractResidence
 		}
 		else
 		{
-			removeFunctions();
 			if (_owner != null)
 			{
 				_owner.setHideoutId(0);
 				_owner.broadcastToOnlineMembers(new PledgeShowInfoUpdate(_owner));
+				removeFunctions();
 			}
 			_owner = null;
 			setPaidUntil(0);
@@ -283,8 +283,8 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Gets the next date of clan hall payment
-	 * @return the next date of clan hall payment
+	 * Gets the due date of clan hall payment
+	 * @return the due date of clan hall payment
 	 */
 	public long getPaidUntil()
 	{
@@ -292,12 +292,21 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Set the next date of clan hall payment
-	 * @param paidUntil the date of next clan hall payment
+	 * Set the due date of clan hall payment
+	 * @param paidUntil the due date of clan hall payment
 	 */
 	public void setPaidUntil(long paidUntil)
 	{
 		_paidUntil = paidUntil;
+	}
+	
+	/**
+	 * Gets the next date of clan hall payment
+	 * @return the next date of clan hall payment
+	 */
+	public long getNextPayment()
+	{
+		return (_checkPaymentTask != null) ? System.currentTimeMillis() + _checkPaymentTask.getDelay(TimeUnit.MILLISECONDS) : 0;
 	}
 	
 	public Location getOwnerLocation()
