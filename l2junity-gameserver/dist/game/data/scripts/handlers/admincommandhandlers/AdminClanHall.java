@@ -180,12 +180,6 @@ public final class AdminClanHall implements IAdminCommandHandler
 			sb.append("</table>");
 
 			sb.append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
-			sb.append("<tr>");
-			sb.append("<td align=center fixwidth=\"83\">Status:</td>");
-			sb.append("<td align=center fixwidth=\"83\"></td>");
-			sb.append("<td align=center fixwidth=\"83\">" + (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">Owned</font>") + "</td>");
-			sb.append("</tr>");
-			
 			sb.append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
 			sb.append("<tr>");
 			sb.append("<td align=center fixwidth=\"83\">Location:</td>");
