@@ -265,6 +265,7 @@ public final class ClanHall extends AbstractResidence
 		}
 		else
 		{
+			removeFunctions();
 			if (_owner != null)
 			{
 				_owner.setHideoutId(0);
@@ -277,7 +278,6 @@ public final class ClanHall extends AbstractResidence
 				_checkPaymentTask.cancel(true);
 				_checkPaymentTask = null;
 			}
-			removeFunctions();
 		}
 		updateDB();
 	}
