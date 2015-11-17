@@ -34,7 +34,6 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.residences.ResidenceFunction;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionTemplate;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
-import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -119,7 +118,7 @@ public final class ClanHallManager extends AbstractNpcAI
 		final String action = st.nextToken();
 		final ClanHall clanHall = npc.getClanHall();
 		String htmltext = null;
-		
+		_log.info("Event je: " + event);
 		if ((clanHall != null) && isOwningClan(player, npc))
 		{
 			switch (action)
@@ -345,11 +344,12 @@ public final class ClanHallManager extends AbstractNpcAI
 										final int funcId = Integer.parseInt(st.nextToken());
 										final int funcLv = Integer.parseInt(st.nextToken());
 										
-										final ResidenceFunction oldFunc = clanHall.getFunction(funcId);
-										if ((oldFunc != null) && (oldFunc.getLevel() == funcLv))
+										final ResidenceFunction oldFunc = clanHall.getFunction(funcId, funcLv);
+										if (oldFunc != null)
 										{
+											final int funcVal = (int) oldFunc.getTemplate().getValue();
 											htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-manageFuncAlreadySet.html");
-											htmltext = htmltext.replaceAll("%funcEffect%", String.valueOf((int) oldFunc.getTemplate().getValue()) + "%");
+											htmltext = htmltext.replaceAll("%funcEffect%", "<fstring p1=\"" + (funcVal > 0 ? funcVal : oldFunc.getLevel()) + "\">" + (funcVal > 0 ? NpcStringId.S1.getId() : NpcStringId.STAGE_S1.getId()) + "</fstring>");
 										}
 										else if ((funcId >= 1) && (funcId <= 8))
 										{
@@ -374,20 +374,64 @@ public final class ClanHallManager extends AbstractNpcAI
 										final ResidenceFunctionTemplate template = ResidenceFunctionsData.getInstance().getFunction(funcId, funcLv);
 										if ((template != null) && (getQuestItemsCount(player, template.getCost().getId()) >= template.getCost().getCount()))
 										{
-											if (clanHall.getFunction(funcId) != null)
+											if (clanHall.getFunction(funcId, funcLv) != null)
 											{
 												return null;
 											}
 											
 											takeItems(player, template.getCost().getId(), template.getCost().getCount());
 											clanHall.addFunction(funcId, funcLv);
-											clanHall.getResidenceZone().getPlayersInside().forEach(pl -> pl.sendPacket(new AgitDecoInfo(clanHall)));
+											clanHall.broadcastClanHallInfo();
 											htmltext = "ClanHallManager-manageFuncDone.html";
 										}
 										else
 										{
 											htmltext = "ClanHallManager-noAdena.html";
 										}
+									}
+									break;
+								}
+								case "removeFunction":
+								{
+									if (st.countTokens() == 2)
+									{
+										final String act = st.nextToken();
+										
+										final ResidenceFunctionType funcType = ResidenceFunctionType.valueOf(st.nextToken());
+										if (funcType != null)
+										{
+											if (act.equals("confirm"))
+											{
+												htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-removeFunctionConfirm.html");
+												htmltext = htmltext.replaceAll("%FUNC_TYPE%", funcType.toString());
+											}
+											else if (act.equals("remove"))
+											{
+												final ResidenceFunction func = clanHall.getFunction(funcType);
+												if (func != null)
+												{
+													clanHall.removeFunction(func);
+													clanHall.broadcastClanHallInfo();
+													htmltext = "ClanHallManager-removeFunctionDone.html";
+												}
+												else
+												{
+													htmltext = "ClanHallManager-removeFunctionFail.html";
+												}
+											}
+											else
+											{
+												htmltext = "ClanHallManager-removeFunctionFail.html";
+											}
+										}
+										else
+										{
+											htmltext = "ClanHallManager-removeFunctionFail.html";
+										}
+									}
+									else
+									{
+										htmltext = "ClanHallManager-removeFunctionFail.html";
 									}
 									break;
 								}
@@ -399,10 +443,6 @@ public final class ClanHallManager extends AbstractNpcAI
 						htmltext = "ClanHallManager-noAuthority.html";
 					}
 					break;
-				}
-				default:
-				{
-					player.sendMessage("This case is not implemented yet. :(");
 				}
 			}
 		}
@@ -441,7 +481,7 @@ public final class ClanHallManager extends AbstractNpcAI
 			htmltext = htmltext.replaceAll("%" + name + "recovery%", String.valueOf((int) func.getTemplate().getValue()) + "%");
 			htmltext = htmltext.replaceAll("%" + name + "price%", "<fstring p1=\"" + func.getTemplate().getCost().getCount() + "\" p2=\"" + func.getTemplate().getDurationAsDays() + "\">" + NpcStringId.FONT_COLOR_FFAABB_S1_FONT_ADENA_S2_DAY_S.getId() + "</fstring>");
 			htmltext = htmltext.replace("%" + name + "expire%", "Withdraw the fee for the next time at " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(func.getExpiration())));
-			htmltext = htmltext.replaceAll("%" + name + "deactive%", "[Deactivate]"); // TODO:
+			htmltext = htmltext.replaceAll("%" + name + "deactive%", "[<a action=\"bypass -h Quest ClanHallManager manageFunctions removeFunction confirm " + func.getType().toString() + "\">Deactivate</a>]");
 		}
 		else
 		{

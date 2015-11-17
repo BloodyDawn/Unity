@@ -186,11 +186,11 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 		finally
 		{
-			final ResidenceFunction oldFunc = _functions.put(func.getId(), func);
-			if (oldFunc != null)
+			if (_functions.containsKey(func.getId()))
 			{
-				removeFunction(oldFunc);
+				removeFunction(_functions.get(func.getId()));
 			}
+			_functions.put(func.getId(), func);
 		}
 	}
 	
@@ -201,7 +201,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	public void removeFunction(ResidenceFunction func)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE * FROM residence_functions WHERE residenceId = ? and id = ?"))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM residence_functions WHERE residenceId = ? and id = ?"))
 		{
 			ps.setInt(1, getResidenceId());
 			ps.setInt(2, func.getId());
@@ -214,6 +214,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		finally
 		{
 			func.cancelExpiration();
+			_functions.remove(func.getId());
 		}
 	}
 	
