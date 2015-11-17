@@ -131,7 +131,6 @@ import quests.Q00489_InThisQuietPlace.Q00489_InThisQuietPlace;
 import quests.Q00490_DutyOfTheSurvivor.Q00490_DutyOfTheSurvivor;
 import quests.Q00493_KickingOutUnwelcomeGuests.Q00493_KickingOutUnwelcomeGuests;
 import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
-import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
 import quests.Q00508_AClansReputation.Q00508_AClansReputation;
 import quests.Q00509_AClansFame.Q00509_AClansFame;
 import quests.Q00510_AClansPrestige.Q00510_AClansPrestige;
@@ -155,7 +154,6 @@ import quests.Q00647_InfluxOfMachines.Q00647_InfluxOfMachines;
 import quests.Q00648_AnIceMerchantsDream.Q00648_AnIceMerchantsDream;
 import quests.Q00650_ABrokenDream.Q00650_ABrokenDream;
 import quests.Q00652_AnAgedExAdventurer.Q00652_AnAgedExAdventurer;
-import quests.Q00655_AGrandPlanForTamingWildBeasts.Q00655_AGrandPlanForTamingWildBeasts;
 import quests.Q00662_AGameOfCards.Q00662_AGameOfCards;
 import quests.Q00688_DefeatTheElrokianRaiders.Q00688_DefeatTheElrokianRaiders;
 import quests.Q00761_AssistingTheGoldenRamArmy.Q00761_AssistingTheGoldenRamArmy;
@@ -424,7 +422,6 @@ public class QuestMasterHandler
 		Q00490_DutyOfTheSurvivor.class,
 		Q00493_KickingOutUnwelcomeGuests.class,
 		Q00501_ProofOfClanAlliance.class,
-		Q00504_CompetitionForTheBanditStronghold.class,
 		Q00508_AClansReputation.class,
 		Q00509_AClansFame.class,
 		Q00510_AClansPrestige.class,
@@ -448,7 +445,6 @@ public class QuestMasterHandler
 		Q00648_AnIceMerchantsDream.class,
 		Q00650_ABrokenDream.class,
 		Q00652_AnAgedExAdventurer.class,
-		Q00655_AGrandPlanForTamingWildBeasts.class,
 		Q00662_AGameOfCards.class,
 		Q00688_DefeatTheElrokianRaiders.class,
 		Q00761_AssistingTheGoldenRamArmy.class,

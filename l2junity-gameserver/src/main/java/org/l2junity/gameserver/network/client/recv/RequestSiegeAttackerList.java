@@ -19,10 +19,8 @@
 
 package org.l2junity.gameserver.network.client.recv;
 
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.SiegeAttackerList;
 import org.l2junity.network.PacketReader;
@@ -49,14 +47,6 @@ public final class RequestSiegeAttackerList implements IClientIncomingPacket
 		if (castle != null)
 		{
 			client.sendPacket(new SiegeAttackerList(castle));
-		}
-		else
-		{
-			SiegableHall hall = CHSiegeManager.getInstance().getSiegableHall(_castleId);
-			if (hall != null)
-			{
-				client.sendPacket(new SiegeAttackerList(hall));
-			}
 		}
 	}
 }

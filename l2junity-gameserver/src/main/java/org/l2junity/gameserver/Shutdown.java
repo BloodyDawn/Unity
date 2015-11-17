@@ -24,7 +24,6 @@ import org.l2junity.UPnPService;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.sql.impl.OfflineTradersTable;
 import org.l2junity.gameserver.datatables.BotReportTable;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
@@ -290,7 +289,7 @@ public class Shutdown extends Thread
 			}
 			catch (Throwable t)
 			{
-				
+			
 			}
 			
 			// server will quit, when this function ends.
@@ -511,7 +510,7 @@ public class Shutdown extends Thread
 			case GM_RESTART:
 				LOGGER.info("GM restart received. Restarting NOW!");
 				break;
-		
+				
 		}
 		
 		/*
@@ -546,9 +545,6 @@ public class Shutdown extends Thread
 			CastleManorManager.getInstance().storeMe();
 			LOGGER.info("Castle Manor Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
-		
-		CHSiegeManager.getInstance().onServerShutDown();
-		LOGGER.info("CHSiegeManager: Siegable hall attacker lists saved!");
 		
 		// Save all global (non-player specific) Quest data that needs to persist after reboot
 		QuestManager.getInstance().save();

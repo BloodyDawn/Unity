@@ -27,9 +27,7 @@ import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.SubclassInfoType;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
@@ -48,8 +46,6 @@ import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.Siege;
-import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -83,6 +79,7 @@ import org.l2junity.gameserver.network.client.send.ExWorldChatCnt;
 import org.l2junity.gameserver.network.client.send.HennaInfo;
 import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListAll;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.client.send.PledgeSkillList;
@@ -229,18 +226,7 @@ public class EnterWorld implements IClientIncomingPacket
 		if (activeChar.getClan() != null)
 		{
 			notifyClanMembers(activeChar);
-			
 			notifySponsorOrApprentice(activeChar);
-			
-			AuctionableHall clanHall = ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan());
-			
-			if (clanHall != null)
-			{
-				if (!clanHall.getPaid())
-				{
-					activeChar.sendPacket(SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
-				}
-			}
 			
 			for (Siege siege : SiegeManager.getInstance().getSieges())
 			{
@@ -279,21 +265,6 @@ public class EnterWorld implements IClientIncomingPacket
 				{
 					activeChar.setSiegeState((byte) 2);
 					activeChar.setSiegeSide(siege.getFort().getResidenceId());
-				}
-			}
-			
-			for (SiegableHall hall : CHSiegeManager.getInstance().getConquerableHalls().values())
-			{
-				if (!hall.isInSiege())
-				{
-					continue;
-				}
-				
-				if (hall.isRegistered(activeChar.getClan()))
-				{
-					activeChar.setSiegeState((byte) 1);
-					activeChar.setSiegeSide(hall.getId());
-					activeChar.setIsInHideoutSiege(true);
 				}
 			}
 			
@@ -369,6 +340,7 @@ public class EnterWorld implements IClientIncomingPacket
 			PledgeShowMemberListAll.sendAllTo(activeChar);
 			clan.broadcastToOnlineMembers(new ExPledgeCount(clan));
 			activeChar.sendPacket(new PledgeSkillList(clan));
+			activeChar.sendPacket(new PledgeShowInfoUpdate(clan));
 		}
 		else
 		{

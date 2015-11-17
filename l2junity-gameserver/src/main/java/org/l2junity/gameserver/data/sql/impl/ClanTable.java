@@ -32,10 +32,9 @@ import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
-import org.l2junity.gameserver.instancemanager.AuctionManager;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
@@ -45,11 +44,10 @@ import org.l2junity.gameserver.model.ClanWar;
 import org.l2junity.gameserver.model.ClanWar.ClanWarState;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Auction;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.Siege;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerClanCreate;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerClanDestroy;
@@ -239,19 +237,10 @@ public class ClanTable
 			}
 		}
 		
-		int hallId = clan.getHideoutId();
-		if (hallId == 0)
+		final ClanHall hall = ClanHallData.getInstance().getClanHallByClan(clan);
+		if (hall != null)
 		{
-			for (SiegableHall hall : CHSiegeManager.getInstance().getConquerableHalls().values())
-			{
-				hall.removeAttacker(clan);
-			}
-		}
-		
-		Auction auction = AuctionManager.getInstance().getAuction(clan.getAuctionBiddedAt());
-		if (auction != null)
-		{
-			auction.cancelBid(clan.getId());
+			hall.setOwner(null);
 		}
 		
 		ClanMember leaderMember = clan.getLeader();
@@ -332,15 +321,6 @@ public class ClanTable
 					}
 				}
 			}
-			
-			if (hallId != 0)
-			{
-				SiegableHall hall = CHSiegeManager.getInstance().getSiegableHall(hallId);
-				if ((hall != null) && (hall.getOwnerId() == clanId))
-				{
-					hall.free();
-				}
-			}
 		}
 		catch (Exception e)
 		{
@@ -363,7 +343,7 @@ public class ClanTable
 			{
 				destroyClan(clanId);
 			}
-		}, Math.max(getClan(clanId).getDissolvingExpiryTime() - System.currentTimeMillis(), 300000));
+		} , Math.max(getClan(clanId).getDissolvingExpiryTime() - System.currentTimeMillis(), 300000));
 	}
 	
 	public boolean isAllyExists(String allyName)

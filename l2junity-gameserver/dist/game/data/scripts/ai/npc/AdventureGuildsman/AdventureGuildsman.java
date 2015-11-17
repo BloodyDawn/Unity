@@ -50,7 +50,8 @@ public final class AdventureGuildsman extends AbstractNpcAI
 		31840, 31841, 31991,
 		31992, 31993, 31995,
 		33946, 34187, 31812,
-		31813, 31811
+		31813, 31811, 31801,
+		31802, 31803
 	};
 	// @formatter:on
 	// Skills

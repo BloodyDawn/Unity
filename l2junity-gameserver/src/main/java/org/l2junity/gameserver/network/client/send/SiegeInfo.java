@@ -22,11 +22,9 @@ import java.util.Calendar;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -48,19 +46,12 @@ import org.l2junity.network.PacketWriter;
  */
 public class SiegeInfo implements IClientOutgoingPacket
 {
-	private Castle _castle;
-	private ClanHall _hall;
+	private final Castle _castle;
 	private final PlayerInstance _player;
 	
 	public SiegeInfo(Castle castle, PlayerInstance player)
 	{
 		_castle = castle;
-		_player = player;
-	}
-	
-	public SiegeInfo(ClanHall hall, PlayerInstance player)
-	{
-		_hall = hall;
 		_player = player;
 	}
 	
@@ -121,41 +112,6 @@ public class SiegeInfo implements IClientOutgoingPacket
 				packet.writeD((int) (_castle.getSiegeDate().getTimeInMillis() / 1000));
 				packet.writeD(0x00);
 			}
-		}
-		else
-		{
-			packet.writeD(_hall.getId());
-			
-			final int ownerId = _hall.getOwnerId();
-			
-			packet.writeD(((ownerId == _player.getClanId()) && (_player.isClanLeader())) ? 0x01 : 0x00);
-			packet.writeD(ownerId);
-			if (ownerId > 0)
-			{
-				L2Clan owner = ClanTable.getInstance().getClan(ownerId);
-				if (owner != null)
-				{
-					packet.writeS(owner.getName()); // Clan Name
-					packet.writeS(owner.getLeaderName()); // Clan Leader Name
-					packet.writeD(owner.getAllyId()); // Ally ID
-					packet.writeS(owner.getAllyName()); // Ally Name
-				}
-				else
-				{
-					_log.warn("Null owner for siegable hall: " + _hall.getName());
-				}
-			}
-			else
-			{
-				packet.writeS(""); // Clan Name
-				packet.writeS(""); // Clan Leader Name
-				packet.writeD(0); // Ally ID
-				packet.writeS(""); // Ally Name
-			}
-			
-			packet.writeD((int) (Calendar.getInstance().getTimeInMillis() / 1000));
-			packet.writeD((int) ((CHSiegeManager.getInstance().getSiegableHall(_hall.getId()).getNextSiegeTime()) / 1000));
-			packet.writeD(0x00); // number of choices?
 		}
 		return true;
 	}

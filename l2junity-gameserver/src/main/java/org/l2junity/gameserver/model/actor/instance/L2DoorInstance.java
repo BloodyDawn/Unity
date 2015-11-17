@@ -30,7 +30,6 @@ import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
@@ -41,9 +40,7 @@ import org.l2junity.gameserver.model.actor.stat.DoorStat;
 import org.l2junity.gameserver.model.actor.status.DoorStatus;
 import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -62,7 +59,6 @@ public class L2DoorInstance extends Creature
 	public static final byte OPEN_BY_SKILL = 8;
 	public static final byte OPEN_BY_CYCLE = 16;
 	
-	private ClanHall _clanHall;
 	private boolean _open = false;
 	private boolean _isAttackableDoor = false;
 	private int _meshindex = 1;
@@ -87,17 +83,6 @@ public class L2DoorInstance extends Creature
 		if (isOpenableByTime())
 		{
 			startTimerOpen();
-		}
-		
-		int clanhallId = template.getClanHallId();
-		if (clanhallId > 0)
-		{
-			ClanHall hall = ClanHallManager.getAllClanHalls().get(clanhallId);
-			if (hall != null)
-			{
-				setClanHall(hall);
-				hall.getDoors().add(this);
-			}
 		}
 	}
 	
@@ -291,16 +276,6 @@ public class L2DoorInstance extends Creature
 		return FortManager.getInstance().getFort(this);
 	}
 	
-	public void setClanHall(ClanHall clanhall)
-	{
-		_clanHall = clanhall;
-	}
-	
-	public ClanHall getClanHall()
-	{
-		return _clanHall;
-	}
-	
 	public boolean isEnemy()
 	{
 		if ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getZone().isActive() && getIsShowHp())
@@ -308,10 +283,6 @@ public class L2DoorInstance extends Creature
 			return true;
 		}
 		if ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getZone().isActive() && getIsShowHp())
-		{
-			return true;
-		}
-		if ((getClanHall() != null) && getClanHall().isSiegableHall() && ((SiegableHall) getClanHall()).getSiegeZone().isActive() && getIsShowHp())
 		{
 			return true;
 		}
@@ -338,15 +309,6 @@ public class L2DoorInstance extends Creature
 		
 		PlayerInstance actingPlayer = attacker.getActingPlayer();
 		
-		if (getClanHall() != null)
-		{
-			SiegableHall hall = (SiegableHall) getClanHall();
-			if (!hall.isSiegableHall())
-			{
-				return false;
-			}
-			return hall.isInSiege() && hall.getSiege().doorIsAutoAttackable() && hall.getSiege().checkIsAttacker(actingPlayer.getClan());
-		}
 		// Attackable only during siege by everyone (not owner)
 		boolean isCastle = ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getZone().isActive());
 		boolean isFort = ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getZone().isActive());
@@ -441,6 +403,18 @@ public class L2DoorInstance extends Creature
 			{
 				player.sendPacket(oe);
 			}
+		}
+	}
+	
+	public final void openCloseMe(boolean open)
+	{
+		if (open)
+		{
+			openMe();
+		}
+		else
+		{
+			closeMe();
 		}
 	}
 	
@@ -617,9 +591,8 @@ public class L2DoorInstance extends Creature
 		
 		boolean isFort = ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getSiege().isInProgress());
 		boolean isCastle = ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress());
-		boolean isHall = ((getClanHall() != null) && getClanHall().isSiegableHall() && ((SiegableHall) getClanHall()).isInSiege());
 		
-		if (isFort || isCastle || isHall)
+		if (isFort || isCastle)
 		{
 			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_CASTLE_GATE_HAS_BEEN_DESTROYED));
 		}

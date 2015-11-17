@@ -18,10 +18,8 @@
  */
 package org.l2junity.gameserver.model.actor.status;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 
 public class FolkStatus extends NpcStatus
@@ -40,17 +38,6 @@ public class FolkStatus extends NpcStatus
 	@Override
 	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
 	{
-	}
-	
-	@Override
-	public final void reduceMp(double value)
-	{
-		// If Clan Hall buff are free and it's a Clan Hall Manager MP won't get reduced.
-		if (Config.CH_BUFF_FREE && (getActiveChar() instanceof L2ClanHallManagerInstance))
-		{
-			return;
-		}
-		super.reduceMp(value);
 	}
 	
 	@Override

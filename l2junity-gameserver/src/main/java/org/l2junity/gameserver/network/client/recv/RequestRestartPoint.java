@@ -19,9 +19,8 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.Location;
@@ -31,8 +30,9 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.residences.AbstractResidence;
+import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.PacketReader;
 
@@ -115,10 +115,6 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 	protected final void portPlayer(final PlayerInstance activeChar)
 	{
 		Location loc = null;
-		Castle castle = null;
-		Fort fort = null;
-		SiegableHall hall = null;
-		boolean isInDefense = false;
 		Instance instance = null;
 		
 		// force jail
@@ -126,6 +122,7 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 		{
 			_requestedPointType = 27;
 		}
+		
 		switch (_requestedPointType)
 		{
 			case 1: // to clanhall
@@ -136,17 +133,17 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 					return;
 				}
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CLANHALL);
+				final ClanHall residense = ClanHallData.getInstance().getClanHallByClan(activeChar.getClan());
 				
-				if ((ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()) != null) && (ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP) != null))
+				if ((residense != null) && (residense.hasFunction(ResidenceFunctionType.EXP_RESTORE)))
 				{
-					activeChar.restoreExp(ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl());
+					activeChar.restoreExp(residense.getFunction(ResidenceFunctionType.EXP_RESTORE).getValue());
 				}
 				break;
 			}
 			case 2: // to castle
 			{
-				castle = CastleManager.getInstance().getCastle(activeChar);
-				
+				final Castle castle = CastleManager.getInstance().getCastle(activeChar);
 				if ((castle != null) && castle.getSiege().isInProgress())
 				{
 					// Siege in progress
@@ -172,32 +169,34 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 					}
 					loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CASTLE);
 				}
-				if ((CastleManager.getInstance().getCastleByOwner(activeChar.getClan()) != null) && (CastleManager.getInstance().getCastleByOwner(activeChar.getClan()).getFunction(Castle.FUNC_RESTORE_EXP) != null))
+				
+				if ((castle != null) && (castle.hasFunction(ResidenceFunctionType.EXP_RESTORE)))
 				{
-					activeChar.restoreExp(CastleManager.getInstance().getCastleByOwner(activeChar.getClan()).getFunction(Castle.FUNC_RESTORE_EXP).getLvl());
+					activeChar.restoreExp(castle.getFunction(ResidenceFunctionType.EXP_RESTORE).getValue());
 				}
 				break;
 			}
 			case 3: // to fortress
 			{
-				if (((activeChar.getClan() == null) || (activeChar.getClan().getFortId() == 0)) && !isInDefense)
+				if ((activeChar.getClan() == null) || (activeChar.getClan().getFortId() == 0))
 				{
 					_log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - To Fortress and he doesn't have Fortress!");
 					return;
 				}
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.FORTRESS);
-				if ((FortManager.getInstance().getFortByOwner(activeChar.getClan()) != null) && (FortManager.getInstance().getFortByOwner(activeChar.getClan()).getFunction(Fort.FUNC_RESTORE_EXP) != null))
+				
+				final AbstractResidence residense = FortManager.getInstance().getFortByOwner(activeChar.getClan());
+				if ((residense != null) && (residense.hasFunction(ResidenceFunctionType.EXP_RESTORE)))
 				{
-					activeChar.restoreExp(FortManager.getInstance().getFortByOwner(activeChar.getClan()).getFunction(Fort.FUNC_RESTORE_EXP).getLvl());
+					activeChar.restoreExp(residense.getFunction(ResidenceFunctionType.EXP_RESTORE).getValue());
 				}
 				break;
 			}
 			case 4: // to siege HQ
 			{
 				SiegeClan siegeClan = null;
-				castle = CastleManager.getInstance().getCastle(activeChar);
-				fort = FortManager.getInstance().getFort(activeChar);
-				hall = CHSiegeManager.getInstance().getNearbyClanHall(activeChar);
+				final Castle castle = CastleManager.getInstance().getCastle(activeChar);
+				final Fort fort = FortManager.getInstance().getFort(activeChar);
 				
 				if ((castle != null) && castle.getSiege().isInProgress())
 				{
@@ -207,23 +206,9 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 				{
 					siegeClan = fort.getSiege().getAttackerClan(activeChar.getClan());
 				}
-				else if ((hall != null) && hall.isInSiege())
-				{
-					siegeClan = hall.getSiege().getAttackerClan(activeChar.getClan());
-				}
+				
 				if (((siegeClan == null) || siegeClan.getFlag().isEmpty()))
 				{
-					// Check if clan hall has inner spawns loc
-					if (hall != null)
-					{
-						loc = hall.getSiege().getInnerSpawnLoc(activeChar);
-						
-						if (loc != null)
-						{
-							break;
-						}
-					}
-					
 					_log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
 					return;
 				}
@@ -248,7 +233,7 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 				}
 				break;
 			}
-			case 6: // TODO: Agathion ress
+			case 6: // TODO: Agathon resurrection
 			{
 				break;
 			}

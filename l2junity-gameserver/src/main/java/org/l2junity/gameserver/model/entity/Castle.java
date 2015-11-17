@@ -52,6 +52,7 @@ import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.CastleSpawnHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.residences.AbstractResidence;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.type.CastleZone;
@@ -243,6 +244,7 @@ public final class Castle extends AbstractResidence
 		super(castleId);
 		load();
 		initResidenceZone();
+		initFunctions();
 		spawnSideNpcs();
 		if (getOwnerId() != 0)
 		{
@@ -256,7 +258,7 @@ public final class Castle extends AbstractResidence
 	 * @param type
 	 * @return
 	 */
-	public CastleFunction getFunction(int type)
+	public CastleFunction getCastleFunction(int type)
 	{
 		if (_function.containsKey(type))
 		{
@@ -917,6 +919,7 @@ public final class Castle extends AbstractResidence
 		return _doors;
 	}
 	
+	@Override
 	public final int getOwnerId()
 	{
 		return _ownerId;

@@ -146,7 +146,7 @@ public abstract class L2ZoneRespawn extends ZoneType
 		return getSpawnLoc();
 	}
 	
-	public final Location getBanishSpawnLoc()
+	public Location getBanishSpawnLoc()
 	{
 		if (_banishSpawnLocs != null)
 		{

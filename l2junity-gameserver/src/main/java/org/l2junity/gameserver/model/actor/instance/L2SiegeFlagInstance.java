@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.actor.instance;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.L2Clan;
@@ -43,7 +42,7 @@ public class L2SiegeFlagInstance extends Npc
 	private final boolean _isAdvanced;
 	private boolean _canTalk;
 	
-	public L2SiegeFlagInstance(PlayerInstance player, L2NpcTemplate template, boolean advanced, boolean outPost)
+	public L2SiegeFlagInstance(PlayerInstance player, L2NpcTemplate template, boolean advanced)
 	{
 		super(template);
 		setInstanceType(InstanceType.L2SiegeFlagInstance);
@@ -54,10 +53,6 @@ public class L2SiegeFlagInstance extends Npc
 		if (_siege == null)
 		{
 			_siege = FortSiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
-		}
-		if (_siege == null)
-		{
-			_siege = CHSiegeManager.getInstance().getSiege(player);
 		}
 		if ((_clan == null) || (_siege == null))
 		{
@@ -163,7 +158,7 @@ public class L2SiegeFlagInstance extends Npc
 		super.reduceCurrentHp(damage, attacker, skill);
 		if (canTalk())
 		{
-			if (((getCastle() != null) && getCastle().getSiege().isInProgress()) || ((getFort() != null) && getFort().getSiege().isInProgress()) || ((getConquerableHall() != null) && getConquerableHall().isInSiege()))
+			if (((getCastle() != null) && getCastle().getSiege().isInProgress()) || ((getFort() != null) && getFort().getSiege().isInProgress()))
 			{
 				if (_clan != null)
 				{

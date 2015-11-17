@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.MapRegion;
 import org.l2junity.gameserver.model.TeleportWhereType;
@@ -34,10 +35,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.ILocational;
-import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -261,18 +260,10 @@ public final class MapRegionManager implements IGameXmlReader
 				// If teleport to clan hall
 				if (teleportWhere == TeleportWhereType.CLANHALL)
 				{
-					clanhall = ClanHallManager.getInstance().getAbstractHallByOwner(player.getClan());
-					if (clanhall != null)
+					clanhall = ClanHallData.getInstance().getClanHallByClan(player.getClan());
+					if ((clanhall != null) && !player.isFlyingMounted())
 					{
-						ClanHallZone zone = clanhall.getZone();
-						if ((zone != null) && !player.isFlyingMounted())
-						{
-							if (player.getReputation() < 0)
-							{
-								return zone.getChaoticSpawnLoc();
-							}
-							return zone.getSpawnLoc();
-						}
+						return clanhall.getOwnerLocation();
 					}
 				}
 				
@@ -331,7 +322,6 @@ public final class MapRegionManager implements IGameXmlReader
 				{
 					castle = CastleManager.getInstance().getCastle(player);
 					fort = FortManager.getInstance().getFort(player);
-					clanhall = ClanHallManager.getInstance().getNearbyAbstractHall(activeChar.getX(), activeChar.getY(), 10000);
 					if (castle != null)
 					{
 						if (castle.getSiege().isInProgress())
@@ -357,15 +347,6 @@ public final class MapRegionManager implements IGameXmlReader
 								// Spawn to flag - Need more work to get player to the nearest flag
 								return flags.stream().findAny().get().getLocation();
 							}
-						}
-					}
-					else if ((clanhall != null) && clanhall.isSiegableHall())
-					{
-						SiegableHall sHall = (SiegableHall) clanhall;
-						Set<Npc> flags = sHall.getSiege().getFlag(player.getClan());
-						if ((flags != null) && !flags.isEmpty())
-						{
-							return flags.stream().findAny().get().getLocation();
 						}
 					}
 				}

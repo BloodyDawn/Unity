@@ -89,6 +89,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 	private static final int LORD_CLOAK_OF_DARK = 34997;
 	// Fortress
 	private static final Map<Integer, List<Integer>> FORTRESS = new HashMap<>();
+	
 	static
 	{
 		FORTRESS.put(1, Arrays.asList(101, 102, 112, 113)); // Gludio Castle
@@ -101,6 +102,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 		FORTRESS.put(8, Arrays.asList(110, 120, 121)); // Rune Castle
 		FORTRESS.put(9, Arrays.asList(111, 121)); // Schuttgart Castle
 	}
+	
 	// Buffs
 	private static final SkillHolder[] BUFFS =
 	{
@@ -160,7 +162,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 				html = getHtmlPacket(player, npc, "castleresetdeco.html");
 				html.replace("%AgitDecoSubmit%", Integer.toString(func));
 			}
-			else if ((castle.getFunction(func) != null) && (castle.getFunction(func).getLvl() == level))
+			else if ((castle.getFunction(func) != null) && (castle.getCastleFunction(func).getLvl() == level))
 			{
 				html = getHtmlPacket(player, npc, "castledecoalreadyset.html");
 				html.replace("%AgitDecoEffect%", "<fstring p1=\"" + level + "\">" + fstring + "</fstring>");
@@ -180,7 +182,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 	
 	private final void funcReplace(final Castle castle, final NpcHtmlMessage html, final int func, final String str)
 	{
-		final CastleFunction function = castle.getFunction(func);
+		final CastleFunction function = castle.getCastleFunction(func);
 		if (function == null)
 		{
 			html.replace("%" + str + "Depth%", "<fstring>4</fstring>");
@@ -903,9 +905,9 @@ public final class CastleChamberlain extends AbstractNpcAI
 			{
 				if (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_USE_FUNCTIONS))
 				{
-					final CastleFunction HP = castle.getFunction(Castle.FUNC_RESTORE_HP);
-					final CastleFunction MP = castle.getFunction(Castle.FUNC_RESTORE_MP);
-					final CastleFunction XP = castle.getFunction(Castle.FUNC_RESTORE_EXP);
+					final CastleFunction HP = castle.getCastleFunction(Castle.FUNC_RESTORE_HP);
+					final CastleFunction MP = castle.getCastleFunction(Castle.FUNC_RESTORE_MP);
+					final CastleFunction XP = castle.getCastleFunction(Castle.FUNC_RESTORE_EXP);
 					final NpcHtmlMessage html = getHtmlPacket(player, npc, "castledecofunction.html");
 					html.replace("%HPDepth%", (HP == null) ? "0" : Integer.toString(HP.getLvl()));
 					html.replace("%MPDepth%", (MP == null) ? "0" : Integer.toString(MP.getLvl()));
@@ -930,7 +932,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 				}
 				else
 				{
-					htmltext = npc.getCastle().getName() + "-t" + castle.getFunction(Castle.FUNC_TELEPORT).getLvl() + ".html";
+					htmltext = npc.getCastle().getName() + "-t" + castle.getCastleFunction(Castle.FUNC_TELEPORT).getLvl() + ".html";
 				}
 				break;
 			}
@@ -964,7 +966,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 					}
 					else
 					{
-						final NpcHtmlMessage html = getHtmlPacket(player, npc, "castlebuff-0" + castle.getFunction(Castle.FUNC_SUPPORT).getLvl() + ".html");
+						final NpcHtmlMessage html = getHtmlPacket(player, npc, "castlebuff-0" + castle.getCastleFunction(Castle.FUNC_SUPPORT).getLvl() + ".html");
 						html.replace("%MPLeft%", Integer.toString((int) npc.getCurrentMp()));
 						player.sendPacket(html);
 					}

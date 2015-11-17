@@ -260,60 +260,6 @@ public final class Config
 	public static boolean SHOW_GOD_VIDEO_INTRO;
 	
 	// --------------------------------------------------
-	// ClanHall Settings
-	// --------------------------------------------------
-	public static long CH_TELE_FEE_RATIO;
-	public static int CH_TELE1_FEE;
-	public static int CH_TELE2_FEE;
-	public static long CH_ITEM_FEE_RATIO;
-	public static int CH_ITEM1_FEE;
-	public static int CH_ITEM2_FEE;
-	public static int CH_ITEM3_FEE;
-	public static long CH_MPREG_FEE_RATIO;
-	public static int CH_MPREG1_FEE;
-	public static int CH_MPREG2_FEE;
-	public static int CH_MPREG3_FEE;
-	public static int CH_MPREG4_FEE;
-	public static int CH_MPREG5_FEE;
-	public static long CH_HPREG_FEE_RATIO;
-	public static int CH_HPREG1_FEE;
-	public static int CH_HPREG2_FEE;
-	public static int CH_HPREG3_FEE;
-	public static int CH_HPREG4_FEE;
-	public static int CH_HPREG5_FEE;
-	public static int CH_HPREG6_FEE;
-	public static int CH_HPREG7_FEE;
-	public static int CH_HPREG8_FEE;
-	public static int CH_HPREG9_FEE;
-	public static int CH_HPREG10_FEE;
-	public static int CH_HPREG11_FEE;
-	public static int CH_HPREG12_FEE;
-	public static int CH_HPREG13_FEE;
-	public static long CH_EXPREG_FEE_RATIO;
-	public static int CH_EXPREG1_FEE;
-	public static int CH_EXPREG2_FEE;
-	public static int CH_EXPREG3_FEE;
-	public static int CH_EXPREG4_FEE;
-	public static int CH_EXPREG5_FEE;
-	public static int CH_EXPREG6_FEE;
-	public static int CH_EXPREG7_FEE;
-	public static long CH_SUPPORT_FEE_RATIO;
-	public static int CH_SUPPORT1_FEE;
-	public static int CH_SUPPORT2_FEE;
-	public static int CH_SUPPORT3_FEE;
-	public static int CH_SUPPORT4_FEE;
-	public static int CH_SUPPORT5_FEE;
-	public static int CH_SUPPORT6_FEE;
-	public static int CH_SUPPORT7_FEE;
-	public static int CH_SUPPORT8_FEE;
-	public static long CH_CURTAIN_FEE_RATIO;
-	public static int CH_CURTAIN1_FEE;
-	public static int CH_CURTAIN2_FEE;
-	public static long CH_FRONT_FEE_RATIO;
-	public static int CH_FRONT1_FEE;
-	public static int CH_FRONT2_FEE;
-	public static boolean CH_BUFF_FREE;
-	// --------------------------------------------------
 	// Castle Settings
 	// --------------------------------------------------
 	public static long CS_TELE_FEE_RATIO;
@@ -1112,58 +1058,6 @@ public final class Config
 			
 			// Load Feature L2Properties file (if exists)
 			final PropertiesParser Feature = new PropertiesParser(FEATURE_CONFIG_FILE);
-			
-			CH_TELE_FEE_RATIO = Feature.getLong("ClanHallTeleportFunctionFeeRatio", 604800000);
-			CH_TELE1_FEE = Feature.getInt("ClanHallTeleportFunctionFeeLvl1", 7000);
-			CH_TELE2_FEE = Feature.getInt("ClanHallTeleportFunctionFeeLvl2", 14000);
-			CH_SUPPORT_FEE_RATIO = Feature.getLong("ClanHallSupportFunctionFeeRatio", 86400000);
-			CH_SUPPORT1_FEE = Feature.getInt("ClanHallSupportFeeLvl1", 2500);
-			CH_SUPPORT2_FEE = Feature.getInt("ClanHallSupportFeeLvl2", 5000);
-			CH_SUPPORT3_FEE = Feature.getInt("ClanHallSupportFeeLvl3", 7000);
-			CH_SUPPORT4_FEE = Feature.getInt("ClanHallSupportFeeLvl4", 11000);
-			CH_SUPPORT5_FEE = Feature.getInt("ClanHallSupportFeeLvl5", 21000);
-			CH_SUPPORT6_FEE = Feature.getInt("ClanHallSupportFeeLvl6", 36000);
-			CH_SUPPORT7_FEE = Feature.getInt("ClanHallSupportFeeLvl7", 37000);
-			CH_SUPPORT8_FEE = Feature.getInt("ClanHallSupportFeeLvl8", 52000);
-			CH_MPREG_FEE_RATIO = Feature.getLong("ClanHallMpRegenerationFunctionFeeRatio", 86400000);
-			CH_MPREG1_FEE = Feature.getInt("ClanHallMpRegenerationFeeLvl1", 2000);
-			CH_MPREG2_FEE = Feature.getInt("ClanHallMpRegenerationFeeLvl2", 3750);
-			CH_MPREG3_FEE = Feature.getInt("ClanHallMpRegenerationFeeLvl3", 6500);
-			CH_MPREG4_FEE = Feature.getInt("ClanHallMpRegenerationFeeLvl4", 13750);
-			CH_MPREG5_FEE = Feature.getInt("ClanHallMpRegenerationFeeLvl5", 20000);
-			CH_HPREG_FEE_RATIO = Feature.getLong("ClanHallHpRegenerationFunctionFeeRatio", 86400000);
-			CH_HPREG1_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl1", 700);
-			CH_HPREG2_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl2", 800);
-			CH_HPREG3_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl3", 1000);
-			CH_HPREG4_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl4", 1166);
-			CH_HPREG5_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl5", 1500);
-			CH_HPREG6_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl6", 1750);
-			CH_HPREG7_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl7", 2000);
-			CH_HPREG8_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl8", 2250);
-			CH_HPREG9_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl9", 2500);
-			CH_HPREG10_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl10", 3250);
-			CH_HPREG11_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl11", 3270);
-			CH_HPREG12_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl12", 4250);
-			CH_HPREG13_FEE = Feature.getInt("ClanHallHpRegenerationFeeLvl13", 5166);
-			CH_EXPREG_FEE_RATIO = Feature.getLong("ClanHallExpRegenerationFunctionFeeRatio", 86400000);
-			CH_EXPREG1_FEE = Feature.getInt("ClanHallExpRegenerationFeeLvl1", 3000);
-			CH_EXPREG2_FEE = Feature.getInt("ClanHallExpRegenerationFeeLvl2", 6000);
-			CH_EXPREG3_FEE = Feature.getInt("ClanHallExpRegenerationFeeLvl3", 9000);
-			CH_EXPREG4_FEE = Feature.getInt("ClanHallExpRegenerationFeeLvl4", 15000);
-			CH_EXPREG5_FEE = Feature.getInt("ClanHallExpRegenerationFeeLvl5", 21000);
-			CH_EXPREG6_FEE = Feature.getInt("ClanHallExpRegenerationFeeLvl6", 23330);
-			CH_EXPREG7_FEE = Feature.getInt("ClanHallExpRegenerationFeeLvl7", 30000);
-			CH_ITEM_FEE_RATIO = Feature.getLong("ClanHallItemCreationFunctionFeeRatio", 86400000);
-			CH_ITEM1_FEE = Feature.getInt("ClanHallItemCreationFunctionFeeLvl1", 30000);
-			CH_ITEM2_FEE = Feature.getInt("ClanHallItemCreationFunctionFeeLvl2", 70000);
-			CH_ITEM3_FEE = Feature.getInt("ClanHallItemCreationFunctionFeeLvl3", 140000);
-			CH_CURTAIN_FEE_RATIO = Feature.getLong("ClanHallCurtainFunctionFeeRatio", 604800000);
-			CH_CURTAIN1_FEE = Feature.getInt("ClanHallCurtainFunctionFeeLvl1", 2000);
-			CH_CURTAIN2_FEE = Feature.getInt("ClanHallCurtainFunctionFeeLvl2", 2500);
-			CH_FRONT_FEE_RATIO = Feature.getLong("ClanHallFrontPlatformFunctionFeeRatio", 259200000);
-			CH_FRONT1_FEE = Feature.getInt("ClanHallFrontPlatformFunctionFeeLvl1", 1300);
-			CH_FRONT2_FEE = Feature.getInt("ClanHallFrontPlatformFunctionFeeLvl2", 4000);
-			CH_BUFF_FREE = Feature.getBoolean("AltClanHallMpBuffFree", false);
 			SIEGE_HOUR_LIST = new ArrayList<>();
 			for (String hour : Feature.getString("SiegeHourList", "").split(","))
 			{

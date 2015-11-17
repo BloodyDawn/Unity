@@ -41,8 +41,6 @@ public final class CastleSiegeManager extends AbstractNpcAI
 		35367, // Goddard Castle
 		35513, // Rune Castle
 		35559, // Schuttgart Castle
-		35639, // Fortress of the Dead
-		35420, // Devastated Castle
 	};
 	
 	private CastleSiegeManager()
@@ -72,25 +70,14 @@ public final class CastleSiegeManager extends AbstractNpcAI
 		}
 		else
 		{
-			if (npc.getConquerableHall() != null)
-			{
-				npc.getConquerableHall().showSiegeInfo(player);
-			}
-			else
-			{
-				npc.getCastle().getSiege().listRegisterClan(player);
-			}
+			npc.getCastle().getSiege().listRegisterClan(player);
 		}
 		return htmltext;
 	}
 	
 	private boolean isInSiege(Npc npc)
 	{
-		if ((npc.getConquerableHall() != null) && npc.getConquerableHall().isInSiege())
-		{
-			return true;
-		}
-		else if (npc.getCastle().getSiege().isInProgress())
+		if (npc.getCastle().getSiege().isInProgress())
 		{
 			return true;
 		}

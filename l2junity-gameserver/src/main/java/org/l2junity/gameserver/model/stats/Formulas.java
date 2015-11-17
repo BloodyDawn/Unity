@@ -24,12 +24,12 @@ import java.util.List;
 import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -43,15 +43,15 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.ClanHall;
-import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.items.Armor;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
+import org.l2junity.gameserver.model.residences.AbstractResidence;
+import org.l2junity.gameserver.model.residences.ResidenceFunction;
+import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
@@ -122,12 +122,13 @@ public final class Formulas
 				int clanHallIndex = player.getClan().getHideoutId();
 				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
 				{
-					ClanHall clansHall = ClanHallManager.getInstance().getClanHallById(clanHallIndex);
-					if (clansHall != null)
+					final AbstractResidence residense = ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
+					if (residense != null)
 					{
-						if (clansHall.getFunction(ClanHall.FUNC_RESTORE_HP) != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
+						if (func != null)
 						{
-							hpRegenMultiplier *= 1 + ((double) clansHall.getFunction(ClanHall.FUNC_RESTORE_HP).getLvl() / 100);
+							hpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -140,12 +141,13 @@ public final class Formulas
 				int castleIndex = player.getClan().getCastleId();
 				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
 				{
-					Castle castle = CastleManager.getInstance().getCastleById(castleIndex);
-					if (castle != null)
+					final AbstractResidence residense = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
+					if (residense != null)
 					{
-						if (castle.getFunction(Castle.FUNC_RESTORE_HP) != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
+						if (func != null)
 						{
-							hpRegenMultiplier *= 1 + ((double) castle.getFunction(Castle.FUNC_RESTORE_HP).getLvl() / 100);
+							hpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -158,12 +160,13 @@ public final class Formulas
 				int fortIndex = player.getClan().getFortId();
 				if ((fortIndex > 0) && (fortIndex == posFortIndex))
 				{
-					Fort fort = FortManager.getInstance().getFortById(fortIndex);
-					if (fort != null)
+					final AbstractResidence residense = FortManager.getInstance().getFortById(player.getClan().getCastleId());
+					if (residense != null)
 					{
-						if (fort.getFunction(Fort.FUNC_RESTORE_HP) != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
+						if (func != null)
 						{
-							hpRegenMultiplier *= 1 + ((double) fort.getFunction(Fort.FUNC_RESTORE_HP).getLvl() / 100);
+							hpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -172,7 +175,7 @@ public final class Formulas
 			// Mother Tree effect is calculated at last
 			if (player.isInsideZone(ZoneId.MOTHER_TREE))
 			{
-				MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
+				final MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
 				int hpBonus = zone == null ? 0 : zone.getHpRegenBonus();
 				hpRegenBonus += hpBonus;
 			}
@@ -215,15 +218,7 @@ public final class Formulas
 		
 		if (cha.isPlayer())
 		{
-			PlayerInstance player = cha.getActingPlayer();
-			
-			// Mother Tree effect is calculated at last'
-			if (player.isInsideZone(ZoneId.MOTHER_TREE))
-			{
-				MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
-				int mpBonus = zone == null ? 0 : zone.getMpRegenBonus();
-				mpRegenBonus += mpBonus;
-			}
+			final PlayerInstance player = cha.getActingPlayer();
 			
 			if (player.isInsideZone(ZoneId.CLAN_HALL) && (player.getClan() != null) && (player.getClan().getHideoutId() > 0))
 			{
@@ -232,12 +227,13 @@ public final class Formulas
 				int clanHallIndex = player.getClan().getHideoutId();
 				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
 				{
-					ClanHall clansHall = ClanHallManager.getInstance().getClanHallById(clanHallIndex);
-					if (clansHall != null)
+					final AbstractResidence residense = ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
+					if (residense != null)
 					{
-						if (clansHall.getFunction(ClanHall.FUNC_RESTORE_MP) != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
+						if (func != null)
 						{
-							mpRegenMultiplier *= 1 + ((double) clansHall.getFunction(ClanHall.FUNC_RESTORE_MP).getLvl() / 100);
+							mpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -250,12 +246,13 @@ public final class Formulas
 				int castleIndex = player.getClan().getCastleId();
 				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
 				{
-					Castle castle = CastleManager.getInstance().getCastleById(castleIndex);
-					if (castle != null)
+					final AbstractResidence residense = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
+					if (residense != null)
 					{
-						if (castle.getFunction(Castle.FUNC_RESTORE_MP) != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
+						if (func != null)
 						{
-							mpRegenMultiplier *= 1 + ((double) castle.getFunction(Castle.FUNC_RESTORE_MP).getLvl() / 100);
+							mpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
@@ -268,15 +265,24 @@ public final class Formulas
 				int fortIndex = player.getClan().getFortId();
 				if ((fortIndex > 0) && (fortIndex == posFortIndex))
 				{
-					Fort fort = FortManager.getInstance().getFortById(fortIndex);
-					if (fort != null)
+					final AbstractResidence residense = FortManager.getInstance().getFortById(player.getClan().getCastleId());
+					if (residense != null)
 					{
-						if (fort.getFunction(Fort.FUNC_RESTORE_MP) != null)
+						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
+						if (func != null)
 						{
-							mpRegenMultiplier *= 1 + ((double) fort.getFunction(Fort.FUNC_RESTORE_MP).getLvl() / 100);
+							mpRegenMultiplier *= func.getValue();
 						}
 					}
 				}
+			}
+			
+			// Mother Tree effect is calculated at last'
+			if (player.isInsideZone(ZoneId.MOTHER_TREE))
+			{
+				MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
+				int mpBonus = zone == null ? 0 : zone.getMpRegenBonus();
+				mpRegenBonus += mpBonus;
 			}
 			
 			// Calculate Movement bonus

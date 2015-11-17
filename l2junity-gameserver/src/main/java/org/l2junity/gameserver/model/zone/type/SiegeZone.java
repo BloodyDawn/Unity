@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.zone.type;
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.MountType;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -31,7 +30,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.Siegable;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
@@ -131,23 +129,6 @@ public class SiegeZone extends ZoneType
 				throw new IllegalArgumentException("Siege object already defined!");
 			}
 			getSettings().setSiegeableId(Integer.parseInt(value));
-		}
-		else if (name.equals("clanHallId"))
-		{
-			if (getSettings().getSiegeableId() != -1)
-			{
-				throw new IllegalArgumentException("Siege object already defined!");
-			}
-			getSettings().setSiegeableId(Integer.parseInt(value));
-			SiegableHall hall = CHSiegeManager.getInstance().getConquerableHalls().get(getSettings().getSiegeableId());
-			if (hall == null)
-			{
-				_log.warn("L2SiegeZone: Siegable clan hall with id " + value + " does not exist!");
-			}
-			else
-			{
-				hall.setSiegeZone(this);
-			}
 		}
 		else
 		{

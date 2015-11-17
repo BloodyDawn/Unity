@@ -25,6 +25,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ItemsAutoDestroy;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
@@ -36,7 +37,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
-import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.TownManager;
@@ -47,8 +47,6 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
-import org.l2junity.gameserver.model.actor.instance.L2DoormenInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FishermanInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TeleporterInstance;
@@ -59,8 +57,8 @@ import org.l2junity.gameserver.model.actor.status.NpcStatus;
 import org.l2junity.gameserver.model.actor.tasks.npc.RandomAnimationTask;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCanBeSeen;
@@ -479,9 +477,9 @@ public class Npc extends Creature
 		return CastleManager.getInstance().findNearestCastle(this);
 	}
 	
-	public final SiegableHall getConquerableHall()
+	public final ClanHall getClanHall()
 	{
-		return CHSiegeManager.getInstance().getNearbyClanHall(getX(), getY(), 10000);
+		return ClanHallData.getInstance().getClanHallByNpcId(getId());
 	}
 	
 	/**
@@ -670,11 +668,7 @@ public class Npc extends Creature
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if (player.isCursedWeaponEquipped() && (!(player.getTarget() instanceof L2ClanHallManagerInstance) || !(player.getTarget() instanceof L2DoormenInstance)))
-		{
-			player.setTarget(player);
-			return;
-		}
+		
 		if (player.getReputation() < 0)
 		{
 			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof L2MerchantInstance))

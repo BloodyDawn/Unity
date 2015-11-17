@@ -19,6 +19,7 @@
 package handlers.actionhandlers;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
@@ -26,7 +27,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.holders.DoorRequestHolder;
 import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 
@@ -42,7 +43,8 @@ public class L2DoorInstanceAction implements IActionHandler
 		}
 		else if (interact)
 		{
-			L2DoorInstance door = (L2DoorInstance) target;
+			final L2DoorInstance door = (L2DoorInstance) target;
+			final ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
 			// MyTargetSelected my = new MyTargetSelected(getObjectId(), activeChar.getLevel());
 			// activeChar.sendPacket(my);
 			if (target.isAutoAttackable(activeChar))
@@ -52,13 +54,13 @@ public class L2DoorInstanceAction implements IActionHandler
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				}
 			}
-			else if ((activeChar.getClan() != null) && (door.getClanHall() != null) && (activeChar.getClanId() == door.getClanHall().getOwnerId()))
+			else if ((activeChar.getClan() != null) && (clanHall != null) && (activeChar.getClanId() == clanHall.getOwnerId()))
 			{
 				if (!door.isInsideRadius(activeChar, Npc.INTERACTION_DISTANCE, false, false))
 				{
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				}
-				else if (!door.getClanHall().isSiegableHall() || !((SiegableHall) door.getClanHall()).isInSiege())
+				else
 				{
 					activeChar.addScript(new DoorRequestHolder(door));
 					if (!door.getOpen())
