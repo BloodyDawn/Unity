@@ -268,7 +268,7 @@ public final class Fort extends AbstractResidence
 	 * @param type
 	 * @return
 	 */
-	public FortFunction getFunction(int type)
+	public FortFunction getFortFunction(int type)
 	{
 		if (_function.get(type) != null)
 		{

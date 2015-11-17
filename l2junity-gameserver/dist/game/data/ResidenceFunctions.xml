@@ -2,97 +2,45 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/ResidenceFunctions.xsd">
 	<!-- Clan hall functions -->
 	<function id="1" type="HP_REGEN">
-		<function level="1" costId="57" costCount="230000" duration="7days" value="200.00" />
-		<function level="2" costId="57" costCount="2300000" duration="7days" value="300.00" />
-		<function level="3" costId="57" costCount="2300000" duration="7days" value="500.00" />
-		<function level="4" costId="57" costCount="2300000" duration="7days" value="700.00" />
-		<function level="5" costId="57" costCount="2300000" duration="7days" value="1000.00" />
+		<function level="1" costId="57" costCount="14000" duration="1days" value="200" />
+		<function level="2" costId="57" costCount="17500" duration="3days" value="300" />
+		<function level="3" costId="57" costCount="37500" duration="3days" value="500" />
+		<function level="4" costId="57" costCount="77500" duration="3days" value="700" />
+		<function level="5" costId="57" costCount="132500" duration="3days" value="1000" />
 	</function>
 	<function id="2" type="MP_REGEN">
-		<function level="1" costId="57" costCount="23000" duration="7days" value="500.00" />
-		<function level="2" costId="57" costCount="230000" duration="7days" value="1000.00" />
-		<function level="3" costId="57" costCount="2300000" duration="7days" value="2000.00" />
-		<function level="4" costId="57" costCount="2300000" duration="7days" value="3000.00" />
+		<function level="1" costId="57" costCount="85000" duration="2days" value="500" />
+		<function level="2" costId="57" costCount="137500" duration="2days" value="1000" />
+		<function level="3" costId="57" costCount="200000" duration="2days" value="2000" />
+		<function level="4" costId="57" costCount="275000" duration="2days" value="3000" />
 	</function>
 	<function id="3" type="EXP_RESTORE">
-		<function level="1" costId="57" costCount="15000" duration="1day" value="0.35" />
-		<function level="2" costId="57" costCount="30000" duration="1day" value="0.45" />
-		<function level="3" costId="57" costCount="45000" duration="1day" value="0.55" />
-		<function level="4" costId="57" costCount="175000" duration="3days" value="0.70" />
+		<function level="1" costId="57" costCount="45000" duration="1days" value="35" />
+		<function level="2" costId="57" costCount="75000" duration="1days" value="45" />
+		<function level="3" costId="57" costCount="105000" duration="1days" value="55" />
+		<function level="4" costId="57" costCount="150000" duration="1days" value="70" />
 	</function>
-	<!-- Other functions -->
-	<function id="4" type="CP_REGEN">
-		<function level="1" costId="57" costCount="1000" duration="1day" />
-		<function level="2" costId="57" costCount="2000" duration="1day" />
+	<function id="4" type="TELEPORT">
+		<function level="1" costId="57" costCount="840000" duration="2days" />
+		<function level="2" costId="57" costCount="860000" duration="2days" />
 	</function>
-	<function id="5" type="TELEPORT">
-		<function level="1" costId="57" costCount="1960000" duration="7days" />
-		<function level="2" costId="57" costCount="840000" duration="3days" />
-		<function level="3" costId="57" costCount="840000" duration="2days" />
-		<function level="4" costId="57" costCount="860000" duration="2days" />
+	<function id="5" type="BUFF">
+		<function level="1" costId="57" costCount="185000" duration="1days" />
+		<function level="2" costId="57" costCount="260000" duration="1days" />
+		<function level="3" costId="57" costCount="335000" duration="1days" />
+		<function level="4" costId="57" costCount="410000" duration="1days" />
 	</function>
-	<function id="6" type="BROADCAST">
-		<function level="1" costId="57" costCount="30000" duration="1day" />
-		<function level="2" costId="57" costCount="40000" duration="1day" />
+	<function id="6" type="ITEM">
+		<function level="1" costId="57" costCount="150000" duration="1days" />
+		<function level="2" costId="57" costCount="350000" duration="1days" />
+		<function level="3" costId="57" costCount="700000" duration="1days" />
 	</function>
 	<function id="7" type="CURTAIN">
 		<function level="1" costId="57" costCount="10000" duration="7days" />
 		<function level="2" costId="57" costCount="12500" duration="7days" />
 	</function>
-	<function id="8" type="HANGING">
-		<function level="1" costId="57" costCount="30000" duration="1day" />
-		<function level="2" costId="57" costCount="70000" duration="1day" />
-	</function>
-	<function id="9" type="BUFF">
-		<function level="1" costId="57" costCount="25000" duration="1day" />
-		<function level="2" costId="57" costCount="25000" duration="1day" />
-		<function level="3" costId="57" costCount="55000" duration="1day" />
-		<function level="4" costId="57" costCount="105000" duration="1day" />
-		<function level="5" costId="57" costCount="180000" duration="1day" />
-		<function level="6" costId="57" costCount="185000" duration="1day" />
-		<function level="7" costId="57" costCount="260000" duration="1day" />
-		<function level="8" costId="57" costCount="335000" duration="1day" />
-		<function level="9" costId="57" costCount="410000" duration="1day" />
-	</function>
-	<function id="10" type="OUTERFLAG">
-		<function level="1" costId="57" costCount="11000000" duration="1day" />
-		<function level="2" costId="57" costCount="12000000" duration="1day" />
-	</function>
-	<function id="11" type="PLATFORM">
+	<function id="8" type="PLATFORM">
 		<function level="1" costId="57" costCount="6500" duration="3days" />
 		<function level="2" costId="57" costCount="20000" duration="3days" />
-	</function>
-	<function id="12" type="ITEM">
-		<function level="1" costId="57" costCount="150000" duration="1day" />
-		<function level="2" costId="57" costCount="350000" duration="1day" />
-		<function level="3" costId="57" costCount="700000" duration="1day" />
-	</function>
-	<function id="13" type="ITEM">
-		<function level="1" costId="57" costCount="3430000" duration="7days" />
-		<function level="2" costId="57" costCount="3920000" duration="7days" />
-		<function level="3" costId="57" costCount="4410000" duration="7days" />
-	</function>
-	<function id="13" type="HP_REGEN">
-		<function level="1" costId="57" costCount="144667" duration="7days" value="12.0" />
-		<function level="2" costId="57" costCount="162750" duration="7days" value="16.0" />
-	</function>
-	<function id="13" type="MP_REGEN">
-		<function level="1" costId="57" costCount="560000" duration="7days" value="36.00" />
-		<function level="2" costId="57" costCount="630000" duration="7days" value="51.00" />
-	</function>
-	<function id="13" type="EXP_RESTORE">
-		<function level="1" costId="57" costCount="840000" duration="7days" value="0.60" />
-		<function level="2" costId="57" costCount="945000" duration="7days" value="0.70" />
-	</function>
-	<function id="13" type="TELEPORT">
-		<function level="1" costId="57" costCount="1568000" duration="7days" />
-		<function level="2" costId="57" costCount="1764000" duration="7days" />
-	</function>
-	<function id="82" type="BROADCAST">
-		<function level="1" costId="57" costCount="70000" duration="7days" />
-	</function>
-	<function id="13" type="BUFF">
-		<function level="1" costId="57" costCount="1876000" duration="7days" />
-		<function level="2" costId="57" costCount="2110500" duration="7days" />
 	</function>
 </list>

@@ -19,10 +19,12 @@
 package ai.npc.ClanHallManager;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.StringTokenizer;
 
 import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.data.xml.impl.ResidenceFunctionsData;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
@@ -30,7 +32,10 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.residences.ResidenceFunction;
+import org.l2junity.gameserver.model.residences.ResidenceFunctionTemplate;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import ai.npc.AbstractNpcAI;
@@ -59,6 +64,14 @@ public final class ClanHallManager extends AbstractNpcAI
 	};
 	// @formatter:on
 	// Misc
+	// private static final int HP_REGEN_FUNC_ID = 1;
+	// private static final int MP_REGEN_FUNC_ID = 2;
+	// private static final int EXP_RESTORE_FUNC_ID = 3;
+	// private static final int TELEPORT_FUNC_ID = 4;
+	// private static final int BUFF_FUNC_ID = 5;
+	// private static final int ITEM_FUNC_ID = 6;
+	// private static final int CURTAIN_FUNC_ID = 7;
+	// private static final int PLATFORM_FUNC_ID = 8;
 	private static final int[] ALLOWED_BUFFS =
 	{
 		4342, // Wind Walk
@@ -174,7 +187,7 @@ public final class ClanHallManager extends AbstractNpcAI
 							{
 								case "teleport":
 								{
-									final int teleportLevel = clanHall.getFunctionLevel(ResidenceFunctionType.TELEPORT) - 10;
+									final int teleportLevel = clanHall.getFunctionLevel(ResidenceFunctionType.TELEPORT);
 									if (teleportLevel > 0)
 									{
 										if (!st.hasMoreTokens())
@@ -219,7 +232,7 @@ public final class ClanHallManager extends AbstractNpcAI
 								}
 								case "buffs":
 								{
-									final int buffLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF) - 14;
+									final int buffLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF);
 									if (buffLevel > 0)
 									{
 										if (!st.hasMoreTokens())
@@ -258,7 +271,7 @@ public final class ClanHallManager extends AbstractNpcAI
 								}
 								case "items":
 								{
-									final int itemLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF) - 10;
+									final int itemLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF);
 									switch (itemLevel)
 									{
 										case 1:
@@ -289,7 +302,79 @@ public final class ClanHallManager extends AbstractNpcAI
 				}
 				case "manageFunctions":
 				{
-				
+					if (player.hasClanPrivilege(ClanPrivilege.CH_SET_FUNCTIONS))
+					{
+						if (!st.hasMoreTokens())
+						{
+							htmltext = "ClanHallManager-11.html";
+						}
+						else
+						{
+							switch (st.nextToken())
+							{
+								case "recovery":
+								{
+									htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-manageFuncRecovery.html");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.HP_REGEN), htmltext, "HP");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.MP_REGEN), htmltext, "MP");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.EXP_RESTORE), htmltext, "XP");
+									break;
+								}
+								case "other":
+								{
+									htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-manageFuncOther.html");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.TELEPORT), htmltext, "TP");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.BUFF), htmltext, "BUFF");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.ITEM), htmltext, "ITEM");
+									break;
+								}
+								case "decor":
+								{
+									htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-manageFuncDecor.html");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.CURTAIN), htmltext, "CURTAIN");
+									htmltext = getFunctionInfo(clanHall.getFunction(ResidenceFunctionType.PLATFORM), htmltext, "PODIUM");
+									break;
+								}
+								case "selectFunction":
+								{
+									if (st.countTokens() == 2)
+									{
+										final int funcId = Integer.parseInt(st.nextToken());
+										final int funcLv = Integer.parseInt(st.nextToken());
+										
+										final ResidenceFunction oldFunc = clanHall.getFunction(funcId);
+										if ((oldFunc != null) && (oldFunc.getLevel() == funcLv))
+										{
+											htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-manageFuncAlreadySet.html");
+											htmltext = htmltext.replaceAll("%funcEffect%", String.valueOf((int) oldFunc.getTemplate().getValue()) + "%");
+										}
+										else if ((funcId >= 1) && (funcId <= 8))
+										{
+											final ResidenceFunctionTemplate template = ResidenceFunctionsData.getInstance().getFunction(funcId, funcLv);
+											if (template != null)
+											{
+												htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-funcConfirm" + funcId + ".html");
+												htmltext = htmltext.replaceAll("%funcId%", String.valueOf(funcId));
+												htmltext = htmltext.replaceAll("%funcLv%", String.valueOf(funcLv));
+												htmltext = htmltext.replaceAll("%funcCost%", "<fstring p1=\"" + template.getCost().getCount() + "\" p2=\"" + template.getDurationAsDays() + "\">" + NpcStringId.FONT_COLOR_FFAABB_S1_FONT_ADENA_S2_DAY_S.getId() + "</fstring>");
+											}
+										}
+									}
+									break;
+								}
+								case "setFunction":
+								{
+									
+									break;
+								}
+							}
+						}
+					}
+					else
+					{
+						htmltext = "ClanHallManager-noAuthority.html";
+					}
+					break;
 				}
 				default:
 				{
@@ -321,6 +406,27 @@ public final class ClanHallManager extends AbstractNpcAI
 		else
 		{
 			htmltext = "ClanHallManager-03.html";
+		}
+		return htmltext;
+	}
+	
+	private String getFunctionInfo(ResidenceFunction func, String htmltext, String name)
+	{
+		if (func != null)
+		{
+			final Calendar calendar = Calendar.getInstance();
+			calendar.setTimeInMillis(func.getExpiration());
+			htmltext = htmltext.replaceAll("%" + name + "recovery%", String.valueOf((int) func.getTemplate().getValue()) + "%");
+			htmltext = htmltext.replaceAll("%" + name + "price%", "<fstring p1=\"" + func.getTemplate().getCost().getCount() + "\" p2=\"" + func.getTemplate().getDurationAsDays() + "\">" + NpcStringId.FONT_COLOR_FFAABB_S1_FONT_ADENA_S2_DAY_S.getId() + "</fstring>");
+			htmltext = htmltext.replace("%" + name + "Expire%", "<fstring p1=\"" + calendar.get(Calendar.MONTH) + "\" p2=\"" + (calendar.get(Calendar.DATE)) + "\" p3=\"" + calendar.get(Calendar.HOUR) + "\">" + NpcStringId.WITHDRAW_THE_FEE_FOR_THE_NEXT_TIME_AT_S1_S2_S3.getId() + "</fstring>");
+			htmltext = htmltext.replaceAll("%" + name + "deactive%", "[Deactivate]"); // TODO:
+		}
+		else
+		{
+			htmltext = htmltext.replaceAll("%" + name + "recovery%", "<fstring p1=\"\" p2=\"\">" + NpcStringId.NONE2.getId() + "</fstring>");
+			htmltext = htmltext.replaceAll("%" + name + "price%", "");
+			htmltext = htmltext.replaceAll("%" + name + "expire%", "");
+			htmltext = htmltext.replaceAll("%" + name + "deactive%", "");
 		}
 		return htmltext;
 	}

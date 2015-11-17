@@ -280,6 +280,15 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	}
 	
 	/**
+	 * @param id
+	 * @return the function by id, null if not available
+	 */
+	public ResidenceFunction getFunction(int id)
+	{
+		return _functions.values().stream().filter(func -> (func.getId() == id)).findFirst().orElse(null);
+	}
+	
+	/**
 	 * @param type
 	 * @return level of function, 0 if not available
 	 */

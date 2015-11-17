@@ -258,7 +258,7 @@ public final class Castle extends AbstractResidence
 	 * @param type
 	 * @return
 	 */
-	public CastleFunction getFunction(int type)
+	public CastleFunction getCastleFunction(int type)
 	{
 		if (_function.containsKey(type))
 		{
