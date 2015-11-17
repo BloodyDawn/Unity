@@ -118,7 +118,7 @@ public final class ClanHallManager extends AbstractNpcAI
 		final String action = st.nextToken();
 		final ClanHall clanHall = npc.getClanHall();
 		String htmltext = null;
-		_log.info("Event je: " + event);
+		
 		if ((clanHall != null) && isOwningClan(player, npc))
 		{
 			switch (action)
