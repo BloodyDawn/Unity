@@ -139,10 +139,9 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM residense_functions WHERE ownerId = ? AND residenseId = ?"))
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM residence_functions WHERE residenceId = ?"))
 		{
-			ps.setInt(1, getOwnerId());
-			ps.setInt(2, getResidenceId());
+			ps.setInt(1, getResidenceId());
 			try (ResultSet rs = ps.executeQuery())
 			{
 				while (rs.next())
@@ -153,6 +152,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 					final ResidenceFunction func = new ResidenceFunction(id, level, expiration, this);
 					if ((expiration <= System.currentTimeMillis()) && !func.reactivate())
 					{
+						removeFunction(func);
 						continue;
 					}
 					_functions.put(id, func);
@@ -161,7 +161,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn("Failed to initialize functions for owner: {} residense: {}", getOwnerId(), getResidenceId(), e);
+			LOGGER.warn("Failed to initialize functions for residence: {}", getResidenceId(), e);
 		}
 	}
 	
@@ -177,22 +177,20 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	public void addFunction(ResidenceFunction func)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO residense_functions (id, level, expiration, ownerId, residenseId) VALUES (?, ?, ?, ?, ?) ON DUPLICATE UPDATE level = ?, expiration = ?, ownerId = ?"))
+			PreparedStatement ps = con.prepareStatement("INSERT INTO residence_functions (id, level, expiration, residenceId) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, expiration = ?"))
 		{
 			ps.setInt(1, func.getId());
 			ps.setInt(2, func.getLevel());
 			ps.setLong(3, func.getExpiration());
-			ps.setInt(4, func.getOwnerId());
-			ps.setInt(5, getResidenceId());
+			ps.setInt(4, getResidenceId());
 			
-			ps.setInt(6, func.getLevel());
-			ps.setLong(7, func.getExpiration());
-			ps.setInt(8, func.getOwnerId());
+			ps.setInt(5, func.getLevel());
+			ps.setLong(6, func.getExpiration());
 			ps.execute();
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn("Failed to add function: {} for owner: {} residense: {}", func.getId(), getOwnerId(), getResidenceId(), e);
+			LOGGER.warn("Failed to add function: {} for residence: {}", func.getId(), getResidenceId(), e);
 		}
 		finally
 		{
@@ -211,16 +209,15 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	public void removeFunction(ResidenceFunction func)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE * FROM residense_functions WHERE ownerId = ? AND residenseId = ? and id = ?"))
+			PreparedStatement ps = con.prepareStatement("DELETE * FROM residence_functions WHERE residenceId = ? and id = ?"))
 		{
-			ps.setInt(1, getOwnerId());
-			ps.setInt(2, getResidenceId());
-			ps.setInt(3, func.getId());
+			ps.setInt(1, getResidenceId());
+			ps.setInt(2, func.getId());
 			ps.execute();
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn("Failed to remove function: {} for owner: {} residense: {}", func.getId(), getOwnerId(), getResidenceId(), e);
+			LOGGER.warn("Failed to remove function: {} residence: {}", func.getId(), getResidenceId(), e);
 		}
 		finally
 		{
@@ -234,15 +231,14 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	public void removeFunctions()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE * FROM residense_functions WHERE ownerId = ? AND residenseId = ?"))
+			PreparedStatement ps = con.prepareStatement("DELETE * FROM residence_functions WHERE AND residenceId = ?"))
 		{
-			ps.setInt(1, getOwnerId());
-			ps.setInt(2, getResidenceId());
+			ps.setInt(1, getResidenceId());
 			ps.execute();
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn("Failed to remove functions for owner: {} residense: {}", getOwnerId(), getResidenceId(), e);
+			LOGGER.warn("Failed to remove functions for residence: {}", getResidenceId(), e);
 		}
 		finally
 		{

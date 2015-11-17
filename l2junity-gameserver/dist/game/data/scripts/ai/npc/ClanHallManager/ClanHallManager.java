@@ -19,7 +19,6 @@
 package ai.npc.ClanHallManager;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.StringTokenizer;
 
@@ -35,6 +34,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.residences.ResidenceFunction;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionTemplate;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
+import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -176,10 +176,13 @@ public final class ClanHallManager extends AbstractNpcAI
 					{
 						if (!st.hasMoreTokens())
 						{
+							final ResidenceFunction hpFunc = clanHall.getFunction(ResidenceFunctionType.HP_REGEN);
+							final ResidenceFunction mpFunc = clanHall.getFunction(ResidenceFunctionType.MP_REGEN);
+							final ResidenceFunction xpFunc = clanHall.getFunction(ResidenceFunctionType.EXP_RESTORE);
 							htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-09.html");
-							htmltext = htmltext.replaceAll("%hpFunction%", String.valueOf(clanHall.getFunctionLevel(ResidenceFunctionType.HP_REGEN)));
-							htmltext = htmltext.replaceAll("%mpFunction%", String.valueOf(clanHall.getFunctionLevel(ResidenceFunctionType.MP_REGEN)));
-							htmltext = htmltext.replaceAll("%resFunction%", String.valueOf(clanHall.getFunctionLevel(ResidenceFunctionType.EXP_RESTORE)));
+							htmltext = htmltext.replaceAll("%hpFunction%", hpFunc != null ? String.valueOf((int) hpFunc.getValue()) : "0");
+							htmltext = htmltext.replaceAll("%mpFunction%", mpFunc != null ? String.valueOf((int) mpFunc.getValue()) : "0");
+							htmltext = htmltext.replaceAll("%resFunction%", xpFunc != null ? String.valueOf((int) xpFunc.getValue()) : "0");
 						}
 						else
 						{
@@ -271,7 +274,7 @@ public final class ClanHallManager extends AbstractNpcAI
 								}
 								case "items":
 								{
-									final int itemLevel = clanHall.getFunctionLevel(ResidenceFunctionType.BUFF);
+									final int itemLevel = clanHall.getFunctionLevel(ResidenceFunctionType.ITEM);
 									switch (itemLevel)
 									{
 										case 1:
@@ -297,7 +300,7 @@ public final class ClanHallManager extends AbstractNpcAI
 				{
 					htmltext = getHtm(player.getHtmlPrefix(), "ClanHallManager-10.html");
 					htmltext = htmltext.replaceAll("%lease%", String.valueOf(clanHall.getLease()));
-					htmltext = htmltext.replaceAll("%payDate%", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(clanHall.getNextPayment()))); // TODO: Not really paid until, it's when server check CWH for adenas
+					htmltext = htmltext.replaceAll("%payDate%", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(clanHall.getNextPayment())));
 					break;
 				}
 				case "manageFunctions":
@@ -364,7 +367,28 @@ public final class ClanHallManager extends AbstractNpcAI
 								}
 								case "setFunction":
 								{
-									
+									if (st.countTokens() == 2)
+									{
+										final int funcId = Integer.parseInt(st.nextToken());
+										final int funcLv = Integer.parseInt(st.nextToken());
+										final ResidenceFunctionTemplate template = ResidenceFunctionsData.getInstance().getFunction(funcId, funcLv);
+										if ((template != null) && (getQuestItemsCount(player, template.getCost().getId()) >= template.getCost().getCount()))
+										{
+											if (clanHall.getFunction(funcId) != null)
+											{
+												return null;
+											}
+											
+											takeItems(player, template.getCost().getId(), template.getCost().getCount());
+											clanHall.addFunction(funcId, funcLv);
+											clanHall.getResidenceZone().getPlayersInside().forEach(pl -> pl.sendPacket(new AgitDecoInfo(clanHall)));
+											htmltext = "ClanHallManager-manageFuncDone.html";
+										}
+										else
+										{
+											htmltext = "ClanHallManager-noAdena.html";
+										}
+									}
 									break;
 								}
 							}
@@ -414,11 +438,9 @@ public final class ClanHallManager extends AbstractNpcAI
 	{
 		if (func != null)
 		{
-			final Calendar calendar = Calendar.getInstance();
-			calendar.setTimeInMillis(func.getExpiration());
 			htmltext = htmltext.replaceAll("%" + name + "recovery%", String.valueOf((int) func.getTemplate().getValue()) + "%");
 			htmltext = htmltext.replaceAll("%" + name + "price%", "<fstring p1=\"" + func.getTemplate().getCost().getCount() + "\" p2=\"" + func.getTemplate().getDurationAsDays() + "\">" + NpcStringId.FONT_COLOR_FFAABB_S1_FONT_ADENA_S2_DAY_S.getId() + "</fstring>");
-			htmltext = htmltext.replace("%" + name + "Expire%", "<fstring p1=\"" + calendar.get(Calendar.MONTH) + "\" p2=\"" + (calendar.get(Calendar.DATE)) + "\" p3=\"" + calendar.get(Calendar.HOUR) + "\">" + NpcStringId.WITHDRAW_THE_FEE_FOR_THE_NEXT_TIME_AT_S1_S2_S3.getId() + "</fstring>");
+			htmltext = htmltext.replace("%" + name + "expire%", "Withdraw the fee for the next time at " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(func.getExpiration())));
 			htmltext = htmltext.replaceAll("%" + name + "deactive%", "[Deactivate]"); // TODO:
 		}
 		else
