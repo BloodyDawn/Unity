@@ -20,7 +20,6 @@ package org.l2junity.gameserver.instancemanager;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.l2junity.commons.util.Rnd;
@@ -64,7 +63,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	public static final String MAX_PLAYERS_KEY = "max_players";
 	public static final String MAX_ARENAS_KEY = "max_arenas";
 	public static final String INSTANCE_TEMPLATES_KEY = "instance_templates";
-	public static final String INSTANCE_ZONES_KEY = "instance_zones";
 	public static final String END_BUFFS_KEYH = "end_buffs";
 	
 	protected CeremonyOfChaosManager()
@@ -160,12 +158,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		final List<PlayerInstance> players = getRegisteredPlayers().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
 		final int maxPlayers = getVariables().getInt(MAX_PLAYERS_KEY, 18);
 		final List<Integer> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, Integer.class);
-		final Map<String, Integer> zones = CeremonyOfChaosManager.getInstance().getVariables().getMap(INSTANCE_ZONES_KEY, String.class, Integer.class);
-		if (zones == null)
-		{
-			LOGGER.warn("Couldn't find zones map");
-			return;
-		}
 		
 		for (PlayerInstance player : players)
 		{
@@ -174,7 +166,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 				if ((event == null) || (event.getMembers().size() >= maxPlayers))
 				{
 					final int template = templates.get(Rnd.get(templates.size()));
-					event = new CeremonyOfChaosEvent(eventId++, InstanceManager.getInstance().getInstanceTemplate(template), zones.get(template));
+					event = new CeremonyOfChaosEvent(eventId++, InstanceManager.getInstance().getInstanceTemplate(template));
 					position = 1;
 					getEvents().add(event);
 				}
