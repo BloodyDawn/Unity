@@ -27,9 +27,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.ListenersContainer;
@@ -132,12 +130,6 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	 */
 	protected void initFunctions()
 	{
-		final L2Clan clan = ClanTable.getInstance().getClan(getOwnerId());
-		if (clan == null)
-		{
-			return;
-		}
-		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM residence_functions WHERE residenceId = ?"))
 		{
