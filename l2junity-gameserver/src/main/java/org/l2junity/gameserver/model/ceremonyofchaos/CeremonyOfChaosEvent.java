@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.ceremonyofchaos;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
@@ -302,7 +303,6 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			}
 		}
 		getTimers().cancelTimer("update", null, null);
-		
 		getTimers().addTimer("match_end_countdown", StatsSet.valueOf("time", 30), 30 * 1000, null, null);
 	}
 	
@@ -313,6 +313,10 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			final PlayerInstance player = member.getPlayer();
 			if (player != null)
 			{
+				if (player.inObserverMode())
+				{
+					player.leaveObserverMode();
+				}
 				// Revive the player
 				player.doRevive();
 				
@@ -362,18 +366,20 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	{
 		final List<CeremonyOfChaosMember> winners = new ArrayList<>();
 		//@formatter:off
-		final int winnerLifeTime = getMembers().values().stream()
+		final OptionalInt winnerLifeTime = getMembers().values().stream()
 			.mapToInt(CeremonyOfChaosMember::getLifeTime)
-			.max()
-			.getAsInt();
+			.max();
 		
-		getMembers().values().stream()
-			.sorted(Comparator.comparingLong(CeremonyOfChaosMember::getLifeTime)
-				.reversed()
-				.thenComparingInt(CeremonyOfChaosMember::getScore)
-				.reversed())
-			.filter(member -> member.getLifeTime() == winnerLifeTime)
-			.collect(Collectors.toCollection(() -> winners));
+		if(winnerLifeTime.isPresent())
+		{
+			getMembers().values().stream()
+				.sorted(Comparator.comparingLong(CeremonyOfChaosMember::getLifeTime)
+					.reversed()
+					.thenComparingInt(CeremonyOfChaosMember::getScore)
+					.reversed())
+				.filter(member -> member.getLifeTime() == winnerLifeTime.getAsInt())
+				.collect(Collectors.toCollection(() -> winners));
+		}
 		
 		//@formatter:on
 		return winners;
@@ -433,13 +439,13 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				}
 				else if ((time == 30) || (time == 20))
 				{
-					getTimers().addTimer(event, params.set("time", time - 10), (time - 10) * 1000, null, null);
+					getTimers().addTimer(event, params.set("time", time - 10), 10 * 1000, null, null);
 				}
 				else if (time == 10)
 				{
 					getTimers().addTimer(event, params.set("time", 5), 5 * 1000, null, null);
 				}
-				else if ((time > 1) && (time < 5))
+				else if ((time > 1) && (time <= 5))
 				{
 					getTimers().addTimer(event, params.set("time", time - 1), 1000, null, null);
 				}
@@ -455,7 +461,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				// Reschedule
 				if ((time == 30) || (time == 20))
 				{
-					getTimers().addTimer(event, params.set("time", time - 10), (time - 10) * 1000, null, null);
+					getTimers().addTimer(event, params.set("time", time - 10), 10 * 1000, null, null);
 				}
 				else if ((time > 0) && (time <= 10))
 				{

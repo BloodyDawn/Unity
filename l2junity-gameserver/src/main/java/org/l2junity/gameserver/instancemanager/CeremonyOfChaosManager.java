@@ -233,7 +233,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 				{
 					getTimers().addTimer(event, params.set("time", 5), 5 * 1000, null, null);
 				}
-				else if ((time > 1) && (time < 5))
+				else if ((time > 1) && (time <= 5))
 				{
 					getTimers().addTimer(event, params.set("time", time - 1), 1000, null, null);
 				}

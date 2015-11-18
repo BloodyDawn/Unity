@@ -273,6 +273,7 @@ public final class TimerExecutor<T>
 			final TimerHolder<T> holder = holders.next();
 			if (holder.isEqual(event, npc, player))
 			{
+				holders.remove();
 				return holder.cancelTimer();
 			}
 		}
