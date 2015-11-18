@@ -313,6 +313,12 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			final PlayerInstance player = member.getPlayer();
 			if (player != null)
 			{
+				// Leaves observer mode
+				if (player.inObserverMode())
+				{
+					player.setObserving(false);
+				}
+				
 				// Revive the player
 				player.doRevive();
 				
@@ -337,12 +343,6 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				
 				// Teleport player back
 				player.teleToLocation(player.getLastLocation(), null);
-				
-				// Leaves observer mode
-				if (player.inObserverMode())
-				{
-					player.leaveObserverMode();
-				}
 				
 				// Restore player information
 				final PcAppearance app = player.getAppearance();
