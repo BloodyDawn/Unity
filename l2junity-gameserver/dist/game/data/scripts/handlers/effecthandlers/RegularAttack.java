@@ -82,9 +82,9 @@ public final class RegularAttack extends AbstractEffect
 		
 		if (damage > 0)
 		{
-			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			effected.reduceCurrentHp(damage, effector, skill);
+			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 			
 			Weapon weapon = effector.getActiveWeaponItem();
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());

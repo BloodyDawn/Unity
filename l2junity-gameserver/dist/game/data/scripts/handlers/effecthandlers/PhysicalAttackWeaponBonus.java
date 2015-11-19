@@ -140,9 +140,9 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 			{
 				damage = Math.min(damage, damageCap);
 			}
-			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			effected.reduceCurrentHp(damage, effector, skill);
+			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 		}
 		else
 		{
