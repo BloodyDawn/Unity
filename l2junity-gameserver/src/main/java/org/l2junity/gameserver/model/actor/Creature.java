@@ -4001,9 +4001,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			setChargedShot(ShotType.SOULSHOTS, false);
 		}
 		
-		// Send message about damage/crit or miss
-		sendDamageMessage(target, null, damage, crit, miss);
-		
 		// Check Raidboss attack
 		// Character will be petrified if attacking a raid that's more
 		// than 8 levels lower
@@ -4025,20 +4022,28 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 		}
 		
-		// If L2Character target is a L2PcInstance, send a system message
-		if (target.isPlayer())
-		{
-			PlayerInstance enemy = target.getActingPlayer();
-			enemy.getAI().clientStartAutoAttack();
-		}
-		
 		if (!miss && (damage > 0))
 		{
 			Weapon weapon = getActiveWeaponItem();
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			int reflectedDamage = 0;
 			
-			if (!target.isInvul()) // Do not reflect or vampiric if target is invulnerable
+			// reduce targets HP
+			damage = (int) target.notifyDamageReceived(damage, this, null, crit, false, false);
+			target.reduceCurrentHp(damage, this, null);
+			
+			// Send message about damage/crit or miss
+			sendDamageMessage(target, null, damage, crit, miss);
+			
+			// If L2Character target is a L2PcInstance, send a system message
+			if (target.isPlayer())
+			{
+				PlayerInstance enemy = target.getActingPlayer();
+				enemy.getAI().clientStartAutoAttack();
+			}
+			
+			// When killing blow is made, the target doesn't reflect (vamp too?). Do not reflect or vampiric if target is invulnerable.
+			if (!target.isDead() && !target.isInvul())
 			{
 				if (!isBow) // No reflect if weapon is of type bow
 				{
@@ -4068,36 +4073,24 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						setCurrentHp(getCurrentHp() + absorbDamage);
 					}
 				}
-			}
-			
-			// reduce targets HP
-			damage = (int) target.notifyDamageReceived(damage, this, null, crit, false, false);
-			target.reduceCurrentHp(damage, this, null);
-			
-			// When killing blow is made, the target doesn't reflect.
-			if ((reflectedDamage > 0) && !target.isDead())
-			{
-				target.sendDamageMessage(this, null, reflectedDamage, false, false);
-				reduceCurrentHp(reflectedDamage, target, true, false, null);
-				notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
-			}
-			
-			// Absorb MP from the damage inflicted
-			double absorbPercent = getStat().getValue(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0);
-			
-			if (absorbPercent > 0)
-			{
-				int maxCanAbsorb = (int) (getMaxRecoverableMp() - getCurrentMp());
-				int absorbDamage = (int) ((absorbPercent / 100.) * damage);
 				
-				if (absorbDamage > maxCanAbsorb)
+				// Absorb MP from the damage inflicted
+				absorbPercent = getStat().getValue(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0);
+				if (absorbPercent > 0)
 				{
-					absorbDamage = maxCanAbsorb; // Can't absord more than max hp
+					int absorbDamage = (int) Math.min((absorbPercent / 100.) * damage, getMaxRecoverableMp() - getCurrentMp());
+					absorbDamage = Math.min(absorbDamage, (int) target.getCurrentMp());
+					if (absorbDamage > 0)
+					{
+						setCurrentMp(getCurrentMp() + absorbDamage);
+					}
 				}
 				
-				if (absorbDamage > 0)
+				if (reflectedDamage > 0)
 				{
-					setCurrentMp(getCurrentMp() + absorbDamage);
+					reflectedDamage = (int) notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
+					reduceCurrentHp(reflectedDamage, target, true, false, null);
+					target.sendDamageMessage(this, null, reflectedDamage, false, false);
 				}
 			}
 			
