@@ -380,20 +380,56 @@
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="17947" levels="1" name="Scroll of Escape: Town of Rune">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Teleports you to the Town of Rune. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="39556" /> <!-- Minstrel's Scroll of Escape: Town of Rune -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="44065" y="-48183" z="-792" /> <!-- Town of Rune (Bard NPC) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="17948" levels="1" name="Scroll of Escape: Town of Aden">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Teleports you to the Town of Aden. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="39557" /> <!-- Minstrel's Scroll of Escape: Town of Aden -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="147205" y="25784" z="-2008" /> <!-- Town of Aden (Bard NPC) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="17949" levels="1" name="Scroll of Escape: Town of Oren">
 		<!-- Teleports you to the Town of Oren. -->
@@ -1002,11 +1038,29 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="17990" levels="1" name="Scroll of Escape: Seed of Annihilation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="39495" /> <!-- Scroll of Escape: Seed of Annihilation -->
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="-178257" y="154054" z="2568" /> <!-- Seed of Annihilation (Entrance) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="17991" levels="1" name="Scroll of Escape: Harnak's Underground Ruins">
 		<!-- AUTO GENERATED SKILL -->
@@ -1023,11 +1077,29 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="17993" levels="1" name="Scroll of Escape: Fairy Settlement">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="39498" /> <!-- Scroll of Escape: Fairy Settlement -->
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="214432" y="79857" z="816" /> <!-- Fairy Settlement (Peace Zone) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="17994" levels="1" name="Scroll of Escape: Garden of Genesis">
 		<!-- AUTO GENERATED SKILL -->
@@ -1037,11 +1109,29 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="17995" levels="1" name="Scroll of Escape: Prison of Darkness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="39500" /> <!-- Scroll of Escape: Prison of Darkness -->
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="207480" y="86749" z="-1000" /> <!-- Ancient City Arcan (Gatekeeper) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="17996" levels="1" name="Scroll of Escape: Fortuna">
 		<!-- AUTO GENERATED SKILL -->
@@ -1051,24 +1141,78 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="17997" levels="1" name="Scroll of Escape: Isle of Souls">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="39502" /> <!-- Scroll of Escape: Isle of Souls -->
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="-95435" y="52324" z="-2024" /> <!-- Stronghold II -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="17998" levels="1" name="Scroll of Escape: Nornil's Cave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="39503" /> <!-- Scroll of Escape: Nornil's Cave -->
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="-86215" y="37924" z="-2096" /> <!-- Mimir's Forest -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="17999" levels="1" name="Scroll of Escape: Seal of Shilen">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="39504" /> <!-- Scroll of Escape: Seal of Shilen -->
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="184729" y="19759" z="-3168" /> <!-- Seal of Shilen (Entrance) -->
+			</effect>
+		</for>
 	</skill>
 </list>
