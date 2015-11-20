@@ -63,6 +63,21 @@ public final class PunishmentHolder
 		}
 	}
 	
+	public void stopPunishment(PunishmentType type)
+	{
+		_holder.values().stream().flatMap(p -> p.values().stream()).filter(p -> p.getType() == type).forEach(t ->
+		{
+			t.stopPunishment();
+			final String key = String.valueOf(t.getKey());
+			final Map<PunishmentType, PunishmentTask> punishments = _holder.get(key);
+			punishments.remove(t.getType());
+			if (punishments.isEmpty())
+			{
+				_holder.remove(key);
+			}
+		});
+	}
+	
 	/**
 	 * @param key
 	 * @param type

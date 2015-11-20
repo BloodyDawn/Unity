@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.instancemanager;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.CeremonyOfChaosState;
@@ -43,6 +46,9 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
+import org.l2junity.gameserver.model.punishment.PunishmentAffect;
+import org.l2junity.gameserver.model.punishment.PunishmentType;
+import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -81,8 +87,26 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@ScheduleTarget
 	public void onPeriodEnd(String text)
 	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables var = ?"))
+		{
+			ps.setString(1, PlayerVariables.CEREMONY_OF_CHAOS_PROHIBITED_PENALTIES);
+			ps.execute();
+		}
+		catch (Exception e)
+		{
+			LOGGER.error("Could not reset Ceremony Of Chaos penalties: " + e);
+		}
+		
+		// Update data for online players.
+		World.getInstance().getPlayers().stream().forEach(player ->
+		{
+			player.getVariables().remove(PlayerVariables.CEREMONY_OF_CHAOS_PROHIBITED_PENALTIES);
+			player.getVariables().storeMe();
+		});
+		
+		LOGGER.info("Ceremony of Chaos penalties have been reset.");
 		LOGGER.info("Ceremony of Chaos period has ended!");
-		LOGGER.info(text);
 	}
 	
 	@ScheduleTarget
@@ -94,6 +118,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@ScheduleTarget
 	public void onEventEnd()
 	{
+		PunishmentManager.getInstance().stopPunishment(PunishmentAffect.CHARACTER, PunishmentType.COC_BAN);
 		LOGGER.info("Ceremony of Chaos event has ended!");
 	}
 	
@@ -175,7 +200,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			}
 			else
 			{
-				// TODO: Handle player penalties
+				player.prohibiteCeremonyOfChaos();
 				player.sendPacket(ExCuriousHouseState.IDLE_PACKET);
 			}
 		}
@@ -329,6 +354,10 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		else if (player.isFishing())
 		{
 			sm = SystemMessageId.YOU_CANNOT_PARTICIPATE_IN_THE_CEREMONY_OF_CHAOS_WHILE_FISHING;
+			canRegister = false;
+		}
+		else if (player.isCeremonyOfChaosProhibited())
+		{
 			canRegister = false;
 		}
 		

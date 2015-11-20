@@ -64,5 +64,9 @@ public class RequestJoinCuriousHouse implements IClientIncomingPacket
 			player.sendPacket(SystemMessageId.EXCEPT_THE_VITALITY_BUFF_ALL_BUFFS_INCLUDING_ART_OF_SEDUCTION_WILL_BE_DELETED);
 			player.sendPacket(ExCuriousHouseState.PREPARE_PACKET);
 		}
+		else
+		{
+			player.sendPacket(SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW);
+		}
 	}
 }

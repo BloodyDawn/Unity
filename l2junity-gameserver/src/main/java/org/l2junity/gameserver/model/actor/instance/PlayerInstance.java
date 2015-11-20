@@ -240,6 +240,7 @@ import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
+import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -13622,6 +13623,21 @@ public final class PlayerInstance extends Playable
 	public void setWorldChatPoints(int points)
 	{
 		getVariables().set(PlayerVariables.WORLD_CHAT_VARIABLE_NAME, points);
+	}
+	
+	public void prohibiteCeremonyOfChaos()
+	{
+		if (!PunishmentManager.getInstance().hasPunishment(getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.COC_BAN))
+		{
+			PunishmentManager.getInstance().startPunishment(new PunishmentTask(getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.COC_BAN, 0, "", getClass().getSimpleName()));
+			final int penalties = getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_PROHIBITED_PENALTIES, 0);
+			getVariables().set(PlayerVariables.CEREMONY_OF_CHAOS_PROHIBITED_PENALTIES, penalties + 1);
+		}
+	}
+	
+	public boolean isCeremonyOfChaosProhibited()
+	{
+		return PunishmentManager.getInstance().hasPunishment(getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.COC_BAN) || (getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_PROHIBITED_PENALTIES, 0) >= 30);
 	}
 	
 	/**

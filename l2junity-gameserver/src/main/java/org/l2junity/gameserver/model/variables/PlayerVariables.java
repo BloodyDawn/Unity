@@ -51,6 +51,7 @@ public class PlayerVariables extends AbstractVariables
 	public static final String WORLD_CHAT_VARIABLE_NAME = "WORLD_CHAT_POINTS";
 	public static final String VITALITY_ITEMS_USED_VARIABLE_NAME = "VITALITY_ITEMS_USED";
 	private static final String ONE_DAY_REWARDS = "ONE_DAY_REWARDS";
+	public static final String CEREMONY_OF_CHAOS_PROHIBITED_PENALTIES = "CEREMONY_OF_CHAOS_PENALTIES";
 	
 	private final int _objectId;
 	
