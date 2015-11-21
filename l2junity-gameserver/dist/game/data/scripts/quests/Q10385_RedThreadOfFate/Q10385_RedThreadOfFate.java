@@ -764,73 +764,95 @@ public final class Q10385_RedThreadOfFate extends Quest
 		String htmltext = null;
 		final QuestState qs = getQuestState(player, false);
 		
-		switch (npc.getId())
+		if (qs != null)
 		{
-			case DESERTED_DWARVEN_HOUSE:
+			switch (npc.getId())
 			{
-				if ((qs != null) && qs.isCond(14))
+				case DESERTED_DWARVEN_HOUSE:
 				{
-					showOnScreenMsg(player, NpcStringId.USE_THE_FONDEST_HEART_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-					htmltext = "33788-01.html";
-				}
-				npc.showChatWindow(player);
-				break;
-			}
-			case PAAGRIO_TEMPLE:
-			{
-				if ((qs != null) && qs.isCond(15))
-				{
-					showOnScreenMsg(player, NpcStringId.USE_THE_FIERCEST_FLAME_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-					htmltext = "33787-01.html";
-				}
-				npc.showChatWindow(player);
-				break;
-			}
-			case ALTAR_OF_SHILEN:
-			{
-				if ((qs != null) && qs.isCond(16))
-				{
-					showOnScreenMsg(player, NpcStringId.USE_THE_BRIGHTEST_LIGHT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-					htmltext = "33785-01.html";
-				}
-				npc.showChatWindow(player);
-				break;
-			}
-			case CAVE_OF_SOULS:
-			{
-				if ((qs != null) && qs.isCond(17))
-				{
-					showOnScreenMsg(player, NpcStringId.USE_THE_PUREST_SOUL_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-					htmltext = "33789-01.html";
-				}
-				npc.showChatWindow(player);
-				break;
-			}
-			case MOTHER_TREE:
-			{
-				switch (qs.getCond())
-				{
-					case 18:
+					if (qs.isCond(14))
 					{
-						showOnScreenMsg(player, NpcStringId.USE_THE_CLEAREST_WATER_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-						htmltext = "33786-01.html";
+						showOnScreenMsg(player, NpcStringId.USE_THE_FONDEST_HEART_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+						htmltext = "33788-01.html";
+					}
+					else
+					{
 						npc.showChatWindow(player);
-						break;
 					}
-					case 19:
-					case 20:
-					case 21:
-					{
-						final Quest instance = QuestManager.getInstance().getQuest(TalkingIslandPast.class.getSimpleName());
-						if (instance != null)
-						{
-							instance.onAdvEvent("enterInstance", npc, player);
-						}
-						break;
-					}
+					break;
 				}
-				break;
+				case PAAGRIO_TEMPLE:
+				{
+					if (qs.isCond(15))
+					{
+						showOnScreenMsg(player, NpcStringId.USE_THE_FIERCEST_FLAME_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+						htmltext = "33787-01.html";
+					}
+					else
+					{
+						npc.showChatWindow(player);
+					}
+					break;
+				}
+				case ALTAR_OF_SHILEN:
+				{
+					if (qs.isCond(16))
+					{
+						showOnScreenMsg(player, NpcStringId.USE_THE_BRIGHTEST_LIGHT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+						htmltext = "33785-01.html";
+					}
+					else
+					{
+						npc.showChatWindow(player);
+					}
+					break;
+				}
+				case CAVE_OF_SOULS:
+				{
+					if (qs.isCond(17))
+					{
+						showOnScreenMsg(player, NpcStringId.USE_THE_PUREST_SOUL_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+						htmltext = "33789-01.html";
+					}
+					else
+					{
+						npc.showChatWindow(player);
+					}
+					break;
+				}
+				case MOTHER_TREE:
+				{
+					switch (qs.getCond())
+					{
+						case 18:
+						{
+							showOnScreenMsg(player, NpcStringId.USE_THE_CLEAREST_WATER_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+							htmltext = "33786-01.html";
+							break;
+						}
+						case 19:
+						case 20:
+						case 21:
+						{
+							final Quest instance = QuestManager.getInstance().getQuest(TalkingIslandPast.class.getSimpleName());
+							if (instance != null)
+							{
+								instance.onAdvEvent("enterInstance", npc, player);
+							}
+							break;
+						}
+						default:
+						{
+							npc.showChatWindow(player);
+						}
+					}
+					break;
+				}
 			}
+		}
+		else
+		{
+			npc.showChatWindow(player);
 		}
 		return htmltext;
 	}
