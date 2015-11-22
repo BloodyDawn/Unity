@@ -136,13 +136,14 @@ public class CharStatus
 	
 	public void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
 	{
-		if (getActiveChar().isDead())
+		final Creature activeChar = getActiveChar();
+		if (activeChar.isDead())
 		{
 			return;
 		}
 		
 		// invul handling
-		if (getActiveChar().isInvul() && !(isDOT || isHPConsumption))
+		if (activeChar.isInvul() && !(isDOT || isHPConsumption))
 		{
 			return;
 		}
@@ -159,29 +160,24 @@ public class CharStatus
 		if (!isDOT && !isHPConsumption)
 		{
 			getActiveChar().stopEffectsOnDamage(awake);
-			if (getActiveChar().hasBlockActions() && (Rnd.get(10) == 0))
+			if (activeChar.hasBlockActions() && (Rnd.get(10) == 0))
 			{
-				getActiveChar().stopStunning(true);
+				activeChar.stopStunning(true);
 			}
 		}
 		
 		if (value > 0)
 		{
-			final double hpLockMin = getActiveChar().getStat().getValue(Stats.HP_LOCK_MIN, 0);
-			setCurrentHp(Math.max(getCurrentHp() - value, hpLockMin));
+			final double hpLockMin = activeChar.getStat().getValue(Stats.HP_LOCK_MIN, activeChar.isUndying() ? 1 : 0);
+			final double newHp = Math.max(getCurrentHp() - value, hpLockMin);
+			setCurrentHp(newHp);
 		}
 		
-		if ((getActiveChar().getCurrentHp() < 0.5) && !getActiveChar().isUndying()) // Die
+		if ((activeChar.getCurrentHp() < 0.5)) // Die
 		{
-			getActiveChar().abortAttack();
-			getActiveChar().abortCast();
-			
-			if (Config.DEBUG)
-			{
-				_log.debug("char is dead.");
-			}
-			
-			getActiveChar().doDie(attacker);
+			activeChar.abortAttack();
+			activeChar.abortCast();
+			activeChar.doDie(attacker);
 		}
 	}
 	
