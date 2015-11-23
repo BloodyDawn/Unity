@@ -1669,6 +1669,7 @@
 		<set name="for_npc" val="true" />
 		<set name="reuse_delay" val="1" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<skills>
 			<skill id="12002" level="1" /> <!-- Glimmer -->
@@ -1720,6 +1721,7 @@
 		<set name="is_questitem" val="true" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17379" name="Letter containing secret information" type="EtcItem">
@@ -1768,6 +1770,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12009" level="1" /> <!-- Teredor Antidote -->

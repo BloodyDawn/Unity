@@ -400,6 +400,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="2243" level="1" /> <!-- Hot Spring Brimstone -->
@@ -763,6 +764,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_stackable" val="true" />
 		<createItems>
 			<item id="8059" count="1" chance="100" /> <!-- Research Report -->
