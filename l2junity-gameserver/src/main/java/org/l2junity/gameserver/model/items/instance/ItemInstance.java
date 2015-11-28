@@ -1876,13 +1876,11 @@ public final class ItemInstance extends WorldObject
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
 		
-		// Notify instance about decayed item
-		final Instance instance = getInstanceWorld();
-		if (instance != null)
+		if (!super.decayMe())
 		{
-			instance.onInstanceChange(this, false);
+			return false;
 		}
-		return super.decayMe();
+		return true;
 	}
 	
 	public boolean isQuestItem()
