@@ -77,11 +77,7 @@ public final class CastleSiegeManager extends AbstractNpcAI
 	
 	private boolean isInSiege(Npc npc)
 	{
-		if (npc.getCastle().getSiege().isInProgress())
-		{
-			return true;
-		}
-		return false;
+		return npc.getCastle().getSiege().isInProgress();
 	}
 	
 	public static void main(String[] args)

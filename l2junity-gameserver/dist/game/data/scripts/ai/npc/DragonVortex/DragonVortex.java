@@ -18,7 +18,6 @@
  */
 package ai.npc.DragonVortex;
 
-import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
@@ -103,18 +102,9 @@ public final class DragonVortex extends AbstractNpcAI
 				raid = RAIDS[0]; // Emerald Horn
 			}
 			addSpawn(raid, npc.getX() + getRandom(-500, 500), npc.getY() + getRandom(-500, 500), npc.getZ() + 10, 0, false, DESPAWN_DELAY, true);
-			getTimers().addTimer("RESET", 60000, npc, null);
+			getTimers().addTimer("RESET", 60000, t -> npc.setScriptValue(0));
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	@Override
-	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
-	{
-		if (event.equals("RESET") && (npc != null))
-		{
-			npc.setScriptValue(0);
-		}
 	}
 	
 	public static void main(String[] args)

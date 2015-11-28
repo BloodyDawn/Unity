@@ -63,14 +63,6 @@ public final class ClanHallManager extends AbstractNpcAI
 	};
 	// @formatter:on
 	// Misc
-	// private static final int HP_REGEN_FUNC_ID = 1;
-	// private static final int MP_REGEN_FUNC_ID = 2;
-	// private static final int EXP_RESTORE_FUNC_ID = 3;
-	// private static final int TELEPORT_FUNC_ID = 4;
-	// private static final int BUFF_FUNC_ID = 5;
-	// private static final int ITEM_FUNC_ID = 6;
-	// private static final int CURTAIN_FUNC_ID = 7;
-	// private static final int PLATFORM_FUNC_ID = 8;
 	private static final int[] ALLOWED_BUFFS =
 	{
 		4342, // Wind Walk

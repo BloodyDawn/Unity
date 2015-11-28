@@ -33,7 +33,7 @@ import ai.npc.AbstractNpcAI;
  */
 public final class ClanTrader extends AbstractNpcAI
 {
-	// Npc
+	// NPCs
 	private static final int[] CLAN_TRADER =
 	{
 		32024, // Mulia
@@ -111,11 +111,7 @@ public final class ClanTrader extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME))
-		{
-			return npc.getId() + ".html";
-		}
-		return npc.getId() + "-01.html";
+		return npc.getId() + ((player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME)) ? ".html" : "-01.html");
 	}
 	
 	public static void main(String[] args)
