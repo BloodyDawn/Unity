@@ -144,7 +144,7 @@ public abstract class AbstractServerPlugin
 			LOGGER.warn("Plugin: " + getName() + " couldn't uninstall plugin: files {}", getName(), _filesToInstall, e);
 			return false;
 		}
-		broadcastMessage("Plugin: " + getName() + "uninstallation complete!");
+		broadcastMessage("Plugin: " + getName() + " uninstallation complete!");
 		return true;
 	}
 	
