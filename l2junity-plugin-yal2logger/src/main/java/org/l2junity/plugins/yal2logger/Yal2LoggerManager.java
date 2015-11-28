@@ -16,60 +16,63 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package custom.PacketLogger;
+package org.l2junity.plugins.yal2logger;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.Containers;
 import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.ListenerRegisterType;
-import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
-import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.impl.server.OnPacketReceived;
 import org.l2junity.gameserver.model.events.impl.server.OnPacketSent;
+import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.network.client.IncomingPackets;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.scripting.annotations.Disabled;
+import org.l2junity.plugins.yal2logger.LogWriters.IPacketHandler;
+import org.l2junity.plugins.yal2logger.LogWriters.YAL2Logger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import ai.npc.AbstractNpcAI;
-import custom.PacketLogger.LogWriters.IPacketHandler;
-import custom.PacketLogger.LogWriters.YAL2Logger;
 
 /**
  * @author UnAfraid
  */
-@Disabled
-public final class PacketLogger extends AbstractNpcAI
+public final class Yal2LoggerManager
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(Yal2LoggerManager.class);
 	private final Map<Integer, IPacketHandler> _logs = new ConcurrentHashMap<>();
-	private static final Logger LOGGER = LoggerFactory.getLogger(PacketLogger.class);
 	
-	private PacketLogger()
+	protected Yal2LoggerManager()
 	{
-		super(PacketLogger.class.getSimpleName(), "custom");
+	
 	}
 	
-	@RegisterEvent(EventType.ON_PACKET_RECEIVED)
-	@RegisterType(ListenerRegisterType.GLOBAL)
-	public void onPacketReceived(OnPacketReceived event)
+	public void init()
+	{
+		final ListenersContainer container = Containers.Global();
+		container.addListener(new ConsumerEventListener(container, EventType.ON_PACKET_RECEIVED, (OnPacketReceived event) -> onPacketReceived(event), this));
+		container.addListener(new ConsumerEventListener(container, EventType.ON_PACKET_SENT, (OnPacketSent event) -> onPacketSent(event), this));
+		container.addListener(new ConsumerEventListener(container, EventType.ON_PLAYER_LOGOUT, (OnPlayerLogout event) -> onPlayerLogout(event), this));
+	}
+	
+	public void shutdown()
+	{
+		Containers.Global().removeListenerIf(listener -> listener.getOwner() == this);
+	}
+	
+	private void onPacketReceived(OnPacketReceived event)
 	{
 		handlePacket(event.getClient(), event.getData(), true);
 	}
 	
-	@RegisterEvent(EventType.ON_PACKET_SENT)
-	@RegisterType(ListenerRegisterType.GLOBAL)
-	public void onPacketSent(OnPacketSent event)
+	private void onPacketSent(OnPacketSent event)
 	{
 		handlePacket(event.getClient(), event.getData(), false);
 	}
 	
-	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
-	@RegisterType(ListenerRegisterType.GLOBAL)
-	public void onPlayerLogout(OnPlayerLogout event)
+	private void onPlayerLogout(OnPlayerLogout event)
 	{
 		final PlayerInstance player = event.getActiveChar();
 		final L2GameClient client = player.getClient();
@@ -77,6 +80,7 @@ public final class PacketLogger extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		final IPacketHandler handler = _logs.remove(client.getObjectId());
 		if (handler != null)
 		{
@@ -107,8 +111,13 @@ public final class PacketLogger extends AbstractNpcAI
 		}
 	}
 	
-	public static void main(String[] args)
+	public static final Yal2LoggerManager getInstance()
 	{
-		new PacketLogger();
+		return SingletonHolder.INSTANCE;
+	}
+	
+	private static class SingletonHolder
+	{
+		protected static final Yal2LoggerManager INSTANCE = new Yal2LoggerManager();
 	}
 }

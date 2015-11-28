@@ -405,7 +405,7 @@ public class Duel
 			
 			for (L2DoorInstance door : _duelInstance.getDoors())
 			{
-				if ((door != null) && !door.getOpen())
+				if ((door != null) && !door.isOpen())
 				{
 					door.openMe();
 				}

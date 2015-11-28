@@ -25,7 +25,6 @@ import java.util.List;
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public final class ItemsAutoDestroy
@@ -82,8 +81,7 @@ public final class ItemsAutoDestroy
 				
 				if ((curtime - item.getDropTime()) > autoDestroyTime)
 				{
-					World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-					World.getInstance().removeObject(item);
+					item.decayMe();
 					itemIterator.remove();
 					if (Config.SAVE_DROPPED_ITEM)
 					{

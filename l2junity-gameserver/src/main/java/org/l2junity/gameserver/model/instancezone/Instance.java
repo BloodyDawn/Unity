@@ -62,6 +62,7 @@ import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -83,9 +84,10 @@ public final class Instance implements IIdentifiable, INamable
 	private long _endTime;
 	// Advanced instance parameters
 	private final Set<Integer> _allowed = ConcurrentHashMap.newKeySet(); // ObjectId of players which can enter to instance
-	private final Set<PlayerInstance> _players = ConcurrentHashMap.newKeySet(); // Players inside instance
+	private final Map<Integer, PlayerInstance> _players = new ConcurrentHashMap<>(); // Players inside instance
 	private final Set<Npc> _npcs = ConcurrentHashMap.newKeySet(); // Spawned NPCs inside instance
 	private final Map<Integer, L2DoorInstance> _doors = new HashMap<>(); // Spawned doors inside instance
+	private final Map<Integer, ItemInstance> _items = new ConcurrentHashMap<>(); // Spawned items inside instance
 	private final StatsSet _parameters = new StatsSet();
 	// Timers
 	private final Map<Integer, ScheduledFuture<?>> _ejectDeadTasks = new ConcurrentHashMap<>();
@@ -258,7 +260,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public void addPlayer(PlayerInstance player)
 	{
-		_players.add(player);
+		_players.put(player.getObjectId(), player);
 		if (_emptyDestroyTask != null)
 		{
 			_emptyDestroyTask.cancel(false);
@@ -294,16 +296,16 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public boolean containsPlayer(PlayerInstance player)
 	{
-		return _players.contains(player);
+		return _players.containsKey(player.getObjectId());
 	}
 	
 	/**
 	 * Get all players inside instance.
 	 * @return players within instance
 	 */
-	public Set<PlayerInstance> getPlayers()
+	public Collection<PlayerInstance> getPlayers()
 	{
-		return _players;
+		return _players.values();
 	}
 	
 	/**
@@ -322,7 +324,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public PlayerInstance getFirstPlayer()
 	{
-		return _players.stream().findFirst().orElse(null);
+		return _players.values().stream().findFirst().orElse(null);
 	}
 	
 	/**
@@ -333,7 +335,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public Set<PlayerInstance> getPlayersInsideRadius(ILocational object, int radius)
 	{
-		return _players.stream().filter(p -> p.isInsideRadius(object, radius, true, true)).collect(Collectors.toSet());
+		return _players.values().stream().filter(p -> p.isInsideRadius(object, radius, true, true)).collect(Collectors.toSet());
 	}
 	
 	/**
@@ -387,7 +389,7 @@ public final class Instance implements IIdentifiable, INamable
 	/**
 	 * Get spawned door by template ID.
 	 * @param id template ID of door
-	 * @return instance of door if found, otherwise {@code null}
+	 * @return instance door if found, {@code null} otherwise
 	 */
 	public L2DoorInstance getDoor(int id)
 	{
@@ -406,19 +408,55 @@ public final class Instance implements IIdentifiable, INamable
 		{
 			if (open)
 			{
-				if (!door.getOpen())
+				if (!door.isOpen())
 				{
 					door.openMe();
 				}
 			}
 			else
 			{
-				if (door.getOpen())
+				if (door.isOpen())
 				{
 					door.closeMe();
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Adds an item to the instance
+	 * @param item
+	 */
+	public void addItem(ItemInstance item)
+	{
+		_items.put(item.getObjectId(), item);
+	}
+	
+	/**
+	 * Removes the item from instance
+	 * @param item
+	 */
+	public void removeItem(ItemInstance item)
+	{
+		_items.remove(item.getObjectId());
+	}
+	
+	/**
+	 * @param objectId
+	 * @return instance item if found, {@code null} otherwise
+	 */
+	public ItemInstance getItem(int objectId)
+	{
+		return _items.get(objectId);
+	}
+	
+	/**
+	 * Get all items spawned inside instance world.
+	 * @return collection of spawned items
+	 */
+	public Collection<ItemInstance> getItems()
+	{
+		return _items.values();
 	}
 	
 	/**
@@ -539,7 +577,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	private void removePlayers()
 	{
-		_players.forEach(this::ejectPlayer);
+		_players.values().forEach(this::ejectPlayer);
 		_players.clear();
 	}
 	
@@ -569,6 +607,15 @@ public final class Instance implements IIdentifiable, INamable
 			}
 		}
 		_npcs.clear();
+	}
+	
+	/**
+	 * Despawns Items inside the instance world.
+	 */
+	public void removeItems()
+	{
+		_items.values().stream().filter(Objects::nonNull).forEach(ItemInstance::decayMe);
+		_items.clear();
 	}
 	
 	/**
@@ -648,6 +695,7 @@ public final class Instance implements IIdentifiable, INamable
 		removePlayers();
 		removeDoors();
 		removeNpcs();
+		removeItems();
 		
 		InstanceManager.getInstance().unregister(getId());
 	}
@@ -678,7 +726,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public void broadcastPacket(IClientOutgoingPacket... packets)
 	{
-		for (PlayerInstance player : _players)
+		for (PlayerInstance player : _players.values())
 		{
 			for (IClientOutgoingPacket packet : packets)
 			{
@@ -903,6 +951,18 @@ public final class Instance implements IIdentifiable, INamable
 					npc.getSpawn().stopRespawn();
 				}
 				removeNpc(npc);
+			}
+		}
+		else if (object.isItem())
+		{
+			final ItemInstance item = (ItemInstance) object;
+			if (enter)
+			{
+				addItem(item);
+			}
+			else
+			{
+				removeItem(item);
 			}
 		}
 	}

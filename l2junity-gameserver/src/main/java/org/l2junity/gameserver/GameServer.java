@@ -132,6 +132,7 @@ import org.l2junity.gameserver.network.client.ClientNetworkManager;
 import org.l2junity.gameserver.network.loginserver.LoginServerNetworkManager;
 import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.pathfinding.PathFinding;
+import org.l2junity.gameserver.plugins.ServerPluginProvider;
 import org.l2junity.gameserver.script.faenor.FaenorScriptEngine;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.gameserver.taskmanager.TaskManager;
@@ -175,6 +176,7 @@ public class GameServer
 		// load script engines
 		printSection("Scripting Engines");
 		ScriptEngineManager.getInstance();
+		ServerPluginProvider.getInstance().onInit();
 		
 		printSection("Telnet");
 		TelnetServer.getInstance();
@@ -293,6 +295,7 @@ public class GameServer
 		AirShipManager.getInstance();
 		ShuttleData.getInstance();
 		GraciaSeedsManager.getInstance();
+		ServerPluginProvider.getInstance().onLoad();
 		
 		try
 		{
@@ -396,6 +399,8 @@ public class GameServer
 		
 		LOGGER.info("Maximum numbers of connected players: {}", Config.MAXIMUM_ONLINE_USERS);
 		LOGGER.info("Server loaded in {} seconds.", ManagementFactory.getRuntimeMXBean().getUptime() / 1000);
+		
+		ServerPluginProvider.getInstance().onStart();
 		
 		printSection("UPnP");
 		UPnPService.getInstance();

@@ -2812,7 +2812,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		{
 			_log.warn(getClass().getSimpleName() + ": called openDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
 		}
-		else if (!door.getOpen())
+		else if (!door.isOpen())
 		{
 			door.openMe();
 		}
@@ -2830,7 +2830,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		{
 			_log.warn(getClass().getSimpleName() + ": called closeDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
 		}
-		else if (door.getOpen())
+		else if (door.isOpen())
 		{
 			door.closeMe();
 		}

@@ -159,7 +159,7 @@ public class CharStatus
 		
 		if (!isDOT && !isHPConsumption)
 		{
-			getActiveChar().stopEffectsOnDamage(awake);
+			activeChar.stopEffectsOnDamage(awake);
 			if (activeChar.hasBlockActions() && (Rnd.get(10) == 0))
 			{
 				activeChar.stopStunning(true);

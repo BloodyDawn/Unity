@@ -212,7 +212,7 @@ public class L2DoorInstance extends Creature
 	/**
 	 * @return Returns the open.
 	 */
-	public boolean getOpen()
+	public boolean isOpen()
 	{
 		return _open;
 	}
@@ -379,7 +379,7 @@ public class L2DoorInstance extends Creature
 		OnEventTrigger oe = null;
 		if (getEmitter() > 0)
 		{
-			oe = new OnEventTrigger(getEmitter(), getOpen());
+			oe = new OnEventTrigger(getEmitter(), isOpen());
 		}
 		
 		for (PlayerInstance player : knownPlayers)
@@ -460,7 +460,7 @@ public class L2DoorInstance extends Creature
 				first = door;
 			}
 			
-			if (door.getOpen() != open)
+			if (door.isOpen() != open)
 			{
 				door.setOpen(open);
 				door.broadcastStatusUpdate();
@@ -606,7 +606,7 @@ public class L2DoorInstance extends Creature
 		{
 			if (getEmitter() > 0)
 			{
-				activeChar.sendPacket(new OnEventTrigger(getEmitter(), getOpen()));
+				activeChar.sendPacket(new OnEventTrigger(getEmitter(), isOpen()));
 			}
 			
 			activeChar.sendPacket(new StaticObject(this, activeChar.isGM()));
@@ -656,7 +656,7 @@ public class L2DoorInstance extends Creature
 		@Override
 		public void run()
 		{
-			if (getOpen())
+			if (isOpen())
 			{
 				closeMe();
 			}
@@ -668,7 +668,7 @@ public class L2DoorInstance extends Creature
 		@Override
 		public void run()
 		{
-			boolean open = getOpen();
+			boolean open = isOpen();
 			if (open)
 			{
 				closeMe();

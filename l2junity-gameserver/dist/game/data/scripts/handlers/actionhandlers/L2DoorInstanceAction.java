@@ -63,7 +63,7 @@ public class L2DoorInstanceAction implements IActionHandler
 				else
 				{
 					activeChar.addScript(new DoorRequestHolder(door));
-					if (!door.getOpen())
+					if (!door.isOpen())
 					{
 						activeChar.sendPacket(new ConfirmDlg(1140));
 					}
@@ -82,7 +82,7 @@ public class L2DoorInstanceAction implements IActionHandler
 				else
 				{
 					activeChar.addScript(new DoorRequestHolder((L2DoorInstance) target));
-					if (!((L2DoorInstance) target).getOpen())
+					if (!((L2DoorInstance) target).isOpen())
 					{
 						activeChar.sendPacket(new ConfirmDlg(1140));
 					}
