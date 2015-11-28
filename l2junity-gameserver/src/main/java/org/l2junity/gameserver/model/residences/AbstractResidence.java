@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -295,6 +296,14 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	{
 		final ResidenceFunction function = _functions.values().stream().filter(func -> func.getTemplate().getType() == type).findFirst().orElse(null);
 		return function != null ? function.getExpiration() : -1;
+	}
+	
+	/**
+	 * @return all avaible functions
+	 */
+	public Collection<ResidenceFunction> getFunctions()
+	{
+		return _functions.values();
 	}
 	
 	@Override
