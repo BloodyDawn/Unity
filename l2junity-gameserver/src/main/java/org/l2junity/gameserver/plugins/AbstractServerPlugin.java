@@ -152,7 +152,7 @@ public abstract class AbstractServerPlugin
 	 * @param fromVersion
 	 * @return
 	 */
-	public boolean update(double fromVersion)
+	public boolean update(int fromVersion)
 	{
 		return true;
 	}
