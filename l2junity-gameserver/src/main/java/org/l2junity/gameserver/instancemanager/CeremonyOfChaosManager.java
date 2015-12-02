@@ -88,7 +88,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	public void onPeriodEnd(String text)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables var = ?"))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var = ?"))
 		{
 			ps.setString(1, PlayerVariables.CEREMONY_OF_CHAOS_PROHIBITED_PENALTIES);
 			ps.execute();
