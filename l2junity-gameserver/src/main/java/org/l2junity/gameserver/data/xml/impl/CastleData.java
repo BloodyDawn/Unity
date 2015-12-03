@@ -53,7 +53,7 @@ public final class CastleData implements IGameXmlReader
 	{
 		_spawns.clear();
 		_siegeGuards.clear();
-		parseDatapackDirectory("data/castles", true);
+		parseDatapackDirectory("data/residences/castles", true);
 	}
 	
 	@Override

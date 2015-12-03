@@ -56,7 +56,7 @@ public final class ClanHallData implements IGameXmlReader
 	@Override
 	public void load()
 	{
-		parseDatapackDirectory("data/clanHalls", true);
+		parseDatapackDirectory("data/residences/clanHalls", true);
 		LOGGER.info("Succesfully loaded {} Clan Halls.", _clanHalls.size());
 	}
 	
