@@ -119,6 +119,7 @@ public class HtmCache
 				byte[] bytes = Files.readAllBytes(file.toPath());
 				String content = processHtml(Util.readAllLines(file, StandardCharsets.UTF_8));
 				content = content.replaceAll("(?s)<!--.*?-->", ""); // Remove html comments
+				content = content.replaceAll("\r", "").replaceAll("\n", ""); // Remove new lines
 				
 				String oldContent = _cache.put(file.toURI().getPath().substring(Config.DATAPACK_ROOT.toURI().getPath().length()), content);
 				if (oldContent == null)
