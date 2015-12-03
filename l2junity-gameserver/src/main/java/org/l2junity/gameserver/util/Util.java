@@ -587,9 +587,9 @@ public final class Util
 		return (target != null) && (obj.calculateDistance(target, true, false) <= radius);
 	}
 	
-	public static String readAllLines(File file, Charset cs) throws IOException
+	public static String readAllLines(File file, Charset cs, String newLineDelimiter) throws IOException
 	{
-		String result = "";
+		final StringBuilder sb = new StringBuilder();
 		try (final InputStream in = new FileInputStream(file);
 			final InputStreamReader reader = new InputStreamReader(in, cs);
 			final BufferedReader buffer = new BufferedReader(reader))
@@ -597,9 +597,13 @@ public final class Util
 			String line;
 			while ((line = buffer.readLine()) != null)
 			{
-				result += line + System.lineSeparator();
+				sb.append(line);
+				if (newLineDelimiter != null)
+				{
+					sb.append(newLineDelimiter);
+				}
 			}
 		}
-		return result;
+		return sb.toString();
 	}
 }

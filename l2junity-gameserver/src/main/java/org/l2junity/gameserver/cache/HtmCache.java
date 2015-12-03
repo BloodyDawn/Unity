@@ -20,7 +20,6 @@ package org.l2junity.gameserver.cache;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -116,20 +115,19 @@ public class HtmCache
 		{
 			try
 			{
-				byte[] bytes = Files.readAllBytes(file.toPath());
-				String content = processHtml(Util.readAllLines(file, StandardCharsets.UTF_8));
+				String content = processHtml(Util.readAllLines(file, StandardCharsets.UTF_8, null));
 				content = content.replaceAll("(?s)<!--.*?-->", ""); // Remove html comments
-				content = content.replaceAll("\r", "").replaceAll("\n", ""); // Remove new lines
+				// content = content.replaceAll("\r", "").replaceAll("\n", ""); // Remove new lines
 				
 				String oldContent = _cache.put(file.toURI().getPath().substring(Config.DATAPACK_ROOT.toURI().getPath().length()), content);
 				if (oldContent == null)
 				{
-					_bytesBuffLen += bytes.length;
+					_bytesBuffLen += content.length() * 2;
 					_loadedFiles++;
 				}
 				else
 				{
-					_bytesBuffLen = (_bytesBuffLen - oldContent.length()) + bytes.length;
+					_bytesBuffLen = (_bytesBuffLen - oldContent.length()) + (content.length() * 2);
 				}
 				return content;
 			}
