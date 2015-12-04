@@ -398,8 +398,8 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16130" levels="1" name="Oasis Energy">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- The Oasis has quenched your thirst, suddenly wearing you out. Atk./ Casting Spd. - 25%, and Speed - 50. -->
+		<set name="abnormalTime" val="15" />
 		<set name="icon" val="icon.oasis_feel" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -410,6 +410,13 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="650" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.75" />
+				<mul stat="mAtkSpd" val="0.75" />
+				<add stat="moveSpeed" val="-50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="16131" levels="1" name="Thirst Quench">
 		<!-- AUTO GENERATED SKILL -->

@@ -39,7 +39,7 @@ import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
  * another type of damage zone with skills
  * @author kerberos
  */
-public class EffectZone extends ZoneType
+public final class EffectZone extends ZoneType
 {
 	private int _chance;
 	private int _initialDelay;
@@ -74,60 +74,56 @@ public class EffectZone extends ZoneType
 	@Override
 	public void setParameter(String name, String value)
 	{
-		if (name.equals("chance"))
+		switch (name)
 		{
-			_chance = Integer.parseInt(value);
-		}
-		else if (name.equals("initialDelay"))
-		{
-			_initialDelay = Integer.parseInt(value);
-		}
-		else if (name.equals("reuse"))
-		{
-			_reuse = Integer.parseInt(value);
-		}
-		else if (name.equals("bypassSkillConditions"))
-		{
-			_bypassConditions = Boolean.parseBoolean(value);
-		}
-		else if (name.equals("maxDynamicSkillCount"))
-		{
-			_skills = new ConcurrentHashMap<>(Integer.parseInt(value));
-		}
-		else if (name.equals("skillIdLvl"))
-		{
-			String[] propertySplit = value.split(";");
-			_skills = new ConcurrentHashMap<>(propertySplit.length);
-			for (String skill : propertySplit)
-			{
-				String[] skillSplit = skill.split("-");
-				if (skillSplit.length != 2)
+			case "chance":
+				_chance = Integer.parseInt(value);
+				break;
+			case "initialDelay":
+				_initialDelay = Integer.parseInt(value);
+				break;
+			case "reuse":
+				_reuse = Integer.parseInt(value);
+				break;
+			case "bypassSkillConditions":
+				_bypassConditions = Boolean.parseBoolean(value);
+				break;
+			case "maxDynamicSkillCount":
+				_skills = new ConcurrentHashMap<>(Integer.parseInt(value));
+				break;
+			case "showDangerIcon":
+				_isShowDangerIcon = Boolean.parseBoolean(value);
+				break;
+			case "skillIdLvl":
+				final String[] propertySplit = value.split(";");
+				_skills = new ConcurrentHashMap<>(propertySplit.length);
+				for (String skill : propertySplit)
 				{
-					_log.warn(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skill + "\"");
-				}
-				else
-				{
-					try
+					final String[] skillSplit = skill.split("-");
+					if (skillSplit.length != 2)
 					{
-						_skills.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+						_log.warn(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skill + "\"");
 					}
-					catch (NumberFormatException nfe)
+					else
 					{
-						if (!skill.isEmpty())
+						try
 						{
-							_log.warn(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skillSplit[0] + "\"" + skillSplit[1]);
+							_skills.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+						}
+						catch (NumberFormatException nfe)
+						{
+							if (!skill.isEmpty())
+							{
+								_log.warn(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skillSplit[0] + "\"" + skillSplit[1]);
+							}
 						}
 					}
 				}
+				break;
+			default:
+			{
+				super.setParameter(name, value);
 			}
-		}
-		else if (name.equals("showDangerIcon"))
-		{
-			_isShowDangerIcon = Boolean.parseBoolean(value);
-		}
-		else
-		{
-			super.setParameter(name, value);
 		}
 	}
 	
@@ -147,6 +143,7 @@ public class EffectZone extends ZoneType
 				}
 			}
 		}
+		
 		if (character.isPlayer())
 		{
 			character.setInsideZone(ZoneId.ALTERED, true);
@@ -173,15 +170,11 @@ public class EffectZone extends ZoneType
 				}
 			}
 		}
+		
 		if (_characterList.isEmpty() && (getSettings().getTask() != null))
 		{
 			getSettings().clear();
 		}
-	}
-	
-	protected Skill getSkill(int skillId, int skillLvl)
-	{
-		return SkillData.getInstance().getSkill(skillId, skillLvl);
 	}
 	
 	public int getChance()
@@ -250,26 +243,20 @@ public class EffectZone extends ZoneType
 		{
 			if (isEnabled())
 			{
-				for (Creature temp : getCharactersInside())
+				getCharactersInside().forEach(character ->
 				{
-					if ((temp != null) && !temp.isDead())
+					if ((character != null) && !character.isDead() && (Rnd.get(100) < getChance()))
 					{
-						if (Rnd.get(100) < getChance())
+						for (Entry<Integer, Integer> e : _skills.entrySet())
 						{
-							for (Entry<Integer, Integer> e : _skills.entrySet())
+							final Skill skill = SkillData.getInstance().getSkill(e.getKey(), e.getValue());
+							if ((skill != null) && (_bypassConditions || skill.checkCondition(character, character)))
 							{
-								Skill skill = getSkill(e.getKey(), e.getValue());
-								if ((skill != null) && (_bypassConditions || skill.checkCondition(temp, temp)))
-								{
-									if (!temp.isAffectedBySkill(e.getKey()))
-									{
-										skill.applyEffects(temp, temp);
-									}
-								}
+								skill.activateSkill(character, character);
 							}
 						}
 					}
-				}
+				});
 			}
 		}
 	}
