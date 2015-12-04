@@ -18,13 +18,17 @@
  */
 package handlers.admincommandhandlers;
 
+import java.awt.Color;
+
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.client.send.ExServerPrimitive;
 
 /**
  * This class handles following admin commands: - open1 = open coloseum door 24190001 - open2 = open coloseum door 24190002 - open3 = open coloseum door 24190003 - open4 = open coloseum door 24190004 - openall = open all coloseum door - close1 = close coloseum door 24190001 - close2 = close coloseum
@@ -39,7 +43,8 @@ public class AdminDoorControl implements IAdminCommandHandler
 		"admin_open",
 		"admin_close",
 		"admin_openall",
-		"admin_closeall"
+		"admin_closeall",
+		"admin_checkNodes",
 	};
 	
 	@Override
@@ -47,7 +52,32 @@ public class AdminDoorControl implements IAdminCommandHandler
 	{
 		try
 		{
-			if (command.startsWith("admin_open "))
+			if (command.startsWith("admin_checkNodes"))
+			{
+				if (command.equals("admin_checkNodes"))
+				{
+					final ExServerPrimitive exsp = new ExServerPrimitive("DebugPoint_" + activeChar.getObjectId(), activeChar.getX(), activeChar.getY(), activeChar.getZ());
+					exsp.addPoint(Color.BLACK, 0, 0, 0);
+					activeChar.sendPacket(exsp);
+				}
+				else
+				{
+					final int objId = Integer.parseInt(command.substring(17));
+					final WorldObject target = World.getInstance().findObject(objId);
+					if ((target != null) && target.isDoor())
+					{
+						final DoorInstance door = (DoorInstance) target;
+						final ExServerPrimitive exsp = new ExServerPrimitive("DebugPoint_" + activeChar.getObjectId(), activeChar.getX(), activeChar.getY(), activeChar.getZ());
+						
+						exsp.addLine("", Color.RED, true, door.getX(0), door.getY(0), door.getZMin(), door.getX(1), door.getY(1), door.getZMin());
+						exsp.addLine("", Color.RED, true, door.getX(1), door.getY(1), door.getZMin(), door.getX(2), door.getY(2), door.getZMin());
+						exsp.addLine("", Color.RED, true, door.getX(2), door.getY(2), door.getZMax(), door.getX(3), door.getY(3), door.getZMax());
+						exsp.addLine("", Color.RED, true, door.getX(3), door.getY(3), door.getZMin(), door.getX(0), door.getY(0), door.getZMax());
+						activeChar.sendPacket(exsp);
+					}
+				}
+			}
+			else if (command.startsWith("admin_open "))
 			{
 				int doorId = Integer.parseInt(command.substring(11));
 				if (_doorTable.getDoor(doorId) != null)

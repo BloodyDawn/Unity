@@ -49,7 +49,7 @@ public class HtmlUtil
 	 */
 	public static String getHpGauge(int width, long current, long max, boolean displayAsPercentage)
 	{
-		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_HP_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_HP_Center", 17, -13);
+		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_HP_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_HP_Center", 21, -13);
 	}
 	
 	/**

@@ -487,7 +487,8 @@ public final class DoorInstance extends Creature
 		return getClass().getSimpleName() + "[" + getTemplate().getId() + "](" + getObjectId() + ")";
 	}
 	
-	public String getDoorName()
+	@Override
+	public String getName()
 	{
 		return getTemplate().getName();
 	}
