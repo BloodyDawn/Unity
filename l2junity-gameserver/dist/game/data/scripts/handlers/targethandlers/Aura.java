@@ -24,7 +24,7 @@ import java.util.List;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -47,7 +47,7 @@ public class Aura implements ITargetTypeHandler
 				// Stealth door targeting.
 				if (obj.isDoor())
 				{
-					final L2DoorInstance door = (L2DoorInstance) obj;
+					final DoorInstance door = (DoorInstance) obj;
 					if (!door.getTemplate().isStealth())
 					{
 						continue;

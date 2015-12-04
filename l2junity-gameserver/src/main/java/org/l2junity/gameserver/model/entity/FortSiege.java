@@ -47,7 +47,7 @@ import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FortCommanderInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -658,7 +658,7 @@ public class FortSiege implements Siegable
 						_siegeRestore.cancel(true);
 					}
 					// open doors in main building
-					for (L2DoorInstance door : getFort().getDoors())
+					for (DoorInstance door : getFort().getDoors())
 					{
 						if (door.getIsShowHp())
 						{

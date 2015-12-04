@@ -31,7 +31,7 @@ import org.l2junity.gameserver.enums.ClanHallType;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.slf4j.Logger;
@@ -63,7 +63,7 @@ public final class ClanHallData implements IGameXmlReader
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
-		final List<L2DoorInstance> doors = new ArrayList<>();
+		final List<DoorInstance> doors = new ArrayList<>();
 		final List<Integer> npcs = new ArrayList<>();
 		final List<ClanHallTeleportHolder> teleports = new ArrayList<>();
 		final StatsSet params = new StatsSet();
@@ -115,7 +115,7 @@ public final class ClanHallData implements IGameXmlReader
 										{
 											final NamedNodeMap np = npcNode.getAttributes();
 											final int doorId = parseInteger(np, "id");
-											final L2DoorInstance door = DoorData.getInstance().getDoor(doorId);
+											final DoorInstance door = DoorData.getInstance().getDoor(doorId);
 											if (door != null)
 											{
 												doors.add(door);
@@ -187,7 +187,7 @@ public final class ClanHallData implements IGameXmlReader
 	
 	public ClanHall getClanHallByDoorId(int doorId)
 	{
-		final L2DoorInstance door = DoorData.getInstance().getDoor(doorId);
+		final DoorInstance door = DoorData.getInstance().getDoor(doorId);
 		return _clanHalls.values().stream().filter(ch -> ch.getDoors().contains(door)).findFirst().orElse(null);
 	}
 	

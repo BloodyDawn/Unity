@@ -27,6 +27,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.DoorAI;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
+import org.l2junity.gameserver.enums.DoorOpenType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.instancemanager.CastleManager;
@@ -35,10 +36,9 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.stat.DoorStat;
 import org.l2junity.gameserver.model.actor.status.DoorStatus;
-import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
+import org.l2junity.gameserver.model.actor.templates.DoorTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -51,24 +51,18 @@ import org.l2junity.gameserver.network.client.send.StaticObject;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
-public class L2DoorInstance extends Creature
+public final class DoorInstance extends Creature
 {
-	public static final byte OPEN_BY_CLICK = 1;
-	public static final byte OPEN_BY_TIME = 2;
-	public static final byte OPEN_BY_ITEM = 4;
-	public static final byte OPEN_BY_SKILL = 8;
-	public static final byte OPEN_BY_CYCLE = 16;
-	
 	private boolean _open = false;
 	private boolean _isAttackableDoor = false;
 	private int _meshindex = 1;
 	// used for autoclose on open
 	private Future<?> _autoCloseTask;
 	
-	public L2DoorInstance(L2DoorTemplate template)
+	public DoorInstance(DoorTemplate template)
 	{
 		super(template);
-		setInstanceType(InstanceType.L2DoorInstance);
+		setInstanceType(InstanceType.DoorInstance);
 		setIsInvul(false);
 		setLethalable(false);
 		_open = template.isOpenByDefault();
@@ -123,10 +117,9 @@ public class L2DoorInstance extends Creature
 	}
 	
 	@Override
-	public L2DoorTemplate getTemplate()
+	public DoorTemplate getTemplate()
 	{
-		return (L2DoorTemplate) super.getTemplate();
-		
+		return (DoorTemplate) super.getTemplate();
 	}
 	
 	@Override
@@ -158,7 +151,7 @@ public class L2DoorInstance extends Creature
 	 */
 	public final boolean isOpenableBySkill()
 	{
-		return (getTemplate().getOpenType() & OPEN_BY_SKILL) == OPEN_BY_SKILL;
+		return (getTemplate().getOpenType()) == DoorOpenType.BY_SKILL;
 	}
 	
 	/**
@@ -166,7 +159,7 @@ public class L2DoorInstance extends Creature
 	 */
 	public final boolean isOpenableByItem()
 	{
-		return (getTemplate().getOpenType() & OPEN_BY_ITEM) == OPEN_BY_ITEM;
+		return (getTemplate().getOpenType()) == DoorOpenType.BY_ITEM;
 	}
 	
 	/**
@@ -174,7 +167,7 @@ public class L2DoorInstance extends Creature
 	 */
 	public final boolean isOpenableByClick()
 	{
-		return (getTemplate().getOpenType() & OPEN_BY_CLICK) == OPEN_BY_CLICK;
+		return (getTemplate().getOpenType()) == DoorOpenType.BY_CLICK;
 	}
 	
 	/**
@@ -182,7 +175,7 @@ public class L2DoorInstance extends Creature
 	 */
 	public final boolean isOpenableByTime()
 	{
-		return (getTemplate().getOpenType() & OPEN_BY_TIME) == OPEN_BY_TIME;
+		return (getTemplate().getOpenType()) == DoorOpenType.BY_TIME;
 	}
 	
 	/**
@@ -190,7 +183,7 @@ public class L2DoorInstance extends Creature
 	 */
 	public final boolean isOpenableByCycle()
 	{
-		return (getTemplate().getOpenType() & OPEN_BY_CYCLE) == OPEN_BY_CYCLE;
+		return (getTemplate().getOpenType()) == DoorOpenType.BY_CYCLE;
 	}
 	
 	@Override
@@ -225,7 +218,7 @@ public class L2DoorInstance extends Creature
 		_open = open;
 		if (getChildId() > 0)
 		{
-			L2DoorInstance sibling = getSiblingDoor(getChildId());
+			final DoorInstance sibling = getSiblingDoor(getChildId());
 			if (sibling != null)
 			{
 				sibling.notifyChildEvent(open);
@@ -282,7 +275,7 @@ public class L2DoorInstance extends Creature
 		{
 			return true;
 		}
-		if ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getZone().isActive() && getIsShowHp())
+		else if ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getZone().isActive() && getIsShowHp())
 		{
 			return true;
 		}
@@ -293,25 +286,24 @@ public class L2DoorInstance extends Creature
 	public boolean isAutoAttackable(Creature attacker)
 	{
 		// Doors can`t be attacked by NPCs
-		if (!(attacker instanceof Playable))
+		if (!attacker.isPlayable())
 		{
 			return false;
 		}
-		
-		if (getIsAttackableDoor())
+		else if (getIsAttackableDoor())
 		{
 			return true;
 		}
-		if (!getIsShowHp())
+		else if (!getIsShowHp())
 		{
 			return false;
 		}
 		
-		PlayerInstance actingPlayer = attacker.getActingPlayer();
+		final PlayerInstance actingPlayer = attacker.getActingPlayer();
 		
 		// Attackable only during siege by everyone (not owner)
-		boolean isCastle = ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getZone().isActive());
-		boolean isFort = ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getZone().isActive());
+		final boolean isCastle = ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getZone().isActive());
+		final boolean isFort = ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getZone().isActive());
 		
 		if (isFort)
 		{
@@ -367,15 +359,15 @@ public class L2DoorInstance extends Creature
 	@Override
 	public void broadcastStatusUpdate()
 	{
-		Collection<PlayerInstance> knownPlayers = World.getInstance().getVisibleObjects(this, PlayerInstance.class);
+		final Collection<PlayerInstance> knownPlayers = World.getInstance().getVisibleObjects(this, PlayerInstance.class);
 		if ((knownPlayers == null) || knownPlayers.isEmpty())
 		{
 			return;
 		}
 		
-		StaticObject su = new StaticObject(this, false);
-		StaticObject targetableSu = new StaticObject(this, true);
-		DoorStatusUpdate dsu = new DoorStatusUpdate(this);
+		final StaticObject su = new StaticObject(this, false);
+		final StaticObject targetableSu = new StaticObject(this, true);
+		final DoorStatusUpdate dsu = new DoorStatusUpdate(this);
 		OnEventTrigger oe = null;
 		if (getEmitter() > 0)
 		{
@@ -433,7 +425,7 @@ public class L2DoorInstance extends Creature
 	public final void closeMe()
 	{
 		// remove close task
-		Future<?> oldTask = _autoCloseTask;
+		final Future<?> oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
 			_autoCloseTask = null;
@@ -450,11 +442,11 @@ public class L2DoorInstance extends Creature
 	
 	private void manageGroupOpen(boolean open, String groupName)
 	{
-		Set<Integer> set = DoorData.getDoorsByGroup(groupName);
-		L2DoorInstance first = null;
+		final Set<Integer> set = DoorData.getDoorsByGroup(groupName);
+		DoorInstance first = null;
 		for (Integer id : set)
 		{
-			L2DoorInstance door = getSiblingDoor(id);
+			final DoorInstance door = getSiblingDoor(id);
 			if (first == null)
 			{
 				first = door;
@@ -478,13 +470,8 @@ public class L2DoorInstance extends Creature
 	 */
 	private void notifyChildEvent(boolean open)
 	{
-		byte openThis = open ? getTemplate().getMasterDoorOpen() : getTemplate().getMasterDoorClose();
-		
-		if (openThis == 0)
-		{
-			return;
-		}
-		else if (openThis == 1)
+		final byte openThis = open ? getTemplate().getMasterDoorOpen() : getTemplate().getMasterDoorClose();
+		if (openThis == 1)
 		{
 			openMe();
 		}
@@ -571,7 +558,6 @@ public class L2DoorInstance extends Creature
 				return;
 			}
 		}
-		
 		super.reduceCurrentHp(damage, attacker, awake, isDOT, skill);
 	}
 	
@@ -589,8 +575,8 @@ public class L2DoorInstance extends Creature
 			return false;
 		}
 		
-		boolean isFort = ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getSiege().isInProgress());
-		boolean isCastle = ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress());
+		final boolean isFort = ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getSiege().isInProgress());
+		final boolean isCastle = ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress());
 		
 		if (isFort || isCastle)
 		{
@@ -608,7 +594,6 @@ public class L2DoorInstance extends Creature
 			{
 				activeChar.sendPacket(new OnEventTrigger(getEmitter(), isOpen()));
 			}
-			
 			activeChar.sendPacket(new StaticObject(this, activeChar.isGM()));
 		}
 	}
@@ -630,7 +615,7 @@ public class L2DoorInstance extends Creature
 	 * @param doorId
 	 * @return
 	 */
-	private L2DoorInstance getSiblingDoor(int doorId)
+	private DoorInstance getSiblingDoor(int doorId)
 	{
 		final Instance inst = getInstanceWorld();
 		return (inst != null) ? inst.getDoor(doorId) : DoorData.getInstance().getDoor(doorId);
@@ -642,7 +627,8 @@ public class L2DoorInstance extends Creature
 		{
 			return;
 		}
-		Future<?> oldTask = _autoCloseTask;
+		
+		final Future<?> oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
 			_autoCloseTask = null;

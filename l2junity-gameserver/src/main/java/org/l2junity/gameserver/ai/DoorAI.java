@@ -23,8 +23,8 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -33,12 +33,11 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class DoorAI extends CharacterAI
 {
-	public DoorAI(L2DoorInstance door)
+	public DoorAI(DoorInstance door)
 	{
 		super(door);
 	}
 	
-	// rather stupid AI... well, it's for doors :D
 	@Override
 	protected void onIntentionIdle()
 	{
@@ -92,8 +91,7 @@ public class DoorAI extends CharacterAI
 	@Override
 	protected void onEvtAttacked(Creature attacker)
 	{
-		L2DoorInstance me = (L2DoorInstance) _actor;
-		ThreadPoolManager.getInstance().executeGeneral(new onEventAttackedDoorTask(me, attacker));
+		ThreadPoolManager.getInstance().executeGeneral(new onEventAttackedDoorTask((DoorInstance) _actor, attacker));
 	}
 	
 	@Override
@@ -148,10 +146,10 @@ public class DoorAI extends CharacterAI
 	
 	private class onEventAttackedDoorTask implements Runnable
 	{
-		private final L2DoorInstance _door;
+		private final DoorInstance _door;
 		private final Creature _attacker;
 		
-		public onEventAttackedDoorTask(L2DoorInstance door, Creature attacker)
+		public onEventAttackedDoorTask(DoorInstance door, Creature attacker)
 		{
 			_door = door;
 			_attacker = attacker;

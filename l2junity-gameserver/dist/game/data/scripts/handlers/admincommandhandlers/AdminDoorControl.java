@@ -22,7 +22,7 @@ import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 
@@ -85,13 +85,13 @@ public class AdminDoorControl implements IAdminCommandHandler
 			}
 			if (command.equals("admin_closeall"))
 			{
-				for (L2DoorInstance door : _doorTable.getDoors())
+				for (DoorInstance door : _doorTable.getDoors())
 				{
 					door.closeMe();
 				}
 				for (Castle castle : CastleManager.getInstance().getCastles())
 				{
-					for (L2DoorInstance door : castle.getDoors())
+					for (DoorInstance door : castle.getDoors())
 					{
 						door.closeMe();
 					}
@@ -99,13 +99,13 @@ public class AdminDoorControl implements IAdminCommandHandler
 			}
 			if (command.equals("admin_openall"))
 			{
-				for (L2DoorInstance door : _doorTable.getDoors())
+				for (DoorInstance door : _doorTable.getDoors())
 				{
 					door.openMe();
 				}
 				for (Castle castle : CastleManager.getInstance().getCastles())
 				{
-					for (L2DoorInstance door : castle.getDoors())
+					for (DoorInstance door : castle.getDoors())
 					{
 						door.openMe();
 					}
@@ -114,9 +114,9 @@ public class AdminDoorControl implements IAdminCommandHandler
 			if (command.equals("admin_open"))
 			{
 				WorldObject target = activeChar.getTarget();
-				if (target instanceof L2DoorInstance)
+				if (target instanceof DoorInstance)
 				{
-					((L2DoorInstance) target).openMe();
+					((DoorInstance) target).openMe();
 				}
 				else
 				{
@@ -127,9 +127,9 @@ public class AdminDoorControl implements IAdminCommandHandler
 			if (command.equals("admin_close"))
 			{
 				WorldObject target = activeChar.getTarget();
-				if (target instanceof L2DoorInstance)
+				if (target instanceof DoorInstance)
 				{
-					((L2DoorInstance) target).closeMe();
+					((DoorInstance) target).closeMe();
 				}
 				else
 				{

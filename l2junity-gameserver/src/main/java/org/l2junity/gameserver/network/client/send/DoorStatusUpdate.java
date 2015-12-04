@@ -18,15 +18,15 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
 public final class DoorStatusUpdate implements IClientOutgoingPacket
 {
-	private final L2DoorInstance _door;
+	private final DoorInstance _door;
 	
-	public DoorStatusUpdate(L2DoorInstance door)
+	public DoorStatusUpdate(DoorInstance door)
 	{
 		_door = door;
 	}

@@ -18,9 +18,10 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.enums.DoorOpenType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -42,7 +43,7 @@ public final class DetectHiddenObjects extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -51,11 +52,11 @@ public final class DetectHiddenObjects extends AbstractEffect
 			return;
 		}
 		
-		final L2DoorInstance door = (L2DoorInstance) effected;
+		final DoorInstance door = (DoorInstance) effected;
 		if (door.getTemplate().isStealth())
 		{
 			door.setMeshIndex(1);
-			door.setTargetable(door.getTemplate().getOpenType() != 0);
+			door.setTargetable(door.getTemplate().getOpenType() != DoorOpenType.NONE);
 			door.broadcastStatusUpdate();
 		}
 	}

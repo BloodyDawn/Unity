@@ -39,7 +39,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -312,7 +312,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	public void onInstanceCreated(Instance instance)
 	{
 		spawnState(instance);
-		for (L2DoorInstance door : instance.getDoors())
+		for (DoorInstance door : instance.getDoors())
 		{
 			if (CommonUtil.contains(ATTACKABLE_DOORS, door.getId()))
 			{
@@ -538,7 +538,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 				}
 				case "DoorCheck":
 				{
-					final L2DoorInstance tmp = world.getDoor(FORTRESS_DOOR);
+					final DoorInstance tmp = world.getDoor(FORTRESS_DOOR);
 					if (tmp.getCurrentHp() < tmp.getMaxHp())
 					{
 						world.setParameter("deviceCount", 0);

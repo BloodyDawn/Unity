@@ -48,7 +48,7 @@ import org.l2junity.gameserver.model.TowerSpawn;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.CastleSpawnHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -71,7 +71,7 @@ public final class Castle extends AbstractResidence
 {
 	protected static final Logger _log = LoggerFactory.getLogger(Castle.class);
 	
-	private final List<L2DoorInstance> _doors = new ArrayList<>();
+	private final List<DoorInstance> _doors = new ArrayList<>();
 	private final List<Npc> _sideNpcs = new ArrayList<>();
 	private int _ownerId = 0;
 	private Siege _siege = null;
@@ -470,7 +470,7 @@ public final class Castle extends AbstractResidence
 			return;
 		}
 		
-		final L2DoorInstance door = getDoor(doorId);
+		final DoorInstance door = getDoor(doorId);
 		if (door != null)
 		{
 			if (open)
@@ -491,7 +491,7 @@ public final class Castle extends AbstractResidence
 			return;
 		}
 		
-		final L2DoorInstance door = getDoor(doorName);
+		final DoorInstance door = getDoor(doorName);
 		if (door != null)
 		{
 			if (open)
@@ -630,7 +630,7 @@ public final class Castle extends AbstractResidence
 	 */
 	public void spawnDoor(boolean isDoorWeak)
 	{
-		for (L2DoorInstance door : _doors)
+		for (DoorInstance door : _doors)
 		{
 			if (door.isDead())
 			{
@@ -784,7 +784,7 @@ public final class Castle extends AbstractResidence
 	// This method loads castle door data from database
 	private void loadDoor()
 	{
-		for (L2DoorInstance door : DoorData.getInstance().getDoors())
+		for (DoorInstance door : DoorData.getInstance().getDoors())
 		{
 			if ((door.getCastle() != null) && (door.getCastle().getResidenceId() == getResidenceId()))
 			{
@@ -816,7 +816,7 @@ public final class Castle extends AbstractResidence
 	
 	private void removeDoorUpgrade()
 	{
-		for (L2DoorInstance door : _doors)
+		for (DoorInstance door : _doors)
 		{
 			door.getStat().setUpgradeHpRatio(1);
 			door.setCurrentHp(door.getCurrentHp());
@@ -836,7 +836,7 @@ public final class Castle extends AbstractResidence
 	
 	public void setDoorUpgrade(int doorId, int ratio, boolean save)
 	{
-		final L2DoorInstance door = (getDoors().isEmpty()) ? DoorData.getInstance().getDoor(doorId) : getDoor(doorId);
+		final DoorInstance door = (getDoors().isEmpty()) ? DoorData.getInstance().getDoor(doorId) : getDoor(doorId);
 		if (door == null)
 		{
 			return;
@@ -904,17 +904,17 @@ public final class Castle extends AbstractResidence
 		}
 	}
 	
-	public final L2DoorInstance getDoor(int doorId)
+	public final DoorInstance getDoor(int doorId)
 	{
 		return getDoors().stream().filter(d -> d.getId() == doorId).findFirst().orElse(null);
 	}
 	
-	public final L2DoorInstance getDoor(String doorName)
+	public final DoorInstance getDoor(String doorName)
 	{
 		return getDoors().stream().filter(d -> d.getTemplate().getName().equals(doorName)).findFirst().orElse(null);
 	}
 	
-	public final List<L2DoorInstance> getDoors()
+	public final List<DoorInstance> getDoors()
 	{
 		return _doors;
 	}

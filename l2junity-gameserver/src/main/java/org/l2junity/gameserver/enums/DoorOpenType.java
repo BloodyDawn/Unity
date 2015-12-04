@@ -16,24 +16,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.holders;
-
-import org.l2junity.gameserver.model.actor.instance.DoorInstance;
+package org.l2junity.gameserver.enums;
 
 /**
- * @author UnAfraid
+ * @author St3eT
  */
-public class DoorRequestHolder
+public enum DoorOpenType
 {
-	private final DoorInstance _target;
-	
-	public DoorRequestHolder(DoorInstance door)
-	{
-		_target = door;
-	}
-	
-	public DoorInstance getDoor()
-	{
-		return _target;
-	}
+	NONE,
+	BY_CLICK,
+	BY_TIME,
+	BY_ITEM,
+	BY_SKILL,
+	BY_CYCLE;
 }

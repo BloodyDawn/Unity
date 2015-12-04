@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
@@ -44,7 +44,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class OlympiadStadiumZone extends L2ZoneRespawn
 {
-	private final List<L2DoorInstance> _doors = new ArrayList<>(2);
+	private final List<DoorInstance> _doors = new ArrayList<>(2);
 	private final List<L2Spawn> _buffers = new ArrayList<>(2);
 	private final List<Location> _spectatorLocations = new ArrayList<>(1);
 	private int _instanceTemplate = 0;
@@ -199,7 +199,7 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 		}
 	}
 	
-	public List<L2DoorInstance> getDoors()
+	public List<DoorInstance> getDoors()
 	{
 		return _doors;
 	}

@@ -43,7 +43,7 @@ import org.l2junity.gameserver.instancemanager.tasks.FourSepulchersChangeEntryTi
 import org.l2junity.gameserver.instancemanager.tasks.FourSepulchersChangeWarmUpTimeTask;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SepulcherMonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SepulcherNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -1392,7 +1392,7 @@ public final class FourSepulchersManager
 		{
 			try
 			{
-				L2DoorInstance door = DoorData.getInstance().getDoor(doorId);
+				DoorInstance door = DoorData.getInstance().getDoor(doorId);
 				if (door != null)
 				{
 					door.closeMe();

@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.shuttle;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,8 +36,8 @@ public class L2ShuttleEngine implements Runnable
 	
 	private final L2ShuttleInstance _shuttle;
 	private int _cycle = 0;
-	private final L2DoorInstance _door1;
-	private final L2DoorInstance _door2;
+	private final DoorInstance _door1;
+	private final DoorInstance _door2;
 	
 	public L2ShuttleEngine(L2ShuttleData data, L2ShuttleInstance shuttle)
 	{

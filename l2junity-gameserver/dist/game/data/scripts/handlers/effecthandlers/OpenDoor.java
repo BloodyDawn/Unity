@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -59,7 +59,7 @@ public final class OpenDoor extends AbstractEffect
 			return;
 		}
 		
-		final L2DoorInstance door = (L2DoorInstance) effected;
+		final DoorInstance door = (DoorInstance) effected;
 		if ((!door.isOpenableBySkill() && !_isItem) || (door.getFort() != null))
 		{
 			effector.sendPacket(SystemMessageId.THIS_DOOR_CANNOT_BE_UNLOCKED);

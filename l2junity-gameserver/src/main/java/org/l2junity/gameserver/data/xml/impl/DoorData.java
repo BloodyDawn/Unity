@@ -30,8 +30,8 @@ import java.util.Set;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
+import org.l2junity.gameserver.model.actor.templates.DoorTemplate;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.slf4j.Logger;
@@ -41,17 +41,18 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 /**
- * Loads doors.
+ * This class loads and hold info about doors.
  * @author JIV, GodKratos, UnAfraid
  */
-public class DoorData implements IGameXmlReader
+public final class DoorData implements IGameXmlReader
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(DoorData.class);
-	
+	// Info holders
 	private static final Map<String, Set<Integer>> _groups = new HashMap<>();
-	private final Map<Integer, L2DoorInstance> _doors = new HashMap<>();
-	private final Map<Integer, StatsSet> _templates = new HashMap<>();
-	private final Map<Integer, List<L2DoorInstance>> _regions = new HashMap<>();
+	private final Map<Integer, DoorInstance> _doors = new HashMap<>();
+	private final Map<Integer, DoorTemplate> _templates = new HashMap<>();
+	private final Map<Integer, List<DoorInstance>> _regions = new HashMap<>();
+	// Logger
+	private static final Logger LOGGER = LoggerFactory.getLogger(DoorData.class);
 	
 	protected DoorData()
 	{
@@ -64,30 +65,61 @@ public class DoorData implements IGameXmlReader
 		_doors.clear();
 		_groups.clear();
 		_regions.clear();
-		parseDatapackFile("data/doors.xml");
+		parseDatapackFile("data/DoorData.xml");
 	}
 	
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
-		for (Node a = doc.getFirstChild(); a != null; a = a.getNextSibling())
+		for (Node listNode = doc.getFirstChild(); listNode != null; listNode = listNode.getNextSibling())
 		{
-			if ("list".equalsIgnoreCase(a.getNodeName()))
+			if ("list".equals(listNode.getNodeName()))
 			{
-				for (Node b = a.getFirstChild(); b != null; b = b.getNextSibling())
+				for (Node doorNode = listNode.getFirstChild(); doorNode != null; doorNode = doorNode.getNextSibling())
 				{
-					if ("door".equalsIgnoreCase(b.getNodeName()))
+					if ("door".equals(doorNode.getNodeName()))
 					{
-						final NamedNodeMap attrs = b.getAttributes();
-						final StatsSet set = new StatsSet();
-						set.set("baseHpMax", 1); // Avoid doors without HP value created dead due to default value 0 in L2CharTemplate
+						final StatsSet params = new StatsSet();
+						params.set("baseHpMax", 1); // Avoid doors without HP value created dead due to default value 0 in L2CharTemplate
+						NamedNodeMap attrs = doorNode.getAttributes();
 						for (int i = 0; i < attrs.getLength(); i++)
 						{
 							final Node att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
+							params.set(att.getNodeName(), att.getNodeValue());
 						}
-						makeDoor(set);
-						_templates.put(set.getInt("id"), set);
+						
+						for (Node doorNode2 = doorNode.getFirstChild(); doorNode2 != null; doorNode2 = doorNode2.getNextSibling())
+						{
+							attrs = doorNode2.getAttributes();
+							if (doorNode2.getNodeName().equals("nodes"))
+							{
+								params.set("nodeZ", parseInteger(attrs, "nodeZ"));
+								int count = 0;
+								
+								for (Node nodes = doorNode2.getFirstChild(); nodes != null; nodes = nodes.getNextSibling())
+								{
+									final NamedNodeMap np = nodes.getAttributes();
+									if ("node".equals(nodes.getNodeName()))
+									{
+										params.set("nodeX_" + count, parseInteger(np, "x"));
+										params.set("nodeY_" + count, parseInteger(np, "y"));
+										count++;
+									}
+								}
+							}
+							else
+							{
+								if (attrs != null)
+								{
+									for (int i = 0; i < attrs.getLength(); i++)
+									{
+										final Node att = attrs.item(i);
+										params.set(att.getNodeName(), att.getNodeValue());
+									}
+								}
+							}
+						}
+						makeDoor(params);
 					}
 				}
 			}
@@ -96,57 +128,52 @@ public class DoorData implements IGameXmlReader
 		LOGGER.info("Loaded {} Door Templates for {} regions.", _doors.size(), _regions.size());
 	}
 	
-	public void insertCollisionData(StatsSet set)
+	/**
+	 * @param set
+	 */
+	private void makeDoor(StatsSet set)
 	{
+		// Insert Collision data
 		int posX, posY, nodeX, nodeY, height;
-		height = set.getInt("height");
-		String[] pos = set.getString("node1").split(",");
-		nodeX = Integer.parseInt(pos[0]);
-		nodeY = Integer.parseInt(pos[1]);
-		pos = set.getString("node2").split(",");
-		posX = Integer.parseInt(pos[0]);
-		posY = Integer.parseInt(pos[1]);
+		height = set.getInt("height", 150);
+		nodeX = set.getInt("nodeX_0");
+		nodeY = set.getInt("nodeY_0");
+		posX = set.getInt("nodeX_1");
+		posY = set.getInt("nodeX_1");
 		int collisionRadius; // (max) radius for movement checks
 		collisionRadius = Math.min(Math.abs(nodeX - posX), Math.abs(nodeY - posY));
 		if (collisionRadius < 20)
 		{
 			collisionRadius = 20;
 		}
-		
 		set.set("collision_radius", collisionRadius);
 		set.set("collision_height", height);
-	}
-	
-	/**
-	 * @param set
-	 */
-	private void makeDoor(StatsSet set)
-	{
-		insertCollisionData(set);
-		L2DoorTemplate template = new L2DoorTemplate(set);
-		L2DoorInstance door = new L2DoorInstance(template);
+		// Create door template + door instance
+		final DoorTemplate template = new DoorTemplate(set);
+		final DoorInstance door = new DoorInstance(template);
 		door.setCurrentHp(door.getMaxHp());
 		door.spawnMe(template.getX(), template.getY(), template.getZ());
+		_templates.put(door.getId(), template);
 		putDoor(door, MapRegionManager.getInstance().getMapRegionLocId(door));
 	}
 	
-	public StatsSet getDoorTemplate(int doorId)
+	public DoorTemplate getDoorTemplate(int doorId)
 	{
 		return _templates.get(doorId);
 	}
 	
-	public L2DoorInstance getDoor(int doorId)
+	public DoorInstance getDoor(int doorId)
 	{
 		return _doors.get(doorId);
 	}
 	
-	public void putDoor(L2DoorInstance door, int region)
+	public void putDoor(DoorInstance door, int region)
 	{
 		_doors.put(door.getId(), door);
 		
 		if (!_regions.containsKey(region))
 		{
-			_regions.put(region, new ArrayList<L2DoorInstance>());
+			_regions.put(region, new ArrayList<DoorInstance>());
 		}
 		_regions.get(region).add(door);
 	}
@@ -167,7 +194,7 @@ public class DoorData implements IGameXmlReader
 		return _groups.get(groupName);
 	}
 	
-	public Collection<L2DoorInstance> getDoors()
+	public Collection<DoorInstance> getDoors()
 	{
 		return _doors.values();
 	}
@@ -196,13 +223,13 @@ public class DoorData implements IGameXmlReader
 	 */
 	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, Instance instance, boolean doubleFaceCheck)
 	{
-		final Collection<L2DoorInstance> allDoors = (instance != null) ? instance.getDoors() : _regions.get(MapRegionManager.getInstance().getMapRegionLocId(x, y));
+		final Collection<DoorInstance> allDoors = (instance != null) ? instance.getDoors() : _regions.get(MapRegionManager.getInstance().getMapRegionLocId(x, y));
 		if (allDoors == null)
 		{
 			return false;
 		}
 		
-		for (L2DoorInstance doorInst : allDoors)
+		for (DoorInstance doorInst : allDoors)
 		{
 			// check dead and open
 			if (doorInst.isDead() || doorInst.isOpen() || !doorInst.checkCollision() || (doorInst.getX(0) == 0))

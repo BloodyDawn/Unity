@@ -50,9 +50,9 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
+import org.l2junity.gameserver.model.actor.templates.DoorTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
@@ -85,7 +85,7 @@ public final class Instance implements IIdentifiable, INamable
 	private final Set<Integer> _allowed = ConcurrentHashMap.newKeySet(); // ObjectId of players which can enter to instance
 	private final Set<PlayerInstance> _players = ConcurrentHashMap.newKeySet(); // Players inside instance
 	private final Set<Npc> _npcs = ConcurrentHashMap.newKeySet(); // Spawned NPCs inside instance
-	private final Map<Integer, L2DoorInstance> _doors = new HashMap<>(); // Spawned doors inside instance
+	private final Map<Integer, DoorInstance> _doors = new HashMap<>(); // Spawned doors inside instance
 	private final StatsSet _parameters = new StatsSet();
 	// Timers
 	private final Map<Integer, ScheduledFuture<?>> _ejectDeadTasks = new ConcurrentHashMap<>();
@@ -345,15 +345,15 @@ public final class Instance implements IIdentifiable, INamable
 		{
 			// Load door template
 			final int doorId = entry.getKey();
-			final StatsSet templ = DoorData.getInstance().getDoorTemplate(doorId);
-			if (templ == null)
+			final DoorTemplate template = DoorData.getInstance().getDoorTemplate(doorId);
+			if (template == null)
 			{
 				LOGGER.warn("Cannot find template for doors {}, instance {} ({})", doorId, getName(), getTemplateId());
 				continue;
 			}
 			
 			// Create new door instance
-			final L2DoorInstance door = new L2DoorInstance(new L2DoorTemplate(templ));
+			final DoorInstance door = new DoorInstance(template);
 			door.setInstance(this);
 			door.setCurrentHp(door.getMaxHp());
 			door.spawnMe(door.getTemplate().getX(), door.getTemplate().getY(), door.getTemplate().getZ());
@@ -379,7 +379,7 @@ public final class Instance implements IIdentifiable, INamable
 	 * Get all doors spawned inside instance world.
 	 * @return collection of spawned doors
 	 */
-	public Collection<L2DoorInstance> getDoors()
+	public Collection<DoorInstance> getDoors()
 	{
 		return _doors.values();
 	}
@@ -389,7 +389,7 @@ public final class Instance implements IIdentifiable, INamable
 	 * @param id template ID of door
 	 * @return instance of door if found, otherwise {@code null}
 	 */
-	public L2DoorInstance getDoor(int id)
+	public DoorInstance getDoor(int id)
 	{
 		return _doors.get(id);
 	}
@@ -401,7 +401,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public void openCloseDoor(int id, boolean open)
 	{
-		final L2DoorInstance door = _doors.get(id);
+		final DoorInstance door = _doors.get(id);
 		if (door != null)
 		{
 			if (open)
@@ -548,7 +548,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	private void removeDoors()
 	{
-		_doors.values().stream().filter(Objects::nonNull).forEach(L2DoorInstance::decayMe);
+		_doors.values().stream().filter(Objects::nonNull).forEach(DoorInstance::decayMe);
 		_doors.clear();
 	}
 	

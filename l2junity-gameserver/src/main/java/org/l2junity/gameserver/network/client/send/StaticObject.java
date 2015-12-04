@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
@@ -55,7 +55,7 @@ public class StaticObject implements IClientOutgoingPacket
 		_damageGrade = 0;
 	}
 	
-	public StaticObject(L2DoorInstance door, boolean targetable)
+	public StaticObject(DoorInstance door, boolean targetable)
 	{
 		_staticObjectId = door.getId();
 		_objectId = door.getObjectId();

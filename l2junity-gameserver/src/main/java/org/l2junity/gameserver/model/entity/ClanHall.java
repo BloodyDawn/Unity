@@ -40,7 +40,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.residences.AbstractResidence;
@@ -62,7 +62,7 @@ public final class ClanHall extends AbstractResidence
 	private final int _lease;
 	private final int _deposit;
 	private final List<Integer> _npcs;
-	private final List<L2DoorInstance> _doors;
+	private final List<DoorInstance> _doors;
 	private final List<ClanHallTeleportHolder> _teleports;
 	private final Location _ownerLocation;
 	private final Location _banishLocation;
@@ -87,7 +87,7 @@ public final class ClanHall extends AbstractResidence
 		_lease = params.getInt("lease");
 		_deposit = params.getInt("deposit");
 		_npcs = params.getList("npcList", Integer.class);
-		_doors = params.getList("doorList", L2DoorInstance.class);
+		_doors = params.getList("doorList", DoorInstance.class);
 		_teleports = params.getList("teleportList", ClanHallTeleportHolder.class);
 		_ownerLocation = params.getLocation("owner_loc");
 		_banishLocation = params.getLocation("banish_loc");
@@ -178,7 +178,7 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Open or close all {@link L2DoorInstance} related to this {@link ClanHall}.
+	 * Open or close all {@link DoorInstance} related to this {@link ClanHall}.
 	 * @param open {@code true} means open door, {@code false} means close door
 	 */
 	public void openCloseDoors(boolean open)
@@ -196,10 +196,10 @@ public final class ClanHall extends AbstractResidence
 	}
 	
 	/**
-	 * Gets all {@link L2DoorInstance} related to this {@link ClanHall}.
-	 * @return all {@link L2DoorInstance} related to this {@link ClanHall}
+	 * Gets all {@link DoorInstance} related to this {@link ClanHall}.
+	 * @return all {@link DoorInstance} related to this {@link ClanHall}
 	 */
-	public List<L2DoorInstance> getDoors()
+	public List<DoorInstance> getDoors()
 	{
 		return _doors;
 	}

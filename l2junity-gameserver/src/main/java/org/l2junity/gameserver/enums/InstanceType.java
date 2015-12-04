@@ -32,7 +32,7 @@ public enum InstanceType
 	L2MerchantInstance(L2NpcInstance),
 	L2WarehouseInstance(L2NpcInstance),
 	L2StaticObjectInstance(L2Character),
-	L2DoorInstance(L2Character),
+	DoorInstance(L2Character),
 	L2TerrainObjectInstance(L2Npc),
 	L2EffectPointInstance(L2Npc),
 	CommissionManagerInstance(L2Npc),

@@ -49,7 +49,7 @@ import handlers.actionhandlers.L2PetInstanceAction;
 import handlers.actionhandlers.L2StaticObjectInstanceAction;
 import handlers.actionhandlers.L2SummonAction;
 import handlers.actionhandlers.L2TrapAction;
-import handlers.actionshifthandlers.L2DoorInstanceActionShift;
+import handlers.actionshifthandlers.DoorInstanceActionShift;
 import handlers.actionshifthandlers.L2ItemInstanceActionShift;
 import handlers.actionshifthandlers.L2NpcActionShift;
 import handlers.actionshifthandlers.L2PcInstanceActionShift;
@@ -304,7 +304,7 @@ public class MasterHandler
 		},
 		{
 			// Action Shift Handlers
-			L2DoorInstanceActionShift.class,
+			DoorInstanceActionShift.class,
 			L2ItemInstanceActionShift.class,
 			L2NpcActionShift.class,
 			L2PcInstanceActionShift.class,

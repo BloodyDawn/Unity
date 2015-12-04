@@ -8323,7 +8323,7 @@ public final class PlayerInstance extends Playable
 		// skills can be used on Walls and Doors only during siege
 		if (target.isDoor())
 		{
-			final L2DoorInstance door = (L2DoorInstance) target;
+			final DoorInstance door = (DoorInstance) target;
 			
 			if ((door.getCastle() != null) && (door.getCastle().getResidenceId() > 0))
 			{

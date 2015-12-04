@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -184,7 +184,7 @@ public final class EnergySeeds extends AbstractNpcAI
 		{
 			for (int doorId : SEED_OF_DESTRUCTION_DOORS)
 			{
-				L2DoorInstance doorInstance = DoorData.getInstance().getDoor(doorId);
+				DoorInstance doorInstance = DoorData.getInstance().getDoor(doorId);
 				if (doorInstance != null)
 				{
 					doorInstance.openMe();
@@ -196,7 +196,7 @@ public final class EnergySeeds extends AbstractNpcAI
 		{
 			for (int doorId : SEED_OF_DESTRUCTION_DOORS)
 			{
-				L2DoorInstance doorInstance = DoorData.getInstance().getDoor(doorId);
+				DoorInstance doorInstance = DoorData.getInstance().getDoor(doorId);
 				if (doorInstance != null)
 				{
 					doorInstance.closeMe();

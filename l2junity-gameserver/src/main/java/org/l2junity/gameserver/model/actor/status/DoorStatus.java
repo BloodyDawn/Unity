@@ -18,18 +18,18 @@
  */
 package org.l2junity.gameserver.model.actor.status;
 
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 
 public class DoorStatus extends CharStatus
 {
-	public DoorStatus(L2DoorInstance activeChar)
+	public DoorStatus(DoorInstance activeChar)
 	{
 		super(activeChar);
 	}
 	
 	@Override
-	public L2DoorInstance getActiveChar()
+	public DoorInstance getActiveChar()
 	{
-		return (L2DoorInstance) super.getActiveChar();
+		return (DoorInstance) super.getActiveChar();
 	}
 }

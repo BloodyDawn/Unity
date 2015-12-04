@@ -27,7 +27,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -81,12 +81,12 @@ public class OlympiadStadium
 	
 	public final void openDoors()
 	{
-		_instance.getDoors().forEach(L2DoorInstance::openMe);
+		_instance.getDoors().forEach(DoorInstance::openMe);
 	}
 	
 	public final void closeDoors()
 	{
-		_instance.getDoors().forEach(L2DoorInstance::closeMe);
+		_instance.getDoors().forEach(DoorInstance::closeMe);
 	}
 	
 	public final void spawnBuffers()

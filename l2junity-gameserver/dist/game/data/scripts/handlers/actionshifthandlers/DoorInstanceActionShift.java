@@ -22,13 +22,13 @@ import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.StaticObject;
 
-public class L2DoorInstanceActionShift implements IActionShiftHandler
+public class DoorInstanceActionShift implements IActionShiftHandler
 {
 	@Override
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
@@ -36,7 +36,7 @@ public class L2DoorInstanceActionShift implements IActionShiftHandler
 		if (activeChar.isGM())
 		{
 			activeChar.setTarget(target);
-			final L2DoorInstance door = (L2DoorInstance) target;
+			final DoorInstance door = (DoorInstance) target;
 			final ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
 			activeChar.sendPacket(new StaticObject(door, activeChar.isGM()));
 			
@@ -66,6 +66,6 @@ public class L2DoorInstanceActionShift implements IActionShiftHandler
 	@Override
 	public InstanceType getInstanceType()
 	{
-		return InstanceType.L2DoorInstance;
+		return InstanceType.DoorInstance;
 	}
 }

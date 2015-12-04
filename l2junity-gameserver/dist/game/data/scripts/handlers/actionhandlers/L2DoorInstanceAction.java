@@ -25,7 +25,7 @@ import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.holders.DoorRequestHolder;
@@ -43,7 +43,7 @@ public class L2DoorInstanceAction implements IActionHandler
 		}
 		else if (interact)
 		{
-			final L2DoorInstance door = (L2DoorInstance) target;
+			final DoorInstance door = (DoorInstance) target;
 			final ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
 			// MyTargetSelected my = new MyTargetSelected(getObjectId(), activeChar.getLevel());
 			// activeChar.sendPacket(my);
@@ -73,7 +73,7 @@ public class L2DoorInstanceAction implements IActionHandler
 					}
 				}
 			}
-			else if ((activeChar.getClan() != null) && (((L2DoorInstance) target).getFort() != null) && (activeChar.getClan() == ((L2DoorInstance) target).getFort().getOwnerClan()) && ((L2DoorInstance) target).isOpenableBySkill() && !((L2DoorInstance) target).getFort().getSiege().isInProgress())
+			else if ((activeChar.getClan() != null) && (((DoorInstance) target).getFort() != null) && (activeChar.getClan() == ((DoorInstance) target).getFort().getOwnerClan()) && ((DoorInstance) target).isOpenableBySkill() && !((DoorInstance) target).getFort().getSiege().isInProgress())
 			{
 				if (!((Creature) target).isInsideRadius(activeChar, Npc.INTERACTION_DISTANCE, false, false))
 				{
@@ -81,8 +81,8 @@ public class L2DoorInstanceAction implements IActionHandler
 				}
 				else
 				{
-					activeChar.addScript(new DoorRequestHolder((L2DoorInstance) target));
-					if (!((L2DoorInstance) target).isOpen())
+					activeChar.addScript(new DoorRequestHolder((DoorInstance) target));
+					if (!((DoorInstance) target).isOpen())
 					{
 						activeChar.sendPacket(new ConfirmDlg(1140));
 					}
@@ -99,6 +99,6 @@ public class L2DoorInstanceAction implements IActionHandler
 	@Override
 	public InstanceType getInstanceType()
 	{
-		return InstanceType.L2DoorInstance;
+		return InstanceType.DoorInstance;
 	}
 }

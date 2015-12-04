@@ -54,7 +54,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -2807,7 +2807,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void openDoor(int doorId, int instanceId)
 	{
-		final L2DoorInstance door = getDoor(doorId, instanceId);
+		final DoorInstance door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
 			_log.warn(getClass().getSimpleName() + ": called openDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
@@ -2825,7 +2825,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void closeDoor(int doorId, int instanceId)
 	{
-		final L2DoorInstance door = getDoor(doorId, instanceId);
+		final DoorInstance door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
 			_log.warn(getClass().getSimpleName() + ": called closeDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
@@ -2842,9 +2842,9 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param instanceId the ID of the instance the door is in (0 if the door is not not inside an instance)
 	 * @return the found door or {@code null} if no door with that ID and instance ID was found
 	 */
-	public L2DoorInstance getDoor(int doorId, int instanceId)
+	public DoorInstance getDoor(int doorId, int instanceId)
 	{
-		L2DoorInstance door = null;
+		DoorInstance door = null;
 		if (instanceId <= 0)
 		{
 			door = DoorData.getInstance().getDoor(doorId);

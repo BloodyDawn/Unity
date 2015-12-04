@@ -25,7 +25,7 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -210,7 +210,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		}
 		else if (cha.isDoor())
 		{
-			final L2DoorInstance door = (L2DoorInstance) cha;
+			final DoorInstance door = (DoorInstance) cha;
 			return addDoorName(door.getId());
 		}
 		return addString(cha.getName());

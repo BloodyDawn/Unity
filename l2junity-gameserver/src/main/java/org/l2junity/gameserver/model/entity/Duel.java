@@ -34,7 +34,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -403,7 +403,7 @@ public class Duel
 			broadcastToTeam1(ExDuelStart.PARTY_DUEL);
 			broadcastToTeam2(ExDuelStart.PARTY_DUEL);
 			
-			for (L2DoorInstance door : _duelInstance.getDoors())
+			for (DoorInstance door : _duelInstance.getDoors())
 			{
 				if ((door != null) && !door.isOpen())
 				{

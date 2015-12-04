@@ -49,7 +49,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -67,7 +67,7 @@ public final class Fort extends AbstractResidence
 {
 	protected static final Logger _log = LoggerFactory.getLogger(Fort.class);
 	
-	private final List<L2DoorInstance> _doors = new ArrayList<>();
+	private final List<DoorInstance> _doors = new ArrayList<>();
 	private L2StaticObjectInstance _flagPole = null;
 	private volatile FortSiege _siege = null;
 	private Calendar _siegeDate;
@@ -351,7 +351,7 @@ public final class Fort extends AbstractResidence
 			return;
 		}
 		
-		L2DoorInstance door = getDoor(doorId);
+		DoorInstance door = getDoor(doorId);
 		if (door != null)
 		{
 			if (open)
@@ -530,7 +530,7 @@ public final class Fort extends AbstractResidence
 	 */
 	public void resetDoors()
 	{
-		for (L2DoorInstance door : _doors)
+		for (DoorInstance door : _doors)
 		{
 			if (door.isOpen())
 			{
@@ -551,7 +551,7 @@ public final class Fort extends AbstractResidence
 	// This method upgrade door
 	public void upgradeDoor(int doorId, int hp, int pDef, int mDef)
 	{
-		L2DoorInstance door = getDoor(doorId);
+		DoorInstance door = getDoor(doorId);
 		if (door != null)
 		{
 			door.setCurrentHp(door.getMaxHp() + hp);
@@ -725,7 +725,7 @@ public final class Fort extends AbstractResidence
 	// This method loads fort door data from database
 	private void loadDoor()
 	{
-		for (L2DoorInstance door : DoorData.getInstance().getDoors())
+		for (DoorInstance door : DoorData.getInstance().getDoors())
 		{
 			if ((door.getFort() != null) && (door.getFort().getResidenceId() == getResidenceId()))
 			{
@@ -889,14 +889,14 @@ public final class Fort extends AbstractResidence
 		_fortOwner = clan;
 	}
 	
-	public final L2DoorInstance getDoor(int doorId)
+	public final DoorInstance getDoor(int doorId)
 	{
 		if (doorId <= 0)
 		{
 			return null;
 		}
 		
-		for (L2DoorInstance door : getDoors())
+		for (DoorInstance door : getDoors())
 		{
 			if (door.getId() == doorId)
 			{
@@ -906,7 +906,7 @@ public final class Fort extends AbstractResidence
 		return null;
 	}
 	
-	public final List<L2DoorInstance> getDoors()
+	public final List<DoorInstance> getDoors()
 	{
 		return _doors;
 	}
