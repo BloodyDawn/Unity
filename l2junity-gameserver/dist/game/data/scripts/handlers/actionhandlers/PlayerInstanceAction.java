@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
-public class L2PcInstanceAction implements IActionHandler
+public class PlayerInstanceAction implements IActionHandler
 {
 	/**
 	 * Manage actions when a player click on this L2PcInstance.<BR>

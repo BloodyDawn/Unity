@@ -41,18 +41,18 @@ import org.slf4j.LoggerFactory;
 
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
-import handlers.actionhandlers.L2DoorInstanceAction;
+import handlers.actionhandlers.DoorInstanceAction;
 import handlers.actionhandlers.L2ItemInstanceAction;
-import handlers.actionhandlers.L2NpcAction;
-import handlers.actionhandlers.L2PcInstanceAction;
+import handlers.actionhandlers.NpcAction;
+import handlers.actionhandlers.PlayerInstanceAction;
 import handlers.actionhandlers.L2PetInstanceAction;
 import handlers.actionhandlers.L2StaticObjectInstanceAction;
 import handlers.actionhandlers.L2SummonAction;
 import handlers.actionhandlers.L2TrapAction;
 import handlers.actionshifthandlers.DoorInstanceActionShift;
 import handlers.actionshifthandlers.L2ItemInstanceActionShift;
-import handlers.actionshifthandlers.L2NpcActionShift;
-import handlers.actionshifthandlers.L2PcInstanceActionShift;
+import handlers.actionshifthandlers.NpcActionShift;
+import handlers.actionshifthandlers.PlayerInstanceActionShift;
 import handlers.actionshifthandlers.L2StaticObjectInstanceActionShift;
 import handlers.actionshifthandlers.L2SummonActionShift;
 import handlers.admincommandhandlers.AdminAdmin;
@@ -293,10 +293,10 @@ public class MasterHandler
 			// Action Handlers
 			L2ArtefactInstanceAction.class,
 			L2DecoyAction.class,
-			L2DoorInstanceAction.class,
+			DoorInstanceAction.class,
 			L2ItemInstanceAction.class,
-			L2NpcAction.class,
-			L2PcInstanceAction.class,
+			NpcAction.class,
+			PlayerInstanceAction.class,
 			L2PetInstanceAction.class,
 			L2StaticObjectInstanceAction.class,
 			L2SummonAction.class,
@@ -306,8 +306,8 @@ public class MasterHandler
 			// Action Shift Handlers
 			DoorInstanceActionShift.class,
 			L2ItemInstanceActionShift.class,
-			L2NpcActionShift.class,
-			L2PcInstanceActionShift.class,
+			NpcActionShift.class,
+			PlayerInstanceActionShift.class,
 			L2StaticObjectInstanceActionShift.class,
 			L2SummonActionShift.class,
 		},

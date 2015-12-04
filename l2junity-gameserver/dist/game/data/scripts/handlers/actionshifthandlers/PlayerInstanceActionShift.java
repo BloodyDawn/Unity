@@ -25,7 +25,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
-public class L2PcInstanceActionShift implements IActionShiftHandler
+public class PlayerInstanceActionShift implements IActionShiftHandler
 {
 	@Override
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)

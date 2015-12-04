@@ -34,7 +34,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.MoveToPawn;
 
-public class L2NpcAction implements IActionHandler
+public class NpcAction implements IActionHandler
 {
 	/**
 	 * Manage actions when a player click on the L2Npc.<BR>

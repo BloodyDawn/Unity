@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.holders.DoorRequestHolder;
 import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 
-public class L2DoorInstanceAction implements IActionHandler
+public class DoorInstanceAction implements IActionHandler
 {
 	@Override
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)

@@ -40,7 +40,7 @@ import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 import handlers.bypasshandlers.NpcViewMod;
 
-public class L2NpcActionShift implements IActionShiftHandler
+public class NpcActionShift implements IActionShiftHandler
 {
 	@Override
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
