@@ -47,7 +47,7 @@ import org.w3c.dom.Node;
 public final class DoorData implements IGameXmlReader
 {
 	// Info holders
-	private static final Map<String, Set<Integer>> _groups = new HashMap<>();
+	private final Map<String, Set<Integer>> _groups = new HashMap<>();
 	private final Map<Integer, DoorInstance> _doors = new HashMap<>();
 	private final Map<Integer, DoorTemplate> _templates = new HashMap<>();
 	private final Map<Integer, List<DoorInstance>> _regions = new HashMap<>();
@@ -154,6 +154,11 @@ public final class DoorData implements IGameXmlReader
 		door.setCurrentHp(door.getMaxHp());
 		door.spawnMe(template.getX(), template.getY(), template.getZ());
 		_templates.put(door.getId(), template);
+		if (template.getGroupName() != null)
+		{
+			_groups.computeIfAbsent(template.getGroupName(), key -> new HashSet<>()).add(template.getId());
+		}
+		
 		putDoor(door, MapRegionManager.getInstance().getMapRegionLocId(door));
 	}
 	
@@ -178,18 +183,7 @@ public final class DoorData implements IGameXmlReader
 		_regions.get(region).add(door);
 	}
 	
-	public static void addDoorGroup(String groupName, int doorId)
-	{
-		Set<Integer> set = _groups.get(groupName);
-		if (set == null)
-		{
-			set = new HashSet<>();
-			_groups.put(groupName, set);
-		}
-		set.add(doorId);
-	}
-	
-	public static Set<Integer> getDoorsByGroup(String groupName)
+	public Set<Integer> getDoorsByGroup(String groupName)
 	{
 		return _groups.get(groupName);
 	}

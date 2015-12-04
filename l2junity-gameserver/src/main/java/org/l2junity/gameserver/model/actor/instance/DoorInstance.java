@@ -69,11 +69,6 @@ public final class DoorInstance extends Creature
 		_isAttackableDoor = template.isAttackable();
 		setTargetable(template.isTargetable());
 		
-		if (getGroupName() != null)
-		{
-			DoorData.addDoorGroup(getGroupName(), getId());
-		}
-		
 		if (isOpenableByTime())
 		{
 			startTimerOpen();
@@ -442,7 +437,7 @@ public final class DoorInstance extends Creature
 	
 	private void manageGroupOpen(boolean open, String groupName)
 	{
-		final Set<Integer> set = DoorData.getDoorsByGroup(groupName);
+		final Set<Integer> set = DoorData.getInstance().getDoorsByGroup(groupName);
 		DoorInstance first = null;
 		for (Integer id : set)
 		{
