@@ -1978,6 +1978,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		EventDispatcher.getInstance().notifyEvent(new OnCreatureKill(killer, this), this);
 		
+		calculateRewards(killer);
+		
 		// Set target to null and cancel Attack or Cast
 		setTarget(null);
 		
@@ -1988,8 +1990,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		getStatus().stopHpMpRegeneration();
 		
 		stopAllEffectsExceptThoseThatLastThroughDeath();
-		
-		calculateRewards(killer);
 		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
 		broadcastStatusUpdate();
