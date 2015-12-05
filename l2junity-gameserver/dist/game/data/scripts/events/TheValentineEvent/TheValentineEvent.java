@@ -38,7 +38,6 @@ public final class TheValentineEvent extends LongTimeEvent
 	
 	private TheValentineEvent()
 	{
-		super();
 		addStartNpc(NPC);
 		addFirstTalkId(NPC);
 		addTalkId(NPC);

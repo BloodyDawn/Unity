@@ -52,7 +52,6 @@ public final class HeavyMedal extends LongTimeEvent
 	
 	private HeavyMedal()
 	{
-		super();
 		addStartNpc(CAT_ROY);
 		addStartNpc(CAT_WINNIE);
 		addTalkId(CAT_ROY);

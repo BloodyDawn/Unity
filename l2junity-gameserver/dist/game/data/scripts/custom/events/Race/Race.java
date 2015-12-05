@@ -104,7 +104,6 @@ public final class Race extends Event
 	
 	private Race()
 	{
-		super();
 		addStartNpc(_start_npc);
 		addFirstTalkId(_start_npc);
 		addTalkId(_start_npc);

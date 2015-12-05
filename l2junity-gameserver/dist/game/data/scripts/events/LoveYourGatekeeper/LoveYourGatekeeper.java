@@ -45,7 +45,6 @@ public final class LoveYourGatekeeper extends LongTimeEvent
 	
 	private LoveYourGatekeeper()
 	{
-		super();
 		addStartNpc(GATEKEEPER);
 		addFirstTalkId(GATEKEEPER);
 		addTalkId(GATEKEEPER);

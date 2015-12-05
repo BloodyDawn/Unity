@@ -77,7 +77,6 @@ public final class Rabbits extends Event
 	
 	private Rabbits()
 	{
-		super();
 		addFirstTalkId(NPC_MANAGER, CHEST);
 		addTalkId(NPC_MANAGER);
 		addStartNpc(NPC_MANAGER);

@@ -69,7 +69,6 @@ public final class Elpies extends Event
 	
 	private Elpies()
 	{
-		super();
 		addSpawnId(ELPY);
 		addKillId(ELPY);
 	}

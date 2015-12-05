@@ -69,7 +69,6 @@ public final class MasterOfEnchanting extends LongTimeEvent
 	
 	private MasterOfEnchanting()
 	{
-		super();
 		addStartNpc(MASTER_YOGI);
 		addFirstTalkId(MASTER_YOGI);
 		addTalkId(MASTER_YOGI);
