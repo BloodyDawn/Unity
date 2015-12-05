@@ -83,7 +83,7 @@ public class BanHandler implements IPunishmentHandler
 	@Override
 	public void onEnd(PunishmentTask task)
 	{
-		
+	
 	}
 	
 	/**

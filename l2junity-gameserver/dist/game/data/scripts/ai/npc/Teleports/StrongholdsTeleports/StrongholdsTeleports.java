@@ -39,7 +39,6 @@ public final class StrongholdsTeleports extends AbstractNpcAI
 	
 	private StrongholdsTeleports()
 	{
-		super(StrongholdsTeleports.class.getSimpleName(), "ai/npc/Teleports");
 		addFirstTalkId(NPCs);
 	}
 	

@@ -106,7 +106,7 @@ public final class Q10369_NoblesseSoulTesting extends Quest
 	
 	public Q10369_NoblesseSoulTesting()
 	{
-		super(10369, Q10369_NoblesseSoulTesting.class.getSimpleName(), "Noblesse, Soul Testing");
+		super(10369);
 		addStartNpc(CERENAS);
 		addTalkId(CERENAS, EVAS_AVATAR, LANYA);
 		addKillId(ONE_WHO_EATS_PROPHECIES);

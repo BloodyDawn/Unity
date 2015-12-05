@@ -79,7 +79,7 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 	
 	public Q10751_WindsOfFateEncounters()
 	{
-		super(10751, Q10751_WindsOfFateEncounters.class.getSimpleName(), "Winds of Fate: Encounters");
+		super(10751);
 		addStartNpc(NAVARI);
 		addFirstTalkId(TELESHA, MYSTERIOUS_WIZARD);
 		addTalkId(NAVARI, AYANTHE, KATALIN, RAYMOND, TELESHA, MYSTERIOUS_WIZARD);

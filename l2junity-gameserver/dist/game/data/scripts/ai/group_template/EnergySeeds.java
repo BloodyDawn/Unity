@@ -92,7 +92,6 @@ public final class EnergySeeds extends AbstractNpcAI
 	
 	public EnergySeeds()
 	{
-		super(EnergySeeds.class.getSimpleName(), "ai/group_template");
 		registerMobs(SEED_IDS);
 		addFirstTalkId(SEED_IDS);
 		addFirstTalkId(TEMPORARY_TELEPORTER);

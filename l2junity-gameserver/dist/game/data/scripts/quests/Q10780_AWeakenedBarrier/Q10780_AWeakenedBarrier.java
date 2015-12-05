@@ -58,7 +58,7 @@ public final class Q10780_AWeakenedBarrier extends Quest
 	
 	public Q10780_AWeakenedBarrier()
 	{
-		super(10780, Q10780_AWeakenedBarrier.class.getSimpleName(), "A Weakened Barrier");
+		super(10780);
 		addStartNpc(ANDY);
 		addTalkId(ANDY, BACON);
 		addKillId(MONSTERS);

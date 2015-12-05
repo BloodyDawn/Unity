@@ -40,6 +40,7 @@ public final class IsleOfPrayer extends AbstractNpcAI
 	private static final int RED_SEED_OF_EVIL_SHARD = 9596;
 	// Monsters
 	private static final Map<Integer, ItemChanceHolder> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(22257, new ItemChanceHolder(YELLOW_SEED_OF_EVIL_SHARD, 2087)); // Island Guardian
@@ -61,7 +62,6 @@ public final class IsleOfPrayer extends AbstractNpcAI
 	
 	private IsleOfPrayer()
 	{
-		super(IsleOfPrayer.class.getSimpleName(), "ai/group_template");
 		addKillId(MONSTERS.keySet());
 	}
 	

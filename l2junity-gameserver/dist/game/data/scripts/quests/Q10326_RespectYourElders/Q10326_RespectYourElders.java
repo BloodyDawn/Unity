@@ -60,7 +60,7 @@ public final class Q10326_RespectYourElders extends Quest
 	
 	public Q10326_RespectYourElders()
 	{
-		super(10326, Q10326_RespectYourElders.class.getSimpleName(), "Respect Your Elders");
+		super(10326);
 		addStartNpc(GALLINT);
 		addTalkId(GALLINT, PANTHEON);
 		addSpawnId(HANDERMONKEY);

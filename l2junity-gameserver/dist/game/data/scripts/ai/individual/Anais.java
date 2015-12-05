@@ -51,7 +51,6 @@ public final class Anais extends AbstractNpcAI
 	
 	private Anais()
 	{
-		super(Anais.class.getSimpleName(), "ai/individual");
 		addAttackId(ANAIS);
 		addSpawnId(DIVINE_BURNER);
 		addKillId(GRAIL_WARD);

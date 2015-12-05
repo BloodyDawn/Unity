@@ -41,7 +41,7 @@ public final class Passive extends AbstractEffect
 	{
 		return info.getEffected().isAttackable();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
@@ -50,7 +50,7 @@ public final class Passive extends AbstractEffect
 		effected.disableAllSkills();
 		effected.setIsImmobilized(true);
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

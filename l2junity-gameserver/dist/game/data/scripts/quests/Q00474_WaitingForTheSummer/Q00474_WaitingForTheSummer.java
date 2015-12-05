@@ -52,7 +52,7 @@ public final class Q00474_WaitingForTheSummer extends Quest
 	
 	public Q00474_WaitingForTheSummer()
 	{
-		super(474, Q00474_WaitingForTheSummer.class.getSimpleName(), "Waiting for the Summer");
+		super(474);
 		addStartNpc(ADVENTURER);
 		addTalkId(ADVENTURER, VISHOTSKY);
 		addKillId(LOST_BUFFALO, FROST_BUFFALO, URSUS_CUB, URSUS, LOST_YETI, FROST_YETI);

@@ -42,7 +42,6 @@ public final class TeleportWithCharm extends AbstractNpcAI
 	
 	private TeleportWithCharm()
 	{
-		super(TeleportWithCharm.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(WHIRPY, TAMIL);
 		addTalkId(WHIRPY, TAMIL);
 	}

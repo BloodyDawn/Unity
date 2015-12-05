@@ -43,7 +43,6 @@ public class Rignos extends AbstractNpcAI
 	
 	private Rignos()
 	{
-		super(Rignos.class.getSimpleName(), "ai/npc");
 		addStartNpc(RIGNOS);
 		addTalkId(RIGNOS);
 		addFirstTalkId(RIGNOS);

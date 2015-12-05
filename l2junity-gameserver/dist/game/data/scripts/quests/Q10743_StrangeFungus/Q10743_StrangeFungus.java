@@ -56,7 +56,7 @@ public final class Q10743_StrangeFungus extends Quest
 	
 	public Q10743_StrangeFungus()
 	{
-		super(10743, Q10743_StrangeFungus.class.getSimpleName(), "Strange Fungus");
+		super(10743);
 		addStartNpc(LEIRA);
 		addTalkId(LEIRA, MILONE);
 		addKillId(GROWLER, ROBUST_GROWLER, EVOLVED_GROWLER);

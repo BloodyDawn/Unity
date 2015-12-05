@@ -55,7 +55,7 @@ public final class CpHeal extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -63,9 +63,9 @@ public final class CpHeal extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		double amount = _power;
-
+		
 		// Prevents overheal and negative amount
 		amount = Math.max(Math.min(amount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);
 		if (amount != 0)
@@ -77,7 +77,7 @@ public final class CpHeal extends AbstractEffect
 			su.addCaster(effector);
 			effected.broadcastPacket(su);
 		}
-
+		
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);
 		sm.addInt((int) amount);
 		effected.sendPacket(sm);

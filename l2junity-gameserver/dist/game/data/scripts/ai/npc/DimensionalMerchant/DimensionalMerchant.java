@@ -69,7 +69,6 @@ public final class DimensionalMerchant extends AbstractNpcAI
 	
 	private DimensionalMerchant()
 	{
-		super(DimensionalMerchant.class.getSimpleName(), "ai/npc");
 		addStartNpc(MERCHANT);
 		addFirstTalkId(MERCHANT);
 		addTalkId(MERCHANT);

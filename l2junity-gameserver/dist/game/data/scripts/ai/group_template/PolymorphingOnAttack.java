@@ -41,6 +41,7 @@ import ai.npc.AbstractNpcAI;
 public final class PolymorphingOnAttack extends AbstractNpcAI
 {
 	private static final Map<Integer, List<Integer>> MOBSPAWNS = new HashMap<>();
+	
 	static
 	{
 		MOBSPAWNS.put(21258, Arrays.asList(21259, 100, 100, -1)); // Fallen Orc Shaman -> Sharp Talon Tiger (always polymorphs)
@@ -57,6 +58,7 @@ public final class PolymorphingOnAttack extends AbstractNpcAI
 		MOBSPAWNS.put(21533, Arrays.asList(21534, 100, 30, -1)); // Alliance of Splendor
 		MOBSPAWNS.put(21537, Arrays.asList(21538, 100, 30, -1)); // Fang of Splendor
 	}
+	
 	protected static final NpcStringId[][] MOBTEXTS =
 	{
 		new NpcStringId[]
@@ -81,7 +83,6 @@ public final class PolymorphingOnAttack extends AbstractNpcAI
 	
 	private PolymorphingOnAttack()
 	{
-		super(PolymorphingOnAttack.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBSPAWNS.keySet());
 	}
 	

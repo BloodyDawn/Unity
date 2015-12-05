@@ -65,7 +65,6 @@ public final class FortressSiegeManager extends AbstractNpcAI
 	
 	private FortressSiegeManager()
 	{
-		super(FortressSiegeManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(MANAGERS);
 		addTalkId(MANAGERS);
 		addFirstTalkId(MANAGERS);

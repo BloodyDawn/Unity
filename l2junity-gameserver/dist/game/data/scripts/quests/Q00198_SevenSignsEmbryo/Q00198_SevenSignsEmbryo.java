@@ -55,7 +55,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 	
 	public Q00198_SevenSignsEmbryo()
 	{
-		super(198, Q00198_SevenSignsEmbryo.class.getSimpleName(), "Seven Signs, Embryo");
+		super(198);
 		addFirstTalkId(JAINA);
 		addStartNpc(WOOD);
 		addTalkId(WOOD, FRANZ);

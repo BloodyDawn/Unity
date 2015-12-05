@@ -40,7 +40,6 @@ public final class EvasGiftBox extends AbstractNpcAI
 	
 	private EvasGiftBox()
 	{
-		super(EvasGiftBox.class.getSimpleName(), "ai/individual");
 		addKillId(BOX);
 		addSpawnId(BOX);
 	}

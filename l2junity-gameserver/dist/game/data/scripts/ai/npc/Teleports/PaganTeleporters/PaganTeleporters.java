@@ -38,11 +38,13 @@ public final class PaganTeleporters extends AbstractNpcAI
 	private static final int TRIOLS_MIRROR_2 = 32040;
 	// Locations
 	private static final Map<Integer, Location> TRIOLS_LOCS = new HashMap<>();
+	
 	static
 	{
 		TRIOLS_LOCS.put(TRIOLS_MIRROR_1, new Location(-12766, -35840, -10856));
 		TRIOLS_LOCS.put(TRIOLS_MIRROR_2, new Location(36640, -51218, 718));
 	}
+	
 	// @formatter:off
 	private static final int[] NPCS =
 	{
@@ -56,7 +58,6 @@ public final class PaganTeleporters extends AbstractNpcAI
 	
 	private PaganTeleporters()
 	{
-		super(PaganTeleporters.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 		addFirstTalkId(TRIOLS_MIRROR_1, TRIOLS_MIRROR_2);

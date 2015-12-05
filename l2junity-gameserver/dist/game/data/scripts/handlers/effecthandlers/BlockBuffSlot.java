@@ -56,7 +56,7 @@ public final class BlockBuffSlot extends AbstractEffect
 			_blockBuffSlots = Collections.<AbnormalType> emptySet();
 		}
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

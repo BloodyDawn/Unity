@@ -74,7 +74,7 @@ public final class Q10360_CertificationOfFate extends Quest
 	
 	public Q10360_CertificationOfFate()
 	{
-		super(10360, Q10360_CertificationOfFate.class.getSimpleName(), "Certification of Fate");
+		super(10360);
 		addStartNpc(RAYMOND, RAINS, TOBIAS, DRIKUS, MENDIO, GERSHWIN, ESRANDELL, ELLENIA);
 		addTalkId(RAYMOND, RAINS, TOBIAS, DRIKUS, MENDIO, GERSHWIN, ESRANDELL, ELLENIA, RENFAD, JOEL, SCHUAZEN, SELON);
 		addFirstTalkId(JOEL, SCHUAZEN);

@@ -36,7 +36,6 @@ public final class MarinSmith extends AbstractNpcAI
 	
 	private MarinSmith()
 	{
-		super(MarinSmith.class.getSimpleName(), "ai/individual");
 		addSpawnId(MARIN_SMITH);
 	}
 	

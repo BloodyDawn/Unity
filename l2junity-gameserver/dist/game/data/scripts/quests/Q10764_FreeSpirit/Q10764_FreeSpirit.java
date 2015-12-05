@@ -53,7 +53,7 @@ public final class Q10764_FreeSpirit extends Quest
 	
 	public Q10764_FreeSpirit()
 	{
-		super(10764, Q10764_FreeSpirit.class.getSimpleName(), "Free Spirit");
+		super(10764);
 		addStartNpc(VORBOS);
 		addTalkId(VORBOS, TREE_SPIRIT, WIND_SPIRIT);
 		addSpawnId(LIBERATED_TREE_SPIRIT, LIBERATED_WIND_SPIRIT, SYLPH);

@@ -61,7 +61,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 	
 	public Q10292_SevenSignsGirlOfDoubt()
 	{
-		super(10292, Q10292_SevenSignsGirlOfDoubt.class.getSimpleName(), "Seven Signs, Girl of Doubt");
+		super(10292);
 		addStartNpc(WOOD);
 		addTalkId(WOOD, FRANZ, JAINA, ELCADIA, HARDIN);
 		addKillId(MOBS);
@@ -174,7 +174,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 						creature2.deleteMe();
 						st.unset("ex");
 						isBusy = false;
-					}, 60000);
+					} , 60000);
 				}
 				break;
 			}

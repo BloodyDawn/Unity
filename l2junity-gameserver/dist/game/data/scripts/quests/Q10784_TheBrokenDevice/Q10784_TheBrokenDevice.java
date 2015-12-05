@@ -53,7 +53,7 @@ public final class Q10784_TheBrokenDevice extends Quest
 	
 	public Q10784_TheBrokenDevice()
 	{
-		super(10784, Q10784_TheBrokenDevice.class.getSimpleName(), "The Broken Device");
+		super(10784);
 		addStartNpc(NOVAIN);
 		addTalkId(NOVAIN);
 		addKillId(MONSTERS);

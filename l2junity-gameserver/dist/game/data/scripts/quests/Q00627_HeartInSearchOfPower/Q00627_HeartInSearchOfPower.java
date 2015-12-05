@@ -46,6 +46,7 @@ public final class Q00627_HeartInSearchOfPower extends Quest
 	private static final int LOW_GRADE_ARMOR = 36551;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(21520, 661); // Eye of Splendor
@@ -63,13 +64,14 @@ public final class Q00627_HeartInSearchOfPower extends Quest
 		MONSTERS.put(21540, 875); // Wailing of Splendor
 		MONSTERS.put(21658, 791); // Punishment of Splendor
 	}
+	
 	// Misc
 	private static final int MIN_LV = 60;
 	private static final int BEAD_OF_OBEDIENCE_COUNT_REQUIRED = 300;
 	
 	public Q00627_HeartInSearchOfPower()
 	{
-		super(627, Q00627_HeartInSearchOfPower.class.getSimpleName(), "Heart in Search of Power");
+		super(627);
 		addStartNpc(MYSTERIOUS_NECROMANCER);
 		addTalkId(MYSTERIOUS_NECROMANCER, ENFEUX);
 		addKillId(MONSTERS.keySet());

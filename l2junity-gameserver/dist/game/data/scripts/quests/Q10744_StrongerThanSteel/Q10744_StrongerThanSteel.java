@@ -45,7 +45,7 @@ public final class Q10744_StrongerThanSteel extends Quest
 	
 	public Q10744_StrongerThanSteel()
 	{
-		super(10744, Q10744_StrongerThanSteel.class.getSimpleName(), "Stronger Than Steel");
+		super(10744);
 		addStartNpc(MILONE);
 		addTalkId(MILONE, DOLKIN);
 		addKillId(TREANT, LEAFIE);

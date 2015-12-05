@@ -57,7 +57,7 @@ public class Q10761_AnOrcInLove extends Quest
 	
 	public Q10761_AnOrcInLove()
 	{
-		super(10761, Q10761_AnOrcInLove.class.getSimpleName(), "An Orc in Love");
+		super(10761);
 		addStartNpc(VORBOS);
 		addTalkId(VORBOS);
 		addKillId(MONSTERS);

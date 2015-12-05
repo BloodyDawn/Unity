@@ -45,13 +45,13 @@ public final class BlockParty extends AbstractEffect
 	{
 		return (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN, 0, "Party banned by bot report", "system", true));
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

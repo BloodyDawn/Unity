@@ -33,6 +33,7 @@ import ai.npc.AbstractNpcAI;
 public final class PolymorphingAngel extends AbstractNpcAI
 {
 	private static final Map<Integer, Integer> ANGELSPAWNS = new HashMap<>(5);
+	
 	static
 	{
 		ANGELSPAWNS.put(20830, 20859);
@@ -44,7 +45,6 @@ public final class PolymorphingAngel extends AbstractNpcAI
 	
 	private PolymorphingAngel()
 	{
-		super(PolymorphingAngel.class.getSimpleName(), "ai/group_template");
 		addKillId(ANGELSPAWNS.keySet());
 	}
 	

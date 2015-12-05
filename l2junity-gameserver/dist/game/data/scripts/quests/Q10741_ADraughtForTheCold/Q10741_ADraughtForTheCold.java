@@ -49,7 +49,7 @@ public final class Q10741_ADraughtForTheCold extends Quest
 	
 	public Q10741_ADraughtForTheCold()
 	{
-		super(10741, Q10741_ADraughtForTheCold.class.getSimpleName(), "A Draught For The Cold");
+		super(10741);
 		addStartNpc(SIVANTHE);
 		addTalkId(SIVANTHE, LEIRA);
 		addKillId(HONEY_BEE, KIKU, ROBUST_HONEY_BEE);

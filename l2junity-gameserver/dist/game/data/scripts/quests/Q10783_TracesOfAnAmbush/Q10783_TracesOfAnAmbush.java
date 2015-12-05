@@ -69,7 +69,7 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 	
 	public Q10783_TracesOfAnAmbush()
 	{
-		super(10783, Q10783_TracesOfAnAmbush.class.getSimpleName(), "Traces of an Ambush");
+		super(10783);
 		addStartNpc(NOVAIN);
 		addTalkId(NOVAIN);
 		addKillId(MONSTERS);

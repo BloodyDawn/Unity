@@ -56,7 +56,6 @@ public final class FleeMonsters extends AbstractNpcAI
 	
 	private FleeMonsters()
 	{
-		super(FleeMonsters.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBS);
 	}
 	

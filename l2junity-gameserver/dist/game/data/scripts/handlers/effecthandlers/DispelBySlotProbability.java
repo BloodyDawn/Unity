@@ -77,7 +77,7 @@ public final class DispelBySlotProbability extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -85,7 +85,7 @@ public final class DispelBySlotProbability extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		final CharEffectList effectList = effected.getEffectList();
 		// There is no need to iterate over all buffs,
 		// Just iterate once over all slots to dispel and get the buff with that abnormal if exists,

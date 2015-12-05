@@ -51,7 +51,7 @@ public final class Q10358_DividedSakumPoslof extends Quest
 	
 	public Q10358_DividedSakumPoslof()
 	{
-		super(10358, Q10358_DividedSakumPoslof.class.getSimpleName(), "Divided Sakum, Poslof");
+		super(10358);
 		addStartNpc(LEF);
 		addTalkId(LEF, ADVENTURER_GUIDE);
 		addKillId(ZOMBIE_WARRIOR, VEELEAN, POSLOF);

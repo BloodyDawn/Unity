@@ -43,7 +43,7 @@ public final class Q10412_ASuspiciousVagabondInTheForest extends Quest
 	
 	public Q10412_ASuspiciousVagabondInTheForest()
 	{
-		super(10412, Q10412_ASuspiciousVagabondInTheForest.class.getSimpleName(), "A Suspicious Vagabond in the Forest");
+		super(10412);
 		addStartNpc(HATUBA);
 		addTalkId(HATUBA, VAGABOND);
 		addCondNotRace(Race.ERTHEIA, "33849-08.html");

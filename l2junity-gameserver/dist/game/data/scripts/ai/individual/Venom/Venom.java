@@ -102,7 +102,6 @@ public final class Venom extends AbstractNpcAI
 	
 	private Venom()
 	{
-		super(Venom.class.getSimpleName(), "ai/individual");
 		addStartNpc(DUNGEON_KEEPER, TELEPORT_CUBE);
 		addFirstTalkId(DUNGEON_KEEPER, TELEPORT_CUBE);
 		addTalkId(DUNGEON_KEEPER, TELEPORT_CUBE);

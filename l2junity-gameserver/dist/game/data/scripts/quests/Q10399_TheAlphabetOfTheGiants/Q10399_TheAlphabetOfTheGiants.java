@@ -49,7 +49,7 @@ public final class Q10399_TheAlphabetOfTheGiants extends Quest
 	
 	public Q10399_TheAlphabetOfTheGiants()
 	{
-		super(10399, Q10399_TheAlphabetOfTheGiants.class.getSimpleName(), "The Alphabet of the Giants");
+		super(10399);
 		addStartNpc(BACON);
 		addTalkId(BACON);
 		addKillId(MONSTERS);

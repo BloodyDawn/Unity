@@ -44,7 +44,6 @@ public final class Pantheon extends AbstractNpcAI
 	
 	private Pantheon()
 	{
-		super(Pantheon.class.getSimpleName(), "ai/npc");
 		addSpawnId(PANTHEON);
 		addStartNpc(PANTHEON);
 		addFirstTalkId(PANTHEON);

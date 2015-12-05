@@ -51,7 +51,7 @@ public final class Q10392_FailureAndItsConsequences extends Quest
 	
 	public Q10392_FailureAndItsConsequences()
 	{
-		super(10392, Q10392_FailureAndItsConsequences.class.getSimpleName(), "Failure and its Consequences");
+		super(10392);
 		addStartNpc(IASON);
 		addTalkId(IASON, ELI);
 		addKillId(MONSTERS);

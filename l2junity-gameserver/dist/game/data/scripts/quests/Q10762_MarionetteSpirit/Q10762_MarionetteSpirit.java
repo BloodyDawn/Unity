@@ -45,7 +45,7 @@ public final class Q10762_MarionetteSpirit extends Quest
 	
 	public Q10762_MarionetteSpirit()
 	{
-		super(10762, Q10762_MarionetteSpirit.class.getSimpleName(), "Marionette Spirit");
+		super(10762);
 		addStartNpc(VORBOS);
 		addTalkId(VORBOS);
 		addKillId(MARIONETTE_SPIRIT);

@@ -41,7 +41,6 @@ public final class AltarOfEvil extends AbstractNpcAI
 	
 	public AltarOfEvil()
 	{
-		super(AltarOfEvil.class.getSimpleName(), "ai/group_template");
 		addAttackId(RIFTER);
 		addNpcHateId(RIFTER);
 		addSpellFinishedId(RIFTER);

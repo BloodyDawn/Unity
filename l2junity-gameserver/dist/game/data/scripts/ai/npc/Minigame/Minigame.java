@@ -63,7 +63,6 @@ public final class Minigame extends AbstractNpcAI
 	
 	private Minigame()
 	{
-		super(Minigame.class.getSimpleName(), "ai/npc");
 		addStartNpc(SUMIEL);
 		addFirstTalkId(SUMIEL);
 		addTalkId(SUMIEL);

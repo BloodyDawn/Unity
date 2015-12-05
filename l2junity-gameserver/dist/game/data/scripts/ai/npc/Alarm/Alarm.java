@@ -43,7 +43,6 @@ public final class Alarm extends AbstractNpcAI
 	
 	private Alarm()
 	{
-		super(Alarm.class.getSimpleName(), "ai/npc");
 		addStartNpc(ALARM);
 		addTalkId(ALARM);
 		addFirstTalkId(ALARM);

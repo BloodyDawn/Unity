@@ -53,7 +53,7 @@ public class ClassChange extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -64,24 +64,24 @@ public class ClassChange extends AbstractEffect
 			ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
 				final int activeClass = player.getClassId().getId();
-
+				
 				if (!player.setActiveClass(_index))
 				{
 					player.sendMessage("You cannot switch your class right now!");
 					return;
 				}
-
+				
 				final Skill identifyCrisis = SkillData.getInstance().getSkill(IDENTITY_CRISIS_SKILL_ID, 1);
 				if (identifyCrisis != null)
 				{
 					identifyCrisis.applyEffects(player, player);
 				}
-
+				
 				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCESSFULLY_SWITCHED_S1_TO_S2);
 				msg.addClassId(activeClass);
 				msg.addClassId(player.getClassId().getId());
 				player.sendPacket(msg);
-
+				
 				player.broadcastUserInfo();
 				player.sendPacket(new AcquireSkillList(player));
 				player.sendPacket(new ExSubjobInfo(player, SubclassInfoType.CLASS_CHANGED));

@@ -94,7 +94,7 @@ public final class Q10413_EmbryoInTheForestOfTheDead extends Quest
 	
 	public Q10413_EmbryoInTheForestOfTheDead()
 	{
-		super(10413, Q10413_EmbryoInTheForestOfTheDead.class.getSimpleName(), "Embryo in the Forest of the Dead");
+		super(10413);
 		addStartNpc(HATUBA);
 		addTalkId(HATUBA);
 		addKillId(MONSTERS);

@@ -55,7 +55,7 @@ public final class Q00943_FillingTheEnergyOfDestruction extends Quest
 	
 	public Q00943_FillingTheEnergyOfDestruction()
 	{
-		super(943, Q00943_FillingTheEnergyOfDestruction.class.getSimpleName(), "Filling the Energy of Destruction");
+		super(943);
 		addStartNpc(SEED_TALISMAN);
 		addTalkId(SEED_TALISMAN);
 		addKillId(BOSSES);

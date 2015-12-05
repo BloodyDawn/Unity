@@ -63,7 +63,7 @@ public final class Bluff extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		effected.broadcastPacket(new StartRotation(effected.getObjectId(), effected.getHeading(), 1, 65535));
 		effected.broadcastPacket(new StopRotation(effected.getObjectId(), effector.getHeading(), 65535));
 		effected.setHeading(effector.getHeading());

@@ -64,7 +64,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 	
 	public Q00511_AwlUnderFoot()
 	{
-		super(511, Q00511_AwlUnderFoot.class.getSimpleName(), "Awl Under Foot");
+		super(511);
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 		

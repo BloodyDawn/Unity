@@ -42,7 +42,6 @@ public final class Sodian extends AbstractNpcAI
 	
 	private Sodian()
 	{
-		super(Sodian.class.getSimpleName(), "ai/individual");
 		addSpawnId(SODIAN);
 	}
 	

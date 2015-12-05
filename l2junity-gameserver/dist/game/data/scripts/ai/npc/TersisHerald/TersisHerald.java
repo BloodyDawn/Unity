@@ -70,7 +70,6 @@ public final class TersisHerald extends AbstractNpcAI
 	
 	private TersisHerald()
 	{
-		super(TersisHerald.class.getSimpleName(), "ai/npc");
 		addStartNpc(HERALD);
 		addFirstTalkId(HERALD);
 		addTalkId(HERALD);

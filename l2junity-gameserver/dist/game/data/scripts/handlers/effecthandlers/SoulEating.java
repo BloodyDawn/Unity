@@ -47,7 +47,7 @@ public final class SoulEating extends AbstractEffect
 		super(attachCond, applyCond, set, params);
 		_expNeeded = params.getInt("expNeeded");
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
@@ -56,7 +56,7 @@ public final class SoulEating extends AbstractEffect
 			effected.addListener(new ConsumerEventListener(effected, EventType.ON_PLAYABLE_EXP_CHANGED, (OnPlayableExpChanged event) -> onExperienceReceived(event.getActiveChar(), (event.getNewExp() - event.getOldExp())), this));
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

@@ -27,15 +27,16 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
+import ai.npc.AbstractNpcAI;
+
 /**
  * @author DS
  */
-public final class AirShipGludioGracia extends Quest implements Runnable
+public final class AirShipGludioGracia extends AbstractNpcAI implements Runnable
 {
 	private static final int[] CONTROLLERS =
 	{
@@ -54,7 +55,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 		new VehiclePathPoint(-151202, 252556, 231),
 		new VehiclePathPoint(-160403, 256144, 222),
 		new VehiclePathPoint(-167874, 256731, -509, 0, 41035)
-	// teleport: x,y,z,speed=0,heading
+		// teleport: x,y,z,speed=0,heading
 	};
 	
 	private static final VehiclePathPoint[] WARPGATE_TO_GRACIA =
@@ -87,7 +88,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 		new VehiclePathPoint(-169763, 254815, 282),
 		new VehiclePathPoint(-168067, 256626, 343),
 		new VehiclePathPoint(-157261, 255664, 221, 0, 64781)
-	// teleport: x,y,z,speed=0,heading
+		// teleport: x,y,z,speed=0,heading
 	};
 	
 	private static final VehiclePathPoint[] WARPGATE_TO_GLUDIO =
@@ -110,7 +111,6 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 	
 	public AirShipGludioGracia()
 	{
-		super(-1, AirShipGludioGracia.class.getSimpleName(), "vehicles");
 		addStartNpc(CONTROLLERS);
 		addFirstTalkId(CONTROLLERS);
 		addTalkId(CONTROLLERS);

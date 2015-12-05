@@ -58,7 +58,7 @@ public final class Lethal extends AbstractEffect
 	{
 		return L2EffectType.LETHAL_ATTACK;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{

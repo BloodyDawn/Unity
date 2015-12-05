@@ -42,6 +42,7 @@ import ai.npc.AbstractNpcAI;
 public final class SeedOfAnnihilation extends AbstractNpcAI
 {
 	private static final Map<Integer, Location> TELEPORT_ZONES = new HashMap<>();
+	
 	static
 	{
 		TELEPORT_ZONES.put(60002, new Location(-213175, 182648, -10992));
@@ -79,7 +80,6 @@ public final class SeedOfAnnihilation extends AbstractNpcAI
 	
 	public SeedOfAnnihilation()
 	{
-		super(SeedOfAnnihilation.class.getSimpleName(), "ai/group_template");
 		loadSeedRegionData();
 		for (int i : TELEPORT_ZONES.keySet())
 		{

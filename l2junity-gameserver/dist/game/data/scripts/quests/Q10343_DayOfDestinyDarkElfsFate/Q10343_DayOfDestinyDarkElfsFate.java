@@ -41,7 +41,7 @@ public final class Q10343_DayOfDestinyDarkElfsFate extends ThirdClassTransferQue
 	
 	public Q10343_DayOfDestinyDarkElfsFate()
 	{
-		super(10343, Q10343_DayOfDestinyDarkElfsFate.class.getSimpleName(), "Day of Destiny: Dark Elf's Fate", MIN_LEVEL, START_RACE);
+		super(10343, MIN_LEVEL, START_RACE);
 		addStartNpc(OLTRAN);
 		addTalkId(OLTRAN);
 		addCondMinLevel(MIN_LEVEL, "30862-11.html");

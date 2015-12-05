@@ -45,7 +45,6 @@ public final class SinEater extends AbstractNpcAI
 	
 	private SinEater()
 	{
-		super(SinEater.class.getSimpleName(), "ai/individual");
 		addSummonSpawnId(SIN_EATER);
 		addSummonTalkId(SIN_EATER);
 	}

@@ -71,7 +71,6 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	
 	public WarriorFishingBlock()
 	{
-		super(WarriorFishingBlock.class.getSimpleName(), "ai/group_template");
 		addAttackId(MONSTERS);
 		addKillId(MONSTERS);
 		addSpawnId(MONSTERS);

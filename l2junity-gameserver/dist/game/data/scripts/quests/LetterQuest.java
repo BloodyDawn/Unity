@@ -56,7 +56,7 @@ public abstract class LetterQuest extends Quest
 	
 	public LetterQuest(int questId, String name, String descr)
 	{
-		super(questId, name, descr);
+		super(questId);
 	}
 	
 	/**

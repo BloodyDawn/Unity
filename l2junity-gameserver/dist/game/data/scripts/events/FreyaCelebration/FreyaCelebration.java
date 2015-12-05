@@ -67,7 +67,7 @@ public final class FreyaCelebration extends LongTimeEvent
 	
 	private FreyaCelebration()
 	{
-		super(FreyaCelebration.class.getSimpleName(), "events");
+		super();
 		addStartNpc(FREYA);
 		addFirstTalkId(FREYA);
 		addTalkId(FREYA);

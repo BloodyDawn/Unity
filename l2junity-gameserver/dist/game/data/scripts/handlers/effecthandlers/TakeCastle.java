@@ -48,7 +48,7 @@ public final class TakeCastle extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -56,7 +56,7 @@ public final class TakeCastle extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		final Castle castle = CastleManager.getInstance().getCastle(effector);
 		castle.engrave(effector.getClan(), effected, _side);
 	}

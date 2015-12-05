@@ -43,7 +43,7 @@ public final class Untargetable extends AbstractEffect
 	{
 		return info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

@@ -48,6 +48,7 @@ public class Q00135_TempleExecutor extends Quest
 	private static final int BADGE_TEMPLE_EXECUTOR = 10334;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20781, 439); // Delu Lizardman Shaman
@@ -56,6 +57,7 @@ public class Q00135_TempleExecutor extends Quest
 		MOBS.put(21106, 423); // Cursed Seer
 		MOBS.put(21107, 902); // Delu Lizardman Commander
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	private static final int ITEM_COUNT = 10;
@@ -63,7 +65,7 @@ public class Q00135_TempleExecutor extends Quest
 	
 	public Q00135_TempleExecutor()
 	{
-		super(135, Q00135_TempleExecutor.class.getSimpleName(), "Temple Executor");
+		super(135);
 		addStartNpc(SHEGFIELD);
 		addTalkId(SHEGFIELD, ALEX, SONIN, PANO);
 		addKillId(MOBS.keySet());

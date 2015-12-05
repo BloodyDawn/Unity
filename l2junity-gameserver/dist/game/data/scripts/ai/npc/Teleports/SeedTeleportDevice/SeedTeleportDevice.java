@@ -42,7 +42,6 @@ public final class SeedTeleportDevice extends AbstractNpcAI
 	
 	private SeedTeleportDevice()
 	{
-		super(SeedTeleportDevice.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(SEED_TELEPORT_DEVICE);
 		addFirstTalkId(SEED_TELEPORT_DEVICE);
 		addTalkId(SEED_TELEPORT_DEVICE);

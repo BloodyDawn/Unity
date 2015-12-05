@@ -20,12 +20,13 @@ package village_master.Alliance;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.Quest;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author UnAfraid
  */
-public final class Alliance extends Quest
+public final class Alliance extends AbstractNpcAI
 {
 	// @formatter:off
 	private static final int[] NPCS =
@@ -47,7 +48,6 @@ public final class Alliance extends Quest
 	
 	private Alliance()
 	{
-		super(-1, Alliance.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}

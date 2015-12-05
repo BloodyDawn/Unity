@@ -63,7 +63,7 @@ public final class BlockAction extends AbstractEffect
 	{
 		return !_blockedActions.contains(id);
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
@@ -77,7 +77,7 @@ public final class BlockAction extends AbstractEffect
 			PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "block action debuff", "system", true));
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

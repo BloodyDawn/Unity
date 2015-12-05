@@ -57,7 +57,6 @@ public final class AdventurersGuide extends AbstractNpcAI
 	
 	private AdventurersGuide()
 	{
-		super(AdventurersGuide.class.getSimpleName(), "ai/npc");
 		addStartNpc(ADVENTURERS_GUIDE);
 		addTalkId(ADVENTURERS_GUIDE);
 		addFirstTalkId(ADVENTURERS_GUIDE);

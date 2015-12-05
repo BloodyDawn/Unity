@@ -42,7 +42,6 @@ public final class Gagabu extends AbstractNpcAI
 	
 	private Gagabu()
 	{
-		super(Gagabu.class.getSimpleName(), "ai/individual");
 		addSpawnId(GAGABU);
 	}
 	

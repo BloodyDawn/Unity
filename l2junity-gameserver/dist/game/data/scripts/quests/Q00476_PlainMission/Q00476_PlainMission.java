@@ -70,7 +70,7 @@ public final class Q00476_PlainMission extends Quest
 	
 	public Q00476_PlainMission()
 	{
-		super(476, Q00476_PlainMission.class.getSimpleName(), "Plain Mission");
+		super(476);
 		addStartNpc(ADVENTURER);
 		addTalkId(ADVENTURER, ANDREI);
 		addKillId(BANDERSNATCH);

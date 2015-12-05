@@ -41,7 +41,6 @@ public final class RuinsOfYeSagira extends AbstractNpcAI
 	
 	private RuinsOfYeSagira()
 	{
-		super(RuinsOfYeSagira.class.getSimpleName(), "ai/group_template");
 		addRouteFinishedId(GUARD);
 		startQuestTimer("SPAWN_FIRST", 15000, null, null, true);
 	}

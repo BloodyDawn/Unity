@@ -56,7 +56,7 @@ public final class Q10333_DisappearedSakum extends Quest
 	
 	public Q10333_DisappearedSakum()
 	{
-		super(10333, Q10333_DisappearedSakum.class.getSimpleName(), "Disappeared Sakum");
+		super(10333);
 		addStartNpc(BATHIS);
 		addTalkId(BATHIS, VENT, SCHUNAIN);
 		addKillId(LIZARDMEN, VAKU_ORC);

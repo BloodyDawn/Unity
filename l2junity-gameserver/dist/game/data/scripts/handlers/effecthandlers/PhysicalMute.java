@@ -42,7 +42,7 @@ public final class PhysicalMute extends AbstractEffect
 	{
 		return EffectFlag.PSYCHICAL_MUTED.getMask();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

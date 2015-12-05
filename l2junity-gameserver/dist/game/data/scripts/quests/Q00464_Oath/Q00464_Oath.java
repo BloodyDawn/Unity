@@ -79,7 +79,7 @@ public class Q00464_Oath extends Quest
 	
 	public Q00464_Oath()
 	{
-		super(464, Q00464_Oath.class.getSimpleName(), "Oath");
+		super(464);
 		for (int[] npc : NPC)
 		{
 			addTalkId(npc[0]);

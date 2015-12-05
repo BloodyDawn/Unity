@@ -46,7 +46,7 @@ public final class Q10330_ToTheRuinsOfYeSagira extends Quest
 	
 	public Q10330_ToTheRuinsOfYeSagira()
 	{
-		super(10330, Q10330_ToTheRuinsOfYeSagira.class.getSimpleName(), "To the Ruins of Ye Sagira");
+		super(10330);
 		addStartNpc(ATRAN);
 		addTalkId(ATRAN, LAKCIS);
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33448-05.htm");

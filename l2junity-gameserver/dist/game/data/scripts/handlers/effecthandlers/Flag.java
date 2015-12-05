@@ -41,13 +41,13 @@ public final class Flag extends AbstractEffect
 	{
 		return (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		effected.updatePvPFlag(1);
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

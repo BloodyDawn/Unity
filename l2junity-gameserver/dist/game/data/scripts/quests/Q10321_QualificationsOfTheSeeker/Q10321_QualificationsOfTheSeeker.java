@@ -43,7 +43,7 @@ public final class Q10321_QualificationsOfTheSeeker extends Quest
 	
 	public Q10321_QualificationsOfTheSeeker()
 	{
-		super(10321, Q10321_QualificationsOfTheSeeker.class.getSimpleName(), "Qualifications Of The Seeker");
+		super(10321);
 		addStartNpc(THEODORE);
 		addTalkId(THEODORE, SHANNON);
 		addCondMaxLevel(MAX_LEVEL, "32975-01a.htm");

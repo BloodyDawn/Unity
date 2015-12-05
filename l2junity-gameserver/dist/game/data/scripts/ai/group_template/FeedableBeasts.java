@@ -181,7 +181,6 @@ public final class FeedableBeasts extends AbstractNpcAI
 	
 	private FeedableBeasts()
 	{
-		super(FeedableBeasts.class.getSimpleName(), "ai/group_template");
 		addKillId(FEEDABLE_BEASTS);
 		addSkillSeeId(FEEDABLE_BEASTS);
 		

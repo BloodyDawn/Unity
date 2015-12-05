@@ -42,7 +42,6 @@ public final class Stiller extends AbstractNpcAI
 	
 	private Stiller()
 	{
-		super(Stiller.class.getSimpleName(), "ai/individual");
 		addSpawnId(STILLER);
 	}
 	

@@ -489,7 +489,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
 							sb.append("<td width=5></td>");
 							sb.append("</tr>");
 						}).build();
-
+						
 						content = content.replaceAll("%pages%", result.getPagerTemplate().toString());
 						content = content.replaceAll("%announcements%", result.getBodyTemplate().toString());
 						Util.sendCBHtml(activeChar, content);

@@ -38,7 +38,6 @@ public final class Sirra extends AbstractNpcAI
 	
 	private Sirra()
 	{
-		super(Sirra.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(SIRRA);
 	}
 	

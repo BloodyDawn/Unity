@@ -43,7 +43,6 @@ public final class LaVieEnRose extends AbstractNpcAI
 	
 	private LaVieEnRose()
 	{
-		super(LaVieEnRose.class.getSimpleName(), "ai/npc");
 		addStartNpc(LA_VIE_EN_ROSE);
 		addTalkId(LA_VIE_EN_ROSE);
 		addFirstTalkId(LA_VIE_EN_ROSE);

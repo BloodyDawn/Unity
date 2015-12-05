@@ -49,7 +49,7 @@ public final class Disarm extends AbstractEffect
 	{
 		return EffectFlag.DISARMED.getMask();
 	}
-
+	
 	@Override
 	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{

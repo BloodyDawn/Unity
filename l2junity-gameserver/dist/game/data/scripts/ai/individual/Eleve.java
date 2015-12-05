@@ -56,7 +56,6 @@ public final class Eleve extends AbstractNpcAI
 	
 	private Eleve()
 	{
-		super(Eleve.class.getSimpleName(), "ai/individual");
 		addSpawnId(ELEVE);
 	}
 	

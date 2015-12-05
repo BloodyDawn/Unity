@@ -65,7 +65,6 @@ public final class CastleDoorManager extends AbstractNpcAI
 	
 	private CastleDoorManager()
 	{
-		super(CastleDoorManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(DOORMENS_OUTTER);
 		addStartNpc(DOORMENS_INNER);
 		addTalkId(DOORMENS_OUTTER);

@@ -36,7 +36,6 @@ public final class Handermonkey extends AbstractNpcAI
 	
 	private Handermonkey()
 	{
-		super(Handermonkey.class.getSimpleName(), "ai/individual");
 		addSpawnId(HANDERMONKEY);
 	}
 	

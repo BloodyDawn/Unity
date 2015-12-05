@@ -87,7 +87,6 @@ public final class QueenAnt extends AbstractNpcAI
 	
 	private QueenAnt()
 	{
-		super(QueenAnt.class.getSimpleName(), "ai/individual");
 		addSpawnId(MOBS);
 		addKillId(MOBS);
 		addAggroRangeEnterId(MOBS);

@@ -41,7 +41,7 @@ public final class Q10345_DayOfDestinyDwarfsFate extends ThirdClassTransferQuest
 	
 	public Q10345_DayOfDestinyDwarfsFate()
 	{
-		super(10345, Q10345_DayOfDestinyDwarfsFate.class.getSimpleName(), "Day of Destiny: Dwarf's Fate", MIN_LEVEL, START_RACE);
+		super(10345, MIN_LEVEL, START_RACE);
 		addStartNpc(FERRIS);
 		addTalkId(FERRIS);
 		addCondMinLevel(MIN_LEVEL, "30847-11.html");

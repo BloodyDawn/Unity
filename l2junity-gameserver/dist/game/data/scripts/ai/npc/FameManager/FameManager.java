@@ -46,7 +46,6 @@ public final class FameManager extends AbstractNpcAI
 	
 	private FameManager()
 	{
-		super(FameManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(FAME_MANAGER);
 		addTalkId(FAME_MANAGER);
 		addFirstTalkId(FAME_MANAGER);

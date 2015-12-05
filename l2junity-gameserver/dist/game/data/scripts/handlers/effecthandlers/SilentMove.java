@@ -47,7 +47,7 @@ public final class SilentMove extends AbstractEffect
 		{
 			return false;
 		}
-
+		
 		return info.getSkill().isToggle();
 	}
 }

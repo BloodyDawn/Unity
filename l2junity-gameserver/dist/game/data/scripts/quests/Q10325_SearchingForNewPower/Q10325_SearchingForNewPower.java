@@ -50,7 +50,7 @@ public final class Q10325_SearchingForNewPower extends Quest
 	
 	public Q10325_SearchingForNewPower()
 	{
-		super(10325, Q10325_SearchingForNewPower.class.getSimpleName(), "Searching For New Power");
+		super(10325);
 		addStartNpc(GALLINT);
 		addTalkId(GALLINT, TALBOT, CIDNET, BLACK, HERTZ, KINCAID, XONIA);
 		addCondMaxLevel(MAX_LEVEL, "32980-12.htm");

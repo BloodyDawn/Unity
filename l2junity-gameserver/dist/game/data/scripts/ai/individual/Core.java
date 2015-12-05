@@ -59,7 +59,6 @@ public final class Core extends AbstractNpcAI
 	
 	private Core()
 	{
-		super(Core.class.getSimpleName(), "ai/individual");
 		registerMobs(CORE, DEATH_KNIGHT, DOOM_WRAITH, SUSCEPTOR);
 		
 		_firstAttacked = false;

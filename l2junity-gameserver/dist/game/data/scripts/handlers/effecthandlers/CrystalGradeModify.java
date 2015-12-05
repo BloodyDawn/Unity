@@ -46,13 +46,13 @@ public final class CrystalGradeModify extends AbstractEffect
 	{
 		return info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		effected.getActingPlayer().setExpertisePenaltyBonus(_grade);
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

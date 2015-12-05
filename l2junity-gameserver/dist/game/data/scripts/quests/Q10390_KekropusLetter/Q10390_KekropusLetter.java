@@ -61,7 +61,7 @@ public final class Q10390_KekropusLetter extends Quest
 	
 	public Q10390_KekropusLetter()
 	{
-		super(10390, Q10390_KekropusLetter.class.getSimpleName(), "Kekropus' Letter");
+		super(10390);
 		addStartNpc(RAYMOND, RAINS, TOBIAS, DRIKUS, MENDIO, GERSHWIN, ESRANDELL, ELLENIA);
 		addTalkId(RAYMOND, RAINS, TOBIAS, DRIKUS, MENDIO, GERSHWIN, ESRANDELL, ELLENIA, BATHIS, GOSTA, ELI);
 		addSeeCreatureId(INVISIBLE_NPC);

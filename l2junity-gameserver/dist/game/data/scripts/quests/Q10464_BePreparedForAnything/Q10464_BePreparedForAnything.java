@@ -45,7 +45,7 @@ public final class Q10464_BePreparedForAnything extends Quest
 	
 	public Q10464_BePreparedForAnything()
 	{
-		super(10464, Q10464_BePreparedForAnything.class.getSimpleName(), "Be Prepared for Anything");
+		super(10464);
 		addStartNpc(PATERSON);
 		addTalkId(PATERSON, OLF_KANORE);
 		registerQuestItems(MAGIC_PIN, LEATHER_BELT, LEATHER_BELT_FINISHED);

@@ -47,7 +47,7 @@ public final class Q00493_KickingOutUnwelcomeGuests extends Quest
 	
 	public Q00493_KickingOutUnwelcomeGuests()
 	{
-		super(493, Q00493_KickingOutUnwelcomeGuests.class.getSimpleName(), "Kicking Out Unwelcome Guests");
+		super(493);
 		addStartNpc(GEORGIO);
 		addTalkId(GEORGIO);
 		addKillId(LUNATIC_CREATURE, RESURRECTED_CREATION, UNDEAD_CREATURE, SHILEN_MESSENGER, HELLISH_CREATURE);

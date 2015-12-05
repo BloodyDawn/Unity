@@ -59,7 +59,7 @@ public final class Root extends AbstractEffect
 			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

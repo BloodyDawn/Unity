@@ -107,7 +107,7 @@ public final class Q00762_AnOminousRequest extends Quest
 	
 	public Q00762_AnOminousRequest()
 	{
-		super(762, Q00762_AnOminousRequest.class.getSimpleName(), "An Ominous Request");
+		super(762);
 		addStartNpc(MYSTERIOUS_WIZARD);
 		addTalkId(MYSTERIOUS_WIZARD);
 		addKillId(MONSTERS);

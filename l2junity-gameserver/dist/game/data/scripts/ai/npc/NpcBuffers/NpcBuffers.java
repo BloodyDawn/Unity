@@ -33,7 +33,6 @@ public final class NpcBuffers extends AbstractNpcAI
 	
 	private NpcBuffers()
 	{
-		super(NpcBuffers.class.getSimpleName(), "npc");
 		
 		for (int npcId : _npcBuffers.getNpcBufferIds())
 		{

@@ -51,7 +51,7 @@ public final class Q10709_TheStolenSeed extends Quest
 	
 	public Q10709_TheStolenSeed()
 	{
-		super(10709, Q10709_TheStolenSeed.class.getSimpleName(), "The Stolen Seed");
+		super(10709);
 		addStartNpc(NOVIAN);
 		addTalkId(NOVIAN, CONTROL_DEVICE);
 		addKillId(CURSED_AKUM);

@@ -64,7 +64,6 @@ public final class SoIController extends AirShipController
 	
 	public SoIController()
 	{
-		super(-1, SoIController.class.getSimpleName(), "vehicles");
 		addStartNpc(CONTROLLER_ID);
 		addFirstTalkId(CONTROLLER_ID);
 		addTalkId(CONTROLLER_ID);

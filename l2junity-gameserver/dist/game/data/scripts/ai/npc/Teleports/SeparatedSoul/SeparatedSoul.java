@@ -54,6 +54,7 @@ public final class SeparatedSoul extends AbstractNpcAI
 	private static final int MIN_LEVEL = 80;
 	// Locations
 	private static final Map<String, Location> LOCATIONS = new HashMap<>();
+	
 	static
 	{
 		LOCATIONS.put("HuntersVillage", new Location(117031, 76769, -2696));
@@ -68,7 +69,6 @@ public final class SeparatedSoul extends AbstractNpcAI
 	
 	private SeparatedSoul()
 	{
-		super(SeparatedSoul.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(SEPARATED_SOULS);
 		addTalkId(SEPARATED_SOULS);
 	}

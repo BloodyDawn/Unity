@@ -44,6 +44,7 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 	// Mobs
 	private static final Map<Integer, Integer> MOBS1 = new HashMap<>();
 	private static final Map<Integer, Double> MOBS2 = new HashMap<>();
+	
 	static
 	{
 		MOBS1.put(22660, 366); // lesser_giant_re
@@ -60,7 +61,7 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 	
 	public Q00377_ExplorationOfTheGiantsCavePart2()
 	{
-		super(377, Q00377_ExplorationOfTheGiantsCavePart2.class.getSimpleName(), "Exploration of the Giants' Cave - Part 2");
+		super(377);
 		addStartNpc(SOBLING);
 		addTalkId(SOBLING);
 		addKillId(MOBS1.keySet());

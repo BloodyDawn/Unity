@@ -49,7 +49,7 @@ public final class Q10366_RuinsStatusUpdate extends Quest
 	
 	public Q10366_RuinsStatusUpdate()
 	{
-		super(10366, Q10366_RuinsStatusUpdate.class.getSimpleName(), "Ruins Status Update");
+		super(10366);
 		addStartNpc(SEBION);
 		addTalkId(SEBION, FRANCO, RIVIAN, DEVON, TOOK, MOKA, VALFAR);
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "32978-10.htm");

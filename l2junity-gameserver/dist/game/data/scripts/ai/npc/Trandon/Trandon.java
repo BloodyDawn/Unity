@@ -56,7 +56,6 @@ public final class Trandon extends AbstractNpcAI
 	
 	private Trandon()
 	{
-		super(Trandon.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPC_ID);
 		addFirstTalkId(NPC_ID);
 		addTalkId(NPC_ID);

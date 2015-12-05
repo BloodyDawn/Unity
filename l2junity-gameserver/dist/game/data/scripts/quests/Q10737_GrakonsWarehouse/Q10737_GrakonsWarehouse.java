@@ -51,7 +51,7 @@ public final class Q10737_GrakonsWarehouse extends Quest
 	
 	public Q10737_GrakonsWarehouse()
 	{
-		super(10737, Q10737_GrakonsWarehouse.class.getSimpleName(), "Grakon's Warehouse");
+		super(10737);
 		addStartNpc(KATALIN, AYANTHE);
 		addTalkId(KATALIN, AYANTHE, GRAKON);
 		

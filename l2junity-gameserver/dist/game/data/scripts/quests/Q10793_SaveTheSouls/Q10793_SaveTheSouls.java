@@ -63,7 +63,7 @@ public final class Q10793_SaveTheSouls extends Quest
 	
 	public Q10793_SaveTheSouls()
 	{
-		super(10793, Q10793_SaveTheSouls.class.getSimpleName(), "Save the Souls");
+		super(10793);
 		addStartNpc(HATUBA);
 		addTalkId(HATUBA);
 		addKillId(MONSTERS);

@@ -41,7 +41,7 @@ public final class Q10361_RolesOfTheSeeker extends Quest
 	
 	public Q10361_RolesOfTheSeeker()
 	{
-		super(10361, Q10361_RolesOfTheSeeker.class.getSimpleName(), "Roles of the Seeker");
+		super(10361);
 		addStartNpc(LAKCIS);
 		addTalkId(LAKCIS, CHESHA);
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "32977-05.htm");

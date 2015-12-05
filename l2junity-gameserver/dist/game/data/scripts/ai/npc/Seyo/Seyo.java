@@ -47,7 +47,6 @@ public final class Seyo extends AbstractNpcAI
 	
 	public Seyo()
 	{
-		super(Seyo.class.getSimpleName(), "ai/npc");
 		addStartNpc(SEYO);
 		addTalkId(SEYO);
 		addFirstTalkId(SEYO);

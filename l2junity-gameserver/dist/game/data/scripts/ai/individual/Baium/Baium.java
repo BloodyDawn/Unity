@@ -106,7 +106,6 @@ public final class Baium extends AbstractNpcAI
 	
 	private Baium()
 	{
-		super(Baium.class.getSimpleName(), "ai/individual");
 		addFirstTalkId(ANG_VORTEX);
 		addTalkId(ANG_VORTEX, TELE_CUBE, BAIUM_STONE);
 		addStartNpc(ANG_VORTEX, TELE_CUBE, BAIUM_STONE);

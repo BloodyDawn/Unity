@@ -49,6 +49,7 @@ public final class Q00186_ContractExecution extends Quest
 	private static final int MAX_LEVEL_FOR_EXP_SP = 47;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20577, 40); // Leto Lizardman
@@ -61,7 +62,7 @@ public final class Q00186_ContractExecution extends Quest
 	
 	public Q00186_ContractExecution()
 	{
-		super(186, Q00186_ContractExecution.class.getSimpleName(), "Contract Execution");
+		super(186);
 		addStartNpc(RESEARCHER_LORAIN);
 		addTalkId(RESEARCHER_LORAIN, BLUEPRINT_SELLER_LUKA, MAESTRO_NIKOLA);
 		addKillId(MONSTERS.keySet());

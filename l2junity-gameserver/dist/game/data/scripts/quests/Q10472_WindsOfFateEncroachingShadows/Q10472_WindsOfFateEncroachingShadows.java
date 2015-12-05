@@ -82,7 +82,7 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 	
 	public Q10472_WindsOfFateEncroachingShadows()
 	{
-		super(10472, Q10472_WindsOfFateEncroachingShadows.class.getSimpleName(), "Winds of Fate: Encroaching Shadows");
+		super(10472);
 		addStartNpc(NAVARI);
 		addTalkId(NAVARI, ZEPHYRA, MOMET, BLACK_MARKETEER_MAMMON, BLACKSMITH_OF_MAMMON, HARDIN, KARLA, RAINA);
 		addKillId(MOBS);

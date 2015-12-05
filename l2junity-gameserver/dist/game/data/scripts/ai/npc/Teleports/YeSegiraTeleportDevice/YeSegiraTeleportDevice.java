@@ -64,6 +64,7 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 	};
 	// Locations
 	private static final Map<String, Location> LOCATIONS = new HashMap<>();
+	
 	static
 	{
 		LOCATIONS.put("village", new Location(-114413, 252159, -1592));
@@ -77,12 +78,12 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 		LOCATIONS.put("4_exploration_zone", new Location(-112382, 238710, -2904));
 		LOCATIONS.put("5_exploration_zone", new Location(-110980, 233774, -3200));
 	}
+	
 	// Misc
 	private static final String MOVIE_VAR = "TI_YESEGIRA_MOVIE";
 	
 	private YeSegiraTeleportDevice()
 	{
-		super(YeSegiraTeleportDevice.class.getSimpleName(), "ai/npc/Teleports");
 		addFirstTalkId(TELEPORT_DEVICES);
 		addStartNpc(TELEPORT_DEVICES);
 		addTalkId(TELEPORT_DEVICES);

@@ -54,7 +54,6 @@ public final class BabyPets extends AbstractNpcAI
 	
 	private BabyPets()
 	{
-		super(BabyPets.class.getSimpleName(), "ai/group_template");
 		addSummonSpawnId(BABY_PETS);
 	}
 	

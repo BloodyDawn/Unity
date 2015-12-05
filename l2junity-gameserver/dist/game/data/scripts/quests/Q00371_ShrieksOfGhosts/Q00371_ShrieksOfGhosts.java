@@ -69,6 +69,7 @@ public final class Q00371_ShrieksOfGhosts extends Quest
 	private static final int MIN_LEVEL = 59;
 	
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20818, new DropInfo(350, 400)); // hallates_warrior
@@ -78,7 +79,7 @@ public final class Q00371_ShrieksOfGhosts extends Quest
 	
 	public Q00371_ShrieksOfGhosts()
 	{
-		super(371, Q00371_ShrieksOfGhosts.class.getSimpleName(), "Shrieks of Ghosts");
+		super(371);
 		addStartNpc(REVA);
 		addTalkId(REVA, PATRIN);
 		addKillId(MOBS.keySet());

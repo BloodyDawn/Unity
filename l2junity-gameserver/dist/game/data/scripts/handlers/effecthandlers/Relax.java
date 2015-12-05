@@ -54,7 +54,7 @@ public final class Relax extends AbstractEffect
 	{
 		return L2EffectType.RELAXING;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
@@ -67,7 +67,7 @@ public final class Relax extends AbstractEffect
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
 		}
 	}
-
+	
 	@Override
 	public boolean onActionTime(BuffInfo info)
 	{

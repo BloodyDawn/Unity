@@ -51,7 +51,7 @@ public final class Q00489_InThisQuietPlace extends Quest
 	
 	public Q00489_InThisQuietPlace()
 	{
-		super(489, Q00489_InThisQuietPlace.class.getSimpleName(), "In This Quiet Place");
+		super(489);
 		addStartNpc(ADVENTURER);
 		addTalkId(ADVENTURER, BESTIAN);
 		addKillId(MONSTERS);

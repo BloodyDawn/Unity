@@ -60,7 +60,6 @@ public final class SoDController extends AirShipController
 	
 	public SoDController()
 	{
-		super(-1, SoDController.class.getSimpleName(), "vehicles");
 		addStartNpc(CONTROLLER_ID);
 		addFirstTalkId(CONTROLLER_ID);
 		addTalkId(CONTROLLER_ID);

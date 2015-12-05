@@ -110,7 +110,7 @@ public final class Q10385_RedThreadOfFate extends Quest
 	
 	public Q10385_RedThreadOfFate()
 	{
-		super(10385, Q10385_RedThreadOfFate.class.getSimpleName(), "Red Thread of Fate");
+		super(10385);
 		addStartNpc(RAINA);
 		addFirstTalkId(ALTAR_OF_SHILEN, MOTHER_TREE, PAAGRIO_TEMPLE, DESERTED_DWARVEN_HOUSE, CAVE_OF_SOULS);
 		addTalkId(RAINA, MORELYN, LANYA, LADY_OF_THE_LAKE, NERUPA, ENFEUX, INNOCENTIN, VULCAN, MIXING_URN, WESLEY, HEINE_WATER_SOURCE, MYSTERIOUS_DARK_KNIGHT, DARIN, ROXXY, BIOTIN);

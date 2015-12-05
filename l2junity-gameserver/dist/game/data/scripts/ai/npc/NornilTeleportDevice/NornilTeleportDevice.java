@@ -44,7 +44,6 @@ public final class NornilTeleportDevice extends AbstractNpcAI
 	
 	public NornilTeleportDevice()
 	{
-		super(NornilTeleportDevice.class.getSimpleName(), "ai/npc");
 		addStartNpc(DEVICE);
 		addFirstTalkId(DEVICE);
 		addTalkId(DEVICE);

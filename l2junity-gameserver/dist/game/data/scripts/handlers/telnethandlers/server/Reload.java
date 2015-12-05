@@ -60,7 +60,7 @@ import org.slf4j.LoggerFactory;
 public class Reload implements ITelnetCommand
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Reload.class);
-
+	
 	private Reload()
 	{
 	}

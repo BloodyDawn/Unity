@@ -121,7 +121,7 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 						}
 						catch (Exception e)
 						{
-							
+						
 						}
 						
 						if (range <= 0)

@@ -79,7 +79,7 @@ public final class Q10322_SearchingForTheMysteriousPower extends Quest
 	
 	public Q10322_SearchingForTheMysteriousPower()
 	{
-		super(10322, Q10322_SearchingForTheMysteriousPower.class.getSimpleName(), "Searching For The Mysterious Power");
+		super(10322);
 		addStartNpc(SHANNON);
 		addTalkId(SHANNON, ADVENTURERS_GUIDE, EVAIN);
 		addKillId(SCARECROW);

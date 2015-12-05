@@ -36,7 +36,6 @@ public final class Acateo extends AbstractNpcAI
 	
 	private Acateo()
 	{
-		super(Acateo.class.getSimpleName(), "ai/npc");
 		addStartNpc(ACATEO);
 		addFirstTalkId(ACATEO);
 		addTalkId(ACATEO);

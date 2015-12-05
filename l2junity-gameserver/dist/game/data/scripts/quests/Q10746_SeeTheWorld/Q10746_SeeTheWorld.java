@@ -50,7 +50,7 @@ public final class Q10746_SeeTheWorld extends Quest
 	
 	public Q10746_SeeTheWorld()
 	{
-		super(10746, Q10746_SeeTheWorld.class.getSimpleName(), "See The World");
+		super(10746);
 		addStartNpc(KARLA);
 		addTalkId(KARLA, ASTIEL, LEVIAN);
 		

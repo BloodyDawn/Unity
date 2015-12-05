@@ -76,7 +76,6 @@ public final class Maguen extends AbstractNpcAI
 	
 	public Maguen()
 	{
-		super(Maguen.class.getSimpleName(), "ai/individual");
 		addKillId(ELITES);
 		addSkillSeeId(MAGUEN);
 		addSpellFinishedId(MAGUEN);

@@ -38,19 +38,19 @@ public final class Hide extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		if (effected.isPlayer())
 		{
 			effected.setInvisible(true);
-
+			
 			if ((effected.getAI().getNextIntention() != null) && (effected.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK))
 			{
 				effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
-
+			
 			World.getInstance().forEachVisibleObject(effected, Creature.class, target ->
 			{
 				if ((target.getTarget() == effected))
@@ -63,7 +63,7 @@ public final class Hide extends AbstractEffect
 			});
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

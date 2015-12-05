@@ -48,7 +48,7 @@ public final class Q00044_HelpTheSon extends Quest
 	
 	public Q00044_HelpTheSon()
 	{
-		super(44, Q00044_HelpTheSon.class.getSimpleName(), "Help The Son!");
+		super(44);
 		addStartNpc(LUNDY);
 		addTalkId(LUNDY, DRIKUS);
 		addKillId(MAILLE_GUARD, MAILLE_LIZARDMAN, MAILLE_SCOUT);

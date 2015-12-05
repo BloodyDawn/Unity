@@ -39,7 +39,6 @@ public final class FreyasSteward extends AbstractNpcAI
 	
 	private FreyasSteward()
 	{
-		super(FreyasSteward.class.getSimpleName(), "ai/npc");
 		addStartNpc(FREYAS_STEWARD);
 		addFirstTalkId(FREYAS_STEWARD);
 		addTalkId(FREYAS_STEWARD);

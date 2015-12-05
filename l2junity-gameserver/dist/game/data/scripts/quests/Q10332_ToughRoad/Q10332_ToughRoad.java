@@ -49,7 +49,7 @@ public final class Q10332_ToughRoad extends Quest
 	
 	public Q10332_ToughRoad()
 	{
-		super(10332, Q10332_ToughRoad.class.getSimpleName(), "Tough Road");
+		super(10332);
 		addStartNpc(KAKAI);
 		addTalkId(KAKAI, BATHIS);
 		addEnterZoneId(ZONE_ID);

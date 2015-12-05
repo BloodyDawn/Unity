@@ -71,6 +71,7 @@ public class Q00631_DeliciousTopChoiceMeat extends Quest
 	private static final int CRYSTAL_SPICE_COMPRESSED_PACK = 15483;
 	
 	private static final Map<Integer, Double> MOBS_MEAT = new HashMap<>();
+	
 	static
 	{
 		MOBS_MEAT.put(18878, 0.172); // Full Grown Kookaburra
@@ -85,7 +86,7 @@ public class Q00631_DeliciousTopChoiceMeat extends Quest
 	
 	public Q00631_DeliciousTopChoiceMeat()
 	{
-		super(631, Q00631_DeliciousTopChoiceMeat.class.getSimpleName(), "Delicious Top Choice Meat");
+		super(631);
 		addStartNpc(TUNATUN);
 		addTalkId(TUNATUN);
 		addKillId(MOBS_MEAT.keySet());

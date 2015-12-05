@@ -51,7 +51,7 @@ public final class Q10757_QuietingTheStorm extends Quest
 	
 	public Q10757_QuietingTheStorm()
 	{
-		super(10757, Q10757_QuietingTheStorm.class.getSimpleName(), "Quieting the Storm");
+		super(10757);
 		addStartNpc(PIO);
 		addTalkId(PIO);
 		addKillId(VORTEX, GIANT_WINDIMA, IMMENSE_WINDIMA);

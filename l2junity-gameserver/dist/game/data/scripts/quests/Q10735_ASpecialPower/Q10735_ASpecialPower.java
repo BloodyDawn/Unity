@@ -55,7 +55,7 @@ public final class Q10735_ASpecialPower extends Quest
 	
 	public Q10735_ASpecialPower()
 	{
-		super(10735, Q10735_ASpecialPower.class.getSimpleName(), "A Special Power");
+		super(10735);
 		addStartNpc(AYANTHE);
 		addTalkId(AYANTHE);
 		

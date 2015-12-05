@@ -37,7 +37,6 @@ public final class PavelArchaic extends AbstractNpcAI
 	
 	private PavelArchaic()
 	{
-		super(PavelArchaic.class.getSimpleName(), "ai/group_template");
 		addKillId(SAFETY_DEVICE, PINCER_GOLEM, JACKHAMMER_GOLEM);
 	}
 	

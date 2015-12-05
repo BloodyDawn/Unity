@@ -52,7 +52,7 @@ public final class Q10398_ASuspiciousBadge extends Quest
 	
 	public Q10398_ASuspiciousBadge()
 	{
-		super(10398, Q10398_ASuspiciousBadge.class.getSimpleName(), "A Suspicious Badge");
+		super(10398);
 		addStartNpc(ANDY);
 		addTalkId(ANDY, BACON);
 		addKillId(MONSTERS);

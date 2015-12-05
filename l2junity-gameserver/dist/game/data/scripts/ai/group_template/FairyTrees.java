@@ -50,7 +50,6 @@ public class FairyTrees extends AbstractNpcAI
 	
 	private FairyTrees()
 	{
-		super(FairyTrees.class.getSimpleName(), "ai/group_template");
 		addKillId(MOBS);
 		addSpawnId(MOBS);
 	}

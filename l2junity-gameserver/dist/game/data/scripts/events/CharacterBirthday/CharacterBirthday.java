@@ -20,15 +20,16 @@ package events.CharacterBirthday;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Character Birthday event AI.<br>
  * Updated to H5 by Nyaran.
  * @author Gnacik
  */
-public final class CharacterBirthday extends Quest
+public final class CharacterBirthday extends AbstractNpcAI
 {
 	private static final int ALEGRIA = 32600;
 	private static int SPAWNS = 0;
@@ -58,7 +59,6 @@ public final class CharacterBirthday extends Quest
 	
 	private CharacterBirthday()
 	{
-		super(-1, CharacterBirthday.class.getSimpleName(), "events");
 		addStartNpc(ALEGRIA);
 		addStartNpc(GK);
 		addTalkId(ALEGRIA);

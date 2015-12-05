@@ -36,7 +36,6 @@ public final class Holly extends AbstractNpcAI
 	
 	private Holly()
 	{
-		super(Holly.class.getSimpleName(), "ai/individual");
 		addSpawnId(HOLLY);
 	}
 	

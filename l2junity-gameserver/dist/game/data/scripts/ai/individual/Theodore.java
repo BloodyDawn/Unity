@@ -36,7 +36,6 @@ public final class Theodore extends AbstractNpcAI
 	
 	private Theodore()
 	{
-		super(Theodore.class.getSimpleName(), "ai/individual");
 		addSpawnId(THEODORE);
 	}
 	

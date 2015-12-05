@@ -90,7 +90,6 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	
 	private PlainsOfLizardman()
 	{
-		super(PlainsOfLizardman.class.getSimpleName(), "ai/group_template");
 		addAttackId(FANTASY_MUSHROOM, RAINBOW_FROG, STICKY_MUSHROOM, ENERGY_PLANT, TANTA_SUMMONER);
 		addKillId(TANTA_LIZARDMEN);
 	}

@@ -34,7 +34,6 @@ public final class BlackJudge extends AbstractNpcAI
 	
 	private BlackJudge()
 	{
-		super(BlackJudge.class.getSimpleName(), "ai/npc");
 		addStartNpc(BLACK_JUDGE);
 		addTalkId(BLACK_JUDGE);
 		addFirstTalkId(BLACK_JUDGE);

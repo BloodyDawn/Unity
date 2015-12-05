@@ -41,7 +41,7 @@ public final class Q10342_DayOfDestinyElvenFate extends ThirdClassTransferQuest
 	
 	public Q10342_DayOfDestinyElvenFate()
 	{
-		super(10342, Q10342_DayOfDestinyElvenFate.class.getSimpleName(), "Day of Destiny: Elven Fate", MIN_LEVEL, START_RACE);
+		super(10342, MIN_LEVEL, START_RACE);
 		addStartNpc(WINONIN);
 		addTalkId(WINONIN);
 		addCondMinLevel(MIN_LEVEL, "30856-11.html");

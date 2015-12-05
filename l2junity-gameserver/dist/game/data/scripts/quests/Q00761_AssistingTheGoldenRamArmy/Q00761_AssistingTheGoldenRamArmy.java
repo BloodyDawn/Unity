@@ -78,7 +78,7 @@ public final class Q00761_AssistingTheGoldenRamArmy extends Quest
 	
 	public Q00761_AssistingTheGoldenRamArmy()
 	{
-		super(761, Q00761_AssistingTheGoldenRamArmy.class.getSimpleName(), "Assisting the Golden Ram Army");
+		super(761);
 		addStartNpc(PIERCE);
 		addTalkId(PIERCE);
 		addKillId(MONSTERS);

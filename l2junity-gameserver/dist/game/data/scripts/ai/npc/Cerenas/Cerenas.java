@@ -38,7 +38,6 @@ public final class Cerenas extends AbstractNpcAI
 	
 	private Cerenas()
 	{
-		super(Cerenas.class.getSimpleName(), "ai/npc");
 		addStartNpc(CERENAS);
 		addTalkId(CERENAS);
 	}

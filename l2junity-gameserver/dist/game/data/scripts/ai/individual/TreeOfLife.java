@@ -44,7 +44,6 @@ public final class TreeOfLife extends AbstractNpcAI
 	
 	private TreeOfLife()
 	{
-		super(TreeOfLife.class.getSimpleName(), "ai/individual");
 		addSummonSpawnId(TREE_OF_LIFE);
 	}
 	

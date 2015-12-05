@@ -38,6 +38,7 @@ public class Q00647_InfluxOfMachines extends Quest
 	private static final int GUTENHAGEN = 32069;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(22801, 280); // Cruel Pincer Golem
@@ -53,6 +54,7 @@ public class Q00647_InfluxOfMachines extends Quest
 		MOBS.put(22811, 849); // Great Chaos Golem
 		MOBS.put(22812, 463); // Boom Golem
 	}
+	
 	// Item
 	private static final int BROKEN_GOLEM_FRAGMENT = 15521;
 	private static final int[] RECIPES =
@@ -74,7 +76,7 @@ public class Q00647_InfluxOfMachines extends Quest
 	
 	public Q00647_InfluxOfMachines()
 	{
-		super(647, Q00647_InfluxOfMachines.class.getSimpleName(), "Influx of Machines");
+		super(647);
 		addStartNpc(GUTENHAGEN);
 		addTalkId(GUTENHAGEN);
 		addKillId(MOBS.keySet());

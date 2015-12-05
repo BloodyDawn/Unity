@@ -56,7 +56,6 @@ public final class Karonf extends AbstractNpcAI
 	
 	private Karonf()
 	{
-		super(Karonf.class.getSimpleName(), "ai/individual");
 		addSpawnId(KARONF);
 	}
 	

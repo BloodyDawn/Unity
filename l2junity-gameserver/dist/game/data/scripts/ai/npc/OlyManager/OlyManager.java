@@ -67,7 +67,6 @@ public final class OlyManager extends AbstractNpcAI
 	
 	private OlyManager()
 	{
-		super(OlyManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(MANAGERS);
 		addFirstTalkId(MANAGERS);
 		addTalkId(MANAGERS);

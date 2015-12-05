@@ -42,7 +42,6 @@ public final class Luderic extends AbstractNpcAI
 	
 	private Luderic()
 	{
-		super(Luderic.class.getSimpleName(), "ai/individual");
 		addSpawnId(LUDERIC);
 	}
 	

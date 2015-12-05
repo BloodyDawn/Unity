@@ -58,7 +58,7 @@ public final class Q10402_NowhereToTurn extends Quest
 	
 	public Q10402_NowhereToTurn()
 	{
-		super(10402, Q10402_NowhereToTurn.class.getSimpleName(), "Nowhere to Turn");
+		super(10402);
 		addStartNpc(EBLUNE);
 		addTalkId(EBLUNE);
 		addKillId(MONSTERS);

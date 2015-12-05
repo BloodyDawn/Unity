@@ -23,12 +23,13 @@ import java.util.Map;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.Quest;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author UnAfraid
  */
-public final class Clan extends Quest
+public final class Clan extends AbstractNpcAI
 {
 	// @formatter:off
 	private static final int[] NPCS =
@@ -48,6 +49,7 @@ public final class Clan extends Quest
 	};
 	// @formatter:on
 	private static final Map<String, String> LEADER_REQUIRED = new HashMap<>();
+	
 	static
 	{
 		LEADER_REQUIRED.put("9000-03.htm", "9000-03-no.htm");
@@ -65,7 +67,6 @@ public final class Clan extends Quest
 	
 	private Clan()
 	{
-		super(-1, Clan.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}

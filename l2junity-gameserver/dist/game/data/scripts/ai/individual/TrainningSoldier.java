@@ -38,7 +38,6 @@ public final class TrainningSoldier extends AbstractNpcAI
 	
 	private TrainningSoldier()
 	{
-		super(TrainningSoldier.class.getSimpleName(), "ai/individual");
 		addSeeCreatureId(SOLDIER);
 	}
 	

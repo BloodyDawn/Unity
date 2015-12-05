@@ -50,7 +50,7 @@ public final class Q10337_SakumsImpact extends Quest
 	
 	public Q10337_SakumsImpact()
 	{
-		super(10337, Q10337_SakumsImpact.class.getSimpleName(), "Sakum's Impact");
+		super(10337);
 		addStartNpc(ADVENTURE_GUILDSMAN);
 		addTalkId(ADVENTURE_GUILDSMAN, SILVAN, LEF);
 		addKillId(SKELETON_WARRIOR, RUIN_IMP, BAT, RUIN_BAT);

@@ -81,7 +81,7 @@ public final class ChameleonRest extends AbstractEffect
 		info.getEffected().reduceCurrentMp(manaDam);
 		return info.getSkill().isToggle();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

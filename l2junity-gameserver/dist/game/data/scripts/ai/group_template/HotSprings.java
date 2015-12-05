@@ -51,7 +51,6 @@ public final class HotSprings extends AbstractNpcAI
 	
 	private HotSprings()
 	{
-		super(HotSprings.class.getSimpleName(), "ai/group_template");
 		addAttackId(BANDERSNATCHLING, FLAVA, ATROXSPAWN, NEPENTHES, ATROX, BANDERSNATCH);
 	}
 	

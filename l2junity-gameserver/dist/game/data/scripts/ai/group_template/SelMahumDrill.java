@@ -128,7 +128,6 @@ public final class SelMahumDrill extends AbstractNpcAI
 	
 	private SelMahumDrill()
 	{
-		super(SelMahumDrill.class.getSimpleName(), "ai/group_template");
 		
 		addAttackId(MAHUM_SOLDIERS);
 		addKillId(MAHUM_CHIEFS);

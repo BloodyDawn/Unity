@@ -52,7 +52,7 @@ public final class Q10745_TheSecretIngredients extends Quest
 	
 	public Q10745_TheSecretIngredients()
 	{
-		super(10745, Q10745_TheSecretIngredients.class.getSimpleName(), "The Secret Ingredients");
+		super(10745);
 		addStartNpc(DOLKIN);
 		addTalkId(DOLKIN, KARLA);
 		addKillId(KARAPHON, KEEN_HONEYBEE, KEEN_GROWLER);

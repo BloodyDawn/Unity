@@ -85,7 +85,7 @@ public final class Q00763_ADauntingTask extends Quest
 	
 	public Q00763_ADauntingTask()
 	{
-		super(763, Q00763_ADauntingTask.class.getSimpleName(), "A Daunting Task");
+		super(763);
 		addStartNpc(JANITT);
 		addTalkId(JANITT);
 		addKillId(MONSTERS);

@@ -65,7 +65,7 @@ public final class Q00470_DivinityProtector extends Quest
 	
 	public Q00470_DivinityProtector()
 	{
-		super(470, Q00470_DivinityProtector.class.getSimpleName(), "Divinity Protector");
+		super(470);
 		addStartNpc(ADVENTURER);
 		addTalkId(ADVENTURER, AGRIPEL);
 		addKillId(MONSTERS);

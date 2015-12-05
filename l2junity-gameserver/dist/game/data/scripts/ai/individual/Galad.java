@@ -36,7 +36,6 @@ public final class Galad extends AbstractNpcAI
 	
 	private Galad()
 	{
-		super(Galad.class.getSimpleName(), "ai/individual");
 		addSpawnId(GALAD);
 	}
 	

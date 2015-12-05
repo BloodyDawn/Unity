@@ -41,7 +41,7 @@ public final class Q10344_DayOfDestinyOrcsFate extends ThirdClassTransferQuest
 	
 	public Q10344_DayOfDestinyOrcsFate()
 	{
-		super(10344, Q10344_DayOfDestinyOrcsFate.class.getSimpleName(), "Day of Destiny: Orc's Fate", MIN_LEVEL, START_RACE);
+		super(10344, MIN_LEVEL, START_RACE);
 		addStartNpc(LADANZA);
 		addTalkId(LADANZA);
 		addCondMinLevel(MIN_LEVEL, "30865-11.html");

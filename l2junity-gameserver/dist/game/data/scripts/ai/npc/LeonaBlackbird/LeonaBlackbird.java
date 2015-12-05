@@ -35,7 +35,6 @@ public final class LeonaBlackbird extends AbstractNpcAI
 	
 	public LeonaBlackbird()
 	{
-		super(LeonaBlackbird.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(LEONA);
 		addTalkId(LEONA);
 		addStartNpc(LEONA);

@@ -68,7 +68,7 @@ public final class AttackTrait extends AbstractEffect
 			}
 		}
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

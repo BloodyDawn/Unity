@@ -99,7 +99,6 @@ public final class WyvernManager extends AbstractNpcAI
 	
 	private WyvernManager()
 	{
-		super(WyvernManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(MANAGERS.keySet());
 		addTalkId(MANAGERS.keySet());
 		addFirstTalkId(MANAGERS.keySet());

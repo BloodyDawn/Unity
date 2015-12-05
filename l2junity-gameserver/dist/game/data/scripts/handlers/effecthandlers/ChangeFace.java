@@ -46,7 +46,7 @@ public final class ChangeFace extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -54,7 +54,7 @@ public final class ChangeFace extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		final PlayerInstance player = effected.getActingPlayer();
 		player.getAppearance().setFace(_value);
 		player.broadcastUserInfo();

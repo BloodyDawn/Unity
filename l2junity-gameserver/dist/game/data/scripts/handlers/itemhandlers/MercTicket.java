@@ -51,7 +51,6 @@ public final class MercTicket extends AbstractNpcAI implements IItemHandler
 	
 	public MercTicket()
 	{
-		super(MercTicket.class.getSimpleName(), "handlers");
 	}
 	
 	@Override

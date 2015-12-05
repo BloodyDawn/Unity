@@ -66,7 +66,7 @@ public final class Q10786_ResidentProblemSolver extends Quest
 	
 	public Q10786_ResidentProblemSolver()
 	{
-		super(10786, Q10786_ResidentProblemSolver.class.getSimpleName(), "Resident Problem Solver");
+		super(10786);
 		addStartNpc(SHUVANN);
 		addTalkId(SHUVANN);
 		addKillId(MONSTERS);

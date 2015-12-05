@@ -36,7 +36,6 @@ public final class GuardSoldier extends AbstractNpcAI
 	
 	private GuardSoldier()
 	{
-		super(GuardSoldier.class.getSimpleName(), "ai/individual");
 		addSpawnId(GUARD_SOLDIER);
 	}
 	

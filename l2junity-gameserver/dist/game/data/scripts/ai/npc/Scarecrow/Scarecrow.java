@@ -34,7 +34,6 @@ public final class Scarecrow extends AbstractNpcAI
 	
 	private Scarecrow()
 	{
-		super(Scarecrow.class.getSimpleName(), "ai");
 		addSpawnId(SCARECROW, TRAINING_DUMMY);
 	}
 	

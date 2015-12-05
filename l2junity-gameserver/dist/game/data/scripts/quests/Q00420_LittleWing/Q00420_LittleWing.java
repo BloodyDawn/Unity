@@ -108,6 +108,7 @@ public final class Q00420_LittleWing extends Quest
 	private static final List<Integer> EGGS = Arrays.asList(EXARION_EGG, SUZET_EGG, KALIBRAN_EGG, SHAMHAI_EGG, ZWOV_EGG);
 	// Drake Drops
 	private static final Map<Integer, Integer> EGG_DROPS = new HashMap<>();
+	
 	{
 		EGG_DROPS.put(DEAD_SEEKER, SHAMHAI_EGG);
 		EGG_DROPS.put(MARSH_SPIDER, ZWOV_EGG);
@@ -115,12 +116,13 @@ public final class Q00420_LittleWing extends Quest
 		EGG_DROPS.put(ROAD_SCAVENGER, KALIBRAN_EGG);
 		EGG_DROPS.put(LETO_WARRIOR, EXARION_EGG);
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 35;
 	
 	public Q00420_LittleWing()
 	{
-		super(420, Q00420_LittleWing.class.getSimpleName(), "Little Wing");
+		super(420);
 		addStartNpc(COOPER);
 		addTalkId(MARIA, CRONOS, BYRON, MIMYU, EXARION, ZWOV, KALIBRAN, SUZET, SHAMHAI, COOPER);
 		addAttackId(DELUXE_STONE_BREAKERS);

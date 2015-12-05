@@ -43,7 +43,6 @@ public final class Lekon extends AbstractNpcAI
 	
 	public Lekon()
 	{
-		super(Lekon.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(LEKON);
 		addTalkId(LEKON);
 		addStartNpc(LEKON);

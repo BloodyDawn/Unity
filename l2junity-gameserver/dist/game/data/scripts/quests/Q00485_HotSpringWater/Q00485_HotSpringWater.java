@@ -55,7 +55,7 @@ public final class Q00485_HotSpringWater extends Quest
 	
 	public Q00485_HotSpringWater()
 	{
-		super(485, Q00485_HotSpringWater.class.getSimpleName(), "Hot Spring Water");
+		super(485);
 		addStartNpc(ADVENTURER);
 		addTalkId(ADVENTURER, WALDERAL);
 		addKillId(MONSTERS);

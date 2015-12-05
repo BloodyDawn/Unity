@@ -44,7 +44,7 @@ public final class Q00040_ASpecialOrder extends Quest
 	
 	public Q00040_ASpecialOrder()
 	{
-		super(40, Q00040_ASpecialOrder.class.getSimpleName(), "A Special Order");
+		super(40);
 		addStartNpc(HELVETIA);
 		addTalkId(HELVETIA, O_FULLE, GESTO);
 		registerQuestItems(FISH_CHEST, SEED_JAR);

@@ -36,7 +36,6 @@ public final class Shannon extends AbstractNpcAI
 	
 	private Shannon()
 	{
-		super(Shannon.class.getSimpleName(), "ai/individual");
 		addSpawnId(SHANNON);
 	}
 	

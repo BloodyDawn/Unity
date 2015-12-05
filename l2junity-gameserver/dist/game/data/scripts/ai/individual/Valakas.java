@@ -121,7 +121,6 @@ public final class Valakas extends AbstractNpcAI
 	
 	private Valakas()
 	{
-		super(Valakas.class.getSimpleName(), "ai/individual");
 		registerMobs(VALAKAS);
 		
 		ZONE = ZoneManager.getInstance().getZoneById(12010);

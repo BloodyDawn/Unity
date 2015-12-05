@@ -65,7 +65,7 @@ public final class Q10410_EmbryoInTheSwampOfScreams extends Quest
 	
 	public Q10410_EmbryoInTheSwampOfScreams()
 	{
-		super(10410, Q10410_EmbryoInTheSwampOfScreams.class.getSimpleName(), "Embryo in the Swamp of Screams");
+		super(10410);
 		addStartNpc(DOKARA);
 		addTalkId(DOKARA);
 		addKillId(MONSTERS);

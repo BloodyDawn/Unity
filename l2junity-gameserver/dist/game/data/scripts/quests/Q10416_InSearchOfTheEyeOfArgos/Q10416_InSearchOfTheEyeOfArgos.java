@@ -42,7 +42,7 @@ public final class Q10416_InSearchOfTheEyeOfArgos extends Quest
 	
 	public Q10416_InSearchOfTheEyeOfArgos()
 	{
-		super(10416, Q10416_InSearchOfTheEyeOfArgos.class.getSimpleName(), "In Search of the Eye of Argos");
+		super(10416);
 		addStartNpc(JANITT);
 		addTalkId(JANITT, EYE_OF_ARGOS);
 		addCondNotRace(Race.ERTHEIA, "33851-06.html");

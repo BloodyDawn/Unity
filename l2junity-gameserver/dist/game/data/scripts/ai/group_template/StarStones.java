@@ -44,7 +44,6 @@ public final class StarStones extends AbstractNpcAI
 	
 	public StarStones()
 	{
-		super(StarStones.class.getSimpleName(), "ai/group_template");
 		addSkillSeeId(MOBS);
 	}
 	

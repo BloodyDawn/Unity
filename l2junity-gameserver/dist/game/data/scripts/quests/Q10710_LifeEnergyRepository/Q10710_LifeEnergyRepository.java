@@ -57,7 +57,7 @@ public final class Q10710_LifeEnergyRepository extends Quest
 	
 	public Q10710_LifeEnergyRepository()
 	{
-		super(10710, Q10710_LifeEnergyRepository.class.getSimpleName(), "Life Energy Repository");
+		super(10710);
 		addStartNpc(SHUVANN);
 		addTalkId(SHUVANN, LIFE_ENERGY);
 		registerQuestItems(FRAGMENT);

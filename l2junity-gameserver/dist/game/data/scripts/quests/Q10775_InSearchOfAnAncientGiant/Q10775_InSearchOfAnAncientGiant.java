@@ -55,7 +55,7 @@ public final class Q10775_InSearchOfAnAncientGiant extends Quest
 	
 	public Q10775_InSearchOfAnAncientGiant()
 	{
-		super(10775, Q10775_InSearchOfAnAncientGiant.class.getSimpleName(), "In Search of an Ancient Giant");
+		super(10775);
 		addStartNpc(ROMBEL);
 		addTalkId(ROMBEL, BELKADHI);
 		addKillId(MONSTERS);

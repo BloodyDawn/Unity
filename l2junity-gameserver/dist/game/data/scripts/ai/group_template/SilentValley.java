@@ -62,7 +62,6 @@ public final class SilentValley extends AbstractNpcAI
 	
 	private SilentValley()
 	{
-		super(SilentValley.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBS);
 		addAttackId(CHEST, GUARD1, GUARD2);
 		addEventReceivedId(GUARD1, GUARD2);

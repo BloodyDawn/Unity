@@ -47,7 +47,6 @@ public final class GiantSoldiers extends AbstractNpcAI
 	
 	public GiantSoldiers()
 	{
-		super(GiantSoldiers.class.getSimpleName(), "ai/npc");
 		addStartNpc(LAKSIAN, BELOA, SKIA, RANLOF, ROVIEL, ASIN, SEKNUS, DRELL, CELLPHINE);
 		addFirstTalkId(LAKSIAN, BELOA, SKIA, RANLOF, ROVIEL, ASIN, SEKNUS, DRELL);
 		addSpawnId(LAKSIAN);

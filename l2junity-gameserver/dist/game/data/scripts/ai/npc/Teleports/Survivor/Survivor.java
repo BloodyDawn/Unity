@@ -40,7 +40,6 @@ public final class Survivor extends AbstractNpcAI
 	
 	private Survivor()
 	{
-		super(Survivor.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(SURVIVOR);
 		addTalkId(SURVIVOR);
 	}

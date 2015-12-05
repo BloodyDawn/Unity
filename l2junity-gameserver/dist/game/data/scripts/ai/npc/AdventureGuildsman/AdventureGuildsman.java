@@ -58,7 +58,6 @@ public final class AdventureGuildsman extends AbstractNpcAI
 	
 	private AdventureGuildsman()
 	{
-		super(AdventureGuildsman.class.getSimpleName(), "ai/npc");
 		addStartNpc(ADVENTURERS_GUILDSMAN);
 		addTalkId(ADVENTURERS_GUILDSMAN);
 		addFirstTalkId(ADVENTURERS_GUILDSMAN);

@@ -44,7 +44,6 @@ public final class CrumaTower extends AbstractNpcAI
 	
 	public CrumaTower()
 	{
-		super(CrumaTower.class.getSimpleName(), "ai/group_template");
 		addSpawnId(CARSUS);
 		addAttackId(TELEPORT_DEVICE);
 	}

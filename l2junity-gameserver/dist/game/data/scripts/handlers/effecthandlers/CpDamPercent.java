@@ -46,7 +46,7 @@ public final class CpDamPercent extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -54,12 +54,12 @@ public final class CpDamPercent extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		if (effected.getActingPlayer().isFakeDeath())
 		{
 			effected.stopFakeDeath(true);
 		}
-
+		
 		int damage = (int) ((effected.getCurrentCp() * _power) / 100);
 		// Manage attack or cast break of the target (calculating rate, sending message)
 		if (Formulas.calcAtkBreak(effected, damage))
@@ -67,7 +67,7 @@ public final class CpDamPercent extends AbstractEffect
 			effected.breakAttack();
 			effected.breakCast();
 		}
-
+		
 		if (damage > 0)
 		{
 			effected.setCurrentCp(effected.getCurrentCp() - damage);

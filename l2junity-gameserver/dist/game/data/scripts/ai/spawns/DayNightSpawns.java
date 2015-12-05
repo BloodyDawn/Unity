@@ -42,7 +42,6 @@ public final class DayNightSpawns extends AbstractNpcAI
 	
 	private DayNightSpawns()
 	{
-		super(DayNightSpawns.class.getSimpleName(), "ai/spawns");
 	}
 	
 	@Override

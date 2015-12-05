@@ -53,7 +53,7 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 	
 	public Q10320_LetsGoToTheCentralSquare()
 	{
-		super(10320, Q10320_LetsGoToTheCentralSquare.class.getSimpleName(), "Let's Go To The Central Square");
+		super(10320);
 		addStartNpc(PANTHEON);
 		addTalkId(PANTHEON, THEODORE);
 		addEnterZoneId(TALKING_ISLAND_PRESENTATION_MOVIE_ZONE);

@@ -51,7 +51,7 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 	private final int _skillLevelScaleTo;
 	private final L2TargetType _targetType;
 	private final InstanceType _attackerType;
-
+	
 	public TriggerSkillBySkillAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -66,13 +66,13 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
 		_attackerType = params.getEnum("attackerType", InstanceType.class, InstanceType.L2Character);
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_DAMAGE_DEALT, (OnCreatureDamageDealt event) -> onAttackEvent(event), this));
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

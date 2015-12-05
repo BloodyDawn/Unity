@@ -43,7 +43,6 @@ public final class Lumi extends AbstractNpcAI
 	
 	private Lumi()
 	{
-		super(Lumi.class.getSimpleName(), "ai/individual");
 		addSpawnId(LUMI);
 	}
 	

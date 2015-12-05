@@ -75,7 +75,6 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 	
 	public AdminZones()
 	{
-		super(AdminZones.class.getSimpleName(), "handlers");
 	}
 	
 	@Override

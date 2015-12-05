@@ -75,7 +75,7 @@ public final class Q10329_BackupSeekers extends Quest
 	
 	public Q10329_BackupSeekers()
 	{
-		super(10329, Q10329_BackupSeekers.class.getSimpleName(), "Backup Seekers");
+		super(10329);
 		addStartNpc(KAKAI);
 		addTalkId(KAKAI, ATRAN);
 		addSpawnId(BART);

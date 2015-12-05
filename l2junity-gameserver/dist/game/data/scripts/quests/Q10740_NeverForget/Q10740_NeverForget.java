@@ -57,7 +57,7 @@ public final class Q10740_NeverForget extends Quest
 	
 	public Q10740_NeverForget()
 	{
-		super(10740, Q10740_NeverForget.class.getSimpleName(), "Never Forget");
+		super(10740);
 		addStartNpc(SIVANTHE);
 		addTalkId(SIVANTHE, REMEMBERANCE_TOWER);
 		addKillId(MOBS);

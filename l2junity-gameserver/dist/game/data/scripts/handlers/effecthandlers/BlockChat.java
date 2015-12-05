@@ -52,13 +52,13 @@ public final class BlockChat extends AbstractEffect
 	{
 		return L2EffectType.CHAT_BLOCK;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "Chat banned bot report", "system", true));
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

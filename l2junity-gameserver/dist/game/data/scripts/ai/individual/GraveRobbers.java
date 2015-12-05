@@ -37,7 +37,6 @@ public final class GraveRobbers extends AbstractNpcAI
 	
 	private GraveRobbers()
 	{
-		super(GraveRobbers.class.getSimpleName(), "ai/individual");
 		addSpawnId(GRAVE_ROBBER_SUMMONER, GRAVE_ROBBER_MEGICIAN);
 	}
 	

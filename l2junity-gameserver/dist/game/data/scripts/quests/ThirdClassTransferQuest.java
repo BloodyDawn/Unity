@@ -66,9 +66,9 @@ public abstract class ThirdClassTransferQuest extends Quest
 	private final int _minLevel;
 	private final Race _race;
 	
-	public ThirdClassTransferQuest(int questId, String name, String descr, int minLevel, Race race)
+	public ThirdClassTransferQuest(int questId, int minLevel, Race race)
 	{
-		super(questId, name, descr);
+		super(questId);
 		addTalkId(QUARTERMASTER, VANGUARD_MEMBER);
 		addTalkId(VANGUARDS);
 		//@formatter:off

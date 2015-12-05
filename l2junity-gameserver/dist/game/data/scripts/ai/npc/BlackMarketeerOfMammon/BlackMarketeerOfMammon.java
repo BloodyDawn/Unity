@@ -38,7 +38,6 @@ public final class BlackMarketeerOfMammon extends AbstractNpcAI
 	
 	private BlackMarketeerOfMammon()
 	{
-		super(BlackMarketeerOfMammon.class.getSimpleName(), "ai/npc");
 		addStartNpc(BLACK_MARKETEER);
 		addTalkId(BLACK_MARKETEER);
 		addFirstTalkId(BLACK_MARKETEER);

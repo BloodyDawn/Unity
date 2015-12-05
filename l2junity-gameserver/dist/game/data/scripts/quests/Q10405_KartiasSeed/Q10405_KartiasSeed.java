@@ -59,7 +59,7 @@ public final class Q10405_KartiasSeed extends Quest
 	
 	public Q10405_KartiasSeed()
 	{
-		super(10405, Q10405_KartiasSeed.class.getSimpleName(), "Kartia's Seed");
+		super(10405);
 		addStartNpc(SHUVANN);
 		addTalkId(SHUVANN);
 		addKillId(MONSTERS);

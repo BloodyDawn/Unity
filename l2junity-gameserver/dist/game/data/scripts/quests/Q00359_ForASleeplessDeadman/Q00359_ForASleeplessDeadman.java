@@ -53,6 +53,7 @@ public final class Q00359_ForASleeplessDeadman extends Quest
 	};
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(21006, 0.365); // doom_servant
@@ -62,7 +63,7 @@ public final class Q00359_ForASleeplessDeadman extends Quest
 	
 	public Q00359_ForASleeplessDeadman()
 	{
-		super(359, Q00359_ForASleeplessDeadman.class.getSimpleName(), "For a Sleepless Deadman");
+		super(359);
 		addStartNpc(ORVEN);
 		addTalkId(ORVEN);
 		addKillId(MOBS.keySet());

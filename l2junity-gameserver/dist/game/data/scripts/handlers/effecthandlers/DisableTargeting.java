@@ -36,7 +36,7 @@ public final class DisableTargeting extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

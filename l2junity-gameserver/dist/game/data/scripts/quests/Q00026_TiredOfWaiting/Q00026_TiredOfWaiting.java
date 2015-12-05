@@ -38,6 +38,7 @@ public final class Q00026_TiredOfWaiting extends Quest
 	// Items
 	private static final int DELIVERY_BOX = 17281;
 	private static final Map<String, Integer> REWARDS = new HashMap<>();
+	
 	static
 	{
 		REWARDS.put("31045-10.html", 17248); // Large Dragon Bone
@@ -47,7 +48,7 @@ public final class Q00026_TiredOfWaiting extends Quest
 	
 	public Q00026_TiredOfWaiting()
 	{
-		super(26, Q00026_TiredOfWaiting.class.getSimpleName(), "Tired of Waiting");
+		super(26);
 		addStartNpc(ISAEL_SILVERSHADOW);
 		addTalkId(ISAEL_SILVERSHADOW, KITZKA);
 		registerQuestItems(DELIVERY_BOX);

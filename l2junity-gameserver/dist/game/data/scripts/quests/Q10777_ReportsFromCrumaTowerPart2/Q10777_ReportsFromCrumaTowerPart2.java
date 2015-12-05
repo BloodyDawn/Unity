@@ -53,7 +53,7 @@ public final class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 	
 	public Q10777_ReportsFromCrumaTowerPart2()
 	{
-		super(10777, Q10777_ReportsFromCrumaTowerPart2.class.getSimpleName(), "Reports from Cruma Tower, Part 2");
+		super(10777);
 		addStartNpc(BELKADHI);
 		addTalkId(BELKADHI, MAGIC_OWL);
 		

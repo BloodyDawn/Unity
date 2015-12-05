@@ -50,7 +50,7 @@ public final class Q10364_ObligationsOfTheSeeker extends Quest
 	
 	public Q10364_ObligationsOfTheSeeker()
 	{
-		super(10364, Q10364_ObligationsOfTheSeeker.class.getSimpleName(), "Obligations of the Seeker");
+		super(10364);
 		addStartNpc(CELIN);
 		addTalkId(CELIN, WALTER, DEP);
 		addKillId(KRAPHER, AVIAN);

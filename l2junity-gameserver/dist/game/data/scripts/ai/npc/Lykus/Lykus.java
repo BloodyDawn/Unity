@@ -38,7 +38,6 @@ public final class Lykus extends AbstractNpcAI
 	
 	public Lykus()
 	{
-		super(Lykus.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(LYKUS);
 		addTalkId(LYKUS);
 		addStartNpc(LYKUS);

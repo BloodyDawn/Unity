@@ -23,18 +23,23 @@ import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.client.send.ExCubeGameChangeTimeToStart;
 import org.l2junity.gameserver.network.client.send.ExCubeGameRequestReady;
 import org.l2junity.gameserver.network.client.send.ExCubeGameTeamList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Handys Block Checker Event AI.
  * @authors BiggBoss, Gigiikun
  */
-public class HandysBlockCheckerEvent extends Quest
+public class HandysBlockCheckerEvent extends AbstractNpcAI
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(HandysBlockCheckerEvent.class);
+	
 	// Arena Managers
 	private static final int A_MANAGER_1 = 32521;
 	private static final int A_MANAGER_2 = 32522;
@@ -43,7 +48,6 @@ public class HandysBlockCheckerEvent extends Quest
 	
 	public HandysBlockCheckerEvent()
 	{
-		super(-1, HandysBlockCheckerEvent.class.getSimpleName(), "Handy's Block Checker Event");
 		addFirstTalkId(A_MANAGER_1, A_MANAGER_2, A_MANAGER_3, A_MANAGER_4);
 		HandysBlockCheckerManager.getInstance().startUpParticipantsQueue();
 	}
@@ -101,11 +105,11 @@ public class HandysBlockCheckerEvent extends Quest
 		if (Config.ENABLE_BLOCK_CHECKER_EVENT)
 		{
 			new HandysBlockCheckerEvent();
-			_log.info("Handy's Block Checker Event is enabled");
+			LOGGER.info("Handy's Block Checker Event is enabled");
 		}
 		else
 		{
-			_log.info("Handy's Block Checker Event is disabled");
+			LOGGER.info("Handy's Block Checker Event is disabled");
 		}
 	}
 }

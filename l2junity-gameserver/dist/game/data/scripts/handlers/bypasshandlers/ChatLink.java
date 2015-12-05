@@ -48,7 +48,7 @@ public class ChatLink implements IBypassHandler
 		}
 		catch (Exception ioobe)
 		{
-			
+		
 		}
 		
 		final Npc npc = (Npc) target;

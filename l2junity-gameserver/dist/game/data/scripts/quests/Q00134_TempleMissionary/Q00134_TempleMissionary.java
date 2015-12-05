@@ -46,6 +46,7 @@ public class Q00134_TempleMissionary extends Quest
 	// Monsters
 	private static final int CRUMA_MARSHLANDS_TRAITOR = 27339;
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20157, 78); // Marsh Stakato
@@ -56,6 +57,7 @@ public class Q00134_TempleMissionary extends Quest
 		MOBS.put(20233, 95); // Marsh Spider
 		MOBS.put(20234, 96); // Marsh Stakato Drone
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	private static final int MAX_REWARD_LEVEL = 41;
@@ -64,7 +66,7 @@ public class Q00134_TempleMissionary extends Quest
 	
 	public Q00134_TempleMissionary()
 	{
-		super(134, Q00134_TempleMissionary.class.getSimpleName(), "Temple Missionary");
+		super(134);
 		addStartNpc(GLYVKA);
 		addTalkId(GLYVKA, ROUKE);
 		addKillId(CRUMA_MARSHLANDS_TRAITOR);

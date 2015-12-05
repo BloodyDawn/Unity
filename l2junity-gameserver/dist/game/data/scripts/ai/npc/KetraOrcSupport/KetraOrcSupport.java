@@ -77,6 +77,7 @@ public final class KetraOrcSupport extends AbstractNpcAI
 	};
 	// Misc
 	private static final Map<Integer, BuffsData> BUFF = new HashMap<>();
+	
 	static
 	{
 		BUFF.put(1, new BuffsData(4359, 2)); // Focus: Requires 2 Buffalo Horns
@@ -91,7 +92,6 @@ public final class KetraOrcSupport extends AbstractNpcAI
 	
 	private KetraOrcSupport()
 	{
-		super(KetraOrcSupport.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(KADUN, WAHKAN, ASEFA, ATAN, JAFF, JUMARA, KURFA);
 		addTalkId(ASEFA, KURFA, JAFF);
 		addStartNpc(KURFA, JAFF);

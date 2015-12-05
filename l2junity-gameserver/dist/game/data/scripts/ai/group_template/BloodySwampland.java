@@ -34,7 +34,6 @@ public final class BloodySwampland extends AbstractNpcAI
 	
 	public BloodySwampland()
 	{
-		super(BloodySwampland.class.getSimpleName(), "ai/group_template");
 		addAttackId(COLLECTOR);
 	}
 	

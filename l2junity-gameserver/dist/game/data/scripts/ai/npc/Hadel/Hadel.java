@@ -39,7 +39,6 @@ public final class Hadel extends AbstractNpcAI
 	
 	private Hadel()
 	{
-		super(Hadel.class.getSimpleName(), "ai/npc");
 		addStartNpc(HADEL);
 		addTalkId(HADEL);
 		addFirstTalkId(HADEL);

@@ -60,7 +60,6 @@ public final class AncientArcanCity extends AbstractNpcAI
 	
 	private AncientArcanCity()
 	{
-		super(AncientArcanCity.class.getSimpleName(), "ai/group_template");
 		addEnterZoneId(TOWN_ZONE.getId(), TELEPORT_ZONE.getId());
 		startQuestTimer("CHANGE_STATE", CHANGE_STATE_TIME, null, null, true);
 	}

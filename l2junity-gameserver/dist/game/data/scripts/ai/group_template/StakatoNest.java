@@ -85,7 +85,6 @@ public final class StakatoNest extends AbstractNpcAI
 	
 	private StakatoNest()
 	{
-		super(StakatoNest.class.getSimpleName(), "ai/group_template");
 		registerMobs(STAKATO_MOBS);
 	}
 	

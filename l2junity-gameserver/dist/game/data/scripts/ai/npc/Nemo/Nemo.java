@@ -44,7 +44,6 @@ public final class Nemo extends AbstractNpcAI
 	
 	public Nemo()
 	{
-		super(Nemo.class.getSimpleName(), "ai/npc");
 		addStartNpc(NEMO);
 		addFirstTalkId(NEMO);
 		addTalkId(NEMO);

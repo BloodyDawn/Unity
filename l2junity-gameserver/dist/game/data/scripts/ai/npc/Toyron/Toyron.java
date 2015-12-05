@@ -43,7 +43,6 @@ public final class Toyron extends AbstractNpcAI
 	
 	private Toyron()
 	{
-		super(Toyron.class.getSimpleName(), "ai/npc");
 		addStartNpc(TOYRON);
 		addFirstTalkId(TOYRON);
 		addTalkId(TOYRON);

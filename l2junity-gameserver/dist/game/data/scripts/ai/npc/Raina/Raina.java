@@ -146,7 +146,6 @@ public final class Raina extends AbstractNpcAI
 	
 	private Raina()
 	{
-		super(Raina.class.getSimpleName(), "ai/npc");
 		addStartNpc(RAINA);
 		addFirstTalkId(RAINA);
 		addTalkId(RAINA);

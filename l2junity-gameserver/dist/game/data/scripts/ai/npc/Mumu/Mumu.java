@@ -35,7 +35,6 @@ public final class Mumu extends AbstractNpcAI
 	
 	public Mumu()
 	{
-		super(Mumu.class.getSimpleName(), "ai/npc");
 		addStartNpc(MUMU);
 		addFirstTalkId(MUMU);
 		addTalkId(MUMU);

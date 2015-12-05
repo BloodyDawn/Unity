@@ -53,7 +53,7 @@ public final class Q10756_AnInterdimensionalDraft extends Quest
 	
 	public Q10756_AnInterdimensionalDraft()
 	{
-		super(10756, Q10756_AnInterdimensionalDraft.class.getSimpleName(), "An Interdimensional Draft");
+		super(10756);
 		addStartNpc(PIO);
 		addTalkId(PIO);
 		addKillId(MONSTERS);

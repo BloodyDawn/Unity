@@ -62,7 +62,7 @@ public class FriendsBoard implements IParseBoardHandler
 		}
 		else
 		{
-			
+		
 		}
 		return true;
 	}

@@ -45,7 +45,7 @@ public final class Q10417_DaimonTheWhiteEyed extends Quest
 	
 	public Q10417_DaimonTheWhiteEyed()
 	{
-		super(10417, Q10417_DaimonTheWhiteEyed.class.getSimpleName(), "Daimon the White-eyed");
+		super(10417);
 		addStartNpc(EYE_OF_ARGOS);
 		addTalkId(EYE_OF_ARGOS, JANITT);
 		addKillId(DAIMON_THE_WHITEEYED);

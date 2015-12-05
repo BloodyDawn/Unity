@@ -43,7 +43,6 @@ public final class Banette extends AbstractNpcAI
 	
 	private Banette()
 	{
-		super(Banette.class.getSimpleName(), "ai/individual");
 		addSpawnId(BANETTE);
 	}
 	

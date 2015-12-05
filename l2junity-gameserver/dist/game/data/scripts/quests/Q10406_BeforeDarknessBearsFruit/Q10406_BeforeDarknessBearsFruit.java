@@ -49,7 +49,7 @@ public final class Q10406_BeforeDarknessBearsFruit extends Quest
 	
 	public Q10406_BeforeDarknessBearsFruit()
 	{
-		super(10406, Q10406_BeforeDarknessBearsFruit.class.getSimpleName(), "Before Darkness Bears Fruit");
+		super(10406);
 		addStartNpc(SHUVANN);
 		addTalkId(SHUVANN);
 		addKillId(KARTIAS_FLOWER);

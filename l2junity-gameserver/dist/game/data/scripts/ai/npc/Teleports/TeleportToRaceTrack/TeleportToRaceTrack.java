@@ -57,6 +57,7 @@ public final class TeleportToRaceTrack extends AbstractNpcAI
 	};
 	// Misc
 	private static final Map<Integer, Integer> TELEPORTERS = new HashMap<>();
+	
 	static
 	{
 		TELEPORTERS.put(30059, 2); // Trisha
@@ -71,12 +72,12 @@ public final class TeleportToRaceTrack extends AbstractNpcAI
 		TELEPORTERS.put(31275, 9); // Tatiana
 		TELEPORTERS.put(31964, 10); // Bilia
 	}
+	
 	// Player Variables
 	private static final String MONSTER_RETURN = "MONSTER_RETURN";
 	
 	private TeleportToRaceTrack()
 	{
-		super(TeleportToRaceTrack.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(RACE_MANAGER);
 		addStartNpc(TELEPORTERS.keySet());
 		addTalkId(RACE_MANAGER);

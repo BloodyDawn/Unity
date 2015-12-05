@@ -49,7 +49,7 @@ public final class Restoration extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -64,7 +64,7 @@ public final class Restoration extends AbstractEffect
 			_log.warn(Restoration.class.getSimpleName() + " effect with wrong item Id/count: " + _itemId + "/" + _itemCount + "!");
 			return;
 		}
-
+		
 		if (effected.isPlayer())
 		{
 			effected.getActingPlayer().addItem("Skill", _itemId, _itemCount, effector, true);

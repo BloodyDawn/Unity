@@ -40,7 +40,6 @@ public final class Incarnation extends AbstractNpcAI
 {
 	public Incarnation()
 	{
-		super(Incarnation.class.getSimpleName(), "ai/group_template");
 	}
 	
 	@RegisterEvent(EventType.ON_NPC_SPAWN)

@@ -71,7 +71,6 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 	
 	private MonumentOfHeroes()
 	{
-		super(MonumentOfHeroes.class.getSimpleName(), "ai/npc");
 		addStartNpc(MONUMENTS);
 		addFirstTalkId(MONUMENTS);
 		addTalkId(MONUMENTS);

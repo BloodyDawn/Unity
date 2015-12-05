@@ -41,13 +41,13 @@ public final class ImmobileBuff extends Buff
 	{
 		return L2EffectType.BUFF;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		effected.setIsImmobilized(true);
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

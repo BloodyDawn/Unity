@@ -70,7 +70,6 @@ public final class SelMahumSquad extends AbstractNpcAI
 	
 	private SelMahumSquad()
 	{
-		super(SelMahumSquad.class.getSimpleName(), "ai/group_template");
 		
 		addAttackId(CHEF);
 		addAttackId(SQUAD_LEADERS);

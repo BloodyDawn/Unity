@@ -67,7 +67,6 @@ public final class Sailren extends AbstractNpcAI
 	
 	private Sailren()
 	{
-		super(Sailren.class.getSimpleName(), "ai/individual");
 		addStartNpc(STATUE, CUBIC);
 		addTalkId(STATUE, CUBIC);
 		addFirstTalkId(STATUE);

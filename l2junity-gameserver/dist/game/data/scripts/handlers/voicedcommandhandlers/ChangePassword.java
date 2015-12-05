@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
 public class ChangePassword implements IVoicedCommandHandler
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ChangePassword.class);
-
+	
 	private static final String[] _voicedCommands =
 	{
 		"changepassword"

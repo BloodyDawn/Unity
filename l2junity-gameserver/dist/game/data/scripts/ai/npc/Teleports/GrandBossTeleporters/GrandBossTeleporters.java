@@ -59,7 +59,6 @@ public final class GrandBossTeleporters extends AbstractNpcAI
 	
 	private GrandBossTeleporters()
 	{
-		super(GrandBossTeleporters.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
 	}

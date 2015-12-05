@@ -44,7 +44,6 @@ public final class Apprentice extends AbstractNpcAI
 	
 	private Apprentice()
 	{
-		super(Apprentice.class.getSimpleName(), "ai/npc");
 		addSpawnId(APPRENTICE);
 		addStartNpc(APPRENTICE);
 		addTalkId(APPRENTICE);

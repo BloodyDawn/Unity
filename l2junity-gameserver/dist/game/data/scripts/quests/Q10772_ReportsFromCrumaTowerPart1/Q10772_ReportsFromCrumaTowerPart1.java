@@ -53,7 +53,7 @@ public final class Q10772_ReportsFromCrumaTowerPart1 extends Quest
 	
 	public Q10772_ReportsFromCrumaTowerPart1()
 	{
-		super(10772, Q10772_ReportsFromCrumaTowerPart1.class.getSimpleName(), "Reports from Cruma Tower, Part 1");
+		super(10772);
 		addStartNpc(JANSSEN);
 		addTalkId(JANSSEN, MAGIC_OWL);
 		

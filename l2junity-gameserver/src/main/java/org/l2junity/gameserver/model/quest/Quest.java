@@ -95,8 +95,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	private volatile Set<QuestCondition> _startCondition = null;
 	
 	private final int _questId;
-	private final String _name;
-	private final String _descr;
 	private final byte _initialState = State.CREATED;
 	private boolean _isCustom = false;
 	
@@ -133,14 +131,10 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * The Quest object constructor.<br>
 	 * Constructing a quest also calls the {@code init_LoadGlobalData} convenience method.
 	 * @param questId ID of the quest
-	 * @param name String corresponding to the name of the quest
-	 * @param descr String for the description of the quest
 	 */
-	public Quest(int questId, String name, String descr)
+	public Quest(int questId)
 	{
 		_questId = questId;
-		_name = name;
-		_descr = descr;
 		if (questId > 0)
 		{
 			QuestManager.getInstance().addQuest(this);
@@ -213,7 +207,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public QuestState getQuestState(PlayerInstance player, boolean initIfNone)
 	{
-		final QuestState qs = player.getQuestState(_name);
+		final QuestState qs = player.getQuestState(getName());
 		if ((qs != null) || !initIfNone)
 		{
 			return qs;
@@ -234,7 +228,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public String getName()
 	{
-		return _name;
+		return getClass().getSimpleName();
 	}
 	
 	/**
@@ -242,7 +236,8 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public String getDescr()
 	{
-		return _descr;
+		final String path = getClass().getName().replace('.', '/');
+		return path.substring(0, path.lastIndexOf('/' + getClass().getSimpleName()));
 	}
 	
 	/**
@@ -2851,10 +2846,10 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public String getHtm(String prefix, String fileName)
 	{
 		final HtmCache hc = HtmCache.getInstance();
-		String content = hc.getHtm(prefix, fileName.startsWith("data/") ? fileName : "data/scripts/" + getDescr().toLowerCase() + "/" + getName() + "/" + fileName);
+		String content = hc.getHtm(prefix, fileName.startsWith("data/") ? fileName : "data/scripts/" + getDescr().toLowerCase() + "/" + fileName);
 		if (content == null)
 		{
-			content = hc.getHtm(prefix, "data/scripts/" + getDescr() + "/" + getName() + "/" + fileName);
+			content = hc.getHtm(prefix, "data/scripts/" + getDescr() + "/" + fileName);
 			if (content == null)
 			{
 				content = hc.getHtmForce(prefix, "data/scripts/quests/" + getName() + "/" + fileName);

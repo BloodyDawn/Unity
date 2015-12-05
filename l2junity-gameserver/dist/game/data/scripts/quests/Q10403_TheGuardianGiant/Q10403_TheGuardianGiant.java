@@ -54,7 +54,7 @@ public final class Q10403_TheGuardianGiant extends Quest
 	
 	public Q10403_TheGuardianGiant()
 	{
-		super(10403, Q10403_TheGuardianGiant.class.getSimpleName(), "The Guardian Giant");
+		super(10403);
 		addStartNpc(NOVIAN);
 		addTalkId(NOVIAN);
 		addKillId(MONSTERS);

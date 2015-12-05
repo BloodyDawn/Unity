@@ -46,7 +46,7 @@ public final class Q00016_TheComingDarkness extends Quest
 	
 	public Q00016_TheComingDarkness()
 	{
-		super(16, Q00016_TheComingDarkness.class.getSimpleName(), "The Coming Darkness");
+		super(16);
 		addStartNpc(HIERARCH);
 		addTalkId(HIERARCH, EVIL_ALTAR_1, EVIL_ALTAR_2, EVIL_ALTAR_3, EVIL_ALTAR_4, EVIL_ALTAR_5);
 		registerQuestItems(CRYSTAL_OF_SEAL);

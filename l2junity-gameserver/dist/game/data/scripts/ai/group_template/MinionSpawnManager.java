@@ -416,7 +416,6 @@ public final class MinionSpawnManager extends AbstractNpcAI
 	
 	private MinionSpawnManager()
 	{
-		super(MinionSpawnManager.class.getSimpleName(), "ai/group_template");
 		
 		addSpawnId(NPC);
 		addAttackId(ON_ATTACK_NPC);

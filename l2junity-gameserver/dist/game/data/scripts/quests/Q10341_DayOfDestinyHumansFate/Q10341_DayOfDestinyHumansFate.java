@@ -41,7 +41,7 @@ public final class Q10341_DayOfDestinyHumansFate extends ThirdClassTransferQuest
 	
 	public Q10341_DayOfDestinyHumansFate()
 	{
-		super(10341, Q10341_DayOfDestinyHumansFate.class.getSimpleName(), "Day of Destiny: Human's Fate", MIN_LEVEL, START_RACE);
+		super(10341, MIN_LEVEL, START_RACE);
 		addStartNpc(ORVEN);
 		addTalkId(ORVEN);
 		addCondMinLevel(MIN_LEVEL, "30857-11.html");

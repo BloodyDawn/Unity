@@ -60,7 +60,7 @@ public final class Q10776_TheWrathOfTheGiants extends Quest
 	
 	public Q10776_TheWrathOfTheGiants()
 	{
-		super(10776, Q10776_TheWrathOfTheGiants.class.getSimpleName(), "The Wrath of the Giants");
+		super(10776);
 		addStartNpc(BELKADHI);
 		addTalkId(BELKADHI, DESTROYED_DEVICE, NARSIDES);
 		addKillId(ENRAGED_GIANT_NARSIDES);

@@ -42,7 +42,6 @@ public class SeeThroughSilentMove extends AbstractNpcAI
 	
 	private SeeThroughSilentMove()
 	{
-		super(SeeThroughSilentMove.class.getSimpleName(), "ai/group_template");
 		addSpawnId(MONSTERS);
 	}
 	

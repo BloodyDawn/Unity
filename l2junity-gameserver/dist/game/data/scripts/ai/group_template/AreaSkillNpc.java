@@ -91,7 +91,6 @@ public final class AreaSkillNpc extends AbstractNpcAI
 	
 	private AreaSkillNpc()
 	{
-		super(AreaSkillNpc.class.getSimpleName(), "ai/group_template");
 		addSpawnId(BASIC);
 		addSpawnId(TOTEMS);
 		addSpawnId(DECOY);

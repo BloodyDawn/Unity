@@ -47,7 +47,7 @@ public class VisualBuff extends AbstractEffect
 			_visualSkills.add(new SkillHolder(skillId, 1));
 		}
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

@@ -58,7 +58,7 @@ public final class ResistSkill extends AbstractEffect
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": Without parameters!");
 		}
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

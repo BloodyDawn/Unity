@@ -57,7 +57,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	
 	public Q00114_ResurrectionOfAnOldManager()
 	{
-		super(114, Q00114_ResurrectionOfAnOldManager.class.getSimpleName(), "Resurrection of an Old Manager");
+		super(114);
 		addStartNpc(YUMI);
 		addTalkId(YUMI, WENDY, BOX, STONES, NEWYEAR);
 		addKillId(GUARDIAN);
@@ -78,7 +78,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 		String htmltext = event;
 		switch (event)
 		{
-		// Yumi
+			// Yumi
 			case "32041-04.htm":
 				st.startQuest();
 				break;

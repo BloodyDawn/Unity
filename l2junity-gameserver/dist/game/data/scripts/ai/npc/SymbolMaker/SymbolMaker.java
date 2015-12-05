@@ -49,7 +49,6 @@ public final class SymbolMaker extends AbstractNpcAI
 	
 	private SymbolMaker()
 	{
-		super(SymbolMaker.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(NPCS);
 		addStartNpc(NPCS);
 		addTalkId(NPCS);

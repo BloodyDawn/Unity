@@ -50,7 +50,6 @@ public final class CastleAmbassador extends AbstractNpcAI
 	
 	private CastleAmbassador()
 	{
-		super(CastleAmbassador.class.getSimpleName(), "ai/npc");
 		addStartNpc(CASTLE_AMBASSADOR);
 		addTalkId(CASTLE_AMBASSADOR);
 		addFirstTalkId(CASTLE_AMBASSADOR);

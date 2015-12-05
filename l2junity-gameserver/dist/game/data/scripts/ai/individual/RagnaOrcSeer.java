@@ -32,7 +32,6 @@ public final class RagnaOrcSeer extends AbstractNpcAI
 	
 	private RagnaOrcSeer()
 	{
-		super(RagnaOrcSeer.class.getSimpleName(), "ai/individual");
 		addSpawnId(RAGNA_ORC_SEER);
 	}
 	

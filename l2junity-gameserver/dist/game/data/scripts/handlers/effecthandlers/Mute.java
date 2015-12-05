@@ -48,7 +48,7 @@ public final class Mute extends AbstractEffect
 	{
 		return L2EffectType.MUTE;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

@@ -44,7 +44,7 @@ public final class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 	
 	public Q10327_IntruderWhoWantsTheBookOfGiants()
 	{
-		super(10327, Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName(), "Intruder Who Wants the Book of Giants ");
+		super(10327);
 		addStartNpc(PANTHEON);
 		addTalkId(PANTHEON);
 		registerQuestItems(THE_WAR_OF_GODS_AND_GIANTS);

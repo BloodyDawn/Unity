@@ -53,7 +53,7 @@ public final class Q10362_CertificationOfTheSeeker extends Quest
 	
 	public Q10362_CertificationOfTheSeeker()
 	{
-		super(10362, Q10362_CertificationOfTheSeeker.class.getSimpleName(), "Certification of The Seeker");
+		super(10362);
 		addStartNpc(CHESHA);
 		addTalkId(CHESHA, NAGEL);
 		addKillId(STALKER, CRAWLER);

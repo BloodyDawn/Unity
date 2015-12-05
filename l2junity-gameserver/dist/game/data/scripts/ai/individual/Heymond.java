@@ -43,7 +43,6 @@ public final class Heymond extends AbstractNpcAI
 	
 	private Heymond()
 	{
-		super(Heymond.class.getSimpleName(), "ai/individual");
 		addSpawnId(HEYMOND);
 	}
 	

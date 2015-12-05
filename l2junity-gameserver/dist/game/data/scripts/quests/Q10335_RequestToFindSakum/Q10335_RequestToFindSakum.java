@@ -51,7 +51,7 @@ public final class Q10335_RequestToFindSakum extends Quest
 	
 	public Q10335_RequestToFindSakum()
 	{
-		super(10335, Q10335_RequestToFindSakum.class.getSimpleName(), "Request To Find Sakum");
+		super(10335);
 		addStartNpc(BATHIS);
 		addTalkId(BATHIS, KALLESIN, ZENATH);
 		addKillId(SKELETON_TRACKER, SKELETON_BOWMAN, RUIN_SPARTOI, RUIN_ZOMBIE, RUIN_ZOMBIE_LEADER);

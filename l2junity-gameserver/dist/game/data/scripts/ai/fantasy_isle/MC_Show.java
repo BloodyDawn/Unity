@@ -166,6 +166,7 @@ public class MC_Show extends AbstractNpcAI
 	}
 	
 	private static Map<String, ShoutInfo> TALKS = new HashMap<>(26);
+	
 	static
 	{
 		TALKS.put("1", new ShoutInfo(MESSAGES[1], "2", 1000));
@@ -188,6 +189,7 @@ public class MC_Show extends AbstractNpcAI
 	}
 	
 	private static Map<String, WalkInfo> WALKS = new HashMap<>(88);
+	
 	static
 	{
 		WALKS.put("npc1_1", new WalkInfo(new Location(-56546, -56384, -2008, 0), "npc1_2", 1200));
@@ -282,7 +284,6 @@ public class MC_Show extends AbstractNpcAI
 	
 	private MC_Show()
 	{
-		super(MC_Show.class.getSimpleName(), "ai/fantasy_isle");
 		addSpawnId(32433, 32431, 32432, 32442, 32443, 32444, 32445, 32446, 32424, 32425, 32426, 32427, 32428);
 		scheduleTimer();
 	}

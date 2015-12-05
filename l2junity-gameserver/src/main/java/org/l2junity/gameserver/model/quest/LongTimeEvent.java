@@ -36,16 +36,21 @@ import org.l2junity.gameserver.model.announce.EventAnnouncement;
 import org.l2junity.gameserver.model.drops.GeneralDropItem;
 import org.l2junity.gameserver.script.DateRange;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Parent class for long time events.<br>
  * Maintains config reading, spawn of NPC's, adding of event's drop.
  * @author GKR
  */
-public class LongTimeEvent extends Quest
+public class LongTimeEvent extends AbstractNpcAI
 {
+	Logger _log = LoggerFactory.getLogger(getClass());
 	protected String _eventName;
 	
 	// Messages
@@ -73,10 +78,8 @@ public class LongTimeEvent extends Quest
 		}
 	}
 	
-	public LongTimeEvent(String name, String descr)
+	public LongTimeEvent()
 	{
-		super(-1, name, descr);
-		
 		loadConfig();
 		
 		if (_eventPeriod != null)

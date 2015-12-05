@@ -42,7 +42,7 @@ public final class Q10334_ReportingTheStatusOfTheWindmillHill extends Quest
 	
 	public Q10334_ReportingTheStatusOfTheWindmillHill()
 	{
-		super(10334, Q10334_ReportingTheStatusOfTheWindmillHill.class.getSimpleName(), "Reporting The Status Of The Windmill Hill");
+		super(10334);
 		addStartNpc(SCHUNAIN);
 		addTalkId(SCHUNAIN, BATHIS);
 		addCondNotRace(Race.ERTHEIA, "33508-07.htm");

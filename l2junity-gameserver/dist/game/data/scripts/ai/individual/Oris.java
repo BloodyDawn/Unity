@@ -36,7 +36,6 @@ public final class Oris extends AbstractNpcAI
 	
 	private Oris()
 	{
-		super(Oris.class.getSimpleName(), "ai/individual");
 		addSpawnId(ORIS);
 		addStartNpc(ORIS);
 		addTalkId(ORIS);

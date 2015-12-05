@@ -46,7 +46,7 @@ public final class Q10708_StrengthenTheBarrier extends Quest
 	
 	public Q10708_StrengthenTheBarrier()
 	{
-		super(10708, Q10708_StrengthenTheBarrier.class.getSimpleName(), "Strengthen the Barrier");
+		super(10708);
 		addStartNpc(BACON);
 		addTalkId(BACON, BARRIER_ENFORCER);
 		registerQuestItems(KEY);

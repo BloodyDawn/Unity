@@ -55,7 +55,7 @@ public final class Q10323_TrainLikeItsReal extends Quest
 	
 	public Q10323_TrainLikeItsReal()
 	{
-		super(10323, Q10323_TrainLikeItsReal.class.getSimpleName(), "Train Like It's Real");
+		super(10323);
 		addStartNpc(EVAIN);
 		addTalkId(HOLDEN, EVAIN, SHANNON);
 		addKillId(TRAINING_GOLEM);

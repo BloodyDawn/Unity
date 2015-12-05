@@ -51,7 +51,7 @@ public final class SummonTrap extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -59,7 +59,7 @@ public final class SummonTrap extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		if (_npcId <= 0)
 		{
 			_log.warn(SummonTrap.class.getSimpleName() + ": Invalid NPC ID:" + _npcId + " in skill ID: " + skill.getId());

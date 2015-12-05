@@ -44,7 +44,7 @@ public final class Q10733_TheTestForSurvival extends Quest
 	
 	public Q10733_TheTestForSurvival()
 	{
-		super(10733, Q10733_TheTestForSurvival.class.getSimpleName(), "The Test for Survival");
+		super(10733);
 		addStartNpc(GERETH);
 		addTalkId(GERETH, DIA, KATALIN, AYANTHE);
 		registerQuestItems(GERETH_RECOMMENDATION);

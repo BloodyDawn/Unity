@@ -54,7 +54,7 @@ public final class Q10707_FlamesOfSorrow extends Quest
 	
 	public Q10707_FlamesOfSorrow()
 	{
-		super(10707, Q10707_FlamesOfSorrow.class.getSimpleName(), "Flames of Sorrow");
+		super(10707);
 		addFirstTalkId(WARNING_FIRE);
 		addStartNpc(LEO);
 		addTalkId(LEO, WARNING_FIRE);

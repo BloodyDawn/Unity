@@ -49,7 +49,6 @@ public final class DragonVortex extends AbstractNpcAI
 	
 	private DragonVortex()
 	{
-		super(DragonVortex.class.getSimpleName(), "ai/npc");
 		addStartNpc(VORTEX);
 		addFirstTalkId(VORTEX);
 		addTalkId(VORTEX);

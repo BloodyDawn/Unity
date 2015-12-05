@@ -48,7 +48,7 @@ public class BlockTarget extends AbstractEffect
 			}
 		});
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

@@ -36,7 +36,6 @@ public final class Bink extends AbstractNpcAI
 	
 	private Bink()
 	{
-		super(Bink.class.getSimpleName(), "ai/individual");
 		addSpawnId(BINK);
 	}
 	

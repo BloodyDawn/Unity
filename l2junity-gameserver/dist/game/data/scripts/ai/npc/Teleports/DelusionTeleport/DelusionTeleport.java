@@ -70,7 +70,6 @@ public final class DelusionTeleport extends AbstractNpcAI
 	
 	private DelusionTeleport()
 	{
-		super(DelusionTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}

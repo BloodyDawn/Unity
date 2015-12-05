@@ -56,13 +56,13 @@ public final class Betray extends AbstractEffect
 	{
 		return L2EffectType.DEBUFF;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effected.getActingPlayer());
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

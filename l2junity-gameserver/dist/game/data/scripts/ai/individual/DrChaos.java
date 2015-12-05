@@ -24,15 +24,16 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SpecialCamera;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * DrChaos' AI.
  * @author Kerberos
  */
-public final class DrChaos extends Quest
+public final class DrChaos extends AbstractNpcAI
 {
 	private static final int DR_CHAOS = 32033;
 	private static final int STRANGE_MACHINE = 32032;
@@ -44,8 +45,6 @@ public final class DrChaos extends Quest
 	
 	private DrChaos()
 	{
-		// TODO extends AbstractNpcAI
-		super(-1, "Doctor Chaos", "ai/individual");
 		addFirstTalkId(DR_CHAOS);
 		_IsGolemSpawned = false;
 	}

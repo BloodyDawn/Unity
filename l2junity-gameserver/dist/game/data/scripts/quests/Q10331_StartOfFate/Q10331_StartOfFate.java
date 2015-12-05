@@ -67,7 +67,7 @@ public final class Q10331_StartOfFate extends Quest
 	
 	public Q10331_StartOfFate()
 	{
-		super(10331, Q10331_StartOfFate.class.getSimpleName(), "Start of Fate");
+		super(10331);
 		addStartNpc(FRANCO, RIVIAN, DEVON, TOOK, MOKA, VALFAR);
 		addTalkId(FRANCO, RIVIAN, DEVON, TOOK, MOKA, VALFAR, SEBION, LAKCIS, PANTHEON);
 		registerQuestItems(SARIL_NECKLACE);
@@ -96,9 +96,9 @@ public final class Q10331_StartOfFate extends Quest
 				htmltext = event;
 				break;
 			}
-			/**
-			 * 1st class transfer htmls menu with classes
-			 */
+				/**
+				 * 1st class transfer htmls menu with classes
+				 */
 			case "32146-07.html": // Kamael Male
 			case "32146-08.html": // Kamael Female
 			case "32153-07.html": // Human Fighter

@@ -42,6 +42,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	// Monsters
 	private static final int FALLEN_ANGEL = 27338;
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20079, 338); // Ant
@@ -55,6 +56,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 		MOBS.put(20089, 431); // Noble Ant
 		MOBS.put(20090, 917); // Noble Ant Leader
 	}
+	
 	// Items
 	private static final int CRYPTOGRAM_OF_THE_ANGEL_SEARCH = 10351;
 	private static final int PROPHECY_FRAGMENT = 10352;
@@ -66,7 +68,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	
 	public Q00142_FallenAngelRequestOfDawn()
 	{
-		super(142, Q00142_FallenAngelRequestOfDawn.class.getSimpleName(), "Fallen Angel - Request of Dawn");
+		super(142);
 		addTalkId(NATOOLS, RAYMOND, CASIAN, ROCK);
 		addKillId(MOBS.keySet());
 		addKillId(FALLEN_ANGEL);

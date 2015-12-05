@@ -134,7 +134,6 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 	
 	private MentorGuide()
 	{
-		super(MentorGuide.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(MENTOR_GUIDE);
 		addStartNpc(MENTOR_GUIDE);
 		addTalkId(MENTOR_GUIDE);

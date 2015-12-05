@@ -81,7 +81,7 @@ public final class GiftOfVitality extends LongTimeEvent
 	
 	private GiftOfVitality()
 	{
-		super(GiftOfVitality.class.getSimpleName(), "events");
+		super();
 		addStartNpc(STEVE_SHYAGEL);
 		addFirstTalkId(STEVE_SHYAGEL);
 		addTalkId(STEVE_SHYAGEL);

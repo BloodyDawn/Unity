@@ -69,7 +69,7 @@ public final class Elpies extends Event
 	
 	private Elpies()
 	{
-		super(Elpies.class.getSimpleName(), "custom/events");
+		super();
 		addSpawnId(ELPY);
 		addKillId(ELPY);
 	}
@@ -119,7 +119,7 @@ public final class Elpies extends Event
 		{
 			Broadcast.toAllOnlinePlayers("Time is up!");
 			eventStop();
-		}, despawnDelay);
+		} , despawnDelay);
 		return true;
 	}
 	

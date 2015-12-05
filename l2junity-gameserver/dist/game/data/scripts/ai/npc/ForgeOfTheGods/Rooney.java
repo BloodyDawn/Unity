@@ -81,7 +81,6 @@ public final class Rooney extends AbstractNpcAI
 	
 	private Rooney()
 	{
-		super(Rooney.class.getSimpleName(), "ai/npc");
 		addSeeCreatureId(ROONEY);
 		addSpawn(ROONEY, LOCATIONS[getRandom(LOCATIONS.length)], false, 0);
 	}

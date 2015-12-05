@@ -33,7 +33,6 @@ public final class TrainingGolem extends AbstractNpcAI
 	
 	private TrainingGolem()
 	{
-		super(TrainingGolem.class.getSimpleName(), "ai/individual");
 		addSpawnId(TRAINING_GOLEM);
 	}
 	

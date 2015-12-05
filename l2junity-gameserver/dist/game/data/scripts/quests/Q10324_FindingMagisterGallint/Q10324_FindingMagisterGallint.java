@@ -41,7 +41,7 @@ public final class Q10324_FindingMagisterGallint extends Quest
 	
 	public Q10324_FindingMagisterGallint()
 	{
-		super(10324, Q10324_FindingMagisterGallint.class.getSimpleName(), "Finding Magister Gallint");
+		super(10324);
 		addStartNpc(SHANNON);
 		addTalkId(SHANNON, GALLINT);
 		addCondMaxLevel(MAX_LEVEL, "32974-01a.htm");

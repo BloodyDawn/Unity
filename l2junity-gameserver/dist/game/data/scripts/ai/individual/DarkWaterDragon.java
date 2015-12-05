@@ -48,7 +48,6 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	
 	private DarkWaterDragon()
 	{
-		super(DarkWaterDragon.class.getSimpleName(), "ai/individual");
 		int[] mobs =
 		{
 			DRAGON,

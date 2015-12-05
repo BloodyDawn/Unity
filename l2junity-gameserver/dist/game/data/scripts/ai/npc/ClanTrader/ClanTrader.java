@@ -49,7 +49,6 @@ public final class ClanTrader extends AbstractNpcAI
 	
 	private ClanTrader()
 	{
-		super(ClanTrader.class.getSimpleName(), "ai/npc");
 		addStartNpc(CLAN_TRADER);
 		addTalkId(CLAN_TRADER);
 		addFirstTalkId(CLAN_TRADER);

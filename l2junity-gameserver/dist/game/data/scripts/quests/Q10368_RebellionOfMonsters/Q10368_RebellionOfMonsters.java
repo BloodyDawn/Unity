@@ -47,7 +47,7 @@ public final class Q10368_RebellionOfMonsters extends Quest
 	
 	public Q10368_RebellionOfMonsters()
 	{
-		super(10368, Q10368_RebellionOfMonsters.class.getSimpleName(), "Rebellion of Monsters");
+		super(10368);
 		addStartNpc(FRED);
 		addTalkId(FRED);
 		addKillId(WEARY_JAGUAR, WEARY_JAGUAR_SCOUT, ANT_SOLDIER, ANT_WARRIOR_CAPTAIN);

@@ -79,7 +79,6 @@ public final class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 	
 	public ClassMaster()
 	{
-		super(ClassMaster.class.getSimpleName(), "ai/npc");
 		load();
 		addStartNpc(CLASS_MASTER);
 		addTalkId(CLASS_MASTER);

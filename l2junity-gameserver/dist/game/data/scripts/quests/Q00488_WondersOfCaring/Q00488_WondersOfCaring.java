@@ -54,7 +54,7 @@ public final class Q00488_WondersOfCaring extends Quest
 	
 	public Q00488_WondersOfCaring()
 	{
-		super(488, Q00488_WondersOfCaring.class.getSimpleName(), "Wonders of Caring");
+		super(488);
 		addStartNpc(ADVENTURER);
 		addTalkId(ADVENTURER, DOLPHREN);
 		addKillId(MONSTERS);

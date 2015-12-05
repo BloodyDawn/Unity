@@ -41,7 +41,6 @@ public final class SummonPc extends AbstractNpcAI
 	
 	private SummonPc()
 	{
-		super(SummonPc.class.getSimpleName(), "ai/group_template");
 		addAttackId(PORTA, PERUM);
 		addSpellFinishedId(PORTA, PERUM);
 	}

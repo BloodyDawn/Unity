@@ -59,7 +59,6 @@ public final class MonkOfChaos extends AbstractNpcAI
 	
 	private MonkOfChaos()
 	{
-		super(MonkOfChaos.class.getSimpleName(), "ai/npc");
 		addStartNpc(MONK_OF_CHAOS);
 		addTalkId(MONK_OF_CHAOS);
 		addFirstTalkId(MONK_OF_CHAOS);

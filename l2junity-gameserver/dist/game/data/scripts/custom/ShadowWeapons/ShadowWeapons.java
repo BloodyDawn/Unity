@@ -20,13 +20,14 @@ package custom.ShadowWeapons;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.Quest;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Shadow Weapons AI.<br>
  * @author Nyaran, jurchiks
  */
-public final class ShadowWeapons extends Quest
+public final class ShadowWeapons extends AbstractNpcAI
 {
 	// @formatter:off
 	private static final int[] NPCS =
@@ -45,7 +46,6 @@ public final class ShadowWeapons extends Quest
 	// @formatter:on
 	private ShadowWeapons()
 	{
-		super(-1, ShadowWeapons.class.getSimpleName(), "custom");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}

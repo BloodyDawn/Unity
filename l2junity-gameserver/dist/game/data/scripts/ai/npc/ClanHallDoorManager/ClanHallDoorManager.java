@@ -53,7 +53,6 @@ public final class ClanHallDoorManager extends AbstractNpcAI
 	
 	private ClanHallDoorManager()
 	{
-		super(ClanHallDoorManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(DOOR_MANAGERS);
 		addTalkId(DOOR_MANAGERS);
 		addFirstTalkId(DOOR_MANAGERS);

@@ -36,7 +36,6 @@ public final class Mai extends AbstractNpcAI
 	
 	private Mai()
 	{
-		super(Mai.class.getSimpleName(), "ai/individual");
 		addSpawnId(MAI);
 	}
 	

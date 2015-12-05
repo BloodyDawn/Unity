@@ -53,7 +53,6 @@ public final class GateOfUnlimitedSummoning extends AbstractNpcAI
 	
 	private GateOfUnlimitedSummoning()
 	{
-		super(GateOfUnlimitedSummoning.class.getSimpleName(), "ai/group_template");
 		addSpawnId(DEATH_GATE.keySet());
 	}
 	

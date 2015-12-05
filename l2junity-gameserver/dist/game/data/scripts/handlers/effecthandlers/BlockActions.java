@@ -39,11 +39,11 @@ import org.l2junity.gameserver.model.skills.Skill;
 public final class BlockActions extends AbstractEffect
 {
 	private final Set<Integer> _allowedSkills;
-
+	
 	public BlockActions(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		final String[] allowedSkills = params.getString("allowedSkills", "").split(";");
 		_allowedSkills = Arrays.stream(allowedSkills).filter(s -> !s.isEmpty()).map(Integer::parseInt).collect(Collectors.toSet());
 	}
@@ -59,14 +59,14 @@ public final class BlockActions extends AbstractEffect
 	{
 		return L2EffectType.BLOCK_ACTIONS;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		_allowedSkills.stream().forEach(effected::addBlockActionsAllowedSkill);
 		effected.startParalyze();
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

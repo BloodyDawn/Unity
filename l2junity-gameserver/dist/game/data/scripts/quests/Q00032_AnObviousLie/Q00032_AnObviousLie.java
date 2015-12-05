@@ -49,6 +49,7 @@ public final class Q00032_AnObviousLie extends Quest
 	private static final int MIN_LVL = 45;
 	// Reward
 	private static final Map<String, Integer> EARS = new HashMap<>();
+	
 	{
 		EARS.put("cat", 6843); // Cat Ears
 		EARS.put("raccoon", 7680); // Raccoon ears
@@ -57,7 +58,7 @@ public final class Q00032_AnObviousLie extends Quest
 	
 	public Q00032_AnObviousLie()
 	{
-		super(32, Q00032_AnObviousLie.class.getSimpleName(), "An Obvious Lie");
+		super(32);
 		addStartNpc(MAXIMILIAN);
 		addTalkId(MAXIMILIAN, GENTLER, MIKI_THE_CAT);
 		addKillId(ALLIGATOR);

@@ -55,7 +55,6 @@ public final class Lindvior extends AbstractNpcAI
 	
 	public Lindvior()
 	{
-		super(Lindvior.class.getSimpleName(), "ai/individual");
 		scheduleNextLindviorVisit();
 	}
 	

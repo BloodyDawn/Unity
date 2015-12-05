@@ -43,7 +43,7 @@ public final class Q10409_ASuspiciousVagabondInTheSwamp extends Quest
 	
 	public Q10409_ASuspiciousVagabondInTheSwamp()
 	{
-		super(10409, Q10409_ASuspiciousVagabondInTheSwamp.class.getSimpleName(), "A Suspicious Vagabond in the Swamp");
+		super(10409);
 		addStartNpc(DOKARA);
 		addTalkId(DOKARA, VAGABOND);
 		addCondNotRace(Race.ERTHEIA, "33847-09.html");

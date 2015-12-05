@@ -36,7 +36,6 @@ public final class Sebion extends AbstractNpcAI
 	
 	private Sebion()
 	{
-		super(Sebion.class.getSimpleName(), "ai/individual");
 		addSpawnId(SEBION);
 	}
 	

@@ -72,7 +72,7 @@ public final class Q00177_SplitDestiny extends Quest
 	
 	public Q00177_SplitDestiny()
 	{
-		super(177, Q00177_SplitDestiny.class.getSimpleName(), "Split Destiny");
+		super(177);
 		addStartNpc(HADEL);
 		addTalkId(HADEL, ISHUMA);
 		addKillId(GIANTS_HAND_MONSTERS);

@@ -35,12 +35,12 @@ public class Q00013_ParcelDelivery extends Quest
 	private static final int VULCAN = 31539;
 	// Item
 	private static final int PACKAGE = 7263;
-	//Misc
+	// Misc
 	private static final int MIN_LEVEL = 74;
 	
 	public Q00013_ParcelDelivery()
 	{
-		super(13, Q00013_ParcelDelivery.class.getSimpleName(), "Parcel Delivery");
+		super(13);
 		addStartNpc(FUNDIN);
 		addTalkId(FUNDIN, VULCAN);
 		registerQuestItems(PACKAGE);

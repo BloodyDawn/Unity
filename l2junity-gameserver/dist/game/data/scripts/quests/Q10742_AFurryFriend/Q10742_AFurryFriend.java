@@ -52,7 +52,7 @@ public final class Q10742_AFurryFriend extends Quest
 	
 	public Q10742_AFurryFriend()
 	{
-		super(10742, Q10742_AFurryFriend.class.getSimpleName(), "A Furry Friend");
+		super(10742);
 		addStartNpc(LEIRA);
 		addTalkId(LEIRA, KIKU_S_CAVE);
 		addFirstTalkId(KIKU_S_CAVE);

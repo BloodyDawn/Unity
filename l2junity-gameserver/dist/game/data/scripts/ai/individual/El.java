@@ -36,7 +36,6 @@ public final class El extends AbstractNpcAI
 	
 	private El()
 	{
-		super(El.class.getSimpleName(), "ai/individual");
 		addSpawnId(EL);
 	}
 	

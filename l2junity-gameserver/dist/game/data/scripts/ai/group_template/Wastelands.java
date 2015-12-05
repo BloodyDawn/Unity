@@ -72,7 +72,6 @@ public final class Wastelands extends AbstractNpcAI
 	
 	private Wastelands()
 	{
-		super(Wastelands.class.getSimpleName(), "ai/individual");
 		addSpawnId(COMMANDER, GUARD, DECO_GUARD, REGENERATED_KANILOV, REGENERATED_POSLOF, SAKUM);
 		addSeeCreatureId(JOEL, SCHUAZEN, COMMANDO, COMMANDO_CAPTAIN);
 		addKillId(REGENERATED_POSLOF, SAKUM);

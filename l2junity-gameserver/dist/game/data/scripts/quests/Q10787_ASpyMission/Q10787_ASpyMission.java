@@ -50,7 +50,7 @@ public final class Q10787_ASpyMission extends Quest
 	
 	public Q10787_ASpyMission()
 	{
-		super(10787, Q10787_ASpyMission.class.getSimpleName(), "A Spy Mission");
+		super(10787);
 		addStartNpc(SHUVANN);
 		addTalkId(SHUVANN, SUSPICIOUS_BOX);
 		

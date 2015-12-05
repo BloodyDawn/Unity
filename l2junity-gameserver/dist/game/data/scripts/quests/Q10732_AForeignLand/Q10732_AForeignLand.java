@@ -40,7 +40,7 @@ public final class Q10732_AForeignLand extends Quest
 	
 	public Q10732_AForeignLand()
 	{
-		super(10732, Q10732_AForeignLand.class.getSimpleName(), "A Foreign Land");
+		super(10732);
 		addStartNpc(NAVARI);
 		addTalkId(NAVARI, GERETH);
 		addCondRace(Race.ERTHEIA, "");

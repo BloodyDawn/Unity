@@ -61,7 +61,7 @@ public final class Q10359_TracesOfEvil extends Quest
 	
 	public Q10359_TracesOfEvil()
 	{
-		super(10359, Q10359_TracesOfEvil.class.getSimpleName(), "Traces of Evil");
+		super(10359);
 		addStartNpc(ADVENTURER_GUIDE);
 		addTalkId(ADVENTURER_GUIDE, FRED, RAYMOND, RAINS, TOBIAS, DRIKUS, MENDIO, GERSHWIN, ESRANDELL, ELLENIA);
 		addKillId(MONSTERS);

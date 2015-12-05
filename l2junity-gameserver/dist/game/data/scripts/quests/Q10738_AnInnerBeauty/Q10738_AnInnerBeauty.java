@@ -43,7 +43,7 @@ public final class Q10738_AnInnerBeauty extends Quest
 	
 	public Q10738_AnInnerBeauty()
 	{
-		super(10738, Q10738_AnInnerBeauty.class.getSimpleName(), "An Inner Beauty");
+		super(10738);
 		addStartNpc(GRAKON);
 		addTalkId(GRAKON, EVNA);
 		

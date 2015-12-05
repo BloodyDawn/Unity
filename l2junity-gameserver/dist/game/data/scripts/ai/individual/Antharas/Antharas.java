@@ -130,7 +130,6 @@ public final class Antharas extends AbstractNpcAI
 	
 	private Antharas()
 	{
-		super(Antharas.class.getSimpleName(), "ai/individual");
 		addStartNpc(HEART, CUBE);
 		addTalkId(HEART, CUBE);
 		addFirstTalkId(HEART);

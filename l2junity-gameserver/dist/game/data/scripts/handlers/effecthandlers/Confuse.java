@@ -60,13 +60,13 @@ public final class Confuse extends AbstractEffect
 	{
 		return EffectFlag.CONFUSED.getMask();
 	}
-
+	
 	@Override
 	public boolean isInstant()
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{

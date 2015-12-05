@@ -67,7 +67,7 @@ public final class Q00490_DutyOfTheSurvivor extends Quest
 	
 	public Q00490_DutyOfTheSurvivor()
 	{
-		super(490, Q00490_DutyOfTheSurvivor.class.getSimpleName(), "Duty of the Survivor");
+		super(490);
 		addStartNpc(VOLLODOS);
 		addTalkId(VOLLODOS);
 		addKillId(EXTRACT_MONSTERS);

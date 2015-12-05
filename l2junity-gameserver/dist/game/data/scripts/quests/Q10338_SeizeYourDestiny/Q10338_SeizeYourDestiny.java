@@ -52,7 +52,7 @@ public final class Q10338_SeizeYourDestiny extends Quest
 	
 	public Q10338_SeizeYourDestiny()
 	{
-		super(10338, Q10338_SeizeYourDestiny.class.getSimpleName(), "Seize Your Destiny");
+		super(10338);
 		addStartNpc(CELLPHINE);
 		addTalkId(CELLPHINE, HADEL, HERMUNCUS);
 		addKillId(HARNAKS_WRAITH);

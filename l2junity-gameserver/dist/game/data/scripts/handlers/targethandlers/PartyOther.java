@@ -40,7 +40,7 @@ public class PartyOther implements ITargetTypeHandler
 				{
 					switch (skill.getId())
 					{
-					// FORCE BUFFS may cancel here but there should be a proper condition
+						// FORCE BUFFS may cancel here but there should be a proper condition
 						case 426:
 							if (!target.getActingPlayer().isMageClass())
 							{

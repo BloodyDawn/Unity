@@ -59,7 +59,6 @@ public final class ArenaManager extends AbstractNpcAI
 	
 	private ArenaManager()
 	{
-		super(ArenaManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(ARENA_MANAGER);
 		addTalkId(ARENA_MANAGER);
 		addFirstTalkId(ARENA_MANAGER);

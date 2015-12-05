@@ -83,7 +83,6 @@ public final class Mammons extends AbstractNpcAI
 	
 	private Mammons()
 	{
-		super(Mammons.class.getSimpleName(), "ai/npc");
 		addStartNpc(MAMMONS);
 		addTalkId(MAMMONS);
 		addFirstTalkId(MAMMONS);

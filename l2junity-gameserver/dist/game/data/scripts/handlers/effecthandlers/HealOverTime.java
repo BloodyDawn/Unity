@@ -41,7 +41,7 @@ public final class HealOverTime extends AbstractEffect
 		
 		_power = params.getDouble("power", 0);
 	}
-
+	
 	@Override
 	public boolean onActionTime(BuffInfo info)
 	{

@@ -78,7 +78,6 @@ public final class ClassTransferTalk extends AbstractNpcAI
 	
 	private ClassTransferTalk()
 	{
-		super(ClassTransferTalk.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(FRANCO, RIVIAN, DEVON, TOOK, KAKAI, MOKA, VALFAR);
 		addStartNpc(FIRST_CLASS_TOWNS);
 		addStartNpc(SECOND_CLASS_TOWNS);

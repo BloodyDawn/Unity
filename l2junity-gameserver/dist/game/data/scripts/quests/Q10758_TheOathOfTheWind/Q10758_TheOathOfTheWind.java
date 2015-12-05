@@ -44,7 +44,7 @@ public final class Q10758_TheOathOfTheWind extends Quest
 	
 	public Q10758_TheOathOfTheWind()
 	{
-		super(10758, Q10758_TheOathOfTheWind.class.getSimpleName(), "The Oath of the Wind");
+		super(10758);
 		addStartNpc(PIO);
 		addTalkId(PIO);
 		addSpawnId(WINDIMA);

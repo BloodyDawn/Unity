@@ -63,6 +63,7 @@ public final class TeleportToFantasy extends AbstractNpcAI
 	};
 	// Misc
 	private static final Map<Integer, Integer> TELEPORTERS = new HashMap<>();
+	
 	static
 	{
 		TELEPORTERS.put(30059, 2); // Trisha
@@ -77,12 +78,12 @@ public final class TeleportToFantasy extends AbstractNpcAI
 		TELEPORTERS.put(31275, 9); // Tatiana
 		TELEPORTERS.put(31964, 10); // Bilia
 	}
+	
 	// Player Variables
 	private static final String FANTASY_RETURN = "FANTASY_RETURN";
 	
 	private TeleportToFantasy()
 	{
-		super(TeleportToFantasy.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(PADDIES);
 		addStartNpc(TELEPORTERS.keySet());
 		addTalkId(PADDIES);

@@ -42,7 +42,6 @@ public abstract class AbstractInstance extends AbstractNpcAI
 {
 	public AbstractInstance(String name)
 	{
-		super(name, "instances");
 	}
 	
 	/**

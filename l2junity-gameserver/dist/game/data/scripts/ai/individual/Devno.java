@@ -57,7 +57,6 @@ public final class Devno extends AbstractNpcAI
 	
 	private Devno()
 	{
-		super(Devno.class.getSimpleName(), "ai/individual");
 		addSpawnId(DEVNO);
 	}
 	

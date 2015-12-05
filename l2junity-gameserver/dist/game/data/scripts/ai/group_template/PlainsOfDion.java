@@ -60,7 +60,6 @@ public final class PlainsOfDion extends AbstractNpcAI
 	
 	private PlainsOfDion()
 	{
-		super(PlainsOfDion.class.getSimpleName(), "ai/group_template");
 		addAttackId(DELU_LIZARDMEN);
 	}
 	

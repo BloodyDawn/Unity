@@ -57,7 +57,7 @@ public final class Q10395_NotATraitor extends Quest
 	
 	public Q10395_NotATraitor()
 	{
-		super(10395, Q10395_NotATraitor.class.getSimpleName(), "Not a Traitor");
+		super(10395);
 		addStartNpc(LEO);
 		addTalkId(LEO, KELIOS);
 		addKillId(MONSTERS);

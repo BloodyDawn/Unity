@@ -49,7 +49,7 @@ public final class Q10394_MutualBenefit extends Quest
 	
 	public Q10394_MutualBenefit()
 	{
-		super(10394, Q10394_MutualBenefit.class.getSimpleName(), "Mutual Benefit");
+		super(10394);
 		addStartNpc(KELIOS);
 		addTalkId(KELIOS);
 		addKillId(GARGOYLE, BASILISK, ELDER_BASILISK);

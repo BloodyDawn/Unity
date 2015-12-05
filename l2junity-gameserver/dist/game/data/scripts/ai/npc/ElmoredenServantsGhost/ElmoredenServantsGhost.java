@@ -39,7 +39,6 @@ public final class ElmoredenServantsGhost extends AbstractNpcAI
 	
 	private ElmoredenServantsGhost()
 	{
-		super(ElmoredenServantsGhost.class.getSimpleName(), "ai/npc");
 		addStartNpc(GHOST);
 		addTalkId(GHOST);
 		addFirstTalkId(GHOST);

@@ -77,6 +77,7 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 	};
 	// Misc
 	private static final Map<Integer, BuffsData> BUFF = new HashMap<>();
+	
 	static
 	{
 		BUFF.put(1, new BuffsData(4359, 2)); // Focus: Requires 2 Nepenthese Seeds
@@ -91,7 +92,6 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 	
 	private VarkaSilenosSupport()
 	{
-		super(VarkaSilenosSupport.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(ASHAS, NARAN, UDAN, DIYABU, HAGOS, SHIKON, TERANU);
 		addTalkId(UDAN, HAGOS, TERANU);
 		addStartNpc(HAGOS, TERANU);

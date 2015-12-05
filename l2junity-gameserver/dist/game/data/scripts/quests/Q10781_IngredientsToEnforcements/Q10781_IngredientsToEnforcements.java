@@ -51,7 +51,7 @@ public final class Q10781_IngredientsToEnforcements extends Quest
 	
 	public Q10781_IngredientsToEnforcements()
 	{
-		super(10781, Q10781_IngredientsToEnforcements.class.getSimpleName(), "Ingredients to Enforcements");
+		super(10781);
 		addStartNpc(BACON);
 		addTalkId(BACON);
 		addKillId(MONSTERS);

@@ -43,7 +43,7 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 	
 	public Q00688_DefeatTheElrokianRaiders()
 	{
-		super(688, Q00688_DefeatTheElrokianRaiders.class.getSimpleName(), "Defeat the Elrokian Raiders!");
+		super(688);
 		addStartNpc(DINN);
 		addTalkId(DINN);
 		addKillId(ELROKI);

@@ -38,7 +38,6 @@ public final class FrozenLabyrinth extends AbstractNpcAI
 	
 	private FrozenLabyrinth()
 	{
-		super(FrozenLabyrinth.class.getSimpleName(), "ai/group_template");
 		addAttackId(PRONGHORN, FROST_BUFFALO);
 	}
 	

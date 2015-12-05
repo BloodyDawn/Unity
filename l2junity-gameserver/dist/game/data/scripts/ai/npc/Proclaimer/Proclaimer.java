@@ -53,7 +53,6 @@ public final class Proclaimer extends AbstractNpcAI
 	
 	private Proclaimer()
 	{
-		super(Proclaimer.class.getSimpleName(), "ai/npc");
 		addStartNpc(PROCLAIMER);
 		addFirstTalkId(PROCLAIMER);
 		addTalkId(PROCLAIMER);

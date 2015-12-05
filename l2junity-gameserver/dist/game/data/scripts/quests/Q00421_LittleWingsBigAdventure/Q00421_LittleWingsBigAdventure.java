@@ -67,6 +67,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	private static final int MIN_PLAYER_LVL = 45;
 	private static final int MIN_HACHLING_LVL = 55;
 	private static final Map<Integer, NpcData> NPC_DATA = new HashMap<>();
+	
 	static
 	{
 		NPC_DATA.put(TREE_OF_WIND, new NpcData(NpcStringId.HEY_YOU_VE_ALREADY_DRUNK_THE_ESSENCE_OF_WIND, 2, 1, 270));
@@ -77,7 +78,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	
 	public Q00421_LittleWingsBigAdventure()
 	{
-		super(421, Q00421_LittleWingsBigAdventure.class.getSimpleName(), "Little Wing's Big Adventure");
+		super(421);
 		addStartNpc(CRONOS);
 		addTalkId(CRONOS, MIMYU);
 		addAttackId(NPC_DATA.keySet());

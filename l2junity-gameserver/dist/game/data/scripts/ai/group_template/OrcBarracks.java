@@ -55,7 +55,6 @@ public final class OrcBarracks extends AbstractNpcAI
 	
 	public OrcBarracks()
 	{
-		super(OrcBarracks.class.getSimpleName(), "ai/group_template");
 		addSpawnId(TUREK_ORC_FOOTMAN);
 		addKillId(TUREK_ORC_FOOTMAN);
 		addKillId(MOBS);

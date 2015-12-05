@@ -53,6 +53,7 @@ public final class Q00111_ElrokianHuntersProof extends Quest
 	private static final int MIN_LEVEL = 75;
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MOBS_DROP_CHANCES.put(22196, new ItemChanceHolder(DIARY_FRAGMENT, 0.51, 4)); // velociraptor_leader
@@ -79,7 +80,7 @@ public final class Q00111_ElrokianHuntersProof extends Quest
 	
 	public Q00111_ElrokianHuntersProof()
 	{
-		super(111, Q00111_ElrokianHuntersProof.class.getSimpleName(), "Elrokian Hunter's Proof");
+		super(111);
 		addStartNpc(MARQUEZ);
 		addTalkId(MARQUEZ, MUSHIKA, ASAMAH, KIRIKACHIN);
 		addKillId(MOBS_DROP_CHANCES.keySet());
@@ -235,9 +236,9 @@ public final class Q00111_ElrokianHuntersProof extends Quest
 				else if (qs.isCond(10))
 				{
 					if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, 10, item.getChance(), true) //
-						&& (getQuestItemsCount(qs.getPlayer(), ORNITHOMINUS_CLAW) >= 10) //
-						&& (getQuestItemsCount(qs.getPlayer(), DEINONYCHUS_BONE) >= 10) //
-						&& (getQuestItemsCount(qs.getPlayer(), PACHYCEPHALOSAURUS_SKIN) >= 10))
+					&& (getQuestItemsCount(qs.getPlayer(), ORNITHOMINUS_CLAW) >= 10) //
+					&& (getQuestItemsCount(qs.getPlayer(), DEINONYCHUS_BONE) >= 10) //
+					&& (getQuestItemsCount(qs.getPlayer(), PACHYCEPHALOSAURUS_SKIN) >= 10))
 					{
 						qs.setCond(11);
 					}

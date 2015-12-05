@@ -67,7 +67,6 @@ public final class ManorManager extends AbstractNpcAI
 	
 	public ManorManager()
 	{
-		super(ManorManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPC);
 		addFirstTalkId(NPC);
 		addTalkId(NPC);

@@ -40,7 +40,6 @@ public final class DrillSergeant extends AbstractNpcAI
 	
 	private DrillSergeant()
 	{
-		super(DrillSergeant.class.getSimpleName(), "ai/individual");
 		addSpawnId(SERGANT);
 	}
 	

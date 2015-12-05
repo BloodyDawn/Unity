@@ -45,7 +45,7 @@ public final class Q10391_ASuspiciousHelper extends Quest
 	
 	public Q10391_ASuspiciousHelper()
 	{
-		super(10391, Q10391_ASuspiciousHelper.class.getSimpleName(), "A Suspicious Helper");
+		super(10391);
 		addStartNpc(ELI);
 		addTalkId(ELI, CHEL, IASON);
 		registerQuestItems(CARD, EXP_MATERTIAL);

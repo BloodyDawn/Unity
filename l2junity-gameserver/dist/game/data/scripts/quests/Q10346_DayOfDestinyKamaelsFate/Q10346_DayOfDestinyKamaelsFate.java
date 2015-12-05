@@ -41,7 +41,7 @@ public final class Q10346_DayOfDestinyKamaelsFate extends ThirdClassTransferQues
 	
 	public Q10346_DayOfDestinyKamaelsFate()
 	{
-		super(10346, Q10346_DayOfDestinyKamaelsFate.class.getSimpleName(), "Day of Destiny: Kamael's Fate", MIN_LEVEL, START_RACE);
+		super(10346, MIN_LEVEL, START_RACE);
 		addStartNpc(BROME);
 		addTalkId(BROME);
 		addCondMinLevel(MIN_LEVEL, "32221-11.html");

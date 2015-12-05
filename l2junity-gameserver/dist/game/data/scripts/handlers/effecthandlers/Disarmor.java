@@ -63,7 +63,7 @@ public final class Disarmor extends AbstractEffect
 	{
 		return (_slot != L2Item.SLOT_NONE) && info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
@@ -71,7 +71,7 @@ public final class Disarmor extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		PlayerInstance player = effected.getActingPlayer();
 		ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(_slot);
 		if (unequiped.length > 0)
@@ -83,7 +83,7 @@ public final class Disarmor extends AbstractEffect
 			}
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
-
+			
 			SystemMessage sm = null;
 			if (unequiped[0].getEnchantLevel() > 0)
 			{

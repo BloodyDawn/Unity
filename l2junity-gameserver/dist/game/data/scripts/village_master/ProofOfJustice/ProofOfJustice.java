@@ -40,6 +40,7 @@ public final class ProofOfJustice extends AbstractNpcAI
 	private static final int JUSTICE = 17822; // Proof of Justice
 	// Misc
 	private static final Map<Integer, List<ClassId>> CLASSLIST = new HashMap<>();
+	
 	static
 	{
 		CLASSLIST.put(30505, Arrays.asList(ClassId.DESTROYER, ClassId.TYRANT, ClassId.OVERLORD, ClassId.WARCRYER));
@@ -54,7 +55,6 @@ public final class ProofOfJustice extends AbstractNpcAI
 	
 	private ProofOfJustice()
 	{
-		super(ProofOfJustice.class.getSimpleName(), "village_master");
 		addStartNpc(CLASSLIST.keySet());
 		addTalkId(CLASSLIST.keySet());
 	}

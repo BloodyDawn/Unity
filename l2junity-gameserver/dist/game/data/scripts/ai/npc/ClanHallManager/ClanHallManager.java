@@ -97,7 +97,6 @@ public final class ClanHallManager extends AbstractNpcAI
 	
 	private ClanHallManager()
 	{
-		super(ClanHallManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(CLANHALL_MANAGERS);
 		addTalkId(CLANHALL_MANAGERS);
 		addFirstTalkId(CLANHALL_MANAGERS);

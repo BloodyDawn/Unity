@@ -76,7 +76,6 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	
 	private MonasteryOfSilence()
 	{
-		super(MonasteryOfSilence.class.getSimpleName(), "ai/group_template");
 		addSkillSeeId(DIVINITY_CLAN);
 		addAttackId(KNIGHT, CAPTAIN, GUIDE, SEEKER, ASCETIC);
 		addNpcHateId(GUIDE, SEEKER, SAVIOR, ASCETIC);

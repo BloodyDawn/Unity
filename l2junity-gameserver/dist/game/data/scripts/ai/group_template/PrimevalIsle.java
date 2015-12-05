@@ -108,7 +108,6 @@ public final class PrimevalIsle extends AbstractNpcAI
 	
 	private PrimevalIsle()
 	{
-		super(PrimevalIsle.class.getSimpleName(), "ai/group_template");
 		addSpawnId(TREX);
 		addSpawnId(SPRIGNANT);
 		addSpawnId(MONSTERS);

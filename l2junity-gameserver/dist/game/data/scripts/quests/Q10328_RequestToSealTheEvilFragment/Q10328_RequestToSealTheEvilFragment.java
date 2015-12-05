@@ -42,7 +42,7 @@ public final class Q10328_RequestToSealTheEvilFragment extends Quest
 	
 	public Q10328_RequestToSealTheEvilFragment()
 	{
-		super(10328, Q10328_RequestToSealTheEvilFragment.class.getSimpleName(), "Request to Seal the Evil Fragment");
+		super(10328);
 		addStartNpc(PANTHEON);
 		addTalkId(PANTHEON, KAKAI);
 		addCondMaxLevel(MAX_LEVEL, "32972-06.htm");

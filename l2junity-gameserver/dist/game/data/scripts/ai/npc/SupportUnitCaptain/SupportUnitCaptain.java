@@ -124,7 +124,6 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 	
 	private SupportUnitCaptain()
 	{
-		super(SupportUnitCaptain.class.getSimpleName(), "ai/npc");
 		addStartNpc(UNIT_CAPTAIN);
 		addTalkId(UNIT_CAPTAIN);
 		addFirstTalkId(UNIT_CAPTAIN);

@@ -38,6 +38,7 @@ public final class ProofOfCourage extends AbstractNpcAI
 {
 	// Misc
 	private static final Map<Integer, List<ClassId>> CLASSLIST = new HashMap<>();
+	
 	static
 	{
 		CLASSLIST.put(32146, Arrays.asList(ClassId.TROOPER, ClassId.WARDER));
@@ -50,7 +51,6 @@ public final class ProofOfCourage extends AbstractNpcAI
 	
 	private ProofOfCourage()
 	{
-		super(ProofOfCourage.class.getSimpleName(), "village_master");
 		addStartNpc(CLASSLIST.keySet());
 		addTalkId(CLASSLIST.keySet());
 	}

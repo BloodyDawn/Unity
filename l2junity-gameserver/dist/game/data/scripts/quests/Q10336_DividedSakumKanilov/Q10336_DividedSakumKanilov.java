@@ -49,7 +49,7 @@ public final class Q10336_DividedSakumKanilov extends Quest
 	
 	public Q10336_DividedSakumKanilov()
 	{
-		super(10336, Q10336_DividedSakumKanilov.class.getSimpleName(), "Divided Sakum, Kanilov");
+		super(10336);
 		addStartNpc(ZENATH);
 		addTalkId(ZENATH, ADVENTURE_GUILDSMAN);
 		addKillId(KANILOV);

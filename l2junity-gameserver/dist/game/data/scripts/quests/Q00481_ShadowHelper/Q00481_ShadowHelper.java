@@ -69,7 +69,7 @@ public final class Q00481_ShadowHelper extends Quest
 	
 	public Q00481_ShadowHelper()
 	{
-		super(481, Q00481_ShadowHelper.class.getSimpleName(), "Shadow Helper");
+		super(481);
 		addStartNpc(RIDENBAG);
 		addTalkId(RIDENBAG);
 		addKillId(MONSTERS);

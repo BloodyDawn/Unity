@@ -41,7 +41,7 @@ public final class EnableCloak extends AbstractEffect
 	{
 		return (info.getEffector() != null) && (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{

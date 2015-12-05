@@ -66,6 +66,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	private static final int MIN_LEVEL = 80;
 	private static final Map<Integer, Integer> MONSTER_NPCS = new HashMap<>();
 	private static final Map<Integer, Integer> MONSTER_ESSENCES = new HashMap<>();
+	
 	static
 	{
 		MONSTER_NPCS.put(25725, DRAKE_LORD_CORPSE);
@@ -75,6 +76,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 		MONSTER_ESSENCES.put(BEHEMOTH_LEADER_CORPSE, BEHEMOTH_LEADER_ESSENCE);
 		MONSTER_ESSENCES.put(DRAGON_BEAST_CORPSE, DRAGON_BEAST_ESSENCE);
 	}
+	
 	// Rewards
 	private static final int[] WEAPONS =
 	{
@@ -136,7 +138,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	
 	public Q00456_DontKnowDontCare()
 	{
-		super(456, Q00456_DontKnowDontCare.class.getSimpleName(), "Don't Know, Don't Care");
+		super(456);
 		addStartNpc(SEPARATED_SOUL);
 		addTalkId(SEPARATED_SOUL);
 		addFirstTalkId(DRAKE_LORD_CORPSE, BEHEMOTH_LEADER_CORPSE, DRAGON_BEAST_CORPSE);
@@ -293,9 +295,9 @@ public final class Q00456_DontKnowDontCare extends Quest
 			PlayerInstance attacker = aggro.getAttacker().getActingPlayer();
 			
 			if (attacker.isInParty() //
-				&& attacker.getParty().isInCommandChannel() //
-				&& attacker.getParty().getCommandChannel().equals(cc) // only players from the same cc are allowed
-				&& Util.checkIfInRange(1500, npc, attacker, true))
+			&& attacker.getParty().isInCommandChannel() //
+			&& attacker.getParty().getCommandChannel().equals(cc) // only players from the same cc are allowed
+			&& Util.checkIfInRange(1500, npc, attacker, true))
 			{
 				allowedPlayers.add(attacker.getObjectId());
 			}

@@ -153,7 +153,6 @@ public final class WeaverOlf extends AbstractNpcAI
 	
 	private WeaverOlf()
 	{
-		super(WeaverOlf.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
 	}

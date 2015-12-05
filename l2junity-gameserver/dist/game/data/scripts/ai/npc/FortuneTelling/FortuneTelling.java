@@ -37,7 +37,6 @@ public final class FortuneTelling extends AbstractNpcAI
 	
 	public FortuneTelling()
 	{
-		super(FortuneTelling.class.getSimpleName(), "ai/npc");
 		addStartNpc(MINE);
 		addTalkId(MINE);
 	}

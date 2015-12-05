@@ -49,7 +49,6 @@ public final class AlchemistManager extends AbstractNpcAI
 	
 	private AlchemistManager()
 	{
-		super(AlchemistManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(ALCHEMISTS);
 		addTalkId(ALCHEMISTS);
 		addFirstTalkId(ALCHEMISTS);

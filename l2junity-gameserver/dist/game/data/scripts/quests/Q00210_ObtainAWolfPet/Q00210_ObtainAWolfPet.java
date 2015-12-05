@@ -42,7 +42,7 @@ public final class Q00210_ObtainAWolfPet extends Quest
 	
 	public Q00210_ObtainAWolfPet()
 	{
-		super(210, Q00210_ObtainAWolfPet.class.getSimpleName(), "Obtain a Wolf Pet");
+		super(210);
 		addStartNpc(LUNDY);
 		addTalkId(LUNDY, BELLA, BRYNN, SYDNIA);
 		addCondMinLevel(MIN_LEVEL, "30827-07.htm");

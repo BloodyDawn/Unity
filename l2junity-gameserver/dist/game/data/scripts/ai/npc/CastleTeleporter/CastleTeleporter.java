@@ -71,7 +71,6 @@ public final class CastleTeleporter extends AbstractNpcAI
 	
 	private CastleTeleporter()
 	{
-		super(CastleTeleporter.class.getSimpleName(), "ai/npc");
 		addStartNpc(MASS_TELEPORTERS);
 		addStartNpc(SIEGE_TELEPORTERS);
 		addTalkId(MASS_TELEPORTERS);

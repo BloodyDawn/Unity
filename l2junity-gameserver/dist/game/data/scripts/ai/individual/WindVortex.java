@@ -39,7 +39,6 @@ public final class WindVortex extends AbstractNpcAI
 	
 	public WindVortex()
 	{
-		super(WindVortex.class.getSimpleName(), "ai/individual");
 		addAttackId(VORTEX);
 	}
 	

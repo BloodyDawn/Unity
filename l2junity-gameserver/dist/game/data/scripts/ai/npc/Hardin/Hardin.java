@@ -37,7 +37,6 @@ public final class Hardin extends AbstractNpcAI
 	
 	private Hardin()
 	{
-		super(Hardin.class.getSimpleName(), "ai/npc");
 		addStartNpc(HARDIN);
 		addFirstTalkId(HARDIN);
 	}

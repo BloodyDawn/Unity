@@ -36,7 +36,6 @@ public final class TomaJunior extends AbstractNpcAI
 	
 	private TomaJunior()
 	{
-		super(GuardSoldier.class.getSimpleName(), "ai/individual");
 		addSpawnId(TOMA_JUNIOR);
 	}
 	

@@ -91,7 +91,7 @@ public final class Q10365_SeekerEscort extends Quest
 	
 	public Q10365_SeekerEscort()
 	{
-		super(10365, Q10365_SeekerEscort.class.getSimpleName(), "Seeker Escort");
+		super(10365);
 		addStartNpc(DEP);
 		addTalkId(DEP, SEBION);
 		addSpawnId(BLOODHOUND);

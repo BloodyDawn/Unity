@@ -57,7 +57,6 @@ public final class SinWardens extends AbstractNpcAI
 	
 	private SinWardens()
 	{
-		super(SinWardens.class.getSimpleName(), "ai/individual");
 		addKillId(SIN_WARDEN_MINIONS);
 	}
 	

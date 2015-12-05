@@ -45,7 +45,7 @@ public final class Q10763_TerrifyingChertuba extends Quest
 	
 	public Q10763_TerrifyingChertuba()
 	{
-		super(10763, Q10763_TerrifyingChertuba.class.getSimpleName(), "Terrifying Chertuba");
+		super(10763);
 		addStartNpc(VORBOS);
 		addTalkId(VORBOS);
 		addKillId(CHERTUBA_ILLUSION, CHERTUBA_MIRAGE);

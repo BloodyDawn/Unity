@@ -77,7 +77,6 @@ public final class QueenShyeed extends AbstractNpcAI
 	
 	private QueenShyeed()
 	{
-		super(QueenShyeed.class.getSimpleName(), "ai/individual");
 		addKillId(SHYEED);
 		spawnShyeed();
 	}

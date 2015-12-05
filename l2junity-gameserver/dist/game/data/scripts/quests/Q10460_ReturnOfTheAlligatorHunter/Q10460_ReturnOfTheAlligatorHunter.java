@@ -53,7 +53,7 @@ public final class Q10460_ReturnOfTheAlligatorHunter extends Quest
 	
 	public Q10460_ReturnOfTheAlligatorHunter()
 	{
-		super(10460, Q10460_ReturnOfTheAlligatorHunter.class.getSimpleName(), "Return of the Alligator Hunter");
+		super(10460);
 		addStartNpc(ENRON);
 		addTalkId(ENRON);
 		addKillId(MONSTERS);

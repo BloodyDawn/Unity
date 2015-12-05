@@ -52,7 +52,6 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 	
 	private CastleMercenaryManager()
 	{
-		super(CastleMercenaryManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 		addFirstTalkId(NPCS);

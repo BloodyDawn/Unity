@@ -36,7 +36,6 @@ public final class Plenos extends AbstractNpcAI
 	
 	private Plenos()
 	{
-		super(Plenos.class.getSimpleName(), "ai/individual");
 		addSpawnId(PLENOS);
 	}
 	

@@ -70,7 +70,6 @@ public final class KeucereusNorthController extends AirShipController
 	
 	public KeucereusNorthController()
 	{
-		super(-1, KeucereusNorthController.class.getSimpleName(), "vehicles");
 		addStartNpc(CONTROLLER_ID);
 		addFirstTalkId(CONTROLLER_ID);
 		addTalkId(CONTROLLER_ID);

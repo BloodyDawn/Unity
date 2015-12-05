@@ -63,7 +63,7 @@ public final class Q10734_DoOrDie extends Quest
 	
 	public Q10734_DoOrDie()
 	{
-		super(10734, Q10734_DoOrDie.class.getSimpleName(), "Do or Die");
+		super(10734);
 		addStartNpc(KATALIN, AYANTHE);
 		addTalkId(KATALIN, AYANTHE, ADVENTURER_S_GUIDE_APPRENTICE);
 		addKillId(TRAINING_DUMMY);

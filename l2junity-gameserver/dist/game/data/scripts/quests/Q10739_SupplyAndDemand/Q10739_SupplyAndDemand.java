@@ -57,7 +57,7 @@ public final class Q10739_SupplyAndDemand extends Quest
 	
 	public Q10739_SupplyAndDemand()
 	{
-		super(10739, Q10739_SupplyAndDemand.class.getSimpleName(), "Supply And Demand");
+		super(10739);
 		addStartNpc(EVNA);
 		addTalkId(EVNA, DENYA, PELU, CERI, SIVANTHE);
 		

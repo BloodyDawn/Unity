@@ -46,7 +46,6 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 	
 	private EilhalderVonHellmann()
 	{
-		super(EilhalderVonHellmann.class.getSimpleName(), "ai/spawns");
 		addSpawnId(EILHALDER_VON_HELLMANN);
 	}
 	

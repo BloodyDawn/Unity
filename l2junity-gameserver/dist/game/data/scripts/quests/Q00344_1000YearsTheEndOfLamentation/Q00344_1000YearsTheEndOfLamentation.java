@@ -47,6 +47,7 @@ public final class Q00344_1000YearsTheEndOfLamentation extends Quest
 	private static final ItemHolder CRUCIFIX = new ItemHolder(4273, 1);
 	// Monsters
 	private static final Map<Integer, Double> MONSTER_CHANCES = new HashMap<>();
+	
 	{
 		MONSTER_CHANCES.put(20236, 0.58); // Cave Servant
 		MONSTER_CHANCES.put(20238, 0.75); // Cave Servant Warrior
@@ -59,6 +60,7 @@ public final class Q00344_1000YearsTheEndOfLamentation extends Quest
 		MONSTER_CHANCES.put(20275, 0.79); // Cave Servant Captain
 		MONSTER_CHANCES.put(20276, 0.85); // Royal Cave Servant
 	}
+	
 	// Rewards
 	private static final ItemHolder ORIHARUKON_ORE = new ItemHolder(1874, 25);
 	private static final ItemHolder VARNISH_OF_PURITY = new ItemHolder(1887, 10);
@@ -77,7 +79,7 @@ public final class Q00344_1000YearsTheEndOfLamentation extends Quest
 	
 	public Q00344_1000YearsTheEndOfLamentation()
 	{
-		super(344, Q00344_1000YearsTheEndOfLamentation.class.getSimpleName(), "1000 years, the End of Lamentation");
+		super(344);
 		addStartNpc(GILMORE);
 		addTalkId(KAIEN, GARVARENTZ, GILMORE, RODEMAI, ORVEN);
 		addKillId(MONSTER_CHANCES.keySet());

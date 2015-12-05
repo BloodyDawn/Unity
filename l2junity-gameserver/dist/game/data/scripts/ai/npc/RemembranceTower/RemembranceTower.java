@@ -37,7 +37,6 @@ public final class RemembranceTower extends AbstractNpcAI
 	
 	private RemembranceTower()
 	{
-		super(RemembranceTower.class.getSimpleName(), "ai/npc");
 		addStartNpc(REMEMBRANCE_TOWER);
 		addTalkId(REMEMBRANCE_TOWER);
 		addFirstTalkId(REMEMBRANCE_TOWER);

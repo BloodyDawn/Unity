@@ -63,7 +63,7 @@ public final class Q10363_RequestOfTheSeeker extends Quest
 	
 	public Q10363_RequestOfTheSeeker()
 	{
-		super(10363, Q10363_RequestOfTheSeeker.class.getSimpleName(), "Request of the Seeker");
+		super(10363);
 		addStartNpc(NAGEL);
 		addTalkId(NAGEL, CELIN);
 		addSpawnId(CORPSES);

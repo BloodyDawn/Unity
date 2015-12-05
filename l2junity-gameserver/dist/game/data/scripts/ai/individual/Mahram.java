@@ -36,7 +36,6 @@ public final class Mahram extends AbstractNpcAI
 	
 	private Mahram()
 	{
-		super(Mahram.class.getSimpleName(), "ai/individual");
 		addSpawnId(MAHRAM);
 	}
 	

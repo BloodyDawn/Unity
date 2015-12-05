@@ -31,7 +31,6 @@ public final class NoRandomActivity extends AbstractNpcAI
 {
 	private NoRandomActivity()
 	{
-		super(NoRandomActivity.class.getSimpleName(), "ai/spawns");
 	}
 	
 	@Override

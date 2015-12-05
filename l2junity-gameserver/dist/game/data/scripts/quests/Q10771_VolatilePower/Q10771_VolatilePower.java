@@ -51,7 +51,7 @@ public final class Q10771_VolatilePower extends Quest
 	
 	public Q10771_VolatilePower()
 	{
-		super(10771, Q10771_VolatilePower.class.getSimpleName(), "Volatile Power");
+		super(10771);
 		addStartNpc(JANSSEN);
 		addFirstTalkId(HIDDEN_CRUSHER);
 		addTalkId(JANSSEN, HIDDEN_CRUSHER);

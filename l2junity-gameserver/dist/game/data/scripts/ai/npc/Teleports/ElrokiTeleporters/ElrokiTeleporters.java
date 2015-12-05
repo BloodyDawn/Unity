@@ -39,7 +39,6 @@ public final class ElrokiTeleporters extends AbstractNpcAI
 	
 	private ElrokiTeleporters()
 	{
-		super(ElrokiTeleporters.class.getSimpleName(), "ai/npc/Teleports");
 		addFirstTalkId(ORAHOCHIN, GARIACHIN);
 		addStartNpc(ORAHOCHIN, GARIACHIN);
 		addTalkId(ORAHOCHIN, GARIACHIN);

@@ -46,7 +46,6 @@ public final class AvantGarde extends AbstractNpcAI
 	
 	public AvantGarde()
 	{
-		super(AvantGarde.class.getSimpleName(), "ai/npc");
 		addStartNpc(AVANT_GARDE);
 		addTalkId(AVANT_GARDE);
 		addFirstTalkId(AVANT_GARDE);

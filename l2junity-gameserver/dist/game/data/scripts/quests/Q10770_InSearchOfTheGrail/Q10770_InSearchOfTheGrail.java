@@ -53,7 +53,7 @@ public final class Q10770_InSearchOfTheGrail extends Quest
 	
 	public Q10770_InSearchOfTheGrail()
 	{
-		super(10770, Q10770_InSearchOfTheGrail.class.getSimpleName(), "In Search of the Grail");
+		super(10770);
 		addStartNpc(LORAIN);
 		addTalkId(LORAIN, JANSSEN);
 		addKillId(MONSTERS);

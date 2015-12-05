@@ -42,7 +42,7 @@ public final class Grow extends AbstractEffect
 	{
 		return L2EffectType.BUFF;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
@@ -53,7 +53,7 @@ public final class Grow extends AbstractEffect
 			npc.setCollisionRadius(npc.getTemplate().getCollisionRadiusGrown());
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{

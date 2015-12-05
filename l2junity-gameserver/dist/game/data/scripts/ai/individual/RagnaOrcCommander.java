@@ -32,7 +32,6 @@ public final class RagnaOrcCommander extends AbstractNpcAI
 	
 	private RagnaOrcCommander()
 	{
-		super(RagnaOrcCommander.class.getSimpleName(), "ai/individual");
 		addSpawnId(RAGNA_ORC_COMMANDER);
 	}
 	
