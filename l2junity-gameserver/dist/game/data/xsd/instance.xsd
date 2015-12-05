@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="DoorData.xsd" />
+
 	<xs:element name="instance">
 		<xs:complexType>
 			<xs:sequence maxOccurs="1">
@@ -190,12 +192,7 @@
 				<xs:element name="doorlist" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
 						<xs:sequence maxOccurs="1">
-							<xs:element name="door" maxOccurs="unbounded">
-								<xs:complexType>
-									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
-									<xs:attribute name="open" type="xs:boolean" />
-								</xs:complexType>
-							</xs:element>
+							<xs:element name="door" maxOccurs="unbounded" type="door" />
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

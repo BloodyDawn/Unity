@@ -26,7 +26,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -341,37 +340,10 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	private void spawnDoors()
 	{
-		for (Entry<Integer, Boolean> entry : _template.getDoors().entrySet())
+		for (DoorTemplate template : _template.getDoors().values())
 		{
-			// Load door template
-			final int doorId = entry.getKey();
-			final DoorTemplate template = DoorData.getInstance().getDoorTemplate(doorId);
-			if (template == null)
-			{
-				LOGGER.warn("Cannot find template for doors {}, instance {} ({})", doorId, getName(), getTemplateId());
-				continue;
-			}
-			
 			// Create new door instance
-			final DoorInstance door = new DoorInstance(template);
-			door.setInstance(this);
-			door.setCurrentHp(door.getMaxHp());
-			door.spawnMe(door.getTemplate().getX(), door.getTemplate().getY(), door.getTemplate().getZ());
-			_doors.put(doorId, door);
-			
-			// Check if doors should be opened/closed
-			final Boolean openStatus = entry.getValue();
-			if (openStatus != null)
-			{
-				if (openStatus)
-				{
-					door.openMe();
-				}
-				else
-				{
-					door.closeMe();
-				}
-			}
+			DoorData.getInstance().spawnDoor(template, this);
 		}
 	}
 	

@@ -41,6 +41,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.templates.DoorTemplate;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
 import org.l2junity.gameserver.model.holders.SpawnHolder;
@@ -70,7 +71,7 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	private boolean _isPvP = false;
 	private boolean _allowPlayerSummon = false;
 	private StatsSet _parameters = StatsSet.EMPTY_STATSET;
-	private final Map<Integer, Boolean> _doors = new HashMap<>();
+	private final Map<Integer, DoorTemplate> _doors = new HashMap<>();
 	private final Map<String, List<SpawnHolder>> _spawns = new HashMap<>();
 	// Locations
 	private InstanceTeleportType _enterLocationType = InstanceTeleportType.NONE;
@@ -181,16 +182,11 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	/**
 	 * Add door into instance world.
 	 * @param templateId template id of door
-	 * @param open open status of door, meaning of each possible value:
-	 *            <ul>
-	 *            <li><b>null</b> - default value from door template</li>
-	 *            <li><b>true</b> - opened</li>
-	 *            <li><b>false</b> - closed</li>
-	 *            </ul>
+	 * @param template door template
 	 */
-	public void addDoor(int templateId, Boolean open)
+	public void addDoor(int templateId, DoorTemplate template)
 	{
-		_doors.put(templateId, open);
+		_doors.put(templateId, template);
 	}
 	
 	/**
@@ -442,14 +438,9 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	
 	/**
 	 * Get doors data for instance world.
-	 * @return map in form <i>doorId, openStatus</i>, where <i>openStatus</i> value means:
-	 *         <ul>
-	 *         <li><b>null</b> - default value from door template</li>
-	 *         <li><b>true</b> - opened</li>
-	 *         <li><b>false</b> - closed</li>
-	 *         </ul>
+	 * @return map in form <i>doorId, door template</i>
 	 */
-	public Map<Integer, Boolean> getDoors()
+	public Map<Integer, DoorTemplate> getDoors()
 	{
 		return _doors;
 	}

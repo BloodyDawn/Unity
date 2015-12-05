@@ -184,9 +184,11 @@ public class GameServer
 		printSection("World");
 		// start game time control early
 		GameTimeController.init();
-		InstanceManager.getInstance();
 		World.getInstance();
 		MapRegionManager.getInstance();
+		ZoneManager.getInstance();
+		DoorData.getInstance();
+		InstanceManager.getInstance();
 		AnnouncementsTable.getInstance();
 		GlobalVariablesManager.getInstance();
 		
@@ -263,8 +265,6 @@ public class GameServer
 		SpawnsData.getInstance();
 		WalkingManager.getInstance();
 		StaticObjectData.getInstance();
-		ZoneManager.getInstance();
-		DoorData.getInstance();
 		ItemAuctionManager.getInstance();
 		CastleManager.getInstance().loadInstances();
 		NpcBufferTable.getInstance();

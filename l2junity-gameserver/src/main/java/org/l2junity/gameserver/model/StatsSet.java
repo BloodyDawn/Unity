@@ -747,4 +747,9 @@ public class StatsSet implements IParserAdvUtils
 	{
 		_set.remove(key);
 	}
+	
+	public boolean contains(String name)
+	{
+		return _set.containsKey(name);
+	}
 }

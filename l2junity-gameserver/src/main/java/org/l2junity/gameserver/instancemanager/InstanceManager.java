@@ -37,12 +37,14 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
+import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.enums.InstanceRemoveBuffType;
 import org.l2junity.gameserver.enums.InstanceTeleportType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.templates.DoorTemplate;
 import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
 import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -248,14 +250,32 @@ public final class InstanceManager implements IGameXmlReader
 				}
 				case "doorlist":
 				{
-					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					for (Node doorNode = d.getFirstChild(); doorNode != null; doorNode = doorNode.getNextSibling())
 					{
-						if (e.getNodeName().equals("door"))
+						if (doorNode.getNodeName().equals("door"))
 						{
-							attrs = e.getAttributes();
-							final int doorId = parseInteger(attrs, "id");
-							final Boolean open = parseBoolean(attrs, "open", null); // Let's use some magic - null means default (door template value), true open and false close
-							template.addDoor(doorId, open);
+							final StatsSet parsedSet = DoorData.getInstance().parseDoor(doorNode);
+							final StatsSet mergedSet = new StatsSet();
+							final int doorId = parsedSet.getInt("id");
+							final StatsSet templateSet = DoorData.getInstance().getDoorTemplate(doorId);
+							if (templateSet != null)
+							{
+								mergedSet.merge(templateSet);
+							}
+							else
+							{
+								LOGGER.warn("Cannot find template for door: {}, instance: {} ({})", doorId, template.getName(), template.getId());
+							}
+							mergedSet.merge(parsedSet);
+							
+							try
+							{
+								template.addDoor(doorId, new DoorTemplate(mergedSet));
+							}
+							catch (Exception e)
+							{
+								LOGGER.warn("Cannot initialize template for door: {}, instance: {} ({})", doorId, template.getName(), template.getId(), e);
+							}
 						}
 					}
 					break;

@@ -56,7 +56,6 @@ public final class DoorInstance extends Creature
 	private boolean _open = false;
 	private boolean _isAttackableDoor = false;
 	private int _meshindex = 1;
-	// used for autoclose on open
 	private Future<?> _autoCloseTask;
 	
 	public DoorInstance(DoorTemplate template)
@@ -67,7 +66,7 @@ public final class DoorInstance extends Creature
 		setLethalable(false);
 		_open = template.isOpenByDefault();
 		_isAttackableDoor = template.isAttackable();
-		setTargetable(template.isTargetable());
+		super.setTargetable(template.isTargetable());
 		
 		if (isOpenableByTime())
 		{
