@@ -232,9 +232,9 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
-	 * @return the description of the quest
+	 * @return the path of the quest script
 	 */
-	public String getDescr()
+	public String getPath()
 	{
 		final String path = getClass().getName().replace('.', '/');
 		return path.substring(0, path.lastIndexOf('/' + getClass().getSimpleName()));
@@ -2831,7 +2831,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 			
 			if (player.isGM() && player.isDebug())
 			{
-				player.sendMessage("HTML: " + (filename.startsWith("data/") ? filename : "data/scripts/" + getDescr().toLowerCase() + "/" + getName() + "/" + filename));
+				player.sendMessage("HTML: " + (filename.startsWith("data/") ? filename : "data/scripts/" + getPath().toLowerCase() + "/" + getName() + "/" + filename));
 			}
 		}
 		
@@ -2846,10 +2846,10 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public String getHtm(String prefix, String fileName)
 	{
 		final HtmCache hc = HtmCache.getInstance();
-		String content = hc.getHtm(prefix, fileName.startsWith("data/") ? fileName : "data/scripts/" + getDescr().toLowerCase() + "/" + fileName);
+		String content = hc.getHtm(prefix, fileName.startsWith("data/") ? fileName : "data/scripts/" + getPath().toLowerCase() + "/" + fileName);
 		if (content == null)
 		{
-			content = hc.getHtm(prefix, "data/scripts/" + getDescr() + "/" + fileName);
+			content = hc.getHtm(prefix, "data/scripts/" + getPath() + "/" + fileName);
 			if (content == null)
 			{
 				content = hc.getHtmForce(prefix, "data/scripts/quests/" + getName() + "/" + fileName);

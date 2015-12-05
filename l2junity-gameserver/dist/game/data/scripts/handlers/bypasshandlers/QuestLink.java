@@ -110,14 +110,14 @@ public class QuestLink implements IBypassHandler
 				{
 					sbCanStart.append("<font color=\"bbaa88\">");
 					sbCanStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-					sbCanStart.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
+					sbCanStart.append(quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
 					sbCanStart.append("</button></font>");
 				}
 				else
 				{
 					sbCantStart.append("<font color=\"a62f31\">");
 					sbCantStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-					sbCantStart.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
+					sbCantStart.append(quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
 					sbCantStart.append("</button></font>");
 				}
 			}
@@ -129,14 +129,14 @@ public class QuestLink implements IBypassHandler
 			{
 				sbStarted.append("<font color=\"ffdd66\">");
 				sbStarted.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-				sbStarted.append(quest.isCustomQuest() ? quest.getDescr() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02" + "</fstring>");
+				sbStarted.append(quest.isCustomQuest() ? quest.getPath() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02" + "</fstring>");
 				sbStarted.append("</button></font>");
 			}
 			else if (qs.isCompleted())
 			{
 				sbCompleted.append("<font color=\"787878\">");
 				sbCompleted.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-				sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03" + "</fstring>");
+				sbCompleted.append(quest.isCustomQuest() ? quest.getPath() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03" + "</fstring>");
 				sbCompleted.append("</button></font>");
 			}
 		}
