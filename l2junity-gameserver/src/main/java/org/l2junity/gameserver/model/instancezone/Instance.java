@@ -343,7 +343,7 @@ public final class Instance implements IIdentifiable, INamable
 		for (DoorTemplate template : _template.getDoors().values())
 		{
 			// Create new door instance
-			DoorData.getInstance().spawnDoor(template, this);
+			_doors.put(template.getId(), DoorData.getInstance().spawnDoor(template, this));
 		}
 	}
 	
