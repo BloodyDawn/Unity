@@ -388,12 +388,30 @@
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="9935" levels="1" name="Scroll of Escape: Town of Goddard">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Return to the Town of Goddard. -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="37121" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="147491" y="-56633" z="-2776" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9936" levels="1" name="Scroll of Escape: Town of Goddard">
 		<!-- AUTO GENERATED SKILL -->
@@ -855,12 +873,30 @@
 		</for>
 	</skill>
 	<skill id="9975" levels="1" name="Scroll of Escape: Varka Silenos Barracks">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Return to the Varka Silenos Barracks. -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="37034" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="125740" y="-40864" z="-3736" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9976" levels="1" name="Scroll of Escape: Ketra Orc Outpost">
 		<!-- AUTO GENERATED SKILL -->
