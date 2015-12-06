@@ -50,7 +50,7 @@ public final class Q10414_KekropusLetterWithCourage extends LetterQuest
 	
 	public Q10414_KekropusLetterWithCourage()
 	{
-		super(10414, Q10414_KekropusLetterWithCourage.class.getSimpleName(), "Kekropus' Letter: With Courage");
+		super(10414);
 		addTalkId(ANDREI, JANITT);
 		addSeeCreatureId(INVISIBLE_NPC);
 		

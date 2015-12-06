@@ -50,7 +50,7 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 	
 	public Q10401_KekropusLetterDecodingTheBadge()
 	{
-		super(10401, Q10401_KekropusLetterDecodingTheBadge.class.getSimpleName(), "Kekropus' Letter: Decoding the Badge");
+		super(10401);
 		addTalkId(PATERSON, EBLUNE);
 		addSeeCreatureId(INVISIBLE_NPC);
 		

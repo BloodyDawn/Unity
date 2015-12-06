@@ -50,7 +50,7 @@ public final class Q10393_KekropusLetterAClueCompleted extends LetterQuest
 	
 	public Q10393_KekropusLetterAClueCompleted()
 	{
-		super(10393, Q10393_KekropusLetterAClueCompleted.class.getSimpleName(), "Kekropus' Letter: A Clue Completed");
+		super(10393);
 		addTalkId(FLUTER, KELIOS);
 		addSeeCreatureId(INVISIBLE_NPC);
 		

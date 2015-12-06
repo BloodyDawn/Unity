@@ -49,7 +49,7 @@ public final class Q10769_LettersFromTheQueenCrumaTowerPart1 extends LetterQuest
 	
 	public Q10769_LettersFromTheQueenCrumaTowerPart1()
 	{
-		super(10769, Q10769_LettersFromTheQueenCrumaTowerPart1.class.getSimpleName(), "Letters from the Queen: Cruma Tower, Part 1");
+		super(10769);
 		addTalkId(SYLVAIN, LORAIN);
 		
 		setIsErtheiaQuest(true);

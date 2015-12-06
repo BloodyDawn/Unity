@@ -50,7 +50,7 @@ public final class Q10408_KekropusLetterTheSwampOfScreams extends LetterQuest
 	
 	public Q10408_KekropusLetterTheSwampOfScreams()
 	{
-		super(10408, Q10408_KekropusLetterTheSwampOfScreams.class.getSimpleName(), "Kekropus' Letter: The Swamp of Screams");
+		super(10408);
 		addTalkId(MATHIAS, DOKARA);
 		addSeeCreatureId(INVISIBLE_NPC);
 		

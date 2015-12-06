@@ -47,7 +47,7 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends LetterQuest
 	
 	public Q10760_LettersFromTheQueenOrcBarracks()
 	{
-		super(10760, Q10760_LettersFromTheQueenOrcBarracks.class.getSimpleName(), "Letters from the Queen: Orc Barracks");
+		super(10760);
 		addTalkId(LEVIAN, PIOTUR);
 		
 		setIsErtheiaQuest(true);

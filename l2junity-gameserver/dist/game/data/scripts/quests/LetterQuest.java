@@ -49,12 +49,12 @@ import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
  */
 public abstract class LetterQuest extends Quest
 {
-	private int startSOE;
-	private Location startTeleport;
-	private NpcStringId startMessage;
-	private String startQuestSound;
+	private int _startSOE;
+	private Location _startTeleport;
+	private NpcStringId _startMessage;
+	private String _startQuestSound;
 	
-	public LetterQuest(int questId, String name, String descr)
+	public LetterQuest(int questId)
 	{
 		super(questId);
 	}
@@ -76,7 +76,7 @@ public abstract class LetterQuest extends Quest
 	 */
 	public final void setStartQuestSound(String sound)
 	{
-		startQuestSound = sound;
+		_startQuestSound = sound;
 	}
 	
 	/**
@@ -98,8 +98,8 @@ public abstract class LetterQuest extends Quest
 	 */
 	public final void setStartLocation(int itemId, Location loc)
 	{
-		startSOE = itemId;
-		startTeleport = loc;
+		_startSOE = itemId;
+		_startTeleport = loc;
 	}
 	
 	/**
@@ -111,12 +111,12 @@ public abstract class LetterQuest extends Quest
 		if (val)
 		{
 			addCondRace(Race.ERTHEIA, "");
-			startMessage = NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ;
+			_startMessage = NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ;
 		}
 		else
 		{
 			addCondNotRace(Race.ERTHEIA, "");
-			startMessage = NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ;
+			_startMessage = NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ;
 		}
 	}
 	
@@ -146,9 +146,9 @@ public abstract class LetterQuest extends Quest
 			final QuestState st = getQuestState(player, true);
 			st.startQuest();
 			
-			player.sendPacket(new PlaySound(3, startQuestSound, 0, 0, 0, 0, 0));
+			player.sendPacket(new PlaySound(3, _startQuestSound, 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(html));
-			giveItems(player, startSOE, 1);
+			giveItems(player, _startSOE, 1);
 		}
 	}
 	
@@ -161,7 +161,7 @@ public abstract class LetterQuest extends Quest
 		
 		if (event.getCommand().equals(getTeleportCommand()))
 		{
-			if ((st != null) && st.isCond(1) && hasQuestItems(player, startSOE))
+			if ((st != null) && st.isCond(1) && hasQuestItems(player, _startSOE))
 			{
 				if (CastleManager.getInstance().getCastles().stream().anyMatch(c -> c.getSiege().isInProgress()))
 				{
@@ -189,8 +189,8 @@ public abstract class LetterQuest extends Quest
 				}
 				else
 				{
-					player.teleToLocation(startTeleport);
-					takeItems(player, startSOE, -1);
+					player.teleToLocation(_startTeleport);
+					takeItems(player, _startSOE, -1);
 				}
 			}
 			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
@@ -209,7 +209,7 @@ public abstract class LetterQuest extends Quest
 		{
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
 			playSound(player, QuestSound.ITEMSOUND_QUEST_TUTORIAL);
-			showOnScreenMsg(player, startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
+			showOnScreenMsg(player, _startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
 		}
 	}
 	
@@ -224,7 +224,7 @@ public abstract class LetterQuest extends Quest
 		{
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
 			playSound(player, QuestSound.ITEMSOUND_QUEST_TUTORIAL);
-			showOnScreenMsg(player, startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
+			showOnScreenMsg(player, _startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
 		}
 	}
 	

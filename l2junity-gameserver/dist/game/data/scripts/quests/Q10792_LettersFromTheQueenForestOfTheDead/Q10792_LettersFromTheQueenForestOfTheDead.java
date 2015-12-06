@@ -48,7 +48,7 @@ public final class Q10792_LettersFromTheQueenForestOfTheDead extends LetterQuest
 	
 	public Q10792_LettersFromTheQueenForestOfTheDead()
 	{
-		super(10792, Q10792_LettersFromTheQueenForestOfTheDead.class.getSimpleName(), "Letters from the Queen: Forest of the Dead");
+		super(10792);
 		addTalkId(INNOCENTIN, HATUBA);
 		
 		setIsErtheiaQuest(true);

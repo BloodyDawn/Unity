@@ -48,7 +48,7 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends LetterQues
 	
 	public Q10785_LettersFromTheQueenFieldsOfMassacre()
 	{
-		super(10785, Q10785_LettersFromTheQueenFieldsOfMassacre.class.getSimpleName(), "Letters from the Queen: Fields of Massacre");
+		super(10785);
 		addTalkId(ORVEN, SHUVANN);
 		
 		setIsErtheiaQuest(true);

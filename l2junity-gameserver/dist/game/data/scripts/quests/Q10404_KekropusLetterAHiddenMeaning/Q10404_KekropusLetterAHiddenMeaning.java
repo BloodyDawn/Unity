@@ -50,7 +50,7 @@ public final class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 	
 	public Q10404_KekropusLetterAHiddenMeaning()
 	{
-		super(10404, Q10404_KekropusLetterAHiddenMeaning.class.getSimpleName(), "Kekropus' Letter: A Hidden Meaning");
+		super(10404);
 		addTalkId(PATERSON, SHUVANN);
 		addSeeCreatureId(INVISIBLE_NPC);
 		

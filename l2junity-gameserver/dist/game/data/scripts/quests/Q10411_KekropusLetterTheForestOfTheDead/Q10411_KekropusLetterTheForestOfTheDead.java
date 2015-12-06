@@ -50,7 +50,7 @@ public final class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 	
 	public Q10411_KekropusLetterTheForestOfTheDead()
 	{
-		super(10411, Q10411_KekropusLetterTheForestOfTheDead.class.getSimpleName(), "Kekropus' Letter: The Forest of the Dead");
+		super(10411);
 		addTalkId(MATHIAS, HATUBA);
 		addSeeCreatureId(INVISIBLE_NPC);
 		

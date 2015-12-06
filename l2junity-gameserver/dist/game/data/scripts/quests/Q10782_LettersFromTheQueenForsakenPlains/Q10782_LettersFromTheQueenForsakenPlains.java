@@ -48,7 +48,7 @@ public final class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 	
 	public Q10782_LettersFromTheQueenForsakenPlains()
 	{
-		super(10782, Q10782_LettersFromTheQueenForsakenPlains.class.getSimpleName(), "Letters from the Queen: Forsaken Plains");
+		super(10782);
 		addTalkId(ORVEN, NOVAIN);
 		
 		setIsErtheiaQuest(true);

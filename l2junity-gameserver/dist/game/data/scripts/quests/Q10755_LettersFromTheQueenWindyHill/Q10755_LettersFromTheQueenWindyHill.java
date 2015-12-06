@@ -47,7 +47,7 @@ public final class Q10755_LettersFromTheQueenWindyHill extends LetterQuest
 	
 	public Q10755_LettersFromTheQueenWindyHill()
 	{
-		super(10755, Q10755_LettersFromTheQueenWindyHill.class.getSimpleName(), "Letters from the Queen: Windy Hill");
+		super(10755);
 		addTalkId(LEVIAN, PIO);
 		
 		setIsErtheiaQuest(true);

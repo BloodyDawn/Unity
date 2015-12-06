@@ -48,7 +48,7 @@ public final class Q10789_LettersFromTheQueenSwampOfScreams extends LetterQuest
 	
 	public Q10789_LettersFromTheQueenSwampOfScreams()
 	{
-		super(10789, Q10789_LettersFromTheQueenSwampOfScreams.class.getSimpleName(), "Letters from the Queen: Swamp of Screams");
+		super(10789);
 		addTalkId(INNOCENTIN, DOKARA);
 		
 		setIsErtheiaQuest(true);

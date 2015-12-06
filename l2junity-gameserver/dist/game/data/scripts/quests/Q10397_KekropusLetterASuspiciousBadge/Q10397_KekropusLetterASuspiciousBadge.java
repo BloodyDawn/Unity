@@ -50,7 +50,7 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends LetterQuest
 	
 	public Q10397_KekropusLetterASuspiciousBadge()
 	{
-		super(10397, Q10397_KekropusLetterASuspiciousBadge.class.getSimpleName(), "Kekropus' Letter: A Suspicious Badge");
+		super(10397);
 		addTalkId(MOUEN, ANDY);
 		addSeeCreatureId(INVISIBLE_NPC);
 		

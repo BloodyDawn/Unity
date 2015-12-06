@@ -48,7 +48,7 @@ public final class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 	
 	public Q10779_LettersFromTheQueenSeaOfSpores()
 	{
-		super(10779, Q10779_LettersFromTheQueenSeaOfSpores.class.getSimpleName(), "Letters from the Queen: Sea of Spores");
+		super(10779);
 		addTalkId(HOLINT, ANDY);
 		
 		setIsErtheiaQuest(true);
