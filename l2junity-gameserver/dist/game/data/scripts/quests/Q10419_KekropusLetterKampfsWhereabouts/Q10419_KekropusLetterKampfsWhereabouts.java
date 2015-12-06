@@ -50,7 +50,7 @@ public final class Q10419_KekropusLetterKampfsWhereabouts extends LetterQuest
 	
 	public Q10419_KekropusLetterKampfsWhereabouts()
 	{
-		super(10414);
+		super(10419);
 		addTalkId(ANDREI, HANSEN);
 		addSeeCreatureId(INVISIBLE_NPC);
 		
