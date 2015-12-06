@@ -40,7 +40,7 @@ import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.scripting.annotations.Disabled;
 
-import ai.npc.AbstractNpcAI;
+import ai.AbstractNpcAI;
 
 /**
  * An example usage of Listeners.

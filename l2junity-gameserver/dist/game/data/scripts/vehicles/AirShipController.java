@@ -42,7 +42,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ai.npc.AbstractNpcAI;
+import ai.AbstractNpcAI;
 
 public abstract class AirShipController extends AbstractNpcAI
 {

@@ -22,7 +22,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.spawns.SpawnGroup;
 import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 
-import ai.npc.AbstractNpcAI;
+import ai.AbstractNpcAI;
 
 /**
  * @author UnAfraid

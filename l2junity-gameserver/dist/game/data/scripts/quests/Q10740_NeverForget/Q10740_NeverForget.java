@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
-import ai.npc.RemembranceTower.RemembranceTower;
+import ai.individual.FearonVillage.RemembranceTower.RemembranceTower;
 
 /**
  * Never Forget (10740)

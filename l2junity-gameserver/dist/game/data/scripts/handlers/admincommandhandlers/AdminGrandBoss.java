@@ -33,8 +33,8 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.zone.type.NoRestartZone;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
-import ai.individual.Antharas.Antharas;
-import ai.individual.Baium.Baium;
+import ai.individual.LairOfAntharas.Antharas.Antharas;
+import ai.individual.TowerOfInsolence.Baium.Baium;
 
 /**
  * @author St3eT

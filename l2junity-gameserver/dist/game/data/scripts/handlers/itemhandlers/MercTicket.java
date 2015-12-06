@@ -39,7 +39,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
-import ai.npc.AbstractNpcAI;
+import ai.AbstractNpcAI;
 
 /**
  * Mercenary Ticket Item Handler.

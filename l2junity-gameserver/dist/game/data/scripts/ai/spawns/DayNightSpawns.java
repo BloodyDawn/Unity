@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.OnDayNightChange;
 import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 
-import ai.npc.AbstractNpcAI;
+import ai.AbstractNpcAI;
 
 /**
  * @author UnAfraid

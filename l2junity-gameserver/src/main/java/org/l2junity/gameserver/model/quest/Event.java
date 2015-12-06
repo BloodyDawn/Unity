@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.quest;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
-import ai.npc.AbstractNpcAI;
+import ai.AbstractNpcAI;
 
 /**
  * Abstract event class.
