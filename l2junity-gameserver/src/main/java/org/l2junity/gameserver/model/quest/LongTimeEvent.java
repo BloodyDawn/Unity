@@ -41,16 +41,14 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import ai.AbstractNpcAI;
-
 /**
  * Parent class for long time events.<br>
  * Maintains config reading, spawn of NPC's, adding of event's drop.
  * @author GKR
  */
-public class LongTimeEvent extends AbstractNpcAI
+public class LongTimeEvent extends Quest
 {
-	Logger _log = LoggerFactory.getLogger(getClass());
+	protected Logger _log = LoggerFactory.getLogger(getClass());
 	protected String _eventName;
 	
 	// Messages
@@ -80,6 +78,7 @@ public class LongTimeEvent extends AbstractNpcAI
 	
 	public LongTimeEvent()
 	{
+		super(-1);
 		loadConfig();
 		
 		if (_eventPeriod != null)

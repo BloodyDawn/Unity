@@ -20,14 +20,17 @@ package org.l2junity.gameserver.model.quest;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
-import ai.AbstractNpcAI;
-
 /**
  * Abstract event class.
  * @author JIV
  */
-public abstract class Event extends AbstractNpcAI
+public abstract class Event extends Quest
 {
+	public Event()
+	{
+		super(-1);
+	}
+	
 	public abstract boolean eventStart(PlayerInstance eventMaker);
 	
 	public abstract boolean eventStop();
