@@ -49,7 +49,7 @@ public class NpcBuffersData implements IGameXmlReader
 	@Override
 	public void load()
 	{
-		parseDatapackFile("data/scripts/ai/npc/NpcBuffers/NpcBuffersData.xml");
+		parseDatapackFile("data/scripts/ai/individual/Other/NpcBuffers/NpcBuffersData.xml");
 		LOGGER.info("Loaded: {} buffers data.", _npcBuffers.size());
 	}
 	
