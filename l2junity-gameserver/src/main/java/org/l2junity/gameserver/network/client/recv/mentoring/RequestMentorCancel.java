@@ -65,11 +65,11 @@ public class RequestMentorCancel implements IClientIncomingPacket
 				final Mentee mentee = MentorManager.getInstance().getMentee(player.getObjectId(), objectId);
 				if (mentee != null)
 				{
-					MentorManager.getInstance().cancelMentoringBuffs(mentee.getPlayerInstance());
+					MentorManager.getInstance().cancelAllMentoringBuffs(mentee.getPlayerInstance());
 					
 					if (MentorManager.getInstance().isAllMenteesOffline(player.getObjectId(), mentee.getObjectId()))
 					{
-						MentorManager.getInstance().cancelMentoringBuffs(player);
+						MentorManager.getInstance().cancelAllMentoringBuffs(player);
 					}
 					
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED_THE_MENTOR_CANNOT_OBTAIN_ANOTHER_MENTEE_FOR_TWO_DAYS).addString(_name));
@@ -86,11 +86,11 @@ public class RequestMentorCancel implements IClientIncomingPacket
 				final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 				if ((mentor != null) && (mentor.getObjectId() == objectId))
 				{
-					MentorManager.getInstance().cancelMentoringBuffs(player);
+					MentorManager.getInstance().cancelAllMentoringBuffs(player);
 					
 					if (MentorManager.getInstance().isAllMenteesOffline(mentor.getObjectId(), player.getObjectId()))
 					{
-						MentorManager.getInstance().cancelMentoringBuffs(mentor.getPlayerInstance());
+						MentorManager.getInstance().cancelAllMentoringBuffs(mentor.getPlayerInstance());
 					}
 					
 					MentorManager.getInstance().setPenalty(mentor.getObjectId(), Config.MENTOR_PENALTY_FOR_MENTEE_LEAVE);

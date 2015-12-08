@@ -83,7 +83,6 @@ public final class LabyrinthOfBelis extends AbstractInstance
 	
 	public LabyrinthOfBelis()
 	{
-		super(LabyrinthOfBelis.class.getSimpleName());
 		addStartNpc(SEBION, INFILTRATION_OFFICER, BELIS_VERITIFICATION_SYSTEM);
 		addFirstTalkId(INFILTRATION_OFFICER, ELECTRICITY_GENERATOR, BELIS_VERITIFICATION_SYSTEM);
 		addTalkId(SEBION, INFILTRATION_OFFICER, BELIS_VERITIFICATION_SYSTEM);

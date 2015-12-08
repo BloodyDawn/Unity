@@ -40,10 +40,6 @@ import ai.AbstractNpcAI;
  */
 public abstract class AbstractInstance extends AbstractNpcAI
 {
-	public AbstractInstance(String name)
-	{
-	}
-	
 	/**
 	 * Get instance world associated with {@code player}.<br>
 	 * @param player player who wants get instance world

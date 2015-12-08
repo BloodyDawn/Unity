@@ -188,7 +188,6 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	
 	public Stage1()
 	{
-		super(Stage1.class.getSimpleName());
 		load();
 		addStartNpc(ALENOS, TELEPORT);
 		addTalkId(ALENOS, TELEPORT);

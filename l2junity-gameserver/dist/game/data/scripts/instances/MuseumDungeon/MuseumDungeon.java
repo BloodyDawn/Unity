@@ -63,7 +63,6 @@ public final class MuseumDungeon extends AbstractInstance
 	
 	public MuseumDungeon()
 	{
-		super(MuseumDungeon.class.getSimpleName());
 		addStartNpc(PANTHEON);
 		addFirstTalkId(DESK);
 		addTalkId(PANTHEON, TOYRON);

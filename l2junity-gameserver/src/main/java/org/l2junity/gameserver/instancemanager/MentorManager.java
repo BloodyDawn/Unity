@@ -129,7 +129,7 @@ public class MentorManager
 		return _menteeData;
 	}
 	
-	public void cancelMentoringBuffs(PlayerInstance player)
+	public void cancelAllMentoringBuffs(PlayerInstance player)
 	{
 		if (player == null)
 		{

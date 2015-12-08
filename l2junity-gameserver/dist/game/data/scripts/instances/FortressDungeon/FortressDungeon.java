@@ -105,7 +105,6 @@ public final class FortressDungeon extends AbstractInstance
 	
 	public FortressDungeon()
 	{
-		super(FortressDungeon.class.getSimpleName());
 		// NPCs
 		addStartNpc(NPCS.keySet());
 		addTalkId(NPCS.keySet());

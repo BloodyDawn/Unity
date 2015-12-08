@@ -96,7 +96,6 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	
 	public HarnakUndergroundRuins()
 	{
-		super(HarnakUndergroundRuins.class.getSimpleName());
 		registerMobs(KRAKIA_BATHUS, KRAKIA_CARCASS, KRAKIA_LOTUS, RAKZAN, WEISS_KHAN, BAMONTI, SEKNUS, WEISS_ELE, HARNAKS_WRAITH);
 		addSeeCreatureId(POWER_SOURCES);
 		addEnterZoneId(ZONE_ROOM_2, ZONE_ROOM_3);

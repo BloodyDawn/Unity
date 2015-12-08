@@ -40,7 +40,6 @@ public final class EvasHiddenSpace extends AbstractInstance
 	
 	public EvasHiddenSpace()
 	{
-		super(EvasHiddenSpace.class.getSimpleName());
 		addStartNpc(CERENAS);
 		addTalkId(CERENAS, EVAS_AVATAR);
 		addFirstTalkId(EVAS_AVATAR);

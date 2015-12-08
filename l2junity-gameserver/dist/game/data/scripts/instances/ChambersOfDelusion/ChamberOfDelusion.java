@@ -92,7 +92,6 @@ public final class ChamberOfDelusion extends AbstractInstance
 	
 	public ChamberOfDelusion()
 	{
-		super(ChamberOfDelusion.class.getName());
 		addStartNpc(ENTRANCE_GATEKEEPER.keySet());
 		addStartNpc(ROOM_GATEKEEPERS);
 		addTalkId(ENTRANCE_GATEKEEPER.keySet());

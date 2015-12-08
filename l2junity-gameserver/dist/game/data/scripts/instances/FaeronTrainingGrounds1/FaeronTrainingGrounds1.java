@@ -61,7 +61,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 	
 	public FaeronTrainingGrounds1()
 	{
-		super(FaeronTrainingGrounds1.class.getSimpleName());
 		addStartNpc(AYANTHE, AYANTHE_2);
 		addFirstTalkId(AYANTHE_2);
 		addTalkId(AYANTHE, AYANTHE_2);

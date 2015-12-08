@@ -65,6 +65,8 @@ import ai.AbstractNpcAI;
  */
 public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(MentorGuide.class);
+	
 	// NPCs
 	private static final int MENTOR_GUIDE = 33587;
 	// Items
@@ -75,6 +77,11 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 	// Skills
 	private final static SkillHolder[] MENTEE_BUFFS =
 	{
+		new SkillHolder(9233, 1), // Mentor's Guidance
+	};
+	// Skills
+	private final static SkillHolder[] MENTEE_BUFFS_WITHOUT_MENTOR_ONLINE =
+	{
 		new SkillHolder(9227, 1), // Mentor's Poem of Horn
 		new SkillHolder(9228, 1), // Mentor's Poem of Drum
 		new SkillHolder(9229, 1), // Mentor's Poem of Lute
@@ -84,7 +91,6 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 		new SkillHolder(17082, 1), // Mentor's Prevailing Sonata
 		new SkillHolder(17083, 1), // Mentor's Daring Sonata
 		new SkillHolder(17084, 1), // Mentor's Refreshing Sonata
-		new SkillHolder(9233, 1), // Mentor's Guidance
 	};
 	protected static final SkillHolder[] MENTOR_BUFFS =
 	{
@@ -103,7 +109,6 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 	private static final String MENTEE_GRADUATE_TITLE = "Congratulations on your graduation";
 	private static final String MENTEE_GRADUATE_BODY = "Greetings! This is the Mentor Guide.\nCongratulations!  Did you enjoy the time with a mentor? Here is a Mentee Certificate for graduating.\n\nFind me in town, and I'll give you a Diploma if you show me your Mentee Certificatee. You'll also get a small graduation gift!\n\nNow, on to your next Adventure!";
 	private static final Map<Integer, Integer> MENTEE_COINS = new HashMap<>();
-	private static final Logger LOGGER = LoggerFactory.getLogger(MentorGuide.class);
 	
 	@Override
 	public void load()
@@ -163,7 +168,14 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 				final int objectId = Integer.valueOf(params[1]);
 				MentorManager.getInstance().getMentees(objectId).stream().filter(Objects::nonNull).filter(Mentee::isOnline).forEach(mentee ->
 				{
-					MentorManager.getInstance().cancelMentoringBuffs(mentee.getPlayerInstance());
+					final PlayerInstance menteePlayer = mentee.getPlayerInstance();
+					if (menteePlayer != null)
+					{
+						for (SkillHolder holder : MENTEE_BUFFS)
+						{
+							menteePlayer.stopSkillEffects(holder.getSkill());
+						}
+					}
 					mentee.sendPacket(new ExMentorList(mentee.getPlayerInstance()));
 				});
 			}
@@ -187,8 +199,14 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 			sk.getSkill().applyEffects(event.getMentor(), event.getMentor());
 		}
 		
-		// Starting buffs for Mentee
+		// Starting buffs for Mentee when mentor is online
 		for (SkillHolder sk : MENTEE_BUFFS)
+		{
+			sk.getSkill().applyEffects(event.getMentee(), event.getMentee());
+		}
+		
+		// Starting buffs for Mentee
+		for (SkillHolder sk : MENTEE_BUFFS_WITHOUT_MENTOR_ONLINE)
 		{
 			sk.getSkill().applyEffects(event.getMentee(), event.getMentee());
 		}
@@ -215,36 +233,45 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 		if (event.isMenteeOnline())
 		{
 			final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
-			if ((mentor != null) && mentor.isOnline())
+			if (mentor != null)
 			{
-				//@formatter:off
-				final long mentorBuffs = mentor.getPlayerInstance().getEffectList().getEffects()
-					.stream()
-					.map(BuffInfo::getSkill)
-					.filter(Skill::isMentoring)
-					.count();
-				//@formatter:on
-				
-				if (mentorBuffs != MENTOR_BUFFS.length)
-				{
-					// Starting buffs for Mentor
-					for (SkillHolder sk : MENTOR_BUFFS)
-					{
-						sk.getSkill().applyEffects(mentor.getPlayerInstance(), mentor.getPlayerInstance());
-					}
-				}
-				
 				// Starting buffs for Mentee
-				for (SkillHolder sk : MENTEE_BUFFS)
+				for (SkillHolder sk : MENTEE_BUFFS_WITHOUT_MENTOR_ONLINE)
 				{
 					sk.getSkill().applyEffects(player, player);
 				}
 				
-				// Add the mentee skill
-				handleMenteeSkills(player);
-				
-				mentor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_MENTEE_S1_HAS_CONNECTED).addCharName(player));
-				mentor.sendPacket(new ExMentorList(mentor.getPlayerInstance()));
+				if (mentor.isOnline())
+				{
+					//@formatter:off
+					final long mentorBuffs = mentor.getPlayerInstance().getEffectList().getEffects()
+						.stream()
+						.map(BuffInfo::getSkill)
+						.filter(Skill::isMentoring)
+						.count();
+					//@formatter:on
+					
+					if (mentorBuffs != MENTOR_BUFFS.length)
+					{
+						// Starting buffs for Mentor
+						for (SkillHolder sk : MENTOR_BUFFS)
+						{
+							sk.getSkill().applyEffects(mentor.getPlayerInstance(), mentor.getPlayerInstance());
+						}
+					}
+					
+					// Starting buffs for Mentee
+					for (SkillHolder sk : MENTEE_BUFFS)
+					{
+						sk.getSkill().applyEffects(player, player);
+					}
+					
+					// Add the mentee skill
+					handleMenteeSkills(player);
+					
+					mentor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_MENTEE_S1_HAS_CONNECTED).addCharName(player));
+					mentor.sendPacket(new ExMentorList(mentor.getPlayerInstance()));
+				}
 			}
 			player.sendPacket(new ExMentorList(player));
 		}
@@ -255,7 +282,7 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 			{
 				if (MentorManager.getInstance().isAllMenteesOffline(mentor.getObjectId(), player.getObjectId()))
 				{
-					MentorManager.getInstance().cancelMentoringBuffs(mentor.getPlayerInstance());
+					MentorManager.getInstance().cancelAllMentoringBuffs(mentor.getPlayerInstance());
 				}
 				
 				mentor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_MENTEE_S1_HAS_DISCONNECTED).addCharName(player));
@@ -455,7 +482,7 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 	
 	private void handleGraduateMentee(PlayerInstance player)
 	{
-		MentorManager.getInstance().cancelMentoringBuffs(player);
+		MentorManager.getInstance().cancelAllMentoringBuffs(player);
 		final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 		if (mentor != null)
 		{
@@ -468,7 +495,7 @@ public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 				
 				if (MentorManager.getInstance().isAllMenteesOffline(mentor.getObjectId(), player.getObjectId()))
 				{
-					MentorManager.getInstance().cancelMentoringBuffs(mentor.getPlayerInstance());
+					MentorManager.getInstance().cancelAllMentoringBuffs(mentor.getPlayerInstance());
 				}
 				mentor.sendPacket(new ExMentorList(mentor.getPlayerInstance()));
 			}

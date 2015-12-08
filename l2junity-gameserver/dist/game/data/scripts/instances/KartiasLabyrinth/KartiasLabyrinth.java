@@ -126,7 +126,6 @@ public final class KartiasLabyrinth extends AbstractInstance
 	
 	public KartiasLabyrinth()
 	{
-		super(KartiasLabyrinth.class.getSimpleName());
 		addStartNpc(KARTIA_RESEARCHER);
 		addFirstTalkId(ADOLPH);
 		addTalkId(ADOLPH);

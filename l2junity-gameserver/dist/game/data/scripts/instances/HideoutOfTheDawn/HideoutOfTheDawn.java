@@ -37,7 +37,6 @@ public final class HideoutOfTheDawn extends AbstractInstance
 	
 	public HideoutOfTheDawn()
 	{
-		super(HideoutOfTheDawn.class.getSimpleName());
 		addStartNpc(WOOD);
 		addTalkId(WOOD, JAINA);
 	}
