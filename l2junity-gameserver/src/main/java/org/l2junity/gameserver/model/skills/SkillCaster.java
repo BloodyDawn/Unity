@@ -171,9 +171,9 @@ public class SkillCaster implements Runnable
 		_item = item;
 		_ctrlPressed = ctrlPressed;
 		_shiftPressed = shiftPressed;
-		_castTime = getCastTime(_caster, _skill);
-		_reuseDelay = getReuseTime(_caster, _skill);
-		_skillMastery = Formulas.calcSkillMastery(_caster, _skill);
+		_castTime = getCastTime(_caster, skill, item);
+		_reuseDelay = getReuseTime(_caster, skill);
+		_skillMastery = Formulas.calcSkillMastery(_caster, skill);
 		_castInterruptTime = -2 + GameTimeController.getInstance().getGameTicks() + (_castTime / GameTimeController.MILLIS_IN_TICK);
 		
 		return true;
@@ -289,25 +289,32 @@ public class SkillCaster implements Runnable
 			ThreadPoolManager.getInstance().scheduleEffect(new FlyToLocationTask(_caster, _target, _skill), 50);
 		}
 		
-		// launch the magic in skillTime milliseconds
+		// Casting action is starting...
+		_caster.stopEffectsOnAction();
+		
+		// Start casting.
 		if (_castTime > 0)
 		{
+			// Show the gauge bar for casting.
 			if (_caster.isPlayer())
 			{
 				_caster.sendPacket(new SetupGauge(_caster.getObjectId(), SetupGauge.BLUE, _castTime));
 			}
 			
+			// Start channeling if skill is channeling.
 			if (_skill.isChanneling() && (_skill.getChannelingSkillId() > 0))
 			{
 				_caster.getSkillChannelizer().startChanneling(_skill);
 			}
+			
+			// Schedule a thread that will execute after casting time is over.
+			_task = ThreadPoolManager.getInstance().scheduleGeneral(this, _castTime);
 		}
-		
-		// Casting action is starting...
-		_caster.stopEffectsOnAction();
-		
-		// Start casting. Removed: For client animation reasons (party buffs especially) 400 ms before!
-		_task = ThreadPoolManager.getInstance().scheduleGeneral(this, _castTime);
+		else
+		{
+			// Casting time is instant, execute now.
+			run();
+		}
 	}
 	
 	@Override
@@ -911,10 +918,16 @@ public class SkillCaster implements Runnable
 	 * Calculates the time required for this skill to be cast.
 	 * @param caster the creature that is requesting the calculation.
 	 * @param skill the skill from which casting time will be calculated.
+	 * @param item the item that has been used for this skill cast.
 	 * @return the time in milliseconds required for this skill to be casted.
 	 */
-	public static int getCastTime(Creature caster, Skill skill)
+	public static int getCastTime(Creature caster, Skill skill, ItemInstance item)
 	{
+		if ((item != null) && (item.getItem().hasImmediateEffect() || item.getItem().hasExImmediateEffect()))
+		{
+			return 0;
+		}
+		
 		// Get the Base Casting Time of the Skills.
 		int skillTime = (skill.getHitTime() + skill.getCoolTime());
 		
