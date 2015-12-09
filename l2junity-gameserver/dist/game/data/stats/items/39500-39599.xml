@@ -1313,6 +1313,9 @@
 	<item id="39584" name="Scroll of Escape: Town of Goddard" type="EtcItem">
 		<!-- Teleports you to Town of Goddard. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1323,6 +1326,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="weight" val="30" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="17959" level="1" /> <!-- Scroll of Escape: Town of Goddard -->
+		</skills>
 	</item>
 	<item id="39585" name="Scroll of Escape: Wall of Argos" type="EtcItem">
 		<!-- Teleports you to Wall of Argos. -->
@@ -1341,6 +1350,9 @@
 	<item id="39586" name="Scroll of Escape: Town of Giran" type="EtcItem">
 		<!-- Teleports you to Town of Giran. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1351,10 +1363,19 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="weight" val="30" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="17961" level="1" /> <!-- Scroll of Escape: Town of Giran -->
+		</skills>
 	</item>
 	<item id="39587" name="Scroll of Escape: Dragon Valley" type="EtcItem">
 		<!-- Teleports you to Dragon Valley. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1365,6 +1386,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="weight" val="30" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="17962" level="1" /> <!-- Scroll of Escape: Dragon Valley -->
+		</skills>
 	</item>
 	<item id="39588" name="Yum Yum Candy Box" name_additional="Event" type="EtcItem">
 		<!-- Wrapped Pack containing a Yum Yum Candy (30-day). Cannot be shared once open. The coupon that came with this gives you the Nom Nom Candy Box. Cannot be used in the Olympiad / Ceremony of Chaos. -->
