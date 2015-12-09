@@ -10,6 +10,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="icon.mentee_certificate" />
 	</item>
 	<item id="33801" name="Mentoring Guidebook" type="EtcItem">
@@ -18,6 +19,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="icon.etc_magic_book_black_i00" />
 	</item>
 	<item id="33802" name="Mentee Certificate Pack" type="EtcItem">
@@ -31,6 +33,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="33800" min="1" max="1" chance="100" /> <!-- Mentee Certificate -->
@@ -48,6 +51,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33804" name="Mentee's Mark" type="EtcItem">
@@ -61,6 +65,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33805" name="Diploma" type="EtcItem">
@@ -74,6 +79,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33806" name="Giant's Scroll: Enchant Weapon (D-grade)" name_additional="Event" type="EtcItem">
@@ -92,6 +98,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9244" level="1" /> <!-- Giant's Scroll: Enchant Weapon (D-grade) -->
@@ -113,6 +120,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9246" level="1" /> <!-- Giant's Scroll: Enchant Weapon (C-grade) -->
@@ -134,6 +142,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9248" level="1" /> <!-- Giant's Scroll: Enchant Weapon (B-grade) -->
@@ -155,6 +164,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9250" level="1" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
@@ -176,6 +186,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9252" level="1" /> <!-- Giant's Scroll: Enchant Weapon (S-grade) -->
@@ -197,6 +208,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9254" level="1" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
@@ -218,6 +230,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9245" level="1" /> <!-- Giant's Scroll: Enchant Armor (D-grade) -->
@@ -239,6 +252,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9247" level="1" /> <!-- Giant's Scroll: Enchant Armor (C-grade) -->
@@ -260,6 +274,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9249" level="1" /> <!-- Giant's Scroll: Enchant Armor (B-grade) -->
@@ -281,6 +296,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9251" level="1" /> <!-- Giant's Scroll: Enchant Armor (A-grade) -->
@@ -302,6 +318,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9253" level="1" /> <!-- Giant's Scroll: Enchant Armor (S-grade) -->
@@ -323,6 +340,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="MULTI_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9255" level="1" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
@@ -343,6 +361,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9234" level="1" /> <!-- Scroll: Enchant Hair Accessory -->
@@ -360,6 +379,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33820" name="Unbind Scroll (D-grade)" name_additional="Event" type="EtcItem">
@@ -373,6 +393,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33821" name="Unbind Scroll (C-grade)" name_additional="Event" type="EtcItem">
@@ -386,6 +407,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33822" name="Unbind Scroll (B-grade)" name_additional="Event" type="EtcItem">
@@ -399,6 +421,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33823" name="Unbind Scroll (A-grade)" name_additional="Event" type="EtcItem">
@@ -412,6 +435,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33824" name="Unbind Scroll (S-grade)" name_additional="Event" type="EtcItem">
@@ -425,6 +449,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33825" name="Unbind Scroll (S80-grade)" name_additional="Event" type="EtcItem">
@@ -438,6 +463,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33826" name="Unbind Scroll (R-grade)" name_additional="Event" type="EtcItem">
@@ -452,6 +478,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33827" name="Unbind Scroll (R95-grade)" name_additional="Event" type="EtcItem">
@@ -466,6 +493,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33828" name="Soul Crystal Change Stone (A-grade)" name_additional="Event" type="EtcItem">
@@ -479,6 +507,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33829" name="Soul Crystal Change Stone (S-grade)" name_additional="Event" type="EtcItem">
@@ -492,6 +521,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33830" name="Soul Crystal Change Stone (S80-grade)" name_additional="Event" type="EtcItem">
@@ -505,6 +535,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33831" name="Soul Crystal Change Stone (R-grade)" name_additional="Event" type="EtcItem">
@@ -518,6 +549,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33832" name="Soul Crystal Change Stone (R95-grade)" name_additional="Event" type="EtcItem">
@@ -531,6 +563,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33833" name="Attribute Change Crystal (S-grade)" name_additional="Event" type="EtcItem">
@@ -548,6 +581,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12881" level="1" /> <!-- Change Attribute -->
@@ -568,6 +602,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12881" level="1" /> <!-- Change Attribute -->
@@ -588,6 +623,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12881" level="1" /> <!-- Change Attribute -->
@@ -608,6 +644,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12881" level="1" /> <!-- Change Attribute -->
@@ -628,6 +665,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12881" level="1" /> <!-- Change Attribute -->
@@ -647,6 +685,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22367" level="1" /> <!-- Destruction Scroll: Enchant Weapon (D-grade) -->
@@ -666,6 +705,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22365" level="1" /> <!-- Destruction Scroll: Enchant Weapon (C-grade) -->
@@ -685,6 +725,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22363" level="1" /> <!-- Destruction Scroll: Enchant Weapon (B-grade) -->
@@ -704,6 +745,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22361" level="1" /> <!-- Destruction Scroll: Enchant Weapon (A-grade) -->
@@ -723,6 +765,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22359" level="1" /> <!-- Destruction Scroll: Enchant Weapon (S-grade) -->
@@ -742,6 +785,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12872" level="1" /> <!-- Destruction Scroll: Enchant Weapon (R-grade) -->
@@ -761,6 +805,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22368" level="1" /> <!-- Destruction Scroll: Enchant Armor (D-grade) -->
@@ -780,6 +825,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22366" level="1" /> <!-- Destruction Scroll: Enchant Armor (C-grade) -->
@@ -799,6 +845,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22364" level="1" /> <!-- Destruction Scroll: Enchant Armor (B-grade) -->
@@ -818,6 +865,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22362" level="1" /> <!-- Destruction Scroll: Enchant Armor (A-grade) -->
@@ -837,6 +885,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22360" level="1" /> <!-- Destruction Scroll: Enchant Armor (S-grade) -->
@@ -856,6 +905,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12873" level="1" /> <!-- Destruction Scroll: Enchant Armor (R-grade) -->
@@ -874,6 +924,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2515" level="1" /> <!-- Lucky Clover (D-grade) -->
@@ -892,6 +943,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2516" level="1" /> <!-- Lucky Clover (C-grade) -->
@@ -910,6 +962,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2517" level="1" /> <!-- Lucky Clover (B-grade) -->
@@ -928,6 +981,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2518" level="1" /> <!-- Lucky Clover (A-grade) -->
@@ -946,6 +1000,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2519" level="1" /> <!-- Lucky Clover (S-grade) -->
@@ -964,6 +1019,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9207" level="1" /> <!-- Lucky Clover (R-grade) -->
@@ -982,6 +1038,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2520" level="1" /> <!-- Lucky Clover (D-grade) -->
@@ -1000,6 +1057,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2521" level="1" /> <!-- Lucky Clover (C-grade) -->
@@ -1018,6 +1076,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2522" level="1" /> <!-- Lucky Clover (B-grade) -->
@@ -1036,6 +1095,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2523" level="1" /> <!-- Lucky Clover (A-grade) -->
@@ -1054,6 +1114,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2524" level="1" /> <!-- Lucky Clover (S-grade) -->
@@ -1072,6 +1133,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9208" level="1" /> <!-- Lucky Clover (R-grade) -->
@@ -1096,6 +1158,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9200" level="1" /> <!-- Elixir: Lute Melody -->
@@ -1120,6 +1183,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12875" level="3" /> <!-- Fire Stone -->
@@ -1140,6 +1204,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12876" level="3" /> <!-- Water Stone -->
@@ -1160,6 +1225,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12878" level="3" /> <!-- Earth Stone -->
@@ -1180,6 +1246,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12877" level="3" /> <!-- Wind Stone -->
@@ -1200,6 +1267,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12880" level="3" /> <!-- Dark Stone -->
@@ -1220,6 +1288,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12879" level="3" /> <!-- Holy Stone -->
@@ -1240,6 +1309,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12875" level="1" /> <!-- Fire Stone -->
@@ -1260,6 +1330,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12876" level="1" /> <!-- Water Stone -->
@@ -1280,6 +1351,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12878" level="1" /> <!-- Earth Stone -->
@@ -1300,6 +1372,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12877" level="1" /> <!-- Wind Stone -->
@@ -1320,6 +1393,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12880" level="1" /> <!-- Dark Stone -->
@@ -1340,6 +1414,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12879" level="1" /> <!-- Holy Stone -->
@@ -1366,6 +1441,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1520" />
 		<skills>
 			<skill id="13279" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Dagger Special Ability -->
@@ -1401,6 +1477,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1520" />
 		<skills>
 			<skill id="13252" level="3" type="ON_ENCHANT" type_value="4" /> <!-- One-handed Sword Special Ability -->
@@ -1435,6 +1512,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1740" />
 		<skills>
 			<skill id="13258" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Two-handed Sword Special Ability -->
@@ -1469,6 +1547,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1740" />
 		<skills>
 			<skill id="13253" level="3" type="ON_ENCHANT" type_value="4" /> <!-- One-handed Blunt Special Ability -->
@@ -1504,6 +1583,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1550" />
 		<skills>
 			<skill id="13264" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Fist Weapon Special Ability -->
@@ -1539,6 +1619,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="2010" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -1576,6 +1657,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1520" />
 		<skills>
 			<skill id="13289" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Bow Special Ability -->
@@ -1612,6 +1694,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1580" />
 		<skills>
 			<skill id="13294" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Crossbow Special Ability -->
@@ -1647,6 +1730,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1520" />
 		<skills>
 			<skill id="13295" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Magic Sword Special Ability -->
@@ -1681,6 +1765,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1080" />
 		<skills>
 			<skill id="13296" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Magic One-handed Blunt Special Ability -->
@@ -1716,6 +1801,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1080" />
 		<skills>
 			<skill id="13301" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Magic Two-handed Blunt Special Ability -->
@@ -1752,6 +1838,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1520" />
 		<skills>
 			<skill id="13274" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Dualsword Special Ability -->
@@ -1786,6 +1873,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="2050" />
 		<skills>
 			<skill id="13284" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Dual Dagger Special Ability -->
@@ -1821,6 +1909,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1740" />
 		<skills>
 			<skill id="13269" level="3" type="ON_ENCHANT" type_value="4" /> <!-- Dual Blunt Weapon Special Ability -->
@@ -1851,6 +1940,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="530" />
 		<stats>
 			<stat type="pDef">114</stat>
@@ -1874,6 +1964,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="7520" />
 		<skills>
 			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
@@ -1901,6 +1992,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="3170" />
 		<stats>
 			<stat type="pDef">190</stat>
@@ -1923,6 +2015,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="510" />
 		<stats>
 			<stat type="pDef">76</stat>
@@ -1945,6 +2038,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1070" />
 		<stats>
 			<stat type="pDef">76</stat>
@@ -1966,6 +2060,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1130" />
 		<stats>
 			<stat type="sDef">415</stat>
@@ -1989,6 +2084,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="530" />
 		<stats>
 			<stat type="pDef">114</stat>
@@ -2012,6 +2108,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="4140" />
 		<skills>
 			<skill id="13063" level="1" /> <!-- Cloak Slot Activation (R-grade) -->
@@ -2041,6 +2138,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1320" />
 		<stats>
 			<stat type="pDef">152</stat>
@@ -2065,6 +2163,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="510" />
 		<stats>
 			<stat type="pDef">76</stat>
@@ -2087,6 +2186,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="1070" />
 		<stats>
 			<stat type="pDef">76</stat>

@@ -8,6 +8,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="ARMOR_ENCHANT_STONE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9208" level="1" /> <!-- Lucky Clover (R-grade) -->
@@ -44,6 +45,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="back" />
 		<set name="commissionItemType" val="CLOAK" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<stats>
 			<stat type="fireRes">7</stat>
@@ -92,6 +94,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22959" min="1" max="1" chance="100" /> <!-- SP Rune 50% - 1-hour -->
@@ -204,6 +207,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22044" level="7" /> <!-- Elixir of Life (Novice) -->
@@ -222,6 +226,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23614" name="Vitality Maintaining Potion (10-minute)" name_additional="No Weekly Usage Limit" type="EtcItem">
@@ -261,6 +266,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hair" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="21353" level="1" /> <!-- Vitality Recovery -->
@@ -281,6 +287,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="21354" level="1" /> <!-- Vitality Recovery -->
@@ -295,6 +302,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23614" min="1" max="1" chance="100" /> <!-- Vitality Maintaining Potion (10-minute) - No Weekly Usage Limit -->
@@ -309,6 +317,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23615" min="1" max="1" chance="100" /> <!-- Black Gem Mask - Vitality (7-day) (No Weekly Usage Limit) -->
@@ -323,6 +332,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23616" min="1" max="1" chance="100" /> <!-- Artisan's Goggles - Vitality (7-day) (No Weekly Usage Limit) -->
@@ -367,6 +377,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22850" level="1" /> <!-- Vitality Suspending Potion -->
@@ -417,6 +428,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23625" name="Fancy Hat" type="Armor">
@@ -432,6 +444,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23626" name="Hat of Cheers" type="Armor">
@@ -447,6 +460,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23627" name="Chocolate Doughnut" type="EtcItem">
@@ -612,6 +626,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="back" />
 		<set name="commissionItemType" val="CLOAK" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<stats>
 			<stat type="pDef">25</stat>
@@ -639,6 +654,7 @@
 		<set name="bodypart" val="rear;lear" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="equip_reuse_delay" val="7200" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="4320" />
 		<skills>
 			<skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
@@ -664,6 +680,7 @@
 		<set name="bodypart" val="rear;lear" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="equip_reuse_delay" val="7200" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
@@ -689,6 +706,7 @@
 		<set name="bodypart" val="neck" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="equip_reuse_delay" val="7200" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="4320" />
 		<skills>
 			<skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
@@ -714,6 +732,7 @@
 		<set name="bodypart" val="neck" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="equip_reuse_delay" val="7200" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
@@ -733,6 +752,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9632" level="1" /> <!-- Star Agathion Pack -->
@@ -816,6 +836,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9573" level="1" /> <!-- High-grade Lucky Enchant Stone: Weapon (R-grade) -->
@@ -832,6 +853,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9574" level="1" /> <!-- High-grade Lucky Enchant Stone: Armor (R-grade) -->
@@ -1532,6 +1554,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="chest" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23693" name="Ninja Pants" name_additional="Modified Set" type="Armor">
@@ -1546,6 +1569,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="legs" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23694" name="Ninja Gloves" name_additional="Modified Set" type="Armor">
@@ -1560,6 +1584,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="gloves" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23695" name="Ninja Shoes" name_additional="Modified Set" type="Armor">
@@ -1574,6 +1599,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="feet" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="23696" name="Ninja Top Appearance Stone" name_additional="Modified Set" type="EtcItem">

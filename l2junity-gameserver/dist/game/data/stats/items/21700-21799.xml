@@ -130,6 +130,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_freightable" val="false" />
 		<stats>
 			<stat type="pDef">28</stat>
@@ -191,6 +192,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="21245" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
@@ -229,6 +231,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22256" level="1" /> <!-- Might -->
@@ -278,6 +281,7 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="immediate_effect" val="true" />
 		<set name="commissionItemType" val="CLOAK" />
 	</item>
 	<item id="21714" name="Sealed Cloak of Freya" type="EtcItem">
@@ -288,6 +292,7 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="immediate_effect" val="true" />
 		<set name="commissionItemType" val="CLOAK" />
 	</item>
 	<item id="21715" name="Frintezza's Sealed Cloak" type="EtcItem">
@@ -298,6 +303,7 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
+		<set name="immediate_effect" val="true" />
 		<set name="commissionItemType" val="CLOAK" />
 	</item>
 	<item id="21716" name="Zaken's Cloak" type="Armor">
@@ -548,6 +554,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="21726" name="Angel Cat's Blessing" name_additional="Event" type="EtcItem">
@@ -568,6 +575,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22256" level="1" /> <!-- Might -->
@@ -604,6 +612,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="4320" />
 		<skills>
 			<skill id="21248" level="1" /> <!-- Release Agathion's Seal - Zinyanzi -->
@@ -629,6 +638,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="21248" level="1" /> <!-- Release Agathion's Seal - Zinyanzi -->
@@ -651,6 +661,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="21249" level="1" /> <!-- Release Agathion's Seal - Yanzi -->
@@ -692,6 +703,7 @@
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">69</stat>
@@ -720,6 +732,7 @@
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -746,6 +759,7 @@
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -772,6 +786,7 @@
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">63</stat>
@@ -800,6 +815,7 @@
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -828,6 +844,7 @@
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">77</stat>
@@ -856,6 +873,7 @@
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -884,6 +902,7 @@
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -916,6 +935,7 @@
 		<set name="commissionItemType" val="BOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">179</stat>
@@ -944,6 +964,7 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
@@ -975,6 +996,7 @@
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">63</stat>
@@ -1001,6 +1023,7 @@
 		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -1027,6 +1050,7 @@
 		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">96</stat>
@@ -1055,6 +1079,7 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1087,6 +1112,7 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<stats>
 			<stat type="pAtk">100</stat>
@@ -1173,6 +1199,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21751" name="Rune Jewelry Box - Crystal" type="EtcItem">
@@ -1233,6 +1260,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -1265,6 +1293,7 @@
 		<set name="enchant_enabled" val="7" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21756" name="Rank 1 Scholar's Hat" type="Armor">
@@ -1284,6 +1313,7 @@
 		<set name="enchant_enabled" val="7" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21757" name="Rank 2 Scholar's Hat" type="Armor">
@@ -1303,6 +1333,7 @@
 		<set name="enchant_enabled" val="7" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21758" name="Rank 3 Scholar's Hat" type="Armor">
@@ -1322,6 +1353,7 @@
 		<set name="enchant_enabled" val="7" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 	</item>
 	<item id="21759" name="Illumination - Red" type="EtcItem">
@@ -1330,6 +1362,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21760" name="Illumination - Pink" type="EtcItem">
@@ -1338,6 +1371,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21761" name="Illumination - Rose Pink" type="EtcItem">
@@ -1346,6 +1380,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21762" name="Illumination - Orange" type="EtcItem">
@@ -1354,6 +1389,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21763" name="Illumination - Mint Green" type="EtcItem">
@@ -1362,6 +1398,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21764" name="Illumination - Green" type="EtcItem">
@@ -1370,6 +1407,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21765" name="Illumination - Sky Blue" type="EtcItem">
@@ -1378,6 +1416,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21766" name="Illumination - Blue" type="EtcItem">
@@ -1386,6 +1425,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21767" name="Illumination - Purple" type="EtcItem">
@@ -1394,6 +1434,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21768" name="Illumination - White" type="EtcItem">
@@ -1402,6 +1443,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21769" name="Unrefined Ore" type="EtcItem">
@@ -1410,6 +1452,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21770" name="Unrefined Jewel" type="EtcItem">
@@ -1418,6 +1461,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21771" name="Jewel of Dusk" type="EtcItem">
@@ -1426,6 +1470,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21772" name="Jewel of Dawn" type="EtcItem">
@@ -1434,6 +1479,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21773" name="Jewel of Splendor" type="EtcItem">
@@ -1442,6 +1488,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21774" name="Giant's Jewel" type="EtcItem">
@@ -1450,6 +1497,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="21775" name="Imperial Crusader Breastplate of Fortune" name_additional="90-day" type="Armor">
@@ -1470,6 +1518,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1496,6 +1545,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1521,6 +1571,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">55</stat>
@@ -1543,6 +1594,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">55</stat>
@@ -1565,6 +1617,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">83</stat>
@@ -1587,6 +1640,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1638,6 +1692,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">249</stat>
@@ -1660,6 +1715,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">55</stat>
@@ -1682,6 +1738,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">55</stat>
@@ -1704,6 +1761,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">83</stat>
@@ -1748,6 +1806,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1774,6 +1833,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">55</stat>
@@ -1796,6 +1856,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">55</stat>
@@ -1818,6 +1879,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">83</stat>
@@ -1841,6 +1903,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">13</stat>
@@ -1887,6 +1950,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1913,6 +1977,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1938,6 +2003,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">61</stat>
@@ -1960,6 +2026,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">61</stat>
@@ -1982,6 +2049,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<stats>
 			<stat type="pDef">92</stat>
@@ -2004,6 +2072,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="element_enabled" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />

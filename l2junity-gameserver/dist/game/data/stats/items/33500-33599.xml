@@ -12,6 +12,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33501" name="Mark of the King" type="EtcItem">
@@ -26,6 +27,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33502" name="Weapon Attribute Change Crystal (S-grade)" type="EtcItem">
@@ -43,6 +45,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="CHANGE_ATTR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="12881" level="1" /> <!-- Change Attribute -->
@@ -65,6 +68,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22256" level="1" /> <!-- Might -->
@@ -97,6 +101,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="33503" min="5" max="5" chance="100" /> <!-- Hero's Blessed Buff Scroll -->
@@ -136,6 +141,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="33505" min="5" max="5" chance="100" /> <!-- Scroll: Noblesse Blessing -->
@@ -175,6 +181,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="33507" min="30" max="30" chance="100" /> <!-- Scroll: Mount Kukuru -->
@@ -192,6 +199,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<skills>
 			<skill id="13342" level="1" /> <!-- T-shirt of Destiny -->
@@ -213,6 +221,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="440" />
 		<skills>
 			<skill id="13343" level="1" /> <!-- Belt of Destiny -->
@@ -229,6 +238,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33512" name="Returning Hero's Vitality Replenishing Juice" type="EtcItem">
@@ -263,6 +273,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="33512" min="5" max="5" chance="100" /> <!-- Returning Hero's Vitality Replenishing Juice -->
@@ -280,6 +291,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33515" name="Gift Box of Destiny" type="EtcItem">
@@ -294,6 +306,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33516" name="Unbind Scroll (R-grade)" name_additional="Campaign" type="EtcItem">
@@ -309,6 +322,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="R" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33517" name="Unbind Scroll (R95-grade)" name_additional="Campaign" type="EtcItem">
@@ -324,6 +338,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="R95" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33518" name="Blessed Scroll of Resurrection" type="EtcItem">
@@ -364,6 +379,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9185" level="1" /> <!-- Scroll: Enchant Weapon (R-grade) -->
@@ -385,6 +401,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9186" level="1" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -396,6 +413,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 		<capsuled_items>
 			<item id="17304" min="1" max="1" chance="100" /> <!-- Immortal Helmet - Heavy Armor -->
@@ -412,6 +430,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 		<capsuled_items>
 			<item id="17310" min="1" max="1" chance="100" /> <!-- Immortal Leather Helmet - Light Armor -->
@@ -436,6 +455,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8644" level="1" /> <!-- Talisman (R-grade) - M. Critical Rate -->
@@ -456,6 +476,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8645" level="1" /> <!-- Talisman (R-grade) - P. Accuracy -->
@@ -476,6 +497,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8646" level="1" /> <!-- Talisman (R-grade) - M. Accuracy -->
@@ -496,6 +518,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8647" level="1" /> <!-- Talisman (R-grade) - P. Evasion -->
@@ -516,6 +539,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8648" level="1" /> <!-- Talisman (R-grade) - M. Evasion -->
@@ -536,6 +560,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8649" level="1" /> <!-- Talisman (R-grade) - P. Critical Rate -->
@@ -556,6 +581,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8650" level="1" /> <!-- Talisman (R-grade) - P. Critical Evasion -->
@@ -577,6 +603,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8687" level="1" /> <!-- Talisman (R-grade) - M. Critical Rate (Active) -->
@@ -598,6 +625,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8688" level="1" /> <!-- Talisman (R-grade) - P. Accuracy (Active) -->
@@ -619,6 +647,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8689" level="1" /> <!-- Talisman (R-grade) - M. Accuracy (Active) -->
@@ -640,6 +669,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8690" level="1" /> <!-- Talisman (R-grade) - P. Evasion (Active) -->
@@ -661,6 +691,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8691" level="1" /> <!-- Talisman (R-grade) - M. Evasion (Active) -->
@@ -682,6 +713,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8692" level="1" /> <!-- Talisman (R-grade) - P. Critical Rate (Active) -->
@@ -703,6 +735,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="8693" level="1" /> <!-- Talisman (R-grade) - P. Critical Evasion (Active) -->
@@ -723,6 +756,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="13138" level="1" /> <!-- Haste Talisman -->
@@ -743,6 +777,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="13139" level="1" /> <!-- P. Atk. Talisman -->
@@ -763,6 +798,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="13140" level="1" /> <!-- P. Def. Talisman -->
@@ -783,6 +819,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="13141" level="1" /> <!-- Casting Spd. Talisman -->
@@ -803,6 +840,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="13142" level="1" /> <!-- M. Def. Talisman -->
@@ -823,6 +861,7 @@
 		<set name="bodypart" val="deco1" />
 		<set name="useSkillDisTime" val="1" />
 		<set name="duration" val="60" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="13143" level="1" /> <!-- M. Atk. Talisman -->
@@ -848,6 +887,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="504570" />
 		<skills>
 			<skill id="3045" level="14" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Haste -->
@@ -890,6 +930,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="1348420" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
@@ -934,6 +975,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
@@ -968,6 +1010,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
@@ -1002,6 +1045,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
@@ -1037,6 +1081,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
@@ -1071,6 +1116,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
@@ -1105,6 +1151,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
@@ -1140,6 +1187,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
@@ -1174,6 +1222,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
@@ -1208,6 +1257,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
@@ -1243,6 +1293,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
@@ -1280,6 +1331,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
@@ -1316,6 +1368,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
@@ -1351,6 +1404,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
@@ -1386,6 +1440,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
@@ -1422,6 +1477,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3066" level="4" /> <!-- Special Ability: Critical Damage -->
@@ -1457,6 +1513,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3600" level="10" /> <!-- Special Ability: Anger -->
@@ -1492,6 +1549,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
@@ -1528,6 +1586,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
@@ -1564,6 +1623,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
@@ -1599,6 +1659,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
@@ -1634,6 +1695,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
@@ -1669,6 +1731,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
@@ -1704,6 +1767,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
@@ -1739,6 +1803,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
@@ -1774,6 +1839,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
@@ -1810,6 +1876,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3565" level="2" /> <!-- Special Ability: Focus -->
@@ -1845,6 +1912,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3564" level="2" /> <!-- Special Ability: Haste -->
@@ -1880,6 +1948,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
@@ -1915,6 +1984,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
@@ -1950,6 +2020,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
@@ -1985,6 +2056,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
@@ -2020,6 +2092,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
@@ -2055,6 +2128,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
@@ -2090,6 +2164,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="4395050" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
@@ -2126,6 +2201,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
@@ -2161,6 +2237,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
@@ -2197,6 +2274,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
@@ -2233,6 +2311,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
@@ -2270,6 +2349,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
@@ -2305,6 +2385,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
@@ -2340,6 +2421,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
@@ -2377,6 +2459,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
@@ -2414,6 +2497,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
@@ -2450,6 +2534,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="3747300" />
 		<skills>
 			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
@@ -2482,6 +2567,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="1219900" />
 		<stats>
 			<stat type="pDef">226</stat>
@@ -2505,6 +2591,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="762400" />
 		<stats>
 			<stat type="pDef">141</stat>
@@ -2526,6 +2613,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="457450" />
 		<stats>
 			<stat type="pDef">92</stat>
@@ -2548,6 +2636,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="304950" />
 		<stats>
 			<stat type="pDef">61</stat>
@@ -2570,6 +2659,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="304950" />
 		<stats>
 			<stat type="pDef">61</stat>
@@ -2592,6 +2682,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="320200" />
 		<stats>
 			<stat type="sDef">321</stat>
@@ -2617,6 +2708,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="914900" />
 		<stats>
 			<stat type="pDef">170</stat>
@@ -2640,6 +2732,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="571800" />
 		<stats>
 			<stat type="pDef">106</stat>
@@ -2661,6 +2754,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<set name="element_enabled" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="457450" />
 		<stats>
 			<stat type="pDef">92</stat>

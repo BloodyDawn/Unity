@@ -11,6 +11,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23301" min="1" max="1" chance="100" /> <!-- Sayha's Shirt -->
@@ -31,6 +32,7 @@
 		<set name="enchant_enabled" val="8" />
 		<set name="enchanted" val="7" />
 		<set name="equip_reuse_delay" val="30" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<stats>
 			<stat type="pDef">28</stat>
@@ -47,6 +49,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22687" level="1" /> <!-- Blessed Scroll: Enchant Elemental Shirt Pack -->
@@ -63,6 +66,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23304" min="1" max="1" chance="100" /> <!-- Eva's Shirt -->
@@ -83,6 +87,7 @@
 		<set name="enchant_enabled" val="8" />
 		<set name="enchanted" val="7" />
 		<set name="equip_reuse_delay" val="30" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<stats>
 			<stat type="pDef">28</stat>
@@ -99,6 +104,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22688" level="1" /> <!-- Blessed Scroll: Enchant Elemental Shirt Pack -->
@@ -115,6 +121,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23307" min="1" max="1" chance="100" /> <!-- Maphr's Shirt -->
@@ -135,6 +142,7 @@
 		<set name="enchant_enabled" val="8" />
 		<set name="enchanted" val="7" />
 		<set name="equip_reuse_delay" val="30" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<stats>
 			<stat type="pDef">28</stat>
@@ -154,6 +162,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23309" name="Elven Radler" name_additional="Event" type="EtcItem">
@@ -162,6 +171,7 @@
 		<set name="weight" val="100" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22690" level="1" /> <!-- Elven Radler -->
@@ -173,6 +183,7 @@
 		<set name="weight" val="100" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22691" level="1" /> <!-- Dion Pilsner -->
@@ -184,6 +195,7 @@
 		<set name="weight" val="100" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22692" level="1" /> <!-- Dwarven Royal Blue Cocktail -->
@@ -195,6 +207,7 @@
 		<set name="weight" val="100" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22693" level="1" /> <!-- Aden White Beer -->
@@ -213,6 +226,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="43200" />
 		<skills>
 			<skill id="22694" level="1" /> <!-- Gran Kain's Delight -->
@@ -222,18 +236,21 @@
 		<!-- Ingredient needed for crafting beer. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_malt" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23315" name="Beer Ingredient: Hops" name_additional="Event" type="EtcItem">
 		<!-- Ingredient needed for crafting beer. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_hops" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23316" name="Beer Ingredient: Yeast" name_additional="Event" type="EtcItem">
 		<!-- Ingredient needed for crafting beer. -->
 		<set name="icon" val="BranchSys3.icon1.g_beerfestival_yeast" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23318" name="Beer Tankard" name_additional="Event" type="EtcItem">
@@ -247,6 +264,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="23319" name="Harp's Sealed Rune of Power (3-day)" type="EtcItem">
@@ -262,6 +280,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_half_power" />
 		<skills>
 			<skill id="22695" level="1" /> <!-- Harp's Sealed Rune of Power -->
@@ -280,6 +299,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_half_magic" />
 		<skills>
 			<skill id="22696" level="1" /> <!-- Harp's Sealed Rune of Magic -->
@@ -298,6 +318,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_flint_will" />
 		<skills>
 			<skill id="22697" level="1" /> <!-- Flynt's Sealed Rune of Will -->
@@ -316,6 +337,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_flint_destroy" />
 		<skills>
 			<skill id="22698" level="1" /> <!-- Flynt's Sealed Rune of Destruction -->
@@ -334,6 +356,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_destroy_tech" />
 		<skills>
 			<skill id="22699" level="1" /> <!-- Dr. Destroy's Sealed Rune of Skill -->
@@ -352,6 +375,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_destroy_wisdom" />
 		<skills>
 			<skill id="22700" level="1" /> <!-- Dr. Destroy's Sealed Rune of Wisdom -->
@@ -369,6 +393,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_half_power" />
 		<skills>
 			<skill id="22695" level="1" /> <!-- Harp's Sealed Rune of Power -->
@@ -386,6 +411,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_half_magic" />
 		<skills>
 			<skill id="22696" level="1" /> <!-- Harp's Sealed Rune of Magic -->
@@ -403,6 +429,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_flint_will" />
 		<skills>
 			<skill id="22697" level="1" /> <!-- Flynt's Sealed Rune of Will -->
@@ -420,6 +447,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_flint_destroy" />
 		<skills>
 			<skill id="22698" level="1" /> <!-- Flynt's Sealed Rune of Destruction -->
@@ -437,6 +465,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_destroy_tech" />
 		<skills>
 			<skill id="22699" level="1" /> <!-- Dr. Destroy's Sealed Rune of Skill -->
@@ -454,6 +483,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_destroy_wisdom" />
 		<skills>
 			<skill id="22700" level="1" /> <!-- Dr. Destroy's Sealed Rune of Wisdom -->
@@ -515,6 +545,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="SOULSHOT" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="17754" min="5000" max="5000" chance="100" /> <!-- Soulshot (R-grade) -->
@@ -529,6 +560,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="SPIRITSHOT" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="19442" min="5000" max="5000" chance="100" /> <!-- Blessed Spiritshot (R-grade) -->
@@ -635,6 +667,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22439" level="1" /> <!-- Ancient Scroll: Enchant Weapon (R-grade) -->
@@ -650,6 +683,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22440" level="1" /> <!-- Divine Scroll: Enchant Weapon (R-grade) -->
@@ -665,6 +699,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22442" level="1" /> <!-- Ancient Scroll: Enchant Armor (R-grade) -->
@@ -680,6 +715,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22443" level="1" /> <!-- Divine Scroll: Enchant Armor (R-grade) -->
@@ -710,6 +746,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="WEAPON_ENCHANT_STONE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9207" level="1" /> <!-- Lucky Clover (R-grade) -->
@@ -724,6 +761,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="ARMOR_ENCHANT_STONE" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="9208" level="1" /> <!-- Lucky Clover (R-grade) -->
@@ -737,6 +775,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23085" min="1" max="1" chance="100" /> <!-- Power Shirt - Event -->
@@ -862,6 +901,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22431" level="1" /> <!-- Weapon Restoration Stone (R-grade) -->
@@ -877,6 +917,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22432" level="1" /> <!-- Weapon Restoration Stone (S-grade) -->
@@ -892,6 +933,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22433" level="1" /> <!-- Weapon Restoration Stone (A-grade) -->
@@ -1003,6 +1045,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22550" level="1" /> <!-- Armor Restoration Stone (R-grade) -->
@@ -1018,6 +1061,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22551" level="1" /> <!-- Armor Restoration Stone (S-grade) -->
@@ -1033,6 +1077,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22552" level="1" /> <!-- Armor Restoration Stone (A-grade) -->
@@ -1080,6 +1125,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="RESTORE_SHAPE_SHIFTING_HAIRACC" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22624" level="1" /> <!-- Hair Accessory Restoration Stone -->
@@ -1093,6 +1139,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22402" min="1" max="1" chance="100" /> <!-- Weapon Appearance Stone (R-grade) -->
@@ -1107,6 +1154,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22403" min="1" max="1" chance="100" /> <!-- Weapon Appearance Stone (S-grade) -->
@@ -1121,6 +1169,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22682" min="1" max="1" chance="100" /> <!-- Armor Appearance Stone (R-grade) -->
@@ -1135,6 +1184,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22683" min="1" max="1" chance="100" /> <!-- Armor Appearance Stone (S-grade) -->
@@ -1149,6 +1199,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22708" min="1" max="1" chance="100" /> <!-- Hair Accessory Appearance Stone -->
@@ -1209,6 +1260,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<skills>
 			<skill id="21328" level="1" /> <!-- Adenian Underwear: Speed -->
@@ -1236,6 +1288,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<skills>
 			<skill id="21329" level="1" /> <!-- Adenian Underwear: Speed -->
@@ -1263,6 +1316,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<skills>
 			<skill id="21330" level="1" /> <!-- Adenian Underwear: Speed -->
@@ -1290,6 +1344,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<skills>
 			<skill id="21331" level="1" /> <!-- Adenian Underwear: Speed -->
@@ -1317,6 +1372,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="130" />
 		<skills>
 			<skill id="21332" level="1" /> <!-- Adenian Underwear: Speed -->
@@ -1343,6 +1399,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="23386" name="Agathion - Griffin" name_additional="Wind Walk" type="Armor">
@@ -1361,6 +1418,7 @@
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_coc_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="21347" level="1" /> <!-- Release Agathion's Seal - Griffin -->
@@ -1383,6 +1441,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_coc_restricted" val="true" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="1440" />
 		<skills>
 			<skill id="22718" level="1" /> <!-- Blessed Griffin Egg -->
@@ -1418,6 +1477,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_commissionable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23391" min="1" max="1" chance="100" /> <!-- XP Rune II (Lv. 1-95) 100% - 1-hour -->
@@ -1435,6 +1495,7 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
 		<set name="is_commissionable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="23392" min="1" max="1" chance="100" /> <!-- XP Rune II (Lv. 1-95) 100% - 3-hour -->
@@ -1452,6 +1513,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="60" />
 		<skills>
 			<skill id="9529" level="1" /> <!-- XP Rune II (Lv. 1-95) 100% -->
@@ -1469,6 +1531,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="180" />
 		<skills>
 			<skill id="9529" level="1" /> <!-- XP Rune II (Lv. 1-95) 100% -->

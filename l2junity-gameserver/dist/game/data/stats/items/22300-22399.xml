@@ -13,6 +13,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="21600" />
 	</item>
 	<item id="22301" name="Sweet Chocolate Cookie" name_additional="Event" type="EtcItem">
@@ -52,6 +53,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="4320" />
 		<skills>
 			<skill id="3558" level="1" /> <!-- Antharas' Earring -->
@@ -78,6 +80,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3558" level="1" /> <!-- Antharas' Earring -->
@@ -104,6 +107,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="4320" />
 		<skills>
 			<skill id="3561" level="1" /> <!-- Baium's Ring -->
@@ -130,6 +134,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3561" level="1" /> <!-- Baium's Ring -->
@@ -149,6 +154,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2021" level="1" /> <!-- Scroll: Enchant Weapon (S-grade) -->
@@ -164,6 +170,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2006" level="1" /> <!-- Scroll: Enchant Weapon (A-grade) -->
@@ -179,6 +186,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2022" level="1" /> <!-- Scroll: Enchant Armor (S-grade) -->
@@ -194,6 +202,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2007" level="1" /> <!-- Scroll: Enchant Armor (A-grade) -->
@@ -207,6 +216,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22398" level="1" /> <!-- Allegra Box -->
@@ -220,6 +230,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22399" level="1" /> <!-- Latus Box -->
@@ -241,6 +252,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="enchant_enabled" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="8291" level="6" /> <!-- Add Belt Weight Gauge -->
@@ -266,6 +278,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="8290" level="6" /> <!-- Add Belt Inventory Slot -->
@@ -289,6 +302,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="BLESS_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2026" level="1" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
@@ -309,6 +323,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="BLESS_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2208" level="1" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
@@ -329,6 +344,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="BLESS_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2027" level="1" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
@@ -349,6 +365,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="BLESS_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2028" level="1" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
@@ -369,6 +386,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="BLESS_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2209" level="1" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
@@ -389,6 +407,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="BLESS_ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2210" level="1" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
@@ -409,6 +428,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2006" level="1" /> <!-- Scroll: Enchant Weapon (A-grade) -->
@@ -429,6 +449,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2015" level="1" /> <!-- Scroll: Enchant Weapon (B-grade) -->
@@ -449,6 +470,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2007" level="1" /> <!-- Scroll: Enchant Armor (A-grade) -->
@@ -469,6 +491,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2016" level="1" /> <!-- Scroll: Enchant Armor (B-grade) -->
@@ -533,6 +556,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="65" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="8331" level="1" /> <!-- Blue Talisman - Buff Cancel -->
@@ -555,6 +579,7 @@
 		<set name="useSkillDisTime" val="6" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="duration" val="65" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="8332" level="1" /> <!-- Blue Talisman - Buff Steal -->
@@ -579,6 +604,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2907" level="5" /> <!-- Elixir of Life (Battleground) -->
@@ -603,6 +629,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2908" level="5" /> <!-- Elixir of Mind (Battleground) -->
@@ -627,6 +654,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2909" level="5" /> <!-- Elixir of CP (Battleground) -->
@@ -643,6 +671,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<capsuled_items>
 			<item id="20034" min="5" max="5" chance="100" /> <!-- Revita-Pop (Event) -->
@@ -665,6 +694,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<capsuled_items>
 			<item id="20034" min="10" max="10" chance="100" /> <!-- Revita-Pop (Event) -->
@@ -687,6 +717,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_mailable" val="false" />
 		<capsuled_items>
 			<item id="16853" min="1" max="1" chance="100" /> <!-- Equipment Set Pack (90-day) - 90-day -->
@@ -707,6 +738,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="60" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_dropable" val="false" />
 		<skills>
 			<skill id="26046" level="5" /> <!-- XP Rune III (Lv. 1-100+) 50% -->
@@ -725,6 +757,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="22336" name="Pathfinder's Reward - Relief" type="EtcItem">
@@ -773,6 +806,7 @@
 		<set name="weight" val="100" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22337" min="1" max="1" chance="100" /> <!-- Extra Pass: Rim Kamaloka -->
@@ -819,6 +853,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="BLESS_ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2029" level="1" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
@@ -839,6 +874,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2017" level="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
@@ -859,6 +895,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2018" level="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
@@ -879,6 +916,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_WP" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2019" level="1" /> <!-- Scroll: Enchant Weapon (D-grade) -->
@@ -899,6 +937,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ENCHT_AM" />
 		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="2020" level="1" /> <!-- Scroll: Enchant Armor (D-grade) -->
@@ -1055,6 +1094,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
@@ -1074,6 +1114,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="30" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
@@ -1092,6 +1133,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22355" min="1" max="1" chance="100" /> <!-- Mount - Tame Princess Ant - 7-day -->
@@ -1109,6 +1151,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22356" min="1" max="1" chance="100" /> <!-- Mount - Tame Princess Ant -->
@@ -1169,6 +1212,7 @@
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="590" />
 		<stats>
 			<stat type="pAtkSpd">379</stat>
@@ -1192,6 +1236,7 @@
 		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="price" val="1180" />
 		<stats>
 			<stat type="pAtkSpd">325</stat>
@@ -1215,6 +1260,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
@@ -1234,6 +1280,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="30" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
@@ -1259,6 +1306,7 @@
 		<set name="bodypart" val="lrhand" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<stats>
 			<stat type="pAtkSpd">325</stat>
@@ -1286,6 +1334,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="450" />
 		<stats>
 			<stat type="pAtkSpd">325</stat>
@@ -1310,6 +1359,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="22368" name="Black Bear Hat" type="Armor">
@@ -1327,6 +1377,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="enchant_enabled" val="7" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="22369" name="Mount - Black Bear Pack (7-day)" type="EtcItem">
@@ -1341,6 +1392,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22363" min="1" max="1" chance="100" /> <!-- Mount - Black Bear - 7-day -->
@@ -1358,6 +1410,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22364" min="1" max="1" chance="100" /> <!-- Mount - Black Bear -->
@@ -1375,6 +1428,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22365" min="1" max="1" chance="100" /> <!-- Black Bear Claw - 7-day -->
@@ -1392,6 +1446,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22366" min="1" max="1" chance="100" /> <!-- Black Bear Claw -->
@@ -1409,6 +1464,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22367" min="1" max="1" chance="100" /> <!-- Black Bear Hat - 7-day -->
@@ -1426,6 +1482,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22368" min="1" max="1" chance="100" /> <!-- Black Bear Hat -->
@@ -1446,6 +1503,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="22376" name="Brilliant Beach Sun Cap" type="Armor">
@@ -1463,6 +1521,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="enchant_enabled" val="7" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="22377" name="Stylish Straw Hat" name_additional="7-day" type="Armor">
@@ -1480,6 +1539,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="22378" name="Stylish Straw Hat" type="Armor">
@@ -1497,6 +1557,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="enchant_enabled" val="7" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="22379" name="Brilliant Beach Sun Cap Pack (7-day)" type="EtcItem">
@@ -1511,6 +1572,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22375" min="1" max="1" chance="100" /> <!-- Brilliant Beach Sun Cap - 7-day -->
@@ -1528,6 +1590,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22376" min="1" max="1" chance="100" /> <!-- Brilliant Beach Sun Cap -->
@@ -1545,6 +1608,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22377" min="1" max="1" chance="100" /> <!-- Stylish Straw Hat - 7-day -->
@@ -1562,6 +1626,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<capsuled_items>
 			<item id="22378" min="1" max="1" chance="100" /> <!-- Stylish Straw Hat -->
@@ -1582,6 +1647,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
@@ -1601,6 +1667,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="30" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
@@ -1666,6 +1733,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -1696,6 +1764,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="isAppearanceable" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="2040" />
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
@@ -1723,6 +1792,7 @@
 		<set name="bodypart" val="back" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="CLOAK" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 		<stats>
 			<stat type="pDef">20</stat>
@@ -1741,6 +1811,7 @@
 		<set name="bodypart" val="back" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="CLOAK" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<stats>
 			<stat type="pDef">20</stat>
@@ -1761,6 +1832,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="hairall" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="22392" name="Halloween Pumpkin Hat" name_additional="Event" type="Armor">
@@ -1778,6 +1850,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="enchant_enabled" val="7" />
 		<set name="isAppearanceable" val="true" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="22393" name="Halloween Gift Box" name_additional="Event" type="EtcItem">
@@ -1788,6 +1861,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<skills>
 			<skill id="22414" level="1" /> <!-- Halloween Gift Box -->
@@ -1806,6 +1880,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="23346" level="1" /> <!-- Valakas Agathion Cute Trick -->
@@ -1827,6 +1902,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="23346" level="2" /> <!-- Valakas Agathion Cute Trick -->
@@ -1849,6 +1925,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="23346" level="3" /> <!-- Valakas Agathion Cute Trick -->
@@ -1871,6 +1948,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="23346" level="4" /> <!-- Valakas Agathion Cute Trick -->
@@ -1893,6 +1971,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="23346" level="5" /> <!-- Valakas Agathion Cute Trick -->
@@ -1915,6 +1994,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
 		<set name="weight" val="150" />
 		<skills>
 			<skill id="23346" level="6" /> <!-- Valakas Agathion Cute Trick -->
