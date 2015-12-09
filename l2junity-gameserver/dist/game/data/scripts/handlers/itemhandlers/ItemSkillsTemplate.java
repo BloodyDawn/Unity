@@ -66,6 +66,7 @@ public class ItemSkillsTemplate implements IItemHandler
 		}
 		
 		boolean hasConsumeSkill = false;
+		boolean successfulUse = false;
 		
 		for (SkillHolder skillInfo : skills)
 		{
@@ -85,23 +86,23 @@ public class ItemSkillsTemplate implements IItemHandler
 				
 				if (!itemSkill.checkCondition(playable, playable.getTarget()))
 				{
-					return false;
+					continue;
 				}
 				
 				if (playable.isSkillDisabled(itemSkill))
 				{
-					return false;
+					continue;
 				}
 				
 				// Verify that skill is not under reuse.
 				if (!checkReuse(playable, itemSkill, item))
 				{
-					return false;
+					continue;
 				}
 				
 				if (!item.isPotion() && !item.isElixir() && !item.isScroll() && playable.isCastingNow())
 				{
-					return false;
+					continue;
 				}
 				
 				// Send message to the master.
@@ -115,13 +116,18 @@ public class ItemSkillsTemplate implements IItemHandler
 				if (itemSkill.isWithoutAction() || ((item.getItem().hasImmediateEffect() || item.getItem().hasExImmediateEffect()) && itemSkill.isStatic()))
 				{
 					playable.doSimultaneousCast(itemSkill, item);
+					successfulUse = true;
 				}
 				else
 				{
 					playable.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-					if (!playable.useMagic(itemSkill, item, forceUse, false))
+					if (playable.useMagic(itemSkill, item, forceUse, false))
 					{
-						return false;
+						successfulUse = true;
+					}
+					else
+					{
+						continue;
 					}
 				}
 				
@@ -132,7 +138,7 @@ public class ItemSkillsTemplate implements IItemHandler
 			}
 		}
 		
-		if (checkConsume(item, hasConsumeSkill))
+		if (successfulUse && checkConsume(item, hasConsumeSkill))
 		{
 			if (!playable.destroyItem("Consume", item.getObjectId(), 1, playable, false))
 			{
@@ -141,7 +147,7 @@ public class ItemSkillsTemplate implements IItemHandler
 			}
 		}
 		
-		return true;
+		return successfulUse;
 	}
 	
 	/**
@@ -151,7 +157,6 @@ public class ItemSkillsTemplate implements IItemHandler
 	 */
 	private boolean checkConsume(ItemInstance item, boolean hasConsumeSkill)
 	{
-		
 		switch (item.getItem().getDefaultAction())
 		{
 			case CAPSULE:
