@@ -72,12 +72,6 @@ public final class Mammons extends AbstractNpcAI
 		NpcStringId.I_HAVE_SOME_EXCELLENT_WEAPONS_TO_SHOW_YOU,
 		NpcStringId.I_VE_BEEN_SO_BUSY_LATELY_IN_ADDITION_TO_PLANNING_MY_TRIP,
 	};
-	private static String[] TOWN_NAME =
-	{
-		"Town of Aden",
-		"Town of Giran",
-		"Town of Rune",
-	};
 	private static final int TELEPORT_DELAY = 1800000; // 30min
 	private static final List<Npc> _mammons = new ArrayList<>();
 	
@@ -126,11 +120,11 @@ public final class Mammons extends AbstractNpcAI
 				if (blacksmith != null)
 				{
 					blacksmith.broadcastSay(ChatType.NPC_GENERAL, RANDOM_SAY[getRandom(RANDOM_SAY.length)]);
-				}
-				
-				if (Config.ANNOUNCE_MAMMON_SPAWN)
-				{
-					Broadcast.toAllOnlinePlayers("Mammon's has been spawned in " + TOWN_NAME[town] + ".", false);
+					
+					if (Config.ANNOUNCE_MAMMON_SPAWN)
+					{
+						Broadcast.toAllOnlinePlayers("Mammon's has been spawned in Town of " + blacksmith.getCastle().getName() + ".", false);
+					}
 				}
 				break;
 			}
