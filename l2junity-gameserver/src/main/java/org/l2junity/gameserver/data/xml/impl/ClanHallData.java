@@ -21,9 +21,11 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.ClanHallGrade;
@@ -46,7 +48,7 @@ import org.w3c.dom.Node;
 public final class ClanHallData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ClanHallData.class);
-	private static final Map<Integer, ClanHall> _clanHalls = new ConcurrentHashMap<>();
+	private static final Map<Integer, ClanHall> _clanHalls = new HashMap<>();
 	
 	protected ClanHallData()
 	{
@@ -189,6 +191,11 @@ public final class ClanHallData implements IGameXmlReader
 	{
 		final DoorInstance door = DoorData.getInstance().getDoor(doorId);
 		return _clanHalls.values().stream().filter(ch -> ch.getDoors().contains(door)).findFirst().orElse(null);
+	}
+	
+	public List<ClanHall> getFreeAuctionableHall()
+	{
+		return _clanHalls.values().stream().filter(ch -> (ch.getType() == ClanHallType.AUCTIONABLE) && (ch.getOwner() == null)).sorted(Comparator.comparingInt(ClanHall::getResidenceId)).collect(Collectors.toList());
 	}
 	
 	/**

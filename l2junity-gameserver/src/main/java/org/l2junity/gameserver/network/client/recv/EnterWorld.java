@@ -24,6 +24,7 @@ import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.AnnouncementsTable;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.SubclassInfoType;
@@ -42,6 +43,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.L2Event;
@@ -223,7 +225,8 @@ public class EnterWorld implements IClientIncomingPacket
 		boolean showClanNotice = false;
 		
 		// Clan related checks are here
-		if (activeChar.getClan() != null)
+		final L2Clan clan = activeChar.getClan();
+		if (clan != null)
 		{
 			notifyClanMembers(activeChar);
 			notifySponsorOrApprentice(activeChar);
@@ -235,13 +238,13 @@ public class EnterWorld implements IClientIncomingPacket
 					continue;
 				}
 				
-				if (siege.checkIsAttacker(activeChar.getClan()))
+				if (siege.checkIsAttacker(clan))
 				{
 					activeChar.setSiegeState((byte) 1);
 					activeChar.setSiegeSide(siege.getCastle().getResidenceId());
 				}
 				
-				else if (siege.checkIsDefender(activeChar.getClan()))
+				else if (siege.checkIsDefender(clan))
 				{
 					activeChar.setSiegeState((byte) 2);
 					activeChar.setSiegeSide(siege.getCastle().getResidenceId());
@@ -255,13 +258,13 @@ public class EnterWorld implements IClientIncomingPacket
 					continue;
 				}
 				
-				if (siege.checkIsAttacker(activeChar.getClan()))
+				if (siege.checkIsAttacker(clan))
 				{
 					activeChar.setSiegeState((byte) 1);
 					activeChar.setSiegeSide(siege.getFort().getResidenceId());
 				}
 				
-				else if (siege.checkIsDefender(activeChar.getClan()))
+				else if (siege.checkIsDefender(clan))
 				{
 					activeChar.setSiegeState((byte) 2);
 					activeChar.setSiegeSide(siege.getFort().getResidenceId());
@@ -271,15 +274,15 @@ public class EnterWorld implements IClientIncomingPacket
 			// Residential skills support
 			if (activeChar.getClan().getCastleId() > 0)
 			{
-				CastleManager.getInstance().getCastleByOwner(activeChar.getClan()).giveResidentialSkills(activeChar);
+				CastleManager.getInstance().getCastleByOwner(clan).giveResidentialSkills(activeChar);
 			}
 			
 			if (activeChar.getClan().getFortId() > 0)
 			{
-				FortManager.getInstance().getFortByOwner(activeChar.getClan()).giveResidentialSkills(activeChar);
+				FortManager.getInstance().getFortByOwner(clan).giveResidentialSkills(activeChar);
 			}
 			
-			showClanNotice = activeChar.getClan().isNoticeEnabled();
+			showClanNotice = clan.isNoticeEnabled();
 		}
 		
 		if (Config.ENABLE_VITALITY)
@@ -333,14 +336,20 @@ public class EnterWorld implements IClientIncomingPacket
 		activeChar.sendPacket(new EtcStatusUpdate(activeChar));
 		
 		// Clan packets
-		if (activeChar.getClan() != null)
+		if (clan != null)
 		{
-			final L2Clan clan = activeChar.getClan();
 			clan.broadcastToOnlineMembers(new PledgeShowMemberListUpdate(activeChar));
 			PledgeShowMemberListAll.sendAllTo(activeChar);
 			clan.broadcastToOnlineMembers(new ExPledgeCount(clan));
 			activeChar.sendPacket(new PledgeSkillList(clan));
 			activeChar.sendPacket(new PledgeShowInfoUpdate(clan));
+			final ClanHall ch = ClanHallData.getInstance().getClanHallByClan(clan);
+			if ((ch != null) && (ch.getCostFailDay() > 0))
+			{
+				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
+				sm.addInt(ch.getLease());
+				activeChar.sendPacket(sm);
+			}
 		}
 		else
 		{

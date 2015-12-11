@@ -47,7 +47,7 @@ public class NextPrevPageHandler implements IPageHandler
 		sb.append(style.applySeparator());
 		
 		// Next
-		sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, currentPage + 1), ">", currentPage > pages));
+		sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, currentPage + 1), ">", currentPage >= pages));
 		
 		// Separator
 		sb.append(style.applySeparator());

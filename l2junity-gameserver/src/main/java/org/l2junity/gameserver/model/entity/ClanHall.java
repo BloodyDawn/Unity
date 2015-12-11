@@ -47,6 +47,8 @@ import org.l2junity.gameserver.model.residences.AbstractResidence;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -128,7 +130,7 @@ public final class ClanHall extends AbstractResidence
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			LOGGER.info("Failed loading clan hall", e);
 		}
 	}
 	
@@ -365,10 +367,14 @@ public final class ClanHall extends AbstractResidence
 					if (getCostFailDay() > 8)
 					{
 						setOwner(null);
+						clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.THE_CLAN_HALL_FEE_IS_ONE_WEEK_OVERDUE_THEREFORE_THE_CLAN_HALL_OWNERSHIP_HAS_BEEN_REVOKED));
 					}
 					else
 					{
 						_checkPaymentTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckPaymentTask(), 1, TimeUnit.DAYS);
+						final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
+						sm.addInt(getLease());
+						clan.broadcastToOnlineMembers(sm);
 					}
 				}
 				else

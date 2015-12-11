@@ -102,6 +102,7 @@ import org.l2junity.gameserver.instancemanager.BoatManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
+import org.l2junity.gameserver.instancemanager.ClanHallAuctionManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
@@ -249,6 +250,7 @@ public class GameServer
 		ClanTable.getInstance();
 		ResidenceFunctionsData.getInstance();
 		ClanHallData.getInstance();
+		ClanHallAuctionManager.getInstance();
 		ClanEntryManager.getInstance();
 		
 		printSection("Geodata");
