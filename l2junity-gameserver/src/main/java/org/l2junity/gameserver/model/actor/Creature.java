@@ -674,13 +674,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		// Go through the StatusListener
 		// Send the Server->Client packet StatusUpdate with current HP and MP
-		for (Creature temp : getStatus().getStatusListener())
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if (temp != null)
+			if (isVisibleFor(player))
 			{
-				temp.sendPacket(su);
+				player.sendPacket(su);
 			}
-		}
+		});
 	}
 	
 	/**
