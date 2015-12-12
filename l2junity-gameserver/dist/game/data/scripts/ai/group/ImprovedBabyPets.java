@@ -146,7 +146,7 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 			final int targetType = parameters.getInt("step" + stepNumber + "_buff_target0" + buffNumber, 0);
 			final BuffInfo skillInfo = owner.getEffectList().getBuffInfoByAbnormalType(skill.getSkill().getAbnormalType());
 			
-			if ((skillInfo == null) && SkillCaster.checkDoCastConditions(summon, skill.getSkill()) && !owner.isDead())
+			if ((skillInfo == null) && SkillCaster.checkUseConditions(summon, skill.getSkill()) && !owner.isDead())
 			{
 				if (mergedSkill != null)
 				{
@@ -186,7 +186,7 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 		final SkillHolder skill = parameters.getObject("step" + stepNumber + "_heal0" + healNumber, SkillHolder.class);
 		final int targetType = parameters.getInt("step" + stepNumber + "_heal_target0" + healNumber, 0);
 		
-		if ((skill != null) && (owner != null) && SkillCaster.checkDoCastConditions(summon, skill.getSkill()) && !owner.isDead())
+		if ((skill != null) && (owner != null) && SkillCaster.checkUseConditions(summon, skill.getSkill()) && !owner.isDead())
 		{
 			final BuffInfo heal_info = owner.getEffectList().getBuffInfoByAbnormalType(skill.getSkill().getAbnormalType());
 			

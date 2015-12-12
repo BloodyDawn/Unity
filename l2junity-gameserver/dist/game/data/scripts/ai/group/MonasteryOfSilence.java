@@ -114,7 +114,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 			{
 				if ((npc != null) && (player != null) && (getRandom(100) < 3))
 				{
-					if (SkillCaster.checkDoCastConditions(npc, STUDENT_CANCEL.getSkill()))
+					if (SkillCaster.checkUseConditions(npc, STUDENT_CANCEL.getSkill()))
 					{
 						npc.setTarget(player);
 						npc.doCast(STUDENT_CANCEL.getSkill());
@@ -144,7 +144,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 		{
 			case KNIGHT:
 			{
-				if ((getRandom(100) < 10) && (mob.getMostHated() == player) && SkillCaster.checkDoCastConditions(mob, WARRIOR_THRUSTING.getSkill()))
+				if ((getRandom(100) < 10) && (mob.getMostHated() == player) && SkillCaster.checkUseConditions(mob, WARRIOR_THRUSTING.getSkill()))
 				{
 					npc.setTarget(player);
 					npc.doCast(WARRIOR_THRUSTING.getSkill());
@@ -155,7 +155,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 			{
 				if ((getRandom(100) < 20) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && npc.isScriptValue(0))
 				{
-					if (SkillCaster.checkDoCastConditions(npc, KNIGHT_BLESS.getSkill()))
+					if (SkillCaster.checkUseConditions(npc, KNIGHT_BLESS.getSkill()))
 					{
 						npc.setTarget(npc);
 						npc.doCast(KNIGHT_BLESS.getSkill());
@@ -168,7 +168,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 			}
 			case GUIDE:
 			{
-				if ((getRandom(100) < 3) && (mob.getMostHated() == player) && SkillCaster.checkDoCastConditions(npc, ORDEAL_STRIKE.getSkill()))
+				if ((getRandom(100) < 3) && (mob.getMostHated() == player) && SkillCaster.checkUseConditions(npc, ORDEAL_STRIKE.getSkill()))
 				{
 					npc.setTarget(player);
 					npc.doCast(ORDEAL_STRIKE.getSkill());
@@ -177,7 +177,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 			}
 			case SEEKER:
 			{
-				if ((getRandom(100) < 33) && (mob.getMostHated() == player) && SkillCaster.checkDoCastConditions(npc, SAVER_STRIKE.getSkill()))
+				if ((getRandom(100) < 33) && (mob.getMostHated() == player) && SkillCaster.checkUseConditions(npc, SAVER_STRIKE.getSkill()))
 				{
 					npc.setTarget(npc);
 					npc.doCast(SAVER_STRIKE.getSkill());
@@ -245,7 +245,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				}
 			}
 			
-			if ((skill != null) && SkillCaster.checkDoCastConditions(npc, skill.getSkill()))
+			if ((skill != null) && SkillCaster.checkUseConditions(npc, skill.getSkill()))
 			{
 				npc.setTarget(player);
 				npc.doCast(skill.getSkill());

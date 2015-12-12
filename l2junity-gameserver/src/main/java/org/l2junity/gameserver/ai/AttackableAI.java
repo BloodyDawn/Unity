@@ -367,7 +367,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			for (Skill buff : getActiveChar().getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				if (SkillCaster.checkDoCastConditions(getActiveChar(), buff))
+				if (SkillCaster.checkUseConditions(getActiveChar(), buff))
 				{
 					if (!_actor.isAffectedBySkill(buff.getId()))
 					{
@@ -900,7 +900,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								continue;
 							}
-							if (!SkillCaster.checkDoCastConditions(npc, healSkill))
+							if (!SkillCaster.checkUseConditions(npc, healSkill))
 							{
 								continue;
 							}
@@ -925,7 +925,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : aiHealSkills)
 					{
-						if (!SkillCaster.checkDoCastConditions(npc, sk))
+						if (!SkillCaster.checkUseConditions(npc, sk))
 						{
 							continue;
 						}
@@ -939,7 +939,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				for (Skill sk : aiHealSkills)
 				{
-					if (!SkillCaster.checkDoCastConditions(npc, sk))
+					if (!SkillCaster.checkUseConditions(npc, sk))
 					{
 						continue;
 					}
@@ -994,7 +994,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							{
 								continue;
 							}
-							if (!SkillCaster.checkDoCastConditions(npc, sk))
+							if (!SkillCaster.checkUseConditions(npc, sk))
 							{
 								continue;
 							}
@@ -1017,7 +1017,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				for (Skill sk : aiResSkills)
 				{
-					if (!SkillCaster.checkDoCastConditions(npc, sk))
+					if (!SkillCaster.checkUseConditions(npc, sk))
 					{
 						continue;
 					}
@@ -1086,7 +1086,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getShortRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
-			if (SkillCaster.checkDoCastConditions(npc, shortRangeSkill))
+			if (SkillCaster.checkUseConditions(npc, shortRangeSkill))
 			{
 				npc.doCast(shortRangeSkill);
 				LOGGER.debug("{} used short range skill {} on {}", this, shortRangeSkill, npc.getTarget());
@@ -1097,7 +1097,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getLongRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().size()));
-			if (SkillCaster.checkDoCastConditions(npc, longRangeSkill))
+			if (SkillCaster.checkUseConditions(npc, longRangeSkill))
 			{
 				npc.doCast(longRangeSkill);
 				LOGGER.debug("{} used long range skill {} on {}", this, longRangeSkill, npc.getTarget());
@@ -1141,7 +1141,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		final Attackable caster = getActiveChar();
 		
-		if (!SkillCaster.checkDoCastConditions(caster, sk))
+		if (!SkillCaster.checkUseConditions(caster, sk))
 		{
 			return false;
 		}
@@ -1620,7 +1620,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE))
 					{
-						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkUseConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1644,7 +1644,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.COT))
 					{
-						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkUseConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1667,7 +1667,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.DEBUFF))
 					{
-						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkUseConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1691,7 +1691,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.NEGATIVE))
 					{
-						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkUseConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}
@@ -1715,7 +1715,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.ATTACK))
 					{
-						if (!SkillCaster.checkDoCastConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
+						if (!SkillCaster.checkUseConditions(npc, sk) || (((sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius()) <= dist2) && !canAura(sk)))
 						{
 							continue;
 						}

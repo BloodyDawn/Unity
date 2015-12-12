@@ -525,7 +525,7 @@ public final class Baium extends AbstractNpcAI
 			final Attackable mob = (Attackable) npc;
 			final Creature mostHated = mob.getMostHated();
 			
-			if ((getRandom(100) < 10) && SkillCaster.checkDoCastConditions(mob, SPEAR_ATTACK.getSkill()))
+			if ((getRandom(100) < 10) && SkillCaster.checkUseConditions(mob, SPEAR_ATTACK.getSkill()))
 			{
 				if ((mostHated != null) && (npc.calculateDistance(mostHated, true, false) < 1000) && zone.isCharacterInZone(mostHated))
 				{
@@ -539,7 +539,7 @@ public final class Baium extends AbstractNpcAI
 				}
 			}
 			
-			if ((getRandom(100) < 5) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && SkillCaster.checkDoCastConditions(mob, ANGEL_HEAL.getSkill()))
+			if ((getRandom(100) < 5) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && SkillCaster.checkUseConditions(mob, ANGEL_HEAL.getSkill()))
 			{
 				npc.setTarget(npc);
 				npc.doCast(ANGEL_HEAL.getSkill());
@@ -779,7 +779,7 @@ public final class Baium extends AbstractNpcAI
 			}
 		}
 		
-		if ((skillToCast != null) && SkillCaster.checkDoCastConditions(npc, skillToCast.getSkill()))
+		if ((skillToCast != null) && SkillCaster.checkUseConditions(npc, skillToCast.getSkill()))
 		{
 			npc.setTarget(player);
 			npc.doCast(skillToCast.getSkill());

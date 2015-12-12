@@ -199,32 +199,9 @@ public class Attackable extends Npc
 	 */
 	public void useMagic(Skill skill)
 	{
-		if ((skill == null) || isAlikeDead() || skill.isPassive() || isCastingNow(SkillCaster::isNormalType) || isSkillDisabled(skill))
+		if (!SkillCaster.checkUseConditions(this, skill))
 		{
 			return;
-		}
-		
-		if ((getCurrentMp() < (getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill))) || (getCurrentHp() <= skill.getHpConsume()))
-		{
-			return;
-		}
-		
-		if (!skill.isStatic())
-		{
-			if (skill.isMagic())
-			{
-				if (isMuted())
-				{
-					return;
-				}
-			}
-			else
-			{
-				if (isPhysicalMuted())
-				{
-					return;
-				}
-			}
 		}
 		
 		final WorldObject target = skill.getFirstOfTargetList(this);

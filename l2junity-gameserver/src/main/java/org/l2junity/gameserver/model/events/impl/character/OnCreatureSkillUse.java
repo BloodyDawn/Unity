@@ -24,22 +24,20 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * An instantly executed event when L2Character is attacked by L2Character.
- * @author UnAfraid
+ * Executed when the caster Creature tries to use a skill.
+ * @author UnAfraid, Nik
  */
 public class OnCreatureSkillUse implements IBaseEvent
 {
 	private final Creature _caster;
 	private final Skill _skill;
 	private final boolean _simultaneously;
-	private final Creature _target;
 	
-	public OnCreatureSkillUse(Creature caster, Skill skill, boolean simultaneously, Creature target)
+	public OnCreatureSkillUse(Creature caster, Skill skill, boolean simultaneously)
 	{
 		_caster = caster;
 		_skill = skill;
 		_simultaneously = simultaneously;
-		_target = target;
 	}
 	
 	public final Creature getCaster()
@@ -55,11 +53,6 @@ public class OnCreatureSkillUse implements IBaseEvent
 	public boolean isSimultaneously()
 	{
 		return _simultaneously;
-	}
-	
-	public final Creature getTarget()
-	{
-		return _target;
 	}
 	
 	@Override

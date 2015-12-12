@@ -120,7 +120,7 @@ public class SkillCaster implements Runnable
 		Objects.requireNonNull(skill);
 		
 		// Casting failed due conditions...
-		if (!checkDoCastConditions(_caster, skill))
+		if (!checkUseConditions(_caster, skill))
 		{
 			return false;
 		}
@@ -142,13 +142,6 @@ public class SkillCaster implements Runnable
 		// TODO: Support for item target.
 		if (!target.isCreature())
 		{
-			return false;
-		}
-		
-		final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillUse(_caster, skill, skill.isWithoutAction(), (Creature) target), _caster, TerminateReturn.class);
-		if ((term != null) && term.terminate())
-		{
-			_isCasting.set(false);
 			return false;
 		}
 		
@@ -742,7 +735,7 @@ public class SkillCaster implements Runnable
 		return target;
 	}
 	
-	public static boolean checkDoCastConditions(Creature caster, Skill skill)
+	public static boolean checkUseConditions(Creature caster, Skill skill)
 	{
 		if (caster == null)
 		{
@@ -750,6 +743,13 @@ public class SkillCaster implements Runnable
 		}
 		
 		if ((skill == null) || caster.isSkillDisabled(skill) || (((skill.getFlyRadius() > 0) || (skill.getFlyType() != null)) && caster.isMovementDisabled()))
+		{
+			caster.sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
+		final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillUse(caster, skill, skill.isWithoutAction()), caster, TerminateReturn.class);
+		if ((term != null) && term.terminate())
 		{
 			caster.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

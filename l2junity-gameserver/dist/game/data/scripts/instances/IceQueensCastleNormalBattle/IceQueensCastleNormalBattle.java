@@ -568,7 +568,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							else
 							{
-								if (SkillCaster.checkDoCastConditions(npc, BLIZZARD_BREATH.getSkill()))
+								if (SkillCaster.checkUseConditions(npc, BLIZZARD_BREATH.getSkill()))
 								{
 									npc.setTarget(npc);
 									npc.doCast(BLIZZARD_BREATH.getSkill());
@@ -609,7 +609,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "LEADER_RANGEBUFF":
 					{
-						if (SkillCaster.checkDoCastConditions(npc, SELF_RANGE_BUFF.getSkill()))
+						if (SkillCaster.checkUseConditions(npc, SELF_RANGE_BUFF.getSkill()))
 						{
 							npc.setTarget(npc);
 							npc.doCast(SELF_RANGE_BUFF.getSkill());
@@ -782,7 +782,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if (getRandomBoolean())
 							{
-								if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkDoCastConditions(npc, ICE_BALL.getSkill()))
+								if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkUseConditions(npc, ICE_BALL.getSkill()))
 								{
 									npc.setTarget(attacker);
 									npc.doCast(ICE_BALL.getSkill());
@@ -790,7 +790,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							else
 							{
-								if (canReachMostHated && SkillCaster.checkDoCastConditions(npc, ICE_BALL.getSkill()))
+								if (canReachMostHated && SkillCaster.checkUseConditions(npc, ICE_BALL.getSkill()))
 								{
 									npc.setTarget(mostHated);
 									npc.doCast(ICE_BALL.getSkill());
@@ -801,7 +801,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if (getRandomBoolean())
 							{
-								if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkDoCastConditions(npc, SUMMON_ELEMENTAL.getSkill()))
+								if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkUseConditions(npc, SUMMON_ELEMENTAL.getSkill()))
 								{
 									npc.setTarget(attacker);
 									npc.doCast(SUMMON_ELEMENTAL.getSkill());
@@ -809,7 +809,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							else
 							{
-								if (canReachMostHated && SkillCaster.checkDoCastConditions(npc, SUMMON_ELEMENTAL.getSkill()))
+								if (canReachMostHated && SkillCaster.checkUseConditions(npc, SUMMON_ELEMENTAL.getSkill()))
 								{
 									npc.setTarget(mostHated);
 									npc.doCast(SUMMON_ELEMENTAL.getSkill());
@@ -818,7 +818,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						}
 						else if (getRandom(10000) < 1500)
 						{
-							if (!npc.isAffectedBySkill(SELF_NOVA.getSkillId()) && SkillCaster.checkDoCastConditions(npc, SELF_NOVA.getSkill()))
+							if (!npc.isAffectedBySkill(SELF_NOVA.getSkillId()) && SkillCaster.checkUseConditions(npc, SELF_NOVA.getSkill()))
 							{
 								npc.setTarget(npc);
 								npc.doCast(SELF_NOVA.getSkill());
@@ -869,7 +869,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						if (getRandomBoolean())
 						{
-							if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkDoCastConditions(npc, ICE_BALL.getSkill()))
+							if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkUseConditions(npc, ICE_BALL.getSkill()))
 							{
 								npc.setTarget(attacker);
 								npc.doCast(ICE_BALL.getSkill());
@@ -877,7 +877,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						}
 						else
 						{
-							if (canReachMostHated && SkillCaster.checkDoCastConditions(npc, ICE_BALL.getSkill()))
+							if (canReachMostHated && SkillCaster.checkUseConditions(npc, ICE_BALL.getSkill()))
 							{
 								npc.setTarget(mostHated);
 								npc.doCast(ICE_BALL.getSkill());
@@ -888,7 +888,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						if (getRandomBoolean())
 						{
-							if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkDoCastConditions(npc, SUMMON_ELEMENTAL.getSkill()))
+							if ((npc.calculateDistance(attacker, true, false) <= 800) && SkillCaster.checkUseConditions(npc, SUMMON_ELEMENTAL.getSkill()))
 							{
 								npc.setTarget(attacker);
 								npc.doCast(SUMMON_ELEMENTAL.getSkill());
@@ -896,7 +896,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						}
 						else
 						{
-							if (canReachMostHated && SkillCaster.checkDoCastConditions(npc, SUMMON_ELEMENTAL.getSkill()))
+							if (canReachMostHated && SkillCaster.checkUseConditions(npc, SUMMON_ELEMENTAL.getSkill()))
 							{
 								npc.setTarget(mostHated);
 								npc.doCast(SUMMON_ELEMENTAL.getSkill());
@@ -905,7 +905,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					else if (getRandom(10000) < 1500)
 					{
-						if (!npc.isAffectedBySkill(SELF_NOVA.getSkillId()) && SkillCaster.checkDoCastConditions(npc, SELF_NOVA.getSkill()))
+						if (!npc.isAffectedBySkill(SELF_NOVA.getSkillId()) && SkillCaster.checkUseConditions(npc, SELF_NOVA.getSkill()))
 						{
 							npc.setTarget(npc);
 							npc.doCast(SELF_NOVA.getSkill());
@@ -913,7 +913,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					else if (getRandom(10000) < 1333)
 					{
-						if (!npc.isAffectedBySkill(REFLECT_MAGIC.getSkillId()) && SkillCaster.checkDoCastConditions(npc, REFLECT_MAGIC.getSkill()))
+						if (!npc.isAffectedBySkill(REFLECT_MAGIC.getSkillId()) && SkillCaster.checkUseConditions(npc, REFLECT_MAGIC.getSkill()))
 						{
 							npc.setTarget(npc);
 							npc.doCast(REFLECT_MAGIC.getSkill());
@@ -989,13 +989,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if (getRandom(10000) < 2500)
 							{
-								if (SkillCaster.checkDoCastConditions(npc, POWER_STRIKE.getSkill()))
+								if (SkillCaster.checkUseConditions(npc, POWER_STRIKE.getSkill()))
 								{
 									npc.setTarget(attacker);
 									npc.doCast(POWER_STRIKE.getSkill());
 								}
 							}
-							else if (SkillCaster.checkDoCastConditions(npc, POWER_STRIKE.getSkill()) && canReachMostHated)
+							else if (SkillCaster.checkUseConditions(npc, POWER_STRIKE.getSkill()) && canReachMostHated)
 							{
 								npc.setTarget(((Attackable) npc).getMostHated());
 								npc.doCast(POWER_STRIKE.getSkill());
@@ -1005,13 +1005,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if (getRandomBoolean())
 							{
-								if (SkillCaster.checkDoCastConditions(npc, POINT_TARGET.getSkill()))
+								if (SkillCaster.checkUseConditions(npc, POINT_TARGET.getSkill()))
 								{
 									npc.setTarget(attacker);
 									npc.doCast(POINT_TARGET.getSkill());
 								}
 							}
-							else if (SkillCaster.checkDoCastConditions(npc, POINT_TARGET.getSkill()) && canReachMostHated)
+							else if (SkillCaster.checkUseConditions(npc, POINT_TARGET.getSkill()) && canReachMostHated)
 							{
 								npc.setTarget(((Attackable) npc).getMostHated());
 								npc.doCast(POINT_TARGET.getSkill());
@@ -1021,13 +1021,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if (getRandomBoolean())
 							{
-								if (SkillCaster.checkDoCastConditions(npc, CYLINDER_THROW.getSkill()))
+								if (SkillCaster.checkUseConditions(npc, CYLINDER_THROW.getSkill()))
 								{
 									npc.setTarget(attacker);
 									npc.doCast(CYLINDER_THROW.getSkill());
 								}
 							}
-							else if (SkillCaster.checkDoCastConditions(npc, CYLINDER_THROW.getSkill()) && canReachMostHated)
+							else if (SkillCaster.checkUseConditions(npc, CYLINDER_THROW.getSkill()) && canReachMostHated)
 							{
 								npc.setTarget(((Attackable) npc).getMostHated());
 								npc.doCast(CYLINDER_THROW.getSkill());
