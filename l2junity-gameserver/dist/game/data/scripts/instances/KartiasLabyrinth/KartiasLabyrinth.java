@@ -334,7 +334,6 @@ public final class KartiasLabyrinth extends AbstractInstance
 					addExpAndSp(player, (xp + getRandom(xp_rnd)), (sp + getRandom(sp_rnd)));
 				});
 			}
-			npc.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.NO_HOW_COULD_THIS_BE_I_CAN_T_GO_BACK_TO_NIHIL_LIKE_THIS);
 			instance.finishInstance();
 		}
 	}
