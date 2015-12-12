@@ -565,11 +565,11 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14840" levels="1" name="Adolph's Superior Aggression Aura">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies and forcefully changes their target to make them attack you. -->
 		<set name="icon" val="icon.skill10027" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -581,13 +581,14 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
 	</skill>
 	<skill id="14841" levels="1" name="Adolph's Superior Aggression Aura">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies and forcefully changes their target to make them attack you. -->
 		<set name="icon" val="icon.skill10027" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -599,13 +600,14 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
 	</skill>
 	<skill id="14842" levels="1" name="Adolph's Superior Aggression Aura">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies and forcefully changes their target to make them attack you. -->
 		<set name="icon" val="icon.skill10027" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -617,13 +619,14 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
 	</skill>
 	<skill id="14843" levels="1" name="Adolph's Chain Hydra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Drags the selected target and enemies near the target to the user's location. -->
 		<set name="icon" val="icon.skill10016" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
@@ -644,13 +647,21 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PullBack">
+				<param speed="600" delay="650" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14844" levels="1" name="Adolph's Chain Hydra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Drags the selected target and enemies near the target to the user's location. -->
 		<set name="icon" val="icon.skill10016" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
@@ -671,13 +682,21 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PullBack">
+				<param speed="600" delay="650" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14845" levels="1" name="Adolph's Chain Hydra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Drags the selected target and enemies near the target to the user's location. -->
 		<set name="icon" val="icon.skill10016" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
@@ -698,13 +717,21 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PullBack">
+				<param speed="600" delay="650" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14846" levels="1" name="Adolph's Justice Punishment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the selected target with 13673 power added to P. Atk and decreases P. Atk./M. Atk. by 20%. -->
 		<set name="icon" val="icon.skill10010" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -722,13 +749,26 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="5" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="13673" />
+				<param criticalChance="5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.8" />
+				<mul stat="mAtk" val="0.8" />
+			</effect>
+			<effect name="BlockSkill">
+				<param magicTypes="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14847" levels="1" name="Adolph's Justice Punishment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the selected target with 16034 power added to P. Atk and decreases P. Atk./M. Atk. by 20%. -->
 		<set name="icon" val="icon.skill10010" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -746,13 +786,24 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="5" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="16034" />
+				<param criticalChance="5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.8" />
+				<mul stat="mAtk" val="0.8" />
+			</effect>
+			<!-- TODO : p_block_skill;1 -->
+		</for>
 	</skill>
 	<skill id="14848" levels="1" name="Adolph's Justice Punishment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the selected target with 18395 power added to P. Atk and decreases P. Atk./M. Atk. by 20%. -->
 		<set name="icon" val="icon.skill10010" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -770,13 +821,24 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="5" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="18395" />
+				<param criticalChance="5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.8" />
+				<mul stat="mAtk" val="0.8" />
+			</effect>
+			<!-- TODO : p_block_skill;1 -->
+		</for>
 	</skill>
 	<skill id="14849" levels="1" name="Adolph's Shield Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the targets at the front with 9516 power added to P. Atk. and Stuns for 9 seconds. -->
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
@@ -793,14 +855,23 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="9516" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14850" levels="1" name="Adolph's Shield Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the targets at the front with 11162 power added to P. Atk. and Stuns for 9 seconds. -->
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
@@ -817,14 +888,23 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="11162" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14851" levels="1" name="Adolph's Shield Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the targets at the front with 12809 power added to P. Atk. and Stuns for 9 seconds. -->
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
@@ -841,10 +921,19 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="12809" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14852" levels="1" name="Adolph's Final Ultimate Defense">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 seconds, P. Def. + 4000 and M. Def. + 4000. Damage received is capped at 300 and 40% of it is reflected back to the attacker. Additionally, + 80% Buff-canceling Attack Resistance. -->
 		<set name="icon" val="icon.skill10017" />
 		<set name="operateType" val="A2" />
@@ -861,9 +950,19 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="900000" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Buff">
+				<add stat="pDef" val="4000" />
+				<add stat="mDef" val="4000" />
+				<sub stat="cancelVuln" val="80" />
+				<add stat="reflectDam" val="40" />
+				<set stat="damageCap" val="300" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14853" levels="1" name="Adolph's Final Ultimate Defense">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 seconds, P. Def. + 4000 and M. Def. + 4000. Damage received is capped at 300 and 40% of it is reflected back to the attacker. Additionally, + 80% Buff-canceling Attack Resistance. -->
 		<set name="icon" val="icon.skill10017" />
 		<set name="operateType" val="A2" />
@@ -880,9 +979,19 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="900000" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Buff">
+				<add stat="pDef" val="4000" />
+				<add stat="mDef" val="4000" />
+				<sub stat="cancelVuln" val="80" />
+				<add stat="reflectDam" val="40" />
+				<set stat="damageCap" val="300" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14854" levels="1" name="Adolph's Final Ultimate Defense">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 seconds, P. Def. + 4000 and M. Def. + 4000. Damage received is capped at 300 and 40% of it is reflected back to the attacker. Additionally, + 80% Buff-canceling Attack Resistance. -->
 		<set name="icon" val="icon.skill10017" />
 		<set name="operateType" val="A2" />
@@ -899,13 +1008,23 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="900000" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Buff">
+				<add stat="pDef" val="4000" />
+				<add stat="mDef" val="4000" />
+				<sub stat="cancelVuln" val="80" />
+				<add stat="reflectDam" val="40" />
+				<set stat="damageCap" val="300" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14855" levels="1" name="Barton's Hurricane Rush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rushes in with the shoulder to attack the enemy and Stuns for 3 seconds. -->
 		<set name="icon" val="icon.skill10267" />
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="15000" />
@@ -922,13 +1041,20 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="flyType" val="CHARGE" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="EnemyCharge" />
+		</for>
 	</skill>
 	<skill id="14856" levels="1" name="Barton's Hurricane Rush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rushes in with the shoulder to attack the enemy and Stuns for 3 seconds. -->
 		<set name="icon" val="icon.skill10267" />
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="15000" />
@@ -945,13 +1071,20 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="flyType" val="CHARGE" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="EnemyCharge" />
+		</for>
 	</skill>
 	<skill id="14857" levels="1" name="Barton's Hurricane Rush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rushes in with the shoulder to attack the enemy and Stuns for 3 seconds. -->
 		<set name="icon" val="icon.skill10267" />
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="15000" />
@@ -968,13 +1101,20 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="flyType" val="CHARGE" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="EnemyCharge" />
+		</for>
 	</skill>
 	<skill id="14858" levels="1" name="Barton's Infinity Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful attack on the target with 15303 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10275" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -985,13 +1125,19 @@
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="15303" />
+				<param criticalChance="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14859" levels="1" name="Barton's Infinity Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful attack on the target with 17947 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10275" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1002,13 +1148,19 @@
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="90" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="17947" />
+				<param criticalChance="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14860" levels="1" name="Barton's Infinity Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful attack on the target with 20592 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10275" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1019,13 +1171,19 @@
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="95" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="20592" />
+				<param criticalChance="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14861" levels="1" name="Barton's Sonic Star">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies at the speed of light with 11557 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10281" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-700" />
@@ -1033,13 +1191,21 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="600000" />
+		<set name="affectLimit" val="10-10" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="11557" />
+				<param criticalChance="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14862" levels="1" name="Barton's Sonic Star">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies at the speed of light with 13553 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10281" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-700" />
@@ -1047,13 +1213,21 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="90" />
 		<set name="reuseDelay" val="600000" />
+		<set name="affectLimit" val="10-10" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="13553" />
+				<param criticalChance="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14863" levels="1" name="Barton's Sonic Star">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies at the speed of light with 15549 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10281" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-700" />
@@ -1061,13 +1235,21 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="95" />
 		<set name="reuseDelay" val="600000" />
+		<set name="affectLimit" val="10-10" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="15549" />
+				<param criticalChance="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14864" levels="1" name="Barton's Power Bomber">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerfully strikes the target with 11159 Power added to P. Atk. to knock down for 2 seconds. -->
 		<set name="icon" val="icon.skill10262" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1086,13 +1268,31 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="11159" />
+			</effect>
+			<effect name="KnockBack">
+				<param distance="250" speed="600" knockDown="true" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+				<param KNOCKBACK="100" />
+				<param AIRBIND="100" />
+				<param HOLD="100" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14865" levels="1" name="Barton's Power Bomber">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerfully strikes the target with 13102 Power added to P. Atk. to knock down for 2 seconds. -->
 		<set name="icon" val="icon.skill10262" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1111,13 +1311,31 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="13102" />
+			</effect>
+			<effect name="KnockBack">
+				<param distance="250" speed="600" knockDown="true" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+				<param KNOCKBACK="100" />
+				<param AIRBIND="100" />
+				<param HOLD="100" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14866" levels="1" name="Barton's Power Bomber">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerfully strikes the target with 15046 Power added to P. Atk. to knock down for 2 seconds. -->
 		<set name="icon" val="icon.skill10262" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1136,6 +1354,24 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="15046" />
+			</effect>
+			<effect name="KnockBack">
+				<param distance="250" speed="600" knockDown="true" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+				<param KNOCKBACK="100" />
+				<param AIRBIND="100" />
+				<param HOLD="100" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14867" levels="1" name="Barton's Berserker Rage">
 		<!-- AUTO GENERATED SKILL -->
