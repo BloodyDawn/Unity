@@ -57,6 +57,7 @@ import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceLeave;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
 import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -201,6 +202,7 @@ public final class Instance implements IIdentifiable, INamable
 	public void setStatus(int value)
 	{
 		_parameters.set("INSTANCE_STATUS", value);
+		EventDispatcher.getInstance().notifyEventAsync(new OnInstanceStatusChange(this, value), _template);
 	}
 	
 	/**

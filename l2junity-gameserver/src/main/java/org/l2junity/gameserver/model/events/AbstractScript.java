@@ -104,6 +104,7 @@ import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceLeave;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
 import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
@@ -1354,6 +1355,30 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	protected final List<AbstractEventListener> setInstanceLeaveId(Consumer<OnInstanceLeave> callback, Collection<Integer> templateIds)
 	{
 		return registerConsumer(callback, EventType.ON_INSTANCE_LEAVE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation on instance status change
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceStatusChangeId(Consumer<OnInstanceStatusChange> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_STATUS_CHANGE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation on instance status change
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceStatusChangeId(Consumer<OnInstanceStatusChange> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_STATUS_CHANGE, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	// --------------------------------------------------------------------------------------------------

@@ -110,6 +110,7 @@ import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceLeave;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemCreate;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
@@ -264,7 +265,8 @@ public enum EventType
 	ON_INSTANCE_CREATED(OnInstanceCreated.class, void.class),
 	ON_INSTANCE_DESTROY(OnInstanceDestroy.class, void.class),
 	ON_INSTANCE_ENTER(OnInstanceEnter.class, void.class),
-	ON_INSTANCE_LEAVE(OnInstanceLeave.class, void.class);
+	ON_INSTANCE_LEAVE(OnInstanceLeave.class, void.class),
+	ON_INSTANCE_STATUS_CHANGE(OnInstanceStatusChange.class, void.class);
 	
 	private final Class<? extends IBaseEvent> _eventClass;
 	private final Class<?>[] _returnClass;
