@@ -977,8 +977,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<for>
-			<effect name="Buff">
-				<mul stat="maxCp" val="#cp" />
+			<effect name="MaxCp">
+				<param amount="#cp" mode="PER" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="#hp" mode="PER" />
