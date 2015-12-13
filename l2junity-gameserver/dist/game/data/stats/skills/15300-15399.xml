@@ -2031,6 +2031,11 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="BlockSkill">
+				<param magicTypes="0;1;2;3;4;5;22" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15397" levels="1" name="Detonate">
 		<!-- AUTO GENERATED SKILL -->

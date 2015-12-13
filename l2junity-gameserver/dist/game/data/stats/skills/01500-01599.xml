@@ -2194,8 +2194,9 @@
 				<mul stat="mAtk" val="0.3" />
 				<sub stat="accCombat" val="8" />
 			</effect>
-			<effect name="Mute" />
-			<effect name="PhysicalMute" />
+			<effect name="BlockSkill">
+				<param magicTypes="1;2;3;4;5" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1571" levels="1" name="Inventory Increase">

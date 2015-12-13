@@ -332,7 +332,9 @@
 				<mul stat="pAtk" val="0.8" />
 				<mul stat="mAtk" val="0.8" />
 			</effect>
-			<effect name="Mute" />
+			<effect name="BlockSkill">
+				<param magicTypes="1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10011" levels="8" name="Shield Impact">
