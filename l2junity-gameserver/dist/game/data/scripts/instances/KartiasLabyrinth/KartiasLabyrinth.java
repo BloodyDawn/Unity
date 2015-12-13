@@ -225,6 +225,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 				case "TELEPORT_PLAYER":
 				{
 					instance.openCloseDoor(instance.getTemplateParameters().getInt("firstDoorId"), false);
+					instance.setStatus(1); // Used for notify helper's AI
 					player.teleToLocation(instance.getTemplateParameters().getLocation("playerLoc"));
 					manageProgressInInstance(instance);
 					break;
@@ -305,6 +306,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 			{
 				instance.setParameter("BOSS_KILL_OPEN_DOOR", true);
 				instance.openCloseDoor(instance.getTemplateParameters().getInt("thirdDoorId"), true);
+				instance.setStatus(3); // Used for notify helper's AI
 			}
 			else if (param.getBoolean("CONTINUE_AFTER_KILL", false) && instance.getAliveNpcs(MONSTERS).isEmpty())
 			{
@@ -473,6 +475,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 				{
 					instance.setParameter("MINIBOSS_SURVIVED", true);
 					instance.openCloseDoor(instance.getTemplateParameters().getInt("thirdDoorId"), true);
+					instance.setStatus(3); // Used for notify helper's AI
 					npc.deleteMe();
 				}
 			}
@@ -683,6 +686,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 			instance.setParameter("BOSS_KILL_OPEN_DOOR", true);
 			instance.spawnGroup("ROOM2_STAGE1_WAVE1");
 			instance.openCloseDoor(instance.getTemplateParameters().getInt("secondDoorId"), true);
+			instance.setStatus(2); // Used for notify helper's AI
 			instance.getAliveNpcs(BOZ_ENERGY).forEach(npc -> npc.deleteMe());
 			param.set("ROOM", 3);
 			param.set("STAGE", 1);

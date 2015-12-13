@@ -65,11 +65,14 @@ public final class KartiaSupportTroop extends AbstractNpcAI
 			if (!npc.isInCombat() || !npc.isAttackingNow() || (npc.getTarget() == null))
 			{
 				final List<L2MonsterInstance> monsterList = World.getInstance().getVisibleObjects(npc, L2MonsterInstance.class);
-				final L2MonsterInstance monster = monsterList.get(getRandom(monsterList.size()));
-				
-				if (monster.isTargetable() && GeoData.getInstance().canSeeTarget(npc, monster))
+				if (monsterList.isEmpty())
 				{
-					addAttackDesire(npc, monster);
+					final L2MonsterInstance monster = monsterList.get(getRandom(monsterList.size()));
+					
+					if (monster.isTargetable() && GeoData.getInstance().canSeeTarget(npc, monster))
+					{
+						addAttackDesire(npc, monster);
+					}
 				}
 			}
 		}
