@@ -1075,6 +1075,7 @@
 		<set name="magicLvl" val="-2" />
 		<set name="abnormalTime" val="-1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1557,6 +1558,7 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
+		<set name="staticReuse" val="true" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1599,6 +1601,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
+		<set name="staticReuse" val="true" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1636,6 +1639,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="staticReuse" val="true" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Heal">
@@ -1752,6 +1756,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">

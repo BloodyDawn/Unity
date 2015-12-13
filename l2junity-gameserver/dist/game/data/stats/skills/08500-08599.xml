@@ -134,6 +134,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -184,6 +185,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="BranchSys2.icon.br_spirit_of_brave_i00" />
 		<set name="reuseDelay" val="2000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8513" levels="1" name="Olympic Athlete's Spell of Blessing">
@@ -195,6 +197,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="BranchSys2.icon.br_spell_of_blessing_i00" />
 		<set name="reuseDelay" val="2000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8514" levels="1" name="Olympic Athlete's Energy of Victory">
@@ -206,6 +209,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="BranchSys2.icon.br_obsession_of_winning_i00" />
 		<set name="reuseDelay" val="2000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8515" levels="1" name="Release Agathion's Seal - Ball Trapping Gnosian">
@@ -827,6 +831,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
+		<set name="staticReuse" val="true" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8556" levels="1" name="Exciting Adventure">
@@ -970,6 +975,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="83" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="12000" />
 	</skill>
 	<skill id="8564" levels="1" name="Rush Impact">
@@ -1561,6 +1567,7 @@
 		<set name="magicLvl" val="80" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelBySlotMyself">

@@ -191,6 +191,7 @@
 		<set name="canBeDispelled" val="false" />
 		<set name="affectRange" val="1000" />
 		<set name="affectLimit" val="50-50" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="14400000" />
 	</skill>
 	<skill id="19013" levels="1" name="Clan Un-debuff">
@@ -227,6 +228,7 @@
 		<set name="abnormalTime" val="5" />
 		<set name="canBeDispelled" val="false" />
 		<set name="affectRange" val="500" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19015" levels="1" name="Clan Friendly">
@@ -625,6 +627,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">

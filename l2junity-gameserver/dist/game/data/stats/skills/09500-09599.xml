@@ -251,6 +251,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9519" levels="1" name="Draco's Blessing (1-hour)">
@@ -267,6 +268,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9520" levels="1" name="Draco's Blessing (1-hour)">
@@ -283,6 +285,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9521" levels="1" name="Draco's Blessing (3-hour)">
@@ -299,6 +302,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10800" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9522" levels="1" name="Summon Clan Member">
@@ -315,6 +319,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9523" levels="1" name="Mysterious Incantation">
@@ -337,6 +342,7 @@
 		<set name="abnormalLvl" val="99" />
 		<set name="abnormalTime" val="30" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9524" levels="1" name="Healing Potion of Chaos">
@@ -407,6 +413,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9529" levels="1" name="XP Rune II (Lv. 1-95) 100%">
@@ -918,6 +925,7 @@
 		<set name="abnormalLvl" val="25" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9570" levels="1" name="Heavenly P. Def. Cookie">
@@ -936,6 +944,7 @@
 		<set name="abnormalLvl" val="25" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9571" levels="1" name="Heavenly Magic Cookie">
@@ -954,6 +963,7 @@
 		<set name="abnormalLvl" val="25" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9572" levels="1" name="Heavenly CP Cookie">
@@ -972,6 +982,7 @@
 		<set name="abnormalLvl" val="25" />
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9573" levels="1" name="High-grade Lucky Enchant Stone: Weapon (R-grade)">
@@ -1013,6 +1024,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="-1000" />
 	</skill>
 	<skill id="9577" levels="1" name="Returning Hero's Vitality Replenishing Juice">
@@ -1032,6 +1044,7 @@
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="14400" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9579" levels="1" name="Clearest Water">
@@ -1053,7 +1066,7 @@
 		<set name="isMagic" val="1" />
 		<cond>
 			<target npcId="33786" />
-		</cond>			
+		</cond>
 	</skill>
 	<skill id="9580" levels="1" name="Brightest Light">
 		<!-- Brightest Light given by Nerupa in the Arms of Timiniel of Magmeld. You can use it at Shilen's Stone Statue in the Dark Elf Village. -->
@@ -1065,7 +1078,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="itemConsumeId" val="36068" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="is_destroyable" val="false" />		
+		<set name="is_destroyable" val="false" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
@@ -1074,7 +1087,7 @@
 		<set name="isMagic" val="1" />
 		<cond>
 			<target npcId="33785" />
-		</cond>		
+		</cond>
 	</skill>
 	<skill id="9581" levels="1" name="Purest Soul">
 		<!-- Purest Soul given by Enfeux in the Valley of Saints. You can use it at the Cave of Souls near Kamael Village. -->
@@ -1095,7 +1108,7 @@
 		<set name="isMagic" val="1" />
 		<cond>
 			<target npcId="33789" />
-		</cond>			
+		</cond>
 	</skill>
 	<skill id="9582" levels="1" name="Fiercest Flame">
 		<!-- Fiercest Flame given by Vulcan, the Blacksmith of Flame at the Forge of the Gods. You can use it at the Pa'agrio Temple in the Orc Village. -->
@@ -1116,7 +1129,7 @@
 		<set name="isMagic" val="1" />
 		<cond>
 			<target npcId="33787" />
-		</cond>		
+		</cond>
 	</skill>
 	<skill id="9583" levels="1" name="Fondest Heart">
 		<!-- Letter containing the fond heart of Vulcan, the Blacksmith of Flame. You can use it at the ruined Dwarven Village. -->
@@ -1128,7 +1141,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="itemConsumeId" val="36071" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="is_destroyable" val="false" />		
+		<set name="is_destroyable" val="false" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
@@ -1137,7 +1150,7 @@
 		<set name="isMagic" val="1" />
 		<cond>
 			<target npcId="33788" />
-		</cond>		
+		</cond>
 	</skill>
 	<skill id="9584" levels="1" name="Verna's Vaccine">
 		<!-- AUTO GENERATED SKILL -->
@@ -1319,6 +1332,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="trait" val="PULL" />
+		<set name="staticReuse" val="true" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9595" levels="1" name="Mysterious Defense">
@@ -1336,6 +1350,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="9596" levels="1" name="Stronghold Siege (10-second)">

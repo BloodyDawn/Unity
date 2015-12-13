@@ -77,6 +77,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -669,6 +670,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="109">
 			<target npcId="1538" />
@@ -687,6 +689,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonNpc">
@@ -924,6 +927,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="VitalityPointUp">
@@ -944,6 +948,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="VitalityPointUp">
@@ -1877,6 +1882,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22182" levels="1" name="Birthday Vitality Buff">
@@ -1898,6 +1904,7 @@
 		<set name="icon" val="icon.etc_potion_blue_i00" />
 		<set name="hitTime" val="100" />
 		<set name="isMagic" val="4" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1990,6 +1997,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="4" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22188" levels="1" name="Summon Big Wedding Cake">

@@ -21,6 +21,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="hitTime" val="3000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21201" levels="1" name="Haste">
@@ -42,6 +43,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="hitTime" val="3000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21202" levels="1" name="Release Agathion's Seal - Ball Trapping Gnosian">
@@ -389,6 +391,7 @@
 		<set name="icon" val="BranchSys2.icon.br_polar_bear_cap_i00" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="14400000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21223" levels="1" name="Ultimate Defense">
@@ -405,6 +408,7 @@
 		<set name="icon" val="BranchSys2.icon.br_polar_bear_wp_i00" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21224" levels="1" name="Soul of an Adventurer of Immortality's Ability">
@@ -422,6 +426,7 @@
 		<set name="icon" val="BranchSys2.icon.br_stagbeetle_cap_i00" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21225" levels="1" name="Soul of a Strong Warrior's Ability">
@@ -439,6 +444,7 @@
 		<set name="icon" val="BranchSys2.icon.br_hornbeetle_cap_i00" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21226" levels="1" name="Soul of a Wise Magician's Ability">
@@ -456,6 +462,7 @@
 		<set name="icon" val="BranchSys2.icon.br_ladybug_cap_i00" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21227" levels="1" name="Ability of Prominent Adventure's Soul">
@@ -473,6 +480,7 @@
 		<set name="icon" val="BranchSys2.icon.br_mantis_cap_i00" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21228" levels="1" name="Soul of a Brave Warrior's Ability">
@@ -490,6 +498,7 @@
 		<set name="icon" val="BranchSys2.icon.br_locust_cap_i00" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21229" levels="1" name="Blood Awakening">
@@ -508,6 +517,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="14400000" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21230" levels="1" name="Improve Magic">
@@ -526,6 +536,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="14400000" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21231" levels="1" name="Improve Critical Attack">
@@ -544,6 +555,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="14400000" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21232" levels="1" name="Shiny Platform">
@@ -629,6 +641,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="icon" val="Icon.skill1050" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -660,6 +673,7 @@
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="icon" val="BranchSys2.icon.7anni_shirt_i00" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Invincible" />
@@ -740,6 +754,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -766,6 +781,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -792,6 +808,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -839,6 +856,7 @@
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="isMagic" val="4" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21247" levels="1" name="Santa's Gift">
@@ -849,6 +867,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21248" levels="1" name="Release Agathion's Seal - Zinyanzi">
@@ -922,6 +941,7 @@
 		<set name="icon" val="BranchSys.icon.br_party_hat_gold_i00" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="1200000" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21252" levels="1" name="Hellblade">
@@ -1270,6 +1290,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="86400000" />
 	</skill>
 	<skill id="21275" levels="5" name="Cloak Inventory Slot Add">
@@ -1311,6 +1332,7 @@
 		<set name="trait" val="ETC" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="21278" levels="1" name="Vitality Recovery Potion">
@@ -1563,6 +1585,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="1" />
 		<set name="magicLvl" val="1" />
+		<set name="staticReuse" val="true" />
 		<set name="reuseDelay" val="20000" />
 	</skill>
 	<skill id="21298" levels="1" name="Release Agathion's Seal - Lancet">
