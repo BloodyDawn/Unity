@@ -65,7 +65,7 @@ public final class KartiaSupportTroop extends AbstractNpcAI
 			if (!npc.isInCombat() || !npc.isAttackingNow() || (npc.getTarget() == null))
 			{
 				final List<L2MonsterInstance> monsterList = World.getInstance().getVisibleObjects(npc, L2MonsterInstance.class);
-				if (monsterList.isEmpty())
+				if (!monsterList.isEmpty())
 				{
 					final L2MonsterInstance monster = monsterList.get(getRandom(monsterList.size()));
 					

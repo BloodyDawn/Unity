@@ -18,9 +18,27 @@
  */
 package ai.individual.KartiasLabyrinth;
 
+import java.util.List;
+
+import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.util.Util;
 
 import ai.AbstractNpcAI;
 
@@ -46,7 +64,142 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 	
 	private KartiaHelperAdolph()
 	{
+		setCreatureKillId(this::onCreatureKill, KARTIA_ADOLPH);
+		setCreatureAttackedId(this::onCreatureAttacked, KARTIA_ADOLPH);
+		addSpellFinishedId(KARTIA_ADOLPH);
+		addSeeCreatureId(KARTIA_ADOLPH);
 		setInstanceStatusChangeId(this::onInstanceStatusChange, KARTIA_SOLO_INSTANCES);
+		setInstanceDestroyId(this::onInstanceDestroy, KARTIA_SOLO_INSTANCES);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if ((instance != null) && event.equals("CHECK_ACTION"))
+		{
+			final StatsSet instParams = instance.getTemplateParameters();
+			boolean actionFound = false;
+			
+			if (!npc.isInCombat() || !npc.isAttackingNow() || (npc.getTarget() == null))
+			{
+				final List<L2MonsterInstance> monsterList = World.getInstance().getVisibleObjects(npc, L2MonsterInstance.class, 500);
+				if (!monsterList.isEmpty())
+				{
+					final L2MonsterInstance monster = monsterList.get(getRandom(monsterList.size()));
+					
+					if (monster.isTargetable() && GeoData.getInstance().canSeeTarget(npc, monster))
+					{
+						actionFound = true;
+						addAttackDesire(npc, monster);
+					}
+				}
+			}
+			
+			if (!actionFound)
+			{
+				final SkillHolder hateSkill = instParams.getSkillHolder("adolphHate");
+				if (npc.isInCombat() && (hateSkill != null) && SkillCaster.checkUseConditions(npc, hateSkill.getSkill()))
+				{
+					addSkillCastDesire(npc, null, hateSkill, 23);
+				}
+				else
+				{
+					final PlayerInstance instancePlayer = npc.getVariables().getObject("PLAYER_OBJECT", PlayerInstance.class);
+					if (instancePlayer != null)
+					{
+						final double radian = Math.toRadians(Util.convertHeadingToDegree(instancePlayer.getHeading()));
+						final int X = (int) (instancePlayer.getX() + (Math.cos(radian) * 150));
+						final int Y = (int) (instancePlayer.getY() + (Math.sin(radian) * 150));
+						final Location loc = GeoData.getInstance().moveCheck(instancePlayer.getX(), instancePlayer.getY(), instancePlayer.getZ(), X, Y, instancePlayer.getZ(), instance);
+						
+						if (!npc.isInsideRadius(loc, 50, true, true))
+						{
+							npc.setIsRunning(true);
+							addMoveToDesire(npc, loc, 23);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@Override
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (instance != null)
+		{
+			final StatsSet instParams = instance.getTemplateParameters();
+			final SkillHolder hateSkill = instParams.getSkillHolder("adolphHate");
+			final SkillHolder shieldSkill = instParams.getSkillHolder("adolphShield");
+			final SkillHolder punishSkill = instParams.getSkillHolder("adolphPunish");
+			
+			if ((hateSkill != null) && (skill.getId() == hateSkill.getSkillId()))
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_FILTHY_MONSTERS_I_WILL_TAKE_YOU_ON);
+			}
+			else if ((shieldSkill != null) && (skill.getId() == shieldSkill.getSkillId()))
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.STOP_RIGHT_THERE_I_WILL_BE_YOUR_OPPONENT);
+			}
+			else if ((punishSkill != null) && (skill.getId() == punishSkill.getSkillId()))
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_WILL_SHOW_YOU_THE_JUSTICE_OF_ADEN);
+			}
+		}
+		return super.onSpellFinished(npc, player, skill);
+	}
+	
+	public void onCreatureAttacked(OnCreatureAttacked event)
+	{
+		final Npc npc = (Npc) event.getTarget();
+		final Instance instance = npc.getInstanceWorld();
+		if (instance != null)
+		{
+			final StatsSet instParams = instance.getTemplateParameters();
+			final int random = getRandom(1000);
+			
+			if (random < 333)
+			{
+				final SkillHolder shieldSkill = instParams.getSkillHolder("adolphShield");
+				if ((shieldSkill != null) && SkillCaster.checkUseConditions(npc, shieldSkill.getSkill()))
+				{
+					addSkillCastDesire(npc, null, shieldSkill, 23);
+				}
+			}
+			else if (random < 666)
+			{
+				final SkillHolder punishSkill = instParams.getSkillHolder("adolphPunish");
+				if ((punishSkill != null) && SkillCaster.checkUseConditions(npc, punishSkill.getSkill()))
+				{
+					addSkillCastDesire(npc, null, punishSkill, 23);
+				}
+			}
+			
+			if ((npc.getCurrentHpPercent() < 30) && npc.isScriptValue(0))
+			{
+				final SkillHolder ultimateSkill = instParams.getSkillHolder("adolphUltimate");
+				if ((ultimateSkill != null) && SkillCaster.checkUseConditions(npc, ultimateSkill.getSkill()))
+				{
+					npc.setScriptValue(1);
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.IT_S_NOT_OVER);
+					addSkillCastDesire(npc, null, ultimateSkill, 23);
+					getTimers().addTimer("RESTORE_SCRIPTVAL", 10000, n -> npc.setScriptValue(0));
+				}
+			}
+		}
+	}
+	
+	public void onCreatureKill(OnCreatureKill event)
+	{
+		final Npc npc = (Npc) event.getTarget();
+		final Instance world = npc.getInstanceWorld();
+		if (world != null)
+		{
+			getTimers().cancelTimersOf(npc);
+			world.destroy(); // Kartia can't continue without Adolph
+		}
 	}
 	
 	public void onInstanceStatusChange(OnInstanceStatusChange event)
@@ -57,7 +210,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 		{
 			case 1:
 			{
-				// Nothing for now
+				instance.getAliveNpcs(KARTIA_ADOLPH).forEach(adolph -> getTimers().addRepeatingTimer("CHECK_ACTION", 3000, adolph, null));
 				break;
 			}
 			case 2:
@@ -71,6 +224,21 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				break;
 			}
 		}
+	}
+	
+	public void onInstanceDestroy(OnInstanceDestroy event)
+	{
+		event.getInstanceWorld().getAliveNpcs(KARTIA_ADOLPH).forEach(npc -> getTimers().cancelTimersOf(npc));
+	}
+	
+	@Override
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
+	{
+		if (creature.isPlayer())
+		{
+			npc.getVariables().set("PLAYER_OBJECT", creature.getActingPlayer());
+		}
+		return super.onSeeCreature(npc, creature, isSummon);
 	}
 	
 	public static void main(String[] args)
