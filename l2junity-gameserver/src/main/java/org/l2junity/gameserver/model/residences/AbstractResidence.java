@@ -225,7 +225,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	public void removeFunctions()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM residence_functions WHERE AND residenceId = ?"))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM residence_functions WHERE residenceId = ?"))
 		{
 			ps.setInt(1, getResidenceId());
 			ps.execute();
