@@ -22,6 +22,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="40" />
 		<set name="trait" val="BLEED" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19002" levels="1" name="Anchor">
@@ -192,6 +193,7 @@
 		<set name="affectRange" val="1000" />
 		<set name="affectLimit" val="50-50" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="reuseDelay" val="14400000" />
 	</skill>
 	<skill id="19013" levels="1" name="Clan Un-debuff">
@@ -229,6 +231,7 @@
 		<set name="canBeDispelled" val="false" />
 		<set name="affectRange" val="500" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19015" levels="1" name="Clan Friendly">
@@ -628,6 +631,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">
@@ -1149,6 +1153,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="20" />
 		<set name="trait" val="BLEED" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19099" levels="1" name="GM's Authority">
@@ -1169,6 +1174,7 @@
 		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="3600" />
 		<set name="trait" val="TURN_STONE" />
+		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

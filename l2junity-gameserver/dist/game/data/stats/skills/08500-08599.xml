@@ -635,6 +635,7 @@
 		<set name="magicLvl" val="81" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
+		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8546" levels="1" name="Arcane Wisdom">
@@ -732,6 +733,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="10-10" />
+		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8551" levels="1" name="Chant of Victory">
@@ -780,6 +782,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="150" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8553" levels="1" name="Arcane Power">
@@ -850,6 +853,7 @@
 		<set name="magicLvl" val="81" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8557" levels="1" name="Wind Riding">
@@ -868,6 +872,7 @@
 		<set name="magicLvl" val="81" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8558" levels="1" name="Ghost Walking">
@@ -886,6 +891,7 @@
 		<set name="magicLvl" val="81" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8559" levels="1" name="Lethal Shot">
@@ -1001,6 +1007,7 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="5-12" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8565" levels="1" name="Dread Pool">
@@ -1025,6 +1032,7 @@
 		<set name="trait" val="DERANGEMENT" />
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
+		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8566" levels="1" name="Earthquake">
@@ -1216,6 +1224,7 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="nextActionAttack" val="true" />
 		<for>
 			<effect name="BlockActions">

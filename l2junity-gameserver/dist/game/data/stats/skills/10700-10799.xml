@@ -202,6 +202,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="TeleportToTarget" />
@@ -574,7 +575,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="activateRate" val="200" />
 		<set name="lvlBonusRate" val="20" />
 		<set name="icon" val="icon.skill10761" />
@@ -860,7 +861,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="activateRate" val="90" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="nextActionAttack" val="true" />
@@ -1144,6 +1145,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="abnormalVisualEffect" val="REAL_TARGET" />
 		<set name="reuseDelay" val="120000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1612,7 +1614,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="5" />
 		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="activateRate" val="50" />
 		<set name="affectRate" val="150" />
 		<set name="lvlBonusRate" val="30" />

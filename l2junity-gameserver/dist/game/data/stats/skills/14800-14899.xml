@@ -72,6 +72,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="trait" val="PARALYZE" />
+		<set name="abnormalVisualEffect" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14804" levels="1" name="Damage Reflect Resistance">
@@ -469,6 +470,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="6-12" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14835" levels="1" name="Dwarf Explosion">
@@ -510,6 +512,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="6-12" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14837" levels="1" name="Poor and Pitiful Creature">
@@ -533,6 +536,7 @@
 		<set name="trait" val="AIRBIND" />
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="6-12" />
+		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14838" levels="1" name="Hide">
@@ -550,6 +554,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="30" />
 		<set name="abnormalTime" val="-1" />
+		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14839" levels="1" name="Cancel Hide">
@@ -860,6 +865,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -893,6 +899,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -926,6 +933,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -954,6 +962,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="900000" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -983,6 +992,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="900000" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1012,6 +1022,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="900000" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1045,6 +1056,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="flyType" val="CHARGE" />
 		<for>
 			<effect name="BlockActions">
@@ -1075,6 +1087,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="flyType" val="CHARGE" />
 		<for>
 			<effect name="BlockActions">
@@ -1105,6 +1118,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="flyType" val="CHARGE" />
 		<for>
 			<effect name="BlockActions">
@@ -1271,6 +1285,7 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<for>
@@ -1315,6 +1330,7 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<for>
@@ -1359,6 +1375,7 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<for>
@@ -1635,6 +1652,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<for>
@@ -1672,6 +1690,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<for>
@@ -1709,6 +1728,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<for>
@@ -1837,6 +1857,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
 		<for>
@@ -1870,6 +1891,7 @@
 		<set name="magicLvl" val="90" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
 		<for>
@@ -1903,6 +1925,7 @@
 		<set name="magicLvl" val="95" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
 		<for>

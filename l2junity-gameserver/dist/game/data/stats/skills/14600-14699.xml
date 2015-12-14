@@ -32,6 +32,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14602" levels="1" name="Cry of Destiny - Mark of Plague">
@@ -55,6 +56,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14603" levels="1" name="Cry of Destiny - Exile">
@@ -79,6 +81,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14604" levels="1" name="Chain Skills">
@@ -211,6 +214,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14612" levels="1" name="Press the icon to use the chain skill.">
@@ -306,6 +310,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="trait" val="HOLD" />
+		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14617" levels="1" name="Knock Down Resistance">
@@ -498,6 +503,7 @@
 		<set name="abnormalTime" val="5" />
 		<set name="trait" val="BLEED" />
 		<set name="isDebuff" val="true" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isSuicideAttack" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -530,6 +536,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
 		<set name="trait" val="BLEED" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -551,7 +558,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -636,7 +643,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -723,7 +730,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="AIRBIND" />
-		<set name="abnormalVisualEffect" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -879,7 +886,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -956,7 +963,7 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1705,6 +1712,7 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="5-12" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14678" levels="1" name="Cry of Destiny - Power Bomber">
@@ -1727,6 +1735,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14679" levels="1" name="Cry of Destiny - Heart Breaker">
@@ -1819,6 +1828,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
+		<set name="abnormalVisualEffect" val="REAL_TARGET" />
 		<set name="coolTime" val="200" />
 	</skill>
 	<skill id="14684" levels="1" name="Cry of Destiny - Recoil Shot">
@@ -1842,6 +1852,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14685" levels="1" name="Cry of Destiny - Elemental Spike">
@@ -1915,6 +1926,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="trait" val="AIRBIND" />
+		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14688" levels="2" name="Cry of Destiny - Mark of Weakness">
@@ -1938,6 +1950,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14689" levels="2" name="Cry of Destiny - Mark of Plague">
@@ -1961,6 +1974,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14690" levels="1" name="Cry of Destiny - Exile">
@@ -1985,6 +1999,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14691" levels="1" name="Cry of Destiny - Crippling Attack">
@@ -2095,6 +2110,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14697" levels="1" name="Ghost's Hell Binding">
@@ -2119,6 +2135,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
 		<set name="trait" val="AIRBIND" />
+		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14698" levels="1" name="Current Shock">
@@ -2139,6 +2156,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DamOverTime" ticks="2">
@@ -2163,6 +2181,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="120" />
+		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 </list>

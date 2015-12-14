@@ -962,6 +962,7 @@
 		<set name="effectPoint" val="709" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -998,6 +999,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="reuseDelay" val="600000" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1185,6 +1187,7 @@
 		<set name="effectPoint" val="-711" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1436,7 +1439,7 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="activateRate" val="90" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
@@ -1495,6 +1498,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="trait" val="SHOCK" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10548" levels="8" name="Plunder">
@@ -1530,7 +1534,7 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="2" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="activateRate" val="140" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />

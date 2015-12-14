@@ -1176,6 +1176,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="activateRate" val="60" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalVisualEffect" val="CHANGEBODY" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1284,7 +1285,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="TURN_STONE" />
-		<set name="abnormalVisualEffect" val="CHANGE_BODY" />
+		<set name="abnormalVisualEffect" val="CHANGEBODY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1316,7 +1317,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="TURN_STONE" />
-		<set name="abnormalVisualEffect" val="CHANGE_BODY" />
+		<set name="abnormalVisualEffect" val="CHANGEBODY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
@@ -1365,6 +1366,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelBySlot">

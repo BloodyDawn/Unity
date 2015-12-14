@@ -203,6 +203,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="22618" levels="1" name="STR Dye Pack (R-grade)">
@@ -342,9 +343,11 @@
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="CHANGE_GRADE_B" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="22631" levels="2" name="Sweet Summer Slushie">
+		<table name="#abnormalVisualEffect"> SWEET_ICE_FLAKES FANTASY_ICE_FLAKES </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Change into the Beach Swimsuit. For 1 hr., Atk./Casting Spd. + 5%, Speed + 5, and Max HP/MP + 5%. Cooldown is 1 hr. -->
 		<set name="icon" val="BranchSys3.icon1.g_ev_sweet_icewater" />
@@ -361,6 +364,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="#abnormalVisualEffect" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="22632" levels="1" name="Beach Swimsuit Appearance Stone">
@@ -739,6 +743,7 @@
 		<set name="abnormalTime" val="1800" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="isDebuff" val="false" />
 	</skill>
 	<skill id="22668" levels="1" name="Roasted Sausage">
@@ -758,6 +763,7 @@
 		<set name="abnormalTime" val="1800" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="VP_UP" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="22669" levels="1" name="Pretzel">
@@ -774,6 +780,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22670" levels="1" name="Snack Mix">
