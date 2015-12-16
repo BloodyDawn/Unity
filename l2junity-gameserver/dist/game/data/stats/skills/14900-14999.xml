@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14900" levels="1" name="Elise' Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the target with 1519 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -17,13 +17,18 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="90" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1519" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14901" levels="1" name="Elise' Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the target with 1557 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -35,9 +40,14 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="95" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1557" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14902" levels="1" name="Elise' Summon Tree of Life">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<set name="icon" val="icon.skill11774" />
 		<set name="operateType" val="A1" />
@@ -51,9 +61,14 @@
 		<set name="hitCancelTime" val="3" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="14933" lifeTime="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14903" levels="1" name="Elise' Summon Tree of Life">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<set name="icon" val="icon.skill11774" />
 		<set name="operateType" val="A1" />
@@ -67,9 +82,14 @@
 		<set name="hitCancelTime" val="3" />
 		<set name="magicLvl" val="90" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="14943" lifeTime="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14904" levels="1" name="Elise' Summon Tree of Life">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<set name="icon" val="icon.skill11774" />
 		<set name="operateType" val="A1" />
@@ -83,13 +103,18 @@
 		<set name="hitCancelTime" val="3" />
 		<set name="magicLvl" val="95" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="15010" lifeTime="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14905" levels="1" name="Elise' Radiant Recharge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers the target's MP with a maximum of 166 power depending on the target's Lv.. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<set name="icon" val="icon.skill11760" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -105,13 +130,31 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<target active_skill_id="11760" /> <!-- Cannot be used to classes that has Radiant Recharge skill -->
+				</not>
+				<not>
+					<target active_skill_id="1013" /> <!-- Cannot be used to classes that has Recharge skill -->
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="ManaHealByLevel">
+				<param power="166" />
+			</effect>
+			<effect name="ManaHealOverTime" ticks="1">
+				<param power="12" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14906" levels="1" name="Elise' Radiant Recharge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers the target's MP with a maximum of 174 power depending on the target's Lv.. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<set name="icon" val="icon.skill11760" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -127,13 +170,31 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<target active_skill_id="11760" /> <!-- Cannot be used to classes that has Radiant Recharge skill -->
+				</not>
+				<not>
+					<target active_skill_id="1013" /> <!-- Cannot be used to classes that has Recharge skill -->
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="ManaHealByLevel">
+				<param power="174" />
+			</effect>
+			<effect name="ManaHealOverTime" ticks="1">
+				<param power="12" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14907" levels="1" name="Elise' Radiant Recharge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers the target's MP with a maximum of 183 power depending on the target's Lv.. Also, for 10 seconds, recovers 13 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<set name="icon" val="icon.skill11760" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -149,9 +210,27 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<target active_skill_id="11760" /> <!-- Cannot be used to classes that has Radiant Recharge skill -->
+				</not>
+				<not>
+					<target active_skill_id="1013" /> <!-- Cannot be used to classes that has Recharge skill -->
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="ManaHealByLevel">
+				<param power="183" />
+			</effect>
+			<effect name="ManaHealOverTime" ticks="1">
+				<param power="13" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14908" levels="1" name="Elise' Crystal Regeneration">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover HP and MP by 100%. -->
 		<set name="icon" val="icon.skill11765" />
 		<set name="operateType" val="A2" />
@@ -168,9 +247,19 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="reuseDelay" val="300000" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="BlockActions" />
+			<effect name="HealPercent">
+				<param power="100" />
+			</effect>
+			<effect name="ManaHealPercent" ticks="1">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14909" levels="1" name="Elise' Crystal Regeneration">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover HP and MP by 100%. -->
 		<set name="icon" val="icon.skill11765" />
 		<set name="operateType" val="A2" />
@@ -187,9 +276,19 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="reuseDelay" val="300000" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="BlockActions" />
+			<effect name="HealPercent">
+				<param power="100" />
+			</effect>
+			<effect name="ManaHealPercent" ticks="1">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14910" levels="1" name="Elise' Crystal Regeneration">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover HP and MP by 100%. -->
 		<set name="icon" val="icon.skill11765" />
 		<set name="operateType" val="A2" />
@@ -206,6 +305,16 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="reuseDelay" val="300000" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="BlockActions" />
+			<effect name="HealPercent">
+				<param power="100" />
+			</effect>
+			<effect name="ManaHealPercent" ticks="1">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14911" levels="1" name="Dimensional Blow">
 		<!-- Glory Days confirmed -->

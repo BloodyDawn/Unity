@@ -1287,7 +1287,7 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
-		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="11159" />
@@ -1332,7 +1332,7 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
-		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="13102" />
@@ -1377,7 +1377,7 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
-		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="15046" />
@@ -1654,7 +1654,7 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="24888" />
@@ -1692,7 +1692,7 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="26565" />
@@ -1730,7 +1730,7 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<set name="isDebuff" val="true" />
-		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCKBACK" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="28242" />
@@ -2074,6 +2074,7 @@
 		</for>
 	</skill>
 	<skill id="14892" levels="1" name="Guardian Spirit's Blow">
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a Guardian Spirit's blow. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
@@ -2093,7 +2094,7 @@
 		</for>
 	</skill>
 	<skill id="14893" levels="1" name="Guardian Spirit's Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a Guardian Spirit's blow. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
@@ -2106,9 +2107,14 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="90" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="36042" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14894" levels="1" name="Guardian Spirit's Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a Guardian Spirit's blow. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
@@ -2121,13 +2127,18 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="95" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="36042" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14895" levels="1" name="Guardian Spirit's Wrath">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with a Guardian Spirit's wrath. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-183" />
@@ -2137,13 +2148,18 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="20000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="11159" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14896" levels="1" name="Guardian Spirit's Wrath">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with a Guardian Spirit's wrath. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-183" />
@@ -2153,13 +2169,18 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="20000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="13102" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14897" levels="1" name="Guardian Spirit's Wrath">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with a Guardian Spirit's wrath. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-183" />
@@ -2169,13 +2190,18 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="20000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="15046" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14898" levels="1" name="Elise' Progressive Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the target and the 10 most injured allies around the target by up to 40% of their Max HP. The recovery amount decreases starting from the most injured person. -->
 		<set name="icon" val="icon.skill11828" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -2186,13 +2212,18 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealPercent">
+				<param power="40" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14899" levels="1" name="Elise' Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the target with 1488 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -2204,5 +2235,10 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1488" />
+			</effect>
+		</for>
 	</skill>
 </list>
