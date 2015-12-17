@@ -529,16 +529,16 @@
 		</for>
 	</skill>
 	<skill id="10760" levels="11" name="Tornado Shot">
-		<table name="#fanRange"> 0;0;900;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 20814 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
+		<table name="#fanRange"> 0;0;900;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 0;0;700;50 </table>
 		<table name="#power"> 20814 21546 23011 24476 25941 27406 28871 30336 33258 34786 36314 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 98 100 103 107 110 114 117 121 125 129 133 </table>
 		<set name="icon" val="icon.skill10760" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1500" />
