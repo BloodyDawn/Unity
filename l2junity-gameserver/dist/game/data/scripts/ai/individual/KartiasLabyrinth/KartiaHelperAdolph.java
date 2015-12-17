@@ -180,7 +180,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 			if ((npc.getCurrentHpPercent() < 30) && npc.isScriptValue(0))
 			{
 				final SkillHolder ultimateSkill = instParams.getSkillHolder("adolphUltimate");
-				if ((ultimateSkill != null) && SkillCaster.checkUseConditions(npc, ultimateSkill.getSkill()))
+				if ((ultimateSkill != null) && !npc.isAffectedBySkill(ultimateSkill.getSkillId()) && SkillCaster.checkUseConditions(npc, ultimateSkill.getSkill()))
 				{
 					npc.setScriptValue(1);
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.IT_S_NOT_OVER);
