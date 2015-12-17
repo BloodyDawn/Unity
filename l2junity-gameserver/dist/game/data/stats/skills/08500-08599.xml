@@ -927,6 +927,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="81" />
 		<set name="affectLimit" val="5-12" />
+		<set name="fanRange" val="0;0;900;40" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8561" levels="1" name="Arrow Rain">
@@ -964,6 +965,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="81" />
 		<set name="affectLimit" val="5-12" />
+		<set name="fanRange" val="0;0;900;100" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8563" levels="1" name="Death Shot">
@@ -1008,6 +1010,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="5-12" />
 		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="fanRange" val="0;0;600;60" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8565" levels="1" name="Dread Pool">
@@ -1184,7 +1187,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="reuseDelay" val="75000" />
 		<set name="affectRange" val="500" />
-		<set name="fanRange" val="0,0,500,60" />
+		<set name="fanRange" val="0;0;500;60" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -1282,7 +1285,7 @@
 		<set name="affectRange" val="400" />
 		<set name="reuseDelay" val="75000" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="fanRange" val="0,0,400,90" />
+		<set name="fanRange" val="0;0;400;90" />
 		<for>
 			<effect name="PhysicalSoulAttack">
 				<param power="6468" />
@@ -1376,7 +1379,7 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="affectRange" val="900" />
-		<set name="fanRange" val="0,0,900,40" />
+		<set name="fanRange" val="0;0;900;40" />
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
@@ -1407,7 +1410,7 @@
 		<set name="reuseDelay" val="12000" />
 		<set name="staticReuse" val="true" />
 		<set name="affectRange" val="900" />
-		<set name="fanRange" val="0,0,900,60" />
+		<set name="fanRange" val="0;0;900;60" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW, CROSSBOW" />
 		</cond>

@@ -9,7 +9,7 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="fanRange" val="0,0,200,900" />
+		<set name="fanRange" val="0;0;200;900" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -216,7 +216,7 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="fanRange" val="0,0,900,100" />
+		<set name="fanRange" val="0;0;900;100" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -361,7 +361,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
-		<set name="fanRange" val="0,0,200,900" />
+		<set name="fanRange" val="0;0;200;900" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
 		<set name="lvlBonusRate" val="20" />
@@ -2268,7 +2268,7 @@
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="affectLimit" val="10-0" />
 		<set name="affectRange" val="400" />
-		<set name="fanRange" val="0,0,400,60" />
+		<set name="fanRange" val="0;0;400;60" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-10330" />
 		<set name="effectRange" val="900" />
@@ -2332,7 +2332,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-686" />
 		<set name="effectRange" val="1400" />
-		<set name="fanRange" val="0,0,900,60" />
+		<set name="fanRange" val="0;0;900;60" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill0987" />
 		<set name="magicLvl" val="83" />
@@ -2592,6 +2592,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="fanRange" val="0;0;600;60" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<and>
