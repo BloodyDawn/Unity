@@ -226,4 +226,19 @@ public class FriendlyNpcAI extends AttackableAI
 		
 		_actor.doAttack(originalAttackTarget);
 	}
+	
+	@Override
+	protected void thinkCast()
+	{
+		if (checkTargetLost(getCastTarget()))
+		{
+			setCastTarget(null);
+			return;
+		}
+		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
+		{
+			return;
+		}
+		_actor.doCast(_skill, _item, _forceUse, _dontMove);
+	}
 }
