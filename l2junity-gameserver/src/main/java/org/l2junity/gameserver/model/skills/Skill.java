@@ -858,14 +858,12 @@ public final class Skill implements IIdentifiable
 	
 	public int getAffectRange()
 	{
-		// TODO: REMOVE THIS ONCE TARGET HANDLING IS REWORKED!
-		// This is temporary fix, because affectRange shouldnt exist when fanRange exists. Third value [2] of fanRange is the actual affectRange.
-		if (_fanRange[2] != 0)
-		{
-			return _fanRange[2];
-		}
-		
 		return _affectRange;
+	}
+	
+	public int[] getFanRange()
+	{
+		return _fanRange;
 	}
 	
 	public int getAffectLimit()

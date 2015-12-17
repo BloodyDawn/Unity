@@ -1329,9 +1329,10 @@ public class CharacterAI extends AbstractAI
 	
 	public boolean canAura(Skill sk)
 	{
+		int affectRange = ((sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA)) ? sk.getFanRange()[2] : sk.getAffectRange();
 		if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 		{
-			for (WorldObject target : World.getInstance().getVisibleObjects(_actor, Creature.class, sk.getAffectRange()))
+			for (WorldObject target : World.getInstance().getVisibleObjects(_actor, Creature.class, affectRange))
 			{
 				if (target == getAttackTarget())
 				{
@@ -1344,12 +1345,13 @@ public class CharacterAI extends AbstractAI
 	
 	public boolean canAOE(Skill sk)
 	{
+		int affectRange = ((sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AURA)) ? sk.getFanRange()[2] : sk.getAffectRange();
 		if (sk.hasEffectType(L2EffectType.DISPEL, L2EffectType.DISPEL_BY_SLOT))
 		{
 			if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 			{
 				boolean cancast = true;
-				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, affectRange))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target))
 					{
@@ -1378,7 +1380,7 @@ public class CharacterAI extends AbstractAI
 			else if ((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA))
 			{
 				boolean cancast = true;
-				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, affectRange))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target) || (target == null))
 					{
@@ -1410,7 +1412,7 @@ public class CharacterAI extends AbstractAI
 			if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 			{
 				boolean cancast = false;
-				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, affectRange))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target))
 					{
@@ -1439,7 +1441,7 @@ public class CharacterAI extends AbstractAI
 			else if ((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA))
 			{
 				boolean cancast = true;
-				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, affectRange))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target))
 					{

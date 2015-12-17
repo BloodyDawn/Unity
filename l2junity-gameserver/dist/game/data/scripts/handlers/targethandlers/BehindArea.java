@@ -95,7 +95,7 @@ public class BehindArea implements ITargetTypeHandler
 				return;
 			}
 			
-			if (Util.checkIfInRange(skill.getAffectRange(), origin, obj, true))
+			if (Util.checkIfInRange(skill.getFanRange()[2], origin, obj, true))
 			{
 				if (!obj.isBehind(activeChar))
 				{

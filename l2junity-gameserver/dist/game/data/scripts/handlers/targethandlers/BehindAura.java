@@ -39,7 +39,7 @@ public class BehindAura implements ITargetTypeHandler
 		List<Creature> targetList = new ArrayList<>();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
 		int maxTargets = skill.getAffectLimit();
-		for (Creature obj : World.getInstance().getVisibleObjects(activeChar, Creature.class, skill.getAffectRange()))
+		for (Creature obj : World.getInstance().getVisibleObjects(activeChar, Creature.class, skill.getFanRange()[2]))
 		{
 			if (obj.isAttackable() || obj.isPlayable())
 			{
