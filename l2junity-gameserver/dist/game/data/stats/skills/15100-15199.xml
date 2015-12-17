@@ -1524,11 +1524,11 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15182" levels="1" name="Adolph's Superior Aggression Aura">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies into attacking you. -->
 		<set name="icon" val="icon.skill10027" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -1541,13 +1541,17 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="staticReuse" val="true" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="15183" levels="1" name="Adolph's Superior Aggression Aura">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies into attacking you. -->
 		<set name="icon" val="icon.skill10027" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -1560,13 +1564,17 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="staticReuse" val="true" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="15184" levels="1" name="Adolph's Superior Aggression Aura">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies into attacking you. -->
 		<set name="icon" val="icon.skill10027" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -1579,13 +1587,17 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="staticReuse" val="true" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="15185" levels="1" name="Adolph's Shield Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks targets at the front and inflicts Stun for 9 second(s). -->
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
@@ -1604,13 +1616,22 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="9516" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15186" levels="1" name="Adolph's Shield Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks targets at the front and inflicts Stun for 9 second(s). -->
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
@@ -1627,15 +1648,24 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="11162" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15187" levels="1" name="Adolph's Shield Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks targets at the front and inflicts Stun for 9 second(s). -->
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
@@ -1652,15 +1682,24 @@
 		<set name="abnormalTime" val="9" />
 		<set name="trait" val="SHOCK" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="12809" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15188" levels="1" name="Hayuk's Multiple Arrow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 23391 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10771" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="350" />
@@ -1671,13 +1710,20 @@
 		<set name="magicLvl" val="85" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="7000" />
+		<set name="affectRange" val="900" />
+		<set name="fanRange" val="0;0;900;90" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="23391" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15189" levels="1" name="Hayuk's Multiple Arrow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 27459 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10771" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="350" />
@@ -1688,13 +1734,20 @@
 		<set name="magicLvl" val="90" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="7000" />
+		<set name="affectRange" val="900" />
+		<set name="fanRange" val="0;0;900;90" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="27459" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15190" levels="1" name="Hayuk's Multiple Arrow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 31527 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10771" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="350" />
@@ -1705,13 +1758,20 @@
 		<set name="magicLvl" val="95" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="7000" />
+		<set name="affectRange" val="900" />
+		<set name="fanRange" val="0;0;900;90" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="31527" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15191" levels="1" name="Hayuk's Heavy Arrow Rain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rains down arrows like rain on the target and its surrounding area with 22526 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10772" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="350" />
@@ -1723,13 +1783,18 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="15000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="22526" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15192" levels="1" name="Hayuk's Heavy Arrow Rain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rains down arrows like rain on the target and its surrounding area with 26448 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10772" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="350" />
@@ -1741,13 +1806,18 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="15000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="26448" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15193" levels="1" name="Hayuk's Heavy Arrow Rain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rains down arrows like rain on the target and its surrounding area with 30371 power added to P. Atk. -->
 		<set name="icon" val="icon.skill10772" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="350" />
@@ -1759,13 +1829,18 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="15000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="30371" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15194" levels="1" name="Eliyah's Mass Exile">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases 282 HP per second. -->
 		<set name="icon" val="icon.skill11296" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="DEPORT" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
@@ -1787,13 +1862,22 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="282" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="Invincible" />
+		</for>
 	</skill>
 	<skill id="15195" levels="1" name="Eliyah's Mass Exile">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases 296 HP per second. -->
 		<set name="icon" val="icon.skill11296" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="DEPORT" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
@@ -1815,13 +1899,22 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="296" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="Invincible" />
+		</for>
 	</skill>
 	<skill id="15196" levels="1" name="Eliyah's Mass Exile">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases 313 HP per second. -->
 		<set name="icon" val="icon.skill11296" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="DEPORT" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
@@ -1843,6 +1936,15 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="313" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="Invincible" />
+		</for>
 	</skill>
 	<skill id="15197" levels="1" name="Guardian Spirit's Wrath">
 		<!-- AUTO GENERATED SKILL -->

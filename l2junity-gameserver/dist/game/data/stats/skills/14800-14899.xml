@@ -587,6 +587,10 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="14841" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
@@ -606,6 +610,10 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="14842" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
@@ -625,6 +633,10 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="14843" levels="1" name="Adolph's Chain Hydra">
 		<!-- Glory Days confirmed -->
@@ -1841,7 +1853,7 @@
 		<!-- Banishes the target and nearby enemies to another dimension. The exiled targets become incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 282 per second. -->
 		<set name="icon" val="icon.skill11296" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="DEPORT" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1875,7 +1887,7 @@
 		<!-- Banishes the target and nearby enemies to another dimension. The exiled targets become incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 296 per second. -->
 		<set name="icon" val="icon.skill11296" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="DEPORT" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1909,7 +1921,7 @@
 		<!-- Banishes the target and nearby enemies to another dimension. The exiled targets become incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 313 per second. -->
 		<set name="icon" val="icon.skill11296" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="DEPORT" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
