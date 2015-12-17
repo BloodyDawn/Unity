@@ -56,7 +56,7 @@ public final class GetAgro extends AbstractEffect
 	{
 		if (effected instanceof Attackable)
 		{
-			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effected);
+			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
 		}
 	}
 }
