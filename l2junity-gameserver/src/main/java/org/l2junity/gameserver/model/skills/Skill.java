@@ -142,6 +142,7 @@ public final class Skill implements IIdentifiable
 	// The radius center varies according to the _targetType:
 	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
 	private final int _affectRange;
+	private final int[] _fanRange = new int[4]; // unk;startDegree;fanAffectRange;fanAffectAngle
 	private final int[] _affectLimit = new int[3]; // TODO: Third value is unknown... find it out!
 	private final int[] _affectHeight = new int[2];
 	
@@ -297,6 +298,23 @@ public final class Skill implements IIdentifiable
 				}
 			}
 		}
+		final String fanRange = set.getString("fanRange", null);
+		if (fanRange != null)
+		{
+			try
+			{
+				String[] valuesSplit = fanRange.split(";");
+				_fanRange[0] = Integer.parseInt(valuesSplit[0]);
+				_fanRange[1] = Integer.parseInt(valuesSplit[1]);
+				_fanRange[2] = Integer.parseInt(valuesSplit[2]);
+				_fanRange[3] = Integer.parseInt(valuesSplit[3]);
+			}
+			catch (Exception e)
+			{
+				throw new IllegalArgumentException("SkillId: " + _id + " invalid fanRange value: " + fanRange + ", \"unk;startDegree;fanAffectRange;fanAffectAngle\" required");
+			}
+		}
+		
 		final String affectLimit = set.getString("affectLimit", null);
 		if (affectLimit != null)
 		{
@@ -840,6 +858,13 @@ public final class Skill implements IIdentifiable
 	
 	public int getAffectRange()
 	{
+		// TODO: REMOVE THIS ONCE TARGET HANDLING IS REWORKED!
+		// This is temporary fix, because affectRange shouldnt exist when fanRange exists. Third value [2] of fanRange is the actual affectRange.
+		if (_fanRange[2] != 0)
+		{
+			return _fanRange[2];
+		}
+		
 		return _affectRange;
 	}
 	
