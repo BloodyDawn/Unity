@@ -1761,6 +1761,7 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">
+		<!-- Glory Days confirmed -->
 		<!-- Max HP + 463. Can be used when the main/ dual class is Level 85 or above. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxHp"> 463 972 1458 1926 </table>
@@ -1777,61 +1778,121 @@
 		</for>
 	</skill>
 	<skill id="1987" levels="1" name="Sigel Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe/ Light Armor. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5">
+					<using kind="MAGIC,LIGHT" />
+				</mul>
+				<mul stat="mAtkSpd" val="0.5">
+					<using kind="MAGIC,LIGHT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="1988" levels="1" name="Tyrr Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5">
+					<using kind="MAGIC" />
+				</mul>
+				<mul stat="mAtkSpd" val="0.5">
+					<using kind="MAGIC" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="1989" levels="1" name="Yul Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe/ Heavy Armor. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5">
+					<using kind="MAGIC,HEAVY" />
+				</mul>
+				<mul stat="mAtkSpd" val="0.5">
+					<using kind="MAGIC,HEAVY" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="1990" levels="1" name="Othell Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe/ Heavy Armor. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5">
+					<using kind="MAGIC,HEAVY" />
+				</mul>
+				<mul stat="mAtkSpd" val="0.5">
+					<using kind="MAGIC,HEAVY" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="1991" levels="1" name="Feoh Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with Light Armor/ Heavy Armor. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5">
+					<using kind="HEAVY,LIGHT" />
+				</mul>
+				<mul stat="mAtkSpd" val="0.5">
+					<using kind="HEAVY,LIGHT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="1992" levels="1" name="Wynn Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with Heavy Armor. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5">
+					<using kind="HEAVY" />
+				</mul>
+				<mul stat="mAtkSpd" val="0.5">
+					<using kind="HEAVY" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="1993" levels="1" name="Iss Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- No Penalty. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
@@ -1840,13 +1901,23 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1994" levels="1" name="Aeore Armor Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with Heavy Armor. -->
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5">
+					<using kind="HEAVY" />
+				</mul>
+				<mul stat="mAtkSpd" val="0.5">
+					<using kind="HEAVY" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="1995" levels="1" name="Dual - MP Drain">
 		<!-- Restores MP. -->

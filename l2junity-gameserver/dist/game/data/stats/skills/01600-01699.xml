@@ -65,11 +65,11 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1627" levels="1" name="Power Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-1" />
@@ -78,13 +78,18 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="60580" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1628" levels="1" name="Super Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 277440. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="-1" />
@@ -93,9 +98,14 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="277440" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1629" levels="1" name="Might">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases P. Atk. by 100%. -->
 		<set name="icon" val="icon.skill1068" />
 		<set name="operateType" val="A2" />
@@ -110,9 +120,14 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1630" levels="1" name="Focus">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases Critical Rate/Damage by 100%. -->
 		<set name="icon" val="icon.skill1077" />
 		<set name="operateType" val="A2" />
@@ -127,9 +142,15 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="rCrit" val="1" />
+				<mul stat="cAtk" val="2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1631" levels="1" name="Absolute Defense">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster absolute defense. P. Def. and M. Def. + 5000. -->
 		<set name="icon" val="icon.skill0110" />
 		<set name="operateType" val="A2" />
@@ -144,9 +165,16 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="hitTime" val="1000" />
+		<for>
+			<effect name="ImmobileBuff">
+				<add stat="pDef" val="5000" />
+				<add stat="mDef" val="5000" />
+				<sub stat="cancelVuln" val="80" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1632" levels="1" name="Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Def. and M. Def. + 20%. -->
 		<set name="icon" val="icon.skill1040" />
 		<set name="operateType" val="A2" />
@@ -161,13 +189,19 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.2" />
+				<mul stat="mDef" val="1.2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1633" levels="1" name="Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster heal. Power 1024. -->
 		<set name="icon" val="icon.skill1401" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="403" />
@@ -176,13 +210,18 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Heal">
+				<param power="1024" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1634" levels="1" name="Spinning Slasher">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 36675. -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
@@ -191,9 +230,14 @@
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="6-12" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="36675" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1635" levels="1" name="Blood Siphon">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Damage blood siphon 100%. -->
 		<set name="icon" val="icon.skill1268" />
 		<set name="operateType" val="A2" />
@@ -208,9 +252,14 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="VampiricAttack">
+				<param amount="300" chance="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1636" levels="1" name="Petrify">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Petrify -->
 		<set name="icon" val="icon.skill1540" />
 		<set name="operateType" val="A2" />
@@ -227,13 +276,21 @@
 		<set name="trait" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="Invincible">
+				<mul stat="regHp" val="0" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1637" levels="1" name="Stun">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts stun on the enemy for 7 seconds. -->
 		<set name="icon" val="icon.skill0092" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
@@ -250,9 +307,15 @@
 		<set name="trait" val="SHOCK" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1638" levels="1" name="Stun">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts stun on the enemy for 7 seconds. -->
 		<set name="icon" val="icon.skill0092" />
 		<set name="operateType" val="A2" />
@@ -273,9 +336,15 @@
 		<set name="trait" val="SHOCK" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1639" levels="1" name="Stun">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts stun on the enemy for 7 seconds. -->
 		<set name="icon" val="icon.skill0092" />
 		<set name="operateType" val="A2" />
@@ -294,13 +363,19 @@
 		<set name="affectRange" val="1000" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1640" levels="1" name="Hold">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<set name="icon" val="icon.skill1201" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
@@ -318,13 +393,19 @@
 		<set name="trait" val="HOLD" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1641" levels="1" name="Hold">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<set name="icon" val="icon.skill1201" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
@@ -342,13 +423,19 @@
 		<set name="trait" val="HOLD" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1642" levels="1" name="Hold">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<set name="icon" val="icon.skill1201" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
@@ -364,13 +451,19 @@
 		<set name="affectRange" val="1000" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1643" levels="1" name="Paralysis">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Causes the enemy's body to go completely rigid for 15 seconds and causes paralysis for 10 seconds. -->
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
@@ -388,9 +481,21 @@
 		<set name="abnormalTime" val="15" />
 		<set name="trait" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="moveSpeed" val="0.5" />
+				<mul stat="pAtkSpd" val="0.5" />
+				<mul stat="mAtkSpd" val="0.5" />
+			</effect>
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="6091" skillLevel="1" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="1644" levels="1" name="Damage Reflect">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Reflect damage 50% -->
 		<set name="icon" val="icon.skill0086" />
 		<set name="operateType" val="A2" />
@@ -405,13 +510,18 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<add stat="reflectDam" val="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1645" levels="1" name="Debuff Invincibility">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Becomes invincible from debuffs for 30 seconds. Can only be used on party members. -->
 		<set name="icon" val="icon.skill1411" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
@@ -422,6 +532,11 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<set stat="debuffImmunity" val="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1646" levels="1" name="Mana Burn">
 		<!-- AUTO GENERATED SKILL -->

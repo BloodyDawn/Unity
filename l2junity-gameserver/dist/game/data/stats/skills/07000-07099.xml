@@ -1784,7 +1784,7 @@
 		</for>
 	</skill>
 	<skill id="7098" levels="1" name="Clan-exclusive Pet Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers all of your HP. Power 3000 -->
 		<set name="icon" val="icon.skill1401" />
 		<set name="operateType" val="A1" />
@@ -1797,13 +1797,18 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Heal">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="7099" levels="1" name="Clan-exclusive Pet Fear">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts fear on the target for 3 seconds. -->
 		<set name="icon" val="icon.skill4108" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="5" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
@@ -1821,5 +1826,9 @@
 		<set name="trait" val="DERANGEMENT" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</for>
 	</skill>
 </list>
