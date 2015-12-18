@@ -94,7 +94,7 @@ public class AdminKill implements IAdminCommandHandler
 						
 						World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, radius, wo ->
 						{
-							if ((wo instanceof L2ControllableMobInstance))
+							if ((wo instanceof L2ControllableMobInstance) || (wo instanceof FriendlyNpcInstance))
 							{
 								return;
 							}
