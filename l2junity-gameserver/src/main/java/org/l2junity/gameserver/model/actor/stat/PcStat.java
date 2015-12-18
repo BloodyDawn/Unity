@@ -175,20 +175,11 @@ public class PcStat extends PlayableStat
 		}
 		else
 		{
-			if ((addToExp - baseExp) > 0)
-			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1_XP_BONUS_S2_AND_S3_SP_BONUS_S4);
-				sm.addLong(addToExp);
-				sm.addLong(addToExp - baseExp);
-				sm.addLong(addToSp);
-				sm.addLong(addToSp - baseSp);
-			}
-			else
-			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_XP_AND_S2_SP);
-				sm.addLong(addToExp);
-				sm.addLong(addToSp);
-			}
+			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1_XP_BONUS_S2_AND_S3_SP_BONUS_S4);
+			sm.addLong(addToExp);
+			sm.addLong(addToExp - baseExp);
+			sm.addLong(addToSp);
+			sm.addLong(addToSp - baseSp);
 		}
 		activeChar.sendPacket(sm);
 	}
