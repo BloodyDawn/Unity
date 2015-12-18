@@ -18,7 +18,14 @@
  */
 package ai.individual.KartiasLabyrinth;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
 import org.l2junity.gameserver.model.instancezone.Instance;
 
@@ -37,6 +44,12 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 		33622, // Barton (Kartia 90)
 		33633, // Barton (Kartia 95)
 	};
+	private static final int[] KARTIA_ADOLPH =
+	{
+		33609, // Adolph (Kartia 85)
+		33620, // Adolph (Kartia 90)
+		33631, // Adolph (Kartia 95)
+	};
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
 		205, // Solo 85
@@ -46,7 +59,45 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 	
 	private KartiaHelperBarton()
 	{
+		setCreatureKillId(this::onCreatureKill, KARTIA_BARTON);
+		addSeeCreatureId(KARTIA_BARTON);
+		setInstanceDestroyId(this::onInstanceDestroy, KARTIA_SOLO_INSTANCES);
 		setInstanceStatusChangeId(this::onInstanceStatusChange, KARTIA_SOLO_INSTANCES);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if ((instance != null) && event.equals("CHECK_ACTION"))
+		{
+			final Npc adolph = npc.getVariables().getObject("ADOLPH_OBJECT", Npc.class);
+			if (adolph != null)
+			{
+				final double distance = npc.calculateDistance(adolph, false, false);
+				if (distance > 200)
+				{
+					final Location loc = new Location(adolph.getX() + getRandom(-100, 100), adolph.getY() + getRandom(-100, 100), adolph.getZ() + 50);
+					if (distance > 500)
+					{
+						npc.teleToLocation(loc);
+					}
+					else
+					{
+						npc.setIsRunning(true);
+						addMoveToDesire(npc, loc, 23);
+					}
+				}
+				else if (!npc.isInCombat() || !npc.isAttackingNow() || (npc.getTarget() == null))
+				{
+					final Creature monster = (Creature) adolph.getTarget();
+					if ((monster != null) && adolph.isInCombat())
+					{
+						addAttackDesire(npc, monster);
+					}
+				}
+			}
+		}
 	}
 	
 	public void onInstanceStatusChange(OnInstanceStatusChange event)
@@ -57,7 +108,7 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 		{
 			case 1:
 			{
-				// Nothing for now
+				instance.getAliveNpcs(KARTIA_BARTON).forEach(barton -> getTimers().addRepeatingTimer("CHECK_ACTION", 3000, barton, null));
 				break;
 			}
 			case 2:
@@ -71,6 +122,35 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 				break;
 			}
 		}
+	}
+	
+	@Override
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
+	{
+		if (creature.isPlayer())
+		{
+			npc.getVariables().set("PLAYER_OBJECT", creature.getActingPlayer());
+		}
+		else if (CommonUtil.contains(KARTIA_ADOLPH, creature.getId()))
+		{
+			npc.getVariables().set("ADOLPH_OBJECT", creature);
+		}
+		return super.onSeeCreature(npc, creature, isSummon);
+	}
+	
+	public void onCreatureKill(OnCreatureKill event)
+	{
+		final Npc npc = (Npc) event.getTarget();
+		final Instance world = npc.getInstanceWorld();
+		if (world != null)
+		{
+			getTimers().cancelTimersOf(npc);
+		}
+	}
+	
+	public void onInstanceDestroy(OnInstanceDestroy event)
+	{
+		event.getInstanceWorld().getAliveNpcs(KARTIA_BARTON).forEach(npc -> getTimers().cancelTimersOf(npc));
 	}
 	
 	public static void main(String[] args)
