@@ -162,7 +162,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 	{
 		final Npc npc = (Npc) event.getTarget();
 		final Instance instance = npc.getInstanceWorld();
-		if (instance != null)
+		if ((instance != null) && !event.getAttacker().isPlayable())
 		{
 			final StatsSet instParams = instance.getTemplateParameters();
 			final int random = getRandom(1000);
