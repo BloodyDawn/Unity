@@ -20,6 +20,7 @@ package ai.individual.KartiasLabyrinth;
 
 import java.util.List;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
@@ -55,6 +56,12 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 		33620, // Adolph (Kartia 90)
 		33631, // Adolph (Kartia 95)
 	};
+	private static final int[] MIRRORS =
+	{
+		33798, // Life Plunderer (85)
+		33799, // Life Plunderer (90)
+		33800, // Life Plunderer (95)
+	};
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
 		205, // Solo 85
@@ -88,7 +95,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				{
 					final L2MonsterInstance monster = monsterList.get(getRandom(monsterList.size()));
 					
-					if (monster.isTargetable() && GeoData.getInstance().canSeeTarget(npc, monster))
+					if (monster.isTargetable() && GeoData.getInstance().canSeeTarget(npc, monster) && CommonUtil.contains(MIRRORS, monster.getId()))
 					{
 						actionFound = true;
 						addAttackDesire(npc, monster);
