@@ -203,6 +203,7 @@ import quests.Q10335_RequestToFindSakum.Q10335_RequestToFindSakum;
 import quests.Q10336_DividedSakumKanilov.Q10336_DividedSakumKanilov;
 import quests.Q10337_SakumsImpact.Q10337_SakumsImpact;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
+import quests.Q10339_FightingTheForgotten.Q10339_FightingTheForgotten;
 import quests.Q10341_DayOfDestinyHumansFate.Q10341_DayOfDestinyHumansFate;
 import quests.Q10342_DayOfDestinyElvenFate.Q10342_DayOfDestinyElvenFate;
 import quests.Q10343_DayOfDestinyDarkElfsFate.Q10343_DayOfDestinyDarkElfsFate;
@@ -494,6 +495,7 @@ public class QuestMasterHandler
 		Q10336_DividedSakumKanilov.class,
 		Q10337_SakumsImpact.class,
 		Q10338_SeizeYourDestiny.class,
+		Q10339_FightingTheForgotten.class,
 		Q10341_DayOfDestinyHumansFate.class,
 		Q10342_DayOfDestinyElvenFate.class,
 		Q10343_DayOfDestinyDarkElfsFate.class,
