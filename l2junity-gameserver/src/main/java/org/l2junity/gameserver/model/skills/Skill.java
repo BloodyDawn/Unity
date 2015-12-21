@@ -46,6 +46,7 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -1207,13 +1208,13 @@ public final class Skill implements IIdentifiable
 				}
 			}
 		}
-		else
+		else if (target.isAttackable() && caster.isAttackable())
 		{
-			// target is mob
-			if ((targetPlayer == null) && target.isAttackable() && caster.isAttackable())
-			{
-				return false;
-			}
+			return false;
+		}
+		else if ((caster instanceof FriendlyNpcInstance) && (target.isPlayable() || (target instanceof FriendlyNpcInstance)))
+		{
+			return false;
 		}
 		
 		if (!GeoData.getInstance().canSeeTarget(caster, target))
