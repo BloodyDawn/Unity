@@ -95,7 +95,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				{
 					final L2MonsterInstance monster = monsterList.get(getRandom(monsterList.size()));
 					
-					if (monster.isTargetable() && GeoData.getInstance().canSeeTarget(npc, monster) && CommonUtil.contains(MIRRORS, monster.getId()))
+					if (monster.isTargetable() && GeoData.getInstance().canSeeTarget(npc, monster) && !CommonUtil.contains(MIRRORS, monster.getId()))
 					{
 						actionFound = true;
 						addAttackDesire(npc, monster);

@@ -18,7 +18,7 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -56,7 +56,7 @@ public final class GetAgro extends AbstractEffect
 	{
 		if (effected instanceof Attackable)
 		{
-			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
+			effected.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, effector, skill.getEffectPoint());
 		}
 	}
 }
