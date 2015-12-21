@@ -2172,12 +2172,14 @@
 		</for>
 	</skill>
 	<skill id="777" levels="1" name="Demolition Impact">
+		<!-- TODO : Confirm me -->
+		<!-- Unleashes a shock of destruction to attack nearby enemies with 7475 Power added to P. Atk. Requires a sword or blunt weapon. Over-hit and Critical are possible. -->
 		<!-- Confirmed CT2.5 -->
 		<set name="affectRange" val="500" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-686" />
 		<set name="effectRange" val="200" />
-		<set name="fanRange" val="0,0,500,60" />
+		<set name="fanRange" val="0;0;500;60" />
 		<set name="hitTime" val="1200" />
 		<set name="icon" val="icon.skill0777" />
 		<set name="magicLvl" val="81" />

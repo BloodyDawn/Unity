@@ -620,7 +620,6 @@
 		</for>
 	</skill>
 	<skill id="10267" levels="9" name="Hurricane Rush">
-		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Shoulder charge target to Stun it for 3 seconds. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
@@ -632,15 +631,13 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="130" />
-		<set name="affectRange" val="600" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="icon" val="icon.skill10267" />
 		<set name="effectRange" val="800" />
-		<set name="fanRange" val="0,0,600,60" />
 		<set name="flyType" val="CHARGE" />
 		<set name="operateType" val="DA2" />
 		<set name="nextActionAttack" val="true" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />

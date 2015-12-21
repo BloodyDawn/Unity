@@ -1047,7 +1047,6 @@
 	</skill>
 	<skill id="6268" levels="1" name="Jump Attack">
 		<set name="effectPoint" val="-273" />
-		<set name="fanRange" val="0,0,300,90" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -1058,7 +1057,14 @@
 		<set name="affectRange" val="500" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="AURA" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributeValue" val="20" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="150000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6269" levels="1" name="Trojan Poison">
 		<set name="abnormalLvl" val="10" />

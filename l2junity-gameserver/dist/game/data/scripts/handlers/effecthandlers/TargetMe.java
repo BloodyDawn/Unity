@@ -48,9 +48,9 @@ public final class TargetMe extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		if (info.getEffected().isPlayable())
+		if (info.getEffected().getTarget() != info.getEffector())
 		{
-			if (info.getEffected().getTarget() != info.getEffector())
+			if (info.getEffected().isPlayable())
 			{
 				PlayerInstance effector = info.getEffector().getActingPlayer();
 				// If effector is null, then its not a player, but NPC. If its not null, then it should check if the skill is pvp skill.
@@ -59,9 +59,13 @@ public final class TargetMe extends AbstractEffect
 					// Target is different
 					info.getEffected().setTarget(info.getEffector());
 				}
+				((Playable) info.getEffected()).setLockedTarget(info.getEffector());
 			}
-			
-			((Playable) info.getEffected()).setLockedTarget(info.getEffector());
+			else
+			{
+				System.out.println("Setting target on : " + info.getEffector().getName());
+				info.getEffected().setTarget(info.getEffector());
+			}
 		}
 	}
 }
