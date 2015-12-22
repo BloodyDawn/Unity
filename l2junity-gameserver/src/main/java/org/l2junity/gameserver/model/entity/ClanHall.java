@@ -45,7 +45,6 @@ import org.l2junity.gameserver.model.holders.ClanHallTeleportHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.residences.AbstractResidence;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
-import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -158,11 +157,6 @@ public final class ClanHall extends AbstractResidence
 		{
 			setResidenceZone(zone);
 		}
-	}
-	
-	public void broadcastClanHallInfo()
-	{
-		getResidenceZone().getPlayersInside().forEach(pl -> pl.sendPacket(new AgitDecoInfo(this)));
 	}
 	
 	public int getCostFailDay()

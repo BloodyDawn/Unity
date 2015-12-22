@@ -25,6 +25,8 @@ import java.util.StringTokenizer;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.data.xml.impl.ResidenceFunctionsData;
 import org.l2junity.gameserver.model.ClanPrivilege;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -34,6 +36,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.residences.ResidenceFunction;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionTemplate;
 import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
+import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -100,6 +103,7 @@ public final class ClanHallManager extends AbstractNpcAI
 		addStartNpc(CLANHALL_MANAGERS);
 		addTalkId(CLANHALL_MANAGERS);
 		addFirstTalkId(CLANHALL_MANAGERS);
+		addSeeCreatureId(CLANHALL_MANAGERS);
 	}
 	
 	@Override
@@ -372,7 +376,7 @@ public final class ClanHallManager extends AbstractNpcAI
 											
 											takeItems(player, template.getCost().getId(), template.getCost().getCount());
 											clanHall.addFunction(funcId, funcLv);
-											clanHall.broadcastClanHallInfo();
+											updateVisualEffects(clanHall, npc);
 											htmltext = "ClanHallManager-manageFuncDone.html";
 										}
 										else
@@ -402,7 +406,7 @@ public final class ClanHallManager extends AbstractNpcAI
 												if (func != null)
 												{
 													clanHall.removeFunction(func);
-													clanHall.broadcastClanHallInfo();
+													updateVisualEffects(clanHall, npc);
 													htmltext = "ClanHallManager-removeFunctionDone.html";
 												}
 												else
@@ -463,6 +467,25 @@ public final class ClanHallManager extends AbstractNpcAI
 			htmltext = "ClanHallManager-03.html";
 		}
 		return htmltext;
+	}
+	
+	@Override
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
+	{
+		if (creature.isPlayer())
+		{
+			final ClanHall clanHall = npc.getClanHall();
+			if (clanHall != null)
+			{
+				creature.getActingPlayer().sendPacket(new AgitDecoInfo(clanHall));
+			}
+		}
+		return super.onSeeCreature(npc, creature, isSummon);
+	}
+	
+	private void updateVisualEffects(ClanHall clanHall, Npc npc)
+	{
+		World.getInstance().forEachVisibleObject(npc, PlayerInstance.class, player -> player.sendPacket(new AgitDecoInfo(clanHall)));
 	}
 	
 	private String getFunctionInfo(ResidenceFunction func, String htmltext, String name)

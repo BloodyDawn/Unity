@@ -23,7 +23,6 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 
 /**
  * A clan hall zone
@@ -54,17 +53,7 @@ public class ClanHallZone extends ResidenceZone
 	{
 		if (character.isPlayer())
 		{
-			// Set as in clan hall
 			character.setInsideZone(ZoneId.CLAN_HALL, true);
-			
-			final ClanHall clanHall = ClanHallData.getInstance().getClanHallById(getResidenceId());
-			if (clanHall == null)
-			{
-				return;
-			}
-			
-			// Send decoration packet
-			character.sendPacket(new AgitDecoInfo(clanHall));
 		}
 	}
 	
