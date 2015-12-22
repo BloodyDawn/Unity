@@ -2003,7 +2003,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
 				<param minDamage="1" />
 				<param chance="10" />
 				<param skillId="6921" skillLevel="1" /> <!-- Penetration Attack -->
@@ -2369,15 +2369,19 @@
 		</for>
 	</skill>
 	<skill id="1584" levels="1" name="Equipment Craft">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Can read equipment recipe books. -->
 		<set name="icon" val="icon.skill0172" />
+		<set name="isMagic" val="2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="OpenDwarfRecipeBook" />
+		</for>
 	</skill>
 	<skill id="1585" levels="1" name="Rhythm of Critical Dark">
 		<!-- Glory Days confirmed -->

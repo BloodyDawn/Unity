@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="12000" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -17,6 +17,14 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="KNOCKDOWN" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="104" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="12001" levels="1" name="Glimmer Crystal">
 		<!-- AUTO GENERATED SKILL -->

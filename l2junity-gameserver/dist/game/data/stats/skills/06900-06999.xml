@@ -276,6 +276,7 @@
 		</for>
 	</skill>
 	<skill id="6921" levels="1" name="Penetrating Attack">
+		<!-- Glory Days confirmed -->
 		<!-- P. Def. is decreased momentarily. -->
 		<set name="abnormalTime" val="5" />
 		<set name="activateRate" val="80" />
@@ -295,7 +296,12 @@
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="500" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.77" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6922" levels="3" name="Adventurer's Might">
 		<table name="#effectPoint"> 121 204 379 </table>

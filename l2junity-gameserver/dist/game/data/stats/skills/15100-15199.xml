@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="15100" levels="1" name="Noblesse Blessing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 6 hours, buffs and debuffs do not disappear but remain upon death. -->
 		<set name="icon" val="icon.skill1323" />
 		<set name="operateType" val="A2" />
@@ -18,13 +18,16 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="NoblesseBless" />
+		</for>
 	</skill>
 	<skill id="15101" levels="1" name="Elise' Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the target with 1488 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
@@ -34,13 +37,18 @@
 		<set name="hitCancelTime" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1488" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15102" levels="1" name="Elise' Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the target with 1519 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
@@ -50,13 +58,18 @@
 		<set name="hitCancelTime" val="1" />
 		<set name="magicLvl" val="90" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1519" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15103" levels="1" name="Elise' Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the target with 1557 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
@@ -66,13 +79,18 @@
 		<set name="hitCancelTime" val="1" />
 		<set name="magicLvl" val="95" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1557" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15104" levels="1" name="Dimensional Trap">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<set name="icon" val="icon.skill11561" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="500" />
@@ -90,9 +108,15 @@
 		<set name="trait" val="HOLD" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15105" levels="1" name="Mysterious Shadow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Becomes invisible and decreases speed by 30%. -->
 		<set name="icon" val="icon.skill10784" />
 		<set name="operateType" val="A2" />
@@ -109,6 +133,13 @@
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="reuseDelay" val="360000" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="34903" /> <!-- Mysterious Shadow -->
+		<for>
+			<effect name="Hide">
+				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15106" levels="1" name="Mysterious Power">
 		<!-- AUTO GENERATED SKILL -->

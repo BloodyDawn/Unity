@@ -603,7 +603,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1650" levels="1" name="Absolute Defense">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster absolute defense. Defense increased 50000. -->
 		<set name="icon" val="icon.skill0110" />
 		<set name="operateType" val="A2" />
@@ -618,22 +618,39 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="hitTime" val="1000" />
+		<for>
+			<effect name="Buff">
+				<add stat="pDef" val="50000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1651" levels="1" name="Melee Weapon Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Resistant to melee weapon attacks. -->
 		<set name="icon" val="icon.skill4071" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DefenceTrait">
+				<param BLUNT="100" />
+				<param DAGGER="100" />
+				<param SWORD="100" />
+				<param DUALFIST="100" />
+				<param DUAL="100" />
+				<param RAPIER="100" />
+				<param ANCIENTSWORD="100" />
+				<param DUALDAGGER="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1652" levels="1" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 54355. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-1" />
@@ -642,13 +659,19 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="1000" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="54355" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1653" levels="1" name="Super Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="-1" />
@@ -657,13 +680,19 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="95" />
 		<set name="reuseDelay" val="1000" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="50937" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1654" levels="1" name="Long Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 49414. -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
@@ -673,13 +702,19 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="95" />
 		<set name="reuseDelay" val="1000" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="49414" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1655" levels="1" name="Long Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
@@ -689,13 +724,19 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="95" />
 		<set name="reuseDelay" val="1000" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="50937" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1656" levels="1" name="Mass Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 54355. -->
 		<set name="icon" val="icon.skill1181" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -707,13 +748,19 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="5-12" />
 		<set name="castRange" val="2000" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="54355" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1657" levels="1" name="Self-destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 237492. -->
 		<set name="icon" val="icon.skill1181" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -724,13 +771,19 @@
 		<set name="affectRange" val="500" />
 		<set name="affectLimit" val="5-12" />
 		<set name="hitTime" val="5000" />
+		<set name="isSuicideAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="237492" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1658" levels="1" name="Self-destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 500000. -->
 		<set name="icon" val="icon.skill1181" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -739,13 +792,19 @@
 		<set name="affectRange" val="500" />
 		<set name="affectLimit" val="5-12" />
 		<set name="hitTime" val="5000" />
+		<set name="isSuicideAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="500000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1659" levels="1" name="Wild Sweep">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 54355. -->
 		<set name="icon" val="icon.skill0245" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="720" />
@@ -757,13 +816,19 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="fanRange" val="0;0;1000;90" />
 		<set name="reuseDelay" val="4000" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="54355" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1660" levels="1" name="Spinning Slasher">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 100000. -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="1067" />
 		<set name="coolTime" val="733" />
@@ -774,6 +839,11 @@
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="6-12" />
 		<set name="reuseDelay" val="4000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="100000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1661" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
