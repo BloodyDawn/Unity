@@ -223,6 +223,7 @@ import quests.Q10368_RebellionOfMonsters.Q10368_RebellionOfMonsters;
 import quests.Q10369_NoblesseSoulTesting.Q10369_NoblesseSoulTesting;
 import quests.Q10385_RedThreadOfFate.Q10385_RedThreadOfFate;
 import quests.Q10386_MysteriousJourney.Q10386_MysteriousJourney;
+import quests.Q10387_SoullessOne.Q10387_SoullessOne;
 import quests.Q10390_KekropusLetter.Q10390_KekropusLetter;
 import quests.Q10391_ASuspiciousHelper.Q10391_ASuspiciousHelper;
 import quests.Q10392_FailureAndItsConsequences.Q10392_FailureAndItsConsequences;
@@ -516,6 +517,7 @@ public class QuestMasterHandler
 		Q10369_NoblesseSoulTesting.class,
 		Q10385_RedThreadOfFate.class,
 		Q10386_MysteriousJourney.class,
+		Q10387_SoullessOne.class,
 		Q10390_KekropusLetter.class,
 		Q10391_ASuspiciousHelper.class,
 		Q10392_FailureAndItsConsequences.class,

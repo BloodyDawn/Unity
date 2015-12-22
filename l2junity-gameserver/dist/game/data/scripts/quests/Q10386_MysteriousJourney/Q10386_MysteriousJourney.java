@@ -156,7 +156,10 @@ public final class Q10386_MysteriousJourney extends Quest
 								{
 									giveAdena(player, 58_707, true);
 									giveItems(player, EWR, 1);
-									addExpAndSp(player, 27_244_350, 6_538);
+									if (player.getLevel() >= MIN_LEVEL)
+									{
+										addExpAndSp(player, 27_244_350, 6_538);
+									}
 									st.exitQuest(false, true);
 								}
 								htmltext = "33780-06.html";
@@ -194,7 +197,11 @@ public final class Q10386_MysteriousJourney extends Quest
 			}
 			case State.COMPLETED:
 			{
-				if (npc.getId() == HESED)
+				if (npc.getId() == TAPOY)
+				{
+					htmltext = "30499-06.html";
+				}
+				else if (npc.getId() == HESED)
 				{
 					htmltext = "33780-07.html";
 				}
