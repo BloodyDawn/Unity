@@ -700,11 +700,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "MANA_BURN":
 					{
-						for (PlayerInstance temp : world.getPlayers())
-						{
-							temp.setCurrentMp(0);
-							temp.broadcastStatusUpdate();
-						}
+						world.getPlayers().forEach(temp -> temp.setCurrentMp(0, true));
 						break;
 					}
 				}

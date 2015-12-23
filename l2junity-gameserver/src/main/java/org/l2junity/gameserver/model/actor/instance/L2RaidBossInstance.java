@@ -60,9 +60,9 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	@Override
 	public void onSpawn()
 	{
+		super.onSpawn();
 		setRandomWalking(false);
 		broadcastPacket(new PlaySound(1, getParameters().getString("RaidSpawnMusic", "Rm01_A"), 0, 0, 0, 0, 0));
-		super.onSpawn();
 	}
 	
 	@Override
