@@ -47,6 +47,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.DoorInstance;
@@ -476,6 +477,52 @@ public final class Instance implements IIdentifiable, INamable
 	public List<Npc> getNpcs(int... id)
 	{
 		return _npcs.stream().filter(n -> CommonUtil.contains(id, n.getId())).collect(Collectors.toList());
+	}
+	
+	/**
+	 * Get spawned NPCs from instance with specific IDs and class type.
+	 * @param <T>
+	 * @param clazz
+	 * @param ids IDs of NPCs which should be found
+	 * @return list of filtered NPCs from instance
+	 */
+	public <T extends Creature> List<T> getNpcs(Class<T> clazz, int... ids)
+	{
+		return _npcs.stream().filter(n -> CommonUtil.contains(ids, n.getId())).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
+	}
+	
+	/**
+	 * Get spawned and alive NPCs from instance with specific IDs and class type.
+	 * @param <T>
+	 * @param clazz
+	 * @param ids IDs of NPCs which should be found
+	 * @return list of filtered NPCs from instance
+	 */
+	public <T extends Creature> List<T> getAliveNpcs(Class<T> clazz, int... ids)
+	{
+		return _npcs.stream().filter(n -> CommonUtil.contains(ids, n.getId()) && !n.isDead()).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
+	}
+	
+	/**
+	 * Get spawned NPCs from instance with specific class type.
+	 * @param <T>
+	 * @param clazz
+	 * @return list of filtered NPCs from instance
+	 */
+	public <T extends Creature> List<T> getNpcs(Class<T> clazz)
+	{
+		return _npcs.stream().filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
+	}
+	
+	/**
+	 * Get spawned and alive NPCs from instance with specific class type.
+	 * @param <T>
+	 * @param clazz
+	 * @return list of filtered NPCs from instance
+	 */
+	public <T extends Creature> List<T> getAliveNpcs(Class<T> clazz)
+	{
+		return _npcs.stream().filter(n -> !n.isDead()).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
 	}
 	
 	/**
