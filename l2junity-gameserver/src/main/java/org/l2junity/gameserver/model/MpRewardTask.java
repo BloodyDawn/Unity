@@ -58,9 +58,7 @@ public class MpRewardTask
 		{
 			case PER:
 			{
-				final double maxMp = creature.getMaxMp();
-				final double valueMultiplier = (1 + (template.getMpRewardValue() / 100f));
-				return ((maxMp * valueMultiplier) - maxMp) / template.getMpRewardTicks();
+				return (creature.getMaxMp() * (template.getMpRewardValue() / 100)) / template.getMpRewardTicks();
 			}
 		}
 		return template.getMpRewardValue() / template.getMpRewardTicks();
