@@ -136,6 +136,7 @@ public final class EffectMasterHandler
 		MagicalAbnormalDispelAttack.class,
 		MagicalAttack.class,
 		MagicalAttackByAbnormal.class,
+		MagicalAttackByAbnormalSlot.class,
 		MagicalAttackMp.class,
 		MagicalAttackRange.class,
 		MagicalDamOverTime.class,

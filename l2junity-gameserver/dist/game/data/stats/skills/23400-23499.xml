@@ -511,10 +511,10 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23425" levels="1" name="Physical Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-2" />
@@ -523,12 +523,17 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="4800" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23426" levels="1" name="Physical Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-2" />
@@ -537,12 +542,17 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="90" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="6000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23427" levels="1" name="Physical Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-2" />
@@ -551,9 +561,14 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="95" />
 		<set name="coolTime" val="500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="7300" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23428" levels="1" name="(Haste)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 20 min., Atk. Spd. + 15%. -->
 		<set name="icon" val="icon.skill1086" />
 		<set name="operateType" val="A2" />
@@ -570,12 +585,17 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23429" levels="1" name="Magic Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
@@ -590,12 +610,17 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="39" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23430" levels="1" name="Magic Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
@@ -610,12 +635,17 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="44" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23431" levels="1" name="Magic Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
@@ -630,13 +660,18 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="48" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23432" levels="1" name="(Radiant Heal)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals target with 1488 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -649,13 +684,18 @@
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1488" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23433" levels="1" name="(Radiant Heal)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals target with 1519 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -668,13 +708,18 @@
 		<set name="magicLvl" val="90" />
 		<set name="affectRange" val="200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1519" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23434" levels="1" name="(Radiant Heal)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals target with 1557 power. If HP is full, CP is restored with the remaining power. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -687,9 +732,14 @@
 		<set name="magicLvl" val="95" />
 		<set name="affectRange" val="200" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="1557" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23435" levels="1" name="Borna Spirit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Borna's Atk. Spd. + 5%, Casting Spd. + 5%, and has a chance of applying 9% Vampiric Rage. M. Atk. + 10%, M. Critical Rate + 10%, and P. Def./ M. Def. + 20%. Has a chance of inflicting magic damage when attacked. -->
 		<set name="icon" val="icon.skill11046" />
 		<set name="operateType" val="P" />
@@ -700,12 +750,38 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="coolTime" val="300" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.05" />
+				<mul stat="mAtkSpd" val="1.05" />
+				<mul stat="mAtk" val="1.1" />
+				<mul stat="mCritRate" val="1.1" />
+				<mul stat="pDef" val="1.2" />
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;CASTING_TIME_DOWN,-1" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="10" />
+				<param skillId="5567" skillLevel="1" /> <!-- Flame Armor -->
+				<param targetType="ONE" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;CASTING_TIME_DOWN" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23436" levels="3" name="Borna Spike">
-		<table name="#magicLvl"> 85 88 92 </table>
-		<table name="#effectPoint"> -687 -700 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 121 magic damage with an attribute bestowed. Over-hit. -->
+		<table name="#effectPoint"> -687 -700 -709 </table>
+		<table name="#magicLvl"> 85 88 92 </table>
 		<table name="#mpConsumes"> 45 47 51 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
@@ -846,11 +922,11 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23442" levels="1" name="Drake Lord's Authority">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily decreases target's P. Def. and inflicts 2416 physical damage. -->
 		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="80" />
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
@@ -867,9 +943,17 @@
 		<set name="abnormalLvl" val="13" />
 		<set name="abnormalTime" val="9" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="2416" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.8" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23443" levels="1" name="Freya's Authority">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Water attribute + 35, and Water Def. + 35. -->
 		<set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
 		<set name="operateType" val="A2" />
@@ -884,9 +968,17 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<add stat="waterRes" val="35" />
+			</effect>
+			<effect name="Buff">
+				<add stat="waterPower" val="35" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23444" levels="1" name="Spezion's Authority">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 15%. -->
 		<set name="icon" val="BranchSys3.Icon.g_spacia_claw_i00" />
 		<set name="operateType" val="A2" />
@@ -901,6 +993,11 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23445" levels="1" name="Maliss' Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -983,11 +1080,12 @@
 		<set name="reuseDelay" val="-1000" />
 	</skill>
 	<skill id="23449" levels="3" name="(Gust Blade)">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 85 90 95 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#power"> 10314 12450 13874 </table>
 		<set name="icon" val="icon.skill10013" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="121" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
@@ -1001,14 +1099,22 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="fanRange" val="0;0;150;120" />
 		<set name="reuseDelay" val="7000" />
+		<set name="nextActionAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+				<param criticalChance="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23450" levels="3" name="(Chain Galaxy)">
-		<table name="#magicLvl"> 85 90 95 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts 14300 physical damage to surrounding enemies and decreases their HP heal amount by 90%. -->
+		<table name="#magicLvl"> 85 90 95 </table>
+		<table name="#power"> 14300 16748 19686 </table>
 		<set name="icon" val="icon.skill10014" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="159" />
 		<set name="hitTime" val="1700" />
 		<set name="coolTime" val="370" />
@@ -1027,11 +1133,23 @@
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="5-12" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+				<param criticalChance="5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="healEffect" val="0.1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23451" levels="3" name="(Final Ultimate Defense)">
-		<table name="#magicLvl"> 85 90 95 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., P. Def. + 4000, M. Def. + 4000, receive only up to 300 damage, and reflect 40% of received damage back to enemy. Buff Cancel Resistance + 80%. -->
+		<table name="#magicLvl"> 85 90 95 </table>
+		<table name="#def"> 4000 6000 8000 </table>
+		<table name="#reflectDam"> 40 60 80 </table>
+		<table name="#damageCap"> 300 200 150 </table>
 		<set name="icon" val="icon.skill10017" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -1049,6 +1167,15 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="reuseDelay" val="900000" />
+		<for>
+			<effect name="Buff">
+				<add stat="pDef" val="#def" />
+				<add stat="mDef" val="#def" />
+				<sub stat="cancelVuln" val="80" />
+				<add stat="reflectDam" val="#reflectDam" />
+				<set stat="damageCap" val="#damageCap" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23452" levels="3" name="(Protection of Faith)">
 		<table name="#magicLvl"> 85 90 95 </table>
@@ -1247,12 +1374,13 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="23461" levels="3" name="(Armor Destruction)">
-		<table name="#magicLvl"> 85 90 95 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<!-- Inflicts 11159 physical damage on target, decreases their P. Def., and absorbs their Momentum. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical. -->
+		<table name="#magicLvl"> 85 90 95 </table>
+		<table name="#power"> 11159 11936 12714 </table>
 		<set name="icon" val="icon.skill10258" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="50" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1090" />
@@ -1269,6 +1397,22 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="20" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+				<param criticalChance="5" />
+				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.77" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="FocusMomentum">
+				<param maxCharges="10" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="23462" levels="1" name="(Power Bomber)">
 		<!-- AUTO GENERATED SKILL -->

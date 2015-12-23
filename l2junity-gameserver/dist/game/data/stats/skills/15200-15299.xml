@@ -291,11 +291,11 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15218" levels="1" name="Clear Target">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels the enemy's target. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="250" />
 		<set name="hitTime" val="1500" />
@@ -307,13 +307,18 @@
 		<set name="effectRange" val="460" />
 		<set name="magicLvl" val="93" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="TargetCancel">
+				<param chance="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15219" levels="1" name="Double Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts strong damage upon the enemies near the target. -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="2000" />
@@ -325,9 +330,14 @@
 		<set name="magicLvl" val="94" />
 		<set name="affectRange" val="100" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="40000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15220" levels="1" name="Explosion">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage upon monsters around you and inflicts Bleed for 5 sec. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A2" />
@@ -348,14 +358,24 @@
 		<set name="affectRange" val="150" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isDebuff" val="true" />
+		<set name="isSuicideAttack" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="40000" />
+			</effect>
+			<effect name="DamOverTime" ticks="5">
+				<param power="1000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15221" levels="3" name="Blood Spear">
-		<table name="#magicLvl"> 93 94 95 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the target with an arrow of darkness. -->
+		<table name="#magicLvl"> 93 94 95 </table>
+		<table name="#power"> 1000 1500 2000 </table>
 		<set name="icon" val="icon.skill0122" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="250" />
 		<set name="hitTime" val="2000" />
@@ -367,14 +387,20 @@
 		<set name="effectRange" val="460" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15222" levels="3" name="Home Thrust">
-		<table name="#magicLvl"> 93 94 95 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Launches a powerful attack on the target. -->
+		<table name="#magicLvl"> 93 94 95 </table>
+		<table name="#power"> 30000 40000 50000 </table>
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="100" />
 		<set name="effectPoint" val="-2" />
@@ -384,13 +410,18 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="hitTime" val="2000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15223" levels="1" name="Body Slice">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Launches a powerful attack on enemies within a 120 degree radius. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="100" />
 		<set name="effectPoint" val="-2" />
@@ -401,13 +432,18 @@
 		<set name="magicLvl" val="94" />
 		<set name="fanRange" val="0;0;100;120" />
 		<set name="hitTime" val="2000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="40000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15224" levels="1" name="Bloody Breath">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Your soul is sucked away, and your P. Def. and M. Def. is decreased. -->
 		<set name="icon" val="icon.skill11769" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="250" />
 		<set name="hitTime" val="2000" />
@@ -426,13 +462,19 @@
 		<set name="abnormalTime" val="5" />
 		<set name="affectRange" val="200" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.9" />
+				<mul stat="mDef" val="0.9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15225" levels="1" name="Sword Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Strikes down with the sword to inflict powerful damage on enemies within 200 grids of you. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="250" />
 		<set name="hitTime" val="3000" />
@@ -444,9 +486,14 @@
 		<set name="magicLvl" val="95" />
 		<set name="affectRange" val="200" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="40000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15226" levels="1" name="Sword Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Strikes down with the sword to inflict powerful damage on enemies within 200 grids of you. Additional damage on targets debuffed with Soul Drain. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
@@ -462,9 +509,18 @@
 		<set name="magicLvl" val="96" />
 		<set name="affectRange" val="200" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="40000" />
+			</effect>
+			<effect name="MagicalAttackByAbnormalSlot">
+				<param abnormalType="PD_DOWN" />
+				<param power="500" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15227" levels="1" name="Added Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Additional damage received when debuffed with Soul Drain. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -475,13 +531,18 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="94" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="30000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15228" levels="1" name="Soul Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses the absorbed soul to send a powerful shock wave within a 120 degree radius. Only damages targets debuffed with Soul Drain. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="-2" />
@@ -491,13 +552,19 @@
 		<set name="magicLvl" val="94" />
 		<set name="fanRange" val="0;0;150;120" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="MagicalAttackByAbnormalSlot">
+				<param abnormalType="PD_DOWN" />
+				<param power="500" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15229" levels="1" name="Soul Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses the absorbed soul to send a powerful shock wave within a 120 degree radius. Additional damage on targets debuffed with Soul Drain. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="-2" />
@@ -507,9 +574,18 @@
 		<set name="magicLvl" val="94" />
 		<set name="fanRange" val="0;0;150;120" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="40000" />
+			</effect>
+			<effect name="MagicalAttackByAbnormalSlot">
+				<param abnormalType="PD_DOWN" />
+				<param power="500" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15230" levels="1" name="Added Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Additional damage received when debuffed with Soul Drain. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -520,6 +596,12 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="94" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="MagicalAttackByAbnormalSlot">
+				<param abnormalType="PD_DOWN" />
+				<param power="500" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15231" levels="1" name="Quick Thrust">
 		<!-- AUTO GENERATED SKILL -->
@@ -545,7 +627,7 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="15232" levels="1" name="Speed Up">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases your Atk. Spd. by 200%. -->
 		<set name="icon" val="icon.skill1086" />
 		<set name="operateType" val="A2" />
@@ -560,13 +642,18 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15233" levels="1" name="Full Swing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Swing your sword to launch a powerful attack on nearby enemies. -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-2" />
@@ -576,13 +663,18 @@
 		<set name="magicLvl" val="95" />
 		<set name="affectRange" val="200" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="40000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15234" levels="1" name="Dark Spheres">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shoot dark red spheres toward enemies within 120 degrees of you. Additional damage on PCs debuffed with Soul Drain. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="5000" />
@@ -594,13 +686,22 @@
 		<set name="magicLvl" val="96" />
 		<set name="fanRange" val="0;0;200;120" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="200000" />
+			</effect>
+			<effect name="MagicalAttackByAbnormalSlot">
+				<param abnormalType="PD_DOWN" />
+				<param power="500" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15235" levels="1" name="Dark Wind">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Create a strong wind around you to push back enemies. -->
 		<set name="icon" val="icon.skill4107" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="3000" />
@@ -616,13 +717,25 @@
 		<set name="affectRange" val="250" />
 		<set name="affectLimit" val="10-10" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="180000" />
+			</effect>
+			<effect name="MagicalAttackByAbnormalSlot">
+				<param abnormalType="PD_DOWN" />
+				<param power="500" />
+			</effect>
+			<effect name="KnockBack">
+				<param distance="200" speed="400" knockDown="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15236" levels="1" name="Dark Thrust">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerful attack on the target. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE	" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="100" />
 		<set name="effectPoint" val="-2" />
@@ -632,13 +745,18 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="96" />
 		<set name="hitTime" val="2000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="200000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15237" levels="1" name="Dark Buster">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts strong damage upon the enemies near the target. -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="100" />
 		<set name="effectPoint" val="-2" />
@@ -649,6 +767,11 @@
 		<set name="magicLvl" val="96" />
 		<set name="affectRange" val="200" />
 		<set name="hitTime" val="3000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="200000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15238" levels="1" name="Dark Breath">
 		<!-- AUTO GENERATED SKILL -->
