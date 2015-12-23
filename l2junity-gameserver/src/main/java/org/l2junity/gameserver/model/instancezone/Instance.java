@@ -486,9 +486,10 @@ public final class Instance implements IIdentifiable, INamable
 	 * @param ids IDs of NPCs which should be found
 	 * @return list of filtered NPCs from instance
 	 */
-	public <T extends Creature> List<T> getNpcs(Class<T> clazz, int... ids)
+	@SafeVarargs
+	public final <T extends Creature> List<T> getNpcs(Class<T> clazz, int... ids)
 	{
-		return _npcs.stream().filter(n -> CommonUtil.contains(ids, n.getId())).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
+		return _npcs.stream().filter(n -> (ids.length == 0) || CommonUtil.contains(ids, n.getId())).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
 	}
 	
 	/**
@@ -498,31 +499,10 @@ public final class Instance implements IIdentifiable, INamable
 	 * @param ids IDs of NPCs which should be found
 	 * @return list of filtered NPCs from instance
 	 */
-	public <T extends Creature> List<T> getAliveNpcs(Class<T> clazz, int... ids)
+	@SafeVarargs
+	public final <T extends Creature> List<T> getAliveNpcs(Class<T> clazz, int... ids)
 	{
-		return _npcs.stream().filter(n -> CommonUtil.contains(ids, n.getId()) && !n.isDead()).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
-	}
-	
-	/**
-	 * Get spawned NPCs from instance with specific class type.
-	 * @param <T>
-	 * @param clazz
-	 * @return list of filtered NPCs from instance
-	 */
-	public <T extends Creature> List<T> getNpcs(Class<T> clazz)
-	{
-		return _npcs.stream().filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
-	}
-	
-	/**
-	 * Get spawned and alive NPCs from instance with specific class type.
-	 * @param <T>
-	 * @param clazz
-	 * @return list of filtered NPCs from instance
-	 */
-	public <T extends Creature> List<T> getAliveNpcs(Class<T> clazz)
-	{
-		return _npcs.stream().filter(n -> !n.isDead()).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
+		return _npcs.stream().filter(n -> ((ids.length == 0) || CommonUtil.contains(ids, n.getId())) && !n.isDead()).filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
 	}
 	
 	/**

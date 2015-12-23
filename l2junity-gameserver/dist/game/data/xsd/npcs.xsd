@@ -76,6 +76,28 @@
 									<xs:attribute name="raidPoints" type="xs:decimal" />
 								</xs:complexType>
 							</xs:element>
+							<xs:element name="mpReward" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:attribute name="value" type="xs:positiveInteger" />
+									<xs:attribute name="type">
+										<xs:simpleType>
+											<xs:restriction base="xs:token">
+												<xs:enumeration value="DIFF" />
+												<xs:enumeration value="PER" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ticks" type="xs:positiveInteger" />
+									<xs:attribute name="affects">
+										<xs:simpleType>
+											<xs:restriction base="xs:token">
+												<xs:enumeration value="SOLO" />
+												<xs:enumeration value="PARTY" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
 							<xs:element name="stats" minOccurs="0" maxOccurs="1">
 								<xs:complexType>
 									<xs:all>

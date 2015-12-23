@@ -36,6 +36,8 @@ import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.AISkillScope;
+import org.l2junity.gameserver.enums.MpRewardAffectType;
+import org.l2junity.gameserver.enums.MpRewardType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.base.ClassId;
@@ -146,6 +148,14 @@ public class NpcData implements IGameXmlReader
 									set.set("expRate", parseDouble(attrs, "expRate"));
 									set.set("sp", parseDouble(attrs, "sp"));
 									set.set("raidPoints", parseDouble(attrs, "raidPoints"));
+									break;
+								}
+								case "mpreward":
+								{
+									set.set("mpRewardValue", parseInteger(attrs, "value"));
+									set.set("mpRewardType", parseEnum(attrs, MpRewardType.class, "type"));
+									set.set("mpRewardTicks", parseInteger(attrs, "ticks"));
+									set.set("mpRewardAffectType", parseEnum(attrs, MpRewardAffectType.class, "affects"));
 									break;
 								}
 								case "stats":

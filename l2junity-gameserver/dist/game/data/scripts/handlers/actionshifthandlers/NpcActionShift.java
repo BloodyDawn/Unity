@@ -93,6 +93,10 @@ public class NpcActionShift implements IActionShiftHandler
 			html.replace("%collision_height%", String.valueOf(npc.getTemplate().getfCollisionHeight()));
 			html.replace("%dist%", String.valueOf((int) activeChar.calculateDistance(target, true, false)));
 			html.replace("%clanHall%", clanHall != null ? clanHall.getName() : "none");
+			html.replace("%mpRewardValue%", npc.getTemplate().getMpRewardValue());
+			html.replace("%mpRewardTicks%", npc.getTemplate().getMpRewardTicks());
+			html.replace("%mpRewardType%", npc.getTemplate().getMpRewardType().name());
+			html.replace("%mpRewardAffectType%", npc.getTemplate().getMpRewardAffectType().name());
 			
 			AttributeType attackAttribute = npc.getAttackElement();
 			html.replace("%ele_atk%", attackAttribute.name());

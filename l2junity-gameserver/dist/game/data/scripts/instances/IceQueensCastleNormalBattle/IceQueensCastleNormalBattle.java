@@ -33,6 +33,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -1197,12 +1198,9 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	private void manageDespawnMinions(Instance world)
 	{
 		world.setParameter("canSpawnMobs", false);
-		for (Npc mobs : world.getNpcs(BREATH, GLACIER, KNIGHT_EASY, KNIGHT_HARD))
+		for (L2MonsterInstance mobs : world.getAliveNpcs(L2MonsterInstance.class, BREATH, GLACIER, KNIGHT_EASY, KNIGHT_HARD))
 		{
-			if (!mobs.isDead())
-			{
-				mobs.doDie(null);
-			}
+			mobs.doDie(null);
 		}
 	}
 	

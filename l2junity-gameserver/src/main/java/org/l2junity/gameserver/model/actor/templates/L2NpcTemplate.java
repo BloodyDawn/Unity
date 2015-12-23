@@ -30,6 +30,8 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
+import org.l2junity.gameserver.enums.MpRewardAffectType;
+import org.l2junity.gameserver.enums.MpRewardType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.Sex;
 import org.l2junity.gameserver.model.StatsSet;
@@ -99,6 +101,10 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 	private Map<DropListScope, List<IDropItem>> _dropLists;
 	private double _collisionRadiusGrown;
 	private double _collisionHeightGrown;
+	private int _mpRewardValue;
+	private MpRewardType _mpRewardType;
+	private int _mpRewardTicks;
+	private MpRewardAffectType _mpRewardAffectType;
 	
 	private final List<ClassId> _teachInfo = new ArrayList<>();
 	
@@ -170,6 +176,11 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 		
 		_collisionRadiusGrown = set.getDouble("collisionRadiusGrown", 0);
 		_collisionHeightGrown = set.getDouble("collisionHeightGrown", 0);
+		
+		_mpRewardValue = set.getInt("mpRewardValue", 0);
+		_mpRewardType = set.getEnum("mpRewardType", MpRewardType.class, MpRewardType.DIFF);
+		_mpRewardTicks = set.getInt("mpRewardTicks", 0);
+		_mpRewardAffectType = set.getEnum("mpRewardAffectType", MpRewardAffectType.class, MpRewardAffectType.SOLO);
 	}
 	
 	@Override
@@ -432,6 +443,26 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 	public Set<Integer> getClans()
 	{
 		return _clans;
+	}
+	
+	public int getMpRewardValue()
+	{
+		return _mpRewardValue;
+	}
+	
+	public MpRewardType getMpRewardType()
+	{
+		return _mpRewardType;
+	}
+	
+	public int getMpRewardTicks()
+	{
+		return _mpRewardTicks;
+	}
+	
+	public MpRewardAffectType getMpRewardAffectType()
+	{
+		return _mpRewardAffectType;
 	}
 	
 	/**
