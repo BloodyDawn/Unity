@@ -19,15 +19,20 @@
 package ai.individual.KartiasLabyrinth;
 
 import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.skills.SkillCaster;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import ai.AbstractNpcAI;
 
@@ -60,6 +65,7 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 	private KartiaHelperBarton()
 	{
 		setCreatureKillId(this::onCreatureKill, KARTIA_BARTON);
+		setCreatureAttackedId(this::onCreatureAttacked, KARTIA_BARTON);
 		addSeeCreatureId(KARTIA_BARTON);
 		setInstanceDestroyId(this::onInstanceDestroy, KARTIA_SOLO_INSTANCES);
 		setInstanceStatusChangeId(this::onInstanceStatusChange, KARTIA_SOLO_INSTANCES);
@@ -136,6 +142,37 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 			npc.getVariables().set("ADOLPH_OBJECT", creature);
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
+	}
+	
+	public void onCreatureAttacked(OnCreatureAttacked event)
+	{
+		final Npc npc = (Npc) event.getTarget();
+		final Instance instance = npc.getInstanceWorld();
+		if ((instance != null) && !event.getAttacker().isPlayable())
+		{
+			final StatsSet instParams = instance.getTemplateParameters();
+			final int random = getRandom(1000);
+			
+			if (random < 333)
+			{
+				final SkillHolder infinitySkill = instParams.getSkillHolder("bartonInfinity");
+				if ((infinitySkill != null) && SkillCaster.checkUseConditions(npc, infinitySkill.getSkill()))
+				{
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.DIE3);
+					addSkillCastDesire(npc, npc.getAI().getAttackTarget(), infinitySkill, 23);
+				}
+			}
+			else if ((npc.getCurrentHpPercent() < 50) && npc.isScriptValue(0))
+			{
+				final SkillHolder berserkerSkill = instParams.getSkillHolder("bartonBerserker");
+				if ((berserkerSkill != null) && !npc.isAffectedBySkill(berserkerSkill.getSkillId()) && SkillCaster.checkUseConditions(npc, berserkerSkill.getSkill()))
+				{
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WAAAAAAAAHHHHHH);
+					addSkillCastDesire(npc, npc.getAI().getAttackTarget(), berserkerSkill, 23);
+					getTimers().addTimer("RESTORE_SCRIPTVAL", 10000, n -> npc.setScriptValue(0));
+				}
+			}
+		}
 	}
 	
 	public void onCreatureKill(OnCreatureKill event)
