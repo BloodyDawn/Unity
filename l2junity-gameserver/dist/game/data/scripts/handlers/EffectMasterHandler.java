@@ -170,6 +170,7 @@ public final class EffectMasterHandler
 		ProtectionBlessing.class,
 		PullBack.class,
 		RandomizeHate.class,
+		RealDamage.class,
 		RebalanceHP.class,
 		Recovery.class,
 		RefuelAirship.class,

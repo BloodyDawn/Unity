@@ -256,7 +256,7 @@
 		<set name="hitTime" val="1660" />
 	</skill>
 	<skill id="14212" levels="1" name="Manifestation of Authority">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill14289" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -267,9 +267,10 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
 		<set name="hitTime" val="8000" />
+		<set name="isMagic" val="2" />
 	</skill>
 	<skill id="14213" levels="1" name="Manifestation of Authority">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill14289" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -280,9 +281,10 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
 		<set name="hitTime" val="8000" />
+		<set name="isMagic" val="2" />
 	</skill>
 	<skill id="14214" levels="1" name="Manifestation of Authority">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill14289" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -293,9 +295,10 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
 		<set name="hitTime" val="8000" />
+		<set name="isMagic" val="2" />
 	</skill>
 	<skill id="14215" levels="1" name="Barrier of Reflection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Reflects 600% of damage. -->
 		<set name="icon" val="icon.skill0086" />
 		<set name="operateType" val="A2" />
@@ -312,13 +315,18 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="6" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<add stat="reflectDam" val="600" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14216" levels="1" name="Energy Seal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Yoke status. -->
 		<set name="icon" val="icon.skill14216" />
 		<set name="operateType" val="CA2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
@@ -337,11 +345,11 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14217" levels="1" name="Yoke Status">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="abnormalType" val="AIRBIND" />
@@ -356,13 +364,18 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14218" levels="1" name="Istina's Mark">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Istina's Mark is received. Handling Istina any further will be difficult. -->
 		<set name="icon" val="icon.skill5239" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="2000" />
@@ -383,10 +396,10 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14219" levels="1" name="Death Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
@@ -398,9 +411,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="affectRange" val="50" />
 		<set name="hitTime" val="2000" />
+		<for>
+			<effect name="RealDamage">
+				<param power="1000000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14220" levels="1" name="Flood">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Flood -->
 		<set name="icon" val="icon.skill14220" />
 		<set name="operateType" val="A2" />
@@ -418,12 +436,20 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.5" />
+				<mul stat="pAtkSpd" val="1.5" />
+				<mul stat="mAtkSpd" val="1.5" />
+				<mul stat="physicalSkillPower" val="1.5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14221" levels="1" name="Acid Eruption">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="100" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -433,10 +459,10 @@
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="14222" levels="1" name="Acid Eruption">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="100" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -446,10 +472,10 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="14223" levels="1" name="Acid Eruption">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -458,6 +484,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="affectRange" val="250" />
 		<set name="hitTime" val="1000" />
+		<for>
+			<effect name="HealPercent">
+				<param power="-60" />
+			</effect>
+			<effect name="PhysicalAttack">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14224" levels="1" name="Energy Control Device">
 		<!-- AUTO GENERATED SKILL -->
