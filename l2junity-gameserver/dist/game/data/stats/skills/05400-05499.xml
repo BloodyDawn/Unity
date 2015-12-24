@@ -860,12 +860,14 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5450" levels="7" name="Thin Skin">
+		<table name="#isMagic"> 2 4 4 4 4 4 4 </table>
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvl"> 4 5 5 6 7 8 8 </table>
 		<table name="#dot"> 218 266 266 307 307 335 335 </table>
@@ -883,7 +885,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="4" />
+		<set name="isMagic" val="#isMagic" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -903,6 +905,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -913,6 +916,7 @@
 		</for>
 	</skill>
 	<skill id="5452" levels="3" name="Spite">
+		<table name="#isMagic"> 2 4 4 </table>
 		<!-- Confirmed CT2.5 -->
 		<table name="#defCritDamage"> 1.4 1.5 1.6 </table>
 		<table name="#magicLvl"> 66 70 74 </table>
@@ -926,7 +930,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="isMagic" val="4" />
+		<set name="isMagic" val="#isMagic" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

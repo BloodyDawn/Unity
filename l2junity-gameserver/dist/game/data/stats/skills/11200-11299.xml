@@ -138,6 +138,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="97" />
 		<set name="trait" val="SHOCK" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -790,7 +791,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" />
+		<set name="isMagic" val="2" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="SummonNpc">
@@ -823,7 +824,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="1100" />
 		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="1" />
+		<set name="isMagic" val="2" />
 		<set name="staticReuse" val="true" />
 		<cond>
 			<player canTransform="true" />
@@ -1103,6 +1104,7 @@
 		<set name="channelingTickInterval" val="2000" />
 		<set name="mpPerChanneling" val="15" />
 		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
@@ -1719,6 +1721,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<effect name="Buff">

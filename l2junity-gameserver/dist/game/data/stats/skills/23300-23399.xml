@@ -58,6 +58,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="castRange" val="2000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23304" levels="1" name="Teleport">
@@ -71,6 +72,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="castRange" val="2000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23305" levels="1" name="Zinyanzi Agathion - Yunbokhwan">
@@ -89,6 +91,7 @@
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="43200000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23306" levels="1" name="Zinyanzi Agathion Cute Trick">
@@ -100,6 +103,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23307" levels="1" name="Yanzi Agathion Cute Trick">
@@ -111,6 +115,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23308" levels="1" name="Totem's Energy - Body">
@@ -411,7 +416,7 @@
 		<set name="effectRange" val="200" />
 		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i00" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="1" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="82" />
@@ -500,7 +505,7 @@
 		<set name="icon" val="BranchSys2.icon.br_wp_wind_of_mardil_i00" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<!-- set name="abnormalType" val="RAID_WEAPON" / --> <!-- FIXME: Value unconfirmed. -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="1" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="71" />
 		<set name="operateType" val="A2" />
@@ -574,6 +579,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23330" levels="1" name="Lantern Agathion's Gift2">
@@ -585,6 +591,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23331" levels="1" name="Lantern Agathion's Gift3">
@@ -596,6 +603,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23332" levels="1" name="Lantern Agathion's Gift4">
@@ -607,6 +615,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23333" levels="1" name="Agathion's New Year's Wish">
@@ -639,6 +648,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23335" levels="1" name="Agathion's New Year's Wish">
@@ -671,6 +681,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23337" levels="1" name="Juju Agathion's Gift 1">
@@ -682,6 +693,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23338" levels="1" name="Juju Agathion's Gift 2">
@@ -693,6 +705,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23339" levels="1" name="Juju Agathion's Gift 3">
@@ -704,6 +717,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23340" levels="1" name="Juju Agathion's Gift 4">
@@ -715,6 +729,7 @@
 		<set name="hitTime" val="2700" />
 		<set name="coolTime" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23341" levels="1" name="Norhand's Flint">
@@ -798,6 +813,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
+		<set name="isMagic" val="2" />
 		<set name="hitTime" val="200" />
 	</skill>
 	<skill id="23346" levels="7" name="Valakas Agathion Cute Trick">
@@ -810,6 +826,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="isMagic" val="2" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="23347" levels="7" name="Valakas Agathion Special Skill: Valakas' Blessing">
@@ -951,6 +968,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23355" levels="1" name="Lingering Tree's Blessing - Stage 2">
@@ -970,6 +988,7 @@
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23356" levels="1" name="Lingering Tree's Blessing - Stage 3">
@@ -989,6 +1008,7 @@
 		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23357" levels="1" name="Lingering Tree's Blessing - Stage 4">
@@ -1008,6 +1028,7 @@
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23358" levels="1" name="Lingering Tree's Blessing - Stage 5">
@@ -1027,6 +1048,7 @@
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23359" levels="1" name="Tree's Blessing - Lute Melody">
@@ -1383,6 +1405,7 @@
 		<set name="effectRange" val="1500" />
 		<set name="magicLvl" val="99" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="reuseDelay" val="1200000" />
 	</skill>
 	<skill id="23381" levels="3" name="Jermann - Flow of Destruction">
@@ -1520,6 +1543,7 @@
 		<set name="deleteAbnormalOnLeave" val="true" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23388" levels="1" name="Jermann">
@@ -1540,6 +1564,7 @@
 		<set name="deleteAbnormalOnLeave" val="true" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23389" levels="1" name="Jermann">
@@ -1560,6 +1585,7 @@
 		<set name="deleteAbnormalOnLeave" val="true" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23390" levels="1" name="Mysterious Power of Ancient Kartia's Labyrinth">
@@ -1579,6 +1605,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="trait" val="POISON" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23391" levels="1" name="Great Mysterious Power of Ancient Kartia's Labyrinth">
@@ -1598,6 +1625,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="trait" val="POISON" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23392" levels="1" name="Stabilized Power of Ancient Kartia's Labyrinth">
@@ -1735,6 +1763,7 @@
 		<set name="affectRange" val="250" />
 		<set name="affectLimit" val="5-12" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23399" levels="3" name="Freezing Cold">
@@ -1756,6 +1785,7 @@
 		<set name="affectRange" val="250" />
 		<set name="affectLimit" val="5-12" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

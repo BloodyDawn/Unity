@@ -551,7 +551,7 @@
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill_agathion_special" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="4" /> <!-- Item Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="7200000" />
@@ -574,6 +574,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23235" levels="1" name="Singer and Dancer Agathion Special Skill: Hunter's Song">
@@ -591,6 +592,7 @@
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="1200000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23236" levels="1" name="Agathion Cute Trick - Zaken's Spirit Swords">
@@ -602,6 +604,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23237" levels="1" name="Swords' Song">
@@ -619,6 +622,7 @@
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="7200000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23238" levels="1" name="Master's Blessing - Eye of Pa'agrio">
@@ -630,7 +634,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
@@ -662,7 +666,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
@@ -702,6 +706,7 @@
 		<set name="magicLvl" val="79" />
 		<set name="icon" val="icon.skill1413" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -733,7 +738,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
@@ -776,6 +781,7 @@
 		<set name="magicLvl" val="49" />
 		<set name="icon" val="icon.skill0826" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -804,6 +810,7 @@
 		<set name="magicLvl" val="49" />
 		<set name="icon" val="icon.skill0827" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -834,6 +841,7 @@
 		<set name="magicLvl" val="46" />
 		<set name="icon" val="icon.skill0829" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -864,6 +872,7 @@
 		<set name="magicLvl" val="46" />
 		<set name="icon" val="icon.skill0830" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -893,6 +902,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="icon" val="icon.skill1542" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -922,6 +932,7 @@
 		<set name="magicLvl" val="76" />
 		<set name="icon" val="icon.skill1352" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -949,6 +960,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="icon" val="icon.skill1354" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -971,6 +983,7 @@
 		<set name="affectRange" val="-2" />
 		<set name="icon" val="icon.skill1429" />
 		<set name="reuseDelay" val="2000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="CallTargetParty" />
@@ -985,6 +998,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23251" levels="1" name="Agathion Cute Trick - Makeshift Bat">
@@ -996,6 +1010,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23252" levels="1" name="Agathion Cute Trick - Griffin">
@@ -1007,6 +1022,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23253" levels="1" name="Master's Blessing - Focus">
@@ -1025,6 +1041,7 @@
 		<set name="magicLvl" val="52" />
 		<set name="icon" val="icon.skill1077" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1048,6 +1065,7 @@
 		<set name="magicLvl" val="56" />
 		<set name="icon" val="icon.skill1242" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1071,6 +1089,7 @@
 		<set name="magicLvl" val="52" />
 		<set name="icon" val="icon.skill1086" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1094,6 +1113,7 @@
 		<set name="magicLvl" val="56" />
 		<set name="icon" val="icon.skill1240" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1117,6 +1137,7 @@
 		<set name="magicLvl" val="72" />
 		<set name="icon" val="icon.skill1045" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MaxHp">
@@ -1140,6 +1161,7 @@
 		<set name="magicLvl" val="70" />
 		<set name="icon" val="icon.skill1048" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1163,6 +1185,7 @@
 		<set name="magicLvl" val="52" />
 		<set name="icon" val="icon.skill1087" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1186,6 +1209,7 @@
 		<set name="magicLvl" val="48" />
 		<set name="icon" val="icon.skill1085" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1209,6 +1233,7 @@
 		<set name="magicLvl" val="52" />
 		<set name="icon" val="icon.skill1257" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1232,6 +1257,7 @@
 		<set name="magicLvl" val="40" />
 		<set name="icon" val="icon.skill1068" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1255,6 +1281,7 @@
 		<set name="magicLvl" val="44" />
 		<set name="icon" val="icon.skill1040" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1278,6 +1305,7 @@
 		<set name="magicLvl" val="52" />
 		<set name="icon" val="icon.skill1036" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1301,6 +1329,7 @@
 		<set name="magicLvl" val="72" />
 		<set name="icon" val="icon.skill1268" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="VampiricAttack">
@@ -1324,6 +1353,7 @@
 		<set name="magicLvl" val="52" />
 		<set name="icon" val="icon.skill1059" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1347,6 +1377,7 @@
 		<set name="magicLvl" val="30" />
 		<set name="icon" val="icon.skill1204" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1370,6 +1401,7 @@
 		<set name="magicLvl" val="52" />
 		<set name="icon" val="icon.skill1062" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1400,6 +1432,7 @@
 		<set name="magicLvl" val="74" />
 		<set name="icon" val="icon.skill1388" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1423,6 +1456,7 @@
 		<set name="magicLvl" val="74" />
 		<set name="icon" val="icon.skill1389" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1446,6 +1480,7 @@
 		<set name="magicLvl" val="70" />
 		<set name="icon" val="icon.skill1303" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1469,6 +1504,7 @@
 		<set name="magicLvl" val="74" />
 		<set name="icon" val="icon.skill1397" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1494,6 +1530,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="icon" val="icon.skill1355" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1529,6 +1566,7 @@
 		<set name="magicLvl" val="78" />
 		<set name="icon" val="icon.skill1356" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1564,6 +1602,7 @@
 		<set name="magicLvl" val="78" />
 		<set name="icon" val="icon.skill1357" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1602,6 +1641,7 @@
 		<set name="magicLvl" val="78" />
 		<set name="icon" val="icon.skill1363" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1630,7 +1670,7 @@
 		<set name="abnormalType" val="IMPROVE_PA_PD_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="70" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
@@ -1663,7 +1703,7 @@
 		<set name="abnormalType" val="IMPROVE_MA_MD_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
@@ -1696,7 +1736,7 @@
 		<set name="abnormalType" val="IMPROVE_HP_MP_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="72" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
@@ -1731,7 +1771,7 @@
 		<set name="abnormalType" val="IMPROVE_CRT_RATE_DMG_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
@@ -1764,7 +1804,7 @@
 		<set name="abnormalType" val="IMPROVE_SHIELD_RATE_DEFENCE_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="70" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
@@ -1797,7 +1837,7 @@
 		<set name="abnormalType" val="IMPROVE_SPEED_AVOID_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="72" />
 		<set name="mpConsume" val="1" />
 		<set name="mpInitialConsume" val="1" />
@@ -1839,6 +1879,7 @@
 		<set name="magicLvl" val="49" />
 		<set name="icon" val="icon.skill0825" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1868,6 +1909,7 @@
 		<set name="magicLvl" val="46" />
 		<set name="icon" val="icon.skill0828" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1894,6 +1936,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="icon" val="icon.skill1323" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="NoblesseBless" />
@@ -1907,7 +1950,7 @@
 		<set name="abnormalType" val="IMPROVE_HIT_DEFENCE_CRT_RATE_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
@@ -1938,7 +1981,7 @@
 		<set name="abnormalType" val="IMPROVE_MA_MD_UP" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
@@ -1977,6 +2020,7 @@
 		<set name="magicLvl" val="79" />
 		<set name="icon" val="icon.skill1413" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2007,7 +2051,7 @@
 		<set name="abnormalType" val="IMPROVE_VAMPIRIC_HASTE" />
 		<set name="affectRange" val="2000" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="2" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="74" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
@@ -2049,6 +2093,7 @@
 		<set name="magicLvl" val="49" />
 		<set name="icon" val="icon.skill0826" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2076,6 +2121,7 @@
 		<set name="magicLvl" val="49" />
 		<set name="icon" val="icon.skill0827" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2105,6 +2151,7 @@
 		<set name="magicLvl" val="46" />
 		<set name="icon" val="icon.skill0829" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2134,6 +2181,7 @@
 		<set name="magicLvl" val="46" />
 		<set name="icon" val="icon.skill0830" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2162,6 +2210,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="icon" val="icon.skill1542" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -2190,6 +2239,7 @@
 		<set name="magicLvl" val="76" />
 		<set name="icon" val="icon.skill1352" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2216,6 +2266,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="icon" val="icon.skill1354" />
 		<set name="reuseDelay" val="1000" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2242,6 +2293,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="600000" />
 		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23298" levels="1" name="Flame Hawk">

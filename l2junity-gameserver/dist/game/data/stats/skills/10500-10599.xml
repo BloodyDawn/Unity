@@ -527,6 +527,7 @@
 		<set name="isTriggeredSkill" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="isMagic" val="2" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions">
@@ -929,6 +930,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="effectRange" val="1100" />
+		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TeleportToTarget" />
@@ -1000,6 +1002,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
+		<set name="isMagic" val="4" />
 		<set name="reuseDelay" val="600000" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1043,6 +1046,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE" />
+		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1517,6 +1521,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="isMagic" val="2" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="Plunder" />
@@ -1748,6 +1753,7 @@
 		<set name="isTriggeredSkill" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="isMagic" val="2" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="Root" />
