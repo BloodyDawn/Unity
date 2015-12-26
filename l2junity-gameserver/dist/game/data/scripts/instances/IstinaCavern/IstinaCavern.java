@@ -23,7 +23,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.CategoryType;
-import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.DamageDoneInfo;
@@ -37,6 +36,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.ExSendUIEvent;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -209,10 +209,7 @@ public final class IstinaCavern extends AbstractInstance
 							npc.setTargetable(false);
 							npc.setIsInvul(true);
 							getTimers().addTimer("BALLISTA_END_TIMER", 1000, npc, null);
-							// gg->BroadcastUIEventFStr(myself->sm, 1000, 2, 0, 0, gg->IntToStr(myself->i_ai2), gg->IntToStr(i0), "0", "2042", "0", 1811347, "", "", "", "", "");
-							// i_ai2 = countDown
-							// i0 = charged
-							npc.broadcastSay(ChatType.GENERAL, "Time left: " + countDown + " seconds, charged: " + charged + "%.");
+							instance.getPlayers().forEach(temp -> temp.sendPacket(new ExSendUIEvent(temp, 2, countDown, charged, 0, 2042, 0, NpcStringId.REPLENISH_BALLISTA_MAGIC_POWER.getId())));
 						}
 						
 						npcVars.set("HELP_COUNT_DOWN", npcVars.getInt("HELP_COUNT_DOWN", 0) + 1);
@@ -220,10 +217,7 @@ public final class IstinaCavern extends AbstractInstance
 						{
 							npcVars.set("COUNT_DOWN", countDown - 1);
 							npcVars.set("HELP_COUNT_DOWN", 0);
-							// gg->BroadcastUIEventFStr(myself->sm, 1000, 2, 0, 0, gg->IntToStr(myself->i_ai2), gg->IntToStr(i0), "0", "2042", "0", 1811347, "", "", "", "", "");
-							// i_ai2 = countDown
-							// i0 = charged
-							npc.broadcastSay(ChatType.GENERAL, "Time left: " + countDown + " seconds, charged: " + charged + "%.");
+							instance.getPlayers().forEach(temp -> temp.sendPacket(new ExSendUIEvent(temp, 2, countDown, charged, 0, 2042, 0, NpcStringId.REPLENISH_BALLISTA_MAGIC_POWER.getId())));
 						}
 						getTimers().addTimer("BALLISTA_CHECK_TIMER", 500, npc, null);
 					}
