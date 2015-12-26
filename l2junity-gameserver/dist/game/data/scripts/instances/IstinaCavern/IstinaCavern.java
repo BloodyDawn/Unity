@@ -18,9 +18,15 @@
  */
 package instances.IstinaCavern;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.l2junity.Config;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
+import org.l2junity.gameserver.model.AggroInfo;
+import org.l2junity.gameserver.model.DamageDoneInfo;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -34,6 +40,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.util.Util;
 
 import instances.AbstractInstance;
 
@@ -250,7 +257,8 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						istina.teleToLocation(DEFEAT_ISTINA_LOC);
 						istina.setInvisible(false);
-						istina.doDie(istina.getMostHated());
+						istina.setUndying(false);
+						istina.reduceCurrentHp(1000000, istina.getVariables().getObject("REWARD_PLAYER", PlayerInstance.class), false, false, null);
 					});
 					break;
 				}
@@ -310,14 +318,14 @@ public final class IstinaCavern extends AbstractInstance
 		final Instance instance = npc.getInstanceWorld();
 		if (isIstinaInstance(instance))
 		{
-			final StatsSet npcParams = npc.getVariables();
-			final int stage = npcParams.getInt("ISTINA_STAGE", -1);
+			final StatsSet npcVars = npc.getVariables();
+			final int stage = npcVars.getInt("ISTINA_STAGE", -1);
 			
 			if (npc.getId() == BALLISTA)
 			{
-				if (npcParams.getBoolean("COUNTING_ENABLED", false))
+				if (npcVars.getBoolean("COUNTING_ENABLED", false))
 				{
-					final int score = npcParams.getInt("SCORE_VAL", 0);
+					final int score = npcVars.getInt("SCORE_VAL", 0);
 					int addScore = damage;
 					
 					if (skill != null)
@@ -333,7 +341,7 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						addScore *= 2;
 					}
-					npcParams.set("SCORE_VAL", score + addScore);
+					npcVars.set("SCORE_VAL", score + addScore);
 				}
 			}
 			else
@@ -342,7 +350,7 @@ public final class IstinaCavern extends AbstractInstance
 				{
 					case -1:
 					{
-						npcParams.set("ISTINA_STAGE", 1);
+						npcVars.set("ISTINA_STAGE", 1);
 						instance.getDoors().forEach(DoorInstance::closeMe);
 						npc.setUndying(true);
 						((Attackable) npc).setCanReturnToSpawnPoint(false);
@@ -355,7 +363,7 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						if (npc.getCurrentHpPercent() < 85)
 						{
-							npcParams.set("ISTINA_STAGE", 2);
+							npcVars.set("ISTINA_STAGE", 2);
 							// myself->AddTimerEx(Authority_Timer, (3 * 1000));
 						}
 						break;
@@ -364,7 +372,7 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						if (npc.getCurrentHpPercent() < 70)
 						{
-							npcParams.set("ISTINA_STAGE", 3);
+							npcVars.set("ISTINA_STAGE", 3);
 							if (isExtremeMode(instance))
 							{
 								// myself->AddTimerEx(Seal_Timer, (3 * 1000));
@@ -377,7 +385,7 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						if (npc.getCurrentHpPercent() < 55)
 						{
-							npcParams.set("ISTINA_STAGE", 4);
+							npcVars.set("ISTINA_STAGE", 4);
 							// myself->AddTimerEx(Creation_Timer, (Creation_Timer_Interval * 1000));
 						}
 						break;
@@ -386,7 +394,7 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						if (npc.getCurrentHpPercent() < 40)
 						{
-							npcParams.set("ISTINA_STAGE", 5);
+							npcVars.set("ISTINA_STAGE", 5);
 							if (isExtremeMode(instance))
 							{
 								// myself->AddTimerEx(Order_Timer, (Order_Timer_Interval * 100));
@@ -398,7 +406,8 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						if (npc.getCurrentHpPercent() < 0.01)
 						{
-							npcParams.set("ISTINA_STAGE", 6);
+							npcVars.set("ISTINA_STAGE", 6);
+							npcVars.set("REWARD_PLAYER", getRewardPlayer(npc));
 							getTimers().cancelTimer("DEATH_TIMER", npc, null);
 							getTimers().cancelTimer("DEATH_CHECK_TIMER", npc, null);
 							getTimers().cancelTimer("REFLECT_TIMER", npc, null);
@@ -465,7 +474,7 @@ public final class IstinaCavern extends AbstractInstance
 		return (instance != null) && ((instance.getTemplateId() == TEMPLATE_ID_COMMON) || (instance.getTemplateId() == TEMPLATE_ID_EXTREME));
 	}
 	
-	public int getChargedPercent(int score, boolean isExtreme)
+	private int getChargedPercent(int score, boolean isExtreme)
 	{
 		final int charged;
 		if (score >= (isExtreme ? PERFECT_SCORE_2 : PERFECT_SCORE_1))
@@ -477,6 +486,44 @@ public final class IstinaCavern extends AbstractInstance
 			charged = (score * 100) / (isExtreme ? PERFECT_SCORE_2 : PERFECT_SCORE_1);
 		}
 		return charged;
+	}
+	
+	private PlayerInstance getRewardPlayer(Npc npc)
+	{
+		final Map<PlayerInstance, DamageDoneInfo> rewards = new ConcurrentHashMap<>();
+		PlayerInstance maxDealer = null;
+		int maxDamage = 0;
+		
+		for (AggroInfo info : ((Attackable) npc).getAggroList().values())
+		{
+			if (info == null)
+			{
+				continue;
+			}
+			
+			final PlayerInstance attacker = info.getAttacker().getActingPlayer();
+			if (attacker != null)
+			{
+				final int damage = info.getDamage();
+				if (damage > 1)
+				{
+					if (!Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, attacker, true))
+					{
+						continue;
+					}
+					
+					final DamageDoneInfo reward = rewards.computeIfAbsent(attacker, DamageDoneInfo::new);
+					reward.addDamage(damage);
+					
+					if (reward.getDamage() > maxDamage)
+					{
+						maxDealer = attacker;
+						maxDamage = reward.getDamage();
+					}
+				}
+			}
+		}
+		return maxDealer;
 	}
 	
 	public static void main(String[] args)
