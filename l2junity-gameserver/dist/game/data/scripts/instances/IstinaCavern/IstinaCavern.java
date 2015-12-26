@@ -1,0 +1,486 @@
+/*
+ * Copyright (C) 2004-2015 L2J DataPack
+ * 
+ * This file is part of L2J DataPack.
+ * 
+ * L2J DataPack is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J DataPack is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+package instances.IstinaCavern;
+
+import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import instances.AbstractInstance;
+
+/**
+ * Istina Cavern instance zone.
+ * @author St3eT
+ */
+public final class IstinaCavern extends AbstractInstance
+{
+	// NPCs
+	private static final int RUMIESE = 33151;
+	private static final int INVISIBLE_NPC = 18919;
+	private static final int BALLISTA = 19021;
+	private static final int EXTREME_MINION = 23125;
+	private static final int[] ISTINA =
+	{
+		29195,
+	};
+	// Skills
+	private static final SkillHolder ERUPTION_1 = new SkillHolder(14222, 1);
+	private static final SkillHolder ERUPTION_2 = new SkillHolder(14223, 1);
+	// Locations
+	private static final Location DEFEAT_ISTINA_LOC = new Location(-177120, 148782, -11384, 49140);
+	// Misc
+	private static final int PERFECT_SCORE_1 = 30000000;
+	private static final int PERFECT_SCORE_2 = 300000000;
+	private static final int TEMPLATE_ID_COMMON = 169;
+	private static final int TEMPLATE_ID_EXTREME = 170;
+	
+	public IstinaCavern()
+	{
+		addStartNpc(RUMIESE);
+		addTalkId(RUMIESE);
+		addAttackId(ISTINA);
+		addAttackId(BALLISTA);
+		addSpellFinishedId(ISTINA);
+		addSpellFinishedId(INVISIBLE_NPC);
+		addSpawnId(INVISIBLE_NPC, BALLISTA);
+	}
+	
+	@Override
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
+	{
+		if (event.equals("enterInstanceCommon"))
+		{
+			enterInstance(player, npc, TEMPLATE_ID_COMMON);
+		}
+		else if (event.equals("enterInstanceExtreme"))
+		{
+			// enterInstance(player, npc, TEMPLATE_ID_EXTREME);
+		}
+		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isIstinaInstance(instance))
+		{
+			final StatsSet npcParams = npc.getParameters();
+			final StatsSet npcVars = npc.getVariables();
+			switch (event)
+			{
+				case "DEATH_TIMER":
+				{
+					final Creature mostHated = ((Attackable) npc).getMostHated();
+					if ((mostHated != null) && npc.isInsideRadius(mostHated, 15000, false, true))
+					{
+						final SkillHolder death1 = npcParams.getSkillHolder("Istina_Death_Skill01");
+						final SkillHolder death2 = npcParams.getSkillHolder("Istina_Death_Skill02");
+						
+						if (mostHated.isInCategory(CategoryType.TANKER_GROUP))
+						{
+							addSkillCastDesire(npc, mostHated, (mostHated.isAffectedBySkill(death1) ? death2 : death1), 23);
+						}
+						else
+						{
+							addSkillCastDesire(npc, mostHated, death2, 23);
+						}
+					}
+					getTimers().addTimer("DEATH_TIMER", 35000, npc, null);
+					break;
+				}
+				case "DEATH_CHECK_TIMER":
+				{
+					final SkillHolder death1 = npcParams.getSkillHolder("Istina_Death_Skill01");
+					final SkillHolder death2 = npcParams.getSkillHolder("Istina_Death_Skill02");
+					final Creature mostHated = ((Attackable) npc).getMostHated();
+					
+					if ((mostHated != null) && npc.isInsideRadius(mostHated, 15000, false, true) && mostHated.isInCategory(CategoryType.TANKER_GROUP) && mostHated.isAffectedBySkill(death1))
+					{
+						addSkillCastDesire(npc, mostHated, death2, 23);
+					}
+					break;
+				}
+				case "REFLECT_TIMER":
+				{
+					if (!isExtremeMode(instance))
+					{
+						showOnScreenMsg(instance, NpcStringId.ISTINA_SPREADS_THE_REFLECTING_PROTECTIVE_SHEET, ExShowScreenMessage.TOP_CENTER, 4000);
+					}
+					final SkillHolder reflect = npcParams.getSkillHolder("Istina_Refraction_Skill");
+					npc.setTarget(npc);
+					npc.doCast(reflect.getSkill());
+					instance.broadcastPacket(new PlaySound(1, "Npcdialog1.istina_voice_02", 0, 0, 0, 0, 0));
+					getTimers().addTimer("REFLECT_TIMER", 90000 + getRandom(15000), npc, null);
+					break;
+				}
+				case "REFLECT_CHECK_TIMER":
+				{
+					if (npc.isAffectedBySkill(npcParams.getSkillHolder("Istina_Refraction_Skill")))
+					{
+						getTimers().addTimer("REFLECT_CHECK_TIMER", 1000, npc, null);
+					}
+					else
+					{
+						npc.setState(2);
+					}
+					break;
+				}
+				case "LOW_ERUPTION_TIMER":
+				{
+					final Attackable istina = (Attackable) npc;
+					if ((istina.getHateList() != null) && (istina.getHateList().size() > 0))
+					{
+						final Creature target = istina.getHateList().stream().sorted((o1, o2) -> (int) o1.calculateDistance(o2, true, false)).findFirst().orElse(null);
+						if (target != null)
+						{
+							addSpawn(INVISIBLE_NPC, new Location(target.getX() + getRandom(-50, 50), target.getY() + getRandom(-50, 50), target.getZ() + 10), false, 0, false, instance.getId());
+							instance.setParameter("ERUPTION_TARGET", target);
+						}
+					}
+					getTimers().addTimer("LOW_ERUPTION_TIMER", 15000, npc, null);
+					break;
+				}
+				case "BALLISTA_START_TIMER":
+				{
+					final int helpCountDown = npcVars.getInt("HELP_COUNT_DOWN", 5);
+					if (helpCountDown == 0)
+					{
+						getTimers().addTimer("BALLISTA_CHECK_TIMER", 1000, npc, null);
+						npc.setTargetable(true);
+						npc.setIsInvul(false);
+						npcVars.set("COUNTING_ENABLED", true);
+						showOnScreenMsg(instance, NpcStringId.START_CHARGING_MANA_BALLISTA, ExShowScreenMessage.TOP_CENTER, 4000);
+					}
+					else
+					{
+						showOnScreenMsg(instance, NpcStringId.AFTER_S1_SECONDS_THE_CHARGING_MAGIC_BALLISTAS_STARTS, ExShowScreenMessage.TOP_CENTER, 4000, Integer.toString(helpCountDown));
+						npcVars.set("HELP_COUNT_DOWN", helpCountDown - 1);
+						getTimers().addTimer("BALLISTA_START_TIMER", 1000, npc, null);
+					}
+					break;
+				}
+				case "BALLISTA_CHECK_TIMER":
+				{
+					if (npcVars.getBoolean("COUNTING_ENABLED", false))
+					{
+						final int countDown = npcVars.getInt("COUNT_DOWN", 30);
+						final int charged = getChargedPercent(npcVars.getInt("SCORE_VAL", 0), isExtremeMode(instance));
+						
+						if (countDown == 0)
+						{
+							npcVars.set("COUNTING_ENABLED", false);
+							npc.setTargetable(false);
+							npc.setIsInvul(true);
+							getTimers().addTimer("BALLISTA_END_TIMER", 1000, npc, null);
+							// gg->BroadcastUIEventFStr(myself->sm, 1000, 2, 0, 0, gg->IntToStr(myself->i_ai2), gg->IntToStr(i0), "0", "2042", "0", 1811347, "", "", "", "", "");
+							// i_ai2 = countDown
+							// i0 = charged
+							npc.broadcastSay(ChatType.GENERAL, "Time left: " + countDown + " seconds, charged: " + charged + "%.");
+						}
+						
+						npcVars.set("HELP_COUNT_DOWN", npcVars.getInt("HELP_COUNT_DOWN", 0) + 1);
+						if (npcVars.getInt("HELP_COUNT_DOWN", 0) == 2)
+						{
+							npcVars.set("COUNT_DOWN", countDown - 1);
+							npcVars.set("HELP_COUNT_DOWN", 0);
+							// gg->BroadcastUIEventFStr(myself->sm, 1000, 2, 0, 0, gg->IntToStr(myself->i_ai2), gg->IntToStr(i0), "0", "2042", "0", 1811347, "", "", "", "", "");
+							// i_ai2 = countDown
+							// i0 = charged
+							npc.broadcastSay(ChatType.GENERAL, "Time left: " + countDown + " seconds, charged: " + charged + "%.");
+						}
+						getTimers().addTimer("BALLISTA_CHECK_TIMER", 500, npc, null);
+					}
+					
+					break;
+				}
+				case "BALLISTA_END_TIMER":
+				{
+					if (getChargedPercent(npcVars.getInt("SCORE_VAL", 0), isExtremeMode(instance)) >= getRandom(100))
+					{
+						playMovie(instance, Movie.SC_ISTINA_ENDING_A);
+						getTimers().addTimer("INSTANCE_FINISH_TIMER", 23000, npc, null);
+					}
+					else
+					{
+						playMovie(instance, Movie.SC_ISTINA_ENDING_B);
+						getTimers().addTimer("INSTANCE_FINISH_TIMER", 22000, npc, null);
+					}
+					instance.getAliveNpcs(ISTINA).forEach(istina ->
+					{
+						istina.teleToLocation(instance.getEnterLocation());
+						istina.setInvisible(true);
+					});
+					break;
+				}
+				case "INSTANCE_FINISH_TIMER":
+				{
+					getTimers().addTimer("NPC_DELETE", 3000, evnt -> npc.deleteMe());
+					instance.finishInstance();
+					instance.getAliveNpcs(Attackable.class, ISTINA).forEach(istina ->
+					{
+						istina.teleToLocation(DEFEAT_ISTINA_LOC);
+						istina.setInvisible(false);
+						istina.doDie(istina.getMostHated());
+					});
+					break;
+				}
+			}
+		}
+	}
+	
+	@Override
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if ((skill != null) && isIstinaInstance(instance))
+		{
+			final int skillId = skill.getId();
+			
+			if (npc.getId() == INVISIBLE_NPC)
+			{
+				if (skillId == ERUPTION_1.getSkillId())
+				{
+					npc.setTarget(npc);
+					npc.doCast(ERUPTION_2.getSkill());
+				}
+				else if (skillId == ERUPTION_2.getSkillId())
+				{
+					getTimers().addTimer("NPC_DELETE", 2000, event -> npc.deleteMe());
+					
+					if (isExtremeMode(instance) && (getRandom(100) < 30))
+					{
+						addAttackPlayerDesire(addSpawn(EXTREME_MINION, npc, false, 0, false, instance.getId()), instance.getParameters().getObject("ERUPTION_TARGET", PlayerInstance.class), 23);
+					}
+				}
+			}
+			else
+			{
+				final StatsSet npcParams = npc.getParameters();
+				final SkillHolder death1 = npcParams.getSkillHolder("Istina_Death_Skill01");
+				final SkillHolder reflect = npcParams.getSkillHolder("Istina_Refraction_Skill");
+				
+				if (skillId == death1.getSkillId())
+				{
+					showOnScreenMsg(player, NpcStringId.ISTINA_S_MARK_SHINES_ABOVE_THE_HEAD, ExShowScreenMessage.TOP_CENTER, 4000);
+					getTimers().addTimer("DEATH_CHECK_TIMER", 10000, npc, null);
+				}
+				else if (skillId == reflect.getSkillId())
+				{
+					npc.setState(1);
+					getTimers().addTimer("REFLECT_CHECK_TIMER", 1000, npc, null);
+				}
+			}
+		}
+		return super.onSpellFinished(npc, player, skill);
+	}
+	
+	@Override
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isIstinaInstance(instance))
+		{
+			final StatsSet npcParams = npc.getVariables();
+			final int stage = npcParams.getInt("ISTINA_STAGE", -1);
+			
+			if (npc.getId() == BALLISTA)
+			{
+				if (npcParams.getBoolean("COUNTING_ENABLED", false))
+				{
+					final int score = npcParams.getInt("SCORE_VAL", 0);
+					int addScore = damage;
+					
+					if (skill != null)
+					{
+						if (skill.getEffectPoint() < 0)
+						{
+							addScore *= 1.5;
+						}
+						addScore *= 1.5;
+					}
+					
+					if (attacker.isInCategory(CategoryType.FIGHTER_GROUP))
+					{
+						addScore *= 2;
+					}
+					npcParams.set("SCORE_VAL", score + addScore);
+				}
+			}
+			else
+			{
+				switch (stage)
+				{
+					case -1:
+					{
+						npcParams.set("ISTINA_STAGE", 1);
+						instance.getDoors().forEach(DoorInstance::closeMe);
+						npc.setUndying(true);
+						((Attackable) npc).setCanReturnToSpawnPoint(false);
+						getTimers().addTimer("DEATH_TIMER", 3500, npc, null);
+						getTimers().addTimer("REFLECT_TIMER", 3500, npc, null);
+						getTimers().addTimer("LOW_ERUPTION_TIMER", 15000, npc, null);
+						break;
+					}
+					case 1:
+					{
+						if (npc.getCurrentHpPercent() < 85)
+						{
+							npcParams.set("ISTINA_STAGE", 2);
+							// myself->AddTimerEx(Authority_Timer, (3 * 1000));
+						}
+						break;
+					}
+					case 2:
+					{
+						if (npc.getCurrentHpPercent() < 70)
+						{
+							npcParams.set("ISTINA_STAGE", 3);
+							if (isExtremeMode(instance))
+							{
+								// myself->AddTimerEx(Seal_Timer, (3 * 1000));
+							}
+							// myself->AddTimerEx(Overcrowding_Timer, (10 * 1000));
+						}
+						break;
+					}
+					case 3:
+					{
+						if (npc.getCurrentHpPercent() < 55)
+						{
+							npcParams.set("ISTINA_STAGE", 4);
+							// myself->AddTimerEx(Creation_Timer, (Creation_Timer_Interval * 1000));
+						}
+						break;
+					}
+					case 4:
+					{
+						if (npc.getCurrentHpPercent() < 40)
+						{
+							npcParams.set("ISTINA_STAGE", 5);
+							if (isExtremeMode(instance))
+							{
+								// myself->AddTimerEx(Order_Timer, (Order_Timer_Interval * 100));
+							}
+						}
+						break;
+					}
+					case 5:
+					{
+						if (npc.getCurrentHpPercent() < 0.01)
+						{
+							npcParams.set("ISTINA_STAGE", 6);
+							getTimers().cancelTimer("DEATH_TIMER", npc, null);
+							getTimers().cancelTimer("DEATH_CHECK_TIMER", npc, null);
+							getTimers().cancelTimer("REFLECT_TIMER", npc, null);
+							getTimers().cancelTimer("REFLECT_CHECK_TIMER", npc, null);
+							getTimers().cancelTimer("LOW_ERUPTION_TIMER", npc, null);
+							// myself->BlockTimer(Authority_Timer);
+							// myself->BlockTimer(Overcrowding_Timer);
+							// myself->BlockTimer(Sub_Creation_TImer);
+							if (isExtremeMode(instance))
+							{
+								// myself->BlockTimer(Seal_Timer);
+								// myself->BlockTimer(Order_Timer);
+							}
+							instance.getAliveNpcs(EXTREME_MINION).forEach(Npc::deleteMe);
+							instance.spawnGroup("BALLISTA");
+							// myself->AddTimerEx(Broadcast_Timer, (2 * 1000));
+							// myself->AddTimerEx(Authority_End_Timer, (1 * 1000));
+							// myself->AddTimerEx(Location_Check_Timer, (4 * 1000));
+							npc.disableCoreAI(true);
+							npc.teleToLocation(DEFEAT_ISTINA_LOC);
+							npc.setState(3);
+							npc.setTargetable(false);
+							playMovie(instance, Movie.SC_ISTINA_BRIDGE);
+							instance.finishInstance(15);
+						}
+						break;
+					}
+				}
+			}
+		}
+		return super.onAttack(npc, attacker, damage, isSummon, skill);
+	}
+	
+	@Override
+	public String onSpawn(Npc npc)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isIstinaInstance(instance))
+		{
+			if (npc.getId() == INVISIBLE_NPC)
+			{
+				npc.setTarget(npc);
+				npc.doCast(ERUPTION_1.getSkill());
+			}
+			else if (npc.getId() == BALLISTA)
+			{
+				npc.disableCoreAI(true);
+				npc.setUndying(true);
+				npc.setIsInvul(true);
+				npc.setTargetable(false);
+				getTimers().addTimer("BALLISTA_START_TIMER", 10000, npc, null);
+			}
+		}
+		return super.onSpawn(npc);
+	}
+	
+	private boolean isExtremeMode(Instance instance)
+	{
+		return instance.getTemplateId() == TEMPLATE_ID_EXTREME;
+	}
+	
+	private boolean isIstinaInstance(Instance instance)
+	{
+		return (instance != null) && ((instance.getTemplateId() == TEMPLATE_ID_COMMON) || (instance.getTemplateId() == TEMPLATE_ID_EXTREME));
+	}
+	
+	public int getChargedPercent(int score, boolean isExtreme)
+	{
+		final int charged;
+		if (score >= (isExtreme ? PERFECT_SCORE_2 : PERFECT_SCORE_1))
+		{
+			charged = 100;
+		}
+		else
+		{
+			charged = (score * 100) / (isExtreme ? PERFECT_SCORE_2 : PERFECT_SCORE_1);
+		}
+		return charged;
+	}
+	
+	public static void main(String[] args)
+	{
+		new IstinaCavern();
+	}
+}

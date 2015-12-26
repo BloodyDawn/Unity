@@ -3141,4 +3141,14 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	{
 		new MovieHolder(new ArrayList<>(players), movie);
 	}
+	
+	/**
+	 * Play scene for all PlayerInstance inside instance.
+	 * @param instance Instance object
+	 * @param movie the movie
+	 */
+	public void playMovie(Instance instance, Movie movie)
+	{
+		playMovie(instance.getPlayers(), movie);
+	}
 }
