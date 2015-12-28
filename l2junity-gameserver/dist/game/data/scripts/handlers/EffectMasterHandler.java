@@ -148,6 +148,7 @@ public final class EffectMasterHandler
 		ManaHealPercent.class,
 		MaxCp.class,
 		MaxHp.class,
+		MaxMp.class,
 		ModifyVital.class,
 		MpConsumePerLevel.class,
 		Mute.class,

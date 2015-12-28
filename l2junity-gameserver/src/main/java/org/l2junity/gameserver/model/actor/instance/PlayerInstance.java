@@ -11779,7 +11779,7 @@ public final class PlayerInstance extends Playable
 			sm.addPcName(this);
 			sm.addCharName(target);
 			sm.addInt(damage);
-			sm.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+			sm.addPopup(target.getObjectId(), getObjectId(), -damage);
 		}
 		sendPacket(sm);
 	}

@@ -1237,6 +1237,9 @@
 		<set name="isDebuff" val="true" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="nextActionAttack" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD,BLUNT" />
+		</cond>
 		<for>
 			<effect name="BlockActions">
 				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
@@ -1244,6 +1247,12 @@
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
+			</effect>
+			<effect name="PhysicalAttack">
+				<param power="3295" />
+				<param criticalChance="20" />
+				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>

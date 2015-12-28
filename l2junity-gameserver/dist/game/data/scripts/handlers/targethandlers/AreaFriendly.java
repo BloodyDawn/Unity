@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
-import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -103,35 +102,29 @@ public class AreaFriendly implements ITargetTypeHandler
 		
 		if (target.isPlayable())
 		{
+			boolean friendly = false;
+			
 			if (activeChar == target)
 			{
-				return true;
+				friendly = true;
 			}
-			
-			if ((target != activeChar) && activeChar.isInParty() && target.isInParty())
+			else if ((activeChar.getAllyId() > 0) && (activeChar.getAllyId() == target.getActingPlayer().getAllyId()))
 			{
-				return (activeChar.getParty().getLeader() == target.getParty().getLeader());
+				friendly = true;
 			}
-			
-			if ((activeChar.getClanId() != 0) && (target.getClanId() != 0))
+			else if ((activeChar.getClanId() > 0) && (activeChar.getClanId() == target.getActingPlayer().getClanId()))
 			{
-				return (activeChar.getClanId() == target.getClanId());
+				friendly = true;
 			}
-			
-			if ((activeChar.getAllyId() != 0) && (target.getAllyId() != 0))
+			else if (activeChar.isInParty() && activeChar.getParty().containsPlayer(target.getActingPlayer()))
 			{
-				return (activeChar.getAllyId() == target.getAllyId());
+				friendly = true;
 			}
-			
-			if ((target != activeChar) && ((target.getActingPlayer().getPvpFlag() > 0) || (target.getActingPlayer().getReputation() < 0)))
+			else if ((target != activeChar) && (target.getActingPlayer().getPvpFlag() == 0))
 			{
-				return false;
+				friendly = true;
 			}
-			
-			if (target.isInsideZone(ZoneId.PVP))
-			{
-				return false;
-			}
+			return friendly;
 		}
 		return true;
 	}
