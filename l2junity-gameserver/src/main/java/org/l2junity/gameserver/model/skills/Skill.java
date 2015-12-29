@@ -59,7 +59,10 @@ import org.l2junity.gameserver.model.holders.AttachSkillHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.skills.targets.AffectObject;
+import org.l2junity.gameserver.model.skills.targets.AffectScope;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
@@ -142,6 +145,9 @@ public final class Skill implements IIdentifiable
 	// Effecting area of the skill, in radius.
 	// The radius center varies according to the _targetType:
 	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
+	private final TargetType _targetTypeRetail;
+	private final AffectScope _affectScope;
+	private final AffectObject _affectObject;
 	private final int _affectRange;
 	private final int[] _fanRange = new int[4]; // unk;startDegree;fanAffectRange;fanAffectAngle
 	private final int[] _affectLimit = new int[3]; // TODO: Third value is unknown... find it out!
@@ -277,6 +283,9 @@ public final class Skill implements IIdentifiable
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
 		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
 		
+		_targetTypeRetail = set.getEnum("targetTypeRetail", TargetType.class, TargetType.NONE);
+		_affectScope = set.getEnum("affectScope", AffectScope.class, AffectScope.NONE);
+		_affectObject = set.getEnum("affectObject", AffectObject.class, AffectObject.ALL);
 		_affectRange = set.getInt("affectRange", 0);
 		
 		final String rideState = set.getString("rideState", null);
@@ -355,7 +364,7 @@ public final class Skill implements IIdentifiable
 			}
 		}
 		
-		_targetType = set.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
+		_targetType = L2TargetType.SELF;// set.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
 		_magicLevel = set.getInt("magicLvl", 0);
 		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
 		_activateRate = set.getInt("activateRate", -1);
@@ -855,6 +864,21 @@ public final class Skill implements IIdentifiable
 	public int getCoolTime()
 	{
 		return _coolTime;
+	}
+	
+	public TargetType getTargetTypeRetail()
+	{
+		return _targetTypeRetail;
+	}
+	
+	public AffectScope getAffectScope()
+	{
+		return _affectScope;
+	}
+	
+	public AffectObject getAffectObject()
+	{
+		return _affectObject;
 	}
 	
 	public int getAffectRange()
