@@ -19,8 +19,11 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Objects;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -28,12 +31,14 @@ import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.model.Augmentation;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ensoul.EnsoulOption;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
-import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.multisell.Entry;
 import org.l2junity.gameserver.model.multisell.Ingredient;
+import org.l2junity.gameserver.model.multisell.ItemInfo;
 import org.l2junity.gameserver.model.multisell.PreparedListContainer;
+import org.l2junity.gameserver.model.variables.ItemVariables;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -215,8 +220,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 					}
 				}
 				
-				List<Augmentation> augmentation = new ArrayList<>();
-				Collection<AttributeHolder> attributes = null;
+				final Map<Integer, ItemInfo> originalInfos = new LinkedHashMap<>();
 				/** All ok, remove items and add final product */
 				
 				for (Ingredient e : entry.getIngredients())
@@ -270,14 +274,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 									ItemInstance[] inventoryContents = inv.getAllItemsByItemId(e.getItemId(), e.getEnchantLevel(), false).toArray(new ItemInstance[0]);
 									for (int i = 0; i < (e.getItemCount() * _amount); i++)
 									{
-										if (inventoryContents[i].isAugmented())
-										{
-											augmentation.add(inventoryContents[i].getAugmentation());
-										}
-										if (inventoryContents[i].getAttributes() != null)
-										{
-											attributes = inventoryContents[i].getAttributes();
-										}
+										originalInfos.put(i, new ItemInfo(inventoryContents[i]));
 										if (!player.destroyItem("Multisell", inventoryContents[i].getObjectId(), 1, player.getTarget(), true))
 										{
 											player.setMultiSell(null);
@@ -325,7 +322,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 									// choice 1. Small number of items exchanged. No sorting.
 									for (int i = 1; i <= (e.getItemCount() * _amount); i++)
 									{
-										Collection<ItemInstance> inventoryContents = inv.getAllItemsByItemId(e.getItemId(), false);
+										final Collection<ItemInstance> inventoryContents = inv.getAllItemsByItemId(e.getItemId(), false);
 										
 										itemToTake = inventoryContents.iterator().next();
 										// get item with the LOWEST enchantment level from the inventory...
@@ -393,28 +390,56 @@ public class MultiSellChoose implements IClientIncomingPacket
 						}
 						else
 						{
-							ItemInstance product = null;
 							for (int i = 0; i < (e.getItemCount() * _amount); i++)
 							{
-								product = inv.addItem("Multisell", e.getItemId(), 1, player, player.getTarget());
+								final ItemInstance product = inv.addItem("Multisell", e.getItemId(), 1, player, player.getTarget());
 								if ((product != null) && list.getMaintainEnchantment())
 								{
-									if (i < augmentation.size())
+									final ItemInfo info = originalInfos.get(i);
+									if (info.getAugmentId() > 0)
 									{
-										product.setAugmentation(new Augmentation(augmentation.get(i).getId()));
+										product.setAugmentation(new Augmentation(info.getAugmentId()));
 									}
-									if (attributes != null)
+									if (info.getElementals().length > 0)
 									{
-										attributes.forEach(product::setAttribute);
+										Arrays.stream(info.getElementals()).filter(Objects::nonNull).forEach(product::setAttribute);
+									}
+									if (info.getVisualId() > 0)
+									{
+										product.setVisualId(info.getVisualId());
+										if (info.getVisualStoneId() > 0)
+										{
+											product.getVariables().set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, info.getVisualStoneId());
+										}
+										if (info.getVisualIdLifeTime() > 0)
+										{
+											product.getVariables().set(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, info.getVisualIdLifeTime());
+											product.scheduleVisualLifeTime();
+										}
+									}
+									if (!info.getSpecialAbilities().isEmpty())
+									{
+										int position = 0;
+										for (EnsoulOption option : info.getSpecialAbilities())
+										{
+											product.addSpecialAbility(option, position++, 1, true);
+										}
+									}
+									if (!info.getAdditionalSpecialAbilities().isEmpty())
+									{
+										int position = 0;
+										for (EnsoulOption option : info.getAdditionalSpecialAbilities())
+										{
+											product.addSpecialAbility(option, position++, 2, true);
+										}
 									}
 									product.setEnchantLevel(e.getEnchantLevel());
 									product.updateDatabase();
 								}
 							}
 						}
-						// msg part
-						SystemMessage sm;
 						
+						final SystemMessage sm;
 						if ((e.getItemCount() * _amount) > 1)
 						{
 							sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1_S);
