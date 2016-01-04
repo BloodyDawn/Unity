@@ -243,7 +243,6 @@ public final class QuestState
 		{
 			try
 			{
-				getQuest().sendNpcLogList(getPlayer());
 				int previousVal = 0;
 				try
 				{
@@ -254,6 +253,7 @@ public final class QuestState
 					previousVal = 0;
 				}
 				setCond(Integer.parseInt(val), previousVal);
+				getQuest().sendNpcLogList(getPlayer());
 			}
 			catch (Exception e)
 			{
