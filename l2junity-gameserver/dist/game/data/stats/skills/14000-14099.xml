@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14001" levels="3" name="Cross Slash">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 132687 138779 64068 </table>
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1500" />
@@ -16,14 +17,20 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2500" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14002" levels="3" name="Transfixion Attack">
-		<table name="#magicLvl"> 95 96 97 </table>
+		<!-- Glory Days confirmed -->
 		<table name="#effectPoint"> -352 -353 -353 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#magicLvl"> 95 96 97 </table>
+		<table name="#power"> 132687 138779 168092 </table>
 		<set name="icon" val="icon.skill0484" />
 		<set name="operateType" val="DA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="20" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="100" />
@@ -33,15 +40,21 @@
 		<set name="effectRange" val="600" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14003" levels="3" name="Straight Slash">
-		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on the target. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
+		<table name="#magicLvl"> 95 96 97 </table>
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 132687 138779 237433 </table>
 		<set name="icon" val="icon.skill0122" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
@@ -55,14 +68,33 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.9" />
+				<sub stat="pDef" val="500" />
+				<mul stat="mDef" val="0.9" />
+				<sub stat="rEvas" val="4" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="50" />
+				<param skillId="1760" skillLevel="2" /> <!-- Armor Destruction -->
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14004" levels="3" name="Front Elven Bow">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 132687 138779 98750 </table>
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="2000" />
@@ -72,14 +104,20 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14005" levels="3" name="Battlefront Slash">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 53147 67537 81105 </table>
 		<set name="icon" val="icon.skill0320" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="2000" />
@@ -91,15 +129,21 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="fanRange" val="0;0;90;150" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14006" levels="3" name="Shield Stun">
-		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
+		<table name="#magicLvl"> 95 96 97 </table>
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 132687 138779 59777 </table>
 		<set name="icon" val="icon.skill0092" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="2000" />
@@ -120,14 +164,33 @@
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="fanRange" val="0;0;15;200" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="KnockBack">
+				<param distance="100" speed="400" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param KNOCKBACK="100" />
+				<param AIRBIND="100" />
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14007" levels="3" name="Power Blow">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 132687 138779 144943 </table>
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="250" />
 		<set name="hitTime" val="2000" />
@@ -137,13 +200,19 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14008" levels="3" name="Power Zeppelin">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#power"> 53147 67537 57977 </table>
 		<set name="icon" val="icon.skill0493" />
 		<set name="operateType" val="DA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="20" />
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="100" />
@@ -154,14 +223,20 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="150" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14009" levels="3" name="Electric Shock">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 78 78 79 </table>
+		<table name="#power"> 175 180 186 </table>
 		<set name="icon" val="icon.skill1172" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1000" />
@@ -174,13 +249,19 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14010" levels="3" name="Electric Range">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<table name="#mpConsumes"> 78 78 79 </table>
+		<table name="#power"> 175 180 186 </table>
 		<set name="icon" val="icon.skill0279" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="3000" />
@@ -195,14 +276,21 @@
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="150" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14011" levels="3" name="Electric Staff">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
+		<table name="#dot"> 318 323 328 </table>
 		<table name="#mpConsumes"> 78 78 79 </table>
+		<table name="#power"> 175 180 186 </table>
 		<set name="icon" val="icon.skill1265" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="3000" />
@@ -225,14 +313,23 @@
 		<set name="affectRange" val="250" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+			<effect name="DamOverTime" ticks="1">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14012" levels="3" name="Iron Deal">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 53147 67537 403420 </table>
 		<set name="icon" val="icon.skill0320" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="3000" />
@@ -244,14 +341,20 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="fanRange" val="0;0;300;90" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14013" levels="3" name="Iron Drop Deal">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 95 96 97 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 53147 67537 403420 </table>
 		<set name="icon" val="icon.skill0320" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="3000" />
@@ -263,14 +366,20 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="fanRange" val="0;0;250;90" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14014" levels="3" name="Power Front Slash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 		<table name="#mpConsumes"> 85 86 86 </table>
+		<table name="#power"> 53147 67537 403420 </table>
 		<set name="icon" val="icon.skill0320" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="3000" />
@@ -287,12 +396,30 @@
 		<set name="abnormalTime" val="20" />
 		<set name="fanRange" val="0;0;150;90" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.9" />
+				<sub stat="pDef" val="500" />
+				<mul stat="mDef" val="0.9" />
+				<sub stat="rEvas" val="4" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="50" />
+				<param skillId="1760" skillLevel="2" /> <!-- Armor Destruction -->
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14015" levels="1" name="Circle Slash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="86" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="3000" />
@@ -304,12 +431,17 @@
 		<set name="magicLvl" val="98" />
 		<set name="affectRange" val="250" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="201710" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14016" levels="1" name="Elven Bow Range">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0320" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="86" />
 		<set name="castRange" val="250" />
 		<set name="hitTime" val="3000" />
@@ -321,6 +453,11 @@
 		<set name="magicLvl" val="98" />
 		<set name="fanRange" val="0;0;90;250" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="201710" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14017" levels="1" name="Thunder Storm">
 		<!-- AUTO GENERATED SKILL -->
