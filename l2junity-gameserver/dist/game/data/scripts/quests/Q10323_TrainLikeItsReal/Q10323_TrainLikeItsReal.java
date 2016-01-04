@@ -103,7 +103,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 				if (qs.isCond(1))
 				{
 					qs.setCond(2, true);
-					sendNpcLogList(player);
 					htmltext = event;
 				}
 				break;
@@ -120,7 +119,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 						startQuestTimer("showscreen_spiritshot", 4500, npc, player);
 						player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_003_bullet_01.htm", TutorialShowHtml.LARGE_WINDOW));
 						qs.setCond(5, true);
-						sendNpcLogList(player);
 					}
 					else
 					{
@@ -129,7 +127,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 						startQuestTimer("showscreen_soulshot", 4500, npc, player);
 						player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_003_bullet_01.htm", TutorialShowHtml.LARGE_WINDOW));
 						qs.setCond(4, true);
-						sendNpcLogList(player);
 					}
 					htmltext = event;
 				}
@@ -267,7 +264,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 				killedGolem++;
 				qs.setCond(3, true);
 				qs.setMemoState(killedGolem);
-				sendNpcLogList(killer);
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else if (qs.isCond(6) || qs.isCond(7))
@@ -275,7 +271,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 				killedGolem++;
 				qs.setCond(8, true);
 				qs.setMemoState(killedGolem);
-				sendNpcLogList(killer);
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
