@@ -21,18 +21,18 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * Transfer Damage effect implementation.
  * @author UnAfraid
  */
-public final class TransferDamage extends AbstractEffect
+public final class TransferDamageToPlayer extends AbstractStatAddEffect
 {
-	public TransferDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TransferDamageToPlayer(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(attachCond, applyCond, set, params, Stats.TRANSFER_DAMAGE_TO_PLAYER);
 	}
 	
 	@Override

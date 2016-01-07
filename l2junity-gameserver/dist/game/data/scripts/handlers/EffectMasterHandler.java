@@ -236,7 +236,7 @@ public final class EffectMasterHandler
 		TeleportToSummon.class,
 		TeleportToTarget.class,
 		ThrowUp.class,
-		TransferDamage.class,
+		TransferDamageToPlayer.class,
 		TransferHate.class,
 		Transformation.class,
 		TrapDetect.class,
