@@ -1029,7 +1029,7 @@ public final class Formulas
 			return 0;
 		}
 		
-		int degreeside = (int) target.getStat().getValue(Stats.SHIELD_DEFENCE_ANGLE, 0) + 120;
+		int degreeside = target.isAffected(EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
 		if ((degreeside < 360) && (!target.isFacing(attacker, degreeside)))
 		{
 			return 0;

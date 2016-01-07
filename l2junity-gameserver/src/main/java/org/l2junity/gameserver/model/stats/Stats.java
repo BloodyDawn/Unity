@@ -217,9 +217,6 @@ public enum Stats
 	BOW_MP_CONSUME_RATE("BowMpConsumeRate"),
 	MP_CONSUME("MpConsume"),
 	
-	// Shield Stats
-	SHIELD_DEFENCE_ANGLE("shieldDefAngle"),
-	
 	// Skill mastery
 	SKILL_CRITICAL("skillCritical"),
 	SKILL_CRITICAL_PROBABILITY("skillCriticalProbability"),
