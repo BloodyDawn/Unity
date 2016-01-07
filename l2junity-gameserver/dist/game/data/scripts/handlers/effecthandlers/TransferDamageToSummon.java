@@ -25,9 +25,9 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class TransferDamageSummon extends AbstractStatAddEffect
+public class TransferDamageToSummon extends AbstractStatAddEffect
 {
-	public TransferDamageSummon(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TransferDamageToSummon(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.TRANSFER_DAMAGE_SUMMON_PERCENT);
 	}
