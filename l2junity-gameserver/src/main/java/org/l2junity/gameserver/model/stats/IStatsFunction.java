@@ -123,7 +123,7 @@ public interface IStatsFunction
 				}
 			}
 			
-			if ((stat == Stats.MAGIC_DEFENCE) || (stat == Stats.POWER_DEFENCE))
+			if ((stat == Stats.MAGICAL_DEFENCE) || (stat == Stats.PHYSICAL_DEFENCE))
 			{
 				value += calcEnchantDefBonus(item, blessedBonus, enchant, overEnchant);
 			}
@@ -131,7 +131,7 @@ public interface IStatsFunction
 			{
 				value += calcEnchantMatkBonus(item, blessedBonus, enchant, overEnchant);
 			}
-			else if ((stat == Stats.POWER_ATTACK) && item.isWeapon())
+			else if ((stat == Stats.PHYSICAL_ATTACK) && item.isWeapon())
 			{
 				value += calcEnchantedPAtkBonus(item, blessedBonus, enchant, overEnchant);
 			}

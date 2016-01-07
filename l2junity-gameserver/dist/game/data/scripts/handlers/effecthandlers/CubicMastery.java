@@ -19,48 +19,16 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.Stats;
 
 /**
- * Cubic Mastery effect implementation.
- * @author Zoey76
+ * @author Sdw
  */
-public final class CubicMastery extends AbstractEffect
+public final class CubicMastery extends AbstractStatAddEffect
 {
-	private final int _cubicCount;
-	
 	public CubicMastery(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
-		_cubicCount = params.getInt("cubicCount", 1);
-	}
-	
-	@Override
-	public boolean canStart(BuffInfo info)
-	{
-		return (info.getEffector() != null) && (info.getEffected() != null) && info.getEffected().isPlayer();
-	}
-	
-	@Override
-	public void onStart(Creature effector, Creature effected, Skill skill)
-	{
-		effected.getActingPlayer().getStat().setMaxCubicCount(_cubicCount);
-	}
-	
-	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		return info.getSkill().isPassive();
-	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().getActingPlayer().getStat().setMaxCubicCount(1);
+		super(attachCond, applyCond, set, params, Stats.MAX_CUBIC);
 	}
 }

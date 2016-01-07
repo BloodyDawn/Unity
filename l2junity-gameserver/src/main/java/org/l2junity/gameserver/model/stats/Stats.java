@@ -73,17 +73,14 @@ public enum Stats
 	HEAL_POWER("healPower"),
 	
 	// ATTACK & DEFENCE
-	POWER_DEFENCE("pDef", new PDefenseFinalizer()),
-	MAGIC_DEFENCE("mDef", new MDefenseFinalizer()),
-	POWER_ATTACK("pAtk", new PAttackFinalizer()),
+	PHYSICAL_DEFENCE("pDef", new PDefenseFinalizer()),
+	MAGICAL_DEFENCE("mDef", new MDefenseFinalizer()),
+	PHYSICAL_ATTACK("pAtk", new PAttackFinalizer()),
 	MAGIC_ATTACK("mAtk", new MAttackFinalizer()),
 	PHYSICAL_SKILL_POWER("physicalSkillPower"),
-	POWER_ATTACK_SPEED("pAtkSpd", new PAttackSpeedFinalizer()),
+	PHYSICAL_ATTACK_SPEED("pAtkSpd", new PAttackSpeedFinalizer()),
 	MAGIC_ATTACK_SPEED("mAtkSpd", new MAttackSpeedFinalizer()), // Magic Skill Casting Time Rate
 	ATK_REUSE("atkReuse"), // Bows Hits Reuse Rate
-	P_REUSE("pReuse"), // Physical Skill Reuse Rate
-	MAGIC_REUSE_RATE("mReuse"), // Magic Skill Reuse Rate
-	DANCE_REUSE("dReuse"), // Dance Skill Reuse Rate
 	SHIELD_DEFENCE("sDef"),
 	CRITICAL_DAMAGE("cAtk"),
 	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
@@ -114,7 +111,6 @@ public enum Stats
 	// ATTACK & DEFENCE RATES
 	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
 	MAGIC_EVASION_RATE("mEvas", new MEvasionRateFinalizer()),
-	P_SKILL_EVASION("pSkillEvas"),
 	DEFENCE_CRITICAL_RATE("defCritRate"),
 	DEFENCE_CRITICAL_RATE_ADD("defCritRateAdd"),
 	DEFENCE_MAGIC_CRITICAL_RATE("defMCritRate"),
@@ -122,9 +118,9 @@ public enum Stats
 	DEFENCE_CRITICAL_DAMAGE("defCritDamage"),
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
-	SHIELD_RATE("rShld"),
+	SHIELD_DEFENCE_RATE("rShld"),
 	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
-	MCRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
+	MAGIC_CRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
 	BLOW_RATE("blowRate"),
 	EXPSP_RATE("rExp"),
 	BONUS_EXP("bonusExp"),
@@ -134,7 +130,7 @@ public enum Stats
 	// ACCURACY & RANGE
 	ACCURACY_COMBAT("accCombat", new PAccuracyFinalizer()),
 	ACCURACY_MAGIC("accMagic", new MAccuracyFinalizer()),
-	POWER_ATTACK_RANGE("pAtkRange", new PRangeFinalizer()),
+	PHYSICAL_ATTACK_RANGE("pAtkRange", new PRangeFinalizer()),
 	MAGIC_ATTACK_RANGE("mAtkRange"),
 	ATTACK_COUNT_MAX("atkCountMax"),
 	// Run speed, walk & escape speed are calculated proportionally, magic speed is a buff
@@ -164,10 +160,8 @@ public enum Stats
 	
 	// VULNERABILITIES
 	DAMAGE_ZONE_VULN("damageZoneVuln"),
-	MOVEMENT_VULN("movementVuln"),
 	CANCEL_VULN("cancelVuln"), // Resistance for cancel type skills
 	DEBUFF_VULN("debuffVuln"),
-	BUFF_VULN("buffVuln"),
 	
 	// RESISTANCES
 	FIRE_RES("fireRes", new AttributeFinalizer(AttributeType.FIRE, false)),
@@ -179,7 +173,6 @@ public enum Stats
 	BASE_ATTRIBUTE_RES("baseAttrRes"),
 	MAGIC_SUCCESS_RES("magicSuccRes"),
 	// BUFF_IMMUNITY("buffImmunity"), //TODO: Implement me
-	DEBUFF_IMMUNITY("debuffImmunity"),
 	ABNORMAL_RESIST_PHYSICAL("abnormalResPhysical"),
 	ABNORMAL_RESIST_MAGICAL("abnormalResMagical"),
 	FIXED_DAMAGE_RES("fixedDamageRes"), // Resistance agains fixed damage.
@@ -193,8 +186,6 @@ public enum Stats
 	DARK_POWER("darkPower", new AttributeFinalizer(AttributeType.DARK, true)),
 	
 	// PROFICIENCY
-	CANCEL_PROF("cancelProf"),
-	
 	REFLECT_DAMAGE_PERCENT("reflectDam"),
 	REFLECT_DAMAGE_PERCENT_DEFENSE("reflectDamDef"),
 	REFLECT_SKILL_MAGIC("reflectSkillMagic"),
@@ -212,13 +203,12 @@ public enum Stats
 	WEIGHT_PENALTY("weightPenalty"),
 	
 	// ExSkill
-	INV_LIM("inventoryLimit"),
-	WH_LIM("whLimit"),
-	FREIGHT_LIM("FreightLimit"),
-	P_SELL_LIM("PrivateSellLimit"),
-	P_BUY_LIM("PrivateBuyLimit"),
-	REC_D_LIM("DwarfRecipeLimit"),
-	REC_C_LIM("CommonRecipeLimit"),
+	INVENTORY_NORMAL("inventoryLimit"),
+	STORAGE_PRIVATE("whLimit"),
+	TRADE_SELL("PrivateSellLimit"),
+	TRADE_BUY("PrivateBuyLimit"),
+	RECIPE_DWARVEN("DwarfRecipeLimit"),
+	RECIPE_COMMON("CommonRecipeLimit"),
 	
 	// C4 Stats
 	PHYSICAL_MP_CONSUME_RATE("PhysicalMpConsumeRate"),
@@ -257,6 +247,9 @@ public enum Stats
 	// Summon Points
 	MAX_SUMMON_POINTS("summonPoints"),
 	
+	// Cubic Count
+	MAX_CUBIC("cubicCount"),
+	
 	// Exp bonus applied to vitality
 	VITALITY_EXP_BONUS("vitalityExpBonus"),
 	
@@ -286,9 +279,6 @@ public enum Stats
 	
 	// Maximun momentum one can charge
 	MAX_MOMENTUM("maxMomentum"),
-	
-	// Alters the hate of your physical attacks.
-	HATE_ATTACK("hateAttack"),
 	
 	// Which base stat ordinal should alter skill critical formula.
 	STAT_SKILLCRITICAL("statSkillCritical"),

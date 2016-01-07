@@ -79,24 +79,24 @@ public class L2CharTemplate extends ListenersContainer
 		_baseValues.put(Stats.REGENERATE_CP_RATE, set.getDouble("baseCpReg", 0));
 		
 		// Attack and Defense
-		_baseValues.put(Stats.POWER_ATTACK, set.getDouble("basePAtk", 0));
+		_baseValues.put(Stats.PHYSICAL_ATTACK, set.getDouble("basePAtk", 0));
 		_baseValues.put(Stats.MAGIC_ATTACK, set.getDouble("baseMAtk", 0));
-		_baseValues.put(Stats.POWER_DEFENCE, set.getDouble("basePDef", 0));
-		_baseValues.put(Stats.MAGIC_DEFENCE, set.getDouble("baseMDef", 0));
+		_baseValues.put(Stats.PHYSICAL_DEFENCE, set.getDouble("basePDef", 0));
+		_baseValues.put(Stats.MAGICAL_DEFENCE, set.getDouble("baseMDef", 0));
 		
 		// Attack speed
-		_baseValues.put(Stats.POWER_ATTACK_SPEED, set.getDouble("basePAtkSpd", 300));
+		_baseValues.put(Stats.PHYSICAL_ATTACK_SPEED, set.getDouble("basePAtkSpd", 300));
 		_baseValues.put(Stats.MAGIC_ATTACK_SPEED, set.getDouble("baseMAtkSpd", 333));
 		
 		// Misc
 		_baseValues.put(Stats.SHIELD_DEFENCE, set.getDouble("baseShldDef", 0));
-		_baseValues.put(Stats.POWER_ATTACK_RANGE, set.getDouble("baseAtkRange", 40));
+		_baseValues.put(Stats.PHYSICAL_ATTACK_RANGE, set.getDouble("baseAtkRange", 40));
 		_baseValues.put(Stats.RANDOM_DAMAGE, set.getDouble("baseRndDam", 0));
 		
 		// Shield and critical rates
-		_baseValues.put(Stats.SHIELD_RATE, set.getDouble("baseShldRate", 0));
+		_baseValues.put(Stats.SHIELD_DEFENCE_RATE, set.getDouble("baseShldRate", 0));
 		_baseValues.put(Stats.CRITICAL_RATE, set.getDouble("baseCritRate", 4));
-		_baseValues.put(Stats.MCRITICAL_RATE, set.getDouble("baseMCritRate", 0));
+		_baseValues.put(Stats.MAGIC_CRITICAL_RATE, set.getDouble("baseMCritRate", 0));
 		
 		// Breath under water
 		_baseValues.put(Stats.BREATH, set.getDouble("baseBreath", 100));
@@ -358,7 +358,7 @@ public class L2CharTemplate extends ListenersContainer
 	 */
 	public int getBasePAtk()
 	{
-		return _baseValues.getOrDefault(Stats.POWER_ATTACK, 0d).intValue();
+		return _baseValues.getOrDefault(Stats.PHYSICAL_ATTACK, 0d).intValue();
 	}
 	
 	/**
@@ -374,7 +374,7 @@ public class L2CharTemplate extends ListenersContainer
 	 */
 	public int getBasePDef()
 	{
-		return _baseValues.getOrDefault(Stats.POWER_DEFENCE, 0d).intValue();
+		return _baseValues.getOrDefault(Stats.PHYSICAL_DEFENCE, 0d).intValue();
 	}
 	
 	/**
@@ -382,7 +382,7 @@ public class L2CharTemplate extends ListenersContainer
 	 */
 	public int getBaseMDef()
 	{
-		return _baseValues.getOrDefault(Stats.MAGIC_DEFENCE, 0d).intValue();
+		return _baseValues.getOrDefault(Stats.MAGICAL_DEFENCE, 0d).intValue();
 	}
 	
 	/**
@@ -390,7 +390,7 @@ public class L2CharTemplate extends ListenersContainer
 	 */
 	public int getBasePAtkSpd()
 	{
-		return _baseValues.getOrDefault(Stats.POWER_ATTACK_SPEED, 0d).intValue();
+		return _baseValues.getOrDefault(Stats.PHYSICAL_ATTACK_SPEED, 0d).intValue();
 	}
 	
 	/**
@@ -422,7 +422,7 @@ public class L2CharTemplate extends ListenersContainer
 	 */
 	public int getBaseShldRate()
 	{
-		return _baseValues.getOrDefault(Stats.SHIELD_RATE, 0d).intValue();
+		return _baseValues.getOrDefault(Stats.SHIELD_DEFENCE_RATE, 0d).intValue();
 	}
 	
 	/**
@@ -438,7 +438,7 @@ public class L2CharTemplate extends ListenersContainer
 	 */
 	public int getBaseMCritRate()
 	{
-		return _baseValues.getOrDefault(Stats.MCRITICAL_RATE, 0d).intValue();
+		return _baseValues.getOrDefault(Stats.MAGIC_CRITICAL_RATE, 0d).intValue();
 	}
 	
 	/**
@@ -519,7 +519,7 @@ public class L2CharTemplate extends ListenersContainer
 	 */
 	public int getBaseAttackRange()
 	{
-		return _baseValues.getOrDefault(Stats.POWER_ATTACK_RANGE, 0d).intValue();
+		return _baseValues.getOrDefault(Stats.PHYSICAL_ATTACK_RANGE, 0d).intValue();
 	}
 	
 	/**

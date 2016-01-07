@@ -86,7 +86,7 @@ public class Debug
 		msg.replace("%mdef%", target.getMDef(target, skill));
 		msg.replace("%acc%", target.getAccuracy());
 		msg.replace("%evas%", target.getEvasionRate(target));
-		msg.replace("%crit%", target.getCriticalHit(target, skill));
+		msg.replace("%crit%", target.getCriticalHit());
 		msg.replace("%speed%", target.getRunSpeed());
 		msg.replace("%pAtkSpd%", target.getPAtkSpd());
 		msg.replace("%mAtkSpd%", target.getMAtkSpd());

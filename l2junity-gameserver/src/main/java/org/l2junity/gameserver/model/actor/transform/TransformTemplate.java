@@ -68,10 +68,10 @@ public final class TransformTemplate
 		addStats(Stats.FLY_WALK_SPEED, set.getDouble("flyWalk", 0));
 		addStats(Stats.FLY_RUN_SPEED, set.getDouble("flyRun", 0));
 		
-		addStats(Stats.POWER_ATTACK, set.getDouble("pAtk", 0));
+		addStats(Stats.PHYSICAL_ATTACK, set.getDouble("pAtk", 0));
 		addStats(Stats.MAGIC_ATTACK, set.getDouble("mAtk", 0));
-		addStats(Stats.POWER_ATTACK_RANGE, set.getInt("range", 0));
-		addStats(Stats.POWER_ATTACK_SPEED, set.getInt("attackSpeed", 0));
+		addStats(Stats.PHYSICAL_ATTACK_RANGE, set.getInt("range", 0));
+		addStats(Stats.PHYSICAL_ATTACK_SPEED, set.getInt("attackSpeed", 0));
 		addStats(Stats.CRITICAL_RATE, set.getInt("critRate", 0));
 		addStats(Stats.STAT_STR, set.getInt("str", 0));
 		addStats(Stats.STAT_INT, set.getInt("int", 0));

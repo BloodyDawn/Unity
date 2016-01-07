@@ -2939,22 +2939,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							info.addComponentType(UserInfoType.MULTIPLIER);
 							break;
 						}
-						case POWER_ATTACK_SPEED:
+						case PHYSICAL_ATTACK_SPEED:
 						{
 							info.addComponentType(UserInfoType.MULTIPLIER, UserInfoType.STATS);
 							break;
 						}
-						case POWER_ATTACK:
-						case POWER_DEFENCE:
+						case PHYSICAL_ATTACK:
+						case PHYSICAL_DEFENCE:
 						case EVASION_RATE:
 						case ACCURACY_COMBAT:
 						case CRITICAL_RATE:
-						case MCRITICAL_RATE:
+						case MAGIC_CRITICAL_RATE:
 						case MAGIC_EVASION_RATE:
 						case ACCURACY_MAGIC:
 						case MAGIC_ATTACK:
 						case MAGIC_ATTACK_SPEED:
-						case MAGIC_DEFENCE:
+						case MAGICAL_DEFENCE:
 						{
 							info.addComponentType(UserInfoType.STATS);
 							break;
@@ -4904,7 +4904,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getCriticalDmg(init);
 	}
 	
-	public int getCriticalHit(Creature target, Skill skill)
+	public int getCriticalHit()
 	{
 		return getStat().getCriticalHit();
 	}
@@ -4967,11 +4967,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public int getMDef(Creature target, Skill skill)
 	{
 		return getStat().getMDef();
-	}
-	
-	public double getMReuseRate(Skill skill)
-	{
-		return getStat().getMReuseRate();
 	}
 	
 	public int getPAtk(Creature target)

@@ -29,6 +29,7 @@ import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
+import org.l2junity.gameserver.enums.Position;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
@@ -397,7 +398,7 @@ public final class Formulas
 		// Initial damage
 		final double baseMod = ((77 * (power + (attacker.getPAtk(target) * ssboost))) / defence);
 		// Critical
-		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1));
+		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)));
 		final double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
 		final double criticalAddMod = ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
 		final double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -484,7 +485,7 @@ public final class Formulas
 		// Initial damage
 		double baseMod = ((77 * (power + attacker.getPAtk(target))) / defence) * ssboost;
 		// Critical
-		double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1));
+		double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)));
 		double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
 		double criticalAddMod = ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
 		double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -580,7 +581,7 @@ public final class Formulas
 		if (crit)
 		{
 			// Finally retail like formula
-			damage = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1) * ((70 * damage) / defence);
+			damage = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)) * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1) * ((70 * damage) / defence);
 			// Crit dmg add is almost useless in normal hits...
 			damage += ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 70) / defence);
 			damage += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -865,6 +866,7 @@ public final class Formulas
 	 */
 	public static boolean calcCrit(double rate, boolean skill, Creature activeChar, Creature target)
 	{
+		rate *= activeChar.getStat().getPositionTypeValue(Stats.CRITICAL_RATE, Position.getPosition(activeChar, target));
 		// Skills are not affected by critical rate defence buffs.
 		if (skill)
 		{
@@ -1021,7 +1023,7 @@ public final class Formulas
 			return 0;
 		}
 		
-		double shldRate = target.getStat().getValue(Stats.SHIELD_RATE, 0) * BaseStats.DEX.calcBonus(target);
+		double shldRate = target.getStat().getValue(Stats.SHIELD_DEFENCE_RATE, 0) * BaseStats.DEX.calcBonus(target);
 		if (shldRate <= 1e-6)
 		{
 			return 0;
@@ -1093,8 +1095,17 @@ public final class Formulas
 		
 		if (skill.isDebuff())
 		{
-			if (target.getStat().getValue(Stats.DEBUFF_IMMUNITY, 0) > 0)
+			if (target.isAffected(EffectFlag.DEBUFF_BLOCK))
 			{
+				int times = target.getDebuffBlockedTime();
+				if (times > 0)
+				{
+					times = target.decrementDebuffBlockTimes();
+					if (times == 0)
+					{
+						target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+					}
+				}
 				return false;
 			}
 		}
@@ -1128,15 +1139,7 @@ public final class Formulas
 		
 		if (skill.isDebuff())
 		{
-			boolean resisted = target.getStat().getValue(Stats.DEBUFF_IMMUNITY, 0) > 0;
-			if (!resisted)
-			{
-				final double distance = attacker.calculateDistance(target, true, false);
-				if (distance > target.getStat().getValue(Stats.DEBUFFED_MAX_RANGE, Integer.MAX_VALUE))
-				{
-					resisted = true;
-				}
-			}
+			boolean resisted = false;
 			if (!resisted && target.isAffected(EffectFlag.DEBUFF_BLOCK))
 			{
 				int times = target.getDebuffBlockedTime();
@@ -1148,11 +1151,15 @@ public final class Formulas
 						target.stopEffects(L2EffectType.DEBUFF_BLOCK);
 					}
 				}
-				else
-				{
-					target.stopEffects(L2EffectType.DEBUFF_BLOCK);
-				}
 				resisted = true;
+			}
+			if (!resisted)
+			{
+				final double distance = attacker.calculateDistance(target, true, false);
+				if (distance > target.getStat().getValue(Stats.DEBUFFED_MAX_RANGE, Integer.MAX_VALUE))
+				{
+					resisted = true;
+				}
 			}
 			
 			resisted |= target.isCastingNow(s -> s.getSkill().getAbnormalResists().contains(skill.getAbnormalType()));
@@ -1184,8 +1191,7 @@ public final class Formulas
 		final double elementMod = calcAttributeBonus(attacker, target, skill);
 		final double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
-		Stats stat = skill.isDebuff() ? Stats.DEBUFF_VULN : Stats.BUFF_VULN;
-		final double buffDebuffMod = 1 + (target.getStat().getValue(stat, 1) / 100);
+		final double buffDebuffMod = skill.isDebuff() ? 1 + (target.getStat().getValue(Stats.DEBUFF_VULN, 1) / 100) : 0;
 		final double rate = baseMod * elementMod * traitMod * buffDebuffMod;
 		final double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) * basicPropertyResist : 0;
 		
@@ -1220,8 +1226,17 @@ public final class Formulas
 			{
 				return true;
 			}
-			else if (target.getStat().getValue(Stats.DEBUFF_IMMUNITY, 0) > 0)
+			else if (target.isAffected(EffectFlag.DEBUFF_BLOCK))
 			{
+				int times = target.getDebuffBlockedTime();
+				if (times > 0)
+				{
+					times = target.decrementDebuffBlockTimes();
+					if (times == 0)
+					{
+						target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+					}
+				}
 				return false;
 			}
 		}
@@ -1404,7 +1419,7 @@ public final class Formulas
 		{
 			return false;
 		}
-		if (Rnd.get(100) < target.getStat().getValue(Stats.P_SKILL_EVASION, 0))
+		if (Rnd.get(100) < target.getStat().getSkillEvasionTypeValue(skill.getMagicType()))
 		{
 			if (activeChar.isPlayer())
 			{
@@ -1746,8 +1761,7 @@ public final class Formulas
 				// Resist Modifier.
 				int cancelMagicLvl = skill.getMagicLevel();
 				final double vuln = target.getStat().getValue(Stats.CANCEL_VULN, 0);
-				final double prof = activeChar.getStat().getValue(Stats.CANCEL_PROF, 0);
-				double resMod = 1 + (((vuln + prof) * -1) / 100);
+				double resMod = 1 + (-vuln / 100);
 				double finalRate = rate / resMod;
 				
 				if (activeChar.isDebug())
@@ -2062,7 +2076,7 @@ public final class Formulas
 		if (crit)
 		{
 			critMod = isBow ? 0.5 : 1;
-			cAtk = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
+			cAtk = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)) * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
 			cAtkAdd += attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0);
 			cAtkAdd += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
 		}

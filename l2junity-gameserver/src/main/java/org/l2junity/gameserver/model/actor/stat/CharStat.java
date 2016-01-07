@@ -33,6 +33,7 @@ import java.util.stream.Stream;
 import org.l2junity.Config;
 import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.enums.Position;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -66,6 +67,9 @@ public class CharStat
 	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
 	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
 	private final Map<Stats, Map<MoveType, Double>> _moveTypeStats = new ConcurrentHashMap<>();
+	private final Map<Integer, Double> _reuseStat = new ConcurrentHashMap<>();
+	private final Map<Integer, Double> _skillEvasionStat = new ConcurrentHashMap<>();
+	private final Map<Stats, Map<Position, Double>> _positionStats = new ConcurrentHashMap<>();
 	
 	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
 	
@@ -263,7 +267,7 @@ public class CharStat
 	 */
 	public final int getMCriticalHit()
 	{
-		return (int) getValue(Stats.MCRITICAL_RATE);
+		return (int) getValue(Stats.MAGIC_CRITICAL_RATE);
 	}
 	
 	/**
@@ -272,7 +276,7 @@ public class CharStat
 	 */
 	public int getMDef()
 	{
-		return (int) getValue(Stats.MAGIC_DEFENCE);
+		return (int) getValue(Stats.MAGICAL_DEFENCE);
 	}
 	
 	/**
@@ -352,19 +356,11 @@ public class CharStat
 	}
 	
 	/**
-	 * @return the MReuse rate (base+modifier) of the L2Character.
-	 */
-	public final double getMReuseRate()
-	{
-		return getValue(Stats.MAGIC_REUSE_RATE, 1);
-	}
-	
-	/**
 	 * @return the PAtk (base+modifier) of the L2Character.
 	 */
 	public int getPAtk()
 	{
-		return (int) getValue(Stats.POWER_ATTACK);
+		return (int) getValue(Stats.PHYSICAL_ATTACK);
 	}
 	
 	/**
@@ -372,7 +368,7 @@ public class CharStat
 	 */
 	public int getPAtkSpd()
 	{
-		return (int) getValue(Stats.POWER_ATTACK_SPEED);
+		return (int) getValue(Stats.PHYSICAL_ATTACK_SPEED);
 	}
 	
 	/**
@@ -380,7 +376,7 @@ public class CharStat
 	 */
 	public int getPDef()
 	{
-		return (int) getValue(Stats.POWER_DEFENCE);
+		return (int) getValue(Stats.PHYSICAL_DEFENCE);
 	}
 	
 	/**
@@ -388,7 +384,7 @@ public class CharStat
 	 */
 	public final int getPhysicalAttackRange()
 	{
-		return (int) getValue(Stats.POWER_ATTACK_RANGE);
+		return (int) getValue(Stats.PHYSICAL_ATTACK_RANGE);
 	}
 	
 	public int getPhysicalAttackRadius()
@@ -847,6 +843,16 @@ public class CharStat
 		}
 	}
 	
+	public double getPositionTypeValue(Stats stat, Position position)
+	{
+		return _positionStats.getOrDefault(stat, Collections.emptyMap()).getOrDefault(position, 1d);
+	}
+	
+	public void mergePositionTypeValue(Stats stat, Position position, double value)
+	{
+		_positionStats.computeIfAbsent(stat, key -> new ConcurrentHashMap<>()).merge(position, value, MathUtil::mul);
+	}
+	
 	public double getMoveTypeValue(Stats stat, MoveType type)
 	{
 		return _moveTypeStats.getOrDefault(stat, Collections.emptyMap()).getOrDefault(type, 0d);
@@ -855,6 +861,26 @@ public class CharStat
 	public void mergeMoveTypeValue(Stats stat, MoveType type, double value)
 	{
 		_moveTypeStats.computeIfAbsent(stat, key -> new ConcurrentHashMap<>()).merge(type, value, MathUtil::add);
+	}
+	
+	public double getReuseTypeValue(int magicType)
+	{
+		return _reuseStat.getOrDefault(magicType, 1d);
+	}
+	
+	public void mergeReuseTypeValue(int magicType, double value)
+	{
+		_reuseStat.merge(magicType, value, MathUtil::mul);
+	}
+	
+	public double getSkillEvasionTypeValue(int magicType)
+	{
+		return _skillEvasionStat.getOrDefault(magicType, 0d);
+	}
+	
+	public void mergeSkillEvasionTypeValue(int magicType, double value)
+	{
+		_skillEvasionStat.merge(magicType, value, MathUtil::add);
 	}
 	
 	public void addToVampiricSum(int sum)
@@ -873,5 +899,15 @@ public class CharStat
 		{
 			_lock.readLock().unlock();
 		}
+	}
+	
+	/**
+	 * Calculates the time required for this skill to be used again.
+	 * @param skill the skill from which reuse time will be calculated.
+	 * @return the time in milliseconds this skill is being under reuse.
+	 */
+	public int getReuseTime(Skill skill)
+	{
+		return (skill.isStaticReuse() || skill.isStatic()) ? skill.getReuseDelay() : (int) (skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType()));
 	}
 }

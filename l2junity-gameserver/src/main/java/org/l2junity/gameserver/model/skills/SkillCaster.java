@@ -53,7 +53,6 @@ import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.Formulas;
-import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -165,7 +164,7 @@ public class SkillCaster implements Runnable
 		_ctrlPressed = ctrlPressed;
 		_shiftPressed = shiftPressed;
 		_castTime = getCastTime(_caster, skill, item);
-		_reuseDelay = getReuseTime(_caster, skill);
+		_reuseDelay = _caster.getStat().getReuseTime(skill);
 		_skillMastery = Formulas.calcSkillMastery(_caster, skill);
 		_castInterruptTime = -2 + GameTimeController.getInstance().getGameTicks() + (_castTime / GameTimeController.MILLIS_IN_TICK);
 		
@@ -958,35 +957,5 @@ public class SkillCaster implements Runnable
 		}
 		
 		return skillTime;
-	}
-	
-	/**
-	 * Calculates the time required for this skill to be used again.
-	 * @param caster the creature that is requesting the calculation.
-	 * @param skill the skill from which reuse time will be calculated.
-	 * @return the time in milliseconds this skill is being under reuse.
-	 */
-	public static int getReuseTime(Creature caster, Skill skill)
-	{
-		// Calculate the Reuse Time of the Skill
-		int reuseDelay;
-		if (skill.isStaticReuse() || skill.isStatic())
-		{
-			reuseDelay = skill.getReuseDelay();
-		}
-		else if (skill.isMagic())
-		{
-			reuseDelay = (int) (skill.getReuseDelay() * caster.getStat().getValue(Stats.MAGIC_REUSE_RATE, 1));
-		}
-		else if (skill.isPhysical())
-		{
-			reuseDelay = (int) (skill.getReuseDelay() * caster.getStat().getValue(Stats.P_REUSE, 1));
-		}
-		else
-		{
-			reuseDelay = (int) (skill.getReuseDelay() * caster.getStat().getValue(Stats.DANCE_REUSE, 1));
-		}
-		
-		return reuseDelay;
 	}
 }

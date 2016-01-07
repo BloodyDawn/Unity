@@ -173,19 +173,19 @@ public class PetStat extends SummonStat
 	@Override
 	public int getMDef()
 	{
-		return (int) getValue(Stats.MAGIC_DEFENCE, getActiveChar().getPetLevelData().getPetMDef());
+		return (int) getValue(Stats.MAGICAL_DEFENCE, getActiveChar().getPetLevelData().getPetMDef());
 	}
 	
 	@Override
 	public int getPAtk()
 	{
-		return (int) getValue(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk());
+		return (int) getValue(Stats.PHYSICAL_ATTACK, getActiveChar().getPetLevelData().getPetPAtk());
 	}
 	
 	@Override
 	public int getPDef()
 	{
-		return (int) getValue(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef());
+		return (int) getValue(Stats.PHYSICAL_DEFENCE, getActiveChar().getPetLevelData().getPetPDef());
 	}
 	
 	@Override

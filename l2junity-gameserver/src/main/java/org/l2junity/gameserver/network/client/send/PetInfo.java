@@ -167,7 +167,7 @@ public class PetInfo implements IClientOutgoingPacket
 		packet.writeD(_summon.getPDef(null));// pdef
 		packet.writeD(_summon.getAccuracy());// accuracy
 		packet.writeD(_summon.getEvasionRate(null));// evasion
-		packet.writeD(_summon.getCriticalHit(null, null));// critical
+		packet.writeD(_summon.getCriticalHit());// critical
 		packet.writeD(_summon.getMAtk(null, null));// matk
 		packet.writeD(_summon.getMDef(null, null));// mdef
 		packet.writeD(_summon.getMagicAccuracy()); // magic accuracy

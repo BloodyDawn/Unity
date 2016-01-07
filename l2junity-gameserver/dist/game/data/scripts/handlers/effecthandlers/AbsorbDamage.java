@@ -33,12 +33,12 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
 /**
  * @author Sdw
  */
-public class DamageShield extends AbstractEffect
+public class AbsorbDamage extends AbstractEffect
 {
 	private final double _damage;
 	private static final Map<Integer, Double> _damageHolder = new ConcurrentHashMap<>();
 	
-	public DamageShield(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public AbsorbDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

@@ -75,7 +75,7 @@ public class NpcActionShift implements IActionShiftHandler
 			html.replace("%mdef%", String.valueOf(npc.getMDef(null, null)));
 			html.replace("%accu%", String.valueOf(npc.getAccuracy()));
 			html.replace("%evas%", String.valueOf(npc.getEvasionRate(null)));
-			html.replace("%crit%", String.valueOf(npc.getCriticalHit(null, null)));
+			html.replace("%crit%", String.valueOf(npc.getCriticalHit()));
 			html.replace("%rspd%", String.valueOf(npc.getRunSpeed()));
 			html.replace("%aspd%", String.valueOf(npc.getPAtkSpd()));
 			html.replace("%cspd%", String.valueOf(npc.getMAtkSpd()));

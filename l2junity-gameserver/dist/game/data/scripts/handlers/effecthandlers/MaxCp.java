@@ -21,69 +21,22 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.conditions.ConditionUsingItemType;
-import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author Nik
  */
-public class MaxCp extends AbstractEffect
+public class MaxCp extends AbstractStatEffect
 {
-	private final double _amount;
-	private final int _mode;
 	private final boolean _heal;
-	private final Condition _armorTypeCondition;
 	
 	public MaxCp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
 	{
-		super(attachCond, applyCond, set, params);
+		super(attachCond, applyCond, set, params, Stats.MAX_CP);
 		
-		_amount = params.getDouble("amount", 0);
-		switch (params.getString("mode", "DIFF"))
-		{
-			case "DIFF":
-			{
-				_mode = 0;
-				break;
-			}
-			case "PER":
-			{
-				_mode = 1;
-				break;
-			}
-			default:
-			{
-				throw new IllegalArgumentException("Mode should be DIFF or PER skill id:" + params.getInt("id"));
-			}
-		}
 		_heal = params.getBoolean("heal", false);
-		
-		int armorTypesMask = 0;
-		final String[] armorTypes = params.getString("armorType", "ALL").split(";");
-		for (String armorType : armorTypes)
-		{
-			if (armorType.equalsIgnoreCase("ALL"))
-			{
-				armorTypesMask = 0;
-				break;
-			}
-			
-			try
-			{
-				armorTypesMask |= ArmorType.valueOf(armorType).mask();
-			}
-			catch (IllegalArgumentException e)
-			{
-				final IllegalArgumentException exception = new IllegalArgumentException("armorTypes should contain ArmorType enum value but found " + armorType + " skill:" + params.getInt("id"));
-				exception.addSuppressed(e);
-				throw exception;
-			}
-		}
-		_armorTypeCondition = armorTypesMask != 0 ? new ConditionUsingItemType(armorTypesMask) : null;
 	}
 	
 	@Override
@@ -93,35 +46,14 @@ public class MaxCp extends AbstractEffect
 		{
 			switch (_mode)
 			{
-				case 0: // DIFF
+				case DIFF: // DIFF
 				{
 					effected.setCurrentCp(effected.getCurrentCp() + _amount);
 					break;
 				}
-				case 1: // PER
+				case PER: // PER
 				{
 					effected.setCurrentCp(effected.getCurrentCp() + (effected.getMaxCp() * (_amount / 100)));
-					break;
-				}
-			}
-		}
-	}
-	
-	@Override
-	public void pump(Creature effected, Skill skill)
-	{
-		if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
-		{
-			switch (_mode)
-			{
-				case 0: // DIFF
-				{
-					effected.getStat().mergeAdd(Stats.MAX_CP, _amount);
-					break;
-				}
-				case 1: // PER
-				{
-					effected.getStat().mergeMul(Stats.MAX_CP, (_amount / 100) + 1);
 					break;
 				}
 			}
