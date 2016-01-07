@@ -1045,7 +1045,7 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 58 63 68 72 </table>
 		<table name="#evas"> 60 70 80 90 </table>
-		<table name="#pSkillEvas"> 1.8 1.85 1.9 1.95 </table>
+		<table name="#pSkillEvas"> 80 85 90 95 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
@@ -1067,8 +1067,10 @@
 				<add stat="rEvas" val="#evas" />
 				<add stat="mEvas" val="#evas" />
 				<mul stat="mDef" val="1.2" />
-				<mul stat="pSkillEvas" val="#pSkillEvas" />
 				<sub stat="cancelVuln" val="95" />
+			</effect>
+			<effect name="SkillEvasion">
+				<param magicType="0" amount="#pSkillEvas" />
 			</effect>
 		</for>
 	</skill>

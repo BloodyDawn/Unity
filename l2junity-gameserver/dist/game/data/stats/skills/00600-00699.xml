@@ -404,7 +404,9 @@
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="moveSpeed" val="#runSpd" />
-				<add stat="pSkillEvas" val="#pSkillEvas" />
+			</effect>
+			<effect name="SkillEvasion">
+				<param magicType="0" amount="#pSkillEvas" />
 			</effect>
 		</for>
 	</skill>

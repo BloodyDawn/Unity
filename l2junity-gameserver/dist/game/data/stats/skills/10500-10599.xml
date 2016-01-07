@@ -665,7 +665,6 @@
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
 				<mul stat="mDef" val="1.2" />
-				<add stat="pSkillEvas" val="60" />
 				<sub stat="cancelVuln" val="30" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -674,6 +673,9 @@
 				<param chance="40" />
 				<param skillId="10544" skillLevel="1" /> <!-- Cancel target -->
 				<param targetType="ONE" />
+			</effect>
+			<effect name="SkillEvasion">
+				<param magicType="0" amount="60" />
 			</effect>
 		</for>
 	</skill>
@@ -773,9 +775,11 @@
 		<set name="reuseDelay" val="150000" />
 		<for>
 			<effect name="Buff">
-				<!-- TODO : replace with p_avoid_counter_skill ? -->
-				<add stat="pSkillEvas" val="#pSkillEvas" />
 				<add stat="vengeancePdam" val="#vengeancePdam" />
+			</effect>
+			<!-- TODO : replace me with p_avoid_counter_skill -->
+			<effect name="SkillEvasion">
+				<param magicType="0" amount="#pSkillEvas" />
 			</effect>
 		</for>
 	</skill>
@@ -1011,7 +1015,6 @@
 			<effect name="Buff">
 				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="rEvas" val="40" />
-				<add stat="pSkillEvas" val="#pSkillEvas" />
 				<mul stat="blowRate" val="#blowRate" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
@@ -1021,6 +1024,9 @@
 				<param chance="80" />
 				<param skillId="10545" skillLevel="#triggerLvl" /> <!-- Crippling Poison -->
 				<param targetType="ONE" />
+			</effect>
+			<effect name="SkillEvasion">
+				<param magicType="0" amount="#pSkillEvas" />
 			</effect>
 		</for>
 	</skill>

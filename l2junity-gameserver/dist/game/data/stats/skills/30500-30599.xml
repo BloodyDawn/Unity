@@ -452,9 +452,11 @@
 				<param times="#blockDebuff" />
 			</effect>
 			<effect name="Buff">
-				<add stat="pSkillEvas" val="#pSkillEvas" />
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
+			</effect>
+			<effect name="SkillEvasion">
+				<param magicType="0" amount="#pSkillEvas" />
 			</effect>
 		</for>
 	</skill>

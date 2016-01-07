@@ -356,9 +356,11 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="pSkillEvas" val="#pSkillEvas" />
 				<add stat="rEvas" val="#rEvas" />
 				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="SkillEvasion">
+				<param magicType="0" amount="#pSkillEvas" />
 			</effect>
 		</for>
 	</skill>
