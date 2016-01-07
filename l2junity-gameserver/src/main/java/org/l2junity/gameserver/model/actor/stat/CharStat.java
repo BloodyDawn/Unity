@@ -68,6 +68,7 @@ public class CharStat
 	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
 	private final Map<Stats, Map<MoveType, Double>> _moveTypeStats = new ConcurrentHashMap<>();
 	private final Map<Integer, Double> _reuseStat = new ConcurrentHashMap<>();
+	private final Map<Integer, Double> _mpConsumeStat = new ConcurrentHashMap<>();
 	private final Map<Integer, Double> _skillEvasionStat = new ConcurrentHashMap<>();
 	private final Map<Stats, Map<Position, Double>> _positionStats = new ConcurrentHashMap<>();
 	
@@ -871,6 +872,16 @@ public class CharStat
 	public void mergeReuseTypeValue(int magicType, double value)
 	{
 		_reuseStat.merge(magicType, value, MathUtil::mul);
+	}
+	
+	public double getMpConsumeTypeValue(int magicType)
+	{
+		return _mpConsumeStat.getOrDefault(magicType, 1d);
+	}
+	
+	public void mergeMpConsumeTypeValue(int magicType, double value)
+	{
+		_mpConsumeStat.merge(magicType, value, MathUtil::mul);
 	}
 	
 	public double getSkillEvasionTypeValue(int magicType)

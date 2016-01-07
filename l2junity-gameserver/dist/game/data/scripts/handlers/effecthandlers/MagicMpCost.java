@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.enums.Position;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -28,27 +27,27 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class CriticalRatePositionBonus extends AbstractEffect
+public class MagicMpCost extends AbstractEffect
 {
-	protected final double _amount;
-	protected final Position _position;
+	private final int _magicType;
+	private final double _amount;
 	
-	public CriticalRatePositionBonus(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public MagicMpCost(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat) throws IllegalArgumentException
 	{
 		super(attachCond, applyCond, set, params);
+		_magicType = params.getInt("magicType", 0);
 		_amount = params.getDouble("amount", 0);
-		_position = params.getEnum("position", Position.class, Position.FRONT);
 	}
 	
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getStat().mergePositionTypeValue(Stats.CRITICAL_RATE, _position, (_amount / 100) + 1);
+		info.getEffected().getStat().mergeMpConsumeTypeValue(_magicType, (_amount / 100) + 1);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().getStat().mergePositionTypeValue(Stats.CRITICAL_RATE, _position, (-_amount / 100) - 1);
+		info.getEffected().getStat().mergeMpConsumeTypeValue(_magicType, (-_amount / 100) - 1);
 	}
 }

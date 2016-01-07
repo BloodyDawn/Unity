@@ -210,13 +210,6 @@ public enum Stats
 	RECIPE_DWARVEN("DwarfRecipeLimit"),
 	RECIPE_COMMON("CommonRecipeLimit"),
 	
-	// C4 Stats
-	PHYSICAL_MP_CONSUME_RATE("PhysicalMpConsumeRate"),
-	MAGICAL_MP_CONSUME_RATE("MagicalMpConsumeRate"),
-	DANCE_MP_CONSUME_RATE("DanceMpConsumeRate"),
-	BOW_MP_CONSUME_RATE("BowMpConsumeRate"),
-	MP_CONSUME("MpConsume"),
-	
 	// Skill mastery
 	SKILL_CRITICAL("skillCritical"),
 	SKILL_CRITICAL_PROBABILITY("skillCriticalProbability"),
