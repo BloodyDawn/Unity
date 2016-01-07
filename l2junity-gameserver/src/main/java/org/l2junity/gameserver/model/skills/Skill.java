@@ -486,6 +486,7 @@ public final class Skill implements IIdentifiable
 		{
 			case AREA:
 			case AURA:
+			case AURA_FRIENDLY:
 			case BEHIND_AREA:
 			case BEHIND_AURA:
 			case FRONT_AREA:

@@ -621,6 +621,7 @@ public abstract class Summon extends Playable
 			// PARTY, AURA, SELF should be cast even if no target has been found
 			case PARTY:
 			case AURA:
+			case AURA_FRIENDLY:
 			case FRONT_AURA:
 			case BEHIND_AURA:
 			case SELF:

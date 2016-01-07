@@ -8185,6 +8185,7 @@ public final class PlayerInstance extends Playable
 		switch (skill.getTargetType())
 		{
 			case AURA: // AURA, SELF should be cast even if no target has been found
+			case AURA_FRIENDLY:
 			case FRONT_AURA:
 			case BEHIND_AURA:
 			case GROUND:
@@ -8289,6 +8290,7 @@ public final class PlayerInstance extends Playable
 		{
 			// Target the player if skill type is AURA, PARTY, CLAN or SELF
 			case AURA:
+			case AURA_FRIENDLY:
 			case FRONT_AURA:
 			case BEHIND_AURA:
 			case PARTY:
@@ -8460,6 +8462,7 @@ public final class PlayerInstance extends Playable
 				switch (sklTargetType)
 				{
 					case AURA:
+					case AURA_FRIENDLY:
 					case FRONT_AURA:
 					case BEHIND_AURA:
 					case AURA_CORPSE_MOB:
@@ -8533,6 +8536,7 @@ public final class PlayerInstance extends Playable
 			case CLAN: // For such skills, checkPvpSkill() is called from L2Skill.getTargetList()
 			case PARTY_CLAN: // For such skills, checkPvpSkill() is called from L2Skill.getTargetList()
 			case AURA:
+			case AURA_FRIENDLY:
 			case FRONT_AURA:
 			case BEHIND_AURA:
 			case AREA_SUMMON:

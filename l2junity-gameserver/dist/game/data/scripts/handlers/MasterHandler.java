@@ -39,22 +39,22 @@ import org.l2junity.gameserver.handler.VoicedCommandHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import handlers.actionhandlers.DoorInstanceAction;
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
-import handlers.actionhandlers.DoorInstanceAction;
 import handlers.actionhandlers.L2ItemInstanceAction;
-import handlers.actionhandlers.NpcAction;
-import handlers.actionhandlers.PlayerInstanceAction;
 import handlers.actionhandlers.L2PetInstanceAction;
 import handlers.actionhandlers.L2StaticObjectInstanceAction;
 import handlers.actionhandlers.L2SummonAction;
 import handlers.actionhandlers.L2TrapAction;
+import handlers.actionhandlers.NpcAction;
+import handlers.actionhandlers.PlayerInstanceAction;
 import handlers.actionshifthandlers.DoorInstanceActionShift;
 import handlers.actionshifthandlers.L2ItemInstanceActionShift;
-import handlers.actionshifthandlers.NpcActionShift;
-import handlers.actionshifthandlers.PlayerInstanceActionShift;
 import handlers.actionshifthandlers.L2StaticObjectInstanceActionShift;
 import handlers.actionshifthandlers.L2SummonActionShift;
+import handlers.actionshifthandlers.NpcActionShift;
+import handlers.actionshifthandlers.PlayerInstanceActionShift;
 import handlers.admincommandhandlers.AdminAdmin;
 import handlers.admincommandhandlers.AdminAnnouncements;
 import handlers.admincommandhandlers.AdminBBS;
@@ -212,6 +212,7 @@ import handlers.targethandlers.AreaFriendly;
 import handlers.targethandlers.AreaSummon;
 import handlers.targethandlers.Aura;
 import handlers.targethandlers.AuraCorpseMob;
+import handlers.targethandlers.AuraFriendly;
 import handlers.targethandlers.BehindArea;
 import handlers.targethandlers.BehindAura;
 import handlers.targethandlers.Clan;
@@ -518,6 +519,7 @@ public class MasterHandler
 			AreaSummon.class,
 			Aura.class,
 			AuraCorpseMob.class,
+			AuraFriendly.class,
 			BehindArea.class,
 			BehindAura.class,
 			Clan.class,

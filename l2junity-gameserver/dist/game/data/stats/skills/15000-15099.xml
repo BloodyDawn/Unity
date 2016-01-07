@@ -38,10 +38,10 @@
 		<set name="castRange" val="2000" />
 	</skill>
 	<skill id="15002" levels="1" name="Progressive Heal - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confirmed -->
 		<set name="icon" val="icon.skill015002" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA_FRIENDLY" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -51,13 +51,18 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="50-50" />
 		<set name="castRange" val="350" />
+		<for>
+			<effect name="HealPercent">
+				<param power="40" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15003" levels="1" name="Summon Tree of Life - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers 666 HP per second for all party members for 15 seconds. -->
 		<set name="icon" val="icon.skill1229" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA_FRIENDLY" />
 		<set name="effectPoint" val="204" />
 		<set name="abnormalType" val="LIFE_FORCE_ORC" />
 		<set name="basicProperty" val="NONE" />
@@ -70,6 +75,11 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="50-50" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealOverTime" ticks="1">
+				<param power="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="15004" levels="1" name="Bard's Blessing - Oil Coating">
 		<!-- AUTO GENERATED SKILL -->

@@ -333,6 +333,7 @@ public class SkillCaster implements Runnable
 				{
 					// only AURA-type skills can be cast without target
 					case AURA:
+					case AURA_FRIENDLY:
 					case FRONT_AURA:
 					case BEHIND_AURA:
 					case AURA_CORPSE_MOB:
@@ -696,6 +697,7 @@ public class SkillCaster implements Runnable
 				break;
 			case AURA:
 			case AURA_CORPSE_MOB:
+			case AURA_FRIENDLY:
 			case FRONT_AURA:
 			case BEHIND_AURA:
 			case GROUND:
