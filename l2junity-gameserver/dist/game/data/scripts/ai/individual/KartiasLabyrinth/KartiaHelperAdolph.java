@@ -62,6 +62,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 		33799, // Life Plunderer (90)
 		33800, // Life Plunderer (95)
 	};
+	// Misc
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
 		205, // Solo 85

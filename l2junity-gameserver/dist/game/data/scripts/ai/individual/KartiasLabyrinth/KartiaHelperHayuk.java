@@ -37,6 +37,7 @@ public final class KartiaHelperHayuk extends AbstractNpcAI
 		33624, // Hayuk (Kartia 90)
 		33635, // Hayuk (Kartia 95)
 	};
+	// Misc
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
 		205, // Solo 85

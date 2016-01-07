@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
@@ -55,6 +56,7 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 		33620, // Adolph (Kartia 90)
 		33631, // Adolph (Kartia 95)
 	};
+	// Misc
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
 		205, // Solo 85
@@ -77,7 +79,7 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 		final Instance instance = npc.getInstanceWorld();
 		if ((instance != null) && event.equals("CHECK_ACTION"))
 		{
-			final Npc adolph = npc.getVariables().getObject("ADOLPH_OBJECT", Npc.class);
+			final FriendlyNpcInstance adolph = npc.getVariables().getObject("ADOLPH_OBJECT", FriendlyNpcInstance.class);
 			if (adolph != null)
 			{
 				final double distance = npc.calculateDistance(adolph, false, false);
