@@ -327,7 +327,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 	
 	public void onInstanceDestroy(OnInstanceDestroy event)
 	{
-		event.getInstanceWorld().getAliveNpcs(KARTIA_BARTON).forEach(npc -> getTimers().cancelTimersOf(npc));
+		event.getInstanceWorld().getAliveNpcs(KARTIA_ELISE).forEach(npc -> getTimers().cancelTimersOf(npc));
 	}
 	
 	public static void main(String[] args)
