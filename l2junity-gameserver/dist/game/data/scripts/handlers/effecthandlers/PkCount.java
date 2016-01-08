@@ -35,7 +35,7 @@ public class PkCount extends AbstractEffect
 {
 	private final int _amount;
 	
-	public PkCount(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public PkCount(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

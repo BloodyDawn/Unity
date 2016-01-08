@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class HitNumber extends AbstractStatEffect
 {
-	public HitNumber(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public HitNumber(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.ATTACK_COUNT_MAX);
 	}

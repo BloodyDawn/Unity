@@ -33,7 +33,7 @@ public class VampiricAttack extends AbstractEffect
 	private final int _amount;
 	private final int _sum;
 	
-	public VampiricAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public VampiricAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		_amount = params.getInt("amount", 0);

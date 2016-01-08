@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class ExpModify extends AbstractStatEffect
 {
-	public ExpModify(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public ExpModify(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.BONUS_EXP);
 	}

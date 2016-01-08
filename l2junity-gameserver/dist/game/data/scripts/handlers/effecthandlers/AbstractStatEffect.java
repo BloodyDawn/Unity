@@ -47,7 +47,7 @@ public abstract class AbstractStatEffect extends AbstractEffect
 		this(attachCond, applyCond, set, params, stat, stat);
 	}
 	
-	public AbstractStatEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat) throws IllegalArgumentException
+	public AbstractStatEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat)
 	{
 		super(attachCond, applyCond, set, params);
 		

@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PhysicalAttackSpeed extends AbstractStatEffect
 {
-	public PhysicalAttackSpeed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public PhysicalAttackSpeed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.PHYSICAL_ATTACK_SPEED);
 	}

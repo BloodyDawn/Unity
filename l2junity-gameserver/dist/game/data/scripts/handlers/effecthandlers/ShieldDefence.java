@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class ShieldDefence extends AbstractStatEffect
 {
-	public ShieldDefence(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public ShieldDefence(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.SHIELD_DEFENCE);
 	}

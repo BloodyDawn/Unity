@@ -1441,39 +1441,21 @@ public final class Formulas
 	public static boolean calcSkillMastery(Creature actor, Skill sk)
 	{
 		// Static Skills are not affected by Skill Mastery.
-		if (sk.isStatic())
+		if (sk.isStatic() || !actor.isPlayer())
 		{
 			return false;
 		}
 		
-		final int val = (int) actor.getStat().getValue(Stats.SKILL_CRITICAL, 0);
+		final int val = (int) actor.getStat().getValue(Stats.SKILL_CRITICAL, -1);
 		
-		if (val == 0)
+		if (val == -1)
 		{
 			return false;
 		}
 		
-		if (actor.isPlayer())
-		{
-			double initVal = 0;
-			switch (val)
-			{
-				case 1:
-				{
-					initVal = (BaseStats.STR).calcBonus(actor);
-					break;
-				}
-				case 4:
-				{
-					initVal = (BaseStats.INT).calcBonus(actor);
-					break;
-				}
-			}
-			initVal *= actor.getStat().getValue(Stats.SKILL_CRITICAL_PROBABILITY, 1);
-			return (Rnd.get(100) < initVal);
-		}
+		final double chance = BaseStats.values()[val].calcBonus(actor) * actor.getStat().getValue(Stats.SKILL_CRITICAL_PROBABILITY, 1);
 		
-		return false;
+		return ((Rnd.nextDouble() * 100.) < chance);
 	}
 	
 	/**

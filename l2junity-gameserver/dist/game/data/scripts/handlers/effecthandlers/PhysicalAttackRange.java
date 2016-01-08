@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PhysicalAttackRange extends AbstractStatEffect
 {
-	public PhysicalAttackRange(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public PhysicalAttackRange(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.PHYSICAL_ATTACK_RANGE);
 	}

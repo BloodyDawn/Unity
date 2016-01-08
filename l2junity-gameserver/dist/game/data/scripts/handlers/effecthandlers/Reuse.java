@@ -33,7 +33,7 @@ public class Reuse extends AbstractEffect
 	private final int _magicType;
 	private final double _amount;
 	
-	public Reuse(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat) throws IllegalArgumentException
+	public Reuse(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat)
 	{
 		super(attachCond, applyCond, set, params);
 		_magicType = params.getInt("magicType", 0);

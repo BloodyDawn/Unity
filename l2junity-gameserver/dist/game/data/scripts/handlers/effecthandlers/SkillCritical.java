@@ -19,35 +19,29 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author Sdw
  */
-public class SkillEvasion extends AbstractEffect
+public class SkillCritical extends AbstractEffect
 {
-	private final int _magicType;
-	private final double _amount;
+	private final BaseStats _stat;
 	
-	public SkillEvasion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat)
+	public SkillCritical(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		_magicType = params.getInt("magicType", 0);
-		_amount = params.getDouble("amount", 0);
+		_stat = params.getEnum("stat", BaseStats.class, BaseStats.STR);
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
+	public void pump(Creature effected, Skill skill)
 	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, (_amount / 100) + 1);
-	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, (-_amount / 100) - 1);
+		effected.getStat().mergeAdd(Stats.SKILL_CRITICAL, _stat.ordinal());
 	}
 }

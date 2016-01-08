@@ -32,7 +32,7 @@ public class MaxCp extends AbstractStatEffect
 {
 	private final boolean _heal;
 	
-	public MaxCp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public MaxCp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.MAX_CP);
 		

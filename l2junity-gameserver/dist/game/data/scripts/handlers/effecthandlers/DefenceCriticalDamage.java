@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class DefenceCriticalDamage extends AbstractStatEffect
 {
-	public DefenceCriticalDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public DefenceCriticalDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.DEFENCE_CRITICAL_DAMAGE, Stats.DEFENCE_CRITICAL_DAMAGE_ADD);
 	}

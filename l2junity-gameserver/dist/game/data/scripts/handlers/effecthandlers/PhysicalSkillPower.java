@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PhysicalSkillPower extends AbstractStatEffect
 {
-	public PhysicalSkillPower(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public PhysicalSkillPower(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.PHYSICAL_SKILL_POWER);
 	}

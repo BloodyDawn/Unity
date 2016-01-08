@@ -36,7 +36,7 @@ public class SendSystemMessageToClan extends AbstractEffect
 {
 	private final SystemMessage _message;
 	
-	public SendSystemMessageToClan(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public SendSystemMessageToClan(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

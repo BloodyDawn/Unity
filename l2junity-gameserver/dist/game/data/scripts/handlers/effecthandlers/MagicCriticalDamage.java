@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class MagicCriticalDamage extends AbstractStatEffect
 {
-	public MagicCriticalDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public MagicCriticalDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.MAGIC_CRIT_DMG, Stats.MAGIC_CRIT_DMG_ADD);
 	}

@@ -32,7 +32,7 @@ public class MaxHp extends AbstractStatEffect
 {
 	private final boolean _heal;
 	
-	public MaxHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public MaxHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.MAX_HP);
 		

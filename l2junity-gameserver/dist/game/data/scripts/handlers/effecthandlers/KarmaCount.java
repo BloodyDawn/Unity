@@ -35,7 +35,7 @@ public class KarmaCount extends AbstractEffect
 	private final int _amount;
 	private final int _mode;
 	
-	public KarmaCount(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public KarmaCount(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

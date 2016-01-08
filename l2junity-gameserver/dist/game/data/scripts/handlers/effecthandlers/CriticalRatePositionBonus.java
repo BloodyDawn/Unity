@@ -34,7 +34,7 @@ public class CriticalRatePositionBonus extends AbstractEffect
 	protected final double _amount;
 	protected final Position _position;
 	
-	public CriticalRatePositionBonus(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public CriticalRatePositionBonus(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		_amount = params.getDouble("amount", 0);

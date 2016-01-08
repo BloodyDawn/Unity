@@ -32,7 +32,7 @@ public class MaxMp extends AbstractStatEffect
 {
 	private final boolean _heal;
 	
-	public MaxMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public MaxMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.MAX_MP);
 		

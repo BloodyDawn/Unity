@@ -36,7 +36,7 @@ public class ResistDispelByCategory extends AbstractEffect
 	private final double _amount;
 	private final StatModifierType _mode;
 	
-	public ResistDispelByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public ResistDispelByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

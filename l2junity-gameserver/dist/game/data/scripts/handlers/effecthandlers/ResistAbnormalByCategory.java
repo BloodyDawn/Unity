@@ -36,7 +36,7 @@ public class ResistAbnormalByCategory extends AbstractEffect
 	private final double _amount;
 	private final StatModifierType _mode;
 	
-	public ResistAbnormalByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public ResistAbnormalByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

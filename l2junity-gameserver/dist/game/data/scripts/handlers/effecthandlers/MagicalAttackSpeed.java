@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class MagicalAttackSpeed extends AbstractStatEffect
 {
-	public MagicalAttackSpeed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public MagicalAttackSpeed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.MAGIC_ATTACK_SPEED);
 	}

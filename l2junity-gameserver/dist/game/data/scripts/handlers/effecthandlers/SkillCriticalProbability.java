@@ -20,34 +20,15 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author Sdw
  */
-public class SkillEvasion extends AbstractEffect
+public class SkillCriticalProbability extends AbstractStatEffect
 {
-	private final int _magicType;
-	private final double _amount;
-	
-	public SkillEvasion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat)
+	public SkillCriticalProbability(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		_magicType = params.getInt("magicType", 0);
-		_amount = params.getDouble("amount", 0);
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, (_amount / 100) + 1);
-	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, (-_amount / 100) - 1);
+		super(attachCond, applyCond, set, params, Stats.SKILL_CRITICAL_PROBABILITY);
 	}
 }
