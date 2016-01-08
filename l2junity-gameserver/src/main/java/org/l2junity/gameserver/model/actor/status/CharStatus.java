@@ -28,8 +28,8 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.stats.Formulas;
-import org.l2junity.gameserver.model.stats.Stats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -168,8 +168,7 @@ public class CharStatus
 		
 		if (value > 0)
 		{
-			final double hpLockMin = activeChar.getStat().getValue(Stats.HP_LOCK_MIN, activeChar.isUndying() ? 1 : 0);
-			final double newHp = Math.max(getCurrentHp() - value, hpLockMin);
+			final double newHp = Math.max(getCurrentHp() - value, (activeChar.isAffected(EffectFlag.IGNORE_DEATH) || activeChar.isUndying()) ? 1 : 0);
 			setCurrentHp(newHp);
 		}
 		
@@ -281,18 +280,6 @@ public class CharStatus
 			if (getActiveChar().isDead())
 			{
 				return false;
-			}
-			
-			double hpLock = getActiveChar().getStat().getValue(Stats.HP_LOCK, 0);
-			if (hpLock > 0)
-			{
-				if (_currentHp == hpLock)
-				{
-					return false;
-				}
-				
-				_currentHp = hpLock;
-				return true;
 			}
 			
 			if (newHp >= maxHp)

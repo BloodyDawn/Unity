@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -16,45 +16,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.effects;
+package handlers.effecthandlers;
+
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 
 /**
- * @author UnAfraid
+ * @author Sdw
  */
-public enum EffectFlag
+public class IgnoreDeath extends AbstractEffect
 {
-	NONE,
-	RESURRECTION_SPECIAL,
-	NOBLESS_BLESSING,
-	SILENT_MOVE,
-	PROTECTION_BLESSING,
-	RELAXING,
-	BLOCK_CONTROL,
-	CONFUSED,
-	MUTED,
-	PSYCHICAL_MUTED,
-	PSYCHICAL_ATTACK_MUTED,
-	DISARMED,
-	ROOTED,
-	BLOCK_ACTIONS,
-	CONDITIONAL_BLOCK_ACTIONS,
-	BETRAYED,
-	INVUL,
-	BLOCK_RESURRECTION,
-	SERVITOR_SHARE,
-	UNTARGETABLE,
-	CANNOT_ESCAPE,
-	DEBUFF_BLOCK,
-	DOUBLE_CAST,
-	ATTACK_BEHIND,
-	TARGETING_DISABLED,
-	FACEOFF,
-	PHYSICAL_SHIELD_ANGLE_ALL,
-	CHEAPSHOT,
-	IGNORE_DEATH;
-	
-	public int getMask()
+	public IgnoreDeath(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		return 1 << ordinal();
+		super(attachCond, applyCond, set, params);
+	}
+	
+	@Override
+	public int getEffectFlags()
+	{
+		return EffectFlag.IGNORE_DEATH.getMask();
 	}
 }

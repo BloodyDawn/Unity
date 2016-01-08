@@ -264,8 +264,7 @@ public class PcStatus extends PlayableStatus
 		
 		if (value > 0)
 		{
-			final double hpLockMin = getActiveChar().getStat().getValue(Stats.HP_LOCK_MIN, 0);
-			value = Math.max(getCurrentHp() - value, hpLockMin);
+			value = Math.max(getCurrentHp() - value, (getActiveChar().isAffected(EffectFlag.IGNORE_DEATH) || getActiveChar().isUndying()) ? 1 : 0);
 			if (value <= 0)
 			{
 				if (getActiveChar().isInDuel())

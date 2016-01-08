@@ -773,9 +773,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
-			<effect name="Buff">
-				<add stat="hpLockMin" val="1" />
-			</effect>
+			<effect name="IgnoreDeath" />
 		</for>
 	</skill>
 	<skill id="10023" levels="5" name="King of Beasts">

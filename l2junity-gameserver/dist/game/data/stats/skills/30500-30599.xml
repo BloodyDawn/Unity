@@ -616,7 +616,6 @@
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="cAtkSkill" val="#cAtkSkill" />
-				<set stat="hpLockMin" val="1" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param KNOCKDOWN="90" KNOCKBACK="90" PULL="90" AIRBIND="90" AGGRESSION="90" />
@@ -627,6 +626,7 @@
 				<param skillId="30521" skillLevel="1" /> <!-- Damage Up -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="IgnoreDeath" />
 		</for>
 		<endEffects>
 			<effect name="HealPercent">
