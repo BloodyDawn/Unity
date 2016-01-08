@@ -126,7 +126,7 @@ public final class FatalBlow extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
 		if (damageCap > 0)
 		{
 			damage = Math.min(damage, damageCap);

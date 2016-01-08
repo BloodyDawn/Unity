@@ -254,7 +254,7 @@ public enum Stats
 	RANDOM_DAMAGE("randomDamage", new RandomDamageFinalizer()),
 	
 	// Affects the random weapon damage.
-	DAMAGE_CAP("damageCap"),
+	DAMAGE_LIMIT("damageCap"),
 	
 	// Lock your HP at the given value.
 	HP_LOCK("hpLock"),
