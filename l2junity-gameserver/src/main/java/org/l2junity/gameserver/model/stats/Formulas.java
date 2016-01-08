@@ -407,7 +407,6 @@ public final class Formulas
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double attributeMod = calcAttributeBonus(attacker, target, skill);
 		final double weaponMod = attacker.getRandomDamageMultiplier();
-		final double damageResMod = 1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100);
 		
 		double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
 		
@@ -417,7 +416,6 @@ public final class Formulas
 		damage *= attributeMod;
 		damage *= weaponMod;
 		damage *= penaltyMod;
-		damage *= damageResMod;
 		
 		if (attacker.isDebug())
 		{
@@ -436,7 +434,6 @@ public final class Formulas
 			set.set("attributeMod", attributeMod);
 			set.set("weaponMod", weaponMod);
 			set.set("penaltyMod", penaltyMod);
-			set.set("damageResMod", damageResMod);
 			set.set("damage", (int) damage);
 			Debug.sendSkillDebug(attacker, target, skill, set);
 		}
@@ -493,7 +490,6 @@ public final class Formulas
 		double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		double attributeMod = calcAttributeBonus(attacker, target, skill);
 		double weaponMod = attacker.getRandomDamageMultiplier();
-		final double damageResMod = 1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100);
 		
 		double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
 		
@@ -502,7 +498,6 @@ public final class Formulas
 		damage *= attributeMod;
 		damage *= weaponMod;
 		damage *= penaltyMod;
-		damage *= damageResMod;
 		
 		if (attacker.isDebug())
 		{
@@ -520,7 +515,6 @@ public final class Formulas
 			set.set("attributeMod", attributeMod);
 			set.set("weaponMod", weaponMod);
 			set.set("penaltyMod", penaltyMod);
-			set.set("damageResMod", damageResMod);
 			set.set("damage", (int) damage);
 			Debug.sendSkillDebug(attacker, target, skill, set);
 		}
@@ -637,7 +631,6 @@ public final class Formulas
 		}
 		
 		damage *= calcAttributeBonus(attacker, target, skill);
-		damage *= (1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 		
 		if (target.isAttackable() || attacker.isAttackable())
 		{
@@ -761,7 +754,6 @@ public final class Formulas
 		}
 		
 		damage *= calcAttributeBonus(attacker, target, skill);
-		damage *= (1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 		
 		// Bonus damage if target is affected by Storm Sign
 		damage *= target.getStat().getValue(Stats.STORM_SIGN_BONUS, 1);
@@ -846,7 +838,6 @@ public final class Formulas
 		}
 		
 		damage *= calcAttributeBonus(owner, target, skill);
-		damage *= (1 - (target.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 		
 		if (target.isAttackable())
 		{

@@ -175,7 +175,6 @@ public enum Stats
 	// BUFF_IMMUNITY("buffImmunity"), //TODO: Implement me
 	ABNORMAL_RESIST_PHYSICAL("abnormalResPhysical"),
 	ABNORMAL_RESIST_MAGICAL("abnormalResMagical"),
-	FIXED_DAMAGE_RES("fixedDamageRes"), // Resistance agains fixed damage.
 	
 	// ELEMENT POWER
 	FIRE_POWER("firePower", new AttributeFinalizer(AttributeType.FIRE, true)),

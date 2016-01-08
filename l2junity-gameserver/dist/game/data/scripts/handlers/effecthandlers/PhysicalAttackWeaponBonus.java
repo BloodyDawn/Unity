@@ -228,7 +228,6 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		damage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 		
 		damage *= Formulas.calcAttributeBonus(effector, effected, skill);
-		damage *= (1 - (effected.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 		
 		// PvE Bonuses.
 		if (effected.isAttackable() || effector.isAttackable())
