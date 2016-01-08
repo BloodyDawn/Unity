@@ -1822,11 +1822,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<set stat="maxSouls" val="#maxSouls" />
-			</effect>
 			<effect name="SoulEating">
-				<param expNeeded="#expNeeded" />
+				<param maxSouls="#maxSouls" expNeeded="#expNeeded" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
