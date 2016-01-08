@@ -271,8 +271,8 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<set stat="maxMomentum" val="10" />
+			<effect name="FocusEnergy">
+				<param amount="10" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />

@@ -2483,8 +2483,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<for>
-			<effect name="Buff">
-				<set stat="maxMomentum" val="#maxMomentum" />
+			<effect name="FocusEnergy">
+				<param amount="#maxMomentum" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
@@ -2515,8 +2515,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<set stat="maxMomentum" val="#maxMomentum" />
+			<effect name="FocusEnergy">
+				<param amount="#maxMomentum" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
