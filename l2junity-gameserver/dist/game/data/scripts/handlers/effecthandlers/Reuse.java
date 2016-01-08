@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -42,12 +43,12 @@ public class Reuse extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getStat().mergeReuseTypeValue(_magicType, (_amount / 100) + 1);
+		info.getEffected().getStat().mergeReuseTypeValue(_magicType, (_amount / 100) + 1, MathUtil::mul);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().getStat().mergeReuseTypeValue(_magicType, (-_amount / 100) - 1);
+		info.getEffected().getStat().mergeReuseTypeValue(_magicType, (_amount / 100) + 1, MathUtil::div);
 	}
 }

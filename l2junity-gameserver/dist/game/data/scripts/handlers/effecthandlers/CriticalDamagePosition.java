@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.enums.Position;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -43,12 +44,12 @@ public class CriticalDamagePosition extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getStat().mergePositionTypeValue(Stats.CRITICAL_DAMAGE, _position, (_amount / 100) + 1);
+		info.getEffected().getStat().mergePositionTypeValue(Stats.CRITICAL_DAMAGE, _position, (_amount / 100) + 1, MathUtil::mul);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().getStat().mergePositionTypeValue(Stats.CRITICAL_DAMAGE, _position, (-_amount / 100) - 1);
+		info.getEffected().getStat().mergePositionTypeValue(Stats.CRITICAL_DAMAGE, _position, (_amount / 100) + 1, MathUtil::div);
 	}
 }

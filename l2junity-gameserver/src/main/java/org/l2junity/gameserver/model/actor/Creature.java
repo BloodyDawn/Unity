@@ -1021,7 +1021,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
+							mpConsume = isAffected(EffectFlag.CHEAPSHOT) ? 0 : mpConsume;
 							
 							if (getCurrentMp() < mpConsume)
 							{
@@ -1083,7 +1083,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
+							mpConsume = isAffected(EffectFlag.CHEAPSHOT) ? 0 : mpConsume;
 							
 							if (getCurrentMp() < mpConsume)
 							{

@@ -28,6 +28,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.function.BiFunction;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
@@ -460,20 +461,7 @@ public class CharStat
 			}
 		}
 		
-		mpConsume = getValue(Stats.MP_CONSUME, mpConsume);
-		
-		if (skill.isDance())
-		{
-			return (int) getValue(Stats.DANCE_MP_CONSUME_RATE, mpConsume);
-		}
-		else if (skill.isMagic())
-		{
-			return (int) getValue(Stats.MAGICAL_MP_CONSUME_RATE, mpConsume);
-		}
-		else
-		{
-			return (int) getValue(Stats.PHYSICAL_MP_CONSUME_RATE, mpConsume);
-		}
+		return (int) (mpConsume * getMpConsumeTypeValue(skill.getMagicType()));
 	}
 	
 	/**
@@ -487,7 +475,7 @@ public class CharStat
 			return 1;
 		}
 		
-		return (int) getValue(Stats.MP_CONSUME, skill.getMpInitialConsume());
+		return skill.getMpInitialConsume();
 	}
 	
 	public AttributeType getAttackElement()
@@ -849,9 +837,9 @@ public class CharStat
 		return _positionStats.getOrDefault(stat, Collections.emptyMap()).getOrDefault(position, 1d);
 	}
 	
-	public void mergePositionTypeValue(Stats stat, Position position, double value)
+	public void mergePositionTypeValue(Stats stat, Position position, double value, BiFunction<? super Double, ? super Double, ? extends Double> func)
 	{
-		_positionStats.computeIfAbsent(stat, key -> new ConcurrentHashMap<>()).merge(position, value, MathUtil::mul);
+		_positionStats.computeIfAbsent(stat, key -> new ConcurrentHashMap<>()).merge(position, value, func);
 	}
 	
 	public double getMoveTypeValue(Stats stat, MoveType type)
@@ -869,9 +857,9 @@ public class CharStat
 		return _reuseStat.getOrDefault(magicType, 1d);
 	}
 	
-	public void mergeReuseTypeValue(int magicType, double value)
+	public void mergeReuseTypeValue(int magicType, double value, BiFunction<? super Double, ? super Double, ? extends Double> func)
 	{
-		_reuseStat.merge(magicType, value, MathUtil::mul);
+		_reuseStat.merge(magicType, value, func);
 	}
 	
 	public double getMpConsumeTypeValue(int magicType)
@@ -879,9 +867,9 @@ public class CharStat
 		return _mpConsumeStat.getOrDefault(magicType, 1d);
 	}
 	
-	public void mergeMpConsumeTypeValue(int magicType, double value)
+	public void mergeMpConsumeTypeValue(int magicType, double value, BiFunction<? super Double, ? super Double, ? extends Double> func)
 	{
-		_mpConsumeStat.merge(magicType, value, MathUtil::mul);
+		_mpConsumeStat.merge(magicType, value, func);
 	}
 	
 	public double getSkillEvasionTypeValue(int magicType)
