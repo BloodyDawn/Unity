@@ -221,10 +221,10 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		if (effected.isAttackable() || effector.isAttackable())
 		{
 			damage *= Formulas.calcPveDamagePenalty(effector, effected, skill, false);
-			damage *= effector.getStat().getValue(Stats.PVE_PHYS_SKILL_DMG, 1) * effected.getStat().getValue(Stats.PVE_PHYS_SKILL_DEF, 1);
+			damage *= effector.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DAMAGE, 1) * effected.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DEFENCE, 1);
 			if (effector.isRaid())
 			{
-				damage *= effected.getStat().getValue(Stats.PVE_RAID_PHYS_SKILL_DEF, 1);
+				damage *= effected.getStat().getValue(Stats.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1);
 			}
 		}
 		

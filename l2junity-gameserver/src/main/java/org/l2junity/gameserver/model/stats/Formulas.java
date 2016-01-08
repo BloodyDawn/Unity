@@ -638,18 +638,18 @@ public final class Formulas
 			
 			if (skill != null)
 			{
-				damage *= attacker.getStat().getValue(Stats.PVE_PHYS_SKILL_DMG, 1) * target.getStat().getValue(Stats.PVE_PHYS_SKILL_DEF, 1);
+				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DEFENCE, 1);
 				if (attacker.isRaid())
 				{
-					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYS_SKILL_DEF, 1);
+					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1);
 				}
 			}
 			else
 			{
-				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_DEF, 1);
+				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DEFENCE, 1);
 				if (attacker.isRaid())
 				{
-					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_DEF, 1);
+					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1);
 				}
 			}
 			
@@ -765,10 +765,10 @@ public final class Formulas
 		if (target.isAttackable() || attacker.isAttackable())
 		{
 			damage *= calcPveDamagePenalty(attacker, target, skill, mcrit);
-			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_DEF, 1);
+			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DEFENCE, 1);
 			if (attacker.isRaid())
 			{
-				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_DEF, 1);
+				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1);
 			}
 		}
 		return damage;
@@ -841,7 +841,7 @@ public final class Formulas
 		
 		if (target.isAttackable())
 		{
-			damage *= attacker.getOwner().getStat().getValue(Stats.PVE_MAGICAL_DMG, 1);
+			damage *= attacker.getOwner().getStat().getValue(Stats.PVE_MAGICAL_SKILL_DAMAGE, 1);
 			damage *= calcPveDamagePenalty(attacker.getOwner(), target, skill, mcrit);
 		}
 		return damage;
@@ -1349,10 +1349,10 @@ public final class Formulas
 		if (target.isAttackable() || attacker.isAttackable())
 		{
 			damage *= calcPveDamagePenalty(attacker, target, skill, mcrit);
-			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_DEF, 1);
+			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DEFENCE, 1);
 			if (attacker.isRaid())
 			{
-				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_DEF, 1);
+				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1);
 			}
 		}
 		
@@ -2077,10 +2077,10 @@ public final class Formulas
 		if (target.isAttackable() || attacker.isAttackable())
 		{
 			damage *= calcPveDamagePenalty(attacker, target, null, crit);
-			damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_DEF, 1);
+			damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DEFENCE, 1);
 			if (attacker.isRaid())
 			{
-				damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_DEF, 1);
+				damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1);
 			}
 		}
 		

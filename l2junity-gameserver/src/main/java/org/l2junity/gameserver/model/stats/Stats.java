@@ -97,15 +97,15 @@ public enum Stats
 	PVP_PHYSICAL_SKILL_DEFENCE("pvpPhysSkillsDef"),
 	
 	// PVE BONUS
-	PVE_PHYSICAL_DMG("pvePhysDmg"),
-	PVE_PHYS_SKILL_DMG("pvePhysSkillsDmg"),
-	PVE_MAGICAL_DMG("pveMagicalDmg"),
-	PVE_PHYSICAL_DEF("pvePhysDef"),
-	PVE_PHYS_SKILL_DEF("pvePhysSkillsDef"),
-	PVE_MAGICAL_DEF("pveMagicalDef"),
-	PVE_RAID_PHYSICAL_DEF("pveRaidPhysDef"),
-	PVE_RAID_PHYS_SKILL_DEF("pveRaidPhysSkillsDef"),
-	PVE_RAID_MAGICAL_DEF("pveRaidMagicalDef"),
+	PVE_PHYSICAL_ATTACK_DAMAGE("pvePhysDmg"),
+	PVE_PHYSICAL_SKILL_DAMAGE("pvePhysSkillsDmg"),
+	PVE_MAGICAL_SKILL_DAMAGE("pveMagicalDmg"),
+	PVE_PHYSICAL_ATTACK_DEFENCE("pvePhysDef"),
+	PVE_PHYSICAL_SKILL_DEFENCE("pvePhysSkillsDef"),
+	PVE_MAGICAL_SKILL_DEFENCE("pveMagicalDef"),
+	PVE_RAID_PHYSICAL_ATTACK_DEFENCE("pveRaidPhysDef"),
+	PVE_RAID_PHYSICAL_SKILL_DEFENCE("pveRaidPhysSkillsDef"),
+	PVE_RAID_MAGICAL_SKILL_DEFENCE("pveRaidMagicalDef"),
 	
 	// ATTACK & DEFENCE RATES
 	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
