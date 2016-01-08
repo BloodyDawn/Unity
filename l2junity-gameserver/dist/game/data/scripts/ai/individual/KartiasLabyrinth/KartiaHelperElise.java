@@ -120,8 +120,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder chainSkill = instParams.getSkillHolder("eliseChainHeal");
 					if (chainSkill != null)
 					{
-						npc.setTarget(player);
-						npc.doCast(chainSkill.getSkill());
+						addSkillCastDesire(npc, player, chainSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.POWER_OF_LIGHT_PROTECT_US);
 					}
 				}
@@ -130,8 +129,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder healSkill = instParams.getSkillHolder("eliseHeal");
 					if (healSkill != null)
 					{
-						npc.setTarget(player);
-						npc.doCast(healSkill.getSkill());
+						addSkillCastDesire(npc, player, healSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.POWER_OF_LIGHT_PROTECT_US);
 					}
 				}
@@ -140,8 +138,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder rechargeSkill = instParams.getSkillHolder("eliseRecharge");
 					if (rechargeSkill != null)
 					{
-						npc.setTarget(player);
-						npc.doCast(rechargeSkill.getSkill());
+						addSkillCastDesire(npc, player, rechargeSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MEN_FOCUS_CHARGING_COMPLETE);
 					}
 				}
@@ -161,8 +158,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder chainSkill = instParams.getSkillHolder("eliseChainHeal");
 					if (chainSkill != null)
 					{
-						npc.setTarget(adolph);
-						npc.doCast(chainSkill.getSkill());
+						addSkillCastDesire(npc, adolph, chainSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.POWER_OF_LIGHT_PROTECT_US);
 					}
 				}
@@ -171,8 +167,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder healSkill = instParams.getSkillHolder("eliseHeal");
 					if (healSkill != null)
 					{
-						npc.setTarget(adolph);
-						npc.doCast(healSkill.getSkill());
+						addSkillCastDesire(npc, adolph, healSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.POWER_OF_LIGHT_PROTECT_US);
 					}
 				}
@@ -192,8 +187,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder chainSkill = instParams.getSkillHolder("eliseChainHeal");
 					if (chainSkill != null)
 					{
-						npc.setTarget(adolph);
-						npc.doCast(chainSkill.getSkill());
+						addSkillCastDesire(npc, barton, chainSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.POWER_OF_LIGHT_PROTECT_US);
 					}
 				}
@@ -213,8 +207,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder chainSkill = instParams.getSkillHolder("eliseChainHeal");
 					if (chainSkill != null)
 					{
-						npc.setTarget(eliyah);
-						npc.doCast(chainSkill.getSkill());
+						addSkillCastDesire(npc, eliyah, chainSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.POWER_OF_LIGHT_PROTECT_US);
 					}
 				}
@@ -234,8 +227,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 					final SkillHolder chainSkill = instParams.getSkillHolder("eliseChainHeal");
 					if (chainSkill != null)
 					{
-						npc.setTarget(hayuk);
-						npc.doCast(chainSkill.getSkill());
+						addSkillCastDesire(npc, hayuk, chainSkill, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.POWER_OF_LIGHT_PROTECT_US);
 					}
 				}
