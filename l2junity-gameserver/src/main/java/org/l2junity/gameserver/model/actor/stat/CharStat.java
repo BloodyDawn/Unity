@@ -140,7 +140,7 @@ public class CharStat
 	{
 		// There is a chance that activeChar has altered base stat for skill critical.
 		double init = -1;
-		byte skillCritRateStat = (byte) _activeChar.getStat().getValue(Stats.STAT_SKILLCRITICAL, init);
+		byte skillCritRateStat = (byte) _activeChar.getStat().getValue(Stats.STAT_BONUS_SKILL_CRITICAL, init);
 		if ((skillCritRateStat >= 0) && (skillCritRateStat < BaseStats.values().length))
 		{
 			return BaseStats.values()[skillCritRateStat].calcBonus(_activeChar);

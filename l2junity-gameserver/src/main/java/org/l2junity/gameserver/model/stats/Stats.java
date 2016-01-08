@@ -260,8 +260,8 @@ public enum Stats
 	MAX_MOMENTUM("maxMomentum"),
 	
 	// Which base stat ordinal should alter skill critical formula.
-	STAT_SKILLCRITICAL("statSkillCritical"),
-	STAT_SPEED("statSpeed"),
+	STAT_BONUS_SKILL_CRITICAL("statSkillCritical"),
+	STAT_BONUS_SPEED("statSpeed"),
 	SHOTS_BONUS("shotBonus", new ShotsBonusFinalizer());
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(Stats.class);

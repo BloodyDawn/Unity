@@ -273,6 +273,8 @@ public final class EffectMasterHandler
 		Speed.class,
 		SpModify.class,
 		Spoil.class,
+		StatBonusSkillCritical.class,
+		StatBonusSpeed.class,
 		StatByMoveType.class,
 		StaticDamage.class,
 		StealAbnormal.class,

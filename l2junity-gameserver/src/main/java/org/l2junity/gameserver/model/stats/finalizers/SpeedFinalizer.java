@@ -50,7 +50,7 @@ public class SpeedFinalizer implements IStatsFunction
 			baseValue += calcEnchantBodyPart(creature, L2Item.SLOT_FEET);
 		}
 		
-		final byte speedStat = (byte) creature.getStat().getAdd(Stats.STAT_SPEED, -1);
+		final byte speedStat = (byte) creature.getStat().getAdd(Stats.STAT_BONUS_SPEED, -1);
 		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
 		{
 			final BaseStats baseStat = BaseStats.values()[speedStat];
