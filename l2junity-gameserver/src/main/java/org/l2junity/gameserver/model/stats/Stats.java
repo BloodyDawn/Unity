@@ -89,13 +89,12 @@ public enum Stats
 	MAGIC_CRIT_DMG_ADD("mCritPowerAdd"),
 	
 	// PVP BONUS
-	PVP_DAMAGE("pvpDamage"), // TODO: Implement me
-	PVP_PHYSICAL_DMG("pvpPhysDmg"),
-	PVP_MAGICAL_DMG("pvpMagicalDmg"),
-	PVP_PHYS_SKILL_DMG("pvpPhysSkillsDmg"),
-	PVP_PHYSICAL_DEF("pvpPhysDef"),
-	PVP_MAGICAL_DEF("pvpMagicalDef"),
-	PVP_PHYS_SKILL_DEF("pvpPhysSkillsDef"),
+	PVP_PHYSICAL_ATTACK_DAMAGE("pvpPhysDmg"),
+	PVP_MAGICAL_SKILL_DAMAGE("pvpMagicalDmg"),
+	PVP_PHYSICAL_SKILL_DAMAGE("pvpPhysSkillsDmg"),
+	PVP_PHYSICAL_ATTACK_DEFENCE("pvpPhysDef"),
+	PVP_MAGICAL_SKILL_DEFENCE("pvpMagicalDef"),
+	PVP_PHYSICAL_SKILL_DEFENCE("pvpPhysSkillsDef"),
 	
 	// PVE BONUS
 	PVE_PHYSICAL_DMG("pvePhysDmg"),

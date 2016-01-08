@@ -390,9 +390,9 @@ public final class Formulas
 		if (isPvP)
 		{
 			// Damage bonuses in PvP fight
-			pvpBonus = attacker.getStat().getValue(Stats.PVP_PHYS_SKILL_DMG, 1);
+			pvpBonus = attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
 			// Defense bonuses in PvP fight
-			defence *= target.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1);
+			defence *= target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 		}
 		
 		// Initial damage
@@ -474,9 +474,9 @@ public final class Formulas
 		if (isPvP)
 		{
 			// Damage bonuses in PvP fight
-			pvpBonus = attacker.getStat().getValue(Stats.PVP_PHYS_SKILL_DMG, 1);
+			pvpBonus = attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
 			// Defense bonuses in PvP fight
-			defence *= target.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1);
+			defence *= target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 		}
 		
 		// Initial damage
@@ -548,7 +548,7 @@ public final class Formulas
 		// Defense bonuses in PvP fight
 		if (isPvP)
 		{
-			defence *= (skill == null) ? target.getStat().getValue(Stats.PVP_PHYSICAL_DEF, 1) : target.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1);
+			defence *= (skill == null) ? target.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DEFENCE, 1) : target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 		}
 		
 		switch (shld)
@@ -612,11 +612,11 @@ public final class Formulas
 		{
 			if (skill == null)
 			{
-				damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_DMG, 1);
+				damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DAMAGE, 1);
 			}
 			else
 			{
-				damage *= attacker.getStat().getValue(Stats.PVP_PHYS_SKILL_DMG, 1);
+				damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
 			}
 		}
 		
@@ -688,11 +688,11 @@ public final class Formulas
 		{
 			if (skill.isMagic())
 			{
-				mDef *= target.getStat().getValue(Stats.PVP_MAGICAL_DEF, 1);
+				mDef *= target.getStat().getValue(Stats.PVP_MAGICAL_SKILL_DEFENCE, 1);
 			}
 			else
 			{
-				mDef *= target.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1);
+				mDef *= target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 			}
 		}
 		
@@ -749,7 +749,7 @@ public final class Formulas
 		// PvP bonuses for damage
 		if (isPvP)
 		{
-			Stats stat = skill.isMagic() ? Stats.PVP_MAGICAL_DMG : Stats.PVP_PHYS_SKILL_DMG;
+			Stats stat = skill.isMagic() ? Stats.PVP_MAGICAL_SKILL_DAMAGE : Stats.PVP_PHYSICAL_SKILL_DAMAGE;
 			damage *= attacker.getStat().getValue(stat, 1);
 		}
 		
@@ -2070,7 +2070,7 @@ public final class Formulas
 		// PvP bonus
 		if (attacker.isPlayable() && target.isPlayable())
 		{
-			damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_DMG, 1) * target.getStat().getValue(Stats.PVP_PHYSICAL_DEF, 1);
+			damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DAMAGE, 1) * target.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DEFENCE, 1);
 		}
 		
 		// PvE Bonus

@@ -176,7 +176,7 @@ public final class PhysicalAttack extends AbstractEffect
 		// Defense bonuses in PvP fight
 		if (isPvP)
 		{
-			defence *= effected.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1);
+			defence *= effected.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 		}
 		
 		switch (shld)
@@ -225,7 +225,7 @@ public final class PhysicalAttack extends AbstractEffect
 		// Dmg bonuses in PvP fight
 		if (isPvP)
 		{
-			damage *= effector.getStat().getValue(Stats.PVP_PHYS_SKILL_DMG, 1);
+			damage *= effector.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
 		}
 		
 		// Physical skill dmg boost
