@@ -235,9 +235,6 @@ public enum Stats
 	// Cubic Count
 	MAX_CUBIC("cubicCount"),
 	
-	// Exp bonus applied to vitality
-	VITALITY_EXP_BONUS("vitalityExpBonus"),
-	
 	// Storm Sign bonus damage
 	STORM_SIGN_BONUS("stormSignBonus"),
 	
