@@ -57,7 +57,8 @@ public final class IstinaCavern extends AbstractInstance
 	private static final int EXTREME_MINION = 23125;
 	private static final int[] ISTINA =
 	{
-		29195,
+		29195, // Istina (Common)
+		29196, // Istina (Extreme)
 	};
 	// Skills
 	private static final SkillHolder ERUPTION_1 = new SkillHolder(14222, 1);
@@ -256,6 +257,23 @@ public final class IstinaCavern extends AbstractInstance
 					});
 					break;
 				}
+				case "AUTHORITY_TIMER":
+				{
+					final SkillHolder authoritySkill = npcParams.getSkillHolder("Istina_Authority_Skill0" + getRandom(1, 3));
+					if (authoritySkill != null)
+					{
+						addSkillCastDesire(npc, npc.getAI().getAttackTarget(), authoritySkill, 23);
+					}
+					getTimers().addTimer("AUTHORITY_TIMER", 70000 + getRandom(25000), npc, null);
+					break;
+				}
+				case "AUTHORITY_END_TIMER":
+				{
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData1, @OFF, myself->InstantZone_GetId());
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData2, @OFF, myself->InstantZone_GetId());
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData3, @OFF, myself->InstantZone_GetId());
+					break;
+				}
 			}
 		}
 	}
@@ -288,18 +306,34 @@ public final class IstinaCavern extends AbstractInstance
 			else
 			{
 				final StatsSet npcParams = npc.getParameters();
-				final SkillHolder death1 = npcParams.getSkillHolder("Istina_Death_Skill01");
-				final SkillHolder reflect = npcParams.getSkillHolder("Istina_Refraction_Skill");
 				
-				if (skillId == death1.getSkillId())
+				if (skillId == npcParams.getSkillHolder("Istina_Death_Skill01").getSkillId())
 				{
 					showOnScreenMsg(player, NpcStringId.ISTINA_S_MARK_SHINES_ABOVE_THE_HEAD, ExShowScreenMessage.TOP_CENTER, 4000);
 					getTimers().addTimer("DEATH_CHECK_TIMER", 10000, npc, null);
 				}
-				else if (skillId == reflect.getSkillId())
+				else if (skillId == npcParams.getSkillHolder("Istina_Refraction_Skill").getSkillId())
 				{
 					npc.setState(1);
 					getTimers().addTimer("REFLECT_CHECK_TIMER", 1000, npc, null);
+				}
+				else if (skillId == npcParams.getSkillHolder("Istina_Authority_Skill01").getSkillId())
+				{
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData2, @ON, myself->InstantZone_GetId()); // TODO: Need be finished after zone rework
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData3, @ON, myself->InstantZone_GetId()); // TODO: Need be finished after zone rework
+					getTimers().addTimer("AUTHORITY_END_TIMER", 15000, npc, null);
+				}
+				else if (skillId == npcParams.getSkillHolder("Istina_Authority_Skill02").getSkillId())
+				{
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData1, @ON, myself->InstantZone_GetId()); // TODO: Need be finished after zone rework
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData3, @ON, myself->InstantZone_GetId()); // TODO: Need be finished after zone rework
+					getTimers().addTimer("AUTHORITY_END_TIMER", 15000, npc, null);
+				}
+				else if (skillId == npcParams.getSkillHolder("Istina_Authority_Skill03").getSkillId())
+				{
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData1, @ON, myself->InstantZone_GetId()); // TODO: Need be finished after zone rework
+					// gg->Area_SetOnOffEx(Istina_Authority_AreaData2, @ON, myself->InstantZone_GetId()); // TODO: Need be finished after zone rework
+					getTimers().addTimer("AUTHORITY_END_TIMER", 15000, npc, null);
 				}
 			}
 		}
@@ -358,7 +392,7 @@ public final class IstinaCavern extends AbstractInstance
 						if (npc.getCurrentHpPercent() < 85)
 						{
 							npcVars.set("ISTINA_STAGE", 2);
-							// myself->AddTimerEx(Authority_Timer, (3 * 1000));
+							getTimers().addTimer("AUTHORITY_TIMER", 3000, npc, null);
 						}
 						break;
 					}
@@ -407,7 +441,7 @@ public final class IstinaCavern extends AbstractInstance
 							getTimers().cancelTimer("REFLECT_TIMER", npc, null);
 							getTimers().cancelTimer("REFLECT_CHECK_TIMER", npc, null);
 							getTimers().cancelTimer("LOW_ERUPTION_TIMER", npc, null);
-							// myself->BlockTimer(Authority_Timer);
+							getTimers().cancelTimer("AUTHORITY_TIMER", npc, null);
 							// myself->BlockTimer(Overcrowding_Timer);
 							// myself->BlockTimer(Sub_Creation_TImer);
 							if (isExtremeMode(instance))
@@ -415,10 +449,10 @@ public final class IstinaCavern extends AbstractInstance
 								// myself->BlockTimer(Seal_Timer);
 								// myself->BlockTimer(Order_Timer);
 							}
-							instance.getAliveNpcs(EXTREME_MINION).forEach(Npc::deleteMe);
+							instance.getAliveNpcs(EXTREME_MINION, INVISIBLE_NPC).forEach(Npc::deleteMe);
 							instance.spawnGroup("BALLISTA");
 							// myself->AddTimerEx(Broadcast_Timer, (2 * 1000));
-							// myself->AddTimerEx(Authority_End_Timer, (1 * 1000));
+							onTimerEvent("AUTHORITY_END_TIMER", null, npc, null);
 							// myself->AddTimerEx(Location_Check_Timer, (4 * 1000));
 							npc.disableCoreAI(true);
 							npc.teleToLocation(DEFEAT_ISTINA_LOC);
