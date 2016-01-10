@@ -23,23 +23,58 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Target yourself.
+ * Target fortress flagpole
  * @author Nik
  */
-public class Self implements ITargetTypeHandler
+public class FortressFlagpole implements ITargetTypeHandler
 {
 	@Override
 	public Enum<TargetType> getTargetType()
 	{
-		return TargetType.SELF;
+		return TargetType.FORTRESS_FLAGPOLE;
 	}
 	
 	@Override
 	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
 	{
-		return activeChar;
+		final WorldObject target = activeChar.getTarget();
+		if (target != null)
+		{
+			switch (target.getId())
+			{
+				case 35657:
+				case 35688:
+				case 35726:
+				case 35757:
+				case 35795:
+				case 35826:
+				case 35857:
+				case 35895:
+				case 35926:
+				case 35964:
+				case 35002:
+				case 36033:
+				case 36071:
+				case 36109:
+				case 36140:
+				case 36171:
+				case 36209:
+				case 36247:
+				case 36285:
+				case 36316:
+				case 36354:
+					return target;
+			}
+		}
+		
+		if (sendMessage)
+		{
+			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+		}
+		
+		return null;
 	}
-	
 }

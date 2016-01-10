@@ -19,27 +19,37 @@
 package handlers.targethandlers;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.instancemanager.MentorManager;
+import org.l2junity.gameserver.model.Mentee;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
- * Target yourself.
+ * Target my mentor.
  * @author Nik
  */
-public class Self implements ITargetTypeHandler
+public class MyMentor implements ITargetTypeHandler
 {
 	@Override
 	public Enum<TargetType> getTargetType()
 	{
-		return TargetType.SELF;
+		return TargetType.MY_MENTOR;
 	}
 	
 	@Override
 	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
 	{
-		return activeChar;
+		if (activeChar.isPlayer())
+		{
+			Mentee mentor = MentorManager.getInstance().getMentor(activeChar.getObjectId());
+			if (mentor != null)
+			{
+				return mentor.getPlayerInstance();
+			}
+		}
+		
+		return null;
 	}
-	
 }

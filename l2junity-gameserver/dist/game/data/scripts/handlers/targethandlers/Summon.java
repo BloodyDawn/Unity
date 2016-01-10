@@ -18,47 +18,46 @@
  */
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Target Summon handler.
- * @author UnAfraid
+ * Target one of my summons.
+ * @author Nik
  */
 public class Summon implements ITargetTypeHandler
 {
 	@Override
-	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Enum<TargetType> getTargetType()
 	{
-		if (activeChar.hasSummon())
-		{
-			if (!activeChar.hasPet() && activeChar.hasServitors())
-			{
-				return activeChar.getServitors().values().toArray(new Creature[0]);
-			}
-			else if (activeChar.hasPet() && !activeChar.hasServitors())
-			{
-				return new Creature[]
-				{
-					activeChar.getPet()
-				};
-			}
-			final List<Creature> targets = new ArrayList<>(1 + activeChar.getServitors().size());
-			targets.add(activeChar.getPet());
-			targets.addAll(activeChar.getServitors().values());
-			return targets.toArray(new Creature[0]);
-		}
-		return EMPTY_TARGET_LIST;
+		return TargetType.SUMMON;
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
+	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
 	{
-		return L2TargetType.SUMMON;
+		final WorldObject target = activeChar.getTarget();
+		if ((target != null) && target.isCreature() && !((Creature) target).isDead() && activeChar.hasSummon())
+		{
+			if (activeChar.getPet() == target)
+			{
+				return target;
+			}
+			if (activeChar.getServitors().values().stream().anyMatch(s -> s == target))
+			{
+				return target;
+			}
+		}
+		
+		if (sendMessage)
+		{
+			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+		}
+		
+		return null;
 	}
 }

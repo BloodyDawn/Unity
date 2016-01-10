@@ -18,98 +18,57 @@
  */
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author UnAfraid
+ * Target dead player or pet.
+ * @author Nik
  */
 public class PcBody implements ITargetTypeHandler
 {
+	
 	@Override
-	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Enum<TargetType> getTargetType()
 	{
-		List<Creature> targetList = new ArrayList<>();
-		if ((target != null) && target.isDead())
-		{
-			final PlayerInstance player;
-			if (activeChar.isPlayer())
-			{
-				player = activeChar.getActingPlayer();
-			}
-			else
-			{
-				player = null;
-			}
-			
-			final PlayerInstance targetPlayer;
-			if (target.isPlayer())
-			{
-				targetPlayer = target.getActingPlayer();
-			}
-			else
-			{
-				targetPlayer = null;
-			}
-			
-			final L2PetInstance targetPet;
-			if (target.isPet())
-			{
-				targetPet = (L2PetInstance) target;
-			}
-			else
-			{
-				targetPet = null;
-			}
-			
-			if ((player != null) && ((targetPlayer != null) || (targetPet != null)))
-			{
-				boolean condGood = true;
-				
-				if (skill.hasEffectType(L2EffectType.RESURRECTION))
-				{
-					if (targetPlayer != null)
-					{
-						// check target is not in a active siege zone
-						if (targetPlayer.isInsideZone(ZoneId.SIEGE) && !targetPlayer.isInSiege())
-						{
-							condGood = false;
-							activeChar.sendPacket(SystemMessageId.IT_IS_NOT_POSSIBLE_TO_RESURRECT_IN_BATTLEGROUNDS_WHERE_A_SIEGE_WAR_IS_TAKING_PLACE);
-						}
-					}
-				}
-				
-				if (condGood)
-				{
-					if (!onlyFirst)
-					{
-						targetList.add(target);
-						return targetList.toArray(new Creature[targetList.size()]);
-					}
-					return new Creature[]
-					{
-						target
-					};
-				}
-			}
-		}
-		activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
-		return EMPTY_TARGET_LIST;
+		return TargetType.PC_BODY;
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
+	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
 	{
-		return L2TargetType.PC_BODY;
+		final WorldObject target = activeChar.getTarget();
+		if ((target != null) && (target.isPlayer() || target.isPet()))
+		{
+			final Playable targetPlayable = (Playable) target;
+			if (targetPlayable.isDead())
+			{
+				if (targetPlayable.isPlayer() && targetPlayable.isInsideZone(ZoneId.SIEGE) && !targetPlayable.getActingPlayer().isInSiege())
+				{
+					// check target is not in a active siege zone
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.IT_IS_NOT_POSSIBLE_TO_RESURRECT_IN_BATTLEGROUNDS_WHERE_A_SIEGE_WAR_IS_TAKING_PLACE);
+					}
+					
+					return null;
+				}
+				
+				return target;
+			}
+		}
+		
+		if (sendMessage)
+		{
+			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+		}
+		
+		return null;
 	}
 }

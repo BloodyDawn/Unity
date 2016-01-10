@@ -23,23 +23,35 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Target yourself.
+ * Any selected target.
  * @author Nik
  */
-public class Self implements ITargetTypeHandler
+public class Target implements ITargetTypeHandler
 {
 	@Override
 	public Enum<TargetType> getTargetType()
 	{
-		return TargetType.SELF;
+		return TargetType.TARGET;
 	}
 	
 	@Override
 	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
 	{
-		return activeChar;
+		final WorldObject target = activeChar.getTarget();
+		// Check for null target or any other invalid target
+		if ((target != null) && target.isCreature() && !((Creature) target).isDead())
+		{
+			return target;
+		}
+		
+		if (sendMessage)
+		{
+			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+		}
+		
+		return null;
 	}
-	
 }

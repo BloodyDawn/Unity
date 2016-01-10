@@ -18,28 +18,52 @@
  */
 package handlers.targethandlers;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Target yourself.
+ * Target dead monster.
  * @author Nik
  */
-public class Self implements ITargetTypeHandler
+public class NpcBody implements ITargetTypeHandler
 {
+	
 	@Override
 	public Enum<TargetType> getTargetType()
 	{
-		return TargetType.SELF;
+		return TargetType.NPC_BODY;
 	}
 	
 	@Override
 	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
 	{
-		return activeChar;
+		final WorldObject target = activeChar.getTarget();
+		if ((target != null) && target.isAttackable())
+		{
+			final Attackable targetNpc = (Attackable) target;
+			if (targetNpc.isDead())
+			{
+				if (skill.hasEffectType(L2EffectType.HP_DRAIN) && targetNpc.isOldCorpse(activeChar.getActingPlayer(), Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, sendMessage))
+				{
+					return null;
+				}
+				
+				return target;
+			}
+		}
+		
+		if (sendMessage)
+		{
+			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+		}
+		
+		return null;
 	}
-	
 }

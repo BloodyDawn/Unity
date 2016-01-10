@@ -61,7 +61,6 @@ import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.targets.AffectObject;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -134,8 +133,6 @@ public final class Skill implements IIdentifiable
 	private final int _reuseDelay;
 	private final int _reuseDelayGroup;
 	
-	/** Target type of the skill : SELF, PARTY, CLAN, PET... */
-	private final L2TargetType _targetType;
 	private final int _magicLevel;
 	private final int _lvlBonusRate;
 	private final int _activateRate;
@@ -145,7 +142,7 @@ public final class Skill implements IIdentifiable
 	// Effecting area of the skill, in radius.
 	// The radius center varies according to the _targetType:
 	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
-	private final TargetType _targetTypeRetail;
+	private final TargetType _targetType;
 	private final AffectScope _affectScope;
 	private final AffectObject _affectObject;
 	private final int _affectRange;
@@ -283,7 +280,7 @@ public final class Skill implements IIdentifiable
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
 		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
 		
-		_targetTypeRetail = set.getEnum("targetTypeRetail", TargetType.class, TargetType.NONE);
+		_targetType = set.getEnum("targetType", TargetType.class, TargetType.NONE);
 		_affectScope = set.getEnum("affectScope", AffectScope.class, AffectScope.NONE);
 		_affectObject = set.getEnum("affectObject", AffectObject.class, AffectObject.ALL);
 		_affectRange = set.getInt("affectRange", 0);
@@ -364,7 +361,6 @@ public final class Skill implements IIdentifiable
 			}
 		}
 		
-		_targetType = set.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
 		_magicLevel = set.getInt("magicLvl", 0);
 		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
 		_activateRate = set.getInt("activateRate", -1);
@@ -480,25 +476,17 @@ public final class Skill implements IIdentifiable
 		return _attributeValue;
 	}
 	
-	/**
-	 * Return the target type of the skill : SELF, PARTY, CLAN, PET...
-	 * @return
-	 */
-	public L2TargetType getTargetType()
-	{
-		return _targetType;
-	}
-	
 	public boolean isAOE()
 	{
-		switch (_targetType)
+		switch (_affectScope)
 		{
-			case AREA:
-			case AURA:
-			case BEHIND_AREA:
-			case BEHIND_AURA:
-			case FRONT_AREA:
-			case FRONT_AURA:
+			case FAN:
+			case FAN_PB:
+			case POINT_BLANK:
+			case RANGE:
+			case RING_RANGE:
+			case SQUARE:
+			case SQUARE_PB:
 			{
 				return true;
 			}
@@ -866,34 +854,57 @@ public final class Skill implements IIdentifiable
 		return _coolTime;
 	}
 	
-	public TargetType getTargetTypeRetail()
+	/**
+	 * @return the target type of the skill : SELF, TARGET, SUMMON, GROUND...
+	 */
+	public TargetType getTargetType()
 	{
-		return _targetTypeRetail;
+		return _targetType;
 	}
 	
+	/**
+	 * @return the affect scope of the skill : SINGLE, FAN, SQUARE, PARTY, PLEDGE...
+	 */
 	public AffectScope getAffectScope()
 	{
 		return _affectScope;
 	}
 	
+	/**
+	 * @return the affect object of the skill : All, Clan, Friend, NotFriend, Invisible...
+	 */
 	public AffectObject getAffectObject()
 	{
 		return _affectObject;
 	}
 	
+	/**
+	 * @return the AOE range of the skill.
+	 */
 	public int getAffectRange()
 	{
 		return _affectRange;
 	}
 	
+	/**
+	 * @return the AOE fan range of the skill.
+	 */
 	public int[] getFanRange()
 	{
 		return _fanRange;
 	}
 	
+	/**
+	 * @return the maximum amount of targets the skill can affect or 0 if unlimited.
+	 */
 	public int getAffectLimit()
 	{
-		return (_affectLimit[0] + Rnd.get(_affectLimit[1]));
+		if ((_affectLimit[0] > 0) || (_affectLimit[1] > 0))
+		{
+			return (_affectLimit[0] + Rnd.get(_affectLimit[1]));
+		}
+		
+		return 0;
 	}
 	
 	public int getAffectHeightMin()
@@ -1026,7 +1037,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isBad()
 	{
-		return (_effectPoint < 0) && (_targetType != L2TargetType.SELF);
+		return (_effectPoint < 0) && (_targetType != TargetType.SELF);
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object)

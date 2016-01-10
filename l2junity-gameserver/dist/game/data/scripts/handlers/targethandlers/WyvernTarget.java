@@ -19,33 +19,27 @@
 package handlers.targethandlers;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
- * @author UnAfraid
+ * TODO: Target while riding wyvern.
+ * @author Nik
  */
-public class Holy implements ITargetTypeHandler
+public class WyvernTarget implements ITargetTypeHandler
 {
 	@Override
-	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Enum<TargetType> getTargetType()
 	{
-		if (!(target instanceof L2ArtefactInstance))
-		{
-			return EMPTY_TARGET_LIST;
-		}
-		
-		return new Creature[]
-		{
-			target
-		};
+		return TargetType.WYVERN_TARGET;
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
+	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
 	{
-		return L2TargetType.HOLY;
+		return null;
 	}
+	
 }

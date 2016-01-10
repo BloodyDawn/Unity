@@ -241,7 +241,7 @@ import handlers.targethandlers.Self;
 import handlers.targethandlers.Servitor;
 import handlers.targethandlers.Summon;
 import handlers.targethandlers.TargetParty;
-import handlers.targethandlers.Unlockable;
+import handlers.targethandlers.DoorTreasure;
 import handlers.usercommandhandlers.ChannelDelete;
 import handlers.usercommandhandlers.ChannelInfo;
 import handlers.usercommandhandlers.ChannelLeave;
@@ -547,7 +547,7 @@ public class MasterHandler
 			Servitor.class,
 			Summon.class,
 			TargetParty.class,
-			Unlockable.class,
+			DoorTreasure.class,
 		},
 	};
 	
