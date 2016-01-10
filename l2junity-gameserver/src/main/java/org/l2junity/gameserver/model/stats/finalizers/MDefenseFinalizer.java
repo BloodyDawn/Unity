@@ -66,12 +66,15 @@ public class MDefenseFinalizer implements IStatsFunction
 				baseValue += item.getItem().getStats(stat, 0);
 			}
 			
-			final PlayerInstance player = creature.getActingPlayer();
-			for (int slot : SLOTS)
+			if (creature.isPlayer())
 			{
-				if (!player.getInventory().isPaperdollSlotEmpty(slot))
+				final PlayerInstance player = creature.getActingPlayer();
+				for (int slot : SLOTS)
 				{
-					baseValue -= player.getTemplate().getBaseDefBySlot(transform != null ? transform.getBaseDefBySlot(player, slot) : slot);
+					if (!player.getInventory().isPaperdollSlotEmpty(slot))
+					{
+						baseValue -= player.getTemplate().getBaseDefBySlot(transform != null ? transform.getBaseDefBySlot(player, slot) : slot);
+					}
 				}
 			}
 			baseValue *= BaseStats.CHA.calcBonus(creature);
