@@ -18,6 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -46,20 +47,40 @@ public class FanPB implements IAffectScopeHandler
 		final int fanAngle = skill.getFanRange()[3];
 		final int fanHalfAngle = fanAngle / 2; // Half left and half right.
 		final int affectLimit = skill.getAffectLimit();
+		final List<Creature> result = new LinkedList<>();
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && (Math.abs(Util.calculateAngleFrom(c, activeChar) - (activeChar.getHeading() + fanStartAngle)) <= fanHalfAngle) && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
-		List<Creature> result = World.getInstance().getVisibleObjects(activeChar, Creature.class, fanRadius, filter);
+		// Target checks.
+		final Predicate<Creature> filter = c ->
+		{
+			if (c.isDead())
+			{
+				return false;
+			}
+			if (Math.abs(Util.calculateAngleFrom(c, activeChar) - (activeChar.getHeading() + fanStartAngle)) > fanHalfAngle)
+			{
+				return false;
+			}
+			return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+		};
 		
-		// Add object of origin since its skipped in the getVisibleObjects method.
+		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
 		if (filter.test(activeChar))
 		{
 			result.add(activeChar);
 		}
 		
-		if (affectLimit > 0)
+		// Check and add targets.
+		World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, fanRadius, c ->
 		{
-			result = result.subList(0, Math.min(affectLimit, result.size()));
-		}
+			if ((affectLimit > 0) && (result.size() >= affectLimit))
+			{
+				return;
+			}
+			if (filter.test(c))
+			{
+				result.add(c);
+			}
+		});
 		
 		return result;
 	}

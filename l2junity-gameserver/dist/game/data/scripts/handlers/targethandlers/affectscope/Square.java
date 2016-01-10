@@ -18,6 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -27,7 +28,6 @@ import org.l2junity.gameserver.handler.IAffectScopeHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
 import org.l2junity.gameserver.util.Util;
@@ -53,28 +53,47 @@ public class Square implements IAffectScopeHandler
 		final double heading = Math.toRadians(squareStartAngle + Util.convertHeadingToDegree(activeChar.getHeading()));
 		final double cos = Math.cos(-heading);
 		final double sin = Math.sin(-heading);
-		final Predicate<ILocational> square = l ->
+		final List<Creature> result = new LinkedList<>();
+		
+		// Target checks.
+		final Predicate<Creature> filter = c ->
 		{
-			int xp = l.getX() - activeChar.getX();
-			int yp = l.getY() - activeChar.getY();
+			if (c.isDead())
+			{
+				return false;
+			}
+			
+			// Check if inside square.
+			int xp = c.getX() - activeChar.getX();
+			int yp = c.getY() - activeChar.getY();
 			int xr = (int) ((activeChar.getX() + (xp * cos)) - (yp * sin));
 			int yr = (int) (activeChar.getY() + (xp * sin) + (yp * cos));
-			return ((xr > rectX) && (xr < (rectX + squareLength)) && (yr > rectY) && (yr < (rectY + squareWidth)));
+			if ((xr > rectX) && (xr < (rectX + squareLength)) && (yr > rectY) && (yr < (rectY + squareWidth)))
+			{
+				return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+			}
+			
+			return false;
 		};
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && square.test(c) && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
-		List<Creature> result = World.getInstance().getVisibleObjects(activeChar, Creature.class, radius, filter);
-		
-		// Add object of origin since its skipped in the getVisibleObjects method.
-		if (filter.test(activeChar))
+		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
+		if (filter.test(target))
 		{
-			result.add(activeChar);
+			result.add(target);
 		}
 		
-		if (affectLimit > 0)
+		// Check and add targets.
+		World.getInstance().forEachVisibleObjectInRange(target, Creature.class, radius, c ->
 		{
-			result = result.subList(0, Math.min(affectLimit, result.size()));
-		}
+			if ((affectLimit > 0) && (result.size() >= affectLimit))
+			{
+				return;
+			}
+			if (filter.test(c))
+			{
+				result.add(c);
+			}
+		});
 		
 		return result;
 	}

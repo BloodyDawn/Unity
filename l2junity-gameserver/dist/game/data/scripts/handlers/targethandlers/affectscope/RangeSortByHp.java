@@ -44,7 +44,17 @@ public class RangeSortByHp implements IAffectScopeHandler
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
+		// Target checks.
+		final Predicate<Creature> filter = c ->
+		{
+			if (c.isDead())
+			{
+				return false;
+			}
+			
+			return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+		};
+		
 		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
 		
 		// Add object of origin since its skipped in the getVisibleObjects method.

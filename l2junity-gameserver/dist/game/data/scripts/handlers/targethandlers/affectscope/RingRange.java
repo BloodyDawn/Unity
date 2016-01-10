@@ -18,6 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -44,20 +45,43 @@ public class RingRange implements IAffectScopeHandler
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
 		final int startRange = skill.getFanRange()[2];
+		final List<Creature> result = new LinkedList<>();
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && !Util.checkIfInRange(startRange, target, c, false) && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
-		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
-		
-		// Add object of origin since its skipped in the getVisibleObjects method.
-		if (filter.test(target))
+		// Target checks.
+		final Predicate<Creature> filter = c ->
 		{
-			result.add(target);
+			if (c.isDead())
+			{
+				return false;
+			}
+			
+			// Targets before the start range are unaffected.
+			if (Util.checkIfInRange(startRange, activeChar, c, false))
+			{
+				return false;
+			}
+			
+			return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+		};
+		
+		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
+		if (filter.test(activeChar))
+		{
+			result.add(activeChar);
 		}
 		
-		if (affectLimit > 0)
+		// Check and add targets.
+		World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, affectRange, c ->
 		{
-			result = result.subList(0, Math.min(affectLimit, result.size()));
-		}
+			if ((affectLimit > 0) && (result.size() >= affectLimit))
+			{
+				return;
+			}
+			if (filter.test(c))
+			{
+				result.add(c);
+			}
+		});
 		
 		return result;
 	}

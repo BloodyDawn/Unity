@@ -44,10 +44,10 @@ public class SummonExceptMaster implements IAffectScopeHandler
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
-		PlayerInstance player = target.getActingPlayer();
 		
-		if (player != null)
+		if (target.isPlayable())
 		{
+			final PlayerInstance player = target.getActingPlayer();
 			//@formatter:off
 			return player.getServitors().values().stream()
 			.flatMap(p -> Arrays.stream(new Creature[]{p.getPet()}))

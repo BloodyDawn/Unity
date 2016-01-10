@@ -20,15 +20,19 @@ package handlers.targethandlers.affectscope;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
@@ -46,10 +50,11 @@ public class DeadUnion implements IAffectScopeHandler
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
-		PlayerInstance player = target.getActingPlayer();
-		if (player != null)
+		
+		if (target.isPlayable())
 		{
-			org.l2junity.gameserver.model.Party party = player.getParty();
+			final PlayerInstance player = target.getActingPlayer();
+			final org.l2junity.gameserver.model.Party party = player.getParty();
 			final List<PlayerInstance> unionList = ((party != null) ? party.isInCommandChannel() ? party.getCommandChannel().getMembers() : party.getMembers() : Collections.singletonList(player));
 			
 			//@formatter:off
@@ -64,8 +69,45 @@ public class DeadUnion implements IAffectScopeHandler
 			.collect(Collectors.toList());
 			//@formatter:on
 		}
+		else if (target.isNpc())
+		{
+			final List<Creature> result = new LinkedList<>();
+			final Predicate<Npc> filter = n ->
+			{
+				if (!n.isDead())
+				{
+					return false;
+				}
+				if (n.isAutoAttackable(target))
+				{
+					return false;
+				}
+				return ((affectObject == null) || affectObject.checkAffectedObject(activeChar, n));
+			};
+			
+			// Add object of origin since its skipped in the getVisibleObjects method.
+			if (filter.test((Npc) target))
+			{
+				result.add(target);
+			}
+			
+			// Check and add targets.
+			World.getInstance().forEachVisibleObjectInRange(target, Npc.class, affectRange, c ->
+			{
+				if ((affectLimit > 0) && (result.size() >= affectLimit))
+				{
+					return;
+				}
+				if (filter.test(c))
+				{
+					result.add(c);
+				}
+			});
+			
+			return result;
+		}
 		
-		return null; // TODO NPC target union.
+		return null;
 	}
 	
 	@Override

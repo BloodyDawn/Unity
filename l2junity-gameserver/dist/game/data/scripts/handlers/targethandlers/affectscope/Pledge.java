@@ -18,6 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -44,10 +45,11 @@ public class Pledge implements IAffectScopeHandler
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
-		PlayerInstance player = target.getActingPlayer();
+		final List<Creature> result = new LinkedList<>();
 		
-		if (player != null)
+		if (target.isPlayable())
 		{
+			final PlayerInstance player = target.getActingPlayer();
 			final Predicate<Playable> filter = plbl ->
 			{
 				PlayerInstance p = plbl.getActingPlayer();
@@ -62,40 +64,61 @@ public class Pledge implements IAffectScopeHandler
 				return ((affectObject == null) || affectObject.checkAffectedObject(activeChar, p));
 			};
 			
-			List<Playable> result = World.getInstance().getVisibleObjects(target, Playable.class, affectRange, filter);
-			
-			// Add object of origin since its skipped in the getVisibleObjects method.
-			if (target.isPlayable() && filter.test((Playable) target))
+			// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
+			if (filter.test((Playable) target))
 			{
-				result.add((Playable) target);
+				result.add(target);
 			}
 			
-			if (affectLimit > 0)
+			// Check and add targets.
+			World.getInstance().forEachVisibleObjectInRange(target, Playable.class, affectRange, c ->
 			{
-				result = result.subList(0, Math.min(affectLimit, result.size()));
-			}
-			
-			return result;
+				if ((affectLimit > 0) && (result.size() >= affectLimit))
+				{
+					return;
+				}
+				if (filter.test(c))
+				{
+					result.add(c);
+				}
+			});
 		}
-		
-		if (target.isNpc())
+		else if (target.isNpc())
 		{
-			final Predicate<Npc> filter = n -> !n.isDead() && ((Npc) target).isInMyClan(n) && (affectObject != null ? affectObject.checkAffectedObject(activeChar, n) : true);
-			List<Npc> result = World.getInstance().getVisibleObjects(target, Npc.class, affectRange, filter);
+			final Predicate<Npc> filter = n ->
+			{
+				if (n.isDead())
+				{
+					return false;
+				}
+				if (!((Npc) target).isInMyClan(n))
+				{
+					return false;
+				}
+				return ((affectObject == null) || affectObject.checkAffectedObject(activeChar, n));
+			};
 			
 			// Add object of origin since its skipped in the getVisibleObjects method.
 			if (filter.test((Npc) target))
 			{
-				result.add((Npc) target);
+				result.add(target);
 			}
 			
-			if (affectLimit > 0)
+			// Check and add targets.
+			World.getInstance().forEachVisibleObjectInRange(target, Npc.class, affectRange, c ->
 			{
-				result = result.subList(0, Math.min(affectLimit, result.size()));
-			}
+				if ((affectLimit > 0) && (result.size() >= affectLimit))
+				{
+					return;
+				}
+				if (filter.test(c))
+				{
+					result.add(c);
+				}
+			});
 		}
 		
-		return null;
+		return result;
 	}
 	
 	@Override

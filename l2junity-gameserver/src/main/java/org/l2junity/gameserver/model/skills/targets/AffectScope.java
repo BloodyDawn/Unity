@@ -52,7 +52,7 @@ public enum AffectScope
 	RANGE,
 	/** Affects ranged targets, using selected target as point of origin sorted by lowest to highest HP. */
 	RANGE_SORT_BY_HP,
-	/** Affects ranged targets, using selected target as point of origin. */
+	/** Affects targets in donut shaped area, using caster as point of origin. */
 	RING_RANGE,
 	/** Affects a single target. */
 	SINGLE,

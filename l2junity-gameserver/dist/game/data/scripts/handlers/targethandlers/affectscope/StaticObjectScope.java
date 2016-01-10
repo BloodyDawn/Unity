@@ -18,6 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -44,20 +45,42 @@ public class StaticObjectScope implements IAffectScopeHandler
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
+		final List<Creature> result = new LinkedList<>();
 		
-		final Predicate<Creature> filter = c -> ((c instanceof DoorInstance) || (c instanceof L2StaticObjectInstance)) && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
-		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
+		// Target checks.
+		final Predicate<Creature> filter = c ->
+		{
+			if (c.isDead())
+			{
+				return false;
+			}
+			
+			if (!(c instanceof DoorInstance) && !(c instanceof L2StaticObjectInstance))
+			{
+				return false;
+			}
+			
+			return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+		};
 		
-		// Add object of origin since its skipped in the getVisibleObjects method.
+		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
 		if (filter.test(target))
 		{
 			result.add(target);
 		}
 		
-		if (affectLimit > 0)
+		// Check and add targets.
+		World.getInstance().forEachVisibleObjectInRange(target, Creature.class, affectRange, c ->
 		{
-			result = result.subList(0, Math.min(affectLimit, result.size()));
-		}
+			if ((affectLimit > 0) && (result.size() >= affectLimit))
+			{
+				return;
+			}
+			if (filter.test(c))
+			{
+				result.add(c);
+			}
+		});
 		
 		return result;
 	}
