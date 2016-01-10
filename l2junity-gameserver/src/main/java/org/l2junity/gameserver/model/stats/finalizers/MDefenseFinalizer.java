@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.stats.finalizers;
 import java.util.Optional;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -31,7 +30,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.network.client.send.NpcSay;
 
 /**
  * @author UnAfraid
@@ -64,9 +62,7 @@ public class MDefenseFinalizer implements IStatsFunction
 		{
 			for (ItemInstance item : inv.getPaperdollItems(ItemInstance::isEquipped))
 			{
-				double val = item.getItem().getStats(stat, 0);
-				baseValue += val;
-				creature.broadcastPacket(new NpcSay(creature.getObjectId(), ChatType.GENERAL, creature.getId(), "NpcID: " + creature.getId() + " Stat: " + stat + " item: " + item + " value: " + val));
+				baseValue += item.getItem().getStats(stat, 0);
 			}
 		}
 		
