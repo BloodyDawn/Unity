@@ -27,29 +27,48 @@ import org.l2junity.gameserver.handler.IAffectScopeHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
+import org.l2junity.gameserver.util.Util;
 
 /**
- * Range affect scope implementation. Gathers objects in area of target origin (including origin itself).
+ * Square affect scope implementation (actually more like a rectangle).
  * @author Nik
  */
-public class Range implements IAffectScopeHandler
+public class Square implements IAffectScopeHandler
 {
 	@Override
 	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
-		final int affectRange = skill.getAffectRange();
+		final int squareStartAngle = skill.getFanRange()[1];
+		final int squareLength = skill.getFanRange()[2];
+		final int squareWidth = skill.getFanRange()[3];
+		final int radius = (int) Math.sqrt((squareLength * squareLength) + (squareWidth * squareWidth));
 		final int affectLimit = skill.getAffectLimit();
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
-		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
+		final int rectX = activeChar.getX();
+		final int rectY = activeChar.getY() - (squareWidth / 2);
+		final double heading = Math.toRadians(squareStartAngle + Util.convertHeadingToDegree(activeChar.getHeading()));
+		final double cos = Math.cos(-heading);
+		final double sin = Math.sin(-heading);
+		final Predicate<ILocational> square = l ->
+		{
+			int xp = l.getX() - activeChar.getX();
+			int yp = l.getY() - activeChar.getY();
+			int xr = (int) ((activeChar.getX() + (xp * cos)) - (yp * sin));
+			int yr = (int) (activeChar.getY() + (xp * sin) + (yp * cos));
+			return ((xr > rectX) && (xr < (rectX + squareLength)) && (yr > rectY) && (yr < (rectY + squareWidth)));
+		};
+		
+		final Predicate<Creature> filter = c -> !c.isDead() && square.test(c) && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
+		List<Creature> result = World.getInstance().getVisibleObjects(activeChar, Creature.class, radius, filter);
 		
 		// Add object of origin since its skipped in the getVisibleObjects method.
-		if (filter.test(target))
+		if (filter.test(activeChar))
 		{
-			result.add(target);
+			result.add(activeChar);
 		}
 		
 		if (affectLimit > 0)
@@ -63,6 +82,6 @@ public class Range implements IAffectScopeHandler
 	@Override
 	public Enum<AffectScope> getAffectScopeType()
 	{
-		return AffectScope.RANGE;
+		return AffectScope.SQUARE;
 	}
 }

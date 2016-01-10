@@ -20,11 +20,7 @@ package handlers.targethandlers.affectobject;
 
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
-import org.l2junity.gameserver.model.actor.instance.L2FriendlyMobInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.targets.AffectObject;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -37,9 +33,9 @@ public class FriendPc implements IAffectObjectHandler
 	@Override
 	public boolean checkAffectedObject(Creature activeChar, Creature target)
 	{
-		if (activeChar == target)
+		if (!target.isPlayer())
 		{
-			return true;
+			return false;
 		}
 		
 		final PlayerInstance player = activeChar.getActingPlayer();
@@ -47,92 +43,76 @@ public class FriendPc implements IAffectObjectHandler
 		
 		if (player != null)
 		{
-			if (targetPlayer != null)
-			{
-				if (player == targetPlayer)
-				{
-					return true;
-				}
-				
-				final Party party = player.getParty();
-				final Party targetParty = targetPlayer.getParty();
-				if (party != null)
-				{
-					if (party == targetParty)
-					{
-						return true;
-					}
-					
-					if ((targetParty != null) && (party.getCommandChannel() == targetParty.getCommandChannel()))
-					{
-						return true;
-					}
-				}
-				
-				if (target.isInsideZone(ZoneId.PVP))
-				{
-					return false;
-				}
-				
-				// Duel
-				if (player.isInDuel() && targetPlayer.isInDuel())
-				{
-					if (player.getDuelId() == targetPlayer.getDuelId())
-					{
-						return false;
-					}
-				}
-				
-				// Olympiad
-				if (player.isInOlympiadMode() && targetPlayer.isInOlympiadMode())
-				{
-					if (player.getOlympiadGameId() == targetPlayer.getOlympiadGameId())
-					{
-						return false;
-					}
-				}
-				
-				final L2Clan clan = player.getClan();
-				final L2Clan targetClan = targetPlayer.getClan();
-				if (clan != null)
-				{
-					if (clan == targetClan)
-					{
-						return true;
-					}
-					
-					if ((targetClan != null) && (clan.isAtWarWith(targetClan) || targetClan.isAtWarWith(clan)))
-					{
-						return false;
-					}
-				}
-				
-				if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
-				{
-					return true;
-				}
-				
-				if ((player.getSiegeState() > 0) && player.isInsideZone(ZoneId.SIEGE) && (player.getSiegeState() == targetPlayer.getSiegeState()) && (player.getSiegeSide() == targetPlayer.getSiegeSide()))
-				{
-					return true;
-				}
-				
-				// By default any neutral non-flagged player is considered a friend.
-				return (target.getActingPlayer().getPvpFlag() == 0) || (target.getActingPlayer().getReputation() >= 0);
-			}
-		}
-		else if (activeChar.isNpc())
-		{
-			Npc npc = (Npc) activeChar;
-			
-			// Friendly NPCs are friends with players.
-			if ((targetPlayer != null) && ((npc instanceof FriendlyNpcInstance) || (npc instanceof L2FriendlyMobInstance)))
+			// Same player.
+			if (player == targetPlayer)
 			{
 				return true;
 			}
+			
+			// Party (command channel doesn't make you friends).
+			if (player.isInParty() && targetPlayer.isInParty() && (player.getParty().getLeaderObjectId() == targetPlayer.getParty().getLeaderObjectId()))
+			{
+				return true;
+			}
+			
+			// Arena.
+			if (activeChar.isInsideZone(ZoneId.PVP) && target.isInsideZone(ZoneId.PVP))
+			{
+				return false;
+			}
+			
+			// Duel.
+			if (player.isInDuel() && targetPlayer.isInDuel() && (player.getDuelId() == targetPlayer.getDuelId()))
+			{
+				return false;
+			}
+			
+			// Olympiad.
+			if (player.isInOlympiadMode() && targetPlayer.isInOlympiadMode() && (player.getOlympiadGameId() == targetPlayer.getOlympiadGameId()))
+			{
+				return false;
+			}
+			
+			// Clan.
+			final L2Clan clan = player.getClan();
+			final L2Clan targetClan = targetPlayer.getClan();
+			if (clan != null)
+			{
+				if (clan == targetClan)
+				{
+					return true;
+				}
+				
+				// War
+				if ((targetClan != null) && clan.isAtWarWith(targetClan) && targetClan.isAtWarWith(clan))
+				{
+					return false;
+				}
+			}
+			
+			// Alliance.
+			if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
+			{
+				return true;
+			}
+			
+			// Siege.
+			if (target.isInsideZone(ZoneId.SIEGE))
+			{
+				// Players in the same siege side at the same castle are considered friends.
+				if ((player.getSiegeState() > 0) && (player.getSiegeState() == targetPlayer.getSiegeState()) && (player.getSiegeSide() == targetPlayer.getSiegeSide()))
+				{
+					return true;
+				}
+				
+				return false;
+			}
+			
+			// By default any neutral non-flagged player is considered a friend.
+			return (target.getActingPlayer().getPvpFlag() == 0) || (target.getActingPlayer().getReputation() >= 0);
 		}
 		
-		return false;
+		return target.isAutoAttackable(activeChar);
 	}
 	
 	@Override

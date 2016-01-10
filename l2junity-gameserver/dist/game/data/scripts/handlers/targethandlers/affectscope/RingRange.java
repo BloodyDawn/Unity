@@ -29,12 +29,13 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
+import org.l2junity.gameserver.util.Util;
 
 /**
- * Range affect scope implementation. Gathers objects in area of target origin (including origin itself).
+ * Ring Range affect scope implementation. Gathers objects in ring/donut shaped area with start and end range.
  * @author Nik
  */
-public class Range implements IAffectScopeHandler
+public class RingRange implements IAffectScopeHandler
 {
 	@Override
 	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
@@ -42,8 +43,9 @@ public class Range implements IAffectScopeHandler
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
+		final int startRange = skill.getFanRange()[2];
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
+		final Predicate<Creature> filter = c -> !c.isDead() && !Util.checkIfInRange(startRange, target, c, false) && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
 		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
 		
 		// Add object of origin since its skipped in the getVisibleObjects method.
@@ -63,6 +65,6 @@ public class Range implements IAffectScopeHandler
 	@Override
 	public Enum<AffectScope> getAffectScopeType()
 	{
-		return AffectScope.RANGE;
+		return AffectScope.RING_RANGE;
 	}
 }

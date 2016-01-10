@@ -43,7 +43,7 @@ public class PointBlank implements IAffectScopeHandler
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && (affectObject != null ? affectObject.checkAffectedObject(activeChar, c) : true);
+		final Predicate<Creature> filter = c -> !c.isDead() && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
 		List<Creature> result = World.getInstance().getVisibleObjects(activeChar, Creature.class, affectRange, filter); // Use yourself as point of origin.
 		
 		// Add object of origin since its skipped in the getVisibleObjects method.

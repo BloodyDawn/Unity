@@ -34,9 +34,10 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
 
 /**
+ * Party and Clan affect scope implementation.
  * @author Nik
  */
-public class Pledge implements IAffectScopeHandler
+public class PartyPledge implements IAffectScopeHandler
 {
 	@Override
 	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
@@ -55,9 +56,16 @@ public class Pledge implements IAffectScopeHandler
 				{
 					return false;
 				}
-				if ((p != player) && ((p.getClanId() == 0) || (p.getClanId() != player.getClanId())))
+				if (p != player)
 				{
-					return false;
+					if ((p.getClanId() == 0) || (p.getClanId() != player.getClanId()))
+					{
+						return false;
+					}
+					if (!p.isInParty() || !player.isInParty() || (p.getParty().getLeaderObjectId() != player.getParty().getLeaderObjectId()))
+					{
+						return false;
+					}
 				}
 				return ((affectObject == null) || affectObject.checkAffectedObject(activeChar, p));
 			};
@@ -101,6 +109,6 @@ public class Pledge implements IAffectScopeHandler
 	@Override
 	public Enum<AffectScope> getAffectScopeType()
 	{
-		return AffectScope.PLEDGE;
+		return AffectScope.PARTY_PLEDGE;
 	}
 }

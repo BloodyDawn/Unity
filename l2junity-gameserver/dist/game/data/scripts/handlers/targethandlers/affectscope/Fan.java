@@ -29,22 +29,26 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
+import org.l2junity.gameserver.util.Util;
 
 /**
- * Range affect scope implementation. Gathers objects in area of target origin (including origin itself).
+ * Fan affect scope implementation. Gathers objects in a certain angle of circular area in target origin (including origin itself).
  * @author Nik
  */
-public class Range implements IAffectScopeHandler
+public class Fan implements IAffectScopeHandler
 {
 	@Override
 	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
-		final int affectRange = skill.getAffectRange();
+		final int fanStartAngle = skill.getFanRange()[1];
+		final int fanRadius = skill.getFanRange()[2];
+		final int fanAngle = skill.getFanRange()[3];
+		final int fanHalfAngle = fanAngle / 2; // Half left and half right.
 		final int affectLimit = skill.getAffectLimit();
 		
-		final Predicate<Creature> filter = c -> !c.isDead() && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
-		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
+		final Predicate<Creature> filter = c -> !c.isDead() && (Math.abs(Util.calculateAngleFrom(c, activeChar) - (activeChar.getHeading() + fanStartAngle)) <= fanHalfAngle) && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
+		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, fanRadius, filter);
 		
 		// Add object of origin since its skipped in the getVisibleObjects method.
 		if (filter.test(target))
@@ -63,6 +67,6 @@ public class Range implements IAffectScopeHandler
 	@Override
 	public Enum<AffectScope> getAffectScopeType()
 	{
-		return AffectScope.RANGE;
+		return AffectScope.FAN;
 	}
 }

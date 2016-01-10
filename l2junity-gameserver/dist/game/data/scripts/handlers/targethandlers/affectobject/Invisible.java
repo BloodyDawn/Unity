@@ -23,6 +23,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.targets.AffectObject;
 
 /**
+ * Invisible affect object implementation.
  * @author Nik
  */
 public class Invisible implements IAffectObjectHandler
@@ -30,11 +31,6 @@ public class Invisible implements IAffectObjectHandler
 	@Override
 	public boolean checkAffectedObject(Creature activeChar, Creature target)
 	{
-		if (target.isDead())
-		{
-			return false;
-		}
-		
 		return target.isInvisible();
 	}
 	

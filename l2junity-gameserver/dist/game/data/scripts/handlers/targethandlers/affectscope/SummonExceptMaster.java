@@ -54,7 +54,7 @@ public class SummonExceptMaster implements IAffectScopeHandler
 			.filter(Objects::nonNull)
 			.filter(c -> !c.isDead())
 			.filter(c -> affectRange > 0 ? Util.checkIfInRange(affectRange, c, target, true) : true)
-			.filter(c -> affectObject != null ? affectObject.checkAffectedObject(activeChar, c) : true)
+			.filter(c -> (affectObject == null) || affectObject.checkAffectedObject(activeChar, c))
 			.limit(affectLimit > 0 ? affectLimit : Long.MAX_VALUE)
 			.collect(Collectors.toList());
 			//@formatter:on

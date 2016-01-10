@@ -364,7 +364,7 @@ public final class Skill implements IIdentifiable
 			}
 		}
 		
-		_targetType = L2TargetType.SELF;// set.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
+		_targetType = set.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
 		_magicLevel = set.getInt("magicLvl", 0);
 		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
 		_activateRate = set.getInt("activateRate", -1);

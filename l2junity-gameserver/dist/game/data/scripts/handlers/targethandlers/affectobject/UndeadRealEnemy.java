@@ -20,10 +20,10 @@ package handlers.targethandlers.affectobject;
 
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.skills.targets.AffectObject;
 
 /**
+ * Undead enemy npc affect object implementation.
  * @author Nik
  */
 public class UndeadRealEnemy implements IAffectObjectHandler
@@ -41,12 +41,7 @@ public class UndeadRealEnemy implements IAffectObjectHandler
 			return false;
 		}
 		
-		if (activeChar.isNpc() && target.isNpc() && ((Npc) activeChar).isInMyClan(((Npc) target)))
-		{
-			return false;
-		}
-		
-		return true;
+		return target.isAutoAttackable(activeChar);
 	}
 	
 	@Override

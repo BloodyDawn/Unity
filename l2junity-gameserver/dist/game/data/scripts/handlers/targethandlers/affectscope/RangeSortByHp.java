@@ -18,6 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -31,10 +32,10 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
 
 /**
- * Range affect scope implementation. Gathers objects in area of target origin (including origin itself).
+ * Range sorted by lowest to highest hp percent affect scope implementation.
  * @author Nik
  */
-public class Range implements IAffectScopeHandler
+public class RangeSortByHp implements IAffectScopeHandler
 {
 	@Override
 	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
@@ -52,6 +53,9 @@ public class Range implements IAffectScopeHandler
 			result.add(target);
 		}
 		
+		// Sort from lowest hp to highest hp.
+		result.sort(Comparator.comparingInt(Creature::getCurrentHpPercent));
+		
 		if (affectLimit > 0)
 		{
 			result = result.subList(0, Math.min(affectLimit, result.size()));
@@ -63,6 +67,6 @@ public class Range implements IAffectScopeHandler
 	@Override
 	public Enum<AffectScope> getAffectScopeType()
 	{
-		return AffectScope.RANGE;
+		return AffectScope.RANGE_SORT_BY_HP;
 	}
 }

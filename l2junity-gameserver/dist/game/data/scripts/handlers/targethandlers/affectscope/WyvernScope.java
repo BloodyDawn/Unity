@@ -19,50 +19,28 @@
 package handlers.targethandlers.affectscope;
 
 import java.util.List;
-import java.util.function.Predicate;
 
-import org.l2junity.gameserver.handler.AffectObjectHandler;
-import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
 
 /**
- * Range affect scope implementation. Gathers objects in area of target origin (including origin itself).
+ * TODO: Wyvern affect scope.
  * @author Nik
  */
-public class Range implements IAffectScopeHandler
+public class WyvernScope implements IAffectScopeHandler
 {
 	@Override
 	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
 	{
-		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
-		final int affectRange = skill.getAffectRange();
-		final int affectLimit = skill.getAffectLimit();
-		
-		final Predicate<Creature> filter = c -> !c.isDead() && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, c));
-		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
-		
-		// Add object of origin since its skipped in the getVisibleObjects method.
-		if (filter.test(target))
-		{
-			result.add(target);
-		}
-		
-		if (affectLimit > 0)
-		{
-			result = result.subList(0, Math.min(affectLimit, result.size()));
-		}
-		
-		return result;
+		return null; // TODO Unknown affect scope.
 	}
 	
 	@Override
 	public Enum<AffectScope> getAffectScopeType()
 	{
-		return AffectScope.RANGE;
+		return AffectScope.WYVERN_SCOPE;
 	}
 }

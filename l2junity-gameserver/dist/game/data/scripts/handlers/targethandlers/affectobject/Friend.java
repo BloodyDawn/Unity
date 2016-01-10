@@ -20,11 +20,7 @@ package handlers.targethandlers.affectobject;
 
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
-import org.l2junity.gameserver.model.actor.instance.L2FriendlyMobInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.targets.AffectObject;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -49,49 +45,37 @@ public class Friend implements IAffectObjectHandler
 		{
 			if (targetPlayer != null)
 			{
+				// Same player.
 				if (player == targetPlayer)
 				{
 					return true;
 				}
 				
-				final Party party = player.getParty();
-				final Party targetParty = targetPlayer.getParty();
-				if (party != null)
+				// Party (command channel doesn't make you friends).
+				if (player.isInParty() && targetPlayer.isInParty() && (player.getParty().getLeaderObjectId() == targetPlayer.getParty().getLeaderObjectId()))
 				{
-					if (party == targetParty)
-					{
-						return true;
-					}
-					
-					if ((targetParty != null) && (party.getCommandChannel() == targetParty.getCommandChannel()))
-					{
-						return true;
-					}
+					return true;
 				}
 				
-				if (target.isInsideZone(ZoneId.PVP))
+				// Arena.
+				if (activeChar.isInsideZone(ZoneId.PVP) && target.isInsideZone(ZoneId.PVP))
 				{
 					return false;
 				}
 				
-				// Duel
-				if (player.isInDuel() && targetPlayer.isInDuel())
+				// Duel.
+				if (player.isInDuel() && targetPlayer.isInDuel() && (player.getDuelId() == targetPlayer.getDuelId()))
 				{
-					if (player.getDuelId() == targetPlayer.getDuelId())
-					{
-						return false;
-					}
+					return false;
 				}
 				
-				// Olympiad
-				if (player.isInOlympiadMode() && targetPlayer.isInOlympiadMode())
+				// Olympiad.
+				if (player.isInOlympiadMode() && targetPlayer.isInOlympiadMode() && (player.getOlympiadGameId() == targetPlayer.getOlympiadGameId()))
 				{
-					if (player.getOlympiadGameId() == targetPlayer.getOlympiadGameId())
-					{
-						return false;
-					}
+					return false;
 				}
 				
+				// Clan.
 				final L2Clan clan = player.getClan();
 				final L2Clan targetClan = targetPlayer.getClan();
 				if (clan != null)
@@ -101,20 +85,29 @@ public class Friend implements IAffectObjectHandler
 						return true;
 					}
 					
-					if ((targetClan != null) && (clan.isAtWarWith(targetClan) || targetClan.isAtWarWith(clan)))
+					// War
+					if ((targetClan != null) && clan.isAtWarWith(targetClan) && targetClan.isAtWarWith(clan))
 					{
 						return false;
 					}
 				}
 				
+				// Alliance.
 				if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
 				{
 					return true;
 				}
 				
-				if ((player.getSiegeState() > 0) && player.isInsideZone(ZoneId.SIEGE) && (player.getSiegeState() == targetPlayer.getSiegeState()) && (player.getSiegeSide() == targetPlayer.getSiegeSide()))
+				// Siege.
+				if (target.isInsideZone(ZoneId.SIEGE))
 				{
-					return true;
+					// Players in the same siege side at the same castle are considered friends.
+					if ((player.getSiegeState() > 0) && (player.getSiegeState() == targetPlayer.getSiegeState()) && (player.getSiegeSide() == targetPlayer.getSiegeSide()))
+					{
+						return true;
+					}
+					
+					return false;
 				}
 				
 				// By default any neutral non-flagged player is considered a friend.
@@ -122,34 +115,18 @@ public class Friend implements IAffectObjectHandler
 			}
 			
 			// By default any npc that isnt mob is considered friend.
-			return !target.isMonster();
+			return !target.isMonster() && !target.isAutoAttackable(player);
+		}
+		else if (activeChar.isMonster())
+		{
+			return target.isMonster() || !target.isAutoAttackable(activeChar);
 		}
 		else if (activeChar.isNpc())
 		{
-			Npc npc = (Npc) activeChar;
-			
-			if (target.isNpc())
-			{
-				Npc targetNpc = (Npc) target;
-				if (npc.isInMyClan(targetNpc))
-				{
-					return true;
-				}
-				
-				// TODO: Check enemy clans.
-				
-				// By default any other npc is a friend.
-				return true;
-			}
-			
-			// Friendly NPCs are friends with players.
-			if ((targetPlayer != null) && ((npc instanceof FriendlyNpcInstance) || (npc instanceof L2FriendlyMobInstance)))
-			{
-				return true;
-			}
+			return !target.isMonster() && !target.isAutoAttackable(activeChar);
 		}
 		
-		return false;
+		return !target.isAutoAttackable(activeChar);
 	}
 	
 	@Override
