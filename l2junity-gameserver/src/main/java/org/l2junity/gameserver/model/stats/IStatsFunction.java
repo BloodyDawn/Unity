@@ -69,7 +69,8 @@ public interface IStatsFunction
 		{
 			final L2PetInstance pet = (L2PetInstance) creature;
 			final ItemInstance weapon = pet.getActiveWeaponInstance();
-			return weapon != null ? weapon.getItem().getStats(stat, pet.getPetLevelData().getPetPAtk()) : pet.getPetLevelData().getPetPAtk();
+			final double baseVal = stat == Stats.POWER_ATTACK ? pet.getPetLevelData().getPetPAtk() : stat == Stats.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateBalue;
+			return baseVal + (weapon != null ? weapon.getItem().getStats(stat, baseVal) : 0);
 		}
 		else if (creature.isPlayer())
 		{
