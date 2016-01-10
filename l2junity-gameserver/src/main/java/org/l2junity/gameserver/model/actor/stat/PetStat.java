@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.actor.stat;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
-import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -75,7 +74,7 @@ public class PetStat extends SummonStat
 		// Sync up exp with current level
 		// if (getExp() > getExpForLevel(getLevel() + 1) || getExp() < getExpForLevel(getLevel())) setExp(Experience.LEVEL[getLevel()]);
 		
-		StatusUpdate su = new StatusUpdate(getActiveChar());
+		final StatusUpdate su = new StatusUpdate(getActiveChar());
 		su.addAttribute(StatusUpdate.LEVEL, getLevel());
 		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
 		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
@@ -153,48 +152,12 @@ public class PetStat extends SummonStat
 	}
 	
 	@Override
-	public int getMaxHp()
-	{
-		return (int) getValue(Stats.MAX_HP, getActiveChar().getPetLevelData().getPetMaxHP());
-	}
-	
-	@Override
-	public int getMaxMp()
-	{
-		return (int) getValue(Stats.MAX_MP, getActiveChar().getPetLevelData().getPetMaxMP());
-	}
-	
-	@Override
-	public int getMAtk()
-	{
-		return (int) getValue(Stats.MAGIC_ATTACK, getActiveChar().getPetLevelData().getPetMAtk());
-	}
-	
-	@Override
-	public int getMDef()
-	{
-		return (int) getValue(Stats.MAGIC_DEFENCE, getActiveChar().getPetLevelData().getPetMDef());
-	}
-	
-	@Override
-	public int getPAtk()
-	{
-		return (int) getValue(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk());
-	}
-	
-	@Override
-	public int getPDef()
-	{
-		return (int) getValue(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef());
-	}
-	
-	@Override
 	public int getPAtkSpd()
 	{
 		int val = super.getPAtkSpd();
 		if (getActiveChar().isHungry())
 		{
-			val = val / 2;
+			val /= 2;
 		}
 		return val;
 	}
@@ -205,7 +168,7 @@ public class PetStat extends SummonStat
 		int val = super.getMAtkSpd();
 		if (getActiveChar().isHungry())
 		{
-			val = val / 2;
+			val /= 2;
 		}
 		return val;
 	}

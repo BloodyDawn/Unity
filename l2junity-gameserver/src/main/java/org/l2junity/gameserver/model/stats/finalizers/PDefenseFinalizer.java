@@ -22,6 +22,7 @@ import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -52,6 +53,11 @@ public class PDefenseFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		if (creature.isPet())
+		{
+			final L2PetInstance pet = (L2PetInstance) creature;
+			baseValue = pet.getPetLevelData().getPetPDef();
+		}
 		baseValue += calcEnchantedItemBonus(creature, stat);
 		
 		final Transform transform = creature.getTransformation();
