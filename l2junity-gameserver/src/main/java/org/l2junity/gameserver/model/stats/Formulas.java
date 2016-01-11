@@ -360,7 +360,7 @@ public final class Formulas
 	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
-		if (distance > target.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}
@@ -444,7 +444,7 @@ public final class Formulas
 	public static double calcBackstabDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
-		if (distance > target.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}
@@ -540,7 +540,7 @@ public final class Formulas
 		double defence = target.getPDef(attacker);
 		final double distance = attacker.calculateDistance(target, true, false);
 		
-		if (distance > target.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}
@@ -661,7 +661,7 @@ public final class Formulas
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		
-		if (distance > target.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}
@@ -1148,6 +1148,10 @@ public final class Formulas
 			{
 				final double distance = attacker.calculateDistance(target, true, false);
 				if (distance > target.getStat().getValue(Stats.DEBUFFED_MAX_RANGE, Integer.MAX_VALUE))
+				{
+					resisted = true;
+				}
+				else if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 				{
 					resisted = true;
 				}
@@ -1683,9 +1687,7 @@ public final class Formulas
 		{
 			return false;
 		}
-		Stats stat = skill.isMagic() ? Stats.REFLECT_SKILL_MAGIC : Stats.REFLECT_SKILL_PHYSIC;
-		final double reflectChance = target.getStat().getValue(stat, 0);
-		return reflectChance > Rnd.get(100);
+		return target.getStat().getValue(skill.isMagic() ? Stats.REFLECT_SKILL_MAGIC : Stats.REFLECT_SKILL_PHYSIC, 0) > Rnd.get(100);
 	}
 	
 	/**
@@ -2010,7 +2012,7 @@ public final class Formulas
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		
-		if (distance > target.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}

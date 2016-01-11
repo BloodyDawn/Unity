@@ -52,7 +52,7 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="stormSignBonus" val="1.10" />
+				<!-- mul stat="stormSignBonus" val="1.10" / -->
 				<mul stat="mDef" val="0.7" />
 				<sub stat="moveSpeed" val="70" />
 			</effect>
@@ -381,7 +381,7 @@
 		<!-- Trades places with target. Requires a sword or blunt weapon. PC targets only. -->
 		<set name="icon" val="icon.skill30005" />
 		<set name="affectRange" val="1400" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-709" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-709" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="705" />

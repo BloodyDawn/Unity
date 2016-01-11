@@ -152,7 +152,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(effector, effected, skill) : 0;
 		final double distance = effector.calculateDistance(effected, true, false);
 		
-		if (distance > effected.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		if (distance > effected.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}

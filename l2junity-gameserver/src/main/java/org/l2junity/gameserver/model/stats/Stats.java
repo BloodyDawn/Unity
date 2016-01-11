@@ -186,8 +186,8 @@ public enum Stats
 	// PROFICIENCY
 	REFLECT_DAMAGE_PERCENT("reflectDam"),
 	REFLECT_DAMAGE_PERCENT_DEFENSE("reflectDamDef"),
-	REFLECT_SKILL_MAGIC("reflectSkillMagic"),
-	REFLECT_SKILL_PHYSIC("reflectSkillPhysic"),
+	REFLECT_SKILL_MAGIC("reflectSkillMagic"), // Need rework
+	REFLECT_SKILL_PHYSIC("reflectSkillPhysic"), // Need rework
 	VENGEANCE_SKILL_MAGIC_DAMAGE("vengeanceMdam"),
 	VENGEANCE_SKILL_PHYSICAL_DAMAGE("vengeancePdam"),
 	ABSORB_DAMAGE_PERCENT("absorbDam"),
@@ -238,8 +238,8 @@ public enum Stats
 	// Storm Sign bonus damage
 	STORM_SIGN_BONUS("stormSignBonus"),
 	
-	// The maximum allowed range to be damaged from.
-	DAMAGED_MAX_RANGE("damagedMaxRange"),
+	// The maximum allowed range to be damaged/debuffed from.
+	SPHERIC_BARRIER_RANGE("sphericBarrier"),
 	
 	// The maximum allowed range to be debuffed from.
 	DEBUFFED_MAX_RANGE("debuffedMaxRange"),
