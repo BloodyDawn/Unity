@@ -52,6 +52,7 @@ public final class IstinaCavern extends AbstractInstance
 {
 	// NPCs
 	private static final int RUMIESE = 33151;
+	private static final int RUMIESE_INSTANCE = 33293;
 	private static final int INVISIBLE_NPC = 18919;
 	private static final int BALLISTA = 19021;
 	private static final int EXTREME_MINION = 23125;
@@ -63,8 +64,14 @@ public final class IstinaCavern extends AbstractInstance
 	// Skills
 	private static final SkillHolder ERUPTION_1 = new SkillHolder(14222, 1);
 	private static final SkillHolder ERUPTION_2 = new SkillHolder(14223, 1);
+	// Items
+	private static final int CONTROL_DEVICE = 17608; // Energy Control Device
+	private static final int REWARD_BOX_COMMON = 30371; // Box Containing Magic Power
+	private static final int REWARD_BOX_EXTREME = 30374; // Magic Filled Box
 	// Locations
 	private static final Location DEFEAT_ISTINA_LOC = new Location(-177120, 148782, -11384, 49140);
+	private static final Location RUMIESE_LOC = new Location(-177001, 147844, -11380, 47684);
+	private static final Location BATTLE_LOC = new Location(-177111, 146802, -11384);
 	// Misc
 	private static final int PERFECT_SCORE_1 = 30000000;
 	private static final int PERFECT_SCORE_2 = 300000000;
@@ -74,7 +81,8 @@ public final class IstinaCavern extends AbstractInstance
 	public IstinaCavern()
 	{
 		addStartNpc(RUMIESE);
-		addTalkId(RUMIESE);
+		addTalkId(RUMIESE, RUMIESE_INSTANCE);
+		addFirstTalkId(RUMIESE_INSTANCE);
 		addAttackId(ISTINA);
 		addAttackId(BALLISTA);
 		addSpellFinishedId(ISTINA);
@@ -85,15 +93,64 @@ public final class IstinaCavern extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		if (event.equals("enterInstanceCommon"))
+		String htmltext = null;
+		final Instance instance = npc.getInstanceWorld();
+		if (isIstinaInstance(instance))
 		{
-			enterInstance(player, npc, TEMPLATE_ID_COMMON);
+			switch (event)
+			{
+				case "leaveInstance":
+				{
+					teleportPlayerOut(player, instance);
+					break;
+				}
+				case "battleTeleport":
+				{
+					player.teleToLocation(BATTLE_LOC);
+					break;
+				}
+				case "giveDevice":
+				{
+					if (!hasQuestItems(player, CONTROL_DEVICE))
+					{
+						giveItems(player, CONTROL_DEVICE, 1);
+						htmltext = "33293-06.html";
+					}
+					else
+					{
+						htmltext = "33293-07.html";
+					}
+				}
+				case "giveReward":
+				{
+					if (instance.isStatus(3))
+					{
+						if (npc.getVariables().getBoolean("PLAYER_" + player.getObjectId(), true))
+						{
+							giveItems(player, (isExtremeMode(instance) ? REWARD_BOX_EXTREME : REWARD_BOX_COMMON), 1);
+							npc.getVariables().set("PLAYER_" + player.getObjectId(), false);
+						}
+						else
+						{
+							htmltext = "33293-08.html";
+						}
+					}
+					break;
+				}
+			}
 		}
-		else if (event.equals("enterInstanceExtreme"))
+		else
 		{
-			// enterInstance(player, npc, TEMPLATE_ID_EXTREME);
+			if (event.equals("enterInstanceCommon"))
+			{
+				enterInstance(player, npc, TEMPLATE_ID_COMMON);
+			}
+			else if (event.equals("enterInstanceExtreme"))
+			{
+				// enterInstance(player, npc, TEMPLATE_ID_EXTREME);
+			}
 		}
-		return super.onAdvEvent(event, npc, player);
+		return htmltext;
 	}
 	
 	@Override
@@ -230,11 +287,13 @@ public final class IstinaCavern extends AbstractInstance
 					if (getChargedPercent(npcVars.getInt("SCORE_VAL", 0), isExtremeMode(instance)) >= getRandom(100))
 					{
 						playMovie(instance, Movie.SC_ISTINA_ENDING_A);
+						instance.setStatus(3);
 						getTimers().addTimer("INSTANCE_FINISH_TIMER", 23000, npc, null);
 					}
 					else
 					{
 						playMovie(instance, Movie.SC_ISTINA_ENDING_B);
+						instance.setStatus(4);
 						getTimers().addTimer("INSTANCE_FINISH_TIMER", 22000, npc, null);
 					}
 					instance.getAliveNpcs(ISTINA).forEach(istina ->
@@ -378,6 +437,7 @@ public final class IstinaCavern extends AbstractInstance
 				{
 					case -1:
 					{
+						instance.setStatus(1);
 						npcVars.set("ISTINA_STAGE", 1);
 						instance.getDoors().forEach(DoorInstance::closeMe);
 						npc.setUndying(true);
@@ -451,6 +511,9 @@ public final class IstinaCavern extends AbstractInstance
 							}
 							instance.getAliveNpcs(EXTREME_MINION, INVISIBLE_NPC).forEach(Npc::deleteMe);
 							instance.spawnGroup("BALLISTA");
+							instance.setStatus(2);
+							instance.getAliveNpcs(RUMIESE_INSTANCE).forEach(rumiese -> rumiese.teleToLocation(RUMIESE_LOC));
+							instance.getDoors().forEach(DoorInstance::openMe);
 							// myself->AddTimerEx(Broadcast_Timer, (2 * 1000));
 							onTimerEvent("AUTHORITY_END_TIMER", null, npc, null);
 							// myself->AddTimerEx(Location_Check_Timer, (4 * 1000));
@@ -490,6 +553,35 @@ public final class IstinaCavern extends AbstractInstance
 			}
 		}
 		return super.onSpawn(npc);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, PlayerInstance player)
+	{
+		String htmltext = null;
+		final Instance instance = npc.getInstanceWorld();
+		if (isIstinaInstance(instance))
+		{
+			switch (instance.getStatus())
+			{
+				case 0:
+					htmltext = "33293-01.html";
+					break;
+				case 1:
+					htmltext = "33293-02.html";
+					break;
+				case 2:
+					htmltext = "33293-03.html";
+					break;
+				case 3:
+					htmltext = "33293-04.html";
+					break;
+				case 4:
+					htmltext = "33293-05.html";
+					break;
+			}
+		}
+		return htmltext;
 	}
 	
 	private boolean isExtremeMode(Instance instance)
