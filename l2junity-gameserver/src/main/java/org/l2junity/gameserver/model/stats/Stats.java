@@ -241,9 +241,6 @@ public enum Stats
 	// The maximum allowed range to be damaged/debuffed from.
 	SPHERIC_BARRIER_RANGE("sphericBarrier"),
 	
-	// The maximum allowed range to be debuffed from.
-	DEBUFFED_MAX_RANGE("debuffedMaxRange"),
-	
 	// Blocks given amount of debuffs.
 	DEBUFF_BLOCK("debuffBlock"),
 	
