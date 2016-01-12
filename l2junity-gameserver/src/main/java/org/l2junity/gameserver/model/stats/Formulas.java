@@ -1147,11 +1147,7 @@ public final class Formulas
 			if (!resisted)
 			{
 				final double distance = attacker.calculateDistance(target, true, false);
-				if (distance > target.getStat().getValue(Stats.DEBUFFED_MAX_RANGE, Integer.MAX_VALUE))
-				{
-					resisted = true;
-				}
-				else if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
+				if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 				{
 					resisted = true;
 				}
