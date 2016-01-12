@@ -74,6 +74,8 @@ public final class KartiaHelperElise extends AbstractNpcAI
 		33635, // Hayuk (Kartia 95)
 	};
 	private static final int HEALING_TREE = 19256;
+	// Skill
+	private static final SkillHolder TREE_HEAL_SKILL = new SkillHolder(15003, 1); // Summon Tree of Life - NPC
 	// Misc
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
@@ -110,10 +112,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 				final int hpPer = player.getCurrentHpPercent();
 				if ((hpPer < 40) && npcVars.getBoolean("CAN_USE_TREE", true))
 				{
-					npcVars.set("CAN_USE_TREE", false);
-					getTimers().addTimer("TREE_REUSE", 10000, evnt -> npcVars.set("CAN_USE_TREE", true));
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_FORTH_TREE_OF_LIFE);
-					addSpawn(HEALING_TREE, Util.getRandomPosition(player, 20, 50), false, 0, false, instance.getId());
+					summonHealingTree(npc, player);
 				}
 				else if (hpPer < 60)
 				{
@@ -148,10 +147,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 				final int hpPer = adolph.getCurrentHpPercent();
 				if ((hpPer < 40) && npcVars.getBoolean("CAN_USE_TREE", true))
 				{
-					npcVars.set("CAN_USE_TREE", false);
-					getTimers().addTimer("TREE_REUSE", 10000, evnt -> npcVars.set("CAN_USE_TREE", true));
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_FORTH_TREE_OF_LIFE);
-					addSpawn(HEALING_TREE, Util.getRandomPosition(adolph, 20, 50), false, 10000, false, instance.getId());
+					summonHealingTree(npc, adolph);
 				}
 				else if (hpPer < 60)
 				{
@@ -177,10 +173,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 				final int hpPer = barton.getCurrentHpPercent();
 				if ((hpPer < 30) && npcVars.getBoolean("CAN_USE_TREE", true))
 				{
-					npcVars.set("CAN_USE_TREE", false);
-					getTimers().addTimer("TREE_REUSE", 10000, evnt -> npcVars.set("CAN_USE_TREE", true));
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_FORTH_TREE_OF_LIFE);
-					addSpawn(HEALING_TREE, Util.getRandomPosition(barton, 20, 50), false, 10000, false, instance.getId());
+					summonHealingTree(npc, barton);
 				}
 				else
 				{
@@ -197,10 +190,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 				final int hpPer = eliyah.getCurrentHpPercent();
 				if ((hpPer < 30) && npcVars.getBoolean("CAN_USE_TREE", true))
 				{
-					npcVars.set("CAN_USE_TREE", false);
-					getTimers().addTimer("TREE_REUSE", 10000, evnt -> npcVars.set("CAN_USE_TREE", true));
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_FORTH_TREE_OF_LIFE);
-					addSpawn(HEALING_TREE, Util.getRandomPosition(eliyah, 20, 50), false, 10000, false, instance.getId());
+					summonHealingTree(npc, eliyah);
 				}
 				else
 				{
@@ -217,10 +207,7 @@ public final class KartiaHelperElise extends AbstractNpcAI
 				final int hpPer = hayuk.getCurrentHpPercent();
 				if ((hpPer < 30) && npcVars.getBoolean("CAN_USE_TREE", true))
 				{
-					npcVars.set("CAN_USE_TREE", false);
-					getTimers().addTimer("TREE_REUSE", 10000, evnt -> npcVars.set("CAN_USE_TREE", true));
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_FORTH_TREE_OF_LIFE);
-					addSpawn(HEALING_TREE, Util.getRandomPosition(hayuk, 20, 50), false, 10000, false, instance.getId());
+					summonHealingTree(npc, hayuk);
 				}
 				else
 				{
@@ -320,6 +307,15 @@ public final class KartiaHelperElise extends AbstractNpcAI
 	public void onInstanceDestroy(OnInstanceDestroy event)
 	{
 		event.getInstanceWorld().getAliveNpcs(KARTIA_ELISE).forEach(npc -> getTimers().cancelTimersOf(npc));
+	}
+	
+	private void summonHealingTree(Npc npc, Creature target)
+	{
+		npc.getVariables().set("CAN_USE_TREE", false);
+		npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_FORTH_TREE_OF_LIFE);
+		final Npc tree = addSpawn(HEALING_TREE, Util.getRandomPosition(target, 20, 50), false, 0, false, npc.getInstanceId());
+		getTimers().addTimer("TREE_REUSE", 10000, evnt -> npc.getVariables().set("CAN_USE_TREE", true));
+		getTimers().addTimer("TREE_HEAL", 3000, evnt -> addSkillCastDesire(tree, target, TREE_HEAL_SKILL, 23));
 	}
 	
 	public static void main(String[] args)
