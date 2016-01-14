@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 public class PlayerAI extends PlayableAI
 {
@@ -274,7 +274,7 @@ public class PlayerAI extends PlayableAI
 	private void thinkCast()
 	{
 		Creature target = getCastTarget();
-		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor instanceof PlayerInstance))
+		if ((_skill.getTargetType() == TargetType.GROUND) && (_actor instanceof PlayerInstance))
 		{
 			if (maybeMoveToPosition(((PlayerInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
 			{

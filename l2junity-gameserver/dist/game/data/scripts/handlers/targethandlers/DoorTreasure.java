@@ -39,7 +39,7 @@ public class DoorTreasure implements ITargetTypeHandler
 	}
 	
 	@Override
-	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
+	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
 		final WorldObject target = activeChar.getTarget();
 		if ((target != null) && (target.isDoor() || (target instanceof L2ChestInstance)))

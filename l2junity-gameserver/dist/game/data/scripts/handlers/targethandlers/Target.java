@@ -18,11 +18,15 @@
  */
 package handlers.targethandlers;
 
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2EventMonsterInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -38,12 +42,87 @@ public class Target implements ITargetTypeHandler
 	}
 	
 	@Override
-	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
+	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
 		final WorldObject target = activeChar.getTarget();
 		// Check for null target or any other invalid target
 		if ((target != null) && target.isCreature() && !((Creature) target).isDead())
 		{
+			if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+			{
+				if (sendMessage)
+				{
+					activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+				}
+				return null;
+			}
+			
+			if ((activeChar.isInsidePeaceZone(activeChar, target)) && !activeChar.getAccessLevel().allowPeaceAttack())
+			{
+				if (sendMessage)
+				{
+					activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_A_PEACEFUL_ZONE);
+				}
+				return null;
+			}
+			
+			if ((skill.getFlyType() == FlyType.CHARGE) && !GeoData.getInstance().canMove(activeChar, target))
+			{
+				if (sendMessage)
+				{
+					activeChar.sendPacket(SystemMessageId.THE_TARGET_IS_LOCATED_WHERE_YOU_CANNOT_CHARGE);
+				}
+				return null;
+			}
+			
+			if (activeChar.isPlayable() && target.isPlayable() && !activeChar.getActingPlayer().checkPvpSkill(target, skill) && !activeChar.getAccessLevel().allowPeaceAttack())
+			{
+				if (sendMessage)
+				{
+					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+				}
+				
+				return null;
+			}
+			
+			if (!target.isAutoAttackable(activeChar))
+			{
+				if (forceUse)
+				{
+					if ((target.getActingPlayer() != null) && (activeChar.getActingPlayer() != null))
+					{
+						if ((activeChar.getActingPlayer().getSiegeState() > 0) && activeChar.isInsideZone(ZoneId.SIEGE) && (target.getActingPlayer().getSiegeState() == activeChar.getActingPlayer().getSiegeState()) && (target.getActingPlayer() != activeChar.getActingPlayer()) && (target.getActingPlayer().getSiegeSide() == activeChar.getActingPlayer().getSiegeSide()))
+						{
+							if (sendMessage)
+							{
+								activeChar.sendPacket(SystemMessageId.FORCE_ATTACK_IS_IMPOSSIBLE_AGAINST_A_TEMPORARY_ALLIED_MEMBER_DURING_A_SIEGE);
+							}
+							return null;
+						}
+					}
+					
+					if (!target.canBeAttacked() && !activeChar.getAccessLevel().allowPeaceAttack() && !target.isDoor())
+					{
+						return null;
+					}
+				}
+				else
+				{
+					return null;
+				}
+			}
+			
+			if ((target instanceof L2EventMonsterInstance) && ((L2EventMonsterInstance) target).eventSkillAttackBlocked())
+			{
+				return null;
+			}
+			
+			// Check if the skill is a good magic, target is a monster and if force attack is set, if not then we don't want to cast.
+			if ((skill.getEffectPoint() > 0) && target.isMonster() && !forceUse)
+			{
+				return null;
+			}
+			
 			return target;
 		}
 		

@@ -18,12 +18,11 @@
  */
 package org.l2junity.gameserver.model.skills;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -51,7 +50,7 @@ import org.l2junity.gameserver.model.holders.SkillUseHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -132,7 +131,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Check if target is valid.
-		target = checkCastingTarget(_caster, target, skill);
+		target = skill.getTarget(_caster, target, ctrlPressed, shiftPressed, false);
 		if (target == null)
 		{
 			_isCasting.set(false);
@@ -143,19 +142,6 @@ public class SkillCaster implements Runnable
 		if (!target.isCreature())
 		{
 			return false;
-		}
-		
-		// TODO: Unhardcode using event listeners!
-		if (skill.hasEffectType(L2EffectType.RESURRECTION))
-		{
-			if (_caster.isResurrectionBlocked() || ((Creature) target).isResurrectionBlocked())
-			{
-				_caster.sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
-				target.sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
-				
-				_isCasting.set(false);
-				return false;
-			}
 		}
 		
 		// Get ready the casting parameters.
@@ -325,23 +311,7 @@ public class SkillCaster implements Runnable
 		
 		try
 		{
-			Creature[] targets = skill.getTargetList(_caster, false, target);
-			
-			if (targets.length == 0)
-			{
-				switch (skill.getTargetType())
-				{
-					// only AURA-type skills can be cast without target
-					case AURA:
-					case FRONT_AURA:
-					case BEHIND_AURA:
-					case AURA_CORPSE_MOB:
-						break;
-					default:
-						stopCasting(true, skill, target, item);
-						return;
-				}
-			}
+			Creature[] targets = skill.getTargetsAffected(_caster, target).stream().filter(WorldObject::isCreature).map(Creature.class::cast).collect(Collectors.toList()).toArray(new Creature[0]);
 			
 			// Escaping from under skill's radius and peace zone check. First version, not perfect in AoE skills.
 			int escapeRange = 0;
@@ -352,59 +322,6 @@ public class SkillCaster implements Runnable
 			else if ((skill.getCastRange() < 0) && (skill.getAffectRange() > 80))
 			{
 				escapeRange = skill.getAffectRange();
-			}
-			
-			if ((targets.length > 0) && (escapeRange > 0))
-			{
-				int skiprange = 0;
-				int skippeace = 0;
-				List<Creature> targetList = new ArrayList<>(targets.length);
-				for (Creature aoeTarget : targets)
-				{
-					int collisionSum = _caster.getTemplate().getCollisionRadius() + aoeTarget.getTemplate().getCollisionRadius();
-					if (!_caster.isInsideRadius(aoeTarget.getX(), aoeTarget.getY(), aoeTarget.getZ(), escapeRange + collisionSum, true, false))
-					{
-						skiprange++;
-						continue;
-					}
-					
-					if (skill.isBad())
-					{
-						if (_caster.isPlayer())
-						{
-							if (aoeTarget.isInsidePeaceZone(_caster.getActingPlayer()))
-							{
-								skippeace++;
-								continue;
-							}
-						}
-						else
-						{
-							if (aoeTarget.isInsidePeaceZone(_caster, aoeTarget))
-							{
-								skippeace++;
-								continue;
-							}
-						}
-					}
-					targetList.add(aoeTarget);
-				}
-				if (targetList.isEmpty())
-				{
-					if (_caster.isPlayer())
-					{
-						if (skiprange > 0)
-						{
-							_caster.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
-						}
-						else if (skippeace > 0)
-						{
-							_caster.sendPacket(SystemMessageId.A_MALICIOUS_SKILL_CANNOT_BE_USED_IN_A_PEACE_ZONE);
-						}
-					}
-					stopCasting(true, skill, target, item);
-					return;
-				}
 			}
 			
 			// Broadcast MagicSkillLaunched packet.
@@ -514,7 +431,7 @@ public class SkillCaster implements Runnable
 				}
 			}
 			
-			if (_skill.isBad() && (_skill.getTargetType() != L2TargetType.UNLOCKABLE))
+			if (_skill.isBad() && (_skill.getTargetType() != TargetType.DOOR_TREASURE))
 			{
 				_caster.getAI().clientStartAutoAttack();
 			}
@@ -673,68 +590,6 @@ public class SkillCaster implements Runnable
 		_skillMastery = skillMastery;
 	}
 	
-	/**
-	 * TODO: Once target handlers are fixed, this method should be changed appropreately. Method should be static and not change target.
-	 * @param caster
-	 * @param target
-	 * @param skill
-	 * @return if skill can be casted onto target or not.
-	 */
-	private static WorldObject checkCastingTarget(Creature caster, WorldObject target, Skill skill)
-	{
-		// TODO: We need to fix target handlers and use main target + affect range of targets... we have to use main target here and not go through the target list.
-		// Get all possible targets of the skill in a table in function of the skill target type
-		Creature[] targets = skill.getTargetList(caster);
-		
-		boolean doit = false;
-		
-		// AURA skills should always be using caster as target
-		switch (skill.getTargetType())
-		{
-			case AREA_SUMMON: // We need it to correct facing
-				target = caster.getServitors().values().stream().findFirst().orElse(caster.getPet());
-				break;
-			case AURA:
-			case AURA_CORPSE_MOB:
-			case FRONT_AURA:
-			case BEHIND_AURA:
-			case GROUND:
-				target = caster;
-				break;
-			case SELF:
-			case PET:
-			case SERVITOR:
-			case SUMMON:
-			case OWNER_PET:
-			case PARTY:
-			case CLAN:
-			case PARTY_CLAN:
-			case COMMAND_CHANNEL:
-				doit = true;
-			default:
-				if (targets.length == 0)
-				{
-					return null;
-				}
-				
-				if ((skill.isContinuous() && !skill.isDebuff()) || skill.hasEffectType(L2EffectType.CPHEAL, L2EffectType.HEAL))
-				{
-					doit = true;
-				}
-				
-				if (doit)
-				{
-					target = targets[0];
-				}
-				else
-				{
-					target = caster.getTarget();
-				}
-		}
-		
-		return target;
-	}
-	
 	public static boolean checkUseConditions(Creature caster, Skill skill)
 	{
 		if (caster == null)
@@ -810,7 +665,7 @@ public class SkillCaster implements Runnable
 		{
 			final ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(caster);
 			boolean canCast = true;
-			if ((skill.getTargetType() == L2TargetType.GROUND) && caster.isPlayer())
+			if ((skill.getTargetType() == TargetType.GROUND) && caster.isPlayer())
 			{
 				Location wp = caster.getActingPlayer().getCurrentSkillWorldPosition();
 				if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, wp.getX(), wp.getY(), wp.getZ()))

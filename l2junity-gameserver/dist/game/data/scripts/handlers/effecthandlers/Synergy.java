@@ -22,8 +22,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -106,11 +104,13 @@ public final class Synergy extends AbstractEffect
 			
 			if (partyBuffSkill != null)
 			{
-				final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(partyBuffSkill.getTargetType());
-				
-				final Creature[] targets = targetHandler.getTargetList(partyBuffSkill, info.getEffector(), false, info.getEffected());
-				
-				info.getEffector().callSkill(partyBuffSkill, null, targets);
+				partyBuffSkill.forEachTargetAffected(info.getEffector(), info.getEffected(), target ->
+				{
+					if (target.isCreature())
+					{
+						info.getEffector().callSkill(partyBuffSkill, null, (Creature) target);
+					}
+				});
 			}
 			else
 			{

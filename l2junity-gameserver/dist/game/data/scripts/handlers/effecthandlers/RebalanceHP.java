@@ -67,7 +67,7 @@ public final class RebalanceHP extends AbstractEffect
 		
 		switch (skill.getTargetType())
 		{
-			case PARTY:
+			case MY_PARTY:
 			{
 				if (party != null)
 				{

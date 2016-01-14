@@ -22,6 +22,7 @@ import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -41,7 +42,7 @@ public class PcBody implements ITargetTypeHandler
 	}
 	
 	@Override
-	public WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage)
+	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
 		final WorldObject target = activeChar.getTarget();
 		if ((target != null) && (target.isPlayer() || target.isPet()))
@@ -49,15 +50,29 @@ public class PcBody implements ITargetTypeHandler
 			final Playable targetPlayable = (Playable) target;
 			if (targetPlayable.isDead())
 			{
-				if (targetPlayable.isPlayer() && targetPlayable.isInsideZone(ZoneId.SIEGE) && !targetPlayable.getActingPlayer().isInSiege())
+				if (skill.hasEffectType(L2EffectType.RESURRECTION))
 				{
-					// check target is not in a active siege zone
-					if (sendMessage)
+					if (activeChar.isResurrectionBlocked() || ((Creature) target).isResurrectionBlocked())
 					{
-						activeChar.sendPacket(SystemMessageId.IT_IS_NOT_POSSIBLE_TO_RESURRECT_IN_BATTLEGROUNDS_WHERE_A_SIEGE_WAR_IS_TAKING_PLACE);
+						if (sendMessage)
+						{
+							activeChar.sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
+							target.sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
+						}
+						
+						return null;
 					}
 					
-					return null;
+					if (targetPlayable.isPlayer() && targetPlayable.isInsideZone(ZoneId.SIEGE) && !targetPlayable.getActingPlayer().isInSiege())
+					{
+						// check target is not in a active siege zone
+						if (sendMessage)
+						{
+							activeChar.sendPacket(SystemMessageId.IT_IS_NOT_POSSIBLE_TO_RESURRECT_IN_BATTLEGROUNDS_WHERE_A_SIEGE_WAR_IS_TAKING_PLACE);
+						}
+						
+						return null;
+					}
 				}
 				
 				return target;

@@ -23,9 +23,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -36,6 +38,8 @@ import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.handler.AffectScopeHandler;
+import org.l2junity.gameserver.handler.IAffectScopeHandler;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
@@ -75,8 +79,6 @@ import org.slf4j.LoggerFactory;
 public final class Skill implements IIdentifiable
 {
 	private static final Logger _log = LoggerFactory.getLogger(Skill.class);
-	
-	private static final Creature[] EMPTY_TARGET_LIST = new Creature[0];
 	
 	/** Skill ID. */
 	private final int _id;
@@ -1096,74 +1098,86 @@ public final class Skill implements IIdentifiable
 		return (_rideState == null) || _rideState.contains(player.getMountType());
 	}
 	
-	public Creature[] getTargetList(Creature activeChar, boolean onlyFirst)
-	{
-		// Init to null the target of the skill
-		Creature target = null;
-		
-		// Get the L2Objcet targeted by the user of the skill at this moment
-		WorldObject objTarget = activeChar.getTarget();
-		// If the L2Object targeted is a L2Character, it becomes the L2Character target
-		if (objTarget instanceof Creature)
-		{
-			target = (Creature) objTarget;
-		}
-		
-		return getTargetList(activeChar, onlyFirst, target);
-	}
-	
 	/**
-	 * Return all targets of the skill in a table in function a the skill type.<br>
-	 * <B><U>Values of skill type</U>:</B>
-	 * <ul>
-	 * <li>ONE : The skill can only be used on the L2PcInstance targeted, or on the caster if it's a L2PcInstance and no L2PcInstance targeted</li>
-	 * <li>SELF</li>
-	 * <li>HOLY, UNDEAD</li>
-	 * <li>PET</li>
-	 * <li>AURA, AURA_CLOSE</li>
-	 * <li>AREA</li>
-	 * <li>MULTIFACE</li>
-	 * <li>PARTY, CLAN</li>
-	 * <li>CORPSE_PLAYER, CORPSE_MOB, CORPSE_CLAN</li>
-	 * <li>UNLOCKABLE</li>
-	 * <li>ITEM</li>
-	 * <ul>
-	 * @param activeChar The L2Character who use the skill
-	 * @param onlyFirst
-	 * @param target
-	 * @return
+	 * @param activeChar the character that requests getting the skill target.
+	 * @param forceUse if character pressed ctrl (force pick target)
+	 * @param dontMove if character pressed shift (dont move and pick target only if in range)
+	 * @param sendMessage send SystemMessageId packet if target is incorrect.
+	 * @return {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
 	 */
-	public Creature[] getTargetList(Creature activeChar, boolean onlyFirst, Creature target)
+	public WorldObject getTarget(Creature activeChar, WorldObject seletedTarget, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
 		final ITargetTypeHandler handler = TargetHandler.getInstance().getHandler(getTargetType());
 		if (handler != null)
 		{
 			try
 			{
-				return handler.getTargetList(this, activeChar, onlyFirst, target);
+				return handler.getTarget(activeChar, seletedTarget, this, forceUse, dontMove, sendMessage);
 			}
 			catch (Exception e)
 			{
-				_log.warn("Exception in L2Skill.getTargetList(): " + e.getMessage(), e);
+				_log.warn("Exception in Skill.getTarget(): " + e.getMessage(), e);
 			}
 		}
 		activeChar.sendMessage("Target type of skill is not currently handled.");
-		return EMPTY_TARGET_LIST;
+		return null;
 	}
 	
-	public Creature[] getTargetList(Creature activeChar)
+	/**
+	 * @param activeChar the character that needs to gather targets.
+	 * @param target the initial target activeChar is focusing upon.
+	 * @return list containing objects gathered in a specific geometric way that are valid to be affected by this skill.
+	 */
+	public List<WorldObject> getTargetsAffected(Creature activeChar, WorldObject target)
 	{
-		return getTargetList(activeChar, false);
-	}
-	
-	public WorldObject getFirstOfTargetList(Creature activeChar)
-	{
-		WorldObject[] targets = getTargetList(activeChar, true);
-		if (targets.length == 0)
+		if (target == null)
 		{
 			return null;
 		}
-		return targets[0];
+		
+		final IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
+		if (handler != null)
+		{
+			try
+			{
+				final List<WorldObject> result = new LinkedList<>();
+				handler.forEachAffected(activeChar, target, this, o -> result.add(o));
+				return result;
+			}
+			catch (Exception e)
+			{
+				_log.warn("Exception in Skill.getTargetsAffected(): " + e.getMessage(), e);
+			}
+		}
+		activeChar.sendMessage("Target affect scope of skill is not currently handled.");
+		return null;
+	}
+	
+	/**
+	 * @param activeChar the character that needs to gather targets.
+	 * @param target the initial target activeChar is focusing upon.
+	 * @param action for each affected target.
+	 */
+	public void forEachTargetAffected(Creature activeChar, WorldObject target, Consumer<? super WorldObject> action)
+	{
+		if (target == null)
+		{
+			return;
+		}
+		
+		final IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
+		if (handler != null)
+		{
+			try
+			{
+				handler.forEachAffected(activeChar, target, this, action);
+			}
+			catch (Exception e)
+			{
+				_log.warn("Exception in Skill.forEachTargetAffected(): " + e.getMessage(), e);
+			}
+		}
+		activeChar.sendMessage("Target affect scope of skill is not currently handled.");
 	}
 	
 	/**

@@ -18,18 +18,21 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
  * Range affect scope implementation. Gathers objects in area of target origin (including origin itself).
@@ -38,44 +41,78 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 public class Range implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
-		final List<Creature> result = new LinkedList<>();
 		
 		// Target checks.
+		final AtomicInteger affected = new AtomicInteger(0);
 		final Predicate<Creature> filter = c ->
 		{
+			if ((affectLimit > 0) && (affected.get() >= affectLimit))
+			{
+				return false;
+			}
+			
 			if (c.isDead())
 			{
 				return false;
 			}
 			
-			return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+			if (!GeoData.getInstance().canSeeTarget(target, c))
+			{
+				return false;
+			}
+			
+			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+			{
+				return false;
+			}
+			
+			affected.incrementAndGet();
+			return true;
 		};
 		
-		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
-		if (filter.test(target))
-		{
-			result.add(target);
-		}
-		
 		// Check and add targets.
-		World.getInstance().forEachVisibleObjectInRange(target, Creature.class, affectRange, c ->
+		if (skill.getTargetType() == TargetType.GROUND)
 		{
-			if ((affectLimit > 0) && (result.size() >= affectLimit))
+			if (activeChar.isPlayable())
 			{
-				return;
+				Location worldPosition = activeChar.getActingPlayer().getCurrentSkillWorldPosition();
+				if (worldPosition != null)
+				{
+					World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, (int) (affectRange + activeChar.calculateDistance(worldPosition, false, false)), c ->
+					{
+						if (!c.isInsideRadius(worldPosition, affectRange, true, true))
+						{
+							return;
+						}
+						if (filter.test(c))
+						{
+							action.accept(c);
+						}
+					});
+				}
 			}
-			if (filter.test(c))
+		}
+		else
+		{
+			// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
+			if (target.isCreature() && filter.test((Creature) target))
 			{
-				result.add(c);
+				action.accept(target);
 			}
-		});
-		
-		return result;
+			
+			World.getInstance().forEachVisibleObjectInRange(target, Creature.class, affectRange, c ->
+			{
+				if (filter.test(c))
+				{
+					action.accept(c);
+				}
+			});
+		}
 	}
 	
 	@Override

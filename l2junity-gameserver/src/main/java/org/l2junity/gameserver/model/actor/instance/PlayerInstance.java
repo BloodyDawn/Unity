@@ -250,7 +250,7 @@ import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.SkillCastingType;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -287,7 +287,6 @@ import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
 import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
-import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.GameGuardQuery;
 import org.l2junity.gameserver.network.client.send.GetOnVehicle;
 import org.l2junity.gameserver.network.client.send.HennaInfo;
@@ -8180,26 +8179,7 @@ public final class PlayerInstance extends Playable
 			setQueuedSkill(null, false, false);
 		}
 		
-		// Check if the target is correct and Notify the AI with AI_INTENTION_CAST and target
-		WorldObject target = null;
-		switch (skill.getTargetType())
-		{
-			case AURA: // AURA, SELF should be cast even if no target has been found
-			case FRONT_AURA:
-			case BEHIND_AURA:
-			case GROUND:
-			case SELF:
-			case AURA_CORPSE_MOB:
-			case COMMAND_CHANNEL:
-				target = this;
-				break;
-			default:
-				
-				// Get the first target of the list
-				target = skill.getFirstOfTargetList(this);
-				break;
-		}
-		
+		WorldObject target = skill.getTarget(this, getTarget(), forceUse, dontMove, false);
 		if (target == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -8274,43 +8254,14 @@ public final class PlayerInstance extends Playable
 		
 		// ************************************* Check Target *******************************************
 		// Create and set a L2Object containing the target of the skill
-		WorldObject target = null;
-		L2TargetType sklTargetType = skill.getTargetType();
+		WorldObject target = skill.getTarget(this, getTarget(), forceUse, dontMove, false);
 		Location worldPosition = getCurrentSkillWorldPosition();
 		
-		if ((sklTargetType == L2TargetType.GROUND) && (worldPosition == null))
+		if ((skill.getTargetType() == TargetType.GROUND) && (worldPosition == null))
 		{
 			_log.info("WorldPosition is null for skill: " + skill.getName() + ", player: " + getName() + ".");
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
-		}
-		
-		switch (sklTargetType)
-		{
-			// Target the player if skill type is AURA, PARTY, CLAN or SELF
-			case AURA:
-			case FRONT_AURA:
-			case BEHIND_AURA:
-			case PARTY:
-			case CLAN:
-			case PARTY_CLAN:
-			case GROUND:
-			case SELF:
-			case AREA_SUMMON:
-			case AURA_CORPSE_MOB:
-			case COMMAND_CHANNEL:
-				target = this;
-				break;
-			case PET:
-				target = getPet();
-				break;
-			case SERVITOR:
-			case SUMMON:
-				target = getServitors().values().stream().findFirst().orElse(null);
-				break;
-			default:
-				target = getTarget();
-				break;
 		}
 		
 		// Check the validity of the target
@@ -8318,46 +8269,6 @@ public final class PlayerInstance extends Playable
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
-		}
-		
-		// skills can be used on Walls and Doors only during siege
-		if (target.isDoor())
-		{
-			final DoorInstance door = (DoorInstance) target;
-			
-			if ((door.getCastle() != null) && (door.getCastle().getResidenceId() > 0))
-			{
-				if (!door.getCastle().getSiege().isInProgress())
-				{
-					sendPacket(SystemMessageId.INVALID_TARGET);
-					return false;
-				}
-			}
-			else if ((door.getFort() != null) && (door.getFort().getResidenceId() > 0))
-			{
-				if (!door.getFort().getSiege().isInProgress() || !door.getIsShowHp())
-				{
-					sendPacket(SystemMessageId.INVALID_TARGET);
-					return false;
-				}
-			}
-		}
-		
-		// Are the target and the player in the same duel?
-		if (isInDuel())
-		{
-			// Get L2PcInstance
-			if (target.isPlayable())
-			{
-				// Get L2PcInstance
-				PlayerInstance cha = target.getActingPlayer();
-				if (cha.getDuelId() != getDuelId())
-				{
-					sendMessage("You cannot do this while duelling.");
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-			}
 		}
 		
 		// ************************************* Check skill availability *******************************************
@@ -8418,81 +8329,11 @@ public final class PlayerInstance extends Playable
 		// Check if this is bad magic skill
 		if (skill.isBad())
 		{
-			if ((isInsidePeaceZone(this, target)) && !getAccessLevel().allowPeaceAttack())
-			{
-				// If L2Character or target is in a peace zone, send a system message TARGET_IN_PEACEZONE a Server->Client packet ActionFailed
-				sendPacket(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_A_PEACEFUL_ZONE);
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			
 			if (isInOlympiadMode() && !isOlympiadStart())
 			{
 				// if L2PcInstance is in Olympia and the match isn't already start, send a Server->Client packet ActionFailed
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
-			}
-			
-			if ((target.getActingPlayer() != null) && (getSiegeState() > 0) && isInsideZone(ZoneId.SIEGE) && (target.getActingPlayer().getSiegeState() == getSiegeState()) && (target.getActingPlayer() != this) && (target.getActingPlayer().getSiegeSide() == getSiegeSide()))
-			{
-				sendPacket(SystemMessageId.FORCE_ATTACK_IS_IMPOSSIBLE_AGAINST_A_TEMPORARY_ALLIED_MEMBER_DURING_A_SIEGE);
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			
-			if (!target.canBeAttacked() && !getAccessLevel().allowPeaceAttack() && !target.isDoor())
-			{
-				// If target is not attackable, send a Server->Client packet ActionFailed
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			
-			// Check for Event Mob's
-			if ((target instanceof L2EventMonsterInstance) && ((L2EventMonsterInstance) target).eventSkillAttackBlocked())
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			
-			// Check if a Forced ATTACK is in progress on non-attackable target
-			if (!target.isAutoAttackable(this) && !forceUse)
-			{
-				switch (sklTargetType)
-				{
-					case AURA:
-					case FRONT_AURA:
-					case BEHIND_AURA:
-					case AURA_CORPSE_MOB:
-					case CLAN:
-					case PARTY:
-					case SELF:
-					case GROUND:
-					case AREA_SUMMON:
-					case UNLOCKABLE:
-						break;
-					default: // Send a Server->Client packet ActionFailed to the L2PcInstance
-						sendPacket(ActionFailed.STATIC_PACKET);
-						return false;
-				}
-			}
-			
-			// Check if the target is in the skill cast range
-			if (dontMove)
-			{
-				// Calculate the distance between the L2PcInstance and the target
-				if (sklTargetType == L2TargetType.GROUND)
-				{
-					if (!isInsideRadius(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
-					{
-						sendPacket(ActionFailed.STATIC_PACKET);
-						return false;
-					}
-				}
-				else if ((skill.getCastRange() > 0) && !isInsideRadius(target, skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
-				{
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
 			}
 		}
 		
@@ -8518,64 +8359,6 @@ public final class PlayerInstance extends Playable
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
 			}
-		}
-		// Check if the skill is a good magic, target is a monster and if force attack is set, if not then we don't want to cast.
-		if ((skill.getEffectPoint() > 0) && target.isMonster() && !forceUse)
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Check if this is a Pvp skill and target isn't a non-flagged/non-karma player
-		switch (sklTargetType)
-		{
-			case PARTY:
-			case CLAN: // For such skills, checkPvpSkill() is called from L2Skill.getTargetList()
-			case PARTY_CLAN: // For such skills, checkPvpSkill() is called from L2Skill.getTargetList()
-			case AURA:
-			case FRONT_AURA:
-			case BEHIND_AURA:
-			case AREA_SUMMON:
-			case GROUND:
-			case SELF:
-				break;
-			default:
-				if (!checkPvpSkill(target, skill) && !getAccessLevel().allowPeaceAttack() && target.isPlayable())
-				{
-					
-					// Send a System Message to the L2PcInstance
-					sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
-					
-					// Send a Server->Client packet ActionFailed to the L2PcInstance
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-		}
-		
-		// GeoData Los Check here
-		if (skill.getCastRange() > 0)
-		{
-			if (sklTargetType == L2TargetType.GROUND)
-			{
-				if (!GeoData.getInstance().canSeeTarget(this, worldPosition))
-				{
-					sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
-					sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-			}
-			else if (!GeoData.getInstance().canSeeTarget(this, target))
-			{
-				sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-		}
-		
-		if ((skill.getFlyType() == FlyType.CHARGE) && !GeoData.getInstance().canMove(this, target))
-		{
-			sendPacket(SystemMessageId.THE_TARGET_IS_LOCATED_WHERE_YOU_CANNOT_CHARGE);
-			return false;
 		}
 		
 		// finally, after passing all conditions

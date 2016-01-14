@@ -18,10 +18,11 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
@@ -33,13 +34,13 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 import org.l2junity.gameserver.util.Util;
 
 /**
- * Square affect scope implementation (actually more like a rectangle).
+ * Square point blank affect scope implementation (actually more like a rectangle). Gathers objects around yourself except target itself.
  * @author Nik
  */
 public class SquarePB implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int squareStartAngle = skill.getFanRange()[1];
@@ -53,11 +54,15 @@ public class SquarePB implements IAffectScopeHandler
 		final double heading = Math.toRadians(squareStartAngle + Util.convertHeadingToDegree(activeChar.getHeading()));
 		final double cos = Math.cos(-heading);
 		final double sin = Math.sin(-heading);
-		final List<Creature> result = new LinkedList<>();
 		
 		// Target checks.
+		final AtomicInteger affected = new AtomicInteger(0);
 		final Predicate<Creature> filter = c ->
 		{
+			if ((affectLimit > 0) && (affected.get() >= affectLimit))
+			{
+				return false;
+			}
 			if (c.isDead())
 			{
 				return false;
@@ -70,32 +75,31 @@ public class SquarePB implements IAffectScopeHandler
 			int yr = (int) (activeChar.getY() + (xp * sin) + (yp * cos));
 			if ((xr > rectX) && (xr < (rectX + squareLength)) && (yr > rectY) && (yr < (rectY + squareWidth)))
 			{
-				return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+				if (!GeoData.getInstance().canSeeTarget(activeChar, c))
+				{
+					return false;
+				}
+				
+				if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+				{
+					return false;
+				}
+				
+				affected.incrementAndGet();
+				return true;
 			}
 			
 			return false;
 		};
 		
-		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
-		if (filter.test(activeChar))
-		{
-			result.add(activeChar);
-		}
-		
 		// Check and add targets.
-		World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, radius, c ->
+		World.getInstance().forEachVisibleObjectInRange(target, Creature.class, radius, c ->
 		{
-			if ((affectLimit > 0) && (result.size() >= affectLimit))
-			{
-				return;
-			}
 			if (filter.test(c))
 			{
-				result.add(c);
+				action.accept(c);
 			}
 		});
-		
-		return result;
 	}
 	
 	@Override

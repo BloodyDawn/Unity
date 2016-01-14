@@ -514,8 +514,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Remove the L2Character from the world when the decay task is launched.<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
 	 */
 	public void onDecay()
 	{
@@ -3228,8 +3227,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * That's why, client send regularly a Client->Server ValidatePosition packet to eventually correct the gap on the server.<br>
 	 * But, it's always the server position that is used in range calculation. At the end of the estimated movement time,<br>
 	 * the L2Character position is automatically set to the destination position even if the movement is not finished.<br>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br>
-	 * But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br> But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
 	 * @return True if the movement is finished
 	 */
 	public boolean updatePosition()
@@ -3483,11 +3481,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Add the L2Character to movingObjects of the GameTimeController</li>
 	 * <li>Create a task to notify the AI that L2Character arrives at a check point of the movement</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br>
-	 * <B><U>Example of use</U>:</B>
-	 * <ul>
-	 * <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li>
-	 * <li>FollowTask</li>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li> <li>FollowTask</li>
 	 * </ul>
 	 * @param x The X position of the destination
 	 * @param y The Y position of the destination
@@ -5383,20 +5377,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					disableSkill(skill, skill.getReuseDelay());
 				}
 				
-				// @formatter:off
-				final Creature[] targets = ignoreTargetType ? new Creature[]{ target } : skill.getTargetList(this, false, target);
-				// @formatter:on
-				if (targets.length == 0)
+				if (!ignoreTargetType)
 				{
-					return;
-				}
-				
-				for (WorldObject obj : targets)
-				{
-					if ((obj != null) && obj.isCreature())
+					WorldObject objTarget = skill.getTarget(this, getTarget(), false, false, false);
+					if (objTarget.isCreature())
 					{
-						target = (Creature) obj;
-						break;
+						target = (Creature) objTarget;
 					}
 				}
 				
@@ -5408,6 +5394,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						return;
 					}
 				}
+				
+				Creature[] targets = skill.getTargetsAffected(this, target).stream().filter(WorldObject::isCreature).map(Creature.class::cast).collect(Collectors.toList()).toArray(new Creature[0]);
 				
 				broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
 				broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), SkillCastingType.NORMAL, targets));

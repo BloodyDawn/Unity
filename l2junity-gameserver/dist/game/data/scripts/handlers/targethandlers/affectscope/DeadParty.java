@@ -20,19 +20,15 @@ package handlers.targethandlers.affectscope;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
+import java.util.function.Consumer;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
@@ -44,7 +40,7 @@ import org.l2junity.gameserver.util.Util;
 public class DeadParty implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
@@ -57,56 +53,17 @@ public class DeadParty implements IAffectScopeHandler
 			final List<PlayerInstance> partyList = ((party != null) ? party.getMembers() : Collections.singletonList(player));
 			
 			//@formatter:off
-			return partyList.stream()
+			partyList.stream()
 			.flatMap(p -> p.getServitors().values().stream())
 			.flatMap(p -> Arrays.stream(new Creature[]{p.getPet()}))
 			.filter(Objects::nonNull)
 			.filter(c -> c.isDead())
-			.filter(c -> affectRange > 0 ? Util.checkIfInRange(affectRange, c, target, true) : true)
+			.filter(c -> (affectRange <= 0) || Util.checkIfInRange(affectRange, c, (target), true))
 			.filter(c -> (affectObject == null) || affectObject.checkAffectedObject(activeChar, c))
 			.limit(affectLimit > 0 ? affectLimit : Long.MAX_VALUE)
-			.collect(Collectors.toList());
+			.forEach(action);
 			//@formatter:on
 		}
-		else if (target.isNpc())
-		{
-			final List<Creature> result = new LinkedList<>();
-			final Predicate<Npc> filter = n ->
-			{
-				if (!n.isDead())
-				{
-					return false;
-				}
-				if (n.isAutoAttackable(target))
-				{
-					return false;
-				}
-				return ((affectObject == null) || affectObject.checkAffectedObject(activeChar, n));
-			};
-			
-			// Add object of origin since its skipped in the getVisibleObjects method.
-			if (filter.test((Npc) target))
-			{
-				result.add(target);
-			}
-			
-			// Check and add targets.
-			World.getInstance().forEachVisibleObjectInRange(target, Npc.class, affectRange, c ->
-			{
-				if ((affectLimit > 0) && (result.size() >= affectLimit))
-				{
-					return;
-				}
-				if (filter.test(c))
-				{
-					result.add(c);
-				}
-			});
-			
-			return result;
-		}
-		
-		return null;
 	}
 	
 	@Override

@@ -127,12 +127,12 @@ public class CubicInstance
 							}
 							case TARGET:
 							{
-								final Creature[] targetList = skill.getTargetList(_caster);
-								for (Creature possibleTarget : targetList)
+								WorldObject possibleTarget = skill.getTarget(_caster, _caster.getTarget(), false, false, false);
+								if (possibleTarget.isCreature())
 								{
-									if (cubicSkill.validateConditions(this, _owner, possibleTarget))
+									if (cubicSkill.validateConditions(this, _owner, (Creature) possibleTarget))
 									{
-										return possibleTarget;
+										return (Creature) possibleTarget;
 									}
 								}
 								break;

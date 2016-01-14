@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
  * Summon Npc effect implementation.
@@ -103,25 +104,21 @@ public final class SummonNpc extends AbstractEffect
 		int y = player.getY();
 		int z = player.getZ();
 		
-		switch (skill.getTargetType())
+		if (skill.getTargetType() == TargetType.GROUND)
 		{
-			case GROUND:
-				final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
-				if (wordPosition != null)
-				{
-					x = wordPosition.getX();
-					y = wordPosition.getY();
-					z = wordPosition.getZ();
-				}
-				break;
-			case ONE:
-				if (player.getTarget() != null)
-				{
-					x = player.getTarget().getX();
-					y = player.getTarget().getY();
-					z = player.getTarget().getZ();
-				}
-				break;
+			final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
+			if (wordPosition != null)
+			{
+				x = wordPosition.getX();
+				y = wordPosition.getY();
+				z = wordPosition.getZ();
+			}
+		}
+		else
+		{
+			x = effected.getX();
+			y = effected.getY();
+			z = effected.getZ();
 		}
 		
 		if (_randomOffset)

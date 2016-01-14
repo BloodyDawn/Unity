@@ -18,8 +18,8 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
@@ -28,7 +28,6 @@ import org.l2junity.gameserver.handler.IAffectScopeHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -40,18 +39,26 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 public class Pledge implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
-		final List<Creature> result = new LinkedList<>();
 		
 		if (target.isPlayable())
 		{
-			final PlayerInstance player = target.getActingPlayer();
+			final Playable playable = (Playable) target;
+			final PlayerInstance player = playable.getActingPlayer();
+			
+			// Create the target filter.
+			final AtomicInteger affected = new AtomicInteger(0);
 			final Predicate<Playable> filter = plbl ->
 			{
+				if ((affectLimit > 0) && (affected.get() >= affectLimit))
+				{
+					return false;
+				}
+				
 				PlayerInstance p = plbl.getActingPlayer();
 				if ((p == null) || p.isDead())
 				{
@@ -61,64 +68,30 @@ public class Pledge implements IAffectScopeHandler
 				{
 					return false;
 				}
-				return ((affectObject == null) || affectObject.checkAffectedObject(activeChar, p));
+				if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, p))
+				{
+					return false;
+				}
+				
+				affected.incrementAndGet();
+				return true;
 			};
 			
 			// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
-			if (filter.test((Playable) target))
+			if (filter.test(playable))
 			{
-				result.add(target);
+				action.accept(playable);
 			}
 			
 			// Check and add targets.
-			World.getInstance().forEachVisibleObjectInRange(target, Playable.class, affectRange, c ->
+			World.getInstance().forEachVisibleObjectInRange(playable, Playable.class, affectRange, c ->
 			{
-				if ((affectLimit > 0) && (result.size() >= affectLimit))
-				{
-					return;
-				}
 				if (filter.test(c))
 				{
-					result.add(c);
+					action.accept(playable);
 				}
 			});
 		}
-		else if (target.isNpc())
-		{
-			final Predicate<Npc> filter = n ->
-			{
-				if (n.isDead())
-				{
-					return false;
-				}
-				if (!((Npc) target).isInMyClan(n))
-				{
-					return false;
-				}
-				return ((affectObject == null) || affectObject.checkAffectedObject(activeChar, n));
-			};
-			
-			// Add object of origin since its skipped in the getVisibleObjects method.
-			if (filter.test((Npc) target))
-			{
-				result.add(target);
-			}
-			
-			// Check and add targets.
-			World.getInstance().forEachVisibleObjectInRange(target, Npc.class, affectRange, c ->
-			{
-				if ((affectLimit > 0) && (result.size() >= affectLimit))
-				{
-					return;
-				}
-				if (filter.test(c))
-				{
-					result.add(c);
-				}
-			});
-		}
-		
-		return result;
 	}
 	
 	@Override

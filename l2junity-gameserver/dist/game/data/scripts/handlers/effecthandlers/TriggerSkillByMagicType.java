@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.datatables.SkillData;
-import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
@@ -34,7 +33,7 @@ import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
  * Trigger skill by isMagic type.
@@ -46,7 +45,7 @@ public final class TriggerSkillByMagicType extends AbstractEffect
 	private final int _chance;
 	private final int _skillLevelScaleTo;
 	private final SkillHolder _skill;
-	private final L2TargetType _targetType;
+	private final TargetType _targetType;
 	
 	/**
 	 * @param attachCond
@@ -63,20 +62,13 @@ public final class TriggerSkillByMagicType extends AbstractEffect
 		_magicTypes = params.getIntArray("magicTypes", ";");
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
-		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
+		_targetType = params.getEnum("targetType", TargetType.class, TargetType.TARGET);
 	}
 	
 	public void onSkillUseEvent(OnCreatureSkillFinishCast event)
 	{
 		if (!CommonUtil.contains(_magicTypes, event.getSkill().getMagicType()))
 		{
-			return;
-		}
-		
-		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
-		if (targetHandler == null)
-		{
-			_log.warn("Handler for target type: " + _targetType + " does not exist.");
 			return;
 		}
 		
@@ -103,20 +95,19 @@ public final class TriggerSkillByMagicType extends AbstractEffect
 			}
 		}
 		
-		final WorldObject[] targets = targetHandler.getTargetList(triggerSkill, event.getCaster(), false, event.getTarget());
-		
-		for (WorldObject triggerTarget : targets)
+		WorldObject target = null;
+		try
 		{
-			if ((triggerTarget == null) || !triggerTarget.isCreature())
-			{
-				continue;
-			}
-			
-			final Creature targetChar = (Creature) triggerTarget;
-			if (!targetChar.isInvul())
-			{
-				event.getCaster().makeTriggerCast(triggerSkill, targetChar);
-			}
+			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(event.getCaster(), event.getTarget(), triggerSkill, false, false, false);
+		}
+		catch (Exception e)
+		{
+			_log.warn("Exception in ITargetTypeHandler.getTarget(): " + e.getMessage(), e);
+		}
+		
+		if ((target != null) && target.isCreature())
+		{
+			event.getCaster().makeTriggerCast(triggerSkill, (Creature) target);
 		}
 	}
 	

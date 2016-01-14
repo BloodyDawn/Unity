@@ -18,8 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.function.Consumer;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
@@ -28,6 +27,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
  * Single target affect scope implementation.
@@ -36,16 +36,25 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 public class Single implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		
-		if (!target.isDead() && ((affectObject == null) || affectObject.checkAffectedObject(activeChar, target)))
+		if (target.isCreature())
 		{
-			return Collections.singletonList(target);
+			if (skill.getTargetType() == TargetType.GROUND)
+			{
+				action.accept(activeChar); // Return yourself to mark that effects can use your current skill's world position.
+			}
+			if (((affectObject == null) || affectObject.checkAffectedObject(activeChar, (Creature) target)))
+			{
+				action.accept(target); // Return yourself to mark that effects can use your current skill's world position.
+			}
 		}
-		
-		return Collections.emptyList();
+		else if (target.isItem())
+		{
+			action.accept(target); // Return yourself to mark that effects can use your current skill's world position.
+		}
 	}
 	
 	@Override

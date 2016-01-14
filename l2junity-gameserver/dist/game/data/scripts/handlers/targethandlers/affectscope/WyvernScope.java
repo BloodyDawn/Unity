@@ -18,7 +18,7 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
 import org.l2junity.gameserver.model.WorldObject;
@@ -33,9 +33,9 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 public class WyvernScope implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
-		return null; // TODO Unknown affect scope.
+		// TODO Unknown affect scope.
 	}
 	
 	@Override

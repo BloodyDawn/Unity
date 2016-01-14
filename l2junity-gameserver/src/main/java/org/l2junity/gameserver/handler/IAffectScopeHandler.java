@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.handler;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
  */
 public interface IAffectScopeHandler
 {
-	List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill);
+	void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action);
 	
 	Enum<AffectScope> getAffectScopeType();
 }

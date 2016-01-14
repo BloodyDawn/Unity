@@ -20,6 +20,8 @@ package handlers.targethandlers.affectscope;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
@@ -38,40 +40,50 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 public class RangeSortByHp implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
 		
 		// Target checks.
+		final AtomicInteger affected = new AtomicInteger(0);
 		final Predicate<Creature> filter = c ->
 		{
+			if ((affectLimit > 0) && (affected.get() >= affectLimit))
+			{
+				return false;
+			}
+			
 			if (c.isDead())
 			{
 				return false;
 			}
 			
-			return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+			{
+				return false;
+			}
+			
+			affected.incrementAndGet();
+			return true;
 		};
 		
 		List<Creature> result = World.getInstance().getVisibleObjects(target, Creature.class, affectRange, filter);
 		
 		// Add object of origin since its skipped in the getVisibleObjects method.
-		if (filter.test(target))
+		if (target.isCreature() && filter.test((Creature) target))
 		{
-			result.add(target);
+			result.add((Creature) target);
 		}
 		
 		// Sort from lowest hp to highest hp.
-		result.sort(Comparator.comparingInt(Creature::getCurrentHpPercent));
-		
-		if (affectLimit > 0)
-		{
-			result = result.subList(0, Math.min(affectLimit, result.size()));
-		}
-		
-		return result;
+		//@formatter:off
+		result.stream()
+		.sorted(Comparator.comparingInt(Creature::getCurrentHpPercent))
+		.limit(affectLimit > 0 ? affectLimit : Long.MAX_VALUE)
+		.forEach(action);
+		//@formatter:on
 	}
 	
 	@Override

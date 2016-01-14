@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.skills.targets.TargetType;
  */
 public interface ITargetTypeHandler
 {
-	WorldObject getTarget(Creature activeChar, Skill skill, boolean sendMessage);
+	WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage);
 	
 	Enum<TargetType> getTargetType();
 }

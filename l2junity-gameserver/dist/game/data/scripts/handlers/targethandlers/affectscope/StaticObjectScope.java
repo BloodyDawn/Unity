@@ -18,8 +18,8 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
@@ -40,16 +40,20 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 public class StaticObjectScope implements IAffectScopeHandler
 {
 	@Override
-	public List<? extends WorldObject> getAffectedScope(Creature activeChar, Creature target, Skill skill)
+	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
-		final List<Creature> result = new LinkedList<>();
 		
 		// Target checks.
+		final AtomicInteger affected = new AtomicInteger(0);
 		final Predicate<Creature> filter = c ->
 		{
+			if ((affectLimit > 0) && (affected.get() >= affectLimit))
+			{
+				return false;
+			}
 			if (c.isDead())
 			{
 				return false;
@@ -60,29 +64,29 @@ public class StaticObjectScope implements IAffectScopeHandler
 				return false;
 			}
 			
-			return (affectObject == null) || affectObject.checkAffectedObject(activeChar, c);
+			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+			{
+				return false;
+			}
+			
+			affected.incrementAndGet();
+			return true;
 		};
 		
 		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
-		if (filter.test(target))
+		if (target.isCreature() && filter.test((Creature) target))
 		{
-			result.add(target);
+			action.accept(target);
 		}
 		
 		// Check and add targets.
 		World.getInstance().forEachVisibleObjectInRange(target, Creature.class, affectRange, c ->
 		{
-			if ((affectLimit > 0) && (result.size() >= affectLimit))
-			{
-				return;
-			}
 			if (filter.test(c))
 			{
-				result.add(c);
+				action.accept(target);
 			}
 		});
-		
-		return result;
 	}
 	
 	@Override
