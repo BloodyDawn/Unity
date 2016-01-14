@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="23300" levels="1" name="Ghost Piercing">
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="DOT_ATTR" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
-		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="83" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
-		<set name="effectPoint" val="-1000" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="icon" val="icon.skill0773" />
-		<set name="isDebuff" val="true" />
-		<set name="targetType" val="ONE" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>DOT_ATTR</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<attributeType>DARK</attributeType>
+		<attributeValue>20</attributeValue>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicLvl>83</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE</rideState>
+		<effectPoint>-1000</effectPoint>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<lvlBonusRate>1</lvlBonusRate>
+		<icon>icon.skill0773</icon>
+		<isDebuff>true</isDebuff>
+		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
 				<param power="300" />
@@ -27,113 +27,113 @@
 	</skill>
 	<skill id="23301" levels="1" name="Dimensional Door A">
 		<!-- Summons a dimensional door that moves the PC to the Dimensional Door B. -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="Icon.skill1050" />
-		<set name="hitTime" val="4000" />
-		<set name="reuseDelay" val="1000" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<icon>Icon.skill1050</icon>
+		<hitTime>4000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23302" levels="1" name="Dimensional Door B">
 		<!-- Summons a dimensional door that moves the PC to the Dimensional Door A. -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="Icon.skill1050" />
-		<set name="hitTime" val="4000" />
-		<set name="reuseDelay" val="1000" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<icon>Icon.skill1050</icon>
+		<hitTime>4000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23303" levels="1" name="Teleport">
 		<!-- none -->
-		<set name="operateType" val="A1" />
-		<set name="effectPoint" val="1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="2000" />
-		<set name="magicLvl" val="85" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="1000" />
-		<set name="castRange" val="2000" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>2000</effectRange>
+		<magicLvl>85</magicLvl>
+		<hitTime>1500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<castRange>2000</castRange>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23304" levels="1" name="Teleport">
 		<!-- none -->
-		<set name="operateType" val="A1" />
-		<set name="effectPoint" val="1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="2000" />
-		<set name="magicLvl" val="85" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="1000" />
-		<set name="castRange" val="2000" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>2000</effectRange>
+		<magicLvl>85</magicLvl>
+		<hitTime>1500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<castRange>2000</castRange>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23305" levels="1" name="Zinyanzi Agathion - Yunbokhwan">
 		<!-- Restores all HP/MP/CP and becomes invincible for 5 seconds. But can only be used when HP is below 30%. -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="INVINCIBILITY" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="activateRate" val="0" />
-		<set name="abnormalLvl" val="82" />
-		<set name="abnormalTime" val="5" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="icon" val="icon.skill_agathion_special" />
-		<set name="hitTime" val="200" />
-		<set name="reuseDelay" val="43200000" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>INVINCIBILITY</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<activateRate>0</activateRate>
+		<abnormalLvl>82</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<icon>icon.skill_agathion_special</icon>
+		<hitTime>200</hitTime>
+		<reuseDelay>43200000</reuseDelay>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23306" levels="1" name="Zinyanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Zinenze perform cute tricks. -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill_agathion_cute</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23307" levels="1" name="Yanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Enze perform cute tricks. -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill_agathion_cute</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23308" levels="1" name="Totem's Energy - Body">
 		<!-- Increases HP Recovery Bonus by 30% and decreases damage from the topography by 80% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
-		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="400" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="icon" val="BranchSys2.icon.totem_of_body" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="abnormalType" val="ENERGY_OF_TOTEM_1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="4" />
-		<set name="targetType" val="AURA" />
+		<abnormalTime>300</abnormalTime>
+		<affectRange>400</affectRange>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<icon>BranchSys2.icon.totem_of_body</icon>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<abnormalType>ENERGY_OF_TOTEM_1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>4</isMagic>
+		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.3" />
@@ -143,20 +143,20 @@
 	</skill>
 	<skill id="23309" levels="1" name="Totem's Energy - Spirit">
 		<!-- Increases MP Recovery Bonus by 30% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
-		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="400" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="icon" val="BranchSys2.icon.totem_of_mind" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="abnormalType" val="ENERGY_OF_TOTEM_2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="4" />
-		<set name="targetType" val="AURA" />
+		<abnormalTime>300</abnormalTime>
+		<affectRange>400</affectRange>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<icon>BranchSys2.icon.totem_of_mind</icon>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<abnormalType>ENERGY_OF_TOTEM_2</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>4</isMagic>
+		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.3" />
@@ -165,20 +165,20 @@
 	</skill>
 	<skill id="23310" levels="1" name="Totem's Energy - Courage">
 		<!-- Increases P. Def. by 15% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
-		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="400" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="icon" val="BranchSys2.icon.totem_of_bravery" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="abnormalType" val="ENERGY_OF_TOTEM_3" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="4" />
-		<set name="targetType" val="AURA" />
+		<abnormalTime>300</abnormalTime>
+		<affectRange>400</affectRange>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<icon>BranchSys2.icon.totem_of_bravery</icon>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<abnormalType>ENERGY_OF_TOTEM_3</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>4</isMagic>
+		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
@@ -187,20 +187,20 @@
 	</skill>
 	<skill id="23311" levels="1" name="Totem's Energy - Fortitude">
 		<!-- Increases M. Def. by 25% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
-		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="400" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="icon" val="BranchSys2.icon.totem_of_fortitude" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="abnormalType" val="ENERGY_OF_TOTEM_4" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="4" />
-		<set name="targetType" val="AURA" />
+		<abnormalTime>300</abnormalTime>
+		<affectRange>400</affectRange>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<icon>BranchSys2.icon.totem_of_fortitude</icon>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<abnormalType>ENERGY_OF_TOTEM_4</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>4</isMagic>
+		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.25" />
@@ -209,23 +209,23 @@
 	</skill>
 	<skill id="23312" levels="1" name="Fall of the Dragon">
 		<!-- Gift to commemorate the great feats of the warriors who eradicated the reckless dragon. Additional XP and SP are acquired by 100% for 1 hour. -->
-		<set name="icon" val="BranchSys2.icon.the_fall_of_dragon" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="1200" />
-		<set name="isMagic" val="4" />
-		<set name="abnormalType" val="VOTE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="effectRange" val="1500" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="1" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="abnormalTime" val="3600" />
+		<icon>BranchSys2.icon.the_fall_of_dragon</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<castRange>1200</castRange>
+		<isMagic>4</isMagic>
+		<abnormalType>VOTE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<effectRange>1500</effectRange>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<abnormalTime>3600</abnormalTime>
 		<for>
 			<effect name="Buff">
 				<mul stat="bonusExp" val="2.0" />
@@ -237,130 +237,130 @@
 		<table name="#abnormalTime"> 8 6 5 4 4 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 0 </table>
 		<!-- Increases resistance to action-inhibiting attacks by 100%. -->
-		<set name="operateType" val="A4" />
-		<set name="abnormalType" val="RESIST_SHOCK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-3" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="icon" val="icon.skill0386" />
-		<set name="isMagic" val="1" />
-		<set name="targetType" val="NONE" />
+		<operateType>A4</operateType>
+		<abnormalType>RESIST_SHOCK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-3</magicLvl>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>#abnormalTime</abnormalTime>
+		<icon>icon.skill0386</icon>
+		<isMagic>1</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
 		<table name="#abnormalTime"> 8 6 5 4 4 </table>
 		<!-- Increases resistance to control-inhibiting attacks by 100%. -->
-		<set name="operateType" val="A4" />
-		<set name="abnormalType" val="RESIST_SHOCK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-3" />
-		<set name="abnormalLvl" val="0" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="icon" val="icon.skill0388" />
-		<set name="isMagic" val="1" />
-		<set name="targetType" val="NONE" />
+		<operateType>A4</operateType>
+		<abnormalType>RESIST_SHOCK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-3</magicLvl>
+		<abnormalLvl>0</abnormalLvl>
+		<abnormalTime>#abnormalTime</abnormalTime>
+		<icon>icon.skill0388</icon>
+		<isMagic>1</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23315" levels="5" name="Paralysis Immunity Enhance">
 		<!-- Increases resistance to paralysis attacks by 100%. -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="RESIST_SHOCK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-3" />
-		<set name="abnormalLvl" val="0" />
-		<set name="abnormalTime" val="2" />
-		<set name="isMagic" val="1" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>RESIST_SHOCK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-3</magicLvl>
+		<abnormalLvl>0</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23316" levels="5" name="Enhance Petrification Immunity">
 		<!-- Increases resistance to petrification attacks by 100%. -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="RESIST_SHOCK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-3" />
-		<set name="abnormalLvl" val="0" />
-		<set name="abnormalTime" val="2" />
-		<set name="isMagic" val="1" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>RESIST_SHOCK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-3</magicLvl>
+		<abnormalLvl>0</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23317" levels="5" name="Fear Immunity Enhance">
 		<!-- Increases resistance to fear attacks by 100%. -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="RESIST_SHOCK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-3" />
-		<set name="abnormalLvl" val="0" />
-		<set name="abnormalTime" val="2" />
-		<set name="isMagic" val="1" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>RESIST_SHOCK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-3</magicLvl>
+		<abnormalLvl>0</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23318" levels="1" name="Cat the Ranger Boost">
 		<!-- "Recovers the master's HP by 10%. For 1 minute(s), receives power from Cat the Ranger to increase the master's resistance to debuff attacks by 80%, resistance to buff canceling attacks by 40%, Speed by 10%, P. Def. by 20%, and M. Def. by 20%. Does not receive preemptive attacks from monsters. Reuse delay 10 minutes." -->
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="MULTI_BUFF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1400" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="icon" val="BranchSys2.icon.action5016" />
-		<set name="reuseDelay" val="600000" />
-		<set name="isMagic" val="1" />
-		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1400</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<icon>BranchSys2.icon.action5016</icon>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>1</isMagic>
+		<castRange>900</castRange>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23319" levels="1" name="Blood Seeker">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="10" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="BLEEDING" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="90" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="castRange" val="80" />
-		<set name="effectRange" val="200" />
-		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i00" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="84" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
-		<set name="effectPoint" val="-100" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="180" />
-		<set name="trait" val="BLEED" />
+		<abnormalLvl>10</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<castRange>80</castRange>
+		<effectRange>200</effectRange>
+		<icon>BranchSys2.icon.br_wp_Caladbulg_i00</icon>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLvl>84</magicLvl>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE</rideState>
+		<targetType>ONE</targetType>
+		<effectPoint>-100</effectPoint>
+		<basicProperty>PHYSICAL</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<attributeType>DARK</attributeType>
+		<attributeValue>180</attributeValue>
+		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
 				<param power="170" />
@@ -370,31 +370,31 @@
 	<skill id="23320" levels="1" name="Greedy Throat">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="10" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="BLEEDING" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="90" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="castRange" val="80" />
-		<set name="effectRange" val="200" />
-		<set name="icon" val="BranchSys2.icon.br_wp_habus_knife_i00" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="83" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
-		<set name="effectPoint" val="-100" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="180" />
-		<set name="trait" val="BLEED" />
+		<abnormalLvl>10</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<castRange>80</castRange>
+		<effectRange>200</effectRange>
+		<icon>BranchSys2.icon.br_wp_habus_knife_i00</icon>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLvl>83</magicLvl>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE</rideState>
+		<targetType>ONE</targetType>
+		<effectPoint>-100</effectPoint>
+		<basicProperty>PHYSICAL</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<attributeType>DARK</attributeType>
+		<attributeValue>180</attributeValue>
+		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
 				<param power="230" />
@@ -404,29 +404,29 @@
 	<skill id="23321" levels="1" name="Draconic Evolver">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="TURN_FLEE" />
-		<set name="abnormalVisualEffect" val="TURN_FLEE" />
-		<set name="activateRate" val="60" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="200" />
-		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i00" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" />
-		<set name="isTriggeredSkill" val="true" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="82" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="trait" val="DERANGEMENT" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>60</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<castRange>80</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>200</effectRange>
+		<icon>BranchSys2.icon.br_wp_tiatenon_i00</icon>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLvl>82</magicLvl>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>ONE</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -436,27 +436,27 @@
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
 		<!-- This skill only has one level, 10. -->
-		<set name="abnormalLvl" val="13" />
-		<set name="abnormalTime" val="9" />
-		<set name="abnormalType" val="PD_DOWN" />
-		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="200" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
-		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="82" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="trait" val="SHOCK" />
-		<set name="icon" val="BranchSys2.icon.br_wp_astarot_i00" />
-		<set name="targetType" val="ONE" />
+		<abnormalLvl>13</abnormalLvl>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<castRange>80</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>200</effectRange>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicLvl>82</magicLvl>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<trait>SHOCK</trait>
+		<icon>BranchSys2.icon.br_wp_astarot_i00</icon>
+		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
@@ -467,28 +467,28 @@
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
 		<!-- This skill only has one level, 10. -->
-		<set name="abnormalLvl" val="13" />
-		<set name="abnormalTime" val="9" />
-		<set name="abnormalType" val="STUN" />
-		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="200" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
-		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="82" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="icon" val="BranchSys2.icon.br_wp_tirbing_i00" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="trait" val="SHOCK" />
+		<abnormalLvl>13</abnormalLvl>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<castRange>80</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>200</effectRange>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicLvl>82</magicLvl>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>ONE</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<icon>BranchSys2.icon.br_wp_tirbing_i00</icon>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<trait>SHOCK</trait>
 		<for>
 			<effect name="BlockActions">
 				<mul stat="pDef" val="0.77" />
@@ -498,23 +498,23 @@
 	<skill id="23324" levels="1" name="Jet Black Typhoon">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="blockedInOlympiad" val="false" />
-		<set name="effectPoint" val="800" />
-		<set name="icon" val="BranchSys2.icon.br_wp_wind_of_mardil_i00" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>15</abnormalTime>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<effectPoint>800</effectPoint>
+		<icon>BranchSys2.icon.br_wp_wind_of_mardil_i00</icon>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<!-- set name="abnormalType" val="RAID_WEAPON" / --> <!-- FIXME: Value unconfirmed. -->
-		<set name="isMagic" val="1" />
-		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="71" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="abnormalType" val="CASTING_TIME_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>1</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicLvl>71</magicLvl>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<abnormalType>CASTING_TIME_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" />
@@ -523,1269 +523,1269 @@
 		</for>
 	</skill>
 	<skill id="23325" levels="1" name="Enlarge - Luckpy">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="hitTime" val="2000" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<hitTime>2000</hitTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23326" levels="1" name="Reduce - Luckpy">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="hitTime" val="2000" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<hitTime>2000</hitTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23327" levels="1" name="Boss Test - Weaken">
 		<!-- A skill to test a boss mob - Weaken -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="2000" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="648000" />
-		<set name="castRange" val="1500" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>2000</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>648000</abnormalTime>
+		<castRange>1500</castRange>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23328" levels="1" name="Boss Test - Strengthen">
 		<!-- A skill to test a boss mob - Strengthen -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="2000" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="648000" />
-		<set name="castRange" val="1500" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>2000</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>648000</abnormalTime>
+		<castRange>1500</castRange>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23329" levels="1" name="Lantern Agathion's Gift1">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23330" levels="1" name="Lantern Agathion's Gift2">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23331" levels="1" name="Lantern Agathion's Gift3">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23332" levels="1" name="Lantern Agathion's Gift4">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23333" levels="1" name="Agathion's New Year's Wish">
 		<!-- Description: Through the power of the Lantern Agathion, Vitality is maintained and not consumed. -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="VP_KEEP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="icon" val="icon.etc_pi_gift_box_i03" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="1000" />
-		<set name="isMagic" val="4" />
-		<set name="staticReuse" val="true" />
-		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>VP_KEEP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<icon>icon.etc_pi_gift_box_i03</icon>
+		<hitTime>2000</hitTime>
+		<coolTime>1000</coolTime>
+		<isMagic>4</isMagic>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23334" levels="1" name="Lantern Agathion Cute Trick">
 		<!-- Description: Able to see the summoned Lantern's perform cute tricks. -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill_agathion_cute</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23335" levels="1" name="Agathion's New Year's Wish">
 		<!-- Description: Vitality is maintained with the power of Juju Agathion. -->
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="VP_KEEP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="icon" val="icon.etc_pi_gift_box_i03" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="1000" />
-		<set name="isMagic" val="4" />
-		<set name="staticReuse" val="true" />
-		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<operateType>A2</operateType>
+		<abnormalType>VP_KEEP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<icon>icon.etc_pi_gift_box_i03</icon>
+		<hitTime>2000</hitTime>
+		<coolTime>1000</coolTime>
+		<isMagic>4</isMagic>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23336" levels="1" name="Juju Agathion Cute Trick">
 		<!-- Description: Summoned Juju performs cute tricks. -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill_agathion_cute</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23337" levels="1" name="Juju Agathion's Gift 1">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23338" levels="1" name="Juju Agathion's Gift 2">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23339" levels="1" name="Juju Agathion's Gift 3">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23340" levels="1" name="Juju Agathion's Gift 4">
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="55" />
-		<set name="hitTime" val="2700" />
-		<set name="coolTime" val="1000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>55</magicLvl>
+		<hitTime>2700</hitTime>
+		<coolTime>1000</coolTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23341" levels="1" name="Norhand's Flint">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily petrified by Norhand's powerful cry. -->
-		<set name="icon" val="icon.skill4111" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="3000" />
-		<set name="effectPoint" val="-100" />
-		<set name="abnormalType" val="TURN_STONE" />
-		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="300" />
-		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="7" />
-		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
-		<set name="affectRange" val="300" />
-		<set name="abnormalVisualEffect" val="FLESH_STONE" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill4111</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>300</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>3000</coolTime>
+		<effectPoint>-100</effectPoint>
+		<abnormalType>TURN_STONE</abnormalType>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>300</effectRange>
+		<magicLvl>99</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>7</abnormalTime>
+		<attributeType>EARTH</attributeType>
+		<attributeValue>20</attributeValue>
+		<affectRange>300</affectRange>
+		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23342" levels="2" name="Norhand's Trace">
 		<table name="#abnormalLvl"> 1 2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Norhand is searching for Skooldie. A trace of its voice remains. -->
-		<set name="icon" val="BranchSys.icon.br_rotten_jack_ghost_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="2000" />
-		<set name="abnormalType" val="BR_EVENT_BUF7" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="300" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="7200" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="affectRange" val="300" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys.icon.br_rotten_jack_ghost_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>300</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>2000</coolTime>
+		<abnormalType>BR_EVENT_BUF7</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>300</effectRange>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>7200</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<affectRange>300</affectRange>
+		<abnormalVisualEffect>AURA_BUFF</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23344" levels="5" name="Weakened Shilen's Breath">
 		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Is killed and poisoned by Shilen's Breath. Increases Dark Attack Resistance by 5 and HP recovery by 5%. Poison stage increases when killed while poisoned. -->
-		<set name="icon" val="icon.skill5076_c" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="DEATH_PENALTY_GD" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="60" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill5076_c</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<isMagic>1</isMagic>
+		<effectPoint>1</effectPoint>
+		<abnormalType>DEATH_PENALTY_GD</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23345" levels="1" name="Region Banishment">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="1" />
-		<set name="isMagic" val="2" />
-		<set name="hitTime" val="200" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>1</magicLvl>
+		<isMagic>2</isMagic>
+		<hitTime>200</hitTime>
 	</skill>
 	<skill id="23346" levels="7" name="Valakas Agathion Cute Trick">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You can see the summoned Valakas' cute tricks. -->
-		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="2" />
-		<set name="hitTime" val="3000" />
+		<icon>icon.skill_agathion_cute</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<isMagic>2</isMagic>
+		<hitTime>3000</hitTime>
 	</skill>
 	<skill id="23347" levels="7" name="Valakas Agathion Special Skill: Valakas' Blessing">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill_agathion_special" />
-		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
-		<set name="hitTime" val="4000" />
+		<icon>icon.skill_agathion_special</icon>
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalVisualEffect>BR_SOUL_AVATAR</abnormalVisualEffect>
+		<hitTime>4000</hitTime>
 	</skill>
 	<skill id="23348" levels="1" name="Transform Elpy">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into a game Master. -->
-		<set name="icon" val="icon.skilltransform1" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2500" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="-1" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="reuseDelay" val="10000" />
+		<icon>icon.skilltransform1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2500</hitTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>TRANSFORM</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>-1</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="23349" levels="1" name="Tree's Blessing - Stage 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 minutes, increases P. Atk. by 1% and M. Atk. by 2% with the tree's blessing. -->
-		<set name="icon" val="icon.etc_x_mas_tree_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="4" />
+		<icon>icon.etc_x_mas_tree_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic>
 	</skill>
 	<skill id="23350" levels="1" name="Tree's Blessing - Stage 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 minutes, increases P. Atk. by 2% and M. Atk. by 4% with the tree's blessing. -->
-		<set name="icon" val="icon.etc_x_mas_tree_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="900" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="4" />
+		<icon>icon.etc_x_mas_tree_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic>
 	</skill>
 	<skill id="23351" levels="1" name="Tree's Blessing - Stage 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 20 minutes, increases P. Atk. by 3% and M. Atk. by 6% with the tree's blessing. -->
-		<set name="icon" val="icon.etc_x_mas_tree_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="1200" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="4" />
+		<icon>icon.etc_x_mas_tree_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>5</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic>
 	</skill>
 	<skill id="23352" levels="1" name="Tree's Blessing - Stage 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 25 minutes, increases P. Atk. by 4% and M. Atk. by 8% with the tree's blessing. -->
-		<set name="icon" val="icon.etc_x_mas_tree_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="7" />
-		<set name="abnormalTime" val="1500" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="4" />
+		<icon>icon.etc_x_mas_tree_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>7</abnormalLvl>
+		<abnormalTime>1500</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic>
 	</skill>
 	<skill id="23353" levels="1" name="Tree's Blessing - Stage 5">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases P. Atk. by 6% and M. Atk. by 12% with the tree's blessing. -->
-		<set name="icon" val="icon.etc_x_mas_tree_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="9" />
-		<set name="abnormalTime" val="3600" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="4" />
+		<icon>icon.etc_x_mas_tree_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>9</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic>
 	</skill>
 	<skill id="23354" levels="1" name="Lingering Tree's Blessing - Stage 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enjoying Lingering Tree's Blessing. Need to wait for 2 hours to receive Tree's Blessing - Stage 1. -->
-		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="7200" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>7200</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23355" levels="1" name="Lingering Tree's Blessing - Stage 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enjoying Lingering Tree's Blessing. Need to wait for 2 hours to receive Tree's Blessing - Stage 2. -->
-		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="7200" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>7200</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23356" levels="1" name="Lingering Tree's Blessing - Stage 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enjoying Lingering Tree's Blessing. Need to wait for 2 hours to receive Tree's Blessing - Stage 3. -->
-		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="6" />
-		<set name="abnormalTime" val="7200" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>6</abnormalLvl>
+		<abnormalTime>7200</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23357" levels="1" name="Lingering Tree's Blessing - Stage 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enjoying Lingering Tree's Blessing. Need to wait for 2 hours to receive Tree's Blessing - Stage 4. -->
-		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="8" />
-		<set name="abnormalTime" val="7200" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>8</abnormalLvl>
+		<abnormalTime>7200</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23358" levels="1" name="Lingering Tree's Blessing - Stage 5">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enjoying Lingering Tree's Blessing. Need to wait for 2 hours to receive Tree's Blessing - Stage 5. -->
-		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="10" />
-		<set name="abnormalTime" val="7200" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>10</abnormalLvl>
+		<abnormalTime>7200</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23359" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 minutes, increases Atk. Spd. by 34% and Casting Spd. by 31%. Chance of applying Vampiric Rage effect by 9%. -->
-		<set name="icon" val="icon.skill11518" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="80" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11518</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>80</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23360" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 minutes, increases Atk. Spd. by 34% and Casting Spd. by 31%. Chance of applying Vampiric Rage effect by 9%. -->
-		<set name="icon" val="icon.skill11518" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="81" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="900" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11518</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>81</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23361" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 20 minutes, increases Atk. Spd. by 34% and Casting Spd. by 31%. Chance of applying Vampiric Rage effect by 9%. -->
-		<set name="icon" val="icon.skill11518" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="82" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1200" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11518</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>82</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23362" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 25 minutes, increases Atk. Spd. by 34% and Casting Spd. by 31%. Chance of applying Vampiric Rage effect by 9%. -->
-		<set name="icon" val="icon.skill11518" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="83" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1500" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11518</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>83</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1500</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23363" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases Atk. Spd. by 34% and Casting Spd. by 31%. Chance of applying Vampiric Rage effect by 9%. -->
-		<set name="icon" val="icon.skill11518" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="84" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11518</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>84</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23364" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 minutes, increases Max HP by 37%, Max MP by 37%, Max CP by 37%, and HP recovery bonus by 20%. -->
-		<set name="icon" val="icon.skill11519" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="80" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11519</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>80</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23365" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 minutes, increases Max HP by 37%, Max MP by 37%, Max CP by 37%, and HP recovery bonus by 20%. -->
-		<set name="icon" val="icon.skill11519" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="81" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="900" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11519</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>81</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23366" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 20 minutes, increases Max HP by 37%, Max MP by 37%, Max CP by 37%, and HP recovery bonus by 20%. -->
-		<set name="icon" val="icon.skill11519" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="82" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1200" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11519</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>82</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23367" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 25 minutes, increases Max HP by 37%, Max MP by 37%, Max CP by 37%, and HP recovery bonus by 20%. -->
-		<set name="icon" val="icon.skill11519" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="83" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1500" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11519</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>83</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1500</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23368" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases Max HP by 37%, Max MP by 37%, Max CP by 37%, and HP recovery bonus by 20%. -->
-		<set name="icon" val="icon.skill11519" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="84" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11519</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>84</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23369" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 minutes, increases P. Critical Rate by 32%, P. Critical Power by 35%, and M. Critical Rate by 20. Decreases P. Skill MP consumption by 20%, M. Skill MP consumption by 10%, and enchant skill MP consumption for Iss Enchanters by 20%. -->
-		<set name="icon" val="icon.skill11520" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="80" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11520</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>80</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23370" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 minutes, increases P. Critical Rate by 32%, P. Critical Power by 35%, and M. Critical Rate by 20. Decreases P. Skill MP consumption by 20%, M. Skill MP consumption by 10%, and enchant skill MP consumption for Iss Enchanters by 20%. -->
-		<set name="icon" val="icon.skill11520" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="81" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="900" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11520</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>81</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23371" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 20 minutes, increases P. Critical Rate by 32%, P. Critical Power by 35%, and M. Critical Rate by 20. Decreases P. Skill MP consumption by 20%, M. Skill MP consumption by 10%, and enchant skill MP consumption for Iss Enchanters by 20%. -->
-		<set name="icon" val="icon.skill11520" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="82" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1200" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11520</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>82</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23372" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 25 minutes, increases P. Critical Rate by 32%, P. Critical Power by 35%, and M. Critical Rate by 20. Decreases P. Skill MP consumption by 20%, M. Skill MP consumption by 10%, and enchant skill MP consumption for Iss Enchanters by 20%. -->
-		<set name="icon" val="icon.skill11520" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="83" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1500" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11520</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>83</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1500</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23373" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases P. Critical Rate by 32%, P. Critical Power by 35%, and M. Critical Rate by 20. Decreases P. Skill MP consumption by 20%, M. Skill MP consumption by 10%, and enchant skill MP consumption for Iss Enchanters by 20%. -->
-		<set name="icon" val="icon.skill11520" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="84" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11520</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>84</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23374" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 minutes, increases physical Accuracy by 5, physical and magic evasion by 5, and speed by 34. Decreases received critical damage by 30%. -->
-		<set name="icon" val="icon.skill11521" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="80" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11521</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>80</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23375" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 minutes, increases physical Accuracy by 5, physical and magic evasion by 5, and speed by 34. Decreases received critical damage by 30%. -->
-		<set name="icon" val="icon.skill11521" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="81" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="900" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11521</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>81</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23376" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 20 minutes, increases physical Accuracy by 5, physical and magic evasion by 5, and speed by 34. Decreases received critical damage by 30%. -->
-		<set name="icon" val="icon.skill11521" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="82" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1200" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11521</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>82</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23377" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 25 minutes, increases physical Accuracy by 5, physical and magic evasion by 5, and speed by 34. Decreases received critical damage by 30%. -->
-		<set name="icon" val="icon.skill11521" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="83" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1500" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11521</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>83</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1500</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23378" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases physical Accuracy by 5, physical and magic evasion by 5, and speed by 34. Decreases received critical damage by 30%. -->
-		<set name="icon" val="icon.skill11521" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="84" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11521</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>84</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23379" levels="1" name="Elpy Master">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into a game Master. -->
-		<set name="icon" val="icon.skilltransform1" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2500" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="-1" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="reuseDelay" val="10000" />
+		<icon>icon.skilltransform1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2500</hitTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>TRANSFORM</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>-1</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="23380" levels="1" name="Jermann - Soul Blackmail">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23380" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="1000" />
-		<set name="effectPoint" val="1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1500" />
-		<set name="magicLvl" val="99" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="1200000" />
+		<icon>BranchSys3.Icon.g_skill23380</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<castRange>1000</castRange>
+		<effectPoint>1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1500</effectRange>
+		<magicLvl>99</magicLvl>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<reuseDelay>1200000</reuseDelay>
 	</skill>
 	<skill id="23381" levels="3" name="Jermann - Flow of Destruction">
 		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Magical damage on the enemy. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23381" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="500" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-1000" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="staticReuse" val="true" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys3.Icon.g_skill23381</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>500</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>1</isMagic>
+		<effectPoint>-1000</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>#magicLvl</magicLvl>
+		<trait>KNOCKDOWN</trait>
+		<staticReuse>true</staticReuse>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23382" levels="1" name="Jermann - Swiftness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teleport 300 grids forward. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23382" />
-		<set name="operateType" val="DA1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="250" />
-		<set name="castRange" val="700" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="20000" />
-		<set name="effectPoint" val="-1000" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1200" />
-		<set name="magicLvl" val="95" />
-		<set name="staticReuse" val="true" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys3.Icon.g_skill23382</icon>
+		<operateType>DA1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>250</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1200</effectRange>
+		<magicLvl>95</magicLvl>
+		<staticReuse>true</staticReuse>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23383" levels="1" name="Jermann - Shadow of Darkness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon your mirror image and Hide. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23383" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="500" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="-800" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="90" />
-		<set name="staticReuse" val="true" />
-		<set name="reuseDelay" val="60000" />
+		<icon>BranchSys3.Icon.g_skill23383</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>500</mpConsume>
+		<hitTime>500</hitTime>
+		<effectPoint>-800</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>90</magicLvl>
+		<staticReuse>true</staticReuse>
+		<reuseDelay>60000</reuseDelay>
 	</skill>
 	<skill id="23384" levels="3" name="Jermann - Burning Darkness">
 		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Quickly Recover 45000 HP. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23384" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="500" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="50000" />
-		<set name="effectPoint" val="200" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="1" />
+		<icon>BranchSys3.Icon.g_skill23384</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>500</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<reuseDelay>50000</reuseDelay>
+		<effectPoint>200</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<magicLvl>#magicLvl</magicLvl>
+		<staticReuse>true</staticReuse>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23385" levels="3" name="Jermann - Devourer of Nature">
 		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases HP Recovery Bonus. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23385" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="250" />
-		<set name="hitTime" val="800" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="100" />
-		<set name="abnormalType" val="HP_REGEN_UP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="abnormalLvl" val="10" />
-		<set name="abnormalTime" val="28" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="1" />
+		<icon>BranchSys3.Icon.g_skill23385</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>250</mpConsume>
+		<hitTime>800</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<abnormalType>HP_REGEN_UP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>#magicLvl</magicLvl>
+		<abnormalLvl>10</abnormalLvl>
+		<abnormalTime>28</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23386" levels="3" name="Jermann - Destruction Instinct">
 		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Powerful strike on nearby enemies. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23386" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="500" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="-800" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="affectRange" val="200" />
-		<set name="affectLimit" val="6-12" />
-		<set name="staticReuse" val="true" />
-		<set name="reuseDelay" val="12000" />
+		<icon>BranchSys3.Icon.g_skill23386</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>500</mpConsume>
+		<hitTime>500</hitTime>
+		<effectPoint>-800</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<affectRange>200</affectRange>
+		<affectLimit>6-12</affectLimit>
+		<staticReuse>true</staticReuse>
+		<reuseDelay>12000</reuseDelay>
 	</skill>
 	<skill id="23387" levels="1" name="Jermann">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transform into Jermann. -->
-		<set name="icon" val="icon.skilltransform1" />
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="55" />
-		<set name="abnormalTime" val="900" />
-		<set name="deleteAbnormalOnLeave" val="true" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skilltransform1</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>TRANSFORM</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>55</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="23388" levels="1" name="Jermann">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transform into Jermann. -->
-		<set name="icon" val="icon.skilltransform1" />
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="55" />
-		<set name="abnormalTime" val="900" />
-		<set name="deleteAbnormalOnLeave" val="true" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skilltransform1</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>TRANSFORM</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>55</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="23389" levels="1" name="Jermann">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transform into Jermann. -->
-		<set name="icon" val="icon.skilltransform1" />
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-3" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="55" />
-		<set name="abnormalTime" val="900" />
-		<set name="deleteAbnormalOnLeave" val="true" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skilltransform1</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>TRANSFORM</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-3</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>55</abnormalLvl>
+		<abnormalTime>900</abnormalTime>
+		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="23390" levels="1" name="Mysterious Power of Ancient Kartia's Labyrinth">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Accept this mysterious power to make it yours. Refuse, and you will suffer the consequences. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23380" />
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="POISON" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="30" />
-		<set name="trait" val="POISON" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<icon>BranchSys3.Icon.g_skill23380</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>POISON</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>5</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<trait>POISON</trait>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="23391" levels="1" name="Great Mysterious Power of Ancient Kartia's Labyrinth">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Accept this great power to make it yours. Refuse, and you will suffer grave consequences. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23380" />
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="POISON" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="6" />
-		<set name="abnormalTime" val="30" />
-		<set name="trait" val="POISON" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<icon>BranchSys3.Icon.g_skill23380</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>POISON</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>6</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<trait>POISON</trait>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="23392" levels="1" name="Stabilized Power of Ancient Kartia's Labyrinth">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stabilize the Ancient Kartia's Labyrinth to consistently increase your HP. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23380" />
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="POISON" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-2" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="10" />
-		<set name="abnormalTime" val="30" />
-		<set name="trait" val="POISON" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="targetType" val="SELF" />
+		<icon>BranchSys3.Icon.g_skill23380</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>POISON</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>-2</magicLvl>
+		<abnormalLvl>10</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<trait>POISON</trait>
+		<irreplacableBuff>true</irreplacableBuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="23393" levels="1" name="Self-destruction">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- DD + DOT -->
-		<set name="icon" val="icon.skill23393" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="2000" />
-		<set name="effectPoint" val="-100" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="97" />
-		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="50" />
-		<set name="affectRange" val="150" />
-		<set name="staticReuse" val="true" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill23393</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>97</magicLvl>
+		<attributeType>DARK</attributeType>
+		<attributeValue>50</attributeValue>
+		<affectRange>150</affectRange>
+		<staticReuse>true</staticReuse>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23394" levels="1" name="Jermann - Grave of the Sword">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon the Grave of the Sword to the designated area. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23387" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="2000" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="-500" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="91" />
-		<set name="affectRange" val="300" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="1" />
+		<icon>BranchSys3.Icon.g_skill23387</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>2000</mpConsume>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>91</magicLvl>
+		<affectRange>300</affectRange>
+		<staticReuse>true</staticReuse>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23395" levels="1" name="Jermann - Death' Calling">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can summon the Warriors of Death if the Grave of the Sword is nearby. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23388" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="500" />
-		<set name="castRange" val="350" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="60000" />
-		<set name="isMagic" val="4" />
-		<set name="effectPoint" val="-800" />
-		<set name="abnormalType" val="DEATH_CLACK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="550" />
-		<set name="magicLvl" val="91" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="staticReuse" val="true" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys3.Icon.g_skill23388</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>500</mpConsume>
+		<castRange>350</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<isMagic>4</isMagic>
+		<effectPoint>-800</effectPoint>
+		<abnormalType>DEATH_CLACK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>550</effectRange>
+		<magicLvl>91</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<staticReuse>true</staticReuse>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23396" levels="1" name="Jermann - Freezing Cold">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Freeze the ground at the designated area. Enemies on the ice will have momentarily decreased Speed and consistently decreasing HP. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23389" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="500" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="25000" />
-		<set name="effectPoint" val="-500" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="91" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="1" />
+		<icon>BranchSys3.Icon.g_skill23389</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>500</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>25000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>91</magicLvl>
+		<staticReuse>true</staticReuse>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23397" levels="1" name="Jermann - Shard of Ice">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Drop an ice shard at the designated area. Additional damage if the enemy is inflicted with Freezing Cold. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23390" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="500" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="15000" />
-		<set name="effectPoint" val="-800" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="91" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="1" />
+		<icon>BranchSys3.Icon.g_skill23390</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>500</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-800</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>91</magicLvl>
+		<staticReuse>true</staticReuse>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23398" levels="3" name="Grave of the Sword">
 		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Consistently decreases HP. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23387" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="abnormalType" val="DOT_ATTR" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="7" />
-		<set name="trait" val="POISON" />
-		<set name="affectRange" val="250" />
-		<set name="affectLimit" val="5-12" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys3.Icon.g_skill23387</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalType>DOT_ATTR</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>#magicLvl</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>7</abnormalTime>
+		<trait>POISON</trait>
+		<affectRange>250</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23399" levels="3" name="Freezing Cold">
 		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily decreases Speed and consistently decreases HP. -->
-		<set name="icon" val="BranchSys3.Icon.g_skill23389" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="abnormalType" val="ARMOR_WATER" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="12" />
-		<set name="trait" val="POISON" />
-		<set name="affectRange" val="250" />
-		<set name="affectLimit" val="5-12" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>BranchSys3.Icon.g_skill23389</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalType>ARMOR_WATER</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>#magicLvl</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>12</abnormalTime>
+		<trait>POISON</trait>
+		<affectRange>250</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 </list>

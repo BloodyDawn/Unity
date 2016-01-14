@@ -3,10 +3,10 @@
 	<skill id="30000" levels="1" name="Hydro Attack: Debuff">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stacks Storm Marks when using Hydro Attack. -->
-		<set name="icon" val="icon.skill11011" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="0" />
+		<icon>icon.skill11011</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<castRange>0</castRange>
 	</skill>
 	<skill id="30001" levels="28" name="Hydro Attack">
 		<!-- TODO Next action cast. -->
@@ -15,18 +15,18 @@
 		<table name="#mpInitialConsume"> 1 2 2 3 3 4 4 4 5 5 5 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 8 </table>
 		<table name="#mpConsume"> 2 6 8 10 13 14 16 17 18 20 22 23 24 25 26 26 26 26 26 27 27 27 27 27 28 29 30 30 </table>
 		<table name="#power"> 6 14 19 25 32 36 41 46 50 55 60 64 69 72 75 77 79 171 179 187 195 203 211 219 227 231 235 239 </table>
-		<set name="icon" val="icon.skill30001" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="castRange" val="80" />
-		<set name="affectRange" val="160" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-692" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="magicLvl" val="#magicLvl" />
+		<icon>icon.skill30001</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<castRange>80</castRange>
+		<affectRange>160</affectRange> <!-- Unconfirmed -->
+		<effectPoint>-692</effectPoint>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<magicLvl>#magicLvl</magicLvl>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -41,15 +41,15 @@
 		<!-- Updated to Ertheia -->
 		<!-- M. Def. - 30%, Speed - 70. -->
 		<table name="#abnormalLvl"> 1 2 3 </table>
-		<set name="abnormalType" val="STORM_SIGN" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="icon" val="icon.skill30027" />
-		<set name="abnormalTime" val="5" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="isMagic" val="4" />
-		<set name="effectPoint" val="-100" />
-		<set name="isDebuff" val="true" />
+		<abnormalType>STORM_SIGN</abnormalType>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<icon>icon.skill30027</icon>
+		<abnormalTime>5</abnormalTime>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<isMagic>4</isMagic>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
 				<!-- mul stat="stormSignBonus" val="1.10" / -->
@@ -64,17 +64,17 @@
 		<table name="#magicLvl"> 58 62 66 70 74 77 79 81 83 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 47 51 54 58 60 62 64 65 66 67 67 68 68 68 69 69 70 71 72 73 </table>
 		<table name="#power"> 110 120 130 140 150 157 162 167 172 501 515 543 571 599 627 655 683 711 725 739 </table>
-		<set name="icon" val="icon.skill30003" />
-		<set name="affectRange" val="100" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-696" />
-		<set name="hitTime" val="4000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="magicLvl" val="#magicLvl" />
+		<icon>icon.skill30003</icon>
+		<affectRange>100</affectRange> <!-- Unconfirmed -->
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>80</castRange>
+		<effectPoint>-696</effectPoint>
+		<hitTime>4000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<magicLvl>#magicLvl</magicLvl>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -97,23 +97,23 @@
 		<table name="#magicLvl"> 40 44 48 52 56 58 64 68 72 76 78 80 82 84 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 71 72 73 </table>
 		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 140 145 149 154 420 442 464 486 508 530 552 574 584 594 604 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="icon" val="icon.skill30004" />
-		<set name="affectRange" val="100" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-696" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="isDebuff" val="true" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="trait" val="KNOCKBACK" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>STUN</abnormalType>
+		<abnormalTime>5</abnormalTime>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<icon>icon.skill30004</icon>
+		<affectRange>100</affectRange> <!-- Unconfirmed -->
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>80</castRange>
+		<effectPoint>-696</effectPoint>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<isDebuff>true</isDebuff>
+		<magicLvl>#magicLvl</magicLvl>
+		<trait>KNOCKBACK</trait>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -132,12 +132,12 @@
 	<skill id="30005" levels="4" name="Hydro Strike"> <!-- In client is level 4 -->
 		<!-- Updated to Ertheia -->
 		<!-- M. Def. - 50%, Speed - 100. -->
-		<set name="icon" val="icon.skill30027" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="isMagic" val="4" />
-		<set name="effectPoint" val="-100" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30027</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<isMagic>4</isMagic>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
 				<!-- mul stat="stormSignBonus" val="1.10" / -->
@@ -152,25 +152,25 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 134 135 136 137 138 138 139 141 143 145 147 </table>
 		<table name="#power"> 255 269 283 297 311 325 339 353 359 365 371 </table>
-		<set name="icon" val="icon.skill30006" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalTime" val="1" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="affectLimit" val="5-10" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="100" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="60" />
-		<set name="effectPoint" val="-687" />
-		<set name="hitTime" val="1800" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="isMagic" val="1" />
-		<set name="isDebuff" val="true" />
-		<set name="trait" val="KNOCKBACK" />
+		<icon>icon.skill30006</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>STUN</abnormalType>
+		<abnormalTime>1</abnormalTime>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<affectLimit>5-10</affectLimit> <!-- Unconfirmed -->
+		<affectRange>100</affectRange> <!-- Unconfirmed -->
+		<operateType>A1</operateType>
+		<targetType>AURA</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>60</castRange>
+		<effectPoint>-687</effectPoint>
+		<hitTime>1800</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<isMagic>1</isMagic>
+		<isDebuff>true</isDebuff>
+		<trait>KNOCKBACK</trait>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -190,18 +190,18 @@
 		<table name="#magicLvl"> 78 80 82 84 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 63 64 65 66 67 67 68 68 68 69 69 70 71 72 73 </table>
 		<table name="#power"> 123 127 130 134 386 396 416 436 456 476 496 516 536 546 556 </table>
-		<set name="icon" val="icon.skill30007" />
-		<set name="affectLimit" val="5-10" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="100" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-696" />
-		<set name="hitTime" val="4000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30007</icon>
+		<affectLimit>5-10</affectLimit> <!-- Unconfirmed -->
+		<affectRange>100</affectRange> <!-- Unconfirmed -->
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>80</castRange>
+		<effectPoint>-696</effectPoint>
+		<hitTime>4000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -233,16 +233,16 @@
 		<table name="#mpConsumes"> 16 67 68 69 70 </table>
 		<table name="#reuseDelays"> 50000 50000 40000 30000 20000 </table>
 		<table name="#triggerLvl"> 1 2 2 2 2 </table>
-		<set name="icon" val="icon.skill30008" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="3" />
-		<set name="effectPoint" val="687" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="reuseDelay" val="#reuseDelays" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30008</icon>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<effectPoint>687</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<reuseDelay>#reuseDelays</reuseDelay>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -257,20 +257,20 @@
 		<!-- For 5 sec., blends into the wind and teleports backward, and Speed + 100. Requires a sword or blunt weapon. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<table name="#mpConsumes"> 77 78 79 80 81 82 82 83 83 84 </table>
-		<set name="icon" val="icon.skill30009" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalVisualEffect" val="DECEPTIVE_BLINK" />
-		<set name="effectPoint" val="687" />
-		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
-		<set name="removedOnDamage" val="true" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="15000" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30009</icon>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalVisualEffect>DECEPTIVE_BLINK</abnormalVisualEffect>
+		<effectPoint>687</effectPoint>
+		<operateType>A2</operateType>
+		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
+		<removedOnDamage>true</removedOnDamage>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -287,21 +287,21 @@
 		<!-- Updated to IO -->
 		<!-- Cancels all debuffs and recovers HP/MP for 10 sec. inside a refuge of wind. Cannot move. -->
 		<table name="#magicLvl"> 88 101 </table>
-		<set name="icon" val="icon.skill30010" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="WIND_HIDE" />
-		<set name="blockedInOlympiad" val="true" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="687" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="40" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="removedOnDamage" val="true" /> <!-- Unconfirmed -->
-		<set name="reuseDelay" val="180000" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30010</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>WIND_HIDE</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad> <!-- Unconfirmed -->
+		<effectPoint>687</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>40</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<removedOnDamage>true</removedOnDamage> <!-- Unconfirmed -->
+		<reuseDelay>180000</reuseDelay>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="DispelByCategory">
 				<param slot="debuff" rate="100" max="99" /> <!-- Since there is no way to get max debuffs, use 99. -->
@@ -320,18 +320,18 @@
 		<!-- Sends a slashing wind to brand target with Storm Sign Stage 3. Requires a sword or blunt Weapon. -->
 		<table name="#magicLvl"> 76 78 80 82 84 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 31 31 32 32 33 33 34 34 34 34 34 35 36 37 38  </table>
-		<set name="icon" val="icon.skill30011" />
-		<set name="affectRange" val="1400" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="15000" />
-		<set name="effectPoint" val="-687" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30011</icon>
+		<affectRange>1400</affectRange> <!-- Unconfirmed -->
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-687</effectPoint>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -346,20 +346,20 @@
 		<!-- Knocks down target and attacks with 57 Power added to M. Atk. 10% more damage if target is debuffed. If target has Storm Sign, eliminates it and inflicts additional damage. Requires a sword or blunt weapon. -->
 		<table name="#mpConsumes"> 31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 71 72 73 </table>
 		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 141 145 150 154 376 397 418 438 459 480 501 522 535 545 555 </table>
-		<set name="icon" val="icon.skill30012" />
-		<set name="abnormalTime" val="1" />
-		<set name="operateType" val="DA1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="effectPoint" val="-696" /> <!-- Unconfirmed -->
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="7000" />
-		<set name="flyRadius" val="900" />
-		<set name="flyType" val="CHARGE" />
-		<set name="isMagic" val="1" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30012</icon>
+		<abnormalTime>1</abnormalTime>
+		<operateType>DA1</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<effectPoint>-696</effectPoint> <!-- Unconfirmed -->
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7000</reuseDelay>
+		<flyRadius>900</flyRadius>
+		<flyType>CHARGE</flyType>
+		<isMagic>1</isMagic>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -379,17 +379,17 @@
 	<skill id="30013" levels="1" name="Switch Places">
 		<!-- Updated to Ertheia -->
 		<!-- Trades places with target. Requires a sword or blunt weapon. PC targets only. -->
-		<set name="icon" val="icon.skill30005" />
-		<set name="affectRange" val="1400" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-709" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="705" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="300000" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30005</icon>
+		<affectRange>1400</affectRange> <!-- Unconfirmed -->
+		<effectPoint>-709</effectPoint>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>705</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>300</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -404,18 +404,18 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sends a breeze that pushes target toward you. Requires a sword / blunt weapon. -->
 		<table name="#mpConsumes"> 31 31 32 32 33 33 34 34 34 34 34 35 36 37 38 </table>
-		<set name="icon" val="icon.skill30014" />
-		<set name="effectPoint" val="-1371" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="isMagic" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30014</icon>
+		<effectPoint>-1371</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<isMagic>1</isMagic>
+		<abnormalTime>5</abnormalTime>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -423,15 +423,15 @@
 	<skill id="30015" levels="1" name="Mass Compelling Wind">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sends a breeze that pushes target and nearby enemies toward you. -->
-		<set name="icon" val="icon.skill0028" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="1100" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-1371" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill0028</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>1100</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-1371</effectPoint>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="30016" levels="4" name="Eye of the Storm">
 		<!-- Updated to IO -->
@@ -439,16 +439,16 @@
 		<table name="#mpConsumes"> 18 37 40 43 </table>
 		<table name="#MagicalMpConsumeRate"> 1 0.5 0.5 0.5 </table>
 		<table name="#traitResist"> 0 0 90 90 </table>
-		<set name="icon" val="icon.skill30016" />
-		<set name="abnormalTime" val="30" />
-		<set name="effectPoint" val="687" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="300000" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30016</icon>
+		<abnormalTime>30</abnormalTime>
+		<effectPoint>687</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
 				<add stat="mCritRate" val="100" />
@@ -470,19 +470,19 @@
 		<table name="#mpConsumes"> 18 37 40 43 </table>
 		<table name="#runSpd"> 0 7 7 7 </table>
 		<table name="#triggerLevel"> 1 2 3 4 </table>
-		<set name="icon" val="icon.skill30017" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="600" />
-		<set name="abnormalVisualEffect" val="SQUALL" />
-		<set name="effectPoint" val="2" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30017</icon>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
+		<abnormalVisualEffect>SQUALL</abnormalVisualEffect>
+		<effectPoint>2</effectPoint> <!-- Unconfirmed -->
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="defCritDamage" val="#defCrit" />
@@ -502,19 +502,19 @@
 	<skill id="30018" levels="1" name="Windy Illusion">
 		<!-- Updated to Ertheia -->
 		<!-- Removes all debuffs and becomes invincible against targeting for 10 sec. -->
-		<set name="icon" val="icon.skill30018" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="WIND_ILLUSION" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="41" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="300000" />
-		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30018</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>WIND_ILLUSION</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>41</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="Untargetable" />
 			<effect name="DispelByCategory">
@@ -529,20 +529,20 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 670 677 682 687 690 694 699 705 711 717 723 </table>
 		<table name="#power"> 533 561 589 617 645 673 701 729 743 757 771 </table>
-		<set name="icon" val="icon.skill30019" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="10" />
-		<set name="effectPoint" val="-687" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="80" />
-		<set name="hitTime" val="5500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="15000" />
-		<set name="isMagic" val="1" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30019</icon>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<effectPoint>-687</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>5500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<isMagic>1</isMagic>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -561,18 +561,18 @@
 	<skill id="30020" levels="1" name="Sayha's Fury">
 		<!-- Updated to Ertheia -->
 		<!-- For 30 sec., Received P./M. Critical Damage - 50%, and Speed + 70. Has a chance of striking an attacker with lightning and branding them with Storm Sign Stage 4. Requires a sword or blunt weapon. -->
-		<set name="icon" val="icon.skill30020" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalVisualEffect" val="SAYHA_FURY" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="40" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="300000" />
-		<set name="effectPoint" val="2" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30020</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<abnormalVisualEffect>SAYHA_FURY</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>40</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -596,18 +596,18 @@
 		<table name="#moveSpeed"> 50 70 </table>
 		<table name="#mpConsume"> 84 87 </table>
 		<table name="#resist"> 30 40 </table>
-		<set name="icon" val="icon.skill30022" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="effectPoint" val="687" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="hitTime" val="5500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="300000" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill30022</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<effectPoint>687</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>PARTY</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<hitTime>5500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -623,26 +623,26 @@
 	<skill id="30023" levels="1" name="Decoy Lock">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cannot change target. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="1000" />
-		<set name="effectPoint" val="-102" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>1000</hitTime>
+		<effectPoint>-102</effectPoint>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="30026" levels="4" name="Lightning Squall">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 50 Power added to M. Atk., and decreases Speed by 20. -->
 		<table name="#power"> 50 100 150 200 </table>
-		<set name="icon" val="icon.skill30026" />
-		<set name="abnormalTime" val="30" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="1600" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-711" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="1100" />
-		<set name="isMagic" val="4" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30026</icon>
+		<abnormalTime>30</abnormalTime> <!-- Unconfirmed -->
+		<affectRange>1600</affectRange> <!-- Unconfirmed -->
+		<effectPoint>-711</effectPoint> <!-- Unconfirmed -->
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<castRange>1100</castRange>
+		<isMagic>4</isMagic>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -655,14 +655,14 @@
 	<skill id="30027" levels="1" name="Destructive Bolt">
 		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 300 Power added to M. Atk. and has a 10% chance of branding target with Storm Sign Stage 4. -->
-		<set name="icon" val="icon.skill30026" />
-		<set name="affectRange" val="1600" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-711" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="1100" />
-		<set name="isMagic" val="4" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30026</icon>
+		<affectRange>1600</affectRange> <!-- Unconfirmed -->
+		<effectPoint>-711</effectPoint> <!-- Unconfirmed -->
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<castRange>1100</castRange>
+		<isMagic>4</isMagic>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="300" />
@@ -677,20 +677,20 @@
 		<!-- Attacks nearby target with 448 Power added to M. Atk. and locks them inside a storm for 5 sec. 10% more damage if target is debuffed. Requires a sword or blunt weapon. -->
 		<table name="#magicLvl"> 98 101 103 105 </table>
 		<table name="#power"> 448 465 473 481 </table>
-		<set name="icon" val="icon.iconskill30007" />
-		<set name="abnormalTime" val="5" /> <!-- Unconfirmed -->
-		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-707" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="1405" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="isMagic" val="7" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.iconskill30007</icon>
+		<abnormalTime>5</abnormalTime> <!-- Unconfirmed -->
+		<affectLimit>10-10</affectLimit> <!-- Unconfirmed -->
+		<affectRange>200</affectRange> <!-- Unconfirmed -->
+		<effectPoint>-707</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>AURA</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>1405</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<isMagic>7</isMagic>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -705,18 +705,18 @@
 	<skill id="30030" levels="1" name="Storm Captivity">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Trapped by a storm that gives continuous damage. -->
-		<set name="icon" val="icon.skill1042" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="-707" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill1042</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>-707</effectPoint>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="30031" levels="1" name="Magic Potential">
 		<!-- Increases Max. M. Critical Rate to 550. -->
-		<set name="icon" val="icon.skill30025" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30025</icon>
+		<operateType>P</operateType>
+		<magicLvl>85</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<!-- TODO cap stat="mCritRate" val="550" / -->
@@ -731,9 +731,9 @@
 		<table name="#mAtkSpd"> 1.05 1.05 1.10 1.10 1.10 1.15 1.20 1.30 1.30 1.30 1.30 1.30 1.30 1.30 1.30 1.30 1.30 </table>
 		<table name="#mCritRate"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 </table>
 		<table name="#mCritPower"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 </table>
-		<set name="icon" val="icon.skill30023" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30023</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtkMul">
@@ -779,9 +779,9 @@
 		<table name="#mDefAdd"> 0 0 0 0 0 0 533 949 1073 1214 1340 1511 1588 1668 1753 1842 1935 </table>
 		<table name="#mDefMul"> 1 1 1 1 1 1 1.03 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 </table>
 		<table name="#magicSuccRes"> 1 1.05 1.1 1.15 1.2 1.25 1.3 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 </table>
-		<set name="icon" val="icon.skill30024" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30024</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#mDefMul">
@@ -810,9 +810,9 @@
 		<table name="#regMp"> 1 3 5 12 12 12 12 12 12 12 12 12 12 </table>
 		<table name="#mReuse"> 0.9 0.85 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<table name="#MagicalMpConsumeRate"> 1 1 0.95 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 </table>
-		<set name="icon" val="icon.skill10504" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10504</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="regMp" val="#regMp" />
@@ -830,10 +830,10 @@
 		<!-- Attack Attribute Bonus + 10, Fire / Water / Wind / Earth / Holy Resistance + 10. -->
 		<table name="#magicLvl"> 76 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#res"> 10 20 22 24 26 30 32 34 36 38 40 </table>
-		<set name="icon" val="icon.skill11006" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11006</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="fireRes" val="#res" />
@@ -849,9 +849,9 @@
 		<!-- Hold/Mental Resistance + 30. -->
 		<table name="#pullRes"> 0 30 </table>
 		<table name="#hateRes"> 0 30 </table>
-		<set name="icon" val="icon.skill10005" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10005</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
 				<param HOLD="30" DERANGEMENT="30" PULL="#pullRes" HATE="#hateRes" />
@@ -862,10 +862,10 @@
 		<!-- INT + 2. -->
 		<table name="#INT"> 2 4 16 </table>
 		<table name="#magicLvl"> 40 76 85 </table>
-		<set name="icon" val="icon.skill11253" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11253</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="#INT" />

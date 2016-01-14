@@ -2,14 +2,14 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="2100" levels="1" name="Escape: 1 second">
 		<!-- Confirmed CT2.5 -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -26,13 +26,13 @@
 	</skill>
 	<skill id="2101" levels="1" name="Feed: General Strider">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Feed">
 				<param normal="200" ride="200" wyvern="0" />
@@ -41,13 +41,13 @@
 	</skill>
 	<skill id="2102" levels="1" name="Feed: Clan Hall Strider">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Feed">
 				<param normal="200" ride="450" wyvern="0" />
@@ -56,20 +56,20 @@
 	</skill>
 	<skill id="2103" levels="1" name="Mysterious Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="0" />
-		<set name="abnormalTime" val="300" />
-		<set name="abnormalType" val="BIG_HEAD" />
-		<set name="abnormalVisualEffect" val="BIG_HEAD" />
-		<set name="activateRate" val="0" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="trait" val="ETC" />
+		<abnormalLvl>0</abnormalLvl>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>BIG_HEAD</abnormalType>
+		<abnormalVisualEffect>BIG_HEAD</abnormalVisualEffect>
+		<activateRate>0</activateRate>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<trait>ETC</trait>
 		<cond msgId="113" addName="1">
 			<not>
 				<player transformationId="103" />
@@ -78,13 +78,13 @@
 	</skill>
 	<skill id="2104" levels="1" name="Greater Compressed Package of Soulshots: No-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -99,13 +99,13 @@
 	</skill>
 	<skill id="2105" levels="1" name="Greater Compressed Package of Soulshots: D-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -120,13 +120,13 @@
 	</skill>
 	<skill id="2106" levels="1" name="Greater Compressed Package of Soulshots: C-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -141,13 +141,13 @@
 	</skill>
 	<skill id="2107" levels="1" name="Greater Compressed Package of Soulshots: B-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -162,13 +162,13 @@
 	</skill>
 	<skill id="2108" levels="1" name="Greater Compressed Package of Soulshots: A-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -183,13 +183,13 @@
 	</skill>
 	<skill id="2109" levels="1" name="Greater Compressed Package of Soulshots: S-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -204,13 +204,13 @@
 	</skill>
 	<skill id="2110" levels="1" name="Greater Compressed Package of Spiritshots: No-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -225,13 +225,13 @@
 	</skill>
 	<skill id="2111" levels="1" name="Greater Compressed Package of Spiritshots: D-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -246,13 +246,13 @@
 	</skill>
 	<skill id="2112" levels="1" name="Greater Compressed Package of Spiritshots: C-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -267,13 +267,13 @@
 	</skill>
 	<skill id="2113" levels="1" name="Greater Compressed Package of Spiritshots: B-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -288,13 +288,13 @@
 	</skill>
 	<skill id="2114" levels="1" name="Greater Compressed Package of Spiritshots: A-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -309,13 +309,13 @@
 	</skill>
 	<skill id="2115" levels="1" name="Greater Compressed Package of Spiritshots: S-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -330,13 +330,13 @@
 	</skill>
 	<skill id="2116" levels="1" name="Greater Compressed Package of Blessed Spiritshots: No-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -351,13 +351,13 @@
 	</skill>
 	<skill id="2117" levels="1" name="Greater Compressed Package of Blessed Spiritshots: D-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -372,13 +372,13 @@
 	</skill>
 	<skill id="2118" levels="1" name="Greater Compressed Package of Blessed Spiritshots: C-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -393,13 +393,13 @@
 	</skill>
 	<skill id="2119" levels="1" name="Greater Compressed Package of Blessed Spiritshots: B-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -414,13 +414,13 @@
 	</skill>
 	<skill id="2120" levels="1" name="Greater Compressed Package of Blessed Spiritshots: A-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -435,13 +435,13 @@
 	</skill>
 	<skill id="2121" levels="1" name="Greater Compressed Package of Blessed Spiritshots: S-grade">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -456,32 +456,32 @@
 	</skill>
 	<skill id="2122" levels="1" name="Facelifting Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5235" /> <!-- Facelifting Potion - A -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5235</itemConsumeId> <!-- Facelifting Potion - A -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeFace" />
 		</for>
 	</skill>
 	<skill id="2123" levels="1" name="Facelifting Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5236" /> <!-- Facelifting Potion - B -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5236</itemConsumeId> <!-- Facelifting Potion - B -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeFace">
 				<param value="1" />
@@ -490,16 +490,16 @@
 	</skill>
 	<skill id="2124" levels="1" name="Facelifting Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5237" /> <!-- Facelifting Potion - C -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5237</itemConsumeId> <!-- Facelifting Potion - C -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeFace">
 				<param value="2" />
@@ -508,32 +508,32 @@
 	</skill>
 	<skill id="2125" levels="1" name="Dye Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5238" /> <!-- Dye Potion - A -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5238</itemConsumeId> <!-- Dye Potion - A -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairColor" />
 		</for>
 	</skill>
 	<skill id="2126" levels="1" name="Dye Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5239" /> <!-- Dye Potion - B -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5239</itemConsumeId> <!-- Dye Potion - B -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairColor">
 				<param value="1" />
@@ -542,16 +542,16 @@
 	</skill>
 	<skill id="2127" levels="1" name="Dye Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5240" /> <!-- Dye Potion - C -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5240</itemConsumeId> <!-- Dye Potion - C -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairColor">
 				<param value="2" />
@@ -560,16 +560,16 @@
 	</skill>
 	<skill id="2128" levels="1" name="Dye Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5241" /> <!-- Dye Potion - D -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5241</itemConsumeId> <!-- Dye Potion - D -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairColor">
 				<param value="3" />
@@ -578,32 +578,32 @@
 	</skill>
 	<skill id="2129" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5242" /> <!-- Hair Style Change Potion - A -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5242</itemConsumeId> <!-- Hair Style Change Potion - A -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle" />
 		</for>
 	</skill>
 	<skill id="2130" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5243" /> <!-- Hair Style Change Potion - B -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5243</itemConsumeId> <!-- Hair Style Change Potion - B -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle">
 				<param value="1" />
@@ -612,16 +612,16 @@
 	</skill>
 	<skill id="2131" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5244" /> <!-- Hair Style Change Potion - C -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5244</itemConsumeId> <!-- Hair Style Change Potion - C -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle">
 				<param value="2" />
@@ -630,16 +630,16 @@
 	</skill>
 	<skill id="2132" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5245" /> <!-- Hair Style Change Potion - D -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5245</itemConsumeId> <!-- Hair Style Change Potion - D -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle">
 				<param value="3" />
@@ -648,16 +648,16 @@
 	</skill>
 	<skill id="2133" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5246" /> <!-- Hair Style Change Potion - E -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5246</itemConsumeId> <!-- Hair Style Change Potion - E -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle">
 				<param value="4" />
@@ -666,16 +666,16 @@
 	</skill>
 	<skill id="2134" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5247" /> <!-- Hair Style Change Potion - F -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5247</itemConsumeId> <!-- Hair Style Change Potion - F -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="1518">
 			<player sex="1" />
 		</cond>
@@ -687,16 +687,16 @@
 	</skill>
 	<skill id="2135" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5248" /> <!-- Hair Style Change Potion - G -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5248</itemConsumeId> <!-- Hair Style Change Potion - G -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="1518">
 			<player sex="1" />
 		</cond>
@@ -708,13 +708,13 @@
 	</skill>
 	<skill id="2136" levels="1" name="Rice Cake">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
 				<param power="3" />
@@ -726,13 +726,13 @@
 	</skill>
 	<skill id="2137" levels="1" name="Summon Regular Tree">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
 				<param npcId="13006" npcCount="1" despawnDelay="1200000" />
@@ -741,13 +741,13 @@
 	</skill>
 	<skill id="2138" levels="1" name="Summon Special Tree">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
 				<param npcId="13007" npcCount="1" despawnDelay="1200000" />
@@ -756,20 +756,20 @@
 	</skill>
 	<skill id="2139" levels="1" name="Special Tree Recovery Bonus">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="99" />
-		<set name="abnormalTime" val="45" />
-		<set name="abnormalType" val="BUFF_TREE" />
-		<set name="affectRange" val="200" />
-		<set name="icon" val="icon.skill1044" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="-1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="AURA" />
+		<abnormalLvl>99</abnormalLvl>
+		<abnormalTime>45</abnormalTime>
+		<abnormalType>BUFF_TREE</abnormalType>
+		<affectRange>200</affectRange>
+		<icon>icon.skill1044</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>-1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.2" />
@@ -778,239 +778,239 @@
 		</for>
 	</skill>
 	<skill id="2140" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2141" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2142" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2143" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2144" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2145" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2146" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2147" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2148" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2149" levels="1" name="Item - Carol Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2150" levels="1" name="Soulshot: D-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2151" levels="1" name="Soulshot: C-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2152" levels="1" name="Soulshot: B-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2153" levels="1" name="Soulshot: A-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2154" levels="1" name="Soulshot: S-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2155" levels="1" name="Spiritshot: D-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2156" levels="1" name="Spiritshot: C-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2157" levels="1" name="Spiritshot: B-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2158" levels="1" name="Spiritshot: A-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2159" levels="1" name="Spiritshot: S-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2160" levels="1" name="Blessed Spiritshot: D-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2161" levels="1" name="Blessed Spiritshot: C-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2162" levels="1" name="Blessed Spiritshot: B-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2163" levels="1" name="Blessed Spiritshot: A-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2164" levels="1" name="Blessed Spiritshot: S-Grade">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2165" levels="1" name="Momentum Stone">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="FocusMomentum">
 				<param maxCharges="2" />
@@ -1019,13 +1019,13 @@
 	</skill>
 	<skill id="2166" levels="2" name="CP Potion">
 		<table name="#amount"> 50 200 </table>
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHeal">
 				<param power="#amount" />
@@ -1036,17 +1036,17 @@
 		<!-- Confirmed CT2.5 -->
 		<table name="#amount"> 500 5000 100000 500000 </table>
 		<table name="#itemConsumeId"> 5593 5594 5595 9898 </table>
-		<set name="hitTime" val="200" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="#itemConsumeId" />
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>#itemConsumeId</itemConsumeId>
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="GiveSp">
 				<param sp="#amount" />
@@ -1056,23 +1056,23 @@
 	<skill id="2168" levels="6" name="Lucky Charm">
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
 		<table name="#itemConsumeId"> 5703 5803 5804 5805 5806 5807 </table>
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="REDUCE_DROP_PENALTY" />
-		<set name="hitTime" val="2000" />
-		<set name="icon" val="icon.etc_orcish_talisman_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="#itemConsumeId" />
-		<set name="magicLvl" val="-1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>REDUCE_DROP_PENALTY</abnormalType>
+		<hitTime>2000</hitTime>
+		<icon>icon.etc_orcish_talisman_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>#itemConsumeId</itemConsumeId>
+		<magicLvl>-1</magicLvl>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="reduceDeathPenaltyByRaid" val="0" />
@@ -1085,18 +1085,18 @@
 		<table name="#icons"> icon.etc_potion_of_acumen2_i00 icon.etc_potion_of_acumen3_i00 </table>
 		<table name="#magicLvl"> 35 48 </table>
 		<table name="#mAtkSpd"> 1.23 1.3 </table>
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="1200" />
-		<set name="abnormalType" val="CASTING_TIME_DOWN" />
-		<set name="icon" val="#icons" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CASTING_TIME_DOWN</abnormalType>
+		<icon>#icons</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
@@ -1104,19 +1104,19 @@
 		</for>
 	</skill>
 	<skill id="2170" levels="1" name="Scroll: Cancel Sleep">
-		<set name="castRange" val="400" />
-		<set name="coolTime" val="1000" />
-		<set name="effectPoint" val="1" />
-		<set name="effectRange" val="600" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="6037" /> <!-- Waking Scroll -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="ONE" />
+		<castRange>400</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>1</effectPoint>
+		<effectRange>600</effectRange>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>6037</itemConsumeId> <!-- Waking Scroll -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlot">
 				<param dispel="SLEEP,1" />
@@ -1128,14 +1128,14 @@
 		<table name="#extractableItems">
 			5917,1,10;5918,1,10;5919,1,10;5920,1,10;736,1,60
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1151,14 +1151,14 @@
 		<table name="#extractableItems">
 			5922,1,2.5;5923,1,2.5;5924,1,2.5;5925,1,2.5;5926,1,2.5;5927,1,2.5;5928,1,2.5;5929,1,2.5;5930,1,2.5;5931,1,2.5;5932,1,2.5;5933,1,2.5;5934,1,2.5;5935,1,2.5;5936,1,2.5;5937,1,2.5;5938,1,2.5;5939,1,2.5;5940,1,2.5;5941,1,2.5;5942,1,25;5943,1,25
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1174,14 +1174,14 @@
 		<table name="#extractableItems">
 			5945,1,5;5946,1,5;5947,1,5;5948,1,5;5949,1,5;5950,1,5;5951,1,5;5952,1,5;5953,1,5;5954,1,5;5942,1,25;5943,1,25
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1199,14 +1199,14 @@
 			6017,2,10;6020,2,20;6014,1,35;6016,1,35
 			6012,1,20;6018,2,20;6019,2,20;6013,1,40
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1222,14 +1222,14 @@
 		<table name="#extractableItems">
 			6017,2,20;6020,2,20;6016,1,35;6015,2,25
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1248,14 +1248,14 @@
 			6001,1,1.6;5971,1,1.6;5970,1,1.6;4408,1,1.6;4409,1,1.6;5986,1,1.6;5987,1,1.6;5993,1,1.6;5999,1,1.6;6000,1,1.6;5991,1,10.25;5992,1,10.25;5997,1,10.25;5998,1,10.25;5989,1,14.34;5990,1,14.33;5996,1,14.33
 			6001,1,3;5971,1,3;5970,1,3;4408,1,3;4409,1,3;5986,1,2;5987,1,2;5993,1,2;5999,1,2;6000,1,2;5991,1,2.5;5992,1,2.5;5997,1,2.6;5998,1,2.6;5989,1,21.6;5990,1,21.6;5996,1,21.6
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1268,16 +1268,16 @@
 	</skill>
 	<skill id="2177" levels="1" name="Blessed Scroll of Escape: Clan Hall">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="200" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5858" /> <!-- Blessed Scroll of Escape: Clan Hall -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5858</itemConsumeId> <!-- Blessed Scroll of Escape: Clan Hall -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1295,16 +1295,16 @@
 	</skill>
 	<skill id="2178" levels="1" name="Blessed Scroll of Escape: Castle">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="200" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="5859" /> <!-- Blessed Scroll of Escape: Castle -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>5859</itemConsumeId> <!-- Blessed Scroll of Escape: Castle -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1320,19 +1320,19 @@
 		</for>
 	</skill>
 	<skill id="2179" levels="1" name="Blessed Scroll of Resurrection: Pet">
-		<set name="castRange" val="400" />
-		<set name="effectPoint" val="1" />
-		<set name="effectRange" val="600" />
-		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="6387" /> <!-- Blessed Scroll of Resurrection for Pets -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="500" />
-		<set name="targetType" val="PC_BODY" />
+		<castRange>400</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>6387</itemConsumeId> <!-- Blessed Scroll of Resurrection for Pets -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<coolTime>500</coolTime>
+		<targetType>PC_BODY</targetType>
 		<cond msgId="113" addName="1">
 			<target npcType="L2PetInstance" />
 		</cond>
@@ -1347,13 +1347,13 @@
 	</skill>
 	<skill id="2180" levels="1" name="Feed: Castle Strider">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Feed">
 				<param normal="200" ride="450" wyvern="450" />
@@ -1361,101 +1361,101 @@
 		</for>
 	</skill>
 	<skill id="2181" levels="1" name="Item - Fishing Shot">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="2182" levels="1" name="Item - Fishing Shot">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="2183" levels="1" name="Item - Fishing Shot">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="2184" levels="1" name="Item - Fishing Shot">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="2185" levels="1" name="Item - Fishing Shot">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="2186" levels="1" name="Item - Fishing Shot">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="2187" levels="1" name="Item - Special Sound Crystal">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2188" levels="1" name="Golden Spice">
 		<!-- Confirmed CT2.5 -->
-		<set name="castRange" val="40" />
-		<set name="effectPoint" val="-150" />
-		<set name="effectRange" val="200" />
-		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="6643" /> <!-- Old Golden Spice -->
-		<set name="magicLvl" val="80" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="500" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="ONE" />
+		<castRange>40</castRange>
+		<effectPoint>-150</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>6643</itemConsumeId> <!-- Old Golden Spice -->
+		<magicLvl>80</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ONE</targetType>
 	</skill>
 	<skill id="2189" levels="1" name="Crystal Spice">
 		<!-- Confirmed CT2.5 -->
-		<set name="castRange" val="40" />
-		<set name="effectPoint" val="-150" />
-		<set name="effectRange" val="200" />
-		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="6644" /> <!-- Old Crystal Spice -->
-		<set name="magicLvl" val="80" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="500" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="ONE" />
+		<castRange>40</castRange>
+		<effectPoint>-150</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>6644</itemConsumeId> <!-- Old Crystal Spice -->
+		<magicLvl>80</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ONE</targetType>
 	</skill>
 	<skill id="2190" levels="9" name="Small Green Nimble Fish">
 		<!-- Confirmed CT2.5 -->
@@ -1470,14 +1470,14 @@
 			6908,8,39.68;6911,2,37.2
 			6908,12,26.5;6915,1,42.4
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1501,14 +1501,14 @@
 			6908,16,30;6911,4,28.125
 			6908,12,38.5;6915,2,30.8
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1532,14 +1532,14 @@
 			6904,1,2.0688;6908,10,19.7028;6909,2,16.5504;6911,4,12.9301;6921,4,13.7922
 			6904,1,2.61;6908,16,17.4;6909,4,13.05;6915,4,14.5
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1563,14 +1563,14 @@
 			6904,1,2.8512;6908,20,13.5772;6909,4,11.4049;6911,4,17.8201;6921,4,19.0082
 			6904,1,3.648;6908,16,24.3198;6909,4,18.2399;6915,4,20.2666
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1594,14 +1594,14 @@
 			7686,1,6.72;6910,2,13.44;6912,8,18.6667
 			7697,1,6.864;6910,1,27.456;6916,4,25.4222
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1625,14 +1625,14 @@
 			7686,1,6.798;6905,1,6.798;6910,2,13.596;6912,8,18.8833
 			7697,1,6.942;6906,1,6.942;6910,2,13.884;6916,8,12.8555
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1656,14 +1656,14 @@
 			7686,1,9.648;6905,1,9.648;6910,2,19.296;6912,8,21.44
 			7697,1,10.29;6906,1,10.29;6910,2,20.58;6916,8,19.0555
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1687,14 +1687,14 @@
 			7686,1,12;6905,1,12;6910,2,24;6912,16,13.3334
 			7697,1,12.234;6906,1,12.234;6910,2,24.468;6916,8,18.1248
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1718,14 +1718,14 @@
 			7686,2,10.008;6905,1,15.0121;6910,4,15.0121;6912,16,16.6802
 			7697,2,10.208;6906,1,15.3121;6910,4,15.3121;6916,8,22.6844
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1743,14 +1743,14 @@
 			6908,12,41.6;7609,16,33.28
 			6908,24,26.5;7609,26,24.2284
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />

@@ -3,11 +3,11 @@
 	<skill id="1901" levels="1" name="Aim">
 		<!-- Glory Days confirmed -->
 		<!-- Elemental Resistance + 10. -->
-		<set name="icon" val="icon.skill1901" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1901</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="windRes" val="10" />
@@ -20,11 +20,11 @@
 	<skill id="1902" levels="1" name="Mental Fortress">
 		<!-- Glory Days confirmed -->
 		<!-- Debuff Resistance + 1%. -->
-		<set name="icon" val="icon.skill1902" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1902</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="1" />
@@ -34,11 +34,11 @@
 	<skill id="1903" levels="1" name="Fitness">
 		<!-- Glory Days confirmed -->
 		<!-- Increases HP Recovery bonus by 1 and MP Recovery bonus by 1. -->
-		<set name="icon" val="icon.skill1903" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1903</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.01" />
@@ -50,20 +50,20 @@
 		<table name="#abnormalTime"> 10 12 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Cancels all debuffs and renders immune for 10 seconds. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="abnormalType" val="RACE_HUMAN1" />
-		<set name="icon" val="icon.skill1904" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="reuseDelay" val="600000" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalType>RACE_HUMAN1</abnormalType>
+		<icon>icon.skill1904</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="DispelBySlot">
 				<param dispel="POISON,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;BLEEDING,9;STUN,9" />
@@ -79,11 +79,11 @@
 	<skill id="1905" levels="1" name="Swiftness">
 		<!-- Glory Days confirmed -->
 		<!-- Increases Atk. Spd. by 4, Casting Spd. by 3, and Speed when not in combat by 13. -->
-		<set name="icon" val="icon.skill1905" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1905</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="pAtkSpd" val="4" />
@@ -97,11 +97,11 @@
 	<skill id="1906" levels="1" name="Blessing of Water">
 		<!-- Glory Days confirmed -->
 		<!-- Increases Water resistance by 20. -->
-		<set name="icon" val="icon.skill1906" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1906</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="waterRes" val="20" />
@@ -112,20 +112,20 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 15 sec., P. Evasion/ M. Evasion + 90, and Speed + 50. -->
 		<table name="#bonus"> 0 90 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="RACE_ELF1" />
-		<set name="icon" val="icon.skill1907" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="reuseDelay" val="600000" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>RACE_ELF1</abnormalType>
+		<icon>icon.skill1907</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Buff">
 				<add stat="rEvas" val="90" />
@@ -139,11 +139,11 @@
 	<skill id="1908" levels="1" name="Delicacy">
 		<!-- Glory Days confirmed -->
 		<!-- P. Critical Rate + 10 and M. Critical Rate + 10. -->
-		<set name="icon" val="icon.skill1908" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1908</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="10" />
@@ -154,11 +154,11 @@
 	<skill id="1909" levels="1" name="Sharpness">
 		<!-- Glory Days confirmed -->
 		<!-- Increases P. Critical Damage and M. Critical Damage by 1%. -->
-		<set name="icon" val="icon.skill1909" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1909</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.01" />
@@ -169,11 +169,11 @@
 	<skill id="1910" levels="1" name="Dark Presence">
 		<!-- Glory Days confirmed -->
 		<!-- STR and INT + 1 at night. -->
-		<set name="icon" val="icon.skill1910" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1910</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="1">
@@ -188,11 +188,11 @@
 	<skill id="1911" levels="1" name="Blessing of Wind">
 		<!-- Glory Days confirmed -->
 		<!-- Increases Wind resistance by 20. -->
-		<set name="icon" val="icon.skill1911" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1911</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="windRes" val="20" />
@@ -203,20 +203,20 @@
 		<!-- Glory Days confirmed -->
 		<!-- Cancels all your debuffs. For 5 seconds, you cannot be targeted. -->
 		<table name="#abnormalTime"> 5 6 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="abnormalType" val="RACE_DARKELF1" />
-		<set name="icon" val="icon.skill1912" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="reuseDelay" val="600000" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0.2" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalType>RACE_DARKELF1</abnormalType>
+		<icon>icon.skill1912</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0.2</hitCancelTime>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
@@ -231,11 +231,11 @@
 	<skill id="1913" levels="1" name="Life Siphon">
 		<!-- Glory Days confirmed -->
 		<!-- Absorbs 1% of the damage inflicted as HP. -->
-		<set name="icon" val="icon.skill1913" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1913</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
 				<param amount="1" chance="80" />
@@ -246,20 +246,20 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 60 sec., P. Atk. + 10%, M. Atk. + 20%, Atk. Spd., + 10%, and Casting Spd. + 10%. P. Def. / M. Def. - 10%. -->
 		<table name="#def"> 0.9 1 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="RACE_ORC1" />
-		<set name="icon" val="icon.skill1914" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="basicProperty" val="NONE" />
-		<set name="reuseDelay" val="600000" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0.2" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>RACE_ORC1</abnormalType>
+		<icon>icon.skill1914</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<reuseDelay>600000</reuseDelay>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0.2</hitCancelTime>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.1" />
@@ -274,11 +274,11 @@
 	<skill id="1915" levels="1" name="Blessing of Fire">
 		<!-- Glory Days confirmed -->
 		<!-- Increases Fire resistance by 20. -->
-		<set name="icon" val="icon.skill1915" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1915</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="fireRes" val="20" />
@@ -288,11 +288,11 @@
 	<skill id="1916" levels="1" name="Energetic">
 		<!-- Glory Days confirmed -->
 		<!-- HP/MP/CP + 1%. -->
-		<set name="icon" val="icon.skill1916" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1916</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.01" />
@@ -306,11 +306,11 @@
 	<skill id="1917" levels="1" name="Undying Will">
 		<!-- Glory Days confirmed -->
 		<!-- When receiving damage while HP is below 30%, becomes invincible for 5 seconds. 1 time every 5 minutes only. -->
-		<set name="icon" val="icon.skill1917" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1917</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<cond addName="1" msgId="113">
 			<player hp="30" />
 		</cond>
@@ -328,21 +328,21 @@
 		<!-- Glory Days confirmed -->
 		<!-- TODO: Check what the second level is doing -->
 		<!-- Becomes invincible. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="RACE_ORC2" />
-		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
-		<set name="icon" val="icon.skill1917" />
-		<set name="operateType" val="A2" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="reuseDelay" val="300000" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0.2" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>RACE_ORC2</abnormalType>
+		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
+		<icon>icon.skill1917</icon>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0.2</hitCancelTime>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
@@ -356,11 +356,11 @@
 	<skill id="1919" levels="1" name="Dexterity">
 		<!-- Glory Days confirmed -->
 		<!-- Skill Cooldown - 1%. -->
-		<set name="icon" val="icon.skill1919" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1919</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pReuse" val="0.99" />
@@ -372,20 +372,20 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 5 sec., reflects 50% of received damage to attacker and recovers 460 HP every second. -->
 		<table name="#abnormalTime"> 5 7 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="abnormalType" val="RACE_DWAF1" />
-		<set name="icon" val="icon.skill1920" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="basicProperty" val="NONE" />
-		<set name="reuseDelay" val="600000" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0.2" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalType>RACE_DWAF1</abnormalType>
+		<icon>icon.skill1920</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<reuseDelay>600000</reuseDelay>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0.2</hitCancelTime>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="HealOverTime" ticks="1">
 				<param power="92" />
@@ -398,11 +398,11 @@
 	<skill id="1921" levels="1" name="Blessing of Earth">
 		<!-- Glory Days confirmed -->
 		<!-- Increases Earth resistance by 20. -->
-		<set name="icon" val="icon.skill1921" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1921</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="earthRes" val="20" />
@@ -414,27 +414,27 @@
 		<!-- Glory Days confirmed -->
 		<!-- Knocks Down nearby enemies for 3 sec., and decreases their P. Def./ M. Def. by 50%. -->
 		<table name="#abnormalTime"> 3 5 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="icon" val="icon.skill1922" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="reuseDelay" val="300000" />
-		<set name="effectPoint" val="-2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="isDebuff" val="true" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0.2" />
-		<set name="lvlBonusRate" val="20" />
-		<set name="activateRate" val="100" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="affectRange" val="200" />
-		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<icon>icon.skill1922</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<isDebuff>true</isDebuff>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0.2</hitCancelTime>
+		<lvlBonusRate>20</lvlBonusRate>
+		<activateRate>100</activateRate>
+		<trait>KNOCKDOWN</trait>
+		<affectRange>200</affectRange>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="KnockBack">
 				<param distance="50" speed="400" knockDown="true" />
@@ -458,11 +458,11 @@
 	<skill id="1923" levels="1" name="Battle Instinct">
 		<!-- Glory Days confirmed -->
 		<!-- Increases PvP damage by 1%. -->
-		<set name="icon" val="icon.skill1923" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1923</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pvpPhysDmg" val="1.01" />
@@ -474,11 +474,11 @@
 	<skill id="1924" levels="1" name="Dark Silence">
 		<!-- Glory Days confirmed -->
 		<!-- Increases Dark Attack Resistance by 20. -->
-		<set name="icon" val="icon.skill1924" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1924</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
@@ -490,22 +490,22 @@
 		<!-- For 60 seconds, blocks debuff attacks 2 times. -->
 		<table name="#res"> 0 15 </table>
 		<table name="#debuffBlock"> 2 3 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="RACE_KAMAEL1" />
-		<set name="icon" val="icon.skill1925" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="200" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="reuseDelay" val="600000" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0.2" />
-		<set name="activateRate" val="0" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>RACE_KAMAEL1</abnormalType>
+		<icon>icon.skill1925</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>200</hitTime>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<reuseDelay>600000</reuseDelay>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0.2</hitCancelTime>
+		<activateRate>0</activateRate>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="DebuffBlock">
 				<param times="#debuffBlock" />
@@ -524,21 +524,21 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 5 minutes, transforms into ultimate combat form. -->
 		<!-- The p(m)atk/p(m)def multiplier are gone in Lindvior in benefit of higher stat in transform template -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="300" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="icon" val="icon.skill1926" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2500" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="reuseDelay" val="3600000" />
-		<set name="rideState" val="NONE" />
-		<set name="specialLevel" val="-1" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<icon>icon.skill1926</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2500</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<reuseDelay>3600000</reuseDelay>
+		<rideState>NONE</rideState>
+		<specialLevel>-1</specialLevel>
+		<staticReuse>true</staticReuse>
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
@@ -555,14 +555,14 @@
 	<skill id="1927" levels="1" name="Sigel Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Casts Sigel Force on entire party, which increases P Atk. by 1%. -->
-		<set name="icon" val="icon.icon_sigel" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="3" />
-		<set name="toggleGroupId" val="0" />
+		<icon>icon.icon_sigel</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>3</isMagic>
+		<toggleGroupId>0</toggleGroupId>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1928" skillLevel="1" /> <!-- Sigel Force -->
@@ -577,23 +577,23 @@
 	<skill id="1928" levels="1" name="Sigel Force">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 1%. -->
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_SIGEL" />
-		<set name="affectRange" val="1600" />
-		<set name="canBeDispelled" val="false" />
-		<set name="icon" val="icon.icon_sigel_01" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A6" />
-		<set name="targetType" val="PARTY" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_SIGEL</abnormalType>
+		<affectRange>1600</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<icon>icon.icon_sigel_01</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>A6</operateType>
+		<targetType>PARTY</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.01" />
@@ -603,14 +603,14 @@
 	<skill id="1929" levels="1" name="Tyrr Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Casts Tyrr Force on entire party, which increases P. Critical Rate by 1%. -->
-		<set name="icon" val="icon.icon_tir" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="3" />
-		<set name="toggleGroupId" val="0" />
+		<icon>icon.icon_tir</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>3</isMagic>
+		<toggleGroupId>0</toggleGroupId>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1930" skillLevel="1" /> <!-- Tyrr Force -->
@@ -620,23 +620,23 @@
 	<skill id="1930" levels="1" name="Tyrr Force">
 		<!-- Glory Days confirmed -->
 		<!-- P. Critical Rate + 1%. -->
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_TIR" />
-		<set name="affectRange" val="1600" />
-		<set name="canBeDispelled" val="false" />
-		<set name="icon" val="icon.icon_tir_01" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A6" />
-		<set name="targetType" val="PARTY" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_TIR</abnormalType>
+		<affectRange>1600</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<icon>icon.icon_tir_01</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>A6</operateType>
+		<targetType>PARTY</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.01" />
@@ -646,14 +646,14 @@
 	<skill id="1931" levels="1" name="Othell Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Casts Othell Force on entire party, which increases Atk. Spd. by 1%. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="0" />
-		<set name="icon" val="icon.icon_othel" />
-		<set name="operateType" val="AU" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="3" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>0</toggleGroupId>
+		<icon>icon.icon_othel</icon>
+		<operateType>AU</operateType>
+		<magicLvl>85</magicLvl>
+		<targetType>SELF</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1932" skillLevel="1" /> <!-- Othell Force -->
@@ -663,23 +663,23 @@
 	<skill id="1932" levels="1" name="Othell Force">
 		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 1%. -->
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_OTHEL" />
-		<set name="affectRange" val="1600" />
-		<set name="canBeDispelled" val="false" />
-		<set name="icon" val="icon.icon_othel_01" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A6" />
-		<set name="targetType" val="PARTY" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_OTHEL</abnormalType>
+		<affectRange>1600</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<icon>icon.icon_othel_01</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>A6</operateType>
+		<targetType>PARTY</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.01" />
@@ -689,14 +689,14 @@
 	<skill id="1933" levels="1" name="Yul Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Casts Yul Force on entire party, which increases MP Recovery Bonus by 50%. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="0" />
-		<set name="icon" val="icon.icon_yr" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="3" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>0</toggleGroupId>
+		<icon>icon.icon_yr</icon>
+		<magicLvl>85</magicLvl>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1934" skillLevel="1" /> <!-- Yul Force -->
@@ -706,23 +706,23 @@
 	<skill id="1934" levels="1" name="Yul Force">
 		<!-- Glory Days confirmed -->
 		<!-- MP Recovery Bonus + 50%. -->
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_YR" />
-		<set name="affectRange" val="1600" />
-		<set name="canBeDispelled" val="false" />
-		<set name="icon" val="icon.icon_yr_01" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A6" />
-		<set name="targetType" val="PARTY" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_YR</abnormalType>
+		<affectRange>1600</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<icon>icon.icon_yr_01</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>A6</operateType>
+		<targetType>PARTY</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.5" />
@@ -732,14 +732,14 @@
 	<skill id="1935" levels="1" name="Feoh Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Casts Feoh Force on entire party, which increases Casting Spd. by 1%. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="0" />
-		<set name="icon" val="icon.icon_feoh" />
-		<set name="operateType" val="AU" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="3" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>0</toggleGroupId>
+		<icon>icon.icon_feoh</icon>
+		<operateType>AU</operateType>
+		<magicLvl>85</magicLvl>
+		<targetType>SELF</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1936" skillLevel="1" /> <!-- Feoh Force -->
@@ -749,23 +749,23 @@
 	<skill id="1936" levels="1" name="Feoh Force">
 		<!-- Glory Days confirmed -->
 		<!-- Casting Spd. + 1%. -->
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_FEOH" />
-		<set name="affectRange" val="1600" />
-		<set name="canBeDispelled" val="false" />
-		<set name="icon" val="icon.icon_feoh_01" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A6" />
-		<set name="targetType" val="PARTY" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_FEOH</abnormalType>
+		<affectRange>1600</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<icon>icon.icon_feoh_01</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>A6</operateType>
+		<targetType>PARTY</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.01" />
@@ -775,14 +775,14 @@
 	<skill id="1937" levels="1" name="Wynn Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Casts Wynn Force on entire party, which decreases P./M. Skill MP Consumption by 3%. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="0" />
-		<set name="icon" val="icon.icon_wynn" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="3" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>0</toggleGroupId>
+		<icon>icon.icon_wynn</icon>
+		<magicLvl>85</magicLvl>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="5">
 				<param skillId="1938" skillLevel="1" /> <!-- Wynn Force -->
@@ -792,23 +792,23 @@
 	<skill id="1938" levels="1" name="Wynn Force">
 		<!-- Glory Days confirmed -->
 		<!-- P./M. Skill MP Consumption - 3%. -->
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_WYNN" />
-		<set name="affectRange" val="1600" />
-		<set name="canBeDispelled" val="false" />
-		<set name="icon" val="icon.icon_wynn_01" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A6" />
-		<set name="targetType" val="PARTY" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_WYNN</abnormalType>
+		<affectRange>1600</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<icon>icon.icon_wynn_01</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>A6</operateType>
+		<targetType>PARTY</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.97" />
@@ -819,14 +819,14 @@
 	<skill id="1939" levels="1" name="Aeore Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Casts Aeore Force on entire party, which increases M. Atk. by 1%. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="0" />
-		<set name="icon" val="icon.icon_eolh" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="5000" />
-		<set name="isMagic" val="3" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>0</toggleGroupId>
+		<icon>icon.icon_eolh</icon>
+		<magicLvl>85</magicLvl>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1940" skillLevel="1" /> <!-- Aeore Force -->
@@ -836,23 +836,23 @@
 	<skill id="1940" levels="1" name="Aeore Force">
 		<!-- Glory Days confirmed -->
 		<!-- M. Atk. + 1%. -->
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_EOLH" />
-		<set name="affectRange" val="1600" />
-		<set name="canBeDispelled" val="false" />
-		<set name="icon" val="icon.icon_eolh_01" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A6" />
-		<set name="targetType" val="PARTY" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_EOLH</abnormalType>
+		<affectRange>1600</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<icon>icon.icon_eolh_01</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>A6</operateType>
+		<targetType>PARTY</targetType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.01" />
@@ -862,18 +862,18 @@
 	<skill id="1941" levels="1" name="Physical Nail Attack">
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts consecutive attacks using a Demon's claws. -->
-		<set name="effectRange" val="400" />
-		<set name="icon" val="icon.skill0539" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="1" />
-		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="720" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="reuseDelay" val="3000" />
+		<effectRange>400</effectRange>
+		<icon>icon.skill0539</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<mpConsume>1</mpConsume>
+		<hitTime>1080</hitTime>
+		<coolTime>720</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<reuseDelay>3000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="13158" />
@@ -883,21 +883,21 @@
 	<skill id="1942" levels="1" name="Wing Storm">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with spread wings. -->
-		<set name="affectLimit" val="5-12" />
-		<set name="affectRange" val="150" />
-		<set name="icon" val="icon.skill0492" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="1" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="720" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="reuseDelay" val="4000" />
+		<affectLimit>5-12</affectLimit>
+		<affectRange>150</affectRange>
+		<icon>icon.skill0492</icon>
+		<operateType>A1</operateType>
+		<targetType>AURA</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<mpConsume>1</mpConsume>
+		<castRange>40</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1080</hitTime>
+		<coolTime>720</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<reuseDelay>4000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="9000" />
@@ -907,22 +907,22 @@
 	<skill id="1943" levels="1" name="Wing Rush">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks with spread wings. Strikes all in target rush area. -->
-		<set name="affectLimit" val="5-12" />
-		<set name="affectRange" val="150" />
-		<set name="icon" val="icon.skill0540" />
-		<set name="operateType" val="DA1" />
-		<set name="targetType" val="AREA" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="1" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="600" />
-		<set name="flyType" val="CHARGE" />
-		<set name="hitTime" val="800" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="reuseDelay" val="5000" />
+		<affectLimit>5-12</affectLimit>
+		<affectRange>150</affectRange>
+		<icon>icon.skill0540</icon>
+		<operateType>DA1</operateType>
+		<targetType>AREA</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<mpConsume>1</mpConsume>
+		<castRange>600</castRange>
+		<effectRange>600</effectRange>
+		<flyType>CHARGE</flyType>
+		<hitTime>800</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<reuseDelay>5000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -936,21 +936,21 @@
 	<skill id="1944" levels="1" name="Death Arrow">
 		<!-- Glory Days confirmed -->
 		<!-- Shoots a death arrow at the enemy. -->
-		<set name="attributeType" val="WIND" />
-		<set name="attributeValue" val="20" />
-		<set name="icon" val="icon.skill1431" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="1" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="hitTime" val="1200" />
-		<set name="reuseDelay" val="2000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="isMagic" val="1" />
+		<attributeType>WIND</attributeType>
+		<attributeValue>20</attributeValue>
+		<icon>icon.skill1431</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<mpConsume>1</mpConsume>
+		<castRange>600</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1200</hitTime>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttackRange">
 				<param power="182" />
@@ -961,24 +961,24 @@
 	<skill id="1945" levels="1" name="Power Death Beam">
 		<!-- Glory Days confirmed -->
 		<!-- Attack enemies at the front. -->
-		<set name="affectLimit" val="5-12" />
-		<set name="affectRange" val="400" />
-		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
-		<set name="icon" val="icon.skill1471" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="FRONT_AREA" />
-		<set name="fanRange" val="0;0;400;180" />
-		<set name="mpConsume" val="1" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="4000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<affectLimit>5-12</affectLimit>
+		<affectRange>400</affectRange>
+		<attributeType>DARK</attributeType>
+		<attributeValue>20</attributeValue>
+		<icon>icon.skill1471</icon>
+		<operateType>A1</operateType>
+		<targetType>FRONT_AREA</targetType>
+		<fanRange>0;0;400;180</fanRange>
+		<mpConsume>1</mpConsume>
+		<castRange>40</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<reuseDelay>4000</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttackRange">
 				<param power="212" />
@@ -989,95 +989,95 @@
 	<skill id="1946" levels="1" name="Block Sigel Force">
 		<!-- Glory Days confirmed -->
 		<!-- Sigel Momentum is not applied. -->
-		<set name="icon" val="icon.icon_sigel" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_sigel</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1947" levels="1" name="Block Tyrr Force">
 		<!-- Glory Days confirmed -->
 		<!-- Tyrr Momentum is not applied. -->
-		<set name="icon" val="icon.icon_tir" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_tir</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1948" levels="1" name="Block Othell Force">
 		<!-- Glory Days confirmed -->
 		<!-- Othell Momentum is not applied. -->
-		<set name="icon" val="icon.icon_othel" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_othel</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1949" levels="1" name="Block Yul Force">
 		<!-- Glory Days confirmed -->
 		<!-- Yul Momentum is not applied. -->
-		<set name="icon" val="icon.icon_yr" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_yr</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1950" levels="1" name="Block Feoh Force">
 		<!-- Glory Days confirmed -->
 		<!-- Feoh Momentum is not applied. -->
-		<set name="icon" val="icon.icon_feoh" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_feoh</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1951" levels="1" name="Block Iss Force">
 		<!-- Glory Days confirmed -->
 		<!-- Iss Momentum is not applied. -->
-		<set name="icon" val="icon.icon_is" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_is</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1952" levels="1" name="Block Wynn Force">
 		<!-- Glory Days confirmed -->
 		<!-- Wynn Momentum is not applied. -->
-		<set name="icon" val="icon.icon_wynn" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_wynn</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1953" levels="1" name="Block Aeore Force">
 		<!-- Glory Days confirmed -->
 		<!-- Aeore Momentum is not applied. -->
-		<set name="icon" val="icon.icon_eolh" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.icon_eolh</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1954" levels="1" name="Flying Body Reinforcement">
 		<!-- Glory Days confirmed -->
 		<!-- Transforms into final flying combat form. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="icon" val="icon.skill0840" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2500" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="specialLevel" val="-2" />
-		<set name="magicLvl" val="-2" />
-		<set name="abnormalTime" val="-1" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="reuseDelay" val="10000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>TRANSFORM</abnormalType>
+		<icon>icon.skill0840</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2500</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<specialLevel>-2</specialLevel>
+		<magicLvl>-2</magicLvl>
+		<abnormalTime>-1</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<reuseDelay>10000</reuseDelay>
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
@@ -1107,22 +1107,22 @@
 		<table name="#mAtk"> 1.01 1.05 1.16 </table>
 		<table name="#bonus"> 0.01 0.02 0.04 </table>
 		<table name="#reuse"> 0.99 0.98 0.95 </table>
-		<set name="abnormallVL" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="SYNERGY_PARTY_BUF" />
-		<set name="affectRange" val="200" />
-		<set name="icon" val="icon.skill1955" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="operateType" val="A5" />
-		<set name="targetType" val="PARTY" /> <!-- Target ONE on retail, will be PARTY here. -->
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="isMagic" val="3" />
+		<abnormallVL>1</abnormallVL>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>SYNERGY_PARTY_BUF</abnormalType>
+		<affectRange>200</affectRange>
+		<icon>icon.skill1955</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<targetType>PARTY</targetType> <!-- Target ONE on retail, will be PARTY here. -->
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -1140,12 +1140,12 @@
 		<!-- P. Atk. + 1%, M. Atk. + 1%. -->
 		<table name="#pAtk"> 1.01 1.02 1.03 1.04 </table>
 		<table name="#mAtk"> 1.01 1.03 1.04 1.06 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0816" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0816</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -1157,12 +1157,12 @@
 		<!-- Glory Days confirmed -->
 		<!-- P. Def. + 1%, M. Def. + 1%. -->
 		<table name="#def"> 1.01 1.02 1.03 1.04 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0439" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0439</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
@@ -1174,12 +1174,12 @@
 		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 1%, Casting Spd. + 1%. -->
 		<table name="#atkSpd"> 1.01 1.02 1.03 1.04 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0817" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0817</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#atkSpd" />
@@ -1191,12 +1191,12 @@
 		<!-- Glory Days confirmed -->
 		<!-- P. Critical Rate/ M. Critical Rate + 10. -->
 		<table name="#critRate"> 10 20 30 40 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0814" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0814</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#critRate" />
@@ -1208,12 +1208,12 @@
 		<!-- Glory Days confirmed -->
 		<!-- P. Accuracy + 2, M. Accuracy + 2. -->
 		<table name="#acc"> 2 4 6 8 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill1240" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill1240</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="#acc" />
@@ -1225,12 +1225,12 @@
 		<!-- Glory Days confirmed -->
 		<!-- P. Evasion + 2, M. Evasion + 2. -->
 		<table name="#evas"> 2 4 6 8 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0198" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0198</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<add stat="rEvas" val="#evas" />
@@ -1243,12 +1243,12 @@
 		<!-- P. Atk. + 3%, M. Atk. + 4%. -->
 		<table name="#pAtk"> 1.03 1.06 1.09 1.12 </table>
 		<table name="#mAtk"> 1.04 1.09 1.13 1.18 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0816" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0816</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -1260,12 +1260,12 @@
 		<!-- Glory Days confirmed -->
 		<!-- P. Def. + 3%, M. Def. + 3%. -->
 		<table name="#def"> 1.03 1.06 1.09 1.12 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0439" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0439</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
@@ -1277,12 +1277,12 @@
 		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 3%, Casting Spd. + 3%. -->
 		<table name="#atkSpd"> 1.03 1.06 1.09 1.12 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0817" />
-		<set name="magicLvl" val="1" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0817</icon>
+		<magicLvl>1</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#atkSpd" />
@@ -1295,12 +1295,12 @@
 		<!-- Max HP + 6%. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxHp"> 6 12 18 24 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0211" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0211</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="MaxHp">
 				<param amount="#maxHp" mode="PER" />
@@ -1312,12 +1312,12 @@
 		<!-- Max MP + 6%. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxMp"> 1.06 1.12 1.18 1.24 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill0213" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill0213</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="#maxMp" />
@@ -1329,12 +1329,12 @@
 		<!-- Max CP + 6%. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxCp"> 1.06 1.12 1.18 1.24 </table>
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill1397" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill1397</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="maxCp" val="#maxCp" />
@@ -1344,12 +1344,12 @@
 	<skill id="1968" levels="1" name="Dual - HP Drain">
 		<!-- Glory Days confirmed -->
 		<!-- Has a chance of absorbing 5% of damage inflicted upon the enemy as HP when attacking. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.dual_hpsteal" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.dual_hpsteal</icon>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="VampiricAttack">
 				<param amount="5" chance="80" />
@@ -1358,12 +1358,12 @@
 	</skill>
 	<skill id="1969" levels="1" name="Dual - MP Drain">
 		<!-- Has a chance of recovering your own MP when attacking or using a skill. -->
-		<set name="icon" val="icon.dual_mpsteal" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
-		<set name="excludedFromCheck" val="true" />
+		<icon>icon.dual_mpsteal</icon>
+		<operateType>P</operateType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByMagicType">
 				<param magicTypes="0;1;2;3;4;22" />
@@ -1390,12 +1390,12 @@
 	<skill id="1970" levels="1" name="Dual - Specialized for P. Atk.">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 9%, P. Def./ M. Def. - 9%. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.dual_atkup" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.dual_atkup</icon>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.09" />
@@ -1407,12 +1407,12 @@
 	<skill id="1971" levels="1" name="Dual - Specialized for M. Atk.">
 		<!-- Glory Days confirmed -->
 		<!-- M. Atk. + 13%, P. Def./ M. Def. - 9%. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.dual_defup" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.dual_defup</icon>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.13" />
@@ -1424,12 +1424,12 @@
 	<skill id="1972" levels="1" name="Dual - Physical Trait Increase">
 		<!-- Glory Days confirmed -->
 		<!-- Increases success rate for physical attacks and physical defense by 20%. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill4084" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill4084</icon>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="AttackTrait">
 				<param SHOCK="20" />
@@ -1452,12 +1452,12 @@
 	<skill id="1973" levels="1" name="Dual - Mental Trait Increase">
 		<!-- Glory Days confirmed -->
 		<!-- Increases success rate for mental attacks and mental defense by 20%. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="icon" val="icon.skill4116" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<icon>icon.skill4116</icon>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="AttackTrait">
 				<param HOLD="20" />
@@ -1484,12 +1484,12 @@
 	<skill id="1974" levels="1" name="Dual - Berserker's Rage">
 		<!-- Glory Days confirmed -->
 		<!-- Has a chance of P. Atk. + 27% when attacking. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="icon" val="icon.dual_t_atkup" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<icon>icon.dual_t_atkup</icon>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -1504,20 +1504,20 @@
 	<skill id="1975" levels="1" name="Dual - Berserker's Rage">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 27% for 15 sec. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="DUAL_ATTACK_UP" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="20000" />
-		<set name="icon" val="icon.dual_t_atkup" />
-		<set name="isMagic" val="4" />
-		<set name="basicProperty" val="NONE" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>DUAL_ATTACK_UP</abnormalType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<reuseDelay>20000</reuseDelay>
+		<icon>icon.dual_t_atkup</icon>
+		<isMagic>4</isMagic>
+		<basicProperty>NONE</basicProperty>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.27" />
@@ -1527,12 +1527,12 @@
 	<skill id="1976" levels="1" name="Dual - Master's Rage">
 		<!-- Glory Days confirmed -->
 		<!-- Has a chance of Skill Power + 27% during skill use. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="99" />
-		<set name="icon" val="icon.dual_t_skup" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<magicLvl>99</magicLvl>
+		<icon>icon.dual_t_skup</icon>
+		<magicCriticalRate>5</magicCriticalRate>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByMagicType">
 				<param magicTypes="0;1;2;3;4;22" />
@@ -1545,22 +1545,22 @@
 	<skill id="1977" levels="1" name="Dual - Master's Rage">
 		<!-- Glory Days confirmed -->
 		<!-- Skill Power + 27% for 15 sec. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="DUAL_SKILL_UP" />
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="A2" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="operateType" val="A2" />
-		<set name="icon" val="icon.dual_t_skup" />
-		<set name="isMagic" val="4" />
-		<set name="basicProperty" val="NONE" />
-		<set name="reuseDelay" val="20000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="staticReuse" val="true" />
-		<set name="staticDelay" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>DUAL_SKILL_UP</abnormalType>
+		<targetType>SELF</targetType>
+		<operateType>A2</operateType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A2</operateType>
+		<icon>icon.dual_t_skup</icon>
+		<isMagic>4</isMagic>
+		<basicProperty>NONE</basicProperty>
+		<reuseDelay>20000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<staticReuse>true</staticReuse>
+		<staticDelay>true</staticDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="physicalSkillPower" val="1.27" />
@@ -1571,12 +1571,12 @@
 	<skill id="1978" levels="1" name="Dual - Light of Protection">
 		<!-- Glory Days confirmed -->
 		<!-- Has a chance of P. Def./ M. Def. + 27% when attacked. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="icon" val="icon.dual_t_dmgdef" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<icon>icon.dual_t_dmgdef</icon>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -1589,21 +1589,21 @@
 	<skill id="1979" levels="1" name="Dual - Light of Protection">
 		<!-- Glory Days confirmed -->
 		<!-- P. Def./ M. Def. + 27% for 15 sec. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="DUAL_DEFENCE_UP" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="reuseDelay" val="20000" />
-		<set name="icon" val="icon.dual_t_dmgdef" />
-		<set name="isMagic" val="4" />
-		<set name="basicProperty" val="NONE" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="hitCancelTime" val="0" />
-		<set name="staticReuse" val="true" />
-		<set name="staticDelay" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>DUAL_DEFENCE_UP</abnormalType>
+		<targetType>SELF</targetType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>20000</reuseDelay>
+		<icon>icon.dual_t_dmgdef</icon>
+		<isMagic>4</isMagic>
+		<basicProperty>NONE</basicProperty>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<staticReuse>true</staticReuse>
+		<staticDelay>true</staticDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.27" />
@@ -1614,12 +1614,12 @@
 	<skill id="1980" levels="1" name="Dual - Light of Blessing">
 		<!-- Glory Days confirmed -->
 		<!-- Has a chance of restoring HP when attacked. -->
-		<set name="targetType" val="SELF" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="icon" val="icon.dual_t_dmgheal" />
-		<set name="excludedFromCheck" val="true" />
+		<targetType>SELF</targetType>
+		<operateType>P</operateType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<icon>icon.dual_t_dmgheal</icon>
+		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -1631,17 +1631,17 @@
 	</skill>
 	<skill id="1981" levels="1" name="Dual - Light of Blessing">
 		<!-- Restores HP. -->
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="99" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="reuseDelay" val="30000" />
-		<set name="icon" val="icon.dual_t_dmgheal" />
-		<set name="isMagic" val="4" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="hitCancelTime" val="0" />
-		<set name="staticReuse" val="true" />
-		<set name="staticDelay" val="true" />
+		<targetType>SELF</targetType>
+		<magicLvl>99</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>30000</reuseDelay>
+		<icon>icon.dual_t_dmgheal</icon>
+		<isMagic>4</isMagic>
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<hitCancelTime>0</hitCancelTime>
+		<staticReuse>true</staticReuse>
+		<staticDelay>true</staticDelay>
 		<for>
 			<effect name="Heal">
 				<param power="5000" />
@@ -1651,26 +1651,26 @@
 	<skill id="1982" levels="1" name="Dual - Shackles of the Giants">
 		<!-- Glory Days confirmed -->
 		<!-- Blocks target's Physical Skills for 5 sec. Can only use on PCs. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="SILENCE_PHYSICAL" />
-		<set name="abnormalVisualEffect" val="SILENCE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="icon" val="icon.dual_a_pblock" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="600000" />
-		<set name="effectPoint" val="-1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="99" />
-		<set name="trait" val="DERANGEMENT" />
-		<set name="isDebuff" val="true" />
-		<set name="staticReuse" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>SILENCE_PHYSICAL</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<magicCriticalRate>5</magicCriticalRate>
+		<icon>icon.dual_a_pblock</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<effectRange>1100</effectRange>
+		<magicLvl>99</magicLvl>
+		<trait>DERANGEMENT</trait>
+		<isDebuff>true</isDebuff>
+		<staticReuse>true</staticReuse>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -1681,26 +1681,26 @@
 	<skill id="1983" levels="1" name="Dual - Silence of the Giants">
 		<!-- Glory Days confirmed -->
 		<!-- Blocks target's Magical Skills for 5 sec. Can only use on PCs. -->
-		<set name="abnormalVisualEffect" val="SILENCE" />
-		<set name="icon" val="icon.dual_a_mblock" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="600000" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalType" val="SILENCE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="trait" val="DERANGEMENT" />
-		<set name="isDebuff" val="true" />
-		<set name="staticReuse" val="true" />
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<icon>icon.dual_a_mblock</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<abnormalType>SILENCE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<magicLvl>99</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<trait>DERANGEMENT</trait>
+		<isDebuff>true</isDebuff>
+		<staticReuse>true</staticReuse>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -1711,28 +1711,28 @@
 	<skill id="1984" levels="1" name="Dual - Yoke of the Giants">
 		<!-- Glory Days confirmed -->
 		<!-- Decreases target and nearby enemies' Spd. by 90% for 5 sec. Can only use on PCs. -->
-		<set name="icon" val="icon.dual_a_spdown" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="600000" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalType" val="ROOT_MAGICALLY" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="trait" val="HOLD" />
-		<set name="affectRange" val="200" />
-		<set name="affectLimit" val="9-10" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="staticReuse" val="true" />
+		<icon>icon.dual_a_spdown</icon>
+		<operateType>A2</operateType>
+		<targetType>AREA</targetType>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<abnormalType>ROOT_MAGICALLY</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<magicLvl>99</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<trait>HOLD</trait>
+		<affectRange>200</affectRange>
+		<affectLimit>9-10</affectLimit>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic>
+		<staticReuse>true</staticReuse>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -1745,34 +1745,34 @@
 	<skill id="1985" levels="1" name="Dual - Shield of the Giants">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Damage Reflect Resistance becomes 100% for 30 sec. -->
-		<set name="icon" val="icon.dual_a_refdmg" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="DUAL_DMG_SHIELD" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="600000" />
+		<icon>icon.dual_a_refdmg</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>DUAL_DMG_SHIELD</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>99</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<reuseDelay>600000</reuseDelay>
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 463. Can be used when the main/ dual class is Level 85 or above. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxHp"> 463 972 1458 1926 </table>
-		<set name="icon" val="icon.skill0917" />
-		<set name="operateType" val="T" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill0917</icon>
+		<operateType>T</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="MaxHp">
 				<param amount="#maxHp" mode="DIFF" />
@@ -1782,11 +1782,11 @@
 	<skill id="1987" levels="1" name="Sigel Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe/ Light Armor. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5">
@@ -1801,11 +1801,11 @@
 	<skill id="1988" levels="1" name="Tyrr Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5">
@@ -1820,11 +1820,11 @@
 	<skill id="1989" levels="1" name="Yul Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe/ Heavy Armor. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5">
@@ -1839,11 +1839,11 @@
 	<skill id="1990" levels="1" name="Othell Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with a Robe/ Heavy Armor. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5">
@@ -1858,11 +1858,11 @@
 	<skill id="1991" levels="1" name="Feoh Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with Light Armor/ Heavy Armor. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5">
@@ -1877,11 +1877,11 @@
 	<skill id="1992" levels="1" name="Wynn Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with Heavy Armor. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5">
@@ -1896,20 +1896,20 @@
 	<skill id="1993" levels="1" name="Iss Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- No Penalty. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1994" levels="1" name="Aeore Armor Limit">
 		<!-- Glory Days confirmed -->
 		<!-- Stats decrease when equipped with armor that is not best suited for you. Atk. Spd./ Casting Spd. - 50% when equipped with Heavy Armor. -->
-		<set name="icon" val="icon.skill6213_4" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill6213_4</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5">
@@ -1923,14 +1923,14 @@
 	</skill>
 	<skill id="1995" levels="1" name="Dual - MP Drain">
 		<!-- Restores MP. -->
-		<set name="icon" val="icon.dual_mpsteal" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="99" />
-		<set name="reuseDelay" val="6000" />
+		<icon>icon.dual_mpsteal</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>99</magicLvl>
+		<reuseDelay>6000</reuseDelay>
 		<for>
 			<effect name="ManaHeal">
 				<param power="68" />
@@ -1940,29 +1940,29 @@
 	<skill id="1996" levels="2" name="Hurricane Shackle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 sec., blocks target from using escape items and skills. -->
-		<set name="icon" val="icon.skill1996" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="600000" />
-		<set name="effectPoint" val="-100" />
-		<set name="abnormalTime" val="60" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill1996</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<abnormalTime>60</abnormalTime>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="1997" levels="2" name="Gravity Exile">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., blocks target from being resurrected by another character. -->
-		<set name="icon" val="icon.skill1997" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="600000" />
-		<set name="effectPoint" val="-100" />
-		<set name="abnormalTime" val="30" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill1997</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<abnormalTime>30</abnormalTime>
+		<isDebuff>true</isDebuff>
 	</skill>
 </list>

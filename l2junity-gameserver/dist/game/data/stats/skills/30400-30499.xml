@@ -4,10 +4,10 @@
 		<!-- Wind/Holy Resistance + 10. -->
 		<table name="#res"> 10 20</table>
 		<table name="#magicLvl"> 85 85 </table>
-		<set name="icon" val="icon.skill30400" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30400</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="windRes" val="#res" />
@@ -20,10 +20,10 @@
 		<table name="#maxHp"> 1 2 </table>
 		<table name="#runSpd"> 4 7 </table>
 		<table name="#magicLvl"> 85 85 </table>
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skill30401" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<magicLvl>#magicLvl</magicLvl>
+		<icon>icon.skill30401</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="moveSpeed" val="#runSpd" />
@@ -37,10 +37,10 @@
 		<!-- MP Consumption - 1%. -->
 		<table name="#consumeRate"> 0.99 0.98 </table>
 		<table name="#magicLvl"> 85 85 </table>
-		<set name="icon" val="icon.skill30402" />
-		<set name="operateType" val="P" />
+		<icon>icon.skill30402</icon>
+		<operateType>P</operateType>
 		<table name="#magicLvl"> 85 85 </table>
-		<set name="targetType" val="SELF" />
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#consumeRate" />

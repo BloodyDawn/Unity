@@ -3,20 +3,20 @@
 	<skill id="12000" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="2" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1400" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill10317</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>2</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>300</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1400</effectRange>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -28,219 +28,219 @@
 	</skill>
 	<skill id="12001" levels="1" name="Glimmer Crystal">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="1" />
-		<set name="affectRange" val="600" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>1</magicLvl>
+		<affectRange>600</affectRange>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="12002" levels="1" name="Glimmer">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="1000" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="300" />
-		<set name="magicLvl" val="1" />
-		<set name="reuseDelay" val="5000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<castRange>150</castRange>
+		<hitTime>1000</hitTime>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>300</effectRange>
+		<magicLvl>1</magicLvl>
+		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="12003" levels="1" name="Stronghold Fragment">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bestows the authority to control the stronghold. -->
-		<set name="icon" val="icon.etc_dragons_blood_i03" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="800" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="isMagic" val="2" />
-		<set name="castRange" val="300" />
+		<icon>icon.etc_dragons_blood_i03</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>800</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<castRange>300</castRange>
 	</skill>
 	<skill id="12004" levels="1" name="Summon Detector">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Detect the relic. -->
-		<set name="icon" val="icon.skill0324" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="reuseDelay" val="30000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="72" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill0324</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>72</magicLvl>
+		<isMagic>1</isMagic>
 	</skill>
 	<skill id="12005" levels="1" name="Spray Insecticide">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sprays medicine. -->
-		<set name="icon" val="icon.bug_spray_a" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="3000" />
-		<set name="abnormalType" val="POISON" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.bug_spray_a</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>150</castRange>
+		<hitTime>3000</hitTime>
+		<abnormalType>POISON</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="12006" levels="1" name="Spray Insecticide">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sprays medicine. -->
-		<set name="icon" val="icon.bug_spray_b" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="3000" />
-		<set name="abnormalType" val="POISON" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.bug_spray_b</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>150</castRange>
+		<hitTime>3000</hitTime>
+		<abnormalType>POISON</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="12007" levels="1" name="Spray Insecticide">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sprays medicine. -->
-		<set name="icon" val="icon.bug_spray_c" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="3000" />
-		<set name="abnormalType" val="POISON" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="staticReuse" val="true" />
-		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.bug_spray_c</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>150</castRange>
+		<hitTime>3000</hitTime>
+		<abnormalType>POISON</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="12008" levels="1" name="Orbis' Reflect Shield">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Conquers Medusa's Soul. -->
-		<set name="icon" val="icon.skill3260" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="800" />
-		<set name="coolTime" val="1000" />
-		<set name="reuseDelay" val="180000" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill3260</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<castRange>900</castRange>
+		<hitTime>800</hitTime>
+		<coolTime>1000</coolTime>
+		<reuseDelay>180000</reuseDelay>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>1</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="12009" levels="1" name="Teredor Antidote">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincible against a terrible abnormal status. -->
-		<set name="icon" val="icon.grima_poison" />
-		<set name="operateType" val="A2" />
-		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="activateRate" val="0" />
-		<set name="magicLvl" val="1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="20" />
-		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.grima_poison</icon>
+		<operateType>A2</operateType>
+		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<activateRate>0</activateRate>
+		<magicLvl>1</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="12010" levels="1" name="Bonus Hall Key">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="450" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="500" />
-		<set name="magicLvl" val="1" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<castRange>450</castRange>
+		<hitTime>500</hitTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>500</effectRange>
+		<magicLvl>1</magicLvl>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="12011" levels="1" name="Glimmer Crystal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- can summon Magmeld's wisps at Anghell Waterfall -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A2" />
-		<set name="effectPoint" val="2" />
-		<set name="abnormalType" val="PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<effectPoint>2</effectPoint>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>1</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="12012" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18103" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18103</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -253,18 +253,18 @@
 	</skill>
 	<skill id="12013" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18104" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18104</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -277,18 +277,18 @@
 	</skill>
 	<skill id="12014" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18105" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18105</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -301,18 +301,18 @@
 	</skill>
 	<skill id="12015" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18106" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18106</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -325,18 +325,18 @@
 	</skill>
 	<skill id="12016" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18107" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18107</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -349,18 +349,18 @@
 	</skill>
 	<skill id="12017" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18108" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18108</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -373,18 +373,18 @@
 	</skill>
 	<skill id="12018" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18109" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18109</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -397,18 +397,18 @@
 	</skill>
 	<skill id="12019" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18110" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18110</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -421,18 +421,18 @@
 	</skill>
 	<skill id="12020" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18111" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18111</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -445,18 +445,18 @@
 	</skill>
 	<skill id="12021" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18112" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18112</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -469,18 +469,18 @@
 	</skill>
 	<skill id="12022" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18113" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18113</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -493,18 +493,18 @@
 	</skill>
 	<skill id="12023" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18114" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18114</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -517,18 +517,18 @@
 	</skill>
 	<skill id="12024" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18115" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18115</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -541,18 +541,18 @@
 	</skill>
 	<skill id="12025" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18116" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18116</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -565,18 +565,18 @@
 	</skill>
 	<skill id="12026" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18117" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18117</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -589,18 +589,18 @@
 	</skill>
 	<skill id="12027" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18118" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18118</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -613,18 +613,18 @@
 	</skill>
 	<skill id="12028" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18119" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18119</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -637,18 +637,18 @@
 	</skill>
 	<skill id="12029" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18120" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18120</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -661,18 +661,18 @@
 	</skill>
 	<skill id="12030" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18121" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18121</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -685,18 +685,18 @@
 	</skill>
 	<skill id="12031" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18122" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18122</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -709,18 +709,18 @@
 	</skill>
 	<skill id="12032" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18123" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18123</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -733,18 +733,18 @@
 	</skill>
 	<skill id="12033" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18124" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18124</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -757,18 +757,18 @@
 	</skill>
 	<skill id="12034" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18125" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18125</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -781,18 +781,18 @@
 	</skill>
 	<skill id="12035" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18126" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18126</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -805,18 +805,18 @@
 	</skill>
 	<skill id="12036" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18127" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18127</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -829,18 +829,18 @@
 	</skill>
 	<skill id="12037" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18128" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18128</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -853,18 +853,18 @@
 	</skill>
 	<skill id="12038" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18129" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18129</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -877,18 +877,18 @@
 	</skill>
 	<skill id="12039" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18130" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18130</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -901,18 +901,18 @@
 	</skill>
 	<skill id="12040" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18131" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18131</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -925,18 +925,18 @@
 	</skill>
 	<skill id="12041" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18132" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18132</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -949,18 +949,18 @@
 	</skill>
 	<skill id="12042" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18133" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18133</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -973,18 +973,18 @@
 	</skill>
 	<skill id="12043" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18134" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18134</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -997,18 +997,18 @@
 	</skill>
 	<skill id="12044" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18135" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18135</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1021,18 +1021,18 @@
 	</skill>
 	<skill id="12045" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18136" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18136</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1045,18 +1045,18 @@
 	</skill>
 	<skill id="12046" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18137" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18137</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1069,18 +1069,18 @@
 	</skill>
 	<skill id="12047" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18138" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18138</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1093,18 +1093,18 @@
 	</skill>
 	<skill id="12048" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18139" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18139</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1117,18 +1117,18 @@
 	</skill>
 	<skill id="12049" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18140" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18140</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1141,18 +1141,18 @@
 	</skill>
 	<skill id="12050" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18141" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18141</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1165,18 +1165,18 @@
 	</skill>
 	<skill id="12051" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18142" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18142</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1189,18 +1189,18 @@
 	</skill>
 	<skill id="12052" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18143" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18143</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1213,18 +1213,18 @@
 	</skill>
 	<skill id="12053" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18144" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18144</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1237,18 +1237,18 @@
 	</skill>
 	<skill id="12054" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18145" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18145</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1261,18 +1261,18 @@
 	</skill>
 	<skill id="12055" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18146" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18146</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1285,18 +1285,18 @@
 	</skill>
 	<skill id="12056" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18147" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18147</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1309,18 +1309,18 @@
 	</skill>
 	<skill id="12057" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18148" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18148</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1333,18 +1333,18 @@
 	</skill>
 	<skill id="12058" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18149" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18149</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1357,18 +1357,18 @@
 	</skill>
 	<skill id="12059" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18150" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18150</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1381,18 +1381,18 @@
 	</skill>
 	<skill id="12060" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18151" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18151</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1405,18 +1405,18 @@
 	</skill>
 	<skill id="12061" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18152" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18152</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1429,18 +1429,18 @@
 	</skill>
 	<skill id="12062" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18153" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18153</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1453,18 +1453,18 @@
 	</skill>
 	<skill id="12063" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18154" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18154</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1477,18 +1477,18 @@
 	</skill>
 	<skill id="12064" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18155" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18155</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1501,18 +1501,18 @@
 	</skill>
 	<skill id="12065" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18156" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18156</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1525,18 +1525,18 @@
 	</skill>
 	<skill id="12066" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18157" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18157</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1549,18 +1549,18 @@
 	</skill>
 	<skill id="12067" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18158" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18158</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1573,18 +1573,18 @@
 	</skill>
 	<skill id="12068" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18159" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18159</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1597,18 +1597,18 @@
 	</skill>
 	<skill id="12069" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18160" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18160</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1621,18 +1621,18 @@
 	</skill>
 	<skill id="12070" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18161" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18161</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1645,18 +1645,18 @@
 	</skill>
 	<skill id="12071" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18162" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18162</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1669,18 +1669,18 @@
 	</skill>
 	<skill id="12072" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18163" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18163</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1693,18 +1693,18 @@
 	</skill>
 	<skill id="12073" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18164" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18164</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1717,18 +1717,18 @@
 	</skill>
 	<skill id="12074" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18165" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18165</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1741,18 +1741,18 @@
 	</skill>
 	<skill id="12075" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18166" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18166</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1765,18 +1765,18 @@
 	</skill>
 	<skill id="12076" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18167" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18167</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1789,18 +1789,18 @@
 	</skill>
 	<skill id="12077" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18168" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18168</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1813,18 +1813,18 @@
 	</skill>
 	<skill id="12078" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18169" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18169</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1837,18 +1837,18 @@
 	</skill>
 	<skill id="12079" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18170" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18170</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1861,18 +1861,18 @@
 	</skill>
 	<skill id="12080" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18171" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18171</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1885,18 +1885,18 @@
 	</skill>
 	<skill id="12081" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18172" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18172</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1909,18 +1909,18 @@
 	</skill>
 	<skill id="12082" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18173" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18173</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1933,18 +1933,18 @@
 	</skill>
 	<skill id="12083" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18174" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18174</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1957,18 +1957,18 @@
 	</skill>
 	<skill id="12084" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18175" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18175</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1981,18 +1981,18 @@
 	</skill>
 	<skill id="12085" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18176" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18176</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2005,18 +2005,18 @@
 	</skill>
 	<skill id="12086" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18177" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18177</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2029,18 +2029,18 @@
 	</skill>
 	<skill id="12087" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18178" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18178</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2053,18 +2053,18 @@
 	</skill>
 	<skill id="12088" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18179" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18179</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2077,18 +2077,18 @@
 	</skill>
 	<skill id="12089" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18180" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18180</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2101,18 +2101,18 @@
 	</skill>
 	<skill id="12090" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18181" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18181</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2125,18 +2125,18 @@
 	</skill>
 	<skill id="12091" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18182" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18182</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2149,18 +2149,18 @@
 	</skill>
 	<skill id="12092" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18183" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18183</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2173,18 +2173,18 @@
 	</skill>
 	<skill id="12093" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18184" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18184</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2197,18 +2197,18 @@
 	</skill>
 	<skill id="12094" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18185" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18185</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2221,18 +2221,18 @@
 	</skill>
 	<skill id="12095" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18186" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18186</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2245,18 +2245,18 @@
 	</skill>
 	<skill id="12096" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18187" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18187</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2269,18 +2269,18 @@
 	</skill>
 	<skill id="12097" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18188" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18188</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2293,18 +2293,18 @@
 	</skill>
 	<skill id="12098" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18189" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18189</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2317,18 +2317,18 @@
 	</skill>
 	<skill id="12099" levels="1" name="Check Item">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="18190" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="3000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>18190</itemConsumeId>
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />

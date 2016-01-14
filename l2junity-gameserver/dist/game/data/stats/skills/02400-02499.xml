@@ -3,19 +3,19 @@
 	<skill id="2400" levels="1" name="Coral Treasure Chest Key">
 		<!-- Confirmed CT2.5 -->
 		<!-- set name="giveContribution" val="10" / -->
-		<set name="castRange" val="40" />
-		<set name="effectPoint" val="-1" />
-		<set name="effectRange" val="400" />
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10017" /> <!-- Coral Treasure Chest Key -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="UNLOCKABLE" />
+		<castRange>40</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10017</itemConsumeId> <!-- Coral Treasure Chest Key -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>UNLOCKABLE</targetType>
 		<cond msgId="113" addName="1">
 			<target npcId="18477" />
 		</cond>
@@ -25,14 +25,14 @@
 	</skill>
 	<skill id="2401" levels="1" name="Mana Recovery Potion (Battleground)">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="600000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>600000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player level="52" />
 		</cond>
@@ -44,14 +44,14 @@
 	</skill>
 	<skill id="2402" levels="1" name="CP Recovery Potion (Battleground)">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="600000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>600000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player level="52" />
 		</cond>
@@ -63,14 +63,14 @@
 	</skill>
 	<skill id="2403" levels="1" name="Hot Springs CP Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="300000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHeal">
 				<param power="1000" />
@@ -79,18 +79,18 @@
 	</skill>
 	<skill id="2404" levels="1" name="Might">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="PA_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="20" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PA_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>20</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.12" />
@@ -99,18 +99,18 @@
 	</skill>
 	<skill id="2405" levels="1" name="Shield">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="PD_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="25" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PD_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>25</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.12" />
@@ -119,18 +119,18 @@
 	</skill>
 	<skill id="2406" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SPEED_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="30" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>SPEED_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>30</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="moveSpeed" val="33" />
@@ -139,18 +139,18 @@
 	</skill>
 	<skill id="2407" levels="1" name="Focus">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CRITICAL_PROB_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="44" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CRITICAL_PROB_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>44</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.25" />
@@ -159,18 +159,18 @@
 	</skill>
 	<skill id="2408" levels="1" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CRITICAL_DMG_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="48" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CRITICAL_DMG_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>48</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.3" />
@@ -179,18 +179,18 @@
 	</skill>
 	<skill id="2409" levels="1" name="Guidance">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="HIT_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="48" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>HIT_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>48</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="3" />
@@ -199,18 +199,18 @@
 	</skill>
 	<skill id="2410" levels="1" name="Blessed Shield">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SHIELD_PROB_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="48" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>SHIELD_PROB_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>48</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="rShld" val="1.1" />
@@ -219,18 +219,18 @@
 	</skill>
 	<skill id="2411" levels="1" name="Blessed Body">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="MAX_HP_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="52" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MAX_HP_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>52</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="MaxHp">
 				<param amount="20" mode="PER" />
@@ -239,18 +239,18 @@
 	</skill>
 	<skill id="2412" levels="1" name="Haste">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="44" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>44</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
@@ -259,18 +259,18 @@
 	</skill>
 	<skill id="2413" levels="1" name="Vampiric Rage">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="44" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>44</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
 				<param amount="7" chance="80" />
@@ -279,18 +279,18 @@
 	</skill>
 	<skill id="2414" levels="1" name="Berserker Spirit">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="BERSERKER" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="35" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BERSERKER</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>35</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.1" />
@@ -306,18 +306,18 @@
 	</skill>
 	<skill id="2415" levels="1" name="Magic Barrier">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="MD_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="44" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MD_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>44</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.23" />
@@ -326,18 +326,18 @@
 	</skill>
 	<skill id="2416" levels="1" name="Blessed Soul">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="MAX_MP_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="52" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MAX_MP_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>52</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.2" />
@@ -346,18 +346,18 @@
 	</skill>
 	<skill id="2417" levels="1" name="Empower">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="MA_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="44" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MA_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>44</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.65" />
@@ -366,18 +366,18 @@
 	</skill>
 	<skill id="2418" levels="1" name="Acumen">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CASTING_TIME_DOWN" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="35" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CASTING_TIME_DOWN</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>35</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.23" />
@@ -386,18 +386,18 @@
 	</skill>
 	<skill id="2419" levels="1" name="Clarity">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CHEAP_MAGIC" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="58" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CHEAP_MAGIC</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_hot_spring_nectar_i00</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>58</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
@@ -408,13 +408,13 @@
 	</skill>
 	<skill id="2420" levels="1" name="White Seed of Evil Lump">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -429,13 +429,13 @@
 	</skill>
 	<skill id="2421" levels="1" name="Black Seed of Evil Lump">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -453,14 +453,14 @@
 		<table name="#extractableItems">
 			6373,1,1.19;6374,1,1.84;6375,1,4.47;6376,1,4.47;6377,1,4.25;6378,1,3.01;6379,1,0.19;6380,1,4.47;6381,1,4.47;6382,1,3.01;6383,1,0.19;6384,1,4.47;6385,1,4.47;6386,1,3.01;9570,1,3.16;9571,1,3.16;9572,1,3.16;5908,1,15.67;5911,1,15.67;5914,1,15.67
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -478,13 +478,13 @@
 			9625,1,2.20;9626,1,1.42;9627,1,0.67;9546,1,15.30;9547,1,15.30;9548,1,15.30;9549,1,15.30;9550,1,15.30;9551,1,15.30;959,1,0.28;960,1,3.73
 			9625,1,2.20;9626,1,1.42;9627,1,0.67;9546,1,15.30;9547,1,15.30;9548,1,15.30;9549,1,15.30;9550,1,15.30;9551,1,15.30;959,1,0.28;960,1,3.73
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -503,13 +503,13 @@
 			729,1,0.51;730,1,3.86;947,1,1.85;948,1,11.57;8736,1,32.15;8738,1,23.15;8741,1,12.86;8742,1,11.57;3936,1,2.48
 			729,1,0.51;730,1,3.86;947,1,1.85;948,1,11.57;8736,1,32.15;8738,1,23.15;8741,1,12.86;8742,1,11.57;3936,1,2.48
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -529,13 +529,13 @@
 			951,1,3.01;952,1,21.30;955,1,6.41;956,1,52.72;1538,1,2.56;9909,1,7.00;10139,1,7.00
 			951,1,3.01;952,1,21.30;955,1,6.41;956,1,52.72;1538,1,2.56;9909,1,7.00;10139,1,7.00
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -556,13 +556,13 @@
 			10178,5,10179,5,100
 			10178,5,10179,5,100
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -584,13 +584,13 @@
 			10260,3,9.00;10261,3,9.00;10262,3,9.00;10263,3,9.00;10264,3,9.00;10265,3,9.00;10266,3,9.00;10267,3,9.00;10268,3,9.00;10269,3,9.00;10270,3,10.00
 			10260,3,9.00;10261,3,9.00;10262,3,9.00;10263,3,9.00;10264,3,9.00;10265,3,9.00;10266,3,9.00;10267,3,9.00;10268,3,9.00;10269,3,9.00;10270,3,10.00
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="1" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -602,23 +602,23 @@
 		</for>
 	</skill>
 	<skill id="2428" levels="1" name="Transformation Scroll: Rabbit">
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="TRANSFORM" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.skill0298" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10274" /> <!-- Transformation Scroll: Rabbit -->
-		<set name="magicLvl" val="-1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.skill0298</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10274</itemConsumeId> <!-- Transformation Scroll: Rabbit -->
+		<magicLvl>-1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -630,20 +630,20 @@
 	</skill>
 	<skill id="2429" levels="1" name="Haste Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10260" /> <!-- Alacrity Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10260</itemConsumeId> <!-- Alacrity Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
@@ -652,20 +652,20 @@
 	</skill>
 	<skill id="2430" levels="1" name="Accuracy Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="HIT_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10261" /> <!-- Accuracy Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>HIT_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i01</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10261</itemConsumeId> <!-- Accuracy Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
@@ -674,20 +674,20 @@
 	</skill>
 	<skill id="2431" levels="1" name="Critical Damage Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CRITICAL_DMG_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i02" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10262" /> <!-- Critical Hit Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CRITICAL_DMG_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i02</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10262</itemConsumeId> <!-- Critical Hit Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
@@ -696,20 +696,20 @@
 	</skill>
 	<skill id="2432" levels="1" name="Critical Rate Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CRITICAL_PROB_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i03" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10263" /> <!-- Critical Rate Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CRITICAL_PROB_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i03</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10263</itemConsumeId> <!-- Critical Rate Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
@@ -718,20 +718,20 @@
 	</skill>
 	<skill id="2433" levels="1" name="Casting Spd. Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CASTING_TIME_DOWN" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i04" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10264" /> <!-- Casting Spd. Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CASTING_TIME_DOWN</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i04</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10264</itemConsumeId> <!-- Casting Spd. Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
@@ -740,20 +740,20 @@
 	</skill>
 	<skill id="2434" levels="1" name="Evasion Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="AVOID_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10265" /> <!-- Evasion Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>AVOID_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i05</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10265</itemConsumeId> <!-- Evasion Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="rEvas" val="4" />
@@ -762,20 +762,20 @@
 	</skill>
 	<skill id="2435" levels="1" name="M. Atk. Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="MA_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i06" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10266" /> <!-- M. Atk. Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MA_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i06</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10266</itemConsumeId> <!-- M. Atk. Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
@@ -784,20 +784,20 @@
 	</skill>
 	<skill id="2436" levels="1" name="P. Atk. Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="PA_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10267" /> <!-- Power Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PA_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i07</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10267</itemConsumeId> <!-- Power Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
@@ -806,20 +806,20 @@
 	</skill>
 	<skill id="2437" levels="1" name="Wind Walk Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SPEED_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10268" /> <!-- Speed Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>SPEED_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i08</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10268</itemConsumeId> <!-- Speed Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="moveSpeed" val="33" />
@@ -828,20 +828,20 @@
 	</skill>
 	<skill id="2438" levels="1" name="P. Def. Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="PD_UP" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i09" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10269" /> <!-- Defense Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PD_UP</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i09</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10269</itemConsumeId> <!-- Defense Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
@@ -850,20 +850,20 @@
 	</skill>
 	<skill id="2439" levels="1" name="MP Consumption Juice">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="CHEAP_MAGIC" />
-		<set name="effectPoint" val="1" />
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i10" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10270" /> <!-- MP Consumption Juice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CHEAP_MAGIC</abnormalType>
+		<effectPoint>1</effectPoint>
+		<icon>icon.etc_fruit_juice_glass_bottle_i10</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10270</itemConsumeId> <!-- MP Consumption Juice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A2</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
@@ -877,14 +877,14 @@
 		<table name="#extractableItems">
 			9600,1,40;9601,2,50;9602,1,10
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -897,15 +897,15 @@
 	</skill>
 	<skill id="2441" levels="1" name="Protection of Rune">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10549" /> <!-- Forgotten Scroll - Protection of Rune -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10549</itemConsumeId> <!-- Forgotten Scroll - Protection of Rune -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -923,15 +923,15 @@
 	</skill>
 	<skill id="2442" levels="1" name="Protection of Elemental">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10550" /> <!-- Forgotten Scroll - Protection of Elemental -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10550</itemConsumeId> <!-- Forgotten Scroll - Protection of Elemental -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -949,15 +949,15 @@
 	</skill>
 	<skill id="2443" levels="1" name="Protection of Alignment">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10551" /> <!-- Forgotten Scroll - Protection of Alignment -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10551</itemConsumeId> <!-- Forgotten Scroll - Protection of Alignment -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -975,15 +975,15 @@
 	</skill>
 	<skill id="2444" levels="1" name="Fighter's Will">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10552" /> <!-- Forgotten Scroll - Fighter's Will -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10552</itemConsumeId> <!-- Forgotten Scroll - Fighter's Will -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1001,15 +1001,15 @@
 	</skill>
 	<skill id="2445" levels="1" name="Archer's Will">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10553" /> <!-- Forgotten Scroll - Archer's Will -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10553</itemConsumeId> <!-- Forgotten Scroll - Archer's Will -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1027,15 +1027,15 @@
 	</skill>
 	<skill id="2446" levels="1" name="Anti Magic Armor">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10554" /> <!-- Forgotten Scroll - Anti-Magic Armor -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10554</itemConsumeId> <!-- Forgotten Scroll - Anti-Magic Armor -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1053,15 +1053,15 @@
 	</skill>
 	<skill id="2447" levels="1" name="Seed of Revenge">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10555" /> <!-- Forgotten Scroll - Seed of Revenge -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10555</itemConsumeId> <!-- Forgotten Scroll - Seed of Revenge -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1082,15 +1082,15 @@
 	</skill>
 	<skill id="2448" levels="1" name="Hell Scream">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10556" /> <!-- Forgotten Scroll - Hell Scream -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10556</itemConsumeId> <!-- Forgotten Scroll - Hell Scream -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1108,15 +1108,15 @@
 	</skill>
 	<skill id="2449" levels="1" name="Song of Windstorm">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10557" /> <!-- Forgotten Scroll - Song of Windstorm -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10557</itemConsumeId> <!-- Forgotten Scroll - Song of Windstorm -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1134,15 +1134,15 @@
 	</skill>
 	<skill id="2450" levels="1" name="Blade Storm">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10558" /> <!-- Forgotten Scroll - Dance of Blade Storm -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10558</itemConsumeId> <!-- Forgotten Scroll - Dance of Blade Storm -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1160,15 +1160,15 @@
 	</skill>
 	<skill id="2451" levels="1" name="Sixth Sense">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10559" /> <!-- Forgotten Scroll - Sixth Sense -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10559</itemConsumeId> <!-- Forgotten Scroll - Sixth Sense -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1186,15 +1186,15 @@
 	</skill>
 	<skill id="2452" levels="1" name="Expose Vulnerability">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10560" /> <!-- Forgotten Scroll - Expose Weak Point -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10560</itemConsumeId> <!-- Forgotten Scroll - Expose Weak Point -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1212,15 +1212,15 @@
 	</skill>
 	<skill id="2453" levels="1" name="Exciting Adventure">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10561" /> <!-- Forgotten Scroll - Exciting Adventure -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10561</itemConsumeId> <!-- Forgotten Scroll - Exciting Adventure -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1238,15 +1238,15 @@
 	</skill>
 	<skill id="2454" levels="1" name="Wind Riding">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10562" /> <!-- Forgotten Scroll - Wind Riding -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10562</itemConsumeId> <!-- Forgotten Scroll - Wind Riding -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1264,15 +1264,15 @@
 	</skill>
 	<skill id="2455" levels="1" name="Ghost Walking">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10563" /> <!-- Forgotten Scroll - Ghost Walking -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10563</itemConsumeId> <!-- Forgotten Scroll - Ghost Walking -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1290,15 +1290,15 @@
 	</skill>
 	<skill id="2456" levels="1" name="Flame Hawk">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10564" /> <!-- Forgotten Scroll - Flame Hawk -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10564</itemConsumeId> <!-- Forgotten Scroll - Flame Hawk -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1316,15 +1316,15 @@
 	</skill>
 	<skill id="2457" levels="1" name="Arrow Rain">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10565" /> <!-- Forgotten Scroll - Arrow Rain -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10565</itemConsumeId> <!-- Forgotten Scroll - Arrow Rain -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1342,15 +1342,15 @@
 	</skill>
 	<skill id="2458" levels="1" name="Ghost Piercing">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10566" /> <!-- Forgotten Scroll - Ghost Piercing -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10566</itemConsumeId> <!-- Forgotten Scroll - Ghost Piercing -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1368,15 +1368,15 @@
 	</skill>
 	<skill id="2459" levels="1" name="Dread Pool">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10567" /> <!-- Forgotten Scroll - Dread Pool -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10567</itemConsumeId> <!-- Forgotten Scroll - Dread Pool -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1394,15 +1394,15 @@
 	</skill>
 	<skill id="2460" levels="1" name="Weapon Blockade">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10568" /> <!-- Forgotten Scroll - Weapon Blockade -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10568</itemConsumeId> <!-- Forgotten Scroll - Weapon Blockade -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1420,15 +1420,15 @@
 	</skill>
 	<skill id="2461" levels="1" name="Force of Destruction">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10569" /> <!-- Forgotten Scroll - Force of Destruction -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10569</itemConsumeId> <!-- Forgotten Scroll - Force of Destruction -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1446,15 +1446,15 @@
 	</skill>
 	<skill id="2462" levels="1" name="Demolition Impact">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10570" /> <!-- Forgotten Scroll - Demolition Impact -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10570</itemConsumeId> <!-- Forgotten Scroll - Demolition Impact -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1472,15 +1472,15 @@
 	</skill>
 	<skill id="2463" levels="1" name="Golem Armor">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10571" /> <!-- Forgotten Scroll - Golem Armor -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10571</itemConsumeId> <!-- Forgotten Scroll - Golem Armor -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1498,15 +1498,15 @@
 	</skill>
 	<skill id="2464" levels="1" name="Flame Armor">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10572" /> <!-- Forgotten Scroll - Flame Armor -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10572</itemConsumeId> <!-- Forgotten Scroll - Flame Armor -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1524,15 +1524,15 @@
 	</skill>
 	<skill id="2465" levels="1" name="Frost Armor">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10573" /> <!-- Forgotten Scroll - Frost Armor -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10573</itemConsumeId> <!-- Forgotten Scroll - Frost Armor -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1550,15 +1550,15 @@
 	</skill>
 	<skill id="2466" levels="1" name="Hurricane Armor">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10574" /> <!-- Forgotten Scroll - Hurricane Armor -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10574</itemConsumeId> <!-- Forgotten Scroll - Hurricane Armor -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1576,15 +1576,15 @@
 	</skill>
 	<skill id="2467" levels="1" name="Vampiric Mist">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10575" /> <!-- Forgotten Scroll - Vampiric Mist -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10575</itemConsumeId> <!-- Forgotten Scroll - Vampiric Mist -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1602,15 +1602,15 @@
 	</skill>
 	<skill id="2468" levels="1" name="Servitor Barrier">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10576" /> <!-- Forgotten Scroll - Servitor Barrier -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10576</itemConsumeId> <!-- Forgotten Scroll - Servitor Barrier -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1628,15 +1628,15 @@
 	</skill>
 	<skill id="2469" levels="1" name="Excessive Loyalty">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10577" /> <!-- Forgotten Scroll - Excessive Loyalty -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10577</itemConsumeId> <!-- Forgotten Scroll - Excessive Loyalty -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1654,15 +1654,15 @@
 	</skill>
 	<skill id="2470" levels="1" name="Mutual Response">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10578" /> <!-- Forgotten Scroll - Mutual Response -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10578</itemConsumeId> <!-- Forgotten Scroll - Mutual Response -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1680,15 +1680,15 @@
 	</skill>
 	<skill id="2471" levels="1" name="Improve Combat">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10579" /> <!-- Forgotten Scroll - Improve Combat -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10579</itemConsumeId> <!-- Forgotten Scroll - Improve Combat -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1706,15 +1706,15 @@
 	</skill>
 	<skill id="2472" levels="1" name="Improve Magic">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10580" /> <!-- Forgotten Scroll - Improve Magic -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10580</itemConsumeId> <!-- Forgotten Scroll - Improve Magic -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1732,15 +1732,15 @@
 	</skill>
 	<skill id="2473" levels="1" name="Improve Condition">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10581" /> <!-- Forgotten Scroll - Improve Condition -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10581</itemConsumeId> <!-- Forgotten Scroll - Improve Condition -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1758,15 +1758,15 @@
 	</skill>
 	<skill id="2474" levels="1" name="Improve Critical Attack">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10582" /> <!-- Forgotten Scroll - Improve Critical Attack -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10582</itemConsumeId> <!-- Forgotten Scroll - Improve Critical Attack -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1784,15 +1784,15 @@
 	</skill>
 	<skill id="2475" levels="1" name="Improve Shield Defense">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10583" /> <!-- Forgotten Scroll - Improve Shield Defense -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10583</itemConsumeId> <!-- Forgotten Scroll - Improve Shield Defense -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1810,15 +1810,15 @@
 	</skill>
 	<skill id="2476" levels="1" name="Improve Movement">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10584" /> <!-- Forgotten Scroll - Improve Movement -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10584</itemConsumeId> <!-- Forgotten Scroll - Improve Movement -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1836,15 +1836,15 @@
 	</skill>
 	<skill id="2477" levels="1" name="Sublime Self-sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10585" /> <!-- Forgotten Scroll - Sublime Self Sacrifice -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10585</itemConsumeId> <!-- Forgotten Scroll - Sublime Self Sacrifice -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1862,15 +1862,15 @@
 	</skill>
 	<skill id="2478" levels="1" name="Blessing of Eva">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10586" /> <!-- Forgotten Scroll - Blessing of Eva -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10586</itemConsumeId> <!-- Forgotten Scroll - Blessing of Eva -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1888,15 +1888,15 @@
 	</skill>
 	<skill id="2479" levels="1" name="Lord of Vampires">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10587" /> <!-- Forgotten Scroll - Lord of Vampire -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10587</itemConsumeId> <!-- Forgotten Scroll - Lord of Vampire -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1914,15 +1914,15 @@
 	</skill>
 	<skill id="2480" levels="1" name="Thorn Root">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10588" /> <!-- Forgotten Scroll - Thorn Root -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10588</itemConsumeId> <!-- Forgotten Scroll - Thorn Root -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1940,15 +1940,15 @@
 	</skill>
 	<skill id="2481" levels="1" name="Seal of Limit">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10589" /> <!-- Forgotten Scroll - Seal of Limit -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10589</itemConsumeId> <!-- Forgotten Scroll - Seal of Limit -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1966,15 +1966,15 @@
 	</skill>
 	<skill id="2482" levels="1" name="Spirit of the Phoenix">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10591" /> <!-- Forgotten Scroll - Spirit of Phoenix/Flame Icon -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10591</itemConsumeId> <!-- Forgotten Scroll - Spirit of Phoenix/Flame Icon -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -1995,15 +1995,15 @@
 	</skill>
 	<skill id="2483" levels="1" name="Eva's Will">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10592" /> <!-- Forgotten Scroll - Eva's Will -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10592</itemConsumeId> <!-- Forgotten Scroll - Eva's Will -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -2024,15 +2024,15 @@
 	</skill>
 	<skill id="2484" levels="1" name="Pain of Shilen">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10593" /> <!-- Forgotten Scroll - Pain of Shilen / Spirit of Shilen -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10593</itemConsumeId> <!-- Forgotten Scroll - Pain of Shilen / Spirit of Shilen -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -2052,17 +2052,17 @@
 		</for>
 	</skill>
 	<skill id="2485" levels="1" name="Herb of Life">
-		<set name="effectPoint" val="100" />
-		<set name="hitTime" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="40" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="2000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="affectRange" val="1000" />
-		<set name="isRecoveryHerb" val="true" />
+		<effectPoint>100</effectPoint>
+		<hitTime>100</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>40</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<affectRange>1000</affectRange>
+		<isRecoveryHerb>true</isRecoveryHerb>
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
@@ -2073,17 +2073,17 @@
 		</for>
 	</skill>
 	<skill id="2486" levels="1" name="Herb of Mana">
-		<set name="effectPoint" val="100" />
-		<set name="hitTime" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="40" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="2000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="affectRange" val="1000" />
-		<set name="isRecoveryHerb" val="true" />
+		<effectPoint>100</effectPoint>
+		<hitTime>100</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>40</magicLvl>
+		<operateType>A1</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<affectRange>1000</affectRange>
+		<isRecoveryHerb>true</isRecoveryHerb>
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
@@ -2095,25 +2095,25 @@
 	</skill>
 	<skill id="2487" levels="1" name="Item - Special Sound Crystal">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="2488" levels="1" name="Wild Shot">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10594" /> <!-- Forgotten Scroll - Wild Shot -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10594</itemConsumeId> <!-- Forgotten Scroll - Wild Shot -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -2131,15 +2131,15 @@
 	</skill>
 	<skill id="2489" levels="1" name="Lightning Shock">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10595" /> <!-- Forgotten Scroll - Lightning Shock -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10595</itemConsumeId> <!-- Forgotten Scroll - Lightning Shock -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -2160,14 +2160,14 @@
 		<table name="#extractableItems">
 			10470,2,10471,2,10472,1,100
 		</table>
-		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2180,13 +2180,13 @@
 	</skill>
 	<skill id="2491" levels="1" name="Transform Zaken">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SetSkill">
 				<param skillId="663" skillLvl="1" />
@@ -2195,13 +2195,13 @@
 	</skill>
 	<skill id="2492" levels="1" name="Transform Anakim">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SetSkill">
 				<param skillId="664" skillLvl="1" />
@@ -2210,13 +2210,13 @@
 	</skill>
 	<skill id="2493" levels="1" name="Transform Venom">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SetSkill">
 				<param skillId="665" skillLvl="1" />
@@ -2225,13 +2225,13 @@
 	</skill>
 	<skill id="2494" levels="1" name="Transform Gordon">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SetSkill">
 				<param skillId="666" skillLvl="1" />
@@ -2240,13 +2240,13 @@
 	</skill>
 	<skill id="2495" levels="1" name="Transform Ranku">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SetSkill">
 				<param skillId="667" skillLvl="1" />
@@ -2255,13 +2255,13 @@
 	</skill>
 	<skill id="2496" levels="1" name="Transform Kechi">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SetSkill">
 				<param skillId="668" skillLvl="1" />
@@ -2270,13 +2270,13 @@
 	</skill>
 	<skill id="2497" levels="1" name="Transform Demon Prince">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="SetSkill">
 				<param skillId="669" skillLvl="1" />
@@ -2285,17 +2285,17 @@
 	</skill>
 	<skill id="2498" levels="1" name="Bottle of Empty Soul">
 		<!-- Confirmed CT2.5 -->
-		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="10409" /> <!-- A Bottle of Souls -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="soulMaxConsumeCount" val="5" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>10409</itemConsumeId> <!-- A Bottle of Souls -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<soulMaxConsumeCount>5</soulMaxConsumeCount>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<cond msgId="2195">
 			<player souls="5" />
 		</cond>
@@ -2307,13 +2307,13 @@
 	</skill>
 	<skill id="2499" levels="1" name="Full Bottle of Souls">
 		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="SELF" />
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="FocusSouls">
 				<param charge="5" />

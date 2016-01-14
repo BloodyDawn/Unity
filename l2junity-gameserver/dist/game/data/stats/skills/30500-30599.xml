@@ -7,21 +7,21 @@
 		<table name="#magicLvl"> 1 20 28 36 42 46 50 54 60 62 66 70 74 77 79 81 83 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#pDef"> 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<table name="#power"> 22 77 141 221 669 856 1073 1323 1602 1913 2256 2629 3034 3879 4149 4434 4733 18990 20811 23098 25950 29500 33928 39478 46478 47996 49514 51032 </table>
-		<set name="icon" val="icon.skill30500" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="PD_DOWN" />
-		<set name="castRange" val="40" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-687" />
-		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
-		<set name="hitTime" val="1000" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="2000" />
-		<set name="targetType" val="ONE" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30500</icon>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-687</effectPoint>
+		<effectRange>400</effectRange> <!-- Unconfirmed -->
+		<hitTime>1000</hitTime>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<targetType>ONE</targetType>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -43,18 +43,18 @@
 		<table name="#magicLvl"> 20 28 36 42 46 50 54 58 62 66 70 74 77 79 81 83 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#power"> 129 235 369 1116 1428 1789 2205 2671 3189 3760 4383 5058 6466 6916 7390 7888 28134 30832 34221 38446 43706 50268 58492 68865 71115 73365 75615 </table>
-		<set name="icon" val="icon.skill30501" />
-		<set name="castRange" val="40" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-687" />
-		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
-		<set name="hitTime" val="1000" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="5000" />
-		<set name="targetType" val="ONE" />
+		<icon>icon.skill30501</icon>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-687</effectPoint>
+		<effectRange>400</effectRange> <!-- Unconfirmed -->
+		<hitTime>1000</hitTime>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<operateType>A1</operateType>
+		<reuseDelay>5000</reuseDelay>
+		<targetType>ONE</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -71,24 +71,24 @@
 		<!-- Knocks down target for 3 sec. Requires a fist weapon. -->
 		<table name="#magicLvl"> 40 44 48 52 56 60 64 68 72 76 78 80 82 84 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 34 37 41 45 49 54 57 61 65 68 70 71 72 73 74 75 75 75 76 76 77 78 79 80 </table>
-		<set name="icon" val="icon.skill30502" />
-		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
-		<set name="castRange" val="40" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-709" />
-		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
-		<set name="hitTime" val="1000" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="ONE" />
-		<set name="isDebuff" val="true" />
-		<set name="trait" val="KNOCKDOWN" />
+		<icon>icon.skill30502</icon>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<activateRate>100</activateRate> <!-- Guessed -->
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-709</effectPoint>
+		<effectRange>400</effectRange> <!-- Unconfirmed -->
+		<hitTime>1000</hitTime>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<operateType>A2</operateType>
+		<reuseDelay>30000</reuseDelay>
+		<targetType>ONE</targetType>
+		<isDebuff>true</isDebuff>
+		<trait>KNOCKDOWN</trait>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -104,18 +104,18 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 81 81 82 83 83 83 84 84 84 84 84 </table>
 		<table name="#power"> 35167 36755 40540 45273 51165 58506 67683 79217 88893 91705 94517 </table>
-		<set name="icon" val="icon.skill30503" />
-		<set name="castRange" val="60" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-687" />
-		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
-		<set name="hitTime" val="2000" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="5000" />
-		<set name="targetType" val="ONE" />
+		<icon>icon.skill30503</icon>
+		<castRange>60</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-687</effectPoint>
+		<effectRange>400</effectRange> <!-- Unconfirmed -->
+		<hitTime>2000</hitTime>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<operateType>A1</operateType>
+		<reuseDelay>5000</reuseDelay>
+		<targetType>ONE</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -134,18 +134,18 @@
 		<table name="#magicLevel"> 76 78 80 82 84 85 87 89 91 93 95 97 99 101 103 105 </table> <!-- FIXME -->
 		<table name="#mpConsumes"> 75 77 78 79 80 81 82 82 83 83 84 84 85 86 87 88 </table>
 		<table name="#power"> 10417 11147 11917 12727 13577 35167 38540 42776 48058 54633 62836 73116 86081 88893 91705 94517 </table>
-		<set name="icon" val="icon.skill30504" />
-		<set name="castRange" val="40" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-700" />
-		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
-		<set name="hitTime" val="2500" />
-		<set name="magicLvl" val="#magicLevel" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="9000" />
-		<set name="targetType" val="ONE" />
+		<icon>icon.skill30504</icon>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-700</effectPoint>
+		<effectRange>400</effectRange> <!-- Unconfirmed -->
+		<hitTime>2500</hitTime>
+		<magicLvl>#magicLevel</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<operateType>A1</operateType>
+		<reuseDelay>9000</reuseDelay>
+		<targetType>ONE</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -164,22 +164,22 @@
 		<table name="#magicLevel"> 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 149 150 151 151 152 153 155 157 159 161 </table>
 		<table name="#power"> 17266 19164 21530 24475 28150 32755 38563 39823 41083 42343 </table>
-		<set name="icon" val="icon.skill30505" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="affectRange" val="200" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-687" />
-		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
-		<set name="hitTime" val="2000" />
-		<set name="magicLvl" val="#magicLevel" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="operateType" val="A2" />
-		<set name="trait" val="PULL" />
-		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="AURA" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30505</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<activateRate>80</activateRate> <!-- Guessed -->
+		<affectRange>200</affectRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-687</effectPoint>
+		<effectRange>400</effectRange> <!-- Unconfirmed -->
+		<hitTime>2000</hitTime>
+		<magicLvl>#magicLevel</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<operateType>A2</operateType>
+		<trait>PULL</trait>
+		<reuseDelay>30000</reuseDelay>
+		<targetType>AURA</targetType>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -199,26 +199,26 @@
 		<table name="#magicLevel"> 79 81 83 85 87 89 91 93 95 97 99 101 103 105 </table> <!-- FIXME -->
 		<table name="#mpConsumes"> 141 143 146 147 149 150 151 151 152 153 155 157 159 161 </table>
 		<table name="#power"> 5164 5518 5890 19693 21581 23953 26909 30589 35181 40936 48195 49769 51343 52917 </table>
-		<set name="icon" val="icon.skill30506" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalTime" val="2" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="affectRange" val="200" />
-		<set name="castRange" val="80" />
-		<set name="coolTime" val="1000" />
-		<set name="effectPoint" val="-687" />
-		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
-		<set name="fanRange" val="0;0;200;90" />
-		<set name="hitTime" val="2000" />
-		<set name="magicLvl" val="#magicLevel" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="FRONT_AREA" />
-		<set name="isDebuff" val="true" />
-		<set name="trait" val="KNOCKBACK" />
+		<icon>icon.skill30506</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>STUN</abnormalType>
+		<abnormalTime>2</abnormalTime>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<affectRange>200</affectRange>
+		<castRange>80</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>-687</effectPoint>
+		<effectRange>400</effectRange> <!-- Unconfirmed -->
+		<fanRange>0;0;200;90</fanRange>
+		<hitTime>2000</hitTime>
+		<magicLvl>#magicLevel</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<operateType>A2</operateType>
+		<reuseDelay>30000</reuseDelay>
+		<targetType>FRONT_AREA</targetType>
+		<isDebuff>true</isDebuff>
+		<trait>KNOCKBACK</trait>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -236,24 +236,24 @@
 		<!-- Updated to IO -->
 		<!-- Disables targeting and finds weakness to the enemy's left. Enemy is stunned for 5 sec. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 13 14 16 18 19 21 23 24 26 27 28 28 29 29 29 30 30 30 30 30 30 30 30 30 </table>
-		<set name="icon" val="icon.skill30507" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="80" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-687" />
-		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A2" /> <!-- A1 in client? -->
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="100" />
-		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="7000" />
-		<set name="isDebuff" val="true" />
-		<set name="trait" val="SHOCK" />
+		<icon>icon.skill30507</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate> <!-- Unconfirmed -->
+		<effectPoint>-687</effectPoint>
+		<effectRange>900</effectRange> <!-- Unconfirmed -->
+		<operateType>A2</operateType> <!-- A1 in client? -->
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<castRange>300</castRange>
+		<hitTime>100</hitTime>
+		<coolTime>300</coolTime>
+		<reuseDelay>7000</reuseDelay>
+		<isDebuff>true</isDebuff>
+		<trait>SHOCK</trait>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -276,19 +276,19 @@
 		<!-- Disables targeting and finds weakness to the enemy's right. Decreases enemy's resistance to Fist Weapons by 10%. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 7 9 11 14 15 17 19 20 22 23 25 26 27 28 28 29 29 29 30 30 30 30 30 31 32 33 34 </table>
 		<table name="#fistDecrease"> -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 </table>
-		<set name="icon" val="icon.skill30508" />
-		<set name="abnormalTime" val="5" />
-		<set name="effectPoint" val="-687" />
-		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A2" /> <!-- A1 in client? -->
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="100" />
-		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="7000" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30508</icon>
+		<abnormalTime>5</abnormalTime>
+		<effectPoint>-687</effectPoint>
+		<effectRange>900</effectRange> <!-- Unconfirmed -->
+		<operateType>A2</operateType> <!-- A1 in client? -->
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<castRange>300</castRange>
+		<hitTime>100</hitTime>
+		<coolTime>300</coolTime>
+		<reuseDelay>7000</reuseDelay>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -314,17 +314,17 @@
 		<table name="#mpConsumes"> 27 30 35 44 48 </table>
 		<table name="#pAtk"> 1.05 1.10 1.15 1.20 1.20 </table>
 		<table name="#knockdown"> 0 0 0 0 50 </table>
-		<set name="icon" val="icon.skill30509" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="NONE" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="100" />
-		<set name="effectPoint" val="-100" />
-		<set name="reuseDelay" val="7000" />
+		<icon>icon.skill30509</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>NONE</abnormalType>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>150</castRange>
+		<hitTime>100</hitTime>
+		<effectPoint>-100</effectPoint>
+		<reuseDelay>7000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -354,10 +354,10 @@
 	<skill id="30510" levels="1" name="Infighter">
 		<!-- Updated to Ertheia -->
 		<!-- Using Right Sidestep increases P. Critical Rate. -->
-		<set name="icon" val="icon.skill30510" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="97" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30510</icon>
+		<operateType>P</operateType>
+		<magicLvl>97</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
 				<param skillId="30532" skillLevel="1" /> <!-- Inside Position -->
@@ -376,17 +376,17 @@
 		<table name="#mpConsumes"> 20 44 45 45 45 </table>
 		<table name="#pAtk"> 1.10 1.15 1.20 1.25 1.25 </table>
 		<table name="#resists"> 0 15 20 25 30 </table>
-		<set name="icon" val="icon.skill30511" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="NONE" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="687" />
-		<set name="reuseDelay" val="30000" />
+		<icon>icon.skill30511</icon>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>NONE</abnormalType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>687</effectPoint>
+		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -399,18 +399,18 @@
 	<skill id="30512" levels="3" name="Distortion">
 		<!-- Updated to IO -->
 		<!-- For 60 sec., distorts space to attack from behind. Requires a fist weapon. -->
-		<set name="icon" val="icon.skill30512" />
+		<icon>icon.skill30512</icon>
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#attack"> 1.05 1.10 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="60" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="41" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="687" />
-		<set name="reuseDelay" val="180000" />
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>41</mpConsume>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>687</effectPoint>
+		<reuseDelay>180000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -434,15 +434,15 @@
 		<table name="#rEvas"> 50 70 70 </table>
 		<table name="#mEvas"> 50 70 70 </table>
 		<table name="#blockDebuff"> 0 1 3 </table>
-		<set name="icon" val="icon.skill30514" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="3" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="200" />
-		<set name="effectPoint" val="379" />
-		<set name="reuseDelay" val="5000" />
+		<icon>icon.skill30514</icon>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>200</hitTime>
+		<effectPoint>379</effectPoint>
+		<reuseDelay>5000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -463,18 +463,18 @@
 	<skill id="30515" levels="1" name="Spallation">
 		<!-- Updated to Ertheia -->
 		<!-- Creates a protective sphere that diffuses all ranged attacks and debuffs for 30 sec. Damaged if attacked within the sphere. Requires a fist weapon. -->
-		<set name="icon" val="icon.skill30515" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="NONE" />
-		<set name="abnormalVisualEffect" val="SPACEREF" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="31" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="379" />
-		<set name="reuseDelay" val="300000" />
+		<icon>icon.skill30515</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>NONE</abnormalType>
+		<abnormalVisualEffect>SPACEREF</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>31</mpConsume>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>379</effectPoint>
+		<reuseDelay>300000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -488,19 +488,19 @@
 	<skill id="30516" levels="1" name="Gravity Barrier">
 		<!-- Updated to IO -->
 		<!-- Cancels all debuffs and becomes invincible against all debuffs and damage. -->
-		<set name="icon" val="icon.skill30516" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="INVINCIBILITY" />
-		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
-		<set name="canCastWhileDisabled" val="true" />
-		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="30" />
-		<set name="hitTime" val="200" />
-		<set name="effectPoint" val="379" />
-		<set name="reuseDelay" val="300000" />
+		<icon>icon.skill30516</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>INVINCIBILITY</abnormalType>
+		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
+		<canCastWhileDisabled>true</canCastWhileDisabled>
+		<operateType>A2</operateType>
+		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
+		<targetType>SELF</targetType>
+		<mpConsume>30</mpConsume>
+		<hitTime>200</hitTime>
+		<effectPoint>379</effectPoint>
+		<reuseDelay>300000</reuseDelay>
 		<for>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
@@ -512,21 +512,21 @@
 		<!-- Updated to IO -->
 		<!-- Increases the effect of gravity on nearby enemies to slow them down and block them from teleporting. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 73 74 75 75 75 76 76 77 78 79 80 </table>
-		<set name="icon" val="icon.skill30517" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="BLOCK_ESCAPE" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
-		<set name="affectRange" val="300" />
-		<set name="effectPoint" val="-379" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="60000" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30517</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>BLOCK_ESCAPE</abnormalType>
+		<activateRate>80</activateRate> <!-- Guessed -->
+		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
+		<affectRange>300</affectRange>
+		<effectPoint>-379</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>AURA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -542,24 +542,24 @@
 		<!-- Attacks nearby enemies with 19693 Power added to P. Atk. and knocks them down. Damage increases with the number of enemies affected. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 1479 1487 1500 1510 1516 1523 1532 1544 1556 1568 1580 </table>
 		<table name="#power"> 19693 20582 22701 25350 28648 32757 37894 44352 49769 51343 52917 </table>
-		<set name="icon" val="icon.skill30518" />
-		<set name="abnormalTime" val="1" /> <!-- Unconfirmed -->
-		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="affectLimit" val="2-6" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="affectRange" val="300" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-687" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="2500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="isMagic" val="6" />
-		<set name="isDebuff" val="true" />
-		<set name="trait" val="KNOCKDOWN" />
+		<icon>icon.skill30518</icon>
+		<abnormalTime>1</abnormalTime> <!-- Unconfirmed -->
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<activateRate>80</activateRate> <!-- Guessed -->
+		<affectLimit>2-6</affectLimit>
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<affectRange>300</affectRange> <!-- Unconfirmed -->
+		<effectPoint>-687</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>AURA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>2500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<isMagic>6</isMagic>
+		<isDebuff>true</isDebuff>
+		<trait>KNOCKDOWN</trait>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -576,14 +576,14 @@
 	<skill id="30519" levels="1" name="Warped Space">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates a warped space where the enemy is trapped and their abilities are decreased. Requires a fist weapon. -->
-		<set name="icon" val="icon.skill30519" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="772" />
-		<set name="hitTime" val="2500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-707" />
-		<set name="reuseDelay" val="600000" />
+		<icon>icon.skill30519</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>772</mpConsume>
+		<hitTime>2500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-707</effectPoint>
+		<reuseDelay>600000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -597,16 +597,16 @@
 		<table name="#cAtk"> 1.10 1.15 1.15 </table>
 		<table name="#cAtkSkill"> 1.10 1.10 1.15 </table>
 		<table name="#healPercent"> 30 30 40 </table>
-		<set name="icon" val="icon.skill30520" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalVisualEffect" val="PMENTAL_TRAIL" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="100" />
-		<set name="reuseDelay" val="300000" />
+		<icon>icon.skill30520</icon>
+		<abnormalTime>30</abnormalTime>
+		<abnormalVisualEffect>PMENTAL_TRAIL</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>100</effectPoint>
+		<reuseDelay>300000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -637,13 +637,13 @@
 	<skill id="30521" levels="1" name="Damage Up">
 		<!-- Updated to Ertheia -->
 		<!-- Inflicts normal damage x 5. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-100" />
-		<set name="reuseDelay" val="1000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="RegularAttack">
 				<param pAtkMod="5" />
@@ -654,9 +654,9 @@
 	<skill id="30522" levels="1" name="Eminent Attack Movement">
 		<!-- Updated to IO -->
 		<!-- Speed has a chance to increase every time you receive damage. -->
-		<set name="icon" val="icon.skill30522" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30522</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<param minDamage="1" />
@@ -672,13 +672,13 @@
 		<table name="#triggeredLevel"> 2 3 0 </table>
 		<table name="#runSpd"> 10 20 40 </table>
 		<table name="#pDefMDef"> 1.10 1.15 1.20 </table>
-		<set name="icon" val="icon.skill30523" />
-		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="isTriggeredSkill" val="true" />
-		<set name="effectPoint" val="2" />
-		<set name="isMagic" val="4" />
+		<icon>icon.skill30523</icon>
+		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectPoint>2</effectPoint>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<param minDamage="1" />
@@ -694,18 +694,18 @@
 	<skill id="30524" levels="1" name="Reliable Hit">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fixed damage. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="-100" />
-		<set name="mpConsume" val="1" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>-100</effectPoint>
+		<mpConsume>1</mpConsume>
 	</skill>
 	<skill id="30526" levels="1" name="Heavy Punch">
 		<!-- Updated to Ertheia -->
 		<!-- Has a chance to inflict normal damage x 5. Requires a Fist Weapon to activate. -->
-		<set name="icon" val="icon.skill30526" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30526</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -720,37 +720,37 @@
 	</skill>
 	<skill id="30527" levels="1" name="Twisted Space - NPC">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill1042" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="-707" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill1042</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>-707</effectPoint>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="30528" levels="1" name="Spatial Trap">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Trapped in some space, your battle strength is weakened. -->
-		<set name="icon" val="icon.skill30525" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="-707" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30525</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>-707</effectPoint>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="30530" levels="15" name="Crushing Air">
 		<!-- Updated to IO -->
 		<!-- Crushes the air to decrease target's battle strength. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 34 35 35 36 36 37 37 37 37 38 38 38 38 38 38 </table>
-		<set name="icon" val="icon.skill30530" />
-		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
-		<set name="abnormalVisualEffect" val="GRAVITY_SPACE_3" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="-379" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30530</icon>
+		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
+		<abnormalVisualEffect>GRAVITY_SPACE_3</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-379</effectPoint>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
 				<set order="80" stat="moveSpeed" val="1" /> <!-- Set speed to 1 :) -->
@@ -768,13 +768,13 @@
 		<table name="#rCritSkill"> 1.10 1.20 1.40 </table>
 		<table name="#cAtkSkill"> 1 1 1.20 </table>
 		<table name="#cAtk"> 1 1 1.20 </table>
-		<set name="icon" val="icon.skill30510" />
-		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="isTriggeredSkill" val="true" />
-		<set name="effectPoint" val="2" />
-		<set name="isMagic" val="4" />
+		<icon>icon.skill30510</icon>
+		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectPoint>2</effectPoint>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
@@ -801,10 +801,10 @@
 		<table name="#pAtkAdd"> 4 13 63 124 208 306 471 3378 3916 4540 5110 5790 6143 6517 6914 7335 7781 </table>
 		<table name="#pAtkMul"> 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 </table>
 		<table name="#rCrit"> 0 0 10 10 10 20 20 60 60 60 60 60 60 60 60 60 60 </table>
-		<set name="icon" val="icon.skill30524" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill30524</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit">
@@ -841,10 +841,10 @@
 		<table name="#mDef2"> 0 0 0 0 0 0 276 949 1073 1214 1340 1511 1588 1668 1753 1842 1935 </table>
 		<table name="#rEvas"> 0 2 3 3 3 4 4 12 12 12 12 12 12 12 12 12 12 </table>
 		<table name="#magicLvl"> 5 20 40 52 64 76 80 85 90 95 99 99 99 99 99 99 99 </table> <!-- TODO -->
-		<set name="icon" val="icon.skill10254" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10254</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef">
@@ -881,10 +881,10 @@
 		<table name="#regCp"> 0 0 2.4 12 12 12 12 12 12 12 12 12 12 </table>
 		<table name="#runSpd"> 0 0 10 14 14 14 14 14 14 14 14 14 14 </table>
 		<table name="#magicLvl"> 20 40 76 85 90 95 99 100 102 104 104 104 104 </table>
-		<set name="icon" val="icon.skill11506" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11506</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="maxCp" val="#maxCp" />
@@ -903,10 +903,10 @@
 		<!-- Attack Attribute Bonus + 10, Attribute Resistance + 10. -->
 		<table name="#attribute"> 10 20 22 24 26 30 32 34 36 38 40 </table>
 		<table name="#magicLvl"> 76 85 85 85 85 85 85 85 85 85 85 </table> <!-- TODO -->
-		<set name="icon" val="icon.skill11006" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11006</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="fireRes" val="#attribute" />
@@ -931,10 +931,10 @@
 		<table name="#magicLvl"> 76 85 </table>
 		<table name="#traitResist1"> 30 30 </table>
 		<table name="#traitResist2"> 0 30 </table>
-		<set name="icon" val="icon.skill10005" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10005</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
 				<param HOLD="#traitResist1" DERANGEMENT="#traitResist1" PULL="#traitResist2" KNOCKBACK="#traitResist2" KNOCKDOWN="#traitResist2" />
@@ -945,10 +945,10 @@
 		<!-- STR + 2. -->
 		<table name="#STR"> 2 4 14 </table>
 		<table name="#magicLvl"> 40 76 85 </table>
-		<set name="icon" val="icon.skill0430" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill0430</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="#STR" />
@@ -960,24 +960,24 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lands a knee kick on the target. Target is knocked down for 3 seconds. Fist weapon must be equipped. -->
 		<table name="#mpConsumes"> 29 29 30 30 30 30 30 31 32 33 34 </table>
-		<set name="icon" val="icon.skill30546" />
-		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="flyType" val="CHARGE" /> <!-- Should launch flyType 3 (CHARGE) with animationSpeed 333 -->
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="DA2" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="100" />
-		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="7000" />
-		<set name="effectPoint" val="-700" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill30546</icon>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<activateRate>80</activateRate> <!-- Guessed -->
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<flyType>CHARGE</flyType> <!-- Should launch flyType 3 (CHARGE) with animationSpeed 333 -->
+		<nextActionAttack>true</nextActionAttack>
+		<operateType>DA2</operateType>
+		<trait>KNOCKDOWN</trait>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>300</castRange>
+		<hitTime>100</hitTime>
+		<coolTime>300</coolTime>
+		<reuseDelay>7000</reuseDelay>
+		<effectPoint>-700</effectPoint>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -994,15 +994,15 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Throws a powerful punch to a fallen target with 91570 Power added to P. Atk. Ignores 50% of target's P. Def. Fist weapon must be equipped. -->
 		<table name="#power"> 91570 95080 98736 102392 </table>
-		<set name="icon" val="icon.skill30547" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="85" />
-		<set name="castRange" val="80" />
-		<set name="hitTime" val="500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-700" />
-		<set name="reuseDelay" val="5000" />
+		<icon>icon.skill30547</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>85</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-700</effectPoint>
+		<reuseDelay>5000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="DUALFIST" />

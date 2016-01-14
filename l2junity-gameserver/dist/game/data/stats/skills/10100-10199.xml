@@ -11,18 +11,18 @@
 		<table name="#pAtkSpd"> 1.1 1.2 1.25 1.3 </table>
 		<table name="#rCrit"> 30 40 50 60 </table>
 		<table name="#cAtk"> 1.3 1.4 1.5 1.6 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="PINCH" /> <!-- TODO Confirm -->
-		<set name="icon" val="icon.skill10100" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="2" />
-		<set name="reuseDelay" val="600000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>PINCH</abnormalType> <!-- TODO Confirm -->
+		<icon>icon.skill10100</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>2</effectPoint>
+		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
@@ -60,18 +60,18 @@
 		<table name="#pAtkSpd"> 1.1 1.15 1.2 1.25 </table>
 		<table name="#rCrit"> 30 40 50 60 </table>
 		<table name="#cAtk"> 1.3 1.4 1.5 1.6 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="PINCH" /> <!-- TODO Confirm -->
-		<set name="icon" val="icon.skill10101" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="2" />
-		<set name="reuseDelay" val="600000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>PINCH</abnormalType> <!-- TODO Confirm -->
+		<icon>icon.skill10101</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>2</effectPoint>
+		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
@@ -99,28 +99,28 @@
 		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
 		<table name="#mpConsumes"> 185 191 197 203 209 215 </table>
 		<table name="#power"> 33505 34353 35201 36897 38593 40289 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
-		<set name="affectLimit" val="5-12" />
-		<set name="affectRange" val="150" />
-		<set name="activateRate" val="50" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="nextActionAttack" val="true" />
-		<set name="icon" val="icon.skill10102" />
-		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
-		<set name="itemConsumeCount" val="6" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="60000" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="isDebuff" val="true" />
-		<set name="trait" val="KNOCKDOWN" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>150</affectRange>
+		<activateRate>50</activateRate>
+		<lvlBonusRate>1</lvlBonusRate>
+		<nextActionAttack>true</nextActionAttack>
+		<icon>icon.skill10102</icon>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
+		<itemConsumeCount>6</itemConsumeCount>
+		<operateType>A2</operateType>
+		<targetType>AREA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>#effectPoint</effectPoint>
+		<isDebuff>true</isDebuff>
+		<trait>KNOCKDOWN</trait>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -139,29 +139,29 @@
 		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
 		<table name="#mpConsumes"> 185 191 197 199 201 203 </table>
 		<table name="#power"> 18151 18641 19131 20111 21091 22071 </table>
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="60" />
-		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="200" />
-		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
-		<set name="attributeType" val="WATER" />
-		<set name="attributeValue" val="20" />
-		<set name="icon" val="icon.skill10103" />
-		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
-		<set name="itemConsumeCount" val="6" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="AURA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="400" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="60000" />
-		<set name="effectPoint" val="-828" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>2</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>60</activateRate>
+		<affectLimit>10-10</affectLimit>
+		<affectRange>200</affectRange>
+		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
+		<attributeType>WATER</attributeType>
+		<attributeValue>20</attributeValue>
+		<icon>icon.skill10103</icon>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
+		<itemConsumeCount>6</itemConsumeCount>
+		<lvlBonusRate>1</lvlBonusRate>
+		<operateType>A2</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<targetType>AURA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>400</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-828</effectPoint>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -173,14 +173,14 @@
 	</skill>
 	<skill id="10104" levels="1" name="Paladin's Aura">
 		<!-- Increases P. Def. by 25%, Received Heal by 25%, and decreases Received P. Critical Damage by 25%. Increases party members' P. Def. by 20%, Received Heal by 20%, and decreases Received Critical Damage by 20%. Only one Knight's Aura can be active at any time. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="4" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10104" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="1000" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>4</toggleGroupId>
+		<abnormalVisualEffect>AURA_BUFF_SELF</abnormalVisualEffect>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10104</icon>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="10108" skillLevel="1" /> <!-- Paladin's Aura -->
@@ -194,14 +194,14 @@
 	</skill>
 	<skill id="10105" levels="1" name="Avenger's Aura">
 		<!-- Increases P. Atk./Atk. Spd by 25%, P. Critical Rate by 80, P. Critical Damage by 25%, and Speed by 20. Decreases P./M. Atk. by 30%, Atk. Spd./Casting Spd. by 30%, Speed by 20 and Received Critical Damage by 15% of nearby enemies. Only one Knight's Aura can be active at any time. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="4" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10105" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="1000" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>4</toggleGroupId>
+		<abnormalVisualEffect>AURA_BUFF_SELF</abnormalVisualEffect>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10105</icon>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="10109" skillLevel="1" /> <!-- Avenger's Aura -->
@@ -217,14 +217,14 @@
 	</skill>
 	<skill id="10106" levels="1" name="Sentinel's Aura">
 		<!-- Increases M. Def. by 25%, Attribute Resistance by 50, and Debuff Resistance by 25%. Increases party members' M. Def. by 20%, Attribute Resistance by 40, and Debuff Resistance by 20%. Only one Knight's Aura can be active at any time. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="4" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10106" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="1000" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>4</toggleGroupId>
+		<abnormalVisualEffect>AURA_BUFF_SELF</abnormalVisualEffect>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10106</icon>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="10110" skillLevel="1" /> <!-- Sentinel's Aura -->
@@ -241,14 +241,14 @@
 	</skill>
 	<skill id="10107" levels="1" name="Templar's Aura">
 		<!-- Increases P. Atk. by 15%, Atk. Spd. by 15%, and Speed by 10. Increases party members' P. Atk. by 10%, Atk. Spd. by 10%, M. Atk. by 10%, Casting Spd. by 10% and Speed by 10. Only one Knight's Aura can be active at any time. -->
-		<set name="magicCriticalRate" val="5" />
-		<set name="toggleGroupId" val="4" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10107" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="1000" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<toggleGroupId>4</toggleGroupId>
+		<abnormalVisualEffect>AURA_BUFF_SELF</abnormalVisualEffect>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10107</icon>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="10111" skillLevel="1" /> <!-- Templar's Aura -->
@@ -262,20 +262,20 @@
 	</skill>
 	<skill id="10108" levels="1" name="Paladin's Aura">
 		<!-- P. Def. + 20%, heal amount + 20%, and Received P. Critical Damage - 20%. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="AURA" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF" />
-		<set name="affectRange" val="1000" />
-		<set name="canBeDispelled" val="false" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10104" />
-		<set name="operateType" val="A5" />
-		<set name="targetType" val="PARTY_NOTME" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="2" />
-		<set name="reuseDelay" val="1000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>AURA</abnormalType>
+		<abnormalVisualEffect>AURA_BUFF</abnormalVisualEffect>
+		<affectRange>1000</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10104</icon>
+		<operateType>A5</operateType>
+		<targetType>PARTY_NOTME</targetType>
+		<hitTime>500</hitTime>
+		<effectPoint>2</effectPoint>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
@@ -286,21 +286,21 @@
 	</skill>
 	<skill id="10109" levels="1" name="Avenger's Aura">
 		<!-- P./M. Atk. - 30%, Atk. Spd./Casting Spd. - 30%, Speed - 30%, and Received Critical Damage + 15%. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="AURA" />
-		<set name="abnormalVisualEffect" val="AURA_DEBUFF" />
-		<set name="affectRange" val="300" />
-		<set name="canBeDispelled" val="false" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10105" />
-		<set name="operateType" val="A5" />
-		<set name="targetType" val="AURA" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="1000" />
-		<set name="effectPoint" val="2" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>AURA</abnormalType>
+		<abnormalVisualEffect>AURA_DEBUFF</abnormalVisualEffect>
+		<affectRange>300</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10105</icon>
+		<operateType>A5</operateType>
+		<targetType>AURA</targetType>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.7" />
@@ -314,19 +314,19 @@
 	</skill>
 	<skill id="10110" levels="1" name="Sentinel's Aura">
 		<!-- M. Def. + 20%, Attribute Resistance + 40, Debuff Resistance + 20%. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="AURA" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF" />
-		<set name="affectRange" val="1000" />
-		<set name="canBeDispelled" val="false" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10106" />
-		<set name="operateType" val="A5" />
-		<set name="targetType" val="PARTY_NOTME" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="2" />
-		<set name="reuseDelay" val="1000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>AURA</abnormalType>
+		<abnormalVisualEffect>AURA_BUFF</abnormalVisualEffect>
+		<affectRange>1000</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10106</icon>
+		<operateType>A5</operateType>
+		<targetType>PARTY_NOTME</targetType>
+		<hitTime>500</hitTime>
+		<effectPoint>2</effectPoint>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.2" />
@@ -340,20 +340,20 @@
 	</skill>
 	<skill id="10111" levels="1" name="Templar's Aura">
 		<!-- P. Atk. + 10%, Atk. Spd. + 10%, M. Atk. + 10%, Casting Spd. + 10%, Speed + 10. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="11" />
-		<set name="abnormalType" val="AURA" />
-		<set name="abnormalVisualEffect" val="AURA_BUFF" />
-		<set name="affectRange" val="1000" />
-		<set name="canBeDispelled" val="false" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="icon" val="icon.skill10107" />
-		<set name="operateType" val="A5" />
-		<set name="targetType" val="PARTY_NOTME" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="2" />
-		<set name="reuseDelay" val="1000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>11</abnormalTime>
+		<abnormalType>AURA</abnormalType>
+		<abnormalVisualEffect>AURA_BUFF</abnormalVisualEffect>
+		<affectRange>1000</affectRange>
+		<canBeDispelled>false</canBeDispelled>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<icon>icon.skill10107</icon>
+		<operateType>A5</operateType>
+		<targetType>PARTY_NOTME</targetType>
+		<hitTime>500</hitTime>
+		<effectPoint>2</effectPoint>
+		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.1" />

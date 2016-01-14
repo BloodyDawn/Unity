@@ -6,21 +6,21 @@
 		<table name="#mpConsumes"> 276 297 315 333 351 369 </table>
 		<table name="#magicLvl"> 90 95 99 101 103 105 </table>
 		<table name="#power"> 52746 59601 65085 69414 73352 77290 </table>
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skill10300" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="hitTime" val="1690" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-700" />
-		<set name="reuseDelay" val="30000" />
-		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<icon>icon.skill10300</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<castRange>40</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1690</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-700</effectPoint>
+		<reuseDelay>30000</reuseDelay>
+		<rideState>NONE</rideState>
+		<staticReuse>true</staticReuse>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -43,9 +43,9 @@
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
 		<!-- Max Momentum increases to Stage 15. -->
-		<set name="icon" val="icon.skill11842" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11842</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="FocusEnergy">
 				<param amount="5" />
@@ -56,24 +56,24 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gathers Momentum to inflict 22531 damage onto the enemy, increasing the damage as Momentum is consumed. Damage + 30% at max Momentum consumption of 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<table name="#mpConsumes"> 98 105 112 119 </table>
-		<set name="icon" val="icon.skill10302" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-213" />
-		<set name="reuseDelay" val="10000" />
+		<icon>icon.skill10302</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-213</effectPoint>
+		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="10303" levels="4" name="Superior Combat Master">
 		<!-- Max CP/ HP + 2%. -->
 		<table name="#max"> 1.02 1.03 1.04 1.05 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skill0430" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<magicLvl>#magicLvl</magicLvl>
+		<icon>icon.skill0430</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#max" />
@@ -86,10 +86,10 @@
 		<table name="#pAtk"> 709 825 982 1190 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<set name="icon" val="icon.skill11835" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11835</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtkMul">
@@ -107,20 +107,20 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 62 69 76 83 </table>
 		<table name="#trait_pole"> -10 -12 -15 -20 </table> <!-- Confirmed -->
-		<set name="affectLimit" val="9-10" />
-		<set name="affectRange" val="900" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="REAL_TARGET" />
-		<set name="icon" val="icon.skill11833" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="4000" />
-		<set name="effectPoint" val="-436" />
-		<set name="isDebuff" val="true" />
+		<affectLimit>9-10</affectLimit>
+		<affectRange>900</affectRange>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>REAL_TARGET</abnormalType>
+		<icon>icon.skill11833</icon>
+		<operateType>A2</operateType>
+		<targetType>AURA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>4000</reuseDelay>
+		<effectPoint>-436</effectPoint>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DefenceTrait">
 				<param POLE="#trait_pole" />
@@ -133,10 +133,10 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pAtkAdd"> 583 678 807 978 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
-		<set name="icon" val="icon.skill11836" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11836</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="atkCountMax" val="#atkCountMax">
@@ -154,23 +154,23 @@
 	<skill id="10307" levels="1" name="Fist of Fury">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Greatly increases Atk. Spd. Continuously consumes HP. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
-		<set name="icon" val="icon.skill10307new" />
-		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10307new</icon>
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10308" levels="1" name="Wild Roar">
 		<!-- Shouts loudly to invoke the power of the Bison. For 5 minutes, P. Atk. and Critical Damage + 45%, Critical Rate + 45, and Atk. Spd. - 15%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="300" />
-		<set name="abnormalType" val="POSSESSION" />
-		<set name="icon" val="icon.skill11834" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="38" />
-		<set name="hitTime" val="2000" />
-		<set name="effectPoint" val="707" />
-		<set name="reuseDelay" val="30000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>POSSESSION</abnormalType>
+		<icon>icon.skill11834</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>85</magicLvl>
+		<mpConsume>38</mpConsume>
+		<hitTime>2000</hitTime>
+		<effectPoint>707</effectPoint>
+		<reuseDelay>30000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -196,10 +196,10 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pAtkAdd"> 709 825 982 1190 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
-		<set name="icon" val="icon.skill11837" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11837</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtkMul">
@@ -214,17 +214,17 @@
 	<skill id="10310" levels="1" name="Primal Rage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 min., P. Atk. + 15%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>600</abnormalTime>
 		<!-- TODO abnormalType -->
-		<set name="icon" val="icon.skill10310" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="38" />
-		<set name="hitTime" val="1500" />
-		<set name="effectPoint" val="235" />
-		<set name="reuseDelay" val="30000" />
+		<icon>icon.skill10310</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>85</magicLvl>
+		<mpConsume>38</mpConsume>
+		<hitTime>1500</hitTime>
+		<effectPoint>235</effectPoint>
+		<reuseDelay>30000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -241,10 +241,10 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pAtkAdd"> 709 825 982 1190 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
-		<set name="icon" val="icon.skill11838" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11838</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtkMul">
@@ -265,37 +265,37 @@
 	<skill id="10312" levels="4" name="Crafting Mastery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- There is a small chance that the item quantity will double upon crafting. Critical level 1. -->
-		<set name="icon" val="icon.skill10312" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10312</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10313" levels="4" name="Infinite Rush">
 		<!-- Rush toward the frontal enemies to inflict Shock for 9 sec. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 92 98 104 110 </table>
-		<set name="abnormalLvl" val="8" />
-		<set name="abnormalTime" val="9" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="60" />
-		<set name="affectLimit" val="5-12" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="effectRange" val="800" />
-		<set name="fanRange" val="0;0;600;60" />
-		<set name="flyType" val="CHARGE" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="nextActionAttack" val="true" />
-		<set name="icon" val="icon.skill10313" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="FRONT_AREA" />
-		<set name="trait" val="SHOCK" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-669" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>8</abnormalLvl>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>60</activateRate>
+		<affectLimit>5-12</affectLimit>
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<effectRange>800</effectRange>
+		<fanRange>0;0;600;60</fanRange>
+		<flyType>CHARGE</flyType>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<nextActionAttack>true</nextActionAttack>
+		<icon>icon.skill10313</icon>
+		<operateType>A1</operateType>
+		<targetType>FRONT_AREA</targetType>
+		<trait>SHOCK</trait>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-669</effectPoint>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -309,28 +309,28 @@
 	<skill id="10314" levels="4" name="Disarmament">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Disarms enemies for 5 sec. and decreases their P. Atk./ M. Atk. by 40%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
-		<set name="icon" val="icon.skill0485" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="trait" val="DISARM" />
-		<set name="mpConsume" val="38" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="60000" />
-		<set name="effectPoint" val="-341" />
-		<set name="abnormalTime" val="5" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill0485</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<trait>DISARM</trait>
+		<mpConsume>38</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-341</effectPoint>
+		<abnormalTime>5</abnormalTime>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="10315" levels="2" name="Superior Polearm Mastery">
 		<!-- When a spear is equipped, P. Atk. + 2 % and additional P. Atk. + 583. -->
 		<table name="#magicLvl"> 85 90 </table>
 		<table name="#pAtkAdd"> 583 678 </table>
 		<table name="#pAtkMul"> 1.02 1.03 </table>
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skill11836" />
-		<set name="targetType" val="SELF" />
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<icon>icon.skill11836</icon>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtkMul">
@@ -346,10 +346,10 @@
 		<!-- PvP P. Atk. + 5%. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pvpPhysDmg"> 1.05 1.06 1.07 1.08 </table>
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skill0193" />
-		<set name="targetType" val="SELF" />
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<icon>icon.skill0193</icon>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pvpPhysDmg" val="#pvpPhysDmg" />
@@ -362,26 +362,26 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 122 124 129 133 </table>
 		<table name="#power"> 26003 30494 35883 37680 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="50" />
-		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="150" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="trait" val="SHOCK" />
-		<set name="icon" val="icon.skill10317new" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1390" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="15000" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<affectLimit>6-12</affectLimit>
+		<affectRange>150</affectRange>
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<trait>SHOCK</trait>
+		<icon>icon.skill10317new</icon>
+		<operateType>A2</operateType>
+		<targetType>AURA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1390</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>#effectPoint</effectPoint>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
@@ -400,17 +400,17 @@
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 98 105 112 119 126 133 140 </table>
 		<table name="#power"> 17438 20033 22717 25700 27419 28665 29911 </table>
-		<set name="icon" val="icon.skill10318new" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="reuseDelay" val="10000" />
+		<icon>icon.skill10318new</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<nextActionAttack>true</nextActionAttack>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>#effectPoint</effectPoint>
+		<reuseDelay>10000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT,DUAL" />
 		</cond>
@@ -428,18 +428,18 @@
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#magicLvl"> 90 95 99 </table>
 		<table name="#pvpBonus"> 1.2 1.25 1.3 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalVisualEffect" val="DUELING" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skll10319" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="300" />
-		<set name="reuseDelay" val="300000" />
-		<set name="effectPoint" val="500" />
-		<set name="isTriggeredSkill" val="true" />
-		<set name="isMagic" val="4" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<abnormalVisualEffect>DUELING</abnormalVisualEffect>
+		<magicLvl>#magicLvl</magicLvl>
+		<icon>icon.skll10319</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>300</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>500</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
@@ -453,18 +453,18 @@
 		<!-- Engages target in 1:1 combat. Invincible for 30 seconds, and Duelist's Fury is applied, increasing PvP Damage by 20%, Speed by 66, and Debuff Resistance by 90%. -->
 		<table name="#magicLvl"> 90 95 99 </table>
 		<table name="#triggerLvl"> 1 2 3 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalVisualEffect" val="DUELING" />
-		<set name="icon" val="icon.skll10319" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="43" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="300" />
-		<set name="reuseDelay" val="600000" />
-		<set name="effectPoint" val="-500" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<abnormalVisualEffect>DUELING</abnormalVisualEffect>
+		<icon>icon.skll10319</icon>
+		<operateType>A4</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>43</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>300</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<target player="true" />
 		</cond>
@@ -482,26 +482,26 @@
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 122 124 129 133 137 141 145 </table>
 		<table name="#power"> 22536 26428 29542 32656 35788 37424 39060 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="50" />
-		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="150" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="trait" val="SHOCK" />
-		<set name="icon" val="icon.skll10321" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="2500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="-507" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<affectLimit>6-12</affectLimit>
+		<affectRange>150</affectRange>
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<trait>SHOCK</trait>
+		<icon>icon.skll10321</icon>
+		<operateType>A2</operateType>
+		<targetType>AURA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-507</effectPoint>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
@@ -518,16 +518,16 @@
 	</skill>
 	<skill id="10322" levels="1" name="Wolf's Cry">
 		<!-- Shouts loudly to invoke the power of the Wolf. For 5 minutes, P. Def. and M. Def. + 50%, Max HP + 25%, and Spd. + 20. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="300" />
-		<set name="abnormalType" val="POSSESSION" />
-		<set name="icon" val="icon.skll10320" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="38" />
-		<set name="hitTime" val="2000" />
-		<set name="effectPoint" val="707" />
-		<set name="reuseDelay" val="30000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>POSSESSION</abnormalType>
+		<icon>icon.skll10320</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>38</mpConsume>
+		<hitTime>2000</hitTime>
+		<effectPoint>707</effectPoint>
+		<reuseDelay>30000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -543,37 +543,37 @@
 	<skill id="10323" levels="1" name="Self Heal (Warrior)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Recovers 10% of Max HP. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="1" />
-		<set name="effectPoint" val="100" />
-		<set name="reuseDelay" val="5000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>1</mpConsume>
+		<effectPoint>100</effectPoint>
+		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="10324" levels="3" name="Momentum Master">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Power of skills that consume Momentum increase by 10%. -->
-		<set name="icon" val="icon.skill10324" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10324</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10325" levels="6" name="Dreadful Roar">
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
 		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
 		<table name="#mpConsumes"> 149 151 154 157 160 163 </table>
-		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="180" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="itemConsumeCount" val="10" />
-		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
-		<set name="icon" val="icon.skill10325" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-828" />
-		<set name="reuseDelay" val="120000" />
+		<affectLimit>10-10</affectLimit>
+		<affectRange>180</affectRange>
+		<magicLvl>#magicLvl</magicLvl>
+		<itemConsumeCount>10</itemConsumeCount>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
+		<icon>icon.skill10325</icon>
+		<operateType>A1</operateType>
+		<targetType>AURA</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-828</effectPoint>
+		<reuseDelay>120000</reuseDelay>
 		<for>
 			<effect name="DispelByCategory">
 				<param slot="buff" rate="25" max="2" /> <!-- TODO rate -->
@@ -584,15 +584,15 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., P. Atk. + 450, Skill Power + 5%, and HP Recovery is limited to 70%. -->
 		<table name="#mpConsumes"> 45 50 55 </table>
-		<set name="icon" val="icon.skill10326" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="673" />
-		<set name="abnormalTime" val="30" />
-		<set name="reuseDelay" val="180000" />
+		<icon>icon.skill10326</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>673</effectPoint>
+		<abnormalTime>30</abnormalTime>
+		<reuseDelay>180000</reuseDelay>
 	</skill>
 	<skill id="10327" levels="7" name="Momentum Flash">
 		<table name="#power"> 17348 20033 22717 25700 27419 28665 29911 </table>
@@ -600,24 +600,24 @@
 		<!-- Attacks target with 17348 Power added to P. Atk. Requires a sword/dagger/blunt weapon/fist weapon. Damage increases when using Momentum, which you can use up to 3. Over-hit. Critical. -->
 		<table name="#effectPoint"> -183 -188 -193 -198 -193 -193 -198 </table>
 		<table name="#mpConsumes"> 98 105 112 119 126 133 140 </table>
-		<set name="icon" val="icon.skill10327" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="reuseDelay" val="10000" />
+		<icon>icon.skill10327</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>#effectPoint</effectPoint>
+		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="10328" levels="3" name="Soul Berserker">
 		<!-- When equipped with a sword or blunt weapon, P. Atk. +10%, P. Critical Damage + 10%, and P. Skill MP Consumption + 10%. -->
 		<table name="#magicLvl"> 97 98 99 </table>
 		<table name="#add"> 1.1 1.12 1.5 </table>
-		<set name="icon" val="icon.skill10328" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10328</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
@@ -637,10 +637,10 @@
 	</skill>
 	<skill id="10329" levels="1" name="Superior Blunt Weapon Mastery">
 		<!-- When equipped with a one-handed blunt weapon, P. Atk. + 21% and P. Critical Rate + 60. -->
-		<set name="icon" val="icon.skill10329" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10329</icon>
+		<magicLvl>85</magicLvl>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.21">
@@ -657,25 +657,25 @@
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 92 96 101 105 109 113 117 </table>
 		<table name="#power"> 18005 22505 27005 30605 32405 34205 36005 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="60" /> <!-- Guessed -->
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="trait" val="SHOCK" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skill10330" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="7000" />
-		<set name="effectPoint" val="-183" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>60</activateRate> <!-- Guessed -->
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<lvlBonusRate>1</lvlBonusRate>
+		<trait>SHOCK</trait>
+		<magicLvl>#magicLvl</magicLvl>
+		<icon>icon.skill10330</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7000</reuseDelay>
+		<effectPoint>-183</effectPoint>
+		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="BLUNT" />
 		</cond>
@@ -690,45 +690,45 @@
 	<skill id="10331" levels="1" name="Last Man Standing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Engages target in 1:1 combat. All damage from the target is ignored. -->
-		<set name="icon" val="icon.skill10331" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="43" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="300" />
-		<set name="reuseDelay" val="600000" />
-		<set name="effectPoint" val="500" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10331</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>43</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>300</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>500</effectPoint>
+		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="10332" levels="1" name="Duelist Wrath">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. by 20% for 60 seconds when a dualsword/dual blunt is equipped. Critical Rate of skills that consume Momentum greatly increases, and their Power increases by 20%. Consumes 5 Soulstones. -->
-		<set name="icon" val="icon.skill10332" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="64" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="673" />
-		<set name="abnormalTime" val="60" />
-		<set name="reuseDelay" val="300000" />
+		<icon>icon.skill10332</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>64</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>673</effectPoint>
+		<abnormalTime>60</abnormalTime>
+		<reuseDelay>300000</reuseDelay>
 	</skill>
 	<skill id="10333" levels="1" name="Winged Spear">
 		<!-- Increases P. Atk. by 30% for 60 seconds when a spear is equipped. Range of regular skills increases by 80 and has a 10% chance to Stun when striking. Consumes 5 Soulstones. -->
 		<!-- TODO abnormalType -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalVisualEffect" val="LONG_BLOW" />
-		<set name="icon" val="icon.skill10333" />
-		<set name="itemConsumeCount" val="5" />
-		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="64" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="673" />
-		<set name="reuseDelay" val="300000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<abnormalVisualEffect>LONG_BLOW</abnormalVisualEffect>
+		<icon>icon.skill10333</icon>
+		<itemConsumeCount>5</itemConsumeCount>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>64</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>673</effectPoint>
+		<reuseDelay>300000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.3">
@@ -757,19 +757,19 @@
 	<skill id="10334" levels="1" name="Furious Slasher">
 		<!-- Increases P. Atk. by 30% for 60 seconds when a two-handed sword/two-handed blunt weapon is equipped. Attack 5 enemies at the same time with a regular attack. Consumes 5 Soulstones. -->
 		<!-- TODO abnormalType -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalVisualEffect" val="WIDE_SWORD" />
-		<set name="icon" val="icon.skill10334" />
-		<set name="itemConsumeCount" val="5" />
-		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="64" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="673" />
-		<set name="reuseDelay" val="300000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<abnormalVisualEffect>WIDE_SWORD</abnormalVisualEffect>
+		<icon>icon.skill10334</icon>
+		<itemConsumeCount>5</itemConsumeCount>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>64</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>673</effectPoint>
+		<reuseDelay>300000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.3">
@@ -785,19 +785,19 @@
 	<skill id="10335" levels="1" name="Furious Fist">
 		<!-- Increases P. Atk. by 30% and P. Critical Damage by 10% for 60 seconds when a fist weapon is equipped. Has 10% chance to decrease Fist Weapon Resistance by 30% when striking. Consumes 5 Soulstones. -->
 		<!-- TODO abnormalType -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalVisualEffect" val="BIG_FIST" />
-		<set name="icon" val="icon.skill10335" />
-		<set name="itemConsumeCount" val="5" />
-		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="64" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="673" />
-		<set name="reuseDelay" val="300000" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>60</abnormalTime>
+		<abnormalVisualEffect>BIG_FIST</abnormalVisualEffect>
+		<icon>icon.skill10335</icon>
+		<itemConsumeCount>5</itemConsumeCount>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>64</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>673</effectPoint>
+		<reuseDelay>300000</reuseDelay>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.3">
@@ -828,34 +828,34 @@
 	<skill id="10336" levels="1" name="Infinity Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases power when using the Rush Impact. -->
-		<set name="icon" val="icon.skill10336" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10336</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10337" levels="3" name="Infinity Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. + 10% and P. Critical Damage + 10%. -->
-		<set name="icon" val="icon.skill10336" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="2" />
-		<set name="isMagic" val="4" />
+		<icon>icon.skill10336</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>2</effectPoint>
+		<isMagic>4</isMagic>
 	</skill>
 	<skill id="10338" levels="1" name="Punch Drunk">
 		<!-- Decreases target's resistance to Fist Weapons by 30%. -->
 		<!-- TODO abnormalType -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
-		<set name="icon" val="icon.skill10335" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="1" />
-		<set name="castRange" val="500" />
-		<set name="hitTime" val="100" />
-		<set name="coolTime" val="100" />
-		<set name="isMagic" val="4" />
-		<set name="effectPoint" val="-687" />
-		<set name="isDebuff" val="true" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
+		<icon>icon.skill10335</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>1</mpConsume>
+		<castRange>500</castRange>
+		<hitTime>100</hitTime>
+		<coolTime>100</coolTime>
+		<isMagic>4</isMagic>
+		<effectPoint>-687</effectPoint>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DefenceTrait">
 				<param FIST="-30" />
@@ -864,25 +864,25 @@
 	</skill>
 	<skill id="10339" levels="1" name="Winged Spear - Stun">
 		<!-- Stuns target for 3 seconds. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="60" /> <!-- Guessed -->
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
-		<set name="icon" val="icon.skill10333" />
-		<set name="isTriggeredSkill" val="true" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="1" />
-		<set name="castRange" val="500" />
-		<set name="hitTime" val="100" />
-		<set name="coolTime" val="100" />
-		<set name="isMagic" val="4" />
-		<set name="effectPoint" val="-687" />
-		<set name="isDebuff" val="true" />
-		<set name="trait" val="SHOCK" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>60</activateRate> <!-- Guessed -->
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<icon>icon.skill10333</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>1</lvlBonusRate>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>1</mpConsume>
+		<castRange>500</castRange>
+		<hitTime>100</hitTime>
+		<coolTime>100</coolTime>
+		<isMagic>4</isMagic>
+		<effectPoint>-687</effectPoint>
+		<isDebuff>true</isDebuff>
+		<trait>SHOCK</trait>
 		<for>
 			<effect name="BlockActions" />
 		</for>
@@ -893,14 +893,14 @@
 		<!-- Attacks enemies in front with 16214 Power added to P. Atk. If the target is stunned, attacks with 48641 power. Can be used while a sword or blunt weapon is equipped. Consumes 1 Soulstone. -->
 		<table name="#icons"> icon.skill10340 icon.skill0526 icon.skill0526 </table>
 		<table name="#mpConsumes"> 233 236 239 </table>
-		<set name="icon" val="#icons" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-125" />
-		<set name="reuseDelay" val="10000" />
+		<icon>#icons</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-125</effectPoint>
+		<reuseDelay>10000</reuseDelay>
 	</skill>
 </list>

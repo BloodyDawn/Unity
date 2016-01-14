@@ -6,12 +6,12 @@
 		<!-- Damage inflicted on monsters + 50%, and M. Skill MP Consumption + 30%. -->
 		<table name="#magicLvl"> 85 90 95 </table>
 		<table name="#pveDamage"> 1.50 1.55 1.60 </table>
-		<set name="icon" val="icon.skill1520" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="T" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill1520</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>T</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="pvePhysDmg" val="#pveDamage" />
@@ -23,32 +23,32 @@
 	</skill>
 	<skill id="11747" levels="1" name="Enchanter - Individual Passive">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill0217" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill0217</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="11748" levels="1" name="Enchanter - Individual">
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 30% for 5 seconds. -->
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="ATTACK_TIME_DOWN_SPECIAL" />
-		<set name="abnormalLvl" val="1" />
-		<set name="icon" val="icon.skill1543" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="reuseDelayGroup" val="11509" />
-		<set name="effectPoint" val="1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="4" />
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>ATTACK_TIME_DOWN_SPECIAL</abnormalType>
+		<abnormalLvl>1</abnormalLvl>
+		<icon>icon.skill1543</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>500</hitTime>
+		<reuseDelay>5000</reuseDelay>
+		<reuseDelayGroup>11509</reuseDelayGroup>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.30" />
@@ -58,20 +58,20 @@
 	<skill id="11749" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-687" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="nexActionAttack" val="true" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="200" />
-		<set name="magicLvl" val="85" />
-		<set name="reuseDelay" val="10000" />
+		<icon>icon.skill10317</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<castRange>40</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-687</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<nexActionAttack>true</nexActionAttack>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>200</effectRange>
+		<magicLvl>85</magicLvl>
+		<reuseDelay>10000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -84,19 +84,19 @@
 	<skill id="11750" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="DA1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="900" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-687" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="nexActionAttack" val="true" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="85" />
-		<set name="reuseDelay" val="10000" />
+		<icon>icon.skill10317</icon>
+		<operateType>DA1</operateType>
+		<targetType>ONE</targetType>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-687</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<nexActionAttack>true</nexActionAttack>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>85</magicLvl>
+		<reuseDelay>10000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -111,12 +111,12 @@
 		<!-- M. Atk. + 24%, Additional M. Atk. + 981, M. Critical Rate + 6%. INT + 2. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mAtk"> 981 1138 1319 1458 1682 1785 1893 2009 2131 2261 </table>
-		<set name="icon" val="icon.skill11251" />
-		<set name="magicLevel" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11251</icon>
+		<magicLevel>#magicLvl</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.24" />
@@ -136,25 +136,25 @@
 		<table name="#power"> 1.10 1.13 1.16 1.19 1.22 1.25 1.28 1.3 1.3 1.3 1.3 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#hotValue"> 172 173 173 174 174 175 175 176 184 192 200 </table>
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
-		<set name="castRange" val="600" />
-		<set name="reuseDelay" val="1000" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY_MEMBER" />
-		<set name="icon" val="icon.skill11752" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="1" />
+		<abnormalTime>15</abnormalTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
+		<castRange>600</castRange>
+		<reuseDelay>1000</reuseDelay>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>A2</operateType>
+		<targetType>PARTY_MEMBER</targetType>
+		<icon>icon.skill11752</icon>
+		<hitTime>500</hitTime>
+		<effectPoint>#effectPoints</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hotValue" />
@@ -171,19 +171,19 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
-		<set name="icon" val="icon.skill11752" />
-		<set name="effectPoint" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="4" />
+		<abnormalTime>15</abnormalTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
+		<operateType>A4</operateType>
+		<targetType>SELF</targetType>
+		<icon>icon.skill11752</icon>
+		<effectPoint>2</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
 				<add stat="healPower" val="#healPower" />
@@ -199,26 +199,26 @@
 		<table name="#magicLvl"> 85 88 91 94 97 </table>
 		<table name="#effectLvl"> 1 2 3 4 5 </table>
 		<table name="#abnormalLvl"> 2 3 4 5 6 </table>
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalType" val="BLESS_THE_BLOOD" />
-		<set name="hitTime" val="2200" />
-		<set name="coolTime" val="300" />
-		<set name="castRange" val="600" />
-		<set name="reuseDelay" val="15000" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A2" />
-		<set name="icon" val="icon.skill11754" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" />
-		<set name="staticReuse" val="true" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<abnormalTime>60</abnormalTime>
+		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalType>BLESS_THE_BLOOD</abnormalType>
+		<hitTime>2200</hitTime>
+		<coolTime>300</coolTime>
+		<castRange>600</castRange>
+		<reuseDelay>15000</reuseDelay>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>A2</operateType>
+		<icon>icon.skill11754</icon>
+		<effectPoint>#effectPoint</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<isMagic>1</isMagic>
+		<staticReuse>true</staticReuse>
+		<targetType>PARTY_MEMBER</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -240,23 +240,23 @@
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
 		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<set name="icon" val="icon.skill11755" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1100" />
-		<set name="hitTime" val="4500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="3000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="isMagic" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="1" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<icon>icon.skill11755</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<castRange>600</castRange>
+		<effectPoint>#effectPoints</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>4500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<isMagic>1</isMagic>
+		<mpConsume>#mpConsume</mpConsume>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>1</hitCancelTime>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
 		<for>
 			<effect name="HpCpHeal">
 				<param power="#power" />
@@ -271,21 +271,21 @@
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
 		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<set name="icon" val="icon.skill11756" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1100" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="1000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11756</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<castRange>600</castRange>
+		<effectPoint>#effectPoints</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
 				<param power="#power" />
@@ -299,20 +299,20 @@
 		<table name="#effectPoints"> 1734 1760 1781 1798 1811 1826 1844 1865 1881 1899 1917 </table>
 		<table name="#mpConsumes"> 277 281 286 290 295 300 305 310 314 319 323 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
-		<set name="icon" val="icon.skill11757" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="PARTY" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="affectRange" val="1000" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="hitTime" val="6500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="1" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11757</icon>
+		<operateType>A1</operateType>
+		<targetType>PARTY</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<affectRange>1000</affectRange>
+		<effectPoint>#effectPoints</effectPoint>
+		<hitTime>6500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>1</hitCancelTime>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
 				<param power="#power" />
@@ -323,26 +323,26 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Renders the selected party member invincible for 10 seconds. -->
-		<set name="icon" val="icon.skill11758" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="INVINCIBILITY_SPECIAL" />
-		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY_MEMBER" />
-		<set name="mpConsume" val="17" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="120000" />
-		<set name="effectPoint" val="867" />
-		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="85" />
-		<set name="affectRange" val="1000" />
-		<set name="staticReuse" val="true" />
+		<icon>icon.skill11758</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<targetType>PARTY_MEMBER</targetType>
+		<mpConsume>17</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>120000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<effectRange>1100</effectRange>
+		<isMagic>1</isMagic>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<affectRange>1000</affectRange>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Invincible" />
 		</for>
@@ -357,24 +357,24 @@
 		<!-- Glory Days confirmed -->
 		<!-- Skill does not remove on action -->
 		<!-- Renders all party members invincible for 10 seconds. -->
-		<set name="icon" val="icon.skill11759" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="INVINCIBILITY_SPECIAL" />
-		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
-		<set name="mpConsume" val="36" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="120000" />
-		<set name="effectPoint" val="1760" />
-		<set name="isMagic" val="1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="87" />
-		<set name="affectRange" val="1000" />
-		<set name="staticReuse" val="true" />
+		<icon>icon.skill11759</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<targetType>PARTY</targetType>
+		<mpConsume>36</mpConsume>
+		<hitTime>500</hitTime>
+		<reuseDelay>120000</reuseDelay>
+		<effectPoint>1760</effectPoint>
+		<isMagic>1</isMagic>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>87</magicLvl>
+		<affectRange>1000</affectRange>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Invincible" />
 		</for>
@@ -393,26 +393,26 @@
 		<table name="#mpInitialConsume"> 37 37 38 38 39 40 41 41 42 43 43 </table>
 		<table name="#amount"> 166 167 170 174 177 180 183 187 191 195 201 </table>
 		<table name="#amoutOverTime"> 12 12 12 12 13 13 13 13 13 13 13 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MP_RECOVER" />
-		<set name="abnormalTime" val="10" />
-		<set name="operateType" val="A2" />
-		<set name="icon" val="icon.skill11760" />
-		<set name="hitTime" val="5500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="3000" />
-		<set name="isMagic" val="1" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="effectRange" val="1100" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="3" />
-		<set name="targetType" val="ONE" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>MP_RECOVER</abnormalType>
+		<abnormalTime>10</abnormalTime>
+		<operateType>A2</operateType>
+		<icon>icon.skill11760</icon>
+		<hitTime>5500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<isMagic>1</isMagic>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<castRange>600</castRange>
+		<effectPoint>#effectPoint</effectPoint>
+		<effectRange>1100</effectRange>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>3</hitCancelTime>
+		<targetType>ONE</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -441,25 +441,25 @@
 		<table name="#mpInitialConsume"> 780 794 806 822 836 850 864 878 </table>
 		<table name="#amount"> 700 715 725 740 750 768 786 804 </table>
 		<table name="#amoutOverTime"> 10 10 10 10 11 11 11 11 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MP_RECOVER" />
-		<set name="abnormalTime" val="10" />
-		<set name="operateType" val="A2" />
-		<set name="icon" val="icon.skill11761" />
-		<set name="affectRange" val="1000" />
-		<set name="hitTime" val="5500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="300000" />
-		<set name="isMagic" val="1" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="3" />
-		<set name="targetType" val="PARTY" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>MP_RECOVER</abnormalType>
+		<abnormalTime>10</abnormalTime>
+		<operateType>A2</operateType>
+		<icon>icon.skill11761</icon>
+		<affectRange>1000</affectRange>
+		<hitTime>5500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>1</isMagic>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<effectPoint>#effectPoint</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>3</hitCancelTime>
+		<targetType>PARTY</targetType>
 		<for>
 			<effect name="ManaHealByLevel">
 				<param power="#amount" />
@@ -472,24 +472,24 @@
 	<skill id="11762" levels="1" name="Balance Heal">
 		<!-- Glory Days confirmed -->
 		<!-- Equalizes all party members' HP and restores 333 HP every second for 15 seconds. -->
-		<set name="abnormalTime" val="15" />
-		<set name="affectRange" val="1000" />
-		<set name="effectPoint" val="1844" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="1000" />
-		<set name="icon" val="icon.skill11762" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="97" />
-		<set name="mpConsume" val="178" />
-		<set name="mpInitialConsume" val="36" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="20000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
-		<set name="basicProperty" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="abnormalLvl" val="4" />
-		<set name="targetType" val="PARTY" />
+		<abnormalTime>15</abnormalTime>
+		<affectRange>1000</affectRange>
+		<effectPoint>1844</effectPoint>
+		<hitTime>1500</hitTime>
+		<coolTime>1000</coolTime>
+		<icon>icon.skill11762</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>97</magicLvl>
+		<mpConsume>178</mpConsume>
+		<mpInitialConsume>36</mpInitialConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>20000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<abnormalType>LIFE_FORCE_OTHERS</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<abnormalLvl>4</abnormalLvl>
+		<targetType>PARTY</targetType>
 		<for>
 			<effect name="RebalanceHP" />
 			<effect name="HealOverTime" ticks="1">
@@ -500,21 +500,21 @@
 	<skill id="11763" levels="1" name="Radiant Purge">
 		<!-- Glory Days confirmed -->
 		<!-- Dispels target's debuffs. Allies only. -->
-		<set name="castRange" val="600" />
-		<set name="effectPoint" val="867" />
-		<set name="effectRange" val="1100" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="icon" val="icon.skill11763" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="35" />
-		<set name="mpInitialConsume" val="12" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="ONE_FRIENDLY" />
+		<castRange>600</castRange>
+		<effectPoint>867</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<icon>icon.skill11763</icon>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLvl>85</magicLvl>
+		<mpConsume>35</mpConsume>
+		<mpInitialConsume>12</mpInitialConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ONE_FRIENDLY</targetType>
 		<for>
 			<effect name="DispelByCategory">
 				<param slot="debuff" rate="100" max="10" />
@@ -524,26 +524,26 @@
 	<skill id="11764" levels="1" name="Brilliant Purge">
 		<!-- Glory Days confirmed -->
 		<!-- Cancels all party members' debuffs and makes them immune to debuffs for 7 seconds. -->
-		<set name="abnormalTime" val="7" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
-		<set name="affectRange" val="1000" />
-		<set name="magicLvl" val="94" />
-		<set name="operateType" val="A2" />
-		<set name="icon" val="icon.skill11764" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="60000" />
-		<set name="isMagic" val="1" />
-		<set name="mpConsume" val="74" />
-		<set name="mpInitialConsume" val="18" />
-		<set name="castRange" val="600" />
-		<set name="effectPoint" val="1734" />
-		<set name="effectRange" val="1100" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="PARTY" />
+		<abnormalTime>7</abnormalTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
+		<affectRange>1000</affectRange>
+		<magicLvl>94</magicLvl>
+		<operateType>A2</operateType>
+		<icon>icon.skill11764</icon>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<isMagic>1</isMagic>
+		<mpConsume>74</mpConsume>
+		<mpInitialConsume>18</mpInitialConsume>
+		<castRange>600</castRange>
+		<effectPoint>1734</effectPoint>
+		<effectRange>1100</effectRange>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>PARTY</targetType>
 		<for>
 			<effect name="DispelByCategory">
 				<param slot="debuff" rate="100" max="10" />
@@ -562,22 +562,22 @@
 		<table name="#mpPower"> 74 77 81 84 101 121 145 </table>
 		<table name="#mpConsume"> 73 77 80 83 86 90 92 </table>
 		<table name="#abnormalLevels"> 2 3 4 5 5 5 5 </table>
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalLvl" val="#abnormalLevels" />
-		<set name="abnormalType" val="TURN_CRYSTAL" />
-		<set name="abnormalVisualEffect" val="FLESH_STONE" />
-		<set name="operateType" val="A2" />
-		<set name="icon" val="icon.skill11765" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="300000" />
-		<set name="staticReuse" val="true" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalTime>10</abnormalTime>
+		<abnormalLvl>#abnormalLevels</abnormalLvl>
+		<abnormalType>TURN_CRYSTAL</abnormalType>
+		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
+		<operateType>A2</operateType>
+		<icon>icon.skill11765</icon>
+		<hitTime>500</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<effectPoint>#effectPoint</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
@@ -597,20 +597,20 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 95 97 101 </table>
 		<table name="#power"> 153 158 163 167 171 176 180 185 203 209 215 </table>
-		<set name="icon" val="icon.skill11766" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1400" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="2280" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="2000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11766</icon>
+		<effectPoint>#effectPoints</effectPoint>
+		<effectRange>1400</effectRange>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>2280</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>2000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isMagic>1</isMagic>
 		<alterSkill>
 			<skill id="12000" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
 			<skill id="11999" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
@@ -630,22 +630,22 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 423 432 450 468 487 506 526 547 561 589 597 </table>
 		<table name="#power"> 117 119 123 126 129 133 136 139 149 151 157 </table>
-		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="300" />
-		<set name="icon" val="icon.skill11767" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1400" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="3780" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="6700" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="isMagic" val="1" />
+		<affectLimit>10-10</affectLimit>
+		<affectRange>300</affectRange>
+		<icon>icon.skill11767</icon>
+		<effectPoint>#effectPoints</effectPoint>
+		<effectRange>1400</effectRange>
+		<operateType>A1</operateType>
+		<targetType>AREA</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>3780</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>6700</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -658,21 +658,21 @@
 	<skill id="11768" levels="1" name="Rebirth">
 		<!-- Glory Days confirmed -->
 		<!-- Restores all party members' HP/MP/CP and has a chance of dispelling their debuffs. -->
-		<set name="icon" val="icon.skill11768" />
-		<set name="affectRange" val="1000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="PARTY" />
-		<set name="mpConsume" val="53" />
-		<set name="mpInitialConsume" val="13" />
-		<set name="magicLvl" val="93" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="600000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="1811" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<icon>icon.skill11768</icon>
+		<affectRange>1000</affectRange>
+		<operateType>A1</operateType>
+		<targetType>PARTY</targetType>
+		<mpConsume>53</mpConsume>
+		<mpInitialConsume>13</mpInitialConsume>
+		<magicLvl>93</magicLvl>
+		<hitTime>3000</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<isMagic>1</isMagic>
+		<effectPoint>1811</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="ManaHealPercent">
 				<param power="100" />
@@ -697,28 +697,28 @@
 		<table name="#mpConsume"> 28 29 30 33 34 37 38 40 42 </table>
 		<table name="#MpConsumeRate"> 1.5 2.5 3.0 3.5 4.0 4.0 4.0  4.0 4.0 </table>
 		<table name="#pAtkmAtkSpd"> 0.8 0.8 0.8 0.8 0.8 0.8 0.75 0.7 0.65 </table>
-		<set name="activateRate" val="80" />
-		<set name="lvlBonusRate" val="30" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="MP_COST_UP" />
-		<set name="icon" val="icon.skill11769" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="effectRange" val="1100" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="isDebuff" val="true" />
+		<activateRate>80</activateRate>
+		<lvlBonusRate>30</lvlBonusRate>
+		<basicProperty>MAGIC</basicProperty>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>MP_COST_UP</abnormalType>
+		<icon>icon.skill11769</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<isMagic>1</isMagic>
+		<effectPoint>#effectPoint</effectPoint>
+		<effectRange>1100</effectRange>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
 				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
@@ -733,19 +733,19 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Removes the aggression of nearby enemies toward you and increases speed by 100. -->
-		<set name="icon" val="icon.skill11770" />
-		<set name="affectRange" val="500" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="magicLvl" val="97" />
-		<set name="mpConsume" val="8" />
-		<set name="mpInitialConsume" val="2" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="300000" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="trait" val="DERANGEMENT" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11770</icon>
+		<affectRange>500</affectRange>
+		<operateType>A1</operateType>
+		<targetType>AURA</targetType>
+		<magicLvl>97</magicLvl>
+		<mpConsume>8</mpConsume>
+		<mpInitialConsume>2</mpInitialConsume>
+		<hitTime>500</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>DERANGEMENT</trait>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="DeleteHate">
 				<param chance="100" />
@@ -760,20 +760,20 @@
 	<skill id="11771" levels="1" name="Wise Retainer of Lights">
 		<!-- Glory Days confirmed -->
 		<!-- Finally! Causes Lakcis, the giant of light, to materialize. Protects allies near the giant and attacks the enemies. Continuously decreases HP. -->
-		<set name="icon" val="icon.skill1349" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpInitialConsume" val="94" />
-		<set name="mpConsume" val="376" />
-		<set name="hitTime" val="5000" />
-		<set name="coolTime" val="500" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="3" />
-		<set name="magicLvl" val="97" />
-		<set name="reuseDelay" val="600000" />
-		<set name="isMagic" val="2" />
-		<set name="staticReuse" val="true" />
+		<icon>icon.skill1349</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpInitialConsume>94</mpInitialConsume>
+		<mpConsume>376</mpConsume>
+		<hitTime>5000</hitTime>
+		<coolTime>500</coolTime>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>3</hitCancelTime>
+		<magicLvl>97</magicLvl>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic>
+		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="SummonNpc">
 				<param npcId="13300" npcCount="1" />
@@ -788,23 +788,23 @@
 		<table name="#mpConsume"> 14 14 17 18 19 20 21 </table>
 		<table name="#mpInitialConsume"> 3 4 4 4 5 5 6 </table>
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="HEAL_POWER_UP" />
-		<set name="operateType" val="A2" />
-		<set name="icon" val="icon.skill11772" />
-		<set name="hitTime" val="4000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="600000" />
-		<set name="staticReuse" val="true" />
-		<set name="isMagic" val="2" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<abnormalTime>30</abnormalTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>HEAL_POWER_UP</abnormalType>
+		<operateType>A2</operateType>
+		<icon>icon.skill11772</icon>
+		<hitTime>4000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<isMagic>2</isMagic>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="healEffect" val="#healEffect" />
@@ -819,14 +819,14 @@
 		<table name="#magicLvl"> 93 95 </table>
 		<table name="#effectPoint"> 906 913 </table>
 		<table name="#skillLevel"> 1 2 </table>
-		<set name="icon" val="icon.skill11773" />
-		<set name="operateType" val="AU" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="toggleGroupId" val="0" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11773</icon>
+		<operateType>AU</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>#effectPoint</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<toggleGroupId>0</toggleGroupId>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="3">
 				<param power="2" />
@@ -847,22 +847,22 @@
 		<table name="#mpConsumes"> 148 164 180 195 </table>
 		<table name="#mpConsumesInit"> 37 41 45 48 </table>
 		<table name="#npcIds"> 14933 14943 15010 15011 </table>
-		<set name="icon" val="icon.skill11774" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="mpInitialConsume" val="#mpConsumesInit" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="5000" />
-		<set name="coolTime" val="2000" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="effectRange" val="1000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="3" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11774</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<mpInitialConsume>#mpConsumesInit</mpInitialConsume>
+		<castRange>600</castRange>
+		<hitTime>5000</hitTime>
+		<coolTime>2000</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>#effectPoint</effectPoint>
+		<effectRange>1000</effectRange>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>3</hitCancelTime>
+		<isMagic>1</isMagic>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -878,16 +878,16 @@
 	<skill id="11775" levels="1" name="Return">
 		<!-- Glory Days confirmed -->
 		<!-- Moves to the summoned entity. Cannot be used beyond 1000 range. -->
-		<set name="icon" val="icon.skill11775" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="60" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="60000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="91" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11775</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<mpConsume>60</mpConsume>
+		<hitTime>1000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>91</magicLvl>
+		<isMagic>1</isMagic>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -910,19 +910,19 @@
 		<table name="#mpConsumes"> 77 85 94 102 </table>
 		<table name="#mpConsumesInit"> 19 21 23 25 </table>
 		<table name="#npcIds"> 14925 14944 14945 14946 </table>
-		<set name="icon" val="icon.skill11776" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="mpInitialConsume" val="#mpConsumesInit" />
-		<set name="hitTime" val="5000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="3" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11776</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<mpInitialConsume>#mpConsumesInit</mpInitialConsume>
+		<hitTime>5000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>3</hitCancelTime>
+		<isMagic>1</isMagic>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -945,28 +945,28 @@
 		<table name="#mpConsumesInit"> 8 8 9 9 6 10 11 11 </table>
 		<table name="#dot"> 113 118 123 128 134 134 134 134 </table>
 		<table name="#defences"> 0.9 0.85 0.8 0.75 0.7 0.7 0.7 0.7 </table>
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalType" val="MARK_OF_LUMI" />
-		<set name="activateRate" val="90" />
-		<set name="lvlBonusRate" val="20" />
-		<set name="icon" val="icon.skill11777" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="mpInitialConsume" val="#mpConsumesInit" />
-		<set name="castRange" val="900" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1400" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="800" />
-		<set name="reuseDelay" val="4000" />
-		<set name="isMagic" val="1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="isDebuff" val="true" />
+		<abnormalTime>60</abnormalTime>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalType>MARK_OF_LUMI</abnormalType>
+		<activateRate>90</activateRate>
+		<lvlBonusRate>20</lvlBonusRate>
+		<icon>icon.skill11777</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsumes</mpConsume>
+		<mpInitialConsume>#mpConsumesInit</mpInitialConsume>
+		<castRange>900</castRange>
+		<effectPoint>#effectPoints</effectPoint>
+		<effectRange>1400</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>800</coolTime>
+		<reuseDelay>4000</reuseDelay>
+		<isMagic>1</isMagic>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DamOverTime" ticks="1">
 				<param power="#dot" />
@@ -983,29 +983,29 @@
 		<table name="#effectPoints"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table>
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 26 26 27 30 31 33 34 35 37 </table>
-		<set name="icon" val="icon.skill11778" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="SLEEP" />
-		<set name="abnormalVisualEffect" val="SLEEP" />
-		<set name="activateRate" val="100" /> <!-- Custom -->
-		<set name="basicProperty" val="MAGIC" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1100" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="removedOnDamage" val="true" />
-		<set name="isMagic" val="1" />
-		<set name="isDebuff" val="true" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="lvlBonusRate" val="30" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="trait" val="SLEEP" />
+		<icon>icon.skill11778</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>SLEEP</abnormalType>
+		<abnormalVisualEffect>SLEEP</abnormalVisualEffect>
+		<activateRate>100</activateRate> <!-- Custom -->
+		<basicProperty>MAGIC</basicProperty>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<mpConsume>#mpConsumes</mpConsume>
+		<castRange>600</castRange>
+		<effectPoint>#effectPoints</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1500</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<removedOnDamage>true</removedOnDamage>
+		<isMagic>1</isMagic>
+		<isDebuff>true</isDebuff>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicLvl>#magicLvl</magicLvl>
+		<trait>SLEEP</trait>
 		<for>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
@@ -1024,22 +1024,22 @@
 		<!-- Decreases Speed, Atk. Spd. and Casting Spd. by 50%. -->
 		<table name="#magicLvl"> 85 88 91 94 97 100 103 106</table>
 		<table name="#speeds"> 0.5 0.4 0.3 0.2 0.1 0.1 0.1 0.1 </table>
-		<set name="icon" val="icon.skill1394" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="abnormalVisualEffect" val="ROOT" />
-		<set name="activateRate" val="100" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="trait" val="SLEEP" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="isMagic" val="2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill1394</icon>
+		<abnormalTime>10</abnormalTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<trait>SLEEP</trait>
+		<magicLvl>#magicLvl</magicLvl>
+		<isMagic>2</isMagic>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="#speeds" />
@@ -1057,28 +1057,28 @@
 		<table name="#mpConsume"> 28 28 29 32 33 36 36 38 40 </table>
 		<table name="#mpInitialConsume"> 7 7 7 8 8 9 9 9 10 </table>
 		<table name="#healEffect"> 0.5 0.48 0.44 0.4 0.35 0.3 0.3 0.3 0.3 </table>
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />
-		<set name="activateRate" val="100" />
-		<set name="lvlBonusRate" val="30" />
-		<set name="icon" val="icon.skill11780" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="isDebuff" val="true" />
+		<abnormalTime>60</abnormalTime>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalType>HEAL_EFFECT_DOWN</abnormalType>
+		<activateRate>100</activateRate>
+		<lvlBonusRate>30</lvlBonusRate>
+		<icon>icon.skill11780</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<isMagic>1</isMagic>
+		<effectPoint>#effectPoint</effectPoint>
+		<basicProperty>MAGIC</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
 				<mul stat="healEffect" val="#healEffect" />
@@ -1088,18 +1088,18 @@
 	<skill id="11781" levels="6" name="Dark Devour">
 		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
-		<set name="icon" val="icon.skill1367" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="castRange" val="0" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="0" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="affectRange" val="500" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill1367</icon>
+		<operateType>A1</operateType>
+		<targetType>AURA</targetType>
+		<castRange>0</castRange>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>0</effectRange>
+		<magicLvl>#magicLvl</magicLvl>
+		<affectRange>500</affectRange>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
 				<param power="666" />
@@ -1112,12 +1112,12 @@
 		<!-- Casting Spd. + 30% when equipped with a Robe/ Light Armor. MP is continuously consumed. -->
 		<table name="#magicLvl"> 93 99 </table>
 		<table name="#mAtkSpd"> 1.30 1.50 </table>
-		<set name="icon" val="icon.skill11782" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="T" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11782</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>T</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaDamOverTime">
 				<param power="200" /> <!-- 200 MP per tick. -->
@@ -1131,18 +1131,18 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Restarts target's debuff timers. -->
-		<set name="icon" val="icon.skill11783" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="600" />
-		<set name="magicLvl" val="95" />
-		<set name="hitTime" val="6000" />
-		<set name="reuseDelay" val="60000" />
-		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1100" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11783</icon>
+		<operateType>A1</operateType>
+		<targetType>ONE</targetType>
+		<castRange>600</castRange>
+		<magicLvl>95</magicLvl>
+		<hitTime>6000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<effectRange>1100</effectRange>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isMagic>1</isMagic>
 		<for>
 			<!-- effect name="ResetDebuff" / -->
 		</for>
@@ -1154,23 +1154,23 @@
 		<table name="#mpInitialConsume"> 7 7 8 9 </table>
 		<table name="#power"> 85 90 95 100 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<set name="blockedInOlympiad" val="true" />
-		<set name="castRange" val="400" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="icon" val="icon.skill11784" />
-		<set name="isMagic" val="4" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="14" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="effectPoint" val="2" />
-		<set name="effectRange" val="900" />
-		<set name="targetType" val="PC_BODY" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="staticReuse" val="true" />
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<castRange>400</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<icon>icon.skill11784</icon>
+		<isMagic>4</isMagic>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>14</mpInitialConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<effectPoint>2</effectPoint>
+		<effectRange>900</effectRange>
+		<targetType>PC_BODY</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<staticReuse>true</staticReuse>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -1190,23 +1190,23 @@
 		<table name="#power"> 80 90 100 </table>
 		<table name="#target"> CORPSE_PARTY CORPSE_PARTY CORPSE_PARTY_CLAN </table>
 		<table name="#affectLimit"> 0-0 0-0 50-50 </table>
-		<set name="icon" val="icon.skill11785" />
-		<set name="affectLimit" val="#affectLimit" />
-		<set name="affectRange" val="1000" />
-		<set name="blockedInOlympiad" val="true" />
-		<set name="effectPoint" val="2" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="#target" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="600000" />
-		<set name="isMagic" val="4" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="staticReuse" val="true" />
+		<icon>icon.skill11785</icon>
+		<affectLimit>#affectLimit</affectLimit>
+		<affectRange>1000</affectRange>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>2</effectPoint>
+		<operateType>A1</operateType>
+		<targetType>#target</targetType>
+		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>#mpConsume</mpConsume>
+		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>4</isMagic>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<staticReuse>true</staticReuse>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -1220,19 +1220,19 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Immune to debuffs for 5 seconds. -->
-		<set name="icon" val="icon.skill1411" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="1" />
-		<set name="magicLvl" val="97" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill1411</icon>
+		<abnormalTime>5</abnormalTime>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<magicLvl>97</magicLvl>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
@@ -1246,11 +1246,11 @@
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
 		<table name="#regHp"> 2.8 3.4 4 4.6 5.4 6.2 7.8 7.8 8.6 9.4 </table>
 		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7 8.6 8.6 9.4 10.2 </table>
-		<set name="icon" val="icon.skill11787" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11787</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="4299">
@@ -1273,11 +1273,11 @@
 		<!-- Max MP + 313, Casting Spd. + 23%, MP Consumption for magic skills - 15%, and Cooldown - 25%. INT + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#maxMp"> 313 374 435 517 566 635 704 773 842 911 </table>
-		<set name="icon" val="icon.skill11788" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11788</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="maxMp" val="#maxMp" />
@@ -1293,11 +1293,11 @@
 		<!-- M. Def. + 862, Attack Magic Resistance + 35%. INT + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
-		<set name="icon" val="icon.skill10004" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10004</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="mDef" val="#mDef" />
@@ -1311,11 +1311,11 @@
 		<!-- INT + 2. Increases Fire/Water/Wind/Earth Resistance by 20. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#res"> 20 22 24 26 30 32 34 36 38 40 </table>
-		<set name="icon" val="icon.skill10044" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10044</icon>
+		<operateType>P</operateType>
+		<magicLvl>#magicLvl</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
@@ -1329,11 +1329,11 @@
 	<skill id="11791" levels="1" name="Superior Sigil Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2. Increases MP Recovery Bonus by 20 and power of recovery skills by 40 when equipped with a Sigil. -->
-		<set name="icon" val="icon.skill11791" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill11791</icon>
+		<operateType>P</operateType>
+		<magicLvl>85</magicLvl>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
@@ -1352,11 +1352,11 @@
 		<!-- INT + 2. Resistance + 20 to Hold, Sleep, Paralysis, Mental attacks, Poison, Bleed, and Stun. In addition, has a chance of reflecting debuffs back to the attacker. -->
 		<table name="#traits"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
-		<set name="icon" val="icon.skill10005" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10005</icon>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
 				<param HOLD="#traits" />
@@ -1381,23 +1381,23 @@
 		<table name="#mpConsumes"> 48 0 0 </table>
 		<table name="#power"> 1.10 1.20 1.30 </table>
 		<table name="#hotValue"> 103 138 174 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
-		<set name="icon" val="icon.skill1217" />
-		<set name="castRange" val="600" />
-		<set name="reuseDelay" val="1000" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="87" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="PARTY_MEMBER" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
+		<icon>icon.skill1217</icon>
+		<castRange>600</castRange>
+		<reuseDelay>1000</reuseDelay>
+		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>87</magicLvl>
+		<operateType>A4</operateType>
+		<targetType>PARTY_MEMBER</targetType>
+		<hitTime>500</hitTime>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hotValue" />
@@ -1415,19 +1415,19 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
-		<set name="icon" val="icon.skill1217" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="87" />
-		<set name="isMagic" val="4" />
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
+		<icon>icon.skill1217</icon>
+		<operateType>A4</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>87</magicLvl>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
 				<add stat="healPower" val="#healPower" />
@@ -1441,23 +1441,23 @@
 		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
 		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
 		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
-		<set name="icon" val="icon.skill1217" />
-		<set name="abnormalTime" val="15" />
-		<set name="castRange" val="600" />
-		<set name="reuseDelay" val="1000" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="PARTY_MEMBER" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill1217</icon>
+		<abnormalTime>15</abnormalTime>
+		<castRange>600</castRange>
+		<reuseDelay>1000</reuseDelay>
+		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>A4</operateType>
+		<targetType>PARTY_MEMBER</targetType>
+		<hitTime>500</hitTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hotValue" />
@@ -1475,19 +1475,19 @@
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
 		<table name="#abnormalLevel"> 1 2 3 </table>
-		<set name="abnormalTime" val="10" />
-		<set name="icon" val="icon.skill1217" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="89" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="4" />
+		<abnormalTime>10</abnormalTime>
+		<icon>icon.skill1217</icon>
+		<operateType>A4</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>89</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
 				<add stat="healPower" val="#healPower" />
@@ -1501,23 +1501,23 @@
 		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
 		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
 		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
-		<set name="icon" val="icon.skill1217" />
-		<set name="abnormalTime" val="15" />
-		<set name="castRange" val="600" />
-		<set name="reuseDelay" val="1000" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="PARTY_MEMBER" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill1217</icon>
+		<abnormalTime>15</abnormalTime>
+		<castRange>600</castRange>
+		<reuseDelay>1000</reuseDelay>
+		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>A4</operateType>
+		<targetType>PARTY_MEMBER</targetType>
+		<hitTime>500</hitTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hotValue" />
@@ -1535,19 +1535,19 @@
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
 		<table name="#abnormalLevel"> 1 2 3 </table>
-		<set name="abnormalTime" val="10" />
-		<set name="icon" val="icon.skill1217" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="91" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="4" />
+		<abnormalTime>10</abnormalTime>
+		<icon>icon.skill1217</icon>
+		<operateType>A4</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>91</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
 				<add stat="healPower" val="#healPower" />
@@ -1561,23 +1561,23 @@
 		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
 		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
 		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
-		<set name="icon" val="icon.skill1217" />
-		<set name="abnormalTime" val="15" />
-		<set name="castRange" val="600" />
-		<set name="reuseDelay" val="1000" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A4" />
-		<set name="targetType" val="PARTY_MEMBER" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="effectRange" val="1100" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill1217</icon>
+		<abnormalTime>15</abnormalTime>
+		<castRange>600</castRange>
+		<reuseDelay>1000</reuseDelay>
+		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>#magicLvl</magicLvl>
+		<operateType>A4</operateType>
+		<targetType>PARTY_MEMBER</targetType>
+		<hitTime>500</hitTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hotValue" />
