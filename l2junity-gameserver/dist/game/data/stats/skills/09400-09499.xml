@@ -888,9 +888,6 @@
 		<reuseDelay>480000</reuseDelay>
 	</skill>
 	<skill id="9456" levels="3" name="Item Skill: Damage Reflect Resistance">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 55 64 75 </table>
-		<table name="#effectPoint"> 379 438 495 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 sec., Damage Reflect Resistance + 10%. -->
 		<icon>icon.active_damage_shield1</icon>
@@ -898,13 +895,25 @@
 		<targetType>SELF</targetType>
 		<hitTime>4000</hitTime>
 		<reuseDelay>4000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">379</value>
+			<value level="2">438</value>
+			<value level="3">495</value>
+		</effectPoint>
 		<abnormalType>ABNORMAL_ITEM</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<magicLvl>
+			<value level="1">55</value>
+			<value level="2">64</value>
+			<value level="3">75</value>
+		</magicLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>

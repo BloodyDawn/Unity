@@ -562,8 +562,12 @@
 	<skill id="21477" levels="4" name="Power of Abundance - Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. + 15%, M. Atk. + 15%, Skill Power + 15%, Skill Critical Rate + 15% momentarily with the power of Talisman. -->
-		<table name="#icons"> BranchIcon.Icon.g_therich_i00 BranchIcon.Icon.g_therich_i01 BranchIcon.Icon.g_therich_i02 BranchIcon.Icon.g_therich_i02 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">BranchIcon.Icon.g_therich_i00</value>
+			<value level="2">BranchIcon.Icon.g_therich_i01</value>
+			<value level="3">BranchIcon.Icon.g_therich_i02</value>
+			<value level="4">BranchIcon.Icon.g_therich_i02</value>
+		</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>10</mpConsume>

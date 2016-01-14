@@ -12,13 +12,23 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6103" levels="5" name="Showdown with the Turkey - 1st Win">
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
-		<table name="#icons"> icon.xmas_pcwin1_i00 icon.xmas_pcwin2_i00 icon.xmas_pcwin3_i00 icon.xmas_pcwin4_i00 icon.xmas_pcwin5_i00 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>EVENT_WIN</abnormalType>
 		<effectPoint>1</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.xmas_pcwin1_i00</value>
+			<value level="2">icon.xmas_pcwin2_i00</value>
+			<value level="3">icon.xmas_pcwin3_i00</value>
+			<value level="4">icon.xmas_pcwin4_i00</value>
+			<value level="5">icon.xmas_pcwin5_i00</value>
+		</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A2</operateType>
@@ -242,13 +252,19 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6117" levels="3" name="Choice - Scissors">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#icons"> icon.xmas_gawi_i00 icon.xmas_bawi_i00 icon.xmas_bo_i00 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>EVENT_GAWI</abnormalType>
 		<effectPoint>1</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.xmas_gawi_i00</value>
+			<value level="2">icon.xmas_bawi_i00</value>
+			<value level="3">icon.xmas_bo_i00</value>
+		</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A2</operateType>
@@ -665,8 +681,11 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6140" levels="3" name="Bog Stride">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -698,10 +717,13 @@
 		<!-- Lvl 1: Covered in hot and sticky tar. Movement is impaired. Due to the burning tar, for 5 minbutes, moving speed is decreased 30% and P. Def. and evasion are decreased 10%. -->
 		<!-- Lvl 2: Covered in hot and sticky tar. Movement is impaired. Due to the burning tar, for 5 minbutes, moving speed is decreased 60% and P. Def. and evasion are decreased 20%. -->
 		<!-- Lvl 3: Covered in hot and sticky tar. Movement is impaired. Due to the burning tar, for 5 minbutes, moving speed is decreased 90% and P. Def. and evasion are decreased 30%. -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#pDef"> 0.9 0.8 0.7 </table>
 		<table name="#speed"> 0.7 0.4 0.1 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<activateRate>90</activateRate>
@@ -879,14 +901,18 @@
 		<!-- Lvl 2 Only if 2 red eyes are present inside the zone -->
 		<!-- Lvl 3 Only if 3 red eyes are present inside the zone -->
 		<!-- Lvl 4 Only if 4 red eyes are present inside the zone -->
-		<table name="#icons"> icon.skill6151_1 icon.skill6151_2 icon.skill6151_3 icon.skill6151_4 </table>
 		<table name="#pAtkSpd"> 1.02 1.04 1.06 1.08 </table>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>11</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
 		<canBeDispelled>false</canBeDispelled>
 		<effectPoint>-100</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6151_1</value>
+			<value level="2">icon.skill6151_2</value>
+			<value level="3">icon.skill6151_3</value>
+			<value level="4">icon.skill6151_4</value>
+		</icon>
 		<isDebuff>true</isDebuff>
 		<magicLvl>-1</magicLvl>
 		<operateType>A2</operateType>
@@ -904,12 +930,16 @@
 		</for>
 	</skill>
 	<skill id="6151" levels="4" name="Kasha's Curse">
-		<table name="#icons"> icon.skill6151_1 icon.skill6151_2 icon.skill6151_3 icon.skill6151_4 </table>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>11</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
 		<effectPoint>-100</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6151_1</value>
+			<value level="2">icon.skill6151_2</value>
+			<value level="3">icon.skill6151_3</value>
+			<value level="4">icon.skill6151_4</value>
+		</icon>
 		<magicLvl>-1</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
@@ -927,14 +957,18 @@
 		<!-- Lvl 2 Only if 2 green eyes are present inside the zone -->
 		<!-- Lvl 3 Only if 3 green eyes are present inside the zone -->
 		<!-- Lvl 4 Only if 4 green eyes are present inside the zone -->
-		<table name="#icons"> icon.skill6152_1 icon.skill6152_2 icon.skill6152_3 icon.skill6152_4 </table>
 		<table name="#pAtk"> 1.02 1.04 1.06 1.08 </table>
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>11</abnormalTime>
 		<abnormalType>SIGNAL_A</abnormalType>
 		<canBeDispelled>false</canBeDispelled>
 		<effectPoint>-100</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6152_1</value>
+			<value level="2">icon.skill6152_2</value>
+			<value level="3">icon.skill6152_3</value>
+			<value level="4">icon.skill6152_4</value>
+		</icon>
 		<isDebuff>true</isDebuff>
 		<magicLvl>-1</magicLvl>
 		<operateType>A2</operateType>
@@ -952,12 +986,16 @@
 		</for>
 	</skill>
 	<skill id="6153" levels="4" name="Kasha's Yearning">
-		<table name="#icons"> icon.skill6152_1 icon.skill6152_2 icon.skill6152_3 icon.skill6152_4 </table>
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>11</abnormalTime>
 		<abnormalType>SIGNAL_A</abnormalType>
 		<effectPoint>-100</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6152_1</value>
+			<value level="2">icon.skill6152_2</value>
+			<value level="3">icon.skill6152_3</value>
+			<value level="4">icon.skill6152_4</value>
+		</icon>
 		<magicLvl>-1</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
@@ -975,7 +1013,6 @@
 		<!-- Lvl 2 Only if 2 blue eyes are present inside the zone -->
 		<!-- Lvl 3 Only if 3 blue eyes are present inside the zone -->
 		<!-- Lvl 4 Only if 4 blue eyes are present inside the zone -->
-		<table name="#icons"> icon.skill6154_1 icon.skill6154_2 icon.skill6154_3 icon.skill6154_4 </table>
 		<table name="#rCrit"> 150 200 520 750 </table>
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>11</abnormalTime>
@@ -983,7 +1020,12 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<canBeDispelled>false</canBeDispelled>
 		<effectPoint>-100</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6154_1</value>
+			<value level="2">icon.skill6154_2</value>
+			<value level="3">icon.skill6154_3</value>
+			<value level="4">icon.skill6154_4</value>
+		</icon>
 		<isDebuff>true</isDebuff>
 		<magicLvl>-1</magicLvl>
 		<operateType>A2</operateType>
@@ -1002,13 +1044,17 @@
 		</for>
 	</skill>
 	<skill id="6155" levels="4" name="Kasha's Despair">
-		<table name="#icons"> icon.skill6154_1 icon.skill6154_2 icon.skill6154_3 icon.skill6154_4 </table>
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>11</abnormalTime>
 		<abnormalType>MAX_HP_DOWN</abnormalType>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<effectPoint>-100</effectPoint>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6154_1</value>
+			<value level="2">icon.skill6154_2</value>
+			<value level="3">icon.skill6154_3</value>
+			<value level="4">icon.skill6154_4</value>
+		</icon>
 		<magicLvl>-1</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
@@ -1047,7 +1093,6 @@
 		<trait>HOLD</trait>
 	</skill>
 	<skill id="6167" levels="12" name="Stun">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1058,7 +1103,20 @@
 		<effectPoint>-100</effectPoint>
 		<icon>icon.skill0100</icon>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<targetType>NONE</targetType>
@@ -1069,7 +1127,6 @@
 		<trait>SHOCK</trait>
 	</skill>
 	<skill id="6168" levels="12" name="Stun">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1080,7 +1137,20 @@
 		<effectPoint>-100</effectPoint>
 		<icon>icon.skill0100</icon>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<targetType>NONE</targetType>
@@ -1536,17 +1606,38 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6199" levels="7" name="Tail Strike">
-		<table name="#effectPoints"> -1044 -1130 -1206 -1268 -1315 -1349 -1349 </table>
-		<table name="#magicLvl"> 55 60 65 70 75 80 85 </table>
-		<table name="#mpConsume"> 109 121 131 142 151 159 165 </table>
 		<table name="#power"> 1832 2272 2751 3252 3752 4224 4640 </table>
 		<castRange>150</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-1044</value>
+			<value level="2">-1130</value>
+			<value level="3">-1206</value>
+			<value level="4">-1268</value>
+			<value level="5">-1315</value>
+			<value level="6">-1349</value>
+			<value level="7">-1349</value>
+		</effectPoint>
 		<effectRange>500</effectRange>
 		<fanRange>0;0;150;60</fanRange>
 		<hitTime>2000</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">55</value>
+			<value level="2">60</value>
+			<value level="3">65</value>
+			<value level="4">70</value>
+			<value level="5">75</value>
+			<value level="6">80</value>
+			<value level="7">85</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">109</value>
+			<value level="2">121</value>
+			<value level="3">131</value>
+			<value level="4">142</value>
+			<value level="5">151</value>
+			<value level="6">159</value>
+			<value level="7">165</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>

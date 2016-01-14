@@ -377,7 +377,6 @@
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="22631" levels="2" name="Sweet Summer Slushie">
-		<table name="#abnormalVisualEffect"> SWEET_ICE_FLAKES FANTASY_ICE_FLAKES </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Change into the Beach Swimsuit. For 1 hr., Atk./Casting Spd. + 5%, Speed + 5, and Max HP/MP + 5%. Cooldown is 1 hr. -->
 		<icon>BranchSys3.icon1.g_ev_sweet_icewater</icon>
@@ -394,7 +393,10 @@
 		<abnormalTime>3600</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
-		<abnormalVisualEffect>#abnormalVisualEffect</abnormalVisualEffect>
+		<abnormalVisualEffect>
+			<value level="1">SWEET_ICE_FLAKES</value>
+			<value level="2">FANTASY_ICE_FLAKES</value>
+		</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>

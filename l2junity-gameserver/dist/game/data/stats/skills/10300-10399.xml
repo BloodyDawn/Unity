@@ -3,15 +3,27 @@
 	<skill id="10300" levels="6" name="Last Attack">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 52746 Power added to P. Atk. Cuts regular monsters' HP down to 1. Usable when target's HP is 10% or below. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
-		<table name="#mpConsumes"> 276 297 315 333 351 369 </table>
-		<table name="#magicLvl"> 90 95 99 101 103 105 </table>
 		<table name="#power"> 52746 59601 65085 69414 73352 77290 </table>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">90</value>
+			<value level="2">95</value>
+			<value level="3">99</value>
+			<value level="4">101</value>
+			<value level="5">103</value>
+			<value level="6">105</value>
+		</magicLvl>
 		<icon>icon.skill10300</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">276</value>
+			<value level="2">297</value>
+			<value level="3">315</value>
+			<value level="4">333</value>
+			<value level="5">351</value>
+			<value level="6">369</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<castRange>40</castRange>
 		<effectRange>400</effectRange>
@@ -55,11 +67,15 @@
 	<skill id="10302" levels="4" name="Triple Sonic Slash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gathers Momentum to inflict 22531 damage onto the enemy, increasing the damage as Momentum is consumed. Damage + 30% at max Momentum consumption of 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
-		<table name="#mpConsumes"> 98 105 112 119 </table>
 		<icon>icon.skill10302</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">98</value>
+			<value level="2">105</value>
+			<value level="3">112</value>
+			<value level="4">119</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -69,8 +85,12 @@
 	<skill id="10303" levels="4" name="Superior Combat Master">
 		<!-- Max CP/ HP + 2%. -->
 		<table name="#max"> 1.02 1.03 1.04 1.05 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<icon>icon.skill0430</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
@@ -85,9 +105,13 @@
 		<!-- When a dualsword or dual blunt is equipped, P. Atk. + 2% and additional + 709. -->
 		<table name="#pAtk"> 709 825 982 1190 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<icon>icon.skill11835</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -103,19 +127,27 @@
 	</skill>
 	<skill id="10305" levels="4" name="Broad Pull">
 		<!-- Spear Resistance - 10%. Pulls enemies from a large radius nearby. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
-		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 62 69 76 83 </table>
 		<table name="#trait_pole"> -10 -12 -15 -20 </table> <!-- Confirmed -->
 		<affectLimit>9-10</affectLimit>
 		<affectRange>900</affectRange>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>REAL_TARGET</abnormalType>
 		<icon>icon.skill11833</icon>
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">62</value>
+			<value level="2">69</value>
+			<value level="3">76</value>
+			<value level="4">83</value>
+		</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>4000</reuseDelay>
@@ -130,12 +162,16 @@
 	<skill id="10306" levels="4" name="Superior Polearm Mastery">
 		<!-- When a spear is equipped, P. Atk. + 2% and additional P. Atk. 583. Increases the number of possible targets by 1. -->
 		<table name="#atkCountMax"> 1 1 2 2 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pAtkAdd"> 583 678 807 978 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
 		<icon>icon.skill11836</icon>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
@@ -193,11 +229,15 @@
 	</skill>
 	<skill id="10309" levels="4" name="Superior Fist Weapon Mastery">
 		<!-- When a fist weapon is equipped, P. Atk. + 2 % and additional + 709. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pAtkAdd"> 709 825 982 1190 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
 		<icon>icon.skill11837</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -238,11 +278,15 @@
 	</skill>
 	<skill id="10311" levels="4" name="Superior Two-handed Weapon Mastery">
 		<!-- When a two-handed sword or two handed blunt is equipped, P. Atk. + 2 % and additional + 709. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pAtkAdd"> 709 825 982 1190 </table>
 		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
 		<icon>icon.skill11838</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -271,8 +315,6 @@
 	</skill>
 	<skill id="10313" levels="4" name="Infinite Rush">
 		<!-- Rush toward the frontal enemies to inflict Shock for 9 sec. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 92 98 104 110 </table>
 		<abnormalLvl>8</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -284,13 +326,23 @@
 		<fanRange>0;0;600;60</fanRange>
 		<flyType>CHARGE</flyType>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<nextActionAttack>true</nextActionAttack>
 		<icon>icon.skill10313</icon>
 		<operateType>A1</operateType>
 		<targetType>FRONT_AREA</targetType>
 		<trait>SHOCK</trait>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">92</value>
+			<value level="2">98</value>
+			<value level="3">104</value>
+			<value level="4">110</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -324,11 +376,13 @@
 	</skill>
 	<skill id="10315" levels="2" name="Superior Polearm Mastery">
 		<!-- When a spear is equipped, P. Atk. + 2 % and additional P. Atk. + 583. -->
-		<table name="#magicLvl"> 85 90 </table>
 		<table name="#pAtkAdd"> 583 678 </table>
 		<table name="#pAtkMul"> 1.02 1.03 </table>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+		</magicLvl>
 		<icon>icon.skill11836</icon>
 		<targetType>SELF</targetType>
 		<for>
@@ -344,10 +398,14 @@
 	</skill>
 	<skill id="10316" levels="4" name="Bloodthirst">
 		<!-- PvP P. Atk. + 5%. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pvpPhysDmg"> 1.05 1.06 1.07 1.08 </table>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<icon>icon.skill0193</icon>
 		<targetType>SELF</targetType>
 		<for>
@@ -358,9 +416,6 @@
 	</skill>
 	<skill id="10317" levels="4" name="Thunder Slasher">
 		<!-- Swings a spear to inflict 26003 added to P. Atk. on nearby enemies and Stuns them for 5 sec. Requires a spear. Ignores Shield Defense. Over-hit. Critical. -->
-		<table name="#effectPoint"> -92 -94 -97 -99 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 122 124 129 133 </table>
 		<table name="#power"> 26003 30494 35883 37680 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -371,16 +426,31 @@
 		<affectRange>150</affectRange>
 		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<trait>SHOCK</trait>
 		<icon>icon.skill10317new</icon>
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">122</value>
+			<value level="2">124</value>
+			<value level="3">129</value>
+			<value level="4">133</value>
+		</mpConsume>
 		<hitTime>1390</hitTime>
 		<coolTime>200</coolTime>
 		<reuseDelay>15000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-92</value>
+			<value level="2">-94</value>
+			<value level="3">-97</value>
+			<value level="4">-99</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
@@ -396,20 +466,41 @@
 	</skill>
 	<skill id="10318" levels="7" name="Sonic Flash">
 		<!-- Launches a wave of sword energy to inflict 17348 damage added to P. Atk., increasing the damage as Momentum is consumed. Can consume up to 3. Requires a dual sword, sword, or blunt. Over-hit. Critical. -->
-		<table name="#effectPoint"> -183 -188 -193 -198 -203 -208 -213 </table>
-		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
-		<table name="#mpConsumes"> 98 105 112 119 126 133 140 </table>
 		<table name="#power"> 17438 20033 22717 25700 27419 28665 29911 </table>
 		<icon>icon.skill10318new</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">98</value>
+			<value level="2">105</value>
+			<value level="3">112</value>
+			<value level="4">119</value>
+			<value level="5">126</value>
+			<value level="6">133</value>
+			<value level="7">140</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-183</value>
+			<value level="2">-188</value>
+			<value level="3">-193</value>
+			<value level="4">-198</value>
+			<value level="5">-203</value>
+			<value level="6">-208</value>
+			<value level="7">-213</value>
+		</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT,DUAL" />
@@ -426,12 +517,15 @@
 		<!-- TODO: AbnormalType -->
 		<!-- PvP Damage + 20%, Speed + 66, Debuff Resistance + 90%. -->
 		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 90 95 99 </table>
 		<table name="#pvpBonus"> 1.2 1.25 1.3 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>DUELING</abnormalVisualEffect>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">90</value>
+			<value level="2">95</value>
+			<value level="3">99</value>
+		</magicLvl>
 		<icon>icon.skll10319</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -479,8 +573,6 @@
 	</skill>
 	<skill id="10321" levels="7" name="Thunder Spear">
 		<!-- Attacks near the enemy by throwing a spear with 22536 Power added to P. Atk. Stuns for 9 seconds. Requires a spear. Over-hit. Critical hit. Ignores Shield Defense. Target cancel. -->
-		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
-		<table name="#mpConsumes"> 122 124 129 133 137 141 145 </table>
 		<table name="#power"> 22536 26428 29542 32656 35788 37424 39060 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
@@ -491,12 +583,28 @@
 		<affectRange>150</affectRange>
 		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<trait>SHOCK</trait>
 		<icon>icon.skll10321</icon>
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">122</value>
+			<value level="2">124</value>
+			<value level="3">129</value>
+			<value level="4">133</value>
+			<value level="5">137</value>
+			<value level="6">141</value>
+			<value level="7">145</value>
+		</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2500</hitTime>
 		<reuseDelay>30000</reuseDelay>
@@ -559,17 +667,29 @@
 	</skill>
 	<skill id="10325" levels="6" name="Dreadful Roar">
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
-		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
-		<table name="#mpConsumes"> 149 151 154 157 160 163 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>180</affectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">97</value>
+			<value level="2">98</value>
+			<value level="3">99</value>
+			<value level="4">101</value>
+			<value level="5">103</value>
+			<value level="6">105</value>
+		</magicLvl>
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<icon>icon.skill10325</icon>
 		<operateType>A1</operateType>
 		<targetType>AURA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">149</value>
+			<value level="2">151</value>
+			<value level="3">154</value>
+			<value level="4">157</value>
+			<value level="5">160</value>
+			<value level="6">163</value>
+		</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-828</effectPoint>
@@ -583,11 +703,14 @@
 	<skill id="10326" levels="3" name="Bloody Fury">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., P. Atk. + 450, Skill Power + 5%, and HP Recovery is limited to 70%. -->
-		<table name="#mpConsumes"> 45 50 55 </table>
 		<icon>icon.skill10326</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">45</value>
+			<value level="2">50</value>
+			<value level="3">55</value>
+		</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<effectPoint>673</effectPoint>
@@ -598,24 +721,41 @@
 		<table name="#power"> 17348 20033 22717 25700 27419 28665 29911 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 17348 Power added to P. Atk. Requires a sword/dagger/blunt weapon/fist weapon. Damage increases when using Momentum, which you can use up to 3. Over-hit. Critical. -->
-		<table name="#effectPoint"> -183 -188 -193 -198 -193 -193 -198 </table>
-		<table name="#mpConsumes"> 98 105 112 119 126 133 140 </table>
 		<icon>icon.skill10327</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">98</value>
+			<value level="2">105</value>
+			<value level="3">112</value>
+			<value level="4">119</value>
+			<value level="5">126</value>
+			<value level="6">133</value>
+			<value level="7">140</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-183</value>
+			<value level="2">-188</value>
+			<value level="3">-193</value>
+			<value level="4">-198</value>
+			<value level="5">-193</value>
+			<value level="6">-193</value>
+			<value level="7">-198</value>
+		</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="10328" levels="3" name="Soul Berserker">
 		<!-- When equipped with a sword or blunt weapon, P. Atk. +10%, P. Critical Damage + 10%, and P. Skill MP Consumption + 10%. -->
-		<table name="#magicLvl"> 97 98 99 </table>
 		<table name="#add"> 1.1 1.12 1.5 </table>
 		<icon>icon.skill10328</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">97</value>
+			<value level="2">98</value>
+			<value level="3">99</value>
+		</magicLvl>
 		<operateType>T</operateType>
 		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
@@ -654,8 +794,6 @@
 	</skill>
 	<skill id="10330" levels="7" name="Power Hammer Crush">
 		<!-- Attacks target with 18005 Power added to P. Atk. while ignoring 30% of their P. Def. Stuns for 5 sec. Requires a blunt weapon. Over-hit. Critical. -->
-		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
-		<table name="#mpConsumes"> 92 96 101 105 109 113 117 </table>
 		<table name="#power"> 18005 22505 27005 30605 32405 34205 36005 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -665,11 +803,27 @@
 		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<lvlBonusRate>1</lvlBonusRate>
 		<trait>SHOCK</trait>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<icon>icon.skill10330</icon>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">92</value>
+			<value level="2">96</value>
+			<value level="3">101</value>
+			<value level="4">105</value>
+			<value level="5">109</value>
+			<value level="6">113</value>
+			<value level="7">117</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -891,12 +1045,18 @@
 		<table name="#power"> 48641 51282 53878 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks enemies in front with 16214 Power added to P. Atk. If the target is stunned, attacks with 48641 power. Can be used while a sword or blunt weapon is equipped. Consumes 1 Soulstone. -->
-		<table name="#icons"> icon.skill10340 icon.skill0526 icon.skill0526 </table>
-		<table name="#mpConsumes"> 233 236 239 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill10340</value>
+			<value level="2">icon.skill0526</value>
+			<value level="3">icon.skill0526</value>
+		</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">233</value>
+			<value level="2">236</value>
+			<value level="3">239</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>

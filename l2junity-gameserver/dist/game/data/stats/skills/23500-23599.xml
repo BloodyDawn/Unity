@@ -823,7 +823,6 @@
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="23545" levels="2" name="Whirlwind">
-		<table name="#magicLvl"> 88 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Spin your body to inflict powerful damage and Knock Back enemies. -->
 		<icon>icon.skill10266</icon>
@@ -840,7 +839,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">95</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>2</abnormalTime>
 		<trait>KNOCKDOWN</trait>
@@ -850,8 +852,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23546" levels="2" name="(Battle Cry)">
-		<table name="#abnormalTime"> 10 15 </table>
-		<table name="#magicLvl"> 88 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Give a shout of victory to increase your abilities. -->
 		<icon>icon.skill1068</icon>
@@ -864,9 +864,15 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">95</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">10</value>
+			<value level="2">15</value>
+		</abnormalTime>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 	</skill>
@@ -938,8 +944,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23551" levels="2" name="Transform: Giant Rat">
-		<table name="#abnormalTime"> 7 10 </table>
-		<table name="#magicLvl"> 92 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transform into a Giant Rat. -->
 		<icon>icon.skill11537</icon>
@@ -957,15 +961,20 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">95</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">7</value>
+			<value level="2">10</value>
+		</abnormalTime>
 		<trait>CHANGEBODY</trait>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23552" levels="2" name="Instant Recovery">
-		<table name="#magicLvl"> 92 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
@@ -976,7 +985,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">95</value>
+		</magicLvl>
 		<affectRange>900</affectRange>
 		<isMagic>1</isMagic>
 	</skill>
@@ -1020,7 +1032,6 @@
 		<hitTime>2000</hitTime>
 	</skill>
 	<skill id="23555" levels="2" name="(Power Smash)">
-		<table name="#magicLvl"> 94 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1032,7 +1043,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">94</value>
+			<value level="2">95</value>
+		</magicLvl>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="23556" levels="1" name="Piercing Attack">
@@ -1061,7 +1075,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23557" levels="2" name="Energy Burst">
-		<table name="#magicLvl"> 94 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots energy gathered inside toward nearby enemies and momentarily decreases their Speed. -->
 		<icon>icon.skill1160</icon>
@@ -1077,7 +1090,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1100</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">94</value>
+			<value level="2">95</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>6</abnormalTime>
 		<affectRange>200</affectRange>

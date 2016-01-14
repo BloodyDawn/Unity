@@ -1438,8 +1438,6 @@
 	<skill id="14571" levels="5" name="Shilen's Breath">
 		<!-- Ertheia skill -->
 		<!-- Is killed and poisoned by Shilen's Breath. Increases Dark Attack Resistance by 5 and HP recovery by 5%. If killed while poisoned, the poison stage increases. -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
-		<table name="#abnormalTime"> 600 600 300 300 300 </table>
 		<table name="#pAttkMattk"> 1 1 0.75 0.5 0.5 </table>
 		<table name="#pAttkSpdMattkSpd"> 1 1 0.85 0.7 0.7 </table>
 		<table name="#evas"> 0 0 15 30 30 </table>
@@ -1448,8 +1446,20 @@
 		<table name="#maxHpCpMp"> 1 1 0.7 0.5 0.5 </table>
 		<table name="#regHp">1.05 1.1 0 0 0</table>
 		<table name="#bonusExp">1 1.01 1 1 1</table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLvl>
+		<abnormalTime>
+			<value level="1">600</value>
+			<value level="2">600</value>
+			<value level="3">300</value>
+			<value level="4">300</value>
+			<value level="5">300</value>
+		</abnormalTime>
 		<icon>icon.skill5076_c</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>

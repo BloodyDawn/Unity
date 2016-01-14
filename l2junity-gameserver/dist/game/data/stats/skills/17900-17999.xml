@@ -195,8 +195,11 @@
 	<skill id="17924" levels="3" name="Supreme Windy Healing Potion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Converts Supreme Windy Healing Potion. Master Alchemy. -->
-		<table name="#icons"> icon.etc_potion_scarlet_i00 icon.etc_potion_gold_i00 icon.love_potion </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.etc_potion_scarlet_i00</value>
+			<value level="2">icon.etc_potion_gold_i00</value>
+			<value level="3">icon.love_potion</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<reuseDelay>3600000</reuseDelay>
@@ -204,24 +207,30 @@
 	<skill id="17925" levels="2" name="Giant's Scroll: Enchant Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Converts Giant's Scroll: Enchant Weapon (R-grade). Elementary Alchemy. -->
-		<table name="#icons"> icon.giant_scrl_of_ench_am_r icon.giant_scrl_of_ench_wp_r </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.giant_scrl_of_ench_am_r</value>
+			<value level="2">icon.giant_scrl_of_ench_wp_r</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17926" levels="2" name="Giant's Lucky Enchant Stone: Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Converts Giant's Lucky Enchant Stone: Armor (R-grade). Advanced Alchemy. -->
-		<table name="#icons"> icon.giant_ench_armor_stone_r_i01 icon.giant_ench_wp_stone_r_i01 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.giant_ench_armor_stone_r_i01</value>
+			<value level="2">icon.giant_ench_wp_stone_r_i01</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17927" levels="2" name="Windy Lucky Enchant Stone: Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Converts Windy Lucky Enchant Stone: Armor (R-grade). Master Alchemy. -->
-		<table name="#icons"> icon.giant_ench_armor_stone_r_i02 icon.giant_ench_wp_stone_r_i02 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.giant_ench_armor_stone_r_i02</value>
+			<value level="2">icon.giant_ench_wp_stone_r_i02</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<reuseDelay>86400000</reuseDelay>
@@ -229,72 +238,134 @@
 	<skill id="17928" levels="6" name="Lv. 1 Legendary MEN Dye (Luck)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 1 Legendary MEN Dye (Luck). Elementary Alchemy. -->
-		<table name="#icons"> icon.lv1_unique_dye_men_luc icon.lv1_unique_dye_con_luc icon.lv1_unique_dye_wit_luc icon.lv1_unique_dye_dex_luc icon.lv1_unique_dye_int_luc icon.lv1_unique_dye_str_luc </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv1_unique_dye_men_luc</value>
+			<value level="2">icon.lv1_unique_dye_con_luc</value>
+			<value level="3">icon.lv1_unique_dye_wit_luc</value>
+			<value level="4">icon.lv1_unique_dye_dex_luc</value>
+			<value level="5">icon.lv1_unique_dye_int_luc</value>
+			<value level="6">icon.lv1_unique_dye_str_luc</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17929" levels="6" name="Lv. 2 Legendary MEN Dye (Luck)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 2 Legendary MEN Dye (Luck). Intermediate Alchemy. -->
-		<table name="#icons"> icon.lv2_unique_dye_men_luc icon.lv2_unique_dye_con_luc icon.lv2_unique_dye_wit_luc icon.lv2_unique_dye_dex_luc icon.lv2_unique_dye_int_luc icon.lv2_unique_dye_str_luc </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv2_unique_dye_men_luc</value>
+			<value level="2">icon.lv2_unique_dye_con_luc</value>
+			<value level="3">icon.lv2_unique_dye_wit_luc</value>
+			<value level="4">icon.lv2_unique_dye_dex_luc</value>
+			<value level="5">icon.lv2_unique_dye_int_luc</value>
+			<value level="6">icon.lv2_unique_dye_str_luc</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17930" levels="6" name="Lv. 3 Legendary MEN Dye (Luck)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 3 Legendary MEN Dye (Luck). Intermediate Alchemy. -->
-		<table name="#icons"> icon.lv3_unique_dye_men_luc icon.lv3_unique_dye_con_luc icon.lv3_unique_dye_wit_luc icon.lv3_unique_dye_dex_luc icon.lv3_unique_dye_int_luc icon.lv3_unique_dye_str_luc </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv3_unique_dye_men_luc</value>
+			<value level="2">icon.lv3_unique_dye_con_luc</value>
+			<value level="3">icon.lv3_unique_dye_wit_luc</value>
+			<value level="4">icon.lv3_unique_dye_dex_luc</value>
+			<value level="5">icon.lv3_unique_dye_int_luc</value>
+			<value level="6">icon.lv3_unique_dye_str_luc</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17931" levels="6" name="Lv. 4 Legendary MEN Dye (Luck)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 4 Legendary MEN Dye (Luck). Advanced Alchemy. -->
-		<table name="#icons"> icon.lv4_unique_dye_men_luc icon.lv4_unique_dye_con_luc icon.lv4_unique_dye_wit_luc icon.lv4_unique_dye_dex_luc icon.lv4_unique_dye_int_luc icon.lv4_unique_dye_str_luc </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv4_unique_dye_men_luc</value>
+			<value level="2">icon.lv4_unique_dye_con_luc</value>
+			<value level="3">icon.lv4_unique_dye_wit_luc</value>
+			<value level="4">icon.lv4_unique_dye_dex_luc</value>
+			<value level="5">icon.lv4_unique_dye_int_luc</value>
+			<value level="6">icon.lv4_unique_dye_str_luc</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17932" levels="6" name="Lv. 1 Legendary MEN Dye (Charisma)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 1 Legendary MEN Dye (Charisma). Elementary Alchemy. -->
-		<table name="#icons"> icon.lv1_unique_dye_men_cha icon.lv1_unique_dye_con_cha icon.lv1_unique_dye_wit_cha icon.lv1_unique_dye_dex_cha icon.lv1_unique_dye_int_cha icon.lv1_unique_dye_str_cha </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv1_unique_dye_men_cha</value>
+			<value level="2">icon.lv1_unique_dye_con_cha</value>
+			<value level="3">icon.lv1_unique_dye_wit_cha</value>
+			<value level="4">icon.lv1_unique_dye_dex_cha</value>
+			<value level="5">icon.lv1_unique_dye_int_cha</value>
+			<value level="6">icon.lv1_unique_dye_str_cha</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17933" levels="6" name="Lv. 2 Legendary MEN Dye (Charisma)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 2 Legendary MEN Dye (Charisma). Intermediate Alchemy. -->
-		<table name="#icons"> icon.lv2_unique_dye_men_cha icon.lv2_unique_dye_con_cha icon.lv2_unique_dye_wit_cha icon.lv2_unique_dye_dex_cha icon.lv2_unique_dye_int_cha icon.lv2_unique_dye_str_cha </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv2_unique_dye_men_cha</value>
+			<value level="2">icon.lv2_unique_dye_con_cha</value>
+			<value level="3">icon.lv2_unique_dye_wit_cha</value>
+			<value level="4">icon.lv2_unique_dye_dex_cha</value>
+			<value level="5">icon.lv2_unique_dye_int_cha</value>
+			<value level="6">icon.lv2_unique_dye_str_cha</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17934" levels="6" name="Lv. 3 Legendary MEN Dye (Charisma)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 3 Legendary MEN Dye (Charisma). Intermediate Alchemy. -->
-		<table name="#icons"> icon.lv3_unique_dye_men_cha icon.lv3_unique_dye_con_cha icon.lv3_unique_dye_wit_cha icon.lv3_unique_dye_dex_cha icon.lv3_unique_dye_int_cha icon.lv3_unique_dye_str_cha </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv3_unique_dye_men_cha</value>
+			<value level="2">icon.lv3_unique_dye_con_cha</value>
+			<value level="3">icon.lv3_unique_dye_wit_cha</value>
+			<value level="4">icon.lv3_unique_dye_dex_cha</value>
+			<value level="5">icon.lv3_unique_dye_int_cha</value>
+			<value level="6">icon.lv3_unique_dye_str_cha</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17935" levels="6" name="Lv. 4 Legendary MEN Dye (Charisma)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 4 Legendary MEN Dye (Charisma). Advanced Alchemy. -->
-		<table name="#icons"> icon.lv4_unique_dye_men_cha icon.lv4_unique_dye_con_cha icon.lv4_unique_dye_wit_cha icon.lv4_unique_dye_dex_cha icon.lv4_unique_dye_int_cha icon.lv4_unique_dye_str_cha </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv4_unique_dye_men_cha</value>
+			<value level="2">icon.lv4_unique_dye_con_cha</value>
+			<value level="3">icon.lv4_unique_dye_wit_cha</value>
+			<value level="4">icon.lv4_unique_dye_dex_cha</value>
+			<value level="5">icon.lv4_unique_dye_int_cha</value>
+			<value level="6">icon.lv4_unique_dye_str_cha</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17936" levels="14" name="Lv. 5 Legendary MEN Dye (Luck)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 5 Legendary MEN Dye (Luck). Master Alchemy. -->
-		<table name="#icons"> icon.lv5_unique_dye_men_luc icon.lv5_unique_dye_con_luc icon.lv5_unique_dye_wit_luc icon.lv5_unique_dye_dex_luc icon.lv5_unique_dye_int_luc icon.lv5_unique_dye_str_luc icon.lv5_unique_dye_men_cha icon.lv5_unique_dye_con_cha icon.lv5_unique_dye_wit_cha icon.lv5_unique_dye_dex_cha icon.lv5_unique_dye_int_cha icon.lv5_unique_dye_str_cha icon.lv5_unique_dye_cha_luc icon.lv5_unique_dye_luc_cha </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv5_unique_dye_men_luc</value>
+			<value level="2">icon.lv5_unique_dye_con_luc</value>
+			<value level="3">icon.lv5_unique_dye_wit_luc</value>
+			<value level="4">icon.lv5_unique_dye_dex_luc</value>
+			<value level="5">icon.lv5_unique_dye_int_luc</value>
+			<value level="6">icon.lv5_unique_dye_str_luc</value>
+			<value level="7">icon.lv5_unique_dye_men_cha</value>
+			<value level="8">icon.lv5_unique_dye_con_cha</value>
+			<value level="9">icon.lv5_unique_dye_wit_cha</value>
+			<value level="10">icon.lv5_unique_dye_dex_cha</value>
+			<value level="11">icon.lv5_unique_dye_int_cha</value>
+			<value level="12">icon.lv5_unique_dye_str_cha</value>
+			<value level="13">icon.lv5_unique_dye_cha_luc</value>
+			<value level="14">icon.lv5_unique_dye_luc_cha</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<reuseDelay>7200000</reuseDelay>
@@ -302,24 +373,33 @@
 	<skill id="17937" levels="3" name="Mid-grade Life Stone (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Mid-grade Life Stone (R-grade). Elementary Alchemy. -->
-		<table name="#icons"> icon.r_mineral_special_i00 icon.r_mineral_rare_i00 icon.r_mineral_unique_i00 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.r_mineral_special_i00</value>
+			<value level="2">icon.r_mineral_rare_i00</value>
+			<value level="3">icon.r_mineral_unique_i00</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17938" levels="3" name="Mid-grade Life Stone (R95-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Mid-grade Life Stone (R95-grade). Intermediate Alchemy. -->
-		<table name="#icons"> icon.r95_mineral_special_i00 icon.r95_mineral_rare_i00 icon.r95_mineral_unique_i00 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.r95_mineral_special_i00</value>
+			<value level="2">icon.r95_mineral_rare_i00</value>
+			<value level="3">icon.r95_mineral_unique_i00</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17939" levels="3" name="Mid-grade Life Stone (R99-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Mid-grade Life Stone (R99-grade). Advanced Alchemy. -->
-		<table name="#icons"> icon.r99_mineral_special_i00 icon.r99_mineral_rare_i00 icon.r99_mineral_unique_i00 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.r99_mineral_special_i00</value>
+			<value level="2">icon.r99_mineral_rare_i00</value>
+			<value level="3">icon.r99_mineral_unique_i00</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
@@ -334,24 +414,34 @@
 	<skill id="17941" levels="4" name="Lv. 1 Windy CHA Dye (Luck)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 1 Windy CHA Dye (Luck). Elementary Alchemy. -->
-		<table name="#icons"> icon.lv1_unique_dye_cha_luc icon.lv2_unique_dye_cha_luc icon.lv3_unique_dye_cha_luc icon.lv4_unique_dye_cha_luc </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv1_unique_dye_cha_luc</value>
+			<value level="2">icon.lv2_unique_dye_cha_luc</value>
+			<value level="3">icon.lv3_unique_dye_cha_luc</value>
+			<value level="4">icon.lv4_unique_dye_cha_luc</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17942" levels="4" name="Lv. 1 Windy LUC Dye (Charisma)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can convert to Lv. 1 Windy LUC Dye (Charisma). Elementary Alchemy. -->
-		<table name="#icons"> icon.lv1_unique_dye_luc_cha icon.lv2_unique_dye_luc_cha icon.lv3_unique_dye_luc_cha icon.lv4_unique_dye_luc_cha </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lv1_unique_dye_luc_cha</value>
+			<value level="2">icon.lv2_unique_dye_luc_cha</value>
+			<value level="3">icon.lv3_unique_dye_luc_cha</value>
+			<value level="4">icon.lv4_unique_dye_luc_cha</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="17943" levels="2" name="Alchemy Cube">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can use the Alchemy Cube. Elementary Combination Alchemy. -->
-		<table name="#icons"> icon.skill0000 icon.alchemy_mix_cube </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.alchemy_mix_cube</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>

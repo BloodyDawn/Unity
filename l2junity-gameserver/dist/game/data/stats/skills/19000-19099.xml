@@ -483,8 +483,6 @@
 		<reuseDelay>30000</reuseDelay>
 	</skill>
 	<skill id="19028" levels="2" name="Revolution Spirit">
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#magicLvl"> 85 86 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases Max CP by 10000, P. Def. by 1000, and M. Def. by 1000 for 5 minutes. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>BranchSys2.icon.skill20006</icon>
@@ -497,8 +495,14 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+		</magicLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
@@ -805,11 +809,8 @@
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="19074" levels="2" name="Academy Precept">
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#magicLvl"> 85 90 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases academy members' P. Atk. by 10%, M. Atk. by 10%, Critical Rate by 10%, and M. Critical Rate by 10%. -->
-		<table name="#reuseDelays"> 43200000 21600000 </table>
 		<icon>icon.skill19008</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -822,11 +823,20 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>900</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+		</magicLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>2</isMagic>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">43200000</value>
+			<value level="2">21600000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="19075" levels="1" name="Clan Relation">
 		<!-- AUTO GENERATED SKILL -->
@@ -1000,7 +1010,6 @@
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="19088" levels="4" name="Summon Siege Golem">
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a siege weapon. Requires 400 R-grade Crystals. Automatically acquired by dwarves at level 85. -->
 		<icon>icon.skill0013</icon>
@@ -1010,12 +1019,16 @@
 		<hitTime>180000</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="19089" levels="4" name="Summon Wild Hog Cannon">
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a siege weapon. Can only move in normal mode. During siege mode, it cannot move, and it can inflict ranged attacks. Switching modes takes 30 seconds. Requires 100 R-grade Crystals. Automatically acquired by Maestro class at level 85. -->
 		<icon>icon.skill0299</icon>
@@ -1025,12 +1038,16 @@
 		<hitTime>30000</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>1200000</reuseDelay>
 	</skill>
 	<skill id="19090" levels="4" name="Summon Swoop Cannon">
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a Swoop Cannon. Requires 500 R-grade Crystals. Automatically acquired by dwarves at level 85. -->
 		<icon>icon.skill0448</icon>
@@ -1041,7 +1058,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>7.5</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
@@ -1071,27 +1093,42 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="19092" levels="2" name="Chat Prohibited">
-		<table name="#effectPoint"> -700 0 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Chatting is restricted. -->
-		<table name="#castRanges"> 900 -1 </table>
-		<table name="#coolTimes"> 500 0 </table>
-		<table name="#hitTimes"> 2000 1500 </table>
-		<table name="#icons"> icon.skill1170 icon.skill10313 </table>
-		<table name="#isDebuffs"> true false </table>
-		<table name="#isMagics"> 0 1 </table>
-		<table name="#mpConsumes"> 1 2 </table>
-		<table name="#reuseDelays"> 0 150000 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill1170</value>
+			<value level="2">icon.skill10313</value>
+		</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
-		<castRange>#castRanges</castRange>
-		<hitTime>#hitTimes</hitTime>
-		<coolTime>#coolTimes</coolTime>
-		<reuseDelay>#reuseDelays</reuseDelay>
-		<isMagic>#isMagics</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<mpConsume>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</mpConsume>
+		<castRange>
+			<value level="1">900</value>
+			<value level="2">-1</value>
+		</castRange>
+		<hitTime>
+			<value level="1">2000</value>
+			<value level="2">1500</value>
+		</hitTime>
+		<coolTime>
+			<value level="1">500</value>
+			<value level="2">0</value>
+		</coolTime>
+		<reuseDelay>
+			<value level="1">0</value>
+			<value level="2">150000</value>
+		</reuseDelay>
+		<isMagic>
+			<value level="1">0</value>
+			<value level="2">1</value>
+		</isMagic>
+		<effectPoint>
+			<value level="1">-700</value>
+			<value level="2">0</value>
+		</effectPoint>
 		<abnormalType>PARALYZE</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
@@ -1104,7 +1141,10 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1800</abnormalTime>
 		<trait>PARALYZE</trait>
-		<isDebuff>#isDebuffs</isDebuff>
+		<isDebuff>
+			<value level="1">true</value>
+			<value level="2">false</value>
+		</isDebuff>
 	</skill>
 	<skill id="19093" levels="1" name="Added Blow Quiver">
 		<!-- AUTO GENERATED SKILL -->

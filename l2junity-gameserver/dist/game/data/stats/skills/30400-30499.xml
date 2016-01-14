@@ -3,10 +3,12 @@
 	<skill id="30400" levels="2" name="Divine Wind">
 		<!-- Wind/Holy Resistance + 10. -->
 		<table name="#res"> 10 20</table>
-		<table name="#magicLvl"> 85 85 </table>
 		<icon>icon.skill30400</icon>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">85</value>
+		</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
@@ -19,8 +21,10 @@
 		<!-- Max. HP + 1%, Speed + 4. -->
 		<table name="#maxHp"> 1 2 </table>
 		<table name="#runSpd"> 4 7 </table>
-		<table name="#magicLvl"> 85 85 </table>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">85</value>
+		</magicLvl>
 		<icon>icon.skill30401</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>

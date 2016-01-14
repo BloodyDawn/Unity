@@ -1,37 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14100" levels="6" name="Lachik Front Foot Strike">
-		<table name="#magicLvl"> 85 86 87 88 89 90 </table>
-		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#mpConsumes"> 84 84 84 85 85 85 </table>
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">84</value>
+			<value level="2">84</value>
+			<value level="3">84</value>
+			<value level="4">85</value>
+			<value level="5">85</value>
+			<value level="6">85</value>
+		</mpConsume>
 		<castRange>120</castRange>
 		<hitTime>1500</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-350</value>
+			<value level="2">-350</value>
+			<value level="3">-351</value>
+			<value level="4">-352</value>
+			<value level="5">-352</value>
+			<value level="6">-352</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>200</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">87</value>
+			<value level="4">88</value>
+			<value level="5">89</value>
+			<value level="6">90</value>
+		</magicLvl>
 		<affectRange>150</affectRange>
 		<reuseDelay>2000</reuseDelay>
 	</skill>
 	<skill id="14101" levels="4" name="Wood Downward Strike">
-		<table name="#effectPoint"> -347 -349 -350 -350 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Speed is decreased by 20%. -->
-		<table name="#mpConsumes"> 83 84 84 84 </table>
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">83</value>
+			<value level="2">84</value>
+			<value level="3">84</value>
+			<value level="4">84</value>
+		</mpConsume>
 		<hitTime>3000</hitTime>
 		<reuseDelay>5000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-347</value>
+			<value level="2">-349</value>
+			<value level="3">-350</value>
+			<value level="4">-350</value>
+		</effectPoint>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<basicProperty>MAGIC</basicProperty>
 		<rideState>NONE</rideState>
@@ -92,18 +118,29 @@
 		<castRange>900</castRange>
 	</skill>
 	<skill id="14105" levels="6" name="Howling">
-		<table name="#magicLvl"> 85 86 87 88 89 90 </table>
-		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#mpConsumes"> 84 84 84 85 85 85 </table>
 		<icon>icon.skill0412</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">84</value>
+			<value level="2">84</value>
+			<value level="3">84</value>
+			<value level="4">85</value>
+			<value level="5">85</value>
+			<value level="6">85</value>
+		</mpConsume>
 		<castRange>150</castRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>2000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-350</value>
+			<value level="2">-350</value>
+			<value level="3">-351</value>
+			<value level="4">-352</value>
+			<value level="5">-352</value>
+			<value level="6">-352</value>
+		</effectPoint>
 		<abnormalType>HIT_DOWN</abnormalType>
 		<basicProperty>MAGIC</basicProperty>
 		<rideState>NONE</rideState>
@@ -112,7 +149,14 @@
 		<effectRange>400</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>80</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">87</value>
+			<value level="4">88</value>
+			<value level="5">89</value>
+			<value level="6">90</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<fanRange>0;0;120;200</fanRange>
@@ -153,45 +197,81 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14108" levels="6" name="Lachik Ball">
-		<table name="#magicLvl"> 85 86 87 88 89 90 </table>
-		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#mpConsumes"> 77 77 77 78 78 78 </table>
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">77</value>
+			<value level="2">77</value>
+			<value level="3">77</value>
+			<value level="4">78</value>
+			<value level="5">78</value>
+			<value level="6">78</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>2000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-350</value>
+			<value level="2">-350</value>
+			<value level="3">-351</value>
+			<value level="4">-352</value>
+			<value level="5">-352</value>
+			<value level="6">-352</value>
+		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">87</value>
+			<value level="4">88</value>
+			<value level="5">89</value>
+			<value level="6">90</value>
+		</magicLvl>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14109" levels="6" name="Lachik Beam">
-		<table name="#magicLvl"> 85 86 87 88 89 90 </table>
-		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#mpConsumes"> 77 77 77 78 78 78 </table>
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">77</value>
+			<value level="2">77</value>
+			<value level="3">77</value>
+			<value level="4">78</value>
+			<value level="5">78</value>
+			<value level="6">78</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>7500</hitTime>
 		<reuseDelay>2000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-350</value>
+			<value level="2">-350</value>
+			<value level="3">-351</value>
+			<value level="4">-352</value>
+			<value level="5">-352</value>
+			<value level="6">-352</value>
+		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">87</value>
+			<value level="4">88</value>
+			<value level="5">89</value>
+			<value level="6">90</value>
+		</magicLvl>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<fanRange>0;0;180;500</fanRange>
@@ -323,7 +403,6 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14117" levels="5" name="Millipede P. Atk. Enhancement">
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
@@ -339,7 +418,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>90</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
@@ -388,7 +473,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14120" levels="3" name="Enhance">
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
@@ -406,7 +490,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1400</effectRange>
 		<magicLvl>90</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
@@ -601,8 +689,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14130" levels="3" name="Phantom Circle">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -610,18 +696,24 @@
 		<mpConsume>85</mpConsume>
 		<castRange>150</castRange>
 		<hitTime>2500</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>300</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>400</affectRange>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14131" levels="3" name="Phantom Attack">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -629,17 +721,23 @@
 		<mpConsume>85</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>900</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="14132" levels="3" name="Curse Bloodstain">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Poison status. -->
 		<icon>icon.skill1168</icon>
@@ -650,7 +748,11 @@
 		<hitTime>2000</hitTime>
 		<reuseDelay>3000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalType>POISON</abnormalType>
 		<basicProperty>PHYSICAL</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -659,7 +761,11 @@
 		<effectRange>1000</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>80</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<trait>POISON</trait>
@@ -668,8 +774,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14133" levels="3" name="Curse Shout">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
@@ -678,17 +782,23 @@
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>4000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>900</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14134" levels="3" name="Exile Attack">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -696,18 +806,24 @@
 		<mpConsume>85</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>900</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14135" levels="3" name="Exile Slasher">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -715,34 +831,46 @@
 		<mpConsume>85</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>300</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
 	</skill>
 	<skill id="14136" levels="3" name="Dark Counter">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>85</mpConsume>
 		<hitTime>1500</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="14137" levels="3" name="Bloody Fist">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Poison status. -->
 		<icon>icon.skill1168</icon>
@@ -753,7 +881,11 @@
 		<hitTime>2000</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalType>POISON</abnormalType>
 		<basicProperty>PHYSICAL</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -762,7 +894,11 @@
 		<effectRange>2500</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>80</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<trait>POISON</trait>
@@ -771,8 +907,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14138" levels="3" name="Dark Avenger">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -781,12 +915,20 @@
 		<castRange>150</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>7000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>300</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14139" levels="1" name="Teleport">
@@ -808,8 +950,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14140" levels="3" name="Decrease Speed">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Spd decreased. -->
 		<icon>icon.skill1160</icon>
@@ -819,7 +959,11 @@
 		<castRange>1000</castRange>
 		<hitTime>10000</hitTime>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<basicProperty>MAGIC</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -828,14 +972,16 @@
 		<effectRange>1500</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>80</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14141" levels="3" name="Sleep">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sleep Status. -->
 		<icon>icon.skill1069</icon>
@@ -845,7 +991,11 @@
 		<castRange>1000</castRange>
 		<hitTime>10000</hitTime>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalType>SLEEP</abnormalType>
 		<basicProperty>MAGIC</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -854,7 +1004,11 @@
 		<effectRange>1500</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>80</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<trait>SLEEP</trait>
@@ -862,8 +1016,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14142" levels="3" name="Fear">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fear status. -->
 		<icon>icon.skill1169</icon>
@@ -873,7 +1025,11 @@
 		<castRange>1000</castRange>
 		<hitTime>10000</hitTime>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalType>TURN_FLEE</abnormalType>
 		<basicProperty>MAGIC</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -882,7 +1038,11 @@
 		<effectRange>1500</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>80</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<trait>DERANGEMENT</trait>
@@ -890,8 +1050,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14143" levels="3" name="Exile Sword Attack">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -899,34 +1057,46 @@
 		<mpConsume>85</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1100</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
 	</skill>
 	<skill id="14144" levels="3" name="Exile Sword Slasher">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>85</mpConsume>
 		<hitTime>2500</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>600</affectRange>
 		<reuseDelay>4000</reuseDelay>
 	</skill>
 	<skill id="14145" levels="3" name="Yoke of Blood">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Speed is decreased. -->
 		<icon>icon.skill1160</icon>
@@ -937,7 +1107,11 @@
 		<hitTime>2000</hitTime>
 		<reuseDelay>4000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<basicProperty>MAGIC</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -946,15 +1120,17 @@
 		<effectRange>1100</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>80</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<affectRange>250</affectRange>
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14146" levels="3" name="Bloodstain's Will">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -963,17 +1139,23 @@
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>5000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1100</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14147" levels="3" name="Exile Knuckle">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -981,18 +1163,24 @@
 		<mpConsume>85</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>900</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>6000</reuseDelay>
 	</skill>
 	<skill id="14148" levels="3" name="Exile Circle">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -1000,18 +1188,24 @@
 		<mpConsume>85</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>1500</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>300</affectRange>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14149" levels="3" name="Sound of Wind">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0793</icon>
 		<operateType>DA1</operateType>
@@ -1019,20 +1213,26 @@
 		<mpConsume>85</mpConsume>
 		<castRange>600</castRange>
 		<reuseDelay>5000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>800</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<trait>SHOCK</trait>
 		<fanRange>0;0;300;60</fanRange>
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14150" levels="3" name="Space Wave">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -1040,24 +1240,35 @@
 		<mpConsume>85</mpConsume>
 		<castRange>2000</castRange>
 		<hitTime>4000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>2500</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>8000</reuseDelay>
 	</skill>
 	<skill id="14151" levels="3" name="Sky Dash">
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0493</icon>
 		<operateType>DA1</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>85</mpConsume>
 		<castRange>500</castRange>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1068,8 +1279,6 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14152" levels="3" name="Roar of Destruction">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
@@ -1077,37 +1286,49 @@
 		<mpConsume>85</mpConsume>
 		<castRange>250</castRange>
 		<hitTime>1500</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>300</affectRange>
 		<reuseDelay>7000</reuseDelay>
 	</skill>
 	<skill id="14153" levels="3" name="Sky Bomb">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0493</icon>
 		<operateType>DA1</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>85</mpConsume>
 		<castRange>500</castRange>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14154" levels="3" name="Earthquake Roar">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
@@ -1115,18 +1336,24 @@
 		<mpConsume>85</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>2000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<fanRange>0;0;90;400</fanRange>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14155" levels="3" name="Quake Bomb">
-		<table name="#magicLvl"> 92 93 94 </table>
-		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0006</icon>
 		<operateType>A1</operateType>
@@ -1134,13 +1361,21 @@
 		<mpConsume>85</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>3000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-352</value>
+			<value level="2">-353</value>
+			<value level="3">-353</value>
+		</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">93</value>
+			<value level="3">94</value>
+		</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
 	</skill>

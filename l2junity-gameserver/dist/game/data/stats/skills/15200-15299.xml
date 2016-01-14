@@ -153,11 +153,19 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15208" levels="9" name="Weakened Chaos Shield">
-		<table name="#abnormalLvl"> 99 98 97 96 95 94 93 92 91 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lethal Strike Resistance is weakened through the armor destruction skill. -->
-		<table name="#icons"> icon.skill0035 icon.skill0035 icon.skill0035 icon.skill0035 icon.skill0035 icon.skill0035 icon.skill0035 icon.skill0035 icon.skill1418 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill0035</value>
+			<value level="2">icon.skill0035</value>
+			<value level="3">icon.skill0035</value>
+			<value level="4">icon.skill0035</value>
+			<value level="5">icon.skill0035</value>
+			<value level="6">icon.skill0035</value>
+			<value level="7">icon.skill0035</value>
+			<value level="8">icon.skill0035</value>
+			<value level="9">icon.skill1418</value>
+		</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<effectPoint>1</effectPoint>
@@ -168,7 +176,17 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">99</value>
+			<value level="2">98</value>
+			<value level="3">97</value>
+			<value level="4">96</value>
+			<value level="5">95</value>
+			<value level="6">94</value>
+			<value level="7">93</value>
+			<value level="8">92</value>
+			<value level="9">91</value>
+		</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
@@ -375,7 +393,6 @@
 	<skill id="15221" levels="3" name="Blood Spear">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks the target with an arrow of darkness. -->
-		<table name="#magicLvl"> 93 94 95 </table>
 		<table name="#power"> 1000 1500 2000 </table>
 		<icon>icon.skill0122</icon>
 		<operateType>A1</operateType>
@@ -389,7 +406,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>460</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">94</value>
+			<value level="3">95</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
@@ -400,7 +421,6 @@
 	<skill id="15222" levels="3" name="Home Thrust">
 		<!-- Glory Days confirmed -->
 		<!-- Launches a powerful attack on the target. -->
-		<table name="#magicLvl"> 93 94 95 </table>
 		<table name="#power"> 30000 40000 50000 </table>
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -412,7 +432,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">94</value>
+			<value level="3">95</value>
+		</magicLvl>
 		<hitTime>2000</hitTime>
 		<for>
 			<effect name="PhysicalAttack">

@@ -1923,10 +1923,13 @@
 	</skill>
 	<skill id="8289" levels="3" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 84 85 86 </table>
 		<table name="#rCrit"> 128.7 137.1 137.1 </table>
 		<icon>icon.skill1077</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">84</value>
+			<value level="2">85</value>
+			<value level="3">86</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>

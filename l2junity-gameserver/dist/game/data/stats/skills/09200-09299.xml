@@ -750,8 +750,10 @@
 	<skill id="9240" levels="2" name="XP Rune I (Lv. 1-85)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Obtained XP/SP + 100%. -->
-		<table name="#icons"> br_cashtex.skill.br_cash_rune_of_exp_buff_1 br_cashtex.skill.br_cash_rune_of_exp_buff_2 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">br_cashtex.skill.br_cash_rune_of_exp_buff_1</value>
+			<value level="2">br_cashtex.skill.br_cash_rune_of_exp_buff_2</value>
+		</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>

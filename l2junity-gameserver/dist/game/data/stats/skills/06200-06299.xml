@@ -173,9 +173,6 @@
 	<skill id="6205" levels="19" name="Strider Bite">
 		<!-- Confirmed CT2.5 -->
 		<table name="#dot"> 65 75 75 82 82 82 82 82 85 85 85 85 85 85 85 85 85 85 87 </table>
-		<table name="#effectPoints"> -523 -566 -604 -635 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 </table>
-		<table name="#magicLvl"> 55 60 65 70 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 </table>
-		<table name="#mpConsume"> 68 76 82 89 91 94 96 98 100 100 101 102 103 103 104 104 105 105 105 </table>
 		<table name="#power"> 1649 2045 2476 2927 3108 3288 3464 3636 3801 3881 3959 4034 4107 4176 4243 4307 4367 4424 4477 </table>
 		<abnormalLvl>6</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
@@ -185,13 +182,73 @@
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-523</value>
+			<value level="2">-566</value>
+			<value level="3">-604</value>
+			<value level="4">-635</value>
+			<value level="5">-646</value>
+			<value level="6">-655</value>
+			<value level="7">-662</value>
+			<value level="8">-669</value>
+			<value level="9">-676</value>
+			<value level="10">-679</value>
+			<value level="11">-681</value>
+			<value level="12">-684</value>
+			<value level="13">-687</value>
+			<value level="14">-689</value>
+			<value level="15">-692</value>
+			<value level="16">-694</value>
+			<value level="17">-696</value>
+			<value level="18">-698</value>
+			<value level="19">-700</value>
+		</effectPoint>
 		<effectRange>400</effectRange>
 		<hitTime>1080</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">55</value>
+			<value level="2">60</value>
+			<value level="3">65</value>
+			<value level="4">70</value>
+			<value level="5">72</value>
+			<value level="6">74</value>
+			<value level="7">76</value>
+			<value level="8">78</value>
+			<value level="9">80</value>
+			<value level="10">81</value>
+			<value level="11">82</value>
+			<value level="12">83</value>
+			<value level="13">84</value>
+			<value level="14">85</value>
+			<value level="15">86</value>
+			<value level="16">87</value>
+			<value level="17">88</value>
+			<value level="18">89</value>
+			<value level="19">90</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">76</value>
+			<value level="3">82</value>
+			<value level="4">89</value>
+			<value level="5">91</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">100</value>
+			<value level="10">100</value>
+			<value level="11">101</value>
+			<value level="12">102</value>
+			<value level="13">103</value>
+			<value level="14">103</value>
+			<value level="15">104</value>
+			<value level="16">104</value>
+			<value level="17">105</value>
+			<value level="18">105</value>
+			<value level="19">105</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
@@ -211,10 +268,6 @@
 	</skill>
 	<skill id="6206" levels="19" name="Strider Fear">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -523 -566 -604 -635 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 </table>
-		<table name="#magicLvl"> 55 60 65 70 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 </table>
-		<table name="#mpConsume"> 40 44 48 52 53 55 56 57 58 58 59 59 60 60 60 61 61 61 61 </table>
-		<table name="#mpInitialConsume"> 10 11 12 13 14 14 14 15 15 15 15 15 15 15 15 16 16 16 16 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
@@ -223,14 +276,94 @@
 		<affectLimit>6-12</affectLimit>
 		<affectRange>300</affectRange>
 		<basicProperty>MAGIC</basicProperty>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-523</value>
+			<value level="2">-566</value>
+			<value level="3">-604</value>
+			<value level="4">-635</value>
+			<value level="5">-646</value>
+			<value level="6">-655</value>
+			<value level="7">-662</value>
+			<value level="8">-669</value>
+			<value level="9">-676</value>
+			<value level="10">-679</value>
+			<value level="11">-681</value>
+			<value level="12">-684</value>
+			<value level="13">-687</value>
+			<value level="14">-689</value>
+			<value level="15">-692</value>
+			<value level="16">-694</value>
+			<value level="17">-696</value>
+			<value level="18">-698</value>
+			<value level="19">-700</value>
+		</effectPoint>
 		<hitTime>4000</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">55</value>
+			<value level="2">60</value>
+			<value level="3">65</value>
+			<value level="4">70</value>
+			<value level="5">72</value>
+			<value level="6">74</value>
+			<value level="7">76</value>
+			<value level="8">78</value>
+			<value level="9">80</value>
+			<value level="10">81</value>
+			<value level="11">82</value>
+			<value level="12">83</value>
+			<value level="13">84</value>
+			<value level="14">85</value>
+			<value level="15">86</value>
+			<value level="16">87</value>
+			<value level="17">88</value>
+			<value level="18">89</value>
+			<value level="19">90</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">40</value>
+			<value level="2">44</value>
+			<value level="3">48</value>
+			<value level="4">52</value>
+			<value level="5">53</value>
+			<value level="6">55</value>
+			<value level="7">56</value>
+			<value level="8">57</value>
+			<value level="9">58</value>
+			<value level="10">58</value>
+			<value level="11">59</value>
+			<value level="12">59</value>
+			<value level="13">60</value>
+			<value level="14">60</value>
+			<value level="15">60</value>
+			<value level="16">61</value>
+			<value level="17">61</value>
+			<value level="18">61</value>
+			<value level="19">61</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">10</value>
+			<value level="2">11</value>
+			<value level="3">12</value>
+			<value level="4">13</value>
+			<value level="5">14</value>
+			<value level="6">14</value>
+			<value level="7">14</value>
+			<value level="8">15</value>
+			<value level="9">15</value>
+			<value level="10">15</value>
+			<value level="11">15</value>
+			<value level="12">15</value>
+			<value level="13">15</value>
+			<value level="14">15</value>
+			<value level="15">15</value>
+			<value level="16">16</value>
+			<value level="17">16</value>
+			<value level="18">16</value>
+			<value level="19">16</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -282,9 +415,13 @@
 	</skill>
 	<skill id="6209" levels="4" name="Weapon Grade Penalty">
 		<table name="#cAtk"> 0.9 0.8 0.7 0.6 </table>
-		<table name="#icons"> icon.skill6209_1 icon.skill6209_2 icon.skill6209_3 icon.skill6209_4 </table>
 		<table name="#rCrit"> -0.1 -0.2 -0.3 -0.4 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6209_1</value>
+			<value level="2">icon.skill6209_2</value>
+			<value level="3">icon.skill6209_3</value>
+			<value level="4">icon.skill6209_4</value>
+		</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<stayAfterDeath>true</stayAfterDeath>
@@ -302,9 +439,13 @@
 	</skill>
 	<skill id="6213" levels="4" name="Armor Grade Penalty">
 		<table name="#amount"> 0.8333 0.6944 0.5787 0.4823 </table>
-		<table name="#icons"> icon.skill6213_1 icon.skill6213_2 icon.skill6213_3 icon.skill6213_4 </table>
 		<table name="#rEvas"> 2.5 5 7.5 10 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill6213_1</value>
+			<value level="2">icon.skill6213_2</value>
+			<value level="3">icon.skill6213_3</value>
+			<value level="4">icon.skill6213_4</value>
+		</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<stayAfterDeath>true</stayAfterDeath>
@@ -567,8 +708,13 @@
 		</for>
 	</skill>
 	<skill id="6240" levels="5" name="Heatstroke">
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLvl>
 		<abnormalTime>86400</abnormalTime>
 		<abnormalType>SIGNAL_D</abnormalType>
 		<effectPoint>-100</effectPoint>
@@ -1103,8 +1249,13 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="6271" levels="5" name="Grima Power Up">
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<effectPoint>1</effectPoint>

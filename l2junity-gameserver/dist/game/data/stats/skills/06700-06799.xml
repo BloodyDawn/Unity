@@ -178,7 +178,6 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6711" levels="3" name="Etis Power Up">
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<!-- none -->
 		<abnormalTime>30</abnormalTime>
 		<blockedInOlympiad>false</blockedInOlympiad>
@@ -189,7 +188,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<hitTime>1000</hitTime>
 		<reuseDelay>20000</reuseDelay>
 		<targetType>NONE</targetType>

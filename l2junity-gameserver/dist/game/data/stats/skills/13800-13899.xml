@@ -200,16 +200,22 @@
 		<reuseDelay>1800000</reuseDelay>
 	</skill>
 	<skill id="13826" levels="2" name="Christmas Fishing Rod">
-		<table name="#effectPoint"> 0 1 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changes the appearance into that of Santa while equipped with the Christmas Fishing Rod. -->
-		<table name="#icons"> icon.christmas_fishingrod_i00 BranchSys3.lcon.s_g_ring_of_uthanka </table>
-		<table name="#isMagics"> 3 0 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.christmas_fishingrod_i00</value>
+			<value level="2">BranchSys3.lcon.s_g_ring_of_uthanka</value>
+		</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<effectPoint>#effectPoint</effectPoint>
-		<isMagic>#isMagics</isMagic>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">1</value>
+		</effectPoint>
+		<isMagic>
+			<value level="1">3</value>
+			<value level="2">0</value>
+		</isMagic>
 	</skill>
 	<skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (High)">
 		<!-- AUTO GENERATED SKILL -->

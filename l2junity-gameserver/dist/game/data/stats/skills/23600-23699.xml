@@ -206,7 +206,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23619" levels="3" name="Silence Bomb">
-		<table name="#abnormalTime"> 7 10 14 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Katura's darkness seeps in to inflict Silence and magic damage for 7sec. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up. -->
 		<icon>icon.skill1064</icon>
@@ -217,7 +216,11 @@
 		<hitTime>2500</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>-100</effectPoint>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">7</value>
+			<value level="2">10</value>
+			<value level="3">14</value>
+		</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23620" levels="1" name="Soul Burn">
@@ -239,7 +242,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23622" levels="3" name="Quaking Earth">
-		<table name="#abnormalTime"> 5 7 10 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The wrath of the earth inflicts Stun for 5sec. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up. -->
 		<icon>icon.skill0100</icon>
@@ -249,7 +251,11 @@
 		<castRange>300</castRange>
 		<hitTime>2500</hitTime>
 		<effectPoint>-10000</effectPoint>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">5</value>
+			<value level="2">7</value>
+			<value level="3">10</value>
+		</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23623" levels="1" name="Sweeping Quake">
@@ -367,26 +373,35 @@
 	<skill id="23635" levels="0" name="Dimensional Backpedal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- After failing to retreat, Kamaloka's boss will remain alive for at least 18sec., with HP that doesn't drop past 1. -->
-		<table name="#castRanges"> </table>
-		<table name="#coolTimes"> </table>
-		<table name="#hitTimes"> </table>
-		<table name="#hpConsumes"> </table>
-		<table name="#icons"> </table>
-		<table name="#isDebuffs"> </table>
-		<table name="#isMagics"> </table>
-		<table name="#mpConsumes"> </table>
-		<table name="#reuseDelays"> </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1" />
+		</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<hpConsume>#hpConsumes</hpConsume>
-		<mpConsume>#mpConsumes</mpConsume>
-		<castRange>#castRanges</castRange>
-		<hitTime>#hitTimes</hitTime>
-		<coolTime>#coolTimes</coolTime>
-		<reuseDelay>#reuseDelays</reuseDelay>
-		<isMagic>#isMagics</isMagic>
-		<isDebuff>#isDebuffs</isDebuff>
+		<hpConsume>
+			<value level="1" />
+		</hpConsume>
+		<mpConsume>
+			<value level="1" />
+		</mpConsume>
+		<castRange>
+			<value level="1" />
+		</castRange>
+		<hitTime>
+			<value level="1" />
+		</hitTime>
+		<coolTime>
+			<value level="1" />
+		</coolTime>
+		<reuseDelay>
+			<value level="1" />
+		</reuseDelay>
+		<isMagic>
+			<value level="1" />
+		</isMagic>
+		<isDebuff>
+			<value level="1" />
+		</isDebuff>
 	</skill>
 	<skill id="23636" levels="1" name="Stun Crush">
 		<!-- AUTO GENERATED SKILL -->

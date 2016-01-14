@@ -386,17 +386,18 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="21333" levels="2" name="Adenia's Vampiric Rage">
-		<table name="#magicLvl"> 67 85 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Passive: Has a chance of absorbing 3% of damage inflicted on enemy as HP when equipped. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">67</value>
+			<value level="2">85</value>
+		</magicLvl>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="21334" levels="2" name="Adenia's Vampiric Rage">
-		<table name="#abnormalTime"> 1800 3600 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Active: For 30 min., has a chance of absorbing 4% of damage inflicted on enemy as HP when used. -->
 		<icon>icon.skill3123</icon>
@@ -410,11 +411,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>44</magicLvl>
 		<abnormalLvl>2</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">1800</value>
+			<value level="2">3600</value>
+		</abnormalTime>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="21335" levels="2" name="Adenia's Damage Reflect">
-		<table name="#magicLvl"> 46 64 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Passive: Reflects 3% of received damage back to enemy. -->
 		<icon>icon.skill3080</icon>
@@ -423,11 +426,13 @@
 		<effectPoint>379</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">46</value>
+			<value level="2">64</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="21336" levels="2" name="Adenia's Damage Reflect">
-		<table name="#magicLvl"> 46 64 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Active: For 5 min., reflects 7% of received damage back to enemy. -->
 		<icon>icon.skill3123</icon>
@@ -441,7 +446,10 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">46</value>
+			<value level="2">64</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
@@ -474,7 +482,6 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="21340" levels="2" name="Adenia's Instant Recovery">
-		<table name="#magicLvl"> 46 61 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Active: Recovers 15% HP, 15% MP, and 20% CP. Usable in the Olympiad. -->
 		<icon>icon.skill3123</icon>
@@ -484,7 +491,10 @@
 		<effectPoint>10</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">46</value>
+			<value level="2">61</value>
+		</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>1800000</reuseDelay>
 	</skill>
@@ -546,11 +556,8 @@
 		<reuseDelay>300000</reuseDelay>
 	</skill>
 	<skill id="21344" levels="2" name="Adenia's Invincibility">
-		<table name="#abnormalTime"> 3 7 </table>
-		<table name="#magicLvl"> 46 61 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Active: Removes all abnormal states and grants invincibility for 3 sec. Cannot use when rendered immobile. Usable in the Olympiad. -->
-		<table name="#reuseDelays"> 7200000 3600000 </table>
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -559,30 +566,45 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">46</value>
+			<value level="2">61</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">7</value>
+		</abnormalTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<isMagic>2</isMagic>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">7200000</value>
+			<value level="2">3600000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="21345" levels="2" name="Adenia's Return">
-		<table name="#magicLvl"> 40 48 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Active: Teleport to town. Unusable in special places such as GM Consultation Room. -->
-		<table name="#isMagic"> 2 1 </table>
-		<table name="#mpConsumes"> 110 214 </table>
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">110</value>
+			<value level="2">214</value>
+		</mpConsume>
 		<hitTime>20000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">48</value>
+		</magicLvl>
 		<affectRange>1000</affectRange>
-		<isMagic>#isMagic</isMagic>
+		<isMagic>
+			<value level="1">2</value>
+			<value level="2">1</value>
+		</isMagic>
 	</skill>
 	<skill id="21346" levels="1" name="Adenia's Weight Limit">
 		<!-- AUTO GENERATED SKILL -->

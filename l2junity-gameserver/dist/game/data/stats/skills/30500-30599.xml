@@ -3,8 +3,6 @@
 	<skill id="30500" levels="28" name="Lateral Hit">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 22 Power added to P. Atk., and decreases their P. Def. by 10% for 20 sec. 20% more damage if target is Stunned. Requires a fist weapon. -->
-		<table name="#mpConsumes"> 8 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 78 79 80 </table>
-		<table name="#magicLvl"> 1 20 28 36 42 46 50 54 60 62 66 70 74 77 79 81 83 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#pDef"> 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<table name="#power"> 22 77 141 221 669 856 1073 1323 1602 1913 2256 2629 3034 3879 4149 4434 4733 18990 20811 23098 25950 29500 33928 39478 46478 47996 49514 51032 </table>
 		<icon>icon.skill30500</icon>
@@ -15,8 +13,66 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>400</effectRange> <!-- Unconfirmed -->
 		<hitTime>1000</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">1</value>
+			<value level="2">20</value>
+			<value level="3">28</value>
+			<value level="4">36</value>
+			<value level="5">42</value>
+			<value level="6">46</value>
+			<value level="7">50</value>
+			<value level="8">54</value>
+			<value level="9">60</value>
+			<value level="10">62</value>
+			<value level="11">66</value>
+			<value level="12">70</value>
+			<value level="13">74</value>
+			<value level="14">77</value>
+			<value level="15">79</value>
+			<value level="16">81</value>
+			<value level="17">83</value>
+			<value level="18">85</value>
+			<value level="19">87</value>
+			<value level="20">89</value>
+			<value level="21">91</value>
+			<value level="22">93</value>
+			<value level="23">95</value>
+			<value level="24">97</value>
+			<value level="25">99</value>
+			<value level="26">101</value>
+			<value level="27">103</value>
+			<value level="28">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">8</value>
+			<value level="2">17</value>
+			<value level="3">23</value>
+			<value level="4">29</value>
+			<value level="5">35</value>
+			<value level="6">39</value>
+			<value level="7">44</value>
+			<value level="8">47</value>
+			<value level="9">52</value>
+			<value level="10">55</value>
+			<value level="11">59</value>
+			<value level="12">63</value>
+			<value level="13">67</value>
+			<value level="14">69</value>
+			<value level="15">70</value>
+			<value level="16">71</value>
+			<value level="17">73</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+			<value level="21">75</value>
+			<value level="22">75</value>
+			<value level="23">76</value>
+			<value level="24">76</value>
+			<value level="25">77</value>
+			<value level="26">78</value>
+			<value level="27">79</value>
+			<value level="28">80</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
@@ -40,8 +96,6 @@
 	<skill id="30501" levels="27" name="Backspin Blow">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 129 Power added to P. Atk. Requires a fist weapon. -->
-		<table name="#magicLvl"> 20 28 36 42 46 50 54 58 62 66 70 74 77 79 81 83 85 87 89 91 93 95 97 99 101 103 105 </table>
-		<table name="#mpConsumes"> 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#power"> 129 235 369 1116 1428 1789 2205 2671 3189 3760 4383 5058 6466 6916 7390 7888 28134 30832 34221 38446 43706 50268 58492 68865 71115 73365 75615 </table>
 		<icon>icon.skill30501</icon>
 		<castRange>40</castRange>
@@ -49,8 +103,64 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>400</effectRange> <!-- Unconfirmed -->
 		<hitTime>1000</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">28</value>
+			<value level="3">36</value>
+			<value level="4">42</value>
+			<value level="5">46</value>
+			<value level="6">50</value>
+			<value level="7">54</value>
+			<value level="8">58</value>
+			<value level="9">62</value>
+			<value level="10">66</value>
+			<value level="11">70</value>
+			<value level="12">74</value>
+			<value level="13">77</value>
+			<value level="14">79</value>
+			<value level="15">81</value>
+			<value level="16">83</value>
+			<value level="17">85</value>
+			<value level="18">87</value>
+			<value level="19">89</value>
+			<value level="20">91</value>
+			<value level="21">93</value>
+			<value level="22">95</value>
+			<value level="23">97</value>
+			<value level="24">99</value>
+			<value level="25">101</value>
+			<value level="26">103</value>
+			<value level="27">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">17</value>
+			<value level="2">23</value>
+			<value level="3">29</value>
+			<value level="4">35</value>
+			<value level="5">39</value>
+			<value level="6">44</value>
+			<value level="7">47</value>
+			<value level="8">52</value>
+			<value level="9">55</value>
+			<value level="10">59</value>
+			<value level="11">63</value>
+			<value level="12">67</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">73</value>
+			<value level="17">73</value>
+			<value level="18">74</value>
+			<value level="19">75</value>
+			<value level="20">75</value>
+			<value level="21">75</value>
+			<value level="22">76</value>
+			<value level="23">76</value>
+			<value level="24">77</value>
+			<value level="25">78</value>
+			<value level="26">79</value>
+			<value level="27">80</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
@@ -69,8 +179,6 @@
 	<skill id="30502" levels="24" name="Chin Strike">
 		<!-- Updated to IO -->
 		<!-- Knocks down target for 3 sec. Requires a fist weapon. -->
-		<table name="#magicLvl"> 40 44 48 52 56 60 64 68 72 76 78 80 82 84 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 34 37 41 45 49 54 57 61 65 68 70 71 72 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<icon>icon.skill30502</icon>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>KNOCKDOWN</abnormalType>
@@ -81,8 +189,58 @@
 		<effectPoint>-709</effectPoint>
 		<effectRange>400</effectRange> <!-- Unconfirmed -->
 		<hitTime>1000</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">44</value>
+			<value level="3">48</value>
+			<value level="4">52</value>
+			<value level="5">56</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">76</value>
+			<value level="11">78</value>
+			<value level="12">80</value>
+			<value level="13">82</value>
+			<value level="14">84</value>
+			<value level="15">86</value>
+			<value level="16">88</value>
+			<value level="17">90</value>
+			<value level="18">92</value>
+			<value level="19">94</value>
+			<value level="20">96</value>
+			<value level="21">98</value>
+			<value level="22">101</value>
+			<value level="23">103</value>
+			<value level="24">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">34</value>
+			<value level="2">37</value>
+			<value level="3">41</value>
+			<value level="4">45</value>
+			<value level="5">49</value>
+			<value level="6">54</value>
+			<value level="7">57</value>
+			<value level="8">61</value>
+			<value level="9">65</value>
+			<value level="10">68</value>
+			<value level="11">70</value>
+			<value level="12">71</value>
+			<value level="13">72</value>
+			<value level="14">73</value>
+			<value level="15">74</value>
+			<value level="16">75</value>
+			<value level="17">75</value>
+			<value level="18">75</value>
+			<value level="19">76</value>
+			<value level="20">76</value>
+			<value level="21">77</value>
+			<value level="22">78</value>
+			<value level="23">79</value>
+			<value level="24">80</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
@@ -101,8 +259,6 @@
 	<skill id="30503" levels="11" name="Spinning Kick">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 35167 Power added to P. Atk. Ignores Shield Defense. Requires a fist weapon. -->
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 81 81 82 83 83 83 84 84 84 84 84 </table>
 		<table name="#power"> 35167 36755 40540 45273 51165 58506 67683 79217 88893 91705 94517 </table>
 		<icon>icon.skill30503</icon>
 		<castRange>60</castRange>
@@ -110,8 +266,32 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>400</effectRange> <!-- Unconfirmed -->
 		<hitTime>2000</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">81</value>
+			<value level="2">81</value>
+			<value level="3">82</value>
+			<value level="4">83</value>
+			<value level="5">83</value>
+			<value level="6">83</value>
+			<value level="7">84</value>
+			<value level="8">84</value>
+			<value level="9">84</value>
+			<value level="10">84</value>
+			<value level="11">84</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
@@ -131,8 +311,7 @@
 	<skill id="30504" levels="16" name="Gravity Hit">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 10417 Power added to P. Atk. Ignores 50% of target's P. Def. Requires a fist weapon. -->
-		<table name="#magicLevel"> 76 78 80 82 84 85 87 89 91 93 95 97 99 101 103 105 </table> <!-- FIXME -->
-		<table name="#mpConsumes"> 75 77 78 79 80 81 82 82 83 83 84 84 85 86 87 88 </table>
+		<!-- FIXME -->
 		<table name="#power"> 10417 11147 11917 12727 13577 35167 38540 42776 48058 54633 62836 73116 86081 88893 91705 94517 </table>
 		<icon>icon.skill30504</icon>
 		<castRange>40</castRange>
@@ -140,8 +319,42 @@
 		<effectPoint>-700</effectPoint>
 		<effectRange>400</effectRange> <!-- Unconfirmed -->
 		<hitTime>2500</hitTime>
-		<magicLvl>#magicLevel</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">76</value>
+			<value level="2">78</value>
+			<value level="3">80</value>
+			<value level="4">82</value>
+			<value level="5">84</value>
+			<value level="6">85</value>
+			<value level="7">87</value>
+			<value level="8">89</value>
+			<value level="9">91</value>
+			<value level="10">93</value>
+			<value level="11">95</value>
+			<value level="12">97</value>
+			<value level="13">99</value>
+			<value level="14">101</value>
+			<value level="15">103</value>
+			<value level="16">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">75</value>
+			<value level="2">77</value>
+			<value level="3">78</value>
+			<value level="4">79</value>
+			<value level="5">80</value>
+			<value level="6">81</value>
+			<value level="7">82</value>
+			<value level="8">82</value>
+			<value level="9">83</value>
+			<value level="10">83</value>
+			<value level="11">84</value>
+			<value level="12">84</value>
+			<value level="13">85</value>
+			<value level="14">86</value>
+			<value level="15">87</value>
+			<value level="16">88</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>9000</reuseDelay>
@@ -161,8 +374,6 @@
 	<skill id="30505" levels="10" name="Pressure Punch">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 17266 Power added to P. Atk, causing target to tumble toward you. Requires a fist weapon. -->
-		<table name="#magicLevel"> 87 89 91 93 95 97 99 101 103 105 </table>
-		<table name="#mpConsumes"> 149 150 151 151 152 153 155 157 159 161 </table>
 		<table name="#power"> 17266 19164 21530 24475 28150 32755 38563 39823 41083 42343 </table>
 		<icon>icon.skill30505</icon>
 		<abnormalLvl>1</abnormalLvl>
@@ -173,8 +384,30 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>400</effectRange> <!-- Unconfirmed -->
 		<hitTime>2000</hitTime>
-		<magicLvl>#magicLevel</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">87</value>
+			<value level="2">89</value>
+			<value level="3">91</value>
+			<value level="4">93</value>
+			<value level="5">95</value>
+			<value level="6">97</value>
+			<value level="7">99</value>
+			<value level="8">101</value>
+			<value level="9">103</value>
+			<value level="10">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">149</value>
+			<value level="2">150</value>
+			<value level="3">151</value>
+			<value level="4">151</value>
+			<value level="5">152</value>
+			<value level="6">153</value>
+			<value level="7">155</value>
+			<value level="8">157</value>
+			<value level="9">159</value>
+			<value level="10">161</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<trait>PULL</trait>
 		<reuseDelay>30000</reuseDelay>
@@ -196,8 +429,7 @@
 	<skill id="30506" levels="14" name="Distant Kick">
 		<!-- Updated to IO -->
 		<!-- Attacks frontal target with 5164 Power added to P. Atk. and blows them away. Requires a fist weapon. -->
-		<table name="#magicLevel"> 79 81 83 85 87 89 91 93 95 97 99 101 103 105 </table> <!-- FIXME -->
-		<table name="#mpConsumes"> 141 143 146 147 149 150 151 151 152 153 155 157 159 161 </table>
+		<!-- FIXME -->
 		<table name="#power"> 5164 5518 5890 19693 21581 23953 26909 30589 35181 40936 48195 49769 51343 52917 </table>
 		<icon>icon.skill30506</icon>
 		<abnormalLvl>1</abnormalLvl>
@@ -211,8 +443,38 @@
 		<effectRange>400</effectRange> <!-- Unconfirmed -->
 		<fanRange>0;0;200;90</fanRange>
 		<hitTime>2000</hitTime>
-		<magicLvl>#magicLevel</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">79</value>
+			<value level="2">81</value>
+			<value level="3">83</value>
+			<value level="4">85</value>
+			<value level="5">87</value>
+			<value level="6">89</value>
+			<value level="7">91</value>
+			<value level="8">93</value>
+			<value level="9">95</value>
+			<value level="10">97</value>
+			<value level="11">99</value>
+			<value level="12">101</value>
+			<value level="13">103</value>
+			<value level="14">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">141</value>
+			<value level="2">143</value>
+			<value level="3">146</value>
+			<value level="4">147</value>
+			<value level="5">149</value>
+			<value level="6">150</value>
+			<value level="7">151</value>
+			<value level="8">151</value>
+			<value level="9">152</value>
+			<value level="10">153</value>
+			<value level="11">155</value>
+			<value level="12">157</value>
+			<value level="13">159</value>
+			<value level="14">161</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
@@ -235,7 +497,6 @@
 	<skill id="30507" levels="24" name="Left Sidestep">
 		<!-- Updated to IO -->
 		<!-- Disables targeting and finds weakness to the enemy's left. Enemy is stunned for 5 sec. Requires a fist weapon. -->
-		<table name="#mpConsumes"> 13 14 16 18 19 21 23 24 26 27 28 28 29 29 29 30 30 30 30 30 30 30 30 30 </table>
 		<icon>icon.skill30507</icon>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -246,7 +507,32 @@
 		<effectRange>900</effectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType> <!-- A1 in client? -->
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">14</value>
+			<value level="3">16</value>
+			<value level="4">18</value>
+			<value level="5">19</value>
+			<value level="6">21</value>
+			<value level="7">23</value>
+			<value level="8">24</value>
+			<value level="9">26</value>
+			<value level="10">27</value>
+			<value level="11">28</value>
+			<value level="12">28</value>
+			<value level="13">29</value>
+			<value level="14">29</value>
+			<value level="15">29</value>
+			<value level="16">30</value>
+			<value level="17">30</value>
+			<value level="18">30</value>
+			<value level="19">30</value>
+			<value level="20">30</value>
+			<value level="21">30</value>
+			<value level="22">30</value>
+			<value level="23">30</value>
+			<value level="24">30</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<castRange>300</castRange>
 		<hitTime>100</hitTime>
@@ -274,7 +560,6 @@
 	<skill id="30508" levels="27" name="Right Sidestep">
 		<!-- Updated to IO -->
 		<!-- Disables targeting and finds weakness to the enemy's right. Decreases enemy's resistance to Fist Weapons by 10%. Requires a fist weapon. -->
-		<table name="#mpConsumes"> 7 9 11 14 15 17 19 20 22 23 25 26 27 28 28 29 29 29 30 30 30 30 30 31 32 33 34 </table>
 		<table name="#fistDecrease"> -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 </table>
 		<icon>icon.skill30508</icon>
 		<abnormalTime>5</abnormalTime>
@@ -282,7 +567,35 @@
 		<effectRange>900</effectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType> <!-- A1 in client? -->
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">7</value>
+			<value level="2">9</value>
+			<value level="3">11</value>
+			<value level="4">14</value>
+			<value level="5">15</value>
+			<value level="6">17</value>
+			<value level="7">19</value>
+			<value level="8">20</value>
+			<value level="9">22</value>
+			<value level="10">23</value>
+			<value level="11">25</value>
+			<value level="12">26</value>
+			<value level="13">27</value>
+			<value level="14">28</value>
+			<value level="15">28</value>
+			<value level="16">29</value>
+			<value level="17">29</value>
+			<value level="18">29</value>
+			<value level="19">30</value>
+			<value level="20">30</value>
+			<value level="21">30</value>
+			<value level="22">30</value>
+			<value level="23">30</value>
+			<value level="24">31</value>
+			<value level="25">32</value>
+			<value level="26">33</value>
+			<value level="27">34</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<castRange>300</castRange>
 		<hitTime>100</hitTime>
@@ -311,7 +624,6 @@
 	<skill id="30509" levels="5" name="Back Step">
 		<!-- Updated to IO -->
 		<!-- Disables targeting and retreats backwards, recovering 10% HP. Requires a Fist Weapon. -->
-		<table name="#mpConsumes"> 27 30 35 44 48 </table>
 		<table name="#pAtk"> 1.05 1.10 1.15 1.20 1.20 </table>
 		<table name="#knockdown"> 0 0 0 0 50 </table>
 		<icon>icon.skill30509</icon>
@@ -320,7 +632,13 @@
 		<abnormalType>NONE</abnormalType>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">27</value>
+			<value level="2">30</value>
+			<value level="3">35</value>
+			<value level="4">44</value>
+			<value level="5">48</value>
+		</mpConsume>
 		<castRange>150</castRange>
 		<hitTime>100</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -372,17 +690,27 @@
 	<skill id="30511" levels="5" name="Air Light">
 		<!-- Updated to IO -->
 		<!-- For 10 min., you're less bound by gravity and P. Atk. + 10%. -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
-		<table name="#mpConsumes"> 20 44 45 45 45 </table>
 		<table name="#pAtk"> 1.10 1.15 1.20 1.25 1.25 </table>
 		<table name="#resists"> 0 15 20 25 30 </table>
 		<icon>icon.skill30511</icon>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLvl>
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>NONE</abnormalType>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">20</value>
+			<value level="2">44</value>
+			<value level="3">45</value>
+			<value level="4">45</value>
+			<value level="5">45</value>
+		</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
@@ -400,9 +728,12 @@
 		<!-- Updated to IO -->
 		<!-- For 60 sec., distorts space to attack from behind. Requires a fist weapon. -->
 		<icon>icon.skill30512</icon>
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#attack"> 1.05 1.10 1.15 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -428,18 +759,24 @@
 	<skill id="30514" levels="3" name="Fluid Weave">
 		<!-- Updated to IO -->
 		<!-- For 3 sec., P. Skill Evasion + 50%, P. Evasion + 50, M. Evasion + 50. Requires a fist weapon. -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#mpConsumes"> 13 29 45 </table>
 		<table name="#pSkillEvas"> 50 70 70 </table>
 		<table name="#rEvas"> 50 70 70 </table>
 		<table name="#mEvas"> 50 70 70 </table>
 		<table name="#blockDebuff"> 0 1 3 </table>
 		<icon>icon.skill30514</icon>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">29</value>
+			<value level="3">45</value>
+		</mpConsume>
 		<hitTime>200</hitTime>
 		<effectPoint>379</effectPoint>
 		<reuseDelay>5000</reuseDelay>
@@ -511,7 +848,6 @@
 	<skill id="30517" levels="11" name="Heavy Hand">
 		<!-- Updated to IO -->
 		<!-- Increases the effect of gravity on nearby enemies to slow them down and block them from teleporting. Requires a fist weapon. -->
-		<table name="#mpConsumes"> 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<icon>icon.skill30517</icon>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
@@ -522,7 +858,19 @@
 		<effectPoint>-379</effectPoint>
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">73</value>
+			<value level="2">74</value>
+			<value level="3">75</value>
+			<value level="4">75</value>
+			<value level="5">75</value>
+			<value level="6">76</value>
+			<value level="7">76</value>
+			<value level="8">77</value>
+			<value level="9">78</value>
+			<value level="10">79</value>
+			<value level="11">80</value>
+		</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
@@ -540,7 +888,6 @@
 	<skill id="30518" levels="11" name="Reverse Weight">
 		<!-- Updated to IO -->
 		<!-- Attacks nearby enemies with 19693 Power added to P. Atk. and knocks them down. Damage increases with the number of enemies affected. Requires a fist weapon. -->
-		<table name="#mpConsumes"> 1479 1487 1500 1510 1516 1523 1532 1544 1556 1568 1580 </table>
 		<table name="#power"> 19693 20582 22701 25350 28648 32757 37894 44352 49769 51343 52917 </table>
 		<icon>icon.skill30518</icon>
 		<abnormalTime>1</abnormalTime> <!-- Unconfirmed -->
@@ -553,7 +900,19 @@
 		<effectPoint>-687</effectPoint>
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">1479</value>
+			<value level="2">1487</value>
+			<value level="3">1500</value>
+			<value level="4">1510</value>
+			<value level="5">1516</value>
+			<value level="6">1523</value>
+			<value level="7">1532</value>
+			<value level="8">1544</value>
+			<value level="9">1556</value>
+			<value level="10">1568</value>
+			<value level="11">1580</value>
+		</mpConsume>
 		<hitTime>2500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
@@ -591,7 +950,6 @@
 	<skill id="30520" levels="3" name="Steel Mind">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., HP stays at 1. Speed + 50, P. Atk. + 15%, P. Critical Damage + 10%, Skill Critical Damage + 10%, and Knock Back / Knock Down / Pull / Aerial Yoke / Aggression Resistance + 90. Normal attacks have normal damage x 5. When duration ends, 30% of HP is restored. Requires a fist weapon. -->
-		<table name="#mpConsumes"> 221 232 243 </table>
 		<table name="#runSpd"> 50 70 70 </table>
 		<table name="#pAtk"> 1.15 1.30 1.30 </table>
 		<table name="#cAtk"> 1.10 1.15 1.15 </table>
@@ -602,7 +960,11 @@
 		<abnormalVisualEffect>PMENTAL_TRAIL</abnormalVisualEffect>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">221</value>
+			<value level="2">232</value>
+			<value level="3">243</value>
+		</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>100</effectPoint>
@@ -738,13 +1100,28 @@
 	<skill id="30530" levels="15" name="Crushing Air">
 		<!-- Updated to IO -->
 		<!-- Crushes the air to decrease target's battle strength. Requires a fist weapon. -->
-		<table name="#mpConsumes"> 34 35 35 36 36 37 37 37 37 38 38 38 38 38 38 </table>
 		<icon>icon.skill30530</icon>
 		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
 		<abnormalVisualEffect>GRAVITY_SPACE_3</abnormalVisualEffect>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">34</value>
+			<value level="2">35</value>
+			<value level="3">35</value>
+			<value level="4">36</value>
+			<value level="5">36</value>
+			<value level="6">37</value>
+			<value level="7">37</value>
+			<value level="8">37</value>
+			<value level="9">37</value>
+			<value level="10">38</value>
+			<value level="11">38</value>
+			<value level="12">38</value>
+			<value level="13">38</value>
+			<value level="14">38</value>
+			<value level="15">38</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -797,12 +1174,30 @@
 		<table name="#accCombat"> 0 2 3 3 3 4 4 8 8 8 8 8 8 8 8 8 8 </table>
 		<table name="#cAtk"> 1 1 1 1 1 1.1 1.1 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 </table>
 		<table name="#pAtkSpd"> 1 1 1 1 1 1 1 1.15 1.15 1.15 1.15 1.15 1.15 1.15 1.15 1.15 1.15 </table>
-		<table name="#magicLvl"> 5 20 40 52 64 76 80 85 90 95 99 99 99 99 99 99 99 </table> <!-- TODO -->
+		<!-- TODO -->
 		<table name="#pAtkAdd"> 4 13 63 124 208 306 471 3378 3916 4540 5110 5790 6143 6517 6914 7335 7781 </table>
 		<table name="#pAtkMul"> 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 1.45 </table>
 		<table name="#rCrit"> 0 0 10 10 10 20 20 60 60 60 60 60 60 60 60 60 60 </table>
 		<icon>icon.skill30524</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">5</value>
+			<value level="2">20</value>
+			<value level="3">40</value>
+			<value level="4">52</value>
+			<value level="5">64</value>
+			<value level="6">76</value>
+			<value level="7">80</value>
+			<value level="8">85</value>
+			<value level="9">90</value>
+			<value level="10">95</value>
+			<value level="11">99</value>
+			<value level="12">99</value>
+			<value level="13">99</value>
+			<value level="14">99</value>
+			<value level="15">99</value>
+			<value level="16">99</value>
+			<value level="17">99</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -840,9 +1235,27 @@
 		<table name="#mDef"> 1 1 1 1 1 1 1.03 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 </table>
 		<table name="#mDef2"> 0 0 0 0 0 0 276 949 1073 1214 1340 1511 1588 1668 1753 1842 1935 </table>
 		<table name="#rEvas"> 0 2 3 3 3 4 4 12 12 12 12 12 12 12 12 12 12 </table>
-		<table name="#magicLvl"> 5 20 40 52 64 76 80 85 90 95 99 99 99 99 99 99 99 </table> <!-- TODO -->
+		<!-- TODO -->
 		<icon>icon.skill10254</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">5</value>
+			<value level="2">20</value>
+			<value level="3">40</value>
+			<value level="4">52</value>
+			<value level="5">64</value>
+			<value level="6">76</value>
+			<value level="7">80</value>
+			<value level="8">85</value>
+			<value level="9">90</value>
+			<value level="10">95</value>
+			<value level="11">99</value>
+			<value level="12">99</value>
+			<value level="13">99</value>
+			<value level="14">99</value>
+			<value level="15">99</value>
+			<value level="16">99</value>
+			<value level="17">99</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -880,9 +1293,22 @@
 		<table name="#regMp"> 1.2 1.8 2.4 6 6 6 6 6 6 6 6 6 6 </table>
 		<table name="#regCp"> 0 0 2.4 12 12 12 12 12 12 12 12 12 12 </table>
 		<table name="#runSpd"> 0 0 10 14 14 14 14 14 14 14 14 14 14 </table>
-		<table name="#magicLvl"> 20 40 76 85 90 95 99 100 102 104 104 104 104 </table>
 		<icon>icon.skill11506</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">76</value>
+			<value level="4">85</value>
+			<value level="5">90</value>
+			<value level="6">95</value>
+			<value level="7">99</value>
+			<value level="8">100</value>
+			<value level="9">102</value>
+			<value level="10">104</value>
+			<value level="11">104</value>
+			<value level="12">104</value>
+			<value level="13">104</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -902,9 +1328,21 @@
 		<!-- Updated to IO -->
 		<!-- Attack Attribute Bonus + 10, Attribute Resistance + 10. -->
 		<table name="#attribute"> 10 20 22 24 26 30 32 34 36 38 40 </table>
-		<table name="#magicLvl"> 76 85 85 85 85 85 85 85 85 85 85 </table> <!-- TODO -->
+		<!-- TODO -->
 		<icon>icon.skill11006</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">76</value>
+			<value level="2">85</value>
+			<value level="3">85</value>
+			<value level="4">85</value>
+			<value level="5">85</value>
+			<value level="6">85</value>
+			<value level="7">85</value>
+			<value level="8">85</value>
+			<value level="9">85</value>
+			<value level="10">85</value>
+			<value level="11">85</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -928,11 +1366,13 @@
 	<skill id="30544" levels="2" name="Eminent Trait Resistance">
 		<!-- Updated to IO -->
 		<!-- Hold/Mental Resistance + 30. -->
-		<table name="#magicLvl"> 76 85 </table>
 		<table name="#traitResist1"> 30 30 </table>
 		<table name="#traitResist2"> 0 30 </table>
 		<icon>icon.skill10005</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">76</value>
+			<value level="2">85</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -944,10 +1384,13 @@
 	<skill id="30545" levels="3" name="Eminent Ability">
 		<!-- STR + 2. -->
 		<table name="#STR"> 2 4 14 </table>
-		<table name="#magicLvl"> 40 76 85 </table>
 		<icon>icon.skill0430</icon>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">76</value>
+			<value level="3">85</value>
+		</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
@@ -959,7 +1402,6 @@
 	<skill id="30546" levels="11" name="Flying Knee Kick">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lands a knee kick on the target. Target is knocked down for 3 seconds. Fist weapon must be equipped. -->
-		<table name="#mpConsumes"> 29 29 30 30 30 30 30 31 32 33 34 </table>
 		<icon>icon.skill30546</icon>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>KNOCKDOWN</abnormalType>
@@ -971,7 +1413,19 @@
 		<operateType>DA2</operateType>
 		<trait>KNOCKDOWN</trait>
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">29</value>
+			<value level="3">30</value>
+			<value level="4">30</value>
+			<value level="5">30</value>
+			<value level="6">30</value>
+			<value level="7">30</value>
+			<value level="8">31</value>
+			<value level="9">32</value>
+			<value level="10">33</value>
+			<value level="11">34</value>
+		</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>100</hitTime>
 		<coolTime>300</coolTime>

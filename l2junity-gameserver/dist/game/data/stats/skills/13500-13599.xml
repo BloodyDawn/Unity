@@ -478,41 +478,55 @@
 	<skill id="13563" levels="5" name="Einhasad's Wrath">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 30 minutes. -->
-		<table name="#reuseDelays"> 1800000 1740000 1680000 1620000 1500000 </table>
 		<icon>icon.ainhasard_shirt</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalTime>60</abnormalTime>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">1800000</value>
+			<value level="2">1740000</value>
+			<value level="3">1680000</value>
+			<value level="4">1620000</value>
+			<value level="5">1500000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="13564" levels="4" name="Einhasad's Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincible for 5 sec. Cooldown is 30 min. -->
-		<table name="#reuseDelays"> 1800000 1680000 1560000 1500000 </table>
 		<icon>icon.ainhasard_shirt_2</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalTime>5</abnormalTime>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">1800000</value>
+			<value level="2">1680000</value>
+			<value level="3">1560000</value>
+			<value level="4">1500000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="13565" levels="3" name="Einhasad's Silence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 seconds, cancels all your debuffs and cannot be targeted by the enemy. Cooldown is 30 minutes. -->
-		<table name="#reuseDelays"> 1800000 1620000 1500000 </table>
 		<icon>icon.ainhasard_shirt_3</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalTime>5</abnormalTime>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">1800000</value>
+			<value level="2">1620000</value>
+			<value level="3">1500000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="13566" levels="2" name="Einhasad's Salvation">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Resurrects when dead and retains all buffs and debuffs. The Noblesse Blessing and Lucky Charm, however, will disappear. Cooldown is 30 minutes. -->
-		<table name="#reuseDelays"> 1800000 1500000 </table>
 		<icon>icon.ainhasard_shirt_4</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">1800000</value>
+			<value level="2">1500000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="13567" levels="1" name="Einhasad's Blessing">
 		<!-- AUTO GENERATED SKILL -->
@@ -533,8 +547,11 @@
 	<skill id="13569" levels="3" name="Talisman - Lilith">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increase M. Def. + 552, MP recovery + 3, dark resistance + 10, and damage reflect resistance + 6. -->
-		<table name="#icons"> icon.lilith_talisman_i00 icon.anakim_talisman_i00 icon.sevensign_talisman_i00 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.lilith_talisman_i00</value>
+			<value level="2">icon.anakim_talisman_i00</value>
+			<value level="3">icon.sevensign_talisman_i00</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<isMagic>3</isMagic>

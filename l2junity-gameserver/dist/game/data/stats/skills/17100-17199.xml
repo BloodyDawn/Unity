@@ -139,8 +139,10 @@
 	<skill id="17117" levels="2" name="Rune of Bountiful Growth">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases acquired XP and SP by 20%. -->
-		<table name="#icons"> icon.ev_charge_run br_cashtex.item.br_cash_rune_of_feather_i00 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.ev_charge_run</value>
+			<value level="2">br_cashtex.item.br_cash_rune_of_feather_i00</value>
+		</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 	</skill>
@@ -192,11 +194,35 @@
 	<skill id="17124" levels="24" name="Snake's Blessing - Stage 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. Return to Snake for another buff when the buff wears out. (Note:) If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full. -->
-		<table name="#castRanges"> 900 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 </table>
 		<icon>icon.card_event_everyday_gift</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<castRange>#castRanges</castRange>
+		<castRange>
+			<value level="1">900</value>
+			<value level="2">-1</value>
+			<value level="3">-1</value>
+			<value level="4">-1</value>
+			<value level="5">-1</value>
+			<value level="6">-1</value>
+			<value level="7">-1</value>
+			<value level="8">-1</value>
+			<value level="9">-1</value>
+			<value level="10">-1</value>
+			<value level="11">-1</value>
+			<value level="12">-1</value>
+			<value level="13">-1</value>
+			<value level="14">-1</value>
+			<value level="15">-1</value>
+			<value level="16">-1</value>
+			<value level="17">-1</value>
+			<value level="18">-1</value>
+			<value level="19">-1</value>
+			<value level="20">-1</value>
+			<value level="21">-1</value>
+			<value level="22">-1</value>
+			<value level="23">-1</value>
+			<value level="24">-1</value>
+		</castRange>
 		<effectPoint>1</effectPoint>
 		<isMagic>4</isMagic>
 	</skill>
@@ -211,11 +237,35 @@
 	<skill id="17126" levels="24" name="Snake's Blessing - Stage 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. Return to Snake for another buff when the buff wears out. (Note:) If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full. -->
-		<table name="#castRanges"> 900 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 </table>
 		<icon>icon.card_event_everyday_gift</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<castRange>#castRanges</castRange>
+		<castRange>
+			<value level="1">900</value>
+			<value level="2">-1</value>
+			<value level="3">-1</value>
+			<value level="4">-1</value>
+			<value level="5">-1</value>
+			<value level="6">-1</value>
+			<value level="7">-1</value>
+			<value level="8">-1</value>
+			<value level="9">-1</value>
+			<value level="10">-1</value>
+			<value level="11">-1</value>
+			<value level="12">-1</value>
+			<value level="13">-1</value>
+			<value level="14">-1</value>
+			<value level="15">-1</value>
+			<value level="16">-1</value>
+			<value level="17">-1</value>
+			<value level="18">-1</value>
+			<value level="19">-1</value>
+			<value level="20">-1</value>
+			<value level="21">-1</value>
+			<value level="22">-1</value>
+			<value level="23">-1</value>
+			<value level="24">-1</value>
+		</castRange>
 		<effectPoint>1</effectPoint>
 		<isMagic>4</isMagic>
 	</skill>

@@ -465,22 +465,34 @@
 	</skill>
 	<skill id="715" levels="4" name="Zaken Energy Drain">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -307 -323 -335 -342 </table>
-		<table name="#magicLvl"> 65 70 75 80 </table>
-		<table name="#mpConsume"> 60 65 69 72 </table>
 		<table name="#power"> 121 133 145 160 </table>
 		<affectRange>100</affectRange>
 		<castRange>600</castRange>
 		<coolTime>2000</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-307</value>
+			<value level="2">-323</value>
+			<value level="3">-335</value>
+			<value level="4">-342</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">65</value>
+			<value level="2">70</value>
+			<value level="3">75</value>
+			<value level="4">80</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">65</value>
+			<value level="3">69</value>
+			<value level="4">72</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -495,9 +507,6 @@
 	</skill>
 	<skill id="716" levels="4" name="Zaken Hold">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -307 -323 -335 -342 </table>
-		<table name="#magicLvl"> 65 70 75 80 </table>
-		<table name="#mpConsume"> 60 65 69 72 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
@@ -506,13 +515,28 @@
 		<basicProperty>MAGIC</basicProperty>
 		<castRange>800</castRange>
 		<coolTime>2000</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-307</value>
+			<value level="2">-323</value>
+			<value level="3">-335</value>
+			<value level="4">-342</value>
+		</effectPoint>
 		<effectRange>1300</effectRange>
 		<hitTime>2000</hitTime>
 		<icon>icon.skill_transform_debuff</icon>
 		<isDebuff>true</isDebuff>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">65</value>
+			<value level="2">70</value>
+			<value level="3">75</value>
+			<value level="4">80</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">65</value>
+			<value level="3">69</value>
+			<value level="4">72</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -525,18 +549,30 @@
 	</skill>
 	<skill id="717" levels="4" name="Zaken Concentrated Attack">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -307 -323 -335 -342 </table>
-		<table name="#magicLvl"> 65 70 75 80 </table>
-		<table name="#mpConsume"> 60 65 69 72 </table>
 		<table name="#power"> 2751 3252 3752 4224 </table>
 		<castRange>50</castRange>
 		<coolTime>900</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-307</value>
+			<value level="2">-323</value>
+			<value level="3">-335</value>
+			<value level="4">-342</value>
+		</effectPoint>
 		<effectRange>200</effectRange>
 		<hitTime>2100</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">65</value>
+			<value level="2">70</value>
+			<value level="3">75</value>
+			<value level="4">80</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">65</value>
+			<value level="3">69</value>
+			<value level="4">72</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -551,17 +587,29 @@
 	</skill>
 	<skill id="718" levels="4" name="Zaken Dancing Sword">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -307 -323 -335 -342 </table>
-		<table name="#magicLvl"> 65 70 75 80 </table>
-		<table name="#mpConsume"> 60 65 69 72 </table>
 		<table name="#power"> 1651 1951 2251 2534 </table>
 		<affectRange>100</affectRange>
 		<coolTime>1500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-307</value>
+			<value level="2">-323</value>
+			<value level="3">-335</value>
+			<value level="4">-342</value>
+		</effectPoint>
 		<hitTime>1500</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">65</value>
+			<value level="2">70</value>
+			<value level="3">75</value>
+			<value level="4">80</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">65</value>
+			<value level="3">69</value>
+			<value level="4">72</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -602,20 +650,26 @@
 	</skill>
 	<skill id="720" levels="2" name="Anakim Holy Light Burst">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -335 -342 </table>
-		<table name="#magicLvl"> 75 80 </table>
-		<table name="#mpConsume"> 69 72 </table>
 		<table name="#power"> 3189 3590 </table>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-335</value>
+			<value level="2">-342</value>
+		</effectPoint>
 		<effectRange>400</effectRange>
 		<attributeType>HOLY</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>1080</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">75</value>
+			<value level="2">80</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">69</value>
+			<value level="2">72</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>2000</reuseDelay>
@@ -631,21 +685,27 @@
 	</skill>
 	<skill id="721" levels="2" name="Anakim Energy Attack">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -335 -342 </table>
-		<table name="#magicLvl"> 75 80 </table>
-		<table name="#mpConsume"> 69 72 </table>
 		<table name="#power"> 186 197 </table>
 		<affectRange>200</affectRange>
 		<castRange>700</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-335</value>
+			<value level="2">-342</value>
+		</effectPoint>
 		<effectRange>1200</effectRange>
 		<attributeType>HOLY</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">75</value>
+			<value level="2">80</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">69</value>
+			<value level="2">72</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -659,21 +719,27 @@
 	</skill>
 	<skill id="722" levels="2" name="Anakim Divine Beam">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -335 -342 </table>
-		<table name="#magicLvl"> 75 80 </table>
-		<table name="#mpConsume"> 69 72 </table>
 		<table name="#power"> 186 197 </table>
 		<affectRange>200</affectRange>
 		<castRange>700</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-335</value>
+			<value level="2">-342</value>
+		</effectPoint>
 		<effectRange>1200</effectRange>
 		<attributeType>HOLY</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">75</value>
+			<value level="2">80</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">69</value>
+			<value level="2">72</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -729,7 +795,6 @@
 	</skill>
 	<skill id="725" levels="2" name="Venom Power Smash">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 75 80 </table>
 		<table name="#power"> 2626 2957 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -737,7 +802,10 @@
 		<effectRange>200</effectRange>
 		<hitTime>830</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">75</value>
+			<value level="2">80</value>
+		</magicLvl>
 		<mpConsume>88</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>2000</reuseDelay>
@@ -753,7 +821,6 @@
 	</skill>
 	<skill id="726" levels="2" name="Venom Sonic Storm">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 75 80 </table>
 		<table name="#power"> 1576 1774 </table>
 		<affectRange>150</affectRange>
 		<castRange>500</castRange>
@@ -761,7 +828,10 @@
 		<effectRange>1000</effectRange>
 		<hitTime>1900</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">75</value>
+			<value level="2">80</value>
+		</magicLvl>
 		<mpConsume>88</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
@@ -1061,14 +1131,17 @@
 	<skill id="738" levels="3" name="Heretic Heal">
 		<!-- Confirmed CT2.5 -->
 		<table name="#amount"> 892 926 956 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
 		<castRange>600</castRange>
 		<effectPoint>575</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>5000</hitTime>
 		<icon>icon.skill_transform_etc</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
 		<mpConsume>48</mpConsume>
 		<mpInitialConsume>12</mpInitialConsume>
 		<operateType>A1</operateType>
@@ -1085,19 +1158,31 @@
 	<skill id="739" levels="3" name="Heretic Battle Heal">
 		<!-- Confirmed CT2.5 -->
 		<table name="#amount"> 743 772 796 </table>
-		<table name="#effectPoints"> 595 617 637 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 136 142 146 </table>
-		<table name="#mpInitialConsume"> 34 36 37 </table>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">595</value>
+			<value level="2">617</value>
+			<value level="3">637</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>2000</hitTime>
 		<icon>icon.skill_transform_etc</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">136</value>
+			<value level="2">142</value>
+			<value level="3">146</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">34</value>
+			<value level="2">36</value>
+			<value level="3">37</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1111,20 +1196,32 @@
 	</skill>
 	<skill id="740" levels="3" name="Heretic Resurrection">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> 595 617 637 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 182 189 195 </table>
-		<table name="#mpInitialConsume"> 46 48 49 </table>
 		<table name="#power"> 50 55 60 </table>
 		<castRange>400</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">595</value>
+			<value level="2">617</value>
+			<value level="3">637</value>
+		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>2000</hitTime>
 		<icon>icon.skill_transform_etc</icon>
 		<isMagic>4</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">182</value>
+			<value level="2">189</value>
+			<value level="3">195</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">46</value>
+			<value level="2">48</value>
+			<value level="3">49</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1143,10 +1240,6 @@
 	</skill>
 	<skill id="741" levels="3" name="Heretic Heal Side Effect">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -323 -331 -337 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 52 54 56 </table>
-		<table name="#mpInitialConsume"> 13 14 14 </table>
 		<abnormalLvl>8</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>POISON</abnormalType>
@@ -1154,16 +1247,32 @@
 		<activateRate>70</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-323</value>
+			<value level="2">-331</value>
+			<value level="3">-337</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>4000</hitTime>
 		<icon>icon.skill_transform_debuff</icon>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">52</value>
+			<value level="2">54</value>
+			<value level="3">56</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">13</value>
+			<value level="2">14</value>
+			<value level="3">14</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1178,9 +1287,6 @@
 	</skill>
 	<skill id="742" levels="3" name="Veil Master Bursting Flame">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 68 70 73 </table>
-		<table name="#mpInitialConsume"> 17 18 19 </table>
 		<table name="#power"> 112 117 122 </table>
 		<castRange>600</castRange>
 		<effectPoint>-92</effectPoint>
@@ -1190,9 +1296,21 @@
 		<hitTime>1200</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">70</value>
+			<value level="3">73</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">17</value>
+			<value level="2">18</value>
+			<value level="3">19</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1207,24 +1325,36 @@
 	</skill>
 	<skill id="743" levels="3" name="Veil Master Dark Explosion">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -323 -331 -337 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 68 70 73 </table>
-		<table name="#mpInitialConsume"> 17 18 19 </table>
 		<table name="#power"> 56 59 61 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-323</value>
+			<value level="2">-331</value>
+			<value level="3">-337</value>
+		</effectPoint>
 		<effectRange>1000</effectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>1800</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">70</value>
+			<value level="3">73</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">17</value>
+			<value level="2">18</value>
+			<value level="3">19</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1238,9 +1368,6 @@
 	</skill>
 	<skill id="744" levels="3" name="Veil Master Dark Flare">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 68 70 73 </table>
-		<table name="#mpInitialConsume"> 17 18 19 </table>
 		<table name="#power"> 112 117 122 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1251,9 +1378,21 @@
 		<hitTime>1800</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">70</value>
+			<value level="3">73</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">17</value>
+			<value level="2">18</value>
+			<value level="3">19</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1267,19 +1406,31 @@
 	</skill>
 	<skill id="745" levels="3" name="Veil Master Dark Cure">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> 635 650 662 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 21 22 23 </table>
-		<table name="#mpInitialConsume"> 6 6 6 </table>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">635</value>
+			<value level="2">650</value>
+			<value level="3">662</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>4000</hitTime>
 		<icon>icon.skill_transform_etc</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">21</value>
+			<value level="2">22</value>
+			<value level="3">23</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">6</value>
+			<value level="3">6</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1293,16 +1444,22 @@
 	</skill>
 	<skill id="746" levels="3" name="Saber Tooth Tiger Bite">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -648 -660 -671 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
 		<table name="#power"> 1789 1955 2117 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-648</value>
+			<value level="2">-660</value>
+			<value level="3">-671</value>
+		</effectPoint>
 		<effectRange>200</effectRange>
 		<hitTime>830</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
 		<mpConsume>88</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
@@ -1320,9 +1477,6 @@
 	<skill id="747" levels="3" name="Saber Tooth Tiger Fear">
 		<!-- Confirmed CT2.5 -->
 		<table name="#dmg"> 895 978 1059 </table>
-		<table name="#effectPoints"> -323 -331 -337 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 150 156 160 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
@@ -1331,12 +1485,24 @@
 		<affectLimit>6-12</affectLimit>
 		<affectRange>150</affectRange>
 		<basicProperty>MAGIC</basicProperty>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-323</value>
+			<value level="2">-331</value>
+			<value level="3">-337</value>
+		</effectPoint>
 		<hitTime>2000</hitTime>
 		<icon>icon.skill_transform_debuff</icon>
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">150</value>
+			<value level="2">156</value>
+			<value level="3">160</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1380,9 +1546,6 @@
 	<skill id="749" levels="3" name="Oel Mahum Stun Attack">
 		<!-- Confirmed CT2.5 -->
 		<table name="#dmg"> 895 978 1059 </table>
-		<table name="#effectPoints"> -323 -331 -337 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 68 71 73 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1391,13 +1554,25 @@
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-323</value>
+			<value level="2">-331</value>
+			<value level="3">-337</value>
+		</effectPoint>
 		<effectRange>400</effectRange>
 		<hitTime>1080</hitTime>
 		<icon>icon.skill_transform_debuff</icon>
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">71</value>
+			<value level="3">73</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
@@ -1441,20 +1616,29 @@
 	<skill id="751" levels="3" name="Oel Mahum Arm Flourish">
 		<!-- Confirmed CT2.5 -->
 		<table name="#dmg"> 1073 1173 1271 </table>
-		<table name="#effectPoints"> -323 -331 -337 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 71 74 77 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>80</affectRange>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-323</value>
+			<value level="2">-331</value>
+			<value level="3">-337</value>
+		</effectPoint>
 		<effectRange>400</effectRange>
 		<fanRange>0;0;80;150</fanRange>
 		<hitTime>1080</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">71</value>
+			<value level="2">74</value>
+			<value level="3">77</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>4000</reuseDelay>
@@ -1470,9 +1654,6 @@
 	</skill>
 	<skill id="752" levels="3" name="Doll Blader Sting">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -323 -331 -337 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 71 74 77 </table>
 		<table name="#power"> 1193 1303 1412 </table>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
@@ -1482,13 +1663,25 @@
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-323</value>
+			<value level="2">-331</value>
+			<value level="3">-337</value>
+		</effectPoint>
 		<effectRange>400</effectRange>
 		<hitTime>1080</hitTime>
 		<icon>icon.skill_transform_debuff</icon>
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">71</value>
+			<value level="2">74</value>
+			<value level="3">77</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
@@ -1509,18 +1702,27 @@
 	</skill>
 	<skill id="753" levels="3" name="Doll Blader Throwing Knife">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -323 -331 -337 </table>
-		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume"> 142 148 153 </table>
 		<table name="#power"> 4769 5211 5645 </table>
 		<castRange>700</castRange>
 		<coolTime>800</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-323</value>
+			<value level="2">-331</value>
+			<value level="3">-337</value>
+		</effectPoint>
 		<effectRange>1200</effectRange>
 		<hitTime>3200</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">142</value>
+			<value level="2">148</value>
+			<value level="3">153</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -2580,7 +2782,6 @@
 	<skill id="791" levels="8" name="Lightning Shock">
 		<!-- Confirmed CT2.5 and Updated to IO -->
 		<table name="#healEffect"> 0.9 0.8 0.7 0.6 0.5 0.5 0.5 0.5 </table>
-		<table name="#magicLvl"> 81 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 149 158 169 179 188 191 195 199 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
@@ -2597,7 +2798,16 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">81</value>
+			<value level="2">85</value>
+			<value level="3">90</value>
+			<value level="4">95</value>
+			<value level="5">99</value>
+			<value level="6">101</value>
+			<value level="7">103</value>
+			<value level="8">105</value>
+		</magicLvl>
 		<mpConsume>52</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
@@ -2657,11 +2867,17 @@
 	</skill>
 	<skill id="793" levels="8" name="Rush Impact">
 		<!-- Confirmed CT2.5 and Updated to IO -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
-		<table name="#magicLvl"> 78 85 90 95 99 101 103 105</table>
-		<table name="#mpConsume"> 83 92 98 104 110 116 122 128 </table>
 		<table name="#power"> 4040 11557 13553 15150 16747 17896 18622 19348 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
@@ -2680,8 +2896,26 @@
 		<icon>icon.skill0793</icon>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">78</value>
+			<value level="2">85</value>
+			<value level="3">90</value>
+			<value level="4">95</value>
+			<value level="5">99</value>
+			<value level="6">101</value>
+			<value level="7">103</value>
+			<value level="8">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">83</value>
+			<value level="2">92</value>
+			<value level="3">98</value>
+			<value level="4">104</value>
+			<value level="5">110</value>
+			<value level="6">116</value>
+			<value level="7">122</value>
+			<value level="8">128</value>
+		</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA2</operateType>
 		<rideState>NONE</rideState>

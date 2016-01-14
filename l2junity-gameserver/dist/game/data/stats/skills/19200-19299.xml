@@ -515,16 +515,20 @@
 	</skill>
 	<skill id="19227" levels="2" name="Wind Hiding">
 		<!-- Blends into the wind for 7 seconds. Increases Speed by 70. Canceled when using normal attacks or attack skills. -->
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#magicLvl"> 20 85 </table>
 		<table name="#runSpd"> 70 100 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
 		<abnormalVisualEffect>WIND_BLEND</abnormalVisualEffect>
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
 		<removedOnDamage>true</removedOnDamage>
 		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">85</value>
+		</magicLvl>
 		<icon>icon.skill30008</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>

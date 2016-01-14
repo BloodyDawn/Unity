@@ -4,10 +4,13 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Damage inflicted on monsters + 50%, and M. Skill MP Consumption + 30%. -->
-		<table name="#magicLvl"> 85 90 95 </table>
 		<table name="#pveDamage"> 1.50 1.55 1.60 </table>
 		<icon>icon.skill1520</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+		</magicLvl>
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -109,10 +112,20 @@
 	<skill id="11751" levels="10" name="Superior Magic Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- M. Atk. + 24%, Additional M. Atk. + 981, M. Critical Rate + 6%. INT + 2. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mAtk"> 981 1138 1319 1458 1682 1785 1893 2009 2131 2261 </table>
 		<icon>icon.skill11251</icon>
-		<magicLevel>#magicLvl</magicLevel>
+		<magicLevel>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
@@ -130,25 +143,69 @@
 	<skill id="11752" levels="11" name="Sustain">
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, Heals the selected party member by 172 per second. Further increases incoming Healing power by 10%. Also increases your Healing power. -->
-		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
-		<table name="#mpConsume"> 42 38 40 42 43 45 46 46 50 57 62 </table>
-		<table name="#mpInitialConsume"> 11 10 10 10 11 11 11 11 12 14 15 </table>
 		<table name="#power"> 1.10 1.13 1.16 1.19 1.22 1.25 1.28 1.3 1.3 1.3 1.3 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#hotValue"> 172 173 173 174 174 175 175 176 184 192 200 </table>
 		<abnormalTime>15</abnormalTime>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
 		<castRange>600</castRange>
 		<reuseDelay>1000</reuseDelay>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
-		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>
+			<value level="1">42</value>
+			<value level="2">38</value>
+			<value level="3">40</value>
+			<value level="4">42</value>
+			<value level="5">43</value>
+			<value level="6">45</value>
+			<value level="7">46</value>
+			<value level="8">46</value>
+			<value level="9">50</value>
+			<value level="10">57</value>
+			<value level="11">62</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">11</value>
+			<value level="2">10</value>
+			<value level="3">10</value>
+			<value level="4">10</value>
+			<value level="5">11</value>
+			<value level="6">11</value>
+			<value level="7">11</value>
+			<value level="8">11</value>
+			<value level="9">12</value>
+			<value level="10">14</value>
+			<value level="11">15</value>
+		</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<targetType>PARTY_MEMBER</targetType>
 		<icon>icon.skill11752</icon>
 		<hitTime>500</hitTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">867</value>
+			<value level="2">874</value>
+			<value level="3">886</value>
+			<value level="4">895</value>
+			<value level="5">902</value>
+			<value level="6">909</value>
+			<value level="7">918</value>
+			<value level="8">927</value>
+			<value level="9">935</value>
+			<value level="10">944</value>
+			<value level="11">952</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -193,25 +250,50 @@
 	<skill id="11754" levels="5" name="Fairy of Life">
 		<!-- Glory Days confirmed -->
 		<!-- Summons a fairy that follows and periodically heals the selected party member for 60 seconds. Has a chance of recovering HP when attacked. -->
-		<table name="#effectPoint"> 867 886 899 909 922 </table>
-		<table name="#mpConsume"> 34 37 38 42 44 </table>
-		<table name="#mpInitialConsume"> 9 9 10 10 11 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 </table>
 		<table name="#effectLvl"> 1 2 3 4 5 </table>
-		<table name="#abnormalLvl"> 2 3 4 5 6 </table>
 		<abnormalTime>60</abnormalTime>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+		</abnormalLvl>
 		<abnormalType>BLESS_THE_BLOOD</abnormalType>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
 		<castRange>600</castRange>
 		<reuseDelay>15000</reuseDelay>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
-		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>
+			<value level="1">34</value>
+			<value level="2">37</value>
+			<value level="3">38</value>
+			<value level="4">42</value>
+			<value level="5">44</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">9</value>
+			<value level="2">9</value>
+			<value level="3">10</value>
+			<value level="4">10</value>
+			<value level="5">11</value>
+		</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">88</value>
+			<value level="3">91</value>
+			<value level="4">94</value>
+			<value level="5">97</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<icon>icon.skill11754</icon>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">867</value>
+			<value level="2">886</value>
+			<value level="3">899</value>
+			<value level="4">909</value>
+			<value level="5">922</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -235,18 +317,50 @@
 	<skill id="11755" levels="11" name="Radiant Heal">
 		<!-- Glory Days confirmed -->
 		<!-- Heals target with 1488 Power added to M. Atk. If HP is full, CP is restored. -->
-		<table name="#mpConsume"> 110 110 113 114 117 118 121 122 123 124 126 </table>
-		<table name="#mpInitialConsume"> 28 28 28 29 29 30 30 31 32 33 34 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
-		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">110</value>
+			<value level="2">110</value>
+			<value level="3">113</value>
+			<value level="4">114</value>
+			<value level="5">117</value>
+			<value level="6">118</value>
+			<value level="7">121</value>
+			<value level="8">122</value>
+			<value level="9">123</value>
+			<value level="10">124</value>
+			<value level="11">126</value>
+		</mpConsume>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">867</value>
+			<value level="2">874</value>
+			<value level="3">886</value>
+			<value level="4">895</value>
+			<value level="5">902</value>
+			<value level="6">909</value>
+			<value level="7">918</value>
+			<value level="8">927</value>
+			<value level="9">935</value>
+			<value level="10">944</value>
+			<value level="11">952</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>4500</hitTime>
 		<coolTime>500</coolTime>
@@ -256,7 +370,19 @@
 		<mpConsume>#mpConsume</mpConsume>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<mpInitialConsume>
+			<value level="1">28</value>
+			<value level="2">28</value>
+			<value level="3">28</value>
+			<value level="4">29</value>
+			<value level="5">29</value>
+			<value level="6">30</value>
+			<value level="7">30</value>
+			<value level="8">31</value>
+			<value level="9">32</value>
+			<value level="10">33</value>
+			<value level="11">34</value>
+		</mpInitialConsume>
 		<for>
 			<effect name="HpCpHeal">
 				<param power="#power" />
@@ -266,19 +392,63 @@
 	<skill id="11756" levels="11" name="Panic Heal">
 		<!-- Glory Days confirmed -->
 		<!-- Heals target with 1488 Power added to M. Atk. If HP is full, CP is restored. -->
-		<table name="#mpConsume"> 166 166 170 173 174 178 181 184 186 187 189 </table>
-		<table name="#mpInitialConsume"> 41 42 42 43 44 44 45 46 47 48 50 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
-		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<icon>icon.skill11756</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">166</value>
+			<value level="2">166</value>
+			<value level="3">170</value>
+			<value level="4">173</value>
+			<value level="5">174</value>
+			<value level="6">178</value>
+			<value level="7">181</value>
+			<value level="8">184</value>
+			<value level="9">186</value>
+			<value level="10">187</value>
+			<value level="11">189</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">41</value>
+			<value level="2">42</value>
+			<value level="3">42</value>
+			<value level="4">43</value>
+			<value level="5">44</value>
+			<value level="6">44</value>
+			<value level="7">45</value>
+			<value level="8">46</value>
+			<value level="9">47</value>
+			<value level="10">48</value>
+			<value level="11">50</value>
+		</mpInitialConsume>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">867</value>
+			<value level="2">874</value>
+			<value level="3">886</value>
+			<value level="4">895</value>
+			<value level="5">902</value>
+			<value level="6">909</value>
+			<value level="7">918</value>
+			<value level="8">927</value>
+			<value level="9">935</value>
+			<value level="10">944</value>
+			<value level="11">952</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -296,16 +466,49 @@
 		<!-- Glory Days confirmed -->
 		<!-- Heals yourself and nearby party members with 1191 Power added to M. Atk. If HP is full, CP is restored. -->
 		<table name="#power"> 1191 1200 1210 1220 1230 1240 1250 1261 1406 1418 1430 </table>
-		<table name="#effectPoints"> 1734 1760 1781 1798 1811 1826 1844 1865 1881 1899 1917 </table>
-		<table name="#mpConsumes"> 277 281 286 290 295 300 305 310 314 319 323 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<icon>icon.skill11757</icon>
 		<operateType>A1</operateType>
 		<targetType>PARTY</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">277</value>
+			<value level="2">281</value>
+			<value level="3">286</value>
+			<value level="4">290</value>
+			<value level="5">295</value>
+			<value level="6">300</value>
+			<value level="7">305</value>
+			<value level="8">310</value>
+			<value level="9">314</value>
+			<value level="10">319</value>
+			<value level="11">323</value>
+		</mpConsume>
 		<affectRange>1000</affectRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">1734</value>
+			<value level="2">1760</value>
+			<value level="3">1781</value>
+			<value level="4">1798</value>
+			<value level="5">1811</value>
+			<value level="6">1826</value>
+			<value level="7">1844</value>
+			<value level="8">1865</value>
+			<value level="9">1881</value>
+			<value level="10">1899</value>
+			<value level="11">1917</value>
+		</effectPoint>
 		<hitTime>6500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>5000</reuseDelay>
@@ -387,10 +590,6 @@
 	<skill id="11760" levels="11" name="Radiant Recharge">
 		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers target's MP with a maximum of 166 Power depending on target's level. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
-		<table name="#effectPoint"> 867 874 886 895 902 909 918 927 935 944 952 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsume"> 146 149 150 154 157 160 162 166 167 170 173 </table>
-		<table name="#mpInitialConsume"> 37 37 38 38 39 40 41 41 42 43 43 </table>
 		<table name="#amount"> 166 167 170 174 177 180 183 187 191 195 201 </table>
 		<table name="#amoutOverTime"> 12 12 12 12 13 13 13 13 13 13 13 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -402,11 +601,59 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 		<isMagic>1</isMagic>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">146</value>
+			<value level="2">149</value>
+			<value level="3">150</value>
+			<value level="4">154</value>
+			<value level="5">157</value>
+			<value level="6">160</value>
+			<value level="7">162</value>
+			<value level="8">166</value>
+			<value level="9">167</value>
+			<value level="10">170</value>
+			<value level="11">173</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">37</value>
+			<value level="2">37</value>
+			<value level="3">38</value>
+			<value level="4">38</value>
+			<value level="5">39</value>
+			<value level="6">40</value>
+			<value level="7">41</value>
+			<value level="8">41</value>
+			<value level="9">42</value>
+			<value level="10">43</value>
+			<value level="11">43</value>
+		</mpInitialConsume>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">867</value>
+			<value level="2">874</value>
+			<value level="3">886</value>
+			<value level="4">895</value>
+			<value level="5">902</value>
+			<value level="6">909</value>
+			<value level="7">918</value>
+			<value level="8">927</value>
+			<value level="9">935</value>
+			<value level="10">944</value>
+			<value level="11">952</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -435,10 +682,6 @@
 	<skill id="11761" levels="8" name="Brilliant Recharge">
 		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers party members' MP with a maximum of 700 Power depending on their level. Also, for 10 seconds, recovers 50 MP per second. -->
-		<table name="#effectPoint"> 1798 1811 1826 1844 1865 1878 1895 1912 </table>
-		<table name="#magicLvl"> 91 93 95 97 99 101 103 105 </table>
-		<table name="#mpConsume"> 3120 3176 3224 3288 3344 3398 3454 3510 </table>
-		<table name="#mpInitialConsume"> 780 794 806 822 836 850 864 878 </table>
 		<table name="#amount"> 700 715 725 740 750 768 786 804 </table>
 		<table name="#amoutOverTime"> 10 10 10 10 11 11 11 11 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -451,10 +694,46 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>300000</reuseDelay>
 		<isMagic>1</isMagic>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
-		<effectPoint>#effectPoint</effectPoint>
+		<magicLvl>
+			<value level="1">91</value>
+			<value level="2">93</value>
+			<value level="3">95</value>
+			<value level="4">97</value>
+			<value level="5">99</value>
+			<value level="6">101</value>
+			<value level="7">103</value>
+			<value level="8">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">3120</value>
+			<value level="2">3176</value>
+			<value level="3">3224</value>
+			<value level="4">3288</value>
+			<value level="5">3344</value>
+			<value level="6">3398</value>
+			<value level="7">3454</value>
+			<value level="8">3510</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">780</value>
+			<value level="2">794</value>
+			<value level="3">806</value>
+			<value level="4">822</value>
+			<value level="5">836</value>
+			<value level="6">850</value>
+			<value level="7">864</value>
+			<value level="8">878</value>
+		</mpInitialConsume>
+		<effectPoint>
+			<value level="1">1798</value>
+			<value level="2">1811</value>
+			<value level="3">1826</value>
+			<value level="4">1844</value>
+			<value level="5">1865</value>
+			<value level="6">1878</value>
+			<value level="7">1895</value>
+			<value level="8">1912</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -556,14 +835,18 @@
 	<skill id="11765" levels="7" name="Crystal Regeneration">
 		<!-- Glory Days confirmed -->
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover 266 HP and 74 MP every second. -->
-		<table name="#effectPoint"> 867 895 913 933 956 977 999 </table>
 		<table name="#hpPower"> 266 273 280 285 342 410 492 </table>
-		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpPower"> 74 77 81 84 101 121 145 </table>
-		<table name="#mpConsume"> 73 77 80 83 86 90 92 </table>
-		<table name="#abnormalLevels"> 2 3 4 5 5 5 5 </table>
 		<abnormalTime>10</abnormalTime>
-		<abnormalLvl>#abnormalLevels</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">5</value>
+			<value level="6">5</value>
+			<value level="7">5</value>
+		</abnormalLvl>
 		<abnormalType>TURN_CRYSTAL</abnormalType>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<operateType>A2</operateType>
@@ -571,9 +854,33 @@
 		<hitTime>500</hitTime>
 		<reuseDelay>300000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<effectPoint>#effectPoint</effectPoint>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">73</value>
+			<value level="2">77</value>
+			<value level="3">80</value>
+			<value level="4">83</value>
+			<value level="5">86</value>
+			<value level="6">90</value>
+			<value level="7">92</value>
+		</mpConsume>
+		<effectPoint>
+			<value level="1">867</value>
+			<value level="2">895</value>
+			<value level="3">913</value>
+			<value level="4">933</value>
+			<value level="5">956</value>
+			<value level="6">977</value>
+			<value level="7">999</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -593,17 +900,50 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 153 Power added to M. Atk. -->
-		<table name="#effectPoints"> -867 -880 -891 -899 -906 -913 -922 -933 -941 -950 -959 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
-		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 95 97 101 </table>
 		<table name="#power"> 153 158 163 167 171 176 180 185 203 209 215 </table>
 		<icon>icon.skill11766</icon>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-867</value>
+			<value level="2">-880</value>
+			<value level="3">-891</value>
+			<value level="4">-899</value>
+			<value level="5">-906</value>
+			<value level="6">-913</value>
+			<value level="7">-922</value>
+			<value level="8">-933</value>
+			<value level="9">-941</value>
+			<value level="10">-950</value>
+			<value level="11">-959</value>
+		</effectPoint>
 		<effectRange>1400</effectRange>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">72</value>
+			<value level="3">76</value>
+			<value level="4">78</value>
+			<value level="5">82</value>
+			<value level="6">85</value>
+			<value level="7">88</value>
+			<value level="8">92</value>
+			<value level="9">95</value>
+			<value level="10">97</value>
+			<value level="11">101</value>
+		</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2280</hitTime>
 		<coolTime>500</coolTime>
@@ -626,19 +966,52 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage on target and nearby enemies with 117 Power and decreases aggression toward yourself. -->
-		<table name="#effectPoints"> -1733 -1747 -1771 -1789 -1803 -1817 -1835 -1853 -1870 -1887 -1904 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
-		<table name="#mpConsumes"> 423 432 450 468 487 506 526 547 561 589 597 </table>
 		<table name="#power"> 117 119 123 126 129 133 136 139 149 151 157 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>300</affectRange>
 		<icon>icon.skill11767</icon>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-1733</value>
+			<value level="2">-1747</value>
+			<value level="3">-1771</value>
+			<value level="4">-1789</value>
+			<value level="5">-1803</value>
+			<value level="6">-1817</value>
+			<value level="7">-1835</value>
+			<value level="8">-1853</value>
+			<value level="9">-1870</value>
+			<value level="10">-1887</value>
+			<value level="11">-1904</value>
+		</effectPoint>
 		<effectRange>1400</effectRange>
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">423</value>
+			<value level="2">432</value>
+			<value level="3">450</value>
+			<value level="4">468</value>
+			<value level="5">487</value>
+			<value level="6">506</value>
+			<value level="7">526</value>
+			<value level="8">547</value>
+			<value level="9">561</value>
+			<value level="10">589</value>
+			<value level="11">597</value>
+		</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3780</hitTime>
 		<coolTime>500</coolTime>
@@ -691,10 +1064,6 @@
 	<skill id="11769" levels="9" name="Dark Backfire">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., target's MP Consumption + 50%, and Casting Spd. and Atk. Spd. - 20%. -->
-		<table name="#effectPoint"> -867 -880 -895 -906 -918 -933 -945 -958 -971 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
-		<table name="#mpInitialConsume"> 7 7 8 8 9 9 9 10 10 </table>
-		<table name="#mpConsume"> 28 29 30 33 34 37 38 40 42 </table>
 		<table name="#MpConsumeRate"> 1.5 2.5 3.0 3.5 4.0 4.0 4.0  4.0 4.0 </table>
 		<table name="#pAtkmAtkSpd"> 0.8 0.8 0.8 0.8 0.8 0.8 0.75 0.7 0.65 </table>
 		<activateRate>80</activateRate>
@@ -706,15 +1075,55 @@
 		<icon>icon.skill11769</icon>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">90</value>
+			<value level="4">93</value>
+			<value level="5">96</value>
+			<value level="6">99</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">28</value>
+			<value level="2">29</value>
+			<value level="3">30</value>
+			<value level="4">33</value>
+			<value level="5">34</value>
+			<value level="6">37</value>
+			<value level="7">38</value>
+			<value level="8">40</value>
+			<value level="9">42</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">7</value>
+			<value level="2">7</value>
+			<value level="3">8</value>
+			<value level="4">8</value>
+			<value level="5">9</value>
+			<value level="6">9</value>
+			<value level="7">9</value>
+			<value level="8">10</value>
+			<value level="9">10</value>
+		</mpInitialConsume>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-867</value>
+			<value level="2">-880</value>
+			<value level="3">-895</value>
+			<value level="4">-906</value>
+			<value level="5">-918</value>
+			<value level="6">-933</value>
+			<value level="7">-945</value>
+			<value level="8">-958</value>
+			<value level="9">-971</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -785,9 +1194,6 @@
 		<!-- Performs an ancient secret technique of the Giants to increase P. Def., M. Def., and Healing power by 1000 for 30 seconds. -->
 		<table name="#healEffect"> 1000 1500 2000 2500 2500 2500 2500 </table>
 		<table name="#def"> 1000 1500 2000 2500 4000 4500 5000 </table>
-		<table name="#mpConsume"> 14 14 17 18 19 20 21 </table>
-		<table name="#mpInitialConsume"> 3 4 4 4 5 5 6 </table>
-		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<abnormalTime>30</abnormalTime>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalType>HEAL_POWER_UP</abnormalType>
@@ -798,9 +1204,33 @@
 		<reuseDelay>600000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">14</value>
+			<value level="2">14</value>
+			<value level="3">17</value>
+			<value level="4">18</value>
+			<value level="5">19</value>
+			<value level="6">20</value>
+			<value level="7">21</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">3</value>
+			<value level="2">4</value>
+			<value level="3">4</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">5</value>
+			<value level="7">6</value>
+		</mpInitialConsume>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -816,15 +1246,19 @@
 	<skill id="11773" levels="2" name="Lakcis Disc">
 		<!-- Glory Days confirmed -->
 		<!-- Directly manipulates the power of light to Heal nearby allies and damage nearby enemies. Continuously consumes MP. -->
-		<table name="#magicLvl"> 93 95 </table>
-		<table name="#effectPoint"> 906 913 </table>
 		<table name="#skillLevel"> 1 2 </table>
 		<icon>icon.skill11773</icon>
 		<operateType>AU</operateType>
 		<targetType>SELF</targetType>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">906</value>
+			<value level="2">913</value>
+		</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">95</value>
+		</magicLvl>
 		<toggleGroupId>0</toggleGroupId>
 		<isMagic>1</isMagic>
 		<for>
@@ -842,22 +1276,38 @@
 	<skill id="11774" levels="4" name="Summon Tree of Life">
 		<!-- Glory Days confirmed -->
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
-		<table name="#effectPoint"> 1733 1789 1825 1865 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 148 164 180 195 </table>
-		<table name="#mpConsumesInit"> 37 41 45 48 </table>
 		<table name="#npcIds"> 14933 14943 15010 15011 </table>
 		<icon>icon.skill11774</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
-		<mpInitialConsume>#mpConsumesInit</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">148</value>
+			<value level="2">164</value>
+			<value level="3">180</value>
+			<value level="4">195</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">37</value>
+			<value level="2">41</value>
+			<value level="3">45</value>
+			<value level="4">48</value>
+		</mpInitialConsume>
 		<castRange>600</castRange>
 		<hitTime>5000</hitTime>
 		<coolTime>2000</coolTime>
 		<reuseDelay>10000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">1733</value>
+			<value level="2">1789</value>
+			<value level="3">1825</value>
+			<value level="4">1865</value>
+		</effectPoint>
 		<effectRange>1000</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -906,16 +1356,28 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Summons a Spirit of Light. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 77 85 94 102 </table>
-		<table name="#mpConsumesInit"> 19 21 23 25 </table>
 		<table name="#npcIds"> 14925 14944 14945 14946 </table>
 		<icon>icon.skill11776</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
-		<mpInitialConsume>#mpConsumesInit</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">77</value>
+			<value level="2">85</value>
+			<value level="3">94</value>
+			<value level="4">102</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">19</value>
+			<value level="2">21</value>
+			<value level="3">23</value>
+			<value level="4">25</value>
+		</mpInitialConsume>
 		<hitTime>5000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -939,10 +1401,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Leaves a mark that decreases target's P. Def. and M. Def. by 10%, and consumes 113 HP every second for 60 seconds. -->
-		<table name="#effectPoints"> -867 -886 -899 -909 -922 -936 -949 -963 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
-		<table name="#mpConsumes"> 32 34 36 38 26 42 43 46 </table>
-		<table name="#mpConsumesInit"> 8 8 9 9 6 10 11 11 </table>
 		<table name="#dot"> 113 118 123 128 134 134 134 134 </table>
 		<table name="#defences"> 0.9 0.85 0.8 0.75 0.7 0.7 0.7 0.7 </table>
 		<abnormalTime>60</abnormalTime>
@@ -953,11 +1411,47 @@
 		<icon>icon.skill11777</icon>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
-		<mpInitialConsume>#mpConsumesInit</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">88</value>
+			<value level="3">91</value>
+			<value level="4">94</value>
+			<value level="5">97</value>
+			<value level="6">101</value>
+			<value level="7">103</value>
+			<value level="8">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">32</value>
+			<value level="2">34</value>
+			<value level="3">36</value>
+			<value level="4">38</value>
+			<value level="5">26</value>
+			<value level="6">42</value>
+			<value level="7">43</value>
+			<value level="8">46</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">8</value>
+			<value level="2">8</value>
+			<value level="3">9</value>
+			<value level="4">9</value>
+			<value level="5">6</value>
+			<value level="6">10</value>
+			<value level="7">11</value>
+			<value level="8">11</value>
+		</mpInitialConsume>
 		<castRange>900</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-867</value>
+			<value level="2">-886</value>
+			<value level="3">-899</value>
+			<value level="4">-909</value>
+			<value level="5">-922</value>
+			<value level="6">-936</value>
+			<value level="7">-949</value>
+			<value level="8">-963</value>
+		</effectPoint>
 		<effectRange>1400</effectRange>
 		<hitTime>1500</hitTime>
 		<coolTime>800</coolTime>
@@ -980,9 +1474,6 @@
 	<skill id="11778" levels="9" name="Fatal Sleep">
 		<!-- Updated to IO -->
 		<!-- For 20 seconds, inflicts Sleep on target. When Sleep ends, decreases Atk. Spd., Casting Spd., and Speed by 50%. -->
-		<table name="#effectPoints"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table>
-		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
-		<table name="#mpConsumes"> 26 26 27 30 31 33 34 35 37 </table>
 		<icon>icon.skill11778</icon>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
@@ -992,9 +1483,29 @@
 		<basicProperty>MAGIC</basicProperty>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">26</value>
+			<value level="2">26</value>
+			<value level="3">27</value>
+			<value level="4">30</value>
+			<value level="5">31</value>
+			<value level="6">33</value>
+			<value level="7">34</value>
+			<value level="8">35</value>
+			<value level="9">37</value>
+		</mpConsume>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-867</value>
+			<value level="2">-874</value>
+			<value level="3">-891</value>
+			<value level="4">-902</value>
+			<value level="5">-913</value>
+			<value level="6">-927</value>
+			<value level="7">-938</value>
+			<value level="8">-950</value>
+			<value level="9">-962</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>30000</reuseDelay>
@@ -1004,7 +1515,17 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<lvlBonusRate>30</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">89</value>
+			<value level="4">92</value>
+			<value level="5">95</value>
+			<value level="6">98</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
 		<trait>SLEEP</trait>
 		<for>
 			<effect name="BlockActions" />
@@ -1022,7 +1543,6 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Speed, Atk. Spd. and Casting Spd. by 50%. -->
-		<table name="#magicLvl"> 85 88 91 94 97 100 103 106</table>
 		<table name="#speeds"> 0.5 0.4 0.3 0.2 0.1 0.1 0.1 0.1 </table>
 		<icon>icon.skill1394</icon>
 		<abnormalTime>10</abnormalTime>
@@ -1033,7 +1553,16 @@
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
 		<trait>SLEEP</trait>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">88</value>
+			<value level="3">91</value>
+			<value level="4">94</value>
+			<value level="5">97</value>
+			<value level="6">100</value>
+			<value level="7">103</value>
+			<value level="8">106</value>
+		</magicLvl>
 		<isMagic>2</isMagic>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1052,10 +1581,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases target's Recovery by 50%. -->
-		<table name="#effectPoint"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table>
-		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
-		<table name="#mpConsume"> 28 28 29 32 33 36 36 38 40 </table>
-		<table name="#mpInitialConsume"> 7 7 7 8 8 9 9 9 10 </table>
 		<table name="#healEffect"> 0.5 0.48 0.44 0.4 0.35 0.3 0.3 0.3 0.3 </table>
 		<abnormalTime>60</abnormalTime>
 		<abnormalLvl>3</abnormalLvl>
@@ -1065,15 +1590,55 @@
 		<icon>icon.skill11780</icon>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">89</value>
+			<value level="4">92</value>
+			<value level="5">95</value>
+			<value level="6">98</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">28</value>
+			<value level="2">28</value>
+			<value level="3">29</value>
+			<value level="4">32</value>
+			<value level="5">33</value>
+			<value level="6">36</value>
+			<value level="7">36</value>
+			<value level="8">38</value>
+			<value level="9">40</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">7</value>
+			<value level="2">7</value>
+			<value level="3">7</value>
+			<value level="4">8</value>
+			<value level="5">8</value>
+			<value level="6">9</value>
+			<value level="7">9</value>
+			<value level="8">9</value>
+			<value level="9">10</value>
+		</mpInitialConsume>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-867</value>
+			<value level="2">-874</value>
+			<value level="3">-891</value>
+			<value level="4">-902</value>
+			<value level="5">-913</value>
+			<value level="6">-927</value>
+			<value level="7">-938</value>
+			<value level="8">-950</value>
+			<value level="9">-962</value>
+		</effectPoint>
 		<basicProperty>MAGIC</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1087,7 +1652,6 @@
 	</skill>
 	<skill id="11781" levels="6" name="Dark Devour">
 		<!-- Glory Days confirmed -->
-		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
 		<icon>icon.skill1367</icon>
 		<operateType>A1</operateType>
 		<targetType>AURA</targetType>
@@ -1097,7 +1661,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>0</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">89</value>
+			<value level="4">92</value>
+			<value level="5">95</value>
+			<value level="6">98</value>
+		</magicLvl>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
 		<for>
@@ -1110,10 +1681,12 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Casting Spd. + 30% when equipped with a Robe/ Light Armor. MP is continuously consumed. -->
-		<table name="#magicLvl"> 93 99 </table>
 		<table name="#mAtkSpd"> 1.30 1.50 </table>
 		<icon>icon.skill11782</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">99</value>
+		</magicLvl>
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1150,18 +1723,26 @@
 	<skill id="11784" levels="4" name="Blessed Resurrection">
 		<!-- Glory Days confirmed -->
 		<!-- Resurrects a dead target and restores 85% of the XP lost. -->
-		<table name="#mpConsume"> 28 30 33 36 </table>
 		<table name="#mpInitialConsume"> 7 7 8 9 </table>
 		<table name="#power"> 85 90 95 100 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
 		<icon>icon.skill11784</icon>
 		<isMagic>4</isMagic>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">28</value>
+			<value level="2">30</value>
+			<value level="3">33</value>
+			<value level="4">36</value>
+		</mpConsume>
 		<mpInitialConsume>14</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>10000</reuseDelay>
@@ -1184,22 +1765,37 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Resurrects all dead party members and restores 80% of the XP lost. -->
-		<table name="#magicLvl"> 89 93 96 </table>
-		<table name="#mpConsume"> 107 116 122 </table>
-		<table name="#mpInitialConsume"> 26 29 30 </table>
 		<table name="#power"> 80 90 100 </table>
-		<table name="#target"> CORPSE_PARTY CORPSE_PARTY CORPSE_PARTY_CLAN </table>
-		<table name="#affectLimit"> 0-0 0-0 50-50 </table>
 		<icon>icon.skill11785</icon>
-		<affectLimit>#affectLimit</affectLimit>
+		<affectLimit>
+			<value level="1">0-0</value>
+			<value level="2">0-0</value>
+			<value level="3">50-50</value>
+		</affectLimit>
 		<affectRange>1000</affectRange>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>2</effectPoint>
 		<operateType>A1</operateType>
-		<targetType>#target</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<targetType>
+			<value level="1">CORPSE_PARTY</value>
+			<value level="2">CORPSE_PARTY</value>
+			<value level="3">CORPSE_PARTY_CLAN</value>
+		</targetType>
+		<magicLvl>
+			<value level="1">89</value>
+			<value level="2">93</value>
+			<value level="3">96</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">107</value>
+			<value level="2">116</value>
+			<value level="3">122</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">26</value>
+			<value level="2">29</value>
+			<value level="3">30</value>
+		</mpInitialConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>600000</reuseDelay>
@@ -1242,13 +1838,23 @@
 	<skill id="11787" levels="10" name="Superior Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4299, P. Def. + 1212, M. Def + 10%, HP Recovery Bonus + 2.8, MP Recovery Bonus + 3.6 when equipped with a Robe/Light Armor. INT + 2.. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
 		<table name="#regHp"> 2.8 3.4 4 4.6 5.4 6.2 7.8 7.8 8.6 9.4 </table>
 		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7 8.6 8.6 9.4 10.2 </table>
 		<icon>icon.skill11787</icon>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<for>
@@ -1271,11 +1877,21 @@
 	<skill id="11788" levels="10" name="Superior Casting Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max MP + 313, Casting Spd. + 23%, MP Consumption for magic skills - 15%, and Cooldown - 25%. INT + 2. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#maxMp"> 313 374 435 517 566 635 704 773 842 911 </table>
 		<icon>icon.skill11788</icon>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<for>
@@ -1291,11 +1907,21 @@
 	<skill id="11789" levels="10" name="Superior Anti Magic">
 		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 862, Attack Magic Resistance + 35%. INT + 2. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
 		<icon>icon.skill10004</icon>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<for>
@@ -1309,11 +1935,21 @@
 	<skill id="11790" levels="10" name="Superior Elemental Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2. Increases Fire/Water/Wind/Earth Resistance by 20. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#res"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<icon>icon.skill10044</icon>
 		<operateType>P</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<for>
@@ -1351,9 +1987,19 @@
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2. Resistance + 20 to Hold, Sleep, Paralysis, Mental attacks, Poison, Bleed, and Stun. In addition, has a chance of reflecting debuffs back to the attacker. -->
 		<table name="#traits"> 20 22 24 26 30 32 34 36 38 40 </table>
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
 		<icon>icon.skill10005</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">104</value>
+			<value level="9">104</value>
+			<value level="10">104</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -1378,7 +2024,6 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
-		<table name="#mpConsumes"> 48 0 0 </table>
 		<table name="#power"> 1.10 1.20 1.30 </table>
 		<table name="#hotValue"> 103 138 174 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -1387,7 +2032,11 @@
 		<icon>icon.skill1217</icon>
 		<castRange>600</castRange>
 		<reuseDelay>1000</reuseDelay>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">48</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+		</mpConsume>
 		<magicLvl>87</magicLvl>
 		<operateType>A4</operateType>
 		<targetType>PARTY_MEMBER</targetType>
@@ -1437,16 +2086,23 @@
 	<skill id="11795" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
-		<table name="#mpConsumes"> 50 0 0 </table>
 		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
-		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
+		<!-- Custom -->
 		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
 		<icon>icon.skill1217</icon>
 		<abnormalTime>15</abnormalTime>
 		<castRange>600</castRange>
 		<reuseDelay>1000</reuseDelay>
-		<mpConsume>#mpConsumes</mpConsume>
-		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+		</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">95</value>
+			<value level="3">99</value>
+		</magicLvl>
 		<operateType>A4</operateType>
 		<targetType>PARTY_MEMBER</targetType>
 		<hitTime>500</hitTime>
@@ -1497,16 +2153,23 @@
 	<skill id="11797" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
-		<table name="#mpConsumes"> 52 0 0 </table>
 		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
-		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
+		<!-- Custom -->
 		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
 		<icon>icon.skill1217</icon>
 		<abnormalTime>15</abnormalTime>
 		<castRange>600</castRange>
 		<reuseDelay>1000</reuseDelay>
-		<mpConsume>#mpConsumes</mpConsume>
-		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>
+			<value level="1">52</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+		</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">95</value>
+			<value level="3">99</value>
+		</magicLvl>
 		<operateType>A4</operateType>
 		<targetType>PARTY_MEMBER</targetType>
 		<hitTime>500</hitTime>
@@ -1557,16 +2220,23 @@
 	<skill id="11799" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
-		<table name="#mpConsumes"> 57 0 0 </table>
 		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
-		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
+		<!-- Custom -->
 		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
 		<icon>icon.skill1217</icon>
 		<abnormalTime>15</abnormalTime>
 		<castRange>600</castRange>
 		<reuseDelay>1000</reuseDelay>
-		<mpConsume>#mpConsumes</mpConsume>
-		<magicLvl>#magicLvl</magicLvl>
+		<mpConsume>
+			<value level="1">57</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+		</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">95</value>
+			<value level="3">99</value>
+		</magicLvl>
 		<operateType>A4</operateType>
 		<targetType>PARTY_MEMBER</targetType>
 		<hitTime>500</hitTime>

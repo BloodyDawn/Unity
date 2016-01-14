@@ -435,8 +435,6 @@
 		</for>
 	</skill>
 	<skill id="23019" levels="3" name="Scissors">
-		<table name="#icons"> BranchSys.icon.br_xmas_gawi_i00 BranchSys.icon.br_xmas_bawi_i00 BranchSys.icon.br_xmas_bo_i00 </table>
-		<table name="#magicLvl"> 1 2 3 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>BR_EVENT_BUF2</abnormalType>
@@ -444,9 +442,17 @@
 		<canBeDispelled>false</canBeDispelled>
 		<castRange>500</castRange>
 		<effectRange>550</effectRange>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">BranchSys.icon.br_xmas_gawi_i00</value>
+			<value level="2">BranchSys.icon.br_xmas_bawi_i00</value>
+			<value level="3">BranchSys.icon.br_xmas_bo_i00</value>
+		</icon>
 		<isMagic>4</isMagic> <!-- Item Skill -->
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<stayAfterDeath>true</stayAfterDeath>
@@ -484,14 +490,34 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="23022" levels="10" name="First win">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<table name="#icons"> BranchSys.icon.br_xmas_pcwin1_i00 BranchSys.icon.br_xmas_pcwin2_i00 BranchSys.icon.br_xmas_pcwin3_i00 BranchSys.icon.br_xmas_pcwin4_i00 BranchSys.icon.br_xmas_pcwin5_i00 BranchSys.icon.br_xmas_pcwin6_i00 BranchSys.icon.br_xmas_pcwin7_i00 BranchSys.icon.br_xmas_pcwin8_i00 BranchSys.icon.br_xmas_pcwin9_i00 BranchSys.icon.br_xmas_pcwin10_i00 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+		</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>BR_EVENT_BUF3</abnormalType>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<canBeDispelled>false</canBeDispelled>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">BranchSys.icon.br_xmas_pcwin1_i00</value>
+			<value level="2">BranchSys.icon.br_xmas_pcwin2_i00</value>
+			<value level="3">BranchSys.icon.br_xmas_pcwin3_i00</value>
+			<value level="4">BranchSys.icon.br_xmas_pcwin4_i00</value>
+			<value level="5">BranchSys.icon.br_xmas_pcwin5_i00</value>
+			<value level="6">BranchSys.icon.br_xmas_pcwin6_i00</value>
+			<value level="7">BranchSys.icon.br_xmas_pcwin7_i00</value>
+			<value level="8">BranchSys.icon.br_xmas_pcwin8_i00</value>
+			<value level="9">BranchSys.icon.br_xmas_pcwin9_i00</value>
+			<value level="10">BranchSys.icon.br_xmas_pcwin10_i00</value>
+		</icon>
 		<isMagic>4</isMagic> <!-- Item Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A2</operateType>
@@ -1399,11 +1425,10 @@
 	</skill>
 	<skill id="23066" levels="1" name="Daewoonso Agathion Special Skill - New Year's Gift Ability">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			57,2009,99;57,20090,0.99;57,200900,0.099;57,2009000,0.0099
-		</table>
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">57,2009,99;57,20090,0.99;57,200900,0.099;57,2009000,0.0099</value>
+		</capsuled_items_skill>
 		<icon>icon.skill_agathion_special</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>85</magicLvl>

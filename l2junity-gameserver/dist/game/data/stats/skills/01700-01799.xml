@@ -530,24 +530,30 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1735" levels="3" name="Increase Skill Power">
-		<table name="#magicLvl"> 86 90 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>P</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">86</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+		</magicLvl>
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1736" levels="3" name="Increase M. Atk.">
-		<table name="#magicLvl"> 86 90 95 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">86</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="1747" levels="1" name="Slaughter">
@@ -757,16 +763,19 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1760" levels="6" name="Armor Destruction">
-		<table name="#abnormalTime"> 5 10 15 20 20 20 </table>
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
-		<table name="#effectRange"> 1500 -1 -1 -1 -1 -1 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def. and M. Def. decreased 7%. Additional 350 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
-		<table name="#castRanges"> 900 -1 -1 -1 -1 -1 </table>
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<castRange>#castRanges</castRange>
+		<castRange>
+			<value level="1">900</value>
+			<value level="2">-1</value>
+			<value level="3">-1</value>
+			<value level="4">-1</value>
+			<value level="5">-1</value>
+			<value level="6">-1</value>
+		</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
 		<abnormalType>ABSORB</abnormalType>
@@ -775,14 +784,34 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<effectRange>#effectRange</effectRange>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<effectRange>
+			<value level="1">1500</value>
+			<value level="2">-1</value>
+			<value level="3">-1</value>
+			<value level="4">-1</value>
+			<value level="5">-1</value>
+			<value level="6">-1</value>
+		</effectRange>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+		</abnormalLvl>
+		<abnormalTime>
+			<value level="1">5</value>
+			<value level="2">10</value>
+			<value level="3">15</value>
+			<value level="4">20</value>
+			<value level="5">20</value>
+			<value level="6">20</value>
+		</abnormalTime>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="1761" levels="10" name="Armor Destruction">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases P. Def. as it accumulates. Currently decreased by 10%. -->
 		<icon>icon.skill0122</icon>
@@ -799,7 +828,18 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1100</effectRange>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>

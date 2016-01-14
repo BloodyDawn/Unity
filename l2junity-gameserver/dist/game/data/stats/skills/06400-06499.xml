@@ -47,9 +47,14 @@
 		</for>
 	</skill>
 	<skill id="6402" levels="5" name="Torumba Poison Strike">
-		<table name="#abnormalLvl"> 11 12 13 14 15 </table>
 		<table name="#dot"> 100 220 440 880 1600 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">11</value>
+			<value level="2">12</value>
+			<value level="3">13</value>
+			<value level="4">14</value>
+			<value level="5">15</value>
+		</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>POISON</abnormalType>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
@@ -839,11 +844,14 @@
 	<skill id="6435" levels="3" name="Curse of the Plains">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 7 8 9 </table>
 		<table name="#cAtk"> 1.2 1.3 1.4 </table>
 		<table name="#dot"> 0.005 0.01 0.02 </table>
 		<table name="#rCrit"> 0.2 0.5 0.75 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">7</value>
+			<value level="2">8</value>
+			<value level="3">9</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>MULTI_DEBUFF</abnormalType>
 		<activateRate>80</activateRate>
@@ -1715,11 +1723,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6492" levels="28" name="Holy Attack">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1731,11 +1795,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6493" levels="28" name="Jack's game - Target">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1747,11 +1867,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6494" levels="28" name="Holy Attack">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1763,11 +1939,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6495" levels="28" name="Holy Attack">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1778,11 +2010,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6496" levels="28" name="Holy Attack">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1793,11 +2081,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6497" levels="28" name="Holy Attack">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1808,11 +2152,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6498" levels="28" name="Holy Shot">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1824,11 +2224,67 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="6499" levels="28" name="Holy Shot">
-		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<effectPoint>
+			<value level="1">-138</value>
+			<value level="2">-204</value>
+			<value level="3">-285</value>
+			<value level="4">-379</value>
+			<value level="5">-477</value>
+			<value level="6">-566</value>
+			<value level="7">-597</value>
+			<value level="8">-624</value>
+			<value level="9">-646</value>
+			<value level="10">-655</value>
+			<value level="11">-662</value>
+			<value level="12">-669</value>
+			<value level="13">-676</value>
+			<value level="14">-679</value>
+			<value level="15">-681</value>
+			<value level="16">-684</value>
+			<value level="17">-687</value>
+			<value level="18">-689</value>
+			<value level="19">-692</value>
+			<value level="20">-694</value>
+			<value level="21">-696</value>
+			<value level="22">-698</value>
+			<value level="23">-700</value>
+			<value level="24">-702</value>
+			<value level="25">-704</value>
+			<value level="26">-706</value>
+			<value level="27">-707</value>
+			<value level="28">-709</value>
+		</effectPoint>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">72</value>
+			<value level="10">74</value>
+			<value level="11">76</value>
+			<value level="12">78</value>
+			<value level="13">80</value>
+			<value level="14">81</value>
+			<value level="15">82</value>
+			<value level="16">83</value>
+			<value level="17">84</value>
+			<value level="18">85</value>
+			<value level="19">86</value>
+			<value level="20">87</value>
+			<value level="21">88</value>
+			<value level="22">89</value>
+			<value level="23">90</value>
+			<value level="24">91</value>
+			<value level="25">92</value>
+			<value level="26">93</value>
+			<value level="27">94</value>
+			<value level="28">95</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>

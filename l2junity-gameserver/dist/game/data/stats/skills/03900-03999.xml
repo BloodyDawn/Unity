@@ -3,9 +3,11 @@
 	<skill id="3900" levels="2" name="Staff of Divine Power">
 		<!-- CT2.5 retail confirmed -->
 		<table name="#healEffect"> 33 43 </table>
-		<table name="#magicLvl"> 61 80 </table>
 		<icon>icon.skill1459</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">61</value>
+			<value level="2">80</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -17,10 +19,12 @@
 	</skill>
 	<skill id="3901" levels="2" name="Staff of Mana Boost">
 		<!-- CT2.5 retail confirmed -->
-		<table name="#magicLvl"> 67 75 </table>
 		<table name="#maxMp"> 239 289 </table>
 		<icon>icon.skill0213</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">67</value>
+			<value level="2">75</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>

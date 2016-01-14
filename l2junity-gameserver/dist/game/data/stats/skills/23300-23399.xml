@@ -234,8 +234,6 @@
 		</for>
 	</skill>
 	<skill id="23313" levels="5" name="Action Prohibit Immunity">
-		<table name="#abnormalTime"> 8 6 5 4 4 </table>
-		<table name="#abnormalLvl"> 1 2 3 4 0 </table>
 		<!-- Increases resistance to action-inhibiting attacks by 100%. -->
 		<operateType>A4</operateType>
 		<abnormalType>RESIST_SHOCK</abnormalType>
@@ -245,14 +243,25 @@
 		<specialLevel>-3</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>-3</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">0</value>
+		</abnormalLvl>
+		<abnormalTime>
+			<value level="1">8</value>
+			<value level="2">6</value>
+			<value level="3">5</value>
+			<value level="4">4</value>
+			<value level="5">4</value>
+		</abnormalTime>
 		<icon>icon.skill0386</icon>
 		<isMagic>1</isMagic>
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
-		<table name="#abnormalTime"> 8 6 5 4 4 </table>
 		<!-- Increases resistance to control-inhibiting attacks by 100%. -->
 		<operateType>A4</operateType>
 		<abnormalType>RESIST_SHOCK</abnormalType>
@@ -263,7 +272,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>-3</magicLvl>
 		<abnormalLvl>0</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">8</value>
+			<value level="2">6</value>
+			<value level="3">5</value>
+			<value level="4">4</value>
+			<value level="5">4</value>
+		</abnormalTime>
 		<icon>icon.skill0388</icon>
 		<isMagic>1</isMagic>
 		<targetType>NONE</targetType>
@@ -759,7 +774,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23342" levels="2" name="Norhand's Trace">
-		<table name="#abnormalLvl"> 1 2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Norhand is searching for Skooldie. A trace of its voice remains. -->
 		<icon>BranchSys.icon.br_rotten_jack_ghost_i00</icon>
@@ -776,7 +790,10 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>300</effectRange>
 		<magicLvl>-2</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>7200</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
@@ -784,7 +801,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23344" levels="5" name="Weakened Shilen's Breath">
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Is killed and poisoned by Shilen's Breath. Increases Dark Attack Resistance by 5 and HP recovery by 5%. Poison stage increases when killed while poisoned. -->
 		<icon>icon.skill5076_c</icon>
@@ -799,7 +815,13 @@
 		<specialLevel>-2</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>-2</magicLvl>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isDebuff>true</isDebuff>
@@ -1409,7 +1431,6 @@
 		<reuseDelay>1200000</reuseDelay>
 	</skill>
 	<skill id="23381" levels="3" name="Jermann - Flow of Destruction">
-		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Magical damage on the enemy. -->
 		<icon>BranchSys3.Icon.g_skill23381</icon>
@@ -1425,7 +1446,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1100</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">98</value>
+		</magicLvl>
 		<trait>KNOCKDOWN</trait>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
@@ -1465,7 +1490,6 @@
 		<reuseDelay>60000</reuseDelay>
 	</skill>
 	<skill id="23384" levels="3" name="Jermann - Burning Darkness">
-		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Quickly Recover 45000 HP. -->
 		<icon>BranchSys3.Icon.g_skill23384</icon>
@@ -1479,12 +1503,15 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">98</value>
+		</magicLvl>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23385" levels="3" name="Jermann - Devourer of Nature">
-		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases HP Recovery Bonus. -->
 		<icon>BranchSys3.Icon.g_skill23385</icon>
@@ -1500,7 +1527,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-2</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">98</value>
+		</magicLvl>
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>28</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
@@ -1508,7 +1539,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23386" levels="3" name="Jermann - Destruction Instinct">
-		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Powerful strike on nearby enemies. -->
 		<icon>BranchSys3.Icon.g_skill23386</icon>
@@ -1519,7 +1549,11 @@
 		<effectPoint>-800</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">98</value>
+		</magicLvl>
 		<affectRange>200</affectRange>
 		<affectLimit>6-12</affectLimit>
 		<staticReuse>true</staticReuse>
@@ -1745,7 +1779,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="23398" levels="3" name="Grave of the Sword">
-		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Consistently decreases HP. -->
 		<icon>BranchSys3.Icon.g_skill23387</icon>
@@ -1756,7 +1789,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">98</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
 		<trait>POISON</trait>
@@ -1767,7 +1804,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="23399" levels="3" name="Freezing Cold">
-		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily decreases Speed and consistently decreases HP. -->
 		<icon>BranchSys3.Icon.g_skill23389</icon>
@@ -1778,7 +1814,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">98</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>12</abnormalTime>
 		<trait>POISON</trait>

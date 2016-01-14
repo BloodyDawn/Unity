@@ -30,10 +30,20 @@
 	</skill>
 	<skill id="11001" levels="10" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 2009 2131 2261 </table>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLvl>
 		<icon>icon.skill11251</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -48,10 +58,20 @@
 	</skill>
 	<skill id="11002" levels="10" name="Superior Robe Mastery">
 		<!-- Max HP + 4447, P. Def. + 1212, and M. Def. + 10% when equipped with a Robe. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLvl>
 		<icon>icon.skill11252</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -71,10 +91,20 @@
 	</skill>
 	<skill id="11003" levels="10" name="Superior Anti Magic">
 		<!-- M. Def. + 862, Magic Attack Resistance + 35%. INT + 2. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">100</value>
+			<value level="6">102</value>
+			<value level="7">104</value>
+			<value level="8">106</value>
+			<value level="9">108</value>
+			<value level="10">110</value>
+		</magicLvl>
 		<icon>icon.skill10004</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -235,23 +265,56 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<icon>icon.skill11011</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<doubleCastSkill>11016</doubleCastSkill>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">37</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+			<value level="4">42</value>
+			<value level="5">43</value>
+			<value level="6">45</value>
+			<value level="7">48</value>
+			<value level="8">50</value>
+			<value level="9">52</value>
+			<value level="10">54</value>
+			<value level="11">56</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2280</hitTime>
 		<coolTime>300</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -277,23 +340,56 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<icon>icon.skill11011</icon>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11011</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">37</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+			<value level="4">42</value>
+			<value level="5">43</value>
+			<value level="6">45</value>
+			<value level="7">48</value>
+			<value level="8">50</value>
+			<value level="9">52</value>
+			<value level="10">54</value>
+			<value level="11">56</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2280</hitTime>
 		<coolTime>300</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -308,23 +404,56 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<icon>icon.skill11011</icon>
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11011</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">37</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+			<value level="4">42</value>
+			<value level="5">43</value>
+			<value level="6">45</value>
+			<value level="7">48</value>
+			<value level="8">50</value>
+			<value level="9">52</value>
+			<value level="10">54</value>
+			<value level="11">56</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2280</hitTime>
 		<coolTime>300</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -339,23 +468,56 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<icon>icon.skill11011</icon>
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11011</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">37</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+			<value level="4">42</value>
+			<value level="5">43</value>
+			<value level="6">45</value>
+			<value level="7">48</value>
+			<value level="8">50</value>
+			<value level="9">52</value>
+			<value level="10">54</value>
+			<value level="11">56</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2280</hitTime>
 		<coolTime>300</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -370,23 +532,56 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<icon>icon.skill11011</icon>
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11011</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">37</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+			<value level="4">42</value>
+			<value level="5">43</value>
+			<value level="6">45</value>
+			<value level="7">48</value>
+			<value level="8">50</value>
+			<value level="9">52</value>
+			<value level="10">54</value>
+			<value level="11">56</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2280</hitTime>
 		<coolTime>300</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -401,21 +596,54 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<icon>icon.skill11011</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11011</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">37</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+			<value level="4">42</value>
+			<value level="5">43</value>
+			<value level="6">45</value>
+			<value level="7">48</value>
+			<value level="8">50</value>
+			<value level="9">52</value>
+			<value level="10">54</value>
+			<value level="11">56</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2280</hitTime>
 		<coolTime>300</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
@@ -431,9 +659,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
@@ -441,14 +666,50 @@
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<doubleCastSkill>11022</doubleCastSkill>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">53</value>
+			<value level="2">55</value>
+			<value level="3">57</value>
+			<value level="4">60</value>
+			<value level="5">62</value>
+			<value level="6">65</value>
+			<value level="7">67</value>
+			<value level="8">70</value>
+			<value level="9">73</value>
+			<value level="10">76</value>
+			<value level="11">79</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>2400</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0.8</hitCancelTime>
@@ -470,9 +731,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<attributeType>FIRE</attributeType>
@@ -480,14 +738,50 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11017</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">53</value>
+			<value level="2">55</value>
+			<value level="3">57</value>
+			<value level="4">60</value>
+			<value level="5">62</value>
+			<value level="6">65</value>
+			<value level="7">67</value>
+			<value level="8">70</value>
+			<value level="9">73</value>
+			<value level="10">76</value>
+			<value level="11">79</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>2400</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -502,9 +796,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<attributeType>WATER</attributeType>
@@ -512,14 +803,50 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11017</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">53</value>
+			<value level="2">55</value>
+			<value level="3">57</value>
+			<value level="4">60</value>
+			<value level="5">62</value>
+			<value level="6">65</value>
+			<value level="7">67</value>
+			<value level="8">70</value>
+			<value level="9">73</value>
+			<value level="10">76</value>
+			<value level="11">79</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>2400</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -534,9 +861,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<attributeType>WIND</attributeType>
@@ -544,14 +868,50 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11017</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">53</value>
+			<value level="2">55</value>
+			<value level="3">57</value>
+			<value level="4">60</value>
+			<value level="5">62</value>
+			<value level="6">65</value>
+			<value level="7">67</value>
+			<value level="8">70</value>
+			<value level="9">73</value>
+			<value level="10">76</value>
+			<value level="11">79</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>2400</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -566,9 +926,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<attributeType>EARTH</attributeType>
@@ -576,14 +933,50 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11017</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">53</value>
+			<value level="2">55</value>
+			<value level="3">57</value>
+			<value level="4">60</value>
+			<value level="5">62</value>
+			<value level="6">65</value>
+			<value level="7">67</value>
+			<value level="8">70</value>
+			<value level="9">73</value>
+			<value level="10">76</value>
+			<value level="11">79</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>2400</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -598,22 +991,55 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11017</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">53</value>
+			<value level="2">55</value>
+			<value level="3">57</value>
+			<value level="4">60</value>
+			<value level="5">62</value>
+			<value level="6">65</value>
+			<value level="7">67</value>
+			<value level="8">70</value>
+			<value level="9">73</value>
+			<value level="10">76</value>
+			<value level="11">79</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>2780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>2400</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+			<value level="9">-712</value>
+			<value level="10">-712</value>
+			<value level="11">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0.8</hitCancelTime>
@@ -630,9 +1056,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
@@ -640,14 +1063,50 @@
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<doubleCastSkill>11028</doubleCastSkill>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">125</value>
+			<value level="2">130</value>
+			<value level="3">135</value>
+			<value level="4">140</value>
+			<value level="5">146</value>
+			<value level="6">151</value>
+			<value level="7">157</value>
+			<value level="8">163</value>
+			<value level="9">169</value>
+			<value level="10">175</value>
+			<value level="11">181</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>6080</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>6700</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-692</value>
+			<value level="3">-696</value>
+			<value level="4">-700</value>
+			<value level="5">-704</value>
+			<value level="6">-707</value>
+			<value level="7">-709</value>
+			<value level="8">-712</value>
+			<value level="9">-715</value>
+			<value level="10">-718</value>
+			<value level="11">-721</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>11</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
@@ -669,9 +1128,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<attributeType>FIRE</attributeType>
@@ -679,15 +1135,51 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11023</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">125</value>
+			<value level="2">130</value>
+			<value level="3">135</value>
+			<value level="4">140</value>
+			<value level="5">146</value>
+			<value level="6">151</value>
+			<value level="7">157</value>
+			<value level="8">163</value>
+			<value level="9">169</value>
+			<value level="10">175</value>
+			<value level="11">181</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>6080</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-692</value>
+			<value level="3">-696</value>
+			<value level="4">-700</value>
+			<value level="5">-704</value>
+			<value level="6">-707</value>
+			<value level="7">-709</value>
+			<value level="8">-712</value>
+			<value level="9">-715</value>
+			<value level="10">-718</value>
+			<value level="11">-721</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -700,9 +1192,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<attributeType>WATER</attributeType>
@@ -710,15 +1199,51 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11023</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">125</value>
+			<value level="2">130</value>
+			<value level="3">135</value>
+			<value level="4">140</value>
+			<value level="5">146</value>
+			<value level="6">151</value>
+			<value level="7">157</value>
+			<value level="8">163</value>
+			<value level="9">169</value>
+			<value level="10">175</value>
+			<value level="11">181</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>6080</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-692</value>
+			<value level="3">-696</value>
+			<value level="4">-700</value>
+			<value level="5">-704</value>
+			<value level="6">-707</value>
+			<value level="7">-709</value>
+			<value level="8">-712</value>
+			<value level="9">-715</value>
+			<value level="10">-718</value>
+			<value level="11">-721</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -731,9 +1256,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<attributeType>WIND</attributeType>
@@ -741,15 +1263,51 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11023</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">125</value>
+			<value level="2">130</value>
+			<value level="3">135</value>
+			<value level="4">140</value>
+			<value level="5">146</value>
+			<value level="6">151</value>
+			<value level="7">157</value>
+			<value level="8">163</value>
+			<value level="9">169</value>
+			<value level="10">175</value>
+			<value level="11">181</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>6080</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-692</value>
+			<value level="3">-696</value>
+			<value level="4">-700</value>
+			<value level="5">-704</value>
+			<value level="6">-707</value>
+			<value level="7">-709</value>
+			<value level="8">-712</value>
+			<value level="9">-715</value>
+			<value level="10">-718</value>
+			<value level="11">-721</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -762,9 +1320,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<attributeType>EARTH</attributeType>
@@ -772,15 +1327,51 @@
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11023</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">125</value>
+			<value level="2">130</value>
+			<value level="3">135</value>
+			<value level="4">140</value>
+			<value level="5">146</value>
+			<value level="6">151</value>
+			<value level="7">157</value>
+			<value level="8">163</value>
+			<value level="9">169</value>
+			<value level="10">175</value>
+			<value level="11">181</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>6080</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-692</value>
+			<value level="3">-696</value>
+			<value level="4">-700</value>
+			<value level="5">-704</value>
+			<value level="6">-707</value>
+			<value level="7">-709</value>
+			<value level="8">-712</value>
+			<value level="9">-715</value>
+			<value level="10">-718</value>
+			<value level="11">-721</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -793,23 +1384,56 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
 		<reuseDelayGroup>11023</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">125</value>
+			<value level="2">130</value>
+			<value level="3">135</value>
+			<value level="4">140</value>
+			<value level="5">146</value>
+			<value level="6">151</value>
+			<value level="7">157</value>
+			<value level="8">163</value>
+			<value level="9">169</value>
+			<value level="10">175</value>
+			<value level="11">181</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>6080</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-692</value>
+			<value level="3">-696</value>
+			<value level="4">-700</value>
+			<value level="5">-704</value>
+			<value level="6">-707</value>
+			<value level="7">-709</value>
+			<value level="8">-712</value>
+			<value level="9">-715</value>
+			<value level="10">-718</value>
+			<value level="11">-721</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>11</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
@@ -826,10 +1450,7 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, decreases target's HP by 480 per second. -->
-		<table name="#effectPoint"> -692 -696 -700 -704 -707 </table>
 		<table name="#dot"> 480 494 509 523 537 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 </table>
-		<table name="#mpConsumes"> 68 72 72 80 84 </table>
 		<icon>icon.skill11029</icon>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -839,14 +1460,32 @@
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">88</value>
+			<value level="3">91</value>
+			<value level="4">94</value>
+			<value level="5">97</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">72</value>
+			<value level="3">72</value>
+			<value level="4">80</value>
+			<value level="5">84</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>1000</hitTime>
 		<reuseDelay>16700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-692</value>
+			<value level="2">-696</value>
+			<value level="3">-700</value>
+			<value level="4">-704</value>
+			<value level="5">-707</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
@@ -859,24 +1498,36 @@
 	<skill id="11030" levels="4" name="Death Lord">
 		<!-- Updated to IO -->
 		<!-- For 10 seconds, drains target's life with 25 Power per second. Absorbs 100% of the damage inflicted as HP. -->
-		<table name="#effectPoint"> -696 -704 -709 -709 </table>
 		<table name="#power"> 25 50 75 100 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 68 72 84 88 </table>
 		<icon>icon.skill11030</icon>
 		<channelingSkillId>11030</channelingSkillId>
 		<channelingTickInterval>1000</channelingTickInterval>
 		<channelingTickInitialDelay>1200</channelingTickInitialDelay>
 		<operateType>CA1</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">72</value>
+			<value level="3">84</value>
+			<value level="4">88</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>10000</hitTime>
 		<reuseDelay>20000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-696</value>
+			<value level="2">-704</value>
+			<value level="3">-709</value>
+			<value level="4">-709</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpPerChanneling>15</mpPerChanneling>
@@ -892,9 +1543,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 157 Power and pushes them back. Over-hit. -->
-		<table name="#effectPoint"> -696 -702 -707 -711 -715 -719 -723 </table>
-		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
-		<table name="#mpConsumes"> 204 216 252 264 276 288 300 </table>
 		<table name="#power"> 157 168 180 189 194 198 202 </table>
 		<icon>icon.skill11032</icon>
 		<abnormalLvl>1</abnormalLvl>
@@ -908,14 +1556,38 @@
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
 		<trait>SHOCK</trait>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">204</value>
+			<value level="2">216</value>
+			<value level="3">252</value>
+			<value level="4">264</value>
+			<value level="5">276</value>
+			<value level="6">288</value>
+			<value level="7">300</value>
+		</mpConsume>
 		<hitTime>4000</hitTime>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-696</value>
+			<value level="2">-702</value>
+			<value level="3">-707</value>
+			<value level="4">-711</value>
+			<value level="5">-715</value>
+			<value level="6">-719</value>
+			<value level="7">-723</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -931,10 +1603,13 @@
 	<skill id="11033" levels="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<table name="#runSpd"> 0.6 0.4 0.2 </table>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">5</value>
+		</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>300</affectRange>
@@ -964,9 +1639,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>100</affectRange>
@@ -976,14 +1648,41 @@
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<doubleCastSkill>11039</doubleCastSkill>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">213</value>
+			<value level="2">216</value>
+			<value level="3">228</value>
+			<value level="4">234</value>
+			<value level="5">246</value>
+			<value level="6">255</value>
+			<value level="7">264</value>
+			<value level="8">276</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -1004,9 +1703,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>100</affectRange>
@@ -1016,15 +1712,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11034</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">213</value>
+			<value level="2">216</value>
+			<value level="3">228</value>
+			<value level="4">234</value>
+			<value level="5">246</value>
+			<value level="6">255</value>
+			<value level="7">264</value>
+			<value level="8">276</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1037,9 +1760,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>100</affectRange>
@@ -1049,15 +1769,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11034</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">213</value>
+			<value level="2">216</value>
+			<value level="3">228</value>
+			<value level="4">234</value>
+			<value level="5">246</value>
+			<value level="6">255</value>
+			<value level="7">264</value>
+			<value level="8">276</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1069,9 +1816,6 @@
 	<skill id="11037" levels="8" name="Elemental Blast (Wind)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>100</affectRange>
@@ -1081,15 +1825,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11034</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">213</value>
+			<value level="2">216</value>
+			<value level="3">228</value>
+			<value level="4">234</value>
+			<value level="5">246</value>
+			<value level="6">255</value>
+			<value level="7">264</value>
+			<value level="8">276</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1102,9 +1873,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>100</affectRange>
@@ -1114,15 +1882,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11034</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">213</value>
+			<value level="2">216</value>
+			<value level="3">228</value>
+			<value level="4">234</value>
+			<value level="5">246</value>
+			<value level="6">255</value>
+			<value level="7">264</value>
+			<value level="8">276</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1135,9 +1930,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>100</affectRange>
@@ -1145,15 +1937,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11034</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">213</value>
+			<value level="2">216</value>
+			<value level="3">228</value>
+			<value level="4">234</value>
+			<value level="5">246</value>
+			<value level="6">255</value>
+			<value level="7">264</value>
+			<value level="8">276</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
@@ -1169,9 +1988,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
-		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1181,14 +1997,41 @@
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<doubleCastSkill>11045</doubleCastSkill>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">264</value>
+			<value level="2">276</value>
+			<value level="3">288</value>
+			<value level="4">300</value>
+			<value level="5">315</value>
+			<value level="6">324</value>
+			<value level="7">336</value>
+			<value level="8">351</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>4780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>11</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -1209,9 +2052,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
-		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1221,15 +2061,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11040</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">264</value>
+			<value level="2">276</value>
+			<value level="3">288</value>
+			<value level="4">300</value>
+			<value level="5">315</value>
+			<value level="6">324</value>
+			<value level="7">336</value>
+			<value level="8">351</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>4780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1242,9 +2109,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
-		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1254,15 +2118,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11040</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">264</value>
+			<value level="2">276</value>
+			<value level="3">288</value>
+			<value level="4">300</value>
+			<value level="5">315</value>
+			<value level="6">324</value>
+			<value level="7">336</value>
+			<value level="8">351</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>4780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1275,9 +2166,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
-		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1287,15 +2175,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11040</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">264</value>
+			<value level="2">276</value>
+			<value level="3">288</value>
+			<value level="4">300</value>
+			<value level="5">315</value>
+			<value level="6">324</value>
+			<value level="7">336</value>
+			<value level="8">351</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>4780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1308,9 +2223,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
-		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1320,15 +2232,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11040</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">264</value>
+			<value level="2">276</value>
+			<value level="3">288</value>
+			<value level="4">300</value>
+			<value level="5">315</value>
+			<value level="6">324</value>
+			<value level="7">336</value>
+			<value level="8">351</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>4780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
@@ -1341,9 +2280,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
-		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1351,15 +2287,42 @@
 		<operateType>A1</operateType>
 		<targetType>AREA</targetType>
 		<reuseDelayGroup>11040</reuseDelayGroup>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">264</value>
+			<value level="2">276</value>
+			<value level="3">288</value>
+			<value level="4">300</value>
+			<value level="5">315</value>
+			<value level="6">324</value>
+			<value level="7">336</value>
+			<value level="8">351</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>4780</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6700</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-712</value>
+			<value level="6">-712</value>
+			<value level="7">-712</value>
+			<value level="8">-712</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>11</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
@@ -1375,9 +2338,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., M. Atk. + 20%, M. Critical Rate + 50%, P. Def. and M. Def. + 20%, Evasion + 2, and MP Consumption for magic skills - 50%. When attacked, has a chance of inflicting magic damage on the attacking target. -->
-		<table name="#effectPoint"> 696 705 </table>
-		<table name="#magicLvl"> 85 95 </table>
-		<table name="#mpConsumes"> 70 85 </table>
 		<table name="#mAtk"> 1.20 1.30 </table>
 		<table name="#mCritRate"> 1.50 1.60 </table>
 		<table name="#MagicalMpConsumeRate"> 0.50 0.40 </table>
@@ -1387,11 +2347,20 @@
 		<abnormalType>FINAL_SECRET</abnormalType>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">85</value>
+		</mpConsume>
 		<hitTime>200</hitTime>
 		<reuseDelay>300000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">696</value>
+			<value level="2">705</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1418,27 +2387,63 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 157 Power. For 20 sec., target's M. Atk. and M. Def. - 30%, Casting Spd., P. Critical Rate, M. Critical Rate, P. Def. and Speed - 10%, and P. Evasion - 6. -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 5 5 5 5 </table>
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#power"> 157 160 166 174 180 187 191 195 199 </table>
-		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
-		<table name="#mpConsumes"> 70 71 76 81 85 91 97 103 109 </table>
 		<icon>icon.skill11047</icon>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">5</value>
+			<value level="7">5</value>
+			<value level="8">5</value>
+			<value level="9">5</value>
+		</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>MULTI_DEBUFF</abnormalType>
 		<activateRate>60</activateRate>
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">89</value>
+			<value level="4">92</value>
+			<value level="5">95</value>
+			<value level="6">98</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">71</value>
+			<value level="3">76</value>
+			<value level="4">81</value>
+			<value level="5">85</value>
+			<value level="6">91</value>
+			<value level="7">97</value>
+			<value level="8">103</value>
+			<value level="9">109</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3500</hitTime>
 		<coolTime>580</coolTime>
 		<reuseDelay>10000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-709</value>
+			<value level="7">-709</value>
+			<value level="8">-709</value>
+			<value level="9">-709</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1464,10 +2469,7 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target and surrounding enemies with 125 power and absorbs 25% of the damage inflicted as HP. Additionally, for 10 seconds, target's M. Atk. and M. Def. - 30%; P. Def., M. Atk., Casting Spd., M. Def., P. Critical Rate, M. Critical Rate, and Speed - 8%; and Accuracy - 12. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#power"> 125 128 133 139 144 150 155 159 163 </table>
-		<table name="#mpConsumes"> 211 220 233 247 262 278 294 310 326 </table>
-		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<icon>icon.skill11048</icon>
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
@@ -1476,15 +2478,45 @@
 		<affectRange>300</affectRange>
 		<operateType>A2</operateType>
 		<targetType>AREA</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">89</value>
+			<value level="4">92</value>
+			<value level="5">95</value>
+			<value level="6">98</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">211</value>
+			<value level="2">220</value>
+			<value level="3">233</value>
+			<value level="4">247</value>
+			<value level="5">262</value>
+			<value level="6">278</value>
+			<value level="7">294</value>
+			<value level="8">310</value>
+			<value level="9">326</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
 		<hitTime>3500</hitTime>
 		<coolTime>580</coolTime>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-709</value>
+			<value level="7">-709</value>
+			<value level="8">-709</value>
+			<value level="9">-709</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1511,21 +2543,36 @@
 		<!-- Glory Days confirmed -->
 		<!-- Cancels one of target's buffs. -->
 		<table name="#buffCount"> 1 2 2 2 2 </table>
-		<table name="#magicLvl"> 93 98 101 103 105 </table>
-		<table name="#effectPoint"> -704 -708 -712 -716 -720 </table>
-		<table name="#mpConsumes"> 82 91 100 109 118 </table>
 		<icon>icon.skill11049</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">82</value>
+			<value level="2">91</value>
+			<value level="3">100</value>
+			<value level="4">109</value>
+			<value level="5">118</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>300000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-704</value>
+			<value level="2">-708</value>
+			<value level="3">-712</value>
+			<value level="4">-716</value>
+			<value level="5">-720</value>
+		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">98</value>
+			<value level="3">101</value>
+			<value level="4">103</value>
+			<value level="5">105</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<for>
@@ -1537,9 +2584,6 @@
 	<skill id="11050" levels="7" name="Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target midair. -->
-		<table name="#effectPoint"> -692 -698 -704 -708 -708 -708 -708 </table>
-		<table name="#magicLvl"> 85 89 93 97 101 103 105 </table>
-		<table name="#mpConsumes"> 70 76 82 88 94 100 106 </table>
 		<icon>icon.skill11050</icon>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -1550,18 +2594,42 @@
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
 		<trait>AIRBIND</trait>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">76</value>
+			<value level="3">82</value>
+			<value level="4">88</value>
+			<value level="5">94</value>
+			<value level="6">100</value>
+			<value level="7">106</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>120000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-692</value>
+			<value level="2">-698</value>
+			<value level="3">-704</value>
+			<value level="4">-708</value>
+			<value level="5">-708</value>
+			<value level="6">-708</value>
+			<value level="7">-708</value>
+		</effectPoint>
 		<abnormalResists>STUN;TURN_FLEE</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">89</value>
+			<value level="3">93</value>
+			<value level="4">97</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<reuseDelayGroup>11050</reuseDelayGroup>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
@@ -1584,9 +2652,6 @@
 	<skill id="11051" levels="7" name="Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target midair. -->
-		<table name="#effectPoint"> -692 -698 -704 -708 -712 -716 -720 </table>
-		<table name="#magicLvl"> 85 89 93 97 101 103 105 </table>
-		<table name="#mpConsumes"> 70 76 82 88 94 100 106 </table>
 		<icon>icon.skill11050</icon>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -1597,18 +2662,42 @@
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
 		<trait>AIRBIND</trait>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">76</value>
+			<value level="3">82</value>
+			<value level="4">88</value>
+			<value level="5">94</value>
+			<value level="6">100</value>
+			<value level="7">106</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>120000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-692</value>
+			<value level="2">-698</value>
+			<value level="3">-704</value>
+			<value level="4">-708</value>
+			<value level="5">-712</value>
+			<value level="6">-716</value>
+			<value level="7">-720</value>
+		</effectPoint>
 		<abnormalResists>STUN;TURN_FLEE</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">89</value>
+			<value level="3">93</value>
+			<value level="4">97</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<reuseDelayGroup>11050</reuseDelayGroup>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
@@ -1631,8 +2720,6 @@
 	<skill id="11052" levels="7" name="Mass Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
-		<table name="#magicLvl"> 89 92 95 98 101 103 105 </table>
-		<table name="#mpConsumes"> 228 243 257 273 289 305 321 </table>
 		<icon>icon.skill11052</icon>
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
@@ -1643,7 +2730,15 @@
 		<operateType>CA2</operateType>
 		<targetType>AREA</targetType>
 		<trait>AIRBIND</trait>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">228</value>
+			<value level="2">243</value>
+			<value level="3">257</value>
+			<value level="4">273</value>
+			<value level="5">289</value>
+			<value level="6">305</value>
+			<value level="7">321</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>10000</hitTime>
@@ -1652,7 +2747,15 @@
 		<abnormalResists>STUN;TURN_FLEE</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">89</value>
+			<value level="2">92</value>
+			<value level="3">95</value>
+			<value level="4">98</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<reuseDelayGroup>11052</reuseDelayGroup>
 		<affectRange>150</affectRange>
 		<affectLimit>5-12</affectLimit>
@@ -1666,8 +2769,6 @@
 	<skill id="11053" levels="7" name="Mass Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
-		<table name="#magicLvl"> 89 92 95 98 101 103 105 </table>
-		<table name="#mpConsumes"> 228 243 257 273 289 305 321 </table>
 		<icon>icon.skill1042</icon>
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
@@ -1678,7 +2779,15 @@
 		<operateType>CA2</operateType>
 		<targetType>AREA</targetType>
 		<trait>AIRBIND</trait>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">228</value>
+			<value level="2">243</value>
+			<value level="3">257</value>
+			<value level="4">273</value>
+			<value level="5">289</value>
+			<value level="6">305</value>
+			<value level="7">321</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>10000</hitTime>
@@ -1687,7 +2796,15 @@
 		<abnormalResists>STUN;TURN_FLEE</abnormalResists>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">89</value>
+			<value level="2">92</value>
+			<value level="3">95</value>
+			<value level="4">98</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<reuseDelayGroup>11052</reuseDelayGroup>
 		<affectRange>150</affectRange>
 		<affectLimit>5-12</affectLimit>
@@ -1742,9 +2859,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, inflicts Fear on target and decreases Speed by 40%. -->
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 101 103 105 </table>
-		<table name="#mpConsumes"> 70 72 76 78 82 85 88 91 94 97  </table>
 		<table name="#runSpd"> 0.60 0.55 0.50 0.45 0.40 0.35 0.30 0.30 0.30 0.30 </table>
 		<icon>icon.skill11055</icon>
 		<abnormalLvl>5</abnormalLvl>
@@ -1756,15 +2870,48 @@
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
 		<trait>DERANGEMENT</trait>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">101</value>
+			<value level="9">103</value>
+			<value level="10">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">72</value>
+			<value level="3">76</value>
+			<value level="4">78</value>
+			<value level="5">82</value>
+			<value level="6">85</value>
+			<value level="7">88</value>
+			<value level="8">91</value>
+			<value level="9">94</value>
+			<value level="10">97</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>1200</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>60000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-694</value>
+			<value level="3">-700</value>
+			<value level="4">-705</value>
+			<value level="5">-709</value>
+			<value level="6">-709</value>
+			<value level="7">-709</value>
+			<value level="8">-709</value>
+			<value level="9">-709</value>
+			<value level="10">-709</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
@@ -1787,9 +2934,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, inflicts Fear on target and nearby enemies and decreases Speed by 25%. -->
-		<table name="#effectPoint"> -700 -705 -705 -705 -705 -705 -705 -705 -705 -705 -705 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
-		<table name="#mpConsumes"> 211 220 228 238 247 257 267 278 289 300 311 </table>
 		<table name="#runSpd"> 0.75 0.70 0.65 0.60 0.55 0.50 0.45 0.40 0.40 0.40 0.40 </table>
 		<icon>icon.skill11056</icon>
 		<abnormalLvl>5</abnormalLvl>
@@ -1802,8 +2946,32 @@
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">89</value>
+			<value level="4">91</value>
+			<value level="5">93</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">211</value>
+			<value level="2">220</value>
+			<value level="3">228</value>
+			<value level="4">238</value>
+			<value level="5">247</value>
+			<value level="6">257</value>
+			<value level="7">267</value>
+			<value level="8">278</value>
+			<value level="9">289</value>
+			<value level="10">300</value>
+			<value level="11">311</value>
+		</mpConsume>
 		<trait>DERANGEMENT</trait>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
@@ -1811,7 +2979,19 @@
 		<coolTime>300</coolTime>
 		<reuseDelay>120000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-700</value>
+			<value level="2">-705</value>
+			<value level="3">-705</value>
+			<value level="4">-705</value>
+			<value level="5">-705</value>
+			<value level="6">-705</value>
+			<value level="7">-705</value>
+			<value level="8">-705</value>
+			<value level="9">-705</value>
+			<value level="10">-705</value>
+			<value level="11">-705</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
@@ -1834,9 +3014,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the back. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
-		<table name="#mpConsumes"> 70 72 77 82 87 92 97 102 107 </table>
 		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<icon>icon.skill11057</icon>
 		<abnormalLvl>1</abnormalLvl>
@@ -1850,13 +3027,43 @@
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
 		<trait>SHOCK</trait>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">90</value>
+			<value level="4">93</value>
+			<value level="5">96</value>
+			<value level="6">99</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">72</value>
+			<value level="3">77</value>
+			<value level="4">82</value>
+			<value level="5">87</value>
+			<value level="6">92</value>
+			<value level="7">97</value>
+			<value level="8">102</value>
+			<value level="9">107</value>
+		</mpConsume>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-709</value>
+			<value level="6">-709</value>
+			<value level="7">-709</value>
+			<value level="8">-709</value>
+			<value level="9">-709</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
@@ -1876,20 +3083,38 @@
 	<skill id="11058" levels="6" name="Shadow Snare">
 		<!-- Glory Days confirmed -->
 		<!-- Pulls enemies in a selected area to the center. -->
-		<table name="#effectPoint"> -700 -705 -709 -700 -705 -709 </table>
-		<table name="#magicLvl"> 91 94 97 101 103 105 </table>
-		<table name="#mpConsumes"> 238 252 267 281 295 310 </table>
 		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
 		<icon>icon.skill11058</icon>
 		<operateType>A1</operateType>
 		<targetType>GROUND</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">91</value>
+			<value level="2">94</value>
+			<value level="3">97</value>
+			<value level="4">101</value>
+			<value level="5">103</value>
+			<value level="6">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">238</value>
+			<value level="2">252</value>
+			<value level="3">267</value>
+			<value level="4">281</value>
+			<value level="5">295</value>
+			<value level="6">310</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>1000</hitTime>
 		<reuseDelay>15000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-700</value>
+			<value level="2">-705</value>
+			<value level="3">-709</value>
+			<value level="4">-700</value>
+			<value level="5">-705</value>
+			<value level="6">-709</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -1904,7 +3129,6 @@
 	<skill id="11059" levels="4" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 4 -->
 		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
-		<table name="#effectPoint"> -709 0 0 -709 </table>
 		<icon>icon.skill1469</icon>
 		<abnormalTime>1</abnormalTime>
 		<abnormalLvl>5</abnormalLvl>
@@ -1915,7 +3139,12 @@
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
 		<trait>PULL</trait>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-709</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">-709</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1936,9 +3165,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, increases Speed by 60. The effect disappears when attacked. -->
-		<table name="#effectPoint"> 692 700 707 707 </table>
-		<table name="#magicLvl"> 87 91 95 99 </table>
-		<table name="#mpConsumes"> 7 8 9 9 </table>
 		<table name="#runSpd"> 60 70 80 90 </table>
 		<icon>icon.skill11062</icon>
 		<abnormalLvl>2</abnormalLvl>
@@ -1946,10 +3172,25 @@
 		<abnormalType>SPEED_UP_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">87</value>
+			<value level="2">91</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">7</value>
+			<value level="2">8</value>
+			<value level="3">9</value>
+			<value level="4">9</value>
+		</mpConsume>
 		<hitTime>200</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">692</value>
+			<value level="2">700</value>
+			<value level="3">707</value>
+			<value level="4">707</value>
+		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<removedOnDamage>true</removedOnDamage>
@@ -1987,18 +3228,51 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Sacrifices 384 HP to recover 400 MP. -->
-		<table name="#effectPoint"> 692 700 707 707 707 707 707 707 707 707 707 </table>
-		<table name="#hpConsumes"> 384 388 396 404 412 420 428 436 448 456 464 </table>
 		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 591 623 655 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<icon>icon.skill11064</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<hpConsume>#hpConsumes</hpConsume>
-		<magicLvl>#magicLvl</magicLvl>
+		<hpConsume>
+			<value level="1">384</value>
+			<value level="2">388</value>
+			<value level="3">396</value>
+			<value level="4">404</value>
+			<value level="5">412</value>
+			<value level="6">420</value>
+			<value level="7">428</value>
+			<value level="8">436</value>
+			<value level="9">448</value>
+			<value level="10">456</value>
+			<value level="11">464</value>
+		</hpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">86</value>
+			<value level="3">88</value>
+			<value level="4">90</value>
+			<value level="5">92</value>
+			<value level="6">94</value>
+			<value level="7">96</value>
+			<value level="8">98</value>
+			<value level="9">101</value>
+			<value level="10">103</value>
+			<value level="11">105</value>
+		</magicLvl>
 		<hitTime>4000</hitTime>
 		<reuseDelay>15000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">692</value>
+			<value level="2">700</value>
+			<value level="3">707</value>
+			<value level="4">707</value>
+			<value level="5">707</value>
+			<value level="6">707</value>
+			<value level="7">707</value>
+			<value level="8">707</value>
+			<value level="9">707</value>
+			<value level="10">707</value>
+			<value level="11">707</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
@@ -2041,8 +3315,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts magical damage on target with 620 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit. -->
-		<table name="#magicLvl"> 95 101 103 105 </table>
-		<table name="#mpConsumes"> 1655 1672 1689 1706 </table>
 		<table name="#power"> 620 677 693 709 </table>
 		<icon>icon.skill11066</icon>
 		<abnormalLvl>7</abnormalLvl>
@@ -2054,8 +3326,18 @@
 		<operateType>A2</operateType>
 		<targetType>ONE</targetType>
 		<trait>DERANGEMENT</trait>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">95</value>
+			<value level="2">101</value>
+			<value level="3">103</value>
+			<value level="4">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">1655</value>
+			<value level="2">1672</value>
+			<value level="3">1689</value>
+			<value level="4">1706</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>6750</hitTime>
@@ -2085,8 +3367,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts magical damage on target and nearby enemies with 620 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit. -->
-		<table name="#magicLvl"> 95 101 103 105 </table>
-		<table name="#mpConsumes"> 1767 1783 1799 1815 </table>
 		<table name="#power"> 620 641 655 669 </table>
 		<abnormalLvl>7</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -2100,8 +3380,18 @@
 		<operateType>A2</operateType>
 		<targetType>AREA</targetType>
 		<trait>DERANGEMENT</trait>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">95</value>
+			<value level="2">101</value>
+			<value level="3">103</value>
+			<value level="4">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">1767</value>
+			<value level="2">1783</value>
+			<value level="3">1799</value>
+			<value level="4">1815</value>
+		</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>10000</hitTime>
@@ -2129,16 +3419,24 @@
 	<skill id="11068" levels="4" name="Double Casting">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 50% and magic skill Cooldown by 5%.ﾠEliminates magic cancel during magic use. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 210 231 255 276 </table>
 		<table name="#mReuse"> 0.95 0.9 0.85 0.8 </table>
 		<table name="#MagicalMpConsumeRate"> 0.5 0.4 0.3 0.2 </table>
 		<icon>icon.skill11068</icon>
 		<abnormalTime>30</abnormalTime>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">210</value>
+			<value level="2">231</value>
+			<value level="3">255</value>
+			<value level="4">276</value>
+		</mpConsume>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>180000</reuseDelay>
@@ -2262,11 +3560,14 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Fire resistance by 20 for 3 seconds. -->
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#fireRes"> 20 50 100 </table>
 		<icon>icon.skill11011</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">10</value>
+		</abnormalTime>
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<attributeType>FIRE</attributeType>
@@ -2293,11 +3594,14 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Water resistance by 20 for 3 seconds. -->
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#waterRes"> 20 50 100 </table>
 		<icon>icon.skill11011</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">10</value>
+		</abnormalTime>
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<attributeType>WATER</attributeType>
@@ -2324,11 +3628,14 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Wind resistance by 20 for 3 seconds. -->
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#windRes"> 20 50 100 </table>
 		<icon>icon.skill11011</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">10</value>
+		</abnormalTime>
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<attributeType>WIND</attributeType>
@@ -2355,11 +3662,14 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Earth resistance by 20 for 3 seconds. -->
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#earthRes"> 20 50 100 </table>
 		<icon>icon.skill11011</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">10</value>
+		</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_EARTH</abnormalType>
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
@@ -2384,11 +3694,14 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Fire/Water/Wind/Earth resistances by 20 for 3 seconds. -->
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#allRes"> 20 50 100 </table>
 		<icon>icon.skill11011</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">10</value>
+		</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_HOLY</abnormalType>
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
@@ -2506,10 +3819,13 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts fear and hold on target. -->
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<icon>icon.skill11017</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">5</value>
+		</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<activateRate>50</activateRate>
@@ -2543,10 +3859,13 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases target's Speed. -->
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<table name="#runSpd"> 0.6 0.4 0.2 </table>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">5</value>
+		</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<icon>icon.skill11017</icon>
 		<activateRate>99</activateRate>
@@ -2596,10 +3915,13 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts hold on target. -->
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<icon>icon.skill11017</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">5</value>
+		</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<basicProperty>NONE</basicProperty>
@@ -2621,10 +3943,13 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts stun on target. -->
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<icon>icon.skill11017</icon>
 		<abnormalLvl>5</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">5</value>
+		</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<activateRate>99</activateRate>
@@ -2645,10 +3970,13 @@
 	<skill id="11092" levels="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<table name="#runSpd"> 0.6 0.4 0.2 </table>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">3</value>
+			<value level="3">5</value>
+		</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<affectRange>300</affectRange>
 		<affectLimit>5-12</affectLimit>
@@ -2718,9 +4046,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the front. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
-		<table name="#mpConsumes"> 70 72 77 82 87 92 97 102 107 </table>
 		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<icon>icon.skill11094</icon>
 		<abnormalLvl>1</abnormalLvl>
@@ -2734,13 +4059,43 @@
 		<operateType>A2</operateType>
 		<targetType>AURA</targetType>
 		<trait>SHOCK</trait>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">87</value>
+			<value level="3">90</value>
+			<value level="4">93</value>
+			<value level="5">96</value>
+			<value level="6">99</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">72</value>
+			<value level="3">77</value>
+			<value level="4">82</value>
+			<value level="5">87</value>
+			<value level="6">92</value>
+			<value level="7">97</value>
+			<value level="8">102</value>
+			<value level="9">107</value>
+		</mpConsume>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>1</isMagic>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-687</value>
+			<value level="2">-696</value>
+			<value level="3">-704</value>
+			<value level="4">-709</value>
+			<value level="5">-709</value>
+			<value level="6">-709</value>
+			<value level="7">-709</value>
+			<value level="8">-709</value>
+			<value level="9">-709</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>

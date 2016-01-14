@@ -50,11 +50,15 @@
 	</skill>
 	<skill id="10608" levels="4" name="Superior Haste">
 		<!-- Physical skill Cooldown - 5%. Spd. + 5. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pReuse"> 0.95 0.94 0.93 0.9 </table>
 		<table name="#runSpd"> 5 6 7 10 </table>
 		<icon>icon.skill10608</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
@@ -170,10 +174,14 @@
 	<skill id="10655" levels="4" name="Superior Critical Damage">
 		<!-- Critical Damage + 5%, Speed + 2. -->
 		<table name="#cAtk"> 1.05 1.06 1.07 1.10 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#runSpd"> 2 3 4 5 </table>
 		<icon>icon.skill10655</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>

@@ -43,11 +43,10 @@
 	</skill>
 	<skill id="22101" levels="1" name="Fortune Box of Love">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			20590,1,40;9207,1,60
-		</table>
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">20590,1,40;9207,1,60</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -235,11 +234,10 @@
 	</skill>
 	<skill id="22108" levels="1" name="Halloween Toy Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			20712,1,20;20713,1,20;20714,1,20;20715,1,20;20716,1,20
-		</table>
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">20712,1,20;20713,1,20;20714,1,20;20715,1,20;20716,1,20</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -259,11 +257,10 @@
 	</skill>
 	<skill id="22109" levels="1" name="Shiny Halloween Toy Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			20718,1,20;20719,1,20;20720,1,20;20721,1,20;20722,1,20
-		</table>
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">20718,1,20;20719,1,20;20720,1,20;20721,1,20;20722,1,20</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -355,11 +352,10 @@
 	</skill>
 	<skill id="22114" levels="1" name="Transformation Scroll Pack">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			20364,1,33;20365,1,33;20366,1,34
-		</table>
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">20364,1,33;20365,1,33;20366,1,34</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -379,11 +375,10 @@
 	</skill>
 	<skill id="22115" levels="1" name="Santa's Weapon Exchange Ticket Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			20755,1,99.99949;20757,1,0.00051
-		</table>
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">20755,1,99.99949;20757,1,0.00051</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>20758</itemConsumeId> <!-- Santa's Weapon Exchange Coupon Box -->
@@ -699,10 +694,13 @@
 	</skill>
 	<skill id="22128" levels="3" name="Rudolph's Joy">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#AtkSpd"> 1.1 1.15 1.2 </table>
 		<abnormalInstant>true</abnormalInstant>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>BR_EVENT_BUF1</abnormalType>
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1384,16 +1382,36 @@
 	</skill>
 	<skill id="22158" levels="10" name="Rose Petal">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<table name="#icons"> BranchSys2.icon.Br_herb_rose_red_i00 BranchSys2.icon.Br_herb_rose_red_i01 BranchSys2.icon.Br_herb_rose_red_i02 BranchSys2.icon.Br_herb_rose_red_i03 BranchSys2.icon.Br_herb_rose_red_i04 BranchSys2.icon.Br_herb_rose_red_i05 BranchSys2.icon.Br_herb_rose_red_i06 BranchSys2.icon.Br_herb_rose_red_i07 BranchSys2.icon.Br_herb_rose_red_i08 BranchSys2.icon.Br_herb_rose_red_i09 </table>
 		<abnormalInstant>true</abnormalInstant>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>BR_EVENT_BUF1</abnormalType>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>100</effectPoint>
 		<hitTime>100</hitTime>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">BranchSys2.icon.Br_herb_rose_red_i00</value>
+			<value level="2">BranchSys2.icon.Br_herb_rose_red_i01</value>
+			<value level="3">BranchSys2.icon.Br_herb_rose_red_i02</value>
+			<value level="4">BranchSys2.icon.Br_herb_rose_red_i03</value>
+			<value level="5">BranchSys2.icon.Br_herb_rose_red_i04</value>
+			<value level="6">BranchSys2.icon.Br_herb_rose_red_i05</value>
+			<value level="7">BranchSys2.icon.Br_herb_rose_red_i06</value>
+			<value level="8">BranchSys2.icon.Br_herb_rose_red_i07</value>
+			<value level="9">BranchSys2.icon.Br_herb_rose_red_i08</value>
+			<value level="10">BranchSys2.icon.Br_herb_rose_red_i09</value>
+		</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>-3</magicLvl>
 		<operateType>A4</operateType>
@@ -1599,10 +1617,9 @@
 	</skill>
 	<skill id="22167" levels="1" name="April Fools' Day Vesper Weapon Gift">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			13457,1,13.32;13458,1,6.66;13459,1,6.66;13460,1,6.66;13461,1,6.66;13462,1,6.66;13463,1,6.66;13464,1,6.66;13466,1,6.66;13467,1,6.66;13468,1,6.66;13469,1,6.66;13470,1,6.66;13465,1,6.66
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">13457,1,13.32;13458,1,6.66;13459,1,6.66;13460,1,6.66;13461,1,6.66;13462,1,6.66;13463,1,6.66;13464,1,6.66;13466,1,6.66;13467,1,6.66;13468,1,6.66;13469,1,6.66;13470,1,6.66;13465,1,6.66</value>
+		</capsuled_items_skill>
 		<icon>icon.skill0001</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -1636,10 +1653,9 @@
 	</skill>
 	<skill id="22169" levels="1" name="Soccer Ball of Cheering Release">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			6575,2,45;6573,1,30;6571,1,15;6569,1,9.4;6577,1,0.6
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">6575,2,45;6573,1,30;6571,1,15;6569,1,9.4;6577,1,0.6</value>
+		</capsuled_items_skill>
 		<icon>icon.skill0001</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1826,11 +1842,10 @@
 	</skill>
 	<skill id="22179" levels="1" name="Fortuna of Chaos">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			8618,3,13.999;8619,1,26;8620,3,17;8621,1,0.011;14700,25,4;14701,12,4;21038,6,5;9627,1,5;6622,3,19;21030,4,1.5;21031,4,1.5;21032,8,1;21033,8,1;21037,5,1
-		</table>
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">8618,3,13.999;8619,1,26;8620,3,17;8621,1,0.011;14700,25,4;14701,12,4;21038,6,5;9627,1,5;6622,3,19;21030,4,1.5;21031,4,1.5;21032,8,1;21033,8,1;21037,5,1</value>
+		</capsuled_items_skill>
 		<icon>icon.skill0001</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1853,11 +1868,10 @@
 	</skill>
 	<skill id="22180" levels="1" name="Wondrous Cubic - 1 time use">
 		<!-- High Five Skill -->
-		<table name="#extractableItems">
-			10633,1,35;10642,1,25;10634,1,20;10643,1,10;10635,1,4;10644,1,3;10636,1,1.2;10645,1,0.8;10637,1,0.6;10646,1,0.4
-		</table>
 		<!-- set name="reuseDelay" val="86400000" / -->
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">10633,1,35;10642,1,25;10634,1,20;10643,1,10;10635,1,4;10644,1,3;10636,1,1.2;10645,1,0.8;10637,1,0.6;10646,1,0.4</value>
+		</capsuled_items_skill>
 		<operateType>A1</operateType> <!-- FIXME: value unconfirmed -->
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<staticReuse>true</staticReuse>

@@ -47,11 +47,13 @@
 		</for>
 	</skill>
 	<skill id="1904" levels="2" name="Unbind">
-		<table name="#abnormalTime"> 10 12 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Cancels all debuffs and renders immune for 10 seconds. -->
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">10</value>
+			<value level="2">12</value>
+		</abnormalTime>
 		<abnormalType>RACE_HUMAN1</abnormalType>
 		<icon>icon.skill1904</icon>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -202,9 +204,11 @@
 	<skill id="1912" levels="2" name="Disparition">
 		<!-- Glory Days confirmed -->
 		<!-- Cancels all your debuffs. For 5 seconds, you cannot be targeted. -->
-		<table name="#abnormalTime"> 5 6 </table>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">5</value>
+			<value level="2">6</value>
+		</abnormalTime>
 		<abnormalType>RACE_DARKELF1</abnormalType>
 		<icon>icon.skill1912</icon>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -371,9 +375,11 @@
 	<skill id="1920" levels="2" name="Endurance">
 		<!-- Glory Days confirmed -->
 		<!-- For 5 sec., reflects 50% of received damage to attacker and recovers 460 HP every second. -->
-		<table name="#abnormalTime"> 5 7 </table>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">5</value>
+			<value level="2">7</value>
+		</abnormalTime>
 		<abnormalType>RACE_DWAF1</abnormalType>
 		<icon>icon.skill1920</icon>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -410,12 +416,14 @@
 		</for>
 	</skill>
 	<skill id="1922" levels="2" name="Earth Tremor">
-		<table name="#abnormalTime"> 3 5 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Knocks Down nearby enemies for 3 sec., and decreases their P. Def./ M. Def. by 50%. -->
 		<table name="#abnormalTime"> 3 5 </table>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">5</value>
+		</abnormalTime>
 		<abnormalType>KNOCKDOWN</abnormalType>
 		<icon>icon.skill1922</icon>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1099,8 +1107,6 @@
 		</for>
 	</skill>
 	<skill id="1955" levels="3" name="Party Solidarity">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 85 90 95 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' P. Atk. by 1%, M. Atk. by 1%, P. Critical Rate by 1%, Atk. Spd. by 1%, and Casting Spd. by 1%. Decreases physical and magic skill Cooldown by 1%. Always includes Sigel and Aeore Force. When 4 or more forces are applied, the Party Solidarity effect is activated. When the number of forces applied increases, the Party Solidarity effect is raised. -->
 		<table name="#pAtk"> 1.01 1.05 1.13 </table>
@@ -1112,7 +1118,11 @@
 		<abnormalType>SYNERGY_PARTY_BUF</abnormalType>
 		<affectRange>200</affectRange>
 		<icon>icon.skill1955</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A5</operateType>
 		<targetType>PARTY</targetType> <!-- Target ONE on retail, will be PARTY here. -->
@@ -1121,7 +1131,11 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<hitCancelTime>0</hitCancelTime>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
@@ -1293,12 +1307,16 @@
 	<skill id="1965" levels="4" name="Dual - Max HP Increase">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 6%. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxHp"> 6 12 18 24 </table>
 		<targetType>SELF</targetType>
 		<operateType>P</operateType>
 		<icon>icon.skill0211</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
@@ -1310,12 +1328,16 @@
 	<skill id="1966" levels="4" name="Dual - Max MP Increase">
 		<!-- Glory Days confirmed -->
 		<!-- Max MP + 6%. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxMp"> 1.06 1.12 1.18 1.24 </table>
 		<targetType>SELF</targetType>
 		<operateType>P</operateType>
 		<icon>icon.skill0213</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
@@ -1327,12 +1349,16 @@
 	<skill id="1967" levels="4" name="Dual - Max CP Increase">
 		<!-- Glory Days confirmed -->
 		<!-- Max CP + 6%. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxCp"> 1.06 1.12 1.18 1.24 </table>
 		<targetType>SELF</targetType>
 		<operateType>P</operateType>
 		<icon>icon.skill1397</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
@@ -1765,13 +1791,17 @@
 	<skill id="1986" levels="4" name="Dual Maximum HP">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 463. Can be used when the main/ dual class is Level 85 or above. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#maxHp"> 463 972 1458 1926 </table>
 		<icon>icon.skill0917</icon>
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MaxHp">

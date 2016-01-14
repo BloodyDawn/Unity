@@ -2,8 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10100" levels="4" name="Guardian's Frenzy">
 		<!-- For 1 min., P./M. Def. +50%, Attribute Resistance + 10, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 20 21 23 24 </table>
 		<table name="#def"> 1.5 1.7 2 2.2 </table>
 		<table name="#elemRes"> 10 20 25 30 </table>
 		<table name="#runSpd"> 10 20 25 30 </table>
@@ -17,8 +15,18 @@
 		<icon>icon.skill10100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">20</value>
+			<value level="2">21</value>
+			<value level="3">23</value>
+			<value level="4">24</value>
+		</mpConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
@@ -51,8 +59,6 @@
 	</skill>
 	<skill id="10101" levels="4" name="Templar's Frenzy">
 		<!-- For 1 min., P. Skill Power + 5%, P./M. Def. + 50%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 20 21 23 24 </table>
 		<table name="#physicalSkillPower"> 1.05 1.07 1.1 1.15 </table>
 		<table name="#def"> 1.5 1.65 1.8 2 </table>
 		<table name="#runSpd"> 10 20 25 30 </table>
@@ -66,8 +72,18 @@
 		<icon>icon.skill10101</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsumes</mpConsume>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">20</value>
+			<value level="2">21</value>
+			<value level="3">23</value>
+			<value level="4">24</value>
+		</mpConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
@@ -95,9 +111,7 @@
 	</skill>
 	<skill id="10102" levels="6" name="Shadow Slash">
 		<!-- Summons a Dark Panther to attack enemies in front of you with 33505 Power added to P. Atk. and knocks them down. Requires a shield. Consumes 6 Soulstones. Over-hit. -->
-		<table name="#effectPoint"> -3541 -3561 -3561 -3541 -3561 -3561 </table>
 		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
-		<table name="#mpConsumes"> 185 191 197 203 209 215 </table>
 		<table name="#power"> 33505 34353 35201 36897 38593 40289 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1</abnormalTime>
@@ -113,12 +127,26 @@
 		<itemConsumeCount>6</itemConsumeCount>
 		<operateType>A2</operateType>
 		<targetType>AREA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">185</value>
+			<value level="2">191</value>
+			<value level="3">197</value>
+			<value level="4">203</value>
+			<value level="5">209</value>
+			<value level="6">215</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-3541</value>
+			<value level="2">-3561</value>
+			<value level="3">-3561</value>
+			<value level="4">-3541</value>
+			<value level="5">-3561</value>
+			<value level="6">-3561</value>
+		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKDOWN</trait>
 		<cond msgId="113" addName="1">
@@ -136,8 +164,6 @@
 	</skill>
 	<skill id="10103" levels="6" name="Mass Freezing Strike">
 		<!-- Freezes the air, inflicting 18151 damage to target and nearby enemies, and for 10 sec., decreases enemy Speed by 100. Consumes 6 Soulstones. -->
-		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
-		<table name="#mpConsumes"> 185 191 197 199 201 203 </table>
 		<table name="#power"> 18151 18641 19131 20111 21091 22071 </table>
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
@@ -153,9 +179,23 @@
 		<itemConsumeCount>6</itemConsumeCount>
 		<lvlBonusRate>1</lvlBonusRate>
 		<operateType>A2</operateType>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">97</value>
+			<value level="2">98</value>
+			<value level="3">99</value>
+			<value level="4">101</value>
+			<value level="5">103</value>
+			<value level="6">105</value>
+		</magicLvl>
 		<targetType>AURA</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">185</value>
+			<value level="2">191</value>
+			<value level="3">197</value>
+			<value level="4">199</value>
+			<value level="5">201</value>
+			<value level="6">203</value>
+		</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>

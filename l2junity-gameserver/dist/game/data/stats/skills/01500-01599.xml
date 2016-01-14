@@ -304,9 +304,6 @@
 	<skill id="1509" levels="9" name="Seal of Limit">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
-		<table name="#magicLvl"> 81 83 85 90 95 99 101 103 105 </table>
-		<table name="#mpConsume"> 72 104 202 222 245 266 286 307 328 </table>
-		<table name="#mpInitialConsume"> 18 26 50 56 61 66 72 77 82 </table>
 		<table name="#power"> 0.8 0.7 0.6 0.5 0.4 0.3 0.4 0.4 0.3 </table>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -321,9 +318,39 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">81</value>
+			<value level="2">83</value>
+			<value level="3">85</value>
+			<value level="4">90</value>
+			<value level="5">95</value>
+			<value level="6">99</value>
+			<value level="7">101</value>
+			<value level="8">103</value>
+			<value level="9">105</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">72</value>
+			<value level="2">104</value>
+			<value level="3">202</value>
+			<value level="4">222</value>
+			<value level="5">245</value>
+			<value level="6">266</value>
+			<value level="7">286</value>
+			<value level="8">307</value>
+			<value level="9">328</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">18</value>
+			<value level="2">26</value>
+			<value level="3">50</value>
+			<value level="4">56</value>
+			<value level="5">61</value>
+			<value level="6">66</value>
+			<value level="7">72</value>
+			<value level="8">77</value>
+			<value level="9">82</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>120000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -366,29 +393,69 @@
 	</skill>
 	<skill id="1511" levels="8" name="Curse of Life Flow">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
-		<table name="#effectPoints"> -566 -582 -597 -611 -624 -635 -646 -655 </table>
-		<table name="#magicLvl"> 60 62 64 66 68 70 72 74 </table>
-		<table name="#mpConsume"> 27 28 29 30 31 31 32 33 </table>
-		<table name="#mpInitialConsume"> 7 7 8 8 8 8 8 9 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>CURSE_LIFE_FLOW</abnormalType>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<activateRate>70</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>600</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-566</value>
+			<value level="2">-582</value>
+			<value level="3">-597</value>
+			<value level="4">-611</value>
+			<value level="5">-624</value>
+			<value level="6">-635</value>
+			<value level="7">-646</value>
+			<value level="8">-655</value>
+		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>3000</hitTime>
 		<icon>icon.skill1511</icon>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>20</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">60</value>
+			<value level="2">62</value>
+			<value level="3">64</value>
+			<value level="4">66</value>
+			<value level="5">68</value>
+			<value level="6">70</value>
+			<value level="7">72</value>
+			<value level="8">74</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">27</value>
+			<value level="2">28</value>
+			<value level="3">29</value>
+			<value level="4">30</value>
+			<value level="5">31</value>
+			<value level="6">31</value>
+			<value level="7">32</value>
+			<value level="8">33</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">7</value>
+			<value level="2">7</value>
+			<value level="3">8</value>
+			<value level="4">8</value>
+			<value level="5">8</value>
+			<value level="6">8</value>
+			<value level="7">8</value>
+			<value level="8">9</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -476,8 +543,6 @@
 		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 58 63 74 85 90 95 99 </table>
 		<table name="#mDef"> 2 2 2.1 2.2 2.3 2.4 2.5 </table>
-		<table name="#mpConsume"> 17 20 22 24 26 27 28 </table>
-		<table name="#mpInitialConsume"> 5 5 6 6 6 7 7 </table>
 		<table name="#res"> 10 15 20 30 35 40 45 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -487,8 +552,24 @@
 		<icon>icon.skill1514</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLvl>58</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<mpConsume>
+			<value level="1">17</value>
+			<value level="2">20</value>
+			<value level="3">22</value>
+			<value level="4">24</value>
+			<value level="5">26</value>
+			<value level="6">27</value>
+			<value level="7">28</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">5</value>
+			<value level="2">5</value>
+			<value level="3">6</value>
+			<value level="4">6</value>
+			<value level="5">6</value>
+			<value level="6">7</value>
+			<value level="7">7</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>300000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -748,24 +829,276 @@
 	<skill id="1523" levels="42" name="Divine Punishment">
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
-		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
-		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
-		<table name="#effectPoints"> -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
-		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
-		<table name="#mpConsume"> 28 29 30 30 31 32 33 33 34 35 36 36 37 38 39 39 40 41 42 42 43 44 44 45 46 46 47 48 48 49 49 50 50 51 51 52 52 53 53 53 54 54 </table>
-		<table name="#mpInitialConsume"> 7 8 8 8 8 8 9 9 9 9 9 9 10 10 10 10 10 11 11 11 11 11 11 12 12 12 12 12 12 13 13 13 13 13 13 13 13 14 14 14 14 14 </table>
 		<table name="#power"> 52 58 64 71 74 77 80 83 86 89 92 95 97 100 102 105 107 109 78 80 81 83 85 86 88 89 90 92 93 95 96 97 99 100 101 102 103 105 106 107 108 109 </table>
 		<castRange>750</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-418</value>
+			<value level="2">-428</value>
+			<value level="3">-438</value>
+			<value level="4">-448</value>
+			<value level="5">-457</value>
+			<value level="6">-467</value>
+			<value level="7">-477</value>
+			<value level="8">-486</value>
+			<value level="9">-495</value>
+			<value level="10">-505</value>
+			<value level="11">-514</value>
+			<value level="12">-523</value>
+			<value level="13">-532</value>
+			<value level="14">-541</value>
+			<value level="15">-549</value>
+			<value level="16">-558</value>
+			<value level="17">-566</value>
+			<value level="18">-574</value>
+			<value level="19">-582</value>
+			<value level="20">-590</value>
+			<value level="21">-597</value>
+			<value level="22">-604</value>
+			<value level="23">-611</value>
+			<value level="24">-617</value>
+			<value level="25">-624</value>
+			<value level="26">-630</value>
+			<value level="27">-635</value>
+			<value level="28">-641</value>
+			<value level="29">-646</value>
+			<value level="30">-650</value>
+			<value level="31">-655</value>
+			<value level="32">-659</value>
+			<value level="33">-662</value>
+			<value level="34">-666</value>
+			<value level="35">-669</value>
+			<value level="36">-673</value>
+			<value level="37">-676</value>
+			<value level="38">-679</value>
+			<value level="39">-681</value>
+			<value level="40">-684</value>
+			<value level="41">-687</value>
+			<value level="42">-689</value>
+		</effectPoint>
 		<effectRange>1250</effectRange>
-		<attributeType>#attributeType</attributeType>
-		<attributeValue>#attributeValue</attributeValue>
+		<attributeType>
+			<value level="1">NONE</value>
+			<value level="2">NONE</value>
+			<value level="3">NONE</value>
+			<value level="4">NONE</value>
+			<value level="5">NONE</value>
+			<value level="6">NONE</value>
+			<value level="7">NONE</value>
+			<value level="8">NONE</value>
+			<value level="9">NONE</value>
+			<value level="10">NONE</value>
+			<value level="11">NONE</value>
+			<value level="12">NONE</value>
+			<value level="13">NONE</value>
+			<value level="14">NONE</value>
+			<value level="15">NONE</value>
+			<value level="16">NONE</value>
+			<value level="17">NONE</value>
+			<value level="18">NONE</value>
+			<value level="19">HOLY</value>
+			<value level="20">HOLY</value>
+			<value level="21">HOLY</value>
+			<value level="22">HOLY</value>
+			<value level="23">HOLY</value>
+			<value level="24">HOLY</value>
+			<value level="25">HOLY</value>
+			<value level="26">HOLY</value>
+			<value level="27">HOLY</value>
+			<value level="28">HOLY</value>
+			<value level="29">HOLY</value>
+			<value level="30">HOLY</value>
+			<value level="31">HOLY</value>
+			<value level="32">HOLY</value>
+			<value level="33">HOLY</value>
+			<value level="34">HOLY</value>
+			<value level="35">HOLY</value>
+			<value level="36">HOLY</value>
+			<value level="37">HOLY</value>
+			<value level="38">HOLY</value>
+			<value level="39">HOLY</value>
+			<value level="40">HOLY</value>
+			<value level="41">HOLY</value>
+			<value level="42">HOLY</value>
+		</attributeType>
+		<attributeValue>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">0</value>
+			<value level="5">0</value>
+			<value level="6">0</value>
+			<value level="7">0</value>
+			<value level="8">0</value>
+			<value level="9">0</value>
+			<value level="10">0</value>
+			<value level="11">0</value>
+			<value level="12">0</value>
+			<value level="13">0</value>
+			<value level="14">0</value>
+			<value level="15">0</value>
+			<value level="16">0</value>
+			<value level="17">0</value>
+			<value level="18">0</value>
+			<value level="19">20</value>
+			<value level="20">20</value>
+			<value level="21">20</value>
+			<value level="22">20</value>
+			<value level="23">20</value>
+			<value level="24">20</value>
+			<value level="25">20</value>
+			<value level="26">20</value>
+			<value level="27">20</value>
+			<value level="28">20</value>
+			<value level="29">20</value>
+			<value level="30">20</value>
+			<value level="31">20</value>
+			<value level="32">20</value>
+			<value level="33">20</value>
+			<value level="34">20</value>
+			<value level="35">20</value>
+			<value level="36">20</value>
+			<value level="37">20</value>
+			<value level="38">20</value>
+			<value level="39">20</value>
+			<value level="40">20</value>
+			<value level="41">20</value>
+			<value level="42">20</value>
+		</attributeValue>
 		<hitTime>4000</hitTime>
 		<icon>icon.skill1523</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">48</value>
+			<value level="3">52</value>
+			<value level="4">56</value>
+			<value level="5">58</value>
+			<value level="6">60</value>
+			<value level="7">62</value>
+			<value level="8">64</value>
+			<value level="9">66</value>
+			<value level="10">68</value>
+			<value level="11">70</value>
+			<value level="12">72</value>
+			<value level="13">74</value>
+			<value level="14">76</value>
+			<value level="15">78</value>
+			<value level="16">80</value>
+			<value level="17">82</value>
+			<value level="18">84</value>
+			<value level="19">62</value>
+			<value level="20">63</value>
+			<value level="21">64</value>
+			<value level="22">65</value>
+			<value level="23">66</value>
+			<value level="24">67</value>
+			<value level="25">68</value>
+			<value level="26">69</value>
+			<value level="27">70</value>
+			<value level="28">71</value>
+			<value level="29">72</value>
+			<value level="30">73</value>
+			<value level="31">74</value>
+			<value level="32">75</value>
+			<value level="33">76</value>
+			<value level="34">77</value>
+			<value level="35">78</value>
+			<value level="36">79</value>
+			<value level="37">80</value>
+			<value level="38">81</value>
+			<value level="39">82</value>
+			<value level="40">83</value>
+			<value level="41">84</value>
+			<value level="42">85</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">28</value>
+			<value level="2">29</value>
+			<value level="3">30</value>
+			<value level="4">30</value>
+			<value level="5">31</value>
+			<value level="6">32</value>
+			<value level="7">33</value>
+			<value level="8">33</value>
+			<value level="9">34</value>
+			<value level="10">35</value>
+			<value level="11">36</value>
+			<value level="12">36</value>
+			<value level="13">37</value>
+			<value level="14">38</value>
+			<value level="15">39</value>
+			<value level="16">39</value>
+			<value level="17">40</value>
+			<value level="18">41</value>
+			<value level="19">42</value>
+			<value level="20">42</value>
+			<value level="21">43</value>
+			<value level="22">44</value>
+			<value level="23">44</value>
+			<value level="24">45</value>
+			<value level="25">46</value>
+			<value level="26">46</value>
+			<value level="27">47</value>
+			<value level="28">48</value>
+			<value level="29">48</value>
+			<value level="30">49</value>
+			<value level="31">49</value>
+			<value level="32">50</value>
+			<value level="33">50</value>
+			<value level="34">51</value>
+			<value level="35">51</value>
+			<value level="36">52</value>
+			<value level="37">52</value>
+			<value level="38">53</value>
+			<value level="39">53</value>
+			<value level="40">53</value>
+			<value level="41">54</value>
+			<value level="42">54</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">7</value>
+			<value level="2">8</value>
+			<value level="3">8</value>
+			<value level="4">8</value>
+			<value level="5">8</value>
+			<value level="6">8</value>
+			<value level="7">9</value>
+			<value level="8">9</value>
+			<value level="9">9</value>
+			<value level="10">9</value>
+			<value level="11">9</value>
+			<value level="12">9</value>
+			<value level="13">10</value>
+			<value level="14">10</value>
+			<value level="15">10</value>
+			<value level="16">10</value>
+			<value level="17">10</value>
+			<value level="18">11</value>
+			<value level="19">11</value>
+			<value level="20">11</value>
+			<value level="21">11</value>
+			<value level="22">11</value>
+			<value level="23">11</value>
+			<value level="24">12</value>
+			<value level="25">12</value>
+			<value level="26">12</value>
+			<value level="27">12</value>
+			<value level="28">12</value>
+			<value level="29">12</value>
+			<value level="30">13</value>
+			<value level="31">13</value>
+			<value level="32">13</value>
+			<value level="33">13</value>
+			<value level="34">13</value>
+			<value level="35">13</value>
+			<value level="36">13</value>
+			<value level="37">13</value>
+			<value level="38">14</value>
+			<value level="39">14</value>
+			<value level="40">14</value>
+			<value level="41">14</value>
+			<value level="42">14</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -780,26 +1113,194 @@
 	<skill id="1524" levels="42" name="Surrender to Holy">
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
-		<table name="#effectPoints"> -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
-		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
-		<table name="#mpConsume"> 31 31 32 33 34 35 35 36 37 38 39 39 40 41 42 43 44 44 45 46 47 48 48 49 50 51 51 52 53 53 54 55 55 56 56 57 58 58 58 59 59 60 </table>
-		<table name="#mpInitialConsume"> 8 8 9 9 9 9 9 10 10 10 10 10 11 11 11 11 11 12 12 12 12 12 13 13 13 13 13 14 14 14 14 14 14 14 15 15 15 15 15 15 15 15 </table>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ARMOR_HOLY</abnormalType>
 		<activateRate>80</activateRate>
 		<basicProperty>MAGIC</basicProperty>
 		<castRange>750</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-418</value>
+			<value level="2">-428</value>
+			<value level="3">-438</value>
+			<value level="4">-448</value>
+			<value level="5">-457</value>
+			<value level="6">-467</value>
+			<value level="7">-477</value>
+			<value level="8">-486</value>
+			<value level="9">-495</value>
+			<value level="10">-505</value>
+			<value level="11">-514</value>
+			<value level="12">-523</value>
+			<value level="13">-532</value>
+			<value level="14">-541</value>
+			<value level="15">-549</value>
+			<value level="16">-558</value>
+			<value level="17">-566</value>
+			<value level="18">-574</value>
+			<value level="19">-582</value>
+			<value level="20">-590</value>
+			<value level="21">-597</value>
+			<value level="22">-604</value>
+			<value level="23">-611</value>
+			<value level="24">-617</value>
+			<value level="25">-624</value>
+			<value level="26">-630</value>
+			<value level="27">-635</value>
+			<value level="28">-641</value>
+			<value level="29">-646</value>
+			<value level="30">-650</value>
+			<value level="31">-655</value>
+			<value level="32">-659</value>
+			<value level="33">-662</value>
+			<value level="34">-666</value>
+			<value level="35">-669</value>
+			<value level="36">-673</value>
+			<value level="37">-676</value>
+			<value level="38">-679</value>
+			<value level="39">-681</value>
+			<value level="40">-684</value>
+			<value level="41">-687</value>
+			<value level="42">-689</value>
+		</effectPoint>
 		<effectRange>1250</effectRange>
 		<hitTime>1500</hitTime>
 		<icon>icon.skill1524</icon>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>30</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">48</value>
+			<value level="3">52</value>
+			<value level="4">56</value>
+			<value level="5">58</value>
+			<value level="6">60</value>
+			<value level="7">62</value>
+			<value level="8">64</value>
+			<value level="9">66</value>
+			<value level="10">68</value>
+			<value level="11">70</value>
+			<value level="12">72</value>
+			<value level="13">74</value>
+			<value level="14">76</value>
+			<value level="15">78</value>
+			<value level="16">80</value>
+			<value level="17">82</value>
+			<value level="18">84</value>
+			<value level="19">62</value>
+			<value level="20">63</value>
+			<value level="21">64</value>
+			<value level="22">65</value>
+			<value level="23">66</value>
+			<value level="24">67</value>
+			<value level="25">68</value>
+			<value level="26">69</value>
+			<value level="27">70</value>
+			<value level="28">71</value>
+			<value level="29">72</value>
+			<value level="30">73</value>
+			<value level="31">74</value>
+			<value level="32">75</value>
+			<value level="33">76</value>
+			<value level="34">77</value>
+			<value level="35">78</value>
+			<value level="36">79</value>
+			<value level="37">80</value>
+			<value level="38">81</value>
+			<value level="39">82</value>
+			<value level="40">83</value>
+			<value level="41">84</value>
+			<value level="42">85</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">31</value>
+			<value level="2">31</value>
+			<value level="3">32</value>
+			<value level="4">33</value>
+			<value level="5">34</value>
+			<value level="6">35</value>
+			<value level="7">35</value>
+			<value level="8">36</value>
+			<value level="9">37</value>
+			<value level="10">38</value>
+			<value level="11">39</value>
+			<value level="12">39</value>
+			<value level="13">40</value>
+			<value level="14">41</value>
+			<value level="15">42</value>
+			<value level="16">43</value>
+			<value level="17">44</value>
+			<value level="18">44</value>
+			<value level="19">45</value>
+			<value level="20">46</value>
+			<value level="21">47</value>
+			<value level="22">48</value>
+			<value level="23">48</value>
+			<value level="24">49</value>
+			<value level="25">50</value>
+			<value level="26">51</value>
+			<value level="27">51</value>
+			<value level="28">52</value>
+			<value level="29">53</value>
+			<value level="30">53</value>
+			<value level="31">54</value>
+			<value level="32">55</value>
+			<value level="33">55</value>
+			<value level="34">56</value>
+			<value level="35">56</value>
+			<value level="36">57</value>
+			<value level="37">58</value>
+			<value level="38">58</value>
+			<value level="39">58</value>
+			<value level="40">59</value>
+			<value level="41">59</value>
+			<value level="42">60</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">8</value>
+			<value level="2">8</value>
+			<value level="3">9</value>
+			<value level="4">9</value>
+			<value level="5">9</value>
+			<value level="6">9</value>
+			<value level="7">9</value>
+			<value level="8">10</value>
+			<value level="9">10</value>
+			<value level="10">10</value>
+			<value level="11">10</value>
+			<value level="12">10</value>
+			<value level="13">11</value>
+			<value level="14">11</value>
+			<value level="15">11</value>
+			<value level="16">11</value>
+			<value level="17">11</value>
+			<value level="18">12</value>
+			<value level="19">12</value>
+			<value level="20">12</value>
+			<value level="21">12</value>
+			<value level="22">12</value>
+			<value level="23">13</value>
+			<value level="24">13</value>
+			<value level="25">13</value>
+			<value level="26">13</value>
+			<value level="27">13</value>
+			<value level="28">14</value>
+			<value level="29">14</value>
+			<value level="30">14</value>
+			<value level="31">14</value>
+			<value level="32">14</value>
+			<value level="33">14</value>
+			<value level="34">14</value>
+			<value level="35">15</value>
+			<value level="36">15</value>
+			<value level="37">15</value>
+			<value level="38">15</value>
+			<value level="39">15</value>
+			<value level="40">15</value>
+			<value level="41">15</value>
+			<value level="42">15</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -818,17 +1319,56 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
 		<table name="#dot"> 9 9 9 9 9 9 11 11 11 11 11 11 11 11 11 11 13 13 13 13 13 13 13 13 13 13 14 14 14 14 14 14 14 14 14 14 15 15 15 15 15 15 </table>
-		<table name="#effectPoints"> -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
-		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
-		<table name="#mpConsume"> 31 31 32 33 34 35 35 36 37 38 39 39 40 41 42 43 44 44 45 46 47 48 48 49 50 51 51 52 53 53 54 55 55 56 56 57 58 58 58 59 59 60 </table>
-		<table name="#mpInitialConsume"> 8 8 9 9 9 9 9 10 10 10 10 10 11 11 11 11 11 12 12 12 12 12 13 13 13 13 13 14 14 14 14 14 14 14 15 15 15 15 15 15 15 15 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>HEAL_EFFECT_DOWN</abnormalType>
 		<activateRate>80</activateRate>
 		<basicProperty>MAGIC</basicProperty>
 		<castRange>750</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-418</value>
+			<value level="2">-428</value>
+			<value level="3">-438</value>
+			<value level="4">-448</value>
+			<value level="5">-457</value>
+			<value level="6">-467</value>
+			<value level="7">-477</value>
+			<value level="8">-486</value>
+			<value level="9">-495</value>
+			<value level="10">-505</value>
+			<value level="11">-514</value>
+			<value level="12">-523</value>
+			<value level="13">-532</value>
+			<value level="14">-541</value>
+			<value level="15">-549</value>
+			<value level="16">-558</value>
+			<value level="17">-566</value>
+			<value level="18">-574</value>
+			<value level="19">-582</value>
+			<value level="20">-590</value>
+			<value level="21">-597</value>
+			<value level="22">-604</value>
+			<value level="23">-611</value>
+			<value level="24">-617</value>
+			<value level="25">-624</value>
+			<value level="26">-630</value>
+			<value level="27">-635</value>
+			<value level="28">-641</value>
+			<value level="29">-646</value>
+			<value level="30">-650</value>
+			<value level="31">-655</value>
+			<value level="32">-659</value>
+			<value level="33">-662</value>
+			<value level="34">-666</value>
+			<value level="35">-669</value>
+			<value level="36">-673</value>
+			<value level="37">-676</value>
+			<value level="38">-679</value>
+			<value level="39">-681</value>
+			<value level="40">-684</value>
+			<value level="41">-687</value>
+			<value level="42">-689</value>
+		</effectPoint>
 		<effectRange>1250</effectRange>
 		<attributeType>HOLY</attributeType>
 		<attributeValue>20</attributeValue>
@@ -837,9 +1377,138 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>30</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">48</value>
+			<value level="3">52</value>
+			<value level="4">56</value>
+			<value level="5">58</value>
+			<value level="6">60</value>
+			<value level="7">62</value>
+			<value level="8">64</value>
+			<value level="9">66</value>
+			<value level="10">68</value>
+			<value level="11">70</value>
+			<value level="12">72</value>
+			<value level="13">74</value>
+			<value level="14">76</value>
+			<value level="15">78</value>
+			<value level="16">80</value>
+			<value level="17">82</value>
+			<value level="18">84</value>
+			<value level="19">62</value>
+			<value level="20">63</value>
+			<value level="21">64</value>
+			<value level="22">65</value>
+			<value level="23">66</value>
+			<value level="24">67</value>
+			<value level="25">68</value>
+			<value level="26">69</value>
+			<value level="27">70</value>
+			<value level="28">71</value>
+			<value level="29">72</value>
+			<value level="30">73</value>
+			<value level="31">74</value>
+			<value level="32">75</value>
+			<value level="33">76</value>
+			<value level="34">77</value>
+			<value level="35">78</value>
+			<value level="36">79</value>
+			<value level="37">80</value>
+			<value level="38">81</value>
+			<value level="39">82</value>
+			<value level="40">83</value>
+			<value level="41">84</value>
+			<value level="42">85</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">31</value>
+			<value level="2">31</value>
+			<value level="3">32</value>
+			<value level="4">33</value>
+			<value level="5">34</value>
+			<value level="6">35</value>
+			<value level="7">35</value>
+			<value level="8">36</value>
+			<value level="9">37</value>
+			<value level="10">38</value>
+			<value level="11">39</value>
+			<value level="12">39</value>
+			<value level="13">40</value>
+			<value level="14">41</value>
+			<value level="15">42</value>
+			<value level="16">43</value>
+			<value level="17">44</value>
+			<value level="18">44</value>
+			<value level="19">45</value>
+			<value level="20">46</value>
+			<value level="21">47</value>
+			<value level="22">48</value>
+			<value level="23">48</value>
+			<value level="24">49</value>
+			<value level="25">50</value>
+			<value level="26">51</value>
+			<value level="27">51</value>
+			<value level="28">52</value>
+			<value level="29">53</value>
+			<value level="30">53</value>
+			<value level="31">54</value>
+			<value level="32">55</value>
+			<value level="33">55</value>
+			<value level="34">56</value>
+			<value level="35">56</value>
+			<value level="36">57</value>
+			<value level="37">58</value>
+			<value level="38">58</value>
+			<value level="39">58</value>
+			<value level="40">59</value>
+			<value level="41">59</value>
+			<value level="42">60</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">8</value>
+			<value level="2">8</value>
+			<value level="3">9</value>
+			<value level="4">9</value>
+			<value level="5">9</value>
+			<value level="6">9</value>
+			<value level="7">9</value>
+			<value level="8">10</value>
+			<value level="9">10</value>
+			<value level="10">10</value>
+			<value level="11">10</value>
+			<value level="12">10</value>
+			<value level="13">11</value>
+			<value level="14">11</value>
+			<value level="15">11</value>
+			<value level="16">11</value>
+			<value level="17">11</value>
+			<value level="18">12</value>
+			<value level="19">12</value>
+			<value level="20">12</value>
+			<value level="21">12</value>
+			<value level="22">12</value>
+			<value level="23">13</value>
+			<value level="24">13</value>
+			<value level="25">13</value>
+			<value level="26">13</value>
+			<value level="27">13</value>
+			<value level="28">14</value>
+			<value level="29">14</value>
+			<value level="30">14</value>
+			<value level="31">14</value>
+			<value level="32">14</value>
+			<value level="33">14</value>
+			<value level="34">14</value>
+			<value level="35">15</value>
+			<value level="36">15</value>
+			<value level="37">15</value>
+			<value level="38">15</value>
+			<value level="39">15</value>
+			<value level="40">15</value>
+			<value level="41">15</value>
+			<value level="42">15</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -855,10 +1524,13 @@
 	<skill id="1526" levels="3" name="Steal Mana">
 		<!-- Confirmed CT2.5 -->
 		<table name="#minDamage"> 41 51 49 </table>
-		<table name="#magicLvl"> 44 56 64 </table>
 		<table name="#triggeredId"> 5676 5677 5678 </table>
 		<icon>icon.skill1526</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">56</value>
+			<value level="3">64</value>
+		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
 		<for>
@@ -874,10 +1546,13 @@
 	</skill>
 	<skill id="1527" levels="3" name="Expert Casting">
 		<!-- Glory Days confirmed -->
-		<table name="#magicLvl"> 40 49 55 </table>
 		<table name="#mReuse"> 0.9 0.85 0.8 </table>
 		<icon>icon.skill1527</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">49</value>
+			<value level="3">55</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -891,26 +1566,278 @@
 	<skill id="1528" levels="42" name="Divine Flash">
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
-		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
-		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
-		<table name="#effectPoints"> -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 </table>
-		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
-		<table name="#mpConsume"> 45 47 48 49 50 52 53 54 55 56 58 59 60 61 63 64 65 66 68 69 70 71 72 74 75 76 77 78 79 80 81 82 83 84 84 85 86 87 87 88 89 89 </table>
-		<table name="#mpInitialConsume"> 12 12 12 13 13 13 14 14 14 14 15 15 15 16 16 16 17 17 17 18 18 18 18 19 19 19 20 20 20 20 21 21 21 21 21 22 22 22 22 22 23 23 </table>
 		<table name="#power"> 29 33 36 39 41 43 45 46 48 50 51 53 54 56 57 58 60 61 44 45 45 46 47 48 49 50 50 51 52 53 54 54 55 56 56 57 58 58 59 60 60 61 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-408</value>
+			<value level="2">-418</value>
+			<value level="3">-428</value>
+			<value level="4">-438</value>
+			<value level="5">-448</value>
+			<value level="6">-457</value>
+			<value level="7">-467</value>
+			<value level="8">-477</value>
+			<value level="9">-486</value>
+			<value level="10">-495</value>
+			<value level="11">-505</value>
+			<value level="12">-514</value>
+			<value level="13">-523</value>
+			<value level="14">-532</value>
+			<value level="15">-541</value>
+			<value level="16">-549</value>
+			<value level="17">-558</value>
+			<value level="18">-566</value>
+			<value level="19">-574</value>
+			<value level="20">-582</value>
+			<value level="21">-590</value>
+			<value level="22">-597</value>
+			<value level="23">-604</value>
+			<value level="24">-611</value>
+			<value level="25">-617</value>
+			<value level="26">-624</value>
+			<value level="27">-630</value>
+			<value level="28">-635</value>
+			<value level="29">-641</value>
+			<value level="30">-646</value>
+			<value level="31">-650</value>
+			<value level="32">-655</value>
+			<value level="33">-659</value>
+			<value level="34">-662</value>
+			<value level="35">-666</value>
+			<value level="36">-669</value>
+			<value level="37">-673</value>
+			<value level="38">-676</value>
+			<value level="39">-679</value>
+			<value level="40">-681</value>
+			<value level="41">-684</value>
+			<value level="42">-687</value>
+		</effectPoint>
 		<effectRange>1000</effectRange>
-		<attributeType>#attributeType</attributeType>
-		<attributeValue>#attributeValue</attributeValue>
+		<attributeType>
+			<value level="1">NONE</value>
+			<value level="2">NONE</value>
+			<value level="3">NONE</value>
+			<value level="4">NONE</value>
+			<value level="5">NONE</value>
+			<value level="6">NONE</value>
+			<value level="7">NONE</value>
+			<value level="8">NONE</value>
+			<value level="9">NONE</value>
+			<value level="10">NONE</value>
+			<value level="11">NONE</value>
+			<value level="12">NONE</value>
+			<value level="13">NONE</value>
+			<value level="14">NONE</value>
+			<value level="15">NONE</value>
+			<value level="16">NONE</value>
+			<value level="17">NONE</value>
+			<value level="18">NONE</value>
+			<value level="19">HOLY</value>
+			<value level="20">HOLY</value>
+			<value level="21">HOLY</value>
+			<value level="22">HOLY</value>
+			<value level="23">HOLY</value>
+			<value level="24">HOLY</value>
+			<value level="25">HOLY</value>
+			<value level="26">HOLY</value>
+			<value level="27">HOLY</value>
+			<value level="28">HOLY</value>
+			<value level="29">HOLY</value>
+			<value level="30">HOLY</value>
+			<value level="31">HOLY</value>
+			<value level="32">HOLY</value>
+			<value level="33">HOLY</value>
+			<value level="34">HOLY</value>
+			<value level="35">HOLY</value>
+			<value level="36">HOLY</value>
+			<value level="37">HOLY</value>
+			<value level="38">HOLY</value>
+			<value level="39">HOLY</value>
+			<value level="40">HOLY</value>
+			<value level="41">HOLY</value>
+			<value level="42">HOLY</value>
+		</attributeType>
+		<attributeValue>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">0</value>
+			<value level="5">0</value>
+			<value level="6">0</value>
+			<value level="7">0</value>
+			<value level="8">0</value>
+			<value level="9">0</value>
+			<value level="10">0</value>
+			<value level="11">0</value>
+			<value level="12">0</value>
+			<value level="13">0</value>
+			<value level="14">0</value>
+			<value level="15">0</value>
+			<value level="16">0</value>
+			<value level="17">0</value>
+			<value level="18">0</value>
+			<value level="19">20</value>
+			<value level="20">20</value>
+			<value level="21">20</value>
+			<value level="22">20</value>
+			<value level="23">20</value>
+			<value level="24">20</value>
+			<value level="25">20</value>
+			<value level="26">20</value>
+			<value level="27">20</value>
+			<value level="28">20</value>
+			<value level="29">20</value>
+			<value level="30">20</value>
+			<value level="31">20</value>
+			<value level="32">20</value>
+			<value level="33">20</value>
+			<value level="34">20</value>
+			<value level="35">20</value>
+			<value level="36">20</value>
+			<value level="37">20</value>
+			<value level="38">20</value>
+			<value level="39">20</value>
+			<value level="40">20</value>
+			<value level="41">20</value>
+			<value level="42">20</value>
+		</attributeValue>
 		<hitTime>4000</hitTime>
 		<icon>icon.skill1528</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">48</value>
+			<value level="3">52</value>
+			<value level="4">56</value>
+			<value level="5">58</value>
+			<value level="6">60</value>
+			<value level="7">62</value>
+			<value level="8">64</value>
+			<value level="9">66</value>
+			<value level="10">68</value>
+			<value level="11">70</value>
+			<value level="12">72</value>
+			<value level="13">74</value>
+			<value level="14">76</value>
+			<value level="15">78</value>
+			<value level="16">80</value>
+			<value level="17">82</value>
+			<value level="18">84</value>
+			<value level="19">62</value>
+			<value level="20">63</value>
+			<value level="21">64</value>
+			<value level="22">65</value>
+			<value level="23">66</value>
+			<value level="24">67</value>
+			<value level="25">68</value>
+			<value level="26">69</value>
+			<value level="27">70</value>
+			<value level="28">71</value>
+			<value level="29">72</value>
+			<value level="30">73</value>
+			<value level="31">74</value>
+			<value level="32">75</value>
+			<value level="33">76</value>
+			<value level="34">77</value>
+			<value level="35">78</value>
+			<value level="36">79</value>
+			<value level="37">80</value>
+			<value level="38">81</value>
+			<value level="39">82</value>
+			<value level="40">83</value>
+			<value level="41">84</value>
+			<value level="42">85</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">45</value>
+			<value level="2">47</value>
+			<value level="3">48</value>
+			<value level="4">49</value>
+			<value level="5">50</value>
+			<value level="6">52</value>
+			<value level="7">53</value>
+			<value level="8">54</value>
+			<value level="9">55</value>
+			<value level="10">56</value>
+			<value level="11">58</value>
+			<value level="12">59</value>
+			<value level="13">60</value>
+			<value level="14">61</value>
+			<value level="15">63</value>
+			<value level="16">64</value>
+			<value level="17">65</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">69</value>
+			<value level="21">70</value>
+			<value level="22">71</value>
+			<value level="23">72</value>
+			<value level="24">74</value>
+			<value level="25">75</value>
+			<value level="26">76</value>
+			<value level="27">77</value>
+			<value level="28">78</value>
+			<value level="29">79</value>
+			<value level="30">80</value>
+			<value level="31">81</value>
+			<value level="32">82</value>
+			<value level="33">83</value>
+			<value level="34">84</value>
+			<value level="35">84</value>
+			<value level="36">85</value>
+			<value level="37">86</value>
+			<value level="38">87</value>
+			<value level="39">87</value>
+			<value level="40">88</value>
+			<value level="41">89</value>
+			<value level="42">89</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">12</value>
+			<value level="2">12</value>
+			<value level="3">12</value>
+			<value level="4">13</value>
+			<value level="5">13</value>
+			<value level="6">13</value>
+			<value level="7">14</value>
+			<value level="8">14</value>
+			<value level="9">14</value>
+			<value level="10">14</value>
+			<value level="11">15</value>
+			<value level="12">15</value>
+			<value level="13">15</value>
+			<value level="14">16</value>
+			<value level="15">16</value>
+			<value level="16">16</value>
+			<value level="17">17</value>
+			<value level="18">17</value>
+			<value level="19">17</value>
+			<value level="20">18</value>
+			<value level="21">18</value>
+			<value level="22">18</value>
+			<value level="23">18</value>
+			<value level="24">19</value>
+			<value level="25">19</value>
+			<value level="26">19</value>
+			<value level="27">20</value>
+			<value level="28">20</value>
+			<value level="29">20</value>
+			<value level="30">20</value>
+			<value level="31">21</value>
+			<value level="32">21</value>
+			<value level="33">21</value>
+			<value level="34">21</value>
+			<value level="35">21</value>
+			<value level="36">22</value>
+			<value level="37">22</value>
+			<value level="38">22</value>
+			<value level="39">22</value>
+			<value level="40">22</value>
+			<value level="41">23</value>
+			<value level="42">23</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -924,9 +1851,6 @@
 	</skill>
 	<skill id="1529" levels="7" name="Soul Web">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 62 64 66 68 70 72 74 </table>
-		<table name="#mpConsume"> 46 48 49 51 52 53 55 </table>
-		<table name="#mpInitialConsume"> 12 12 13 13 13 14 14 </table>
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
@@ -942,9 +1866,33 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>30</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">62</value>
+			<value level="2">64</value>
+			<value level="3">66</value>
+			<value level="4">68</value>
+			<value level="5">70</value>
+			<value level="6">72</value>
+			<value level="7">74</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">46</value>
+			<value level="2">48</value>
+			<value level="3">49</value>
+			<value level="4">51</value>
+			<value level="5">52</value>
+			<value level="6">53</value>
+			<value level="7">55</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">12</value>
+			<value level="2">12</value>
+			<value level="3">13</value>
+			<value level="4">13</value>
+			<value level="5">13</value>
+			<value level="6">14</value>
+			<value level="7">14</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -957,22 +1905,74 @@
 		</for>
 	</skill>
 	<skill id="1530" levels="13" name="Death Spike">
-		<table name="#effectPoints"> -418 -457 -495 -532 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
-		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#mpConsume"> 19 22 24 28 29 31 32 33 35 36 37 38 40 </table>
-		<table name="#mpConsume_Init"> 4 5 6 7 7 7 8 8 8 9 9 9 10 </table>
 		<table name="#power"> 35 39 43 47 49 51 53 56 58 59 61 63 65 </table>
 		<castRange>900</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-418</value>
+			<value level="2">-457</value>
+			<value level="3">-495</value>
+			<value level="4">-532</value>
+			<value level="5">-549</value>
+			<value level="6">-566</value>
+			<value level="7">-582</value>
+			<value level="8">-597</value>
+			<value level="9">-611</value>
+			<value level="10">-624</value>
+			<value level="11">-635</value>
+			<value level="12">-646</value>
+			<value level="13">-655</value>
+		</effectPoint>
 		<effectRange>1400</effectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<icon>icon.skill1148</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpConsume_Init</mpInitialConsume>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">48</value>
+			<value level="3">52</value>
+			<value level="4">56</value>
+			<value level="5">58</value>
+			<value level="6">60</value>
+			<value level="7">62</value>
+			<value level="8">64</value>
+			<value level="9">66</value>
+			<value level="10">68</value>
+			<value level="11">70</value>
+			<value level="12">72</value>
+			<value level="13">74</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">19</value>
+			<value level="2">22</value>
+			<value level="3">24</value>
+			<value level="4">28</value>
+			<value level="5">29</value>
+			<value level="6">31</value>
+			<value level="7">32</value>
+			<value level="8">33</value>
+			<value level="9">35</value>
+			<value level="10">36</value>
+			<value level="11">37</value>
+			<value level="12">38</value>
+			<value level="13">40</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">4</value>
+			<value level="2">5</value>
+			<value level="3">6</value>
+			<value level="4">7</value>
+			<value level="5">7</value>
+			<value level="6">7</value>
+			<value level="7">8</value>
+			<value level="8">8</value>
+			<value level="9">8</value>
+			<value level="10">9</value>
+			<value level="11">9</value>
+			<value level="12">9</value>
+			<value level="13">10</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1200</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -987,9 +1987,6 @@
 	</skill>
 	<skill id="1531" levels="7" name="Blessed Blood">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 40 48 56 60 64 68 72 </table>
-		<table name="#mpConsume"> 28 35 41 44 48 51 53 </table>
-		<table name="#mpInitialConsume"> 7 9 11 11 12 13 14 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -1000,9 +1997,33 @@
 		<hitTime>4000</hitTime>
 		<icon>icon.skill1218</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">48</value>
+			<value level="3">56</value>
+			<value level="4">60</value>
+			<value level="5">64</value>
+			<value level="6">68</value>
+			<value level="7">72</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">28</value>
+			<value level="2">35</value>
+			<value level="3">41</value>
+			<value level="4">44</value>
+			<value level="5">48</value>
+			<value level="6">51</value>
+			<value level="7">53</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">7</value>
+			<value level="2">9</value>
+			<value level="3">11</value>
+			<value level="4">11</value>
+			<value level="5">12</value>
+			<value level="6">13</value>
+			<value level="7">14</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1233,24 +2254,44 @@
 		</for>
 	</skill>
 	<skill id="1539" levels="4" name="Stigma of Shilen">
-		<table name="#abnormalLvl"> 1 2 3 4 </table>
-		<table name="#castRange"> 600 700 800 900 </table>
-		<table name="#effectRange"> 1100 1200 1300 1400 </table>
-		<table name="#magicLvl"> 40 52 62 70 </table>
-		<table name="#mpConsume"> 18 24 29 33 </table>
 		<table name="#traits"> -16 -24 -32 -40 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>STIGMA_OF_SILEN</abnormalType>
 		<abnormalVisualEffect>STIGMA_OF_SILEN</abnormalVisualEffect>
-		<castRange>#castRange</castRange>
+		<castRange>
+			<value level="1">600</value>
+			<value level="2">700</value>
+			<value level="3">800</value>
+			<value level="4">900</value>
+		</castRange>
 		<effectPoint>-635</effectPoint>
-		<effectRange>#effectRange</effectRange>
+		<effectRange>
+			<value level="1">1100</value>
+			<value level="2">1200</value>
+			<value level="3">1300</value>
+			<value level="4">1400</value>
+		</effectRange>
 		<hitTime>1500</hitTime>
 		<icon>icon.skill1539</icon>
 		<isDebuff>true</isDebuff>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">52</value>
+			<value level="3">62</value>
+			<value level="4">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">24</value>
+			<value level="3">29</value>
+			<value level="4">33</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1384,7 +2425,6 @@
 	<skill id="1544" levels="7" name="Death Beam">
 		<!-- Confirmed CT2.5 -->
 		<!-- Kamael Final Form Skill -->
-		<table name="#magicLvl"> 79 80 81 82 83 84 85 </table>
 		<table name="#power"> 138 139 141 142 144 145 146 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>400</affectRange>
@@ -1395,7 +2435,15 @@
 		<hitTime>1500</hitTime>
 		<icon>icon.skill1471</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">79</value>
+			<value level="2">80</value>
+			<value level="3">81</value>
+			<value level="4">82</value>
+			<value level="5">83</value>
+			<value level="6">84</value>
+			<value level="7">85</value>
+		</magicLvl>
 		<mpConsume>58</mpConsume>
 		<mpInitialConsume>15</mpInitialConsume>
 		<operateType>A1</operateType>
@@ -1472,26 +2520,41 @@
 		</for>
 	</skill>
 	<skill id="1547" levels="3" name="Spirit Sharing">
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#amount"> 1.03 1.04 1.05 </table>
-		<table name="#effectPoints"> 418 582 635 </table>
-		<table name="#magicLvl"> 44 62 70 </table>
 		<table name="#mAtkSpd"> 1.01 1.03 1.05 </table>
-		<table name="#mpConsume"> 31 46 52 </table>
-		<table name="#mpInitialConsume"> 8 12 13 </table>
 		<table name="#pAtkSpd"> 1.02 1.05 1.07 </table>
 		<table name="#physicalSkillPower"> 1.05 1.07 1.1 </table>
 		<table name="#rCrit"> 0.05 0.07 0.1 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>SPIRIT_SHARING</abnormalType>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">418</value>
+			<value level="2">582</value>
+			<value level="3">635</value>
+		</effectPoint>
 		<hitTime>4000</hitTime>
 		<icon>icon.skill1497</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">62</value>
+			<value level="3">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">31</value>
+			<value level="2">46</value>
+			<value level="3">52</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">8</value>
+			<value level="2">12</value>
+			<value level="3">13</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1511,12 +2574,12 @@
 	</skill>
 	<skill id="1548" levels="3" name="Earth Resistance">
 		<!-- High Five Skill -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#earthRes"> 10 15 20 </table>
-		<table name="#magicLvl"> 38 48 62 </table>
-		<table name="#mpConsume"> 20 28 31 </table>
-		<table name="#mpInitialConsume"> 5 7 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>ARMOR_EARTH</abnormalType>
 		<castRange>400</castRange>
@@ -1525,9 +2588,21 @@
 		<hitTime>4000</hitTime>
 		<icon>icon.skill1548</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">38</value>
+			<value level="2">48</value>
+			<value level="3">62</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">20</value>
+			<value level="2">28</value>
+			<value level="3">31</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">5</value>
+			<value level="2">7</value>
+			<value level="3">8</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1804,8 +2879,6 @@
 	</skill>
 	<skill id="1558" levels="24" name="Dimension Spiral">
 		<!-- Glory Days confirmed -->
-		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 76 77 78 79 80 81 82 83 84 85 </table>
-		<table name="#mpConsume"> 38 43 47 50 53 55 57 59 60 63 64 67 74 83 92 99 100 106 109 115 118 119 125 134 </table>
 		<table name="#pvePower"> 57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 139 152 166 179 193 207 </table>
 		<table name="#pvpPower"> 57 58 60 61 63 66 68 71 74 77 79 82 84 87 89 90 91 92 93 94 95 96 97 98 </table>
 		<castRange>900</castRange>
@@ -1814,8 +2887,58 @@
 		<hitTime>3000</hitTime>
 		<icon>icon.skill1558</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">44</value>
+			<value level="3">48</value>
+			<value level="4">52</value>
+			<value level="5">56</value>
+			<value level="6">58</value>
+			<value level="7">60</value>
+			<value level="8">62</value>
+			<value level="9">64</value>
+			<value level="10">66</value>
+			<value level="11">68</value>
+			<value level="12">70</value>
+			<value level="13">72</value>
+			<value level="14">74</value>
+			<value level="15">76</value>
+			<value level="16">77</value>
+			<value level="17">78</value>
+			<value level="18">79</value>
+			<value level="19">80</value>
+			<value level="20">81</value>
+			<value level="21">82</value>
+			<value level="22">83</value>
+			<value level="23">84</value>
+			<value level="24">85</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">38</value>
+			<value level="2">43</value>
+			<value level="3">47</value>
+			<value level="4">50</value>
+			<value level="5">53</value>
+			<value level="6">55</value>
+			<value level="7">57</value>
+			<value level="8">59</value>
+			<value level="9">60</value>
+			<value level="10">63</value>
+			<value level="11">64</value>
+			<value level="12">67</value>
+			<value level="13">74</value>
+			<value level="14">83</value>
+			<value level="15">92</value>
+			<value level="16">99</value>
+			<value level="17">100</value>
+			<value level="18">106</value>
+			<value level="19">109</value>
+			<value level="20">115</value>
+			<value level="21">118</value>
+			<value level="22">119</value>
+			<value level="23">125</value>
+			<value level="24">134</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1838,10 +2961,13 @@
 	<skill id="1559" levels="3" name="Potential Ability">
 		<!-- Glory Days confirmed -->
 		<table name="#cAtkAdd"> 177 295 384 </table>
-		<table name="#magicLvl"> 28 40 49 </table>
 		<table name="#rCrit"> 0.2 0.3 0.4 </table>
 		<icon>icon.skill1559</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">28</value>
+			<value level="2">40</value>
+			<value level="3">49</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -1893,18 +3019,33 @@
 	</skill>
 	<skill id="1561" levels="5" name="Battle Cry">
 		<!-- Glory Days confirmed -->
-		<table name="#abnormalLvl"> 2 3 4 5 6 </table>
 		<table name="#amount"> 15 20 25 30 35 </table>
-		<table name="#magicLvl"> 40 49 58 64 70 </table>
-		<table name="#mpConsume"> 18 22 27 30 33 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+		</abnormalLvl>
 		<abnormalTime>600</abnormalTime>
 		<abnormalType>MAX_HP_UP</abnormalType>
 		<effectPoint>635</effectPoint>
 		<hitTime>1500</hitTime>
 		<icon>icon.skill1561</icon>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">49</value>
+			<value level="3">58</value>
+			<value level="4">64</value>
+			<value level="5">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">22</value>
+			<value level="3">27</value>
+			<value level="4">30</value>
+			<value level="5">33</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>150000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1919,30 +3060,40 @@
 	</skill>
 	<skill id="1562" levels="2" name="Chant of Berserker">
 		<!-- High Five Skill -->
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#effectPoints"> 418 495 </table>
-		<table name="#magicLvl"> 44 52 </table>
 		<table name="#mAtk"> 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.05 1.08 </table>
 		<table name="#mDef"> 0.9 0.84 </table>
-		<table name="#mpConsume"> 123 150 </table>
-		<table name="#mpInitialConsume"> 31 38 </table>
 		<table name="#pAtk"> 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.92 </table>
 		<table name="#rEvas"> 2 4 </table>
 		<table name="#runSpd"> 5 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>BERSERKER</abnormalType>
 		<affectRange>1000</affectRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">418</value>
+			<value level="2">495</value>
+		</effectPoint>
 		<hitTime>2500</hitTime>
 		<icon>icon.skill1562</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">44</value>
+			<value level="2">52</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">123</value>
+			<value level="2">150</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">31</value>
+			<value level="2">38</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1964,23 +3115,33 @@
 	</skill>
 	<skill id="1563" levels="2" name="Fury of Pa'agrio">
 		<!-- Glory Days confirmed -->
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#effectPoints"> 457 532 </table>
-		<table name="#magicLvl"> 48 56 </table>
-		<table name="#mpConsume"> 138 164 </table>
-		<table name="#mpInitialConsume"> 34 40 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
 		<affectRange>1000</affectRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">457</value>
+			<value level="2">532</value>
+		</effectPoint>
 		<hitTime>2500</hitTime>
 		<icon>icon.skill1563</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">48</value>
+			<value level="2">56</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">138</value>
+			<value level="2">164</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">34</value>
+			<value level="2">40</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2013,10 +3174,16 @@
 	</skill>
 	<skill id="1565" levels="6" name="Mana Pump">
 		<!-- Glory Days confirmed -->
-		<table name="#magicLvl"> 40 49 58 64 68 72 </table>
 		<table name="#maxMp"> 70 100 140 150 180 200 </table>
 		<icon>icon.skill0213</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">40</value>
+			<value level="2">49</value>
+			<value level="3">58</value>
+			<value level="4">64</value>
+			<value level="5">68</value>
+			<value level="6">72</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>

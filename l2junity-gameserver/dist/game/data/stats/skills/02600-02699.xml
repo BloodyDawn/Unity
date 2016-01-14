@@ -62,11 +62,10 @@
 	</skill>
 	<skill id="2606" levels="1" name="Gran Kain's Gift Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			13259,1,0.8130;13258,1,1.626;13260,1,16.260;13261,10,4.645;13262,10,4.645;13263,10,4.645;13264,10,4.645;13265,10,4.645;13266,10,4.645;13267,10,4.645;13268,10,32.5260;13269,10,16.260
-		</table>
 		<!-- set name="reuseDelay" val="86400000" / -->
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">13259,1,0.8130;13258,1,1.626;13260,1,16.260;13261,10,4.645;13262,10,4.645;13263,10,4.645;13264,10,4.645;13265,10,4.645;13266,10,4.645;13267,10,4.645;13268,10,32.5260;13269,10,16.260</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -114,11 +113,14 @@
 		<!-- Lvl 2: Green Crystal of Fantasy -->
 		<!-- Lvl 3: Red Crystal of Fantasy -->
 		<table name="#amount"> 50000 100000 200000 </table>
-		<table name="#itemConsumeId"> 13386 13387 13388 </table>
 		<hitTime>200</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>#itemConsumeId</itemConsumeId>
+		<itemConsumeId>
+			<value level="1">13386</value>
+			<value level="2">13387</value>
+			<value level="3">13388</value>
+		</itemConsumeId>
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
@@ -140,10 +142,30 @@
 		<table name="#coordX"> -84200 46915 9723 -45208 115158 -80831 -12728 15633 17860 83378 105760 111388 82916 85289 117052 146818 147922 43840 87326 -118092 </table>
 		<table name="#coordY"> 244566 51441 15576 -112502 -178170 149808 122726 142962 170191 147999 113064 219331 53210 16225 76884 25807 -55316 -47779 -143370 46955 </table>
 		<table name="#coordZ"> -3728 -2976 -4568 -240 -880 -3040 -3112 -2696 -3496 -3400 -3176 -3544 -1488 -3672 -2688 -2008 -2728 -792 -1319 342 </table>
-		<table name="#itemConsumeId"> 13395 13396 13397 13398 13399 13400 13401 13402 13403 13404 13405 13406 13407 13408 13409 13410 13411 13412 13413 13414 </table>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
-		<itemConsumeId>#itemConsumeId</itemConsumeId>
+		<itemConsumeId>
+			<value level="1">13395</value>
+			<value level="2">13396</value>
+			<value level="3">13397</value>
+			<value level="4">13398</value>
+			<value level="5">13399</value>
+			<value level="6">13400</value>
+			<value level="7">13401</value>
+			<value level="8">13402</value>
+			<value level="9">13403</value>
+			<value level="10">13404</value>
+			<value level="11">13405</value>
+			<value level="12">13406</value>
+			<value level="13">13407</value>
+			<value level="14">13408</value>
+			<value level="15">13409</value>
+			<value level="16">13410</value>
+			<value level="17">13411</value>
+			<value level="18">13412</value>
+			<value level="19">13413</value>
+			<value level="20">13414</value>
+		</itemConsumeId>
 		<itemConsumeCount>1</itemConsumeCount>
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -601,10 +623,9 @@
 	</skill>
 	<skill id="2638" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			9546,1,16.6;9547,1,16.6;9548,1,16.6;9549,1,16.6;9550,1,16.6;9551,1,17.0
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">9546,1,16.6;9547,1,16.6;9548,1,16.6;9549,1,16.6;9550,1,16.6;9551,1,17.0</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13426</itemConsumeId> <!-- Small Mineral Box -->
@@ -626,10 +647,9 @@
 	</skill>
 	<skill id="2639" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			9546,2,16.6;9547,2,16.6;9548,2,16.6;9549,2,16.6;9550,2,16.6;9551,2,17.0
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">9546,2,16.6;9547,2,16.6;9548,2,16.6;9549,2,16.6;9550,2,16.6;9551,2,17.0</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13423</itemConsumeId> <!-- Medium Mineral Box -->
@@ -651,10 +671,9 @@
 	</skill>
 	<skill id="2640" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			10260,1,9.0;10261,1,9.0;10262,1,9.0;10263,1,9.0;10264,1,9.0;10265,1,9.0;10266,1,9.0;10267,1,9.0;10268,1,9.0;10269,1,9.0;10270,1,10.0
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">10260,1,9.0;10261,1,9.0;10262,1,9.0;10263,1,9.0;10264,1,9.0;10265,1,9.0;10266,1,9.0;10267,1,9.0;10268,1,9.0;10269,1,9.0;10270,1,10.0</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13428</itemConsumeId> <!-- Small Libation Box -->
@@ -676,10 +695,9 @@
 	</skill>
 	<skill id="2641" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			10260,2,9.0;10261,2,9.0;10262,2,9.0;10263,2,9.0;10264,2,9.0;10265,2,9.0;10266,2,9.0;10267,2,9.0;10268,2,9.0;10269,2,9.0;10270,2,10.0
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">10260,2,9.0;10261,2,9.0;10262,2,9.0;10263,2,9.0;10264,2,9.0;10265,2,9.0;10266,2,9.0;10267,2,9.0;10268,2,9.0;10269,2,9.0;10270,2,10.0</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13427</itemConsumeId> <!-- Medium Libation Box -->
@@ -701,10 +719,9 @@
 	</skill>
 	<skill id="2642" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			10260,3,9.0;10261,3,9.0;10262,3,9.0;10263,3,9.0;10264,3,9.0;10265,3,9.0;10266,3,9.0;10267,3,9.0;10268,3,9.0;10269,3,9.0;10270,3,10.0
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">10260,3,9.0;10261,3,9.0;10262,3,9.0;10263,3,9.0;10264,3,9.0;10265,3,9.0;10266,3,9.0;10267,3,9.0;10268,3,9.0;10269,3,9.0;10270,3,10.0</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13424</itemConsumeId> <!-- Large Libation Box -->
@@ -726,10 +743,9 @@
 	</skill>
 	<skill id="2643" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			7122,1,7.14;7123,1,7.14;7124,1,7.14;7125,1,7.14;7126,1,7.14;7127,1,7.14;7128,1,7.14;7129,1,7.14;7130,1,7.18;7131,1,7.14;7132,1,7.14;7133,1,7.14;7134,1,7.14;7135,1,7.14
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">7122,1,7.14;7123,1,7.14;7124,1,7.14;7125,1,7.14;7126,1,7.14;7127,1,7.14;7128,1,7.14;7129,1,7.14;7130,1,7.18;7131,1,7.14;7132,1,7.14;7133,1,7.14;7134,1,7.14;7135,1,7.14</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13425</itemConsumeId> <!-- Small Parchment Box -->
@@ -751,10 +767,9 @@
 	</skill>
 	<skill id="2644" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
-		<table name="#extractableItems">
-			7122,2,7.14;7123,2,7.14;7124,2,7.14;7125,2,7.14;7126,2,7.14;7127,2,7.14;7128,2,7.14;7129,2,7.14;7130,2,7.18;7131,2,7.14;7132,2,7.14;7133,2,7.14;7134,2,7.14;7135,2,7.14
-		</table>
-		<capsuled_items_skill>#extractableItems</capsuled_items_skill>
+		<capsuled_items_skill>
+			<value level="1">7122,2,7.14;7123,2,7.14;7124,2,7.14;7125,2,7.14;7126,2,7.14;7127,2,7.14;7128,2,7.14;7129,2,7.14;7130,2,7.18;7131,2,7.14;7132,2,7.14;7133,2,7.14;7134,2,7.14;7135,2,7.14</value>
+		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13422</itemConsumeId> <!-- Medium Parchment Box -->
@@ -859,11 +874,20 @@
 		<table name="#coordX"> -80831 15633 83378 111388 82916 146818 147922 43840 87326 </table>
 		<table name="#coordY"> 149808 142962 147999 219331 53210 25807 -55316 -47779 -143370 </table>
 		<table name="#coordZ"> -3040 -2696 -3400 -3544 -1488 -2008 -2728 -792 -1319 </table>
-		<table name="#itemConsumeId"> 13731 13732 13733 13736 13734 13735 13737 13738 13739 </table>
 		<hitTime>200</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>#itemConsumeId</itemConsumeId>
+		<itemConsumeId>
+			<value level="1">13731</value>
+			<value level="2">13732</value>
+			<value level="3">13733</value>
+			<value level="4">13736</value>
+			<value level="5">13734</value>
+			<value level="6">13735</value>
+			<value level="7">13737</value>
+			<value level="8">13738</value>
+			<value level="9">13739</value>
+		</itemConsumeId>
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>

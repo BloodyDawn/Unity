@@ -38,11 +38,17 @@
 	<skill id="16103" levels="6" name="Death Lift">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals damage and cancels target. -->
-		<table name="#mpConsumes"> 50 65 80 95 110 125 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">65</value>
+			<value level="3">80</value>
+			<value level="4">95</value>
+			<value level="5">110</value>
+			<value level="6">125</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>1000</coolTime>
@@ -51,11 +57,18 @@
 	</skill>
 	<skill id="16104" levels="7" name="Fatal Strike">
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#mpConsumes"> 50 65 80 95 110 125 140 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">65</value>
+			<value level="3">80</value>
+			<value level="4">95</value>
+			<value level="5">110</value>
+			<value level="6">125</value>
+			<value level="7">140</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>800</coolTime>
@@ -65,11 +78,17 @@
 	<skill id="16105" levels="6" name="Fatal Bomber">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals a powerful blow and knocks down the enemy. -->
-		<table name="#mpConsumes"> 50 65 80 95 110 125 </table>
 		<icon>icon.skill10262</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">65</value>
+			<value level="3">80</value>
+			<value level="4">95</value>
+			<value level="5">110</value>
+			<value level="6">125</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -80,11 +99,16 @@
 	<skill id="16106" levels="5" name="Chain Smash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls target toward you. -->
-		<table name="#mpConsumes"> 50 65 80 95 110 </table>
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">65</value>
+			<value level="3">80</value>
+			<value level="4">95</value>
+			<value level="5">110</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>1000</coolTime>
@@ -107,17 +131,31 @@
 	</skill>
 	<skill id="16108" levels="7" name="Bloody Blades">
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#hitTimes"> 1500 1500 1500 1500 1500 1500 3000 </table>
-		<table name="#isMagics"> 1 1 1 1 1 1 0 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>79</mpConsume>
-		<hitTime>#hitTimes</hitTime>
+		<hitTime>
+			<value level="1">1500</value>
+			<value level="2">1500</value>
+			<value level="3">1500</value>
+			<value level="4">1500</value>
+			<value level="5">1500</value>
+			<value level="6">1500</value>
+			<value level="7">3000</value>
+		</hitTime>
 		<coolTime>800</coolTime>
 		<reuseDelay>3000</reuseDelay>
 		<effectPoint>-700</effectPoint>
-		<isMagic>#isMagics</isMagic>
+		<isMagic>
+			<value level="1">1</value>
+			<value level="2">1</value>
+			<value level="3">1</value>
+			<value level="4">1</value>
+			<value level="5">1</value>
+			<value level="6">1</value>
+			<value level="7">0</value>
+		</isMagic>
 	</skill>
 	<skill id="16109" levels="1" name="Heavy Armor Rise">
 		<!-- AUTO GENERATED SKILL -->
@@ -276,11 +314,16 @@
 	<skill id="16121" levels="5" name="Sleeping Cloud">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Sleep on nearby enemies for 30 sec. -->
-		<table name="#mpConsumes"> 107 122 138 154 160 </table>
 		<icon>icon.skill1072</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">107</value>
+			<value level="2">122</value>
+			<value level="3">138</value>
+			<value level="4">154</value>
+			<value level="5">160</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>3000</reuseDelay>
@@ -385,8 +428,13 @@
 	<skill id="16129" levels="5" name="Desert Thirst">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 5%, M. Atk. + 10%. Atk. Spd./ Casting Spd. - 3%. -->
-		<table name="#icons"> icon.desert_thirst_Lv1 icon.desert_thirst_Lv2 icon.desert_thirst_Lv3 icon.desert_thirst_Lv4 icon.desert_thirst_Lv5 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.desert_thirst_Lv1</value>
+			<value level="2">icon.desert_thirst_Lv2</value>
+			<value level="3">icon.desert_thirst_Lv3</value>
+			<value level="4">icon.desert_thirst_Lv4</value>
+			<value level="5">icon.desert_thirst_Lv5</value>
+		</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>10</mpConsume>
@@ -595,14 +643,28 @@
 	</skill>
 	<skill id="16147" levels="7" name="Fatal Wave">
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#hitTimes"> 1200 1200 1200 3000 1200 1200 1200 </table>
-		<table name="#mpConsumes"> 86 87 88 89 90 91 92 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">86</value>
+			<value level="2">87</value>
+			<value level="3">88</value>
+			<value level="4">89</value>
+			<value level="5">90</value>
+			<value level="6">91</value>
+			<value level="7">92</value>
+		</mpConsume>
 		<castRange>40</castRange>
-		<hitTime>#hitTimes</hitTime>
+		<hitTime>
+			<value level="1">1200</value>
+			<value level="2">1200</value>
+			<value level="3">1200</value>
+			<value level="4">3000</value>
+			<value level="5">1200</value>
+			<value level="6">1200</value>
+			<value level="7">1200</value>
+		</hitTime>
 		<coolTime>570</coolTime>
 		<effectPoint>-1578</effectPoint>
 		<reuseDelay>3000</reuseDelay>
@@ -610,11 +672,16 @@
 	<skill id="16148" levels="5" name="Fear">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Compelled to move due to Fear. -->
-		<table name="#mpConsumes"> 81 84 87 90 94 </table>
 		<icon>icon.skill1092</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">81</value>
+			<value level="2">84</value>
+			<value level="3">87</value>
+			<value level="4">90</value>
+			<value level="5">94</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>4000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -625,11 +692,16 @@
 	<skill id="16149" levels="5" name="Poison">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP cut due to Poison. 11 power. -->
-		<table name="#mpConsumes"> 80 88 100 108 120 </table>
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">80</value>
+			<value level="2">88</value>
+			<value level="3">100</value>
+			<value level="4">108</value>
+			<value level="5">120</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -640,11 +712,16 @@
 	<skill id="16150" levels="5" name="Decrease Speed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Speed momentarily decreased. 9 power. -->
-		<table name="#mpConsumes"> 137 154 160 160 160 </table>
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">137</value>
+			<value level="2">154</value>
+			<value level="3">160</value>
+			<value level="4">160</value>
+			<value level="5">160</value>
+		</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>3000</reuseDelay>
@@ -653,33 +730,61 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16151" levels="7" name="Aura Spike">
-		<table name="#effectPoint"> -100 -105 -110 -115 -115 -120 -125 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals non-attribute magic damage to target. -->
-		<table name="#mpConsumes"> 30 36 42 48 54 54 60 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">36</value>
+			<value level="3">42</value>
+			<value level="4">48</value>
+			<value level="5">54</value>
+			<value level="6">54</value>
+			<value level="7">60</value>
+		</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-105</value>
+			<value level="3">-110</value>
+			<value level="4">-115</value>
+			<value level="5">-115</value>
+			<value level="6">-120</value>
+			<value level="7">-125</value>
+		</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16152" levels="7" name="Fire Spike">
-		<table name="#effectPoint"> -100 -105 -110 -115 -115 -120 -125 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals fire damage to target. -->
-		<table name="#mpConsumes"> 30 36 42 48 54 54 60 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">36</value>
+			<value level="3">42</value>
+			<value level="4">48</value>
+			<value level="5">54</value>
+			<value level="6">54</value>
+			<value level="7">60</value>
+		</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>500</coolTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-105</value>
+			<value level="3">-110</value>
+			<value level="4">-115</value>
+			<value level="5">-115</value>
+			<value level="6">-120</value>
+			<value level="7">-125</value>
+		</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16153" levels="6" name="Power Slam">
@@ -743,11 +848,16 @@
 	<skill id="16157" levels="5" name="Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bleed instantly cuts HP. 1 power. -->
-		<table name="#mpConsumes"> 65 70 75 80 85 </table>
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">65</value>
+			<value level="2">70</value>
+			<value level="3">75</value>
+			<value level="4">80</value>
+			<value level="5">85</value>
+		</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>800</coolTime>
@@ -863,7 +973,6 @@
 	<skill id="16166" levels="3" name="Escape Death">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For some time, P. Evasion + 10, M. Evasion + 10, Evasion Rate against P. Skills + 10%. -->
-		<table name="#reuseDelays"> 5000 120000 120000 </table>
 		<icon>icon.skill0078</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -871,7 +980,11 @@
 		<hitTime>1500</hitTime>
 		<effectPoint>204</effectPoint>
 		<abnormalTime>180</abnormalTime>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">5000</value>
+			<value level="2">120000</value>
+			<value level="3">120000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="16167" levels="2" name="Increase Evasion 1">
 		<!-- AUTO GENERATED SKILL -->

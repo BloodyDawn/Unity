@@ -832,7 +832,6 @@
 		<reuseDelay>1800000</reuseDelay>
 	</skill>
 	<skill id="9367" levels="2" name="Power of Pa'agrio">
-		<table name="#abnormalTime"> 5 10 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- All abnormal status removed. Invincible for 5 sec. Cannot be used when immobile. Can be used in the Olympiad. -->
 		<icon>icon.pi_shirt_of_wolf_2nd_fire</icon>
@@ -846,7 +845,10 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelayGroup>9367</reuseDelayGroup>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalTime>
+			<value level="1">5</value>
+			<value level="2">10</value>
+		</abnormalTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<reuseDelay>1800000</reuseDelay>

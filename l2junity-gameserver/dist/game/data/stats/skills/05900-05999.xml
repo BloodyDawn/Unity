@@ -35,7 +35,6 @@
 		</for>
 	</skill>
 	<skill id="5901" levels="2" name="Mist of Oblivion">
-		<table name="#hitTime"> 2000 22936 </table>
 		<abnormalLvl>8</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>OBLIVION</abnormalType>
@@ -44,7 +43,10 @@
 		<affectLimit>10-10</affectLimit>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
-		<hitTime>#hitTime</hitTime>
+		<hitTime>
+			<value level="1">2000</value>
+			<value level="2">22936</value>
+		</hitTime>
 		<icon>icon.skill1481</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
@@ -111,22 +113,34 @@
 		</for>
 	</skill>
 	<skill id="5904" levels="3" name="Mist of Souleater">
-		<table name="#hitTime"> 2000 22936 22936 </table>
-		<table name="#magicLvl"> 77 81 83 </table>
-		<table name="#mpConsume"> 146 150 153 </table>
-		<table name="#mpInitialConsume"> 37 38 39 </table>
 		<table name="#power"> 112 117 120 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>300</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
-		<hitTime>#hitTime</hitTime>
+		<hitTime>
+			<value level="1">2000</value>
+			<value level="2">22936</value>
+			<value level="3">22936</value>
+		</hitTime>
 		<icon>icon.skill1245</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">77</value>
+			<value level="2">81</value>
+			<value level="3">83</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">146</value>
+			<value level="2">150</value>
+			<value level="3">153</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">37</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -173,7 +187,6 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5907" levels="2" name="Ritual of Entombment">
-		<table name="#hitTime"> 3000 34404 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
@@ -181,7 +194,10 @@
 		<affectLimit>10-10</affectLimit>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
-		<hitTime>#hitTime</hitTime>
+		<hitTime>
+			<value level="1">3000</value>
+			<value level="2">34404</value>
+		</hitTime>
 		<icon>icon.skill1201</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
@@ -201,7 +217,6 @@
 		</for>
 	</skill>
 	<skill id="5908" levels="2" name="Ritual of Entombment">
-		<table name="#hitTime"> 3000 34404 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
@@ -209,7 +224,10 @@
 		<affectLimit>10-10</affectLimit>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
-		<hitTime>#hitTime</hitTime>
+		<hitTime>
+			<value level="1">3000</value>
+			<value level="2">34404</value>
+		</hitTime>
 		<icon>icon.skill1201</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
@@ -324,8 +342,17 @@
 		<trait>DERANGEMENT</trait>
 	</skill>
 	<skill id="5915" levels="9" name="Mummifying Aura">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
 		<effectPoint>100</effectPoint>
@@ -340,8 +367,17 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5916" levels="9" name="Cruising Aura">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<effectPoint>100</effectPoint>
@@ -356,8 +392,17 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5917" levels="9" name="Shrouding Aura">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>AVOID_SKILL</abnormalType>
 		<effectPoint>100</effectPoint>
@@ -373,8 +418,18 @@
 	</skill>
 	<skill id="5918" levels="10" name="Physical Root Vulnerability">
 		<table name="#trait_root_physically"> -10 -20 -30 -40 -50 -60 -70 -80 -90 -99 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 80 90 95 </table>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">80</value>
+			<value level="9">90</value>
+			<value level="10">95</value>
+		</magicLvl>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<operateType>P</operateType>
 		<for>
@@ -580,8 +635,12 @@
 		<targetType>FRONT_AREA</targetType>
 	</skill>
 	<skill id="5927" levels="4" name="Immortal Frenzy">
-		<table name="#abnormalLvl"> 1 2 3 4 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<activateRate>0</activateRate>
@@ -595,8 +654,12 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5928" levels="4" name="Immortal Resilience">
-		<table name="#abnormalLvl"> 1 2 3 4 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
 		<activateRate>0</activateRate>
@@ -819,15 +882,39 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5940" levels="12" name="Energy of Generation">
-		<table name="#abnormalLvl"> 3 4 5 6 7 8 9 10 11 12 13 14 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">3</value>
+			<value level="2">4</value>
+			<value level="3">5</value>
+			<value level="4">6</value>
+			<value level="5">7</value>
+			<value level="6">8</value>
+			<value level="7">9</value>
+			<value level="8">10</value>
+			<value level="9">11</value>
+			<value level="10">12</value>
+			<value level="11">13</value>
+			<value level="12">14</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MP_REGEN_UP</abnormalType>
 		<effectPoint>100</effectPoint>
 		<icon>icon.skill1044</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -1227,16 +1314,22 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5968" levels="2" name="Rapid Shot">
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#effectPoints"> 303 549 </table>
-		<table name="#magicLvl"> 32 55 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>ATTACK_SPEED_UP_BOW</abnormalType>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">303</value>
+			<value level="2">549</value>
+		</effectPoint>
 		<hitTime>1500</hitTime>
 		<icon>icon.skill0099</icon>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">32</value>
+			<value level="2">55</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1246,9 +1339,6 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5969" levels="2" name="Punch of Doom">
-		<table name="#hpConsume"> 513 526 </table>
-		<table name="#magicLvl"> 64 74 </table>
-		<table name="#effectPoints"> -674 -698 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1256,11 +1346,17 @@
 		<activateRate>80</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<coolTime>440</coolTime>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-674</value>
+			<value level="2">-698</value>
+		</effectPoint>
 		<hitTime>1360</hitTime>
 		<icon>icon.skill005969</icon>
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">64</value>
+			<value level="2">74</value>
+		</magicLvl>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A3</operateType>
 		<reuseDelay>120000</reuseDelay>
@@ -1268,7 +1364,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>400</effectRange>
 		<isDebuff>true</isDebuff>
-		<hpConsume>#hpConsume</hpConsume>
+		<hpConsume>
+			<value level="1">513</value>
+			<value level="2">526</value>
+		</hpConsume>
 		<castRange>40</castRange>
 		<targetType>ONE</targetType>
 		<for>
@@ -1371,16 +1470,25 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5975" levels="3" name="Dark Attack">
-		<table name="#effectPoints"> -484 -572 -653 </table>
-		<table name="#magicLvl"> 51 61 79 </table>
-		<table name="#mpConsume"> 50 61 75 </table>
 		<table name="#power"> 1515 2365 6059 </table>
 		<castRange>40</castRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-484</value>
+			<value level="2">-572</value>
+			<value level="3">-653</value>
+		</effectPoint>
 		<effectRange>400</effectRange>
 		<hitTime>1000</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">51</value>
+			<value level="2">61</value>
+			<value level="3">79</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">61</value>
+			<value level="3">75</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1393,16 +1501,25 @@
 		</for>
 	</skill>
 	<skill id="5976" levels="3" name="Dark Storm">
-		<table name="#effectPoints"> -484 -572 -653 </table>
-		<table name="#magicLvl"> 51 61 79 </table>
-		<table name="#mpConsume"> 50 61 75 </table>
 		<table name="#power"> 757 1182 4039 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>100</affectRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-484</value>
+			<value level="2">-572</value>
+			<value level="3">-653</value>
+		</effectPoint>
 		<hitTime>2500</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">51</value>
+			<value level="2">61</value>
+			<value level="3">79</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">61</value>
+			<value level="3">75</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1415,11 +1532,17 @@
 		</for>
 	</skill>
 	<skill id="5977" levels="3" name="Dark Strike">
-		<table name="#magicLvl"> 51 61 79 </table>
-		<table name="#effectPoints"> -484 -572 -653 </table>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-484</value>
+			<value level="2">-572</value>
+			<value level="3">-653</value>
+		</effectPoint>
 		<hitTime>1000</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">51</value>
+			<value level="2">61</value>
+			<value level="3">79</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1453,16 +1576,25 @@
 	</skill>
 	<skill id="5980" levels="3" name="Seal Isolation">
 		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> -484 -572 -653 </table>
-		<table name="#magicLvl"> 51 61 79 </table>
-		<table name="#mpConsume"> 50 61 75 </table>
 		<table name="#power"> 2273 3547 6059 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>300</affectRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-484</value>
+			<value level="2">-572</value>
+			<value level="3">-653</value>
+		</effectPoint>
 		<hitTime>2500</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">51</value>
+			<value level="2">61</value>
+			<value level="3">79</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">61</value>
+			<value level="3">75</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1475,13 +1607,16 @@
 		</for>
 	</skill>
 	<skill id="5981" levels="3" name="Lilith's Curse">
-		<table name="#magicLvl"> 51 51 79 </table>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">51</value>
+			<value level="2">51</value>
+			<value level="3">79</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -1583,8 +1718,17 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5985" levels="9" name="Decaying Aura">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>DMG_SHIELD</abnormalType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1598,8 +1742,17 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5986" levels="9" name="Vampiric Aura">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1702,12 +1855,18 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5990" levels="3" name="Lesser Heal">
-		<table name="#magicLvl"> 70 72 74 </table>
-		<table name="#effectPoints"> 595 610 631 </table>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">595</value>
+			<value level="2">610</value>
+			<value level="3">631</value>
+		</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">70</value>
+			<value level="2">72</value>
+			<value level="3">74</value>
+		</magicLvl>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1725,17 +1884,41 @@
 		<targetType>NONE</targetType>
 	</skill>
 	<skill id="5992" levels="12" name="Aggression">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#effectPoints"> -1371 -2031 -2850 -3787 -4761 -5657 -6349 -6582 -6752 -6887 -6997 -7082 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>TARGET_LOCK</abnormalType>
 		<activateRate>90</activateRate>
 		<basicProperty>MAGIC</basicProperty>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-1371</value>
+			<value level="2">-2031</value>
+			<value level="3">-2850</value>
+			<value level="4">-3787</value>
+			<value level="5">-4761</value>
+			<value level="6">-5657</value>
+			<value level="7">-6349</value>
+			<value level="8">-6582</value>
+			<value level="9">-6752</value>
+			<value level="10">-6887</value>
+			<value level="11">-6997</value>
+			<value level="12">-7082</value>
+		</effectPoint>
 		<icon>icon.skill0028</icon>
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>

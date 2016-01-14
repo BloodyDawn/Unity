@@ -177,12 +177,15 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22916" levels="4" name="Ninja's Hide">
-		<table name="#operateType"> A1 A1 A1 A2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can use Hide when Top, Pants, Gloves, and Shoes are all modified. -->
-		<table name="#reuseDelays"> 0 0 0 3600000 </table>
 		<icon>BranchSys3.icon1.g_co_ninja_u</icon>
-		<operateType>#operateType</operateType>
+		<operateType>
+			<value level="1">A1</value>
+			<value level="2">A1</value>
+			<value level="3">A1</value>
+			<value level="4">A2</value>
+		</operateType>
 		<targetType>SELF</targetType>
 		<abnormalType>STEALTH</abnormalType>
 		<rideState>NONE</rideState>
@@ -195,41 +198,74 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">3600000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="22917" levels="4" name="Rainbow Warrior's Recovery">
-		<table name="#effectPoint"> 0 0 0 100 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can use recovery skill when Top, Pants, Gloves, and Shoes are all modified. -->
-		<table name="#hitTimes"> 0 0 0 1000 </table>
-		<table name="#reuseDelays"> 0 0 0 3600000 </table>
 		<icon>BranchSys3.icon1.g_co_paiwan_u</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<hitTime>#hitTimes</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<hitTime>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">1000</value>
+		</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">100</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">3600000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="22918" levels="4" name="Resurrection Device">
-		<table name="#effectPoint"> 0 0 0 1 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can use resurrection skill when Top, Pants, Gloves, and Shoes are all modified. -->
-		<table name="#castRanges"> -1 -1 -1 400 </table>
-		<table name="#hitTimes"> 0 0 0 3000 </table>
-		<table name="#reuseDelays"> 0 0 0 3600000 </table>
 		<icon>BranchSys3.icon1.g_co_sf_u</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<castRange>#castRanges</castRange>
-		<hitTime>#hitTimes</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<castRange>
+			<value level="1">-1</value>
+			<value level="2">-1</value>
+			<value level="3">-1</value>
+			<value level="4">400</value>
+		</castRange>
+		<hitTime>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">3000</value>
+		</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">1</value>
+		</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<reuseDelay>#reuseDelays</reuseDelay>
+		<reuseDelay>
+			<value level="1">0</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">3600000</value>
+		</reuseDelay>
 	</skill>
 	<skill id="22919" levels="4" name="Special Ops' Experience">
 		<!-- AUTO GENERATED SKILL -->

@@ -246,16 +246,24 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="19118" levels="4" name="Bike Ability">
-		<table name="#effectPoint"> 566 590 611 630 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Blend in with enemies to avoid their notice. If you attack in this state, the entire party becomes exposed. -->
-		<table name="#mpConsumes"> 61 63 67 70 </table>
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<mpConsume>#mpConsumes</mpConsume>
+		<mpConsume>
+			<value level="1">61</value>
+			<value level="2">63</value>
+			<value level="3">67</value>
+			<value level="4">70</value>
+		</mpConsume>
 		<hitTime>2000</hitTime>
-		<effectPoint>#effectPoint</effectPoint>
+		<effectPoint>
+			<value level="1">566</value>
+			<value level="2">590</value>
+			<value level="3">611</value>
+			<value level="4">630</value>
+		</effectPoint>
 		<reuseDelay>4000</reuseDelay>
 	</skill>
 	<skill id="19119" levels="1" name="Noblesse Grace">

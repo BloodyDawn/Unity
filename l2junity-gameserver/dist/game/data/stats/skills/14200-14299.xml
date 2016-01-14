@@ -139,7 +139,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14206" levels="2" name="Lachik Evolution">
-		<table name="#abnormalLvl"> 1 2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lachik Evaluation P. Atk. 100% increased. -->
 		<icon>icon.skill1068</icon>
@@ -154,7 +153,10 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>1</isMagic>
 	</skill>
@@ -527,9 +529,16 @@
 	<skill id="14225" levels="8" name="Control Stage 1">
 		<!-- Glory Days confirmed -->
 		<!-- Control Stage 1 -->
-		<table name="#icons"> icon.skill14225_1 icon.skill14225_2 icon.skill14225_3 icon.skill14225_4 icon.skill14225_5 icon.skill14225_5 icon.skill14225_5 icon.skill14225_5 </table>
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
-		<icon>#icons</icon>
+		<icon>
+			<value level="1">icon.skill14225_1</value>
+			<value level="2">icon.skill14225_2</value>
+			<value level="3">icon.skill14225_3</value>
+			<value level="4">icon.skill14225_4</value>
+			<value level="5">icon.skill14225_5</value>
+			<value level="6">icon.skill14225_5</value>
+			<value level="7">icon.skill14225_5</value>
+			<value level="8">icon.skill14225_5</value>
+		</icon>
 		<operateType>A2</operateType>
 		<effectPoint>100</effectPoint>
 		<abnormalType>SEIZURE_A</abnormalType>
@@ -538,7 +547,16 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+		</abnormalLvl>
 		<abnormalTime>25</abnormalTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
@@ -1255,7 +1273,6 @@
 		<hitTime>500</hitTime>
 	</skill>
 	<skill id="14256" levels="2" name="Powerful Slash">
-		<table name="#magicLvl"> 92 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1268,11 +1285,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">96</value>
+		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14257" levels="2" name="Nearby Slash">
-		<table name="#magicLvl"> 92 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1285,12 +1304,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">96</value>
+		</magicLvl>
 		<affectRange>250</affectRange>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14258" levels="2" name="Scalp">
-		<table name="#magicLvl"> 92 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1303,11 +1324,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">96</value>
+		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14259" levels="2" name="Double Slash">
-		<table name="#magicLvl"> 92 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1320,11 +1343,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">92</value>
+			<value level="2">96</value>
+		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14260" levels="2" name="HP Drain">
-		<table name="#magicLvl"> 93 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1147</icon>
 		<operateType>A1</operateType>
@@ -1338,13 +1363,15 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">96</value>
+		</magicLvl>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14261" levels="2" name="Coagulated Blood">
-		<table name="#magicLvl"> 93 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1275</icon>
 		<operateType>A1</operateType>
@@ -1358,11 +1385,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">96</value>
+		</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14262" levels="2" name="Flame Hurl">
-		<table name="#magicLvl"> 93 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
@@ -1376,20 +1405,21 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">96</value>
+		</magicLvl>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="14263" levels="2" name="Electric Attack">
-		<table name="#trait"> NONE SHOCK </table>
-		<table name="#magicLvl"> 93 -1 </table>
-		<table name="#operateType"> A1 A2 </table>
-		<table name="#specialLevel"> 0 -1 </table>
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#isDebuffs"> false true </table>
 		<icon>icon.skill1275</icon>
-		<operateType>#operateType</operateType>
+		<operateType>
+			<value level="1">A1</value>
+			<value level="2">A2</value>
+		</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>1</mpConsume>
 		<castRange>600</castRange>
@@ -1401,15 +1431,27 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<specialLevel>#specialLevel</specialLevel>
+		<specialLevel>
+			<value level="1">0</value>
+			<value level="2">-1</value>
+		</specialLevel>
 		<basicProperty>NONE</basicProperty>
 		<effectRange>1000</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">93</value>
+			<value level="2">-1</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>8</abnormalTime>
-		<trait>#trait</trait>
+		<trait>
+			<value level="1">NONE</value>
+			<value level="2">SHOCK</value>
+		</trait>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
-		<isDebuff>#isDebuffs</isDebuff>
+		<isDebuff>
+			<value level="1">false</value>
+			<value level="2">true</value>
+		</isDebuff>
 	</skill>
 	<skill id="14264" levels="1" name="Poison Cloud">
 		<!-- AUTO GENERATED SKILL -->
@@ -1482,7 +1524,6 @@
 		</for>
 	</skill>
 	<skill id="14267" levels="2" name="Hole Punch">
-		<table name="#magicLvl"> 96 97 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1495,7 +1536,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">96</value>
+			<value level="2">97</value>
+		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="14268" levels="1" name="Stun and Fear">
@@ -1918,7 +1962,6 @@
 		<hitTime>3000</hitTime>
 	</skill>
 	<skill id="14289" levels="2" name="Manifestation of Authority">
-		<table name="#abnormalLvl"> 1 2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Atk Spd, Speed, Casting Spd, Max HP, Max MP decreased; HP consumed every second. -->
 		<icon>icon.skill14289</icon>
@@ -1932,7 +1975,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>
@@ -1955,7 +2001,6 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="14292" levels="7" name="Strike">
-		<table name="#magicLvl"> 56 59 62 65 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1966,11 +2011,18 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">56</value>
+			<value level="2">59</value>
+			<value level="3">62</value>
+			<value level="4">65</value>
+			<value level="5">68</value>
+			<value level="6">71</value>
+			<value level="7">74</value>
+		</magicLvl>
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="14293" levels="7" name="Range Strike">
-		<table name="#magicLvl"> 56 59 62 65 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
@@ -1979,12 +2031,19 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">56</value>
+			<value level="2">59</value>
+			<value level="3">62</value>
+			<value level="4">65</value>
+			<value level="5">68</value>
+			<value level="6">71</value>
+			<value level="7">74</value>
+		</magicLvl>
 		<affectRange>300</affectRange>
 		<hitTime>3000</hitTime>
 	</skill>
 	<skill id="14294" levels="7" name="Stun Strike">
-		<table name="#magicLvl"> 56 59 62 65 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stun status. -->
 		<icon>icon.skill0100</icon>
@@ -2001,7 +2060,15 @@
 		<effectRange>400</effectRange>
 		<lvlBonusRate>1</lvlBonusRate>
 		<activateRate>50</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">56</value>
+			<value level="2">59</value>
+			<value level="3">62</value>
+			<value level="4">65</value>
+			<value level="5">68</value>
+			<value level="6">71</value>
+			<value level="7">74</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<trait>SHOCK</trait>
@@ -2009,7 +2076,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14295" levels="7" name="Range Stun Strike">
-		<table name="#magicLvl"> 56 59 62 65 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stun status. -->
 		<icon>icon.skill0048</icon>
@@ -2024,7 +2090,15 @@
 		<hitCancelTime>0</hitCancelTime>
 		<lvlBonusRate>1</lvlBonusRate>
 		<activateRate>50</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">56</value>
+			<value level="2">59</value>
+			<value level="3">62</value>
+			<value level="4">65</value>
+			<value level="5">68</value>
+			<value level="6">71</value>
+			<value level="7">74</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<trait>SHOCK</trait>
@@ -2034,7 +2108,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14296" levels="7" name="Shot">
-		<table name="#magicLvl"> 56 59 62 65 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -2045,11 +2118,18 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">56</value>
+			<value level="2">59</value>
+			<value level="3">62</value>
+			<value level="4">65</value>
+			<value level="5">68</value>
+			<value level="6">71</value>
+			<value level="7">74</value>
+		</magicLvl>
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="14297" levels="7" name="Stun Shot">
-		<table name="#magicLvl"> 56 59 62 65 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stun status. -->
 		<icon>icon.skill0101</icon>
@@ -2066,7 +2146,15 @@
 		<effectRange>1400</effectRange>
 		<lvlBonusRate>1</lvlBonusRate>
 		<activateRate>50</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">56</value>
+			<value level="2">59</value>
+			<value level="3">62</value>
+			<value level="4">65</value>
+			<value level="5">68</value>
+			<value level="6">71</value>
+			<value level="7">74</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<trait>SHOCK</trait>
@@ -2074,7 +2162,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14298" levels="7" name="Stab">
-		<table name="#magicLvl"> 56 59 62 65 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bleed. Speed is decreased. -->
 		<icon>icon.skill0096</icon>
@@ -2091,7 +2178,15 @@
 		<effectRange>400</effectRange>
 		<lvlBonusRate>2</lvlBonusRate>
 		<activateRate>100</activateRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">56</value>
+			<value level="2">59</value>
+			<value level="3">62</value>
+			<value level="4">65</value>
+			<value level="5">68</value>
+			<value level="6">71</value>
+			<value level="7">74</value>
+		</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<trait>BLEED</trait>
@@ -2099,7 +2194,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="14299" levels="3" name="Darkness Burn">
-		<table name="#magicLvl"> 68 71 74 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1265</icon>
 		<operateType>A1</operateType>
@@ -2111,7 +2205,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1400</effectRange>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">68</value>
+			<value level="2">71</value>
+			<value level="3">74</value>
+		</magicLvl>
 		<attributeType>HOLY</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>

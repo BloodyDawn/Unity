@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="4600" levels="12" name="Reducing P. Def Stun">
-		<table name="#abnormalLvl"> 11 12 12 13 13 13 13 13 13 13 13 13 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 24 39 54 73 94 116 136 144 152 158 161 163 </table>
 		<table name="#pDef"> 0.83 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">11</value>
+			<value level="2">12</value>
+			<value level="3">12</value>
+			<value level="4">13</value>
+			<value level="5">13</value>
+			<value level="6">13</value>
+			<value level="7">13</value>
+			<value level="8">13</value>
+			<value level="9">13</value>
+			<value level="10">13</value>
+			<value level="11">13</value>
+			<value level="12">13</value>
+		</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
@@ -17,8 +27,34 @@
 		<icon>icon.skill0100</icon>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">39</value>
+			<value level="3">54</value>
+			<value level="4">73</value>
+			<value level="5">94</value>
+			<value level="6">116</value>
+			<value level="7">136</value>
+			<value level="8">144</value>
+			<value level="9">152</value>
+			<value level="10">158</value>
+			<value level="11">161</value>
+			<value level="12">163</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -35,20 +71,29 @@
 		</for>
 	</skill>
 	<skill id="4601" levels="3" name="Acumen Focus">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 70 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
-		<table name="#mpConsume"> 29 53 98 </table>
 		<table name="#rCrit"> 0.2 0.25 0.3 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">98</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -63,13 +108,23 @@
 		</for>
 	</skill>
 	<skill id="4602" levels="12" name="Decrease P. Atk.">
-		<table name="#abnormalLvl"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 24 39 53 70 90 110 130 138 145 150 153 155 </table>
 		<table name="#pAtk"> 0.83 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<table name="#time"> 10 10 15 15 15 15 15 15 15 15 15 15 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">2</value>
+			<value level="4">3</value>
+			<value level="5">3</value>
+			<value level="6">3</value>
+			<value level="7">3</value>
+			<value level="8">3</value>
+			<value level="9">3</value>
+			<value level="10">3</value>
+			<value level="11">3</value>
+			<value level="12">3</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PA_DOWN</abnormalType>
 		<activateRate>80</activateRate>
@@ -82,8 +137,34 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">39</value>
+			<value level="3">53</value>
+			<value level="4">70</value>
+			<value level="5">90</value>
+			<value level="6">110</value>
+			<value level="7">130</value>
+			<value level="8">138</value>
+			<value level="9">145</value>
+			<value level="10">150</value>
+			<value level="11">153</value>
+			<value level="12">155</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -101,12 +182,22 @@
 		</for>
 	</skill>
 	<skill id="4603" levels="12" name="Decrease P. Atk.">
-		<table name="#abnormalLvl"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 24 39 53 70 90 110 130 138 145 150 153 155 </table>
 		<table name="#pAtk"> 0.83 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
 		<table name="#time"> 10 10 15 15 15 15 15 15 15 15 15 15 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">2</value>
+			<value level="4">3</value>
+			<value level="5">3</value>
+			<value level="6">3</value>
+			<value level="7">3</value>
+			<value level="8">3</value>
+			<value level="9">3</value>
+			<value level="10">3</value>
+			<value level="11">3</value>
+			<value level="12">3</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PA_DOWN</abnormalType>
 		<activateRate>80</activateRate>
@@ -119,8 +210,34 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">39</value>
+			<value level="3">53</value>
+			<value level="4">70</value>
+			<value level="5">90</value>
+			<value level="6">110</value>
+			<value level="7">130</value>
+			<value level="8">138</value>
+			<value level="9">145</value>
+			<value level="10">150</value>
+			<value level="11">153</value>
+			<value level="12">155</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -135,13 +252,23 @@
 		</for>
 	</skill>
 	<skill id="4604" levels="12" name="Decrease P. Atk.">
-		<table name="#abnormalLvl"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 24 39 53 70 90 110 130 138 145 150 153 155 </table>
 		<table name="#pAtk"> 0.83 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
 		<table name="#power"> 9 13 19 26 34 43 51 55 58 61 63 65 </table>
 		<table name="#time"> 10 10 15 15 15 15 15 15 15 15 15 15 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">2</value>
+			<value level="4">3</value>
+			<value level="5">3</value>
+			<value level="6">3</value>
+			<value level="7">3</value>
+			<value level="8">3</value>
+			<value level="9">3</value>
+			<value level="10">3</value>
+			<value level="11">3</value>
+			<value level="12">3</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PA_DOWN</abnormalType>
 		<activateRate>80</activateRate>
@@ -154,8 +281,34 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">39</value>
+			<value level="3">53</value>
+			<value level="4">70</value>
+			<value level="5">90</value>
+			<value level="6">110</value>
+			<value level="7">130</value>
+			<value level="8">138</value>
+			<value level="9">145</value>
+			<value level="10">150</value>
+			<value level="11">153</value>
+			<value level="12">155</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -173,14 +326,24 @@
 		</for>
 	</skill>
 	<skill id="4605" levels="12" name="Surrender to Fire">
-		<table name="#abnormalLvl"> 2 3 3 4 4 4 4 4 4 4 4 4 </table>
 		<table name="#fireRes"> 20 25 25 30 30 30 30 30 30 30 30 30 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 24 39 54 73 94 116 136 144 152 158 161 163 </table>
 		<table name="#power"> 46 106 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
 		<table name="#time"> 5 10 10 15 15 15 15 15 15 15 15 15 </table>
 		<table name="#waterRes"> 20 25 25 30 30 30 30 30 30 30 30 30 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">4</value>
+			<value level="6">4</value>
+			<value level="7">4</value>
+			<value level="8">4</value>
+			<value level="9">4</value>
+			<value level="10">4</value>
+			<value level="11">4</value>
+			<value level="12">4</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ARMOR_FIRE</abnormalType>
 		<activateRate>80</activateRate>
@@ -194,8 +357,34 @@
 		<icon>icon.skill4279_new</icon>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">39</value>
+			<value level="3">54</value>
+			<value level="4">73</value>
+			<value level="5">94</value>
+			<value level="6">116</value>
+			<value level="7">136</value>
+			<value level="8">144</value>
+			<value level="9">152</value>
+			<value level="10">158</value>
+			<value level="11">161</value>
+			<value level="12">163</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -212,12 +401,22 @@
 		</for>
 	</skill>
 	<skill id="4606" levels="12" name="Poison">
-		<table name="#abnormalLvl"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
 		<table name="#dot"> 16 24 32 41 50 58 63 63 66 66 68 68 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 35 58 81 109 141 174 203 216 227 235 241 244 </table>
 		<table name="#power"> 46 106 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+			<value level="6">7</value>
+			<value level="7">8</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">9</value>
+			<value level="11">10</value>
+			<value level="12">10</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>POISON</abnormalType>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
@@ -230,8 +429,34 @@
 		<icon>icon.skill4035</icon>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">35</value>
+			<value level="2">58</value>
+			<value level="3">81</value>
+			<value level="4">109</value>
+			<value level="5">141</value>
+			<value level="6">174</value>
+			<value level="7">203</value>
+			<value level="8">216</value>
+			<value level="9">227</value>
+			<value level="10">235</value>
+			<value level="11">241</value>
+			<value level="12">244</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -268,25 +493,31 @@
 		</for>
 	</skill>
 	<skill id="4608" levels="2" name="Berserker Spirit">
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#magicLvl"> 30 70 </table>
 		<table name="#mAtk"> 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.05 1.08 </table>
 		<table name="#mDef"> 0.9 0.84 </table>
-		<table name="#mpConsume"> 20 49 </table>
 		<table name="#pAtk"> 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.92 </table>
 		<table name="#runSpd"> 5 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>BERSERKER</abnormalType>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">30</value>
+			<value level="2">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">20</value>
+			<value level="2">49</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -306,19 +537,31 @@
 		</for>
 	</skill>
 	<skill id="4609" levels="4" name="Vampiric Rage">
-		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#absorbDam"> 6 7 8 9 </table>
-		<table name="#magicLvl"> 20 40 60 70 </table>
-		<table name="#mpConsume"> 15 27 42 49 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">15</value>
+			<value level="2">27</value>
+			<value level="3">42</value>
+			<value level="4">49</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -332,19 +575,28 @@
 		</for>
 	</skill>
 	<skill id="4610" levels="3" name="Focus">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 70 </table>
-		<table name="#mpConsume"> 15 27 49 </table>
 		<table name="#rCrit"> 0.2 0.25 0.3 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>CRITICAL_PROB_UP</abnormalType>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">15</value>
+			<value level="2">27</value>
+			<value level="3">49</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -358,19 +610,28 @@
 		</for>
 	</skill>
 	<skill id="4611" levels="3" name="Death Whisper">
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#cAtk"> 1.25 1.3 1.35 </table>
-		<table name="#magicLvl"> 20 40 70 </table>
-		<table name="#mpConsume"> 15 27 49 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>CRITICAL_DMG_UP</abnormalType>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">70</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">15</value>
+			<value level="2">27</value>
+			<value level="3">49</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -384,8 +645,6 @@
 		</for>
 	</skill>
 	<skill id="4612" levels="12" name="Wide Sweep">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 19 30 42 57 74 91 106 114 119 124 126 128 </table>
 		<table name="#power"> 46 105 216 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
 		<affectRange>1000</affectRange>
 		<castRange>40</castRange>
@@ -393,8 +652,34 @@
 		<effectRange>200</effectRange>
 		<fanRange>0;0;1000;180</fanRange>
 		<hitTime>1800</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">19</value>
+			<value level="2">30</value>
+			<value level="3">42</value>
+			<value level="4">57</value>
+			<value level="5">74</value>
+			<value level="6">91</value>
+			<value level="7">106</value>
+			<value level="8">114</value>
+			<value level="9">119</value>
+			<value level="10">124</value>
+			<value level="11">126</value>
+			<value level="12">128</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -408,14 +693,38 @@
 	</skill>
 	<skill id="4613" levels="12" name="Clan Heal">
 		<table name="#amount"> 83 151 245 362 494 627 743 789 823 845 853 853 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 25 44 67 92 120 147 170 182 189 194 197 197 </table>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">25</value>
+			<value level="2">44</value>
+			<value level="3">67</value>
+			<value level="4">92</value>
+			<value level="5">120</value>
+			<value level="6">147</value>
+			<value level="7">170</value>
+			<value level="8">182</value>
+			<value level="9">189</value>
+			<value level="10">194</value>
+			<value level="11">197</value>
+			<value level="12">197</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -429,14 +738,38 @@
 	</skill>
 	<skill id="4614" levels="12" name="Death Bomb">
 		<!-- Confirmed CT2.5 -->
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 19 30 42 57 74 91 106 114 119 124 126 128 </table>
 		<table name="#power"> 52 78 112 155 203 255 305 328 348 364 377 387 </table>
 		<affectRange>150</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isSuicideAttack>true</isSuicideAttack>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">19</value>
+			<value level="2">30</value>
+			<value level="3">42</value>
+			<value level="4">57</value>
+			<value level="5">74</value>
+			<value level="6">91</value>
+			<value level="7">106</value>
+			<value level="8">114</value>
+			<value level="9">119</value>
+			<value level="10">124</value>
+			<value level="11">126</value>
+			<value level="12">128</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -449,11 +782,21 @@
 		</for>
 	</skill>
 	<skill id="4615" levels="12" name="Bleed">
-		<table name="#abnormalLvl"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
 		<table name="#dmg"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 19 30 42 57 74 91 106 114 119 124 126 128 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+			<value level="6">7</value>
+			<value level="7">8</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">9</value>
+			<value level="11">10</value>
+			<value level="12">10</value>
+		</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>BLEEDING</abnormalType>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
@@ -467,8 +810,34 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">19</value>
+			<value level="2">30</value>
+			<value level="3">42</value>
+			<value level="4">57</value>
+			<value level="5">74</value>
+			<value level="6">91</value>
+			<value level="7">106</value>
+			<value level="8">114</value>
+			<value level="9">119</value>
+			<value level="10">124</value>
+			<value level="11">126</value>
+			<value level="12">128</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -562,8 +931,6 @@
 		</for>
 	</skill>
 	<skill id="4620" levels="12" name="Paralysis">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>PARALYZE</abnormalType>
@@ -578,8 +945,34 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">65</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -591,8 +984,6 @@
 		</for>
 	</skill>
 	<skill id="4621" levels="12" name="NPC AE - 80% HP Drain">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 18 29 40 53 68 83 98 104 109 113 115 117 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -601,8 +992,34 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">29</value>
+			<value level="3">40</value>
+			<value level="4">53</value>
+			<value level="5">68</value>
+			<value level="6">83</value>
+			<value level="7">98</value>
+			<value level="8">104</value>
+			<value level="9">109</value>
+			<value level="10">113</value>
+			<value level="11">115</value>
+			<value level="12">117</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -617,8 +1034,6 @@
 		</for>
 	</skill>
 	<skill id="4622" levels="12" name="NPC AE - 80% HP Drain - Magic">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 18 29 40 53 68 83 98 104 109 113 115 117 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -628,8 +1043,34 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">29</value>
+			<value level="3">40</value>
+			<value level="4">53</value>
+			<value level="5">68</value>
+			<value level="6">83</value>
+			<value level="7">98</value>
+			<value level="8">104</value>
+			<value level="9">109</value>
+			<value level="10">113</value>
+			<value level="11">115</value>
+			<value level="12">117</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -643,8 +1084,6 @@
 		</for>
 	</skill>
 	<skill id="4623" levels="12" name="NPC AE - 80% HP Drain - Slow">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 22 34 48 64 83 102 119 127 133 138 140 143 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -653,8 +1092,34 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">22</value>
+			<value level="2">34</value>
+			<value level="3">48</value>
+			<value level="4">64</value>
+			<value level="5">83</value>
+			<value level="6">102</value>
+			<value level="7">119</value>
+			<value level="8">127</value>
+			<value level="9">133</value>
+			<value level="10">138</value>
+			<value level="11">140</value>
+			<value level="12">143</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -671,7 +1136,6 @@
 	<skill id="4624" levels="12" name="Disease">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>HEAL_EFFECT_DOWN</abnormalType>
@@ -682,7 +1146,20 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -697,10 +1174,21 @@
 	<skill id="4625" levels="12" name="Decrease Speed">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#runSpd"> 0.9 0.8 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">2</value>
+			<value level="4">3</value>
+			<value level="5">3</value>
+			<value level="6">3</value>
+			<value level="7">3</value>
+			<value level="8">3</value>
+			<value level="9">3</value>
+			<value level="10">3</value>
+			<value level="11">3</value>
+			<value level="12">3</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<activateRate>10</activateRate>
@@ -710,7 +1198,20 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -723,18 +1224,54 @@
 		</for>
 	</skill>
 	<skill id="4626" levels="12" name="Physical Barrier">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 7 10 14 18 23 28 33 35 37 38 39 39 </table>
 		<table name="#pDef"> 1.05 1.11 1.17 1.25 1.33 1.43 1.67 2 2.33 2.67 3 3.33 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+			<value level="12">12</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">7</value>
+			<value level="2">10</value>
+			<value level="3">14</value>
+			<value level="4">18</value>
+			<value level="5">23</value>
+			<value level="6">28</value>
+			<value level="7">33</value>
+			<value level="8">35</value>
+			<value level="9">37</value>
+			<value level="10">38</value>
+			<value level="11">39</value>
+			<value level="12">39</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -749,18 +1286,54 @@
 		</for>
 	</skill>
 	<skill id="4627" levels="12" name="Magical Barrier">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mDef"> 1.05 1.11 1.17 1.25 1.33 1.43 1.67 2 2.33 2.67 3 3.33 </table>
-		<table name="#mpConsume"> 7 10 14 18 23 28 33 35 37 38 39 39 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+			<value level="12">12</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MD_UP</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">7</value>
+			<value level="2">10</value>
+			<value level="3">14</value>
+			<value level="4">18</value>
+			<value level="5">23</value>
+			<value level="6">28</value>
+			<value level="7">33</value>
+			<value level="8">35</value>
+			<value level="9">37</value>
+			<value level="10">38</value>
+			<value level="11">39</value>
+			<value level="12">39</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -784,8 +1357,6 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4629" levels="12" name="Drain Energy">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 18 29 40 53 68 83 98 104 109 113 115 117 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
@@ -794,8 +1365,34 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">29</value>
+			<value level="3">40</value>
+			<value level="4">53</value>
+			<value level="5">68</value>
+			<value level="6">83</value>
+			<value level="7">98</value>
+			<value level="8">104</value>
+			<value level="9">109</value>
+			<value level="10">113</value>
+			<value level="11">115</value>
+			<value level="12">117</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -810,8 +1407,6 @@
 		</for>
 	</skill>
 	<skill id="4630" levels="12" name="Twister">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
@@ -820,8 +1415,34 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">65</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -834,20 +1455,29 @@
 		</for>
 	</skill>
 	<skill id="4631" levels="3" name="Acumen Shield Wild Magic">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
-		<table name="#mpConsume"> 29 53 83 </table>
 		<table name="#pDef"> 1.8 1.12 1.15 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">83</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -865,20 +1495,29 @@
 		</for>
 	</skill>
 	<skill id="4632" levels="3" name="Acumen Empower Wild Magic">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
-		<table name="#mpConsume"> 29 53 83 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">83</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -895,24 +1534,33 @@
 		</for>
 	</skill>
 	<skill id="4633" levels="3" name="Acumen Berserker Empower">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtk"> 1.71 1.82 2.03 </table>
 		<table name="#mAtkSpd"> 1.21 1.29 1.4 </table>
 		<table name="#mDef"> 0.9 0.9 0.84 </table>
-		<table name="#mpConsume"> 29 53 83 </table>
 		<table name="#pAtk"> 1.05 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.95 0.92 </table>
 		<table name="#runSpd"> 5 5 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">83</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -933,20 +1581,29 @@
 		</for>
 	</skill>
 	<skill id="4634" levels="3" name="Acumen Empower Damage Shield">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
-		<table name="#mpConsume"> 29 53 83 </table>
 		<table name="#reflect"> 10 15 20 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">83</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -963,25 +1620,34 @@
 		</for>
 	</skill>
 	<skill id="4635" levels="3" name="Acumen Berserker Wild Magic">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtk"> 1.1 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.21 1.29 1.4 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
 		<table name="#mDef"> 0.9 0.9 0.84 </table>
-		<table name="#mpConsume"> 29 53 83 </table>
 		<table name="#pAtk"> 1.05 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.95 0.92 </table>
 		<table name="#runSpd"> 5 5 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">83</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1003,25 +1669,34 @@
 		</for>
 	</skill>
 	<skill id="4636" levels="3" name="Acumen Berserker Damage Shield">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtk"> 1.1 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.21 1.29 1.4 </table>
 		<table name="#mDef"> 0.9 0.9 0.84 </table>
-		<table name="#mpConsume"> 29 53 83 </table>
 		<table name="#pAtk"> 1.05 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.95 0.92 </table>
 		<table name="#reflect"> 10 15 20 </table>
 		<table name="#runSpd"> 5 5 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">83</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1043,20 +1718,29 @@
 		</for>
 	</skill>
 	<skill id="4637" levels="3" name="Acumen Wild Magic Damage Shield">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
-		<table name="#mpConsume"> 29 53 83 </table>
 		<table name="#reflect"> 10 15 20 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">29</value>
+			<value level="2">53</value>
+			<value level="3">83</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1073,21 +1757,30 @@
 		</for>
 	</skill>
 	<skill id="4638" levels="3" name="Acumen Empower Wild Magic">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
-		<table name="#mpConsume"> 43 79 124 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">43</value>
+			<value level="2">79</value>
+			<value level="3">124</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1104,25 +1797,34 @@
 		</for>
 	</skill>
 	<skill id="4639" levels="3" name="Acumen Empower Berserker">
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mAtk"> 1.71 1.82 2.03 </table>
 		<table name="#mAtkSpd"> 1.21 1.29 1.4 </table>
 		<table name="#mDef"> 0.9 0.9 0.84 </table>
-		<table name="#mpConsume"> 43 79 124 </table>
 		<table name="#pAtk"> 1.05 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.95 0.92 </table>
 		<table name="#runSpd"> 5 5 8 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">43</value>
+			<value level="2">79</value>
+			<value level="3">124</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1143,8 +1845,6 @@
 		</for>
 	</skill>
 	<skill id="4640" levels="12" name="Sleep">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 18 29 40 53 68 83 98 104 109 113 115 117 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>SLEEP</abnormalType>
@@ -1159,8 +1859,34 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">29</value>
+			<value level="3">40</value>
+			<value level="4">53</value>
+			<value level="5">68</value>
+			<value level="6">83</value>
+			<value level="7">98</value>
+			<value level="8">104</value>
+			<value level="9">109</value>
+			<value level="10">113</value>
+			<value level="11">115</value>
+			<value level="12">117</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<removedOnDamage>true</removedOnDamage>
 		<reuseDelay>8000</reuseDelay>
@@ -1175,15 +1901,39 @@
 		</for>
 	</skill>
 	<skill id="4641" levels="12" name="Super Strike">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 37 60 84 114 148 182 212 227 238 247 252 255 </table>
 		<table name="#power"> 137 314 656 1249 2164 3408 4878 5627 6335 6960 7461 7850 </table>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>200</effectRange>
 		<hitTime>1800</hitTime>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">37</value>
+			<value level="2">60</value>
+			<value level="3">84</value>
+			<value level="4">114</value>
+			<value level="5">148</value>
+			<value level="6">182</value>
+			<value level="7">212</value>
+			<value level="8">227</value>
+			<value level="9">238</value>
+			<value level="10">247</value>
+			<value level="11">252</value>
+			<value level="12">255</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1196,9 +1946,18 @@
 		</for>
 	</skill>
 	<skill id="4642" levels="9" name="Fast Spell Casting">
-		<table name="#magicLvl"> 20 40 60 70 75 80 85 90 95 </table>
 		<table name="#mAtkSpd"> 1.05 1.07 1.1 1.12 1.15 1.17 1.2 1.22 1.25 </table>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">75</value>
+			<value level="6">80</value>
+			<value level="7">85</value>
+			<value level="8">90</value>
+			<value level="9">95</value>
+		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -1209,12 +1968,22 @@
 		</for>
 	</skill>
 	<skill id="4643" levels="12" name="Decrease Speed">
-		<table name="#abnormalLvl"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 24 39 54 73 94 116 136 144 152 158 161 163 </table>
 		<table name="#power"> 46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
 		<table name="#runSpd"> 0.85 0.7 0.7 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">2</value>
+			<value level="4">3</value>
+			<value level="5">3</value>
+			<value level="6">3</value>
+			<value level="7">3</value>
+			<value level="8">3</value>
+			<value level="9">3</value>
+			<value level="10">3</value>
+			<value level="11">3</value>
+			<value level="12">3</value>
+		</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<activateRate>40</activateRate>
@@ -1226,8 +1995,34 @@
 		<icon>icon.skill1160</icon>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">39</value>
+			<value level="3">54</value>
+			<value level="4">73</value>
+			<value level="5">94</value>
+			<value level="6">116</value>
+			<value level="7">136</value>
+			<value level="8">144</value>
+			<value level="9">152</value>
+			<value level="10">158</value>
+			<value level="11">161</value>
+			<value level="12">163</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -1245,14 +2040,18 @@
 	<skill id="4644" levels="2" name="Haste">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 1 2 </table>
-		<table name="#magicLvl"> 30 70 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
 		<effectPoint>100</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">30</value>
+			<value level="2">70</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -1270,14 +2069,20 @@
 	<skill id="4645" levels="3" name="Focus">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#rCrit"> 0.15 0.25 0.3 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>CRITICAL_PROB_UP</abnormalType>
 		<effectPoint>100</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -1295,14 +2100,20 @@
 	<skill id="4646" levels="3" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#cAtk"> 1.25 1.3 1.35 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>CRITICAL_DMG_UP</abnormalType>
 		<effectPoint>100</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -1319,14 +2130,20 @@
 	<skill id="4647" levels="3" name="Might">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<effectPoint>100</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -1344,14 +2161,20 @@
 	<skill id="4648" levels="3" name="Shield">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
 		<effectPoint>100</effectPoint>
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -1366,11 +2189,21 @@
 		</for>
 	</skill>
 	<skill id="4649" levels="12" name="Poison">
-		<table name="#abnormalLvl"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
 		<table name="#dot"> 16 24 32 41 50 58 63 63 66 66 68 68 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 18 29 40 53 68 83 98 104 109 113 115 117 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+			<value level="6">7</value>
+			<value level="7">8</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">9</value>
+			<value level="11">10</value>
+			<value level="12">10</value>
+		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>POISON</abnormalType>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
@@ -1382,8 +2215,34 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">29</value>
+			<value level="3">40</value>
+			<value level="4">53</value>
+			<value level="5">68</value>
+			<value level="6">83</value>
+			<value level="7">98</value>
+			<value level="8">104</value>
+			<value level="9">109</value>
+			<value level="10">113</value>
+			<value level="11">115</value>
+			<value level="12">117</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>AURA</targetType>
@@ -1416,15 +2275,24 @@
 	</skill>
 	<skill id="4651" levels="3" name="Dispel Slow">
 		<table name="#dispelAbnormals"> SPEED_DOWN,1 SPEED_DOWN,2 SPEED_DOWN,3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
-		<table name="#mpConsume"> 23 42 66 </table>
-		<table name="#mpInitialConsume"> 6 11 17 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">60</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">23</value>
+			<value level="2">42</value>
+			<value level="3">66</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">11</value>
+			<value level="3">17</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1456,14 +2324,38 @@
 	</skill>
 	<skill id="4653" levels="12" name="Corpse Life Drain">
 		<table name="#amount"> 131 201 271 351 451 551 651 691 731 751 771 781 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">65</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1477,16 +2369,40 @@
 		</for>
 	</skill>
 	<skill id="4654" levels="12" name="Death Link">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">65</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1501,16 +2417,40 @@
 		</for>
 	</skill>
 	<skill id="4655" levels="12" name="Death Link">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">65</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1525,16 +2465,40 @@
 		</for>
 	</skill>
 	<skill id="4656" levels="12" name="Death Link">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
 		<table name="#power"> 9 13 19 26 34 43 51 55 58 61 63 65 </table>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">65</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1549,9 +2513,6 @@
 		</for>
 	</skill>
 	<skill id="4657" levels="12" name="Hold">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 22 37 50 67 86 106 124 132 139 143 147 149 </table>
-		<table name="#mpInitialConsume"> 6 10 13 17 22 27 31 33 35 36 37 38 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -1567,9 +2528,48 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">22</value>
+			<value level="2">37</value>
+			<value level="3">50</value>
+			<value level="4">67</value>
+			<value level="5">86</value>
+			<value level="6">106</value>
+			<value level="7">124</value>
+			<value level="8">132</value>
+			<value level="9">139</value>
+			<value level="10">143</value>
+			<value level="11">147</value>
+			<value level="12">149</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">10</value>
+			<value level="3">13</value>
+			<value level="4">17</value>
+			<value level="5">22</value>
+			<value level="6">27</value>
+			<value level="7">31</value>
+			<value level="8">33</value>
+			<value level="9">35</value>
+			<value level="10">36</value>
+			<value level="11">37</value>
+			<value level="12">38</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1585,9 +2585,6 @@
 		</for>
 	</skill>
 	<skill id="4658" levels="12" name="Hold">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 11 19 25 34 43 53 62 66 70 72 74 75 </table>
-		<table name="#mpInitialConsume"> 3 5 7 9 11 14 16 17 18 18 19 19 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -1603,9 +2600,48 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">25</value>
+			<value level="4">34</value>
+			<value level="5">43</value>
+			<value level="6">53</value>
+			<value level="7">62</value>
+			<value level="8">66</value>
+			<value level="9">70</value>
+			<value level="10">72</value>
+			<value level="11">74</value>
+			<value level="12">75</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">3</value>
+			<value level="2">5</value>
+			<value level="3">7</value>
+			<value level="4">9</value>
+			<value level="5">11</value>
+			<value level="6">14</value>
+			<value level="7">16</value>
+			<value level="8">17</value>
+			<value level="9">18</value>
+			<value level="10">18</value>
+			<value level="11">19</value>
+			<value level="12">19</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>ONE</targetType>
@@ -1621,9 +2657,6 @@
 		</for>
 	</skill>
 	<skill id="4659" levels="12" name="Hold">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 16 26 36 48 61 75 88 94 98 102 104 105 </table>
-		<table name="#mpInitialConsume"> 4 7 9 12 16 19 22 24 25 26 26 27 </table>
 		<table name="#power"> 9 13 19 26 34 43 51 55 58 61 63 65 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -1639,9 +2672,48 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">16</value>
+			<value level="2">26</value>
+			<value level="3">36</value>
+			<value level="4">48</value>
+			<value level="5">61</value>
+			<value level="6">75</value>
+			<value level="7">88</value>
+			<value level="8">94</value>
+			<value level="9">98</value>
+			<value level="10">102</value>
+			<value level="11">104</value>
+			<value level="12">105</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">4</value>
+			<value level="2">7</value>
+			<value level="3">9</value>
+			<value level="4">12</value>
+			<value level="5">16</value>
+			<value level="6">19</value>
+			<value level="7">22</value>
+			<value level="8">24</value>
+			<value level="9">25</value>
+			<value level="10">26</value>
+			<value level="11">26</value>
+			<value level="12">27</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>ONE</targetType>
@@ -1657,9 +2729,6 @@
 		</for>
 	</skill>
 	<skill id="4660" levels="12" name="Sleep">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 22 37 50 67 86 106 124 132 139 143 147 149 </table>
-		<table name="#mpInitialConsume"> 6 10 13 17 22 27 31 33 35 36 37 38 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -1675,9 +2744,48 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">22</value>
+			<value level="2">37</value>
+			<value level="3">50</value>
+			<value level="4">67</value>
+			<value level="5">86</value>
+			<value level="6">106</value>
+			<value level="7">124</value>
+			<value level="8">132</value>
+			<value level="9">139</value>
+			<value level="10">143</value>
+			<value level="11">147</value>
+			<value level="12">149</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">10</value>
+			<value level="3">13</value>
+			<value level="4">17</value>
+			<value level="5">22</value>
+			<value level="6">27</value>
+			<value level="7">31</value>
+			<value level="8">33</value>
+			<value level="9">35</value>
+			<value level="10">36</value>
+			<value level="11">37</value>
+			<value level="12">38</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<removedOnDamage>true</removedOnDamage>
 		<reuseDelay>8000</reuseDelay>
@@ -1694,9 +2802,6 @@
 		</for>
 	</skill>
 	<skill id="4661" levels="12" name="Sleep">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 11 19 25 34 43 53 62 66 70 72 74 75 </table>
-		<table name="#mpInitialConsume"> 3 5 7 9 11 14 16 17 18 18 19 19 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -1712,9 +2817,48 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">25</value>
+			<value level="4">34</value>
+			<value level="5">43</value>
+			<value level="6">53</value>
+			<value level="7">62</value>
+			<value level="8">66</value>
+			<value level="9">70</value>
+			<value level="10">72</value>
+			<value level="11">74</value>
+			<value level="12">75</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">3</value>
+			<value level="2">5</value>
+			<value level="3">7</value>
+			<value level="4">9</value>
+			<value level="5">11</value>
+			<value level="6">14</value>
+			<value level="7">16</value>
+			<value level="8">17</value>
+			<value level="9">18</value>
+			<value level="10">18</value>
+			<value level="11">19</value>
+			<value level="12">19</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<removedOnDamage>true</removedOnDamage>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1731,9 +2875,6 @@
 		</for>
 	</skill>
 	<skill id="4662" levels="12" name="Sleep">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 16 26 36 48 61 75 88 94 98 102 104 105 </table>
-		<table name="#mpInitialConsume"> 4 7 9 12 16 19 22 24 25 26 26 27 </table>
 		<table name="#power"> 9 13 19 26 34 43 51 55 58 61 63 65 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -1749,9 +2890,48 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">16</value>
+			<value level="2">26</value>
+			<value level="3">36</value>
+			<value level="4">48</value>
+			<value level="5">61</value>
+			<value level="6">75</value>
+			<value level="7">88</value>
+			<value level="8">94</value>
+			<value level="9">98</value>
+			<value level="10">102</value>
+			<value level="11">104</value>
+			<value level="12">105</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">4</value>
+			<value level="2">7</value>
+			<value level="3">9</value>
+			<value level="4">12</value>
+			<value level="5">16</value>
+			<value level="6">19</value>
+			<value level="7">22</value>
+			<value level="8">24</value>
+			<value level="9">25</value>
+			<value level="10">26</value>
+			<value level="11">26</value>
+			<value level="12">27</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<removedOnDamage>true</removedOnDamage>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1784,9 +2964,6 @@
 		</for>
 	</skill>
 	<skill id="4664" levels="12" name="NPC 100% HP Drain">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 17 31 42 56 72 88 104 110 116 120 122 124 </table>
-		<table name="#mpInitialConsume"> 5 8 11 14 18 22 28 29 29 30 31 31 </table>
 		<table name="#power"> 12 18 25 35 46 57 68 73 78 81 84 86 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1795,9 +2972,48 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">17</value>
+			<value level="2">31</value>
+			<value level="3">42</value>
+			<value level="4">56</value>
+			<value level="5">72</value>
+			<value level="6">88</value>
+			<value level="7">104</value>
+			<value level="8">110</value>
+			<value level="9">116</value>
+			<value level="10">120</value>
+			<value level="11">122</value>
+			<value level="12">124</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">5</value>
+			<value level="2">8</value>
+			<value level="3">11</value>
+			<value level="4">14</value>
+			<value level="5">18</value>
+			<value level="6">22</value>
+			<value level="7">28</value>
+			<value level="8">29</value>
+			<value level="9">29</value>
+			<value level="10">30</value>
+			<value level="11">31</value>
+			<value level="12">31</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1811,9 +3027,6 @@
 		</for>
 	</skill>
 	<skill id="4665" levels="12" name="NPC 100% HP Drain - Magic">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 9 16 21 28 36 44 52 55 58 60 61 62 </table>
-		<table name="#mpInitialConsume"> 3 4 6 7 9 11 14 15 15 15 16 16 </table>
 		<table name="#power"> 12 18 25 35 46 57 68 73 78 81 84 86 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1822,9 +3035,48 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">9</value>
+			<value level="2">16</value>
+			<value level="3">21</value>
+			<value level="4">28</value>
+			<value level="5">36</value>
+			<value level="6">44</value>
+			<value level="7">52</value>
+			<value level="8">55</value>
+			<value level="9">58</value>
+			<value level="10">60</value>
+			<value level="11">61</value>
+			<value level="12">62</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">3</value>
+			<value level="2">4</value>
+			<value level="3">6</value>
+			<value level="4">7</value>
+			<value level="5">9</value>
+			<value level="6">11</value>
+			<value level="7">14</value>
+			<value level="8">15</value>
+			<value level="9">15</value>
+			<value level="10">15</value>
+			<value level="11">16</value>
+			<value level="12">16</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1838,9 +3090,6 @@
 		</for>
 	</skill>
 	<skill id="4666" levels="12" name="NPC 100% HP Drain - Slow">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 9 16 21 28 36 44 52 55 58 60 61 62 </table>
-		<table name="#mpInitialConsume"> 3 4 6 7 9 11 14 15 15 15 16 16 </table>
 		<table name="#power"> 6 9 13 18 23 29 34 37 39 41 42 43 </table>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1849,9 +3098,48 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">9</value>
+			<value level="2">16</value>
+			<value level="3">21</value>
+			<value level="4">28</value>
+			<value level="5">36</value>
+			<value level="6">44</value>
+			<value level="7">52</value>
+			<value level="8">55</value>
+			<value level="9">58</value>
+			<value level="10">60</value>
+			<value level="11">61</value>
+			<value level="12">62</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">3</value>
+			<value level="2">4</value>
+			<value level="3">6</value>
+			<value level="4">7</value>
+			<value level="5">9</value>
+			<value level="6">11</value>
+			<value level="7">14</value>
+			<value level="8">15</value>
+			<value level="9">15</value>
+			<value level="10">15</value>
+			<value level="11">16</value>
+			<value level="12">16</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1865,9 +3153,6 @@
 		</for>
 	</skill>
 	<skill id="4667" levels="12" name="NPC Strong 100% HP Drain">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 25 46 63 84 108 132 155 165 173 179 183 186 </table>
-		<table name="#mpInitialConsume"> 7 12 16 21 27 33 43 42 44 45 46 47 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1876,9 +3161,48 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">25</value>
+			<value level="2">46</value>
+			<value level="3">63</value>
+			<value level="4">84</value>
+			<value level="5">108</value>
+			<value level="6">132</value>
+			<value level="7">155</value>
+			<value level="8">165</value>
+			<value level="9">173</value>
+			<value level="10">179</value>
+			<value level="11">183</value>
+			<value level="12">186</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">7</value>
+			<value level="2">12</value>
+			<value level="3">16</value>
+			<value level="4">21</value>
+			<value level="5">27</value>
+			<value level="6">33</value>
+			<value level="7">43</value>
+			<value level="8">42</value>
+			<value level="9">44</value>
+			<value level="10">45</value>
+			<value level="11">46</value>
+			<value level="12">47</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1892,9 +3216,6 @@
 		</for>
 	</skill>
 	<skill id="4668" levels="12" name="NPC Strong 100% HP Drain - Magic">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 23 32 42 54 66 78 83 87 90 92 93 </table>
-		<table name="#mpInitialConsume"> 4 6 8 11 14 17 21 22 22 23 23 24 </table>
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1903,9 +3224,48 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">23</value>
+			<value level="3">32</value>
+			<value level="4">42</value>
+			<value level="5">54</value>
+			<value level="6">66</value>
+			<value level="7">78</value>
+			<value level="8">83</value>
+			<value level="9">87</value>
+			<value level="10">90</value>
+			<value level="11">92</value>
+			<value level="12">93</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">4</value>
+			<value level="2">6</value>
+			<value level="3">8</value>
+			<value level="4">11</value>
+			<value level="5">14</value>
+			<value level="6">17</value>
+			<value level="7">21</value>
+			<value level="8">22</value>
+			<value level="9">22</value>
+			<value level="10">23</value>
+			<value level="11">23</value>
+			<value level="12">24</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1919,9 +3279,6 @@
 		</for>
 	</skill>
 	<skill id="4669" levels="12" name="NPC Strong 100% HP Drain - Slow">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 23 32 42 54 66 78 83 87 90 92 93 </table>
-		<table name="#mpInitialConsume"> 4 6 8 11 14 17 21 22 22 23 23 24 </table>
 		<table name="#power"> 9 13 19 26 34 43 51 55 58 61 63 65 </table>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1930,9 +3287,48 @@
 		<attributeValue>20</attributeValue>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">13</value>
+			<value level="2">23</value>
+			<value level="3">32</value>
+			<value level="4">42</value>
+			<value level="5">54</value>
+			<value level="6">66</value>
+			<value level="7">78</value>
+			<value level="8">83</value>
+			<value level="9">87</value>
+			<value level="10">90</value>
+			<value level="11">92</value>
+			<value level="12">93</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">4</value>
+			<value level="2">6</value>
+			<value level="3">8</value>
+			<value level="4">11</value>
+			<value level="5">14</value>
+			<value level="6">17</value>
+			<value level="7">21</value>
+			<value level="8">22</value>
+			<value level="9">22</value>
+			<value level="10">23</value>
+			<value level="11">23</value>
+			<value level="12">24</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1946,8 +3342,6 @@
 		</for>
 	</skill>
 	<skill id="4670" levels="12" name="Stun">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 10 16 23 31 40 49 57 61 64 66 68 68 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>2</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1961,8 +3355,34 @@
 		<icon>icon.skill0100</icon>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>2</lvlBonusRate>
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">10</value>
+			<value level="2">16</value>
+			<value level="3">23</value>
+			<value level="4">31</value>
+			<value level="5">40</value>
+			<value level="6">49</value>
+			<value level="7">57</value>
+			<value level="8">61</value>
+			<value level="9">64</value>
+			<value level="10">66</value>
+			<value level="11">68</value>
+			<value level="12">68</value>
+		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
@@ -2000,16 +3420,40 @@
 		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4673" levels="12" name="Dispel Attack">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 12 20 27 35 45 55 67 69 73 75 77 78 </table>
 		<table name="#power"> 8 17 25 33 42 50 58 67 75 83 92 100 </table> <!-- Base Land Rate -->
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">12</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">67</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2022,16 +3466,40 @@
 		</for>
 	</skill>
 	<skill id="4674" levels="12" name="Dispel Defense">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 12 20 27 35 45 55 67 69 73 75 77 78 </table>
 		<table name="#power"> 8 17 25 33 42 50 58 67 75 83 92 100 </table> <!-- Base Land Rate -->
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">12</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">67</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2044,16 +3512,40 @@
 		</for>
 	</skill>
 	<skill id="4675" levels="12" name="Dispel Fighter">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 12 20 27 35 45 55 67 69 73 75 77 78 </table>
 		<table name="#power"> 8 17 25 33 42 50 58 67 75 83 92 100 </table> <!-- Base Land Rate -->
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">12</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">67</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2066,16 +3558,40 @@
 		</for>
 	</skill>
 	<skill id="4676" levels="12" name="Dispel Mage Empower">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 12 20 27 35 45 55 67 69 73 75 77 78 </table>
 		<table name="#power"> 8 17 25 33 42 50 58 67 75 83 92 100 </table> <!-- Base Land Rate -->
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">12</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">67</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2088,16 +3604,40 @@
 		</for>
 	</skill>
 	<skill id="4677" levels="12" name="Dispel Fighter Shield">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 12 20 27 35 45 55 67 69 73 75 77 78 </table>
 		<table name="#power"> 8 17 25 33 42 50 58 67 75 83 92 100 </table> <!-- Base Land Rate -->
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">12</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">67</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2110,16 +3650,40 @@
 		</for>
 	</skill>
 	<skill id="4678" levels="12" name="Dispel Mage Barrier">
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 12 20 27 35 45 55 67 69 73 75 77 78 </table>
 		<table name="#power"> 8 17 25 33 42 50 58 67 75 83 92 100 </table> <!-- Base Land Rate -->
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">12</value>
+			<value level="2">20</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">45</value>
+			<value level="6">55</value>
+			<value level="7">67</value>
+			<value level="8">69</value>
+			<value level="9">73</value>
+			<value level="10">75</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2392,31 +3956,41 @@
 		</for>
 	</skill>
 	<skill id="4689" levels="2" name="Valakas Fear">
-		<table name="#basicProperty"> MAGIC NONE </table>
 		<!-- Confirmed CT2.5 -->
 		<!-- Valakas Skills -->
 		<!-- Lvl 1: Valakas Fear from Front -->
 		<!-- Lvl 2: Valakas Fear Visual -->
-		<table name="#activateRate"> 80 -1 </table>
 		<table name="#basicProperties"> MAGIC NONE </table>
-		<table name="#coolTime"> 2000 0 </table>
-		<table name="#hitTime"> 3000 0 </table>
-		<table name="#lvlBonusRate"> 1 0 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
-		<activateRate>#activateRate</activateRate>
+		<activateRate>
+			<value level="1">80</value>
+			<value level="2">-1</value>
+		</activateRate>
 		<affectRange>1000</affectRange>
-		<basicProperty>#basicProperty</basicProperty>
-		<coolTime>#coolTime</coolTime>
+		<basicProperty>
+			<value level="1">MAGIC</value>
+			<value level="2">NONE</value>
+		</basicProperty>
+		<coolTime>
+			<value level="1">2000</value>
+			<value level="2">0</value>
+		</coolTime>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>180</attributeValue>
-		<hitTime>#hitTime</hitTime>
+		<hitTime>
+			<value level="1">3000</value>
+			<value level="2">0</value>
+		</hitTime>
 		<icon>icon.skill4689</icon>
 		<isDebuff>true</isDebuff>
-		<lvlBonusRate>#lvlBonusRate</lvlBonusRate>
+		<lvlBonusRate>
+			<value level="1">1</value>
+			<value level="2">0</value>
+		</lvlBonusRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
@@ -2454,9 +4028,14 @@
 	<skill id="4691" levels="5" name="Valakas Recovery">
 		<!-- Confirmed CT2.5 -->
 		<!-- Valakas Skills -->
-		<table name="#abnormalLvl"> 11 12 13 14 15 </table>
 		<table name="#regHp"> 0.15 0.3 0.5 0.8 1 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">11</value>
+			<value level="2">12</value>
+			<value level="3">13</value>
+			<value level="4">14</value>
+			<value level="5">15</value>
+		</abnormalLvl>
 		<abnormalTime>43200</abnormalTime>
 		<abnormalType>HP_REGEN_DOWN</abnormalType>
 		<magicLvl>-1</magicLvl>
@@ -2575,13 +4154,49 @@
 	</skill>
 	<skill id="4697" levels="12" name="Aggression">
 		<!-- TODO: Needs to be done -->
-		<table name="#effectPoints"> -410 -608 -853 -1134 -1427 -1695 -1903 -1973 -2024 -2064 -2097 -2123 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 18 29 40 53 68 83 100 104 109 113 115 117 </table>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">-410</value>
+			<value level="2">-608</value>
+			<value level="3">-853</value>
+			<value level="4">-1134</value>
+			<value level="5">-1427</value>
+			<value level="6">-1695</value>
+			<value level="7">-1903</value>
+			<value level="8">-1973</value>
+			<value level="9">-2024</value>
+			<value level="10">-2064</value>
+			<value level="11">-2097</value>
+			<value level="12">-2123</value>
+		</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">29</value>
+			<value level="3">40</value>
+			<value level="4">53</value>
+			<value level="5">68</value>
+			<value level="6">83</value>
+			<value level="7">100</value>
+			<value level="8">104</value>
+			<value level="9">109</value>
+			<value level="10">113</value>
+			<value level="11">115</value>
+			<value level="12">117</value>
+		</mpConsume>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2592,15 +4207,39 @@
 	<skill id="4698" levels="12" name="Regeneration">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvl"> 3 4 5 6 7 8 9 10 11 12 13 14 </table>
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#regHp"> 1.2 1.3 1.4 1.5 1.75 2 3 4 5 6 8.5 11 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
+		<abnormalLvl>
+			<value level="1">3</value>
+			<value level="2">4</value>
+			<value level="3">5</value>
+			<value level="4">6</value>
+			<value level="5">7</value>
+			<value level="6">8</value>
+			<value level="7">9</value>
+			<value level="8">10</value>
+			<value level="9">11</value>
+			<value level="10">12</value>
+			<value level="11">13</value>
+			<value level="12">14</value>
+		</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>HP_REGEN_UP</abnormalType>
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
+		<magicLvl>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+			<value level="4">40</value>
+			<value level="5">50</value>
+			<value level="6">60</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+			<value level="11">90</value>
+			<value level="12">95</value>
+		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
@@ -2616,25 +4255,103 @@
 	</skill>
 	<skill id="4699" levels="13" name="Blessing of Queen">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvl"> 1 2 3 3 3 3 3 3 3 3 3 3 3 </table>
-		<table name="#abnormalTime"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<table name="#cAtk"> 1.2 1.22 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 </table>
-		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
-		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 97 125 155 161 165 169 172 176 179 183 186 189 193 </table>
-		<table name="#mpInitialConsume"> 25 32 39 41 42 43 43 44 45 46 47 48 49 </table>
 		<table name="#rCrit"> 0.25 0.27 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 </table>
-		<abnormalLvl>#abnormalLvl</abnormalLvl>
-		<abnormalTime>#abnormalTime</abnormalTime>
+		<abnormalLvl>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">3</value>
+			<value level="5">3</value>
+			<value level="6">3</value>
+			<value level="7">3</value>
+			<value level="8">3</value>
+			<value level="9">3</value>
+			<value level="10">3</value>
+			<value level="11">3</value>
+			<value level="12">3</value>
+			<value level="13">3</value>
+		</abnormalLvl>
+		<abnormalTime>
+			<value level="1">120</value>
+			<value level="2">120</value>
+			<value level="3">120</value>
+			<value level="4">150</value>
+			<value level="5">165</value>
+			<value level="6">180</value>
+			<value level="7">195</value>
+			<value level="8">210</value>
+			<value level="9">225</value>
+			<value level="10">240</value>
+			<value level="11">255</value>
+			<value level="12">270</value>
+			<value level="13">285</value>
+		</abnormalTime>
 		<abnormalType>BUFF_QUEEN_OF_CAT</abnormalType>
 		<affectRange>1000</affectRange>
-		<effectPoint>#effectPoints</effectPoint>
+		<effectPoint>
+			<value level="1">541</value>
+			<value level="2">611</value>
+			<value level="3">659</value>
+			<value level="4">666</value>
+			<value level="5">669</value>
+			<value level="6">673</value>
+			<value level="7">676</value>
+			<value level="8">679</value>
+			<value level="9">681</value>
+			<value level="10">684</value>
+			<value level="11">687</value>
+			<value level="12">689</value>
+			<value level="13">692</value>
+		</effectPoint>
 		<hitTime>4000</hitTime>
 		<icon>icon.skill1331</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicLvl>#magicLvl</magicLvl>
-		<mpConsume>#mpConsume</mpConsume>
-		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
+		<magicLvl>
+			<value level="1">57</value>
+			<value level="2">66</value>
+			<value level="3">75</value>
+			<value level="4">77</value>
+			<value level="5">78</value>
+			<value level="6">79</value>
+			<value level="7">80</value>
+			<value level="8">81</value>
+			<value level="9">82</value>
+			<value level="10">83</value>
+			<value level="11">84</value>
+			<value level="12">85</value>
+			<value level="13">86</value>
+		</magicLvl>
+		<mpConsume>
+			<value level="1">97</value>
+			<value level="2">125</value>
+			<value level="3">155</value>
+			<value level="4">161</value>
+			<value level="5">165</value>
+			<value level="6">169</value>
+			<value level="7">172</value>
+			<value level="8">176</value>
+			<value level="9">179</value>
+			<value level="10">183</value>
+			<value level="11">186</value>
+			<value level="12">189</value>
+			<value level="13">193</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">25</value>
+			<value level="2">32</value>
+			<value level="3">39</value>
+			<value level="4">41</value>
+			<value level="5">42</value>
+			<value level="6">43</value>
+			<value level="7">43</value>
+			<value level="8">44</value>
+			<value level="9">45</value>
+			<value level="10">46</value>
+			<value level="11">47</value>
+			<value level="12">48</value>
+			<value level="13">49</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>

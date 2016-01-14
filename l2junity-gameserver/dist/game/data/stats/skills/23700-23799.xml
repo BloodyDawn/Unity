@@ -149,21 +149,25 @@
 	</skill>
 	<skill id="23715" levels="2" name="Power Strike">
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#castRanges"> 40 100 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<castRange>#castRanges</castRange>
+		<castRange>
+			<value level="1">40</value>
+			<value level="2">100</value>
+		</castRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="23716" levels="2" name="Power Smash">
 		<!-- AUTO GENERATED SKILL -->
-		<table name="#castRanges"> 40 100 </table>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<castRange>#castRanges</castRange>
+		<castRange>
+			<value level="1">40</value>
+			<value level="2">100</value>
+		</castRange>
 		<effectPoint>-2</effectPoint>
 		<hitTime>1500</hitTime>
 	</skill>
