@@ -446,11 +446,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accMagic" val="#bonus" />
 				<!-- TODO: Implement servitor's p acc -->
 				<!-- TODO: Implement the hidden skill -->
 			</effect>
 			<effect name="Accuracy">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">16</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
 				<amount>
 					<value level="1">8</value>
 					<value level="2">16</value>
@@ -1192,10 +1198,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accMagic" val="#bonus" />
 				<!-- TODO: Implement servitor's p acc -->
 			</effect>
 			<effect name="Accuracy">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">16</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
 				<amount>
 					<value level="1">8</value>
 					<value level="2">16</value>
@@ -1266,10 +1278,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accMagic" val="#bonus" />
 				<!-- TODO: Implement servitor's p acc -->
 			</effect>
 			<effect name="Accuracy">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">16</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
 				<amount>
 					<value level="1">8</value>
 					<value level="2">16</value>

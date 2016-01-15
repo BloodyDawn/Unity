@@ -1210,7 +1210,6 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Buff">
-				<add stat="mEvas" val="#mEvas" />
 				<sub stat="cancelVuln" val="30" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -1238,6 +1237,15 @@
 					<value level="2">65</value>
 					<value level="3">70</value>
 					<value level="4">75</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

@@ -861,7 +861,6 @@
 		<isMagic>22</isMagic>
 		<for>
 			<effect name="Buff">
-				<add stat="mEvas" val="5" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -879,6 +878,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>

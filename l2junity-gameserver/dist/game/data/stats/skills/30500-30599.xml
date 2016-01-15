@@ -1057,7 +1057,6 @@
 				</times>
 			</effect>
 			<effect name="Buff">
-				<add stat="mEvas" val="#mEvas" />
 			</effect>
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
@@ -1068,6 +1067,14 @@
 				</amount>
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">70</value>
+					<value level="3">70</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
 				<amount>
 					<value level="1">50</value>
 					<value level="2">70</value>

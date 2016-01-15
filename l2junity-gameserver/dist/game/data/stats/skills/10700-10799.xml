@@ -1839,7 +1839,6 @@
 		<reuseDelay>900000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="mEvas" val="#evas" />
 				<sub stat="cancelVuln" val="95" />
 			</effect>
 			<effect name="SkillEvasion">
@@ -1856,6 +1855,15 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
 				<amount>
 					<value level="1">60</value>
 					<value level="2">70</value>
