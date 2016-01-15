@@ -163,7 +163,7 @@
 				<!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
-				<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
+				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -184,6 +184,10 @@
 			<effect name="PAtk">
 				<amount>5.4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>234</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -636,7 +640,7 @@
 				<!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
-				<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
+				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -657,6 +661,10 @@
 			<effect name="PAtk">
 				<amount>5.4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>234</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -792,7 +800,7 @@
 				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
-				<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
+				<!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -813,6 +821,10 @@
 			<effect name="PAtk">
 				<amount>6.6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>282</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1017,7 +1029,7 @@
 				<!-- Physical Attack Power +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
 				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
-				<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
+				<!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -1038,6 +1050,10 @@
 			<effect name="PAtk">
 				<amount>6.6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>282</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2329,7 +2345,7 @@
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
 				<!-- Max MP by 354 -->
 				<!-- Increases Evasion by 3 -->
-				<add stat="cAtkAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
+				<!-- Increases Critical Damage by 172 -->
 				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
@@ -2347,6 +2363,10 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>354</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>172</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -2463,7 +2483,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="cAtk" val="1.15" /> <!-- Increases critical attack power by 15% -->
+				<!-- Increases critical attack power by 15% -->
 				<!-- Increases accuracy by 2 -->
 				<HOLD>30</HOLD>
 			</effect>
@@ -2473,6 +2493,10 @@
 			<effect name="Accuracy">
 				<amount>2</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

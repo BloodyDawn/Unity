@@ -299,7 +299,6 @@
 				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BLUNT>
@@ -412,6 +411,21 @@
 				</DUALFIST>
 			</effect>
 			<effect name="GetAgro" />
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">-25</value>
+					<value level="2">-25</value>
+					<value level="3">-25</value>
+					<value level="4">-25</value>
+					<value level="5">-25</value>
+					<value level="6">-30</value>
+					<value level="7">-30</value>
+					<value level="8">-30</value>
+					<value level="9">-30</value>
+					<value level="10">-35</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="402" levels="10" name="Arrest">
@@ -744,9 +758,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="BLUNT" />
-				</mul>
 				<sub stat="cancelVuln" val="40" />
 				<mul stat="healEffect" val="0.2" />
 			</effect>
@@ -783,6 +794,17 @@
 				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">33</value>
+					<value level="2">66</value>
+					<value level="3">100</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
@@ -1527,9 +1549,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.2">
-					<using kind="BOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1565,6 +1584,13 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>BOW</item>
@@ -1797,9 +1823,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,POLE" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="BLUNT,DUALFIST" />
-				</mul>
 				<mul stat="PhysicalMpConsumeRate" val="0.5" />
 				<mul stat="healEffect" val="0.5" />
 			</effect>
@@ -1832,6 +1855,18 @@
 					<item>SWORD</item>
 					<item>BLUNT</item>
 					<item>POLE</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">33</value>
+					<value level="2">66</value>
+					<value level="3">100</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
@@ -2016,13 +2051,17 @@
 				<add stat="rCrit" val="100">
 					<using kind="DUALFIST" />
 				</add>
-				<mul stat="cAtk" val="1.3">
-					<using kind="DUALFIST" />
-				</mul>
 			</effect>
 			<effect name="Accuracy">
 				<amount>6</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>30</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>DUALFIST</item>
 				</weaponType>
@@ -4602,10 +4641,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">25</value>
+					<value level="2">30</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

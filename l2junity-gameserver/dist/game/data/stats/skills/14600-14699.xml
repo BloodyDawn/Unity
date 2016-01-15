@@ -1313,13 +1313,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="2" />
-				<mul stat="cAtk" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>

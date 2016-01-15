@@ -221,7 +221,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1629,7 +1632,6 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
@@ -1661,6 +1663,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

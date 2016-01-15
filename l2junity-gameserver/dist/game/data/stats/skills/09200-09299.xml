@@ -646,7 +646,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.32" />
-				<mul stat="cAtk" val="1.35" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
@@ -654,6 +653,10 @@
 				<mul stat="MagicalMpConsumeRate" val="0.8">
 					<player class_id_restriction="144" />
 				</mul>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

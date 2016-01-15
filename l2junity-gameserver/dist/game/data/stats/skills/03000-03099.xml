@@ -530,7 +530,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">174.78</value>
+					<value level="2">194.1</value>
+					<value level="3">213.12</value>
+					<value level="4">231.29</value>
+					<value level="5">247.98</value>
+					<value level="6">262.57</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -640,7 +650,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">248.56</value>
+					<value level="2">298.04</value>
+					<value level="3">352.73</value>
+					<value level="4">411.98</value>
+					<value level="5">474.82</value>
+					<value level="6">539.9</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1202,10 +1222,34 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">81.6</value>
+					<value level="2">61.4</value>
+					<value level="3">84.14</value>
+					<value level="4">75.49</value>
+					<value level="5">66.77</value>
+					<value level="6">58.01</value>
+					<value level="7">49.42</value>
+					<value level="8">84.11</value>
+					<value level="9">166.26</value>
+					<value level="10">146.88</value>
+					<value level="11">127</value>
+					<value level="12">107.01</value>
+					<value level="13">133.97</value>
+					<value level="14">124.79</value>
+					<value level="15">275.26</value>
+					<value level="16">267.13</value>
+					<value level="17">257.98</value>
+					<value level="18">297.21</value>
+					<value level="19">331.38</value>
+					<value level="20">361.06</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1226,7 +1270,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">106.45</value>
+					<value level="2">118.22</value>
+					<value level="3">129.81</value>
+					<value level="4">140.87</value>
+					<value level="5">151.04</value>
+					<value level="6">159.93</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1906,10 +1960,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">180.94</value>
+					<value level="2">200.79</value>
+					<value level="3">200.79</value>
+					<value level="4">559</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1926,10 +1988,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">297.68</value>
+					<value level="2">326.28</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

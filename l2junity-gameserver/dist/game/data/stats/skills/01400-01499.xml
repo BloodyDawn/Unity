@@ -3416,9 +3416,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#amount" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">30</value>
 					<value level="2">40</value>

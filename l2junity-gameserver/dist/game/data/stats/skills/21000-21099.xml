@@ -381,10 +381,13 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
-				<mul stat="cAtk" val="1.25" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -438,10 +441,13 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
-				<mul stat="cAtk" val="1.25" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -593,10 +599,13 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
-				<mul stat="cAtk" val="1.25" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1241,7 +1250,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1520,7 +1532,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1746,7 +1761,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2196,7 +2214,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

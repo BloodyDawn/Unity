@@ -555,7 +555,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1162,7 +1165,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
@@ -1198,6 +1200,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1285,7 +1291,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -1322,6 +1327,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1832,13 +1841,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>CRITICAL_PROB_UP;CRITICAL_DMG_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

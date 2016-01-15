@@ -822,7 +822,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#pAtkcAtk" />
 				<mul stat="physicalSkillPower" val="#atkSpdDefPower" />
 			</effect>
 			<effect name="PAtk">
@@ -870,6 +869,14 @@
 					<value level="1">2</value>
 					<value level="2">3</value>
 					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

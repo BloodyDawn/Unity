@@ -2074,7 +2074,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -2111,6 +2110,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2328,7 +2331,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
@@ -2364,6 +2366,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2638,7 +2644,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -2675,6 +2680,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2781,7 +2790,6 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="rCrit" val="-0.3" />
-				<mul stat="cAtk" val="0.7" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-10</amount>
@@ -2800,6 +2808,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>

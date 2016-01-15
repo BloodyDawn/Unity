@@ -500,9 +500,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="0.3" />
 				<mul stat="mCritRate" val="4" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1528,7 +1531,6 @@
 			<effect name="TriggerSkillByDamage">
 				<!-- Seed of Revenge -->
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
@@ -1549,6 +1551,14 @@
 			<effect name="PAtk">
 				<amount>300</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">25</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1693,7 +1703,6 @@
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<!-- Pain of Shillien -->
-				<mul stat="cAtk" val="1.2" />
 				<add stat="windPower" val="#windPower" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -1719,6 +1728,10 @@
 					<value level="3">8</value>
 				</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1859,7 +1872,6 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="0.3" />
 			</effect>
 			<effect name="PAtk">
@@ -1868,6 +1880,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>75</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2450,7 +2466,14 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">25</value>
+					<value level="2">30</value>
+					<value level="3">35</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

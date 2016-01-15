@@ -2399,7 +2399,6 @@
 			<effect name="Debuff">
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="regHp" val="0.5" />
-				<mul stat="cAtk" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="PAtk">
@@ -2428,6 +2427,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

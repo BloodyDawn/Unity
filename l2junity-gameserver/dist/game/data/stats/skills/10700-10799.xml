@@ -695,8 +695,22 @@
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<mul stat="rCrit" val="0.25" />
-				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="skillCriticalProbability" val="11" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">12</value>
+					<value level="7">14</value>
+					<value level="8">16</value>
+					<value level="9">18</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2143,7 +2157,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 			<effect name="Accuracy">
 				<amount>
@@ -2153,6 +2166,15 @@
 					<value level="4">40</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">90</value>
+					<value level="3">110</value>
+					<value level="4">130</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

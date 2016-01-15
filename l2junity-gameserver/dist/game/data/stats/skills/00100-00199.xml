@@ -814,9 +814,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.1">
-					<using kind="DUALFIST" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>30</amount>
@@ -832,6 +829,13 @@
 			<effect name="PhysicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -2991,7 +2995,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#crit" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">32</value>
+					<value level="2">56</value>
+					<value level="3">93</value>
+					<value level="4">177</value>
+					<value level="5">295</value>
+					<value level="6">384</value>
+					<value level="7">406</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

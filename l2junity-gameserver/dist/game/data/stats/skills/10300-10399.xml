@@ -277,9 +277,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.45">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</mul>
 				<add stat="rCrit" val="45">
 					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 				</add>
@@ -298,6 +295,18 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-15</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+					<item> DUAL</item>
+					<item> DUALFIST</item>
+					<item> POLE</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>45</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>
@@ -929,14 +938,23 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#add">
-					<using kind="SWORD, BLUNT" />
-				</mul>
 				<mul stat="PhysicalMpConsumeRate" val="1.1">
 					<using kind="SWORD, BLUNT" />
 				</mul>
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">50</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">10</value>
 					<value level="2">12</value>
@@ -1147,9 +1165,6 @@
 		<reuseDelay>300000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.1">
-					<using kind="DUALFIST" />
-				</mul>
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Punch Drunk -->
@@ -1179,6 +1194,13 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>30</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>10</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>DUALFIST</item>

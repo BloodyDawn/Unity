@@ -48,9 +48,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.15">
-					<using kind="DUAL, DUALBLUNT" />
-				</mul>
 				<mul stat="pvePhysDmg" val="1.20" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
@@ -92,6 +89,14 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>DUAL</item>
@@ -1199,7 +1204,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
-				<mul stat="cAtk" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -1255,6 +1259,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1398,7 +1406,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="1.35" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
@@ -1409,6 +1416,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1612,7 +1623,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="sDef" val="1.50" />
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1632,6 +1642,10 @@
 			</effect>
 			<effect name="ShieldDefenceRate">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1660,7 +1674,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1688,6 +1701,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1779,9 +1796,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.15">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>30</amount>
@@ -1808,6 +1822,14 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>
@@ -3321,9 +3343,24 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="2">
-					<using kind="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
-				</mul>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+					<item>POLE</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -3841,7 +3878,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
-				<mul stat="cAtk" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -3898,6 +3934,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4026,7 +4066,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="1.35" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
@@ -4037,6 +4076,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4220,7 +4263,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 				<mul stat="sDef" val="1.50" />
 			</effect>
@@ -4241,6 +4283,10 @@
 			</effect>
 			<effect name="ShieldDefenceRate">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4266,7 +4312,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -4294,6 +4339,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

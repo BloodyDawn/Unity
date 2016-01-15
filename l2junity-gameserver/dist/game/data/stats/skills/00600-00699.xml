@@ -170,10 +170,17 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 			</effect>
 			<effect name="PAtk">
 				<amount>17.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">100</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -572,7 +579,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<add stat="cAtkAdd" val="#cAtk" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">111</value>
+					<value level="2">177</value>
+					<value level="3">253</value>
+					<value level="4">317</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

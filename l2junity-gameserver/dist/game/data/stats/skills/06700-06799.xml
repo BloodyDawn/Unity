@@ -356,7 +356,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1267,7 +1270,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1275,6 +1277,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1363,7 +1369,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1371,6 +1376,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1635,7 +1644,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1643,6 +1651,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

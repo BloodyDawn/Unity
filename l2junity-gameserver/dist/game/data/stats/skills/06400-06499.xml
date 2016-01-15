@@ -912,14 +912,23 @@
 				<mul stat="rCrit" val="#rCrit">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<power>
 					<value level="1">0.005</value>
 					<value level="2">0.01</value>
 					<value level="3">0.02</value>
 				</power>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -946,10 +955,15 @@
 				<mul stat="rCrit" val="0.9">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
-				<mul stat="cAtk" val="1.5">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<power>0.05</power>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>50</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

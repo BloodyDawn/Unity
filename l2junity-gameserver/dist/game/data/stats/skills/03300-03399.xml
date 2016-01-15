@@ -767,7 +767,7 @@
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
-				<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
+				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -778,6 +778,10 @@
 			<effect name="PAtk">
 				<amount>5.4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>234</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

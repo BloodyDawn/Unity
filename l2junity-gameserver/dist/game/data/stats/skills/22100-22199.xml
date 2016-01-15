@@ -526,12 +526,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="0.3" />
 			</effect>
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

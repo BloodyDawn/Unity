@@ -1841,7 +1841,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1955,9 +1963,18 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">1</value>
 					<value level="2">3</value>
@@ -2077,9 +2094,18 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">1</value>
 					<value level="2">3</value>
@@ -2100,7 +2126,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">12</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2173,9 +2207,18 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">1</value>
 					<value level="2">3</value>
@@ -3476,10 +3519,14 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.30" /> <!-- Guessed -->
+				<!-- Guessed -->
 				<!-- Guessed -->
 			</effect>
 			<effect name="FatalBlowRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>

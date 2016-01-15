@@ -185,7 +185,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
@@ -221,6 +220,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -313,7 +316,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -349,6 +351,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -408,7 +414,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.1" />
-				<mul stat="cAtk" val="1.1" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -439,6 +444,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -519,7 +528,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
-				<mul stat="cAtk" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -556,6 +564,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -605,7 +617,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
-				<mul stat="cAtk" val="1.2" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<selfEffects>
@@ -3003,9 +3018,6 @@
 				<add stat="rCrit" val="100">
 					<using kind="SWORD" />
 				</add>
-				<mul stat="cAtk" val="2">
-					<using kind="BLUNT" />
-				</mul>
 				<sub stat="cancelVuln" val="40" />
 				<mul stat="healEffect" val="0.2" />
 			</effect>
@@ -3028,6 +3040,13 @@
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -3128,7 +3147,6 @@
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<!-- Pain of Shillien -->
-				<mul stat="cAtk" val="1.1" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>99</maxAttackerLevel>
@@ -3137,6 +3155,10 @@
 				<minDamage>1</minDamage>
 				<skillId>5564</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3165,9 +3187,6 @@
 				<add stat="rCrit" val="100">
 					<using kind="SWORD" />
 				</add>
-				<mul stat="cAtk" val="2">
-					<using kind="BLUNT" />
-				</mul>
 				<mul stat="healEffect" val="0.2" />
 			</effect>
 			<effect name="VampiricAttack">
@@ -3189,6 +3208,13 @@
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

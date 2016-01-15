@@ -42,9 +42,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -99,6 +96,19 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="10101" levels="4" name="Templar's Frenzy">
@@ -138,9 +148,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -188,6 +195,19 @@
 					<value level="2">15</value>
 					<value level="3">20</value>
 					<value level="4">25</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
 				</amount>
 				<mode>PER</mode>
 				<weaponType>
@@ -362,7 +382,6 @@
 			</effect>
 			<effect name="Buff">
 				<add stat="rCrit" val="80" />
-				<mul stat="cAtk" val="1.25" />
 			</effect>
 			<effect name="PAtk">
 				<amount>25</amount>
@@ -373,6 +392,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>

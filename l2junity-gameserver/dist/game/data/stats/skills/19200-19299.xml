@@ -116,9 +116,12 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.25" />
 				<mul stat="mCritRate" val="1.25" />
-				<mul stat="cAtk" val="1.25" />
 				<mul stat="mCritPower" val="1.25" />
 				<mul stat="cAtkSkill" val="1.25" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

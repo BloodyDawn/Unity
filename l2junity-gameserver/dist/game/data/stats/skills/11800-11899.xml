@@ -776,7 +776,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.32" />
-				<mul stat="cAtk" val="1.35" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
@@ -786,6 +785,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1071,7 +1074,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.2" />
 				<mul stat="mCritRate" val="1.2" />
-				<mul stat="cAtk" val="1.2" />
 				<mul stat="debuffVuln" val="0.9" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
@@ -1110,6 +1112,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

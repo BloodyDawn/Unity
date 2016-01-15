@@ -204,7 +204,6 @@
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base" />
 				<add stat="rCrit" val="#rCrit" />
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<mul stat="regMp" val="1.0557" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -240,6 +239,15 @@
 					<value level="2">354</value>
 					<value level="3">354</value>
 					<value level="4">354</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">172</value>
+					<value level="4">172</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -753,7 +761,6 @@
 				<add stat="DEX" val="#base1" />
 				<sub stat="CON" val="#base2" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -789,6 +796,15 @@
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">182</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1794,7 +1810,6 @@
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
-				<add stat="cAtkAdd" val="#critDmgAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -1821,6 +1836,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">209</value>
+					<value level="3">209</value>
+					<value level="4">209</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1916,7 +1940,6 @@
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
-				<add stat="cAtkAdd" val="#critDmgAdd" />
 				<mul stat="PhysicalMpConsumeRate" val="#mpConsum" />
 				<mul stat="MagicalMpConsumeRate" val="#mpConsum" />
 				<mul stat="DanceMpConsumeRate" val="#mpConsum" />
@@ -1946,6 +1969,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">242</value>
+					<value level="3">242</value>
+					<value level="4">242</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2033,7 +2065,6 @@
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
-				<add stat="cAtkAdd" val="#critDmgAdd" />
 				<mul stat="physicalSkillPower" val="#skillPower" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -2061,6 +2092,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">281</value>
+					<value level="3">281</value>
+					<value level="4">281</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2148,7 +2188,6 @@
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
-				<add stat="cAtkAdd" val="#critDmgAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -2184,6 +2223,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">298</value>
+					<value level="3">298</value>
+					<value level="4">298</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2282,7 +2330,6 @@
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
-				<add stat="cAtkAdd" val="#critDmgAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -2332,6 +2379,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">325</value>
+					<value level="3">325</value>
+					<value level="4">325</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2558,7 +2614,6 @@
 				<add stat="maxHp" val="#maxHp" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<mul stat="healEffect" val="#healEffect" />
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -2598,6 +2653,15 @@
 					<value level="4">3</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">242</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2908,7 +2972,6 @@
 				<add stat="STR" val="-2" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -2949,6 +3012,15 @@
 					<value level="4">13</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">325</value>
+					<value level="4">325</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

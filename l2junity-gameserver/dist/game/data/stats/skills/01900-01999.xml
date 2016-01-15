@@ -187,8 +187,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.01" />
 				<mul stat="mCritPower" val="1.01" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

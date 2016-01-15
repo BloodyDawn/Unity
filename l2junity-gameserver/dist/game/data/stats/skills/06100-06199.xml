@@ -298,7 +298,6 @@
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
 				<add stat="rCrit" val="50" />
-				<mul stat="cAtk" val="1.15" />
 				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="PAtk">
@@ -319,6 +318,10 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

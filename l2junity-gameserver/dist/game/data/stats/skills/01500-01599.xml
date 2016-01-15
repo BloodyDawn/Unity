@@ -101,13 +101,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>CRITICAL_PROB_UP;CRITICAL_DMG_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -783,13 +786,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>CRITICAL_PROB_UP;CRITICAL_DMG_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2504,13 +2510,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>CRITICAL_PROB_UP;CRITICAL_DMG_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3424,9 +3433,19 @@
 				<mul stat="rCrit" val="#rCrit">
 					<using kind="DAGGER,DUALDAGGER,LIGHT" />
 				</mul>
-				<add stat="cAtkAdd" val="#cAtkAdd">
-					<using kind="DAGGER,DUALDAGGER,LIGHT" />
-				</add>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">177</value>
+					<value level="2">295</value>
+					<value level="3">384</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -4057,8 +4076,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<!-- TODO : add stat="mCAtkAdd" val="#mCAtkAdd" / -->
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">18</value>
+					<value level="2">36</value>
+					<value level="3">54</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4186,7 +4212,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="BlockBuffSlot">
@@ -4194,6 +4219,10 @@
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>SONG_OF_HUNTER</dispel>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4218,7 +4247,6 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="BlockBuffSlot">
@@ -4226,6 +4254,10 @@
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>SONG_OF_HUNTER</dispel>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

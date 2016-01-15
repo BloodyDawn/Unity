@@ -5864,9 +5864,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="1.2">
-					<using kind="DUALFIST" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>20</amount>
@@ -5878,6 +5875,13 @@
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

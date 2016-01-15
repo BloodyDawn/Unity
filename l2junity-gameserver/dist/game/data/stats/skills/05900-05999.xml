@@ -554,7 +554,6 @@
 			</effect>
 			<effect name="Debuff">
 				<mul stat="rCrit" val="-0.1" />
-				<mul stat="cAtk" val="0.9" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-10</amount>
@@ -570,6 +569,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

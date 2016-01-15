@@ -451,7 +451,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="220" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>220</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -541,7 +544,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="169" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>169</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -631,7 +637,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="268" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>268</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -741,7 +750,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="340" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>340</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -832,7 +844,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="303" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>303</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1214,7 +1229,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="#cAtkAdd" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">156</value>
+					<value level="2">377</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1387,7 +1408,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="528" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>528</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1577,7 +1601,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="cAtkAdd" val="415" />
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>415</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

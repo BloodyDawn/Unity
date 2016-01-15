@@ -1881,7 +1881,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1898,6 +1897,15 @@
 					<value level="2">75</value>
 					<value level="3">85</value>
 					<value level="4">85</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">35</value>
+					<value level="2">40</value>
+					<value level="3">40</value>
+					<value level="4">45</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2894,7 +2902,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
 				<mul stat="mCritRate" val="1.20" />
-				<mul stat="cAtk" val="1.20" />
 				<mul stat="debuffVuln" val="0.90" />
 				<mul stat="defCritDamage" val="0.7" />
 			</effect>
@@ -2932,6 +2939,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

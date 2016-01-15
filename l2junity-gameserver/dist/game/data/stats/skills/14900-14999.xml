@@ -1166,7 +1166,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="80" />
-				<mul stat="cAtk" val="1.1" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1205,6 +1204,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -1631,9 +1631,6 @@
 				<add stat="rCrit" val="#cAtkAdd">
 					<using kind="SWORD" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="BLUNT" />
-				</mul>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -1686,6 +1683,18 @@
 				<weaponType>
 					<item>SWORD</item>
 					<item> BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
 				</weaponType>
 			</effect>
 		</for>
@@ -1828,7 +1837,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="50" />
-				<mul stat="cAtk" val="1.15" />
 			</effect>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Rage Aura -->
@@ -1844,6 +1852,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4458,9 +4470,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -4515,6 +4524,19 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
@@ -4553,9 +4575,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -4612,6 +4631,19 @@
 					<value level="2">15</value>
 					<value level="3">20</value>
 					<value level="4">25</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
 				</amount>
 				<mode>PER</mode>
 				<weaponType>
