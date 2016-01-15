@@ -9,7 +9,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
+				<!-- Def. Power +8.47% -->
 				<!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
@@ -32,6 +32,10 @@
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalDefence">
+				<amount>8.47</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8401" levels="1" name="Vorpal Leather Armor Set">
@@ -44,7 +48,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- Atk. Power + 5.57% -->
-				<mul stat="pDef" val="1.0557" /> <!-- Def. Power + 5.57% -->
+				<!-- Def. Power + 5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -62,6 +66,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -331,7 +339,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
+				<!-- Def. Power +8.47% -->
 				<!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
@@ -357,6 +365,10 @@
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalDefence">
+				<amount>8.47</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8410" levels="1" name="Vorpal Leather Armor Set - PvP">
@@ -380,7 +392,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- Atk. Power + 5.57% -->
-				<mul stat="pDef" val="1.0557" /> <!-- Def. Power + 5.57% -->
+				<!-- Def. Power + 5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -401,6 +413,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -930,12 +946,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
 				<HOLD>10.5</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>0.62</amount>
 				<mode>PER</mode>
 			</effect>
@@ -950,12 +969,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="531" />
 				<SLEEP>28</SLEEP>
 				<HOLD>28</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
@@ -970,12 +992,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
 				<HOLD>18</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>1.03</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>1.03</amount>
 				<mode>PER</mode>
 			</effect>
@@ -990,12 +1015,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1010,12 +1038,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1392,9 +1423,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="StatByMoveType">
-				<add stat="pDef" val="#pDef">
-					<using kind="HEAVY" />
-				</add>
 				<stat>REGENERATE_MP_RATE</stat>
 				<type>STANDING</type>
 				<value>
@@ -1411,6 +1439,17 @@
 					<value level="2">35</value>
 					<value level="3">37</value>
 				</value>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">80</value>
+					<value level="3">90</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1452,10 +1491,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="45">
-					<using kind="MAGIC" />
-				</add>
 				<mul stat="weightLimit" val="#weightLimit" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1647,12 +1690,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
 				<HOLD>10.5</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>0.62</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1667,12 +1713,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
 				<HOLD>18</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>1.03</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>1.03</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1687,12 +1736,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1707,12 +1759,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>

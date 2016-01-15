@@ -585,7 +585,6 @@
 				<mul stat="maxMp" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -606,6 +605,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1128,7 +1131,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="BlockActions">
-				<mul stat="pDef" val="0.1" />
 			</effect>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>
@@ -1138,6 +1140,10 @@
 					<value level="4">37</value>
 					<value level="5">42</value>
 				</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1465,7 +1471,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<mul stat="pDef" val="#amount" />
 				<power>
 					<value level="1">24</value>
 					<value level="2">32</value>
@@ -1480,6 +1485,21 @@
 				</power>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-20</value>
+					<value level="3">-23</value>
+					<value level="4">-23</value>
+					<value level="5">-23</value>
+					<value level="6">-23</value>
+					<value level="7">-23</value>
+					<value level="8">-23</value>
+					<value level="9">-23</value>
+					<value level="10">-23</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-20</value>
 					<value level="2">-20</value>
@@ -3459,12 +3479,18 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">900</value>
 					<value level="2">1350</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1200</value>
+					<value level="2">1800</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -3550,7 +3576,10 @@
 				<power>200</power>
 			</effect>
 			<effect name="BlockActions">
-				<mul stat="pDef" val="0.1" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4345,7 +4374,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
@@ -4354,6 +4382,10 @@
 				<slot>PA_UP;PD_UP</slot>
 			</effect>
 			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>

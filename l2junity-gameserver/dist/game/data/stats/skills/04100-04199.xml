@@ -466,7 +466,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.6" />
 				<mul stat="pAtkSpd" val="0.75" />
 				<mul stat="mAtkSpd" val="0.75" />
 				<sub stat="accCombat" val="19" />
@@ -486,6 +485,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1915,7 +1918,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-17</value>
+					<value level="2">-20</value>
+					<value level="3">-23</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3518,7 +3528,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.5" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

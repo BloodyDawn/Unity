@@ -181,7 +181,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -477,7 +480,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.77" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -509,7 +515,10 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="BlockActions">
-				<mul stat="pDef" val="0.77" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

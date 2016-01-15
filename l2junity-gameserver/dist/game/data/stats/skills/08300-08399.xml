@@ -33,7 +33,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
+				<!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="531" /> <!-- Max HP +531 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -42,6 +42,10 @@
 				<HOLD>70</HOLD>
 			</effect>
 			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
@@ -68,7 +72,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
+				<!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="540" /> <!-- Max HP +540 -->
 				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 5 -->
@@ -87,6 +91,10 @@
 			<effect name="Speed">
 				<amount>5</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.57</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

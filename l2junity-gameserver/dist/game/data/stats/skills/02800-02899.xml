@@ -1422,7 +1422,6 @@
 				<mul stat="maxMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
@@ -1439,6 +1438,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1472,7 +1475,6 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
 			<effect name="PAtk">
@@ -1488,6 +1490,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1975,7 +1981,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<sub stat="rEvas" val="4" />
@@ -1994,6 +1999,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2167,7 +2176,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2443,7 +2455,6 @@
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
-				<mul stat="pDef" val="1.1" />
 				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
 			<effect name="MaxHp">
@@ -2455,6 +2466,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>

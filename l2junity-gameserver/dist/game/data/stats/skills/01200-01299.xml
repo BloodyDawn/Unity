@@ -5400,7 +5400,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<sub stat="rEvas" val="#rEvas" />
@@ -5430,6 +5429,13 @@
 				<amount>
 					<value level="1">-10</value>
 					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -7051,7 +7057,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<add stat="pDef" val="#def" />
 				<power>
 					<value level="1">5</value>
 					<value level="2">6</value>
@@ -7067,6 +7072,24 @@
 					<value level="12">10</value>
 					<value level="13">10</value>
 				</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">293.3</value>
+					<value level="2">333.2</value>
+					<value level="3">375.9</value>
+					<value level="4">421.4</value>
+					<value level="5">445.2</value>
+					<value level="6">469.7</value>
+					<value level="7">494.9</value>
+					<value level="8">520.1</value>
+					<value level="9">546</value>
+					<value level="10">571.9</value>
+					<value level="11">598.5</value>
+					<value level="12">625.8</value>
+					<value level="13">653.1</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -7697,13 +7720,19 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="ImmobilePetBuff">
-				<add stat="pDef" val="#pDef" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">1350</value>
 					<value level="2">2700</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1800</value>
+					<value level="2">3600</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

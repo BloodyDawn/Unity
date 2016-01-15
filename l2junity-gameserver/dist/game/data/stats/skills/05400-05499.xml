@@ -717,7 +717,6 @@
 			<effect name="Buff">
 				<sub stat="accCombat" val="50" />
 				<sub stat="rEvas" val="#avoid" />
-				<mul stat="pDef" val="#def" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-95</amount>
@@ -728,6 +727,13 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-60</value>
+					<value level="2">0</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-60</value>
 					<value level="2">0</value>
@@ -1016,7 +1022,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pDef" val="0.92" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="PAtk">
@@ -1033,6 +1038,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

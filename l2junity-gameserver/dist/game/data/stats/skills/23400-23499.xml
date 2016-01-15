@@ -885,7 +885,6 @@
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
 				<mul stat="mCritRate" val="1.1" />
-				<mul stat="pDef" val="1.2" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -913,6 +912,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1143,7 +1146,10 @@
 				<power>2416</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.8" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1382,12 +1388,19 @@
 		<reuseDelay>900000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#def" />
 				<sub stat="cancelVuln" val="80" />
 				<add stat="reflectDam" val="#reflectDam" />
 				<set stat="damageCap" val="#damageCap" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">4000</value>
+					<value level="2">6000</value>
+					<value level="3">8000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">4000</value>
 					<value level="2">6000</value>
@@ -1663,7 +1676,10 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.77" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<selfEffects>

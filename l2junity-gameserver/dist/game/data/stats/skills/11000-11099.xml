@@ -97,13 +97,28 @@
 				<add stat="maxHp" val="4447">
 					<using kind="MAGIC" />
 				</add>
-				<add stat="pDef" val="#pDef">
-					<using kind="MAGIC" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1212</value>
+					<value level="2">1330</value>
+					<value level="3">1462</value>
+					<value level="4">1576</value>
+					<value level="5">1767</value>
+					<value level="6">1833</value>
+					<value level="7">1903</value>
+					<value level="8">1975</value>
+					<value level="9">2058</value>
+					<value level="10">2136</value>
+				</amount>
+				<mode>DIFF</mode>
 				<armorType>
 					<item>MAGIC</item>
 				</armorType>
@@ -2764,7 +2779,6 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="mCritRate" val="#mCritRate" />
-				<mul stat="pDef" val="1.20" />
 				<add stat="rEvas" val="2" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
@@ -2786,6 +2800,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2875,7 +2893,6 @@
 				<mul stat="mAtkSpd" val="0.9" />
 				<mul stat="rCrit" val="-0.1" />
 				<mul stat="mCritRate" val="0.9" />
-				<mul stat="pDef" val="0.9" />
 				<sub stat="rEvas" val="6" />
 			</effect>
 			<effect name="MAtk">
@@ -2888,6 +2905,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2965,7 +2986,6 @@
 				<percentage>25</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="0.92" />
 				<mul stat="rCrit" val="-0.08" />
 				<mul stat="mCritRate" val="0.92" />
@@ -2981,6 +3001,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

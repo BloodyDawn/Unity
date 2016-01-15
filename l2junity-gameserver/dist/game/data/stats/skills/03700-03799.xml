@@ -282,7 +282,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" />
-				<mul stat="pDef" val="1.0219" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2.19</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -295,7 +298,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0088" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.88</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -308,7 +314,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0088" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.88</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -321,7 +330,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0132" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1.32</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -597,7 +609,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0133" />
 				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -606,6 +617,10 @@
 			<effect name="Speed">
 				<amount>1.16</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -620,7 +635,6 @@
 			<effect name="Buff">
 				<add stat="cancelVuln" val="8.33" />
 				<mul stat="mAtkSpd" val="1.15" />
-				<mul stat="pDef" val="1.0333" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>20</PARALYZE>
@@ -628,6 +642,10 @@
 			<effect name="Speed">
 				<amount>2.91</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -640,7 +658,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0133" />
 				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -649,6 +666,10 @@
 			<effect name="Speed">
 				<amount>1.16</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -661,7 +682,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.02" />
 				<sub stat="cancel" val="13" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -670,6 +690,10 @@
 			<effect name="Speed">
 				<amount>1.75</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1563,12 +1587,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0208" />
 				<add stat="maxHp" val="185" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>17.5</SLEEP>
 				<HOLD>17.5</HOLD>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1581,12 +1608,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
 				<add stat="maxHp" val="74" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1599,12 +1629,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
 				<add stat="maxHp" val="74" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1630,12 +1663,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0125" />
 				<add stat="maxHp" val="111" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>10.5</SLEEP>
 				<HOLD>10.5</HOLD>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1649,11 +1685,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="889" />
-				<mul stat="pDef" val="1.0724" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>28</SLEEP>
 				<HOLD>28</HOLD>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>7.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1668,7 +1707,10 @@
 			<effect name="Buff">
 				<add stat="darkRes" val="3.2" />
 				<add stat="maxHp" val="984" />
-				<mul stat="pDef" val="1.0724" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>7.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1681,9 +1723,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0208" />
 				<add stat="maxHp" val="205" />
 				<add stat="darkRes" val="2" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1696,9 +1741,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
 				<add stat="maxHp" val="82" />
 				<add stat="darkRes" val="0.8" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1711,9 +1759,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
 				<add stat="maxHp" val="82" />
 				<add stat="darkRes" val="0.8" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1739,9 +1790,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0125" />
 				<add stat="maxHp" val="123" />
 				<add stat="darkRes" val="1.2" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

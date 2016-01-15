@@ -17,7 +17,6 @@
 			<effect name="MpConsumePerLevel" ticks="5">
 				<mul stat="pAtkSpd" val="#amount" />
 				<add stat="accCombat" val="#amount2" />
-				<mul stat="pDef" val="0.9" />
 				<sub stat="rEvas" val="#amount2" />
 				<power>0.4</power>
 			</effect>
@@ -26,6 +25,10 @@
 					<value level="1">5</value>
 					<value level="2">8</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -93,7 +96,10 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="mAtkSpd" val="0.85" />
-				<mul stat="pDef" val="0.77" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1860,10 +1866,13 @@
 		<for>
 			<effect name="TransferDamage">
 				<add stat="transDamToPlayer" val="90" />
-				<add stat="pDef" val="3600" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>2700</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3600</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -2078,7 +2087,6 @@
 			</effect>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.15" />
-				<mul stat="pDef" val="1.3" />
 				<mul stat="pAtkSpd" val="1.1" />
 			</effect>
 			<effect name="MaxHp">
@@ -2091,6 +2099,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2161,7 +2173,7 @@
 		<for>
 			<effect name="Transformation">
 				<!-- pAtk +100% -->
-				<mul stat="pDef" val="2" /> <!-- pDef +100% -->
+				<!-- pDef +100% -->
 				<!-- mAtk +100% -->
 				<!-- mDef +100% -->
 				<transformationId>251</transformationId>
@@ -2175,6 +2187,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3743,7 +3759,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="pDef" val="#pDef" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
@@ -3752,6 +3767,15 @@
 					<value level="2">900</value>
 					<value level="3">1000</value>
 					<value level="4">1100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">1100</value>
+					<value level="3">1200</value>
+					<value level="4">1300</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -4261,7 +4285,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="54.7" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>54.7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

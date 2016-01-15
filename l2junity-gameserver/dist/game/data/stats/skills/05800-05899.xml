@@ -699,7 +699,10 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -893,10 +896,13 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2385,7 +2391,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.8" />
 				<sub stat="rEvas" val="10" />
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="regHp" val="0.5" />
@@ -2403,6 +2408,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2431,7 +2440,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.8" />
 				<sub stat="rEvas" val="10" />
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="regHp" val="0.1" />
@@ -2441,6 +2449,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2489,13 +2501,16 @@
 		<for>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="5" />
-				<mul stat="pDef" val="0.9" />
 			</effect>
 			<effect name="Speed">
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2532,13 +2547,16 @@
 		<for>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="10" />
-				<mul stat="pDef" val="0.8" />
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>

@@ -213,11 +213,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.046" /> <!-- P. Def +4.6% -->
+				<!-- P. Def +4.6% -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>4.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3413" levels="1" name="Dynasty Leather Armor">
@@ -351,12 +355,16 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.054" /> <!-- increase Atk. Spd. +5.4% -->
 				<!-- Increase P. Atk. +2.66% -->
-				<mul stat="pDef" val="1.0266" /> <!-- Increase P. Def. +2.66% -->
+				<!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>2.66</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1395,7 +1403,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="18.3" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>18.3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

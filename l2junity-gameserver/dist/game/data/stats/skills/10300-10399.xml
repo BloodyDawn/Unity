@@ -778,7 +778,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.5" />
 				<mul stat="maxHp" val="1.25" />
 			</effect>
 			<effect name="Speed">
@@ -786,6 +785,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>

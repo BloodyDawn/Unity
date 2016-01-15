@@ -23,7 +23,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="1800" />
 				<add stat="regHp" val="300" />
 				<mul stat="regMp" val="3" />
 				<mul stat="cancelVuln" val="0.2" />
@@ -35,6 +34,10 @@
 			<effect name="MAtk">
 				<amount>50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1800</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

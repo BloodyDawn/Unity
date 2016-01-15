@@ -33,7 +33,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<mul stat="pDef" val="#pDef" />
 				<power>
 					<value level="1">0</value>
 					<value level="2">0</value>
@@ -121,6 +120,26 @@
 					<value level="5">-100</value>
 					<value level="6">-100</value>
 					<value level="7">-100</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+					<value level="11">12</value>
+					<value level="12">14</value>
+					<value level="13">16</value>
+					<value level="14">18</value>
+					<value level="15">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-100</value>
+					<value level="2">-100</value>
+					<value level="3">-100</value>
+					<value level="4">-100</value>
+					<value level="5">-100</value>
+					<value level="6">5</value>
+					<value level="7">5</value>
 					<value level="8">5</value>
 					<value level="9">7</value>
 					<value level="10">10</value>
@@ -320,7 +339,14 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -522,7 +548,14 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -568,7 +601,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1944,7 +1984,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#rate" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2576,7 +2623,6 @@
 		<targetType>PARTY_MEMBER</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<sub stat="rEvas" val="#rEvas" />
@@ -2606,6 +2652,13 @@
 				<amount>
 					<value level="1">-10</value>
 					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

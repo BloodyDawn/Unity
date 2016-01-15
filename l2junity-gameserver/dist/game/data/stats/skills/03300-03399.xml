@@ -723,7 +723,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
+				<!-- P. Def. +5.4% -->
 				<mul stat="healEffect" val="1.03" /> <!-- Received Increased Heal +3% -->
 				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
 			</effect>
@@ -734,6 +734,10 @@
 			<effect name="MaxHp">
 				<amount>492</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -795,7 +799,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
+				<!-- P. Def. +5.4% -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
@@ -803,6 +807,10 @@
 			<effect name="MaxHp">
 				<amount>492</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -894,12 +902,16 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
-				<mul stat="pDef" val="1.026" /> <!-- P. Def. +2.6% -->
+				<!-- P. Def. +2.6% -->
 				<!-- Increase P. Atk. +2.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>2.6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>2.6</amount>
 				<mode>PER</mode>
 			</effect>

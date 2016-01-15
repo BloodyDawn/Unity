@@ -1386,12 +1386,67 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="rEvas" val="#rEvas">
 					<using kind="LIGHT" />
 				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">4.2</value>
+					<value level="2">5.3</value>
+					<value level="3">6.5</value>
+					<value level="4">7.7</value>
+					<value level="5">9</value>
+					<value level="6">9.9</value>
+					<value level="7">10.8</value>
+					<value level="8">12.7</value>
+					<value level="9">13.7</value>
+					<value level="10">14.8</value>
+					<value level="11">16.9</value>
+					<value level="12">18</value>
+					<value level="13">19.1</value>
+					<value level="14">21.5</value>
+					<value level="15">22.7</value>
+					<value level="16">24</value>
+					<value level="17">25.3</value>
+					<value level="18">26.6</value>
+					<value level="19">27.9</value>
+					<value level="20">29.3</value>
+					<value level="21">30.7</value>
+					<value level="22">32.1</value>
+					<value level="23">33.6</value>
+					<value level="24">35</value>
+					<value level="25">36.5</value>
+					<value level="26">38.1</value>
+					<value level="27">39.6</value>
+					<value level="28">41.2</value>
+					<value level="29">42.8</value>
+					<value level="30">44.5</value>
+					<value level="31">46.1</value>
+					<value level="32">47.8</value>
+					<value level="33">49.5</value>
+					<value level="34">51.3</value>
+					<value level="35">53</value>
+					<value level="36">54.8</value>
+					<value level="37">56.6</value>
+					<value level="38">58.4</value>
+					<value level="39">60.2</value>
+					<value level="40">62.1</value>
+					<value level="41">64</value>
+					<value level="42">65.8</value>
+					<value level="43">67.7</value>
+					<value level="44">69.7</value>
+					<value level="45">71.6</value>
+					<value level="46">73.5</value>
+					<value level="47">75.5</value>
+					<value level="48">77.4</value>
+					<value level="49">79.4</value>
+					<value level="50">81.3</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1539,9 +1594,64 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="HEAVY" />
-				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1.9</value>
+					<value level="2">3.3</value>
+					<value level="3">4.8</value>
+					<value level="4">6.4</value>
+					<value level="5">8.1</value>
+					<value level="6">8.9</value>
+					<value level="7">9.8</value>
+					<value level="8">11.7</value>
+					<value level="9">12.7</value>
+					<value level="10">13.7</value>
+					<value level="11">15.8</value>
+					<value level="12">16.9</value>
+					<value level="13">18</value>
+					<value level="14">20.4</value>
+					<value level="15">21.6</value>
+					<value level="16">22.8</value>
+					<value level="17">24.1</value>
+					<value level="18">25.4</value>
+					<value level="19">26.7</value>
+					<value level="20">28</value>
+					<value level="21">29.4</value>
+					<value level="22">30.8</value>
+					<value level="23">32.2</value>
+					<value level="24">33.7</value>
+					<value level="25">35.2</value>
+					<value level="26">36.7</value>
+					<value level="27">38.2</value>
+					<value level="28">39.8</value>
+					<value level="29">41.4</value>
+					<value level="30">43</value>
+					<value level="31">44.6</value>
+					<value level="32">46.3</value>
+					<value level="33">48</value>
+					<value level="34">49.7</value>
+					<value level="35">51.4</value>
+					<value level="36">53.2</value>
+					<value level="37">55</value>
+					<value level="38">56.7</value>
+					<value level="39">58.6</value>
+					<value level="40">60.4</value>
+					<value level="41">62.2</value>
+					<value level="42">64.1</value>
+					<value level="43">66</value>
+					<value level="44">67.8</value>
+					<value level="45">69.7</value>
+					<value level="46">71.6</value>
+					<value level="47">73.6</value>
+					<value level="48">75.5</value>
+					<value level="49">77.4</value>
+					<value level="50">79.3</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1608,12 +1718,69 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="HEAVY" />
-				</add>
 				<mul stat="defCritDamage" val="#defCritDamage">
 					<using kind="HEAVY" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">17.7</value>
+					<value level="2">19.1</value>
+					<value level="3">20.5</value>
+					<value level="4">23.5</value>
+					<value level="5">25</value>
+					<value level="6">26.7</value>
+					<value level="7">30</value>
+					<value level="8">31.8</value>
+					<value level="9">33.6</value>
+					<value level="10">37.4</value>
+					<value level="11">39.3</value>
+					<value level="12">41.3</value>
+					<value level="13">45.6</value>
+					<value level="14">47.7</value>
+					<value level="15">50</value>
+					<value level="16">54.6</value>
+					<value level="17">57.1</value>
+					<value level="18">59.5</value>
+					<value level="19">62.1</value>
+					<value level="20">64.6</value>
+					<value level="21">67.3</value>
+					<value level="22">70</value>
+					<value level="23">72.7</value>
+					<value level="24">75.5</value>
+					<value level="25">78.4</value>
+					<value level="26">81.3</value>
+					<value level="27">84.3</value>
+					<value level="28">87.3</value>
+					<value level="29">90.4</value>
+					<value level="30">93.5</value>
+					<value level="31">96.7</value>
+					<value level="32">99.9</value>
+					<value level="33">103.2</value>
+					<value level="34">106.5</value>
+					<value level="35">109.9</value>
+					<value level="36">113.3</value>
+					<value level="37">116.8</value>
+					<value level="38">120.3</value>
+					<value level="39">123.8</value>
+					<value level="40">127.4</value>
+					<value level="41">131</value>
+					<value level="42">134.7</value>
+					<value level="43">138.4</value>
+					<value level="44">142.1</value>
+					<value level="45">145.8</value>
+					<value level="46">149.6</value>
+					<value level="47">153.4</value>
+					<value level="48">157.2</value>
+					<value level="49">161</value>
+					<value level="50">164.9</value>
+					<value level="51">168.7</value>
+					<value level="52">172.6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1676,15 +1843,67 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="rEvas" val="#rEvas">
 					<using kind="LIGHT" />
 				</add>
 				<mul stat="defCritRate" val="#defCritRate">
 					<using kind="LIGHT" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1.3</value>
+					<value level="2">2.2</value>
+					<value level="3">3.2</value>
+					<value level="4">4.2</value>
+					<value level="5">5.3</value>
+					<value level="6">6.8</value>
+					<value level="7">8.4</value>
+					<value level="8">10.1</value>
+					<value level="9">11.9</value>
+					<value level="10">13.7</value>
+					<value level="11">15.7</value>
+					<value level="12">16.7</value>
+					<value level="13">17.8</value>
+					<value level="14">18.8</value>
+					<value level="15">19.9</value>
+					<value level="16">21.1</value>
+					<value level="17">22.2</value>
+					<value level="18">23.4</value>
+					<value level="19">24.5</value>
+					<value level="20">25.8</value>
+					<value level="21">27</value>
+					<value level="22">28.2</value>
+					<value level="23">29.5</value>
+					<value level="24">30.8</value>
+					<value level="25">32.1</value>
+					<value level="26">33.5</value>
+					<value level="27">34.8</value>
+					<value level="28">36.2</value>
+					<value level="29">37.6</value>
+					<value level="30">39.1</value>
+					<value level="31">40.5</value>
+					<value level="32">42</value>
+					<value level="33">43.5</value>
+					<value level="34">44.9</value>
+					<value level="35">46.5</value>
+					<value level="36">48</value>
+					<value level="37">49.5</value>
+					<value level="38">51.1</value>
+					<value level="39">52.7</value>
+					<value level="40">54.2</value>
+					<value level="41">55.8</value>
+					<value level="42">57.4</value>
+					<value level="43">59.1</value>
+					<value level="44">60.7</value>
+					<value level="45">62.3</value>
+					<value level="46">63.9</value>
+					<value level="47">65.6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1739,9 +1958,55 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="MAGIC" />
-				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1.7</value>
+					<value level="2">2.7</value>
+					<value level="3">4.3</value>
+					<value level="4">5.4</value>
+					<value level="5">7.2</value>
+					<value level="6">8.5</value>
+					<value level="7">10.6</value>
+					<value level="8">12.1</value>
+					<value level="9">14.5</value>
+					<value level="10">15.3</value>
+					<value level="11">16.2</value>
+					<value level="12">17.9</value>
+					<value level="13">18.8</value>
+					<value level="14">19.8</value>
+					<value level="15">21.7</value>
+					<value level="16">22.7</value>
+					<value level="17">23.7</value>
+					<value level="18">25.8</value>
+					<value level="19">26.8</value>
+					<value level="20">27.9</value>
+					<value level="21">30.1</value>
+					<value level="22">31.2</value>
+					<value level="23">32.4</value>
+					<value level="24">33.5</value>
+					<value level="25">34.7</value>
+					<value level="26">35.9</value>
+					<value level="27">37.1</value>
+					<value level="28">38.4</value>
+					<value level="29">39.6</value>
+					<value level="30">40.8</value>
+					<value level="31">42.1</value>
+					<value level="32">43.4</value>
+					<value level="33">44.7</value>
+					<value level="34">45.9</value>
+					<value level="35">47.3</value>
+					<value level="36">48.6</value>
+					<value level="37">49.9</value>
+					<value level="38">51.2</value>
+					<value level="39">52.5</value>
+					<value level="40">53.9</value>
+					<value level="41">55.2</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1796,9 +2061,55 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="MAGIC" />
-				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">7.2</value>
+					<value level="2">8.6</value>
+					<value level="3">11</value>
+					<value level="4">12.7</value>
+					<value level="5">15.4</value>
+					<value level="6">17.4</value>
+					<value level="7">20.5</value>
+					<value level="8">22.7</value>
+					<value level="9">26.3</value>
+					<value level="10">27.6</value>
+					<value level="11">28.8</value>
+					<value level="12">31.5</value>
+					<value level="13">32.9</value>
+					<value level="14">34.2</value>
+					<value level="15">37.1</value>
+					<value level="16">38.6</value>
+					<value level="17">40.1</value>
+					<value level="18">43.2</value>
+					<value level="19">44.8</value>
+					<value level="20">46.4</value>
+					<value level="21">49.8</value>
+					<value level="22">51.5</value>
+					<value level="23">53.2</value>
+					<value level="24">54.9</value>
+					<value level="25">56.7</value>
+					<value level="26">58.5</value>
+					<value level="27">60.3</value>
+					<value level="28">62.1</value>
+					<value level="29">64</value>
+					<value level="30">65.9</value>
+					<value level="31">67.7</value>
+					<value level="32">69.7</value>
+					<value level="33">71.6</value>
+					<value level="34">73.5</value>
+					<value level="35">75.5</value>
+					<value level="36">77.4</value>
+					<value level="37">79.4</value>
+					<value level="38">81.4</value>
+					<value level="39">83.4</value>
+					<value level="40">85.4</value>
+					<value level="41">87.4</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1853,9 +2164,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="LIGHT" />
-				</add>
 				<mul stat="mAtkSpd" val="1.91">
 					<using kind="LIGHT" />
 				</mul>
@@ -1865,6 +2173,55 @@
 				<mul stat="regMp" val="1.2">
 					<using kind="LIGHT" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5.4</value>
+					<value level="2">6.3</value>
+					<value level="3">7.8</value>
+					<value level="4">8.8</value>
+					<value level="5">10.9</value>
+					<value level="6">12.5</value>
+					<value level="7">15</value>
+					<value level="8">16.9</value>
+					<value level="9">19.8</value>
+					<value level="10">20.8</value>
+					<value level="11">21.8</value>
+					<value level="12">24</value>
+					<value level="13">25.1</value>
+					<value level="14">26.3</value>
+					<value level="15">28.6</value>
+					<value level="16">29.8</value>
+					<value level="17">31</value>
+					<value level="18">33.6</value>
+					<value level="19">34.9</value>
+					<value level="20">36.2</value>
+					<value level="21">38.9</value>
+					<value level="22">40.3</value>
+					<value level="23">41.7</value>
+					<value level="24">43.1</value>
+					<value level="25">44.6</value>
+					<value level="26">46</value>
+					<value level="27">47.5</value>
+					<value level="28">49</value>
+					<value level="29">50.5</value>
+					<value level="30">52.1</value>
+					<value level="31">53.6</value>
+					<value level="32">55.2</value>
+					<value level="33">56.7</value>
+					<value level="34">58.3</value>
+					<value level="35">59.9</value>
+					<value level="36">61.5</value>
+					<value level="37">63.1</value>
+					<value level="38">64.7</value>
+					<value level="39">66.4</value>
+					<value level="40">68</value>
+					<value level="41">69.6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1911,7 +2268,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">6.7</value>
+					<value level="2">8</value>
+					<value level="3">9.2</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2456,9 +2820,59 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="MAGIC" />
-				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">11.6</value>
+					<value level="2">13.4</value>
+					<value level="3">16.1</value>
+					<value level="4">18.4</value>
+					<value level="5">20.9</value>
+					<value level="6">23.8</value>
+					<value level="7">26.9</value>
+					<value level="8">29.1</value>
+					<value level="9">32.8</value>
+					<value level="10">35.4</value>
+					<value level="11">39.6</value>
+					<value level="12">42.6</value>
+					<value level="13">47.3</value>
+					<value level="14">49</value>
+					<value level="15">50.7</value>
+					<value level="16">54.2</value>
+					<value level="17">56.1</value>
+					<value level="18">57.9</value>
+					<value level="19">61.8</value>
+					<value level="20">63.7</value>
+					<value level="21">65.7</value>
+					<value level="22">69.9</value>
+					<value level="23">72</value>
+					<value level="24">74.2</value>
+					<value level="25">78.6</value>
+					<value level="26">80.9</value>
+					<value level="27">83.2</value>
+					<value level="28">85.5</value>
+					<value level="29">87.8</value>
+					<value level="30">90.2</value>
+					<value level="31">92.6</value>
+					<value level="32">95.1</value>
+					<value level="33">97.6</value>
+					<value level="34">100.1</value>
+					<value level="35">102.6</value>
+					<value level="36">105.1</value>
+					<value level="37">107.7</value>
+					<value level="38">110.3</value>
+					<value level="39">112.9</value>
+					<value level="40">115.5</value>
+					<value level="41">118.1</value>
+					<value level="42">120.8</value>
+					<value level="43">123.4</value>
+					<value level="44">126.1</value>
+					<value level="45">128.8</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -2517,9 +2931,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="LIGHT" />
-				</add>
 				<mul stat="mAtkSpd" val="1.9">
 					<using kind="LIGHT" />
 				</mul>
@@ -2529,6 +2940,59 @@
 				<mul stat="regMp" val="1.2">
 					<using kind="LIGHT" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">12.6</value>
+					<value level="2">14.5</value>
+					<value level="3">17.5</value>
+					<value level="4">19.3</value>
+					<value level="5">21.2</value>
+					<value level="6">23.2</value>
+					<value level="7">25.5</value>
+					<value level="8">27</value>
+					<value level="9">30.1</value>
+					<value level="10">32.5</value>
+					<value level="11">36.3</value>
+					<value level="12">39.1</value>
+					<value level="13">43.5</value>
+					<value level="14">45</value>
+					<value level="15">46.6</value>
+					<value level="16">49.8</value>
+					<value level="17">51.5</value>
+					<value level="18">53.2</value>
+					<value level="19">56.7</value>
+					<value level="20">58.5</value>
+					<value level="21">60.4</value>
+					<value level="22">64.2</value>
+					<value level="23">66.1</value>
+					<value level="24">68.1</value>
+					<value level="25">72.2</value>
+					<value level="26">74.2</value>
+					<value level="27">76.3</value>
+					<value level="28">78.5</value>
+					<value level="29">80.6</value>
+					<value level="30">82.8</value>
+					<value level="31">85.1</value>
+					<value level="32">87.3</value>
+					<value level="33">89.6</value>
+					<value level="34">91.9</value>
+					<value level="35">94.2</value>
+					<value level="36">96.5</value>
+					<value level="37">98.9</value>
+					<value level="38">101.2</value>
+					<value level="39">103.6</value>
+					<value level="40">106</value>
+					<value level="41">108.5</value>
+					<value level="42">110.9</value>
+					<value level="43">113.3</value>
+					<value level="44">115.8</value>
+					<value level="45">118.2</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -2585,15 +3049,63 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="HEAVY" />
-				</add>
 				<mul stat="mAtkSpd" val="1.71">
 					<using kind="HEAVY" />
 				</mul>
 				<mul stat="pAtkSpd" val="1.25">
 					<using kind="HEAVY" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">11.6</value>
+					<value level="2">13.3</value>
+					<value level="3">15.2</value>
+					<value level="4">17.2</value>
+					<value level="5">19.5</value>
+					<value level="6">21.1</value>
+					<value level="7">23.7</value>
+					<value level="8">25.6</value>
+					<value level="9">28.7</value>
+					<value level="10">30.8</value>
+					<value level="11">34.3</value>
+					<value level="12">35.5</value>
+					<value level="13">36.7</value>
+					<value level="14">39.3</value>
+					<value level="15">40.6</value>
+					<value level="16">41.9</value>
+					<value level="17">44.7</value>
+					<value level="18">46.1</value>
+					<value level="19">47.6</value>
+					<value level="20">50.6</value>
+					<value level="21">52.1</value>
+					<value level="22">53.7</value>
+					<value level="23">56.9</value>
+					<value level="24">58.6</value>
+					<value level="25">60.2</value>
+					<value level="26">61.9</value>
+					<value level="27">63.6</value>
+					<value level="28">65.3</value>
+					<value level="29">67.1</value>
+					<value level="30">68.9</value>
+					<value level="31">70.7</value>
+					<value level="32">72.5</value>
+					<value level="33">74.3</value>
+					<value level="34">76.1</value>
+					<value level="35">78</value>
+					<value level="36">79.9</value>
+					<value level="37">81.7</value>
+					<value level="38">83.6</value>
+					<value level="39">85.5</value>
+					<value level="40">87.5</value>
+					<value level="41">89.4</value>
+					<value level="42">91.3</value>
+					<value level="43">93.3</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -2913,9 +3425,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="LIGHT" />
-				</add>
 				<mul stat="mAtkSpd" val="1.88">
 					<using kind="LIGHT" />
 				</mul>
@@ -2925,6 +3434,47 @@
 				<mul stat="regMp" val="1.2">
 					<using kind="LIGHT" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">11.1</value>
+					<value level="2">11.8</value>
+					<value level="3">12.5</value>
+					<value level="4">14</value>
+					<value level="5">14.8</value>
+					<value level="6">15.6</value>
+					<value level="7">17.3</value>
+					<value level="8">18.1</value>
+					<value level="9">19</value>
+					<value level="10">20.8</value>
+					<value level="11">21.7</value>
+					<value level="12">22.6</value>
+					<value level="13">24.5</value>
+					<value level="14">25.5</value>
+					<value level="15">26.4</value>
+					<value level="16">27.4</value>
+					<value level="17">28.4</value>
+					<value level="18">29.5</value>
+					<value level="19">30.5</value>
+					<value level="20">31.6</value>
+					<value level="21">32.6</value>
+					<value level="22">33.7</value>
+					<value level="23">34.8</value>
+					<value level="24">35.9</value>
+					<value level="25">37</value>
+					<value level="26">38.1</value>
+					<value level="27">39.2</value>
+					<value level="28">40.3</value>
+					<value level="29">41.4</value>
+					<value level="30">42.6</value>
+					<value level="31">43.7</value>
+					<value level="32">44.8</value>
+					<value level="33">46</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -2971,15 +3521,53 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="HEAVY" />
-				</add>
 				<mul stat="mAtkSpd" val="1.68">
 					<using kind="HEAVY" />
 				</mul>
 				<mul stat="pAtkSpd" val="1.25">
 					<using kind="HEAVY" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">14.8</value>
+					<value level="2">15.6</value>
+					<value level="3">16.5</value>
+					<value level="4">18.3</value>
+					<value level="5">19.2</value>
+					<value level="6">20.2</value>
+					<value level="7">22.1</value>
+					<value level="8">23.1</value>
+					<value level="9">24.1</value>
+					<value level="10">26.2</value>
+					<value level="11">27.3</value>
+					<value level="12">28.4</value>
+					<value level="13">30.6</value>
+					<value level="14">31.8</value>
+					<value level="15">33</value>
+					<value level="16">34.1</value>
+					<value level="17">35.3</value>
+					<value level="18">36.5</value>
+					<value level="19">37.8</value>
+					<value level="20">39</value>
+					<value level="21">40.3</value>
+					<value level="22">41.5</value>
+					<value level="23">42.8</value>
+					<value level="24">44.1</value>
+					<value level="25">45.4</value>
+					<value level="26">46.7</value>
+					<value level="27">48</value>
+					<value level="28">49.4</value>
+					<value level="29">50.7</value>
+					<value level="30">52</value>
+					<value level="31">53.4</value>
+					<value level="32">54.7</value>
+					<value level="33">56.1</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -3725,7 +4313,10 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.25" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -5259,9 +5850,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<add stat="pDef" val="#pDef" />
 				<mul stat="rShld" val="1.5" />
 				<power>2</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">121.8</value>
+					<value level="2">161.1</value>
+					<value level="3">212.1</value>
+					<value level="4">256.5</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

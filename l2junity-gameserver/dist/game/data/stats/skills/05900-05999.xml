@@ -600,13 +600,16 @@
 			</effect>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="3" />
-				<mul stat="pDef" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -631,7 +634,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="0.95" />
 				<mul stat="regHp" val="0.95" />
 			</effect>
 			<effect name="MAtk">
@@ -639,6 +641,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1896,23 +1902,29 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.1">
-					<using kind="HEAVY" />
-				</mul>
-				<mul stat="pDef" val="1.05">
-					<using kind="LIGHT" />
-				</mul>
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
 				</add>
-				<mul stat="pDef" val="1.05">
-					<using kind="MAGIC" />
-				</mul>
 				<add stat="regMp" val="2.0">
 					<using kind="MAGIC" />
 				</add>
 			</effect>
-		</for>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+		<effect name="PhysicalDefence">
+		<amount>5</amount><mode>PER</mode><armorType><item>LIGHT</item></armorType></effect></for>
 	</skill>
 	<skill id="5989" levels="1" name="Invincibility">
 		<abnormalLvl>1</abnormalLvl>

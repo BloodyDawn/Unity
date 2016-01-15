@@ -875,7 +875,10 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.5" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1827,9 +1830,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.42" />
-				<mul stat="pDef" val="1.76" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>76</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>76</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2928,7 +2934,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

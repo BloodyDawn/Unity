@@ -57,7 +57,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pDef" val="1.03" />
 				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
@@ -79,6 +78,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>11</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -214,7 +217,6 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.05" />
 				<add stat="holyRes" val="20" />
 				<add stat="darkRes" val="20" />
 				<sub stat="debuffVuln" val="10" />
@@ -222,6 +224,10 @@
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
 				<CROSSBOW>10</CROSSBOW>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -309,7 +315,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
@@ -334,6 +339,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-3</amount>
 				<mode>PER</mode>
 			</effect>
@@ -435,7 +444,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
@@ -460,6 +468,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-3</amount>
 				<mode>PER</mode>
 			</effect>
@@ -524,7 +536,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="5000" />
 			</effect>
 			<effect name="Heal">
 				<power>
@@ -535,6 +546,10 @@
 				</power>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>5000</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -719,7 +734,6 @@
 				<mul stat="cAtk" val="#pAtkcAtk" />
 				<mul stat="pAtkSpd" val="#atkSpdDefPower" />
 				<mul stat="mAtkSpd" val="#atkSpdDefPower" />
-				<mul stat="pDef" val="#atkSpdDefPower" />
 				<mul stat="physicalSkillPower" val="#atkSpdDefPower" />
 			</effect>
 			<effect name="PAtk">
@@ -739,6 +753,14 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">2</value>
 					<value level="2">3</value>

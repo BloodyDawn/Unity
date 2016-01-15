@@ -128,8 +128,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
-				<add stat="pDef" val="#pDefAdd" />
 				<mul stat="maxCp" val="#maxCp" />
 				<add stat="maxCp" val="#maxCpAdd" />
 				<mul stat="regCp" val="#regCp" />
@@ -253,6 +251,36 @@
 					<value level="8">633</value>
 					<value level="9">652</value>
 					<value level="10">671</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">204</value>
+					<value level="2">208</value>
+					<value level="3">212</value>
+					<value level="4">216</value>
+					<value level="5">220</value>
+					<value level="6">225</value>
+					<value level="7">229</value>
+					<value level="8">234</value>
+					<value level="9">239</value>
+					<value level="10">243</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">510</value>
+					<value level="2">520</value>
+					<value level="3">530</value>
+					<value level="4">541</value>
+					<value level="5">552</value>
+					<value level="6">563</value>
+					<value level="7">574</value>
+					<value level="8">585</value>
+					<value level="9">597</value>
+					<value level="10">609</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -464,9 +492,13 @@
 				<value>1.518</value>
 			</effect>
 			<effect name="Buff">
-				<add stat="pDef" val="25">
-					<using kind="HEAVY" />
-				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -500,10 +532,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="16">
-					<using kind="MAGIC" />
-				</add>
 				<mul stat="weightLimit" val="1.3" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -516,9 +552,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="38">
-					<using kind="HEAVY" />
-				</add>
 				<add stat="regMp" val="2.019">
 					<and>
 						<player resting="true" />
@@ -527,6 +560,13 @@
 						</or>
 					</and>
 				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -559,10 +599,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="24">
-					<using kind="MAGIC" />
-				</add>
 				<mul stat="weightLimit" val="1.3" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>24</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -575,9 +619,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="44">
-					<using kind="HEAVY" />
-				</add>
 				<add stat="regMp" val="2.25">
 					<and>
 						<player resting="true" />
@@ -586,6 +627,13 @@
 						</or>
 					</and>
 				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -618,10 +666,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="28">
-					<using kind="MAGIC" />
-				</add>
 				<mul stat="weightLimit" val="1.3" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -634,9 +686,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="50">
-					<using kind="HEAVY" />
-				</add>
 				<add stat="regMp" val="2.43">
 					<and>
 						<player resting="true" />
@@ -645,6 +694,13 @@
 						</or>
 					</and>
 				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -677,10 +733,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="32">
-					<using kind="MAGIC" />
-				</add>
 				<mul stat="weightLimit" val="1.3" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -694,9 +754,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="59">
-					<using kind="HEAVY" />
-				</add>
 				<add stat="regMp" val="2.823">
 					<and>
 						<player resting="true" />
@@ -705,6 +762,13 @@
 						</or>
 					</and>
 				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>59</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -739,10 +803,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="38">
-					<using kind="MAGIC" />
-				</add>
 				<mul stat="weightLimit" val="1.3" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -845,8 +913,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
-				<add stat="pDef" val="#pDefAdd" />
 				<mul stat="maxCp" val="#maxCp" />
 				<add stat="maxCp" val="#maxCpAdd" />
 				<mul stat="regCp" val="#regCp" />
@@ -970,6 +1036,36 @@
 					<value level="8">633</value>
 					<value level="9">652</value>
 					<value level="10">671</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">204</value>
+					<value level="2">208</value>
+					<value level="3">212</value>
+					<value level="4">216</value>
+					<value level="5">220</value>
+					<value level="6">225</value>
+					<value level="7">229</value>
+					<value level="8">234</value>
+					<value level="9">239</value>
+					<value level="10">243</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">510</value>
+					<value level="2">520</value>
+					<value level="3">530</value>
+					<value level="4">541</value>
+					<value level="5">552</value>
+					<value level="6">563</value>
+					<value level="7">574</value>
+					<value level="8">585</value>
+					<value level="9">597</value>
+					<value level="10">609</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1116,7 +1212,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.066" /> <!-- P. Def. +6.6% -->
+				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="healEffect" val="1.04" /> <!-- Heal Capacity +4% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -1125,6 +1221,10 @@
 				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3637" levels="1" name="Dynasty Platinum Plate">
@@ -1158,12 +1258,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.066" /> <!-- P. Def. +6.6% -->
+				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3639" levels="1" name="Dynasty Platinum Plate">
@@ -1279,12 +1383,16 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.066" /> <!-- Atk. Spd. +6.6% -->
 				<!-- P. Atk. +2.66% -->
-				<mul stat="pDef" val="1.0266" /> <!-- P. Def. +2.66% -->
+				<!-- P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>2.66</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1337,12 +1445,16 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
-				<mul stat="pDef" val="1.033" /> <!-- P. Def. +3.3% -->
+				<!-- P. Def. +3.3% -->
 				<!-- P. Atk. +3.3% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>3.3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>3.3</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1832,8 +1944,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0208" />
 				<add stat="maxHp" val="123" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1846,8 +1961,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
 				<add stat="maxHp" val="49" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1860,8 +1978,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
 				<add stat="maxHp" val="49" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1874,8 +1995,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0125" />
 				<add stat="maxHp" val="74" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1889,7 +2013,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="294" />
-				<mul stat="pDef" val="1.0724" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>7.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2125,7 +2252,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0125" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2138,7 +2268,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2168,7 +2301,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0083" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

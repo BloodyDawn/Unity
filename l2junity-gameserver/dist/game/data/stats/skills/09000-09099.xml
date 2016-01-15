@@ -155,7 +155,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -341,7 +344,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pDef" val="0.92" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="PAtk">
@@ -358,6 +360,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1601,7 +1607,6 @@
 				<mul stat="DanceMpConsumeRate" val="0.95" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1619,6 +1624,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

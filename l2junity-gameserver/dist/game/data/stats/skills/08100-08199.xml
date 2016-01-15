@@ -1458,12 +1458,16 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="445" /> <!-- Maximum HP +445 -->
-				<mul stat="pDef" val="1.08" /> <!-- P Def. +8% -->
+				<!-- P Def. +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<HOLD>70</HOLD>
 				<SLEEP>70</SLEEP>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

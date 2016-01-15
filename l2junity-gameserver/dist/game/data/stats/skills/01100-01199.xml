@@ -1559,7 +1559,14 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

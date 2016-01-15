@@ -128,7 +128,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="regMp" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -147,6 +146,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -178,7 +181,6 @@
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
@@ -197,6 +199,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -226,7 +232,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritRate" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -252,6 +257,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -281,7 +290,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -304,6 +312,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -363,7 +375,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="2" />
-				<mul stat="pDef" val="1.1" />
 				<mul stat="pAtkSpd" val="1.1" />
 				<mul stat="rCrit" val="0.1" />
 				<mul stat="cAtk" val="1.1" />
@@ -382,6 +393,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -465,7 +480,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
@@ -487,6 +501,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1245,11 +1263,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="pDef" val="1800" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>1350</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1800</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1774,11 +1795,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="pDef" val="1800" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>1350</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1800</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -2232,13 +2256,16 @@
 		<for>
 			<effect name="BlockControl" />
 			<effect name="Fear">
-				<mul stat="pDef" val="0.7" />
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2553,10 +2580,13 @@
 		<for>
 			<effect name="BlockControl" />
 			<effect name="Fear">
-				<mul stat="pDef" val="0.67" />
 				<sub stat="rEvas" val="10" />
 			</effect>
 			<effect name="Speed">
+				<amount>-33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-33</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2834,7 +2864,6 @@
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<!-- Spirit of Phoenix -->
-				<add stat="pDef" val="200" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>99</maxAttackerLevel>
@@ -2843,6 +2872,10 @@
 				<minDamage>1</minDamage>
 				<skillId>5562</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2869,7 +2902,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="40" />
-				<mul stat="pDef" val="1.5" />
 				<add stat="accCombat" val="6" />
 				<mul stat="pAtkSpd" val="1.3" />
 				<add stat="rCrit" val="100">
@@ -2886,6 +2918,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3396,15 +3432,39 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDefHeavy">
-					<using kind="HEAVY" />
-				</add>
-				<add stat="pDef" val="#pDefLight">
-					<using kind="LIGHT" />
-				</add>
-				<add stat="pDef" val="#pDefMagic">
-					<using kind="MAGIC" />
-				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">59.5</value>
+					<value level="2">119</value>
+					<value level="3">178.5</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">29.75</value>
+					<value level="2">59.5</value>
+					<value level="3">89.25</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">44.625</value>
+					<value level="2">89.25</value>
+					<value level="3">133.875</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>

@@ -1622,10 +1622,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
 				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
 			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1676,8 +1679,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.1" />
 				<mul stat="regHp" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1729,9 +1735,12 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="4" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>300</amount>
 				<mode>PER</mode>
 			</effect>

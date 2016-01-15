@@ -117,13 +117,28 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="MAGIC" />
-				</add>
 				<add stat="maxHp" val="4636">
 					<using kind="MAGIC" />
 				</add>
 				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">969</value>
+					<value level="2">1064</value>
+					<value level="3">1169</value>
+					<value level="4">1261</value>
+					<value level="5">1413</value>
+					<value level="6">1467</value>
+					<value level="7">1522</value>
+					<value level="8">1580</value>
+					<value level="9">1646</value>
+					<value level="10">1709</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -149,13 +164,28 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="maxHp" val="4636">
 					<using kind="LIGHT" />
 				</add>
 				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1355</value>
+					<value level="2">1488</value>
+					<value level="3">1635</value>
+					<value level="4">1763</value>
+					<value level="5">1976</value>
+					<value level="6">2051</value>
+					<value level="7">2128</value>
+					<value level="8">2209</value>
+					<value level="9">2302</value>
+					<value level="10">2389</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -181,13 +211,28 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="HEAVY" />
-				</add>
 				<add stat="maxHp" val="4636">
 					<using kind="HEAVY" />
 				</add>
 				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1558</value>
+					<value level="2">1711</value>
+					<value level="3">1880</value>
+					<value level="4">2027</value>
+					<value level="5">2271</value>
+					<value level="6">2357</value>
+					<value level="7">2446</value>
+					<value level="8">2539</value>
+					<value level="9">2646</value>
+					<value level="10">2746</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -443,10 +488,13 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.6" />
 				<sub stat="rEvas" val="15" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -707,10 +755,13 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.6" />
 				<sub stat="rEvas" val="15" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1002,7 +1053,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
@@ -1035,6 +1085,15 @@
 					<value level="2">30</value>
 					<value level="3">30</value>
 					<value level="4">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1099,7 +1158,6 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="pDef" val="1.20" />
 				<mul stat="pAtkSpd" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
@@ -1141,6 +1199,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1449,7 +1511,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.45" />
 				<mul stat="rShld" val="1.30" />
 				<mul stat="sDef" val="1.50" />
 				<mul stat="cAtk" val="1.35" />
@@ -1464,6 +1525,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>45</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1697,7 +1762,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
@@ -1721,6 +1785,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-3</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2167,7 +2235,6 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<add stat="pDef" val="#def" />
 				<transformationId>500</transformationId>
 			</effect>
 			<effect name="DispelBySlot">
@@ -2186,6 +2253,18 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">3000</value>
+					<value level="2">3500</value>
+					<value level="3">4000</value>
+					<value level="4">4500</value>
+					<value level="5">5000</value>
+					<value level="6">5500</value>
+					<value level="7">6000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">3000</value>
 					<value level="2">3500</value>
@@ -2285,7 +2364,6 @@
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />
-				<add stat="pDef" val="#def" />
 				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
 			<effect name="PAtk">
@@ -2308,6 +2386,17 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2000</value>
+					<value level="2">3000</value>
+					<value level="3">4000</value>
+					<value level="4">4500</value>
+					<value level="5">5000</value>
+					<value level="6">5500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">2000</value>
 					<value level="2">3000</value>
@@ -2424,7 +2513,6 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.5" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-50</amount>
@@ -2439,6 +2527,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3250,10 +3342,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#defence" />
 				<mul stat="physicalSkillPower" val="1.05" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">7</value>
@@ -3455,7 +3555,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
@@ -3488,6 +3587,15 @@
 					<value level="2">30</value>
 					<value level="3">30</value>
 					<value level="4">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3544,7 +3652,6 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="pDef" val="1.20" />
 				<mul stat="pAtkSpd" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
@@ -3587,6 +3694,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3863,7 +3974,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="pDef" val="1.45" />
 				<mul stat="rShld" val="1.30" />
 				<mul stat="sDef" val="1.50" />
 			</effect>
@@ -3876,6 +3986,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>45</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4032,7 +4146,6 @@
 		<mpConsume>1</mpConsume>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<mul stat="pDef" val="#attackDefense" />
 				<mul stat="physicalSkillPower" val="1.05" />
 				<power>
 					<value level="1">4</value>
@@ -4060,6 +4173,15 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">7</value>

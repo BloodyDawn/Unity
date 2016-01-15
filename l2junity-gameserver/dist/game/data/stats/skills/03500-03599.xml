@@ -8,8 +8,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.022" /> <!-- P. Def. +2.2% -->
+				<!-- P. Def. +2.2% -->
 				<add stat="maxHp" val="41" /> <!-- HP +41 -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2.2</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -86,8 +90,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.05" /> <!-- P. Def. +5% -->
+				<!-- P. Def. +5% -->
 				<add stat="maxHp" val="153" /> <!-- HP +153 -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -140,8 +148,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.26% -->
+				<!-- P. Def. +5.26% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -184,7 +196,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.26% -->
+				<!-- P. Def. +5.26% -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -224,8 +240,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.26% -->
+				<!-- P. Def. +5.26% -->
 				<add stat="maxMp" val="170.62" /> <!-- MP +170.62 -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -237,8 +257,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.246 -->
+				<!-- P. Def. +5.246 -->
 				<add stat="maxHp" val="294.49" /> <!-- HP +294.49 -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -308,8 +332,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.26% -->
+				<!-- P. Def. +5.26% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -351,8 +379,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.26% -->
+				<!-- P. Def. +5.26% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -506,7 +538,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.08" /> <!-- P. Def. +8% -->
+				<!-- P. Def. +8% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<!-- Speed +7 -->
 				<sub stat="cancel" val="50" /> <!-- Small decrease in chance of spell interruption -->
@@ -517,6 +549,10 @@
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -818,12 +854,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.08" /> <!-- P Def. +8% -->
+				<!-- P Def. +8% -->
 				<add stat="maxHp" val="445" /> <!-- Maximum HP +445 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1522,7 +1562,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.77" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

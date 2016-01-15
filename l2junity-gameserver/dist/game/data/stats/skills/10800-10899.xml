@@ -448,9 +448,6 @@
 				<mul stat="pAtkSpd" val="#bonus">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
-				<mul stat="pDef" val="#bonus">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -467,6 +464,15 @@
 				</weaponType>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">6</value>

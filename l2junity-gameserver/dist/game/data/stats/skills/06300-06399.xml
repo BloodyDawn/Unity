@@ -81,9 +81,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
@@ -503,7 +506,10 @@
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.1" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -562,9 +568,12 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.77" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>

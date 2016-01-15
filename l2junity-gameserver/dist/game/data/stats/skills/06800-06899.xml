@@ -293,7 +293,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<sub stat="rEvas" val="4" />
@@ -312,6 +311,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -561,7 +564,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1642,7 +1648,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-23</value>
+					<value level="2">-33</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

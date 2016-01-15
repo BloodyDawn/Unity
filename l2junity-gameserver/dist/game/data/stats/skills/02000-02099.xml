@@ -940,7 +940,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1218,8 +1221,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="0.83" />
 				<add stat="reflectDam" val="20" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-17</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

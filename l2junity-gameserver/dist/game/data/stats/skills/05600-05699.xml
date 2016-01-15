@@ -324,9 +324,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.05"> <!-- defense power is increased by 5% -->
-					<using kind="MAGIC" />
-				</mul>
 				<!-- Speed is increased by 10 -->
 			</effect>
 			<effect name="MAtk">
@@ -339,6 +336,13 @@
 			<effect name="Speed">
 				<amount>10</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -734,7 +738,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3068,7 +3075,6 @@
 		<targetType>PARTY_MEMBER</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<sub stat="rEvas" val="#rEvas" />
@@ -3098,6 +3104,13 @@
 				<amount>
 					<value level="1">-10</value>
 					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4164,7 +4177,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="0.34" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-66</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

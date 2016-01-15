@@ -1345,13 +1345,20 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">8</value>
 					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1488,9 +1495,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.1">
-					<using kind="HEAVY" />
-				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1515,12 +1526,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.05">
-					<using kind="LIGHT" />
-				</mul>
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
 				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1545,12 +1560,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.05">
-					<using kind="MAGIC" />
-				</mul>
 				<add stat="regMp" val="2">
 					<using kind="MAGIC" />
 				</add>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1819,13 +1838,16 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<mul stat="pDef" val="0.7" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>260</transformationId>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1860,13 +1882,16 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<mul stat="pDef" val="0.7" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>8</transformationId>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1901,13 +1926,16 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<mul stat="pDef" val="0.7" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>9</transformationId>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2968,11 +2996,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="pDef" val="3600" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>2700</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3600</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -3779,7 +3810,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.18" />
 				<mul stat="pAtkSpd" val="1.2" />
 			</effect>
 			<effect name="MaxHp">
@@ -3788,6 +3818,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>18</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4059,7 +4093,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.6" />
 				<mul stat="pAtkSpd" val="0.6" />
 				<mul stat="mAtkSpd" val="0.6" />
 			</effect>
@@ -4068,6 +4101,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>

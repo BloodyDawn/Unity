@@ -1245,7 +1245,6 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.7" />
 			</effect>
 			<effect name="PhysicalAttack">
 				<criticalChance>20</criticalChance>
@@ -1254,6 +1253,10 @@
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1849,7 +1852,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
@@ -1871,6 +1873,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2016,7 +2022,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="regMp" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2037,6 +2042,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2068,7 +2077,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2094,6 +2102,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

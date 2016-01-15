@@ -82,7 +82,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.046" /> <!-- P. Def +4.6% -->
+				<!-- P. Def +4.6% -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -101,6 +101,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>4.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8203" levels="1" name="Dynasty Breastplate - PvP">
@@ -123,7 +127,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
+				<!-- P. Def. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="healEffect" val="1.03" /> <!-- Received Increased Heal +3% -->
 				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
@@ -133,6 +137,10 @@
 				<SHOCK>13</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8204" levels="1" name="Dynasty Breastplate - PvP">
@@ -215,7 +223,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
+				<!-- P. Def. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
@@ -235,6 +243,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8207" levels="1" name="Dynasty Leather Armor - PvP">
@@ -437,7 +449,7 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
-				<mul stat="pDef" val="1.026" /> <!-- P. Def. +2.6% -->
+				<!-- P. Def. +2.6% -->
 				<!-- Increase P. Atk. +2.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -457,6 +469,10 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>2.6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>2.6</amount>
 				<mode>PER</mode>
 			</effect>
@@ -611,7 +627,7 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.054" /> <!-- increase Atk. Spd. +5.4% -->
 				<!-- Increase P. Atk. +2.66% -->
-				<mul stat="pDef" val="1.0266" /> <!-- Increase P. Def. +2.66% -->
+				<!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -631,6 +647,10 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>2.66</amount>
 				<mode>PER</mode>
 			</effect>
@@ -656,7 +676,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pDef" val="1.066" /> <!-- P. Def. +6.6% -->
+				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="healEffect" val="1.04" /> <!-- Heal Capacity +4% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -666,6 +686,10 @@
 				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8220" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -713,7 +737,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.066" /> <!-- P. Def. +6.6% -->
+				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -733,6 +757,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalDefence">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8222" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -916,7 +944,7 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.066" /> <!-- Atk. Spd. +6.6% -->
 				<!-- P. Atk. +2.66% -->
-				<mul stat="pDef" val="1.0266" /> <!-- P. Def. +2.66% -->
+				<!-- P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -936,6 +964,10 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>2.66</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1048,7 +1080,7 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
-				<mul stat="pDef" val="1.033" /> <!-- P. Def. +3.3% -->
+				<!-- P. Def. +3.3% -->
 				<!-- P. Atk. +3.3% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -1068,6 +1100,10 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
+				<amount>3.3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>3.3</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2041,12 +2077,16 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
+				<!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="531" /> <!-- Max HP by 531 -->
 				<HOLD>70</HOLD>
 				<SLEEP>70</SLEEP>
 			</effect>
 			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2062,7 +2102,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
+				<!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="540" /> <!-- Max HP 540 -->
 				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 5 -->
@@ -2078,6 +2118,10 @@
 			<effect name="Speed">
 				<amount>5</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.57</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

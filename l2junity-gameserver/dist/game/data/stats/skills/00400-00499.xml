@@ -741,7 +741,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="40" />
-				<mul stat="pDef" val="1.5" />
 				<add stat="accCombat" val="6">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -766,6 +765,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1194,7 +1197,6 @@
 		<for>
 			<effect name="SilentMove">
 				<sub stat="rEvas" val="#rEvas" />
-				<mul stat="pDef" val="#amount" />
 				<sub stat="accCombat" val="12" />
 			</effect>
 			<effect name="PAtk">
@@ -1202,6 +1204,14 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-45</value>
+					<value level="2">-30</value>
+					<value level="3">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-45</value>
 					<value level="2">-30</value>
@@ -1939,10 +1949,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="87.1">
-					<using kind="HEAVY" />
-				</add>
 				<mul stat="sDef" val="1.1" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>87.1</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -2078,21 +2092,29 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="80">
-					<using kind="LIGHT" />
-				</add>
 				<mul stat="mAtkSpd" val="1.05">
 					<using kind="LIGHT" />
 				</mul>
-				<add stat="pDef" val="60">
-					<using kind="MAGIC" />
-				</add>
 				<mul stat="mAtkSpd" val="1.07">
 					<using kind="MAGIC" />
 				</mul>
 				<mul stat="MagicalMpConsumeRate" val="0.97">
 					<using kind="MAGIC" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -2246,13 +2268,16 @@
 		</cond>
 		<for>
 			<effect name="BlockActions">
-				<mul stat="pDef" val="0.2" />
 			</effect>
 			<effect name="HealOverTime" ticks="5">
 				<power>60</power>
 			</effect>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>10</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-80</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2927,9 +2952,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef" />
 				<mul stat="regMp" val="1.1" />
 				<add stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">9</value>
+					<value level="2">11</value>
+					<value level="3">12</value>
+					<value level="4">13</value>
+					<value level="5">14</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2994,9 +3028,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="rEvas" val="#rEvas">
 					<using kind="LIGHT" />
 				</add>
@@ -3006,6 +3037,64 @@
 				<mul stat="defCritDamage" val="0.95">
 					<using kind="LIGHT" />
 				</mul>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0.9</value>
+					<value level="2">2.2</value>
+					<value level="3">3.2</value>
+					<value level="4">4.2</value>
+					<value level="5">5.3</value>
+					<value level="6">6</value>
+					<value level="7">6.8</value>
+					<value level="8">8.4</value>
+					<value level="9">9.2</value>
+					<value level="10">10.1</value>
+					<value level="11">11.9</value>
+					<value level="12">12.8</value>
+					<value level="13">13.7</value>
+					<value level="14">15.7</value>
+					<value level="15">16.7</value>
+					<value level="16">17.8</value>
+					<value level="17">18.8</value>
+					<value level="18">19.9</value>
+					<value level="19">21.1</value>
+					<value level="20">22.2</value>
+					<value level="21">23.4</value>
+					<value level="22">24.5</value>
+					<value level="23">25.8</value>
+					<value level="24">27</value>
+					<value level="25">28.2</value>
+					<value level="26">29.5</value>
+					<value level="27">30.8</value>
+					<value level="28">32.1</value>
+					<value level="29">33.5</value>
+					<value level="30">34.8</value>
+					<value level="31">36.2</value>
+					<value level="32">37.6</value>
+					<value level="33">39.1</value>
+					<value level="34">40.5</value>
+					<value level="35">42</value>
+					<value level="36">43.5</value>
+					<value level="37">44.9</value>
+					<value level="38">46.5</value>
+					<value level="39">48</value>
+					<value level="40">49.5</value>
+					<value level="41">51.1</value>
+					<value level="42">52.7</value>
+					<value level="43">54.2</value>
+					<value level="44">55.8</value>
+					<value level="45">57.4</value>
+					<value level="46">59.1</value>
+					<value level="47">60.7</value>
+					<value level="48">62.3</value>
+					<value level="49">63.9</value>
+					<value level="50">65.6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -4248,7 +4337,10 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
-				<mul stat="pDef" val="0.95" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4308,7 +4400,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -4322,6 +4413,19 @@
 					<value level="8">0</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">2000</value>
+					<value level="2">4000</value>
+					<value level="3">4750</value>
+					<value level="4">5250</value>
+					<value level="5">6250</value>
+					<value level="6">6250</value>
+					<value level="7">6250</value>
+					<value level="8">7500</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

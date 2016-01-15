@@ -117,7 +117,10 @@
 		<for>
 			<!-- FIXME: Time value is unconfirmed -->
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.77" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -295,7 +298,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.08" />
 				<mul stat="mAtkSpd" val="1.16" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<sub stat="rEvas" val="4" />
@@ -314,6 +316,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -352,7 +352,6 @@
 			<effect name="Grow">
 				<add stat="accCombat" val="4" />
 				<add stat="rEvas" val="4" />
-				<mul stat="pDef" val="1.83" />
 				<mul stat="pAtkSpd" val="1.33" />
 				<mul stat="rCrit" val="0.3" />
 				<mul stat="mAtkSpd" val="#magical" />
@@ -370,6 +369,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>400</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>83</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -499,7 +502,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="0.34" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-66</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -548,7 +554,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -897,9 +906,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Grow">
-				<mul stat="pDef" val="5" />
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>400</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>400</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1005,7 +1017,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#rate" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1321,7 +1340,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<sub stat="rEvas" val="#rEvas" />
@@ -1351,6 +1369,13 @@
 				<amount>
 					<value level="1">-10</value>
 					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2036,7 +2061,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="3" /> <!-- pDef +200% -->
+				<!-- pDef +200% -->
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2483,7 +2512,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#rate" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2655,7 +2691,6 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<sub stat="rEvas" val="#rEvas" />
-				<mul stat="pDef" val="#pDef" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -2682,6 +2717,13 @@
 				<amount>
 					<value level="1">-10</value>
 					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

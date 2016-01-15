@@ -35,7 +35,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="#base" />
 				<sub stat="DEX" val="#base" />
-				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -61,6 +60,10 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13002" levels="4" name="Vesper Noble Heavy Armor Set">
@@ -83,7 +86,6 @@
 				<sub stat="DEX" val="#base" />
 				<add stat="accCombat" val="#accCombat" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
-				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -117,6 +119,10 @@
 					<value level="3">5.57</value>
 					<value level="4">5.57</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -584,7 +590,6 @@
 			<effect name="Buff">
 				<sub stat="STR" val="#base" />
 				<add stat="CON" val="#base" />
-				<mul stat="pDef" val="1.0847" />
 				<add stat="maxHp" val="#maxHp" />
 				<add stat="accCombat" val="#accCombat" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
@@ -632,6 +637,10 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalDefence">
+				<amount>8.47</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13017" levels="4" name="Vorpal Leather Armor Set">
@@ -655,7 +664,6 @@
 				<add stat="STR" val="#base" />
 				<add stat="DEX" val="#base1" />
 				<sub stat="CON" val="#base2" />
-				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<add stat="fireRes" val="#resist" />
@@ -688,6 +696,10 @@
 					<value level="3">3</value>
 					<value level="4">3</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1591,13 +1603,11 @@
 			<effect name="Buff">
 				<add stat="CON" val="1" />
 				<add stat="maxHp" val="463" />
-				<add stat="pDef" val="#pDef" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<mul stat="defCritRate" val="#defCritRate" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1613,6 +1623,24 @@
 					<value level="2">0</value>
 					<value level="3">38</value>
 					<value level="4">38</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">77</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1639,7 +1667,6 @@
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="cAtkAdd" val="#critDmgAdd" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -1657,6 +1684,15 @@
 					<value level="4">115</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1679,13 +1715,11 @@
 				<add stat="STR" val="-1" />
 				<add stat="maxHp" val="487" />
 				<add stat="maxMp" val="#maxMp" />
-				<add stat="pDef" val="#pDef" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<mul stat="defCritRate" val="#defCritRate" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1701,6 +1735,24 @@
 					<value level="2">0</value>
 					<value level="3">44</value>
 					<value level="4">44</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">87</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1729,7 +1781,6 @@
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="cAtkAdd" val="#critDmgAdd" />
-				<mul stat="pDef" val="#pDefMul" />
 				<mul stat="PhysicalMpConsumeRate" val="#mpConsum" />
 				<mul stat="MagicalMpConsumeRate" val="#mpConsum" />
 				<mul stat="DanceMpConsumeRate" val="#mpConsum" />
@@ -1751,6 +1802,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13068" levels="4" name="Set Effect - Seraph Heavy Armor 2 Piece (Defense Type)">
@@ -1771,14 +1831,12 @@
 				<add stat="CON" val="3" />
 				<add stat="STR" val="-2" />
 				<add stat="maxHp" val="511" />
-				<add stat="pDef" val="#pDef" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="defCritDamageAdd" val="#defCritDamageAdd" />
 				<mul stat="defCritRate" val="#defCritRate" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1794,6 +1852,24 @@
 					<value level="2">0</value>
 					<value level="3">50</value>
 					<value level="4">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">96</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1822,7 +1898,6 @@
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="cAtkAdd" val="#critDmgAdd" />
-				<mul stat="pDef" val="#pDefMul" />
 				<mul stat="physicalSkillPower" val="#skillPower" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -1841,6 +1916,15 @@
 					<value level="4">214</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1862,14 +1946,12 @@
 				<add stat="CON" val="3" />
 				<add stat="STR" val="-1" />
 				<add stat="maxHp" val="521" />
-				<add stat="pDef" val="#pDef" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="healEffect" val="#healEffect" />
 				<mul stat="defCritRate" val="#defCritRate" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1885,6 +1967,24 @@
 					<value level="2">0</value>
 					<value level="3">54</value>
 					<value level="4">54</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">103</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1913,7 +2013,6 @@
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="cAtkAdd" val="#critDmgAdd" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -1941,6 +2040,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13072" levels="4" name="Set Effect - R99 Rare Heavy Armor 2 Piece (Defense Type)">
@@ -1962,14 +2070,12 @@
 				<add stat="CON" val="4" />
 				<add stat="STR" val="-2" />
 				<add stat="maxHp" val="536" />
-				<add stat="pDef" val="#pDef" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="reflectDam" val="#reflect" />
 				<mul stat="defCritRate" val="#defCritRate" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1985,6 +2091,24 @@
 					<value level="2">0</value>
 					<value level="3">58</value>
 					<value level="4">58</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">108</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -2015,7 +2139,6 @@
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
 				<add stat="cAtkAdd" val="#critDmgAdd" />
-				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -2056,6 +2179,15 @@
 					<value level="4">255</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2587,8 +2719,6 @@
 				<add stat="CON" val="-2" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="maxHp" val="#maxHp" />
-				<mul stat="pDef" val="#pDef" />
-				<add stat="pDef" val="#pDefAdd" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="fireRes" val="#elements" />
@@ -2610,6 +2740,24 @@
 					<value level="2">255</value>
 					<value level="3">255</value>
 					<value level="4">0</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">255</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

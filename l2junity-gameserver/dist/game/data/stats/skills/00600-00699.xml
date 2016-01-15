@@ -182,7 +182,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="27.3" />
 				<mul stat="sDef" val="#sDef" />
 			</effect>
 			<effect name="MagicalDefence">
@@ -191,6 +190,10 @@
 					<value level="2">17.6</value>
 					<value level="3">17.6</value>
 				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>27.3</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -922,17 +925,37 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDefHeavy">
-					<using kind="HEAVY" />
-				</add>
-				<add stat="pDef" val="#pDefLight">
-					<using kind="LIGHT" />
-				</add>
-				<add stat="pDef" val="#pDefRobe">
-					<using kind="MAGIC" />
-				</add>
 			</effect>
-		</for>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">17.9</value>
+					<value level="2">35.7</value>
+					<value level="3">53.6</value>
+					<value level="4">71.4</value>
+					<value level="5">89.3</value>
+					<value level="6">107.1</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">9</value>
+					<value level="2">17.9</value>
+					<value level="3">26.8</value>
+					<value level="4">35.7</value>
+					<value level="5">44.7</value>
+					<value level="6">53.6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+		<effect name="PhysicalDefence">
+		<amount><value level="1">13.4</value><value level="2">26.8</value><value level="3">40.2</value><value level="4">53.6</value><value level="5">67</value><value level="6">80.3</value></amount><mode>DIFF</mode><armorType><item>LIGHT</item></armorType></effect></for>
 	</skill>
 	<skill id="633" levels="6" name="Emergent Ability: Empower">
 		<!-- CT2.5 retail confirmed -->
@@ -2233,11 +2256,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="pDef" val="3600" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>2700</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3600</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -2265,7 +2291,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<selfEffects>

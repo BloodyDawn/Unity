@@ -33,7 +33,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="#def" />
 				<add stat="waterRes" val="#elemRes" />
 				<add stat="fireRes" val="#elemRes" />
 				<add stat="windRes" val="#elemRes" />
@@ -63,6 +62,15 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">70</value>
+					<value level="3">100</value>
+					<value level="4">120</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">50</value>
 					<value level="2">70</value>
@@ -107,7 +115,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
-				<mul stat="pDef" val="#def" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -131,6 +138,15 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">65</value>
+					<value level="3">80</value>
+					<value level="4">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">50</value>
 					<value level="2">65</value>
@@ -279,9 +295,12 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.25" />
 				<mul stat="healEffect" val="1.25" />
 				<mul stat="defCritRate" val="0.75" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -392,9 +411,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.2" />
 				<mul stat="healEffect" val="1.2" />
 				<mul stat="defCritRate" val="0.8" />
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
