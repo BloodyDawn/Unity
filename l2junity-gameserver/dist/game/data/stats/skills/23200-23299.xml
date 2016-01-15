@@ -1234,9 +1234,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="1.5">
-					<using kind="HEAVY,LIGHT" />
-				</add>
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
 				</add>
@@ -1262,6 +1259,14 @@
 			<effect name="MaxMp">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -1438,13 +1443,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="2">
-					<using kind="MAGIC" />
-				</add>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 				<armorType>
 					<item>MAGIC</item>
 				</armorType>
@@ -2170,7 +2179,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<mul stat="regMp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -2204,6 +2212,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="23274" levels="1" name="Master's Blessing - Prophecy of Fire">
@@ -2226,7 +2238,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -2267,6 +2278,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2814,9 +2829,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="1.5">
-					<using kind="HEAVY,LIGHT" />
-				</add>
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
 				</add>
@@ -2842,6 +2854,14 @@
 			<effect name="MaxMp">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -3013,13 +3033,17 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="2">
-					<using kind="MAGIC" />
-				</add>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 				<armorType>
 					<item>MAGIC</item>
 				</armorType>

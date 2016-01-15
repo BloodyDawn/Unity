@@ -175,11 +175,18 @@
 		<canBeDispelled>false</canBeDispelled>
 		<for>
 			<effect name="Buff">
-				<add stat="regHp" val="1" /> <!-- 1 Bonus HP/MP regen... what a joke :D -->
-				<add stat="regMp" val="1" />
+				<!-- 1 Bonus HP/MP regen... what a joke :D -->
 			</effect>
 			<effect name="Speed">
 				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

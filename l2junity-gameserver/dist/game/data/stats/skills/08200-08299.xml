@@ -352,7 +352,7 @@
 				<!-- Accuracy +4.3 -->
 				<!-- Max MP +321 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
-				<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
+				<!-- MP recovery are increased +1.72 -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -380,6 +380,10 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>321</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.72</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -950,7 +954,7 @@
 				<!-- Accuracy +5.3 -->
 				<!-- Max MP +321 -->
 				<!-- Atk. Spd. +3.24% -->
-				<add stat="regMp" val="1.066" /> <!-- MP Recovery +6.6% -->
+				<!-- MP Recovery +6.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -978,6 +982,10 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>321</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.066</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1367,11 +1375,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0062" />
 				<SLEEP>17.5</SLEEP>
 				<HOLD>17.5</HOLD>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.62</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2314,7 +2325,7 @@
 			<effect name="Buff">
 				<!-- P. Atk. +5.57% -->
 				<!-- Atk. Spd. +5% -->
-				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
+				<!-- MP Recovery Rate by 5% -->
 				<!-- Max MP by 347 -->
 			</effect>
 			<effect name="PAtk">
@@ -2329,6 +2340,10 @@
 				<amount>347</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8286" levels="1" name="Vesper Noble Light Armor Set">
@@ -2342,7 +2357,7 @@
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
 				<!-- Atk. Spd. +5% -->
-				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
+				<!-- MP Recovery Rate by 5% -->
 				<!-- Max MP by 354 -->
 				<!-- Increases Evasion by 3 -->
 				<!-- Increases Critical Damage by 172 -->
@@ -2369,6 +2384,10 @@
 				<amount>172</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8287" levels="1" name="Vesper Robe Set">
@@ -2382,7 +2401,7 @@
 			<effect name="DefenceTrait">
 				<!-- M. Atk. 8.47% -->
 				<!-- Casting Speed 15% -->
-				<mul stat="regMp" val="1.0557" /> <!-- MP Recovery Rate by 5.57% -->
+				<!-- MP Recovery Rate by 5.57% -->
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
 				<SHOCK>50</SHOCK>
 			</effect>
@@ -2392,6 +2411,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2407,7 +2430,7 @@
 			<effect name="DefenceTrait">
 				<!-- M. Atk. 8.47% -->
 				<!-- Casting Speed 15% -->
-				<mul stat="regMp" val="1.0557" /> <!-- MP Recovery Rate by 5.57% -->
+				<!-- MP Recovery Rate by 5.57% -->
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
 				<!-- Increases Speed by 7 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
@@ -2424,6 +2447,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

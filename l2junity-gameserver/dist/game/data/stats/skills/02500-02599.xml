@@ -317,8 +317,14 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="2" />
-				<mul stat="regMp" val="2" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

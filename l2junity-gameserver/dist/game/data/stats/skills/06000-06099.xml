@@ -160,7 +160,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="0.75" />
 			</effect>
 			<effect name="MAtk">
 				<amount>6</amount>
@@ -171,6 +170,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
 				<amount>-25</amount>
 				<mode>PER</mode>
 			</effect>
@@ -195,7 +198,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="0.5" />
 			</effect>
 			<effect name="MAtk">
 				<amount>9</amount>
@@ -206,6 +208,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -230,7 +236,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="0.25" />
 			</effect>
 			<effect name="MAtk">
 				<amount>12</amount>
@@ -241,6 +246,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>-75</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
 				<amount>-75</amount>
 				<mode>PER</mode>
 			</effect>
@@ -265,7 +274,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="0.06" />
 			</effect>
 			<effect name="MAtk">
 				<amount>15</amount>
@@ -276,6 +284,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>-94</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
 				<amount>-94</amount>
 				<mode>PER</mode>
 			</effect>

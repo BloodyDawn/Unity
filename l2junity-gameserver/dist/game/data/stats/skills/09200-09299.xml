@@ -507,7 +507,6 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="rCrit" val="0.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -542,6 +541,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -612,7 +615,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.37" />
-				<mul stat="regHp" val="1.2" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>37</amount>
@@ -620,6 +622,10 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>37</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

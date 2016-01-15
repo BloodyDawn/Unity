@@ -440,9 +440,6 @@
 				<add stat="maxHp" val="4783">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="regMp" val="6">
-					<using kind="LIGHT" />
-				</add>
 				<mul stat="defCritRate" val="0.65">
 					<using kind="LIGHT" />
 				</mul>
@@ -469,6 +466,13 @@
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>14</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>6</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>

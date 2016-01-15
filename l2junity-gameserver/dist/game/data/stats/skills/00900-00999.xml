@@ -1355,12 +1355,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.17">
-					<using kind="SIGIL" />
-				</mul>
 			</effect>
 			<effect name="MAtk">
 				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>17</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SIGIL</item>
@@ -1380,9 +1384,13 @@
 				<add stat="healEffect" val="30">
 					<using kind="SIGIL" />
 				</add>
-				<mul stat="regMp" val="1.17">
-					<using kind="SIGIL" />
-				</mul>
+			</effect>
+			<effect name="MpRegen">
+				<amount>17</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1727,12 +1735,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.17">
-					<using kind="SIGIL" />
-				</mul>
 			</effect>
 			<effect name="MaxMp">
 				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>17</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SIGIL</item>
@@ -1748,12 +1760,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.17">
-					<using kind="SIGIL" />
-				</mul>
 			</effect>
 			<effect name="MaxMp">
 				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>17</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SIGIL</item>
@@ -3613,11 +3629,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.02" />
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>13</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

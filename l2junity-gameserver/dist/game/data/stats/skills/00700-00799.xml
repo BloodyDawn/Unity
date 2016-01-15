@@ -127,7 +127,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<mul stat="regMp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
@@ -159,6 +158,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="705" levels="1" name="Divine Enchanter Fire Spirit">
@@ -183,7 +186,6 @@
 		<targetType>PARTY_MEMBER</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -224,6 +226,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

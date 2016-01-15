@@ -532,9 +532,6 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="1.5">
-					<using kind="HEAVY,LIGHT" />
-				</add>
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
 				</add>
@@ -561,6 +558,14 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="1414" levels="1" name="Victory of Pa'agrio">
@@ -586,7 +591,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regCp" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -627,6 +631,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

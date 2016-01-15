@@ -428,7 +428,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="#bonus" />
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1098,7 +1104,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="#bonus" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">6</value>
+					<value level="3">9</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1109,11 +1122,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="33" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1124,8 +1140,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="33" />
 				<mul stat="mReuse" val="1.05" />
+			</effect>
+			<effect name="MpRegen">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

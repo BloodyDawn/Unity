@@ -1640,7 +1640,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.01" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1653,7 +1656,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regCp" val="1.01" />
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1703,7 +1709,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.01" />
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

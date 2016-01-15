@@ -2312,8 +2312,6 @@
 				<mul stat="defCritRate" val="#stat" />
 				<mul stat="defMCritRate" val="#stat" />
 				<mul stat="debuffVuln" val="#debuffVuln" />
-				<mul stat="regHp" val="#stat" />
-				<mul stat="regMp" val="#stat" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PULL>
@@ -2331,6 +2329,22 @@
 					<value level="2">7</value>
 					<value level="3">10</value>
 				</KNOCKDOWN>
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2530,8 +2544,6 @@
 				<mul stat="defCritRate" val="#defCritRate" />
 				<mul stat="defMCritRate" val="#defCritRate" />
 				<mul stat="debuffVuln" val="#debuffVuln" />
-				<mul stat="regHp" val="#regHpMp" />
-				<mul stat="regMp" val="#regHpMp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PULL>
@@ -2549,6 +2561,22 @@
 					<value level="2">12</value>
 					<value level="3">15</value>
 				</KNOCKDOWN>
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2578,8 +2606,6 @@
 				<mul stat="defCritRate" val="#defCritRate" />
 				<mul stat="defMCritRate" val="#defCritRate" />
 				<mul stat="debuffVuln" val="#debuffVuln" />
-				<mul stat="regHp" val="#regHpMp" />
-				<mul stat="regMp" val="#regHpMp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PULL>
@@ -2597,6 +2623,22 @@
 					<value level="2">20</value>
 					<value level="3">20</value>
 				</KNOCKDOWN>
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

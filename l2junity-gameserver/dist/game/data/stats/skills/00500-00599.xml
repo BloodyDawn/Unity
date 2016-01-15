@@ -2133,7 +2133,6 @@
 				<power>100</power>
 			</effect>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.15" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -2153,6 +2152,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4305,7 +4308,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regHp" val="1.09" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>1.09</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4318,7 +4324,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regCp" val="1.09" />
+			</effect>
+			<effect name="CpRegen">
+				<amount>1.09</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4331,7 +4340,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="0.47" />
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.47</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

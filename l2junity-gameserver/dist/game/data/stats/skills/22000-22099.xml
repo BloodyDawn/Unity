@@ -2155,7 +2155,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.2" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

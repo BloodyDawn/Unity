@@ -4696,7 +4696,10 @@
 		<trait>BOSS</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

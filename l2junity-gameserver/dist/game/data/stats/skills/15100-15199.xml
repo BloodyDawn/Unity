@@ -1087,12 +1087,15 @@
 		<abnormalTime>3600</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<for>
-		<effect name="BlockActions">
-			<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
-		</effect>
-		<effect name="Buff">
-			<mul stat="regHp" val="0" />
-		</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="Buff">
+			</effect>
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="15156" levels="1" name="Flower Planting">

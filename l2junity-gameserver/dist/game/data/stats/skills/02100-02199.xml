@@ -798,8 +798,14 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.2" />
-				<mul stat="regHp" val="1.4" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

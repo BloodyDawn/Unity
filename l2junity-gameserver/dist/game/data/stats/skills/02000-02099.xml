@@ -1052,7 +1052,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="1.82" />
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.82</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

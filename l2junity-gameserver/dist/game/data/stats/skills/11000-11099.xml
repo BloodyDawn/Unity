@@ -178,12 +178,16 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.20">
-					<using kind="SIGIL" />
-				</mul>
 			</effect>
 			<effect name="MAtk">
 				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SIGIL</item>

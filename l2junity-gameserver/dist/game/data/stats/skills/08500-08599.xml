@@ -2057,7 +2057,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<mul stat="regMp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -2088,6 +2087,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

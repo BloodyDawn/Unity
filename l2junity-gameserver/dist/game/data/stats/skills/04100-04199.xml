@@ -573,7 +573,10 @@
 				<power>10</power>
 			</effect>
 			<effect name="BlockActions">
-				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1139,7 +1142,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="0.05" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>-95</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

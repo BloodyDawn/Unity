@@ -2398,7 +2398,6 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="maxHp" val="0.8" />
-				<mul stat="regHp" val="0.5" />
 				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="PAtk">
@@ -2433,6 +2432,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="HpRegen">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="5895" levels="1" name="Mark of Cowardice">
@@ -2459,7 +2462,6 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="maxHp" val="0.8" />
-				<mul stat="regHp" val="0.1" />
 			</effect>
 			<effect name="Speed">
 				<amount>25</amount>
@@ -2476,6 +2478,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>-90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

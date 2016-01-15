@@ -148,7 +148,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.03" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -161,7 +164,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regCp" val="1.03" />
+			</effect>
+			<effect name="CpRegen">
+				<amount>3</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -294,7 +300,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.03" />
+			</effect>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -876,7 +885,7 @@
 				<!-- Accuracy +4.3 -->
 				<!-- Max MP +321 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
-				<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
+				<!-- MP recovery are increased +1.72 -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -890,6 +899,10 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>321</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.72</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

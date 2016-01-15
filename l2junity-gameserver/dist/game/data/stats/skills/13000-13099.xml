@@ -152,7 +152,6 @@
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base" />
-				<mul stat="regMp" val="1.0557" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -181,6 +180,10 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13004" levels="4" name="Vesper Noble Light Armor Set">
@@ -204,7 +207,6 @@
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base" />
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="regMp" val="1.0557" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>
@@ -251,6 +253,10 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13005" levels="4" name="Vesper Robe Set">
@@ -271,7 +277,6 @@
 				<add stat="INT" val="#base" />
 				<sub stat="MEN" val="#base1" />
 				<add stat="WIT" val="#base" />
-				<mul stat="regMp" val="1.0557" />
 				<sub stat="cancel" val="#cancel" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -300,6 +305,10 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13006" levels="4" name="Vesper Noble Robe Set">
@@ -323,7 +332,6 @@
 				<sub stat="MEN" val="#base1" />
 				<add stat="WIT" val="#base" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-				<mul stat="regMp" val="1.0557" />
 				<sub stat="cancel" val="#cancel" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -360,6 +368,10 @@
 					<value level="3">15</value>
 					<value level="4">15</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -828,7 +840,6 @@
 				<sub stat="INT" val="#base" />
 				<sub stat="MEN" val="#base" />
 				<add stat="WIT" val="#base1" />
-				<mul stat="regMp" val="#regMp" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -873,6 +884,15 @@
 					<value level="4">92</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1023,7 +1043,6 @@
 				<add stat="INT" val="#base1" />
 				<sub stat="MEN" val="#base" />
 				<add stat="WIT" val="#base" />
-				<mul stat="regMp" val="#regMp" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -1069,6 +1088,15 @@
 					<value level="4">97</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3121,7 +3149,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="1" />
-				<mul stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -3164,6 +3191,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">6</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13085" levels="4" name="Set Effect - Immortal Robe 2 Piece (Recovery Type)">
@@ -3185,7 +3221,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="WIT" val="1" />
-				<mul stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -3227,6 +3262,15 @@
 					<value level="4">185</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">6</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3323,7 +3367,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="2" />
 				<add stat="MEN" val="-1" />
-				<mul stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -3365,6 +3408,15 @@
 					<value level="4">202</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3463,7 +3515,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="3" />
 				<add stat="MEN" val="-2" />
-				<mul stat="regMp" val="#regMp" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
@@ -3506,6 +3557,15 @@
 					<value level="4">221</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">8</value>
+					<value level="4">8</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3605,7 +3665,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="3" />
 				<add stat="MEN" val="-1" />
-				<add stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -3653,6 +3712,15 @@
 					<value level="2">228</value>
 					<value level="3">228</value>
 					<value level="4">228</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0.9</value>
+					<value level="4">0.9</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -3758,7 +3826,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="4" />
 				<add stat="MEN" val="-2" />
-				<add stat="regMp" val="#regMp" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -3806,6 +3873,15 @@
 					<value level="2">239</value>
 					<value level="3">239</value>
 					<value level="4">239</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

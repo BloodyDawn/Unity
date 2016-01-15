@@ -741,8 +741,14 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.4" />
-				<mul stat="regCp" val="1.4" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1233,7 +1239,6 @@
 				<sub stat="waterRes" val="50" />
 				<sub stat="earthRes" val="50" />
 				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
-				<mul stat="regHp" val="0.1" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-50</amount>
@@ -1245,6 +1250,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2983,7 +2992,14 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="#rate" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

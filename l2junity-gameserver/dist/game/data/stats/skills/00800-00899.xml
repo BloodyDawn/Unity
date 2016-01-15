@@ -1583,13 +1583,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="2">
-					<using kind="MAGIC" />
-				</add>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 				<armorType>
 					<item>MAGIC</item>
 				</armorType>
@@ -1632,9 +1636,27 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regHp" val="#regHpCp" />
-				<add stat="regMp" val="#regMp" />
-				<add stat="regCp" val="#regHpCp" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1673,11 +1695,14 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regHp" val="10" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3880,7 +3905,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -3897,6 +3921,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

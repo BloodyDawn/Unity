@@ -41,8 +41,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.01" />
-				<mul stat="regMp" val="1.01" />
+			</effect>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -830,7 +836,10 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.5" />
+			</effect>
+			<effect name="MpRegen">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

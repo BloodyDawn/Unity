@@ -101,7 +101,7 @@
 			<effect name="DefenceTrait">
 				<!-- M. Power +8.7% -->
 				<!-- M. Spd. +15% -->
-				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
+				<!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -126,6 +126,10 @@
 			<effect name="MaxMp">
 				<amount>92</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -206,7 +210,7 @@
 			<effect name="DefenceTrait">
 				<!-- M. Power +10% -->
 				<!-- M. Spd. +15% -->
-				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
+				<!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -232,6 +236,10 @@
 			<effect name="MaxMp">
 				<amount>92</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -507,7 +515,7 @@
 			<effect name="DefenceTrait">
 				<!-- M. Power +8.7% -->
 				<!-- M. Spd. +15% -->
-				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
+				<!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -535,6 +543,10 @@
 			<effect name="MaxMp">
 				<amount>92</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -654,7 +666,7 @@
 			<effect name="DefenceTrait">
 				<!-- M. Power +10% -->
 				<!-- M. Spd. +15% -->
-				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
+				<!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -683,6 +695,10 @@
 			<effect name="MaxMp">
 				<amount>92</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -842,12 +858,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.01" />
 				<add stat="fireRes" val="3" />
 				<HOLD>5</HOLD>
 			</effect>
 			<effect name="PAtk">
 				<amount>1.25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -861,12 +880,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.04" />
 				<add stat="waterRes" val="3" />
 				<HOLD>5</HOLD>
 			</effect>
 			<effect name="PAtk">
 				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -880,12 +902,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0167" />
 				<add stat="waterRes" val="3" />
 				<HOLD>5</HOLD>
 			</effect>
 			<effect name="PAtk">
 				<amount>2.08</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.67</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -899,12 +924,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0067" />
 				<add stat="windRes" val="3" />
 				<HOLD>5</HOLD>
 			</effect>
 			<effect name="PAtk">
 				<amount>0.83</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -918,12 +946,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0067" />
 				<add stat="earthRes" val="3" />
 				<HOLD>5</HOLD>
 			</effect>
 			<effect name="PAtk">
 				<amount>0.83</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1177,7 +1208,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.41</amount>
@@ -1191,6 +1221,10 @@
 				<amount>87</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8442" levels="1" name="Vesper Leather Breastplate">
@@ -1202,7 +1236,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.05" />
 			</effect>
 			<effect name="PAtk">
 				<amount>5.57</amount>
@@ -1216,6 +1249,10 @@
 				<amount>347</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8443" levels="1" name="Vesper Leather Leggings">
@@ -1227,7 +1264,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0068" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.67999999999999</amount>
@@ -1241,6 +1277,10 @@
 				<amount>145</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8444" levels="1" name="Vesper Leather Gloves">
@@ -1252,7 +1292,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0027" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.27</amount>
@@ -1265,6 +1304,10 @@
 			<effect name="MaxMp">
 				<amount>58</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1277,7 +1320,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0027" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.27</amount>
@@ -1291,6 +1333,10 @@
 				<amount>58</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8446" levels="1" name="Vesper Circlet">
@@ -1302,11 +1348,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
 				<SHOCK>7.5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1321,7 +1370,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.05" />
 				<sub stat="cancel" val="12" />
 				<SHOCK>20</SHOCK>
 			</effect>
@@ -1331,6 +1379,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1344,11 +1396,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
 				<SHOCK>12.5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1363,11 +1418,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1382,11 +1440,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1513,7 +1574,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<add stat="regMp" val="0.23" />
 				<add stat="waterRes" val="10" />
 				<mul stat="mReuse" val="0.95" />
 				<BLEED>20</BLEED>
@@ -1530,6 +1590,10 @@
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>0.23</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8460" levels="1" name="Blessed Freya's Necklace">
@@ -1542,7 +1606,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<add stat="regMp" val="0.46" />
 				<add stat="waterRes" val="15" />
 				<mul stat="mReuse" val="0.95" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
@@ -1562,6 +1625,10 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.46</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1944,7 +2011,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.41</amount>
@@ -1958,6 +2024,10 @@
 				<amount>87</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8486" levels="1" name="Vesper Noble Leather Leggings">
@@ -1969,7 +2039,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0068" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.67999999999999</amount>
@@ -1983,6 +2052,10 @@
 				<amount>145</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8487" levels="1" name="Vesper Noble Leather Gloves">
@@ -1994,7 +2067,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0027" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.27</amount>
@@ -2007,6 +2079,10 @@
 			<effect name="MaxMp">
 				<amount>58</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2019,7 +2095,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0027" />
 			</effect>
 			<effect name="PAtk">
 				<amount>0.27</amount>
@@ -2033,6 +2108,10 @@
 				<amount>58</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MpRegen">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8489" levels="1" name="Vesper Noble Circlet">
@@ -2044,11 +2123,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
 				<SHOCK>7.5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2063,11 +2145,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
 				<SHOCK>12.5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2082,11 +2167,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2101,11 +2189,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>

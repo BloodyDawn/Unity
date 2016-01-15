@@ -23,12 +23,15 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="383" />
-				<mul stat="regMp" val="1.0827" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>13</POISON>
 			</effect>
 			<effect name="PAtk">
+				<amount>8.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>8.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -44,12 +47,15 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="33" />
-				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>2</POISON>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -65,12 +71,15 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="33" />
-				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>3</POISON>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -86,12 +95,15 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="50" />
-				<mul stat="regMp" val="1.0062" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>2</POISON>
 			</effect>
 			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.62</amount>
 				<mode>PER</mode>
 			</effect>
@@ -107,11 +119,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="33" />
-				<mul stat="regMp" val="1.0083" />
 			</effect>
 			<effect name="Speed">
 				<amount>1.16</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -125,11 +140,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="33" />
-				<mul stat="regMp" val="1.0083" />
 			</effect>
 			<effect name="Speed">
 				<amount>1.16</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -143,11 +161,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="200" />
-				<mul stat="regMp" val="1.0724" />
 			</effect>
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>7.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -161,11 +182,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="88" />
-				<mul stat="regMp" val="1.0208" />
 			</effect>
 			<effect name="Speed">
 				<amount>2.91</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -179,11 +203,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="50" />
-				<mul stat="regMp" val="1.0125" />
 			</effect>
 			<effect name="Speed">
 				<amount>1.75</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -196,11 +223,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.0724" />
 			</effect>
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>7.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -213,11 +243,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.0208" />
 			</effect>
 			<effect name="Speed">
 				<amount>2.91</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -230,11 +263,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.0083" />
 			</effect>
 			<effect name="Speed">
 				<amount>1.16</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -247,11 +283,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.0083" />
 			</effect>
 			<effect name="Speed">
 				<amount>1.16</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -264,11 +303,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.0125" />
 			</effect>
 			<effect name="Speed">
 				<amount>1.75</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -349,11 +391,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0083" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>34</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -366,11 +411,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0083" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>34</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -383,11 +431,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0724" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>205</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>7.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -400,11 +451,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0208" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>85</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -417,11 +471,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0125" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>51</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -826,7 +883,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0932" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>52</POISON>
@@ -835,6 +891,10 @@
 			<effect name="MaxMp">
 				<amount>315</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>9.32</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -847,7 +907,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0083" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>8</POISON>
@@ -856,6 +915,10 @@
 			<effect name="MaxMp">
 				<amount>37</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -868,7 +931,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0083" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>8</POISON>
@@ -877,6 +939,10 @@
 			<effect name="MaxMp">
 				<amount>37</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -889,7 +955,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0125" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>12</POISON>
@@ -898,6 +963,10 @@
 			<effect name="MaxMp">
 				<amount>56</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1210,7 +1279,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0133" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.33</SHOCK>
@@ -1218,6 +1286,10 @@
 			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1230,13 +1302,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0333" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>20.83</SHOCK>
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.33</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1250,7 +1325,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0133" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.33</SHOCK>
@@ -1258,6 +1332,10 @@
 			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1270,7 +1348,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.02" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>12.5</SHOCK>
@@ -1278,6 +1355,10 @@
 			<effect name="MaxMp">
 				<amount>60</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1434,13 +1515,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>11.66</SLEEP>
 				<HOLD>11.66</HOLD>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1455,13 +1539,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0827" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>29.16</SLEEP>
 				<HOLD>29.16</HOLD>
 			</effect>
 			<effect name="MAtk">
+				<amount>8.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>8.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1476,13 +1563,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>11.66</SLEEP>
 				<HOLD>11.66</HOLD>
 			</effect>
 			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>

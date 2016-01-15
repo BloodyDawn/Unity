@@ -509,7 +509,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="regHp" val="12" />
 				<add stat="regHp" val="6" />
 			</effect>
 			<effect name="PAtk">
@@ -540,6 +539,10 @@
 					<value level="9">787</value>
 					<value level="10">850</value>
 				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>12</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

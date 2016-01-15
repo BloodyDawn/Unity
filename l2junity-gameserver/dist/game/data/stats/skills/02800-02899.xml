@@ -1421,8 +1421,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="regHp" val="1.2" />
-				<mul stat="regMp" val="1.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1460,6 +1458,14 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="2857" levels="1" name="Holiday Event - Enchant Scroll (Wizard)">
@@ -1488,7 +1494,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="regMp" val="1.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1515,6 +1520,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2468,10 +2477,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2545,10 +2557,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.2" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -1401,7 +1401,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="regMp" val="1.04" /> <!-- MP Regeneration +4% -->
+				<!-- MP Regeneration +4% -->
 				<!-- M. Atk. +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -1411,6 +1411,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1437,7 +1441,7 @@
 			<effect name="DefenceTrait">
 				<!-- MP +240 -->
 				<!-- Casting Spd. +15% -->
-				<mul stat="regMp" val="1.08" /> <!-- MP Regeneration +8% -->
+				<!-- MP Regeneration +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -1450,6 +1454,10 @@
 			<effect name="MaxMp">
 				<amount>240</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

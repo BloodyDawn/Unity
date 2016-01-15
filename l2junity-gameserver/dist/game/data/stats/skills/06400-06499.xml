@@ -742,7 +742,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="5" />
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -751,6 +750,10 @@
 					<item>BOW</item>
 					<item>CROSSBOW</item>
 				</weaponType>
+			</effect>
+			<effect name="HpRegen">
+				<amount>400</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

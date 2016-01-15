@@ -497,8 +497,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.2" />
-				<mul stat="regMp" val="1.2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -509,6 +507,14 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

@@ -1729,10 +1729,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.15" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

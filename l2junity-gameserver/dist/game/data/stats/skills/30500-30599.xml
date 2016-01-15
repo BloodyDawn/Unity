@@ -1931,9 +1931,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="regCp" val="#regHp" />
-				<add stat="regHp" val="#regHp" />
-				<add stat="regMp" val="#regMp" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>
@@ -1986,6 +1983,60 @@
 					<value level="11">670</value>
 					<value level="12">683</value>
 					<value level="13">696</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">2.5</value>
+					<value level="2">4.5</value>
+					<value level="3">6.5</value>
+					<value level="4">12</value>
+					<value level="5">12</value>
+					<value level="6">12</value>
+					<value level="7">12</value>
+					<value level="8">12</value>
+					<value level="9">12</value>
+					<value level="10">12</value>
+					<value level="11">12</value>
+					<value level="12">12</value>
+					<value level="13">12</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">1.2</value>
+					<value level="2">1.8</value>
+					<value level="3">2.4</value>
+					<value level="4">6</value>
+					<value level="5">6</value>
+					<value level="6">6</value>
+					<value level="7">6</value>
+					<value level="8">6</value>
+					<value level="9">6</value>
+					<value level="10">6</value>
+					<value level="11">6</value>
+					<value level="12">6</value>
+					<value level="13">6</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>
+					<value level="1">2.5</value>
+					<value level="2">4.5</value>
+					<value level="3">6.5</value>
+					<value level="4">12</value>
+					<value level="5">12</value>
+					<value level="6">12</value>
+					<value level="7">12</value>
+					<value level="8">12</value>
+					<value level="9">12</value>
+					<value level="10">12</value>
+					<value level="11">12</value>
+					<value level="12">12</value>
+					<value level="13">12</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
