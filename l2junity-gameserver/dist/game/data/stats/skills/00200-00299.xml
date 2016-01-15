@@ -6056,7 +6056,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<mul stat="rShld" val="1.5" />
 				<power>2</power>
 			</effect>
 			<effect name="PhysicalDefence">
@@ -6067,6 +6066,10 @@
 					<value level="4">256.5</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

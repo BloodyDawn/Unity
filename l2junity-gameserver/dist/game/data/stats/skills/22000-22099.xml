@@ -2069,7 +2069,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="rShld" val="1.15" />
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

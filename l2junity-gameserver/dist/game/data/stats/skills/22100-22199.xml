@@ -1461,8 +1461,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-				<add stat="rShld" val="15" />
+			<effect name="ShieldDefenceRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

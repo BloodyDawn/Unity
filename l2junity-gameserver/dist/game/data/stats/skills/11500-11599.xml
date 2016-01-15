@@ -125,7 +125,7 @@
 				<add stat="maxHp" val="4636">
 					<using kind="MAGIC" />
 				</add>
-				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
+				<!-- Never been in description but is in skilldata -->
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -144,6 +144,10 @@
 				<armorType>
 					<item>MAGIC</item>
 				</armorType>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -172,7 +176,7 @@
 				<add stat="maxHp" val="4636">
 					<using kind="LIGHT" />
 				</add>
-				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
+				<!-- Never been in description but is in skilldata -->
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -191,6 +195,10 @@
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -219,7 +227,7 @@
 				<add stat="maxHp" val="4636">
 					<using kind="HEAVY" />
 				</add>
-				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
+				<!-- Never been in description but is in skilldata -->
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -238,6 +246,10 @@
 				<armorType>
 					<item>HEAVY</item>
 				</armorType>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1566,7 +1578,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="rShld" val="1.30" />
 				<mul stat="sDef" val="1.50" />
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
@@ -1584,6 +1595,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>45</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4123,7 +4138,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="rShld" val="1.30" />
 				<mul stat="sDef" val="1.50" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -4139,6 +4153,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>45</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

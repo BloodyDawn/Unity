@@ -897,8 +897,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<for>
 			<effect name="Buff">
-				<mul stat="rShld" val="1.5" />
 				<mul stat="sDef" val="#sDef" />
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
