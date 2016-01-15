@@ -33,7 +33,11 @@
 				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="#maxHp" mode="PER" />
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

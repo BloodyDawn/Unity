@@ -89,8 +89,12 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttackHpLink">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">29176</value>
+					<value level="2">30726</value>
+					<value level="3">32277</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -275,7 +279,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="EnlargeAbnormalSlot">
-				<param slots="1" />
+				<slots>1</slots>
 			</effect>
 		</for>
 	</skill>

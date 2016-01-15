@@ -25,12 +25,18 @@
 		</cond>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" SLEEP="100" DERANGEMENT="100" CHANGEBODY="100" SHOCK="100" />
-				<param AIRBIND="100" KNOCKBACK="100" KNOCKDOWN="100" />
+				<AIRBIND>100</AIRBIND>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<DERANGEMENT>100</DERANGEMENT>
+				<CHANGEBODY>100</CHANGEBODY>
+				<SHOCK>100</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -64,7 +70,16 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">152</value>
+					<value level="2">154</value>
+					<value level="3">157</value>
+					<value level="4">161</value>
+					<value level="5">165</value>
+					<value level="6">169</value>
+					<value level="7">173</value>
+					<value level="8">177</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -104,7 +119,19 @@
 		</cond>
 		<for>
 			<effect name="Heal">
-				<param power="#power" />
+				<power>
+					<value level="1">1637</value>
+					<value level="2">1645</value>
+					<value level="3">1658</value>
+					<value level="4">1671</value>
+					<value level="5">1685</value>
+					<value level="6">1698</value>
+					<value level="7">1713</value>
+					<value level="8">1727</value>
+					<value level="9">1928</value>
+					<value level="10">1944</value>
+					<value level="11">1960</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -304,7 +331,9 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
@@ -368,7 +397,11 @@
 		<reuseDelay>4000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">20633</value>
+					<value level="2">21717</value>
+					<value level="3">22799</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -397,7 +430,11 @@
 		<reuseDelay>4000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18758</value>
+					<value level="2">19743</value>
+					<value level="3">20727</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -425,7 +462,11 @@
 		<reuseDelay>4000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18758</value>
+					<value level="2">19743</value>
+					<value level="3">20727</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -457,7 +498,11 @@
 		<for>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">370</value>
+					<value level="2">372</value>
+					<value level="3">374</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -475,9 +520,9 @@
 				<mul stat="mDef" val="1.5" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param BOW="50" />
-				<param CROSSBOW="50" />
-				<param TWOHANDCROSSBOW="50" />
+				<BOW>50</BOW>
+				<TWOHANDCROSSBOW>50</TWOHANDCROSSBOW>
+				<CROSSBOW>50</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -506,7 +551,9 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="6645" itemCount="1900" /> <!-- Beast Soulshot -->
+				<!-- Beast Soulshot -->
+				<itemId>6645</itemId>
+				<itemCount>1900</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -550,7 +597,16 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Heal">
-				<param power="#heal" />
+				<power>
+					<value level="1">1191</value>
+					<value level="2">1196</value>
+					<value level="3">1206</value>
+					<value level="4">1216</value>
+					<value level="5">1226</value>
+					<value level="6">1236</value>
+					<value level="7">1246</value>
+					<value level="8">1256</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -583,7 +639,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15066</value>
+					<value level="2">15067</value>
+					<value level="3">15068</value>
+					<value level="4">15069</value>
+					<value level="5">15070</value>
+					<value level="6">15071</value>
+					<value level="7">15072</value>
+					<value level="8">15073</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -616,7 +683,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15074</value>
+					<value level="2">15075</value>
+					<value level="3">15076</value>
+					<value level="4">15077</value>
+					<value level="5">15078</value>
+					<value level="6">15079</value>
+					<value level="7">15080</value>
+					<value level="8">15081</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -649,7 +727,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15082</value>
+					<value level="2">15083</value>
+					<value level="3">15084</value>
+					<value level="4">15085</value>
+					<value level="5">15086</value>
+					<value level="6">15087</value>
+					<value level="7">15088</value>
+					<value level="8">15089</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -744,7 +833,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">10508</value>
+					<value level="2">11190</value>
+					<value level="3">11872</value>
+					<value level="4">12554</value>
+					<value level="5">13236</value>
+					<value level="6">13918</value>
+					<value level="7">14600</value>
+					<value level="8">15282</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -794,7 +892,16 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">8406</value>
+					<value level="2">8920</value>
+					<value level="3">9497</value>
+					<value level="4">10043</value>
+					<value level="5">10588</value>
+					<value level="6">11134</value>
+					<value level="7">11680</value>
+					<value level="8">12225</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="100" />
@@ -825,7 +932,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">10508</value>
+					<value level="2">11190</value>
+					<value level="3">11872</value>
+					<value level="4">12554</value>
+					<value level="5">13236</value>
+					<value level="6">13918</value>
+					<value level="7">14600</value>
+					<value level="8">15282</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -854,7 +970,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">11558</value>
+					<value level="2">12309</value>
+					<value level="3">13059</value>
+					<value level="4">13809</value>
+					<value level="5">14559</value>
+					<value level="6">15309</value>
+					<value level="7">16060</value>
+					<value level="8">16810</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -887,7 +1012,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15114</value>
+					<value level="2">15115</value>
+					<value level="3">15116</value>
+					<value level="4">15117</value>
+					<value level="5">15118</value>
+					<value level="6">15119</value>
+					<value level="7">15120</value>
+					<value level="8">15121</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -920,7 +1056,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15122</value>
+					<value level="2">15123</value>
+					<value level="3">15124</value>
+					<value level="4">15125</value>
+					<value level="5">15126</value>
+					<value level="6">15127</value>
+					<value level="7">15128</value>
+					<value level="8">15129</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -953,7 +1100,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15130</value>
+					<value level="2">15131</value>
+					<value level="3">15132</value>
+					<value level="4">15133</value>
+					<value level="5">15134</value>
+					<value level="6">15135</value>
+					<value level="7">15136</value>
+					<value level="8">15137</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -1048,7 +1206,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">10508</value>
+					<value level="2">11190</value>
+					<value level="3">11872</value>
+					<value level="4">12554</value>
+					<value level="5">13236</value>
+					<value level="6">13918</value>
+					<value level="7">14600</value>
+					<value level="8">15282</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1098,7 +1265,16 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">8406</value>
+					<value level="2">8920</value>
+					<value level="3">9497</value>
+					<value level="4">10043</value>
+					<value level="5">10588</value>
+					<value level="6">11134</value>
+					<value level="7">11680</value>
+					<value level="8">12225</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="100" />
@@ -1129,7 +1305,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">10508</value>
+					<value level="2">11190</value>
+					<value level="3">11872</value>
+					<value level="4">12554</value>
+					<value level="5">13236</value>
+					<value level="6">13918</value>
+					<value level="7">14600</value>
+					<value level="8">15282</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1158,7 +1343,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">11558</value>
+					<value level="2">12309</value>
+					<value level="3">13059</value>
+					<value level="4">13809</value>
+					<value level="5">14559</value>
+					<value level="6">15309</value>
+					<value level="7">16060</value>
+					<value level="8">16810</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1191,7 +1385,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15090</value>
+					<value level="2">15091</value>
+					<value level="3">15092</value>
+					<value level="4">15093</value>
+					<value level="5">15094</value>
+					<value level="6">15095</value>
+					<value level="7">15096</value>
+					<value level="8">15097</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -1224,7 +1429,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15098</value>
+					<value level="2">15099</value>
+					<value level="3">15100</value>
+					<value level="4">15101</value>
+					<value level="5">15102</value>
+					<value level="6">15103</value>
+					<value level="7">15104</value>
+					<value level="8">15105</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -1257,7 +1473,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15106</value>
+					<value level="2">15107</value>
+					<value level="3">15108</value>
+					<value level="4">15109</value>
+					<value level="5">15110</value>
+					<value level="6">15111</value>
+					<value level="7">15112</value>
+					<value level="8">15113</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -1352,7 +1579,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">10508</value>
+					<value level="2">11190</value>
+					<value level="3">11872</value>
+					<value level="4">12554</value>
+					<value level="5">13236</value>
+					<value level="6">13918</value>
+					<value level="7">14600</value>
+					<value level="8">15282</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1402,7 +1638,16 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">8406</value>
+					<value level="2">8920</value>
+					<value level="3">9497</value>
+					<value level="4">10043</value>
+					<value level="5">10588</value>
+					<value level="6">11134</value>
+					<value level="7">11680</value>
+					<value level="8">12225</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="100" />
@@ -1433,7 +1678,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">10508</value>
+					<value level="2">11190</value>
+					<value level="3">11872</value>
+					<value level="4">12554</value>
+					<value level="5">13236</value>
+					<value level="6">13918</value>
+					<value level="7">14600</value>
+					<value level="8">15282</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1462,7 +1716,16 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">11558</value>
+					<value level="2">12309</value>
+					<value level="3">13059</value>
+					<value level="4">13809</value>
+					<value level="5">14559</value>
+					<value level="6">15309</value>
+					<value level="7">16060</value>
+					<value level="8">16810</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1597,7 +1860,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">188</value>
+					<value level="2">202</value>
+					<value level="3">215</value>
+					<value level="4">227</value>
+					<value level="5">242</value>
+					<value level="6">248</value>
+					<value level="7">254</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1686,7 +1957,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">188</value>
+					<value level="2">202</value>
+					<value level="3">215</value>
+					<value level="4">227</value>
+					<value level="5">242</value>
+					<value level="6">248</value>
+					<value level="7">254</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1765,7 +2044,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">188</value>
+					<value level="2">202</value>
+					<value level="3">215</value>
+					<value level="4">227</value>
+					<value level="5">242</value>
+					<value level="6">248</value>
+					<value level="7">254</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1835,7 +2122,14 @@
 		<reuseDelay>400000</reuseDelay>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="#npcIds" npcCount="1" despawnDelay="120000" singleInstance="true" />
+				<npcId>
+					<value level="1">13423</value>
+					<value level="2">13424</value>
+					<value level="3">13425</value>
+				</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>120000</despawnDelay>
+				<singleInstance>true</singleInstance>
 			</effect>
 		</for>
 	</skill>
@@ -1870,7 +2164,21 @@
 				<mul stat="regMp" val="#stat" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param PULL="#trait" KNOCKBACK="#trait" KNOCKDOWN="#trait" />
+				<PULL>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</PULL>
+				<KNOCKBACK>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</KNOCKBACK>
+				<KNOCKDOWN>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</KNOCKDOWN>
 			</effect>
 		</for>
 	</skill>
@@ -1894,7 +2202,18 @@
 		<reuseDelay>50000</reuseDelay>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="#npcId" npcCount="1" despawnDelay="#despawnDelay" singleInstance="true" />
+				<npcId>
+					<value level="1">13426</value>
+					<value level="2">13427</value>
+					<value level="3">13428</value>
+				</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>
+					<value level="1">30000</value>
+					<value level="2">45000</value>
+					<value level="3">30000</value>
+				</despawnDelay>
+				<singleInstance>true</singleInstance>
 			</effect>
 		</for>
 	</skill>
@@ -1930,7 +2249,7 @@
 		</cond>
 		<for>
 			<effect name="TeleportToNpc">
-				<param npcId="13426;13427;13428" />
+				<npcId>13426;13427;13428</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -1988,7 +2307,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">518</value>
+					<value level="2">526</value>
+					<value level="3">542</value>
+					<value level="4">558</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
@@ -2042,7 +2366,21 @@
 				<mul stat="regMp" val="#regHpMp" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param PULL="#trait" KNOCKBACK="#trait" KNOCKDOWN="#trait" />
+				<PULL>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</PULL>
+				<KNOCKBACK>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</KNOCKBACK>
+				<KNOCKDOWN>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</KNOCKDOWN>
 			</effect>
 		</for>
 	</skill>
@@ -2076,7 +2414,21 @@
 				<mul stat="regMp" val="#regHpMp" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param PULL="#trait" KNOCKBACK="#trait" KNOCKDOWN="#trait" />
+				<PULL>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+				</PULL>
+				<KNOCKBACK>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+				</KNOCKBACK>
+				<KNOCKDOWN>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+				</KNOCKDOWN>
 			</effect>
 		</for>
 	</skill>
@@ -2115,7 +2467,16 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15155</value>
+					<value level="2">15156</value>
+					<value level="3">15157</value>
+					<value level="4">15158</value>
+					<value level="5">15159</value>
+					<value level="6">15160</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -2154,7 +2515,16 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15161</value>
+					<value level="2">15162</value>
+					<value level="3">15163</value>
+					<value level="4">15164</value>
+					<value level="5">15165</value>
+					<value level="6">15166</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -2193,7 +2563,16 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15167</value>
+					<value level="2">15168</value>
+					<value level="3">15169</value>
+					<value level="4">15170</value>
+					<value level="5">15171</value>
+					<value level="6">15172</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -2232,7 +2611,16 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15173</value>
+					<value level="2">15174</value>
+					<value level="3">15175</value>
+					<value level="4">15176</value>
+					<value level="5">15177</value>
+					<value level="6">15178</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -2271,7 +2659,16 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15179</value>
+					<value level="2">15180</value>
+					<value level="3">15181</value>
+					<value level="4">15182</value>
+					<value level="5">15183</value>
+					<value level="6">15184</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -2310,7 +2707,16 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">15185</value>
+					<value level="2">15186</value>
+					<value level="3">15187</value>
+					<value level="4">15188</value>
+					<value level="5">15189</value>
+					<value level="6">15190</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -2350,7 +2756,11 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18224</value>
+					<value level="2">19158</value>
+					<value level="3">20092</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="100" />
@@ -2383,10 +2793,17 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">32410</value>
+					<value level="2">34072</value>
+					<value level="3">35734</value>
+				</power>
 			</effect>
 			<effect name="KnockBack">
-				<param speed="700" distance="50" knockDown="true" /> <!-- Guessed -->
+				<!-- Guessed -->
+				<speed>700</speed>
+				<distance>50</distance>
+				<knockDown>true</knockDown>
 			</effect>
 		</for>
 	</skill>
@@ -2414,7 +2831,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">31903</value>
+					<value level="2">33539</value>
+					<value level="3">35175</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2450,10 +2871,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">30623</value>
+					<value level="2">32193</value>
+					<value level="3">33763</value>
+				</power>
 			</effect>
 			<effect name="KnockBack">
-				<param speed="400" distance="100" /> <!-- Guessed -->
+				<!-- Guessed -->
+				<speed>400</speed>
+				<distance>100</distance>
 			</effect>
 		</for>
 	</skill>
@@ -2500,7 +2927,11 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">16198</value>
+					<value level="2">17028</value>
+					<value level="3">17858</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2536,10 +2967,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">22677</value>
+					<value level="2">23839</value>
+					<value level="3">25001</value>
+				</power>
 			</effect>
 			<effect name="KnockBack">
-				<param speed="400" distance="100" /> <!-- Guessed -->
+				<!-- Guessed -->
+				<speed>400</speed>
+				<distance>100</distance>
 			</effect>
 		</for>
 	</skill>
@@ -2567,7 +3004,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">31903</value>
+					<value level="2">33539</value>
+					<value level="3">35175</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2605,7 +3046,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">34449</value>
+					<value level="2">36215</value>
+					<value level="3">37981</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="100" />
@@ -2632,7 +3077,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">40502</value>
+					<value level="2">42578</value>
+					<value level="3">44654</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2657,11 +3106,17 @@
 		<reuseDelay>7000</reuseDelay>
 		<for>
 			<effect name="FatalBlow">
-				<param chance="30" />  <!-- Guessed -->
-				<param power="#power" />
+				<!-- Guessed -->
+				<chance>30</chance>
+				<power>
+					<value level="1">45696</value>
+					<value level="2">47772</value>
+					<value level="3">49848</value>
+				</power>
 			</effect>
 			<effect name="Lethal">
-				<param halfLethal="10" /> <!-- Guessed -->
+				<!-- Guessed -->
+				<halfLethal>10</halfLethal>
 			</effect>
 		</for>
 	</skill>
@@ -2685,11 +3140,17 @@
 		<reuseDelay>7000</reuseDelay>
 		<for>
 			<effect name="FatalBlow">
-				<param chance="30" />  <!-- Guessed -->
-				<param power="#power" />
+				<!-- Guessed -->
+				<chance>30</chance>
+				<power>
+					<value level="1">51411</value>
+					<value level="2">53747</value>
+					<value level="3">56083</value>
+				</power>
 			</effect>
 			<effect name="Lethal">
-				<param halfLethal="10" /> <!-- Guessed -->
+				<!-- Guessed -->
+				<halfLethal>10</halfLethal>
 			</effect>
 		</for>
 	</skill>
@@ -2712,7 +3173,11 @@
 		<reuseDelay>7000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">45568</value>
+					<value level="2">47904</value>
+					<value level="3">50240</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2740,12 +3205,16 @@
 				<mul stat="pAtk" val="1.30" /> <!-- Guessed -->
 			</effect>
 			<effect name="AttackTrait">
-				<param KNOCKBACK="30" KNOCKDOWN="30" /> <!-- Guessed -->
+				<!-- Guessed -->
+				<KNOCKBACK>30</KNOCKBACK>
+				<KNOCKDOWN>30</KNOCKDOWN>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11388" skillLevel="1" /> <!-- Lord of Arcana -->
+				<!-- Lord of Arcana -->
+				<skillId>11388</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -2803,7 +3272,9 @@
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11390" skillLevel="1" /> <!-- Lord of Elemental -->
+				<!-- Lord of Elemental -->
+				<skillId>11390</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -2859,7 +3330,9 @@
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11392" skillLevel="1" /> <!-- Lord of Spectral -->
+				<!-- Lord of Spectral -->
+				<skillId>11392</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
 	</skill>

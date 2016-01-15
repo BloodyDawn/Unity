@@ -296,9 +296,22 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
 				<add stat="mAtk" val="#mAtk" />
 				<mul stat="moveSpeed" val="0.7" />
+				<power>
+					<value level="1">6.45</value>
+					<value level="2">11.1</value>
+					<value level="3">20.39</value>
+					<value level="4">30.49</value>
+					<value level="5">30.49</value>
+					<value level="6">60.43</value>
+					<value level="7">77</value>
+					<value level="8">85.7</value>
+					<value level="9">94.66</value>
+					<value level="10">103.89</value>
+					<value level="11">113.38</value>
+					<value level="12">123.15</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -339,8 +352,21 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
 				<mul stat="moveSpeed" val="0.7" />
+				<power>
+					<value level="1">8</value>
+					<value level="2">21</value>
+					<value level="3">57</value>
+					<value level="4">91</value>
+					<value level="5">133</value>
+					<value level="6">179</value>
+					<value level="7">223</value>
+					<value level="8">251</value>
+					<value level="9">289</value>
+					<value level="10">318</value>
+					<value level="11">324</value>
+					<value level="12">354</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -381,8 +407,21 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
 				<mul stat="moveSpeed" val="0.7" />
+				<power>
+					<value level="1">15</value>
+					<value level="2">21</value>
+					<value level="3">43</value>
+					<value level="4">55</value>
+					<value level="5">89</value>
+					<value level="6">103</value>
+					<value level="7">140</value>
+					<value level="8">168</value>
+					<value level="9">174</value>
+					<value level="10">232</value>
+					<value level="11">265</value>
+					<value level="12">295</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -496,7 +535,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaHealByLevel">
-				<param power="49" />
+				<power>49</power>
 			</effect>
 		</for>
 	</skill>
@@ -515,7 +554,7 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="115" />
+				<power>115</power>
 			</effect>
 		</for>
 	</skill>
@@ -584,7 +623,8 @@
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="5494" skillLevel="1" />
+				<skillId>5494</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -616,7 +656,8 @@
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="5494" skillLevel="1" />
+				<skillId>5494</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -701,7 +742,17 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">1419</value>
+					<value level="2">1458</value>
+					<value level="3">1503</value>
+					<value level="4">1548</value>
+					<value level="5">1584</value>
+					<value level="6">1611</value>
+					<value level="7">1630</value>
+					<value level="8">1651</value>
+					<value level="9">1678</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -751,7 +802,17 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">1971</value>
+					<value level="2">2025</value>
+					<value level="3">2088</value>
+					<value level="4">2150</value>
+					<value level="5">2200</value>
+					<value level="6">2237</value>
+					<value level="7">2263</value>
+					<value level="8">2294</value>
+					<value level="9">2331</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -804,7 +865,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">916</value>
+					<value level="2">1136</value>
+					<value level="3">1376</value>
+					<value level="4">1626</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -878,10 +944,16 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">917</value>
+					<value level="2">1084</value>
+				</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">62</value>
+					<value level="2">67</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1074,7 +1146,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">218</value>
+					<value level="2">266</value>
+					<value level="3">266</value>
+					<value level="4">307</value>
+					<value level="5">307</value>
+					<value level="6">335</value>
+					<value level="7">335</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1146,7 +1226,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MagicalAttackMp">
-				<param power="#power" />
+				<power>
+					<value level="1">148</value>
+					<value level="2">153</value>
+					<value level="3">157</value>
+					<value level="4">162</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1196,7 +1281,9 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="100" max="20" />
+				<slot>buff</slot>
+				<rate>100</rate>
+				<max>20</max>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.7" />
@@ -1310,7 +1397,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1110</value>
+					<value level="2">1479</value>
+					<value level="3">1923</value>
+					<value level="4">2443</value>
+					<value level="5">3030</value>
+					<value level="6">3668</value>
+					<value level="7">4336</value>
+					<value level="8">5002</value>
+					<value level="9">5632</value>
+					<value level="10">6187</value>
+					<value level="11">6632</value>
+					<value level="12">6978</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1400,7 +1500,20 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1110</value>
+					<value level="2">1479</value>
+					<value level="3">1923</value>
+					<value level="4">2443</value>
+					<value level="5">3030</value>
+					<value level="6">3668</value>
+					<value level="7">4336</value>
+					<value level="8">5002</value>
+					<value level="9">5632</value>
+					<value level="10">6187</value>
+					<value level="11">6632</value>
+					<value level="12">6978</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1494,7 +1607,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param TURN_STONE="10" />
+				<TURN_STONE>10</TURN_STONE>
 			</effect>
 		</for>
 	</skill>
@@ -1513,7 +1626,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="INVINCIBILITY,9" />
+				<dispel>INVINCIBILITY,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1731,7 +1844,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">122</value>
+					<value level="2">279</value>
+					<value level="3">584</value>
+					<value level="4">1110</value>
+					<value level="5">1923</value>
+					<value level="6">3030</value>
+					<value level="7">4336</value>
+					<value level="8">5002</value>
+					<value level="9">5632</value>
+					<value level="10">6187</value>
+					<value level="11">6632</value>
+					<value level="12">6978</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1795,10 +1921,10 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2616" />
+				<power>2616</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="71" />
+				<power>71</power>
 			</effect>
 		</for>
 	</skill>
@@ -1821,7 +1947,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="607" />
+				<power>607</power>
 			</effect>
 		</for>
 	</skill>
@@ -1850,11 +1976,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2319" />
+				<power>2319</power>
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="5">
-				<param power="52" />
+				<power>52</power>
 			</effect>
 		</for>
 	</skill>
@@ -1872,7 +1998,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="TargetMeProbability">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1894,7 +2020,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>

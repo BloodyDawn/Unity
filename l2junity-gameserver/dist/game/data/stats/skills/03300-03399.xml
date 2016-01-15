@@ -48,7 +48,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="10" />
+				<BLEED>10</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -61,7 +61,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="10" />
+				<SLEEP>10</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -74,7 +74,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="10" />
+				<SHOCK>10</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -87,7 +87,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DERANGEMENT="10" />
+				<DERANGEMENT>10</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -100,7 +100,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="10" />
+				<PARALYZE>10</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -113,7 +113,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="10" />
+				<HOLD>10</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -263,7 +263,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param GUST="100" />
+				<GUST>100</GUST>
 			</effect>
 		</for>
 	</skill>
@@ -315,7 +315,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TalismanSlot">
-				<param slots="1" />
+				<slots>1</slots>
 			</effect>
 		</for>
 	</skill>
@@ -328,7 +328,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TalismanSlot">
-				<param slots="2" />
+				<slots>2</slots>
 			</effect>
 		</for>
 	</skill>
@@ -341,7 +341,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TalismanSlot">
-				<param slots="3" />
+				<slots>3</slots>
 			</effect>
 		</for>
 	</skill>
@@ -354,7 +354,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TalismanSlot">
-				<param slots="4" />
+				<slots>4</slots>
 			</effect>
 		</for>
 	</skill>
@@ -366,7 +366,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TalismanSlot">
-				<param slots="5" />
+				<slots>5</slots>
 			</effect>
 		</for>
 	</skill>
@@ -378,7 +378,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TalismanSlot">
-				<param slots="6" />
+				<slots>6</slots>
 			</effect>
 		</for>
 	</skill>
@@ -400,7 +400,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11500" />
+				<power>11500</power>
 			</effect>
 		</for>
 	</skill>
@@ -422,7 +422,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11500" />
+				<power>11500</power>
 			</effect>
 		</for>
 	</skill>
@@ -446,7 +446,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
+				<power>15000</power>
 			</effect>
 		</for>
 	</skill>
@@ -474,8 +474,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="200" />
-				<param percentage="5" />
+				<power>200</power>
+				<percentage>5</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -503,7 +503,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="10166" itemCount="1" />
+				<itemId>10166</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -531,7 +532,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="8626" itemCount="1" />
+				<itemId>8626</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -559,7 +561,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="8632" itemCount="1" />
+				<itemId>8632</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -585,7 +588,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="102" />
+				<transformationId>102</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -611,10 +614,10 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="103" />
+				<transformationId>103</transformationId>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="BIG_HEAD,9" />
+				<dispel>BIG_HEAD,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -641,7 +644,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="104" />
+				<transformationId>104</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -719,11 +722,12 @@
 				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="13" />
+				<SHOCK>13</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
-				<param amount="492" mode="DIFF" />
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -743,7 +747,8 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
-				<param amount="492" mode="DIFF" />
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -762,7 +767,8 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
-				<param amount="492" mode="DIFF" />
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -781,7 +787,8 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
-				<param amount="492" mode="DIFF" />
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -799,11 +806,12 @@
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="13" />
+				<HOLD>13</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
-				<param amount="492" mode="DIFF" />
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -936,7 +944,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="101" />
+				<transformationId>101</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -966,7 +974,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16029" />
+				<npcId>16029</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -995,7 +1003,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="18" />
+				<SHOCK>18</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1006,7 +1014,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="8" />
+				<SHOCK>8</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1017,7 +1025,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="12" />
+				<SHOCK>12</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1046,7 +1054,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="11" />
+				<BLEED>11</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -1057,7 +1065,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="5" />
+				<BLEED>5</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -1068,7 +1076,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="8" />
+				<BLEED>8</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -1097,7 +1105,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="16" />
+				<POISON>16</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -1108,7 +1116,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="7" />
+				<POISON>7</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -1119,7 +1127,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="11" />
+				<POISON>11</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -1148,7 +1156,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="9" />
+				<PARALYZE>9</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -1159,7 +1167,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="4" />
+				<PARALYZE>4</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -1170,7 +1178,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="6" />
+				<PARALYZE>6</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -1199,7 +1207,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="18" />
+				<HOLD>18</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1210,7 +1218,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="8" />
+				<HOLD>8</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1221,7 +1229,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="12" />
+				<HOLD>12</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1250,7 +1258,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="18" />
+				<SLEEP>18</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1261,7 +1269,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="8" />
+				<SLEEP>8</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1272,7 +1280,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="12" />
+				<SLEEP>12</SLEEP>
 			</effect>
 		</for>
 	</skill>

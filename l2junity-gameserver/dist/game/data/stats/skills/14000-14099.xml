@@ -25,7 +25,11 @@
 		<reuseDelay>2500</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">132687</value>
+					<value level="2">138779</value>
+					<value level="3">64068</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -54,7 +58,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">132687</value>
+					<value level="2">138779</value>
+					<value level="3">168092</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -88,7 +96,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">132687</value>
+					<value level="2">138779</value>
+					<value level="3">237433</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
@@ -97,11 +109,15 @@
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="1" />
-				<param chance="50" />
-				<param skillId="1760" skillLevel="2" /> <!-- Armor Destruction -->
-				<param targetType="SELF" />
+				<!-- Armor Destruction -->
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId>
+				<skillLevel>2</skillLevel>
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>50</chance>
 			</effect>
 		</for>
 	</skill>
@@ -130,7 +146,11 @@
 		<reuseDelay>3000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">132687</value>
+					<value level="2">138779</value>
+					<value level="3">98750</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -161,7 +181,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">53147</value>
+					<value level="2">67537</value>
+					<value level="3">81105</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -202,20 +226,25 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">132687</value>
+					<value level="2">138779</value>
+					<value level="3">59777</value>
+				</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="400" />
+				<distance>100</distance>
+				<speed>400</speed>
 			</effect>
 			<effect name="DefenceTrait">
-				<param KNOCKBACK="100" />
-				<param AIRBIND="100" />
-				<param HOLD="100" />
-				<param SLEEP="100" />
-				<param SHOCK="100" />
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<KNOCKBACK>100</KNOCKBACK>
+				<SHOCK>100</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -244,7 +273,11 @@
 		<reuseDelay>3000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">132687</value>
+					<value level="2">138779</value>
+					<value level="3">144943</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -270,7 +303,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">53147</value>
+					<value level="2">67537</value>
+					<value level="3">57977</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -302,7 +339,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">175</value>
+					<value level="2">180</value>
+					<value level="3">186</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -332,7 +373,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">175</value>
+					<value level="2">180</value>
+					<value level="3">186</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -372,10 +417,18 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">175</value>
+					<value level="2">180</value>
+					<value level="3">186</value>
+				</power>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#power" />
+				<power>
+					<value level="1">175</value>
+					<value level="2">180</value>
+					<value level="3">186</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -406,7 +459,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">53147</value>
+					<value level="2">67537</value>
+					<value level="3">403420</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -437,7 +494,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">53147</value>
+					<value level="2">67537</value>
+					<value level="3">403420</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -470,7 +531,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">53147</value>
+					<value level="2">67537</value>
+					<value level="3">403420</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
@@ -479,11 +544,15 @@
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="1" />
-				<param chance="50" />
-				<param skillId="1760" skillLevel="2" /> <!-- Armor Destruction -->
-				<param targetType="SELF" />
+				<!-- Armor Destruction -->
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId>
+				<skillLevel>2</skillLevel>
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>50</chance>
 			</effect>
 		</for>
 	</skill>
@@ -505,7 +574,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="201710" />
+				<power>201710</power>
 			</effect>
 		</for>
 	</skill>
@@ -527,7 +596,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="201710" />
+				<power>201710</power>
 			</effect>
 		</for>
 	</skill>
@@ -1530,7 +1599,12 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">12411</value>
+					<value level="2">12977</value>
+					<value level="3">13569</value>
+					<value level="4">7373</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1557,7 +1631,12 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">6960</value>
+					<value level="2">7178</value>
+					<value level="3">7373</value>
+					<value level="4">7373</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1683,7 +1762,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="12411" />
+				<power>12411</power>
 			</effect>
 		</for>
 	</skill>
@@ -1772,10 +1851,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -2741,7 +2820,13 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">460</value>
+					<value level="2">494</value>
+					<value level="3">531</value>
+					<value level="4">571</value>
+					<value level="5">612</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2781,7 +2866,13 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">460</value>
+					<value level="2">494</value>
+					<value level="3">531</value>
+					<value level="4">571</value>
+					<value level="5">612</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2802,7 +2893,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1295" />
+				<power>1295</power>
 			</effect>
 		</for>
 	</skill>

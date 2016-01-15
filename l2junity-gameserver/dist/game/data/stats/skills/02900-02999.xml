@@ -155,7 +155,7 @@
 		</cond>
 		<for>
 			<effect name="Heal">
-				<param power="1900" />
+				<power>1900</power>
 			</effect>
 		</for>
 	</skill>
@@ -173,7 +173,7 @@
 		</cond>
 		<for>
 			<effect name="ManaHeal">
-				<param power="360" />
+				<power>360</power>
 			</effect>
 		</for>
 	</skill>
@@ -191,7 +191,7 @@
 		</cond>
 		<for>
 			<effect name="CpHeal">
-				<param power="360" />
+				<power>360</power>
 			</effect>
 		</for>
 	</skill>
@@ -261,7 +261,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="#npcId" npcCount="1" />
+				<npcId>
+					<value level="1">32702</value>
+					<value level="2">32703</value>
+					<value level="3">13284</value>
+				</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -287,7 +292,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="89417" y="-44506" z="-2136" />
+				<x>89417</x>
+				<y>-44506</y>
+				<z>-2136</z>
 			</effect>
 		</for>
 	</skill>
@@ -303,7 +310,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Feed">
-				<param normal="11000" ride="11000" wyvern="0" />
+				<normal>11000</normal>
+				<ride>11000</ride>
+				<wyvern>0</wyvern>
 			</effect>
 		</for>
 	</skill>
@@ -2170,7 +2179,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="125" />
+				<transformationId>125</transformationId>
 			</effect>
 		</for>
 	</skill>

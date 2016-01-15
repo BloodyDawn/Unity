@@ -213,7 +213,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="68" />
+				<power>68</power>
 			</effect>
 		</for>
 	</skill>
@@ -244,7 +244,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="68" />
+				<power>68</power>
 			</effect>
 		</for>
 	</skill>
@@ -342,7 +342,9 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="5" />
+				<slot>buff</slot>
+				<rate>25</rate>
+				<max>5</max>
 			</effect>
 		</for>
 	</skill>
@@ -453,7 +455,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TargetMeProbability">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -493,7 +495,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -523,7 +525,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="829" />
+				<power>829</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -543,7 +545,9 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="5" />
+				<slot>buff</slot>
+				<rate>25</rate>
+				<max>5</max>
 			</effect>
 		</for>
 	</skill>
@@ -567,7 +571,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2487" />
+				<power>2487</power>
 			</effect>
 		</for>
 	</skill>
@@ -597,7 +601,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="703" />
+				<power>703</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -669,7 +673,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_AQUA_GUARD;DANCE_OF_CONCENTRATION;DANCE_OF_CONCENTRATION;DANCE_OF_EARTH_GUARD;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_LIGHT;DANCE_OF_MYSTIC;DANCE_OF_PROTECTION;DANCE_OF_SHADOW;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_FLAME_GUARD;SONG_OF_HUNTER;SONG_OF_INVOCATION;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_STORM_GUARD;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BLADESTORM;DANCE_OF_ALIGNMENT;SONG_OF_ELEMENTAL;SONG_OF_WINDSTORM" rate="100" />
+				<dispel>DANCE_OF_AQUA_GUARD;DANCE_OF_CONCENTRATION;DANCE_OF_CONCENTRATION;DANCE_OF_EARTH_GUARD;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_LIGHT;DANCE_OF_MYSTIC;DANCE_OF_PROTECTION;DANCE_OF_SHADOW;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_FLAME_GUARD;SONG_OF_HUNTER;SONG_OF_INVOCATION;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_STORM_GUARD;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BLADESTORM;DANCE_OF_ALIGNMENT;SONG_OF_ELEMENTAL;SONG_OF_WINDSTORM</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -739,7 +744,7 @@
 				<mul stat="pAtk" val="1.2" />
 			</effect>
 			<effect name="FocusMomentum">
-				<param maxCharges="7" />
+				<maxCharges>7</maxCharges>
 			</effect>
 		</for>
 	</skill>
@@ -808,7 +813,7 @@
 		<attributeValue>20</attributeValue>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 		</for>
 	</skill>
@@ -827,7 +832,7 @@
 		<attributeValue>20</attributeValue>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 		</for>
 	</skill>
@@ -846,7 +851,7 @@
 		<attributeValue>20</attributeValue>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 		</for>
 	</skill>
@@ -865,7 +870,7 @@
 		<attributeValue>20</attributeValue>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 		</for>
 	</skill>
@@ -890,14 +895,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Unsummon">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtkSpd" val="0.77" />
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;IMPROVE_SPEED_AVOID_UP;IMPROVE_VAMPIRIC_HASTE" rate="80" />
+				<dispel>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;IMPROVE_SPEED_AVOID_UP;IMPROVE_VAMPIRIC_HASTE</dispel>
+				<rate>80</rate>
 			</effect>
 		</for>
 	</skill>
@@ -919,8 +925,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="8264" />
-				<param overHit="true" />
+				<power>8264</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -940,8 +946,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4132" />
-				<param overHit="true" />
+				<power>4132</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -973,7 +979,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1005,8 +1011,8 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6198" />
-				<param overHit="true" />
+				<power>6198</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1033,8 +1039,8 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="228" />
-				<param overHit="true" />
+				<power>228</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1063,8 +1069,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="109" />
 				<mul stat="pAtkSpd" val="0.77" />
+				<power>109</power>
 			</effect>
 		</for>
 	</skill>
@@ -1086,7 +1092,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="8264" />
+				<power>8264</power>
 			</effect>
 		</for>
 	</skill>
@@ -1110,7 +1116,7 @@
 		<for>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
-				<param power="228" />
+				<power>228</power>
 			</effect>
 		</for>
 	</skill>
@@ -1129,8 +1135,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="39544" />
-				<param chance="115" />
+				<power>39544</power>
+				<chance>115</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1210,7 +1216,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">308</value>
+					<value level="2">337</value>
+					<value level="3">365</value>
+					<value level="4">393</value>
+					<value level="5">421</value>
+					<value level="6">448</value>
+					<value level="7">474</value>
+					<value level="8">498</value>
+					<value level="9">520</value>
+					<value level="10">552</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1311,7 +1328,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaHealByLevel">
-				<param power="#amount" />
+				<power>
+					<value level="1">33</value>
+					<value level="2">35</value>
+					<value level="3">38</value>
+					<value level="4">40</value>
+					<value level="5">43</value>
+					<value level="6">45</value>
+					<value level="7">48</value>
+					<value level="8">50</value>
+					<value level="9">52</value>
+					<value level="10">55</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1417,7 +1445,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHeal">
-				<param power="#amount" />
+				<power>
+					<value level="1">264</value>
+					<value level="2">289</value>
+					<value level="3">313</value>
+					<value level="4">337</value>
+					<value level="5">361</value>
+					<value level="6">384</value>
+					<value level="7">406</value>
+					<value level="8">427</value>
+					<value level="9">446</value>
+					<value level="10">473</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1883,7 +1922,23 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="AddHate">
-				<param power="#power" />
+				<power>
+					<value level="1">-219</value>
+					<value level="2">-234</value>
+					<value level="3">-248</value>
+					<value level="4">-262</value>
+					<value level="5">-275</value>
+					<value level="6">-287</value>
+					<value level="7">-299</value>
+					<value level="8">-309</value>
+					<value level="9">-318</value>
+					<value level="10">-330</value>
+					<value level="11">-350</value>
+					<value level="12">-370</value>
+					<value level="13">-390</value>
+					<value level="14">-410</value>
+					<value level="15">-430</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2054,7 +2109,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -2096,7 +2151,7 @@
 		<for>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
+				<SLEEP>100</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2281,7 +2336,23 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">41</value>
+					<value level="2">41</value>
+					<value level="3">50</value>
+					<value level="4">50</value>
+					<value level="5">50</value>
+					<value level="6">58</value>
+					<value level="7">58</value>
+					<value level="8">58</value>
+					<value level="9">63</value>
+					<value level="10">63</value>
+					<value level="11">68</value>
+					<value level="12">73</value>
+					<value level="13">78</value>
+					<value level="14">83</value>
+					<value level="15">88</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2347,7 +2418,23 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">44</value>
+					<value level="2">44</value>
+					<value level="3">54</value>
+					<value level="4">54</value>
+					<value level="5">54</value>
+					<value level="6">62</value>
+					<value level="7">62</value>
+					<value level="8">62</value>
+					<value level="9">67</value>
+					<value level="10">67</value>
+					<value level="11">68</value>
+					<value level="12">69</value>
+					<value level="13">70</value>
+					<value level="14">71</value>
+					<value level="15">72</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2446,7 +2533,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="116" />
+				<power>116</power>
 			</effect>
 		</for>
 	</skill>
@@ -2546,7 +2633,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="54" />
+				<power>54</power>
 			</effect>
 		</for>
 	</skill>
@@ -2630,7 +2717,13 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="#absorbDam" chance="30" />
+				<amount>
+					<value level="1">6</value>
+					<value level="2">7</value>
+					<value level="3">8</value>
+					<value level="4">9</value>
+				</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3069,7 +3162,20 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">58</value>
+					<value level="2">92</value>
+					<value level="3">148</value>
+					<value level="4">219</value>
+					<value level="5">299</value>
+					<value level="6">380</value>
+					<value level="7">450</value>
+					<value level="8">477</value>
+					<value level="9">500</value>
+					<value level="10">525</value>
+					<value level="11">542</value>
+					<value level="12">550</value>
+				</power>
 			</effect>
 		</for>
 	</skill>

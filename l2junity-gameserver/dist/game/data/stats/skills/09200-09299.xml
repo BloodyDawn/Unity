@@ -86,7 +86,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="137" />
+				<transformationId>137</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -190,7 +190,7 @@
 		</cond>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="TRANSFORM,-1" />
+				<dispel>TRANSFORM,-1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -397,7 +397,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="-114558" y="253605" z="-1536" />
+				<x>-114558</x>
+				<y>253605</y>
+				<z>-1536</z>
 			</effect>
 		</for>
 	</skill>
@@ -478,12 +480,16 @@
 		<isMentoring>true</isMentoring>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="80" />
-				<param skillId="6059" skillLevel="1" />
-				<param targetType="SELF" />
-				<param allowWeapons="ALL" />
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>6059</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.2" />
@@ -527,13 +533,14 @@
 				<mul stat="mAtkSpd" val="1.31" />
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="80" />
+				<amount>9</amount>
+				<chance>80</chance>
 			</effect>
 			<effect name="DispelBySlot">
-				<param slot="IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1" />
+				<slot>IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1</slot>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+				<slot>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</slot>
 			</effect>
 		</for>
 	</skill>

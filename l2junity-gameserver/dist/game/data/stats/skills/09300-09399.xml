@@ -877,12 +877,17 @@
 		<reuseDelay>1800000</reuseDelay>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13354" npcCount="1" despawnDelay="300000" singleInstance="true" />
+				<npcId>13354</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>300000</despawnDelay>
+				<singleInstance>true</singleInstance>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="9372" skillLevel="1" /> <!-- Sayha's Portal -->
+				<!-- Sayha's Portal -->
+				<skillId>9372</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -919,7 +924,11 @@
 		<reuseDelay>60000</reuseDelay>
 		<for>
 			<effect name="TeleportToNpc"> <!-- TODO on level 2 teleports party -->
-				<param npcId="13354" party="#party" />
+				<npcId>13354</npcId>
+				<party>
+					<value level="1">false</value>
+					<value level="2">true</value>
+				</party>
 			</effect>
 		</for>
 	</skill>

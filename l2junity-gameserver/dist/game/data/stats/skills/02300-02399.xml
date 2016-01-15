@@ -14,7 +14,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle">
-				<param value="2" />
+				<value>2</value>
 			</effect>
 		</for>
 	</skill>
@@ -32,7 +32,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle">
-				<param value="3" />
+				<value>3</value>
 			</effect>
 		</for>
 	</skill>
@@ -50,7 +50,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ChangeHairStyle">
-				<param value="4" />
+				<value>4</value>
 			</effect>
 		</for>
 	</skill>
@@ -71,7 +71,7 @@
 		</cond>
 		<for>
 			<effect name="ChangeHairStyle">
-				<param value="5" />
+				<value>5</value>
 			</effect>
 		</for>
 	</skill>
@@ -92,7 +92,7 @@
 		</cond>
 		<for>
 			<effect name="ChangeHairStyle">
-				<param value="6" />
+				<value>6</value>
 			</effect>
 		</for>
 	</skill>
@@ -111,7 +111,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="15" />
+				<SHOCK>15</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -140,7 +140,11 @@
 		</cond>
 		<for>
 			<effect name="GiveSp">
-				<param sp="#amount" />
+				<sp>
+					<value level="1">50000</value>
+					<value level="2">100000</value>
+					<value level="3">200000</value>
+				</sp>
 			</effect>
 		</for>
 	</skill>
@@ -158,7 +162,8 @@
 		</cond>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="TURN_STONE" rate="99" />
+				<dispel>TURN_STONE</dispel>
+				<rate>99</rate>
 			</effect>
 		</for>
 	</skill>
@@ -472,7 +477,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -495,7 +500,7 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -887,7 +892,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -911,7 +917,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -935,7 +942,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -959,7 +967,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -983,7 +992,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1007,7 +1017,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1031,7 +1042,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1055,7 +1067,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1079,7 +1092,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1103,7 +1117,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1147,7 +1162,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1171,7 +1187,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1195,7 +1212,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1278,7 +1296,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Feed">
-				<param normal="1100" ride="1100" wyvern="0" />
+				<normal>1100</normal>
+				<ride>1100</ride>
+				<wyvern>0</wyvern>
 			</effect>
 		</for>
 	</skill>
@@ -1302,7 +1322,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1326,7 +1347,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1352,7 +1374,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="FORTRESS" />
+				<escapeType>FORTRESS</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -1376,7 +1398,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="FORTRESS" />
+				<escapeType>FORTRESS</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -1400,7 +1422,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1424,7 +1447,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1448,7 +1472,7 @@
 		</cond>
 		<for>
 			<effect name="HealPercent">
-				<param power="30" />
+				<power>30</power>
 			</effect>
 		</for>
 	</skill>
@@ -1496,7 +1520,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="104" />
+				<transformationId>104</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1523,7 +1547,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="1" />
+				<transformationId>1</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1550,7 +1574,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="2" />
+				<transformationId>2</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1578,7 +1602,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="202" />
+				<transformationId>202</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1606,7 +1630,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="205" />
+				<transformationId>205</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1634,7 +1658,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="208" />
+				<transformationId>208</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1662,7 +1686,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="211" />
+				<transformationId>211</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1690,7 +1714,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="214" />
+				<transformationId>214</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1718,7 +1742,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="217" />
+				<transformationId>217</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2011,7 +2035,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -2035,7 +2059,7 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -2063,7 +2087,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="304" />
+				<transformationId>304</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2085,7 +2109,7 @@
 		</cond>
 		<for>
 			<effect name="Heal">
-				<param power="1900" />
+				<power>1900</power>
 			</effect>
 		</for>
 	</skill>
@@ -2104,9 +2128,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="20" />
-				<param SLEEP="20" />
-				<param DERANGEMENT="20" />
+				<HOLD>20</HOLD>
+				<DERANGEMENT>20</DERANGEMENT>
+				<SLEEP>20</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2174,7 +2198,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>

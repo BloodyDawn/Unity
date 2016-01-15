@@ -434,7 +434,11 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">60</value>
+					<value level="2">61</value>
+					<value level="3">61</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -480,7 +484,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">55</value>
+					<value level="2">56</value>
+					<value level="3">58</value>
+					<value level="4">59</value>
+					<value level="5">60</value>
+					<value level="6">61</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -531,7 +542,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">55</value>
+					<value level="2">56</value>
+					<value level="3">58</value>
+					<value level="4">59</value>
+					<value level="5">60</value>
+					<value level="6">61</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -582,7 +600,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">55</value>
+					<value level="2">56</value>
+					<value level="3">58</value>
+					<value level="4">59</value>
+					<value level="5">60</value>
+					<value level="6">61</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -600,7 +625,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4640" />
+				<power>4640</power>
 			</effect>
 		</for>
 	</skill>
@@ -620,10 +645,10 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4640" />
+				<power>4640</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="70" />
+				<power>70</power>
 			</effect>
 		</for>
 	</skill>
@@ -720,7 +745,7 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="10" />
+				<power>10</power>
 			</effect>
 		</for>
 	</skill>
@@ -747,10 +772,10 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="270" />
+				<power>270</power>
 			</effect>
 			<effect name="HealPercent">
-				<param power="20" />
+				<power>20</power>
 			</effect>
 		</for>
 	</skill>
@@ -768,7 +793,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4640" />
+				<power>4640</power>
 			</effect>
 		</for>
 	</skill>
@@ -786,7 +811,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4640" />
+				<power>4640</power>
 			</effect>
 		</for>
 	</skill>
@@ -811,7 +836,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="183" />
+				<power>183</power>
 			</effect>
 		</for>
 	</skill>
@@ -838,7 +863,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="244" />
+				<power>244</power>
 			</effect>
 		</for>
 	</skill>
@@ -888,7 +913,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="17400" />
+				<power>17400</power>
 			</effect>
 		</for>
 	</skill>
@@ -941,7 +966,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="834" />
+				<power>834</power>
 			</effect>
 		</for>
 	</skill>
@@ -966,12 +991,30 @@
 		<rideState>NONE</rideState>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="20" />
-				<param skillId="5846" skillLevel="#skillLevel" /> <!-- Bleed -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Bleed -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5846</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1027,7 +1070,20 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">25</value>
+					<value level="3">34</value>
+					<value level="4">44</value>
+					<value level="5">54</value>
+					<value level="6">62</value>
+					<value level="7">67</value>
+					<value level="8">67</value>
+					<value level="9">70</value>
+					<value level="10">70</value>
+					<value level="11">71</value>
+					<value level="12">71</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1108,7 +1164,7 @@
 		<for>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1228,7 +1284,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="117" />
+				<transformationId>117</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1254,7 +1310,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="118" />
+				<transformationId>118</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1280,7 +1336,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="119" />
+				<transformationId>119</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1306,7 +1362,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="120" />
+				<transformationId>120</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1881,7 +1937,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpByLevel">
-				<param power="73" />
+				<power>73</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtkSpd" val="0.8" />
@@ -1912,7 +1968,7 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="145" />
+				<power>145</power>
 			</effect>
 		</for>
 	</skill>
@@ -1987,7 +2043,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="873" />
+				<power>873</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2016,7 +2072,7 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="145" />
+				<power>145</power>
 			</effect>
 		</for>
 	</skill>
@@ -2050,7 +2106,10 @@
 		<trait>DISARM</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">2319</value>
+					<value level="2">18664</value>
+				</power>
 			</effect>
 			<effect name="Disarm" />
 		</for>
@@ -2088,7 +2147,10 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">2319</value>
+					<value level="2">18664</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2174,7 +2236,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="TargetCancel">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2271,7 +2333,7 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Bluff">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2463,7 +2525,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="3000" />
+				<power>3000</power>
 			</effect>
 		</for>
 	</skill>

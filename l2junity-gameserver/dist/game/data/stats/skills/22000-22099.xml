@@ -110,7 +110,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="600" />
+				<value>600</value>
 			</effect>
 		</for>
 	</skill>
@@ -128,7 +128,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -299,7 +299,8 @@
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="60" mode="PER" />
+				<amount>60</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -337,7 +338,8 @@
 				<mul stat="DanceMpConsumeRate" val="0.85" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="40" mode="PER" />
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -374,7 +376,8 @@
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="60" mode="PER" />
+				<amount>60</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -412,7 +415,8 @@
 				<mul stat="DanceMpConsumeRate" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="40" mode="PER" />
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -641,7 +645,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -787,7 +791,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="106" npcCount="1" despawnDelay="1200000" isSummonSpawn="true" />
+				<npcId>106</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>1200000</despawnDelay>
+				<isSummonSpawn>true</isSummonSpawn>
 			</effect>
 		</for>
 	</skill>
@@ -891,7 +898,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CrystalGradeModify">
-				<param grade="#bonus" />
+				<grade>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</grade>
 			</effect>
 		</for>
 	</skill>
@@ -907,7 +917,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHeal">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -928,7 +938,14 @@
 		</cond>
 		<for>
 			<effect name="CpHeal">
-				<param power="#amount" />
+				<power>
+					<value level="1">0</value>
+					<value level="2">800</value>
+					<value level="3">1500</value>
+					<value level="4">2000</value>
+					<value level="5">2500</value>
+					<value level="6">3000</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -957,7 +974,7 @@
 		</cond>
 		<for>
 			<effect name="HealPercent">
-				<param power="50" />
+				<power>50</power>
 			</effect>
 		</for>
 	</skill>
@@ -984,7 +1001,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="1" />
+				<transformationId>1</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1011,7 +1028,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="2" />
+				<transformationId>2</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1038,7 +1055,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="203" />
+				<transformationId>203</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1065,7 +1082,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="206" />
+				<transformationId>206</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1092,7 +1109,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="209" />
+				<transformationId>209</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1119,7 +1136,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="212" />
+				<transformationId>212</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1146,7 +1163,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="215" />
+				<transformationId>215</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1173,7 +1190,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="218" />
+				<transformationId>218</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1222,7 +1239,69 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="#coordX" y="#coordY" z="#coordZ" />
+				<x>
+					<value level="1">-84200</value>
+					<value level="2">46915</value>
+					<value level="3">9723</value>
+					<value level="4">-45208</value>
+					<value level="5">115158</value>
+					<value level="6">-80831</value>
+					<value level="7">-12728</value>
+					<value level="8">15633</value>
+					<value level="9">17860</value>
+					<value level="10">83378</value>
+					<value level="11">105760</value>
+					<value level="12">111388</value>
+					<value level="13">82916</value>
+					<value level="14">85289</value>
+					<value level="15">117052</value>
+					<value level="16">146818</value>
+					<value level="17">147922</value>
+					<value level="18">43840</value>
+					<value level="19">87326</value>
+				</x>
+				<y>
+					<value level="1">244566</value>
+					<value level="2">51441</value>
+					<value level="3">15576</value>
+					<value level="4">-112502</value>
+					<value level="5">-178170</value>
+					<value level="6">149808</value>
+					<value level="7">122726</value>
+					<value level="8">142962</value>
+					<value level="9">170191</value>
+					<value level="10">147999</value>
+					<value level="11">113064</value>
+					<value level="12">219331</value>
+					<value level="13">53210</value>
+					<value level="14">16225</value>
+					<value level="15">76884</value>
+					<value level="16">25807</value>
+					<value level="17">-55316</value>
+					<value level="18">-47779</value>
+					<value level="19">-143370</value>
+				</y>
+				<z>
+					<value level="1">-3728</value>
+					<value level="2">-2976</value>
+					<value level="3">-4568</value>
+					<value level="4">-240</value>
+					<value level="5">-880</value>
+					<value level="6">-3040</value>
+					<value level="7">-3112</value>
+					<value level="8">-2696</value>
+					<value level="9">-3496</value>
+					<value level="10">-3400</value>
+					<value level="11">-3176</value>
+					<value level="12">-3544</value>
+					<value level="13">-1488</value>
+					<value level="14">-3672</value>
+					<value level="15">-2688</value>
+					<value level="16">-2008</value>
+					<value level="17">-2728</value>
+					<value level="18">-792</value>
+					<value level="19">-1319</value>
+				</z>
 			</effect>
 		</for>
 	</skill>
@@ -1265,7 +1344,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="5000" />
+				<value>5000</value>
 			</effect>
 		</for>
 	</skill>
@@ -1454,7 +1533,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="80" />
+				<amount>9</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1475,7 +1555,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MaxHp">
-				<param amount="35" mode="PER" />
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1812,9 +1893,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="40" />
-				<param SLEEP="40" />
-				<param DERANGEMENT="40" />
+				<HOLD>40</HOLD>
+				<DERANGEMENT>40</DERANGEMENT>
+				<SLEEP>40</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1982,7 +2063,8 @@
 				<add stat="reflectDam" val="5" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="10" mode="PER" />
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2070,7 +2152,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="8" npcCount="1" despawnDelay="60000" isSummonSpawn="true" />
+				<npcId>8</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>60000</despawnDelay>
+				<isSummonSpawn>true</isSummonSpawn>
 			</effect>
 		</for>
 	</skill>
@@ -2089,7 +2174,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="9" npcCount="1" despawnDelay="60000" isSummonSpawn="true" />
+				<npcId>9</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>60000</despawnDelay>
+				<isSummonSpawn>true</isSummonSpawn>
 			</effect>
 		</for>
 	</skill>
@@ -2126,7 +2214,8 @@
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="60" mode="PER" />
+				<amount>60</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2163,7 +2252,8 @@
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="40" mode="PER" />
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2204,7 +2294,8 @@
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="60" mode="PER" />
+				<amount>60</amount>
+				<mode>PER</mode>
 			</effect>
 		</selfEffects>
 	</skill>

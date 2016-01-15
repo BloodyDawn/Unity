@@ -40,8 +40,18 @@
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#Trait" />
-				<param HOLD="#Trait" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">70</value>
+				</SLEEP>
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">70</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -71,8 +81,18 @@
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#Trait" />
-				<param HOLD="#Trait" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">70</value>
+				</SLEEP>
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">70</value>
+				</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -129,7 +149,12 @@
 				<add stat="maxMp" val="#maxMp" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param PARALYZE="#Trait" />
+				<PARALYZE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -158,7 +183,12 @@
 				<sub stat="cancel" val="#cancel" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#Trait" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -190,7 +220,12 @@
 				<sub stat="cancel" val="#cancel" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#Trait" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -209,11 +244,13 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -231,11 +268,13 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -253,11 +292,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -275,11 +315,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -297,11 +338,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -319,11 +361,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -352,7 +395,12 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#Trait" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -382,7 +430,12 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#Trait" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -411,7 +464,12 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param PARALYZE="#Trait" />
+				<PARALYZE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -447,9 +505,24 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#Trait" />
-				<param HOLD="#Trait" />
-				<param BLEED="#Trait" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SLEEP>
+				<BLEED>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</BLEED>
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -486,7 +559,12 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#Trait" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -522,7 +600,12 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#Trait" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -556,13 +639,34 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#Trait" />
-				<param HOLD="#Trait" />
-				<param BLEED="#Trait" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SLEEP>
+				<BLEED>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</BLEED>
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="VampiricAttack">
-				<param amount="#absorbDam" chance="30" />
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -595,7 +699,12 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param PARALYZE="#Trait" />
+				<PARALYZE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -633,7 +742,12 @@
 				<add stat="earthRes" val="#resist" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#Trait" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -652,11 +766,13 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -674,11 +790,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -696,11 +813,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -718,11 +836,13 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -740,11 +860,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -762,11 +883,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -784,11 +906,13 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -806,11 +930,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -828,11 +953,12 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" />
-				<param targetType="ONE" />
+				<attackerType>L2Playable</attackerType>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1302,7 +1428,12 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#stunRes" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1331,7 +1462,12 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#holdRes" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1364,7 +1500,12 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#stunRes" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1398,7 +1539,12 @@
 				<mul stat="DanceMpConsumeRate" val="#mpConsum" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#holdRes" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1431,7 +1577,12 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#stunRes" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1463,7 +1614,12 @@
 				<mul stat="physicalSkillPower" val="#skillPower" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#holdRes" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1496,7 +1652,12 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#stunRes" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1527,10 +1688,21 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#holdRes" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</HOLD>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="#absorbDam" chance="30" />
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+				</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1564,7 +1736,12 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#stunRes" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1597,13 +1774,35 @@
 				<mul stat="pDef" val="#pDefMul" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#holdRes" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</HOLD>
 			</effect>
 			<effect name="AttackTrait">
-				<param SHOCK="#stunKnockProf" KNOCKDOWN="#stunKnockProf" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</SHOCK>
+				<KNOCKDOWN>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</KNOCKDOWN>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="#absorbDam" chance="30" />
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+				</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1638,7 +1837,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1673,7 +1877,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#HOLD" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1709,7 +1918,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1750,7 +1964,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#HOLD" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1788,7 +2007,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1828,8 +2052,18 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#HOLD" />
-				<param DERANGEMENT="#DERANGEMENT" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">7</value>
+				</HOLD>
+				<DERANGEMENT>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+				</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -1866,10 +2100,21 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SLEEP>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="#absorbDam" chance="30" />
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+				</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1908,7 +2153,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#HOLD" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1945,7 +2195,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1983,7 +2238,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="#HOLD" />
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -2018,7 +2278,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2053,7 +2318,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#SHOCK" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -2089,7 +2359,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2125,7 +2400,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#SHOCK" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -2162,7 +2442,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2200,7 +2485,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#SHOCK" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -2238,7 +2528,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2275,10 +2570,20 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#SHOCK" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</SHOCK>
 			</effect>
 			<effect name="AttackTrait">
-				<param DERANGEMENT="#DERANGEMENT" />
+				<DERANGEMENT>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -2313,10 +2618,20 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="#SLEEP" />
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</SLEEP>
 			</effect>
 			<effect name="AttackTrait">
-				<param DERANGEMENT="#DERANGEMENT" />
+				<DERANGEMENT>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+				</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -2352,7 +2667,12 @@
 				<add stat="earthRes" val="#elements" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="#SHOCK" />
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>

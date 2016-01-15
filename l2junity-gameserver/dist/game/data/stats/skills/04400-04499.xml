@@ -503,18 +503,342 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
-				<param CONSTRUCT_WEAKNESS="#pDefMagicCreatures" />
-				<param BEAST_WEAKNESS="#pDefBeasts" />
-				<param ANIMAL_WEAKNESS="#pDefAnimals" />
-				<param BOW="#pDefBows" />
-				<param PLANT_WEAKNESS="#pDefPlants" />
-				<param BLUNT="#pDefBlunts" />
-				<param DRAGON_WEAKNESS="#pDefDragons" />
-				<param SWORD="#pDefSwords" />
-				<param DUAL="#pDefDuals" />
-				<param GIANT_WEAKNESS="#pDefGiants" />
-				<param SHOCK="#pDefShocks" />
-				<param BUG_WEAKNESS="#pDefBugs" />
+				<CONSTRUCT_WEAKNESS>
+					<value level="1">0</value>
+					<value level="2">-15</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</CONSTRUCT_WEAKNESS>
+				<ANIMAL_WEAKNESS>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-15</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</ANIMAL_WEAKNESS>
+				<PLANT_WEAKNESS>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">-15</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</PLANT_WEAKNESS>
+				<DRAGON_WEAKNESS>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">-15</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</DRAGON_WEAKNESS>
+				<DUAL>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">-15</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</DUAL>
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">15</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</SHOCK>
+				<BEAST_WEAKNESS>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-15</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</BEAST_WEAKNESS>
+				<BLUNT>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">-15</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</BLUNT>
+				<GIANT_WEAKNESS>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">-15</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</GIANT_WEAKNESS>
+				<BOW>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-15</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</BOW>
+				<BUG_WEAKNESS>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">-15</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</BUG_WEAKNESS>
+				<SWORD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">-15</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+				</SWORD>
 			</effect>
 		</for>
 	</skill>
@@ -574,14 +898,326 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
-				<param BOW="#pDefBows" />
-				<param POISON="#pDefPoison" />
-				<param BLUNT="#pDefBlunts" />
-				<param BLEED="#pDefBleed" />
-				<param SLEEP="#pDefSleep" />
-				<param DAGGER="#pDefDagger" />
-				<param DUALDAGGER="#pDefDualDagger" />
-				<param HOLD="#pDefHold" />
+				<BOW>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-15</value>
+					<value level="4">-15</value>
+					<value level="5">-15</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">-15</value>
+					<value level="9">0</value>
+					<value level="10">15</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">0</value>
+					<value level="36">15</value>
+					<value level="37">0</value>
+					<value level="38">0</value>
+				</BOW>
+				<BLUNT>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">-15</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">15</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">0</value>
+					<value level="36">15</value>
+					<value level="37">0</value>
+					<value level="38">0</value>
+				</BLUNT>
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">15</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">15</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">0</value>
+					<value level="36">0</value>
+					<value level="37">0</value>
+					<value level="38">15</value>
+				</SLEEP>
+				<DUALDAGGER>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">0</value>
+					<value level="36">15</value>
+					<value level="37">0</value>
+					<value level="38">0</value>
+				</DUALDAGGER>
+				<POISON>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">15</value>
+					<value level="8">15</value>
+					<value level="9">0</value>
+					<value level="10">15</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">15</value>
+					<value level="36">0</value>
+					<value level="37">0</value>
+					<value level="38">0</value>
+				</POISON>
+				<DAGGER>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">0</value>
+					<value level="36">15</value>
+					<value level="37">0</value>
+					<value level="38">0</value>
+				</DAGGER>
+				<BLEED>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">15</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">15</value>
+					<value level="36">0</value>
+					<value level="37">0</value>
+					<value level="38">0</value>
+				</BLEED>
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">0</value>
+					<value level="21">0</value>
+					<value level="22">0</value>
+					<value level="23">0</value>
+					<value level="24">0</value>
+					<value level="25">0</value>
+					<value level="26">0</value>
+					<value level="27">0</value>
+					<value level="28">0</value>
+					<value level="29">0</value>
+					<value level="30">0</value>
+					<value level="31">0</value>
+					<value level="32">0</value>
+					<value level="33">0</value>
+					<value level="34">0</value>
+					<value level="35">0</value>
+					<value level="36">0</value>
+					<value level="37">15</value>
+					<value level="38">0</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -685,7 +1321,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DUALFIST="#trait_dualfist" />
+				<DUALFIST>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</DUALFIST>
 			</effect>
 		</for>
 	</skill>
@@ -699,7 +1341,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLUNT="#trait_blunt" />
+				<BLUNT>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</BLUNT>
 			</effect>
 		</for>
 	</skill>
@@ -713,7 +1361,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DUAL="#trait_dual" />
+				<DUAL>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</DUAL>
 			</effect>
 		</for>
 	</skill>
@@ -727,7 +1381,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SWORD="#trait_sword" />
+				<SWORD>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</SWORD>
 			</effect>
 		</for>
 	</skill>
@@ -833,7 +1493,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="#trait_shock" />
+				<SHOCK>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -847,7 +1513,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="#trait_poison" />
+				<POISON>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -861,7 +1533,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="#trait_bleed" />
+				<BLEED>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -875,7 +1553,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="#trait_sleep" />
+				<SLEEP>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -889,7 +1573,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="#trait_hold" />
+				<HOLD>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -903,7 +1593,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="#trait_paralyze" />
+				<PARALYZE>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -917,7 +1613,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DERANGEMENT="#trait_derangement" />
+				<DERANGEMENT>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -931,7 +1633,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DUALFIST="#trait_dualfist" />
+				<DUALFIST>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</DUALFIST>
 			</effect>
 		</for>
 	</skill>
@@ -945,7 +1653,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLUNT="#trait_blunt" />
+				<BLUNT>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</BLUNT>
 			</effect>
 		</for>
 	</skill>
@@ -959,8 +1673,20 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="#traits" />
-				<param CROSSBOW="#traits" />
+				<BOW>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</BOW>
+				<CROSSBOW>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -974,7 +1700,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POLE="#trait_pole" />
+				<POLE>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</POLE>
 			</effect>
 		</for>
 	</skill>
@@ -988,7 +1720,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DUAL="#trait_dual" />
+				<DUAL>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</DUAL>
 			</effect>
 		</for>
 	</skill>
@@ -1002,7 +1740,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SWORD="#trait_sword" />
+				<SWORD>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</SWORD>
 			</effect>
 		</for>
 	</skill>
@@ -1016,9 +1760,27 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DAGGER="#traits" />
-				<param RAPIER="#traits" />
-				<param DUALDAGGER="#traits" />
+				<DAGGER>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</DAGGER>
+				<DUALDAGGER>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</DUALDAGGER>
+				<RAPIER>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</RAPIER>
 			</effect>
 		</for>
 	</skill>
@@ -1040,7 +1802,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="#trait_shock" />
+				<SHOCK>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1054,7 +1822,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="#trait_poison" />
+				<POISON>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -1068,7 +1842,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="#trait_bleed" />
+				<BLEED>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -1082,7 +1862,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="#trait_sleep" />
+				<SLEEP>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1096,7 +1882,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="#trait_hold" />
+				<HOLD>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1110,7 +1902,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="#trait_paralyze" />
+				<PARALYZE>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -1124,7 +1922,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DERANGEMENT="#trait_derangement" />
+				<DERANGEMENT>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -1138,7 +1942,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DUALFIST="#trait_dualfist" />
+				<DUALFIST>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</DUALFIST>
 			</effect>
 		</for>
 	</skill>
@@ -1152,7 +1962,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POLE="#trait_pole" />
+				<POLE>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</POLE>
 			</effect>
 		</for>
 	</skill>
@@ -1166,7 +1982,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DUAL="#trait_dual" />
+				<DUAL>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</DUAL>
 			</effect>
 		</for>
 	</skill>
@@ -1180,7 +2002,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SWORD="#trait_sword" />
+				<SWORD>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</SWORD>
 			</effect>
 		</for>
 	</skill>
@@ -1194,9 +2022,27 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DAGGER="#traits" />
-				<param RAPIER="#traits" />
-				<param DUALDAGGER="#traits" />
+				<DAGGER>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</DAGGER>
+				<DUALDAGGER>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</DUALDAGGER>
+				<RAPIER>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</RAPIER>
 			</effect>
 		</for>
 	</skill>
@@ -1210,9 +2056,27 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DAGGER="#traits" />
-				<param RAPIER="#traits" />
-				<param DUALDAGGER="#traits" />
+				<DAGGER>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</DAGGER>
+				<DUALDAGGER>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</DUALDAGGER>
+				<RAPIER>
+					<value level="1">-11</value>
+					<value level="2">-25</value>
+					<value level="3">-43</value>
+					<value level="4">-67</value>
+					<value level="5">-100</value>
+				</RAPIER>
 			</effect>
 		</for>
 	</skill>
@@ -1632,7 +2496,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">46</value>
+					<value level="2">105</value>
+					<value level="3">219</value>
+					<value level="4">417</value>
+					<value level="5">722</value>
+					<value level="6">1136</value>
+					<value level="7">1626</value>
+					<value level="8">1876</value>
+					<value level="9">2112</value>
+					<value level="10">2320</value>
+					<value level="11">2487</value>
+					<value level="12">2617</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1688,7 +2565,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">46</value>
+					<value level="2">105</value>
+					<value level="3">219</value>
+					<value level="4">417</value>
+					<value level="5">722</value>
+					<value level="6">1136</value>
+					<value level="7">1626</value>
+					<value level="8">1876</value>
+					<value level="9">2112</value>
+					<value level="10">2320</value>
+					<value level="11">2487</value>
+					<value level="12">2617</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1712,7 +2602,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="#amount" />
+				<power>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1738,7 +2634,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="100" />
+				<BLEED>100</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -1851,7 +2747,20 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1872,7 +2781,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="183" />
+				<power>183</power>
 			</effect>
 		</for>
 	</skill>
@@ -2073,7 +2982,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="50" />
+				<power>50</power>
 			</effect>
 		</for>
 	</skill>
@@ -2346,7 +3255,20 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttackMp">
-				<param power="#power" />
+				<power>
+					<value level="1">52</value>
+					<value level="2">78</value>
+					<value level="3">112</value>
+					<value level="4">155</value>
+					<value level="5">203</value>
+					<value level="6">255</value>
+					<value level="7">305</value>
+					<value level="8">328</value>
+					<value level="9">348</value>
+					<value level="10">364</value>
+					<value level="11">377</value>
+					<value level="12">387</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2411,7 +3333,20 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2457,7 +3392,20 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">31</value>
+					<value level="2">70</value>
+					<value level="3">146</value>
+					<value level="4">278</value>
+					<value level="5">481</value>
+					<value level="6">758</value>
+					<value level="7">1084</value>
+					<value level="8">1251</value>
+					<value level="9">1408</value>
+					<value level="10">1547</value>
+					<value level="11">1658</value>
+					<value level="12">1745</value>
+				</power>
 			</effect>
 			<effect name="Buff">
 				<add stat="holyPower" val="20" />
@@ -2515,7 +3463,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">46</value>
+					<value level="2">105</value>
+					<value level="3">219</value>
+					<value level="4">417</value>
+					<value level="5">722</value>
+					<value level="6">1136</value>
+					<value level="7">1626</value>
+					<value level="8">1876</value>
+					<value level="9">2112</value>
+					<value level="10">2320</value>
+					<value level="11">2487</value>
+					<value level="12">2617</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2580,11 +3541,28 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="50" />
-				<param skillId="5022" skillLevel="#triggeredLevel" /> <!-- Decrease Speed -->
-				<param targetType="ONE" />
+				<!-- Decrease Speed -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5022</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2637,7 +3615,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">352</value>
+					<value level="2">949</value>
+					<value level="3">2607</value>
+					<value level="4">6828</value>
+					<value level="5">17184</value>
+					<value level="6">33213</value>
+					<value level="7">51007</value>
+					<value level="8">59177</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2704,7 +3695,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">176</value>
+					<value level="2">475</value>
+					<value level="3">1304</value>
+					<value level="4">3414</value>
+					<value level="5">8592</value>
+					<value level="6">16607</value>
+					<value level="7">25504</value>
+					<value level="8">29589</value>
+					<value level="9">33944</value>
+					<value level="10">38501</value>
+					<value level="11">43180</value>
+					<value level="12">47895</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>

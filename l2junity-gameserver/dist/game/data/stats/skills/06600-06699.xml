@@ -1336,7 +1336,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1832</value>
+					<value level="2">2272</value>
+					<value level="3">2751</value>
+					<value level="4">3252</value>
+					<value level="5">3752</value>
+					<value level="6">4224</value>
+					<value level="7">4640</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.5" />
@@ -1383,7 +1391,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1832</value>
+					<value level="2">2272</value>
+					<value level="3">2751</value>
+					<value level="4">3252</value>
+					<value level="5">3752</value>
+					<value level="6">4224</value>
+					<value level="7">4640</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.1" />
@@ -1472,7 +1488,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2748" />
+				<power>2748</power>
 			</effect>
 			<effect name="BlockActions">
 				<mul stat="defCritRate" val="0.5" />
@@ -1522,7 +1538,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="15" />
+				<power>15</power>
 			</effect>
 		</for>
 	</skill>
@@ -1541,7 +1557,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="25" />
+				<power>25</power>
 			</effect>
 		</for>
 	</skill>
@@ -1560,7 +1576,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1578,7 +1594,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealPercent">
-				<param power="11" />
+				<power>11</power>
 			</effect>
 		</for>
 	</skill>
@@ -1597,7 +1613,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealPercent">
-				<param power="18" />
+				<power>18</power>
 			</effect>
 		</for>
 	</skill>
@@ -1616,7 +1632,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1897,7 +1913,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="122" />
+				<power>122</power>
 			</effect>
 		</for>
 	</skill>
@@ -1924,7 +1940,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2319" />
+				<power>2319</power>
 			</effect>
 			<effect name="EnemyCharge" />
 		</for>
@@ -1948,7 +1964,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2319" />
+				<power>2319</power>
 			</effect>
 		</for>
 	</skill>
@@ -2028,7 +2044,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="126" />
+				<transformationId>126</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2189,10 +2205,11 @@
 		<for>
 			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="#ticks">
-				<param power="115" />
+				<power>115</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="6302" skillLevel="1" />
+				<skillId>6302</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2344,7 +2361,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="80" />
+				<amount>9</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2471,7 +2489,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="120" />
+				<power>120</power>
 			</effect>
 		</for>
 	</skill>
@@ -2526,7 +2544,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="120" />
+				<power>120</power>
 			</effect>
 		</for>
 	</skill>
@@ -2618,7 +2636,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="-178244" y="153389" z="2472" />
+				<x>-178244</x>
+				<y>153389</y>
+				<z>2472</z>
 			</effect>
 		</for>
 	</skill>
@@ -2645,7 +2665,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="-178244" y="153389" z="2472" />
+				<x>-178244</x>
+				<y>153389</y>
+				<z>2472</z>
 			</effect>
 		</for>
 	</skill>
@@ -2670,7 +2692,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="17003" itemCount="1" />
+				<itemId>17003</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -2686,7 +2709,7 @@
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="PA_UP,9;PD_UP,9" />
+				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2732,8 +2755,8 @@
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="DamOverTimePercent" ticks="5">
-				<param power="0.02" />
 				<mul stat="pAtkSpd" val="1.2" />
+				<power>0.02</power>
 			</effect>
 		</for>
 	</skill>
@@ -2904,10 +2927,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="45257" />
+				<power>45257</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="6698" skillLevel="1" />
+				<skillId>6698</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2936,15 +2960,16 @@
 		<for>
 			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="5">
-				<param power="115" />
+				<power>115</power>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="5" />
+				<power>5</power>
 			</effect>
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="6302" skillLevel="1" />
+				<skillId>6302</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>

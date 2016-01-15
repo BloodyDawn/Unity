@@ -1007,7 +1007,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -1090,7 +1090,7 @@
 		<for>
 			<!-- TODO: Need new effect i_dispel_by_name. -->
 			<effect name="VitalityPointUp">
-				<param value="5000" />
+				<value>5000</value>
 			</effect>
 		</for>
 	</skill>
@@ -1231,13 +1231,13 @@
 		<for>
 			<effect name="Invincible" />
 			<effect name="CpHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1261,7 +1261,9 @@
 		</cond>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="20" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>20</max>
 			</effect>
 		</for>
 	</skill>
@@ -1290,7 +1292,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ResurrectionSpecial">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1434,7 +1436,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -1524,7 +1526,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1570,7 +1573,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1616,7 +1620,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1662,7 +1667,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1708,7 +1714,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1754,7 +1761,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1800,7 +1808,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1846,7 +1855,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>

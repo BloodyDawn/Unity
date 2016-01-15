@@ -128,7 +128,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="3.57" />
+				<SHOCK>3.57</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -167,7 +167,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="4.76" />
+				<SHOCK>4.76</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -258,7 +258,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="5.71" />
+				<POISON>5.71</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -271,7 +271,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="7.61" />
+				<BLEED>7.61</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -336,7 +336,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="5" />
+				<SLEEP>5</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -409,12 +409,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="6" />
-				<param skillId="5665" skillLevel="1" /> <!-- Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>6</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5665</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -487,12 +492,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="6" />
-				<param skillId="5666" skillLevel="1" /> <!-- Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>6</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5666</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -565,12 +575,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="6" />
-				<param skillId="5667" skillLevel="1" /> <!-- Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>6</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5667</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -612,7 +627,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="3" chance="30" />
+				<amount>3</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -696,7 +712,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="3" chance="30" />
+				<amount>3</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -877,12 +894,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="5" />
-				<param skillId="5668" skillLevel="1" /> <!-- Poison -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Poison -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>5</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5668</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1097,12 +1119,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="6" />
-				<param skillId="5669" skillLevel="1" /> <!-- Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>6</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5669</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1191,12 +1218,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="6" />
-				<param skillId="5670" skillLevel="1" /> <!-- Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>6</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5670</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1241,12 +1273,23 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="#activationChance" />
-				<param skillId="#triggeredId" skillLevel="1" /> <!-- Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>
+					<value level="1">5671</value>
+					<value level="2">5672</value>
+				</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>

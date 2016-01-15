@@ -372,7 +372,7 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -419,7 +419,7 @@
 		<hitTime>2000</hitTime>
 		<for>
 			<effect name="RealDamage">
-				<param power="1000000" />
+				<power>1000000</power>
 			</effect>
 		</for>
 	</skill>
@@ -495,10 +495,10 @@
 		<hitTime>1000</hitTime>
 		<for>
 			<effect name="HealPercent">
-				<param power="-60" />
+				<power>-60</power>
 			</effect>
 			<effect name="PhysicalAttack">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -595,7 +595,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="3000" />
+				<power>3000</power>
 			</effect>
 		</for>
 	</skill>
@@ -685,12 +685,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="10373" />
-				<param criticalChance="10" />
-				<param ignoreShieldDefence="true" />
+				<power>10373</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -740,7 +740,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealPercent">
-				<param power="-20" />
+				<power>-20</power>
 			</effect>
 		</for>
 	</skill>
@@ -767,15 +767,17 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="10373" />
-				<param criticalChance="10" />
-				<param ignoreShieldDefence="true" />
+				<power>10373</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="MaxHp">
-				<param amount="-50" mode="PER" />
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
-				<param amount="-50" mode="PER" />
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -817,9 +819,9 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="63230" />
-				<param criticalChance="10" />
-				<param ignoreShieldDefence="true" />
+				<power>63230</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -848,12 +850,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="63230" />
-				<param criticalChance="10" />
-				<param ignoreShieldDefence="true" />
+				<power>63230</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
-				<param power="338" />
+				<power>338</power>
 			</effect>
 		</for>
 	</skill>
@@ -881,9 +883,9 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="77103" />
-				<param criticalChance="10" />
-				<param ignoreShieldDefence="true" />
+				<power>77103</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -913,9 +915,9 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="77103" />
-				<param criticalChance="10" />
-				<param ignoreShieldDefence="true" />
+				<power>77103</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="Root" />
 		</for>
@@ -945,12 +947,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="77103" />
-				<param criticalChance="10" />
-				<param ignoreShieldDefence="true" />
+				<power>77103</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
-				<param power="272" />
+				<power>272</power>
 			</effect>
 		</for>
 	</skill>
@@ -980,7 +982,7 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DamOverTime" ticks="2">
-				<param power="472" />
+				<power>472</power>
 			</effect>
 		</for>
 	</skill>
@@ -1519,7 +1521,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>

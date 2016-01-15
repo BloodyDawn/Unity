@@ -220,7 +220,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -268,11 +268,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5146" skillLevel="#triggeredLevel" /> <!-- Heal -->
-				<param targetType="SELF" />
+				<!-- Heal -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5146</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -297,11 +312,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5147" skillLevel="#triggeredLevel" /> <!-- Blessed Body -->
-				<param targetType="SELF" />
+				<!-- Blessed Body -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5147</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -326,11 +356,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5148" skillLevel="#triggeredLevel" /> <!-- Prayer -->
-				<param targetType="SELF" />
+				<!-- Prayer -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5148</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -355,11 +400,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5149" skillLevel="#triggeredLevel" /> <!-- Recharge -->
-				<param targetType="SELF" />
+				<!-- Recharge -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5149</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -384,11 +444,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5150" skillLevel="#triggeredLevel" /> <!-- Blessed Soul -->
-				<param targetType="SELF" />
+				<!-- Blessed Soul -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5150</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -418,11 +493,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5151" skillLevel="#triggeredLevel" /> <!-- Mana Gain -->
-				<param targetType="SELF" />
+				<!-- Mana Gain -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5151</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -447,11 +542,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5152" skillLevel="#triggeredLevel" /> <!-- Ritual -->
-				<param targetType="SELF" />
+				<!-- Ritual -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5152</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -476,11 +586,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5153" skillLevel="#triggeredLevel" /> <!-- Cheer -->
-				<param targetType="SELF" />
+				<!-- Cheer -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5153</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -510,11 +635,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5154" skillLevel="#triggeredLevel" /> <!-- Might -->
-				<param targetType="SELF" />
+				<!-- Might -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5154</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -544,11 +689,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5156" skillLevel="#triggeredLevel" /> <!-- Empower -->
-				<param targetType="SELF" />
+				<!-- Empower -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5156</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -572,11 +737,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5157" skillLevel="#triggeredLevel" /> <!-- Duel Might -->
-				<param targetType="SELF" />
+				<!-- Duel Might -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5157</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -606,11 +786,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5158" skillLevel="#triggeredLevel" /> <!-- Shield -->
-				<param targetType="SELF" />
+				<!-- Shield -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5158</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -640,11 +840,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5159" skillLevel="#triggeredLevel" /> <!-- Magic Barrier -->
-				<param targetType="SELF" />
+				<!-- Magic Barrier -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5159</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -669,11 +889,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5160" skillLevel="#triggeredLevel" /> <!-- Duel Weakness -->
-				<param targetType="ONE" />
+				<!-- Duel Weakness -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5160</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -703,11 +938,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5161" skillLevel="#triggeredLevel" /> <!-- Agility -->
-				<param targetType="SELF" />
+				<!-- Agility -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5161</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -737,11 +992,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5162" skillLevel="#triggeredLevel" /> <!-- Guidance -->
-				<param targetType="SELF" />
+				<!-- Guidance -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5162</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -766,11 +1041,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5163" skillLevel="#triggeredLevel" /> <!-- Focus -->
-				<param targetType="SELF" />
+				<!-- Focus -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5163</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -795,11 +1085,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5164" skillLevel="#triggeredLevel" /> <!-- Wild Magic -->
-				<param targetType="SELF" />
+				<!-- Wild Magic -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5164</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -829,11 +1134,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="1" />
-				<param skillId="5165" skillLevel="#triggeredLevel" /> <!-- Charm -->
-				<param targetType="ONE" />
+				<!-- Charm -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>1</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5165</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -863,11 +1188,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5166" skillLevel="#triggeredLevel" /> <!-- Slow -->
-				<param targetType="ONE" />
+				<!-- Slow -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5166</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -897,11 +1242,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5167" skillLevel="#triggeredLevel" /> <!-- Winter -->
-				<param targetType="ONE" />
+				<!-- Winter -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5167</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -926,11 +1291,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5168" skillLevel="#triggeredLevel" /> <!-- Stun -->
-				<param targetType="ONE" />
+				<!-- Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5168</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -955,11 +1335,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5169" skillLevel="#triggeredLevel" /> <!-- Hold -->
-				<param targetType="ONE" />
+				<!-- Hold -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5169</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -984,11 +1379,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5170" skillLevel="#triggeredLevel" /> <!-- Sleep -->
-				<param targetType="ONE" />
+				<!-- Sleep -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5170</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1013,11 +1423,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5171" skillLevel="#triggeredLevel" /> <!-- Paralyze -->
-				<param targetType="ONE" />
+				<!-- Paralyze -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5171</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1042,11 +1467,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5172" skillLevel="#triggeredLevel" /> <!-- Medusa -->
-				<param targetType="ONE" />
+				<!-- Medusa -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5172</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1071,11 +1511,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5173" skillLevel="#triggeredLevel" /> <!-- Fear -->
-				<param targetType="ONE" />
+				<!-- Fear -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5173</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1105,11 +1560,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5174" skillLevel="#triggeredLevel" /> <!-- Poison -->
-				<param targetType="ONE" />
+				<!-- Poison -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5174</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1139,11 +1614,31 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5175" skillLevel="#triggeredLevel" /> <!-- Bleed -->
-				<param targetType="ONE" />
+				<!-- Bleed -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5175</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1168,11 +1663,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5176" skillLevel="#triggeredLevel" /> <!-- Silence -->
-				<param targetType="ONE" />
+				<!-- Silence -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5176</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1197,11 +1707,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="4" />
-				<param skillId="5177" skillLevel="#triggeredLevel" /> <!-- Doom -->
-				<param targetType="ONE" />
+				<!-- Doom -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>4</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5177</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1759,7 +2284,7 @@
 		</cond>
 		<for>
 			<effect name="StaticDamage">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1803,7 +2328,7 @@
 		</cond>
 		<for>
 			<effect name="StaticDamage">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -1828,7 +2353,7 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1856,7 +2381,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -1919,7 +2444,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16028" />
+				<npcId>16028</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -1936,7 +2461,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16027" />
+				<npcId>16027</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -1953,7 +2478,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16026" />
+				<npcId>16026</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -2024,10 +2549,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 			<effect name="CpHeal">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -2181,7 +2706,7 @@
 				<mul stat="pDef" val="0.1" />
 			</effect>
 			<effect name="ManaHealOverTime" ticks="5">
-				<param power="27" />
+				<power>27</power>
 			</effect>
 		</for>
 	</skill>
@@ -2365,7 +2890,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="BLEEDING,9" />
+				<dispel>BLEEDING,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2386,7 +2911,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="ROOT_PHYSICALLY,9" />
+				<dispel>ROOT_PHYSICALLY,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2407,7 +2932,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="ROOT_MAGICALLY,9" />
+				<dispel>ROOT_MAGICALLY,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2428,7 +2953,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="ROOT_PHYSICALLY,3;ROOT_MAGICALLY,3" />
+				<dispel>ROOT_PHYSICALLY,3;ROOT_MAGICALLY,3</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2449,7 +2974,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="SILENCE_PHYSICAL,9" />
+				<dispel>SILENCE_PHYSICAL,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2470,7 +2995,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="SILENCE,9" />
+				<dispel>SILENCE,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2491,7 +3016,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="SILENCE_ALL,9" />
+				<dispel>SILENCE_ALL,9</dispel>
 			</effect>
 		</for>
 	</skill>

@@ -94,7 +94,9 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="5" />
+				<slot>buff</slot>
+				<rate>25</rate>
+				<max>5</max>
 			</effect>
 		</for>
 	</skill>
@@ -144,8 +146,8 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11205" />
-				<param overHit="true" />
+				<power>11205</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -165,8 +167,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6199" />
-				<param overHit="true" />
+				<power>6199</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -195,7 +197,6 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="312" />
 				<mul stat="sDef" val="0.5" />
 				<add stat="accCombat" val="1">
 					<and>
@@ -203,6 +204,7 @@
 						<using slot="lrhand" />
 					</and>
 				</add>
+				<transformationId>312</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -231,7 +233,6 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="313" />
 				<mul stat="sDef" val="0.5" />
 				<mul stat="pAtkSpd" val="1.08">
 					<and>
@@ -239,6 +240,7 @@
 						<using slot="lrhand" />
 					</and>
 				</mul>
+				<transformationId>313</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -267,7 +269,6 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="314" />
 				<mul stat="sDef" val="0.5" />
 				<add stat="accCombat" val="1">
 					<and>
@@ -275,6 +276,7 @@
 						<using slot="lrhand" />
 					</and>
 				</add>
+				<transformationId>314</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -303,11 +305,11 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="315" />
 				<mul stat="sDef" val="0.5" />
 				<mul stat="pAtkSpd" val="1.08">
 					<using kind="DUAL" />
 				</mul>
+				<transformationId>315</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -467,10 +469,54 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>
+					<value level="1">893</value>
+					<value level="2">945</value>
+					<value level="3">998</value>
+					<value level="4">1054</value>
+					<value level="5">1112</value>
+					<value level="6">1172</value>
+					<value level="7">1234</value>
+					<value level="8">1298</value>
+					<value level="9">1365</value>
+					<value level="10">1433</value>
+					<value level="11">1503</value>
+					<value level="12">1575</value>
+					<value level="13">1649</value>
+					<value level="14">1725</value>
+					<value level="15">1803</value>
+					<value level="16">1882</value>
+					<value level="17">1963</value>
+					<value level="18">2045</value>
+					<value level="19">2129</value>
+					<value level="20">2214</value>
+					<value level="21">2301</value>
+					<value level="22">2388</value>
+					<value level="23">2476</value>
+					<value level="24">2565</value>
+					<value level="25">2655</value>
+					<value level="26">2745</value>
+					<value level="27">2836</value>
+					<value level="28">2927</value>
+					<value level="29">3018</value>
+					<value level="30">3108</value>
+					<value level="31">3198</value>
+					<value level="32">3288</value>
+					<value level="33">3376</value>
+					<value level="34">3464</value>
+					<value level="35">3551</value>
+					<value level="36">3636</value>
+					<value level="37">3720</value>
+					<value level="38">3801</value>
+					<value level="39">3881</value>
+					<value level="40">3959</value>
+					<value level="41">4034</value>
+					<value level="42">4107</value>
+					<value level="43">4176</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -627,10 +673,54 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>
+					<value level="1">893</value>
+					<value level="2">945</value>
+					<value level="3">998</value>
+					<value level="4">1054</value>
+					<value level="5">1112</value>
+					<value level="6">1172</value>
+					<value level="7">1234</value>
+					<value level="8">1298</value>
+					<value level="9">1365</value>
+					<value level="10">1433</value>
+					<value level="11">1503</value>
+					<value level="12">1575</value>
+					<value level="13">1649</value>
+					<value level="14">1725</value>
+					<value level="15">1803</value>
+					<value level="16">1882</value>
+					<value level="17">1963</value>
+					<value level="18">2045</value>
+					<value level="19">2129</value>
+					<value level="20">2214</value>
+					<value level="21">2301</value>
+					<value level="22">2388</value>
+					<value level="23">2476</value>
+					<value level="24">2565</value>
+					<value level="25">2655</value>
+					<value level="26">2745</value>
+					<value level="27">2836</value>
+					<value level="28">2927</value>
+					<value level="29">3018</value>
+					<value level="30">3108</value>
+					<value level="31">3198</value>
+					<value level="32">3288</value>
+					<value level="33">3376</value>
+					<value level="34">3464</value>
+					<value level="35">3551</value>
+					<value level="36">3636</value>
+					<value level="37">3720</value>
+					<value level="38">3801</value>
+					<value level="39">3881</value>
+					<value level="40">3959</value>
+					<value level="41">4034</value>
+					<value level="42">4107</value>
+					<value level="43">4176</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -792,10 +882,54 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>
+					<value level="1">992</value>
+					<value level="2">1049</value>
+					<value level="3">1109</value>
+					<value level="4">1171</value>
+					<value level="5">1236</value>
+					<value level="6">1302</value>
+					<value level="7">1371</value>
+					<value level="8">1443</value>
+					<value level="9">1516</value>
+					<value level="10">1592</value>
+					<value level="11">1670</value>
+					<value level="12">1750</value>
+					<value level="13">1832</value>
+					<value level="14">1917</value>
+					<value level="15">2003</value>
+					<value level="16">2091</value>
+					<value level="17">2181</value>
+					<value level="18">2272</value>
+					<value level="19">2366</value>
+					<value level="20">2460</value>
+					<value level="21">2556</value>
+					<value level="22">2653</value>
+					<value level="23">2751</value>
+					<value level="24">2850</value>
+					<value level="25">2950</value>
+					<value level="26">3050</value>
+					<value level="27">3151</value>
+					<value level="28">3252</value>
+					<value level="29">3353</value>
+					<value level="30">3453</value>
+					<value level="31">3553</value>
+					<value level="32">3653</value>
+					<value level="33">3752</value>
+					<value level="34">3849</value>
+					<value level="35">3945</value>
+					<value level="36">4040</value>
+					<value level="37">4133</value>
+					<value level="38">4224</value>
+					<value level="39">4312</value>
+					<value level="40">4399</value>
+					<value level="41">4482</value>
+					<value level="42">4563</value>
+					<value level="43">4640</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -953,10 +1087,54 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>
+					<value level="1">992</value>
+					<value level="2">1049</value>
+					<value level="3">1109</value>
+					<value level="4">1171</value>
+					<value level="5">1236</value>
+					<value level="6">1302</value>
+					<value level="7">1371</value>
+					<value level="8">1443</value>
+					<value level="9">1516</value>
+					<value level="10">1592</value>
+					<value level="11">1670</value>
+					<value level="12">1750</value>
+					<value level="13">1832</value>
+					<value level="14">1917</value>
+					<value level="15">2003</value>
+					<value level="16">2091</value>
+					<value level="17">2181</value>
+					<value level="18">2272</value>
+					<value level="19">2366</value>
+					<value level="20">2460</value>
+					<value level="21">2556</value>
+					<value level="22">2653</value>
+					<value level="23">2751</value>
+					<value level="24">2850</value>
+					<value level="25">2950</value>
+					<value level="26">3050</value>
+					<value level="27">3151</value>
+					<value level="28">3252</value>
+					<value level="29">3353</value>
+					<value level="30">3453</value>
+					<value level="31">3553</value>
+					<value level="32">3653</value>
+					<value level="33">3752</value>
+					<value level="34">3849</value>
+					<value level="35">3945</value>
+					<value level="36">4040</value>
+					<value level="37">4133</value>
+					<value level="38">4224</value>
+					<value level="39">4312</value>
+					<value level="40">4399</value>
+					<value level="41">4482</value>
+					<value level="42">4563</value>
+					<value level="43">4640</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -968,9 +1146,11 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAvoid">
-				<param chance="10" />
-				<param skillId="5673" skillLevel="1" /> <!-- Evasion Counter -->
-				<param targetType="ONE" />
+				<!-- Evasion Counter -->
+				<chance>10</chance>
+				<targetType>ONE</targetType>
+				<skillId>5673</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -982,9 +1162,11 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAvoid">
-				<param chance="10" />
-				<param skillId="5674" skillLevel="1" /> <!-- Evasion Chance -->
-				<param targetType="SELF" />
+				<!-- Evasion Chance -->
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+				<skillId>5674</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -996,9 +1178,11 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAvoid">
-				<param chance="10" />
-				<param skillId="5675" skillLevel="1" /> <!-- Evasion Haste -->
-				<param targetType="SELF" />
+				<!-- Evasion Haste -->
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+				<skillId>5675</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1055,7 +1239,11 @@
 		</cond>
 		<for>
 			<effect name="HealPercent">
-				<param power="#amount" />
+				<power>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1143,7 +1331,12 @@
 				<mul stat="pDef" val="#pDef" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="#maxHp" mode="PER" />
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1203,7 +1396,7 @@
 				</mul>
 			</effect>
 			<effect name="AttackTrait">
-				<param SHOCK="8" />
+				<SHOCK>8</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1340,7 +1533,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13128" npcCount="1" despawnDelay="180000" />
+				<npcId>13128</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -1377,7 +1572,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1402,7 +1597,8 @@
 				<add stat="regHp" val="10" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="10" mode="PER" />
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1446,12 +1642,23 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="#mdot" />
+				<power>
+					<value level="1">16</value>
+					<value level="2">17</value>
+					<value level="3">17</value>
+					<value level="4">17</value>
+				</power>
 			</effect>
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="5697" skillLevel="#calledSkillLevel" />
+				<skillId>5697</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+				</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -1476,7 +1683,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonTrap">
-				<param npcId="#npcId" />
+				<npcId>
+					<value level="1">13125</value>
+					<value level="2">13126</value>
+					<value level="3">13127</value>
+				</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -1517,7 +1728,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="TRANSFORM,-1" />
+				<dispel>TRANSFORM,-1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1534,7 +1745,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="TRANSFORM,-1" />
+				<dispel>TRANSFORM,-1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1571,12 +1782,12 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="260" />
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
+				<transformationId>260</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1609,12 +1820,12 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="8" />
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
+				<transformationId>8</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1647,12 +1858,12 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="9" />
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
+				<transformationId>9</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1671,7 +1882,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="3480" />
+				<power>3480</power>
 			</effect>
 		</for>
 	</skill>
@@ -1893,7 +2104,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="10" />
+				<transformationId>10</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1921,7 +2132,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="11" />
+				<transformationId>11</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1949,7 +2160,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="12" />
+				<transformationId>12</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1977,7 +2188,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="13" />
+				<transformationId>13</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2005,7 +2216,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="14" />
+				<transformationId>14</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2033,7 +2244,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="15" />
+				<transformationId>15</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2061,7 +2272,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="16" />
+				<transformationId>16</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2089,7 +2300,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="17" />
+				<transformationId>17</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2117,7 +2328,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="18" />
+				<transformationId>18</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2145,7 +2356,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="19" />
+				<transformationId>19</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2173,7 +2384,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="20" />
+				<transformationId>20</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2201,7 +2412,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="21" />
+				<transformationId>21</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2234,7 +2445,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">2272</value>
+					<value level="2">3252</value>
+					<value level="3">4224</value>
+					<value level="4">4312</value>
+					<value level="5">4399</value>
+					<value level="6">4482</value>
+					<value level="7">4563</value>
+					<value level="8">4640</value>
+					<value level="9">4715</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2275,7 +2496,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">3252</value>
+					<value level="2">4224</value>
+					<value level="3">4312</value>
+					<value level="4">4399</value>
+					<value level="5">4482</value>
+					<value level="6">4563</value>
+					<value level="7">4640</value>
+					<value level="8">4715</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2341,8 +2571,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">4336</value>
+					<value level="2">5632</value>
+					<value level="3">5750</value>
+					<value level="4">5865</value>
+					<value level="5">5976</value>
+					<value level="6">6084</value>
+					<value level="7">6187</value>
+					<value level="8">6286</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -2420,7 +2659,16 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">68</value>
+					<value level="2">78</value>
+					<value level="3">78</value>
+					<value level="4">79</value>
+					<value level="5">80</value>
+					<value level="6">81</value>
+					<value level="7">81</value>
+					<value level="8">82</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2491,7 +2739,16 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalSoulAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">4878</value>
+					<value level="2">6335</value>
+					<value level="3">6468</value>
+					<value level="4">6598</value>
+					<value level="5">6723</value>
+					<value level="6">6844</value>
+					<value level="7">6960</value>
+					<value level="8">7072</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2578,7 +2835,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">5068</value>
+					<value level="2">5175</value>
+					<value level="3">5278</value>
+					<value level="4">5379</value>
+					<value level="5">5475</value>
+					<value level="6">5568</value>
+					<value level="7">5658</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2682,8 +2947,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttackRange">
-				<param power="#power" />
-				<param powerRange="40" />
+				<power>
+					<value level="1">116</value>
+					<value level="2">117</value>
+					<value level="3">119</value>
+					<value level="4">120</value>
+					<value level="5">121</value>
+					<value level="6">122</value>
+					<value level="7">123</value>
+				</power>
+				<powerRange>40</powerRange>
 			</effect>
 		</for>
 	</skill>
@@ -2724,7 +2997,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">116</value>
+					<value level="2">117</value>
+					<value level="3">119</value>
+					<value level="4">120</value>
+					<value level="5">121</value>
+					<value level="6">122</value>
+					<value level="7">123</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2764,7 +3045,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -2803,7 +3084,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1" />
+				<power>1</power>
 			</effect>
 		</for>
 	</skill>
@@ -2825,13 +3106,15 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
 		<selfEffects>
 			<effect name="Blink">
-				<param angle="0" range="500" /> <!-- Teleport to Back -->
+				<!-- Teleport to Back -->
+				<angle>0</angle>
+				<range>500</range>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -2897,7 +3180,19 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">2251</value>
+					<value level="2">2310</value>
+					<value level="3">2367</value>
+					<value level="4">2424</value>
+					<value level="5">2480</value>
+					<value level="6">2534</value>
+					<value level="7">2588</value>
+					<value level="8">2639</value>
+					<value level="9">2690</value>
+					<value level="10">2738</value>
+					<value level="11">2784</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2965,7 +3260,19 @@
 		<trait>HOLD</trait>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">110</value>
+					<value level="2">111</value>
+					<value level="3">112</value>
+					<value level="4">114</value>
+					<value level="5">115</value>
+					<value level="6">116</value>
+					<value level="7">117</value>
+					<value level="8">119</value>
+					<value level="9">120</value>
+					<value level="10">121</value>
+					<value level="11">122</value>
+				</power>
 			</effect>
 			<effect name="Root" />
 		</for>
@@ -3023,7 +3330,19 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">3752</value>
+					<value level="2">3849</value>
+					<value level="3">3945</value>
+					<value level="4">4040</value>
+					<value level="5">4133</value>
+					<value level="6">4224</value>
+					<value level="7">4312</value>
+					<value level="8">4399</value>
+					<value level="9">4482</value>
+					<value level="10">4563</value>
+					<value level="11">4640</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3080,7 +3399,19 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">3752</value>
+					<value level="2">3849</value>
+					<value level="3">3945</value>
+					<value level="4">4040</value>
+					<value level="5">4133</value>
+					<value level="6">4224</value>
+					<value level="7">4312</value>
+					<value level="8">4399</value>
+					<value level="9">4482</value>
+					<value level="10">4563</value>
+					<value level="11">4640</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3137,7 +3468,19 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">5627</value>
+					<value level="2">5773</value>
+					<value level="3">5918</value>
+					<value level="4">6060</value>
+					<value level="5">6199</value>
+					<value level="6">6335</value>
+					<value level="7">6468</value>
+					<value level="8">6598</value>
+					<value level="9">6723</value>
+					<value level="10">6844</value>
+					<value level="11">6960</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3195,7 +3538,19 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">88</value>
+					<value level="2">89</value>
+					<value level="3">90</value>
+					<value level="4">91</value>
+					<value level="5">92</value>
+					<value level="6">93</value>
+					<value level="7">94</value>
+					<value level="8">95</value>
+					<value level="9">96</value>
+					<value level="10">97</value>
+					<value level="11">98</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3253,7 +3608,19 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">131</value>
+					<value level="2">133</value>
+					<value level="3">135</value>
+					<value level="4">136</value>
+					<value level="5">138</value>
+					<value level="6">139</value>
+					<value level="7">141</value>
+					<value level="8">142</value>
+					<value level="9">144</value>
+					<value level="10">145</value>
+					<value level="11">146</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3311,7 +3678,19 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">197</value>
+					<value level="2">199</value>
+					<value level="3">202</value>
+					<value level="4">204</value>
+					<value level="5">206</value>
+					<value level="6">209</value>
+					<value level="7">211</value>
+					<value level="8">213</value>
+					<value level="9">215</value>
+					<value level="10">217</value>
+					<value level="11">219</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3338,7 +3717,8 @@
 				<mul stat="pAtkSpd" val="1.2" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" />
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3409,12 +3789,26 @@
 		<targetType>ONE</targetType>
 		<pveEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvePower" />
+				<power>
+					<value level="1">9503</value>
+					<value level="2">9702</value>
+					<value level="3">9896</value>
+					<value level="4">10084</value>
+					<value level="5">10266</value>
+					<value level="6">10440</value>
+				</power>
 			</effect>
 		</pveEffects>
 		<pvpEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvpPower" />
+				<power>
+					<value level="1">3168</value>
+					<value level="2">3234</value>
+					<value level="3">3299</value>
+					<value level="4">3362</value>
+					<value level="5">3422</value>
+					<value level="6">3480</value>
+				</power>
 			</effect>
 		</pvpEffects>
 	</skill>
@@ -3456,12 +3850,26 @@
 		<targetType>ONE</targetType>
 		<pveEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvePower" />
+				<power>
+					<value level="1">9503</value>
+					<value level="2">9702</value>
+					<value level="3">9896</value>
+					<value level="4">10084</value>
+					<value level="5">10266</value>
+					<value level="6">10440</value>
+				</power>
 			</effect>
 		</pveEffects>
 		<pvpEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvpPower" />
+				<power>
+					<value level="1">3168</value>
+					<value level="2">3234</value>
+					<value level="3">3299</value>
+					<value level="4">3362</value>
+					<value level="5">3422</value>
+					<value level="6">3480</value>
+				</power>
 			</effect>
 		</pvpEffects>
 	</skill>
@@ -3503,12 +3911,26 @@
 		<targetType>AURA</targetType>
 		<pveEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvePower" />
+				<power>
+					<value level="1">5068</value>
+					<value level="2">5175</value>
+					<value level="3">5278</value>
+					<value level="4">5379</value>
+					<value level="5">5475</value>
+					<value level="6">5568</value>
+				</power>
 			</effect>
 		</pveEffects>
 		<pvpEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvpPower" />
+				<power>
+					<value level="1">1690</value>
+					<value level="2">1725</value>
+					<value level="3">1760</value>
+					<value level="4">1793</value>
+					<value level="5">1825</value>
+					<value level="6">1856</value>
+				</power>
 			</effect>
 		</pvpEffects>
 	</skill>
@@ -3567,12 +3989,26 @@
 		</for>
 		<pveEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvePower" />
+				<power>
+					<value level="1">3168</value>
+					<value level="2">3234</value>
+					<value level="3">3299</value>
+					<value level="4">3362</value>
+					<value level="5">3422</value>
+					<value level="6">3480</value>
+				</power>
 			</effect>
 		</pveEffects>
 		<pvpEffects>
 			<effect name="PhysicalAttack">
-				<param power="#pvpPower" />
+				<power>
+					<value level="1">1056</value>
+					<value level="2">1078</value>
+					<value level="3">1100</value>
+					<value level="4">1121</value>
+					<value level="5">1141</value>
+					<value level="6">1160</value>
+				</power>
 			</effect>
 		</pvpEffects>
 	</skill>

@@ -68,13 +68,13 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="POISON,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;BLEEDING,9;STUN,9" />
+				<dispel>POISON,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;BLEEDING,9;STUN,9</dispel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="100" />
-				<param POISON="100" />
-				<param HOLD="100" />
-				<param BLEED="100" />
+				<POISON>100</POISON>
+				<BLEED>100</BLEED>
+				<SHOCK>100</SHOCK>
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -227,7 +227,9 @@
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 			<effect name="Untargetable" />
 		</for>
@@ -242,7 +244,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="1" chance="80" />
+				<amount>1</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -303,7 +306,8 @@
 				<mul stat="maxCp" val="1.01" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="1" mode="PER" />
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -320,11 +324,14 @@
 		</cond>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" />
-				<param minDamage="1" />
-				<param chance="100" />
-				<param skillId="1918" skillLevel="1" /> <!-- Undying Will -->
-				<param targetType="ONE" />
+				<!-- Undying Will -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<chance>100</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1918</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -350,7 +357,9 @@
 		<for>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="100" />
@@ -394,7 +403,7 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="92" />
+				<power>92</power>
 			</effect>
 			<effect name="Buff">
 				<add stat="reflectDam" val="50" />
@@ -445,17 +454,19 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="KnockBack">
-				<param distance="50" speed="400" knockDown="true" />
+				<distance>50</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
-				<param DERANGEMENT="100" />
-				<param CHANGEBODY="100" />
-				<param SLEEP="100" />
-				<param SHOCK="100" />
+				<DERANGEMENT>100</DERANGEMENT>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<SHOCK>100</SHOCK>
+				<CHANGEBODY>100</CHANGEBODY>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.5" />
@@ -516,7 +527,10 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="DebuffBlock">
-				<param times="#debuffBlock" />
+				<times>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</times>
 			</effect>
 			<effect name="Buff">
 				<add stat="fireRes" val="#res" />
@@ -553,10 +567,10 @@
 		<for>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
-				<param transformationId="506" />
+				<transformationId>506</transformationId>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1" />
+				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -573,12 +587,17 @@
 		<toggleGroupId>0</toggleGroupId>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="1928" skillLevel="1" /> <!-- Sigel Force -->
+				<!-- Sigel Force -->
+				<skillId>1928</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Synergy" ticks="15">
-				<param requiredSlots="SYNERGY_SIGEL;SYNERGY_EOLH" />
-				<param optionalSlots="SYNERGY_FEOH;SYNERGY_LENKER;SYNERGY_OTHEL;SYNERGY_SEER;SYNERGY_TIR;SYNERGY_WYNN;SYNERGY_YR" />
-				<param partyBuffSkillId="1955" minSlot="2" skillLevelScaleTo="3" /> <!-- Party Solidarity -->
+				<!-- Party Solidarity -->
+				<optionalSlots>SYNERGY_FEOH;SYNERGY_LENKER;SYNERGY_OTHEL;SYNERGY_SEER;SYNERGY_TIR;SYNERGY_WYNN;SYNERGY_YR</optionalSlots>
+				<requiredSlots>SYNERGY_SIGEL;SYNERGY_EOLH</requiredSlots>
+				<partyBuffSkillId>1955</partyBuffSkillId>
+				<minSlot>2</minSlot>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
 			</effect>
 		</for>
 	</skill>
@@ -621,7 +640,9 @@
 		<toggleGroupId>0</toggleGroupId>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="1930" skillLevel="1" /> <!-- Tyrr Force -->
+				<!-- Tyrr Force -->
+				<skillId>1930</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -664,7 +685,9 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="1932" skillLevel="1" /> <!-- Othell Force -->
+				<!-- Othell Force -->
+				<skillId>1932</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -707,7 +730,9 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="1934" skillLevel="1" /> <!-- Yul Force -->
+				<!-- Yul Force -->
+				<skillId>1934</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -750,7 +775,9 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="1936" skillLevel="1" /> <!-- Feoh Force -->
+				<!-- Feoh Force -->
+				<skillId>1936</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -793,7 +820,9 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="5">
-				<param skillId="1938" skillLevel="1" /> <!-- Wynn Force -->
+				<!-- Wynn Force -->
+				<skillId>1938</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -837,7 +866,9 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="1940" skillLevel="1" /> <!-- Aeore Force -->
+				<!-- Aeore Force -->
+				<skillId>1940</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -884,7 +915,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13158" />
+				<power>13158</power>
 			</effect>
 		</for>
 	</skill>
@@ -908,7 +939,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9000" />
+				<power>9000</power>
 			</effect>
 		</for>
 	</skill>
@@ -937,7 +968,7 @@
 		<for>
 			<effect name="EnemyCharge" />
 			<effect name="PhysicalAttack">
-				<param power="5841" />
+				<power>5841</power>
 			</effect>
 		</for>
 	</skill>
@@ -961,8 +992,8 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttackRange">
-				<param power="182" />
-				<param powerRange="40" />
+				<power>182</power>
+				<powerRange>40</powerRange>
 			</effect>
 		</for>
 	</skill>
@@ -989,8 +1020,8 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttackRange">
-				<param power="212" />
-				<param powerRange="40" />
+				<power>212</power>
+				<powerRange>40</powerRange>
 			</effect>
 		</for>
 	</skill>
@@ -1092,12 +1123,12 @@
 		<for>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
-				<param transformationId="507" />
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
+				<transformationId>507</transformationId>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1" />
+				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
 			<effect name="Buff">
 				<mul stat="reduceDeathPenaltyByRaid" val="0.1" />
@@ -1321,7 +1352,13 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="MaxHp">
-				<param amount="#maxHp" mode="PER" />
+				<amount>
+					<value level="1">6</value>
+					<value level="2">12</value>
+					<value level="3">18</value>
+					<value level="4">24</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1378,7 +1415,8 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="5" chance="80" />
+				<amount>5</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1392,24 +1430,36 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByMagicType">
-				<param magicTypes="0;1;2;3;4;22" />
-				<param chance="10" />
-				<param skillId="1995" skillLevel="1" /> <!-- Dual - MP Drain -->
-				<param targetType="SELF" />
+				<!-- Dual - MP Drain -->
+				<magicTypes>0;1;2;3;4;22</magicTypes>
+				<skillId>1995</skillId>
+				<skillLevel>1</skillLevel>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="10" />
-				<param skillId="1995" skillLevel="1" /> <!-- Dual - MP Drain -->
-				<param targetType="SELF" />
+				<!-- Dual - MP Drain -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>1995</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="10" />
-				<param skillId="1995" skillLevel="1" /> <!-- Dual - MP Drain -->
-				<param targetType="SELF" />
+				<!-- Dual - MP Drain -->
+				<isCritical>false</isCritical>
+				<skillId>1995</skillId>
+				<skillLevel>1</skillLevel>
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1458,20 +1508,20 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="AttackTrait">
-				<param SHOCK="20" />
-				<param PHYSICAL_BLOCKADE="20" />
-				<param KNOCKDOWN="20" />
-				<param KNOCKBACK="20" />
-				<param PULL="20" />
-				<param DISARM="20" />
+				<SHOCK>20</SHOCK>
+				<KNOCKDOWN>20</KNOCKDOWN>
+				<PULL>20</PULL>
+				<PHYSICAL_BLOCKADE>20</PHYSICAL_BLOCKADE>
+				<DISARM>20</DISARM>
+				<KNOCKBACK>20</KNOCKBACK>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="20" />
-				<param PHYSICAL_BLOCKADE="20" />
-				<param KNOCKDOWN="20" />
-				<param KNOCKBACK="20" />
-				<param PULL="20" />
-				<param DISARM="20" />
+				<SHOCK>20</SHOCK>
+				<KNOCKDOWN>20</KNOCKDOWN>
+				<PULL>20</PULL>
+				<KNOCKBACK>20</KNOCKBACK>
+				<DISARM>20</DISARM>
+				<PHYSICAL_BLOCKADE>20</PHYSICAL_BLOCKADE>
 			</effect>
 		</for>
 	</skill>
@@ -1486,24 +1536,24 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="AttackTrait">
-				<param HOLD="20" />
-				<param SLEEP="20" />
-				<param DERANGEMENT="20" />
-				<param PARALYZE="20" />
-				<param AIRBIND="20" />
-				<param CHANGEBODY="20" />
-				<param DEPORT="20" />
-				<param TURN_STONE="20" />
+				<HOLD>20</HOLD>
+				<DERANGEMENT>20</DERANGEMENT>
+				<AIRBIND>20</AIRBIND>
+				<DEPORT>20</DEPORT>
+				<SLEEP>20</SLEEP>
+				<CHANGEBODY>20</CHANGEBODY>
+				<PARALYZE>20</PARALYZE>
+				<TURN_STONE>20</TURN_STONE>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="20" />
-				<param SLEEP="20" />
-				<param DERANGEMENT="20" />
-				<param PARALYZE="20" />
-				<param AIRBIND="20" />
-				<param CHANGEBODY="20" />
-				<param DEPORT="20" />
-				<param TURN_STONE="20" />
+				<HOLD>20</HOLD>
+				<DERANGEMENT>20</DERANGEMENT>
+				<AIRBIND>20</AIRBIND>
+				<DEPORT>20</DEPORT>
+				<SLEEP>20</SLEEP>
+				<CHANGEBODY>20</CHANGEBODY>
+				<PARALYZE>20</PARALYZE>
+				<TURN_STONE>20</TURN_STONE>
 			</effect>
 		</for>
 	</skill>
@@ -1518,12 +1568,17 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="2" />
-				<param skillId="1975" skillLevel="1" /> <!-- Dual - Berserker's Rage -->
-				<param targetType="SELF" />
-				<param allowWeapons="ALL" />
+				<!-- Dual - Berserker's Rage -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>1975</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1561,10 +1616,12 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByMagicType">
-				<param magicTypes="0;1;2;3;4;22" />
-				<param chance="2" />
-				<param skillId="1977" skillLevel="1" /> <!-- Dual - Master's Rage -->
-				<param targetType="SELF" />
+				<!-- Dual - Master's Rage -->
+				<magicTypes>0;1;2;3;4;22</magicTypes>
+				<skillId>1977</skillId>
+				<skillLevel>1</skillLevel>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
 			</effect>
 		</for>
 	</skill>
@@ -1605,10 +1662,15 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="1" chance="3" />
-				<param skillId="1979" skillLevel="1" /> <!-- Dual - Light of Protection -->
-				<param targetType="SELF" />
+				<!-- Dual - Light of Protection -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<skillId>1979</skillId>
+				<skillLevel>1</skillLevel>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
 			</effect>
 		</for>
 	</skill>
@@ -1648,10 +1710,15 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="1000" chance="20" />
-				<param skillId="1981" skillLevel="1" /> <!-- Dual - Light of Blessing -->
-				<param targetType="SELF" />
+				<!-- Dual - Light of Blessing -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<skillId>1981</skillId>
+				<skillLevel>1</skillLevel>
+				<minDamage>1000</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
 			</effect>
 		</for>
 	</skill>
@@ -1670,7 +1737,7 @@
 		<staticDelay>true</staticDelay>
 		<for>
 			<effect name="Heal">
-				<param power="5000" />
+				<power>5000</power>
 			</effect>
 		</for>
 	</skill>
@@ -1805,7 +1872,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MaxHp">
-				<param amount="#maxHp" mode="DIFF" />
+				<amount>
+					<value level="1">463</value>
+					<value level="2">972</value>
+					<value level="3">1458</value>
+					<value level="4">1926</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1963,7 +2036,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<for>
 			<effect name="ManaHeal">
-				<param power="68" />
+				<power>68</power>
 			</effect>
 		</for>
 	</skill>

@@ -33,12 +33,28 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="#mdot" />
 				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="pAtk" val="#pAtkMul" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mDef" val="#mDef" />
+				<power>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">4</value>
+					<value level="11">5</value>
+					<value level="12">5</value>
+					<value level="13">6</value>
+					<value level="14">6</value>
+					<value level="15">7</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -545,7 +561,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#effectPoints" />
+				<power />
 			</effect>
 		</for>
 	</skill>
@@ -583,7 +599,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="#dispelAbnormals" />
+				<dispel>
+					<value level="1">POISON,3</value>
+					<value level="2">POISON,7</value>
+					<value level="3">POISON,9</value>
+				</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -747,7 +767,40 @@
 		</cond>
 		<for>
 			<effect name="ManaHealByLevel">
-				<param power="#amount" />
+				<power>
+					<value level="1">49</value>
+					<value level="2">52</value>
+					<value level="3">57</value>
+					<value level="4">60</value>
+					<value level="5">66</value>
+					<value level="6">70</value>
+					<value level="7">73</value>
+					<value level="8">77</value>
+					<value level="9">81</value>
+					<value level="10">86</value>
+					<value level="11">90</value>
+					<value level="12">94</value>
+					<value level="13">98</value>
+					<value level="14">102</value>
+					<value level="15">104</value>
+					<value level="16">106</value>
+					<value level="17">108</value>
+					<value level="18">110</value>
+					<value level="19">113</value>
+					<value level="20">115</value>
+					<value level="21">116</value>
+					<value level="22">118</value>
+					<value level="23">120</value>
+					<value level="24">122</value>
+					<value level="25">124</value>
+					<value level="26">126</value>
+					<value level="27">128</value>
+					<value level="28">129</value>
+					<value level="29">131</value>
+					<value level="30">133</value>
+					<value level="31">134</value>
+					<value level="32">136</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -833,7 +886,23 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">83</value>
+					<value level="2">95</value>
+					<value level="3">107</value>
+					<value level="4">121</value>
+					<value level="5">135</value>
+					<value level="6">151</value>
+					<value level="7">176</value>
+					<value level="8">185</value>
+					<value level="9">195</value>
+					<value level="10">224</value>
+					<value level="11">234</value>
+					<value level="12">245</value>
+					<value level="13">278</value>
+					<value level="14">289</value>
+					<value level="15">301</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -901,7 +970,17 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="#power" />
+				<power>
+					<value level="1">0</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">55</value>
+					<value level="7">60</value>
+					<value level="8">65</value>
+					<value level="9">70</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -940,7 +1019,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="#dispelAbnormals" />
+				<dispel>
+					<value level="1">POISON,3;BLEEDING,3;PARALYZE,1</value>
+					<value level="2">POISON,7;BLEEDING,7;PARALYZE,1;TURN_STONE,2</value>
+					<value level="3">POISON,9;BLEEDING,9;PARALYZE,1;TURN_STONE,2</value>
+				</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1075,10 +1158,66 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">440</value>
+					<value level="2">454</value>
+					<value level="3">467</value>
+					<value level="4">494</value>
+					<value level="5">508</value>
+					<value level="6">521</value>
+					<value level="7">549</value>
+					<value level="8">562</value>
+					<value level="9">575</value>
+					<value level="10">589</value>
+					<value level="11">602</value>
+					<value level="12">615</value>
+					<value level="13">628</value>
+					<value level="14">640</value>
+					<value level="15">653</value>
+					<value level="16">665</value>
+					<value level="17">677</value>
+					<value level="18">689</value>
+					<value level="19">700</value>
+					<value level="20">711</value>
+					<value level="21">722</value>
+					<value level="22">733</value>
+					<value level="23">743</value>
+					<value level="24">753</value>
+					<value level="25">763</value>
+					<value level="26">772</value>
+					<value level="27">780</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="#dispelAbnormals" />
+				<dispel>
+					<value level="1">POISON,3;BLEEDING,3</value>
+					<value level="2">POISON,3;BLEEDING,3</value>
+					<value level="3">POISON,3;BLEEDING,3</value>
+					<value level="4">POISON,3;BLEEDING,3</value>
+					<value level="5">POISON,3;BLEEDING,3</value>
+					<value level="6">POISON,7;BLEEDING,7</value>
+					<value level="7">POISON,7;BLEEDING,7</value>
+					<value level="8">POISON,7;BLEEDING,7</value>
+					<value level="9">POISON,7;BLEEDING,7</value>
+					<value level="10">POISON,7;BLEEDING,7</value>
+					<value level="11">POISON,7;BLEEDING,7</value>
+					<value level="12">POISON,7;BLEEDING,7</value>
+					<value level="13">POISON,7;BLEEDING,7</value>
+					<value level="14">POISON,7;BLEEDING,7</value>
+					<value level="15">POISON,7;BLEEDING,7</value>
+					<value level="16">POISON,7;BLEEDING,7</value>
+					<value level="17">POISON,7;BLEEDING,7</value>
+					<value level="18">POISON,7;BLEEDING,7</value>
+					<value level="19">POISON,9;BLEEDING,9</value>
+					<value level="20">POISON,9;BLEEDING,9</value>
+					<value level="21">POISON,9;BLEEDING,9</value>
+					<value level="22">POISON,9;BLEEDING,9</value>
+					<value level="23">POISON,9;BLEEDING,9</value>
+					<value level="24">POISON,9;BLEEDING,9</value>
+					<value level="25">POISON,9;BLEEDING,9</value>
+					<value level="26">POISON,9;BLEEDING,9</value>
+					<value level="27">POISON,9;BLEEDING,9</value>
+				</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1163,7 +1302,23 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#power" />
+				<power>
+					<value level="1">66</value>
+					<value level="2">76</value>
+					<value level="3">86</value>
+					<value level="4">97</value>
+					<value level="5">108</value>
+					<value level="6">121</value>
+					<value level="7">141</value>
+					<value level="8">148</value>
+					<value level="9">156</value>
+					<value level="10">179</value>
+					<value level="11">188</value>
+					<value level="12">196</value>
+					<value level="13">222</value>
+					<value level="14">231</value>
+					<value level="15">241</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1270,7 +1425,27 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">39</value>
+					<value level="2">42</value>
+					<value level="3">44</value>
+					<value level="4">47</value>
+					<value level="5">49</value>
+					<value level="6">52</value>
+					<value level="7">55</value>
+					<value level="8">57</value>
+					<value level="9">60</value>
+					<value level="10">63</value>
+					<value level="11">66</value>
+					<value level="12">68</value>
+					<value level="13">71</value>
+					<value level="14">74</value>
+					<value level="15">77</value>
+					<value level="16">79</value>
+					<value level="17">82</value>
+					<value level="18">84</value>
+					<value level="19">87</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1333,7 +1508,16 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">19</value>
+					<value level="2">21</value>
+					<value level="3">24</value>
+					<value level="4">25</value>
+					<value level="5">28</value>
+					<value level="6">30</value>
+					<value level="7">33</value>
+					<value level="8">36</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1375,7 +1559,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="#trait_bleed" />
+				<BLEED>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+				</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -1421,7 +1609,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="#trait_poison" />
+				<POISON>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+				</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -1487,7 +1679,7 @@
 		</cond>
 		<for>
 			<effect name="DeleteHate">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1538,9 +1730,24 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="#traits" />
-				<param SLEEP="#traits" />
-				<param DERANGEMENT="#traits" />
+				<HOLD>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+				</HOLD>
+				<DERANGEMENT>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+				</DERANGEMENT>
+				<SLEEP>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+				</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1843,7 +2050,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MaxHp">
-				<param amount="#maxHp" mode="PER" heal="true" />
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">35</value>
+				</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
 			</effect>
 		</for>
 	</skill>
@@ -2074,7 +2290,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -2147,7 +2363,9 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="5" />
+				<slot>buff</slot>
+				<rate>25</rate>
+				<max>5</max>
 			</effect>
 		</for>
 	</skill>
@@ -2586,7 +2804,7 @@
 		<for>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
+				<SLEEP>100</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2736,7 +2954,7 @@
 		<for>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
+				<SLEEP>100</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -2918,7 +3136,7 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="DeleteHate">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3366,8 +3584,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="80" />
+				<power>
+					<value level="1">15</value>
+					<value level="2">21</value>
+					<value level="3">26</value>
+					<value level="4">32</value>
+					<value level="5">38</value>
+					<value level="6">44</value>
+				</power>
+				<percentage>80</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -3537,7 +3762,13 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">11</value>
+					<value level="2">16</value>
+					<value level="3">24</value>
+					<value level="4">41</value>
+					<value level="5">50</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3767,7 +3998,7 @@
 		<for>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
+				<SLEEP>100</SLEEP>
 			</effect>
 		</for>
 	</skill>

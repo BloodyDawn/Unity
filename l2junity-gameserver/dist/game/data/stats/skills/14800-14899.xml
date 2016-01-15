@@ -269,21 +269,21 @@
 		<for>
 			<!-- TODO p_abnormal_rate_limit -->
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
-				<param SLEEP="100" />
-				<param DERANGEMENT="100" />
-				<param PARALYZE="100" />
-				<param SHOCK="100" />
-				<param BOSS="100" />
-				<param PHYSICAL_BLOCKADE="100" />
-				<param KNOCKDOWN="100" />
-				<param KNOCKBACK="100" />
-				<param AIRBIND="100" />
-				<param PULL="100" />
-				<param CHANGEBODY="100" />
-				<param DISARM="100" />
-				<param DEPORT="100" />
-				<param TURN_STONE="100" />
+				<HOLD>100</HOLD>
+				<DERANGEMENT>100</DERANGEMENT>
+				<SHOCK>100</SHOCK>
+				<PHYSICAL_BLOCKADE>100</PHYSICAL_BLOCKADE>
+				<KNOCKBACK>100</KNOCKBACK>
+				<PULL>100</PULL>
+				<DISARM>100</DISARM>
+				<TURN_STONE>100</TURN_STONE>
+				<SLEEP>100</SLEEP>
+				<BOSS>100</BOSS>
+				<AIRBIND>100</AIRBIND>
+				<DEPORT>100</DEPORT>
+				<PARALYZE>100</PARALYZE>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKDOWN>100</KNOCKDOWN>
 			</effect>
 		</for>
 	</skill>
@@ -745,10 +745,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" delay="650" />
+				<speed>600</speed>
+				<delay>650</delay>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -780,10 +781,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" delay="650" />
+				<speed>600</speed>
+				<delay>650</delay>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -815,10 +817,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" delay="650" />
+				<speed>600</speed>
+				<delay>650</delay>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -847,15 +850,15 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13673" />
-				<param criticalChance="5" />
+				<power>13673</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.8" />
 				<mul stat="mAtk" val="0.8" />
 			</effect>
 			<effect name="BlockSkill">
-				<param magicTypes="1" />
+				<magicTypes>1</magicTypes>
 			</effect>
 		</for>
 	</skill>
@@ -884,15 +887,15 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="16034" />
-				<param criticalChance="5" />
+				<power>16034</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.8" />
 				<mul stat="mAtk" val="0.8" />
 			</effect>
 			<effect name="BlockSkill">
-				<param magicTypes="1" />
+				<magicTypes>1</magicTypes>
 			</effect>
 		</for>
 	</skill>
@@ -921,15 +924,15 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="18395" />
-				<param criticalChance="5" />
+				<power>18395</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.8" />
 				<mul stat="mAtk" val="0.8" />
 			</effect>
 			<effect name="BlockSkill">
-				<param magicTypes="1" />
+				<magicTypes>1</magicTypes>
 			</effect>
 		</for>
 	</skill>
@@ -961,10 +964,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9516" />
+				<power>9516</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -996,10 +999,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11162" />
+				<power>11162</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -1031,10 +1034,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="12809" />
+				<power>12809</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -1154,7 +1157,7 @@
 		<flyType>CHARGE</flyType>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="EnemyCharge" />
 		</for>
@@ -1185,7 +1188,7 @@
 		<flyType>CHARGE</flyType>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="EnemyCharge" />
 		</for>
@@ -1216,7 +1219,7 @@
 		<flyType>CHARGE</flyType>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="EnemyCharge" />
 		</for>
@@ -1239,8 +1242,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15303" />
-				<param criticalChance="5" />
+				<power>15303</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1262,8 +1265,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="17947" />
-				<param criticalChance="5" />
+				<power>17947</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1285,8 +1288,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="20592" />
-				<param criticalChance="5" />
+				<power>20592</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1307,8 +1310,8 @@
 		<affectRange>200</affectRange> <!-- Guessed -->
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11557" />
-				<param criticalChance="5" />
+				<power>11557</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1329,8 +1332,8 @@
 		<affectRange>200</affectRange> <!-- Guessed -->
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13553" />
-				<param criticalChance="5" />
+				<power>13553</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1351,8 +1354,8 @@
 		<affectRange>200</affectRange> <!-- Guessed -->
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15549" />
-				<param criticalChance="5" />
+				<power>15549</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1384,20 +1387,22 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11159" />
+				<power>11159</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="250" speed="600" knockDown="true" />
+				<distance>250</distance>
+				<speed>600</speed>
+				<knockDown>true</knockDown>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
-				<param SHOCK="100" />
-				<param KNOCKBACK="100" />
-				<param AIRBIND="100" />
-				<param HOLD="100" />
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<HOLD>100</HOLD>
+				<AIRBIND>100</AIRBIND>
+				<SHOCK>100</SHOCK>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -1429,20 +1434,22 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13102" />
+				<power>13102</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="250" speed="600" knockDown="true" />
+				<distance>250</distance>
+				<speed>600</speed>
+				<knockDown>true</knockDown>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
-				<param SHOCK="100" />
-				<param KNOCKBACK="100" />
-				<param AIRBIND="100" />
-				<param HOLD="100" />
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<HOLD>100</HOLD>
+				<AIRBIND>100</AIRBIND>
+				<SHOCK>100</SHOCK>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -1474,20 +1481,22 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15046" />
+				<power>15046</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="250" speed="600" knockDown="true" />
+				<distance>250</distance>
+				<speed>600</speed>
+				<knockDown>true</knockDown>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
-				<param SHOCK="100" />
-				<param KNOCKBACK="100" />
-				<param AIRBIND="100" />
-				<param HOLD="100" />
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<HOLD>100</HOLD>
+				<AIRBIND>100</AIRBIND>
+				<SHOCK>100</SHOCK>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -1531,8 +1540,10 @@
 				</add>
 			</effect>
 			<effect name="TriggerSkillByKill">
-				<param chance="100" />
-				<param skillId="10285" skillLevel="1" /> <!-- HP Drain -->
+				<!-- HP Drain -->
+				<chance>100</chance>
+				<skillId>10285</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1577,8 +1588,10 @@
 				</add>
 			</effect>
 			<effect name="TriggerSkillByKill">
-				<param chance="100" />
-				<param skillId="10285" skillLevel="1" /> <!-- HP Drain -->
+				<!-- HP Drain -->
+				<chance>100</chance>
+				<skillId>10285</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1623,8 +1636,10 @@
 				</add>
 			</effect>
 			<effect name="TriggerSkillByKill">
-				<param chance="100" />
-				<param skillId="10285" skillLevel="1" /> <!-- HP Drain -->
+				<!-- HP Drain -->
+				<chance>100</chance>
+				<skillId>10285</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1751,14 +1766,15 @@
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="24888" />
-				<param criticalChance="5" />
+				<power>24888</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="500" />
+				<distance>100</distance>
+				<speed>500</speed>
 			</effect>
 			<effect name="TargetCancel">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1789,14 +1805,15 @@
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="26565" />
-				<param criticalChance="5" />
+				<power>26565</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="500" />
+				<distance>100</distance>
+				<speed>500</speed>
 			</effect>
 			<effect name="TargetCancel">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1827,14 +1844,15 @@
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="28242" />
-				<param criticalChance="5" />
+				<power>28242</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="500" />
+				<distance>100</distance>
+				<speed>500</speed>
 			</effect>
 			<effect name="TargetCancel">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1855,9 +1873,9 @@
 		<reuseDelay>10000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="22198" />
-				<param criticalChance="10" />
-				<param pDefMod="0.7" />
+				<power>22198</power>
+				<pDefMod>0.7</pDefMod>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1878,9 +1896,9 @@
 		<reuseDelay>10000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="26075" />
-				<param criticalChance="10" />
-				<param pDefMod="0.7" />
+				<power>26075</power>
+				<pDefMod>0.7</pDefMod>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1901,9 +1919,9 @@
 		<reuseDelay>10000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="29176" />
-				<param criticalChance="10" />
-				<param pDefMod="0.7" />
+				<power>29176</power>
+				<pDefMod>0.7</pDefMod>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1925,8 +1943,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Blink">
-				<param flyType="WARP_BACK" animationSpeed="333" />
-				<param angle="0" range="300" /> <!-- Teleport to Back -->
+				<!-- Teleport to Back -->
+				<flyType>WARP_BACK</flyType>
+				<animationSpeed>333</animationSpeed>
+				<angle>0</angle>
+				<range>300</range>
 			</effect>
 		</for>
 	</skill>
@@ -1956,10 +1977,10 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="282" />
+				<power>282</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
 		</for>
@@ -1990,10 +2011,10 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="296" />
+				<power>296</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
 		</for>
@@ -2024,10 +2045,10 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="313" />
+				<power>313</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
 		</for>
@@ -2048,7 +2069,10 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="14927" npcCount="1" despawnDelay="30000" singleInstance="true" />
+				<npcId>14927</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>30000</despawnDelay>
+				<singleInstance>true</singleInstance>
 			</effect>
 		</for>
 	</skill>
@@ -2068,7 +2092,10 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="14927" npcCount="1" despawnDelay="30000" singleInstance="true" />
+				<npcId>14927</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>30000</despawnDelay>
+				<singleInstance>true</singleInstance>
 			</effect>
 		</for>
 	</skill>
@@ -2088,7 +2115,10 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="14927" npcCount="1" despawnDelay="30000" singleInstance="true" />
+				<npcId>14927</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>30000</despawnDelay>
+				<singleInstance>true</singleInstance>
 			</effect>
 		</for>
 	</skill>
@@ -2186,7 +2216,7 @@
 		<coolTime>500</coolTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="36042" />
+				<power>36042</power>
 			</effect>
 		</for>
 	</skill>
@@ -2206,7 +2236,7 @@
 		<coolTime>500</coolTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="36042" />
+				<power>36042</power>
 			</effect>
 		</for>
 	</skill>
@@ -2226,7 +2256,7 @@
 		<coolTime>500</coolTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="36042" />
+				<power>36042</power>
 			</effect>
 		</for>
 	</skill>
@@ -2247,7 +2277,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11159" />
+				<power>11159</power>
 			</effect>
 		</for>
 	</skill>
@@ -2268,7 +2298,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13102" />
+				<power>13102</power>
 			</effect>
 		</for>
 	</skill>
@@ -2289,7 +2319,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15046" />
+				<power>15046</power>
 			</effect>
 		</for>
 	</skill>
@@ -2311,7 +2341,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealPercent">
-				<param power="40" />
+				<power>40</power>
 			</effect>
 		</for>
 	</skill>
@@ -2334,7 +2364,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
-				<param power="1488" />
+				<power>1488</power>
 			</effect>
 		</for>
 	</skill>

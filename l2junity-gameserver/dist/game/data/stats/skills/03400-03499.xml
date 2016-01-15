@@ -8,7 +8,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<param DERANGEMENT="6" />
+				<DERANGEMENT>6</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -19,7 +19,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DERANGEMENT="9" />
+				<DERANGEMENT>9</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -30,7 +30,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DERANGEMENT="4" />
+				<DERANGEMENT>4</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -41,7 +41,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param DERANGEMENT="6" />
+				<DERANGEMENT>6</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -135,7 +135,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -158,7 +158,7 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -318,7 +318,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="104" />
+				<transformationId>104</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -382,7 +382,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16031" />
+				<npcId>16031</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -399,7 +399,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16032" />
+				<npcId>16032</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -416,7 +416,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16033" />
+				<npcId>16033</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -428,12 +428,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="5" />
-				<param skillId="5547" skillLevel="1" /> <!-- Maximum Ability -->
-				<param targetType="PARTY" />
-				<param allowWeapons="ALL" />
+				<!-- Maximum Ability -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>5</chance>
+				<targetType>PARTY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5547</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -455,12 +460,17 @@
 				<add stat="reflectDam" val="9" /> <!-- Reflect Damage 9% -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="5" />
-				<param skillId="5547" skillLevel="1" /> <!-- Maximum Ability -->
-				<param targetType="PARTY" />
-				<param allowWeapons="ALL" />
+				<!-- Maximum Ability -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>5</chance>
+				<targetType>PARTY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5547</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -504,10 +514,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -679,7 +689,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -1444,10 +1454,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="CpHeal">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1490,7 +1500,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="TRANSFORM,9" />
+				<dispel>TRANSFORM,9</dispel>
 			</effect>
 		</for>
 	</skill>

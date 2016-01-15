@@ -466,10 +466,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="30" />
+				<power>30</power>
 			</effect>
 			<effect name="Heal">
-				<param power="450" />
+				<power>450</power>
 			</effect>
 		</for>
 	</skill>
@@ -495,11 +495,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="60" />
-				<param chance="60" />
-				<param skillId="6726" skillLevel="1" /> <!-- Bless the Blood -->
-				<param targetType="SELF" />
+				<!-- Bless the Blood -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>60</chance>
+				<targetType>SELF</targetType>
+				<minDamage>60</minDamage>
+				<skillId>6726</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -518,7 +522,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="458" />
+				<power>458</power>
 			</effect>
 		</for>
 	</skill>
@@ -542,7 +546,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="80" />
+				<amount>9</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -562,7 +567,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealByLevel">
-				<param power="136" />
+				<power>136</power>
 			</effect>
 		</for>
 	</skill>
@@ -608,7 +613,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="858" />
+				<power>858</power>
 			</effect>
 		</for>
 	</skill>
@@ -723,8 +728,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -745,7 +750,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="800" />
+				<power>800</power>
 			</effect>
 		</for>
 	</skill>
@@ -850,8 +855,8 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="200" />
 				<sub stat="darkRes" val="60" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -970,8 +975,8 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -994,8 +999,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1018,8 +1023,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1055,7 +1060,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1079,8 +1084,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1111,7 +1116,7 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -1134,7 +1139,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1156,7 +1161,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1254,8 +1259,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1277,8 +1282,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="10000" />
-				<param criticalChance="20" />
+				<power>10000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1329,8 +1334,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1352,8 +1357,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1372,7 +1377,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1395,7 +1400,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="150" />
+				<power>150</power>
 			</effect>
 		</for>
 	</skill>
@@ -1441,8 +1446,8 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1496,7 +1501,7 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="800" />
+				<power>800</power>
 			</effect>
 		</for>
 	</skill>
@@ -1518,8 +1523,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1542,8 +1547,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1604,8 +1609,8 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1630,8 +1635,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1671,7 +1676,8 @@
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="6779" skillLevel="1" />
+				<skillId>6779</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -1701,8 +1707,8 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="200" />
 				<mul stat="moveSpeed" val="0.8" />
+				<power>200</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1725,8 +1731,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="15000" />
-				<param criticalChance="20" />
+				<power>15000</power>
+				<criticalChance>20</criticalChance>
 			</effect>
 		</for>
 	</skill>

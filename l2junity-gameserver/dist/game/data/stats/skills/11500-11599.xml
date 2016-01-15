@@ -22,7 +22,7 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="104" />
+				<power>104</power>
 			</effect>
 		</for>
 	</skill>
@@ -62,12 +62,17 @@
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="3" />
-				<param skillId="5559" skillLevel="1" /> <!-- Physical Pose -->
-				<param targetType="SELF" />
-				<param allowWeapons="DUAL,DUALBLUNT" />
+				<!-- Physical Pose -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>DUAL,DUALBLUNT</allowWeapons>
+				<skillId>5559</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -314,7 +319,7 @@
 		<for>
 			<effect name="EnemyCharge" />
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -388,9 +393,21 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
-				<param overHit="true" />
+				<power>
+					<value level="1">14608</value>
+					<value level="2">15192</value>
+					<value level="3">16360</value>
+					<value level="4">17528</value>
+					<value level="5">18696</value>
+					<value level="6">19864</value>
+					<value level="7">21032</value>
+					<value level="8">22200</value>
+					<value level="9">26008</value>
+					<value level="10">27138</value>
+					<value level="11">28268</value>
+				</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
@@ -464,9 +481,21 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
-				<param overHit="true" />
+				<power>
+					<value level="1">14608</value>
+					<value level="2">15776</value>
+					<value level="3">16944</value>
+					<value level="4">18112</value>
+					<value level="5">19280</value>
+					<value level="6">20448</value>
+					<value level="7">21616</value>
+					<value level="8">22784</value>
+					<value level="9">28162</value>
+					<value level="10">29386</value>
+					<value level="11">30610</value>
+				</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.60" />
@@ -533,9 +562,21 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
-				<param overHit="true" />
+				<power>
+					<value level="1">21642</value>
+					<value level="2">22507</value>
+					<value level="3">24237</value>
+					<value level="4">25967</value>
+					<value level="5">27697</value>
+					<value level="6">29427</value>
+					<value level="7">31157</value>
+					<value level="8">32887</value>
+					<value level="9">40673</value>
+					<value level="10">42657</value>
+					<value level="11">44641</value>
+				</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -607,9 +648,21 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
-				<param overHit="true" />
+				<power>
+					<value level="1">10263</value>
+					<value level="2">10616</value>
+					<value level="3">11322</value>
+					<value level="4">12027</value>
+					<value level="5">12733</value>
+					<value level="6">13438</value>
+					<value level="7">14144</value>
+					<value level="8">14849</value>
+					<value level="9">19113</value>
+					<value level="10">20045</value>
+					<value level="11">20977</value>
+				</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
@@ -685,9 +738,21 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
-				<param overHit="true" />
+				<power>
+					<value level="1">11722</value>
+					<value level="2">12525</value>
+					<value level="3">13327</value>
+					<value level="4">14130</value>
+					<value level="5">14933</value>
+					<value level="6">15736</value>
+					<value level="7">16539</value>
+					<value level="8">17342</value>
+					<value level="9">21340</value>
+					<value level="10">22380</value>
+					<value level="11">23420</value>
+				</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.6" />
@@ -747,7 +812,14 @@
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="11516" skillLevel="#skillLevel" />
+				<skillId>11516</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -798,7 +870,23 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">8805</value>
+					<value level="2">9717</value>
+					<value level="3">10630</value>
+					<value level="4">11542</value>
+					<value level="5">12454</value>
+					<value level="6">13366</value>
+					<value level="7">13670</value>
+					<value level="8">13974</value>
+					<value level="9">14278</value>
+					<value level="10">14582</value>
+					<value level="11">14886</value>
+					<value level="12">15190</value>
+					<value level="13">15494</value>
+					<value level="14">15799</value>
+					<value level="15">16103</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -866,10 +954,11 @@
 				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" rate="100" />
+				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" />
+				<slot>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -943,17 +1032,22 @@
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="300" />
-				<param chance="80" />
-				<param skillId="11569" skillLevel="1" /> <!-- Critical Damage Increase -->
-				<param targetType="SELF" />
+				<!-- Critical Damage Increase -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<skillId>11569</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MULTI_BUFF;COUNTER_CRITICAL" rate="100" />
+				<dispel>MULTI_BUFF;COUNTER_CRITICAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MULTI_BUFF;COUNTER_CRITICAL" />
+				<slot>MULTI_BUFF;COUNTER_CRITICAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1020,10 +1114,11 @@
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" rate="100" />
+				<dispel>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" />
+				<slot>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1084,10 +1179,11 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" rate="100" />
+				<dispel>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" />
+				<slot>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1151,10 +1247,11 @@
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP" rate="100" />
+				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP" />
+				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1213,13 +1310,15 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="20" />
+				<amount>9</amount>
+				<chance>20</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1255,10 +1354,11 @@
 				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1295,10 +1395,11 @@
 				<add stat="moveSpeed" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1341,10 +1442,11 @@
 				<mul stat="dReuse" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1415,10 +1517,11 @@
 				<sub stat="cancel" val="40" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1456,13 +1559,15 @@
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</slot>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="30" />
+				<amount>9</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1500,10 +1605,11 @@
 				<mul stat="pReuse" val="0.90" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1531,10 +1637,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="BUFF_SPECIAL_MULTI,-1" />
+				<dispel>BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="80" chance="30" />
+				<amount>80</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1636,7 +1743,19 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="#rate" max="2" />
+				<slot>buff</slot>
+				<rate>
+					<value level="1">35</value>
+					<value level="2">40</value>
+					<value level="3">45</value>
+					<value level="4">50</value>
+					<value level="5">55</value>
+					<value level="6">60</value>
+					<value level="7">60</value>
+					<value level="8">60</value>
+					<value level="9">60</value>
+				</rate>
+				<max>2</max>
 			</effect>
 		</for>
 	</skill>
@@ -1708,15 +1827,19 @@
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<param transformationId="500;501;502;503;504" />
 				<mul stat="moveSpeed" val="#runSpd" />
+				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="1" />
-				<param chance="100" />
-				<param skillId="11556" skillLevel="1" /> <!-- Cancel Transform -->
-				<param targetType="SELF" />
+				<!-- Cancel Transform -->
+				<minDamage>1</minDamage>
+				<skillId>11556</skillId>
+				<skillLevel>1</skillLevel>
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>100</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1768,7 +1891,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1824,11 +1947,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,9" />
+				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1872,13 +1995,13 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<param transformationId="500" />
 				<add stat="pDef" val="#def" />
 				<add stat="mDef" val="#def" />
 				<mul stat="moveSpeed" val="#runSpd" />
+				<transformationId>500</transformationId>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,9" />
+				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1905,12 +2028,12 @@
 		<for>
 			<effect name="Untargetable" />
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<param transformationId="505" />
 				<mul stat="moveSpeed" val="0.5" />
+				<transformationId>505</transformationId>
 			</effect>
 			<effect name="DeleteHate" />
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,9" />
+				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1960,10 +2083,9 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,9" />
+				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<param transformationId="500;501;502;503;504" />
 				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pAtk" val="0.2" />
 				<mul stat="mAtk" val="0.2" />
@@ -1971,6 +2093,7 @@
 				<mul stat="mAtkSpd" val="0.2" />
 				<add stat="pDef" val="#def" />
 				<add stat="mDef" val="#def" />
+				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2062,9 +2185,14 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
-				<param overHit="true" />
+				<power>
+					<value level="1">38826</value>
+					<value level="2">44708</value>
+					<value level="3">46888</value>
+					<value level="4">49068</value>
+				</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.5" />
@@ -2127,12 +2255,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="false" />
-				<param minDamage="100" chance="5" />
-				<param skillId="11550" skillLevel="1" /> <!-- Superior Mana Steal -->
-				<param targetType="SELF" />
-				<param allowWeapons="SWORD,BLUNT,DUAL,DUALBLUNT" />
+				<!-- Superior Mana Steal -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>100</minDamage>
+				<chance>5</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>SWORD,BLUNT,DUAL,DUALBLUNT</allowWeapons>
+				<skillId>11550</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2148,7 +2281,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<for>
 			<effect name="ManaHeal">
-				<param power="30" />
+				<power>30</power>
 			</effect>
 		</for>
 	</skill>
@@ -2165,11 +2298,11 @@
 				<add stat="STR" val="2" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="30" />
-				<param SLEEP="30" />
-				<param BLEED="30" />
-				<param DERANGEMENT="30" />
-				<param POISON="30" />
+				<HOLD>30</HOLD>
+				<BLEED>30</BLEED>
+				<POISON>30</POISON>
+				<SLEEP>30</SLEEP>
+				<DERANGEMENT>30</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -2249,7 +2382,7 @@
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,9" />
+				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2377,7 +2510,7 @@
 		<for>
 			<effect name="Invincible" />
 			<effect name="DispelBySlotMyself">
-				<param dispel="MAGICAL_STANCE" />
+				<dispel>MAGICAL_STANCE</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2434,7 +2567,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -2463,26 +2596,38 @@
 		<for>
 			<effect name="SilentMove" />
 			<effect name="TriggerSkillByMagicType">
-				<param magicTypes="0;1;2;3;4;22" />
-				<param chance="100" />
-				<param skillId="7097" skillLevel="1" /> <!-- Cancel Shadow Move -->
-				<param targetType="PARTY" />
+				<!-- Cancel Shadow Move -->
+				<magicTypes>0;1;2;3;4;22</magicTypes>
+				<skillId>7097</skillId>
+				<skillLevel>1</skillLevel>
+				<chance>100</chance>
+				<targetType>PARTY</targetType>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="100" />
-				<param skillId="7097" skillLevel="1" /> <!-- Cancel Shadow Move -->
-				<param targetType="PARTY" />
-				<param allowWeapons="SWORD,BLUNT" />
+				<!-- Cancel Shadow Move -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>PARTY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>SWORD,BLUNT</allowWeapons>
+				<skillId>7097</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="100" />
-				<param skillId="7097" skillLevel="1" /> <!-- Cancel Shadow Move -->
-				<param targetType="PARTY" />
-				<param allowWeapons="SWORD,BLUNT" />
+				<!-- Cancel Shadow Move -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>PARTY</targetType>
+				<skillId>7097</skillId>
+				<skillLevel>1</skillLevel>
+				<isCritical>false</isCritical>
+				<allowWeapons>SWORD,BLUNT</allowWeapons>
 			</effect>
 		</for>
 	</skill>
@@ -2506,7 +2651,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -2541,7 +2686,12 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="#power" />
+				<power>
+					<value level="1">40</value>
+					<value level="2">50</value>
+					<value level="3">60</value>
+					<value level="4">70</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2574,10 +2724,11 @@
 				<add stat="earthRes" val="30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="ARMOR_FIRE;ARMOR_WATER;ARMOR_WIND;ARMOR_EARTH;MD_UP_ATTR;DANCE_OF_AQUA_GUARD;DANCE_OF_EARTH_GUARD;SONG_OF_ELEMENTAL;SONG_OF_FLAME_GUARD;SONG_OF_STORM_GUARD;SONG_OF_WIND" rate="100" />
+				<dispel>ARMOR_FIRE;ARMOR_WATER;ARMOR_WIND;ARMOR_EARTH;MD_UP_ATTR;DANCE_OF_AQUA_GUARD;DANCE_OF_EARTH_GUARD;SONG_OF_ELEMENTAL;SONG_OF_FLAME_GUARD;SONG_OF_STORM_GUARD;SONG_OF_WIND</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="ARMOR_FIRE;ARMOR_WATER;ARMOR_WIND;ARMOR_EARTH;MD_UP_ATTR;DANCE_OF_AQUA_GUARD;DANCE_OF_EARTH_GUARD;SONG_OF_ELEMENTAL;SONG_OF_FLAME_GUARD;SONG_OF_STORM_GUARD;SONG_OF_WIND" />
+				<slot>ARMOR_FIRE;ARMOR_WATER;ARMOR_WIND;ARMOR_EARTH;MD_UP_ATTR;DANCE_OF_AQUA_GUARD;DANCE_OF_EARTH_GUARD;SONG_OF_ELEMENTAL;SONG_OF_FLAME_GUARD;SONG_OF_STORM_GUARD;SONG_OF_WIND</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2608,14 +2759,15 @@
 				<add stat="darkRes" val="30" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param BLEED="50" />
-				<param POISON="50" />
+				<BLEED>50</BLEED>
+				<POISON>50</POISON>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING" rate="100" />
+				<dispel>DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING" />
+				<slot>DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2645,15 +2797,16 @@
 				<add stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="50" />
-				<param SLEEP="50" />
-				<param DERANGEMENT="50" />
+				<HOLD>50</HOLD>
+				<DERANGEMENT>50</DERANGEMENT>
+				<SLEEP>50</SLEEP>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL" rate="100" />
+				<dispel>DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL" />
+				<slot>DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2701,7 +2854,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealPercent">
-				<param power="30" />
+				<power>30</power>
 			</effect>
 		</for>
 	</skill>
@@ -2724,7 +2877,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="CpHeal">
-				<param power="1000" />
+				<power>1000</power>
 			</effect>
 		</for>
 	</skill>
@@ -2771,8 +2924,8 @@
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation">
-				<param transformationId="500;501;502;503;504" />
 				<mul stat="moveSpeed" val="0.80" />
+				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2939,7 +3092,12 @@
 				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="CpHealPercent">
-				<param power="#cpHealPercent" />
+				<power>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3035,10 +3193,11 @@
 				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" rate="100" />
+				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" />
+				<slot>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3104,18 +3263,23 @@
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="300" />
-				<param chance="25" />
-				<param skillId="11569" skillLevel="1" /> <!-- Critical Damage Increase -->
-				<param targetType="SELF" />
-				<param allowWeapons="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
+				<!-- Critical Damage Increase -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>25</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<allowWeapons>SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT</allowWeapons>
+				<skillId>11569</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MULTI_BUFF;COUNTER_CRITICAL" rate="100" />
+				<dispel>MULTI_BUFF;COUNTER_CRITICAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MULTI_BUFF;COUNTER_CRITICAL" />
+				<slot>MULTI_BUFF;COUNTER_CRITICAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3174,10 +3338,11 @@
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" rate="100" />
+				<dispel>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" />
+				<slot>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3231,10 +3396,11 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" rate="100" />
+				<dispel>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" />
+				<slot>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3291,10 +3457,11 @@
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP" rate="100" />
+				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP" />
+				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3345,13 +3512,15 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="20" />
+				<amount>9</amount>
+				<chance>20</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3383,10 +3552,11 @@
 				<mul stat="sDef" val="1.50" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3420,10 +3590,11 @@
 				<add stat="moveSpeed" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3462,10 +3633,11 @@
 				<mul stat="dReuse" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
+				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
+				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -3499,7 +3671,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">326</value>
+					<value level="2">343</value>
+					<value level="3">359</value>
+					<value level="4">375</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3514,12 +3691,17 @@
 		<mpConsume>1</mpConsume>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="#mdot" />
 				<mul stat="pAtk" val="#attackDefense" />
 				<mul stat="pDef" val="#attackDefense" />
 				<mul stat="mAtk" val="#attackDefense" />
 				<mul stat="mDef" val="#attackDefense" />
 				<mul stat="physicalSkillPower" val="1.05" />
+				<power>
+					<value level="1">4</value>
+					<value level="2">4</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</power>
 			</effect>
 		</for>
 	</skill>

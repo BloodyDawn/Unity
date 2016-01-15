@@ -331,7 +331,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="435" />
+				<power>435</power>
 			</effect>
 		</for>
 	</skill>
@@ -353,7 +353,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="3">
-				<param power="50" />
+				<power>50</power>
 			</effect>
 		</for>
 	</skill>
@@ -375,7 +375,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="3">
-				<param power="24" />
+				<power>24</power>
 			</effect>
 		</for>
 	</skill>
@@ -404,7 +404,14 @@
 		</cond>
 		<for>
 			<effect name="CpHeal">
-				<param power="#amount" />
+				<power>
+					<value level="1">0</value>
+					<value level="2">350</value>
+					<value level="3">600</value>
+					<value level="4">800</value>
+					<value level="5">1000</value>
+					<value level="6">1200</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -433,7 +440,14 @@
 		</cond>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">0</value>
+					<value level="2">650</value>
+					<value level="3">1100</value>
+					<value level="4">1500</value>
+					<value level="5">1900</value>
+					<value level="6">2300</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -448,7 +462,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHeal">
-				<param power="50" />
+				<power>50</power>
 			</effect>
 		</for>
 	</skill>
@@ -465,7 +479,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaHeal">
-				<param power="60" />
+				<power>60</power>
 			</effect>
 		</for>
 	</skill>
@@ -681,7 +695,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="80" />
+				<amount>9</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -705,7 +720,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MaxHp">
-				<param amount="35" mode="PER" />
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -898,7 +914,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CrystalGradeModify">
-				<param grade="#bonus" />
+				<grade>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</grade>
 			</effect>
 		</for>
 	</skill>
@@ -1108,7 +1130,14 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="#itemId" itemCount="10000" />
+				<itemId>
+					<value level="1">22067</value>
+					<value level="2">22068</value>
+					<value level="3">22069</value>
+					<value level="4">22070</value>
+					<value level="5">22071</value>
+				</itemId>
+				<itemCount>10000</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1131,7 +1160,30 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="#itemId" itemCount="#itemCount" />
+				<itemId>
+					<value level="1">22072</value>
+					<value level="2">22073</value>
+					<value level="3">22074</value>
+					<value level="4">22075</value>
+					<value level="5">22076</value>
+					<value level="6">22072</value>
+					<value level="7">22073</value>
+					<value level="8">22074</value>
+					<value level="9">22075</value>
+					<value level="10">22076</value>
+				</itemId>
+				<itemCount>
+					<value level="1">5000</value>
+					<value level="2">5000</value>
+					<value level="3">5000</value>
+					<value level="4">5000</value>
+					<value level="5">5000</value>
+					<value level="6">10000</value>
+					<value level="7">10000</value>
+					<value level="8">10000</value>
+					<value level="9">10000</value>
+					<value level="10">10000</value>
+				</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1154,7 +1206,30 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="#itemId" itemCount="#itemCount" />
+				<itemId>
+					<value level="1">22077</value>
+					<value level="2">22078</value>
+					<value level="3">22079</value>
+					<value level="4">22080</value>
+					<value level="5">22081</value>
+					<value level="6">22077</value>
+					<value level="7">22078</value>
+					<value level="8">22079</value>
+					<value level="9">22080</value>
+					<value level="10">22081</value>
+				</itemId>
+				<itemCount>
+					<value level="1">5000</value>
+					<value level="2">5000</value>
+					<value level="3">5000</value>
+					<value level="4">5000</value>
+					<value level="5">5000</value>
+					<value level="6">10000</value>
+					<value level="7">10000</value>
+					<value level="8">10000</value>
+					<value level="9">10000</value>
+					<value level="10">10000</value>
+				</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1177,7 +1252,30 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="#itemId" itemCount="#itemCount" />
+				<itemId>
+					<value level="1">22082</value>
+					<value level="2">22083</value>
+					<value level="3">22084</value>
+					<value level="4">22085</value>
+					<value level="5">22086</value>
+					<value level="6">22082</value>
+					<value level="7">22083</value>
+					<value level="8">22084</value>
+					<value level="9">22085</value>
+					<value level="10">22086</value>
+				</itemId>
+				<itemCount>
+					<value level="1">5000</value>
+					<value level="2">5000</value>
+					<value level="3">5000</value>
+					<value level="4">5000</value>
+					<value level="5">5000</value>
+					<value level="6">10000</value>
+					<value level="7">10000</value>
+					<value level="8">10000</value>
+					<value level="9">10000</value>
+					<value level="10">10000</value>
+				</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1199,7 +1297,26 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="#itemId" itemCount="1" />
+				<itemId>
+					<value level="1">22156</value>
+					<value level="2">22157</value>
+					<value level="3">22158</value>
+					<value level="4">22159</value>
+					<value level="5">22160</value>
+					<value level="6">22161</value>
+					<value level="7">22162</value>
+					<value level="8">22163</value>
+					<value level="9">22164</value>
+					<value level="10">22165</value>
+					<value level="11">22166</value>
+					<value level="12">22167</value>
+					<value level="13">22168</value>
+					<value level="14">22169</value>
+					<value level="15">22170</value>
+					<value level="16">22171</value>
+					<value level="17">22172</value>
+				</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1221,7 +1338,12 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="#itemId" itemCount="1" />
+				<itemId>
+					<value level="1">7583</value>
+					<value level="2">7584</value>
+					<value level="3">7585</value>
+				</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1243,7 +1365,14 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="#itemId" itemCount="10000" />
+				<itemId>
+					<value level="1">22144</value>
+					<value level="2">22145</value>
+					<value level="3">22146</value>
+					<value level="4">22147</value>
+					<value level="5">22148</value>
+				</itemId>
+				<itemCount>10000</itemCount>
 			</effect>
 		</for>
 	</skill>

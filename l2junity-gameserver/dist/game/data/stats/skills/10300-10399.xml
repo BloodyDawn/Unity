@@ -41,15 +41,29 @@
 		</cond>
 		<pveEffects>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">52746</value>
+					<value level="2">59601</value>
+					<value level="3">65085</value>
+					<value level="4">69414</value>
+					<value level="5">73352</value>
+					<value level="6">77290</value>
+				</power>
 			</effect>
 			<effect name="Lethal">
-				<param fullLethal="100" />
+				<fullLethal>100</fullLethal>
 			</effect>
 		</pveEffects>
 		<pvpEffects>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">52746</value>
+					<value level="2">59601</value>
+					<value level="3">65085</value>
+					<value level="4">69414</value>
+					<value level="5">73352</value>
+					<value level="6">77290</value>
+				</power>
 			</effect>
 		</pvpEffects>
 	</skill>
@@ -60,7 +74,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="FocusEnergy">
-				<param amount="5" />
+				<amount>5</amount>
 			</effect>
 		</for>
 	</skill>
@@ -155,7 +169,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DefenceTrait">
-				<param POLE="#trait_pole" />
+				<POLE>
+					<value level="1">-10</value>
+					<value level="2">-12</value>
+					<value level="3">-15</value>
+					<value level="4">-20</value>
+				</POLE>
 			</effect>
 		</for>
 	</skill>
@@ -457,9 +476,14 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
+				<power>
+					<value level="1">26003</value>
+					<value level="2">30494</value>
+					<value level="3">35883</value>
+					<value level="4">37680</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -507,9 +531,17 @@
 		</cond>
 		<for>
 			<effect name="EnergyAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>
+					<value level="1">17438</value>
+					<value level="2">20033</value>
+					<value level="3">22717</value>
+					<value level="4">25700</value>
+					<value level="5">27419</value>
+					<value level="6">28665</value>
+					<value level="7">29911</value>
+				</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -564,7 +596,13 @@
 		</cond>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="10319" skillLevel="#triggerLvl" /> <!-- Duelist's Fury -->
+				<!-- Duelist's Fury -->
+				<skillId>10319</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</skillLevel>
 			</effect>
 		</selfEffects>
 		<for>
@@ -615,10 +653,18 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>
+					<value level="1">22536</value>
+					<value level="2">26428</value>
+					<value level="3">29542</value>
+					<value level="4">32656</value>
+					<value level="5">35788</value>
+					<value level="6">37424</value>
+					<value level="7">39060</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel" />
@@ -696,7 +742,10 @@
 		<reuseDelay>120000</reuseDelay>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="2" /> <!-- TODO rate -->
+				<!-- TODO rate -->
+				<slot>buff</slot>
+				<rate>25</rate>
+				<max>2</max>
 			</effect>
 		</for>
 	</skill>
@@ -835,9 +884,9 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param pDefMod="0.7" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<pDefMod>0.7</pDefMod>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -891,20 +940,30 @@
 				<add stat="pAtkRange" val="80" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="10" />
-				<param skillId="10339" skillLevel="1" /> <!-- Winged Spear - Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="POLE" />
+				<!-- Winged Spear - Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>POLE</allowWeapons>
+				<skillId>10339</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="10" />
-				<param skillId="10339" skillLevel="1" /> <!-- Winged Spear - Stun -->
-				<param targetType="ONE" />
-				<param allowWeapons="POLE" />
+				<!-- Winged Spear - Stun -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>ONE</targetType>
+				<skillId>10339</skillId>
+				<skillLevel>1</skillLevel>
+				<allowWeapons>POLE</allowWeapons>
+				<isCritical>true</isCritical>
 			</effect>
 		</for>
 	</skill>
@@ -962,20 +1021,30 @@
 				</mul>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="10" />
-				<param skillId="10338" skillLevel="1" /> <!-- Punch Drunk -->
-				<param targetType="ONE" />
-				<param allowWeapons="DUALFIST" />
+				<!-- Punch Drunk -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>DUALFIST</allowWeapons>
+				<skillId>10338</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param isCritical="true" />
-				<param minDamage="1" chance="10" />
-				<param skillId="10338" skillLevel="1" /> <!-- Punch Drunk -->
-				<param targetType="ONE" />
-				<param allowWeapons="DUALFIST" />
+				<!-- Punch Drunk -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>ONE</targetType>
+				<skillId>10338</skillId>
+				<skillLevel>1</skillLevel>
+				<allowWeapons>DUALFIST</allowWeapons>
+				<isCritical>true</isCritical>
 			</effect>
 		</for>
 	</skill>
@@ -1012,7 +1081,7 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DefenceTrait">
-				<param FIST="-30" />
+				<FIST>-30</FIST>
 			</effect>
 		</for>
 	</skill>

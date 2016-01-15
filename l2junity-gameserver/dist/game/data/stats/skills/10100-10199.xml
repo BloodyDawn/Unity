@@ -154,11 +154,20 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">33505</value>
+					<value level="2">34353</value>
+					<value level="3">35201</value>
+					<value level="4">36897</value>
+					<value level="5">38593</value>
+					<value level="6">40289</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="KnockBack">
-				<param speed="700" distance="50" knockDown="true" />
+				<speed>700</speed>
+				<distance>50</distance>
+				<knockDown>true</knockDown>
 			</effect>
 		</for>
 	</skill>
@@ -204,7 +213,14 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18151</value>
+					<value level="2">18641</value>
+					<value level="3">19131</value>
+					<value level="4">20111</value>
+					<value level="5">21091</value>
+					<value level="6">22071</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="100" />
@@ -223,7 +239,9 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="10108" skillLevel="1" /> <!-- Paladin's Aura -->
+				<!-- Paladin's Aura -->
+				<skillId>10108</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.25" />
@@ -244,7 +262,9 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="10109" skillLevel="1" /> <!-- Avenger's Aura -->
+				<!-- Avenger's Aura -->
+				<skillId>10109</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.25" />
@@ -267,7 +287,9 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="10110" skillLevel="1" /> <!-- Sentinel's Aura -->
+				<!-- Sentinel's Aura -->
+				<skillId>10110</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.25" />
@@ -291,7 +313,9 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="15">
-				<param skillId="10111" skillLevel="1" /> <!-- Templar's Aura -->
+				<!-- Templar's Aura -->
+				<skillId>10111</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />

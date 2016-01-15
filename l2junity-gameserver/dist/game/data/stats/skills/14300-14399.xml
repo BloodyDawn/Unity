@@ -550,7 +550,7 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="BlockSkill">
-				<param magicTypes="0" />
+				<magicTypes>0</magicTypes>
 			</effect>
 		</for>
 	</skill>
@@ -1036,16 +1036,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Bluff">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 			<effect name="TargetCancel">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 			<effect name="DeleteHateOfMe">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>

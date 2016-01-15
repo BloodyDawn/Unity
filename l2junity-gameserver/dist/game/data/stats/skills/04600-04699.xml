@@ -63,7 +63,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="16" />
+				<power>16</power>
 			</effect>
 			<effect name="BlockActions">
 				<mul stat="pDef" val="#pDef" />
@@ -174,7 +174,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -318,7 +331,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">9</value>
+					<value level="2">13</value>
+					<value level="3">19</value>
+					<value level="4">26</value>
+					<value level="5">34</value>
+					<value level="6">43</value>
+					<value level="7">51</value>
+					<value level="8">55</value>
+					<value level="9">58</value>
+					<value level="10">61</value>
+					<value level="11">63</value>
+					<value level="12">65</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -392,7 +418,20 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">46</value>
+					<value level="2">106</value>
+					<value level="3">219</value>
+					<value level="4">417</value>
+					<value level="5">722</value>
+					<value level="6">1136</value>
+					<value level="7">1626</value>
+					<value level="8">1876</value>
+					<value level="9">2112</value>
+					<value level="10">2320</value>
+					<value level="11">2487</value>
+					<value level="12">2617</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="fireRes" val="#fireRes" />
@@ -466,10 +505,36 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">46</value>
+					<value level="2">106</value>
+					<value level="3">219</value>
+					<value level="4">417</value>
+					<value level="5">722</value>
+					<value level="6">1136</value>
+					<value level="7">1626</value>
+					<value level="8">1876</value>
+					<value level="9">2112</value>
+					<value level="10">2320</value>
+					<value level="11">2487</value>
+					<value level="12">2617</value>
+				</power>
 			</effect>
 			<effect name="DamOverTime" ticks="3">
-				<param power="#dot" />
+				<power>
+					<value level="1">16</value>
+					<value level="2">24</value>
+					<value level="3">32</value>
+					<value level="4">41</value>
+					<value level="5">50</value>
+					<value level="6">58</value>
+					<value level="7">63</value>
+					<value level="8">63</value>
+					<value level="9">66</value>
+					<value level="10">66</value>
+					<value level="11">68</value>
+					<value level="12">68</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -488,7 +553,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="187" />
+				<power>187</power>
 			</effect>
 		</for>
 	</skill>
@@ -570,7 +635,13 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="#absorbDam" chance="80" />
+				<amount>
+					<value level="1">6</value>
+					<value level="2">7</value>
+					<value level="3">8</value>
+					<value level="4">9</value>
+				</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -687,7 +758,20 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">46</value>
+					<value level="2">105</value>
+					<value level="3">216</value>
+					<value level="4">417</value>
+					<value level="5">722</value>
+					<value level="6">1136</value>
+					<value level="7">1626</value>
+					<value level="8">1876</value>
+					<value level="9">2112</value>
+					<value level="10">2320</value>
+					<value level="11">2487</value>
+					<value level="12">2617</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -732,7 +816,20 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">83</value>
+					<value level="2">151</value>
+					<value level="3">245</value>
+					<value level="4">362</value>
+					<value level="5">494</value>
+					<value level="6">627</value>
+					<value level="7">743</value>
+					<value level="8">789</value>
+					<value level="9">823</value>
+					<value level="10">845</value>
+					<value level="11">853</value>
+					<value level="12">853</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -777,7 +874,20 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">52</value>
+					<value level="2">78</value>
+					<value level="3">112</value>
+					<value level="4">155</value>
+					<value level="5">203</value>
+					<value level="6">255</value>
+					<value level="7">305</value>
+					<value level="8">328</value>
+					<value level="9">348</value>
+					<value level="10">364</value>
+					<value level="11">377</value>
+					<value level="12">387</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -847,7 +957,20 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="3">
-				<param power="#dmg" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">25</value>
+					<value level="3">34</value>
+					<value level="4">44</value>
+					<value level="5">54</value>
+					<value level="6">62</value>
+					<value level="7">67</value>
+					<value level="8">67</value>
+					<value level="9">70</value>
+					<value level="10">70</value>
+					<value level="11">71</value>
+					<value level="12">71</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -888,7 +1011,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="TURN_STONE,2" />
+				<dispel>TURN_STONE,2</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -907,7 +1030,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TargetCancel">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -926,7 +1049,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="SLEEP,1" />
+				<dispel>SLEEP,1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1028,8 +1151,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="80" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>80</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -1078,8 +1214,21 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="80" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>80</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -1128,8 +1277,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="80" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>80</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -1401,8 +1563,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -1450,7 +1625,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1941,7 +2129,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">137</value>
+					<value level="2">314</value>
+					<value level="3">656</value>
+					<value level="4">1249</value>
+					<value level="5">2164</value>
+					<value level="6">3408</value>
+					<value level="7">4878</value>
+					<value level="8">5627</value>
+					<value level="9">6335</value>
+					<value level="10">6960</value>
+					<value level="11">7461</value>
+					<value level="12">7850</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2030,7 +2231,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">46</value>
+					<value level="2">105</value>
+					<value level="3">219</value>
+					<value level="4">417</value>
+					<value level="5">722</value>
+					<value level="6">1136</value>
+					<value level="7">1626</value>
+					<value level="8">1876</value>
+					<value level="9">2112</value>
+					<value level="10">2320</value>
+					<value level="11">2487</value>
+					<value level="12">2617</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="#runSpd" />
@@ -2251,7 +2465,20 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="3">
-				<param power="#dot" />
+				<power>
+					<value level="1">16</value>
+					<value level="2">24</value>
+					<value level="3">32</value>
+					<value level="4">41</value>
+					<value level="5">50</value>
+					<value level="6">58</value>
+					<value level="7">63</value>
+					<value level="8">63</value>
+					<value level="9">66</value>
+					<value level="10">66</value>
+					<value level="11">68</value>
+					<value level="12">68</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2269,7 +2496,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="ROOT_MAGICALLY,1" />
+				<dispel>ROOT_MAGICALLY,1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2300,7 +2527,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="#dispelAbnormals" />
+				<dispel>
+					<value level="1">SPEED_DOWN,1</value>
+					<value level="2">SPEED_DOWN,2</value>
+					<value level="3">SPEED_DOWN,3</value>
+				</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2318,7 +2549,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="SILENCE,1" />
+				<dispel>SILENCE,1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -2363,7 +2594,20 @@
 		<targetType>CORPSE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">131</value>
+					<value level="2">201</value>
+					<value level="3">271</value>
+					<value level="4">351</value>
+					<value level="5">451</value>
+					<value level="6">551</value>
+					<value level="7">651</value>
+					<value level="8">691</value>
+					<value level="9">731</value>
+					<value level="10">751</value>
+					<value level="11">771</value>
+					<value level="12">781</value>
+				</power>
 			</effect>
 			<effect name="ConsumeBody" />
 		</for>
@@ -2412,7 +2656,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DeathLink">
-				<param power="#power" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2460,7 +2717,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DeathLink">
-				<param power="#power" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2508,7 +2778,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DeathLink">
-				<param power="#power" />
+				<power>
+					<value level="1">9</value>
+					<value level="2">13</value>
+					<value level="3">19</value>
+					<value level="4">26</value>
+					<value level="5">34</value>
+					<value level="6">43</value>
+					<value level="7">51</value>
+					<value level="8">55</value>
+					<value level="9">58</value>
+					<value level="10">61</value>
+					<value level="11">63</value>
+					<value level="12">65</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2578,8 +2861,21 @@
 		<trait>HOLD</trait>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 			<effect name="Root" />
 		</for>
@@ -2650,8 +2946,21 @@
 		<trait>HOLD</trait>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 			<effect name="Root" />
 		</for>
@@ -2722,8 +3031,21 @@
 		<trait>HOLD</trait>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">9</value>
+					<value level="2">13</value>
+					<value level="3">19</value>
+					<value level="4">26</value>
+					<value level="5">34</value>
+					<value level="6">43</value>
+					<value level="7">51</value>
+					<value level="8">55</value>
+					<value level="9">58</value>
+					<value level="10">61</value>
+					<value level="11">63</value>
+					<value level="12">65</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 			<effect name="Root" />
 		</for>
@@ -2795,8 +3117,21 @@
 		<trait>SLEEP</trait>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2868,8 +3203,21 @@
 		<trait>SLEEP</trait>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2941,8 +3289,21 @@
 		<trait>SLEEP</trait>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">9</value>
+					<value level="2">13</value>
+					<value level="3">19</value>
+					<value level="4">26</value>
+					<value level="5">34</value>
+					<value level="6">43</value>
+					<value level="7">51</value>
+					<value level="8">55</value>
+					<value level="9">58</value>
+					<value level="10">61</value>
+					<value level="11">63</value>
+					<value level="12">65</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2959,7 +3320,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TargetMeProbability">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3021,8 +3382,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="100" />
+				<power>
+					<value level="1">12</value>
+					<value level="2">18</value>
+					<value level="3">25</value>
+					<value level="4">35</value>
+					<value level="5">46</value>
+					<value level="6">57</value>
+					<value level="7">68</value>
+					<value level="8">73</value>
+					<value level="9">78</value>
+					<value level="10">81</value>
+					<value level="11">84</value>
+					<value level="12">86</value>
+				</power>
+				<percentage>100</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -3084,8 +3458,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="100" />
+				<power>
+					<value level="1">12</value>
+					<value level="2">18</value>
+					<value level="3">25</value>
+					<value level="4">35</value>
+					<value level="5">46</value>
+					<value level="6">57</value>
+					<value level="7">68</value>
+					<value level="8">73</value>
+					<value level="9">78</value>
+					<value level="10">81</value>
+					<value level="11">84</value>
+					<value level="12">86</value>
+				</power>
+				<percentage>100</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -3147,8 +3534,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="100" />
+				<power>
+					<value level="1">6</value>
+					<value level="2">9</value>
+					<value level="3">13</value>
+					<value level="4">18</value>
+					<value level="5">23</value>
+					<value level="6">29</value>
+					<value level="7">34</value>
+					<value level="8">37</value>
+					<value level="9">39</value>
+					<value level="10">41</value>
+					<value level="11">42</value>
+					<value level="12">43</value>
+				</power>
+				<percentage>100</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -3210,8 +3610,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="100" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>100</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -3273,8 +3686,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="100" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">26</value>
+					<value level="3">38</value>
+					<value level="4">52</value>
+					<value level="5">68</value>
+					<value level="6">85</value>
+					<value level="7">102</value>
+					<value level="8">110</value>
+					<value level="9">116</value>
+					<value level="10">122</value>
+					<value level="11">126</value>
+					<value level="12">129</value>
+				</power>
+				<percentage>100</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -3336,8 +3762,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="100" />
+				<power>
+					<value level="1">9</value>
+					<value level="2">13</value>
+					<value level="3">19</value>
+					<value level="4">26</value>
+					<value level="5">34</value>
+					<value level="6">43</value>
+					<value level="7">51</value>
+					<value level="8">55</value>
+					<value level="9">58</value>
+					<value level="10">61</value>
+					<value level="11">63</value>
+					<value level="12">65</value>
+				</power>
+				<percentage>100</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -3461,7 +3900,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_UP;BERSERKER;MA_UP;ATTACK_TIME_DOWN;DANCE_OF_FURY;SONG_OF_HUNTER" rate="#power" />
+				<dispel>PA_UP;BERSERKER;MA_UP;ATTACK_TIME_DOWN;DANCE_OF_FURY;SONG_OF_HUNTER</dispel>
+				<rate>
+					<value level="1">8</value>
+					<value level="2">17</value>
+					<value level="3">25</value>
+					<value level="4">33</value>
+					<value level="5">42</value>
+					<value level="6">50</value>
+					<value level="7">58</value>
+					<value level="8">67</value>
+					<value level="9">75</value>
+					<value level="10">83</value>
+					<value level="11">92</value>
+					<value level="12">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -3507,7 +3960,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PD_UP;MAX_HP_UP;SPEED_UP;CASTING_TIME_DOWN;SONG_OF_EARTH;DANCE_OF_FIRE" rate="#power" />
+				<dispel>PD_UP;MAX_HP_UP;SPEED_UP;CASTING_TIME_DOWN;SONG_OF_EARTH;DANCE_OF_FIRE</dispel>
+				<rate>
+					<value level="1">8</value>
+					<value level="2">17</value>
+					<value level="3">25</value>
+					<value level="4">33</value>
+					<value level="5">42</value>
+					<value level="6">50</value>
+					<value level="7">58</value>
+					<value level="8">67</value>
+					<value level="9">75</value>
+					<value level="10">83</value>
+					<value level="11">92</value>
+					<value level="12">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -3553,7 +4020,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="HIT_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;ATTACK_TIME_DOWN" rate="#power" />
+				<dispel>HIT_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;ATTACK_TIME_DOWN</dispel>
+				<rate>
+					<value level="1">8</value>
+					<value level="2">17</value>
+					<value level="3">25</value>
+					<value level="4">33</value>
+					<value level="5">42</value>
+					<value level="6">50</value>
+					<value level="7">58</value>
+					<value level="8">67</value>
+					<value level="9">75</value>
+					<value level="10">83</value>
+					<value level="11">92</value>
+					<value level="12">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -3599,7 +4080,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MA_UP;BERSERKER;CASTING_TIME_DOWN;MAX_MP_UP" rate="#power" />
+				<dispel>MA_UP;BERSERKER;CASTING_TIME_DOWN;MAX_MP_UP</dispel>
+				<rate>
+					<value level="1">8</value>
+					<value level="2">17</value>
+					<value level="3">25</value>
+					<value level="4">33</value>
+					<value level="5">42</value>
+					<value level="6">50</value>
+					<value level="7">58</value>
+					<value level="8">67</value>
+					<value level="9">75</value>
+					<value level="10">83</value>
+					<value level="11">92</value>
+					<value level="12">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -3645,7 +4140,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MAX_HP_UP;SHIELD_PROB_UP;VAMPIRIC_ATTACK;MD_UP" rate="#power" />
+				<dispel>MAX_HP_UP;SHIELD_PROB_UP;VAMPIRIC_ATTACK;MD_UP</dispel>
+				<rate>
+					<value level="1">8</value>
+					<value level="2">17</value>
+					<value level="3">25</value>
+					<value level="4">33</value>
+					<value level="5">42</value>
+					<value level="6">50</value>
+					<value level="7">58</value>
+					<value level="8">67</value>
+					<value level="9">75</value>
+					<value level="10">83</value>
+					<value level="11">92</value>
+					<value level="12">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -3691,7 +4200,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="RESIST_DERANGEMENT;MAX_HP_UP;CANCEL_PROB_DOWN;SPEED_UP" rate="#power" />
+				<dispel>RESIST_DERANGEMENT;MAX_HP_UP;CANCEL_PROB_DOWN;SPEED_UP</dispel>
+				<rate>
+					<value level="1">8</value>
+					<value level="2">17</value>
+					<value level="3">25</value>
+					<value level="4">33</value>
+					<value level="5">42</value>
+					<value level="6">50</value>
+					<value level="7">58</value>
+					<value level="8">67</value>
+					<value level="9">75</value>
+					<value level="10">83</value>
+					<value level="11">92</value>
+					<value level="12">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -3706,8 +4229,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param VALAKAS="-8" />
 				<set stat="debuffImmunity" val="1" />
+				<VALAKAS>-8</VALAKAS>
 			</effect>
 		</for>
 	</skill>
@@ -3754,8 +4277,8 @@
 		<trait>VALAKAS</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="30416" />
-				<param criticalChance="10" />
+				<power>30416</power>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -3781,8 +4304,8 @@
 		<trait>VALAKAS</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="30416" />
-				<param criticalChance="10" />
+				<power>30416</power>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -3816,10 +4339,10 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="648" />
+				<power>648</power>
 			</effect>
 			<effect name="DamOverTime" ticks="3">
-				<param power="216" />
+				<power>216</power>
 			</effect>
 		</for>
 	</skill>
@@ -3853,10 +4376,10 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="648" />
+				<power>648</power>
 			</effect>
 			<effect name="DamOverTime" ticks="3">
-				<param power="216" />
+				<power>216</power>
 			</effect>
 		</for>
 	</skill>
@@ -3879,8 +4402,8 @@
 		<targetType>BEHIND_AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="48391" />
-				<param criticalChance="10" />
+				<power>48391</power>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -3902,7 +4425,7 @@
 		<targetType>BEHIND_AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="157" />
+				<power>157</power>
 			</effect>
 		</for>
 	</skill>
@@ -3948,8 +4471,8 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="27849" />
-				<param criticalChance="10" />
+				<power>27849</power>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="ThrowUp" />
 			<effect name="BlockActions" />
@@ -4021,7 +4544,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="1084" />
+				<power>1084</power>
 			</effect>
 		</for>
 	</skill>
@@ -4084,7 +4607,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="BIG_BODY,1" />
+				<dispel>BIG_BODY,1</dispel>
 			</effect>
 		</for>
 	</skill>

@@ -655,7 +655,7 @@
 		<coolTime>500</coolTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4800" />
+				<power>4800</power>
 			</effect>
 		</for>
 	</skill>
@@ -674,7 +674,7 @@
 		<coolTime>500</coolTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6000" />
+				<power>6000</power>
 			</effect>
 		</for>
 	</skill>
@@ -693,7 +693,7 @@
 		<coolTime>500</coolTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="7300" />
+				<power>7300</power>
 			</effect>
 		</for>
 	</skill>
@@ -742,7 +742,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="39" />
+				<power>39</power>
 			</effect>
 		</for>
 	</skill>
@@ -767,7 +767,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="44" />
+				<power>44</power>
 			</effect>
 		</for>
 	</skill>
@@ -792,7 +792,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="48" />
+				<power>48</power>
 			</effect>
 		</for>
 	</skill>
@@ -816,7 +816,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
-				<param power="1488" />
+				<power>1488</power>
 			</effect>
 		</for>
 	</skill>
@@ -840,7 +840,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
-				<param power="1519" />
+				<power>1519</power>
 			</effect>
 		</for>
 	</skill>
@@ -864,7 +864,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
-				<param power="1557" />
+				<power>1557</power>
 			</effect>
 		</for>
 	</skill>
@@ -890,20 +890,25 @@
 				<mul stat="mDef" val="1.2" />
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="30" />
+				<amount>9</amount>
+				<chance>30</chance>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;CASTING_TIME_DOWN,-1" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;CASTING_TIME_DOWN,-1</dispel>
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="1" />
-				<param chance="10" />
-				<param skillId="5567" skillLevel="1" /> <!-- Flame Armor -->
-				<param targetType="ONE" />
+				<!-- Flame Armor -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>10</chance>
+				<targetType>ONE</targetType>
+				<skillId>5567</skillId>
+				<skillLevel>1</skillLevel>
+				<minDamage>1</minDamage>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;CASTING_TIME_DOWN" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;CASTING_TIME_DOWN</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1129,7 +1134,7 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2416" />
+				<power>2416</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
@@ -1290,8 +1295,12 @@
 		<nextActionAttack>true</nextActionAttack>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
+				<power>
+					<value level="1">10314</value>
+					<value level="2">12450</value>
+					<value level="3">13874</value>
+				</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1326,8 +1335,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
+				<power>
+					<value level="1">14300</value>
+					<value level="2">16748</value>
+					<value level="3">19686</value>
+				</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="healEffect" val="0.1" />
@@ -1489,14 +1502,27 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="17" cubicLvl="#level" />
+				<cubicId>17</cubicId>
+				<cubicLvl>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+				</cubicLvl>
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
-				<param minDamage="10" />
-				<param chance="60" />
-				<param skillId="11827" skillLevel="#level" /> <!-- Fairy Blessing -->
-				<param targetType="SELF" />
+				<!-- Fairy Blessing -->
+				<minDamage>10</minDamage>
+				<skillId>11827</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+				</skillLevel>
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>60</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1614,10 +1640,14 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="5" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>
+					<value level="1">11159</value>
+					<value level="2">11936</value>
+					<value level="3">12714</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>5</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
@@ -1625,7 +1655,7 @@
 		</for>
 		<selfEffects>
 			<effect name="FocusMomentum">
-				<param maxCharges="10" />
+				<maxCharges>10</maxCharges>
 			</effect>
 		</selfEffects>
 	</skill>

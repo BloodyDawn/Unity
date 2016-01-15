@@ -19,10 +19,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="3194" />
+				<power>3194</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="6662" skillLevel="1" />
+				<skillId>6662</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -53,7 +54,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<param power="#mdot" />
+				<power>
+					<value level="1">60</value>
+					<value level="2">30</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -101,7 +105,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -154,7 +158,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -188,7 +192,7 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="139" />
+				<power>139</power>
 			</effect>
 		</for>
 	</skill>
@@ -215,7 +219,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="120" />
+				<power>120</power>
 			</effect>
 		</for>
 	</skill>
@@ -242,7 +246,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="120" />
+				<power>120</power>
 			</effect>
 		</for>
 	</skill>
@@ -269,7 +273,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="120" />
+				<power>120</power>
 			</effect>
 		</for>
 	</skill>
@@ -293,7 +297,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TargetCancel">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -316,7 +320,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -341,7 +345,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -398,7 +402,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="125" />
+				<power>125</power>
 			</effect>
 		</for>
 	</skill>
@@ -421,7 +425,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -443,7 +447,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="15" />
+				<power>15</power>
 			</effect>
 		</for>
 	</skill>
@@ -469,7 +473,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="128" />
+				<power>128</power>
 			</effect>
 		</for>
 	</skill>
@@ -579,7 +583,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="121" />
+				<power>121</power>
 			</effect>
 		</for>
 	</skill>
@@ -605,7 +609,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="121" />
+				<power>121</power>
 			</effect>
 		</for>
 	</skill>
@@ -626,7 +630,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="85" />
+				<power>85</power>
 			</effect>
 		</for>
 	</skill>
@@ -650,7 +654,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="121" />
+				<power>121</power>
 			</effect>
 		</for>
 	</skill>
@@ -674,7 +678,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="85" />
+				<power>85</power>
 			</effect>
 		</for>
 	</skill>
@@ -697,7 +701,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="20531" />
+				<power>20531</power>
 			</effect>
 		</for>
 	</skill>
@@ -720,7 +724,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="11407" />
+				<power>11407</power>
 			</effect>
 		</for>
 	</skill>
@@ -747,7 +751,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="205" />
+				<power>205</power>
 			</effect>
 		</for>
 	</skill>
@@ -770,7 +774,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -789,7 +793,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="5" />
+				<power>5</power>
 			</effect>
 		</for>
 	</skill>
@@ -870,10 +874,10 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -904,7 +908,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -928,7 +932,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="120" />
+				<power>120</power>
 			</effect>
 		</for>
 	</skill>
@@ -951,7 +955,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="121" />
+				<power>121</power>
 			</effect>
 		</for>
 	</skill>
@@ -972,7 +976,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -993,7 +997,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -1026,10 +1030,10 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -1061,7 +1065,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1088,7 +1092,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -1106,7 +1110,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -1614,7 +1618,7 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="93" />
+				<power>93</power>
 			</effect>
 		</for>
 	</skill>
@@ -1663,7 +1667,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">9125</value>
+					<value level="2">13688</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1694,7 +1701,7 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="95" />
+				<power>95</power>
 			</effect>
 		</for>
 	</skill>
@@ -1724,7 +1731,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9125" />
+				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1746,9 +1753,9 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
+				<power>13688</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1773,7 +1780,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -1852,7 +1859,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1911,7 +1918,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -1929,7 +1936,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -1959,7 +1966,7 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="93" />
+				<power>93</power>
 			</effect>
 		</for>
 	</skill>
@@ -2018,7 +2025,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9125" />
+				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2067,7 +2074,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>

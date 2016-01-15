@@ -256,7 +256,8 @@
 				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" />
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -277,7 +278,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaHealPercent">
-				<param power="50" />
+				<power>50</power>
 			</effect>
 		</for>
 	</skill>
@@ -338,7 +339,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="306" />
+				<transformationId>306</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -359,7 +360,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -380,7 +381,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -401,7 +402,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -422,7 +423,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -444,7 +445,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -466,7 +467,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -892,7 +893,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="139" npcCount="1" despawnDelay="1200000" />
+				<npcId>139</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>1200000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -1578,7 +1581,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="183624" y="-114891" z="-3340" />
+				<x>183624</x>
+				<y>-114891</y>
+				<z>-3340</z>
 			</effect>
 		</for>
 	</skill>
@@ -1604,7 +1609,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="183624" y="-114891" z="-3340" />
+				<x>183624</x>
+				<y>-114891</y>
+				<z>-3340</z>
 			</effect>
 		</for>
 	</skill>
@@ -1630,7 +1637,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="154596" y="121127" z="-3812" />
+				<x>154596</x>
+				<y>121127</y>
+				<z>-3812</z>
 			</effect>
 		</for>
 	</skill>
@@ -1656,7 +1665,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="154596" y="121127" z="-3812" />
+				<x>154596</x>
+				<y>121127</y>
+				<z>-3812</z>
 			</effect>
 		</for>
 	</skill>
@@ -1672,7 +1683,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="143" npcCount="1" despawnDelay="1800000" />
+				<npcId>143</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>1800000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -1688,7 +1701,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="144" npcCount="1" despawnDelay="1800000" />
+				<npcId>144</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>1800000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -1705,7 +1720,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="145" npcCount="1" despawnDelay="1800000" />
+				<npcId>145</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>1800000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -1721,7 +1738,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="146" npcCount="1" despawnDelay="1800000" />
+				<npcId>146</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>1800000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -1742,7 +1761,8 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="1000" /> <!-- TODO: Custom. -->
+				<!-- TODO: Custom. -->
+				<power>1000</power>
 			</effect>
 		</for>
 	</skill>
@@ -1763,7 +1783,8 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="ManaHeal">
-				<param power="1000" /> <!-- TODO: Custom. -->
+				<!-- TODO: Custom. -->
+				<power>1000</power>
 			</effect>
 		</for>
 	</skill>

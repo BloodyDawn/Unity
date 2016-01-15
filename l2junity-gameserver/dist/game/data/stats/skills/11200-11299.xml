@@ -130,7 +130,8 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13307" npcCount="1" />
+				<npcId>13307</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -157,10 +158,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" delay="600" />
+				<speed>600</speed>
+				<delay>600</delay>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -187,8 +189,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="55" />
-				<param overHit="true" />
+				<power>55</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.95" />
@@ -218,8 +220,8 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="320" />
-				<param overHit="true" />
+				<power>320</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -246,8 +248,8 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="320" />
-				<param overHit="true" />
+				<power>320</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -274,8 +276,8 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="320" />
-				<param overHit="true" />
+				<power>320</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -301,8 +303,8 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="320" />
-				<param overHit="true" />
+				<power>320</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -377,7 +379,8 @@
 				</mul>
 			</effect>
 			<effect name="MaxHp">
-				<param amount="4151" mode="DIFF" />
+				<amount>4151</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -430,19 +433,31 @@
 				<add stat="summonPoints" val="4" />
 			</effect>
 			<effect name="CubicMastery">
-				<param cubicCount="3" />
+				<cubicCount>3</cubicCount>
 			</effect>
 			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11350" /> <!-- Arcane Rage -->
-				<param skillId="11351" skillLevel="1" skillLevelScaleTo="5" /> <!-- Arcane Link -->
+				<!-- Arcane Rage -->
+				<!-- Arcane Link -->
+				<skillId>11351</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
+				<attackSkillId>11350</attackSkillId>
 			</effect>
 			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11353" /> <!-- Elemental Rage -->
-				<param skillId="11354" skillLevel="1" skillLevelScaleTo="5" /> <!-- Elemental Link -->
+				<!-- Elemental Rage -->
+				<!-- Elemental Link -->
+				<skillId>11354</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
+				<attackSkillId>11353</attackSkillId>
 			</effect>
 			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11356" /> <!-- Spectral Rage -->
-				<param skillId="11357" skillLevel="1" skillLevelScaleTo="5" /> <!-- Spectral Link -->
+				<!-- Spectral Rage -->
+				<!-- Spectral Link -->
+				<skillId>11357</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
+				<attackSkillId>11356</attackSkillId>
 			</effect>
 		</for>
 	</skill>
@@ -459,7 +474,11 @@
 				<add stat="INT" val="2" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="30" SLEEP="30" BLEED="30" POISON="30" DERANGEMENT="30" />
+				<HOLD>30</HOLD>
+				<SLEEP>30</SLEEP>
+				<BLEED>30</BLEED>
+				<POISON>30</POISON>
+				<DERANGEMENT>30</DERANGEMENT>
 			</effect>
 		</for>
 	</skill>
@@ -505,7 +524,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">14929</value>
+					<value level="2">14947</value>
+					<value level="3">14948</value>
+					<value level="4">14949</value>
+					<value level="5">14950</value>
+					<value level="6">14951</value>
+					<value level="7">14952</value>
+					<value level="8">14953</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -551,7 +581,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">14930</value>
+					<value level="2">14954</value>
+					<value level="3">14955</value>
+					<value level="4">14956</value>
+					<value level="5">14957</value>
+					<value level="6">14958</value>
+					<value level="7">14959</value>
+					<value level="8">14960</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -597,7 +638,18 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" summonPoints="2" lifeTime="-1" />
+				<npcId>
+					<value level="1">14931</value>
+					<value level="2">14961</value>
+					<value level="3">14962</value>
+					<value level="4">14963</value>
+					<value level="5">14964</value>
+					<value level="6">14965</value>
+					<value level="7">14966</value>
+					<value level="8">14967</value>
+				</npcId>
+				<summonPoints>2</summonPoints>
+				<lifeTime>-1</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -683,7 +735,19 @@
 		</alterSkill>
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
-				<param power="#power" />
+				<power>
+					<value level="1">85</value>
+					<value level="2">89</value>
+					<value level="3">93</value>
+					<value level="4">97</value>
+					<value level="5">101</value>
+					<value level="6">105</value>
+					<value level="7">109</value>
+					<value level="8">113</value>
+					<value level="9">117</value>
+					<value level="10">121</value>
+					<value level="11">125</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.7" />
@@ -757,15 +821,42 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
-				<param power="#power" />
+				<power>
+					<value level="1">85</value>
+					<value level="2">91</value>
+					<value level="3">97</value>
+					<value level="4">103</value>
+					<value level="5">109</value>
+					<value level="6">117</value>
+					<value level="7">121</value>
+					<value level="8">125</value>
+				</power>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Heal">
-				<param power="#heal" />
+				<power>
+					<value level="1">213</value>
+					<value level="2">213</value>
+					<value level="3">213</value>
+					<value level="4">213</value>
+					<value level="5">213</value>
+					<value level="6">213</value>
+					<value level="7">213</value>
+					<value level="8">213</value>
+				</power>
 			</effect>
 			<effect name="ManaHeal">
-				<param power="#manaheal" />
+				<power>
+					<value level="1">47</value>
+					<value level="2">47</value>
+					<value level="3">47</value>
+					<value level="4">47</value>
+					<value level="5">47</value>
+					<value level="6">47</value>
+					<value level="7">47</value>
+					<value level="8">47</value>
+				</power>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -910,10 +1001,20 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
-				<param power="#power" />
+				<power>
+					<value level="1">85</value>
+					<value level="2">87</value>
+					<value level="3">93</value>
+					<value level="4">99</value>
+					<value level="5">105</value>
+					<value level="6">111</value>
+					<value level="7">117</value>
+					<value level="8">121</value>
+					<value level="9">125</value>
+				</power>
 			</effect>
 			<effect name="SkillTurningOverTime" ticks="1">
-				<param chance="25" />
+				<chance>25</chance>
 			</effect>
 		</for>
 	</skill>
@@ -974,7 +1075,18 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">147</value>
+					<value level="2">151</value>
+					<value level="3">156</value>
+					<value level="4">160</value>
+					<value level="5">164</value>
+					<value level="6">168</value>
+					<value level="7">172</value>
+					<value level="8">198</value>
+					<value level="9">204</value>
+					<value level="10">210</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1013,13 +1125,20 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="ManaHeal">
-				<param power="#manaHeal" />
+				<power>
+					<value level="1">200</value>
+					<value level="2">210</value>
+					<value level="3">220</value>
+					<value level="4">230</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="ROOT_MAGICALLY,3;ROOT_PHYSICALLY,3" />
+				<dispel>ROOT_MAGICALLY,3;ROOT_PHYSICALLY,3</dispel>
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 		</for>
 	</skill>
@@ -1054,7 +1173,8 @@
 		</cond>
 		<for>
 			<effect name="CallPc">
-				<param itemId="8615" itemCount="1" />
+				<itemId>8615</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1090,7 +1210,15 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="#npcIds" npcCount="1" despawnDelay="30000" singleInstance="true" />
+				<npcId>
+					<value level="1">14927</value>
+					<value level="2">15200</value>
+					<value level="3">15201</value>
+					<value level="4">15202</value>
+				</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>30000</despawnDelay>
+				<singleInstance>true</singleInstance>
 			</effect>
 		</for>
 	</skill>
@@ -1135,17 +1263,17 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="509" />
 				<mul stat="pDef" val="1.50" /> <!-- pDef +50% -->
 				<mul stat="mDef" val="1.50" /> <!-- mDef +50% -->
+				<transformationId>509</transformationId>
 			</effect>
 			<effect name="DefenceTrait">
-				<param BOW="50" />
-				<param CROSSBOW="50" />
-				<param TWOHANDCROSSBOW="50" />
+				<CROSSBOW>50</CROSSBOW>
+				<BOW>50</BOW>
+				<TWOHANDCROSSBOW>50</TWOHANDCROSSBOW>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1" />
+				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
 			<effect name="TargetCancel" />
 		</for>
@@ -1191,7 +1319,20 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="15" cubicLvl="#cubicLvl" />
+				<cubicId>15</cubicId>
+				<cubicLvl>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+				</cubicLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1231,7 +1372,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Heal">
-				<param power="#heal" />
+				<power>
+					<value level="1">1308</value>
+					<value level="2">1336</value>
+					<value level="3">1358</value>
+					<value level="4">1381</value>
+					<value level="5">1733</value>
+					<value level="6">1747</value>
+					<value level="7">1761</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1255,8 +1404,8 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<param power="0.2" />
 				<add stat="transDam" val="#power" />
+				<power>0.2</power>
 			</effect>
 		</for>
 	</skill>
@@ -1317,16 +1466,52 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAbnormalDispelAttack">
-				<param power="#power" />
-				<param abnormalType="MARK_OF_WEAKNESS" />
+				<power>
+					<value level="1">85</value>
+					<value level="2">89</value>
+					<value level="3">93</value>
+					<value level="4">97</value>
+					<value level="5">101</value>
+					<value level="6">105</value>
+					<value level="7">109</value>
+					<value level="8">113</value>
+					<value level="9">117</value>
+					<value level="10">121</value>
+					<value level="11">125</value>
+				</power>
+				<abnormalType>MARK_OF_WEAKNESS</abnormalType>
 			</effect>
 			<effect name="MagicalAbnormalDispelAttack">
-				<param power="#power" />
-				<param abnormalType="MARK_OF_PLAGUE" />
+				<power>
+					<value level="1">85</value>
+					<value level="2">89</value>
+					<value level="3">93</value>
+					<value level="4">97</value>
+					<value level="5">101</value>
+					<value level="6">105</value>
+					<value level="7">109</value>
+					<value level="8">113</value>
+					<value level="9">117</value>
+					<value level="10">121</value>
+					<value level="11">125</value>
+				</power>
+				<abnormalType>MARK_OF_PLAGUE</abnormalType>
 			</effect>
 			<effect name="MagicalAbnormalDispelAttack">
-				<param power="#power" />
-				<param abnormalType="MARK_OF_TRICK" />
+				<power>
+					<value level="1">85</value>
+					<value level="2">89</value>
+					<value level="3">93</value>
+					<value level="4">97</value>
+					<value level="5">101</value>
+					<value level="6">105</value>
+					<value level="7">109</value>
+					<value level="8">113</value>
+					<value level="9">117</value>
+					<value level="10">121</value>
+					<value level="11">125</value>
+				</power>
+				<abnormalType>MARK_OF_TRICK</abnormalType>
 			</effect>
 		</for>
 	</skill>
@@ -1417,10 +1602,19 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">353</value>
+					<value level="2">364</value>
+					<value level="3">374</value>
+					<value level="4">385</value>
+					<value level="5">395</value>
+					<value level="6">409</value>
+					<value level="7">416</value>
+					<value level="8">423</value>
+				</power>
 			</effect>
 			<effect name="Invincible" />
 		</for>
@@ -1507,7 +1701,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">100</value>
+					<value level="2">150</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1656,7 +1853,17 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">6277</value>
+					<value level="2">6494</value>
+					<value level="3">6930</value>
+					<value level="4">7365</value>
+					<value level="5">7800</value>
+					<value level="6">8236</value>
+					<value level="7">8671</value>
+					<value level="8">9106</value>
+					<value level="9">9324</value>
+				</power>
 			</effect>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1730,9 +1937,19 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
+				<power>
+					<value level="1">5337</value>
+					<value level="2">5521</value>
+					<value level="3">5889</value>
+					<value level="4">6258</value>
+					<value level="5">6627</value>
+					<value level="6">6995</value>
+					<value level="7">7364</value>
+					<value level="8">7732</value>
+					<value level="9">7917</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="Root" />
 		</for>
@@ -1788,7 +2005,17 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">6300</value>
+					<value level="2">6518</value>
+					<value level="3">6954</value>
+					<value level="4">7391</value>
+					<value level="5">7827</value>
+					<value level="6">8264</value>
+					<value level="7">8700</value>
+					<value level="8">9137</value>
+					<value level="9">9355</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1910,8 +2137,18 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="20" />
+				<power>
+					<value level="1">125</value>
+					<value level="2">127</value>
+					<value level="3">131</value>
+					<value level="4">134</value>
+					<value level="5">138</value>
+					<value level="6">141</value>
+					<value level="7">145</value>
+					<value level="8">149</value>
+					<value level="9">150</value>
+				</power>
+				<percentage>20</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -1968,7 +2205,17 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">100</value>
+					<value level="2">102</value>
+					<value level="3">104</value>
+					<value level="4">107</value>
+					<value level="5">110</value>
+					<value level="6">113</value>
+					<value level="7">116</value>
+					<value level="8">119</value>
+					<value level="9">120</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2007,7 +2254,12 @@
 		<reuseDelay>10000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">8690</value>
+					<value level="2">9051</value>
+					<value level="3">9392</value>
+					<value level="4">9392</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2045,7 +2297,12 @@
 		<reuseDelay>15000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">7183</value>
+					<value level="2">7481</value>
+					<value level="3">7757</value>
+					<value level="4">7757</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2193,7 +2450,9 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="14928" npcCount="3" /> <!-- Hodling -->
+				<!-- Hodling -->
+				<npcId>14928</npcId>
+				<npcCount>3</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -2218,8 +2477,13 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">58</value>
+					<value level="2">60</value>
+					<value level="3">61</value>
+					<value level="4">63</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -2250,7 +2514,18 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="80" max="#max" />
+				<slot>debuff</slot>
+				<rate>80</rate>
+				<max>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+				</max>
 			</effect>
 		</for>
 	</skill>
@@ -2280,7 +2555,9 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="20" max="1" />
+				<slot>buff</slot>
+				<rate>20</rate>
+				<max>1</max>
 			</effect>
 		</for>
 	</skill>
@@ -2321,7 +2598,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -2420,10 +2697,20 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">282</value>
+					<value level="2">288</value>
+					<value level="3">296</value>
+					<value level="4">305</value>
+					<value level="5">313</value>
+					<value level="6">322</value>
+					<value level="7">336</value>
+					<value level="8">343</value>
+					<value level="9">350</value>
+				</power>
 			</effect>
 			<effect name="Invincible" />
 		</for>
@@ -2530,8 +2817,20 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttackRange">
-				<param power="#power" />
-				<param powerRange="40" />
+				<power>
+					<value level="1">168</value>
+					<value level="2">170</value>
+					<value level="3">175</value>
+					<value level="4">180</value>
+					<value level="5">185</value>
+					<value level="6">189</value>
+					<value level="7">194</value>
+					<value level="8">199</value>
+					<value level="9">222</value>
+					<value level="10">228</value>
+					<value level="11">234</value>
+				</power>
+				<powerRange>40</powerRange>
 			</effect>
 		</for>
 	</skill>

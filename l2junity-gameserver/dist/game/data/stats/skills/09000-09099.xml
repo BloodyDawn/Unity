@@ -112,7 +112,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1" />
+				<power>1</power>
 			</effect>
 		</for>
 	</skill>
@@ -312,7 +312,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="80" />
+				<amount>9</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -503,7 +504,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13271" npcCount="1" />
+				<npcId>13271</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -522,7 +524,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13275" npcCount="1" />
+				<npcId>13275</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -541,7 +544,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13271" npcCount="1" />
+				<npcId>13271</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -560,7 +564,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13275" npcCount="1" />
+				<npcId>13275</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -672,7 +677,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -692,7 +697,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -1088,9 +1093,9 @@
 		</cond>
 		<for>
 			<effect name="ResistSkill">
-				<param skillId1="6662" />
-				<param skillId2="6274" />
-				<param skillId3="6275" />
+				<skillId1>6662</skillId1>
+				<skillId3>6275</skillId3>
+				<skillId2>6274</skillId2>
 			</effect>
 		</for>
 	</skill>
@@ -1118,9 +1123,9 @@
 		</cond>
 		<for>
 			<effect name="ResistSkill">
-				<param skillId1="6662" />
-				<param skillId2="6274" />
-				<param skillId3="6275" />
+				<skillId1>6662</skillId1>
+				<skillId3>6275</skillId3>
+				<skillId2>6274</skillId2>
 			</effect>
 		</for>
 	</skill>
@@ -1333,7 +1338,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="GiveSp">
-				<param sp="10000" />
+				<sp>10000</sp>
 			</effect>
 		</for>
 	</skill>
@@ -1434,7 +1439,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="30" />
+				<amount>9</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1450,7 +1456,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="2300" />
+				<power>2300</power>
 			</effect>
 		</for>
 	</skill>
@@ -1490,7 +1496,8 @@
 		</cond>
 		<for>
 			<effect name="OpenDoor">
-				<param chance="100" isItem="true" />
+				<chance>100</chance>
+				<isItem>true</isItem>
 			</effect>
 		</for>
 	</skill>
@@ -1624,7 +1631,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -1673,7 +1680,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="20000" />
+				<value>20000</value>
 			</effect>
 		</for>
 	</skill>
@@ -1741,7 +1748,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CpHeal">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 		</for>
 	</skill>
@@ -1768,7 +1775,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="172" skillLvl="10" />
+				<skillId>172</skillId>
+				<skillLvl>10</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1828,7 +1836,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="758" skillLvl="1" />
+				<skillId>758</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1854,7 +1863,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="759" skillLvl="1" />
+				<skillId>759</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1881,7 +1891,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="945" skillLvl="1" />
+				<skillId>945</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1907,7 +1918,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="755" skillLvl="1" />
+				<skillId>755</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1933,7 +1945,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="756" skillLvl="1" />
+				<skillId>756</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1959,7 +1972,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="757" skillLvl="1" />
+				<skillId>757</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -1979,7 +1993,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13286" npcCount="1" />
+				<npcId>13286</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -1999,7 +2014,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13287" npcCount="1" />
+				<npcId>13287</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -2017,7 +2033,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13293" npcCount="1" />
+				<npcId>13293</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -2035,7 +2052,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13294" npcCount="1" />
+				<npcId>13294</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>

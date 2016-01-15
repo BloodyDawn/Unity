@@ -9,9 +9,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="50" />
-				<param HOLD="50" />
-				<param SLEEP="50" />
 				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
@@ -22,6 +19,9 @@
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
 				<add stat="moveSpeed" val="7" /> <!-- Increases Speed by 7 -->
+				<BLEED>50</BLEED>
+				<SLEEP>50</SLEEP>
+				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -35,7 +35,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="50" />
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power + 5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- Def. Power + 5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
@@ -46,6 +45,7 @@
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="cAtkAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
 				<add stat="maxMp" val="360" /> <!-- Increases Max MP by 360 -->
+				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -59,7 +59,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.087" /> <!-- M. Power +8.7% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
@@ -69,6 +68,7 @@
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="moveSpeed" val="7" /> <!-- Increases Speed by 7 -->
 				<add stat="maxMp" val="92" /> <!-- Increases Max MP by 92 -->
+				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -82,9 +82,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="50" />
-				<param HOLD="50" />
-				<param SLEEP="50" />
 				<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
 				<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to damage magic +2% -->
@@ -93,10 +90,14 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
+				<BLEED>50</BLEED>
+				<SLEEP>50</SLEEP>
+				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="VampiricAttack">
-				<param amount="3" chance="30" />
+				<amount>3</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -109,7 +110,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="50" />
 				<mul stat="pAtk" val="1.0659" /> <!-- Attack Power +6.59% -->
 				<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
 				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
@@ -118,6 +118,7 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
+				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -131,7 +132,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.1" /> <!-- M. Power +10% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
@@ -142,6 +142,7 @@
 				<add stat="moveSpeed" val="7" /> <!-- Increases Speed by 7 -->
 				<add stat="maxMp" val="92" /> <!-- Increases Max MP by 97 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
+				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -155,14 +156,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="50" />
 				<mul stat="pAtk" val="1.0426" /> <!-- Atk Power +4.26% -->
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
@@ -173,6 +177,7 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -186,14 +191,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Mirage -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="50" />
 				<mul stat="pAtk" val="1.0426" /> <!-- P. Atk. +4.26% -->
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
 				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
@@ -204,6 +212,7 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -217,14 +226,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
-				<param targetType="SELF" />
+				<!-- PvP Armor - Critical Down -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param PARALYZE="50" />
 				<mul stat="mAtk" val="1.0811" /> <!-- M. Power +8.11% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<add stat="fireRes" val="5" /> <!-- resistance to fire attributes +5 -->
@@ -234,6 +246,7 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -247,16 +260,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param BLEED="50" />
-				<param HOLD="50" />
-				<param SLEEP="50" />
 				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
@@ -270,6 +284,9 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<HOLD>50</HOLD>
+				<BLEED>50</BLEED>
+				<SLEEP>50</SLEEP>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -283,14 +300,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Mirage -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="50" />
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power + 5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- Def. Power + 5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
@@ -304,6 +324,7 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -317,14 +338,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
-				<param targetType="SELF" />
+				<!-- PvP Armor - Critical Down -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.087" /> <!-- M. Power +8.7% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
@@ -337,6 +361,7 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -350,16 +375,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Speed Down -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5693</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param BLEED="50" />
-				<param HOLD="50" />
-				<param SLEEP="50" />
 				<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
 				<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to damage magic +2% -->
@@ -371,10 +397,14 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<HOLD>50</HOLD>
+				<BLEED>50</BLEED>
+				<SLEEP>50</SLEEP>
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="VampiricAttack">
-				<param amount="3" chance="30" />
+				<amount>3</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -387,14 +417,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<!-- PvP Armor - Mirage -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5694</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param PARALYZE="50" />
 				<mul stat="pAtk" val="1.0659" /> <!-- Attack Power +6.59% -->
 				<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
 				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
@@ -406,6 +439,7 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -419,14 +453,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="2" />
-				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
-				<param targetType="SELF" />
+				<!-- PvP Armor - Critical Down -->
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5691</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.1" /> <!-- M. Power +10% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
@@ -440,6 +477,7 @@
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -474,10 +512,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0125" />
 				<mul stat="pAtkSpd" val="1.01" />
 				<add stat="fireRes" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -490,13 +528,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0426" />
 				<mul stat="pAtkSpd" val="1.04" />
 				<add stat="waterRes" val="1" />
 				<add stat="fireRes" val="1" />
 				<add stat="windRes" val="1" />
 				<add stat="earthRes" val="1" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -509,10 +547,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0208" />
 				<mul stat="pAtkSpd" val="1.0167" />
 				<add stat="waterRes" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -525,10 +563,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="windRes" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -541,10 +579,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="earthRes" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -570,10 +608,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0125" />
 				<mul stat="regMp" val="1.01" />
 				<add stat="fireRes" val="3" />
+				<HOLD>5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -586,10 +624,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0426" />
 				<mul stat="regMp" val="1.04" />
 				<add stat="waterRes" val="3" />
+				<HOLD>5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -602,10 +640,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0208" />
 				<mul stat="regMp" val="1.0167" />
 				<add stat="waterRes" val="3" />
+				<HOLD>5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -618,10 +656,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="regMp" val="1.0067" />
 				<add stat="windRes" val="3" />
+				<HOLD>5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -634,10 +672,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="regMp" val="1.0067" />
 				<add stat="earthRes" val="3" />
+				<HOLD>5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -650,9 +688,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0062" />
 				<add stat="fireRes" val="5" />
+				<PARALYZE>5</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -665,13 +703,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0811" /> <!-- M. Atk. +8.11% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Cast. Spd. +15% -->
 				<add stat="waterRes" val="1" />
 				<add stat="fireRes" val="1" />
 				<add stat="windRes" val="1" />
 				<add stat="earthRes" val="1" />
+				<PARALYZE>5</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -684,9 +722,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0103" />
 				<add stat="waterRes" val="5" />
+				<PARALYZE>5</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -699,9 +737,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0041" />
 				<add stat="windRes" val="5" />
+				<PARALYZE>5</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -714,9 +752,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0041" />
 				<add stat="earthRes" val="5" />
+				<PARALYZE>5</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -742,11 +780,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="10.5" />
-				<param HOLD="10.5" />
 				<mul stat="pAtk" val="1.0062" />
 				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
+				<SLEEP>10.5</SLEEP>
+				<HOLD>10.5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -759,11 +797,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="28" />
-				<param HOLD="28" />
 				<mul stat="pAtk" val="1.0557" />
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="531" />
+				<SLEEP>28</SLEEP>
+				<HOLD>28</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -776,11 +814,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="18" />
-				<param HOLD="18" />
 				<mul stat="pAtk" val="1.0103" />
 				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
+				<SLEEP>18</SLEEP>
+				<HOLD>18</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -793,11 +831,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="7" />
-				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
+				<SLEEP>7</SLEEP>
+				<HOLD>7</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -810,11 +848,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="7" />
-				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
+				<SLEEP>7</SLEEP>
+				<HOLD>7</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -920,10 +958,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="7.5" />
 				<mul stat="mAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
+				<SHOCK>7.5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -936,11 +974,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="20" />
 				<mul stat="mAtk" val="1.0847" />
 				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="regMp" val="1.05" />
 				<sub stat="cancel" val="12" />
+				<SHOCK>20</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -953,10 +991,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="12.5" />
 				<mul stat="mAtk" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
+				<SHOCK>12.5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -969,10 +1007,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -985,10 +1023,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1014,7 +1052,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="7.62" />
+				<BLEED>7.62</BLEED>
 			</effect>
 		</for>
 	</skill>
@@ -1027,7 +1065,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param POISON="6" />
+				<POISON>6</POISON>
 			</effect>
 		</for>
 	</skill>
@@ -1053,8 +1091,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="5" />
-				<param HOLD="5" />
+				<SLEEP>5</SLEEP>
+				<HOLD>5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1080,7 +1118,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="4.76" />
+				<SHOCK>4.76</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1107,16 +1145,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="20" />
-				<param PARALYZE="15" />
-				<param SHOCK="15" />
-				<param SLEEP="15" />
-				<param DERANGEMENT="10" />
 				<add stat="maxMp" val="50" />
 				<add stat="regMp" val="0.23" />
 				<add stat="waterRes" val="10" />
 				<mul stat="mReuse" val="0.95" />
 				<add stat="reflectDam" val="4" />
+				<BLEED>20</BLEED>
+				<SHOCK>15</SHOCK>
+				<DERANGEMENT>10</DERANGEMENT>
+				<PARALYZE>15</PARALYZE>
+				<SLEEP>15</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1130,11 +1168,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLEED="25" />
-				<param PARALYZE="20" />
-				<param SHOCK="20" />
-				<param SLEEP="20" />
-				<param DERANGEMENT="10" />
 				<add stat="maxMp" val="50" />
 				<add stat="regMp" val="0.46" />
 				<add stat="waterRes" val="15" />
@@ -1145,6 +1178,11 @@
 				<add stat="MEN" val="2" />
 				<add stat="CON" val="1" />
 				<sub stat="STR" val="1" />
+				<BLEED>25</BLEED>
+				<SHOCK>20</SHOCK>
+				<DERANGEMENT>10</DERANGEMENT>
+				<PARALYZE>20</PARALYZE>
+				<SLEEP>20</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1159,13 +1197,25 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_MP_RATE" type="STANDING" value="#regMp" />
 				<add stat="pDef" val="#pDef">
 					<using kind="HEAVY" />
 				</add>
+				<stat>REGENERATE_MP_RATE</stat>
+				<type>STANDING</type>
+				<value>
+					<value level="1">32</value>
+					<value level="2">35</value>
+					<value level="3">37</value>
+				</value>
 			</effect>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_MP_RATE" type="SITTING" value="#regMp" />
+				<stat>REGENERATE_MP_RATE</stat>
+				<type>SITTING</type>
+				<value>
+					<value level="1">32</value>
+					<value level="2">35</value>
+					<value level="3">37</value>
+				</value>
 			</effect>
 		</for>
 	</skill>
@@ -1219,7 +1269,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16073" />
+				<npcId>16073</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -1394,11 +1444,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="10.5" />
-				<param HOLD="10.5" />
 				<mul stat="pAtk" val="1.0062" />
 				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
+				<SLEEP>10.5</SLEEP>
+				<HOLD>10.5</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1411,11 +1461,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="18" />
-				<param HOLD="18" />
 				<mul stat="pAtk" val="1.0103" />
 				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
+				<SLEEP>18</SLEEP>
+				<HOLD>18</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1428,11 +1478,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="7" />
-				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
+				<SLEEP>7</SLEEP>
+				<HOLD>7</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1445,11 +1495,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="7" />
-				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
+				<SLEEP>7</SLEEP>
+				<HOLD>7</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -1526,10 +1576,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="7.5" />
 				<mul stat="mAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
+				<SHOCK>7.5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1542,10 +1592,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="12.5" />
 				<mul stat="mAtk" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
+				<SHOCK>12.5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1558,10 +1608,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1574,10 +1624,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
+				<SHOCK>5</SHOCK>
 			</effect>
 		</for>
 	</skill>

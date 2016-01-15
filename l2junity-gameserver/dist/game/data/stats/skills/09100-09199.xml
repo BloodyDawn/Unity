@@ -375,7 +375,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="GiveRecommendation">
-				<param amount="10" />
+				<amount>10</amount>
 			</effect>
 		</for>
 	</skill>
@@ -1267,7 +1267,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="306" />
+				<transformationId>306</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1296,7 +1296,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="305" />
+				<transformationId>305</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1351,7 +1351,8 @@
 				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="5" chance="30" />
+				<amount>5</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1578,7 +1579,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="GiveSp">
-				<param sp="500000" />
+				<sp>500000</sp>
 			</effect>
 		</for>
 	</skill>
@@ -1597,7 +1598,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="GiveSp">
-				<param sp="1000000" />
+				<sp>1000000</sp>
 			</effect>
 		</for>
 	</skill>
@@ -1679,7 +1680,7 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1701,7 +1702,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="GiveSp">
-				<param sp="#amount" />
+				<sp>
+					<value level="1">5000000</value>
+					<value level="2">10000000</value>
+				</sp>
 			</effect>
 		</for>
 	</skill>

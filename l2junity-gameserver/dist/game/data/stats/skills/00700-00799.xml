@@ -20,10 +20,10 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="27" />
+				<power>27</power>
 			</effect>
 			<effect name="Heal">
-				<param power="400" />
+				<power>400</power>
 			</effect>
 		</for>
 	</skill>
@@ -46,7 +46,7 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="70" />
+				<power>70</power>
 			</effect>
 		</for>
 	</skill>
@@ -66,7 +66,9 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 		</for>
 	</skill>
@@ -89,15 +91,16 @@
 		</cond>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="5602" skillLevel="1" />
+				<skillId>5602</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -209,10 +212,12 @@
 				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" />
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="5" chance="30" />
+				<amount>5</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -251,7 +256,8 @@
 				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" />
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -281,7 +287,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -322,7 +328,8 @@
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="5602" skillLevel="1" />
+				<skillId>5602</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -348,10 +355,11 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="14870" />
-				<param consumeItemId="1461" consumeItemCount="1" />
-				<param lifeTime="3600" />
-				<param expMultiplier="0.7" />
+				<npcId>14870</npcId>
+				<lifeTime>3600</lifeTime>
+				<consumeItemId>1461</consumeItemId>
+				<consumeItemCount>1</consumeItemCount>
+				<expMultiplier>0.7</expMultiplier>
 			</effect>
 		</for>
 	</skill>
@@ -365,8 +373,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<param power="0.4" />
 				<add stat="transDam" val="50" />
+				<power>0.4</power>
 			</effect>
 		</for>
 	</skill>
@@ -406,7 +414,9 @@
 				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" heal="true" />
+				<amount>20</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
 			</effect>
 		</for>
 	</skill>
@@ -426,7 +436,7 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="991" />
+				<power>991</power>
 			</effect>
 		</for>
 	</skill>
@@ -459,7 +469,8 @@
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="5602" skillLevel="1" />
+				<skillId>5602</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -500,8 +511,13 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="40" />
+				<power>
+					<value level="1">121</value>
+					<value level="2">133</value>
+					<value level="3">145</value>
+					<value level="4">160</value>
+				</power>
+				<percentage>40</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -580,8 +596,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">2751</value>
+					<value level="2">3252</value>
+					<value level="3">3752</value>
+					<value level="4">4224</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -617,8 +638,13 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">1651</value>
+					<value level="2">1951</value>
+					<value level="3">2251</value>
+					<value level="4">2534</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -644,7 +670,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="15" chance="30" />
+				<amount>15</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -678,8 +705,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">3189</value>
+					<value level="2">3590</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -713,7 +743,10 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">186</value>
+					<value level="2">197</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -747,7 +780,10 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">186</value>
+					<value level="2">197</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -769,7 +805,7 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="1340" />
+				<power>1340</power>
 			</effect>
 		</for>
 	</skill>
@@ -789,7 +825,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 		</for>
 	</skill>
@@ -814,8 +852,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">2626</value>
+					<value level="2">2957</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -840,7 +881,10 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1576</value>
+					<value level="2">1774</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -885,8 +929,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2957" />
-				<param overHit="true" />
+				<power>2957</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -907,8 +951,8 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1774" />
-				<param overHit="true" />
+				<power>1774</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -963,7 +1007,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="162" />
+				<power>162</power>
 			</effect>
 		</for>
 	</skill>
@@ -994,8 +1038,8 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1479" />
-				<param overHit="true" />
+				<power>1479</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1017,8 +1061,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2957" />
-				<param overHit="true" />
+				<power>2957</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1038,8 +1082,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1812" />
-				<param overHit="true" />
+				<power>1812</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1062,7 +1106,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="162" />
+				<power>162</power>
 			</effect>
 		</for>
 	</skill>
@@ -1095,12 +1139,13 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="351" />
+				<power>351</power>
 			</effect>
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="5248" skillLevel="9" />
+				<skillId>5248</skillId>
+				<skillLevel>9</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -1151,7 +1196,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">892</value>
+					<value level="2">926</value>
+					<value level="3">956</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1190,7 +1239,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">743</value>
+					<value level="2">772</value>
+					<value level="3">796</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1234,7 +1287,11 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="#power" />
+				<power>
+					<value level="1">50</value>
+					<value level="2">55</value>
+					<value level="3">60</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1281,7 +1338,7 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="52" />
+				<power>52</power>
 			</effect>
 		</for>
 	</skill>
@@ -1318,8 +1375,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttackRange">
-				<param power="#power" />
-				<param powerRange="40" />
+				<power>
+					<value level="1">112</value>
+					<value level="2">117</value>
+					<value level="3">122</value>
+				</power>
+				<powerRange>40</powerRange>
 			</effect>
 		</for>
 	</skill>
@@ -1362,7 +1423,11 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">56</value>
+					<value level="2">59</value>
+					<value level="3">61</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1400,7 +1465,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">112</value>
+					<value level="2">117</value>
+					<value level="3">122</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1438,7 +1507,9 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 		</for>
 	</skill>
@@ -1469,8 +1540,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">1789</value>
+					<value level="2">1955</value>
+					<value level="3">2117</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1512,8 +1587,12 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#dmg" />
-				<param overHit="true" />
+				<power>
+					<value level="1">895</value>
+					<value level="2">978</value>
+					<value level="3">1059</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -1583,8 +1662,12 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#dmg" />
-				<param overHit="true" />
+				<power>
+					<value level="1">895</value>
+					<value level="2">978</value>
+					<value level="3">1059</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1647,8 +1730,12 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#dmg" />
-				<param overHit="true" />
+				<power>
+					<value level="1">1073</value>
+					<value level="2">1173</value>
+					<value level="3">1271</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1692,11 +1779,15 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">1193</value>
+					<value level="2">1303</value>
+					<value level="3">1412</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="134" />
+				<power>134</power>
 			</effect>
 		</for>
 	</skill>
@@ -1730,8 +1821,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">4769</value>
+					<value level="2">5211</value>
+					<value level="3">5645</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1773,11 +1868,15 @@
 				<mul stat="mDef" val="1.15" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="300" />
-				<param chance="20" />
-				<param skillId="5556" skillLevel="1" /> <!-- Protection Power -->
-				<param targetType="SELF" />
+				<!-- Protection Power -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<skillId>5556</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1796,11 +1895,15 @@
 				<add stat="earthRes" val="20" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="100" />
-				<param chance="20" />
-				<param skillId="5556" skillLevel="1" /> <!-- Protection Power -->
-				<param targetType="SELF" />
+				<!-- Protection Power -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<minDamage>100</minDamage>
+				<skillId>5556</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1817,11 +1920,15 @@
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="100" />
-				<param chance="20" />
-				<param skillId="5556" skillLevel="1" /> <!-- Protection Power -->
-				<param targetType="SELF" />
+				<!-- Protection Power -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<minDamage>100</minDamage>
+				<skillId>5556</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1841,12 +1948,17 @@
 				</mul>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="3" />
-				<param skillId="5559" skillLevel="1" /> <!-- Physical Pose -->
-				<param targetType="SELF" />
-				<param allowWeapons="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
+				<!-- Physical Pose -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER</allowWeapons>
+				<skillId>5559</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1866,12 +1978,17 @@
 				</add>
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="3" />
-				<param skillId="5559" skillLevel="1" /> <!-- Physical Pose -->
-				<param targetType="SELF" />
-				<param allowWeapons="CROSSBOW,BOW" />
+				<!-- Physical Pose -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>CROSSBOW,BOW</allowWeapons>
+				<skillId>5559</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1917,12 +2034,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="1" />
-				<param chance="8" />
-				<param skillId="5561" skillLevel="1" /> <!-- Seed of Revenge -->
-				<param targetType="SELF" />
+				<!-- Seed of Revenge -->
 				<add stat="pAtk" val="100" />
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>8</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5561</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1957,10 +2078,10 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="8409" />
-				<param criticalChance="50" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>8409</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>50</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="maxCp" val="0.1" />
@@ -1968,10 +2089,12 @@
 				<mul stat="healEffect" val="0.7" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="5" />
+				<slot>buff</slot>
+				<rate>25</rate>
+				<max>5</max>
 			</effect>
 			<effect name="CpDamPercent">
-				<param power="90" />
+				<power>90</power>
 			</effect>
 		</for>
 	</skill>
@@ -2026,8 +2149,8 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="10" />
-				<param CROSSBOW="5" />
+				<BOW>10</BOW>
+				<CROSSBOW>5</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -2056,8 +2179,8 @@
 				<mul stat="mAtk" val="0.01" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param BOW="45" />
-				<param CROSSBOW="25" />
+				<BOW>45</BOW>
+				<CROSSBOW>25</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -2084,11 +2207,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="1" />
-				<param chance="5" />
-				<param skillId="5565" skillLevel="1" /> <!-- Expose Weak Point -->
-				<param targetType="ONE" />
+				<!-- Expose Weak Point -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>5</chance>
+				<targetType>ONE</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5565</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2116,7 +2243,8 @@
 				<sub stat="cancelVuln" val="90" />
 			</effect>
 			<effect name="SkillEvasion">
-				<param magicType="0" amount="40" />
+				<magicType>0</magicType>
+				<amount>40</amount>
 			</effect>
 		</for>
 	</skill>
@@ -2144,7 +2272,8 @@
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="SkillEvasion">
-				<param magicType="0" amount="75" />
+				<magicType>0</magicType>
+				<amount>75</amount>
 			</effect>
 		</for>
 	</skill>
@@ -2197,12 +2326,13 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="8049" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>8049</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="23298" skillLevel="1" />
+				<skillId>23298</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2228,12 +2358,13 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="7043" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>7043</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="23299" skillLevel="1" />
+				<skillId>23299</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2260,12 +2391,13 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="8452" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>8452</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="23300" skillLevel="1" />
+				<skillId>23300</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2367,13 +2499,13 @@
 		</cond>
 		<for>
 			<effect name="EnergyAttack">
-				<param chargeConsume="2" />
-				<param power="4500" />
-				<param criticalChance="20" />
-				<param overHit="true" />
+				<chargeConsume>2</chargeConsume>
+				<criticalChance>20</criticalChance>
+				<power>4500</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
-				<param power="200" />
+				<power>200</power>
 			</effect>
 		</for>
 	</skill>
@@ -2403,9 +2535,9 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="7475" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>7475</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -2435,7 +2567,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="259" />
+				<transformationId>259</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -2456,7 +2588,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="10" cubicLvl="1" />
+				<cubicId>10</cubicId>
+				<cubicLvl>1</cubicLvl>
 			</effect>
 		</for>
 	</skill>
@@ -2477,7 +2610,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="11" cubicLvl="1" />
+				<cubicId>11</cubicId>
+				<cubicLvl>1</cubicLvl>
 			</effect>
 		</for>
 	</skill>
@@ -2498,7 +2632,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="12" cubicLvl="1" />
+				<cubicId>12</cubicId>
+				<cubicLvl>1</cubicLvl>
 			</effect>
 		</for>
 	</skill>
@@ -2519,7 +2654,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="13" cubicLvl="1" />
+				<cubicId>13</cubicId>
+				<cubicLvl>1</cubicLvl>
 			</effect>
 		</for>
 	</skill>
@@ -2540,7 +2676,8 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="14" cubicLvl="1" />
+				<cubicId>14</cubicId>
+				<cubicLvl>1</cubicLvl>
 			</effect>
 		</for>
 	</skill>
@@ -2564,12 +2701,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="1" />
-				<param chance="20" />
-				<param skillId="5562" skillLevel="1" /> <!-- Spirit of Phoenix -->
-				<param targetType="SELF" />
+				<!-- Spirit of Phoenix -->
 				<add stat="pDef" val="200" />
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5562</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2632,12 +2773,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="1" />
-				<param chance="20" />
-				<param skillId="5563" skillLevel="1" /> <!-- Eva's Will -->
-				<param targetType="SELF" />
+				<!-- Eva's Will -->
 				<add stat="mDef" val="200" />
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5563</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2674,10 +2819,10 @@
 				<mul stat="healEffect" val="1.3" />
 			</effect>
 			<effect name="HealOverTime" ticks="5">
-				<param power="50" />
+				<power>50</power>
 			</effect>
 			<effect name="HealPercent">
-				<param power="50" />
+				<power>50</power>
 			</effect>
 		</for>
 	</skill>
@@ -2701,12 +2846,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="1" />
-				<param chance="20" />
-				<param skillId="5564" skillLevel="1" /> <!-- Pain of Shillien -->
-				<param targetType="SELF" />
+				<!-- Pain of Shillien -->
 				<mul stat="cAtk" val="1.1" />
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5564</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2745,7 +2894,8 @@
 				<mul stat="healEffect" val="0.2" />
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="40" chance="30" />
+				<amount>40</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2773,9 +2923,9 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
-				<param power="7475" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>7475</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -2818,7 +2968,7 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="MagicalSoulAttack">
-				<param power="69" />
+				<power>69</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="healEffect" val="#healEffect" />
@@ -2827,7 +2977,8 @@
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="6092" skillLevel="1" />
+				<skillId>6092</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -2857,11 +3008,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="1" />
-				<param chance="10" />
-				<param skillId="5600" skillLevel="1" /> <!-- Betrayal Mark -->
-				<param targetType="PARTY" />
+				<!-- Betrayal Mark -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<chance>10</chance>
+				<targetType>PARTY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5600</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2931,7 +3086,16 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">4040</value>
+					<value level="2">11557</value>
+					<value level="3">13553</value>
+					<value level="4">15150</value>
+					<value level="5">16747</value>
+					<value level="6">17896</value>
+					<value level="7">18622</value>
+					<value level="8">19348</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2984,8 +3148,8 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2322" />
-				<param overHit="true" />
+				<power>2322</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -3005,7 +3169,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1900" />
+				<power>1900</power>
 			</effect>
 		</for>
 	</skill>
@@ -3028,8 +3192,8 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2111" />
-				<param overHit="true" />
+				<power>2111</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -3059,10 +3223,10 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1689" />
+				<power>1689</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="69" />
+				<power>69</power>
 			</effect>
 		</for>
 	</skill>

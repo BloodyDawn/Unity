@@ -54,7 +54,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hotValue" />
+				<power>
+					<value level="1">106</value>
+					<value level="2">142</value>
+					<value level="3">178</value>
+				</power>
 			</effect>
 			<effect name="Buff">
 				<mul stat="healEffect" val="#healEffect" />
@@ -62,7 +66,9 @@
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11802" skillLevel="1" skillLevelScaleTo="3" />
+				<skillId>11802</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -119,13 +125,19 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hotValue" />
 				<mul stat="healEffect" val="#power" />
+				<power>
+					<value level="1">107</value>
+					<value level="2">143</value>
+					<value level="3">179</value>
+				</power>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11804" skillLevel="1" skillLevelScaleTo="3" />
+				<skillId>11804</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -183,10 +195,17 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpCpHeal">
-				<param power="#heal" />
+				<power>
+					<value level="1">3274</value>
+					<value level="2">3296</value>
+					<value level="3">3319</value>
+					<value level="4">3338</value>
+				</power>
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 		</for>
 	</skill>
@@ -213,7 +232,13 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealPercent">
-				<param power="#heal" />
+				<power>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">8</value>
+					<value level="5">9</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -243,7 +268,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">200</value>
+					<value level="2">400</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -272,7 +300,10 @@
 		<reuseDelay>10000</reuseDelay>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">200</value>
+					<value level="2">400</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -341,7 +372,7 @@
 			<!-- TODO check Zealar implementation of Res special -->
 			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
 			<effect name="ResurrectionSpecial">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -372,7 +403,7 @@
 			<!-- TODO check Zealar implementation of Res special -->
 			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
 			<effect name="ResurrectionSpecial">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -442,10 +473,23 @@
 		<trait>KNOCKDOWN</trait>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">124</value>
+					<value level="2">127</value>
+					<value level="3">129</value>
+					<value level="4">133</value>
+					<value level="5">137</value>
+					<value level="6">141</value>
+					<value level="7">144</value>
+					<value level="8">148</value>
+					<value level="9">178</value>
+					<value level="10">182</value>
+					<value level="11">186</value>
+				</power>
 			</effect>
 			<effect name="KnockBack">
-				<param speed="500" distance="200" />
+				<speed>500</speed>
+				<distance>200</distance>
 			</effect>
 		</for>
 	</skill>
@@ -478,7 +522,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hotValue" />
+				<power>
+					<value level="1">107</value>
+					<value level="2">143</value>
+					<value level="3">179</value>
+				</power>
 			</effect>
 			<effect name="Buff">
 				<mul stat="healEffect" val="#power" />
@@ -486,7 +534,10 @@
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11804" skillLevel="1" skillLevelScaleTo="3" /> <!-- Sustain -->
+				<!-- Sustain -->
+				<skillId>11804</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -573,10 +624,22 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">102</value>
+					<value level="2">104</value>
+					<value level="3">107</value>
+					<value level="4">110</value>
+					<value level="5">113</value>
+					<value level="6">116</value>
+					<value level="7">119</value>
+					<value level="8">122</value>
+					<value level="9">162</value>
+					<value level="10">166</value>
+					<value level="11">170</value>
+				</power>
 			</effect>
 			<effect name="AddHate">
-				<param power="-1240" />
+				<power>-1240</power>
 			</effect>
 		</for>
 	</skill>
@@ -635,7 +698,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -669,10 +732,10 @@
 				<mul stat="mDef" val="1.30" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="IMPROVE_PA_PD_UP,-1;PA_UP,-1;PD_UP,-1;IMPROVE_MA_MD_UP,-1;MD_UP,-1;MA_UP,-1;KAMAEL_SPECIAL,-1" />
+				<dispel>IMPROVE_PA_PD_UP,-1;PA_UP,-1;PD_UP,-1;IMPROVE_MA_MD_UP,-1;MD_UP,-1;MA_UP,-1;KAMAEL_SPECIAL,-1</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP" />
+				<slot>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -707,10 +770,10 @@
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="IMPROVE_CRT_RATE_DMG_UP,-1;CRITICAL_PROB_UP,-1;CRITICAL_DMG_UP,-1;CHEAP_MAGIC,-1;MAGIC_CRITICAL_UP,-1" />
+				<dispel>IMPROVE_CRT_RATE_DMG_UP,-1;CRITICAL_PROB_UP,-1;CRITICAL_DMG_UP,-1;CHEAP_MAGIC,-1;MAGIC_CRITICAL_UP,-1</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" />
+				<slot>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -742,13 +805,14 @@
 				<mul stat="mAtkSpd" val="1.31" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="30" />
+				<amount>9</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -783,10 +847,10 @@
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="IMPROVE_HIT_DEFENCE_CRT_RATE_UP,-1;HIT_UP,-1;T_CRT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP,-1;AVOID_UP,-1" />
+				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP,-1;HIT_UP,-1;T_CRT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP,-1;AVOID_UP,-1</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP" />
+				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -814,18 +878,18 @@
 		<isMagic>22</isMagic>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="40" />
-				<param POISON="50" />
+				<SHOCK>40</SHOCK>
+				<POISON>50</POISON>
 			</effect>
 			<effect name="Buff">
 				<add stat="holyRes" val="30" />
 				<add stat="darkRes" val="30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_ALIGNMENT,-1;ARMOR_UNHOLY,-1;DANCE_OF_LIGHT,-1;SONG_OF_INVOCATION,-1;RESIST_BLEEDING,-1;RESIST_SHOCK,-1" />
+				<dispel>DANCE_OF_ALIGNMENT,-1;ARMOR_UNHOLY,-1;DANCE_OF_LIGHT,-1;SONG_OF_INVOCATION,-1;RESIST_BLEEDING,-1;RESIST_SHOCK,-1</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING;RESIST_SHOCK" />
+				<slot>DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING;RESIST_SHOCK</slot>
 			</effect>
 		</for>
 	</skill>
@@ -853,19 +917,19 @@
 		<isMagic>22</isMagic>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="50" />
-				<param SLEEP="50" />
-				<param DERANGEMENT="50" />
+				<HOLD>50</HOLD>
+				<DERANGEMENT>50</DERANGEMENT>
+				<SLEEP>50</SLEEP>
 			</effect>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="30" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DANCE_OF_PROTECTION,-1;RESIST_DEBUFF_DISPEL,-1" />
+				<dispel>DANCE_OF_PROTECTION,-1;RESIST_DEBUFF_DISPEL,-1</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL" />
+				<slot>DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -893,7 +957,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ResurrectionSpecial">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -919,7 +983,13 @@
 		<isMagic>2</isMagic>
 		<for>
 			<effect name="Heal">
-				<param power="#power" />
+				<power>
+					<value level="1">521</value>
+					<value level="2">532</value>
+					<value level="3">540</value>
+					<value level="4">546</value>
+					<value level="5">554</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -944,7 +1014,7 @@
 		<targetType>AREA_FRIENDLY</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="40" />
+				<power>40</power>
 			</effect>
 		</for>
 	</skill>
@@ -987,10 +1057,10 @@
 				<mul stat="moveSpeed" val="0.85" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MULTI_BUFF,-1;COUNTER_CRITICAL,-1" />
+				<dispel>MULTI_BUFF,-1;COUNTER_CRITICAL,-1</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MULTI_BUFF;COUNTER_CRITICAL" />
+				<slot>MULTI_BUFF;COUNTER_CRITICAL</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1039,7 +1109,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Unsummon">
-				<param chance="50" />
+				<chance>50</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1102,10 +1172,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DefenceTrait">
-				<param SLEEP="100" />
+				<SLEEP>100</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1258,10 +1328,10 @@
 		</cond>
 		<for>
 			<effect name="CpHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1501,7 +1571,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="HpDrain">
-				<param percentage="50" />
+				<percentage>50</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -1566,15 +1636,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DefenceTrait">
-				<param SWORD="5" />
-				<param BLUNT="5" />
-				<param DAGGER="5" />
-				<param DUAL="5" />
-				<param DUALFIST="5" />
-				<param POLE="5" />
-				<param ANCIENTSWORD="5" />
-				<param RAPIER="5" />
-				<param DUALDAGGER="5" />
+				<SWORD>5</SWORD>
+				<DAGGER>5</DAGGER>
+				<DUALFIST>5</DUALFIST>
+				<ANCIENTSWORD>5</ANCIENTSWORD>
+				<DUALDAGGER>5</DUALDAGGER>
+				<BLUNT>5</BLUNT>
+				<POLE>5</POLE>
+				<DUAL>5</DUAL>
+				<RAPIER>5</RAPIER>
 			</effect>
 		</for>
 	</skill>
@@ -1598,8 +1668,8 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="5" />
-				<param CROSSBOW="5" />
+				<BOW>5</BOW>
+				<CROSSBOW>5</CROSSBOW>
 			</effect>
 		</for>
 	</skill>

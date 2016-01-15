@@ -61,7 +61,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SHOCK="15" />
+				<SHOCK>15</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -74,7 +74,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param SLEEP="15" />
+				<SLEEP>15</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -87,7 +87,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="15" />
+				<HOLD>15</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -100,7 +100,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param PARALYZE="15" />
+				<PARALYZE>15</PARALYZE>
 			</effect>
 		</for>
 	</skill>
@@ -146,7 +146,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -229,7 +229,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="1576" />
+				<npcId>1576</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -247,7 +247,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="1577" />
+				<npcId>1577</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -265,7 +265,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="1578" />
+				<npcId>1578</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -318,7 +318,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16077" />
+				<npcId>16077</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -335,7 +335,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16078" />
+				<npcId>16078</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -352,7 +352,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonAgathion">
-				<param npcId="16079" />
+				<npcId>16079</npcId>
 			</effect>
 		</for>
 	</skill>
@@ -1135,14 +1135,14 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1" />
-				<param criticalChance="10" />
-				<param overHit="true" />
+				<power>1</power>
+				<overHit>true</overHit>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="FocusMomentum">
-				<param maxCharges="7" />
+				<maxCharges>7</maxCharges>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -1167,14 +1167,14 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1" />
-				<param criticalChance="10" />
-				<param overHit="true" />
+				<power>1</power>
+				<overHit>true</overHit>
+				<criticalChance>10</criticalChance>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="FocusMomentum">
-				<param maxCharges="7" />
+				<maxCharges>7</maxCharges>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -1204,9 +1204,9 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6084" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>6084</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1242,17 +1242,17 @@
 		</cond>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
 			<effect name="PhysicalAttack">
-				<param power="3295" />
-				<param criticalChance="20" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<criticalChance>20</criticalChance>
+				<overHit>true</overHit>
+				<power>3295</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
 			</effect>
 		</for>
 	</skill>
@@ -1273,13 +1273,13 @@
 		<hitTime>1500</hitTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param criticalChance="10" />
-				<param overHit="true" />
+				<criticalChance>10</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="FocusSouls">
-				<param charge="1" />
+				<charge>1</charge>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -1305,8 +1305,8 @@
 		<fanRange>0;0;400;90</fanRange>
 		<for>
 			<effect name="PhysicalSoulAttack">
-				<param power="6468" />
-				<param overHit="true" />
+				<power>6468</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1336,7 +1336,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<for>
 			<effect name="MagicalSoulAttack">
-				<param power="112" />
+				<power>112</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.7" />
@@ -1344,7 +1344,7 @@
 				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="-12" />
+				<power>-12</power>
 			</effect>
 		</for>
 	</skill>
@@ -1370,10 +1370,10 @@
 		</cond>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="MULTI_DEBUFF_SOUL,9" />
+				<dispel>MULTI_DEBUFF_SOUL,9</dispel>
 			</effect>
 			<effect name="MagicalSoulAttack">
-				<param power="195" />
+				<power>195</power>
 			</effect>
 		</for>
 	</skill>
@@ -1402,9 +1402,9 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
-				<param power="6468" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>6468</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1433,9 +1433,9 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="16667" />
-				<param criticalChance="15" />
-				<param overHit="true" />
+				<power>16667</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</for>
 	</skill>
@@ -1466,11 +1466,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="140" />
-				<param overHit="true" />
+				<power>140</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
+				<power>12</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.9" />
@@ -1503,10 +1503,10 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="195" />
+				<power>195</power>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="MULTI_DEBUFF_FIRE,9" />
+				<dispel>MULTI_DEBUFF_FIRE,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1535,10 +1535,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="117" />
+				<power>117</power>
 			</effect>
 			<effect name="DamOverTime" ticks="3">
-				<param power="111" />
+				<power>111</power>
 			</effect>
 		</for>
 	</skill>
@@ -1569,11 +1569,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="HpDrain">
-				<param power="139" />
-				<param percentage="25" />
+				<power>139</power>
+				<percentage>25</percentage>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
+				<power>12</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="darkRes" val="30" />
@@ -1600,10 +1600,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DispelBySlotMyself">
-				<param dispel="MAGICAL_STANCE" />
+				<dispel>MAGICAL_STANCE</dispel>
 			</effect>
 			<effect name="SummonNpc">
-				<param npcId="13028" npcCount="1" />
+				<npcId>13028</npcId>
+				<npcCount>1</npcCount>
 			</effect>
 		</for>
 	</skill>
@@ -1634,11 +1635,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="140" />
-				<param overHit="true" />
+				<power>140</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
+				<power>12</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.7" />
@@ -1671,10 +1672,10 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="195" />
+				<power>195</power>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="MULTI_DEBUFF_WATER,9" />
+				<dispel>MULTI_DEBUFF_WATER,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1701,7 +1702,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="117" />
+				<power>117</power>
 			</effect>
 		</for>
 	</skill>
@@ -1732,15 +1733,15 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="140" />
-				<param overHit="true" />
+				<power>140</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
 				<mul stat="moveSpeed" val="0.9" />
 				<mul stat="pAtkSpd" val="0.9" />
 				<mul stat="mAtkSpd" val="0.7" />
 				<sub stat="windRes" val="20" />
+				<power>12</power>
 			</effect>
 		</for>
 	</skill>
@@ -1767,10 +1768,10 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="195" />
+				<power>195</power>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="MULTI_DEBUFF_WIND,9" />
+				<dispel>MULTI_DEBUFF_WIND,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1797,9 +1798,11 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="14836" />
-				<param consumeItemId="3031" consumeItemCount="11" /> <!-- Spirit Ore -->
-				<param lifeTime="3600" />
+				<!-- Spirit Ore -->
+				<npcId>14836</npcId>
+				<lifeTime>3600</lifeTime>
+				<consumeItemId>3031</consumeItemId>
+				<consumeItemCount>11</consumeItemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1840,7 +1843,9 @@
 				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" heal="true" />
+				<amount>20</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
 			</effect>
 		</for>
 	</skill>
@@ -1867,9 +1872,10 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="14837" />
-				<param consumeItemId="3031" consumeItemCount="11" />
-				<param lifeTime="3600" />
+				<npcId>14837</npcId>
+				<lifeTime>3600</lifeTime>
+				<consumeItemId>3031</consumeItemId>
+				<consumeItemCount>11</consumeItemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1896,9 +1902,10 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="14838" />
-				<param consumeItemId="3031" consumeItemCount="11" />
-				<param lifeTime="3600" />
+				<npcId>14838</npcId>
+				<lifeTime>3600</lifeTime>
+				<consumeItemId>3031</consumeItemId>
+				<consumeItemCount>11</consumeItemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1950,7 +1957,9 @@
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 		</for>
 	</skill>
@@ -2030,10 +2039,12 @@
 				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" />
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="5" chance="30" />
+				<amount>5</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2117,7 +2128,7 @@
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<for>
 			<effect name="HealPercent">
-				<param power="30" />
+				<power>30</power>
 			</effect>
 		</for>
 	</skill>

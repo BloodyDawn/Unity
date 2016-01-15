@@ -505,10 +505,13 @@
 		</cond>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param minDamage="1" />
-				<param chance="21" /> <!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
-				<param skillId="13667" skillLevel="1" /> <!-- Orichalcum Arrow - Additional Hit -->
-				<param targetType="ONE" />
+				<!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
+				<!-- Orichalcum Arrow - Additional Hit -->
+				<minDamage>1</minDamage>
+				<skillId>13667</skillId>
+				<skillLevel>1</skillLevel>
+				<chance>21</chance>
+				<targetType>ONE</targetType>
 			</effect>
 		</for>
 	</skill>
@@ -522,7 +525,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<for>
 			<effect name="RegularAttack">
-				<param pDefMod="0.7" />
+				<pDefMod>0.7</pDefMod>
 			</effect>
 		</for>
 	</skill>
@@ -537,10 +540,13 @@
 		</cond>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param minDamage="1" />
-				<param chance="21" /> <!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
-				<param skillId="13669" skillLevel="1" /> <!-- Orichalcum Bolt - Additional Hit -->
-				<param targetType="ONE" />
+				<!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
+				<!-- Orichalcum Bolt - Additional Hit -->
+				<minDamage>1</minDamage>
+				<skillId>13669</skillId>
+				<skillLevel>1</skillLevel>
+				<chance>21</chance>
+				<targetType>ONE</targetType>
 			</effect>
 		</for>
 	</skill>
@@ -554,7 +560,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<for>
 			<effect name="RegularAttack">
-				<param pDefMod="0.7" />
+				<pDefMod>0.7</pDefMod>
 			</effect>
 		</for>
 	</skill>

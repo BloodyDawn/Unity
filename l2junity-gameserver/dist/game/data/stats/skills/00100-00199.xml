@@ -78,8 +78,24 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">36</value>
+					<value level="2">39</value>
+					<value level="3">42</value>
+					<value level="4">49</value>
+					<value level="5">53</value>
+					<value level="6">57</value>
+					<value level="7">66</value>
+					<value level="8">71</value>
+					<value level="9">77</value>
+					<value level="10">88</value>
+					<value level="11">94</value>
+					<value level="12">101</value>
+					<value level="13">115</value>
+					<value level="14">123</value>
+					<value level="15">131</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -237,12 +253,53 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">344</value>
+					<value level="2">367</value>
+					<value level="3">391</value>
+					<value level="4">443</value>
+					<value level="5">471</value>
+					<value level="6">500</value>
+					<value level="7">530</value>
+					<value level="8">562</value>
+					<value level="9">595</value>
+					<value level="10">630</value>
+					<value level="11">666</value>
+					<value level="12">703</value>
+					<value level="13">742</value>
+					<value level="14">782</value>
+					<value level="15">823</value>
+					<value level="16">866</value>
+					<value level="17">910</value>
+					<value level="18">955</value>
+					<value level="19">1002</value>
+					<value level="20">1050</value>
+					<value level="21">1100</value>
+					<value level="22">1150</value>
+					<value level="23">1202</value>
+					<value level="24">1255</value>
+					<value level="25">1309</value>
+					<value level="26">1364</value>
+					<value level="27">1420</value>
+					<value level="28">1476</value>
+					<value level="29">1534</value>
+					<value level="30">1592</value>
+					<value level="31">1651</value>
+					<value level="32">1710</value>
+					<value level="33">1770</value>
+					<value level="34">1830</value>
+					<value level="35">1891</value>
+					<value level="36">1951</value>
+					<value level="37">2012</value>
+					<value level="38">2072</value>
+					<value level="39">2132</value>
+					<value level="40">2192</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
 		</for>
 	</skill>
@@ -408,7 +465,12 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">41</value>
+					<value level="2">50</value>
+					<value level="3">58</value>
+					<value level="4">63</value>
+				</power>
 			</effect>
 			<effect name="ConsumeBody" />
 		</for>
@@ -430,7 +492,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<param PLANT_WEAKNESS="30" />
+				<PLANT_WEAKNESS>30</PLANT_WEAKNESS>
 			</effect>
 		</for>
 	</skill>
@@ -561,7 +623,32 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">26</value>
+					<value level="2">28</value>
+					<value level="3">30</value>
+					<value level="4">31</value>
+					<value level="5">33</value>
+					<value level="6">34</value>
+					<value level="7">36</value>
+					<value level="8">37</value>
+					<value level="9">39</value>
+					<value level="10">40</value>
+					<value level="11">42</value>
+					<value level="12">43</value>
+					<value level="13">45</value>
+					<value level="14">46</value>
+					<value level="15">48</value>
+					<value level="16">49</value>
+					<value level="17">51</value>
+					<value level="18">53</value>
+					<value level="19">56</value>
+					<value level="20">58</value>
+					<value level="21">59</value>
+					<value level="22">61</value>
+					<value level="23">63</value>
+					<value level="24">65</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.8" />
@@ -679,7 +766,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -788,7 +875,11 @@
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="SkillEvasion">
-				<param magicType="0" amount="#pSkillEvas" />
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">25</value>
+					<value level="2">40</value>
+				</amount>
 			</effect>
 		</for>
 	</skill>
@@ -831,8 +922,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="#trait_bow" />
-				<param CROSSBOW="#trait_crossbow" />
+				<BOW>
+					<value level="1">16</value>
+					<value level="2">24</value>
+					<value level="3">32</value>
+					<value level="4">40</value>
+				</BOW>
+				<CROSSBOW>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">16</value>
+					<value level="4">20</value>
+				</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -1139,8 +1240,24 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">42</value>
+					<value level="2">46</value>
+					<value level="3">49</value>
+					<value level="4">57</value>
+					<value level="5">62</value>
+					<value level="6">67</value>
+					<value level="7">77</value>
+					<value level="8">83</value>
+					<value level="9">89</value>
+					<value level="10">103</value>
+					<value level="11">110</value>
+					<value level="12">117</value>
+					<value level="13">134</value>
+					<value level="14">143</value>
+					<value level="15">152</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1191,7 +1308,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MaxHp">
-				<param amount="#amount" mode="PER" heal="true" />
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">35</value>
+				</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
 			</effect>
 		</for>
 	</skill>
@@ -1458,7 +1584,13 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">24</value>
+					<value level="2">41</value>
+					<value level="3">50</value>
+					<value level="4">58</value>
+					<value level="5">63</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1545,9 +1677,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="20" />
-				<param SLEEP="20" />
-				<param POISON="20" />
+				<HOLD>20</HOLD>
+				<POISON>20</POISON>
+				<SLEEP>20</SLEEP>
 			</effect>
 		</for>
 	</skill>
@@ -1697,7 +1829,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="CubicMastery">
-				<param cubicCount="#cubicCount" />
+				<cubicCount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</cubicCount>
 			</effect>
 		</for>
 	</skill>
@@ -1901,10 +2036,32 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_HP_RATE" type="RUNNING" value="#hp" />
+				<stat>REGENERATE_HP_RATE</stat>
+				<type>RUNNING</type>
+				<value>
+					<value level="1">1.9</value>
+					<value level="2">2.7</value>
+					<value level="3">2.9</value>
+					<value level="4">3.6</value>
+					<value level="5">4.5</value>
+					<value level="6">4.7</value>
+					<value level="7">5.6</value>
+					<value level="8">6.7</value>
+				</value>
 			</effect>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_MP_RATE" type="RUNNING" value="#mp" />
+				<stat>REGENERATE_MP_RATE</stat>
+				<type>RUNNING</type>
+				<value>
+					<value level="1">1.9</value>
+					<value level="2">2.1</value>
+					<value level="3">2.2</value>
+					<value level="4">2.5</value>
+					<value level="5">2.7</value>
+					<value level="6">2.8</value>
+					<value level="7">3.1</value>
+					<value level="8">3.5</value>
+				</value>
 			</effect>
 		</for>
 	</skill>
@@ -2051,13 +2208,35 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_HP_RATE" type="RUNNING" value="#hp" />
+				<stat>REGENERATE_HP_RATE</stat>
+				<type>RUNNING</type>
+				<value>
+					<value level="1">2.5</value>
+					<value level="2">3</value>
+					<value level="3">3.5</value>
+					<value level="4">4</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">5.5</value>
+					<value level="8">6</value>
+				</value>
 			</effect>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_MP_RATE" type="RUNNING" value="#mp" />
+				<stat>REGENERATE_MP_RATE</stat>
+				<type>RUNNING</type>
+				<value>
+					<value level="1">1.8</value>
+					<value level="2">1.9</value>
+					<value level="3">2</value>
+					<value level="4">2.1</value>
+					<value level="5">2.2</value>
+					<value level="6">2.3</value>
+					<value level="7">2.4</value>
+					<value level="8">2.5</value>
+				</value>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="-11" />
+				<HOLD>-11</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -2260,7 +2439,7 @@
 		</cond>
 		<for>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -2399,10 +2578,48 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param criticalChance="15" />
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<power>
+					<value level="1">738</value>
+					<value level="2">784</value>
+					<value level="3">833</value>
+					<value level="4">884</value>
+					<value level="5">937</value>
+					<value level="6">992</value>
+					<value level="7">1049</value>
+					<value level="8">1109</value>
+					<value level="9">1171</value>
+					<value level="10">1236</value>
+					<value level="11">1302</value>
+					<value level="12">1371</value>
+					<value level="13">1443</value>
+					<value level="14">1516</value>
+					<value level="15">1592</value>
+					<value level="16">1670</value>
+					<value level="17">1750</value>
+					<value level="18">1832</value>
+					<value level="19">1917</value>
+					<value level="20">2003</value>
+					<value level="21">2091</value>
+					<value level="22">2181</value>
+					<value level="23">2272</value>
+					<value level="24">2366</value>
+					<value level="25">2460</value>
+					<value level="26">2556</value>
+					<value level="27">2653</value>
+					<value level="28">2751</value>
+					<value level="29">2850</value>
+					<value level="30">2950</value>
+					<value level="31">3050</value>
+					<value level="32">3151</value>
+					<value level="33">3252</value>
+					<value level="34">3353</value>
+					<value level="35">3453</value>
+					<value level="36">3553</value>
+					<value level="37">3653</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>

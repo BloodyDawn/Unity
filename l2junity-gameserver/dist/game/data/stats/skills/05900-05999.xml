@@ -25,12 +25,17 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="90" />
-				<param skillId="5902" skillLevel="1" /> <!-- NPC Trigger Target Cancel -->
-				<param targetType="SELF" />
-				<param allowWeapons="ALL" />
+				<!-- NPC Trigger Target Cancel -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>90</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5902</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -60,12 +65,17 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="90" />
-				<param skillId="5902" skillLevel="1" /> <!-- NPC Trigger Target Cancel -->
-				<param targetType="SELF" />
-				<param allowWeapons="ALL" />
+				<!-- NPC Trigger Target Cancel -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>99</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>90</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5902</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -148,8 +158,12 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="80" />
+				<power>
+					<value level="1">112</value>
+					<value level="2">117</value>
+					<value level="3">120</value>
+				</power>
+				<percentage>80</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -212,7 +226,7 @@
 		<targetType>NONE</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -242,7 +256,7 @@
 		<targetType>NONE</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>
@@ -259,7 +273,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="3000" /> <!-- FIXME: value unconfirmed -->
+				<!-- FIXME: value unconfirmed -->
+				<power>3000</power>
 			</effect>
 		</for>
 	</skill>
@@ -276,7 +291,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="5000" /> <!-- FIXME: value unconfirmed -->
+				<!-- FIXME: value unconfirmed -->
+				<power>5000</power>
 			</effect>
 		</for>
 	</skill>
@@ -311,12 +327,17 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param isCritical="false" />
-				<param minDamage="1" chance="100" />
-				<param skillId="5914" skillLevel="1" /> <!-- Putrefaction Cleanse -->
-				<param targetType="ONE" />
-				<param allowWeapons="ALL" />
+				<!-- Putrefaction Cleanse -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ONE</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5914</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -434,7 +455,18 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="DefenceTrait">
-				<param ROOT_PHYSICALLY="#trait_root_physically" />
+				<ROOT_PHYSICALLY>
+					<value level="1">-10</value>
+					<value level="2">-20</value>
+					<value level="3">-30</value>
+					<value level="4">-40</value>
+					<value level="5">-50</value>
+					<value level="6">-60</value>
+					<value level="7">-70</value>
+					<value level="8">-80</value>
+					<value level="9">-90</value>
+					<value level="10">-99</value>
+				</ROOT_PHYSICALLY>
 			</effect>
 		</for>
 	</skill>
@@ -484,7 +516,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="150" />
+				<power>150</power>
 			</effect>
 		</for>
 	</skill>
@@ -517,8 +549,8 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="121" />
-				<param percentage="80" />
+				<power>121</power>
+				<percentage>80</percentage>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.9" />
@@ -558,7 +590,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="121" />
+				<power>121</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="3" />
@@ -702,8 +734,8 @@
 		<targetType>NONE</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="90" />
-				<param CROSSBOW="90" />
+				<BOW>90</BOW>
+				<CROSSBOW>90</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -741,7 +773,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9279" />
+				<power>9279</power>
 			</effect>
 		</for>
 	</skill>
@@ -766,7 +798,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9279" />
+				<power>9279</power>
 			</effect>
 		</for>
 	</skill>
@@ -808,7 +840,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9279" />
+				<power>9279</power>
 			</effect>
 		</for>
 	</skill>
@@ -832,7 +864,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9279" />
+				<power>9279</power>
 			</effect>
 		</for>
 	</skill>
@@ -1372,8 +1404,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param ignoreShieldDefence="true" />
-				<param overHit="true" />
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -1496,7 +1528,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1515</value>
+					<value level="2">2365</value>
+					<value level="3">6059</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1527,7 +1563,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">757</value>
+					<value level="2">1182</value>
+					<value level="3">4039</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1602,7 +1642,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">2273</value>
+					<value level="2">3547</value>
+					<value level="3">6059</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1655,10 +1699,10 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="8" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
+				<transformationId>8</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1692,10 +1736,10 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="9" />
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
+				<transformationId>9</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -1796,7 +1840,7 @@
 				</add>
 			</effect>
 			<effect name="AttackTrait">
-				<param SHOCK="8" />
+				<SHOCK>8</SHOCK>
 			</effect>
 		</for>
 	</skill>
@@ -1955,14 +1999,18 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="171" />
+				<power>171</power>
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="Attackable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="90" />
-				<param skillId="5902" skillLevel="1" /> <!-- NPC Trigger Target Cancel -->
-				<param targetType="SELF" />
+				<!-- NPC Trigger Target Cancel -->
+				<minDamage>1</minDamage>
+				<skillId>5902</skillId>
+				<skillLevel>1</skillLevel>
+				<attackerType>Attackable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>90</chance>
 			</effect>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />

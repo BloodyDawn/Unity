@@ -18,7 +18,7 @@
 		</cond>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="TRANSFORM,-1" />
+				<dispel>TRANSFORM,-1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -46,16 +46,17 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="111" />
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
+				<transformationId>111</transformationId>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<dispel>IMPROVE_SPEED_AVOID_UP;SPEED_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -83,16 +84,17 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="112" />
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
+				<transformationId>112</transformationId>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<dispel>IMPROVE_SPEED_AVOID_UP;SPEED_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -120,16 +122,17 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="124" />
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
+				<transformationId>124</transformationId>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<dispel>IMPROVE_SPEED_AVOID_UP;SPEED_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -157,16 +160,17 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="113" />
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
+				<transformationId>113</transformationId>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<dispel>IMPROVE_SPEED_AVOID_UP;SPEED_UP</dispel>
+				<rate>100</rate>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -258,11 +262,51 @@
 		<trait>BLEED</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
-				<param overHit="true" />
+				<power>
+					<value level="1">1649</value>
+					<value level="2">2045</value>
+					<value level="3">2476</value>
+					<value level="4">2927</value>
+					<value level="5">3108</value>
+					<value level="6">3288</value>
+					<value level="7">3464</value>
+					<value level="8">3636</value>
+					<value level="9">3801</value>
+					<value level="10">3881</value>
+					<value level="11">3959</value>
+					<value level="12">4034</value>
+					<value level="13">4107</value>
+					<value level="14">4176</value>
+					<value level="15">4243</value>
+					<value level="16">4307</value>
+					<value level="17">4367</value>
+					<value level="18">4424</value>
+					<value level="19">4477</value>
+				</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">65</value>
+					<value level="2">75</value>
+					<value level="3">75</value>
+					<value level="4">82</value>
+					<value level="5">82</value>
+					<value level="6">82</value>
+					<value level="7">82</value>
+					<value level="8">82</value>
+					<value level="9">85</value>
+					<value level="10">85</value>
+					<value level="11">85</value>
+					<value level="12">85</value>
+					<value level="13">85</value>
+					<value level="14">85</value>
+					<value level="15">85</value>
+					<value level="16">85</value>
+					<value level="17">85</value>
+					<value level="18">85</value>
+					<value level="19">87</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -673,7 +717,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="18162" />
+				<power>18162</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.5" />
@@ -703,7 +747,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="15352" itemCount="1" />
+				<itemId>15352</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -916,7 +961,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="13270" npcCount="1" despawnDelay="7200" />
+				<npcId>13270</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>7200</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -1209,7 +1256,7 @@
 		<attributeValue>20</attributeValue>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="150000" />
+				<power>150000</power>
 			</effect>
 		</for>
 	</skill>
@@ -1320,10 +1367,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="38976" />
+				<power>38976</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="6662" skillLevel="2" />
+				<skillId>6662</skillId>
+				<skillLevel>2</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1348,10 +1396,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="45256" />
+				<power>45256</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="6662" skillLevel="2" />
+				<skillId>6662</skillId>
+				<skillLevel>2</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1410,7 +1459,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="18560" />
+				<power>18560</power>
 			</effect>
 		</for>
 	</skill>
@@ -1432,7 +1481,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="18560" />
+				<power>18560</power>
 			</effect>
 		</for>
 	</skill>
@@ -1461,7 +1510,8 @@
 		<targetType>ONE</targetType>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="6281" skillLevel="1" />
+				<skillId>6281</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -1481,7 +1531,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="18560" />
+				<power>18560</power>
 			</effect>
 		</for>
 	</skill>
@@ -1528,7 +1578,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="18560" />
+				<power>18560</power>
 			</effect>
 		</for>
 	</skill>
@@ -1626,13 +1676,13 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="CpHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="HealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>
@@ -1705,7 +1755,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -1725,7 +1775,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -1752,7 +1802,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 			<effect name="EnemyCharge" />
 		</for>
@@ -1776,7 +1826,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -1843,7 +1893,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 			<effect name="EnemyCharge" />
 		</for>
@@ -1866,7 +1916,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="4563" />
+				<power>4563</power>
 			</effect>
 		</for>
 	</skill>
@@ -1903,10 +1953,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="1547" />
+				<power>1547</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="6662" skillLevel="1" />
+				<skillId>6662</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>

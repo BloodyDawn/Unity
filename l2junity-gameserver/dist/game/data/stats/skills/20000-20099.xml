@@ -48,9 +48,9 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="3420" />
-				<param chance="20" />
-				<param overHit="true" />
+				<power>3420</power>
+				<overHit>true</overHit>
+				<chance>20</chance>
 			</effect>
 		</for>
 	</skill>
@@ -71,8 +71,8 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="3420" />
-				<param overHit="true" />
+				<power>3420</power>
+				<overHit>true</overHit>
 			</effect>
 		</for>
 	</skill>
@@ -144,10 +144,12 @@
 				<mul stat="maxCp" val="1.15" />
 			</effect>
 			<effect name="CpHealPercent">
-				<param power="15" />
+				<power>15</power>
 			</effect>
 			<effect name="MaxHp">
-				<param amount="15" mode="PER" heal="true" />
+				<amount>15</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
 			</effect>
 		</for>
 	</skill>

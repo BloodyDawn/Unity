@@ -42,7 +42,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -78,7 +78,13 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">100</value>
+					<value level="2">220</value>
+					<value level="3">440</value>
+					<value level="4">880</value>
+					<value level="5">1600</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -105,11 +111,11 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="58" />
 				<mul stat="moveSpeed" val="0.8" />
+				<power>58</power>
 			</effect>
 		</for>
 	</skill>
@@ -134,7 +140,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.3" />
@@ -251,7 +257,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -282,7 +288,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9125" />
+				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -311,7 +317,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -331,7 +337,7 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -361,7 +367,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="9125" />
+				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -388,7 +394,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="13688" />
+				<power>13688</power>
 			</effect>
 		</for>
 	</skill>
@@ -420,7 +426,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="4" />
+				<power>4</power>
 			</effect>
 		</for>
 	</skill>
@@ -451,7 +457,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="4" />
+				<power>4</power>
 			</effect>
 		</for>
 	</skill>
@@ -482,10 +488,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="69" />
+				<power>69</power>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="4" />
+				<power>4</power>
 			</effect>
 		</for>
 	</skill>
@@ -502,7 +508,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6844" />
+				<power>6844</power>
 			</effect>
 		</for>
 	</skill>
@@ -519,7 +525,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6844" />
+				<power>6844</power>
 			</effect>
 		</for>
 	</skill>
@@ -536,7 +542,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6844" />
+				<power>6844</power>
 			</effect>
 		</for>
 	</skill>
@@ -552,7 +558,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6844" />
+				<power>6844</power>
 			</effect>
 		</for>
 	</skill>
@@ -580,7 +586,7 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="2738" />
+				<power>2738</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -599,7 +605,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="6844" />
+				<power>6844</power>
 			</effect>
 		</for>
 	</skill>
@@ -643,7 +649,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="120" />
+				<power>120</power>
 			</effect>
 		</for>
 	</skill>
@@ -687,10 +693,10 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 			<effect name="HealPercent">
-				<param power="90" />
+				<power>90</power>
 			</effect>
 		</for>
 	</skill>
@@ -737,7 +743,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="30" />
+				<power>30</power>
 			</effect>
 		</for>
 	</skill>
@@ -868,13 +874,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTimePercent" ticks="5">
-				<param power="#dot" />
 				<mul stat="rCrit" val="#rCrit">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
 				<mul stat="cAtk" val="#cAtk">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
+				<power>
+					<value level="1">0.005</value>
+					<value level="2">0.01</value>
+					<value level="3">0.02</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -898,13 +908,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTimePercent" ticks="5">
-				<param power="0.05" />
 				<mul stat="rCrit" val="0.9">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
 				<mul stat="cAtk" val="1.5">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
+				<power>0.05</power>
 			</effect>
 		</for>
 	</skill>
@@ -931,7 +941,15 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">30</value>
+					<value level="2">60</value>
+					<value level="3">90</value>
+					<value level="4">150</value>
+					<value level="5">250</value>
+					<value level="6">350</value>
+					<value level="7">500</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -973,17 +991,17 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLUNT="95" />
-				<param DAGGER="95" />
-				<param SWORD="50" />
-				<param DUALFIST="95" />
-				<param DUAL="50" />
-				<param RAPIER="95" />
-				<param ANCIENTSWORD="95" />
-				<param DUALDAGGER="95" />
-				<param BOW="99" />
-				<param CROSSBOW="99" />
-				<param POLE="95" />
+				<BLUNT>95</BLUNT>
+				<SWORD>50</SWORD>
+				<DUAL>50</DUAL>
+				<ANCIENTSWORD>95</ANCIENTSWORD>
+				<BOW>99</BOW>
+				<POLE>95</POLE>
+				<DAGGER>95</DAGGER>
+				<RAPIER>95</RAPIER>
+				<CROSSBOW>99</CROSSBOW>
+				<DUALFIST>95</DUALFIST>
+				<DUALDAGGER>95</DUALDAGGER>
 			</effect>
 		</for>
 	</skill>
@@ -1006,17 +1024,17 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="99" />
-				<param CROSSBOW="99" />
-				<param BLUNT="-5" />
-				<param DAGGER="-5" />
-				<param SWORD="-5" />
-				<param DUALFIST="-5" />
-				<param DUAL="-5" />
-				<param RAPIER="-5" />
-				<param ANCIENTSWORD="-5" />
-				<param DUALDAGGER="-5" />
-				<param POLE="-5" />
+				<BOW>99</BOW>
+				<BLUNT>-5</BLUNT>
+				<SWORD>-5</SWORD>
+				<DUAL>-5</DUAL>
+				<ANCIENTSWORD>-5</ANCIENTSWORD>
+				<POLE>-5</POLE>
+				<CROSSBOW>99</CROSSBOW>
+				<DUALFIST>-5</DUALFIST>
+				<DUALDAGGER>-5</DUALDAGGER>
+				<DAGGER>-5</DAGGER>
+				<RAPIER>-5</RAPIER>
 			</effect>
 		</for>
 	</skill>
@@ -1039,17 +1057,17 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DefenceTrait">
-				<param BLUNT="95" />
-				<param DAGGER="95" />
-				<param SWORD="50" />
-				<param DUALFIST="95" />
-				<param DUAL="50" />
-				<param RAPIER="95" />
-				<param ANCIENTSWORD="95" />
-				<param DUALDAGGER="95" />
-				<param BOW="-100" />
-				<param CROSSBOW="-100" />
-				<param POLE="95" />
+				<BLUNT>95</BLUNT>
+				<SWORD>50</SWORD>
+				<DUAL>50</DUAL>
+				<ANCIENTSWORD>95</ANCIENTSWORD>
+				<BOW>-100</BOW>
+				<POLE>95</POLE>
+				<DAGGER>95</DAGGER>
+				<RAPIER>95</RAPIER>
+				<CROSSBOW>-100</CROSSBOW>
+				<DUALFIST>95</DUALFIST>
+				<DUALDAGGER>95</DUALDAGGER>
 			</effect>
 		</for>
 	</skill>

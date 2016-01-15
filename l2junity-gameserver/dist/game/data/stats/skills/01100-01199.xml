@@ -43,7 +43,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">27</value>
+					<value level="2">40</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -90,7 +93,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">58</value>
+					<value level="2">79</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -156,10 +162,24 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttackMp">
-				<param power="#power" />
+				<power>
+					<value level="1">16</value>
+					<value level="2">22</value>
+					<value level="3">29</value>
+					<value level="4">36</value>
+					<value level="5">46</value>
+					<value level="6">51</value>
+				</power>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<param power="#mdot" />
+				<power>
+					<value level="1">8</value>
+					<value level="2">10</value>
+					<value level="3">13</value>
+					<value level="4">16</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -345,7 +365,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Confuse" abnormalTime="20">
-				<param chance="20" />
+				<chance>20</chance>
 			</effect>
 		</for>
 	</skill>
@@ -392,7 +412,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">58</value>
+					<value level="2">79</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -445,7 +468,12 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">60</value>
+					<value level="2">73</value>
+					<value level="3">84</value>
+					<value level="4">92</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -588,9 +616,67 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" />
-				<param consumeItemId="3031" consumeItemCount="#itemConsumeCountOT" />
-				<param lifeTime="#summonLifeTime" />
+				<npcId>
+					<value level="1">14111</value>
+					<value level="2">14112</value>
+					<value level="3">14113</value>
+					<value level="4">14114</value>
+					<value level="5">14115</value>
+					<value level="6">14116</value>
+					<value level="7">14117</value>
+					<value level="8">14118</value>
+					<value level="9">14119</value>
+					<value level="10">14120</value>
+					<value level="11">14121</value>
+					<value level="12">14122</value>
+					<value level="13">14123</value>
+					<value level="14">14124</value>
+					<value level="15">14125</value>
+					<value level="16">14126</value>
+					<value level="17">14127</value>
+					<value level="18">14128</value>
+				</npcId>
+				<lifeTime>
+					<value level="1">1200</value>
+					<value level="2">1200</value>
+					<value level="3">1200</value>
+					<value level="4">1200</value>
+					<value level="5">3600</value>
+					<value level="6">3600</value>
+					<value level="7">3600</value>
+					<value level="8">3600</value>
+					<value level="9">3600</value>
+					<value level="10">3600</value>
+					<value level="11">3600</value>
+					<value level="12">3600</value>
+					<value level="13">3600</value>
+					<value level="14">3600</value>
+					<value level="15">3600</value>
+					<value level="16">3600</value>
+					<value level="17">3600</value>
+					<value level="18">3600</value>
+				</lifeTime>
+				<consumeItemId>3031</consumeItemId>
+				<consumeItemCount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">1</value>
+					<value level="9">1</value>
+					<value level="10">1</value>
+					<value level="11">1</value>
+					<value level="12">1</value>
+					<value level="13">2</value>
+					<value level="14">2</value>
+					<value level="15">2</value>
+					<value level="16">2</value>
+					<value level="17">2</value>
+					<value level="18">2</value>
+				</consumeItemCount>
 			</effect>
 		</for>
 	</skill>
@@ -752,7 +838,42 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="ManaHealByLevel">
-				<param power="#amount" />
+				<power>
+					<value level="1">41</value>
+					<value level="2">44</value>
+					<value level="3">49</value>
+					<value level="4">52</value>
+					<value level="5">57</value>
+					<value level="6">60</value>
+					<value level="7">66</value>
+					<value level="8">70</value>
+					<value level="9">73</value>
+					<value level="10">77</value>
+					<value level="11">81</value>
+					<value level="12">86</value>
+					<value level="13">90</value>
+					<value level="14">94</value>
+					<value level="15">98</value>
+					<value level="16">102</value>
+					<value level="17">104</value>
+					<value level="18">106</value>
+					<value level="19">108</value>
+					<value level="20">110</value>
+					<value level="21">113</value>
+					<value level="22">115</value>
+					<value level="23">116</value>
+					<value level="24">118</value>
+					<value level="25">120</value>
+					<value level="26">122</value>
+					<value level="27">124</value>
+					<value level="28">126</value>
+					<value level="29">128</value>
+					<value level="30">129</value>
+					<value level="31">131</value>
+					<value level="32">133</value>
+					<value level="33">134</value>
+					<value level="34">136</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -959,7 +1080,53 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">169</value>
+					<value level="2">189</value>
+					<value level="3">211</value>
+					<value level="4">247</value>
+					<value level="5">259</value>
+					<value level="6">272</value>
+					<value level="7">313</value>
+					<value level="8">328</value>
+					<value level="9">343</value>
+					<value level="10">389</value>
+					<value level="11">405</value>
+					<value level="12">421</value>
+					<value level="13">472</value>
+					<value level="14">489</value>
+					<value level="15">507</value>
+					<value level="16">542</value>
+					<value level="17">561</value>
+					<value level="18">579</value>
+					<value level="19">616</value>
+					<value level="20">635</value>
+					<value level="21">654</value>
+					<value level="22">692</value>
+					<value level="23">711</value>
+					<value level="24">730</value>
+					<value level="25">768</value>
+					<value level="26">786</value>
+					<value level="27">805</value>
+					<value level="28">824</value>
+					<value level="29">842</value>
+					<value level="30">860</value>
+					<value level="31">878</value>
+					<value level="32">896</value>
+					<value level="33">913</value>
+					<value level="34">931</value>
+					<value level="35">947</value>
+					<value level="36">964</value>
+					<value level="37">980</value>
+					<value level="38">996</value>
+					<value level="39">1011</value>
+					<value level="40">1026</value>
+					<value level="41">1040</value>
+					<value level="42">1054</value>
+					<value level="43">1067</value>
+					<value level="44">1080</value>
+					<value level="45">1092</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1103,9 +1270,67 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" />
-				<param consumeItemId="3031" consumeItemCount="#itemConsumeCountOT" />
-				<param lifeTime="#summonLifeTime" />
+				<npcId>
+					<value level="1">14479</value>
+					<value level="2">14480</value>
+					<value level="3">14481</value>
+					<value level="4">14482</value>
+					<value level="5">14483</value>
+					<value level="6">14484</value>
+					<value level="7">14485</value>
+					<value level="8">14486</value>
+					<value level="9">14487</value>
+					<value level="10">14488</value>
+					<value level="11">14489</value>
+					<value level="12">14490</value>
+					<value level="13">14491</value>
+					<value level="14">14492</value>
+					<value level="15">14493</value>
+					<value level="16">14494</value>
+					<value level="17">14495</value>
+					<value level="18">14496</value>
+				</npcId>
+				<lifeTime>
+					<value level="1">1200</value>
+					<value level="2">1200</value>
+					<value level="3">1200</value>
+					<value level="4">1200</value>
+					<value level="5">3600</value>
+					<value level="6">3600</value>
+					<value level="7">3600</value>
+					<value level="8">3600</value>
+					<value level="9">3600</value>
+					<value level="10">3600</value>
+					<value level="11">3600</value>
+					<value level="12">3600</value>
+					<value level="13">3600</value>
+					<value level="14">3600</value>
+					<value level="15">3600</value>
+					<value level="16">3600</value>
+					<value level="17">3600</value>
+					<value level="18">3600</value>
+				</lifeTime>
+				<consumeItemId>3031</consumeItemId>
+				<consumeItemCount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">1</value>
+					<value level="9">1</value>
+					<value level="10">1</value>
+					<value level="11">1</value>
+					<value level="12">1</value>
+					<value level="13">2</value>
+					<value level="14">2</value>
+					<value level="15">2</value>
+					<value level="16">2</value>
+					<value level="17">2</value>
+					<value level="18">2</value>
+				</consumeItemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1204,9 +1429,44 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" />
-				<param consumeItemId="3031" consumeItemCount="#itemConsumeCountOT" />
-				<param lifeTime="3600" />
+				<npcId>
+					<value level="1">14001</value>
+					<value level="2">14002</value>
+					<value level="3">14003</value>
+					<value level="4">14004</value>
+					<value level="5">14005</value>
+					<value level="6">14006</value>
+					<value level="7">14007</value>
+					<value level="8">15148</value>
+					<value level="9">15149</value>
+					<value level="10">15150</value>
+					<value level="11">15151</value>
+					<value level="12">15152</value>
+					<value level="13">15153</value>
+					<value level="14">15197</value>
+					<value level="15">15198</value>
+					<value level="16">15199</value>
+				</npcId>
+				<lifeTime>3600</lifeTime>
+				<consumeItemId>3031</consumeItemId>
+				<consumeItemCount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">2</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+				</consumeItemCount>
 			</effect>
 		</for>
 	</skill>
@@ -1519,8 +1779,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="40" />
+				<power>
+					<value level="1">18</value>
+					<value level="2">21</value>
+					<value level="3">23</value>
+					<value level="4">26</value>
+					<value level="5">29</value>
+					<value level="6">32</value>
+				</power>
+				<percentage>40</percentage>
 			</effect>
 		</for>
 	</skill>
@@ -1600,8 +1867,22 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttackRange">
-				<param power="#power" />
-				<param powerRange="40" />
+				<power>
+					<value level="1">58</value>
+					<value level="2">65</value>
+					<value level="3">72</value>
+					<value level="4">78</value>
+					<value level="5">82</value>
+					<value level="6">85</value>
+					<value level="7">89</value>
+					<value level="8">92</value>
+					<value level="9">96</value>
+					<value level="10">99</value>
+					<value level="11">102</value>
+					<value level="12">105</value>
+					<value level="13">108</value>
+				</power>
+				<powerRange>40</powerRange>
 			</effect>
 		</for>
 	</skill>
@@ -1673,7 +1954,24 @@
 		<targetType>CORPSE_MOB</targetType>
 		<for>
 			<effect name="HpByLevel">
-				<param power="#drain" />
+				<power>
+					<value level="1">260</value>
+					<value level="2">299</value>
+					<value level="3">347</value>
+					<value level="4">384</value>
+					<value level="5">426</value>
+					<value level="6">467</value>
+					<value level="7">509</value>
+					<value level="8">529</value>
+					<value level="9">550</value>
+					<value level="10">571</value>
+					<value level="11">590</value>
+					<value level="12">609</value>
+					<value level="13">628</value>
+					<value level="14">645</value>
+					<value level="15">662</value>
+					<value level="16">678</value>
+				</power>
 			</effect>
 			<effect name="ConsumeBody" />
 		</for>
@@ -1727,9 +2025,16 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="#npcIds" />
-				<param lifeTime="3600" />
-				<param expMultiplier="0.1" />
+				<npcId>
+					<value level="1">14038</value>
+					<value level="2">14039</value>
+					<value level="3">14040</value>
+					<value level="4">14041</value>
+					<value level="5">14042</value>
+					<value level="6">14043</value>
+				</npcId>
+				<expMultiplier>0.1</expMultiplier>
+				<lifeTime>3600</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -1818,7 +2123,23 @@
 		<targetType>AREA_CORPSE_MOB</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">61</value>
+					<value level="2">65</value>
+					<value level="3">68</value>
+					<value level="4">72</value>
+					<value level="5">75</value>
+					<value level="6">78</value>
+					<value level="7">82</value>
+					<value level="8">85</value>
+					<value level="9">89</value>
+					<value level="10">92</value>
+					<value level="11">96</value>
+					<value level="12">99</value>
+					<value level="13">102</value>
+					<value level="14">105</value>
+					<value level="15">108</value>
+				</power>
 			</effect>
 			<effect name="ConsumeBody" />
 		</for>
@@ -1882,7 +2203,7 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="DeleteHateOfMe">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1919,7 +2240,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaHeal">
-				<param power="#amount" />
+				<power>
+					<value level="1">22</value>
+					<value level="2">35</value>
+					<value level="3">47</value>
+					<value level="4">53</value>
+					<value level="5">61</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2035,7 +2362,30 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DeathLink">
-				<param power="#power" />
+				<power>
+					<value level="1">68</value>
+					<value level="2">72</value>
+					<value level="3">75</value>
+					<value level="4">78</value>
+					<value level="5">80</value>
+					<value level="6">82</value>
+					<value level="7">84</value>
+					<value level="8">85</value>
+					<value level="9">87</value>
+					<value level="10">89</value>
+					<value level="11">90</value>
+					<value level="12">92</value>
+					<value level="13">94</value>
+					<value level="14">96</value>
+					<value level="15">97</value>
+					<value level="16">99</value>
+					<value level="17">100</value>
+					<value level="18">102</value>
+					<value level="19">104</value>
+					<value level="20">105</value>
+					<value level="21">107</value>
+					<value level="22">108</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2227,7 +2577,7 @@
 		<for>
 			<!-- FIXME: this shouldbe "Distrust" effect -->
 			<effect name="Confuse" abnormalTime="20">
-				<param chance="20" />
+				<chance>20</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2424,7 +2774,14 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">24</value>
+					<value level="2">32</value>
+					<value level="3">41</value>
+					<value level="4">50</value>
+					<value level="5">58</value>
+					<value level="6">63</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2495,7 +2852,15 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="#dot" />
+				<power>
+					<value level="1">11</value>
+					<value level="2">24</value>
+					<value level="3">32</value>
+					<value level="4">41</value>
+					<value level="5">50</value>
+					<value level="6">58</value>
+					<value level="7">63</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2677,7 +3042,8 @@
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="6091" skillLevel="1" />
+				<skillId>6091</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -2781,7 +3147,27 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">29</value>
+					<value level="2">30</value>
+					<value level="3">32</value>
+					<value level="4">34</value>
+					<value level="5">36</value>
+					<value level="6">38</value>
+					<value level="7">40</value>
+					<value level="8">42</value>
+					<value level="9">44</value>
+					<value level="10">46</value>
+					<value level="11">48</value>
+					<value level="12">50</value>
+					<value level="13">52</value>
+					<value level="14">55</value>
+					<value level="15">57</value>
+					<value level="16">58</value>
+					<value level="17">60</value>
+					<value level="18">62</value>
+					<value level="19">64</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2839,7 +3225,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">19</value>
+					<value level="2">21</value>
+					<value level="3">24</value>
+					<value level="4">25</value>
+					<value level="5">28</value>
+					<value level="6">30</value>
+					<value level="7">33</value>
+					<value level="8">36</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2958,7 +3353,30 @@
 		<targetType>FRONT_AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">48</value>
+					<value level="2">50</value>
+					<value level="3">53</value>
+					<value level="4">55</value>
+					<value level="5">56</value>
+					<value level="6">57</value>
+					<value level="7">59</value>
+					<value level="8">60</value>
+					<value level="9">61</value>
+					<value level="10">62</value>
+					<value level="11">63</value>
+					<value level="12">65</value>
+					<value level="13">66</value>
+					<value level="14">67</value>
+					<value level="15">68</value>
+					<value level="16">69</value>
+					<value level="17">70</value>
+					<value level="18">72</value>
+					<value level="19">73</value>
+					<value level="20">74</value>
+					<value level="21">75</value>
+					<value level="22">76</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3018,8 +3436,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttackRange">
-				<param power="#power" />
-				<param powerRange="40" />
+				<power>
+					<value level="1">23</value>
+					<value level="2">26</value>
+					<value level="3">29</value>
+					<value level="4">32</value>
+					<value level="5">35</value>
+					<value level="6">38</value>
+					<value level="7">42</value>
+					<value level="8">44</value>
+				</power>
+				<powerRange>40</powerRange>
 			</effect>
 		</for>
 	</skill>
@@ -3109,7 +3536,23 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">31</value>
+					<value level="2">33</value>
+					<value level="3">34</value>
+					<value level="4">36</value>
+					<value level="5">38</value>
+					<value level="6">39</value>
+					<value level="7">41</value>
+					<value level="8">43</value>
+					<value level="9">45</value>
+					<value level="10">46</value>
+					<value level="11">48</value>
+					<value level="12">50</value>
+					<value level="13">51</value>
+					<value level="14">53</value>
+					<value level="15">54</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3157,7 +3600,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">12</value>
+					<value level="2">13</value>
+					<value level="3">15</value>
+					<value level="4">18</value>
+					<value level="5">21</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3217,7 +3666,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">23</value>
+					<value level="2">26</value>
+					<value level="3">29</value>
+					<value level="4">32</value>
+					<value level="5">35</value>
+					<value level="6">38</value>
+					<value level="7">42</value>
+					<value level="8">44</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3259,7 +3717,11 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">13</value>
+					<value level="2">16</value>
+					<value level="3">19</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3362,7 +3824,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">102</value>
+					<value level="2">125</value>
+					<value level="3">144</value>
+					<value level="4">157</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3422,7 +3889,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">8</value>
+					<value level="2">9</value>
+					<value level="3">11</value>
+					<value level="4">13</value>
+					<value level="5">14</value>
+					<value level="6">16</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="0.8" />

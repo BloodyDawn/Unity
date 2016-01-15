@@ -96,9 +96,36 @@
 				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param BOW="#trait" />
-				<param CROSSBOW="#trait" />
-				<param TWOHANDCROSSBOW="#trait" />
+				<BOW>
+					<value level="1">-40</value>
+					<value level="2">-45</value>
+					<value level="3">-50</value>
+					<value level="4">-55</value>
+					<value level="5">-60</value>
+					<value level="6">-60</value>
+					<value level="7">-60</value>
+					<value level="8">-60</value>
+				</BOW>
+				<TWOHANDCROSSBOW>
+					<value level="1">-40</value>
+					<value level="2">-45</value>
+					<value level="3">-50</value>
+					<value level="4">-55</value>
+					<value level="5">-60</value>
+					<value level="6">-60</value>
+					<value level="7">-60</value>
+					<value level="8">-60</value>
+				</TWOHANDCROSSBOW>
+				<CROSSBOW>
+					<value level="1">-40</value>
+					<value level="2">-45</value>
+					<value level="3">-50</value>
+					<value level="4">-55</value>
+					<value level="5">-60</value>
+					<value level="6">-60</value>
+					<value level="7">-60</value>
+					<value level="8">-60</value>
+				</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -139,14 +166,21 @@
 				<mul stat="mDef" val="0.75" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param BOW="-60" />
-				<param CROSSBOW="-60" />
-				<param TWOHANDCROSSBOW="-60" />
+				<BOW>-60</BOW>
+				<TWOHANDCROSSBOW>-60</TWOHANDCROSSBOW>
+				<CROSSBOW>-60</CROSSBOW>
 			</effect>
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="10804" skillLevel="#triggerLvl" /> <!-- Bullseye -->
+				<!-- Bullseye -->
+				<skillId>10804</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+				</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -164,8 +198,13 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttackSaveHp">
-				<param power="#power" />
-				<param saveHp="10" />
+				<power>
+					<value level="1">30000</value>
+					<value level="2">33546</value>
+					<value level="3">35088</value>
+					<value level="4">36630</value>
+				</power>
+				<saveHp>10</saveHp>
 			</effect>
 		</for>
 	</skill>
@@ -183,8 +222,13 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PhysicalAttackSaveHp">
-				<param power="#power" />
-				<param saveHp="10" />
+				<power>
+					<value level="1">30000</value>
+					<value level="2">33546</value>
+					<value level="3">35088</value>
+					<value level="4">36630</value>
+				</power>
+				<saveHp>10</saveHp>
 			</effect>
 		</for>
 	</skill>
@@ -228,8 +272,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Blink">
-				<param flyType="CHARGE" animationSpeed="333" />
-				<param angle="180" range="#castRanges" /> <!-- Teleport to Front -->
+				<!-- Teleport to Front -->
+				<flyType>CHARGE</flyType>
+				<animationSpeed>333</animationSpeed>
+				<angle>180</angle>
+				<range />
 			</effect>
 		</for>
 	</skill>
@@ -290,7 +337,7 @@
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
+				<HOLD>100</HOLD>
 			</effect>
 		</for>
 	</skill>

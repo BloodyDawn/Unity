@@ -22,7 +22,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="20993" itemCount="1" />
+				<itemId>20993</itemId>
+				<itemCount>1</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -760,7 +761,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="500" />
+				<power>500</power>
 			</effect>
 		</for>
 	</skill>
@@ -778,7 +779,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ManaHeal">
-				<param power="500" />
+				<power>500</power>
 			</effect>
 		</for>
 	</skill>
@@ -1164,10 +1165,10 @@
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="HIT_UP,9" />
+				<dispel>HIT_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="HIT_UP" />
+				<slot>HIT_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1196,10 +1197,10 @@
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="MA_UP,9;MD_UP,9" />
+				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MA_UP;MD_UP" />
+				<slot>MA_UP;MD_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -1267,13 +1268,14 @@
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9" />
+				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="VAMPIRIC_ATTACK;ATTACK_TIME_DOWN" />
+				<slot>VAMPIRIC_ATTACK;ATTACK_TIME_DOWN</slot>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="30" />
+				<amount>9</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1420,12 +1422,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="300" />
-				<param chance="80" />
-				<param skillId="6059" skillLevel="1" /> <!-- Counter Critical -->
-				<param targetType="SELF" />
+				<!-- Counter Critical -->
 				<mul stat="defCritDamage" val="0.7" />
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<skillId>6059</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1655,7 +1661,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="MaxHp">
-				<param amount="35" mode="PER" />
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1847,7 +1854,8 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="80" />
+				<amount>9</amount>
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2132,10 +2140,12 @@
 				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" />
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="5" chance="30" />
+				<amount>5</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2172,7 +2182,9 @@
 				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="20" mode="PER" heal="true" />
+				<amount>20</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
 			</effect>
 		</for>
 	</skill>
@@ -2202,10 +2214,10 @@
 				<mul stat="pDef" val="1.15" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="PA_UP,9;PD_UP,9" />
+				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_UP;PD_UP" />
+				<slot>PA_UP;PD_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2235,10 +2247,10 @@
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="MA_UP,9;MD_UP,9" />
+				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MA_UP;MD_UP" />
+				<slot>MA_UP;MD_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2267,13 +2279,14 @@
 				<mul stat="maxMp" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="MAX_HP_UP,9;MAX_MP_UP,9" />
+				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MAX_HP_UP;MAX_MP_UP" />
+				<slot>MAX_HP_UP;MAX_MP_UP</slot>
 			</effect>
 			<effect name="MaxHp">
-				<param amount="35" mode="PER" />
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2303,10 +2316,10 @@
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9" />
+				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
+				<slot>CRITICAL_PROB_UP;CRITICAL_DMG_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2336,10 +2349,10 @@
 				<mul stat="sDef" val="1.5" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="SHIELD_PROB_UP,9;SHIELD_DEFENCE_UP,9" />
+				<dispel>SHIELD_PROB_UP,9;SHIELD_DEFENCE_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SHIELD_PROB_UP;SHIELD_DEFENCE_UP" />
+				<slot>SHIELD_PROB_UP;SHIELD_DEFENCE_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2369,10 +2382,10 @@
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="SPEED_UP,9;AVOID_UP,9" />
+				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SPEED_UP;AVOID_UP" />
+				<slot>SPEED_UP;AVOID_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2480,10 +2493,10 @@
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="HIT_UP,9" />
+				<dispel>HIT_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="HIT_UP" />
+				<slot>HIT_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2511,10 +2524,10 @@
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="MA_UP,9;MD_UP,9" />
+				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MA_UP;MD_UP" />
+				<slot>MA_UP;MD_UP</slot>
 			</effect>
 		</for>
 	</skill>
@@ -2580,13 +2593,14 @@
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9" />
+				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="VAMPIRIC_ATTACK;ATTACK_TIME_DOWN" />
+				<slot>VAMPIRIC_ATTACK;ATTACK_TIME_DOWN</slot>
 			</effect>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="30" />
+				<amount>9</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2728,12 +2742,16 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="300" />
-				<param chance="80" />
-				<param skillId="6059" skillLevel="1" /> <!-- Counter Critical -->
-				<param targetType="SELF" />
+				<!-- Counter Critical -->
 				<mul stat="defCritDamage" val="0.7" />
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>100</maxAttackerLevel>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<skillId>6059</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -2830,7 +2848,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 		</for>
 	</skill>
@@ -2855,7 +2873,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 		</for>
 	</skill>

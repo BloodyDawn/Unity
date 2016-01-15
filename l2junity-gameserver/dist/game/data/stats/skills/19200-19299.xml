@@ -76,8 +76,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="-60" />
-				<param CROSSBOW="-60" />
+				<BOW>-60</BOW>
+				<CROSSBOW>-60</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -125,8 +125,8 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="50" />
-				<param CROSSBOW="50" />
+				<BOW>50</BOW>
+				<CROSSBOW>50</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -192,7 +192,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="BlockBuffSlot">
-				<param slot="INVINCIBILITY" /> <!-- Guess there is more -->
+				<!-- Guess there is more -->
+				<slot>INVINCIBILITY</slot>
 			</effect>
 		</for>
 	</skill>
@@ -233,7 +234,8 @@
 		</cond>
 		<for>
 			<effect name="Summon">
-				<param npcId="15154" lifeTime="30" />
+				<npcId>15154</npcId>
+				<lifeTime>30</lifeTime>
 			</effect>
 		</for>
 	</skill>
@@ -286,7 +288,9 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="45578" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+				<!-- Enhanced Orichalcum Arrow -->
+				<itemId>45578</itemId>
+				<itemCount>250</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -310,7 +314,9 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="45581" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+				<!-- Enhanced Orichalcum Bolt -->
+				<itemId>45581</itemId>
+				<itemCount>250</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -334,7 +340,9 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="45579" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+				<!-- Enhanced Orichalcum Arrow -->
+				<itemId>45579</itemId>
+				<itemCount>250</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -358,7 +366,9 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="45582" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+				<!-- Enhanced Orichalcum Bolt -->
+				<itemId>45582</itemId>
+				<itemCount>250</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -382,7 +392,9 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="45580" itemCount="250" /> <!-- Enhanced Orichalcum Arrow -->
+				<!-- Enhanced Orichalcum Arrow -->
+				<itemId>45580</itemId>
+				<itemCount>250</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -406,7 +418,9 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="45583" itemCount="250" /> <!-- Enhanced Orichalcum Bolt -->
+				<!-- Enhanced Orichalcum Bolt -->
+				<itemId>45583</itemId>
+				<itemCount>250</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -425,10 +439,13 @@
 		<affectRange>200</affectRange>
 		<for>
 			<effect name="HpCpHeal">
-				<param power="3338" /> <!-- Custom, value if Tree of Life level 4 -->
+				<!-- Custom, value if Tree of Life level 4 -->
+				<power>3338</power>
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>10</max>
 			</effect>
 		</for>
 	</skill>
@@ -563,8 +580,8 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="DefenceTrait">
-				<param DAGGER="50" />
-				<param DUALDAGGER="50" />
+				<DAGGER>50</DAGGER>
+				<DUALDAGGER>50</DUALDAGGER>
 			</effect>
 		</for>
 	</skill>

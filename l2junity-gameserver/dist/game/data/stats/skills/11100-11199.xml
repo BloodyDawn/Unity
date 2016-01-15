@@ -9,8 +9,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11028" /> <!-- Elemental Destruction (4 Elements) -->
-				<param skillId="11105" skillLevel="1" chance="50" /> <!-- Elemental Destruction: 4 Attributes -->
+				<!-- Elemental Destruction (4 Elements) -->
+				<!-- Elemental Destruction: 4 Attributes -->
+				<attackSkillId>11028</attackSkillId>
+				<skillId>11105</skillId>
+				<skillLevel>1</skillLevel>
+				<chance>50</chance>
 			</effect>
 		</for>
 	</skill>
@@ -138,13 +142,23 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">705</value>
+					<value level="6">723</value>
+					<value level="7">741</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -200,13 +214,23 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">705</value>
+					<value level="6">723</value>
+					<value level="7">741</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -262,13 +286,23 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">705</value>
+					<value level="6">723</value>
+					<value level="7">741</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -324,13 +358,23 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">705</value>
+					<value level="6">723</value>
+					<value level="7">741</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -386,13 +430,23 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">705</value>
+					<value level="6">723</value>
+					<value level="7">741</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -446,13 +500,23 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">705</value>
+					<value level="6">723</value>
+					<value level="7">741</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -499,10 +563,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">517</value>
+					<value level="2">562</value>
+					<value level="3">591</value>
+					<value level="4">622</value>
+					<value level="5">637</value>
+					<value level="6">655</value>
+					<value level="7">673</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -546,10 +620,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">517</value>
+					<value level="2">562</value>
+					<value level="3">591</value>
+					<value level="4">622</value>
+					<value level="5">637</value>
+					<value level="6">655</value>
+					<value level="7">673</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -593,10 +677,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">517</value>
+					<value level="2">562</value>
+					<value level="3">591</value>
+					<value level="4">622</value>
+					<value level="5">637</value>
+					<value level="6">655</value>
+					<value level="7">673</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -640,10 +734,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">517</value>
+					<value level="2">562</value>
+					<value level="3">591</value>
+					<value level="4">622</value>
+					<value level="5">637</value>
+					<value level="6">655</value>
+					<value level="7">673</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -687,10 +791,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">517</value>
+					<value level="2">562</value>
+					<value level="3">591</value>
+					<value level="4">622</value>
+					<value level="5">637</value>
+					<value level="6">655</value>
+					<value level="7">673</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -732,10 +846,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">517</value>
+					<value level="2">562</value>
+					<value level="3">591</value>
+					<value level="4">622</value>
+					<value level="5">637</value>
+					<value level="6">655</value>
+					<value level="7">673</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -782,10 +906,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">697</value>
+					<value level="6">715</value>
+					<value level="7">733</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -829,10 +963,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">697</value>
+					<value level="6">715</value>
+					<value level="7">733</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -876,10 +1020,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">697</value>
+					<value level="6">715</value>
+					<value level="7">733</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -923,10 +1077,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">697</value>
+					<value level="6">715</value>
+					<value level="7">733</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -970,10 +1134,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">697</value>
+					<value level="6">715</value>
+					<value level="7">733</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -1015,10 +1189,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">569</value>
+					<value level="2">618</value>
+					<value level="3">649</value>
+					<value level="4">683</value>
+					<value level="5">697</value>
+					<value level="6">715</value>
+					<value level="7">733</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
+				<!-- Detonates Elemental Destruction -->
+				<dispel>BODY_DESTRUCTION</dispel>
+				<rate>100</rate>
 			</effect>
 		</for>
 	</skill>
@@ -1093,7 +1277,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">620</value>
+					<value level="2">657</value>
+					<value level="3">695</value>
+				</power>
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -1122,7 +1310,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">713</value>
+					<value level="2">755</value>
+					<value level="3">799</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1159,7 +1351,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">620</value>
+					<value level="2">657</value>
+					<value level="3">695</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="130" />
@@ -1197,10 +1393,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">620</value>
+					<value level="2">657</value>
+					<value level="3">695</value>
+				</power>
 			</effect>
 			<effect name="KnockBack">
-				<param speed="400" distance="100" /> <!-- Guessed -->
+				<!-- Guessed -->
+				<speed>400</speed>
+				<distance>100</distance>
 			</effect>
 		</for>
 	</skill>
@@ -1233,7 +1435,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">620</value>
+					<value level="2">657</value>
+					<value level="3">695</value>
+				</power>
 			</effect>
 			<effect name="Root" />
 		</for>
@@ -1266,8 +1472,12 @@
 		<isDebuff>true</isDebuff>
 		<channelingEffects>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param percentage="100" />
+				<power>
+					<value level="1">115</value>
+					<value level="2">225</value>
+					<value level="3">300</value>
+				</power>
+				<percentage>100</percentage>
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1292,11 +1502,21 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="127" />
-				<param minDamage="100" /> <!-- Guessed -->
-				<param chance="50" /> <!-- Guessed -->
-				<param skillId="11133" skillLevel="#triggerLevel" /> <!-- Lightning Shield: Paralyze -->
-				<param targetType="ONE" />
+				<!-- Guessed -->
+				<!-- Guessed -->
+				<!-- Lightning Shield: Paralyze -->
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>127</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>ONE</targetType>
+				<minDamage>100</minDamage>
+				<skillId>11133</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1348,10 +1568,13 @@
 		<isMagic>1</isMagic>
 		<channelingEffects>
 			<effect name="MagicalAttack">
-				<param power="860" />
+				<power>860</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="11139" skillLevel="1" skillLevelScaleTo="3" /> <!-- Ignite -->
+				<!-- Ignite -->
+				<skillId>11139</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1377,11 +1600,14 @@
 		<isMagic>1</isMagic>
 		<channelingEffects>
 			<effect name="HpDrain">
-				<param power="550" />
-				<param percentage="50" />
+				<power>550</power>
+				<percentage>50</percentage>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="11140" skillLevel="1" skillLevelScaleTo="5" /> <!-- Black Shackle -->
+				<!-- Black Shackle -->
+				<skillId>11140</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1410,10 +1636,13 @@
 		<isMagic>1</isMagic>
 		<channelingEffects>
 			<effect name="MagicalAttack">
-				<param power="440" />
+				<power>440</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="11141" skillLevel="1" skillLevelScaleTo="5" /> <!-- Freezing Slow -->
+				<!-- Freezing Slow -->
+				<skillId>11141</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1439,10 +1668,13 @@
 		<isMagic>1</isMagic>
 		<channelingEffects>
 			<effect name="MagicalAttack">
-				<param power="550" />
+				<power>550</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="11144" skillLevel="1" skillLevelScaleTo="5" /> <!-- Wind Binding -->
+				<!-- Wind Binding -->
+				<skillId>11144</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1466,10 +1698,13 @@
 		<isMagic>1</isMagic>
 		<channelingEffects>
 			<effect name="MagicalAttack">
-				<param power="600" />
+				<power>600</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="11145" skillLevel="1" skillLevelScaleTo="5" /> <!-- Soul Weakness -->
+				<!-- Soul Weakness -->
+				<skillId>11145</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1496,7 +1731,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="DamOverTime" ticks="1">
-				<param power="#dot" />
+				<power>
+					<value level="1">431</value>
+					<value level="2">503</value>
+					<value level="3">720</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1590,8 +1829,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="123" />
-				<param overHit="true" />
+				<power>123</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="#runSpd" />
@@ -1625,8 +1864,8 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="131" />
-				<param overHit="true" />
+				<power>131</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="moveSpeed" val="#runSpd" />
@@ -1805,10 +2044,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" />
+				<speed>600</speed>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -1842,10 +2081,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" />
+				<speed>600</speed>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</for>
 	</skill>
@@ -1904,7 +2143,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">193</value>
+					<value level="2">195</value>
+					<value level="3">197</value>
+					<value level="4">199</value>
+					<value level="5">202</value>
+					<value level="6">206</value>
+					<value level="7">210</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1918,8 +2165,12 @@
 		<castRange>0</castRange>
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11177" /> <!-- Aqua Crash -->
-				<param skillId="11188" skillLevel="1" skillLevelScaleTo="5" /> <!-- Frozen -->
+				<!-- Aqua Crash -->
+				<!-- Frozen -->
+				<attackSkillId>11177</attackSkillId>
+				<skillId>11188</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
 			</effect>
 		</for>
 	</skill>
@@ -1948,21 +2199,21 @@
 		</cond>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="DamOverTime" ticks="1">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
-				<param SLEEP="100" />
-				<param DERANGEMENT="100" />
-				<param CHANGEBODY="100" />
-				<param SHOCK="100" />
-				<param AIRBIND="100" />
-				<param KNOCKBACK="100" />
-				<param KNOCKDOWN="100" />
+				<HOLD>100</HOLD>
+				<DERANGEMENT>100</DERANGEMENT>
+				<SHOCK>100</SHOCK>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SLEEP>100</SLEEP>
+				<AIRBIND>100</AIRBIND>
 			</effect>
 		</for>
 	</skill>
@@ -1991,21 +2242,21 @@
 		</cond>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="DamOverTime" ticks="1">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
-				<param SLEEP="100" />
-				<param DERANGEMENT="100" />
-				<param CHANGEBODY="100" />
-				<param SHOCK="100" />
-				<param AIRBIND="100" />
-				<param KNOCKBACK="100" />
-				<param KNOCKDOWN="100" />
+				<HOLD>100</HOLD>
+				<DERANGEMENT>100</DERANGEMENT>
+				<SHOCK>100</SHOCK>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SLEEP>100</SLEEP>
+				<AIRBIND>100</AIRBIND>
 			</effect>
 		</for>
 	</skill>
@@ -2034,21 +2285,21 @@
 		</cond>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="DamOverTime" ticks="1">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
-				<param SLEEP="100" />
-				<param DERANGEMENT="100" />
-				<param CHANGEBODY="100" />
-				<param SHOCK="100" />
-				<param AIRBIND="100" />
-				<param KNOCKBACK="100" />
-				<param KNOCKDOWN="100" />
+				<HOLD>100</HOLD>
+				<DERANGEMENT>100</DERANGEMENT>
+				<SHOCK>100</SHOCK>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SLEEP>100</SLEEP>
+				<AIRBIND>100</AIRBIND>
 			</effect>
 		</for>
 	</skill>
@@ -2078,21 +2329,21 @@
 		</cond>
 		<for>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="DamOverTime" ticks="1">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 			<effect name="DefenceTrait">
-				<param HOLD="100" />
-				<param SLEEP="100" />
-				<param DERANGEMENT="100" />
-				<param CHANGEBODY="100" />
-				<param SHOCK="100" />
-				<param AIRBIND="100" />
-				<param KNOCKBACK="100" />
-				<param KNOCKDOWN="100" />
+				<HOLD>100</HOLD>
+				<DERANGEMENT>100</DERANGEMENT>
+				<SHOCK>100</SHOCK>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SLEEP>100</SLEEP>
+				<AIRBIND>100</AIRBIND>
 			</effect>
 		</for>
 	</skill>
@@ -2207,11 +2458,37 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_MP_RATE" type="SITTING" value="#regMpStand" />
 				<add stat="INT" val="2" />
+				<stat>REGENERATE_MP_RATE</stat>
+				<type>SITTING</type>
+				<value>
+					<value level="1">5.1</value>
+					<value level="2">5.7</value>
+					<value level="3">6.3</value>
+					<value level="4">6.9</value>
+					<value level="5">7.7</value>
+					<value level="6">8.5</value>
+					<value level="7">9.3</value>
+					<value level="8">10.1</value>
+					<value level="9">10.9</value>
+					<value level="10">11.7</value>
+				</value>
 			</effect>
 			<effect name="StatByMoveType">
-				<param stat="REGENERATE_MP_RATE" type="WALKING" value="#regMpWalk" />
+				<stat>REGENERATE_MP_RATE</stat>
+				<type>WALKING</type>
+				<value>
+					<value level="1">6.5</value>
+					<value level="2">7.1</value>
+					<value level="3">7.7</value>
+					<value level="4">8.3</value>
+					<value level="5">9.1</value>
+					<value level="6">9.9</value>
+					<value level="7">10.7</value>
+					<value level="8">11.5</value>
+					<value level="9">12.3</value>
+					<value level="10">13.1</value>
+				</value>
 			</effect>
 		</for>
 	</skill>
@@ -2276,7 +2553,15 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">193</value>
+					<value level="2">195</value>
+					<value level="3">197</value>
+					<value level="4">199</value>
+					<value level="5">202</value>
+					<value level="6">206</value>
+					<value level="7">210</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2325,8 +2610,12 @@
 		<castRange>0</castRange>
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11189" /> <!-- Aqua Crash -->
-				<param skillId="11196" skillLevel="1" chance="33" /> <!-- Frozen --> <!-- Chance guessed -->
+				<!-- Aqua Crash -->
+				<!-- Frozen --> <!-- Chance guessed -->
+				<attackSkillId>11189</attackSkillId>
+				<skillId>11196</skillId>
+				<skillLevel>1</skillLevel>
+				<chance>33</chance>
 			</effect>
 		</for>
 	</skill>

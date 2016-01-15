@@ -17,7 +17,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="6645" itemCount="500" />
+				<itemId>6645</itemId>
+				<itemCount>500</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -38,7 +39,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="6646" itemCount="500" />
+				<itemId>6646</itemId>
+				<itemCount>500</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -59,7 +61,8 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="6647" itemCount="500" />
+				<itemId>6647</itemId>
+				<itemCount>500</itemCount>
 			</effect>
 		</for>
 	</skill>
@@ -107,7 +110,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="1517" skillLvl="1" />
+				<skillId>1517</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -133,7 +137,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="1518" skillLvl="1" />
+				<skillId>1518</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -159,7 +164,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="1519" skillLvl="1" />
+				<skillId>1519</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -179,7 +185,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="12774" npcCount="1" despawnDelay="180000" />
+				<npcId>12774</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -199,7 +207,9 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="12777" npcCount="1" despawnDelay="180000" />
+				<npcId>12777</npcId>
+				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</for>
 	</skill>
@@ -248,7 +258,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation">
-				<param transformationId="107" />
+				<transformationId>107</transformationId>
 			</effect>
 		</for>
 	</skill>
@@ -274,7 +284,8 @@
 		</cond>
 		<for>
 			<effect name="VampiricAttack">
-				<param amount="9" chance="30" />
+				<amount>9</amount>
+				<chance>30</chance>
 			</effect>
 		</for>
 	</skill>
@@ -448,7 +459,9 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="-120050" y="44500" z="360" />
+				<x>-120050</x>
+				<y>44500</y>
+				<z>360</z>
 			</effect>
 		</for>
 	</skill>
@@ -474,7 +487,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="818" skillLvl="1" />
+				<skillId>818</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -500,7 +514,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="819" skillLvl="1" />
+				<skillId>819</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -526,7 +541,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="820" skillLvl="1" />
+				<skillId>820</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -552,7 +568,8 @@
 		</cond>
 		<for>
 			<effect name="SetSkill">
-				<param skillId="821" skillLvl="1" />
+				<skillId>821</skillId>
+				<skillLvl>1</skillLvl>
 			</effect>
 		</for>
 	</skill>
@@ -569,7 +586,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="DEATH_PENALTY,-1" />
+				<dispel>DEATH_PENALTY,-1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -593,7 +610,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -1705,7 +1722,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="POISON,9" />
+				<dispel>POISON,9</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1720,7 +1737,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="DEATH_CLACK,1" />
+				<dispel>DEATH_CLACK,1</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -1817,7 +1834,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="VitalityPointUp">
-				<param value="#value" />
+				<value>
+					<value level="1">10000</value>
+					<value level="2">20000</value>
+				</value>
 			</effect>
 		</for>
 	</skill>
@@ -1836,7 +1856,7 @@
 		</cond>
 		<for>
 			<effect name="AddTeleportBookmarkSlot">
-				<param amount="3" />
+				<amount>3</amount>
 			</effect>
 		</for>
 	</skill>
@@ -1892,7 +1912,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="HealPercent">
-				<param power="30" />
+				<power>30</power>
 			</effect>
 		</for>
 	</skill>
@@ -1914,8 +1934,8 @@
 		</cond>
 		<for>
 			<effect name="DefenceTrait">
-				<param BOW="40" />
-				<param CROSSBOW="20" />
+				<BOW>40</BOW>
+				<CROSSBOW>20</CROSSBOW>
 			</effect>
 		</for>
 	</skill>
@@ -1939,7 +1959,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -1964,7 +1984,7 @@
 		</cond>
 		<for>
 			<effect name="Escape">
-				<param escapeType="TOWN" />
+				<escapeType>TOWN</escapeType>
 			</effect>
 		</for>
 	</skill>
@@ -1987,7 +2007,7 @@
 		</cond>
 		<for>
 			<effect name="Resurrection">
-				<param power="100" />
+				<power>100</power>
 			</effect>
 		</for>
 	</skill>

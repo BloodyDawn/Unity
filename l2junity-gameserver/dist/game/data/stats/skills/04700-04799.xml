@@ -154,7 +154,22 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="ATTACK_TIME_UP;HIT_DOWN;PA_DOWN" rate="#power" />
+				<dispel>ATTACK_TIME_UP;HIT_DOWN;PA_DOWN</dispel>
+				<rate>
+					<value level="1">40</value>
+					<value level="2">45</value>
+					<value level="3">50</value>
+					<value level="4">55</value>
+					<value level="5">60</value>
+					<value level="6">65</value>
+					<value level="7">70</value>
+					<value level="8">75</value>
+					<value level="9">80</value>
+					<value level="10">85</value>
+					<value level="11">90</value>
+					<value level="12">95</value>
+					<value level="13">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -405,7 +420,22 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SLEEP;ROOT_MAGICALLY;STUN;PARALYZE;SILENCE" rate="#power" />
+				<dispel>SLEEP;ROOT_MAGICALLY;STUN;PARALYZE;SILENCE</dispel>
+				<rate>
+					<value level="1">40</value>
+					<value level="2">45</value>
+					<value level="3">50</value>
+					<value level="4">55</value>
+					<value level="5">60</value>
+					<value level="6">65</value>
+					<value level="7">70</value>
+					<value level="8">75</value>
+					<value level="9">80</value>
+					<value level="10">85</value>
+					<value level="11">90</value>
+					<value level="12">95</value>
+					<value level="13">100</value>
+				</rate>
 			</effect>
 		</for>
 	</skill>
@@ -526,7 +556,7 @@
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
 			<effect name="TargetMeProbability">
-				<param chance="80" />
+				<chance>80</chance>
 			</effect>
 		</for>
 	</skill>
@@ -648,7 +678,7 @@
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
 			<effect name="TargetMeProbability">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
 		</for>
 	</skill>
@@ -713,7 +743,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">541</value>
+					<value level="2">611</value>
+					<value level="3">659</value>
+					<value level="4">666</value>
+					<value level="5">669</value>
+					<value level="6">673</value>
+					<value level="7">676</value>
+					<value level="8">679</value>
+					<value level="9">681</value>
+					<value level="10">684</value>
+					<value level="11">687</value>
+					<value level="12">689</value>
+					<value level="13">692</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -799,7 +843,25 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1046</value>
+					<value level="2">1230</value>
+					<value level="3">1425</value>
+					<value level="4">1626</value>
+					<value level="5">1727</value>
+					<value level="6">1827</value>
+					<value level="7">1925</value>
+					<value level="8">2020</value>
+					<value level="9">2067</value>
+					<value level="10">2112</value>
+					<value level="11">6459</value>
+					<value level="12">6593</value>
+					<value level="13">7004</value>
+					<value level="14">7443</value>
+					<value level="15">7863</value>
+					<value level="16">8288</value>
+					<value level="17">8713</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -876,9 +938,27 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="20" />
-				<param criticalChance="10" />
+				<power>
+					<value level="1">4181</value>
+					<value level="2">4920</value>
+					<value level="3">5700</value>
+					<value level="4">6503</value>
+					<value level="5">6906</value>
+					<value level="6">7305</value>
+					<value level="7">7698</value>
+					<value level="8">8079</value>
+					<value level="9">8265</value>
+					<value level="10">8447</value>
+					<value level="11">8743</value>
+					<value level="12">8918</value>
+					<value level="13">9101</value>
+					<value level="14">9283</value>
+					<value level="15">9465</value>
+					<value level="16">9648</value>
+					<value level="17">9830</value>
+				</power>
+				<criticalChance>10</criticalChance>
+				<chance>20</chance>
 			</effect>
 		</for>
 	</skill>
@@ -947,7 +1027,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">16</value>
+					<value level="2">35</value>
+					<value level="3">73</value>
+					<value level="4">138</value>
+					<value level="5">238</value>
+					<value level="6">375</value>
+					<value level="7">537</value>
+					<value level="8">619</value>
+					<value level="9">697</value>
+					<value level="10">766</value>
+					<value level="11">821</value>
+					<value level="12">864</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1087,7 +1180,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">6</value>
+					<value level="2">9</value>
+					<value level="3">13</value>
+					<value level="4">17</value>
+					<value level="5">23</value>
+					<value level="6">28</value>
+					<value level="7">34</value>
+					<value level="8">36</value>
+					<value level="9">39</value>
+					<value level="10">41</value>
+					<value level="11">42</value>
+					<value level="12">43</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1147,7 +1253,20 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">33</value>
+					<value level="2">61</value>
+					<value level="3">98</value>
+					<value level="4">145</value>
+					<value level="5">198</value>
+					<value level="6">251</value>
+					<value level="7">298</value>
+					<value level="8">316</value>
+					<value level="9">330</value>
+					<value level="10">338</value>
+					<value level="11">341</value>
+					<value level="12">342</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1230,7 +1349,7 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#effectPoints" />
+				<power />
 			</effect>
 		</for>
 	</skill>
@@ -1289,7 +1408,7 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#effectPoints" />
+				<power />
 			</effect>
 		</for>
 	</skill>
@@ -1335,7 +1454,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">112</value>
+					<value level="2">302</value>
+					<value level="3">834</value>
+					<value level="4">2177</value>
+					<value level="5">5631</value>
+					<value level="6">11008</value>
+					<value level="7">17044</value>
+					<value level="8">20119</value>
+					<value level="9">23243</value>
+					<value level="10">26363</value>
+					<value level="11">29567</value>
+					<value level="12">32796</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1381,7 +1513,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">95</value>
+					<value level="2">255</value>
+					<value level="3">705</value>
+					<value level="4">1840</value>
+					<value level="5">4754</value>
+					<value level="6">9291</value>
+					<value level="7">14390</value>
+					<value level="8">16978</value>
+					<value level="9">19710</value>
+					<value level="10">22699</value>
+					<value level="11">25871</value>
+					<value level="12">28860</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1427,7 +1572,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">51</value>
+					<value level="2">136</value>
+					<value level="3">375</value>
+					<value level="4">982</value>
+					<value level="5">2536</value>
+					<value level="6">4958</value>
+					<value level="7">7667</value>
+					<value level="8">9037</value>
+					<value level="9">10483</value>
+					<value level="10">12074</value>
+					<value level="11">13778</value>
+					<value level="12">15349</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1473,7 +1631,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">48</value>
+					<value level="2">128</value>
+					<value level="3">352</value>
+					<value level="4">922</value>
+					<value level="5">2377</value>
+					<value level="6">4651</value>
+					<value level="7">7195</value>
+					<value level="8">8489</value>
+					<value level="9">9855</value>
+					<value level="10">11363</value>
+					<value level="11">12921</value>
+					<value level="12">14430</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1519,7 +1690,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">45</value>
+					<value level="2">120</value>
+					<value level="3">330</value>
+					<value level="4">858</value>
+					<value level="5">2218</value>
+					<value level="6">4344</value>
+					<value level="7">6724</value>
+					<value level="8">7942</value>
+					<value level="9">9228</value>
+					<value level="10">10625</value>
+					<value level="11">12093</value>
+					<value level="12">13512</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -1586,7 +1770,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">56</value>
+					<value level="2">151</value>
+					<value level="3">417</value>
+					<value level="4">1089</value>
+					<value level="5">2816</value>
+					<value level="6">5504</value>
+					<value level="7">8522</value>
+					<value level="8">10060</value>
+					<value level="9">11622</value>
+					<value level="10">13182</value>
+					<value level="11">14784</value>
+					<value level="12">16398</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1654,7 +1851,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">48</value>
+					<value level="2">128</value>
+					<value level="3">352</value>
+					<value level="4">920</value>
+					<value level="5">2377</value>
+					<value level="6">4645</value>
+					<value level="7">7195</value>
+					<value level="8">8490</value>
+					<value level="9">9855</value>
+					<value level="10">11350</value>
+					<value level="11">12936</value>
+					<value level="12">14430</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1722,7 +1932,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">26</value>
+					<value level="2">68</value>
+					<value level="3">188</value>
+					<value level="4">491</value>
+					<value level="5">1268</value>
+					<value level="6">2479</value>
+					<value level="7">3834</value>
+					<value level="8">4519</value>
+					<value level="9">5242</value>
+					<value level="10">6037</value>
+					<value level="11">6889</value>
+					<value level="12">7675</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1790,7 +2013,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">24</value>
+					<value level="2">64</value>
+					<value level="3">176</value>
+					<value level="4">461</value>
+					<value level="5">1189</value>
+					<value level="6">2326</value>
+					<value level="7">3598</value>
+					<value level="8">4245</value>
+					<value level="9">4928</value>
+					<value level="10">5682</value>
+					<value level="11">6461</value>
+					<value level="12">7215</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1858,7 +2094,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">23</value>
+					<value level="2">60</value>
+					<value level="3">165</value>
+					<value level="4">429</value>
+					<value level="5">1109</value>
+					<value level="6">2172</value>
+					<value level="7">3362</value>
+					<value level="8">3971</value>
+					<value level="9">4614</value>
+					<value level="10">5313</value>
+					<value level="11">6047</value>
+					<value level="12">6756</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -1905,8 +2154,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="115" />
+				<power>
+					<value level="1">168</value>
+					<value level="2">453</value>
+					<value level="3">1251</value>
+					<value level="4">3265</value>
+					<value level="5">7446</value>
+					<value level="6">16511</value>
+					<value level="7">25566</value>
+					<value level="8">30178</value>
+					<value level="9">34864</value>
+					<value level="10">39544</value>
+					<value level="11">44350</value>
+					<value level="12">49193</value>
+				</power>
+				<chance>115</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1952,8 +2214,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="115" />
+				<power>
+					<value level="1">142</value>
+					<value level="2">382</value>
+					<value level="3">1056</value>
+					<value level="4">2760</value>
+					<value level="5">7131</value>
+					<value level="6">13935</value>
+					<value level="7">21585</value>
+					<value level="8">25467</value>
+					<value level="9">29565</value>
+					<value level="10">34048</value>
+					<value level="11">38806</value>
+					<value level="12">43290</value>
+				</power>
+				<chance>115</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1999,8 +2274,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="115" />
+				<power>
+					<value level="1">76</value>
+					<value level="2">204</value>
+					<value level="3">563</value>
+					<value level="4">1473</value>
+					<value level="5">3804</value>
+					<value level="6">7437</value>
+					<value level="7">11500</value>
+					<value level="8">13555</value>
+					<value level="9">15724</value>
+					<value level="10">18112</value>
+					<value level="11">20667</value>
+					<value level="12">23023</value>
+				</power>
+				<chance>115</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2046,8 +2334,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="115" />
+				<power>
+					<value level="1">71</value>
+					<value level="2">191</value>
+					<value level="3">528</value>
+					<value level="4">1382</value>
+					<value level="5">3566</value>
+					<value level="6">6977</value>
+					<value level="7">10793</value>
+					<value level="8">12734</value>
+					<value level="9">14783</value>
+					<value level="10">17044</value>
+					<value level="11">19381</value>
+					<value level="12">21645</value>
+				</power>
+				<chance>115</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2093,8 +2394,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="115" />
+				<power>
+					<value level="1">67</value>
+					<value level="2">179</value>
+					<value level="3">494</value>
+					<value level="4">1287</value>
+					<value level="5">3327</value>
+					<value level="6">6516</value>
+					<value level="7">10085</value>
+					<value level="8">11913</value>
+					<value level="9">13841</value>
+					<value level="10">15937</value>
+					<value level="11">18140</value>
+					<value level="12">20268</value>
+				</power>
+				<chance>115</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2139,7 +2453,20 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">56</value>
+					<value level="2">151</value>
+					<value level="3">417</value>
+					<value level="4">1089</value>
+					<value level="5">2816</value>
+					<value level="6">5504</value>
+					<value level="7">8522</value>
+					<value level="8">10060</value>
+					<value level="9">11622</value>
+					<value level="10">13182</value>
+					<value level="11">14784</value>
+					<value level="12">16398</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2184,7 +2511,20 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">48</value>
+					<value level="2">128</value>
+					<value level="3">352</value>
+					<value level="4">920</value>
+					<value level="5">2377</value>
+					<value level="6">4645</value>
+					<value level="7">7195</value>
+					<value level="8">8490</value>
+					<value level="9">9855</value>
+					<value level="10">11350</value>
+					<value level="11">12936</value>
+					<value level="12">14430</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2229,7 +2569,20 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">26</value>
+					<value level="2">68</value>
+					<value level="3">188</value>
+					<value level="4">491</value>
+					<value level="5">1268</value>
+					<value level="6">2479</value>
+					<value level="7">3834</value>
+					<value level="8">4519</value>
+					<value level="9">5242</value>
+					<value level="10">6037</value>
+					<value level="11">6889</value>
+					<value level="12">7675</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2274,7 +2627,20 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">24</value>
+					<value level="2">64</value>
+					<value level="3">176</value>
+					<value level="4">461</value>
+					<value level="5">1189</value>
+					<value level="6">2326</value>
+					<value level="7">3598</value>
+					<value level="8">4245</value>
+					<value level="9">4928</value>
+					<value level="10">5682</value>
+					<value level="11">6461</value>
+					<value level="12">7215</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2319,7 +2685,20 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">23</value>
+					<value level="2">60</value>
+					<value level="3">165</value>
+					<value level="4">429</value>
+					<value level="5">1109</value>
+					<value level="6">2172</value>
+					<value level="7">3362</value>
+					<value level="8">3971</value>
+					<value level="9">4614</value>
+					<value level="10">5313</value>
+					<value level="11">6047</value>
+					<value level="12">6756</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2365,7 +2744,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">112</value>
+					<value level="2">302</value>
+					<value level="3">834</value>
+					<value level="4">2177</value>
+					<value level="5">5631</value>
+					<value level="6">11008</value>
+					<value level="7">17044</value>
+					<value level="8">20119</value>
+					<value level="9">23243</value>
+					<value level="10">26363</value>
+					<value level="11">29567</value>
+					<value level="12">32796</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2411,7 +2803,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">95</value>
+					<value level="2">255</value>
+					<value level="3">705</value>
+					<value level="4">1840</value>
+					<value level="5">4754</value>
+					<value level="6">9291</value>
+					<value level="7">14390</value>
+					<value level="8">16978</value>
+					<value level="9">19710</value>
+					<value level="10">22699</value>
+					<value level="11">25871</value>
+					<value level="12">28860</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2457,7 +2862,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">51</value>
+					<value level="2">136</value>
+					<value level="3">375</value>
+					<value level="4">982</value>
+					<value level="5">2536</value>
+					<value level="6">4958</value>
+					<value level="7">7667</value>
+					<value level="8">9037</value>
+					<value level="9">10483</value>
+					<value level="10">12074</value>
+					<value level="11">13778</value>
+					<value level="12">15349</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2503,7 +2921,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">48</value>
+					<value level="2">128</value>
+					<value level="3">352</value>
+					<value level="4">922</value>
+					<value level="5">2377</value>
+					<value level="6">4651</value>
+					<value level="7">7195</value>
+					<value level="8">8489</value>
+					<value level="9">9855</value>
+					<value level="10">11363</value>
+					<value level="11">12921</value>
+					<value level="12">14430</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2549,7 +2980,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">45</value>
+					<value level="2">120</value>
+					<value level="3">330</value>
+					<value level="4">858</value>
+					<value level="5">2218</value>
+					<value level="6">4344</value>
+					<value level="7">6724</value>
+					<value level="8">7942</value>
+					<value level="9">9228</value>
+					<value level="10">10625</value>
+					<value level="11">12093</value>
+					<value level="12">13512</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -2616,7 +3060,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">56</value>
+					<value level="2">151</value>
+					<value level="3">417</value>
+					<value level="4">1089</value>
+					<value level="5">2816</value>
+					<value level="6">5504</value>
+					<value level="7">8522</value>
+					<value level="8">10060</value>
+					<value level="9">11622</value>
+					<value level="10">13182</value>
+					<value level="11">14784</value>
+					<value level="12">16398</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2684,7 +3141,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">48</value>
+					<value level="2">128</value>
+					<value level="3">352</value>
+					<value level="4">920</value>
+					<value level="5">2377</value>
+					<value level="6">4645</value>
+					<value level="7">7195</value>
+					<value level="8">8490</value>
+					<value level="9">9855</value>
+					<value level="10">11350</value>
+					<value level="11">12936</value>
+					<value level="12">14430</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2752,7 +3222,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">26</value>
+					<value level="2">68</value>
+					<value level="3">188</value>
+					<value level="4">491</value>
+					<value level="5">1268</value>
+					<value level="6">2479</value>
+					<value level="7">3834</value>
+					<value level="8">4519</value>
+					<value level="9">5242</value>
+					<value level="10">6037</value>
+					<value level="11">6889</value>
+					<value level="12">7675</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2820,7 +3303,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">24</value>
+					<value level="2">64</value>
+					<value level="3">176</value>
+					<value level="4">461</value>
+					<value level="5">1189</value>
+					<value level="6">2326</value>
+					<value level="7">3598</value>
+					<value level="8">4245</value>
+					<value level="9">4928</value>
+					<value level="10">5682</value>
+					<value level="11">6461</value>
+					<value level="12">7215</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2888,7 +3384,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">23</value>
+					<value level="2">60</value>
+					<value level="3">165</value>
+					<value level="4">429</value>
+					<value level="5">1109</value>
+					<value level="6">2172</value>
+					<value level="7">3362</value>
+					<value level="8">3971</value>
+					<value level="9">4614</value>
+					<value level="10">5313</value>
+					<value level="11">6047</value>
+					<value level="12">6756</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -2935,8 +3444,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="67" />
+				<power>
+					<value level="1">280</value>
+					<value level="2">755</value>
+					<value level="3">2084</value>
+					<value level="4">5441</value>
+					<value level="5">14076</value>
+					<value level="6">27518</value>
+					<value level="7">42610</value>
+					<value level="8">50296</value>
+					<value level="9">58107</value>
+					<value level="10">65907</value>
+					<value level="11">73917</value>
+					<value level="12">81989</value>
+				</power>
+				<chance>67</chance>
 			</effect>
 		</for>
 	</skill>
@@ -2982,8 +3504,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="67" />
+				<power>
+					<value level="1">236</value>
+					<value level="2">637</value>
+					<value level="3">1761</value>
+					<value level="4">4600</value>
+					<value level="5">11884</value>
+					<value level="6">23226</value>
+					<value level="7">35974</value>
+					<value level="8">42445</value>
+					<value level="9">49275</value>
+					<value level="10">56746</value>
+					<value level="11">64677</value>
+					<value level="12">72150</value>
+				</power>
+				<chance>67</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3029,8 +3564,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="67" />
+				<power>
+					<value level="1">126</value>
+					<value level="2">339</value>
+					<value level="3">937</value>
+					<value level="4">2455</value>
+					<value level="5">6339</value>
+					<value level="6">12395</value>
+					<value level="7">19166</value>
+					<value level="8">22591</value>
+					<value level="9">26206</value>
+					<value level="10">30185</value>
+					<value level="11">34445</value>
+					<value level="12">38371</value>
+				</power>
+				<chance>67</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3076,8 +3624,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="67" />
+				<power>
+					<value level="1">118</value>
+					<value level="2">319</value>
+					<value level="3">879</value>
+					<value level="4">2303</value>
+					<value level="5">5942</value>
+					<value level="6">11627</value>
+					<value level="7">17987</value>
+					<value level="8">21223</value>
+					<value level="9">24638</value>
+					<value level="10">28406</value>
+					<value level="11">32302</value>
+					<value level="12">36075</value>
+				</power>
+				<chance>67</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3123,8 +3684,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="FatalBlow">
-				<param power="#power" />
-				<param chance="67" />
+				<power>
+					<value level="1">111</value>
+					<value level="2">298</value>
+					<value level="3">824</value>
+					<value level="4">2145</value>
+					<value level="5">5545</value>
+					<value level="6">10860</value>
+					<value level="7">16808</value>
+					<value level="8">19855</value>
+					<value level="9">23069</value>
+					<value level="10">26561</value>
+					<value level="11">30232</value>
+					<value level="12">33780</value>
+				</power>
+				<chance>67</chance>
 			</effect>
 		</for>
 	</skill>
@@ -3169,7 +3743,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">327</value>
+					<value level="2">882</value>
+					<value level="3">2435</value>
+					<value level="4">6357</value>
+					<value level="5">16445</value>
+					<value level="6">32150</value>
+					<value level="7">49783</value>
+					<value level="8">58763</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3214,7 +3801,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">275</value>
+					<value level="2">744</value>
+					<value level="3">2057</value>
+					<value level="4">5374</value>
+					<value level="5">13885</value>
+					<value level="6">27135</value>
+					<value level="7">42030</value>
+					<value level="8">49590</value>
+					<value level="9">57569</value>
+					<value level="10">66298</value>
+					<value level="11">75565</value>
+					<value level="12">84295</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3259,7 +3859,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">147</value>
+					<value level="2">396</value>
+					<value level="3">1095</value>
+					<value level="4">2868</value>
+					<value level="5">7407</value>
+					<value level="6">14481</value>
+					<value level="7">22392</value>
+					<value level="8">26393</value>
+					<value level="9">30618</value>
+					<value level="10">35267</value>
+					<value level="11">40244</value>
+					<value level="12">44830</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3304,7 +3917,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">138</value>
+					<value level="2">372</value>
+					<value level="3">1027</value>
+					<value level="4">2691</value>
+					<value level="5">6943</value>
+					<value level="6">13584</value>
+					<value level="7">21015</value>
+					<value level="8">24795</value>
+					<value level="9">28785</value>
+					<value level="10">33188</value>
+					<value level="11">37739</value>
+					<value level="12">42148</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3349,7 +3975,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">129</value>
+					<value level="2">348</value>
+					<value level="3">962</value>
+					<value level="4">2506</value>
+					<value level="5">6479</value>
+					<value level="6">12688</value>
+					<value level="7">19638</value>
+					<value level="8">23198</value>
+					<value level="9">26952</value>
+					<value level="10">31032</value>
+					<value level="11">35321</value>
+					<value level="12">39466</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3415,7 +4054,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">164</value>
+					<value level="2">441</value>
+					<value level="3">1218</value>
+					<value level="4">3179</value>
+					<value level="5">8223</value>
+					<value level="6">16075</value>
+					<value level="7">24892</value>
+					<value level="8">29382</value>
+					<value level="9">33944</value>
+					<value level="10">38501</value>
+					<value level="11">43180</value>
+					<value level="12">47895</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -3482,7 +4134,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">138</value>
+					<value level="2">372</value>
+					<value level="3">1029</value>
+					<value level="4">2687</value>
+					<value level="5">6943</value>
+					<value level="6">13568</value>
+					<value level="7">21015</value>
+					<value level="8">24795</value>
+					<value level="9">28785</value>
+					<value level="10">33149</value>
+					<value level="11">37783</value>
+					<value level="12">42148</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -3549,7 +4214,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">74</value>
+					<value level="2">198</value>
+					<value level="3">548</value>
+					<value level="4">1434</value>
+					<value level="5">3704</value>
+					<value level="6">7241</value>
+					<value level="7">11196</value>
+					<value level="8">13197</value>
+					<value level="9">15309</value>
+					<value level="10">17634</value>
+					<value level="11">20122</value>
+					<value level="12">22415</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -3616,7 +4294,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">69</value>
+					<value level="2">186</value>
+					<value level="3">514</value>
+					<value level="4">1346</value>
+					<value level="5">3472</value>
+					<value level="6">6792</value>
+					<value level="7">10508</value>
+					<value level="8">12398</value>
+					<value level="9">14393</value>
+					<value level="10">16594</value>
+					<value level="11">18870</value>
+					<value level="12">21074</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -3683,7 +4374,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">65</value>
+					<value level="2">174</value>
+					<value level="3">481</value>
+					<value level="4">1253</value>
+					<value level="5">3240</value>
+					<value level="6">6344</value>
+					<value level="7">9819</value>
+					<value level="8">11599</value>
+					<value level="9">13476</value>
+					<value level="10">15516</value>
+					<value level="11">17661</value>
+					<value level="12">19733</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -3729,7 +4433,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">327</value>
+					<value level="2">882</value>
+					<value level="3">2435</value>
+					<value level="4">6357</value>
+					<value level="5">16445</value>
+					<value level="6">32150</value>
+					<value level="7">49783</value>
+					<value level="8">58763</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3774,7 +4491,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">275</value>
+					<value level="2">744</value>
+					<value level="3">2057</value>
+					<value level="4">5374</value>
+					<value level="5">13885</value>
+					<value level="6">27135</value>
+					<value level="7">42030</value>
+					<value level="8">49590</value>
+					<value level="9">57569</value>
+					<value level="10">66298</value>
+					<value level="11">75565</value>
+					<value level="12">84295</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3819,7 +4549,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">147</value>
+					<value level="2">396</value>
+					<value level="3">1095</value>
+					<value level="4">2868</value>
+					<value level="5">7407</value>
+					<value level="6">14481</value>
+					<value level="7">22392</value>
+					<value level="8">26393</value>
+					<value level="9">30618</value>
+					<value level="10">35267</value>
+					<value level="11">40244</value>
+					<value level="12">44830</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3864,7 +4607,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">138</value>
+					<value level="2">372</value>
+					<value level="3">1027</value>
+					<value level="4">2691</value>
+					<value level="5">6943</value>
+					<value level="6">13584</value>
+					<value level="7">21015</value>
+					<value level="8">24795</value>
+					<value level="9">28785</value>
+					<value level="10">33188</value>
+					<value level="11">37739</value>
+					<value level="12">42148</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3909,7 +4665,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">129</value>
+					<value level="2">348</value>
+					<value level="3">962</value>
+					<value level="4">2506</value>
+					<value level="5">6479</value>
+					<value level="6">12688</value>
+					<value level="7">19638</value>
+					<value level="8">23198</value>
+					<value level="9">26952</value>
+					<value level="10">31032</value>
+					<value level="11">35321</value>
+					<value level="12">39466</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -3975,7 +4744,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">164</value>
+					<value level="2">441</value>
+					<value level="3">1218</value>
+					<value level="4">3179</value>
+					<value level="5">8223</value>
+					<value level="6">16075</value>
+					<value level="7">24892</value>
+					<value level="8">29382</value>
+					<value level="9">33944</value>
+					<value level="10">38501</value>
+					<value level="11">43180</value>
+					<value level="12">47895</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -4042,7 +4824,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">138</value>
+					<value level="2">372</value>
+					<value level="3">1029</value>
+					<value level="4">2687</value>
+					<value level="5">6943</value>
+					<value level="6">13568</value>
+					<value level="7">21015</value>
+					<value level="8">24795</value>
+					<value level="9">28785</value>
+					<value level="10">33149</value>
+					<value level="11">37783</value>
+					<value level="12">42148</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -4109,7 +4904,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">74</value>
+					<value level="2">198</value>
+					<value level="3">548</value>
+					<value level="4">1434</value>
+					<value level="5">3704</value>
+					<value level="6">7241</value>
+					<value level="7">11196</value>
+					<value level="8">13197</value>
+					<value level="9">15309</value>
+					<value level="10">17634</value>
+					<value level="11">20122</value>
+					<value level="12">22415</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -4176,7 +4984,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">69</value>
+					<value level="2">186</value>
+					<value level="3">514</value>
+					<value level="4">1346</value>
+					<value level="5">3472</value>
+					<value level="6">6792</value>
+					<value level="7">10508</value>
+					<value level="8">12398</value>
+					<value level="9">14393</value>
+					<value level="10">16594</value>
+					<value level="11">18870</value>
+					<value level="12">21074</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -4243,7 +5064,20 @@
 		<trait>SHOCK</trait>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">65</value>
+					<value level="2">174</value>
+					<value level="3">481</value>
+					<value level="4">1253</value>
+					<value level="5">3240</value>
+					<value level="6">6344</value>
+					<value level="7">9819</value>
+					<value level="8">11599</value>
+					<value level="9">13476</value>
+					<value level="10">15516</value>
+					<value level="11">17661</value>
+					<value level="12">19733</value>
+				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</for>
@@ -4289,7 +5123,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">352</value>
+					<value level="2">949</value>
+					<value level="3">2607</value>
+					<value level="4">6828</value>
+					<value level="5">17184</value>
+					<value level="6">33213</value>
+					<value level="7">51007</value>
+					<value level="8">59177</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4334,7 +5181,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">352</value>
+					<value level="2">949</value>
+					<value level="3">2607</value>
+					<value level="4">6828</value>
+					<value level="5">17184</value>
+					<value level="6">33213</value>
+					<value level="7">51007</value>
+					<value level="8">59177</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4379,7 +5239,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">352</value>
+					<value level="2">949</value>
+					<value level="3">2607</value>
+					<value level="4">6828</value>
+					<value level="5">17184</value>
+					<value level="6">33213</value>
+					<value level="7">51007</value>
+					<value level="8">59177</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4424,7 +5297,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">352</value>
+					<value level="2">949</value>
+					<value level="3">2607</value>
+					<value level="4">6828</value>
+					<value level="5">17184</value>
+					<value level="6">33213</value>
+					<value level="7">51007</value>
+					<value level="8">59177</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4469,7 +5355,20 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">352</value>
+					<value level="2">949</value>
+					<value level="3">2607</value>
+					<value level="4">6828</value>
+					<value level="5">17184</value>
+					<value level="6">33213</value>
+					<value level="7">51007</value>
+					<value level="8">59177</value>
+					<value level="9">67888</value>
+					<value level="10">77001</value>
+					<value level="11">86359</value>
+					<value level="12">95790</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4515,7 +5414,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">1640</value>
+					<value level="2">2824</value>
+					<value level="3">4501</value>
+					<value level="4">6612</value>
+					<value level="5">9334</value>
+					<value level="6">11649</value>
+					<value level="7">12865</value>
+					<value level="8">13406</value>
+					<value level="9">13624</value>
+					<value level="10">13544</value>
+					<value level="11">13303</value>
+					<value level="12">13157</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4561,7 +5473,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">1382</value>
+					<value level="2">2381</value>
+					<value level="3">3802</value>
+					<value level="4">5590</value>
+					<value level="5">7881</value>
+					<value level="6">9832</value>
+					<value level="7">10862</value>
+					<value level="8">11314</value>
+					<value level="9">11553</value>
+					<value level="10">11661</value>
+					<value level="11">11640</value>
+					<value level="12">11578</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4607,7 +5532,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">736</value>
+					<value level="2">1267</value>
+					<value level="3">2024</value>
+					<value level="4">2983</value>
+					<value level="5">4204</value>
+					<value level="6">5247</value>
+					<value level="7">5787</value>
+					<value level="8">6022</value>
+					<value level="9">6144</value>
+					<value level="10">6203</value>
+					<value level="11">6199</value>
+					<value level="12">6158</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4653,7 +5591,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">691</value>
+					<value level="2">1191</value>
+					<value level="3">1899</value>
+					<value level="4">2799</value>
+					<value level="5">3941</value>
+					<value level="6">4922</value>
+					<value level="7">5431</value>
+					<value level="8">5657</value>
+					<value level="9">5777</value>
+					<value level="10">5838</value>
+					<value level="11">5813</value>
+					<value level="12">5789</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4699,7 +5650,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="Heal">
-				<param power="#amount" />
+				<power>
+					<value level="1">647</value>
+					<value level="2">1115</value>
+					<value level="3">1778</value>
+					<value level="4">2607</value>
+					<value level="5">3677</value>
+					<value level="6">4597</value>
+					<value level="7">5075</value>
+					<value level="8">5293</value>
+					<value level="9">5409</value>
+					<value level="10">5458</value>
+					<value level="11">5441</value>
+					<value level="12">5421</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4764,7 +5728,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hot" />
+				<power>
+					<value level="1">167</value>
+					<value level="2">210</value>
+					<value level="3">315</value>
+					<value level="4">507</value>
+					<value level="5">784</value>
+					<value level="6">1026</value>
+					<value level="7">1195</value>
+					<value level="8">1283</value>
+					<value level="9">1358</value>
+					<value level="10">1427</value>
+					<value level="11">951</value>
+					<value level="12">940</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4829,7 +5806,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hot" />
+				<power>
+					<value level="1">141</value>
+					<value level="2">177</value>
+					<value level="3">266</value>
+					<value level="4">428</value>
+					<value level="5">662</value>
+					<value level="6">866</value>
+					<value level="7">1009</value>
+					<value level="8">1083</value>
+					<value level="9">1152</value>
+					<value level="10">1229</value>
+					<value level="11">832</value>
+					<value level="12">827</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4894,7 +5884,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hot" />
+				<power>
+					<value level="1">75</value>
+					<value level="2">94</value>
+					<value level="3">142</value>
+					<value level="4">229</value>
+					<value level="5">353</value>
+					<value level="6">463</value>
+					<value level="7">538</value>
+					<value level="8">576</value>
+					<value level="9">613</value>
+					<value level="10">654</value>
+					<value level="11">443</value>
+					<value level="12">440</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -4959,7 +5962,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hot" />
+				<power>
+					<value level="1">71</value>
+					<value level="2">89</value>
+					<value level="3">133</value>
+					<value level="4">215</value>
+					<value level="5">331</value>
+					<value level="6">434</value>
+					<value level="7">505</value>
+					<value level="8">542</value>
+					<value level="9">576</value>
+					<value level="10">615</value>
+					<value level="11">416</value>
+					<value level="12">414</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -5024,7 +6040,20 @@
 		<targetType>CLAN_MEMBER</targetType>
 		<for>
 			<effect name="HealOverTime" ticks="1">
-				<param power="#hot" />
+				<power>
+					<value level="1">66</value>
+					<value level="2">83</value>
+					<value level="3">125</value>
+					<value level="4">200</value>
+					<value level="5">309</value>
+					<value level="6">405</value>
+					<value level="7">472</value>
+					<value level="8">507</value>
+					<value level="9">539</value>
+					<value level="10">576</value>
+					<value level="11">389</value>
+					<value level="12">388</value>
+				</power>
 			</effect>
 		</for>
 	</skill>

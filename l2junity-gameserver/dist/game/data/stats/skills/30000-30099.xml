@@ -116,8 +116,37 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
-				<param debuffModifier="1.1" />
+				<power>
+					<value level="1">6</value>
+					<value level="2">14</value>
+					<value level="3">19</value>
+					<value level="4">25</value>
+					<value level="5">32</value>
+					<value level="6">36</value>
+					<value level="7">41</value>
+					<value level="8">46</value>
+					<value level="9">50</value>
+					<value level="10">55</value>
+					<value level="11">60</value>
+					<value level="12">64</value>
+					<value level="13">69</value>
+					<value level="14">72</value>
+					<value level="15">75</value>
+					<value level="16">77</value>
+					<value level="17">79</value>
+					<value level="18">171</value>
+					<value level="19">179</value>
+					<value level="20">187</value>
+					<value level="21">195</value>
+					<value level="22">203</value>
+					<value level="23">211</value>
+					<value level="24">219</value>
+					<value level="25">227</value>
+					<value level="26">231</value>
+					<value level="27">235</value>
+					<value level="28">239</value>
+				</power>
+				<debuffModifier>1.1</debuffModifier>
 			</effect>
 		</for>
 	</skill>
@@ -210,11 +239,32 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
-				<param debuffModifier="1.1" />
+				<power>
+					<value level="1">110</value>
+					<value level="2">120</value>
+					<value level="3">130</value>
+					<value level="4">140</value>
+					<value level="5">150</value>
+					<value level="6">157</value>
+					<value level="7">162</value>
+					<value level="8">167</value>
+					<value level="9">172</value>
+					<value level="10">501</value>
+					<value level="11">515</value>
+					<value level="12">543</value>
+					<value level="13">571</value>
+					<value level="14">599</value>
+					<value level="15">627</value>
+					<value level="16">655</value>
+					<value level="17">683</value>
+					<value level="18">711</value>
+					<value level="19">725</value>
+					<value level="20">739</value>
+				</power>
+				<debuffModifier>1.1</debuffModifier>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="STORM_SIGN,3" />
+				<dispel>STORM_SIGN,3</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -299,10 +349,37 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">57</value>
+					<value level="2">66</value>
+					<value level="3">74</value>
+					<value level="4">83</value>
+					<value level="5">92</value>
+					<value level="6">101</value>
+					<value level="7">110</value>
+					<value level="8">118</value>
+					<value level="9">127</value>
+					<value level="10">136</value>
+					<value level="11">140</value>
+					<value level="12">145</value>
+					<value level="13">149</value>
+					<value level="14">154</value>
+					<value level="15">420</value>
+					<value level="16">442</value>
+					<value level="17">464</value>
+					<value level="18">486</value>
+					<value level="19">508</value>
+					<value level="20">530</value>
+					<value level="21">552</value>
+					<value level="22">574</value>
+					<value level="23">584</value>
+					<value level="24">594</value>
+					<value level="25">604</value>
+				</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="60" type="THROW_UP" />
+				<distance>60</distance>
+				<type>THROW_UP</type>
 			</effect>
 		</for>
 	</skill>
@@ -375,11 +452,24 @@
 		</cond>
 		<for>
 			<effect name="KnockBack">
-				<param distance="60" type="THROW_UP" />
+				<distance>60</distance>
+				<type>THROW_UP</type>
 			</effect>
 			<effect name="MagicalAttack">
-				<param power="#power" />
-				<param debuffModifier="1.1" />
+				<debuffModifier>1.1</debuffModifier>
+				<power>
+					<value level="1">255</value>
+					<value level="2">269</value>
+					<value level="3">283</value>
+					<value level="4">297</value>
+					<value level="5">311</value>
+					<value level="6">325</value>
+					<value level="7">339</value>
+					<value level="8">353</value>
+					<value level="9">359</value>
+					<value level="10">365</value>
+					<value level="11">371</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -439,18 +529,34 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">123</value>
+					<value level="2">127</value>
+					<value level="3">130</value>
+					<value level="4">134</value>
+					<value level="5">386</value>
+					<value level="6">396</value>
+					<value level="7">416</value>
+					<value level="8">436</value>
+					<value level="9">456</value>
+					<value level="10">476</value>
+					<value level="11">496</value>
+					<value level="12">516</value>
+					<value level="13">536</value>
+					<value level="14">546</value>
+					<value level="15">556</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="STORM_SIGN,3" />
+				<dispel>STORM_SIGN,3</dispel>
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="HealPercent">
-				<param power="10" />
+				<power>10</power>
 			</effect>
 			<effect name="ManaHealPercent">
-				<param power="5" />
+				<power>5</power>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -497,7 +603,15 @@
 		</cond>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="19227" skillLevel="#triggerLvl" /> <!-- Wind Hiding -->
+				<!-- Wind Hiding -->
+				<skillId>19227</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+				</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
@@ -545,7 +659,9 @@
 		</cond>
 		<for>
 			<effect name="Blink">
-				<param angle="0" range="400" /> <!-- Teleport to Back, unconfirmed -->
+				<!-- Teleport to Back, unconfirmed -->
+				<angle>0</angle>
+				<range>400</range>
 			</effect>
 			<effect name="Hide">
 				<add stat="moveSpeed" val="100" />
@@ -575,14 +691,19 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="99" /> <!-- Since there is no way to get max debuffs, use 99. -->
+				<!-- Since there is no way to get max debuffs, use 99. -->
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>99</max>
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="HealOverTime" ticks="5">
-				<param power="60" /> <!-- Unconfirmed -->
+				<!-- Unconfirmed -->
+				<power>60</power>
 			</effect>
 			<effect name="ManaHealOverTime" ticks="5">
-				<param power="10" /> <!-- Unconfirmed -->
+				<!-- Unconfirmed -->
+				<power>10</power>
 			</effect>
 		</for>
 	</skill>
@@ -638,7 +759,9 @@
 		</cond>
 		<for>
 			<effect name="CallSkill">
-				<param skillId="30002" skillLevel="3" /> <!-- Storm Sign -->
+				<!-- Storm Sign -->
+				<skillId>30002</skillId>
+				<skillLevel>3</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -691,14 +814,40 @@
 		</cond>
 		<for>
 			<effect name="EnemyCharge">
-				<param animationSpeed="333" />
+				<animationSpeed>333</animationSpeed>
 			</effect>
 			<effect name="MagicalAttack">
-				<param power="#power" />
-				<param debuffModifier="1.1" />
+				<debuffModifier>1.1</debuffModifier>
+				<power>
+					<value level="1">57</value>
+					<value level="2">66</value>
+					<value level="3">74</value>
+					<value level="4">83</value>
+					<value level="5">92</value>
+					<value level="6">101</value>
+					<value level="7">110</value>
+					<value level="8">118</value>
+					<value level="9">127</value>
+					<value level="10">136</value>
+					<value level="11">141</value>
+					<value level="12">145</value>
+					<value level="13">150</value>
+					<value level="14">154</value>
+					<value level="15">376</value>
+					<value level="16">397</value>
+					<value level="17">418</value>
+					<value level="18">438</value>
+					<value level="19">459</value>
+					<value level="20">480</value>
+					<value level="21">501</value>
+					<value level="22">522</value>
+					<value level="23">535</value>
+					<value level="24">545</value>
+					<value level="25">555</value>
+				</power>
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="STORM_SIGN,3" />
+				<dispel>STORM_SIGN,3</dispel>
 			</effect>
 		</for>
 	</skill>
@@ -802,7 +951,42 @@
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param KNOCKDOWN="#traitResist" KNOCKBACK="#traitResist" HATE="#traitResist" PULL="#traitResist" AIRBIND="#traitResist" AGGRESSION="#traitResist" />
+				<KNOCKDOWN>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">90</value>
+					<value level="4">90</value>
+				</KNOCKDOWN>
+				<KNOCKBACK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">90</value>
+					<value level="4">90</value>
+				</KNOCKBACK>
+				<HATE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">90</value>
+					<value level="4">90</value>
+				</HATE>
+				<PULL>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">90</value>
+					<value level="4">90</value>
+				</PULL>
+				<AIRBIND>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">90</value>
+					<value level="4">90</value>
+				</AIRBIND>
+				<AGGRESSION>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">90</value>
+					<value level="4">90</value>
+				</AGGRESSION>
 			</effect>
 		</for>
 	</skill>
@@ -847,12 +1031,23 @@
 				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param chance="50" /> <!-- Unconfirmed -->
-				<param skillId="30026" skillLevel="#triggerLevel" /> <!-- Lightning Squall -->
-				<param targetType="ONE" />
+				<!-- Unconfirmed -->
+				<!-- Lightning Squall -->
+				<chance>50</chance>
+				<targetType>ONE</targetType>
+				<skillId>30026</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+				</skillLevel>
 			</effect>
 			<effect name="DispelByCategory"> <!-- TODO: only active on skill level 3 and 4. -->
-				<param slot="debuff" rate="100" max="99" /> <!-- Since there is no way to get max debuffs, use 99. -->
+				<!-- Since there is no way to get max debuffs, use 99. -->
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>99</max>
 			</effect>
 		</for>
 	</skill>
@@ -875,7 +1070,10 @@
 		<for>
 			<effect name="Untargetable" />
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="99" /> <!-- Since there is no way to get max debuffs, use 99. -->
+				<!-- Since there is no way to get max debuffs, use 99. -->
+				<slot>debuff</slot>
+				<rate>100</rate>
+				<max>99</max>
 			</effect>
 		</for>
 	</skill>
@@ -938,8 +1136,20 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
-				<param debuffModifier="1.1" />
+				<power>
+					<value level="1">533</value>
+					<value level="2">561</value>
+					<value level="3">589</value>
+					<value level="4">617</value>
+					<value level="5">645</value>
+					<value level="6">673</value>
+					<value level="7">701</value>
+					<value level="8">729</value>
+					<value level="9">743</value>
+					<value level="10">757</value>
+					<value level="11">771</value>
+				</power>
+				<debuffModifier>1.1</debuffModifier>
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
@@ -973,9 +1183,12 @@
 				<add stat="moveSpeed" val="70" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param chance="50" /> <!-- Unconfirmed -->
-				<param skillId="30027" skillLevel="1" /> <!-- Destructive Bolt -->
-				<param targetType="ONE" />
+				<!-- Unconfirmed -->
+				<!-- Destructive Bolt -->
+				<chance>50</chance>
+				<targetType>ONE</targetType>
+				<skillId>30027</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</for>
 	</skill>
@@ -1010,7 +1223,26 @@
 				<add stat="moveSpeed" val="#moveSpeed" />
 			</effect>
 			<effect name="DefenceTrait">
-				<param KNOCKDOWN="#resist" KNOCKBACK="#resist" PULL="#resist" AIRBIND="#resist" AGGRESSION="#resist" />
+				<KNOCKDOWN>
+					<value level="1">30</value>
+					<value level="2">40</value>
+				</KNOCKDOWN>
+				<KNOCKBACK>
+					<value level="1">30</value>
+					<value level="2">40</value>
+				</KNOCKBACK>
+				<PULL>
+					<value level="1">30</value>
+					<value level="2">40</value>
+				</PULL>
+				<AIRBIND>
+					<value level="1">30</value>
+					<value level="2">40</value>
+				</AIRBIND>
+				<AGGRESSION>
+					<value level="1">30</value>
+					<value level="2">40</value>
+				</AGGRESSION>
 			</effect>
 		</for>
 	</skill>
@@ -1039,7 +1271,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">150</value>
+					<value level="4">200</value>
+				</power>
 			</effect>
 			<effect name="Debuff">
 				<sub stat="moveSpeed" val="20" />
@@ -1059,10 +1296,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="300" />
+				<power>300</power>
 			</effect>
 			<effect name="CallSkill">
-				<param skillId="30005" chance="10" /> <!-- Storm Sign Lv. 4 -->
+				<!-- Storm Sign Lv. 4 -->
+				<skillId>30005</skillId>
+				<chance>10</chance>
 			</effect>
 		</for>
 	</skill>
@@ -1094,8 +1333,13 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
-				<param debuffModifier="1.1" />
+				<power>
+					<value level="1">448</value>
+					<value level="2">465</value>
+					<value level="3">473</value>
+					<value level="4">481</value>
+				</power>
+				<debuffModifier>1.1</debuffModifier>
 			</effect>
 			<!-- TODO Lock inside storm for 5sec. -->
 		</for>
@@ -1151,20 +1395,31 @@
 				</mul>
 			</effect>
 			<effect name="TriggerSkillBySkillAttack"> <!-- TODO: This should start triggering on skill level 3 -->
-				<param skillId="30002" skillLevel="1" skillLevelScaleTo="3" /> <!-- Storm Sign -->
-				<param attackSkillId="30001" attackSkillLevel="5" /> <!-- Hydro Attack -->
-				<param allowWeapons="BLUNT" />
+				<!-- Storm Sign -->
+				<!-- Hydro Attack -->
+				<skillId>30002</skillId>
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+				<allowWeapons>BLUNT</allowWeapons>
+				<attackSkillId>30001</attackSkillId>
+				<attackSkillLevel>5</attackSkillLevel>
 			</effect>
 			<effect name="TriggerSkillBySkillAttack"> <!-- TODO: This should start triggering on skill level 8 -->
-				<param skillId="30002" skillLevel="3" /> <!-- Storm Sign -->
-				<param attackSkillId="30019" /> <!-- Sayha's Word -->
-				<param allowWeapons="BLUNT" />
+				<!-- Storm Sign -->
+				<!-- Sayha's Word -->
+				<attackSkillId>30019</attackSkillId>
+				<allowWeapons>BLUNT</allowWeapons>
+				<skillId>30002</skillId>
+				<skillLevel>3</skillLevel>
 			</effect>
 			<effect name="TriggerSkillBySkillAttack"> <!-- TODO: This should start triggering on skill level 8 -->
-				<param chance="33" /> <!-- 33% Chance to trigger Storm Sign Lv. 4 -->
-				<param skillId="30005" /> <!-- Storm Sign Lv. 4 -->
-				<param attackSkillId="30003" /> <!-- Hydro Flare -->
-				<param allowWeapons="BLUNT" />
+				<!-- 33% Chance to trigger Storm Sign Lv. 4 -->
+				<!-- Storm Sign Lv. 4 -->
+				<!-- Hydro Flare -->
+				<chance>33</chance>
+				<attackSkillId>30003</attackSkillId>
+				<allowWeapons>BLUNT</allowWeapons>
+				<skillId>30005</skillId>
 			</effect>
 		</for>
 	</skill>
@@ -1218,7 +1473,22 @@
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<effect name="MaxHp">
-				<param amount="#maxHp" mode="DIFF" />
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">4891</value>
+					<value level="5">4891</value>
+					<value level="6">4891</value>
+					<value level="7">4891</value>
+					<value level="8">4891</value>
+					<value level="9">4891</value>
+					<value level="10">4891</value>
+					<value level="11">4891</value>
+					<value level="12">4891</value>
+					<value level="13">4891</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1263,7 +1533,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<param HOLD="30" DERANGEMENT="30" PULL="#pullRes" HATE="#hateRes" />
+				<HOLD>30</HOLD>
+				<DERANGEMENT>30</DERANGEMENT>
+				<PULL>
+					<value level="1">0</value>
+					<value level="2">30</value>
+				</PULL>
+				<HATE>
+					<value level="1">0</value>
+					<value level="2">30</value>
+				</HATE>
 			</effect>
 		</for>
 	</skill>

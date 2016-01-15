@@ -331,7 +331,7 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="TargetCancel">
-				<param chance="50" />
+				<chance>50</chance>
 			</effect>
 		</for>
 	</skill>
@@ -354,7 +354,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="40000" />
+				<power>40000</power>
 			</effect>
 		</for>
 	</skill>
@@ -383,10 +383,10 @@
 		<isSuicideAttack>true</isSuicideAttack>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="40000" />
+				<power>40000</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<param power="1000" />
+				<power>1000</power>
 			</effect>
 		</for>
 	</skill>
@@ -414,7 +414,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">1000</value>
+					<value level="2">1500</value>
+					<value level="3">2000</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -440,7 +444,11 @@
 		<hitTime>2000</hitTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<power>
+					<value level="1">30000</value>
+					<value level="2">40000</value>
+					<value level="3">50000</value>
+				</power>
 			</effect>
 		</for>
 	</skill>
@@ -462,7 +470,7 @@
 		<hitTime>2000</hitTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="40000" />
+				<power>40000</power>
 			</effect>
 		</for>
 	</skill>
@@ -516,7 +524,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="40000" />
+				<power>40000</power>
 			</effect>
 		</for>
 	</skill>
@@ -539,11 +547,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="40000" />
+				<power>40000</power>
 			</effect>
 			<effect name="MagicalAttackByAbnormalSlot">
-				<param abnormalType="PD_DOWN" />
-				<param power="500" />
+				<power>500</power>
+				<abnormalType>PD_DOWN</abnormalType>
 			</effect>
 		</for>
 	</skill>
@@ -561,7 +569,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="30000" />
+				<power>30000</power>
 			</effect>
 		</for>
 	</skill>
@@ -582,8 +590,8 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="MagicalAttackByAbnormalSlot">
-				<param abnormalType="PD_DOWN" />
-				<param power="500" />
+				<abnormalType>PD_DOWN</abnormalType>
+				<power>500</power>
 			</effect>
 		</for>
 	</skill>
@@ -604,11 +612,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="40000" />
+				<power>40000</power>
 			</effect>
 			<effect name="MagicalAttackByAbnormalSlot">
-				<param abnormalType="PD_DOWN" />
-				<param power="500" />
+				<power>500</power>
+				<abnormalType>PD_DOWN</abnormalType>
 			</effect>
 		</for>
 	</skill>
@@ -626,8 +634,8 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="MagicalAttackByAbnormalSlot">
-				<param abnormalType="PD_DOWN" />
-				<param power="500" />
+				<abnormalType>PD_DOWN</abnormalType>
+				<power>500</power>
 			</effect>
 		</for>
 	</skill>
@@ -693,7 +701,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="40000" />
+				<power>40000</power>
 			</effect>
 		</for>
 	</skill>
@@ -716,11 +724,11 @@
 		<reuseDelay>10000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="200000" />
+				<power>200000</power>
 			</effect>
 			<effect name="MagicalAttackByAbnormalSlot">
-				<param abnormalType="PD_DOWN" />
-				<param power="500" />
+				<power>500</power>
+				<abnormalType>PD_DOWN</abnormalType>
 			</effect>
 		</for>
 	</skill>
@@ -747,14 +755,16 @@
 		<reuseDelay>10000</reuseDelay>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="180000" />
+				<power>180000</power>
 			</effect>
 			<effect name="MagicalAttackByAbnormalSlot">
-				<param abnormalType="PD_DOWN" />
-				<param power="500" />
+				<power>500</power>
+				<abnormalType>PD_DOWN</abnormalType>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="200" speed="400" knockDown="true" />
+				<distance>200</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
 			</effect>
 		</for>
 	</skill>
@@ -775,7 +785,7 @@
 		<hitTime>2000</hitTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="200000" />
+				<power>200000</power>
 			</effect>
 		</for>
 	</skill>
@@ -797,7 +807,7 @@
 		<hitTime>3000</hitTime>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="200000" />
+				<power>200000</power>
 			</effect>
 		</for>
 	</skill>
