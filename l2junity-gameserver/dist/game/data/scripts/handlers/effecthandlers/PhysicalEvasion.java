@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class PhysicalEvasion extends AbstractStatEffect
+public class PhysicalEvasion extends AbstractConditionalHpEffect
 {
 	public PhysicalEvasion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{

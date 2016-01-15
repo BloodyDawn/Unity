@@ -275,6 +275,15 @@ public abstract class AbstractEffect
 	}
 	
 	/**
+	 * @param info
+	 * @return {@code true} if pump can be invoked, {@code false} otherwise
+	 */
+	public boolean canPump(BuffInfo info)
+	{
+		return true;
+	}
+	
+	/**
 	 * @param effected
 	 * @param skill
 	 */

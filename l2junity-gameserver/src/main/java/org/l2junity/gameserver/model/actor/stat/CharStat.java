@@ -766,6 +766,7 @@ public class CharStat
 			//@formatter:off
 			effectsStream.forEach(info -> info.getEffects().stream()
 				.filter(effect -> effect.canStart(info))
+				.filter(effect -> effect.canPump(info))
 				.forEach(effect -> effect.pump(info.getEffected(), info.getSkill())));
 			//@formatter:on
 			

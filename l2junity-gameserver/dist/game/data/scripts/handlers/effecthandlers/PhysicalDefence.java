@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class PhysicalDefence extends AbstractStatEffect
+public class PhysicalDefence extends AbstractConditionalHpEffect
 {
 	public PhysicalDefence(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{

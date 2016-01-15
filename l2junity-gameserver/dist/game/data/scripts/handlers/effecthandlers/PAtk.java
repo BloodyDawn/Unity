@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class PAtk extends AbstractStatEffect
+public class PAtk extends AbstractConditionalHpEffect
 {
 	public PAtk(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{

@@ -27,8 +27,9 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class CriticalRate extends AbstractStatEffect
+public class CriticalRate extends AbstractConditionalHpEffect
 {
+	
 	public CriticalRate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params, Stats.CRITICAL_RATE);
