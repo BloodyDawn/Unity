@@ -524,10 +524,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="1.04" /> <!-- Heal +4% -->
+				<!-- Heal +4% -->
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>50</PARALYZE>
+			</effect>
+			<effect name="HealEffect">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1130,7 +1134,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="earthRes" val="15" />
-				<mul stat="healEffect" val="1.1" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 			</effect>
@@ -1148,6 +1151,10 @@
 				<amount>4</amount>
 				<chance>30</chance>
 			</effect>
+			<effect name="HealEffect">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3559" levels="2" name="Zaken's Earring">
@@ -1164,7 +1171,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="#healEffect" />
 				<add stat="darkRes" val="#darkRes" />
 			</effect>
 			<effect name="AttackTrait">
@@ -1193,6 +1199,13 @@
 				<amount>4</amount>
 				<chance>30</chance>
 			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3560" levels="1" name="Orfen's Earring">
@@ -1205,13 +1218,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="1.06" />
 			</effect>
 			<effect name="AttackTrait">
 				<BLEED>20</BLEED>
 			</effect>
 			<effect name="DefenceTrait">
 				<BLEED>20</BLEED>
+			</effect>
+			<effect name="HealEffect">
+				<amount>6</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

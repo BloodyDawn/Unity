@@ -363,10 +363,13 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="healEffect" val="1.25" />
 				<mul stat="defCritRate" val="0.75" />
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
@@ -488,10 +491,13 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="1.2" />
 				<mul stat="defCritRate" val="0.8" />
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

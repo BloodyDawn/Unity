@@ -748,7 +748,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- P. Def. +5.4% -->
-				<mul stat="healEffect" val="1.03" /> <!-- Received Increased Heal +3% -->
+				<!-- Received Increased Heal +3% -->
 				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
 			</effect>
 			<effect name="DefenceTrait">
@@ -761,6 +761,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -1660,7 +1660,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<mul stat="healEffect" val="0.5" />
 				<power>
 					<value level="1">9</value>
 					<value level="2">9</value>
@@ -1705,6 +1704,10 @@
 					<value level="41">15</value>
 					<value level="42">15</value>
 				</power>
+			</effect>
+			<effect name="HealEffect">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2367,7 +2370,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="1.4" />
 				<mul stat="mCritRate" val="1.5" />
 				<mul stat="MagicalMpConsumeRate" val="0.1" />
 			</effect>
@@ -2377,6 +2379,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

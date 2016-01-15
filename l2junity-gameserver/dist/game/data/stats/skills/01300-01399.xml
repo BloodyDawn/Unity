@@ -300,7 +300,14 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="#healEffect" />
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">10</value>
+					<value level="3">12</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2855,7 +2862,10 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="healEffect" val="0.5" />
+			</effect>
+			<effect name="HealEffect">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

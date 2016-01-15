@@ -759,7 +759,6 @@
 					<using kind="SWORD" />
 				</add>
 				<sub stat="cancelVuln" val="40" />
-				<mul stat="healEffect" val="0.2" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -807,6 +806,10 @@
 				<weaponType>
 					<item>BLUNT</item>
 				</weaponType>
+			</effect>
+			<effect name="HealEffect">
+				<amount>-80</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1828,7 +1831,6 @@
 					<using kind="SWORD,POLE" />
 				</add>
 				<mul stat="PhysicalMpConsumeRate" val="0.5" />
-				<mul stat="healEffect" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -1873,6 +1875,10 @@
 					<item>BLUNT</item>
 					<item>DUALFIST</item>
 				</weaponType>
+			</effect>
+			<effect name="HealEffect">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3096,8 +3102,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="0.95" />
 				<mul stat="weightLimit" val="1.25" />
+			</effect>
+			<effect name="HealEffect">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

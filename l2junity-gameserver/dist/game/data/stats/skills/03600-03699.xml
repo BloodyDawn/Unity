@@ -1438,7 +1438,7 @@
 			<effect name="Buff">
 				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-				<mul stat="healEffect" val="1.04" /> <!-- Heal Capacity +4% -->
+				<!-- Heal Capacity +4% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="DefenceTrait">
@@ -1447,6 +1447,10 @@
 			<effect name="EnableCloak" />
 			<effect name="PhysicalDefence">
 				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

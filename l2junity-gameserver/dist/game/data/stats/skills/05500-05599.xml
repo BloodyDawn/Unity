@@ -1125,13 +1125,16 @@
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0" />
 				<mul stat="PhysicalMpConsumeRate" val="0" />
-				<mul stat="healEffect" val="1.1" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1619,7 +1622,6 @@
 				<!-- Spirit of Phoenix -->
 				<add stat="fireRes" val="#elementRes" />
 				<add stat="darkRes" val="#elementRes" />
-				<mul stat="healEffect" val="#healEffect" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
@@ -1640,6 +1642,14 @@
 			<effect name="PhysicalDefence">
 				<amount>500</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

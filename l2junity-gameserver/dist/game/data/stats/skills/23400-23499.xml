@@ -1367,7 +1367,10 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="healEffect" val="0.1" />
+			</effect>
+			<effect name="HealEffect">
+				<amount>-90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

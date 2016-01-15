@@ -1344,7 +1344,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="healEffect" val="1.06" />
+			</effect>
+			<effect name="HealEffect">
+				<amount>6</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
