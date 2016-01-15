@@ -3249,7 +3249,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="breath" val="#breath" />
+			</effect>
+			<effect name="Breath">
+				<amount>
+					<value level="1">400</value>
+					<value level="2">600</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

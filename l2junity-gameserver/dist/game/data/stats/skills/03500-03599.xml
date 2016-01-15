@@ -411,7 +411,11 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="320" /> <!-- HP +320 -->
-				<add stat="breath" val="200" /> <!-- Breath Gauge increased +200 -->
+				<!-- Breath Gauge increased +200 -->
+			</effect>
+			<effect name="Breath">
+				<amount>200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -444,7 +448,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="breath" val="200" /> <!-- Breath Gauge increased +200 -->
+				<!-- Breath Gauge increased +200 -->
 				<!-- P. Atk. +2.7% -->
 				<!-- MP Regeneration +2.5% -->
 			</effect>
@@ -458,6 +462,10 @@
 			<effect name="MpRegen">
 				<amount>2.5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Breath">
+				<amount>200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -491,7 +499,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- Speed + 7 -->
-				<add stat="breath" val="200" /> <!-- Breath Gauge increased +200 -->
+				<!-- Breath Gauge increased +200 -->
 				<!-- MP Regeneration +5.26% -->
 			</effect>
 			<effect name="Speed">
@@ -501,6 +509,10 @@
 			<effect name="MpRegen">
 				<amount>5.26</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Breath">
+				<amount>200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

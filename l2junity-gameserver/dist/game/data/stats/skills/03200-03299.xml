@@ -1786,7 +1786,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="manaCharge" val="1" />
+			</effect>
+			<effect name="ManaCharge">
+				<amount>1</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2175,7 +2178,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="breath" val="6" />
+			</effect>
+			<effect name="Breath">
+				<amount>500</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

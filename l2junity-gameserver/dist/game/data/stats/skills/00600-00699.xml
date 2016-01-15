@@ -1310,7 +1310,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="manaCharge" val="20" />
+			</effect>
+			<effect name="ManaCharge">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

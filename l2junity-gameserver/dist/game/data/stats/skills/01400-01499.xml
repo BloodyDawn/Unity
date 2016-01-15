@@ -2943,7 +2943,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="manaCharge" val="85" />
+			</effect>
+			<effect name="ManaCharge">
+				<amount>85</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

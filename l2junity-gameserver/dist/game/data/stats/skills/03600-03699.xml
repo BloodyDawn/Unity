@@ -2637,7 +2637,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="53" />
-				<add stat="breath" val="33" />
+			</effect>
+			<effect name="Breath">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2651,7 +2654,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="53" />
-				<add stat="breath" val="33" />
+			</effect>
+			<effect name="Breath">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2664,8 +2670,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="breath" val="383" />
 				<add stat="maxHp" val="1093" />
+			</effect>
+			<effect name="Breath">
+				<amount>383</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2679,7 +2688,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="80" />
-				<add stat="breath" val="50" />
+			</effect>
+			<effect name="Breath">
+				<amount>50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
