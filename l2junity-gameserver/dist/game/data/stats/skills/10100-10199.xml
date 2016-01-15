@@ -144,7 +144,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -214,6 +213,15 @@
 					<item>SWORD</item>
 					<item>BLUNT</item>
 				</weaponType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

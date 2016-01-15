@@ -3519,7 +3519,6 @@
 			<effect name="Buff">
 				<mul stat="pReuse" val="#reuse" />
 				<mul stat="mReuse" val="#reuse" />
-				<mul stat="physicalSkillPower" val="1.05" />
 				<add stat="maxHp" val="#maxBase" />
 				<mul stat="skillCriticalProbability" val="#bonus" />
 			</effect>
@@ -3549,6 +3548,10 @@
 					<value level="4">10</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3605,7 +3608,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="1.05" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -3623,6 +3625,10 @@
 					<value level="3">10</value>
 					<value level="4">15</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3674,7 +3680,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="1.05" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -3692,6 +3697,10 @@
 					<value level="3">10</value>
 					<value level="4">15</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4526,7 +4535,6 @@
 		<mpConsume>1</mpConsume>
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
-				<mul stat="physicalSkillPower" val="1.05" />
 				<power>
 					<value level="1">4</value>
 					<value level="2">4</value>
@@ -4568,6 +4576,10 @@
 					<value level="3">10</value>
 					<value level="4">15</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

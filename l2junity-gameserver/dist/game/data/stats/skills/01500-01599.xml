@@ -2947,7 +2947,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="PAtk">
@@ -2979,6 +2978,14 @@
 					<value level="1">1</value>
 					<value level="2">3</value>
 					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

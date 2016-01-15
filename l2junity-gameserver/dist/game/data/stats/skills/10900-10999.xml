@@ -33,14 +33,24 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="#power">
-					<using kind="BOW, CROSSBOW" />
-				</mul>
 				<mul stat="defCritRate" val="#defCritRate">
 					<using kind="BOW, CROSSBOW" />
 				</mul>
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalSkillPower">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">6</value>
@@ -69,7 +79,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -260,10 +278,13 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="1.2" />
 				<!-- TODO P. Skill Critical Rate by 40%, and Skill Critical Damage by 20% -->
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -286,8 +307,11 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="1.4" />
 				<!-- TODO P. Skill Critical Rate by 20%, and Skill Critical Damage by 40% -->
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -308,10 +332,13 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="1.2" />
 				<mul stat="pvpPhysSkillsDmg" val="1.2" />
 				<mul stat="pvpMagicalDmg" val="1.2" />
 				<mul stat="pvpMagicalDef" val="1.2" />
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

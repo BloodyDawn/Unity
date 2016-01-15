@@ -1500,8 +1500,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

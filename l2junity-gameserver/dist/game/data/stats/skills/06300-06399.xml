@@ -380,7 +380,10 @@
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="2" />
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

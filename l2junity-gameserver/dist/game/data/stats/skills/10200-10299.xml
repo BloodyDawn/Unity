@@ -2090,9 +2090,17 @@
 		<reuseDelay>180000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="pvpPhysDmg" val="#pvpPhysDmg" />
 				<mul stat="pvpPhysSkillsDmg" val="#pvpPhysDmg" />
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">35</value>
+					<value level="3">40</value>
+					<value level="4">45</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

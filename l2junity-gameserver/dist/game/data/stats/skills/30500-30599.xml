@@ -997,7 +997,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="#attack" />
 			</effect>
 			<effect name="EffectFlag">
 				<effectFlag>ATTACK_BEHIND</effectFlag>
@@ -1011,6 +1010,14 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">10</value>

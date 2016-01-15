@@ -1935,8 +1935,11 @@
 		<staticDelay>true</staticDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="physicalSkillPower" val="1.27" />
 				<!-- TODO mul stat="magicalSkillPower" val="1.27" / -->
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
