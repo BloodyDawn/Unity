@@ -201,9 +201,18 @@
 			<effect name="Buff">
 				<add stat="rCrit" val="109.2" />
 				<mul stat="maxHp" val="1.1" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -507,9 +516,9 @@
 				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
 				<!-- MP +30% -->
 				<!-- CP +50% -->
-				<mul stat="pvpPhysDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
-				<mul stat="pvpMagicalDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<!-- PVP Damage Bonus +20% -->
+				<!-- PVP Damage Bonus +20% -->
+				<!-- PVP Damage Bonus +20% -->
 				<!-- Reflect Damage 9% -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
@@ -535,6 +544,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

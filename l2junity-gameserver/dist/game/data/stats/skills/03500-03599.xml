@@ -992,9 +992,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="#bonus" />
-				<mul stat="pvpPhysSkillsDmg" val="#bonus" />
-				<mul stat="pvpMagicalDmg" val="#bonus" />
 			</effect>
 			<effect name="HitNumber">
 				<amount>
@@ -1004,6 +1001,33 @@
 					<value level="4">4</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1347,9 +1371,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -1362,6 +1383,18 @@
 					<value level="7">11</value>
 					<value level="8">11</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1388,9 +1421,18 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1416,9 +1458,18 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1444,9 +1495,18 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1463,9 +1523,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>
@@ -1473,6 +1530,18 @@
 					<value level="2">4</value>
 				</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1496,9 +1565,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="HpRegen">
 				<amount>
@@ -1514,6 +1580,18 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3570" levels="1" name="Special Ability: Robust Health">
@@ -1526,9 +1604,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.15" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
@@ -1536,6 +1611,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1592,9 +1679,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
@@ -1609,6 +1693,18 @@
 					<value level="9">1059</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1631,9 +1727,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="Accuracy">
 				<amount>
@@ -1647,6 +1740,18 @@
 					<value level="8">7.5</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1706,9 +1811,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="MAtk">
 				<amount>
@@ -1723,6 +1825,18 @@
 					<value level="9">176.53</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1746,9 +1860,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="MpRegen">
 				<amount>
@@ -1763,6 +1874,18 @@
 					<value level="9">2.05</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1810,9 +1933,9 @@
 				<!-- CP +50% -->
 				<mul stat="sDef" val="1.33" /> <!-- Shield P.Def. +33% -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<!-- Reflect Damage 9% -->
 			</effect>
 			<effect name="DamageShield">
@@ -1825,6 +1948,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1869,9 +2004,9 @@
 				<!-- CP +50% -->
 				<!-- Shield Block Rate +39% -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<!-- Reflect Damage 9% -->
 			</effect>
 			<effect name="DamageShield">
@@ -1888,6 +2023,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1922,9 +2069,9 @@
 				<!-- CP +50% -->
 				<add stat="rCrit" val="78.7" /> <!-- Critical +78.7 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
 				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
 			</effect>
@@ -1935,6 +2082,18 @@
 			<effect name="CriticalDamage">
 				<amount>504</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1951,9 +2110,9 @@
 				<!-- CP +50% -->
 				<!-- Atk. Spd. +7% -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
 				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
 			</effect>
@@ -1963,6 +2122,18 @@
 			</effect>
 			<effect name="MaxCp">
 				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2005,9 +2176,9 @@
 				<!-- CP +50% -->
 				<add stat="rCrit" val="78.7" /> <!-- Critical +78.7 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
 				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
 			</effect>
@@ -2017,6 +2188,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2059,9 +2242,9 @@
 				<!-- CP +50% -->
 				<!-- Evasion +3.15 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
 				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
 			</effect>
@@ -2075,6 +2258,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2119,9 +2314,9 @@
 				<mul stat="rCrit" val="0.22"> <!-- Critical +22% from behind target -->
 					<player behind="true" />
 				</mul>
-				<mul stat="pvpPhysDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
-				<mul stat="pvpMagicalDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<!-- PVP Damage Bonus +20% -->
+				<!-- PVP Damage Bonus +20% -->
+				<!-- PVP Damage Bonus +20% -->
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>2</amount>
@@ -2142,6 +2337,18 @@
 			<effect name="MpRegen">
 				<amount>0.51</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2183,9 +2390,9 @@
 				<!-- Atk. Spd. +7% -->
 				<!-- Accuracy +4.89 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<!-- NOTE: The skill reflection rate has been increased in H5, values unconfirmed -->
 				<add stat="reflectSkillPhysic" val="20" /> <!-- Reflect Skills 20% of the time -->
 				<add stat="reflectSkillMagic" val="20" /> <!-- Reflect Skills 20% of the time -->
@@ -2205,6 +2412,18 @@
 			<effect name="HitNumber">
 				<amount>5</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2238,9 +2457,9 @@
 				<!-- MP +30% -->
 				<!-- CP +50% -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 			</effect>
 			<effect name="MaxCp">
 				<amount>50</amount>
@@ -2248,6 +2467,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2292,9 +2523,9 @@
 				<!-- M.Atk. +29.67 -->
 				<add stat="mCritRate" val="1" /> <!-- Magic Critical Rate +1 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 				<mul stat="MagicalMpConsumeRate" val="0.96" /> <!-- Magic MP Cost -4% -->
 				<sub stat="cancel" val="106" /> <!-- Chance of Magic Cancelation -106 -->
 			</effect>
@@ -2308,6 +2539,18 @@
 			</effect>
 			<effect name="MaxMp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2348,9 +2591,9 @@
 				<!-- Casting Spd. +15% -->
 				<!-- MP regen per tick +0.51 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
+				<!-- PVP Damage Bonus +10% -->
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
@@ -2367,6 +2610,18 @@
 			<effect name="MpRegen">
 				<amount>0.51</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

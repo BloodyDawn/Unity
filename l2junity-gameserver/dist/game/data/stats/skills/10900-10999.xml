@@ -158,20 +158,60 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="#power">
-					<using kind="BOW, CROSSBOW" />
-				</mul>
-				<mul stat="pvpPhysSkillsDmg" val="#power">
-					<using kind="BOW, CROSSBOW" />
-				</mul>
-				<mul stat="pvpMagicalDmg" val="#power">
-					<using kind="BOW, CROSSBOW" />
-				</mul>
-				<mul stat="pvpMagicalDef" val="#power">
-					<using kind="BOW, CROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">6</value>
@@ -200,17 +240,44 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="#power">
-					<using kind="CROSSBOW" />
-				</mul>
-				<mul stat="pvpPhysSkillsDmg" val="#power">
-					<using kind="CROSSBOW" />
-				</mul>
-				<mul stat="pvpMagicalDmg" val="#power">
-					<using kind="CROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">7</value>
@@ -332,11 +399,20 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysSkillsDmg" val="1.2" />
-				<mul stat="pvpMagicalDmg" val="1.2" />
-				<mul stat="pvpMagicalDef" val="1.2" />
 			</effect>
 			<effect name="PhysicalSkillPower">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

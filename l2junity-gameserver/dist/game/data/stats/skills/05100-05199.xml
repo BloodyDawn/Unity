@@ -1759,8 +1759,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1919,8 +1925,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pvpPhysDmg" val="0.95" />
-				<mul stat="pvpPhysSkillsDmg" val="0.95" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

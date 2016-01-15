@@ -559,9 +559,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.01" />
-				<mul stat="pvpPhysSkillsDmg" val="1.01" />
-				<mul stat="pvpMagicalDmg" val="1.01" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -38,9 +38,6 @@
 				<!-- P. Atk. +5.57% -->
 				<!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="531" /> <!-- Max HP +531 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
 			</effect>
@@ -50,6 +47,18 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -80,9 +89,6 @@
 				<!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 5 -->
 				<mul stat="magicSuccRes" val="1.01" /> <!-- Resistance to magic damage by 1% -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
 			</effect>
@@ -103,6 +109,18 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8303" levels="1" name="Vesper Light Armor Set - PvP">
@@ -118,9 +136,6 @@
 				<!-- Atk. Spd. +5% -->
 				<!-- MP Recovery Rate by 5% -->
 				<!-- Max MP by 347 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -149,6 +164,18 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8304" levels="1" name="Vesper Noble Light Armor Set - PvP">
@@ -166,9 +193,6 @@
 				<!-- Max MP by 354 -->
 				<!-- Increases Evasion by 3 -->
 				<!-- Increases Critical Damage by 172 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -206,6 +230,18 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8305" levels="1" name="Vesper Robe Set - PvP">
@@ -232,9 +268,6 @@
 				<!-- Casting Speed 15% -->
 				<!-- MP Recovery Rate by 5.57% -->
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="MAtk">
@@ -247,6 +280,18 @@
 			</effect>
 			<effect name="MpRegen">
 				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -277,9 +322,6 @@
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
 				<!-- Increases Speed by 7 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -297,6 +339,18 @@
 			</effect>
 			<effect name="MpRegen">
 				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -902,8 +956,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.75" />
-				<mul stat="pvpPhysDef" val="1.75" />
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>75</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>75</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1103,7 +1163,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="#pvp" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">0.59999999999999</value>
+					<value level="2">1.5</value>
+					<value level="3">2.1</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1117,8 +1185,24 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysSkillsDmg" val="#pvp" />
-				<mul stat="pvpMagicalDmg" val="#pvp" />
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.59999999999999</value>
+					<value level="2">1.5</value>
+					<value level="3">2.1</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.59999999999999</value>
+					<value level="2">1.5</value>
+					<value level="3">2.1</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1132,9 +1216,33 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDef" val="#pvp" />
-				<mul stat="pvpMagicalDef" val="#pvp" />
-				<mul stat="pvpPhysSkillsDef" val="#pvp" />
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">0.59999999999999</value>
+					<value level="2">1.5</value>
+					<value level="3">2.1</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0.59999999999999</value>
+					<value level="2">1.5</value>
+					<value level="3">2.1</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0.59999999999999</value>
+					<value level="2">1.5</value>
+					<value level="3">2.1</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1148,7 +1256,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="#pvp" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2.5</value>
+					<value level="3">3.5</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1162,8 +1278,24 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysSkillsDmg" val="#pvp" />
-				<mul stat="pvpMagicalDmg" val="#pvp" />
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2.5</value>
+					<value level="3">3.5</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2.5</value>
+					<value level="3">3.5</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1177,9 +1309,33 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDef" val="#pvp" />
-				<mul stat="pvpMagicalDef" val="#pvp" />
-				<mul stat="pvpPhysSkillsDef" val="#pvp" />
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">1.2</value>
+					<value level="2">3</value>
+					<value level="3">4.2</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1.2</value>
+					<value level="2">3</value>
+					<value level="3">4.2</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1.2</value>
+					<value level="2">3</value>
+					<value level="3">4.2</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

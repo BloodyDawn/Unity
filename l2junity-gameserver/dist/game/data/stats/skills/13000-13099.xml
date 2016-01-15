@@ -113,8 +113,8 @@
 			</effect>
 			<effect name="Speed">
 				<amount>
-					<value level="1">-100</value>
-					<value level="2">-100</value>
+					<value level="1">0</value>
+					<value level="2">0</value>
 					<value level="3">5.57</value>
 					<value level="4">5.57</value>
 				</amount>
@@ -385,9 +385,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -397,6 +394,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5693</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -409,9 +418,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -421,6 +427,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5693</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -433,9 +451,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -444,6 +459,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5694</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -456,9 +483,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -467,6 +491,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5694</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -479,9 +515,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -490,6 +523,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5691</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -502,9 +547,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -513,6 +555,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5691</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1109,9 +1163,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -1121,6 +1172,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5693</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1133,9 +1196,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -1144,6 +1204,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5694</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1156,9 +1228,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -1167,6 +1236,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5691</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1179,9 +1260,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -1191,6 +1269,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5693</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1203,9 +1293,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -1214,6 +1301,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5694</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1226,9 +1325,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -1237,6 +1333,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5691</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1249,9 +1357,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -1261,6 +1366,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5693</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1273,9 +1390,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -1284,6 +1398,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5694</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1296,9 +1422,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
@@ -1307,6 +1430,18 @@
 				<minDamage>1</minDamage>
 				<skillId>5691</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1709,13 +1844,22 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="PhysicalAttackRange">
 				<amount>50</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1735,9 +1879,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1748,6 +1889,18 @@
 					<value level="5">600</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

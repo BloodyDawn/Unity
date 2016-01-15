@@ -750,13 +750,22 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.10" />
-				<mul stat="pvpMagicalDmg" val="1.10" />
-				<mul stat="pvpPhysSkillsDmg" val="1.10" />
 				<add stat="holyPower" val="10" />
 				<add stat="darkPower" val="10" />
 			</effect>
 			<effect name="MpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -781,15 +790,24 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDef" val="1.10" />
-				<mul stat="pvpMagicalDef" val="1.10" />
-				<mul stat="pvpPhysSkillsDef" val="1.10" />
 			</effect>
 			<effect name="Speed">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="HpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -814,13 +832,22 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.10" />
-				<mul stat="pvpMagicalDmg" val="1.10" />
-				<mul stat="pvpPhysSkillsDmg" val="1.10" />
 				<add stat="holyPower" val="10" />
 				<add stat="darkPower" val="10" />
 			</effect>
 			<effect name="MpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -845,15 +872,24 @@
 		<reuseDelay>2000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDef" val="1.10" />
-				<mul stat="pvpMagicalDef" val="1.10" />
-				<mul stat="pvpPhysSkillsDef" val="1.10" />
 			</effect>
 			<effect name="Speed">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="HpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>

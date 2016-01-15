@@ -270,9 +270,9 @@
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 				<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
 				<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -282,6 +282,18 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -313,9 +325,9 @@
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 				<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
 				<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
@@ -329,6 +341,18 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -359,9 +383,9 @@
 				<add stat="waterRes" val="5" /> <!-- resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- resistance to earth attributes +5 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
@@ -371,6 +395,18 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -405,9 +441,9 @@
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 7 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<HOLD>50</HOLD>
 				<BLEED>50</BLEED>
 				<SLEEP>50</SLEEP>
@@ -428,6 +464,18 @@
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -461,9 +509,9 @@
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<!-- Increases Critical Damage by 182 -->
 				<!-- Increases Max MP by 360 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -490,6 +538,18 @@
 			<effect name="CriticalDamage">
 				<amount>182</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -522,9 +582,9 @@
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<!-- Increases Speed by 7 -->
 				<!-- Increases Max MP by 92 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -545,6 +605,18 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
@@ -578,9 +650,9 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<HOLD>50</HOLD>
 				<BLEED>50</BLEED>
 				<SLEEP>50</SLEEP>
@@ -592,6 +664,18 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>6.59</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -624,9 +708,9 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
@@ -640,6 +724,18 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -674,9 +770,9 @@
 				<!-- Increases Speed by 7 -->
 				<!-- Increases Max MP by 97 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
-				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
+				<!-- During PvP, damage received decreased -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -697,6 +793,18 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>

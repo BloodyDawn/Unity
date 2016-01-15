@@ -2589,10 +2589,13 @@
 			<effect name="MagicalAttack">
 				<power>102</power>
 			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Buff">
-				<mul stat="pvpMagicalDmg" val="0.5" />
 			</effect>
 		</selfEffects>
 	</skill>

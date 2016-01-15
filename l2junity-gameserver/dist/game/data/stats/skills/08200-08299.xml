@@ -13,9 +13,6 @@
 				<!-- P. Atk +4% -->
 				<!-- Maximum MP +289 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
-				<mul stat="pvpPhysDef" val="1.05" />
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -39,6 +36,18 @@
 			<effect name="MaxMp">
 				<amount>289</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -66,9 +75,6 @@
 				<!-- M. Atk +17% -->
 				<!-- Movement Speed +7 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
-				<mul stat="pvpPhysDef" val="1.05" />
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="MAtk">
@@ -78,6 +84,18 @@
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -93,9 +111,6 @@
 				<!-- P. Def +4.6% -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -111,6 +126,18 @@
 			<effect name="EnableCloak" />
 			<effect name="PhysicalDefence">
 				<amount>4.6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -139,9 +166,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<!-- Received Increased Heal +3% -->
 				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<SHOCK>13</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -151,6 +175,18 @@
 			</effect>
 			<effect name="HealEffect">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -169,9 +205,6 @@
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -193,6 +226,18 @@
 				<amount>234</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8205" levels="1" name="Dynasty Breastplate - PvP">
@@ -208,9 +253,6 @@
 				<add stat="maxHp" val="492" /> <!-- HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -228,6 +270,18 @@
 				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8206" levels="1" name="Dynasty Breastplate - PvP">
@@ -243,9 +297,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -263,6 +314,18 @@
 				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8207" levels="1" name="Dynasty Leather Armor - PvP">
@@ -278,9 +341,6 @@
 				<!-- Accuracy +1.72 -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -301,6 +361,18 @@
 			<effect name="Accuracy">
 				<amount>1.72</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -328,9 +400,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<HOLD>13</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
@@ -340,6 +409,18 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -358,9 +439,6 @@
 				<!-- Atk. Spd. are increased +2.66% -->
 				<!-- MP recovery are increased +1.72 -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -390,6 +468,18 @@
 				<amount>1.72</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8210" levels="1" name="Dynasty Tunic - PvP">
@@ -404,9 +494,6 @@
 				<!-- Casting Spd. +12% -->
 				<!-- Max MP +257 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -428,6 +515,18 @@
 				<amount>257</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8211" levels="1" name="Dynasty Tunic - PvP">
@@ -444,9 +543,6 @@
 				<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -467,6 +563,18 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -484,9 +592,6 @@
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -508,6 +613,18 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8213" levels="1" name="Dynasty Tunic - PvP">
@@ -524,9 +641,6 @@
 				<!-- P. Def. +2.6% -->
 				<!-- Increase P. Atk. +2.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -556,6 +670,18 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8214" levels="1" name="Dynasty Tunic - PvP">
@@ -571,9 +697,6 @@
 				<!-- Increase M. Atk +5.4% -->
 				<!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -599,6 +722,18 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8215" levels="1" name="Dynasty Leather Armor - PvP">
@@ -614,9 +749,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -632,6 +764,18 @@
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -650,9 +794,6 @@
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -674,6 +815,18 @@
 				<amount>234</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8217" levels="1" name="Dynasty Leather Armor - PvP">
@@ -690,9 +843,6 @@
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- decrease MP consumption -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -714,6 +864,18 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8218" levels="1" name="Dynasty Leather Armor - PvP">
@@ -730,9 +892,6 @@
 				<!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -756,6 +915,18 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -784,9 +955,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Heal Capacity +4% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -796,6 +964,18 @@
 			</effect>
 			<effect name="HealEffect">
 				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -814,9 +994,6 @@
 				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -838,6 +1015,18 @@
 				<amount>282</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8221" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -853,9 +1042,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpPhysDef" val="1.05" />
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -873,6 +1059,18 @@
 				<amount>6.6</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8222" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -888,9 +1086,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max. HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- Decreases MP consumption by 6% for active skills -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -906,6 +1101,18 @@
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -934,9 +1141,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Atk. Spd. +3.24% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 				<HOLD>15</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
@@ -946,6 +1150,18 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>3.24</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -964,9 +1180,6 @@
 				<!-- Atk. Spd. +3.24% -->
 				<!-- MP Recovery +6.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -996,6 +1209,18 @@
 				<amount>1.066</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8225" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1011,9 +1236,6 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1029,6 +1251,18 @@
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1047,9 +1281,6 @@
 				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1071,6 +1302,18 @@
 				<amount>282</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8227" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1087,9 +1330,6 @@
 				<!-- P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1115,6 +1355,18 @@
 				<amount>6.6</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8228" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1131,9 +1383,6 @@
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- Decrease MP consumption -6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1155,6 +1404,18 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8229" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1171,9 +1432,6 @@
 				<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1194,6 +1452,18 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1211,9 +1481,6 @@
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1235,6 +1502,18 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8231" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1251,9 +1530,6 @@
 				<!-- P. Def. +3.3% -->
 				<!-- P. Atk. +3.3% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1283,6 +1559,18 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8232" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1298,9 +1586,6 @@
 				<!-- M. Atk. +6.6% -->
 				<!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-				<mul stat="pvpMagicalDef" val="1.05" />
-				<mul stat="pvpPhysSkillsDef" val="1.05" />
-				<mul stat="pvpPhysDef" val="1.05" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1325,6 +1610,18 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2478,9 +2775,18 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2592,9 +2898,18 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="109.2" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2608,9 +2923,18 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="109.2" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2623,12 +2947,21 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2643,9 +2976,18 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rCrit" val="109.2" />
-				<mul stat="pvpPhysDmg" val="1.05" />
-				<mul stat="pvpPhysSkillsDmg" val="1.05" />
-				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
