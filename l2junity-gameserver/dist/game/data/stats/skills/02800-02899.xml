@@ -35,7 +35,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1418,7 +1421,6 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<mul stat="maxMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
@@ -1448,6 +1450,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2483,7 +2489,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.1" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>10</amount>
@@ -2509,6 +2514,10 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="2899" levels="1" name="Cheesecake Herb">
@@ -2530,8 +2539,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.1" />
 				<mul stat="regMp" val="1.2" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

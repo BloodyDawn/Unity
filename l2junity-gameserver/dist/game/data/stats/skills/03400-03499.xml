@@ -305,13 +305,17 @@
 		<for>
 			<effect name="Buff">
 				<!-- Casting Spd. +12% -->
-				<add stat="maxMp" val="257" /> <!-- Max MP +257 -->
+				<!-- Max MP +257 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MagicalAttackSpeed">
 				<amount>12</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>257</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -497,7 +501,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
-				<mul stat="maxMp" val="1.3" /> <!-- MP +30% -->
+				<!-- MP +30% -->
 				<!-- CP +50% -->
 				<mul stat="pvpPhysDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
 				<mul stat="pvpMagicalDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
@@ -523,6 +527,10 @@
 			</effect>
 			<effect name="MaxCp">
 				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -824,7 +832,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="51" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>51</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -850,7 +861,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="59" />
-				<add stat="maxMp" val="26" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -876,10 +890,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="26" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>117</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>26</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -902,7 +919,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="72" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>72</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -928,7 +948,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="74" />
-				<add stat="maxMp" val="36" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -954,10 +977,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="36" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>222</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>36</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -980,7 +1006,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="85" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>85</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1006,7 +1035,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="86" />
-				<add stat="maxMp" val="43" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>43</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1032,10 +1064,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="43" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>258</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>43</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1058,7 +1093,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="111" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>111</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1084,7 +1122,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="112" />
-				<add stat="maxMp" val="56" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>56</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1110,10 +1151,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="56" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>336</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>56</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1136,7 +1180,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="66" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>66</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1162,7 +1209,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="68" />
-				<add stat="maxMp" val="33" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1188,10 +1238,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="33" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>203</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1214,7 +1267,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="78" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>78</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1240,7 +1296,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="80" />
-				<add stat="maxMp" val="39" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1266,10 +1325,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="39" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>39</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1292,7 +1354,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="92" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>92</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1318,7 +1383,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="93" />
-				<add stat="maxMp" val="46" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>46</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1344,10 +1412,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="46" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>282</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>46</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1370,7 +1441,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="122" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>122</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1396,7 +1470,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="123" />
-				<add stat="maxMp" val="61" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>61</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1422,10 +1499,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="61" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>372</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>61</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

@@ -532,7 +532,6 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.15" />
 				<add stat="regMp" val="1.5">
 					<using kind="HEAVY,LIGHT" />
 				</add>
@@ -556,6 +555,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -584,7 +587,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regCp" val="1.2" />
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -621,6 +623,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

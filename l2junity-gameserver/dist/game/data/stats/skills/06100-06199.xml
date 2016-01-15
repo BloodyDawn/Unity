@@ -297,7 +297,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
-				<mul stat="maxMp" val="1.1" />
 				<add stat="rCrit" val="50" />
 				<mul stat="cAtk" val="1.15" />
 				<add stat="mCritRate" val="2" />
@@ -315,6 +314,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>

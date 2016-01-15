@@ -1239,11 +1239,19 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#mAtkMaxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="debuffVuln" val="0.90" />
 			</effect>
 			<effect name="MAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">6</value>
@@ -2063,10 +2071,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#values" />
 				<mul stat="regMp" val="#values" />
 			</effect>
 			<effect name="MAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">6</value>
@@ -2496,7 +2512,21 @@
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
-				<add stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">313</value>
+					<value level="2">374</value>
+					<value level="3">435</value>
+					<value level="4">517</value>
+					<value level="5">566</value>
+					<value level="6">635</value>
+					<value level="7">704</value>
+					<value level="8">773</value>
+					<value level="9">842</value>
+					<value level="10">911</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

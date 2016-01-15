@@ -288,7 +288,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.6" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -317,6 +316,10 @@
 				<amount>60</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="22014" levels="1" name="Winter Holiday Festival">
@@ -342,7 +345,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.85" />
 				<mul stat="DanceMpConsumeRate" val="0.85" />
@@ -371,6 +373,10 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="22015" levels="1" name="Winter Holiday Festival">
@@ -396,7 +402,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.6" />
 				<mul stat="MagicalMpConsumeRate" val="0.7" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -418,6 +423,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>60</amount>
 				<mode>PER</mode>
 			</effect>
@@ -446,7 +455,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.8" />
 				<mul stat="DanceMpConsumeRate" val="0.8" />
@@ -472,6 +480,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1737,7 +1749,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.35" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2323,7 +2338,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.6" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -2352,6 +2366,10 @@
 				<amount>60</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="22098" levels="1" name="Boy's Gift of Gratitude">
@@ -2376,7 +2394,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -2402,6 +2419,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2450,10 +2471,13 @@
 				<amount>60</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.6" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />

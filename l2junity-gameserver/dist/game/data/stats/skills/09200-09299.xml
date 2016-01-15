@@ -507,7 +507,6 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="rCrit" val="0.2" />
@@ -539,6 +538,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -609,10 +612,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.37" />
-				<mul stat="maxMp" val="1.37" />
 				<mul stat="regHp" val="1.2" />
 			</effect>
 			<effect name="MaxCp">
+				<amount>37</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>37</amount>
 				<mode>PER</mode>
 			</effect>

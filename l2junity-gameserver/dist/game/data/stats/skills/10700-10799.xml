@@ -489,12 +489,18 @@
 				<add stat="pAtkRange" val="500">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
-				<mul stat="maxMp" val="1.25">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 				<mul stat="PhysicalMpConsumeRate" val="0.7">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

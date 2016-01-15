@@ -109,7 +109,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -117,6 +116,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -266,7 +269,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -274,6 +276,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -377,7 +383,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -385,6 +390,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -488,7 +497,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
@@ -497,6 +505,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -631,7 +643,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -643,6 +654,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -671,7 +686,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -683,6 +697,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -711,7 +729,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -723,6 +740,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -751,7 +772,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -763,6 +783,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -791,7 +815,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -803,6 +826,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -831,7 +858,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -844,6 +870,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -871,12 +901,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="rCrit" val="0.1" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -905,7 +938,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -918,6 +950,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -945,7 +981,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -957,6 +992,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -984,7 +1023,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<add stat="mCritRate" val="2" />
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -994,6 +1032,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1103,7 +1145,6 @@
 		<trait>ETC</trait>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -1122,6 +1163,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1150,7 +1195,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -1163,6 +1207,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1190,12 +1238,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="rCrit" val="0.1" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1224,7 +1275,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -1237,6 +1287,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1264,7 +1318,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -1276,6 +1329,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1303,7 +1360,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<add stat="mCritRate" val="2" />
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -1313,6 +1369,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1546,7 +1606,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.25" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1876,7 +1939,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.25" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

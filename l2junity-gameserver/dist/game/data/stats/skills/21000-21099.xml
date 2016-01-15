@@ -1038,7 +1038,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.25" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2248,7 +2251,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -2258,6 +2260,10 @@
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

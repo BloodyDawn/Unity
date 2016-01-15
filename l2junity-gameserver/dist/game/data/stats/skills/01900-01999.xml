@@ -350,13 +350,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.01" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1597,7 +1600,15 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">12</value>
+					<value level="3">18</value>
+					<value level="4">24</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

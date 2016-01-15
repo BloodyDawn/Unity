@@ -183,7 +183,6 @@
 		<targetType>PARTY_MEMBER</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
@@ -218,6 +217,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2298,8 +2301,11 @@
 			<effect name="CpDamPercent">
 				<power>90</power>
 			</effect>
-		<effect name="MaxCp">
-		<amount>-90</amount><mode>PER</mode></effect></for>
+			<effect name="MaxCp">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+		</for>
 	</skill>
 	<skill id="763" levels="1" name="Hell Scream">
 		<!-- Confirmed CT2.5 and Updated to H5 -->

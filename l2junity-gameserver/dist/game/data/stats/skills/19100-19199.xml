@@ -766,9 +766,13 @@
 				<mul stat="maxHp" val="1.06">
 					<using kind="LIGHT" />
 				</mul>
-				<mul stat="maxMp" val="1.06">
-					<using kind="LIGHT" />
-				</mul>
+			</effect>
+			<effect name="MaxMp">
+				<amount>6</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -936,7 +940,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#bonus" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1010,12 +1020,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.06">
-					<using kind="MAGIC" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>3</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="MaxMp">
+				<amount>6</amount>
 				<mode>PER</mode>
 				<armorType>
 					<item>MAGIC</item>
@@ -1090,7 +1104,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="regMp" val="33" />
-				<mul stat="maxMp" val="1.10" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

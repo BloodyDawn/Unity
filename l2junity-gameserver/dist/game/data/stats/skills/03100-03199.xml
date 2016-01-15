@@ -1618,7 +1618,21 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+					<value level="6">120</value>
+					<value level="7">140</value>
+					<value level="8">160</value>
+					<value level="9">180</value>
+					<value level="10">200</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

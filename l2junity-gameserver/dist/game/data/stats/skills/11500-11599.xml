@@ -344,7 +344,21 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<add stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">313</value>
+					<value level="2">374</value>
+					<value level="3">435</value>
+					<value level="4">517</value>
+					<value level="5">566</value>
+					<value level="6">635</value>
+					<value level="7">704</value>
+					<value level="8">773</value>
+					<value level="9">842</value>
+					<value level="10">911</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1183,7 +1197,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.20" />
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
@@ -1238,6 +1251,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1301,7 +1318,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
-				<mul stat="maxMp" val="#maxMp" />
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1312,6 +1328,15 @@
 				<slot>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</slot>
 			</effect>
 			<effect name="MaxCp">
+				<amount>
+					<value level="1">37</value>
+					<value level="2">39</value>
+					<value level="3">41</value>
+					<value level="4">43</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>
 					<value level="1">37</value>
 					<value level="2">39</value>
@@ -3417,10 +3442,18 @@
 				<mul stat="physicalSkillPower" val="1.05" />
 				<add stat="regMp" val="#regMp" />
 				<add stat="maxHp" val="#maxBase" />
-				<add stat="maxMp" val="#maxBase" />
 				<mul stat="skillCriticalProbability" val="#bonus" />
 			</effect>
 			<effect name="MaxCp">
+				<amount>
+					<value level="1">1.05</value>
+					<value level="2">1.06</value>
+					<value level="3">1.07</value>
+					<value level="4">1.10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>
 					<value level="1">1.05</value>
 					<value level="2">1.06</value>
@@ -3651,7 +3684,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3798,7 +3839,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.20" />
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
@@ -3857,6 +3897,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11591" levels="4" name="Pipe Organ Frenzy">
@@ -3909,7 +3953,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
-				<mul stat="maxMp" val="#maxMp" />
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -3920,6 +3963,15 @@
 				<slot>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</slot>
 			</effect>
 			<effect name="MaxCp">
+				<amount>
+					<value level="1">37</value>
+					<value level="2">39</value>
+					<value level="3">41</value>
+					<value level="4">43</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>
 					<value level="1">37</value>
 					<value level="2">39</value>

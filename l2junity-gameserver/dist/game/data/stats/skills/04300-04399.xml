@@ -692,7 +692,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.35" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1211,7 +1214,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">35</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1992,8 +2005,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="5000" />
 				<power>18.52</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2011,8 +2027,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="10000" />
 				<power>27.78</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>10000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2030,8 +2049,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="28000" />
 				<power>61.11</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>28000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2049,8 +2071,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="58000" />
 				<power>116.7</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>58000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2068,8 +2093,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="103000" />
 				<power>200</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>103000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2087,8 +2115,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="106000" />
 				<power>205.6</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>106000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2106,8 +2137,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="151000" />
 				<power>288.9</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>151000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2125,8 +2159,11 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
-				<add stat="maxMp" val="196000" />
 				<power>372.2</power>
+			</effect>
+			<effect name="MaxMp">
+				<amount>196000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2703,7 +2740,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">35</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

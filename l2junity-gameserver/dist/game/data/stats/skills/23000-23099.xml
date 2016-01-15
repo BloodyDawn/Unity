@@ -382,7 +382,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -415,6 +414,10 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="23018" levels="1" name="Thomas D. Turkey's Mistake">
@@ -437,7 +440,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -467,6 +469,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1746,7 +1752,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.6" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -1772,6 +1777,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>60</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1807,7 +1816,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.4" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -1833,6 +1841,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1986,7 +1998,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 			</effect>
@@ -1995,6 +2006,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2148,7 +2163,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 			</effect>
@@ -2157,6 +2171,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

@@ -1724,12 +1724,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.05">
-					<using kind="SIGIL" />
-				</mul>
 				<mul stat="regMp" val="1.17">
 					<using kind="SIGIL" />
 				</mul>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1741,12 +1745,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.05">
-					<using kind="SIGIL" />
-				</mul>
 				<mul stat="regMp" val="1.17">
 					<using kind="SIGIL" />
 				</mul>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

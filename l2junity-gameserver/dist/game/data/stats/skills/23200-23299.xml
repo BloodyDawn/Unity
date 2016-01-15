@@ -1234,7 +1234,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.15" />
 				<add stat="regMp" val="1.5">
 					<using kind="HEAVY,LIGHT" />
 				</add>
@@ -1258,6 +1257,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1322,7 +1325,7 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT"   /> </add> -->
+				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT" /> </add> -->
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -1734,7 +1737,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.35" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2212,7 +2218,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
@@ -2247,6 +2252,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2477,7 +2486,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.35" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
@@ -2486,6 +2494,10 @@
 				<slot>MAX_HP_UP;MAX_MP_UP</slot>
 			</effect>
 			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2785,7 +2797,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.15" />
 				<add stat="regMp" val="1.5">
 					<using kind="HEAVY,LIGHT" />
 				</add>
@@ -2809,6 +2820,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2871,7 +2886,7 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT"   /> </add> -->
+				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT" /> </add> -->
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>

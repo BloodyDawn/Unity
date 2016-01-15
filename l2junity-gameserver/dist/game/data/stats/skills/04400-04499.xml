@@ -300,8 +300,32 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#maxmp" />
 				<mul stat="regMp" val="#maxmp" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">21</value>
+					<value level="4">33</value>
+					<value level="5">46</value>
+					<value level="6">61</value>
+					<value level="7">77</value>
+					<value level="8">-75</value>
+					<value level="9">-50</value>
+					<value level="10">100</value>
+					<value level="11">200</value>
+					<value level="12">300</value>
+					<value level="13">400</value>
+					<value level="14">500</value>
+					<value level="15">600</value>
+					<value level="16">700</value>
+					<value level="17">800</value>
+					<value level="18">900</value>
+					<value level="19">1000</value>
+					<value level="20">1100</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

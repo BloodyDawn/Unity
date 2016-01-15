@@ -870,7 +870,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- Accuracy +4.3 -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 Effect -->
+				<!-- Max MP +321 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
 				<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
@@ -884,6 +884,10 @@
 				<amount>2.66</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>321</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3354" levels="1" name="Dynasty Tunic">
@@ -896,7 +900,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
+				<!-- Max MP +321 -->
 				<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -905,6 +909,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>321</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -918,7 +926,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
+				<!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -927,6 +935,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>321</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -940,7 +952,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
+				<!-- Max MP +321 -->
 				<!-- P. Def. +2.6% -->
 				<!-- Increase P. Atk. +2.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -958,6 +970,10 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>321</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3357" levels="1" name="Dynasty Tunic">
@@ -971,7 +987,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Increase M. Atk +5.4% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
+				<!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -982,6 +998,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>321</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

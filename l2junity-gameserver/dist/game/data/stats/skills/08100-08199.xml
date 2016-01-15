@@ -1360,7 +1360,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<add stat="maxMp" val="240" /> <!-- MP +240 -->
+				<!-- MP +240 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -1374,6 +1374,10 @@
 					<item>BOW</item>
 					<item>CROSSBOW</item>
 				</weaponType>
+			</effect>
+			<effect name="MaxMp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1431,7 +1435,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<add stat="maxMp" val="240" /> <!-- MP +240 -->
+				<!-- MP +240 -->
 				<!-- Casting Spd. +15% -->
 				<mul stat="regMp" val="1.08" /> <!-- MP Regeneration +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
@@ -1442,6 +1446,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

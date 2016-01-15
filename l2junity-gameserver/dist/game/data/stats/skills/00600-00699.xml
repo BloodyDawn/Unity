@@ -272,10 +272,17 @@
 		<for>
 			<effect name="Buff">
 				<add stat="healEffect" val="20" />
-				<mul stat="maxMp" val="#maxMp" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
 				<mul stat="DanceMpConsumeRate" val="#MpConsumeRate" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">30</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1213,7 +1220,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="148.2" />
+			</effect>
+			<effect name="MaxMp">
+				<amount>148.2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1227,10 +1237,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxMp" val="74.1" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>147.66</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>74.1</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

@@ -153,7 +153,6 @@
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base" />
 				<mul stat="regMp" val="1.0557" />
-				<add stat="maxMp" val="#maxMp" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -172,6 +171,15 @@
 					<value level="4">5.57</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">347</value>
+					<value level="3">347</value>
+					<value level="4">347</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -198,7 +206,6 @@
 				<add stat="rCrit" val="#rCrit" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<mul stat="regMp" val="1.0557" />
-				<add stat="maxMp" val="#maxMp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>
@@ -226,6 +233,15 @@
 					<value level="4">5.57</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">354</value>
+					<value level="3">354</value>
+					<value level="4">354</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -796,7 +812,6 @@
 				<sub stat="INT" val="#base" />
 				<sub stat="MEN" val="#base" />
 				<add stat="WIT" val="#base1" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -833,6 +848,15 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">92</value>
+					<value level="3">92</value>
+					<value level="4">92</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -983,7 +1007,6 @@
 				<add stat="INT" val="#base1" />
 				<sub stat="MEN" val="#base" />
 				<add stat="WIT" val="#base" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
 				<add stat="fireRes" val="#resist" />
@@ -1021,6 +1044,15 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">97</value>
+					<value level="3">97</value>
+					<value level="4">97</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1810,7 +1842,6 @@
 				<add stat="CON" val="2" />
 				<add stat="STR" val="-1" />
 				<add stat="maxHp" val="487" />
-				<add stat="maxMp" val="#maxMp" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -1849,6 +1880,15 @@
 					<value level="2">0</value>
 					<value level="3">0</value>
 					<value level="4">87</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">202</value>
+					<value level="3">202</value>
+					<value level="4">202</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -3006,7 +3046,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="1" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
@@ -3041,6 +3080,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">185</value>
+					<value level="3">185</value>
+					<value level="4">185</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13085" levels="4" name="Set Effect - Immortal Robe 2 Piece (Recovery Type)">
@@ -3062,7 +3110,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="WIT" val="1" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
@@ -3097,6 +3144,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">185</value>
+					<value level="3">185</value>
+					<value level="4">185</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13086" levels="4" name="Set Effect - Twilight Robe 2 Piece (Magic Type)">
@@ -3119,7 +3175,6 @@
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<add stat="MEN" val="-1" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -3162,6 +3217,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">202</value>
+					<value level="3">202</value>
+					<value level="4">202</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13087" levels="4" name="Set Effect - Twilight Robe 2 Piece (Recovery Type)">
@@ -3184,7 +3248,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="2" />
 				<add stat="MEN" val="-1" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
@@ -3219,6 +3282,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">202</value>
+					<value level="3">202</value>
+					<value level="4">202</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13088" levels="4" name="Set Effect - Seraph Robe 2 Piece (Magic Type)">
@@ -3242,7 +3314,6 @@
 			<effect name="Buff">
 				<add stat="INT" val="3" />
 				<add stat="MEN" val="-2" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -3285,6 +3356,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">221</value>
+					<value level="3">221</value>
+					<value level="4">221</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13089" levels="4" name="Set Effect - Seraph Robe 2 Piece (Recovery Type)">
@@ -3308,7 +3388,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="3" />
 				<add stat="MEN" val="-2" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<mul stat="healEffect" val="#healEffect" />
@@ -3344,6 +3423,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">221</value>
+					<value level="3">221</value>
+					<value level="4">221</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13090" levels="4" name="Set Effect - Eternal Robe 2 Piece (Magic Type)">
@@ -3367,7 +3455,6 @@
 			<effect name="Buff">
 				<add stat="INT" val="3" />
 				<add stat="MEN" val="-1" />
-				<add stat="maxMp" val="#maxMp" />
 				<add stat="mCritPowerAdd" val="#mCritPowerAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
@@ -3411,6 +3498,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">228</value>
+					<value level="3">228</value>
+					<value level="4">228</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13091" levels="4" name="Set Effect - Eternal Robe 2 Piece (Recovery Type)">
@@ -3434,7 +3530,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="3" />
 				<add stat="MEN" val="-1" />
-				<add stat="maxMp" val="#maxMp" />
 				<add stat="regMp" val="#regMp" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
@@ -3477,6 +3572,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">228</value>
+					<value level="3">228</value>
+					<value level="4">228</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13092" levels="4" name="Set Effect - R99 Rare Robe 2 Piece (Magic Type)">
@@ -3499,7 +3603,6 @@
 			<effect name="Buff">
 				<add stat="INT" val="4" />
 				<add stat="MEN" val="-2" />
-				<add stat="maxMp" val="#maxMp" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -3549,6 +3652,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">239</value>
+					<value level="3">239</value>
+					<value level="4">239</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13093" levels="4" name="Set Effect - R99 Rare Robe 2 Piece (Recovery Type)">
@@ -3571,7 +3683,6 @@
 			<effect name="Buff">
 				<add stat="WIT" val="4" />
 				<add stat="MEN" val="-2" />
-				<add stat="maxMp" val="#maxMp" />
 				<add stat="regMp" val="#regMp" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -3613,6 +3724,15 @@
 					<value level="4">25</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">239</value>
+					<value level="3">239</value>
+					<value level="4">239</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
