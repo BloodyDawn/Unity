@@ -1309,15 +1309,28 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="BOW" />
-				</add>
 				<mul stat="pAtkSpd" val="1.2">
 					<using kind="BOW" />
 				</mul>
 				<mul stat="pAtkRange" val="0.5">
 					<using kind="BOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">62</value>
+					<value level="2">67</value>
+					<value level="3">73</value>
+					<value level="4">78</value>
+					<value level="5">83</value>
+					<value level="6">89</value>
+					<value level="7">94</value>
+					<value level="8">100</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1382,15 +1395,28 @@
 				<mul stat="pAtkSpd" val="0.9">
 					<using kind="BOW" />
 				</mul>
-				<add stat="pAtk" val="#pAtk">
-					<using kind="BOW" />
-				</add>
 				<add stat="accCombat" val="#accCombat">
 					<using kind="BOW" />
 				</add>
 				<mul stat="cAtk" val="1.2">
 					<using kind="BOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">124</value>
+					<value level="2">134</value>
+					<value level="3">155</value>
+					<value level="4">155</value>
+					<value level="5">166</value>
+					<value level="6">177</value>
+					<value level="7">188</value>
+					<value level="8">199</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1937,12 +1963,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="200">
-					<using kind="BOW" />
-				</add>
 				<add stat="pAtkRange" val="50">
 					<using kind="BOW" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1955,10 +1985,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="70">
-					<using kind="DAGGER,DUALDAGGER" />
-				</add>
 				<mul stat="blowRate" val="1.03" />
+			</effect>
+			<effect name="PAtk">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -2816,11 +2851,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8.5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3356,9 +3398,59 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="ANCIENTSWORD" />
-				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5.2</value>
+					<value level="2">8.1</value>
+					<value level="3">9.9</value>
+					<value level="4">11.9</value>
+					<value level="5">14.1</value>
+					<value level="6">16.6</value>
+					<value level="7">19.4</value>
+					<value level="8">22.5</value>
+					<value level="9">25.9</value>
+					<value level="10">27.7</value>
+					<value level="11">29.6</value>
+					<value level="12">31.6</value>
+					<value level="13">33.7</value>
+					<value level="14">35.9</value>
+					<value level="15">38.1</value>
+					<value level="16">40.5</value>
+					<value level="17">42.9</value>
+					<value level="18">45.4</value>
+					<value level="19">48.1</value>
+					<value level="20">50.8</value>
+					<value level="21">53.6</value>
+					<value level="22">56.5</value>
+					<value level="23">59.4</value>
+					<value level="24">62.5</value>
+					<value level="25">65.6</value>
+					<value level="26">68.9</value>
+					<value level="27">72.2</value>
+					<value level="28">75.6</value>
+					<value level="29">79</value>
+					<value level="30">82.5</value>
+					<value level="31">86.1</value>
+					<value level="32">89.8</value>
+					<value level="33">93.5</value>
+					<value level="34">97.3</value>
+					<value level="35">101.1</value>
+					<value level="36">104.9</value>
+					<value level="37">108.8</value>
+					<value level="38">112.7</value>
+					<value level="39">116.7</value>
+					<value level="40">120.6</value>
+					<value level="41">124.6</value>
+					<value level="42">128.5</value>
+					<value level="43">132.5</value>
+					<value level="44">136.4</value>
+					<value level="45">140.3</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -3418,9 +3510,59 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="CROSSBOW" />
-				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">12.64</value>
+					<value level="2">18</value>
+					<value level="3">21.28</value>
+					<value level="4">24.88</value>
+					<value level="5">29.04</value>
+					<value level="6">33.6</value>
+					<value level="7">38.72</value>
+					<value level="8">44.32</value>
+					<value level="9">50.56</value>
+					<value level="10">53.92</value>
+					<value level="11">86.72</value>
+					<value level="12">92.16</value>
+					<value level="13">97.84</value>
+					<value level="14">103.76</value>
+					<value level="15">109.92</value>
+					<value level="16">116.32</value>
+					<value level="17">122.96</value>
+					<value level="18">129.84</value>
+					<value level="19">136.96</value>
+					<value level="20">144.4</value>
+					<value level="21">152</value>
+					<value level="22">159.92</value>
+					<value level="23">168</value>
+					<value level="24">176.32</value>
+					<value level="25">184.96</value>
+					<value level="26">193.76</value>
+					<value level="27">202.8</value>
+					<value level="28">212</value>
+					<value level="29">221.44</value>
+					<value level="30">231.04</value>
+					<value level="31">240.88</value>
+					<value level="32">250.8</value>
+					<value level="33">260.96</value>
+					<value level="34">271.2</value>
+					<value level="35">281.6</value>
+					<value level="36">292.16</value>
+					<value level="37">302.72</value>
+					<value level="38">313.44</value>
+					<value level="39">324.16</value>
+					<value level="40">334.96</value>
+					<value level="41">345.76</value>
+					<value level="42">356.56</value>
+					<value level="43">367.28</value>
+					<value level="44">378</value>
+					<value level="45">388.72</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -3481,12 +3623,62 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="RAPIER" />
-				</add>
 				<mul stat="mAtkSpd" val="#mAtkSpd">
 					<using kind="RAPIER" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">3.2</value>
+					<value level="2">5.28</value>
+					<value level="3">6.48</value>
+					<value level="4">7.84</value>
+					<value level="5">9.36</value>
+					<value level="6">11.12</value>
+					<value level="7">13.04</value>
+					<value level="8">15.2</value>
+					<value level="9">17.52</value>
+					<value level="10">18.8</value>
+					<value level="11">20.08</value>
+					<value level="12">21.44</value>
+					<value level="13">22.88</value>
+					<value level="14">24.4</value>
+					<value level="15">25.92</value>
+					<value level="16">27.6</value>
+					<value level="17">29.28</value>
+					<value level="18">30.96</value>
+					<value level="19">32.8</value>
+					<value level="20">34.64</value>
+					<value level="21">36.56</value>
+					<value level="22">38.56</value>
+					<value level="23">40.64</value>
+					<value level="24">42.72</value>
+					<value level="25">44.88</value>
+					<value level="26">47.12</value>
+					<value level="27">49.44</value>
+					<value level="28">51.76</value>
+					<value level="29">54.16</value>
+					<value level="30">56.56</value>
+					<value level="31">59.04</value>
+					<value level="32">61.52</value>
+					<value level="33">64.08</value>
+					<value level="34">66.72</value>
+					<value level="35">69.36</value>
+					<value level="36">72</value>
+					<value level="37">74.64</value>
+					<value level="38">77.36</value>
+					<value level="39">80.08</value>
+					<value level="40">82.8</value>
+					<value level="41">85.52</value>
+					<value level="42">88.24</value>
+					<value level="43">90.96</value>
+					<value level="44">93.68</value>
+					<value level="45">96.4</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>RAPIER</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

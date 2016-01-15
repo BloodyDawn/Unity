@@ -463,9 +463,6 @@
 		</cond>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="BOW" />
-				</add>
 				<add stat="accCombat" val="#accCombat">
 					<using kind="BOW" />
 				</add>
@@ -475,6 +472,22 @@
 				<add stat="pAtkRange" val="#pAtkRange">
 					<using kind="BOW" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">124</value>
+					<value level="2">134</value>
+					<value level="3">145</value>
+					<value level="4">155</value>
+					<value level="5">166</value>
+					<value level="6">177</value>
+					<value level="7">188</value>
+					<value level="8">199</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -2829,11 +2842,14 @@
 				<add stat="mAtk" val="500" />
 				<add stat="mAtkSpd" val="100" />
 				<sub stat="mDef" val="25" />
-				<add stat="pAtk" val="500" />
 				<add stat="pAtkSpd" val="100" />
 				<mul stat="pDef" val="0.75" />
 				<sub stat="rEvas" val="8" />
 				<add stat="moveSpeed" val="20" />
+			</effect>
+			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

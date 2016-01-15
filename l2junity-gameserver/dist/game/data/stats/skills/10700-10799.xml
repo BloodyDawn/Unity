@@ -358,9 +358,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<add stat="pAtk" val="#pAtk">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</add>
 				<mul stat="pAtkSpd" val="1.15">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
@@ -374,6 +371,26 @@
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1663</value>
+					<value level="2">1928</value>
+					<value level="3">2235</value>
+					<value level="4">2515</value>
+					<value level="5">2850</value>
+					<value level="6">3023</value>
+					<value level="7">3208</value>
+					<value level="8">3403</value>
+					<value level="9">3610</value>
+					<value level="10">3830</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

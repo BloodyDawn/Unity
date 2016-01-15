@@ -1927,7 +1927,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">23.64</value>
+					<value level="2">27.96</value>
+					<value level="3">32.76</value>
+					<value level="4">37.98</value>
+					<value level="5">43.62</value>
+					<value level="6">49.62</value>
+					<value level="7">55.86</value>
+					<value level="8">62.28</value>
+					<value level="9">68.88</value>
+					<value level="10">79.74</value>
+					<value level="11">85</value>
+					<value level="12">89</value>
+					<value level="13">93</value>
+					<value level="14">97</value>
+					<value level="15">101</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

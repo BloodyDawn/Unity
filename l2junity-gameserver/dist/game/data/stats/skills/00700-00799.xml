@@ -1979,9 +1979,6 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="100">
-					<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
-				</add>
 				<mul stat="pAtkSpd" val="1.1">
 					<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
 				</mul>
@@ -1998,6 +1995,21 @@
 				<allowWeapons>SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER</allowWeapons>
 				<skillId>5559</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -2074,7 +2086,6 @@
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<!-- Seed of Revenge -->
-				<add stat="pAtk" val="100" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>99</maxAttackerLevel>
@@ -2083,6 +2094,10 @@
 				<minDamage>1</minDamage>
 				<skillId>5561</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

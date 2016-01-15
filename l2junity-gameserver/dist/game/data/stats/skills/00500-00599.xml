@@ -1545,9 +1545,6 @@
 		</cond>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="CROSSBOW" />
-				</add>
 				<add stat="accCombat" val="#accCombat">
 					<using kind="CROSSBOW" />
 				</add>
@@ -1557,6 +1554,22 @@
 				<add stat="pAtkRange" val="#range">
 					<using kind="CROSSBOW" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">124</value>
+					<value level="2">134</value>
+					<value level="3">145</value>
+					<value level="4">155</value>
+					<value level="5">166</value>
+					<value level="6">177</value>
+					<value level="7">188</value>
+					<value level="8">199</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -4203,7 +4216,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="34.6" />
+			</effect>
+			<effect name="PAtk">
+				<amount>34.6</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

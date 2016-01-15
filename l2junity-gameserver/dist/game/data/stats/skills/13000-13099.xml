@@ -1504,10 +1504,19 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">288</value>
+					<value level="2">332</value>
+					<value level="3">377</value>
+					<value level="4">415</value>
+					<value level="5">600</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1573,7 +1582,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="1" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="pAtk" val="#pAtk" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -1588,6 +1596,15 @@
 					<value level="3">5</value>
 					<value level="4">5</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">115</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1647,7 +1664,6 @@
 				<add stat="STR" val="2" />
 				<add stat="CON" val="-1" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="pAtk" val="#pAtk" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -1665,6 +1681,15 @@
 					<value level="3">7</value>
 					<value level="4">7</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">180</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1724,7 +1749,6 @@
 				<add stat="STR" val="3" />
 				<add stat="CON" val="-2" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="pAtk" val="#pAtk" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -1740,6 +1764,15 @@
 					<value level="3">10</value>
 					<value level="4">10</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">214</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1799,7 +1832,6 @@
 				<add stat="STR" val="3" />
 				<add stat="CON" val="-1" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="pAtk" val="#pAtk" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -1823,6 +1855,15 @@
 					<value level="4">2</value>
 				</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">246</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1885,7 +1926,6 @@
 				<add stat="STR" val="4" />
 				<add stat="CON" val="-2" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="pAtk" val="#pAtk" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -1923,6 +1963,15 @@
 					<value level="4">2</value>
 				</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">255</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1992,7 +2041,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="1" />
-				<add stat="pAtk" val="155" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
@@ -2020,6 +2068,10 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PAtk">
+				<amount>155</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13076" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Assassin Type)">
@@ -2043,7 +2095,6 @@
 				<add stat="DEX" val="2" />
 				<add stat="STR" val="-1" />
 				<add stat="rEvas" val="#rEvas" />
-				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
@@ -2069,6 +2120,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">180</value>
+					<value level="4">180</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13077" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Enchant Type)">
@@ -2093,7 +2153,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="CON" val="-1" />
-				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
@@ -2122,6 +2181,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">180</value>
+					<value level="2">180</value>
+					<value level="3">180</value>
+					<value level="4">0</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2198,7 +2266,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="3" />
 				<add stat="CON" val="-2" />
-				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
@@ -2232,6 +2299,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">214</value>
+					<value level="2">214</value>
+					<value level="3">214</value>
+					<value level="4">0</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2315,7 +2391,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="3" />
 				<add stat="CON" val="-1" />
-				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
@@ -2343,6 +2418,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">246</value>
+					<value level="2">246</value>
+					<value level="3">246</value>
+					<value level="4">246</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2417,7 +2501,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="4" />
 				<add stat="CON" val="-2" />
-				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="maxHp" val="#maxHp" />
 				<mul stat="pDef" val="#pDef" />
@@ -2436,6 +2519,15 @@
 					<value level="3">15</value>
 					<value level="4">15</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">255</value>
+					<value level="2">255</value>
+					<value level="3">255</value>
+					<value level="4">0</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

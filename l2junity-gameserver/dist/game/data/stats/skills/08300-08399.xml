@@ -380,7 +380,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="10" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -396,7 +399,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="150" />
 				<add stat="mAtk" val="100" />
 			</effect>
 			<effect name="PAtk">
@@ -406,6 +408,10 @@
 			<effect name="MAtk">
 				<amount>200</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>150</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -421,7 +427,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="300" />
 				<add stat="mAtk" val="200" />
 			</effect>
 			<effect name="PAtk">
@@ -431,6 +436,10 @@
 			<effect name="MAtk">
 				<amount>400</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -446,7 +455,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="400" />
 				<add stat="mAtk" val="300" />
 			</effect>
 			<effect name="PAtk">
@@ -456,6 +464,10 @@
 			<effect name="MAtk">
 				<amount>600</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>400</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -471,7 +483,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="450" />
 				<add stat="mAtk" val="450" />
 			</effect>
 			<effect name="PAtk">
@@ -481,6 +492,10 @@
 			<effect name="MAtk">
 				<amount>800</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>450</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -496,7 +511,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="500" />
 				<add stat="mAtk" val="500" />
 			</effect>
 			<effect name="PAtk">
@@ -506,6 +520,10 @@
 			<effect name="MAtk">
 				<amount>1000</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -521,7 +539,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="650" />
 				<add stat="mAtk" val="1000" />
 			</effect>
 			<effect name="PAtk">
@@ -531,6 +548,10 @@
 			<effect name="MAtk">
 				<amount>1200</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>650</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -546,7 +567,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="750" />
 				<add stat="mAtk" val="1000" />
 			</effect>
 			<effect name="PAtk">
@@ -556,6 +576,10 @@
 			<effect name="MAtk">
 				<amount>1200</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>750</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

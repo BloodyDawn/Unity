@@ -130,9 +130,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="DUAL, DUALBLUNT" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -142,6 +139,19 @@
 					<value level="4">5</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">709</value>
+					<value level="2">825</value>
+					<value level="3">982</value>
+					<value level="4">1190</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>DUAL</item>
 					<item> DUALBLUNT</item>
@@ -207,9 +217,6 @@
 				<add stat="atkCountMax" val="#atkCountMax">
 					<using kind="POLE" />
 				</add>
-				<add stat="pAtk" val="#pAtkAdd">
-					<using kind="POLE" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -219,6 +226,18 @@
 					<value level="4">5</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">583</value>
+					<value level="2">678</value>
+					<value level="3">807</value>
+					<value level="4">978</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>POLE</item>
 				</weaponType>
@@ -289,9 +308,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtkAdd">
-					<using kind="DUALFIST" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -301,6 +317,18 @@
 					<value level="4">5</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">709</value>
+					<value level="2">825</value>
+					<value level="3">982</value>
+					<value level="4">1190</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>DUALFIST</item>
 				</weaponType>
@@ -452,9 +480,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtkAdd">
-					<using kind="POLE" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -462,6 +487,16 @@
 					<value level="2">3</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">583</value>
+					<value level="2">678</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>POLE</item>
 				</weaponType>

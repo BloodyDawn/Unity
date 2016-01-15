@@ -168,9 +168,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="BLUNT,POLE,SWORD" />
-				</add>
 				<mul stat="pAtkSpd" val="1.25">
 					<using kind="BLUNT,POLE,SWORD" />
 				</mul>
@@ -186,6 +183,26 @@
 			<effect name="PAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1689</value>
+					<value level="2">1958</value>
+					<value level="3">2270</value>
+					<value level="4">2555</value>
+					<value level="5">2895</value>
+					<value level="6">3071</value>
+					<value level="7">3258</value>
+					<value level="8">3457</value>
+					<value level="9">3667</value>
+					<value level="10">3890</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BLUNT</item>
+					<item>POLE</item>
+					<item>SWORD</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -211,9 +228,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="DUALFIST,DUALBLUNT,DUAL" />
-				</add>
 				<mul stat="pAtkSpd" val="1.25">
 					<using kind="DUALFIST,DUALBLUNT,DUAL" />
 				</mul>
@@ -225,6 +239,26 @@
 			<effect name="PAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1689</value>
+					<value level="2">1958</value>
+					<value level="3">2270</value>
+					<value level="4">2555</value>
+					<value level="5">2895</value>
+					<value level="6">3071</value>
+					<value level="7">3258</value>
+					<value level="8">3457</value>
+					<value level="9">3667</value>
+					<value level="10">3890</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+					<item>DUALBLUNT</item>
+					<item>DUAL</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -402,9 +436,21 @@
 				<add stat="maxCp" val="#maxCp" />
 				<add stat="regHp" val="12" />
 				<add stat="regHp" val="6" />
-				<add stat="pAtk" val="#pAtk">
-					<player hp="60" />
-				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1027</value>
+					<value level="2">1027</value>
+					<value level="3">1381</value>
+					<value level="4">1554</value>
+					<value level="5">1761</value>
+					<value level="6">1869</value>
+					<value level="7">1982</value>
+					<value level="8">2103</value>
+					<value level="9">2231</value>
+					<value level="10">2367</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1232,9 +1278,12 @@
 		<rideState>NONE</rideState>
 		<for>
 			<effect name="Debuff">
-				<add stat="pAtk" val="200" />
 				<mul stat="pAtkSpd" val="1.1" />
 				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1344,7 +1393,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 				<add stat="debuffVuln" val="#debuffVuln" />
-				<add stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="accCombat" val="#accCombat" />
 				<mul stat="cAtk" val="#cAtk" />
@@ -1368,6 +1416,15 @@
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">873</value>
+					<value level="2">1015</value>
+					<value level="3">1209</value>
+					<value level="4">1435</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

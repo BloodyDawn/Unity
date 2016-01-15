@@ -1809,7 +1809,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10.26</value>
+					<value level="2">11.22</value>
+					<value level="3">11.94</value>
+					<value level="4">12.94</value>
+					<value level="5">13.55</value>
+					<value level="6">14.44</value>
+					<value level="7">14.85</value>
+					<value level="8">15.92</value>
+					<value level="9">16.68</value>
+					<value level="10">17.84</value>
+					<value level="11">17.84</value>
+					<value level="12">17.84</value>
+					<value level="13">17.84</value>
+					<value level="14">17.84</value>
+					<value level="15">17.84</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2503,7 +2522,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="63" />
+			</effect>
+			<effect name="PAtk">
+				<amount>63</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2862,7 +2884,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="8.7" />
 				<add stat="pAtkSpd" val="4" />
 				<add stat="mAtk" val="10.1" />
 				<add stat="mAtkSpd" val="3" />
@@ -2870,6 +2891,10 @@
 				<sub stat="pDef" val="13.6" />
 				<sub stat="mDef" val="11" />
 				<sub stat="rEvas" val="1" />
+			</effect>
+			<effect name="PAtk">
+				<amount>8.7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3029,7 +3054,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="20.8" />
+			</effect>
+			<effect name="PAtk">
+				<amount>20.8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

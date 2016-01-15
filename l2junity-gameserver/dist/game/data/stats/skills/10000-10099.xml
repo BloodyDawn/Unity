@@ -40,9 +40,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="SWORD, BLUNT" />
-				</add>
 				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
@@ -56,6 +53,25 @@
 				<minDamage>1</minDamage>
 				<chance>60</chance>
 				<targetType>SELF</targetType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">844</value>
+					<value level="2">979</value>
+					<value level="3">1135</value>
+					<value level="4">1277</value>
+					<value level="5">1447</value>
+					<value level="6">1535</value>
+					<value level="7">1629</value>
+					<value level="8">1728</value>
+					<value level="9">1833</value>
+					<value level="10">1945</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

@@ -1496,9 +1496,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="FIST,DUALFIST" />
 				</add>
-				<add stat="pAtk" val="#pAtkAdd">
-					<using kind="FIST,DUALFIST" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="FIST,DUALFIST" />
 				</mul>
@@ -1533,6 +1530,32 @@
 					<value level="17">45</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>FIST</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">13</value>
+					<value level="3">63</value>
+					<value level="4">124</value>
+					<value level="5">208</value>
+					<value level="6">306</value>
+					<value level="7">471</value>
+					<value level="8">3378</value>
+					<value level="9">3916</value>
+					<value level="10">4540</value>
+					<value level="11">5110</value>
+					<value level="12">5790</value>
+					<value level="13">6143</value>
+					<value level="14">6517</value>
+					<value level="15">6914</value>
+					<value level="16">7335</value>
+					<value level="17">7781</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>FIST</item>
 					<item>DUALFIST</item>

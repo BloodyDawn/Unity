@@ -1494,7 +1494,6 @@
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<!-- Seed of Revenge -->
-				<add stat="pAtk" val="300" />
 				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
 				<attackerType>L2Character</attackerType>
@@ -1513,6 +1512,10 @@
 					<value level="2">3</value>
 					<value level="3">0</value>
 				</skillLevel>
+			</effect>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

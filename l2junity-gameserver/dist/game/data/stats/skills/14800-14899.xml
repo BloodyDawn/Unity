@@ -1539,7 +1539,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="1.1" />
 				<add stat="debuffVuln" val="80" />
-				<add stat="pAtk" val="500" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="10" />
 				<mul stat="cAtk" val="1.1" />
@@ -1563,6 +1562,10 @@
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1588,7 +1591,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="1.1" />
 				<add stat="debuffVuln" val="80" />
-				<add stat="pAtk" val="565" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="11" />
 				<mul stat="cAtk" val="1.1" />
@@ -1612,6 +1614,10 @@
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>565</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1637,7 +1643,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="1.1" />
 				<add stat="debuffVuln" val="80" />
-				<add stat="pAtk" val="672" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="13" />
 				<mul stat="cAtk" val="1.1" />
@@ -1661,6 +1666,10 @@
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>672</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
