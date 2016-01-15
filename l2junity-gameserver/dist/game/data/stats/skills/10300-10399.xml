@@ -222,9 +222,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="atkCountMax" val="#atkCountMax">
-					<using kind="POLE" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -244,6 +241,18 @@
 					<value level="2">678</value>
 					<value level="3">807</value>
 					<value level="4">978</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="HitNumber">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
 				</amount>
 				<mode>DIFF</mode>
 				<weaponType>
@@ -1146,7 +1155,10 @@
 						<using slot="lrhand" />
 					</and>
 				</mul>
-				<add stat="atkCountMax" val="5" />
+			</effect>
+			<effect name="HitNumber">
+				<amount>5</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

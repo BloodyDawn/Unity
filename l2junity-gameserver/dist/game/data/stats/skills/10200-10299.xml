@@ -174,9 +174,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="atkCountMax" val="10">
-					<using kind="POLE" />
-				</add>
 				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
@@ -220,6 +217,13 @@
 					<item>BLUNT</item>
 					<item>POLE</item>
 					<item>SWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="HitNumber">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
 				</weaponType>
 			</effect>
 		</for>

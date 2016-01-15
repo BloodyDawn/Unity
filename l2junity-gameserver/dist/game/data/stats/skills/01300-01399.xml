@@ -794,8 +794,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<mul stat="maxRecoverableCp" val="0.6" />
-				<mul stat="maxRecoverableHp" val="0.7" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
@@ -811,6 +809,14 @@
 			</effect>
 			<effect name="MaxCp">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="LimitHp">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="LimitCp">
+				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -846,8 +852,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<mul stat="maxRecoverableCp" val="0.6" />
-				<mul stat="maxRecoverableHp" val="0.7" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
@@ -863,6 +867,14 @@
 			</effect>
 			<effect name="MaxCp">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="LimitHp">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="LimitCp">
+				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

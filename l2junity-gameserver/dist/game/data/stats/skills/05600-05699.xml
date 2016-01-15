@@ -179,10 +179,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="maxRecoverableHp" val="0.1" />
 			</effect>
 			<effect name="HealPercent">
 				<power>-99</power>
+			</effect>
+			<effect name="LimitHp">
+				<amount>-90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

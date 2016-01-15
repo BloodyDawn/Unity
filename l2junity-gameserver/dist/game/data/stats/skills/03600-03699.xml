@@ -23,7 +23,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="0.85" />
-				<add stat="atkCountMax" val="4" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
@@ -41,6 +40,10 @@
 					<value level="9">45</value>
 					<value level="10">78.33</value>
 				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HitNumber">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -67,7 +70,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="atkCountMax" val="4" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
 			</effect>
@@ -85,6 +87,10 @@
 					<value level="10">11</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="HitNumber">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -110,7 +116,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="atkCountMax" val="4" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
@@ -128,6 +133,10 @@
 					<value level="9">5.27</value>
 					<value level="10">7.5</value>
 				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HitNumber">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

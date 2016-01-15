@@ -1719,10 +1719,13 @@
 			</effect>
 			<effect name="Debuff">
 				<!-- TODO check this value since multiple levels have been added -->
-				<mul stat="maxRecoverableHp" val="0.50" />
 			</effect>
 			<effect name="DefenceCriticalDamage">
 				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="LimitHp">
+				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
