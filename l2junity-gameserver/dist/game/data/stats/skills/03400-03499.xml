@@ -301,11 +301,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.12" /> <!-- Casting Spd. +12% -->
+				<!-- Casting Spd. +12% -->
 				<add stat="maxMp" val="257" /> <!-- Max MP +257 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MagicalAttackSpeed">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3417" levels="1" name="Equip Shield">

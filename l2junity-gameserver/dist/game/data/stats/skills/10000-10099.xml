@@ -1832,7 +1832,6 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.8" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-20</amount>
@@ -1843,6 +1842,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>

@@ -494,7 +494,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
-				<mul stat="mAtkSpd" val="0.85" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1037,7 +1040,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -1064,6 +1066,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1258,7 +1264,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -1266,6 +1271,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -406,7 +406,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.05" />
-				<mul stat="mAtkSpd" val="1.05" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1509,13 +1512,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3646" levels="1" name="Dynasty Silver Satin Tunic">
@@ -1527,13 +1534,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3647" levels="1" name="Dynasty Silver Satin Tunic">
@@ -1545,7 +1556,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<!-- P. Def. +3.3% -->
 				<!-- P. Atk. +3.3% -->
@@ -1560,6 +1571,10 @@
 				<amount>3.3</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3648" levels="1" name="Dynasty Silver Satin Tunic">
@@ -1571,7 +1586,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<!-- M. Atk. +6.6% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -1579,6 +1594,10 @@
 			<effect name="EnableCloak" />
 			<effect name="MAtk">
 				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2398,10 +2417,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>17.08</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

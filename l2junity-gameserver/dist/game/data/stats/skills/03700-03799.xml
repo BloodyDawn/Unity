@@ -281,10 +281,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>2.19</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -649,7 +652,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="cancelVuln" val="8.33" />
-				<mul stat="mAtkSpd" val="1.15" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>20</PARALYZE>
@@ -660,6 +662,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>3.33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -917,7 +923,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1179,11 +1188,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="regMp" val="1.0333" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>20.83</SHOCK>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1963,7 +1975,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

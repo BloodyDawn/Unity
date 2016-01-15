@@ -346,7 +346,6 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.23" />
 				<add stat="mCritRate" val="6" />
 				<add stat="INT" val="2" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
@@ -398,6 +397,10 @@
 				<weaponType>
 					<item>DUALBLUNT</item>
 				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2893,7 +2896,6 @@
 				<mul stat="regHp" val="1.20" />
 				<mul stat="mCritRate" val="1.20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="0.90" />
 				<mul stat="defCritDamage" val="0.7" />
 			</effect>
@@ -2923,6 +2925,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

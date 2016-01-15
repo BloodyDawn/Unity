@@ -1155,7 +1155,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">23</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

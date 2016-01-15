@@ -1228,11 +1228,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-20</amount>
 				<mode>PER</mode>
+				<armorType>
+					<NONE />
+					<LIGHT />
+					<HEAVY />
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -2418,11 +2421,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="0.7">
-					<not>
-						<using kind="MAGIC" />
-					</not>
-				</mul>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+				<armorType>
+					<NONE />
+					<LIGHT />
+					<HEAVY />
+				</armorType>
 			</effect>
 		</for>
 	</skill>

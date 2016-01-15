@@ -539,7 +539,6 @@
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
 				</add>
-				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="fireRes" val="10" />
 				<add stat="waterRes" val="10" />
 				<add stat="windRes" val="10" />
@@ -553,6 +552,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -585,7 +588,6 @@
 				<mul stat="maxMp" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="CpHealPercent">
@@ -612,6 +614,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3539,7 +3545,6 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="mCritRate" val="#mCritRate" />
 			</effect>
 			<effect name="MAtk">
@@ -3548,6 +3553,10 @@
 					<value level="2">85</value>
 					<value level="3">95</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

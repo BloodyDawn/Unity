@@ -41,7 +41,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtkSpd" val="8" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -184,7 +187,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtkSpd" val="4" />
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
@@ -192,6 +194,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -889,13 +895,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3355" levels="1" name="Dynasty Tunic">
@@ -907,13 +917,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3356" levels="1" name="Dynasty Tunic">
@@ -925,7 +939,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<!-- P. Def. +2.6% -->
 				<!-- Increase P. Atk. +2.6% -->
@@ -940,6 +954,10 @@
 				<amount>2.6</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3357" levels="1" name="Dynasty Tunic">
@@ -951,7 +969,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<!-- Increase M. Atk +5.4% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -959,6 +977,10 @@
 			<effect name="EnableCloak" />
 			<effect name="MAtk">
 				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -973,7 +995,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="0.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-80</amount>
@@ -988,6 +1009,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>

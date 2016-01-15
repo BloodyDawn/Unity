@@ -1432,12 +1432,16 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<add stat="maxMp" val="240" /> <!-- MP +240 -->
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
+				<!-- Casting Spd. +15% -->
 				<mul stat="regMp" val="1.08" /> <!-- MP Regeneration +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

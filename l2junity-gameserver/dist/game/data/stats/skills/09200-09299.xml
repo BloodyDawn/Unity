@@ -511,7 +511,6 @@
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="rCrit" val="0.2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<!-- TODO: increases P. Def. upon evading a critical attack ??? -->
 			</effect>
@@ -539,6 +538,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="9229" levels="1" name="Mentor's Lute Melody">
@@ -562,7 +565,6 @@
 		<isMentoring>true</isMentoring>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.31" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -576,6 +578,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>31</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

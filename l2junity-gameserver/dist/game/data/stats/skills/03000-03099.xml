@@ -1396,10 +1396,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2118,13 +2121,16 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2262,13 +2268,16 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2688,13 +2697,16 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>

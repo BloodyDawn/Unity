@@ -1478,9 +1478,12 @@
 		<for>
 			<effect name="Debuff">
 				<set order="80" stat="moveSpeed" val="1" /> <!-- Set speed to 1 :) -->
-				<mul stat="mAtkSpd" val="0.70" />
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>

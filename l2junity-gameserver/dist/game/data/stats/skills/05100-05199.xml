@@ -937,13 +937,16 @@
 				<chance>80</chance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.77" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;IMPROVE_SPEED_AVOID_UP;IMPROVE_VAMPIRIC_HASTE</dispel>
 				<rate>80</rate>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3217,7 +3220,14 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">23</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

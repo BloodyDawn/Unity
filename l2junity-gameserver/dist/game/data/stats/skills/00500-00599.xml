@@ -113,10 +113,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.85" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -92,7 +92,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- M. Power +8.7% -->
-				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
+				<!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -110,6 +110,10 @@
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -189,7 +193,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- M. Power +10% -->
-				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
+				<!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -208,6 +212,10 @@
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -322,7 +330,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- M. Power +8.11% -->
-				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
+				<!-- M. Spd. +15% -->
 				<add stat="fireRes" val="5" /> <!-- resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- resistance to wind attributes +5 -->
@@ -335,6 +343,10 @@
 			<effect name="EnableCloak" />
 			<effect name="MAtk">
 				<amount>8.11</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -470,7 +482,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- M. Power +8.7% -->
-				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
+				<!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -491,6 +503,10 @@
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -609,7 +625,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- M. Power +10% -->
-				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
+				<!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -631,6 +647,10 @@
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -904,7 +924,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- M. Atk. +8.11% -->
-				<mul stat="mAtkSpd" val="1.15" /> <!-- Cast. Spd. +15% -->
+				<!-- Cast. Spd. +15% -->
 				<add stat="waterRes" val="1" />
 				<add stat="fireRes" val="1" />
 				<add stat="windRes" val="1" />
@@ -913,6 +933,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>8.11</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1250,13 +1274,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="regMp" val="1.05" />
 				<sub stat="cancel" val="12" />
 				<SHOCK>20</SHOCK>
 			</effect>
 			<effect name="MAtk">
 				<amount>8.47</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

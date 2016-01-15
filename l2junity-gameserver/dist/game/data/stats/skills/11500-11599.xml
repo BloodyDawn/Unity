@@ -918,13 +918,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.95" />
 			</effect>
 			<effect name="Speed">
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1172,7 +1175,6 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -1220,6 +1222,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1504,7 +1510,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
@@ -1523,6 +1528,15 @@
 					<value level="2">35</value>
 					<value level="3">36</value>
 					<value level="4">37</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">31</value>
+					<value level="2">32</value>
+					<value level="3">33</value>
+					<value level="4">34</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1600,7 +1614,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -1622,6 +1635,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1652,7 +1669,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="2.00" />
-				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -1684,6 +1700,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1772,7 +1792,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.30" />
 				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
@@ -1787,6 +1806,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1815,7 +1838,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.08" />
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1850,6 +1872,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2429,7 +2455,6 @@
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<mul stat="mAtkSpd" val="0.2" />
 				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
 			<effect name="PAtk">
@@ -2477,6 +2502,10 @@
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
@@ -2501,7 +2530,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>100</amount>
@@ -2512,6 +2540,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2771,7 +2803,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3725,7 +3760,6 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -3774,6 +3808,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4028,7 +4066,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
@@ -4047,6 +4084,15 @@
 					<value level="2">35</value>
 					<value level="3">36</value>
 					<value level="4">37</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">31</value>
+					<value level="2">32</value>
+					<value level="3">33</value>
+					<value level="4">34</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4117,7 +4163,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -4139,6 +4184,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4165,7 +4214,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="2.00" />
-				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -4197,6 +4245,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>

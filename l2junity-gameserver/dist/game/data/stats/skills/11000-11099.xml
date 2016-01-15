@@ -49,7 +49,6 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.23" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
 			<effect name="MAtk">
@@ -70,6 +69,10 @@
 					<value level="10">2261</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -199,11 +202,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
-				<mul stat="mAtkSpd" val="1.06" />
 				<mul stat="MagicalMpConsumeRate" val="0.94" />
 				<mul stat="mCritRate" val="1.06" />
 			</effect>
 			<effect name="MAtk">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>6</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2893,7 +2899,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.9" />
 				<mul stat="rCrit" val="-0.1" />
 				<mul stat="mCritRate" val="0.9" />
 			</effect>
@@ -2916,6 +2921,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-6</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2992,7 +3001,6 @@
 				<percentage>25</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.92" />
 				<mul stat="rCrit" val="-0.08" />
 				<mul stat="mCritRate" val="0.92" />
 			</effect>
@@ -3015,6 +3023,10 @@
 			<effect name="Accuracy">
 				<amount>-12</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

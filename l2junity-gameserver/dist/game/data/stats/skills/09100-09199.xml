@@ -1388,13 +1388,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.2" />
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

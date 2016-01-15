@@ -2016,7 +2016,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="0.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-80</amount>
@@ -2031,6 +2030,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3871,7 +3874,6 @@
 			<effect name="Buff">
 				<mul stat="regMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MAtk">
@@ -3883,6 +3885,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4118,7 +4124,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.6" />
 			</effect>
 			<effect name="Speed">
 				<amount>-40</amount>
@@ -4133,6 +4138,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>

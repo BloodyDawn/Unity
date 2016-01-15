@@ -1216,7 +1216,6 @@
 		<targetType>TARGET_PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#pmAtkSpd" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -1226,6 +1225,13 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">4</value>
 					<value level="2">8</value>
@@ -1884,7 +1890,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.5" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

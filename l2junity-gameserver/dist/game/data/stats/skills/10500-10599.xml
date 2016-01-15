@@ -930,13 +930,16 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.77" />
 			</effect>
 			<effect name="Speed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2403,13 +2406,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.77" />
 			</effect>
 			<effect name="Speed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>

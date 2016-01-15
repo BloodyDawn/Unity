@@ -1345,7 +1345,6 @@
 				<power>112</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>-12</power>
@@ -1355,6 +1354,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1485,7 +1488,6 @@
 				<power>12</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.9" />
 				<sub stat="fireRes" val="20" />
 			</effect>
 			<effect name="Speed">
@@ -1494,6 +1496,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1660,7 +1666,6 @@
 				<power>12</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.9" />
 				<sub stat="waterRes" val="20" />
 			</effect>
 			<effect name="Speed">
@@ -1668,6 +1673,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1761,7 +1770,6 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<mul stat="mAtkSpd" val="0.7" />
 				<sub stat="windRes" val="20" />
 				<power>12</power>
 			</effect>
@@ -1771,6 +1779,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1862,7 +1874,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="1.2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -1895,6 +1906,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2040,7 +2055,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="regMp" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -2067,6 +2081,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2098,7 +2116,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -2130,6 +2147,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

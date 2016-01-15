@@ -1096,7 +1096,6 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.05" />
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -1123,6 +1122,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>

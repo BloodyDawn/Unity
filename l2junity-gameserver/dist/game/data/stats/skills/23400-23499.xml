@@ -885,7 +885,6 @@
 		<coolTime>300</coolTime>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.05" />
 				<mul stat="mCritRate" val="1.1" />
 			</effect>
 			<effect name="VampiricAttack">
@@ -922,6 +921,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>

@@ -813,7 +813,6 @@
 		<isMagic>22</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.31" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1</dispel>
@@ -827,6 +826,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>31</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1070,7 +1073,6 @@
 				<mul stat="regHp" val="1.2" />
 				<mul stat="mCritRate" val="1.2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="debuffVuln" val="0.9" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
@@ -1101,6 +1103,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

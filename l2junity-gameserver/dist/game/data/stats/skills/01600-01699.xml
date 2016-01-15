@@ -24,7 +24,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.5" />
 				<mul stat="mCritRate" val="1.5" />
-				<mul stat="mAtkSpd" val="1.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>50</amount>
@@ -35,6 +34,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -508,13 +511,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>

@@ -1522,7 +1522,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2274,9 +2281,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.91">
-					<using kind="LIGHT" />
-				</mul>
 				<mul stat="regMp" val="1.2">
 					<using kind="LIGHT" />
 				</mul>
@@ -2332,6 +2336,13 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>25</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>91</amount>
 				<mode>PER</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -2601,9 +2612,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="0.7">
-					<using kind="BOW,POLE" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>45</amount>
@@ -2715,6 +2723,14 @@
 					<item>POLE</item>
 				</weaponType>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="250" levels="42" name="Weapon Mastery">
@@ -2772,9 +2788,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="0.7">
-					<using kind="BOW,POLE" />
-				</mul>
 				<add stat="absorbDamMana" val="10" />
 			</effect>
 			<effect name="PAtk">
@@ -2882,6 +2895,14 @@
 			<effect name="Accuracy">
 				<amount>-8</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>BOW</item>
 					<item>POLE</item>
@@ -3055,9 +3076,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.9">
-					<using kind="LIGHT" />
-				</mul>
 				<mul stat="regMp" val="1.2">
 					<using kind="LIGHT" />
 				</mul>
@@ -3122,6 +3140,13 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>90</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="253" levels="43" name="Heavy Armor Mastery">
@@ -3177,9 +3202,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.71">
-					<using kind="HEAVY" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -3234,6 +3256,13 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>25</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>71</amount>
 				<mode>PER</mode>
 				<armorType>
 					<item>HEAVY</item>
@@ -3560,9 +3589,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.88">
-					<using kind="LIGHT" />
-				</mul>
 				<mul stat="regMp" val="1.2">
 					<using kind="LIGHT" />
 				</mul>
@@ -3615,6 +3641,13 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>88</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="259" levels="33" name="Heavy Armor Mastery">
@@ -3660,9 +3693,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.68">
-					<using kind="HEAVY" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -3707,6 +3737,13 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>25</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>68</amount>
 				<mode>PER</mode>
 				<armorType>
 					<item>HEAVY</item>
@@ -4774,8 +4811,11 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.3" />
 				<sub stat="cancel" val="40" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4970,13 +5010,16 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>

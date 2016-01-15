@@ -21,7 +21,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="MAtk">
@@ -29,6 +28,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -337,7 +340,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="MAtk">
@@ -345,6 +347,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -445,7 +451,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="MAtk">
@@ -453,6 +458,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -552,7 +561,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mCritPower" val="1.2" />
 			</effect>
@@ -561,6 +569,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -973,12 +985,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1286,12 +1301,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1588,7 +1606,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="MAtk">
@@ -1596,6 +1613,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

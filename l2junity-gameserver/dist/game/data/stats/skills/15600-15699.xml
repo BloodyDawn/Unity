@@ -497,7 +497,6 @@
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="debuffVuln" val="1.2" />
 				<mul stat="defCritDamage" val="1.3" />
 			</effect>
@@ -543,6 +542,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -668,7 +671,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.31" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
@@ -684,6 +686,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>31</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -744,7 +750,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -769,6 +774,10 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="15650" levels="1" name="Wizard's Harmony (Adventurer)">
@@ -787,7 +796,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="mCritRate" val="2.0" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -823,6 +831,10 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="15651" levels="1" name="Prevailing Sonata (Adventurer)">
@@ -841,7 +853,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="regMp" val="1.10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<sub stat="cancel" val="50" />
@@ -859,6 +870,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -879,7 +894,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.05" />
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -914,6 +928,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>

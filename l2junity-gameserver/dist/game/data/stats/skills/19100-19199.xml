@@ -97,13 +97,16 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.13" />
 			</effect>
 			<effect name="Speed">
 				<amount>13</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>13</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>13</amount>
 				<mode>PER</mode>
 			</effect>
@@ -123,13 +126,16 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.15" />
 			</effect>
 			<effect name="Speed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
@@ -872,7 +878,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#bonus" />
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

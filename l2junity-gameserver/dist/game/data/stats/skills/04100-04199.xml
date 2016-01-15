@@ -472,7 +472,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.75" />
 				<mul stat="rCrit" val="0.1" />
 			</effect>
 			<effect name="PAtk">
@@ -504,6 +503,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-25</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2979,13 +2982,16 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>

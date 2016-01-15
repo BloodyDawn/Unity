@@ -2039,7 +2039,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -2050,6 +2049,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2233,10 +2236,13 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtkSpd" val="0.77" />
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
