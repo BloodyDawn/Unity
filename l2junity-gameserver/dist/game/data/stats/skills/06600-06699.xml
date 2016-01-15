@@ -1755,7 +1755,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.33" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2450,7 +2453,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -2475,6 +2477,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2841,8 +2847,11 @@
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="DamOverTimePercent" ticks="5">
-				<mul stat="pAtkSpd" val="1.2" />
 				<power>0.02</power>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -497,7 +497,6 @@
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="debuffVuln" val="1.2" />
 				<mul stat="defCritDamage" val="1.3" />
@@ -540,6 +539,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -665,7 +668,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.34" />
 				<mul stat="mAtkSpd" val="1.31" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -679,6 +681,10 @@
 				<!-- Chance guessed from Clan Hall buff -->
 				<amount>9</amount>
 				<chance>80</chance>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>34</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -738,7 +744,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -760,6 +765,10 @@
 				<amount>8</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="15650" levels="1" name="Wizard's Harmony (Adventurer)">
@@ -779,7 +788,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mCritRate" val="2.0" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -811,6 +819,10 @@
 				<amount>14</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="15651" levels="1" name="Prevailing Sonata (Adventurer)">
@@ -829,7 +841,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.10" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="regMp" val="1.10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
@@ -845,6 +856,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</slot>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -864,7 +879,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
 				<add stat="reflectDam" val="10" />
 			</effect>
@@ -898,6 +912,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

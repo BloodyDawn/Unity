@@ -112,7 +112,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
+				<!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
 				<add stat="maxMp" val="347" /> <!-- Max MP by 347 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -134,6 +134,10 @@
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8304" levels="1" name="Vesper Noble Light Armor Set - PvP">
@@ -146,7 +150,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
+				<!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5.57% -->
 				<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
 				<!-- Increases Evasion by 3 -->
@@ -174,6 +178,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1911,7 +1919,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- Atk Power +4.26% -->
-				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
+				<!-- Atk. Spd. +4% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
@@ -1922,6 +1930,10 @@
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1936,7 +1948,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +4.26% -->
-				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
+				<!-- Atk. Spd. +4% -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
@@ -1951,6 +1963,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

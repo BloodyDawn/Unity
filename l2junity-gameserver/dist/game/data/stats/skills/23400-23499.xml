@@ -717,7 +717,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.15" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -882,7 +885,6 @@
 		<coolTime>300</coolTime>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
 				<mul stat="mCritRate" val="1.1" />
 			</effect>
@@ -917,6 +919,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1196,7 +1202,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.15" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

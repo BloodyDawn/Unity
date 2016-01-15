@@ -1218,7 +1218,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<mul stat="pAtkSpd" val="0.3" />
 			</effect>
 			<effect name="Speed">
 				<amount>-90</amount>
@@ -1230,6 +1229,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>400</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-70</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

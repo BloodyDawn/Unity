@@ -48,9 +48,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.30">
-					<using kind="DUAL, DUALBLUNT" />
-				</mul>
 				<mul stat="cAtk" val="1.15">
 					<using kind="DUAL, DUALBLUNT" />
 				</mul>
@@ -88,6 +85,14 @@
 					<value level="10">2367</value>
 				</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>DUAL</item>
 					<item> DUALBLUNT</item>
@@ -913,10 +918,13 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.95" />
 				<mul stat="mAtkSpd" val="0.95" />
 			</effect>
 			<effect name="Speed">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1164,7 +1172,6 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="pAtkSpd" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
@@ -1209,6 +1216,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1493,7 +1504,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1506,6 +1516,15 @@
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>20</chance>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">34</value>
+					<value level="2">35</value>
+					<value level="3">36</value>
+					<value level="4">37</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1581,7 +1600,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1602,6 +1620,10 @@
 			<effect name="Speed">
 				<amount>8</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1631,7 +1653,6 @@
 			<effect name="Buff">
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -1662,6 +1683,10 @@
 				<amount>14</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11526" levels="10" name="Superior Sword/Blunt Weapon Mastery">
@@ -1686,9 +1711,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.30">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 				<mul stat="cAtk" val="1.15">
 					<using kind="SWORD,BLUNT" />
 				</mul>
@@ -1711,6 +1733,14 @@
 					<value level="10">2367</value>
 				</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>
 					<item>BLUNT</item>
@@ -1742,7 +1772,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.15" />
 				<mul stat="mAtkSpd" val="1.30" />
 				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
@@ -1755,6 +1784,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</slot>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1782,7 +1815,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<add stat="reflectDam" val="10" />
 			</effect>
@@ -1816,6 +1848,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2393,7 +2429,6 @@
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />
 				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
@@ -2438,6 +2473,10 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
@@ -2462,7 +2501,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="2" />
 				<mul stat="mAtkSpd" val="2" />
 			</effect>
 			<effect name="PAtk">
@@ -2470,6 +2508,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3683,7 +3725,6 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="pAtkSpd" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
@@ -3729,6 +3770,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3983,7 +4028,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -3996,6 +4040,15 @@
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>20</chance>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">34</value>
+					<value level="2">35</value>
+					<value level="3">36</value>
+					<value level="4">37</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4064,7 +4117,6 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -4085,6 +4137,10 @@
 			<effect name="Speed">
 				<amount>8</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4110,7 +4166,6 @@
 			<effect name="Buff">
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -4139,6 +4194,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>14</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

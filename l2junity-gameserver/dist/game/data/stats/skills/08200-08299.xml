@@ -9,7 +9,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.04" /> <!-- Attack Speed +4% -->
+				<!-- Attack Speed +4% -->
 				<!-- P. Atk +4% -->
 				<add stat="maxMp" val="289" /> <!-- Maximum MP +289 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
@@ -29,6 +29,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
@@ -310,7 +314,7 @@
 			<effect name="DefenceTrait">
 				<!-- Evasion +4.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
-				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
+				<!-- Atk. Spd. are increased +2.66% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -321,6 +325,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>4.3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>2.66</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -335,7 +343,7 @@
 			<effect name="Buff">
 				<!-- Accuracy +4.3 -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 Effect -->
-				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
+				<!-- Atk. Spd. are increased +2.66% -->
 				<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -357,6 +365,10 @@
 			<effect name="Accuracy">
 				<amount>4.3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>2.66</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -641,7 +653,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.054" /> <!-- increase Atk. Spd. +5.4% -->
+				<!-- increase Atk. Spd. +5.4% -->
 				<!-- Increase P. Atk. +2.66% -->
 				<!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
@@ -668,6 +680,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -836,7 +852,7 @@
 			<effect name="DefenceTrait">
 				<!-- Evasion +5.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-				<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
+				<!-- Atk. Spd. +3.24% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -847,6 +863,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>5.3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -861,7 +881,7 @@
 			<effect name="Buff">
 				<!-- Accuracy +5.3 -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
-				<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
+				<!-- Atk. Spd. +3.24% -->
 				<add stat="regMp" val="1.066" /> <!-- MP Recovery +6.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -883,6 +903,10 @@
 			<effect name="Accuracy">
 				<amount>5.3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -966,7 +990,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.066" /> <!-- Atk. Spd. +6.6% -->
+				<!-- Atk. Spd. +6.6% -->
 				<!-- P. Atk. +2.66% -->
 				<!-- P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
@@ -993,6 +1017,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>6.6</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1293,7 +1321,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
-				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Critical Hit -->
@@ -1307,6 +1334,10 @@
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>5760</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2166,12 +2197,16 @@
 		<for>
 			<effect name="Buff">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
+				<!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
 				<add stat="maxMp" val="347" /> <!-- Max MP by 347 -->
 			</effect>
 			<effect name="PAtk">
 				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2186,7 +2221,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
-				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
+				<!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
 				<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
 				<!-- Increases Evasion by 3 -->
@@ -2201,6 +2236,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2405,10 +2444,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.04" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -2893,7 +2893,6 @@
 				<mul stat="regHp" val="1.20" />
 				<mul stat="mCritRate" val="1.20" />
 				<mul stat="cAtk" val="1.20" />
-				<mul stat="pAtkSpd" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="0.90" />
 				<mul stat="defCritDamage" val="0.7" />
@@ -2920,6 +2919,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

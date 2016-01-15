@@ -445,7 +445,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.05" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -460,7 +463,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.05" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

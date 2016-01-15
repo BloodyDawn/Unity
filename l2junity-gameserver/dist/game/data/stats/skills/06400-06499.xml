@@ -177,12 +177,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -866,7 +869,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.38" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>38</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

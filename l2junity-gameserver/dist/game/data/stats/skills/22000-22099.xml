@@ -717,7 +717,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.08" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1434,7 +1437,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.33" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1637,7 +1643,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
@@ -1663,6 +1668,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

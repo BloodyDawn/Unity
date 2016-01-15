@@ -655,7 +655,6 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="PAtk">
@@ -690,6 +689,13 @@
 				<amount>
 					<value level="1">-5</value>
 					<value level="2">-8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1914,7 +1920,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="PAtk">
@@ -1954,6 +1959,14 @@
 					<value level="1">-5</value>
 					<value level="2">-5</value>
 					<value level="3">-8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2043,7 +2056,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="mCritRate" val="#mCritRate" />
 			</effect>
@@ -2087,6 +2099,14 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="4636" levels="3" name="Acumen Berserker Damage Shield">
@@ -2127,7 +2147,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="reflectDam" val="#reflect" />
 			</effect>
@@ -2168,6 +2187,14 @@
 					<value level="1">-5</value>
 					<value level="2">-5</value>
 					<value level="3">-8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2297,7 +2324,6 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 			<effect name="PAtk">
@@ -2337,6 +2363,14 @@
 					<value level="1">-5</value>
 					<value level="2">-5</value>
 					<value level="3">-8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2602,7 +2636,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">33</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4972,7 +5012,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.75" />
 				<mul stat="rCrit" val="-0.23" />
 			</effect>
 			<effect name="PAtk">
@@ -4994,6 +5033,10 @@
 			<effect name="Accuracy">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

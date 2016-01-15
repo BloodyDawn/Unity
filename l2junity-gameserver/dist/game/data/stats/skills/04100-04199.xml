@@ -472,7 +472,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.75" />
 				<mul stat="mAtkSpd" val="0.75" />
 				<mul stat="rCrit" val="0.1" />
 			</effect>
@@ -503,6 +502,10 @@
 			<effect name="Accuracy">
 				<amount>-19</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2877,7 +2880,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">-17</value>
+					<value level="2">-20</value>
+					<value level="3">-23</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2969,10 +2979,13 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3127,10 +3140,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3600,7 +3616,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.5" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4176,7 +4195,23 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">-17</value>
+					<value level="2">-20</value>
+					<value level="3">-20</value>
+					<value level="4">-23</value>
+					<value level="5">-23</value>
+					<value level="6">-23</value>
+					<value level="7">-23</value>
+					<value level="8">-23</value>
+					<value level="9">-23</value>
+					<value level="10">-23</value>
+					<value level="11">-23</value>
+					<value level="12">-23</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

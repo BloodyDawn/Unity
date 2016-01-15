@@ -59,7 +59,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.33" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -297,7 +300,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -322,6 +324,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -518,12 +524,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.3" />
 				<mul stat="rCrit" val="0.3" />
 				<mul stat="cAtk" val="1.35" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -956,12 +965,18 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">12</value>
 					<value level="2">0</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">40</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1367,10 +1382,13 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.3" />
 			</effect>
 			<effect name="PAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1970,7 +1988,6 @@
 				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="mAtkSpd" val="#pmAtkSpd" />
-				<mul stat="pAtkSpd" val="#pmAtkSpd" />
 				<mul stat="bonusExp" val="#bonusExp" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -2007,6 +2024,14 @@
 				<amount>
 					<value level="1">0</value>
 					<value level="2">15</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
 					<value level="3">15</value>
 				</amount>
 				<mode>PER</mode>

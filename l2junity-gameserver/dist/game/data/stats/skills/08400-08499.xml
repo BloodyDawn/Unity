@@ -53,7 +53,7 @@
 			<effect name="DefenceTrait">
 				<!-- Atk. Power + 5.57% -->
 				<!-- Def. Power + 5.57% -->
-				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
+				<!-- Atk. Spd. +5% -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -74,6 +74,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -151,7 +155,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<!-- Attack Power +6.59% -->
-				<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
+				<!-- Atk. Spd. +6% -->
 				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -167,6 +171,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>6</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -224,7 +232,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- Atk Power +4.26% -->
-				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
+				<!-- Atk. Spd. +4% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
@@ -238,6 +246,10 @@
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -263,7 +275,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +4.26% -->
-				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
+				<!-- Atk. Spd. +4% -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
@@ -281,6 +293,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -401,7 +417,7 @@
 			<effect name="DefenceTrait">
 				<!-- Atk. Power + 5.57% -->
 				<!-- Def. Power + 5.57% -->
-				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
+				<!-- Atk. Spd. +5% -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -425,6 +441,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -541,7 +561,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- Attack Power +6.59% -->
-				<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
+				<!-- Atk. Spd. +6% -->
 				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -560,6 +580,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>6</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -640,12 +664,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtkSpd" val="1.01" />
 				<add stat="fireRes" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="PAtk">
 				<amount>1.25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -659,7 +686,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtkSpd" val="1.04" />
 				<add stat="waterRes" val="1" />
 				<add stat="fireRes" val="1" />
 				<add stat="windRes" val="1" />
@@ -668,6 +694,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -681,12 +711,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtkSpd" val="1.0167" />
 				<add stat="waterRes" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="PAtk">
 				<amount>2.08</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>1.67</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -700,12 +733,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="windRes" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="PAtk">
 				<amount>0.83</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -719,12 +755,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="earthRes" val="3" />
 				<SHOCK>5</SHOCK>
 			</effect>
 			<effect name="PAtk">
 				<amount>0.83</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1082,11 +1121,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<add stat="maxMp" val="87" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1101,12 +1143,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="regMp" val="1.05" />
 				<add stat="maxMp" val="347" />
 			</effect>
 			<effect name="PAtk">
 				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1120,11 +1165,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<add stat="maxMp" val="145" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1139,11 +1187,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1158,11 +1209,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1798,11 +1852,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<add stat="maxMp" val="87" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1817,11 +1874,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<add stat="maxMp" val="145" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1836,11 +1896,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1855,11 +1918,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
 			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>

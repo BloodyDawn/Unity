@@ -1421,7 +1421,6 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
@@ -1442,6 +1441,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1474,7 +1477,6 @@
 				<mul stat="DanceMpConsumeRate" val="0.95" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
 			<effect name="PAtk">
@@ -1494,6 +1496,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1940,7 +1946,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.33" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1982,7 +1991,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -2007,6 +2015,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2461,7 +2473,6 @@
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
-				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>10</amount>
@@ -2477,6 +2488,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

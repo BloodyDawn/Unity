@@ -835,7 +835,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.7" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -859,9 +862,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.7" />
 			</effect>
 			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1211,7 +1217,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#pmAtkSpd" />
-				<mul stat="pAtkSpd" val="#pmAtkSpd" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -1219,6 +1224,13 @@
 					<value level="2">10</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1933,7 +1945,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.5" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

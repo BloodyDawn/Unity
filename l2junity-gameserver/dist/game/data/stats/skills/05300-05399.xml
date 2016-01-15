@@ -4381,13 +4381,20 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Grow">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">50</value>
 					<value level="2">100</value>
 					<value level="3">200</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">33</value>
+					<value level="2">33</value>
+					<value level="3">50</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

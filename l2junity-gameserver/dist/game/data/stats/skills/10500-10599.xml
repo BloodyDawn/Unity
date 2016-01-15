@@ -47,9 +47,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.25">
-					<using kind="DAGGER" />
-				</mul>
 				<mul stat="blowRate" val="1.05" />
 				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
@@ -79,6 +76,13 @@
 					<item>DAGGER</item>
 				</weaponType>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>25</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="10502" levels="10" name="Superior Dual Dagger Mastery">
@@ -104,9 +108,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.25">
-					<using kind="DUALDAGGER" />
-				</mul>
 				<mul stat="blowRate" val="1.05" />
 				<add stat="STR" val="2" />
 			</effect>
@@ -131,6 +132,13 @@
 			<effect name="Accuracy">
 				<amount>8</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>25</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>DUALDAGGER</item>
 				</weaponType>
@@ -922,10 +930,13 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.77" />
 				<mul stat="mAtkSpd" val="0.77" />
 			</effect>
 			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1118,7 +1129,10 @@
 		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2389,10 +2403,13 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.77" />
 				<mul stat="mAtkSpd" val="0.77" />
 			</effect>
 			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>

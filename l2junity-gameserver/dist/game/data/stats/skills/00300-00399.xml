@@ -1337,7 +1337,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<mul stat="pAtkSpd" val="0.8" />
 				<power>1</power>
 			</effect>
 			<effect name="Speed">
@@ -1356,6 +1355,10 @@
 				<amount>-4</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="340" levels="1" name="Riposte Stance">
@@ -1371,7 +1374,6 @@
 				<add stat="reflectDam" val="30" />
 				<add stat="reflectSkillPhysic" val="30" />
 				<add stat="reflectSkillMagic" val="30" />
-				<mul stat="pAtkSpd" val="0.8" />
 				<power>1</power>
 			</effect>
 			<effect name="Speed">
@@ -1381,6 +1383,10 @@
 			<effect name="Accuracy">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2980,7 +2986,6 @@
 				<set stat="debuffImmunity" val="1" />
 				<mul stat="healEffect" val="2" />
 				<add stat="mAtkSpd" val="100" />
-				<add stat="pAtkSpd" val="100" />
 			</effect>
 			<effect name="PAtk">
 				<amount>500</amount>
@@ -3008,6 +3013,10 @@
 			</effect>
 			<effect name="Accuracy">
 				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

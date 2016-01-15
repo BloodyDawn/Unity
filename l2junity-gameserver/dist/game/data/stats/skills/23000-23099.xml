@@ -1556,9 +1556,12 @@
 		<!-- TODO: Add new operate condition check_abnormal -->
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.2" />
 			</effect>
 			<effect name="Speed">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1858,7 +1861,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="cAtk" val="1.2" />
 			</effect>
@@ -1867,6 +1869,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2066,7 +2072,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="cAtk" val="1.2" />
 			</effect>
@@ -2075,6 +2080,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

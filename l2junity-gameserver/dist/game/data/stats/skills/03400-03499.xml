@@ -361,7 +361,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.054" /> <!-- increase Atk. Spd. +5.4% -->
+				<!-- increase Atk. Spd. +5.4% -->
 				<!-- Increase P. Atk. +2.66% -->
 				<!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
@@ -374,6 +374,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -526,10 +530,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.1" />
 			</effect>
 			<effect name="PAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -15,7 +15,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<mul stat="pAtkSpd" val="#amount" />
 				<power>0.4</power>
 			</effect>
 			<effect name="PAtk">
@@ -42,6 +41,13 @@
 					<value level="2">4</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2112,7 +2118,6 @@
 			</effect>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.15" />
-				<mul stat="pAtkSpd" val="1.1" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -2128,6 +2133,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3121,7 +3130,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -3129,6 +3137,15 @@
 					<value level="2">-30</value>
 					<value level="3">-35</value>
 					<value level="4">-40</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+					<value level="4">-25</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

@@ -553,7 +553,6 @@
 				<percentage>80</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.95" />
 				<mul stat="rCrit" val="-0.1" />
 				<mul stat="cAtk" val="0.9" />
 			</effect>
@@ -568,6 +567,10 @@
 			<effect name="Accuracy">
 				<amount>-3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

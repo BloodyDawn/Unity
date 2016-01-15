@@ -275,12 +275,21 @@
 				<add stat="rCrit" val="45">
 					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 				</add>
-				<mul stat="pAtkSpd" val="0.85">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>45</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+					<item> DUAL</item>
+					<item> DUALFIST</item>
+					<item> POLE</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-15</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>

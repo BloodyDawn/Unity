@@ -297,7 +297,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
@@ -308,6 +307,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -402,7 +405,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
@@ -413,6 +415,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -508,7 +514,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 			</effect>
@@ -517,6 +522,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -811,7 +820,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -820,6 +828,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1121,7 +1133,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -1130,6 +1141,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1535,7 +1550,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 			</effect>
@@ -1545,6 +1559,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

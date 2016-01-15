@@ -444,11 +444,14 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.5" />
 				<mul stat="mAtkSpd" val="1.5" />
 				<mul stat="physicalSkillPower" val="1.5" />
 			</effect>
 			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>

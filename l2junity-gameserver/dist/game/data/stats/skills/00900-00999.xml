@@ -634,12 +634,15 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.8" />
 				<power>230</power>
 			</effect>
 			<effect name="Speed">
 				<amount>-70</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -911,7 +914,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
@@ -937,6 +939,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4311,9 +4317,16 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#amount" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">3</value>
 					<value level="2">4</value>
@@ -4681,13 +4694,20 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="#amount" />
-				<mul stat="pAtkSpd" val="#amount" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">10</value>
 					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

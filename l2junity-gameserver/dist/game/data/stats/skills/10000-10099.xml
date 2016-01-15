@@ -1588,9 +1588,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd">
-					<using kind="SWORD, BLUNT" />
-				</mul>
 				<add stat="rCrit" val="#cAtkAdd">
 					<using kind="SWORD" />
 				</add>
@@ -1633,6 +1630,19 @@
 					<value level="4">10</value>
 				</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+				</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>
 					<item> BLUNT</item>
@@ -1777,7 +1787,6 @@
 		<toggleGroupId>4</toggleGroupId>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.15" />
 				<add stat="rCrit" val="50" />
 				<mul stat="cAtk" val="1.15" />
 			</effect>
@@ -1793,6 +1802,10 @@
 			<effect name="Speed">
 				<amount>10</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1819,7 +1832,6 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.8" />
 			</effect>
 			<effect name="PAtk">
@@ -1827,6 +1839,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MAtk">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -4380,9 +4396,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="debuffVuln" val="#debuffVuln" />
-				<mul stat="pAtkSpd" val="#pAtkSpd">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -4430,6 +4443,19 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
@@ -4465,9 +4491,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd">
-					<using kind="SWORD,BLUNT" />
-				</mul>
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -4519,6 +4542,19 @@
 					<value level="4">10</value>
 				</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+				</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>
 					<item>BLUNT</item>

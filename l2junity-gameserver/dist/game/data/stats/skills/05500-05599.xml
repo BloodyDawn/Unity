@@ -430,7 +430,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -443,6 +442,10 @@
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1822,7 +1825,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.77" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1898,7 +1904,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.32" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>32</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2030,7 +2039,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
@@ -2038,6 +2046,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2222,7 +2234,10 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="mAtkSpd" val="0.77" />
-				<mul stat="pAtkSpd" val="0.9" />
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

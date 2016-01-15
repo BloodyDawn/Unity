@@ -152,7 +152,6 @@
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="regMp" val="1.0557" />
 				<add stat="maxMp" val="#maxMp" />
 			</effect>
@@ -161,6 +160,15 @@
 					<value level="1">0</value>
 					<value level="2">0</value>
 					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
 					<value level="4">5.57</value>
 				</amount>
 				<mode>PER</mode>
@@ -189,7 +197,6 @@
 				<add stat="DEX" val="#base" />
 				<add stat="rCrit" val="#rCrit" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="regMp" val="1.0557" />
 				<add stat="maxMp" val="#maxMp" />
 			</effect>
@@ -207,6 +214,15 @@
 					<value level="1">0</value>
 					<value level="2">0</value>
 					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
 					<value level="4">5.57</value>
 				</amount>
 				<mode>PER</mode>
@@ -465,7 +481,6 @@
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base" />
 				<mul stat="magicSuccRes" val="1.02" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -489,6 +504,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13014" levels="4" name="Moirai Light Armor Set">
@@ -507,7 +531,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="#base" />
 				<sub stat="CON" val="#base" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -533,6 +556,15 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -860,7 +892,6 @@
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base1" />
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -886,6 +917,15 @@
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">6</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2227,7 +2267,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="1" />
 				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -2261,6 +2300,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13075" levels="4" name="Set Effect - Immortal Light Armor 2 Piece (Enchant Type)">
@@ -2285,7 +2333,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
 				<mul stat="healEffect" val="#healEffect" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -2312,6 +2359,15 @@
 				<amount>155</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13076" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Assassin Type)">
@@ -2334,7 +2390,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="2" />
 				<add stat="STR" val="-1" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -2377,6 +2432,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13077" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Enchant Type)">
@@ -2404,7 +2468,6 @@
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
@@ -2439,6 +2502,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13078" levels="4" name="Set Effect - Seraph Light Armor 2 Piece (Assassin Type)">
@@ -2464,7 +2536,6 @@
 				<add stat="STR" val="-2" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -2498,6 +2569,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13079" levels="4" name="Set Effect - Seraph Light Armor 2 Piece (Enchant Type)">
@@ -2525,7 +2605,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="fireRes" val="#elements" />
@@ -2565,6 +2644,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13080" levels="4" name="Set Effect - Eternal Light Armor 2 Piece (Assassin Type)">
@@ -2589,7 +2677,6 @@
 				<add stat="DEX" val="3" />
 				<add stat="STR" val="-1" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -2632,6 +2719,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13081" levels="4" name="Set Effect - Eternal Light Armor 2 Piece (Enchant Type)">
@@ -2659,7 +2755,6 @@
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<add stat="maxHp" val="#maxHp" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -2692,6 +2787,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13082" levels="4" name="Set Effect - R99 Rare Light Armor 2 Piece (Assassin Type)">
@@ -2714,7 +2818,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="4" />
 				<add stat="STR" val="-2" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
@@ -2750,6 +2853,15 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">3</value>
+					<value level="3">3</value>
+					<value level="4">13</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13083" levels="4" name="Set Effect - R99 Rare Light Armor 2 Piece (Enchant Type)">
@@ -2773,7 +2885,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="4" />
 				<add stat="CON" val="-2" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="maxHp" val="#maxHp" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
@@ -2816,6 +2927,15 @@
 					<value level="4">255</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">3</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
