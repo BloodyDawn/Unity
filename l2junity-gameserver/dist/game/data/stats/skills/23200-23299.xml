@@ -1482,7 +1482,6 @@
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<!-- Counter Critical -->
-				<mul stat="defCritDamage" val="0.7" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
@@ -1491,6 +1490,10 @@
 				<minDamage>300</minDamage>
 				<skillId>6059</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3071,7 +3074,6 @@
 		<for>
 			<effect name="TriggerSkillByDamage">
 				<!-- Counter Critical -->
-				<mul stat="defCritDamage" val="0.7" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
@@ -3080,6 +3082,10 @@
 				<minDamage>300</minDamage>
 				<skillId>6059</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

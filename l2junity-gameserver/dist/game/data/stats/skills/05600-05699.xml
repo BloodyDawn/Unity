@@ -295,9 +295,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<sub stat="defCritDamageAdd" val="86"> <!-- critical damage is decreased by 86 -->
-					<using kind="LIGHT" />
-				</sub>
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>2</amount>
@@ -312,6 +309,13 @@
 					<value level="2">2.5</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-86</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -4034,7 +4038,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.85" />
-				<mul stat="defCritDamage" val="0.85" />
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

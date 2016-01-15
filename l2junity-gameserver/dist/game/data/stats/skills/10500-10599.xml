@@ -1719,8 +1719,11 @@
 			</effect>
 			<effect name="Debuff">
 				<!-- TODO check this value since multiple levels have been added -->
-				<mul stat="defCritDamage" val="1.40" />
 				<mul stat="maxRecoverableHp" val="0.50" />
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2093,8 +2096,11 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="defCritDamage" val="1.35" />
 				<mul stat="defCritRate" val="#defCritRate" />
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

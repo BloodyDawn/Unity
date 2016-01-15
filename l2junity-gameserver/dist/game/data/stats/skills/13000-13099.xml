@@ -2034,7 +2034,6 @@
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
 				<add stat="earthRes" val="#elements" />
-				<add stat="defCritDamageAdd" val="#defCritDamageAdd" />
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -2069,6 +2068,15 @@
 					<value level="2">0</value>
 					<value level="3">0</value>
 					<value level="4">96</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">281</value>
+					<value level="4">281</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

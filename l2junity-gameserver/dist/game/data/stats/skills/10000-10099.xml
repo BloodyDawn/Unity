@@ -100,7 +100,6 @@
 				<add stat="maxHp" val="6883">
 					<using kind="HEAVY" />
 				</add>
-				<mul stat="defCritDamage" val="0.65" />
 				<add stat="STR" val="2" />
 			</effect>
 			<effect name="CubicMastery">
@@ -134,6 +133,10 @@
 			<effect name="MpRegen">
 				<amount>8.4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -499,7 +502,6 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="defCritDamage" val="1.1" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-10</amount>
@@ -508,6 +510,10 @@
 			<effect name="PhysicalEvasion">
 				<amount>-2</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1989,10 +1995,13 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="defCritDamage" val="0.85" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2018,10 +2027,13 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="defCritDamage" val="0.9" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4416,7 +4428,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Buff">
-				<mul stat="defCritDamage" val="1.35" />
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

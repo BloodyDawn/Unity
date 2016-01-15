@@ -1825,9 +1825,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="defCritDamage" val="#defCritDamage">
-					<using kind="HEAVY" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1885,6 +1882,66 @@
 					<value level="52">172.6</value>
 				</amount>
 				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-15</value>
+					<value level="3">-15</value>
+					<value level="4">-15</value>
+					<value level="5">-15</value>
+					<value level="6">-15</value>
+					<value level="7">-15</value>
+					<value level="8">-15</value>
+					<value level="9">-15</value>
+					<value level="10">-15</value>
+					<value level="11">-15</value>
+					<value level="12">-15</value>
+					<value level="13">-15</value>
+					<value level="14">-15</value>
+					<value level="15">-15</value>
+					<value level="16">-25</value>
+					<value level="17">-25</value>
+					<value level="18">-25</value>
+					<value level="19">-25</value>
+					<value level="20">-25</value>
+					<value level="21">-25</value>
+					<value level="22">-25</value>
+					<value level="23">-25</value>
+					<value level="24">-25</value>
+					<value level="25">-25</value>
+					<value level="26">-25</value>
+					<value level="27">-25</value>
+					<value level="28">-25</value>
+					<value level="29">-25</value>
+					<value level="30">-25</value>
+					<value level="31">-25</value>
+					<value level="32">-25</value>
+					<value level="33">-25</value>
+					<value level="34">-25</value>
+					<value level="35">-25</value>
+					<value level="36">-25</value>
+					<value level="37">-35</value>
+					<value level="38">-35</value>
+					<value level="39">-35</value>
+					<value level="40">-35</value>
+					<value level="41">-35</value>
+					<value level="42">-35</value>
+					<value level="43">-35</value>
+					<value level="44">-35</value>
+					<value level="45">-35</value>
+					<value level="46">-35</value>
+					<value level="47">-35</value>
+					<value level="48">-35</value>
+					<value level="49">-35</value>
+					<value level="50">-35</value>
+					<value level="51">-35</value>
+					<value level="52">-35</value>
+				</amount>
+				<mode>PER</mode>
 				<armorType>
 					<item>HEAVY</item>
 				</armorType>

@@ -78,7 +78,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="defCritDamage" val="0.95" />
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

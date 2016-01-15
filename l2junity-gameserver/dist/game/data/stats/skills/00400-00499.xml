@@ -3247,9 +3247,6 @@
 				<mul stat="defCritRate" val="0.95">
 					<using kind="LIGHT" />
 				</mul>
-				<mul stat="defCritDamage" val="0.95">
-					<using kind="LIGHT" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -3364,6 +3361,13 @@
 					<value level="51">6</value>
 				</amount>
 				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-5</amount>
+				<mode>PER</mode>
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>
