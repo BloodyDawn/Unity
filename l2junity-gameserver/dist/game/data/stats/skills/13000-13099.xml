@@ -82,7 +82,6 @@
 				<add stat="STR" val="#base" />
 				<sub stat="DEX" val="#base" />
 				<add stat="accCombat" val="#accCombat" />
-				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
@@ -106,6 +105,15 @@
 				<amount>
 					<value level="1">0</value>
 					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-100</value>
+					<value level="2">-100</value>
 					<value level="3">5.57</value>
 					<value level="4">5.57</value>
 				</amount>
@@ -252,7 +260,6 @@
 				<add stat="INT" val="#base" />
 				<sub stat="MEN" val="#base1" />
 				<add stat="WIT" val="#base" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="1.0557" />
@@ -275,6 +282,15 @@
 					<value level="4">8.47</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -477,7 +493,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="#base" />
 				<sub stat="CON" val="#base" />
-				<mul stat="moveSpeed" val="1.03" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -500,6 +515,10 @@
 					<value level="3">4.26</value>
 					<value level="4">4.26</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -567,7 +586,6 @@
 				<add stat="CON" val="#base" />
 				<mul stat="pDef" val="1.0847" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
 				<add stat="fireRes" val="#resist" />
@@ -605,6 +623,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13017" levels="4" name="Vorpal Leather Armor Set">
@@ -630,7 +657,6 @@
 				<sub stat="CON" val="#base2" />
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
-				<mul stat="moveSpeed" val="#runSpd" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -652,6 +678,15 @@
 					<value level="2">0</value>
 					<value level="3">5.57</value>
 					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">3</value>
+					<value level="3">3</value>
+					<value level="4">3</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -677,7 +712,6 @@
 				<sub stat="INT" val="#base" />
 				<sub stat="MEN" val="#base" />
 				<add stat="WIT" val="#base1" />
-				<add stat="moveSpeed" val="7" />
 				<add stat="maxMp" val="#maxMp" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="#regMp" />
@@ -703,6 +737,10 @@
 					<value level="4">8.7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -793,7 +831,6 @@
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base1" />
-				<mul stat="moveSpeed" val="1.03" />
 				<add stat="rCrit" val="#rCrit" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
@@ -817,6 +854,10 @@
 					<value level="3">6.59</value>
 					<value level="4">6.59</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -843,7 +884,6 @@
 				<sub stat="MEN" val="#base" />
 				<add stat="WIT" val="#base" />
 				<add stat="maxMp" val="#maxMp" />
-				<add stat="moveSpeed" val="7" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
@@ -869,6 +909,10 @@
 					<value level="4">10</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

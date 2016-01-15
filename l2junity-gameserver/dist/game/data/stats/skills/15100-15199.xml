@@ -137,7 +137,10 @@
 		<itemConsumeId>34903</itemConsumeId> <!-- Mysterious Shadow -->
 		<for>
 			<effect name="Hide">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

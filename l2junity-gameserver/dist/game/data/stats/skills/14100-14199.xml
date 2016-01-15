@@ -1536,7 +1536,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1745,7 +1748,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

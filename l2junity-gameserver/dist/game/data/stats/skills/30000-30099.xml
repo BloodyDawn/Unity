@@ -170,7 +170,10 @@
 			<effect name="Debuff">
 				<!-- mul stat="stormSignBonus" val="1.10" / -->
 				<mul stat="mDef" val="0.7" />
-				<sub stat="moveSpeed" val="70" />
+			</effect>
+			<effect name="Speed">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -396,7 +399,10 @@
 			<effect name="Debuff">
 				<!-- mul stat="stormSignBonus" val="1.10" / -->
 				<mul stat="mDef" val="0.5" />
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -664,7 +670,10 @@
 				<range>400</range>
 			</effect>
 			<effect name="Hide">
-				<add stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1028,7 +1037,6 @@
 			<effect name="Buff">
 				<mul stat="defCritDamage" val="#defCrit" />
 				<mul stat="defMCritDamage" val="#defCrit" />
-				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Unconfirmed -->
@@ -1048,6 +1056,15 @@
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>99</max>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">7</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1154,7 +1171,10 @@
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
 				<mul stat="mAtkSpd" val="0.70" />
-				<sub stat="moveSpeed" val="180" />
+			</effect>
+			<effect name="Speed">
+				<amount>-180</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1180,7 +1200,6 @@
 			<effect name="Buff">
 				<mul stat="defCritDamage" val="0.5" />
 				<mul stat="defMCritDamage" val="0.5" />
-				<add stat="moveSpeed" val="70" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Unconfirmed -->
@@ -1189,6 +1208,10 @@
 				<targetType>ONE</targetType>
 				<skillId>30027</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Speed">
+				<amount>70</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1220,7 +1243,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#moveSpeed" />
 			</effect>
 			<effect name="DefenceTrait">
 				<KNOCKDOWN>
@@ -1243,6 +1265,13 @@
 					<value level="1">30</value>
 					<value level="2">40</value>
 				</AGGRESSION>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">70</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1279,7 +1308,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="20" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

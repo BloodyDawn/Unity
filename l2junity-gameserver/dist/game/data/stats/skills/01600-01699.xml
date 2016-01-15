@@ -490,9 +490,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
+			</effect>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<endEffects>

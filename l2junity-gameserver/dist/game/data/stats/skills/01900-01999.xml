@@ -132,9 +132,12 @@
 			<effect name="Buff">
 				<add stat="rEvas" val="90" />
 				<add stat="mEvas" val="90" />
-				<add stat="moveSpeed" val="50" />
 				<add stat="pAtkSpd" val="#bonus" />
 				<add stat="mAtkSpd" val="#bonus" />
+			</effect>
+			<effect name="Speed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1898,7 +1901,10 @@
 		</cond>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.1" />
+			</effect>
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

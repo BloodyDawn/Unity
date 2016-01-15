@@ -2439,7 +2439,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#speed" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">33</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

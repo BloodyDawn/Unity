@@ -1894,7 +1894,14 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-40</value>
+					<value level="2">-60</value>
+					<value level="3">-80</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2849,11 +2856,14 @@
 				<mul stat="rCrit" val="-0.1" />
 				<mul stat="mCritRate" val="0.9" />
 				<mul stat="pDef" val="0.9" />
-				<mul stat="moveSpeed" val="0.9" />
 				<sub stat="rEvas" val="6" />
 			</effect>
 			<effect name="MAtk">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2936,11 +2946,14 @@
 				<mul stat="mAtkSpd" val="0.92" />
 				<mul stat="rCrit" val="-0.08" />
 				<mul stat="mCritRate" val="0.92" />
-				<mul stat="moveSpeed" val="0.92" />
 				<sub stat="accCombat" val="12" />
 			</effect>
 			<effect name="MAtk">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3333,7 +3346,6 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Cancel Fear -->
@@ -3345,6 +3357,21 @@
 				<minDamage>1</minDamage>
 				<skillId>1703</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-40</value>
+					<value level="2">-45</value>
+					<value level="3">-50</value>
+					<value level="4">-55</value>
+					<value level="5">-60</value>
+					<value level="6">-65</value>
+					<value level="7">-70</value>
+					<value level="8">-70</value>
+					<value level="9">-70</value>
+					<value level="10">-70</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3417,7 +3444,6 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Cancel Fear -->
@@ -3429,6 +3455,22 @@
 				<minDamage>1</minDamage>
 				<skillId>1703</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-25</value>
+					<value level="2">-30</value>
+					<value level="3">-35</value>
+					<value level="4">-40</value>
+					<value level="5">-45</value>
+					<value level="6">-50</value>
+					<value level="7">-55</value>
+					<value level="8">-60</value>
+					<value level="9">-60</value>
+					<value level="10">-60</value>
+					<value level="11">-60</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3640,7 +3682,6 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Floating Blow -->
@@ -3652,6 +3693,15 @@
 				<minDamage>1</minDamage>
 				<chance>100</chance>
 				<targetType>SELF</targetType>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3820,10 +3870,13 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.6" />
 			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<power>200</power>
+			</effect>
+			<effect name="Speed">
+				<amount>-40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3878,10 +3931,13 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<power>160</power>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4353,7 +4409,6 @@
 			<effect name="Fear" />
 			<effect name="Root" />
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Cancel Fear -->
@@ -4365,6 +4420,10 @@
 				<minDamage>1</minDamage>
 				<skillId>1703</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4394,7 +4453,14 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-40</value>
+					<value level="2">-60</value>
+					<value level="3">-80</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4512,7 +4578,14 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-40</value>
+					<value level="2">-60</value>
+					<value level="3">-80</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

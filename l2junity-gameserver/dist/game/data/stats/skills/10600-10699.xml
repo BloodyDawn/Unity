@@ -64,8 +64,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pReuse" val="#pReuse" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -188,7 +196,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="#cAtk" />
-				<add stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

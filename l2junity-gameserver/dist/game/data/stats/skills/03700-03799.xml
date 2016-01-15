@@ -106,9 +106,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.16" />
 				<add stat="breath" val="33" />
 				<mul stat="regMp" val="1.0083" />
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -121,9 +124,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.16" />
 				<add stat="breath" val="33" />
 				<mul stat="regMp" val="1.0083" />
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -138,7 +144,10 @@
 			<effect name="Buff">
 				<add stat="breath" val="200" />
 				<mul stat="regMp" val="1.0724" />
-				<add stat="moveSpeed" val="7" />
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -151,9 +160,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="2.91" />
 				<add stat="breath" val="88" />
 				<mul stat="regMp" val="1.0208" />
+			</effect>
+			<effect name="Speed">
+				<amount>2.91</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -166,9 +178,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.75" />
 				<add stat="breath" val="50" />
 				<mul stat="regMp" val="1.0125" />
+			</effect>
+			<effect name="Speed">
+				<amount>1.75</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -182,7 +197,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.0724" />
-				<add stat="moveSpeed" val="7" />
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -195,8 +213,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="2.91" />
 				<mul stat="regHp" val="1.0208" />
+			</effect>
+			<effect name="Speed">
+				<amount>2.91</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -209,8 +230,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.16" />
 				<mul stat="regHp" val="1.0083" />
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -223,8 +247,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.16" />
 				<mul stat="regHp" val="1.0083" />
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -237,8 +264,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.75" />
 				<mul stat="regHp" val="1.0125" />
+			</effect>
+			<effect name="Speed">
+				<amount>1.75</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -568,11 +598,14 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.0133" />
-				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>8.33</PARALYZE>
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -588,10 +621,13 @@
 				<add stat="cancelVuln" val="8.33" />
 				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="pDef" val="1.0333" />
-				<add stat="moveSpeed" val="2.91" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>20</PARALYZE>
+			</effect>
+			<effect name="Speed">
+				<amount>2.91</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -605,11 +641,14 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.0133" />
-				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>8.33</PARALYZE>
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -623,11 +662,14 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.02" />
-				<add stat="moveSpeed" val="1.75" />
 				<sub stat="cancel" val="13" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>12.5</PARALYZE>
+			</effect>
+			<effect name="Speed">
+				<amount>1.75</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1406,7 +1448,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 				<add stat="weightPenalty" val="960" />
 			</effect>
@@ -1416,6 +1457,10 @@
 			<effect name="MAtk">
 				<amount>0.41</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1430,13 +1475,16 @@
 			<effect name="Buff">
 				<sub stat="cancel" val="21" />
 				<add stat="weightPenalty" val="8159" />
-				<mul stat="moveSpeed" val="1.0991" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>20.83</SHOCK>
 			</effect>
 			<effect name="MAtk">
 				<amount>16.03</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>9.91</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1450,7 +1498,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 				<add stat="weightPenalty" val="960" />
 			</effect>
@@ -1460,6 +1507,10 @@
 			<effect name="MAtk">
 				<amount>0.41</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>1.16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1472,7 +1523,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="1.175" />
 				<sub stat="cancel" val="13" />
 				<add stat="weightPenalty" val="1440" />
 			</effect>
@@ -1482,6 +1532,10 @@
 			<effect name="MAtk">
 				<amount>0.62</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>1.175</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

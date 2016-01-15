@@ -204,10 +204,24 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="regHp" val="12" />
 				<add stat="regHp" val="6" />
 				<add stat="STR" val="2" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">17</value>
+					<value level="2">18</value>
+					<value level="3">19</value>
+					<value level="4">20</value>
+					<value level="5">22</value>
+					<value level="6">23</value>
+					<value level="7">24</value>
+					<value level="8">25</value>
+					<value level="9">26</value>
+					<value level="10">27</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -484,11 +498,14 @@
 			<effect name="Lethal">
 				<halfLethal>15</halfLethal>
 			</effect>
+			<effect name="Speed">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 		<!-- TODO : Move to effects after A3 skills rework -->
 		<selfEffects>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="40" />
 				<add stat="rEvas" val="5" />
 				<mul stat="cAtk" val="1.3">
 					<player behind="true" />
@@ -875,9 +892,12 @@
 		<trait>PARALYZE</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.77" />
 				<mul stat="pAtkSpd" val="0.77" />
 				<mul stat="mAtkSpd" val="0.77" />
+			</effect>
+			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<endEffects>
@@ -1274,7 +1294,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="sDef" val="0.5" />
 				<mul stat="pDef" val="0.9" />
 				<mul stat="mDef" val="0.9" />
@@ -1282,6 +1301,10 @@
 			<effect name="Mute" />
 			<effect name="PAtk">
 				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1393,9 +1416,20 @@
 		<reuseDelay>60000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="regHp" val="#regHp" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">66</value>
+					<value level="2">66</value>
+					<value level="3">66</value>
+					<value level="4">66</value>
+					<value level="5">68</value>
+					<value level="6">70</value>
+					<value level="7">72</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1458,7 +1492,10 @@
 				<chance>100</chance>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="70" />
+			</effect>
+			<effect name="Speed">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1642,7 +1679,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="rEvas" val="40" />
 				<mul stat="blowRate" val="#blowRate" />
 				<sub stat="cancelVuln" val="80" />
@@ -1667,6 +1703,13 @@
 					<value level="1">75</value>
 					<value level="2">80</value>
 				</amount>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">34</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1869,9 +1912,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 			<effect name="Mute" />
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="10538" levels="4" name="Weakness Critical">
@@ -2013,7 +2059,10 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="180" />
+			</effect>
+			<effect name="Speed">
+				<amount>-180</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2189,8 +2238,11 @@
 				<power>10</power>
 			</effect>
 			<effect name="SilentMove">
-				<mul stat="moveSpeed" val="1.2" />
 				<mul stat="pDef" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2261,9 +2313,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.77" />
 				<mul stat="pAtkSpd" val="0.77" />
 				<mul stat="mAtkSpd" val="0.77" />
+			</effect>
+			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<endEffects>
@@ -2549,7 +2604,10 @@
 				<chance>30</chance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.77" />
+			</effect>
+			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2793,7 +2851,6 @@
 		<for>
 			<effect name="Hide" />
 			<effect name="Buff">
-				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="regHp" val="1.15" />
 			</effect>
 			<effect name="DispelByCategory">
@@ -2803,6 +2860,10 @@
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_PHYSICALLY,3</dispel>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

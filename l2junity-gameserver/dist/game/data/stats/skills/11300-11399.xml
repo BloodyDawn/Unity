@@ -311,7 +311,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="34" />
+			</effect>
+			<effect name="Speed">
+				<amount>34</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -910,7 +913,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1283,7 +1289,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1656,7 +1665,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2317,7 +2329,14 @@
 		<reuseDelay>4000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2366,7 +2385,10 @@
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
 				<mul stat="mAtkSpd" val="0.70" />
-				<sub stat="moveSpeed" val="180" />
+			</effect>
+			<effect name="Speed">
+				<amount>-180</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2812,7 +2834,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3102,7 +3127,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

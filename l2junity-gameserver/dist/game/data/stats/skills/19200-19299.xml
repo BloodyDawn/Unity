@@ -29,7 +29,10 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="3" />
 				<add stat="rEvas" val="8" />
-				<add stat="moveSpeed" val="20" />
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -53,7 +56,10 @@
 			<effect name="Buff">
 				<mul stat="mDef" val="3" />
 				<add stat="mEvas" val="8" />
-				<add stat="moveSpeed" val="20" />
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -562,7 +568,13 @@
 		</cond>
 		<for>
 			<effect name="Hide">
-				<add stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

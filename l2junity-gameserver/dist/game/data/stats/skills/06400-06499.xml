@@ -114,8 +114,11 @@
 				<power>13688</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<mul stat="moveSpeed" val="0.8" />
 				<power>58</power>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -143,7 +146,10 @@
 				<power>13688</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.3" />
+			</effect>
+			<effect name="Speed">
+				<amount>-70</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -171,9 +177,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<add stat="moveSpeed" val="20" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -1320,7 +1320,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -1329,6 +1328,10 @@
 			<effect name="MAtk">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1354,11 +1357,14 @@
 			<effect name="Buff">
 				<add stat="rCrit" val="15" />
 				<add stat="mCritRate" val="2" />
-				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1384,7 +1390,10 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
-				<add stat="moveSpeed" val="20" />
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

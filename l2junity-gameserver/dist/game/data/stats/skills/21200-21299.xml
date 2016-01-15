@@ -586,8 +586,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Transformation">
-				<mul stat="moveSpeed" val="1.5" />
 				<transformationId>20004</transformationId>
+			</effect>
+			<effect name="Speed">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -634,7 +637,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="7" />
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

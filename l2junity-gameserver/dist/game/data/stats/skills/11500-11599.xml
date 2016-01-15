@@ -836,9 +836,12 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.95" />
 				<mul stat="pAtkSpd" val="0.95" />
 				<mul stat="mAtkSpd" val="0.95" />
+			</effect>
+			<effect name="Speed">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<endEffects>
@@ -1072,7 +1075,6 @@
 				<mul stat="pAtkSpd" val="1.20" />
 				<mul stat="mDef" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
-				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -1100,6 +1102,15 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-10</value>
+					<value level="3">-5</value>
+					<value level="4">0</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1296,7 +1307,6 @@
 				<add stat="accCombat" val="#accCombat" />
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1305,6 +1315,15 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">34</value>
+					<value level="2">35</value>
+					<value level="3">36</value>
+					<value level="4">37</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1446,7 +1465,6 @@
 				<mul stat="rCrit" val="1" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="moveSpeed" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -1462,6 +1480,10 @@
 			<effect name="MAtk">
 				<amount>16</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1492,7 +1514,6 @@
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="moveSpeed" val="8" />
 				<mul stat="mDef" val="1.14" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -1515,6 +1536,10 @@
 			<effect name="MAtk">
 				<amount>40</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1691,7 +1716,6 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="accCombat" val="4" />
 				<add stat="rEvas" val="3" />
-				<add stat="moveSpeed" val="20" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
 				<mul stat="mReuse" val="0.90" />
@@ -1703,6 +1727,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</slot>
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1920,7 +1948,6 @@
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<mul stat="moveSpeed" val="#runSpd" />
 				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -1933,6 +1960,21 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<targetType>SELF</targetType>
 				<chance>100</chance>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-30</value>
+					<value level="3">-40</value>
+					<value level="4">-50</value>
+					<value level="5">-60</value>
+					<value level="6">-70</value>
+					<value level="7">-80</value>
+					<value level="8">-80</value>
+					<value level="9">-80</value>
+					<value level="10">-80</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2090,11 +2132,22 @@
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<add stat="pDef" val="#def" />
 				<add stat="mDef" val="#def" />
-				<mul stat="moveSpeed" val="#runSpd" />
 				<transformationId>500</transformationId>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+					<value level="5">60</value>
+					<value level="6">60</value>
+					<value level="7">60</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2121,12 +2174,15 @@
 		<for>
 			<effect name="Untargetable" />
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<mul stat="moveSpeed" val="0.5" />
 				<transformationId>505</transformationId>
 			</effect>
 			<effect name="DeleteHate" />
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
+			</effect>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2179,7 +2235,6 @@
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
 			<effect name="Transformation"> <!-- TODO check effects -->
-				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />
 				<add stat="pDef" val="#def" />
@@ -2193,6 +2248,17 @@
 			<effect name="MAtk">
 				<amount>-80</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">44</value>
+					<value level="2">44</value>
+					<value level="3">44</value>
+					<value level="4">48</value>
+					<value level="5">52</value>
+					<value level="6">56</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2302,13 +2368,16 @@
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.5" />
 				<mul stat="mDef" val="0.5" />
-				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3035,8 +3104,11 @@
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation">
-				<mul stat="moveSpeed" val="0.80" />
 				<transformationId>500;501;502;503;504</transformationId>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3399,7 +3471,6 @@
 				<mul stat="pAtkSpd" val="1.20" />
 				<mul stat="mDef" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
-				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -3428,6 +3499,15 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-10</value>
+					<value level="3">-5</value>
+					<value level="4">0</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3602,7 +3682,6 @@
 				<add stat="accCombat" val="#accCombat" />
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -3611,6 +3690,15 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">34</value>
+					<value level="2">35</value>
+					<value level="3">36</value>
+					<value level="4">37</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3737,7 +3825,6 @@
 				<mul stat="rCrit" val="1" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="moveSpeed" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -3753,6 +3840,10 @@
 			<effect name="MAtk">
 				<amount>16</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3779,7 +3870,6 @@
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="moveSpeed" val="8" />
 				<mul stat="mDef" val="1.14" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -3802,6 +3892,10 @@
 			<effect name="MAtk">
 				<amount>40</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

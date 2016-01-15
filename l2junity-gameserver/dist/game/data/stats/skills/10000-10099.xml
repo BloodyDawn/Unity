@@ -542,7 +542,10 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="70" />
+			</effect>
+			<effect name="Speed">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1505,9 +1508,6 @@
 				<mul stat="pDef" val="#def">
 					<using kind="SWORD, BLUNT" />
 				</mul>
-				<add stat="moveSpeed" val="#runSpd">
-					<using kind="SWORD, BLUNT" />
-				</add>
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD, BLUNT" />
 				</add>
@@ -1520,6 +1520,15 @@
 				<mul stat="cAtk" val="#cAtk">
 					<using kind="BLUNT" />
 				</mul>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1663,7 +1672,6 @@
 				<mul stat="pAtkSpd" val="1.15" />
 				<add stat="rCrit" val="50" />
 				<mul stat="cAtk" val="1.15" />
-				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Rage Aura -->
@@ -1673,6 +1681,10 @@
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4072,7 +4084,6 @@
 				<mul stat="pDef" val="#def" />
 				<mul stat="mDef" val="#def" />
 				<mul stat="debuffVuln" val="#debuffVuln" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -4085,6 +4096,15 @@
 				<mul stat="cAtk" val="#cAtk">
 					<using kind="SWORD,BLUNT" />
 				</mul>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4123,7 +4143,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
 				<mul stat="mDef" val="#def" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -4145,6 +4164,15 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -1200,7 +1200,6 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.5" />
-				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="MagicalMpConsumeRate" val="3" />
 				<mul stat="PhysicalMpConsumeRate" val="3" />
 				<mul stat="DanceMpConsumeRate" val="3" />
@@ -1212,6 +1211,10 @@
 				<mul stat="regHp" val="0.1" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2049,7 +2052,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3044,7 +3050,13 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">33</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3380,7 +3392,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -1251,7 +1251,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.0" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1272,7 +1275,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.0" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1647,7 +1653,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Hide">
-				<mul stat="moveSpeed" val="0.9" />
+			</effect>
+			<effect name="Speed">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

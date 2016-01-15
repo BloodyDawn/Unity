@@ -136,7 +136,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -302,7 +305,6 @@
 				<mul stat="pDef" val="0.95" />
 				<mul stat="mAtkSpd" val="1.05" />
 				<mul stat="pAtkSpd" val="1.05" />
-				<add stat="moveSpeed" val="5" />
 				<sub stat="rEvas" val="2" />
 			</effect>
 			<effect name="PAtk">
@@ -312,6 +314,10 @@
 			<effect name="MAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -838,7 +844,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -1959,13 +1959,16 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />
-				<mul stat="moveSpeed" val="0.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MAtk">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3789,7 +3792,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.2" />
-				<mul stat="moveSpeed" val="0.8" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
@@ -3797,6 +3799,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -4033,9 +4039,12 @@
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
 				<mul stat="mDef" val="0.6" />
-				<mul stat="moveSpeed" val="0.6" />
 				<mul stat="pAtkSpd" val="0.6" />
 				<mul stat="mAtkSpd" val="0.6" />
+			</effect>
+			<effect name="Speed">
+				<amount>-40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<pveEffects>

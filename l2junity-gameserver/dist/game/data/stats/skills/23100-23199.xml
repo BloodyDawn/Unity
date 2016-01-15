@@ -638,7 +638,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="20" />
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1480,7 +1483,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="20" />
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

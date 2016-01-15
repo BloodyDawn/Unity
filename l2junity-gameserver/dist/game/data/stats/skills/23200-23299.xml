@@ -1924,7 +1924,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1952,7 +1955,6 @@
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="moveSpeed" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="PAtk">
@@ -1962,6 +1964,10 @@
 			<effect name="MAtk">
 				<amount>16</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2093,7 +2099,6 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -2104,6 +2109,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2138,7 +2147,6 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2146,6 +2154,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2177,7 +2189,6 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2193,6 +2204,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2225,7 +2240,6 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<add stat="accCombat" val="4" />
-				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2238,6 +2252,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2438,7 +2456,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -2446,6 +2463,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SPEED_UP;AVOID_UP</slot>
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

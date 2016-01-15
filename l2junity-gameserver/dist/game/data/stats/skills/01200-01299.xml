@@ -204,7 +204,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">33</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3679,7 +3685,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -5395,7 +5404,6 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 			<effect name="PAtk">
@@ -5411,6 +5419,13 @@
 					<value level="2">16</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -6977,7 +6992,13 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">33</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -7239,7 +7260,10 @@
 				<power>150</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.5" />
+			</effect>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -7619,7 +7643,10 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

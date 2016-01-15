@@ -273,7 +273,6 @@
 			<effect name="#effectname1">
 				<mul stat="pAtkSpd" val="#attackAndSpeed" />
 				<mul stat="mAtkSpd" val="#attackAndSpeed" />
-				<add stat="moveSpeed" val="#attackAndSpeed" />
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
 			<effect name="DispelByCategory">
@@ -321,6 +320,16 @@
 					<value level="5">0</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1.2</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -579,10 +588,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Grow">
-				<mul stat="moveSpeed" val="1.22" />
 			</effect>
 			<effect name="HealPercent">
 				<power>20</power>
+			</effect>
+			<effect name="Speed">
+				<amount>22</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2380,7 +2392,6 @@
 				<sub stat="rEvas" val="#accCombatrEvas" />
 				<mul stat="pDef" val="#pDefmDef" />
 				<mul stat="mDef" val="#pDefmDef" />
-				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -2419,6 +2430,26 @@
 					<value level="13">-68</value>
 					<value level="14">-72</value>
 					<value level="15">-75</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-13</value>
+					<value level="4">-17</value>
+					<value level="5">-20</value>
+					<value level="6">-23</value>
+					<value level="7">-26</value>
+					<value level="8">-29</value>
+					<value level="9">-32</value>
+					<value level="10">-34</value>
+					<value level="11">-36</value>
+					<value level="12">-37</value>
+					<value level="13">-38</value>
+					<value level="14">-39</value>
+					<value level="15">-40</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2635,10 +2666,13 @@
 				<power>6335</power>
 				<chance>15</chance>
 			</effect>
+			<effect name="Speed">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="40" />
 				<chance>80</chance>
 			</effect>
 		</selfEffects>

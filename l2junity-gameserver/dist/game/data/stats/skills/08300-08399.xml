@@ -71,7 +71,7 @@
 				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="540" /> <!-- Max HP +540 -->
 				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
-				<add stat="moveSpeed" val="5" /> <!-- Increases Speed by 5 -->
+				<!-- Increases Speed by 5 -->
 				<mul stat="magicSuccRes" val="1.01" /> <!-- Resistance to magic damage by 1% -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -83,6 +83,10 @@
 			<effect name="PAtk">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -216,7 +220,7 @@
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Speed 15% -->
 				<mul stat="regMp" val="1.0557" /> <!-- MP Recovery Rate by 5.57% -->
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
-				<add stat="moveSpeed" val="7" /> <!-- Increases Speed by 7 -->
+				<!-- Increases Speed by 7 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -227,6 +231,10 @@
 			<effect name="MAtk">
 				<amount>8.47</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1913,7 +1921,7 @@
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +4.26% -->
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
-				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
+				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 				<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
@@ -1923,6 +1931,10 @@
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

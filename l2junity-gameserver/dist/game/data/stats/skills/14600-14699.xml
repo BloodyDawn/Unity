@@ -511,7 +511,10 @@
 				<power>100</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -544,7 +547,10 @@
 				<power>10000</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -835,7 +841,10 @@
 				<power>500</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1074,7 +1083,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
-				<mul stat="moveSpeed" val="1.05" />
 				<mul stat="pDef" val="0.95" />
 				<mul stat="mDef" val="0.9" />
 				<sub stat="rEvas" val="-2" />
@@ -1085,6 +1093,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

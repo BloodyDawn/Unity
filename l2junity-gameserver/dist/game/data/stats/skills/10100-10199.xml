@@ -41,7 +41,6 @@
 				<add stat="earthRes" val="#elemRes" />
 				<add stat="holyRes" val="#elemRes" />
 				<add stat="darkRes" val="#elemRes" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -54,6 +53,15 @@
 				<mul stat="cAtk" val="#cAtk">
 					<using kind="SWORD,BLUNT" />
 				</mul>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -93,7 +101,6 @@
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="pDef" val="#def" />
 				<mul stat="mDef" val="#def" />
-				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -106,6 +113,15 @@
 				<mul stat="cAtk" val="#cAtk">
 					<using kind="SWORD,BLUNT" />
 				</mul>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -223,7 +239,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -270,11 +289,14 @@
 				<mul stat="pAtkSpd" val="1.25" />
 				<add stat="rCrit" val="80" />
 				<mul stat="cAtk" val="1.25" />
-				<add stat="moveSpeed" val="20" />
 			</effect>
 			<effect name="PAtk">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -322,11 +344,14 @@
 			</effect>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
-				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -375,7 +400,6 @@
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
-				<add stat="moveSpeed" val="0.7" />
 				<mul stat="defCritRate" val="1.15" />
 			</effect>
 			<effect name="PAtk">
@@ -385,6 +409,10 @@
 			<effect name="MAtk">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>0.7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -434,7 +462,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
-				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -443,6 +470,10 @@
 			<effect name="MAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

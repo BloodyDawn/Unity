@@ -367,8 +367,11 @@
 				<power>213</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
-				<mul stat="moveSpeed" val="0.77" />
 				<power>55</power>
+			</effect>
+			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

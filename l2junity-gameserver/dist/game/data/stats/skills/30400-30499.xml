@@ -30,7 +30,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>
@@ -38,6 +37,13 @@
 					<value level="2">2</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">7</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

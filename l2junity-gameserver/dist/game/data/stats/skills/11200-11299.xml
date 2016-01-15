@@ -193,7 +193,10 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.95" />
+			</effect>
+			<effect name="Speed">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2133,7 +2136,10 @@
 		<for>
 			<effect name="PhysicalAttack" />
 			<effect name="Debuff">
-				<sub stat="moveSpeed" val="100" />
+			</effect>
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2816,7 +2822,6 @@
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="debuffVuln" val="0.90" />
 				<mul stat="defCritDamage" val="0.7" />
-				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2824,6 +2829,15 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-10</value>
+					<value level="3">-5</value>
+					<value level="4">0</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

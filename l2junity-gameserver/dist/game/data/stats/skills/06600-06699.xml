@@ -1347,7 +1347,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.5" />
+			</effect>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1402,7 +1405,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.1" />
+			</effect>
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1819,7 +1825,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2333,7 +2342,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2438,7 +2450,6 @@
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="moveSpeed" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="PAtk">
@@ -2448,6 +2459,10 @@
 			<effect name="MAtk">
 				<amount>16</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2635,7 +2650,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="40" />
+			</effect>
+			<effect name="Speed">
+				<amount>40</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2663,7 +2681,10 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="45" />
+			</effect>
+			<effect name="Speed">
+				<amount>45</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

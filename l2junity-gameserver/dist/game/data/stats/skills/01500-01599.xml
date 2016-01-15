@@ -160,7 +160,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -168,6 +167,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SPEED_UP;AVOID_UP</slot>
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -524,10 +527,13 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
 				<power>12</power>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2096,7 +2102,10 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2369,7 +2378,6 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -2377,6 +2385,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SPEED_UP;AVOID_UP</slot>
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2646,10 +2658,13 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="moveSpeed" val="0.5" />
 				<sub stat="accCombat" val="12" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3472,7 +3487,6 @@
 				<sub stat="rEvas" val="#rEvas" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -3487,6 +3501,13 @@
 					<value level="2">16</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -99,7 +99,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="7" /> <!-- Speed +7 -->
+				<!-- Speed +7 -->
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -309,8 +313,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="7" /> <!-- Speed +7 -->
+				<!-- Speed +7 -->
 				<mul stat="regHp" val="1.0526" /> <!-- HP Regeneration +5.26% -->
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -382,9 +390,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="7" /> <!-- Speed + 7 -->
+				<!-- Speed + 7 -->
 				<add stat="breath" val="200" /> <!-- Breath Gauge increased +200 -->
 				<mul stat="regMp" val="1.0526" /> <!-- MP Regeneration +5.26% -->
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -484,11 +496,15 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="1.08" /> <!-- P. Def. +8% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<add stat="moveSpeed" val="7" /> <!-- Speed +7 -->
+				<!-- Speed +7 -->
 				<sub stat="cancel" val="50" /> <!-- Small decrease in chance of spell interruption -->
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>50</PARALYZE>
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -834,7 +850,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- M. Atk +17% -->
-				<add stat="moveSpeed" val="7" /> <!-- Movement Speed +7 -->
+				<!-- Movement Speed +7 -->
 				<sub stat="cancel" val="50" /> <!-- Casting Cancel Probability -50% -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 			</effect>
@@ -844,6 +860,10 @@
 			<effect name="MAtk">
 				<amount>17</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1339,7 +1359,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1810,7 +1833,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

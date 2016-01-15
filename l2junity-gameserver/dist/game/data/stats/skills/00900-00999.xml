@@ -634,10 +634,13 @@
 		<trait>POISON</trait>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<mul stat="moveSpeed" val="0.3" />
 				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.8" />
 				<power>230</power>
+			</effect>
+			<effect name="Speed">
+				<amount>-70</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<pveEffects>
@@ -910,7 +913,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="moveSpeed" val="8" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
@@ -922,6 +924,10 @@
 			<effect name="MAtk">
 				<amount>16</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1263,7 +1269,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Hide">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2657,7 +2666,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="66" />
+			</effect>
+			<effect name="Speed">
+				<amount>66</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3085,7 +3097,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3108,7 +3123,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3131,7 +3149,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3155,7 +3176,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3179,7 +3203,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SilentMove">
-				<mul stat="moveSpeed" val="0.7" />
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3271,7 +3298,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="moveSpeed" val="2" />
+			</effect>
+			<effect name="Speed">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3295,7 +3325,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="66" />
+			</effect>
+			<effect name="Speed">
+				<amount>66</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3688,7 +3721,10 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4390,11 +4426,14 @@
 		</cond>
 		<for>
 			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.2" />
 			</effect>
 			<effect name="PhysicalAttack">
 				<power>3488</power>
 				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="Speed">
+				<amount>-80</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

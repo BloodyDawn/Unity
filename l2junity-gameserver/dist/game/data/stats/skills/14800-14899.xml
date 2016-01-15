@@ -1542,7 +1542,6 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="10" />
 				<mul stat="cAtk" val="1.1" />
-				<add stat="moveSpeed" val="30" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1565,6 +1564,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>30</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1594,7 +1597,6 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="11" />
 				<mul stat="cAtk" val="1.1" />
-				<add stat="moveSpeed" val="30" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1617,6 +1619,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>565</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>30</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1646,7 +1652,6 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="13" />
 				<mul stat="cAtk" val="1.1" />
-				<add stat="moveSpeed" val="30" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1669,6 +1674,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>672</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>30</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

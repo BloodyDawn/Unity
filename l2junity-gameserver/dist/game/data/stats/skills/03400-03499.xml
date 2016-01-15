@@ -109,7 +109,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SilentMove">
-				<mul stat="moveSpeed" val="0.6" />
+			</effect>
+			<effect name="Speed">
+				<amount>-40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1418,7 +1421,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="moveSpeed" val="3" />
+			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
