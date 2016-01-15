@@ -4260,7 +4260,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="444" />
+			</effect>
+			<effect name="MaxCp">
+				<amount>444</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -568,7 +568,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.37" />
-				<mul stat="maxCp" val="1.37" />
 				<mul stat="regHp" val="1.2" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -579,6 +578,10 @@
 				<slot>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</slot>
 			</effect>
 			<effect name="MaxHp">
+				<amount>37</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
 				<amount>37</amount>
 				<mode>PER</mode>
 			</effect>

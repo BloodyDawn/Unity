@@ -509,7 +509,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="maxCp" val="#maxCp" />
 				<add stat="regHp" val="12" />
 				<add stat="regHp" val="6" />
 			</effect>
@@ -525,6 +524,21 @@
 					<value level="8">2103</value>
 					<value level="9">2231</value>
 					<value level="10">2367</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">296</value>
+					<value level="2">296</value>
+					<value level="3">411</value>
+					<value level="4">489</value>
+					<value level="5">533</value>
+					<value level="6">596</value>
+					<value level="7">660</value>
+					<value level="8">723</value>
+					<value level="9">787</value>
+					<value level="10">850</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1321,7 +1335,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxCp" val="1.15" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -1330,6 +1343,10 @@
 			</effect>
 			<effect name="CpHealPercent">
 				<power>15</power>
+			</effect>
+			<effect name="MaxCp">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

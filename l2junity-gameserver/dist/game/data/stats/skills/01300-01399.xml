@@ -787,7 +787,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<mul stat="maxCp" val="0.8" />
 				<mul stat="maxRecoverableCp" val="0.6" />
 				<mul stat="maxRecoverableHp" val="0.7" />
 			</effect>
@@ -802,6 +801,10 @@
 			<effect name="PhysicalDefence">
 				<amount>3000</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -836,7 +839,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<mul stat="maxCp" val="0.8" />
 				<mul stat="maxRecoverableCp" val="0.6" />
 				<mul stat="maxRecoverableHp" val="0.7" />
 			</effect>
@@ -851,6 +853,10 @@
 			<effect name="MagicalDefence">
 				<amount>4500</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -1887,7 +1887,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="#maxCp" />
 				<add stat="regCp" val="#regHp" />
 				<add stat="regHp" val="#regHp" />
 				<add stat="regMp" val="#regMp" />
@@ -1925,6 +1924,24 @@
 					<value level="11">14</value>
 					<value level="12">14</value>
 					<value level="13">14</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">231</value>
+					<value level="4">545</value>
+					<value level="5">573</value>
+					<value level="6">601</value>
+					<value level="7">625</value>
+					<value level="8">631</value>
+					<value level="9">644</value>
+					<value level="10">657</value>
+					<value level="11">670</value>
+					<value level="12">683</value>
+					<value level="13">696</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

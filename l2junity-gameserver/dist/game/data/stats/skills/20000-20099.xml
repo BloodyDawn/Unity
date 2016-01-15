@@ -144,7 +144,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxCp" val="1.15" />
 			</effect>
 			<effect name="CpHealPercent">
 				<power>15</power>
@@ -153,6 +152,10 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 				<heal>true</heal>
+			</effect>
+			<effect name="MaxCp">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

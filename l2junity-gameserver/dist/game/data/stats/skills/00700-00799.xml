@@ -2287,7 +2287,6 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="maxCp" val="0.1" />
 				<add stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="0.7" />
 			</effect>
@@ -2299,7 +2298,8 @@
 			<effect name="CpDamPercent">
 				<power>90</power>
 			</effect>
-		</for>
+		<effect name="MaxCp">
+		<amount>-90</amount><mode>PER</mode></effect></for>
 	</skill>
 	<skill id="763" levels="1" name="Hell Scream">
 		<!-- Confirmed CT2.5 and Updated to H5 -->

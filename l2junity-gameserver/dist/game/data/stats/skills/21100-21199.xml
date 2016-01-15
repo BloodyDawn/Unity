@@ -1104,7 +1104,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="maxCp" val="1.4" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -1120,6 +1119,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

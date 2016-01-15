@@ -1302,7 +1302,6 @@
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
 				<mul stat="maxMp" val="#maxMp" />
-				<mul stat="maxCp" val="#maxCp" />
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1311,6 +1310,15 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</slot>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">37</value>
+					<value level="2">39</value>
+					<value level="3">41</value>
+					<value level="4">43</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3410,8 +3418,16 @@
 				<add stat="regMp" val="#regMp" />
 				<add stat="maxHp" val="#maxBase" />
 				<add stat="maxMp" val="#maxBase" />
-				<add stat="maxCp" val="#maxBase" />
 				<mul stat="skillCriticalProbability" val="#bonus" />
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">1.05</value>
+					<value level="2">1.06</value>
+					<value level="3">1.07</value>
+					<value level="4">1.10</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3583,7 +3599,6 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="CpHealPercent">
 				<power>
@@ -3592,6 +3607,15 @@
 					<value level="3">7</value>
 					<value level="4">10</value>
 				</power>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3886,7 +3910,6 @@
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
 				<mul stat="maxMp" val="#maxMp" />
-				<mul stat="maxCp" val="#maxCp" />
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -3895,6 +3918,15 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</slot>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">37</value>
+					<value level="2">39</value>
+					<value level="3">41</value>
+					<value level="4">43</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

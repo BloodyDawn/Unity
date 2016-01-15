@@ -580,10 +580,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="3000" />
 				<mul stat="pvpPhysDmg" val="1.10" />
 				<mul stat="pvpPhysSkillsDmg" val="1.10" />
 				<mul stat="pvpMagicalDmg" val="1.10" />
+			</effect>
+			<effect name="MaxCp">
+				<amount>3000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -600,10 +603,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="3000" />
 				<mul stat="pvpPhysDmg" val="1.10" />
 				<mul stat="pvpPhysSkillsDmg" val="1.10" />
 				<mul stat="pvpMagicalDmg" val="1.10" />
+			</effect>
+			<effect name="MaxCp">
+				<amount>3000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

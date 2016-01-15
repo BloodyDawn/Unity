@@ -67,12 +67,20 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#inc" />
-				<mul stat="maxCp" val="#inc" />
 				<mul stat="pvePhysDmg" val="1.3" />
 				<mul stat="pvePhysSkillsDmg" val="1.3" />
 				<mul stat="pveMagicalDmg" val="1.3" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">7</value>

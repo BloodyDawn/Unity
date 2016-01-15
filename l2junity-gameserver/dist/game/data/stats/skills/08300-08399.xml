@@ -313,10 +313,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="1200" />
 			</effect>
 			<effect name="CpHeal">
 				<power>1200</power>
+			</effect>
+			<effect name="MaxCp">
+				<amount>1200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -341,10 +344,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="800" />
 			</effect>
 			<effect name="CpHeal">
 				<power>800</power>
+			</effect>
+			<effect name="MaxCp">
+				<amount>800</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -662,7 +668,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="672" />
+			</effect>
+			<effect name="MaxCp">
+				<amount>672</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -831,10 +840,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="1500" />
 			</effect>
 			<effect name="CpHeal">
 				<power>1500</power>
+			</effect>
+			<effect name="MaxCp">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1120,11 +1132,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="DefenceTrait">
 				<BLEED>15</BLEED>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1140,11 +1158,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<HOLD>15</HOLD>
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>15</POISON>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1160,11 +1184,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<BLEED>15</BLEED>
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>15</PARALYZE>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1180,11 +1210,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<PARALYZE>15</PARALYZE>
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>15</HOLD>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1200,11 +1236,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<DERANGEMENT>15</DERANGEMENT>
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>15</SHOCK>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1220,11 +1262,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<SLEEP>15</SLEEP>
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>15</SHOCK>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1240,11 +1288,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>15</SLEEP>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1260,11 +1314,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<POISON>15</POISON>
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>15</HOLD>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1280,11 +1340,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="AttackTrait">
-				<mul stat="maxCp" val="#maxCp" />
 				<HOLD>15</HOLD>
 			</effect>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>15</DERANGEMENT>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -383,7 +383,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="maxCp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -412,6 +411,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxCp">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="23018" levels="1" name="Thomas D. Turkey's Mistake">
@@ -435,7 +438,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="maxCp" val="1.4" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -462,6 +464,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1741,7 +1747,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.6" />
-				<mul stat="maxCp" val="1.6" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -1764,6 +1769,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>60</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1799,7 +1808,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
-				<mul stat="maxCp" val="1.4" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
@@ -1822,6 +1830,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

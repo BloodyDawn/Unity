@@ -2374,7 +2374,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxCp" val="1.1" />
+			</effect>
+			<effect name="MaxCp">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2386,7 +2389,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="maxCp" val="0.9" />
+			</effect>
+			<effect name="MaxCp">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
