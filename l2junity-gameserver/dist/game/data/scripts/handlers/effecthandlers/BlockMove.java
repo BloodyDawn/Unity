@@ -29,9 +29,9 @@ import org.l2junity.gameserver.model.skills.Skill;
  * Immobile Buff effect implementation.
  * @author mkizub
  */
-public final class ImmobileBuff extends Buff
+public final class BlockMove extends Buff
 {
-	public ImmobileBuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockMove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 	}

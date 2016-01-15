@@ -152,7 +152,7 @@ public final class EffectMasterHandler
 		HpCpHeal.class,
 		HpRegen.class,
 		HpDrain.class,
-		ImmobileBuff.class,
+		BlockMove.class,
 		ImmobilePetBuff.class,
 		Invincible.class,
 		KarmaCount.class,

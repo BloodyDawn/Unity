@@ -473,7 +473,7 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="ImmobileBuff">
+			<effect name="BlockMove">
 				<mul stat="rCrit" val="0.2">
 					<using kind="BOW" />
 				</mul>
@@ -2485,7 +2485,7 @@
 			</effect>
 		</for>
 		<selfEffects>
-			<effect name="ImmobileBuff">
+			<effect name="BlockMove">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 		</selfEffects>

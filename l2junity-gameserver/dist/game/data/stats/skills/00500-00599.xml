@@ -1571,7 +1571,7 @@
 			<using kind="CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="ImmobileBuff">
+			<effect name="BlockMove">
 				<mul stat="rCrit" val="0.2">
 					<using kind="CROSSBOW" />
 				</mul>
@@ -3806,7 +3806,7 @@
 		<attributeValue>20</attributeValue>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="ImmobileBuff">
+			<effect name="BlockMove">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
