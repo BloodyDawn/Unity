@@ -1082,7 +1082,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<add stat="reflectDam" val="40" />
 				<set stat="damageCap" val="300" />
 			</effect>
 			<effect name="MagicalDefence">
@@ -1091,6 +1090,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>4000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>40</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1118,7 +1121,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<add stat="reflectDam" val="40" />
 				<set stat="damageCap" val="300" />
 			</effect>
 			<effect name="MagicalDefence">
@@ -1127,6 +1129,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>4000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>40</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1154,7 +1160,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<add stat="reflectDam" val="40" />
 				<set stat="damageCap" val="300" />
 			</effect>
 			<effect name="MagicalDefence">
@@ -1163,6 +1168,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>4000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>40</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

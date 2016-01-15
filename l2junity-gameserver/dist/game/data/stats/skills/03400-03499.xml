@@ -184,7 +184,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="reflectDam" val="10" />
+			</effect>
+			<effect name="DamageShield">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -496,7 +499,7 @@
 				<mul stat="pvpPhysDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
 				<mul stat="pvpMagicalDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
 				<mul stat="pvpPhysSkillsDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
-				<add stat="reflectDam" val="9" /> <!-- Reflect Damage 9% -->
+				<!-- Reflect Damage 9% -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Maximum Ability -->
@@ -510,6 +513,10 @@
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>5547</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="DamageShield">
+				<amount>9</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

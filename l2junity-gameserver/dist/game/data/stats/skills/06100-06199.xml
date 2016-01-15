@@ -863,7 +863,10 @@
 			<effect name="Buff">
 				<add stat="vengeancePdam" val="70" />
 				<add stat="reflectSkillPhysic" val="70" />
-				<add stat="reflectDam" val="70" />
+			</effect>
+			<effect name="DamageShield">
+				<amount>70</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

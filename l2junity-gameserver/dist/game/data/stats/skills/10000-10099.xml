@@ -103,7 +103,6 @@
 				<add stat="regMp" val="8.4" />
 				<mul stat="defCritDamage" val="0.65" />
 				<add stat="STR" val="2" />
-				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
@@ -128,6 +127,10 @@
 				<armorType>
 					<item>HEAVY</item>
 				</armorType>
+			</effect>
+			<effect name="DamageShield">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1206,7 +1209,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
-				<add stat="reflectDam" val="#reflectDam" />
 				<set stat="damageCap" val="#damageCap" />
 			</effect>
 			<effect name="MagicalDefence">
@@ -1230,6 +1232,18 @@
 					<value level="5">12000</value>
 					<value level="6">14000</value>
 					<value level="7">16000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">60</value>
+					<value level="3">80</value>
+					<value level="4">100</value>
+					<value level="5">100</value>
+					<value level="6">100</value>
+					<value level="7">100</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1423,9 +1437,20 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="reflectDam" val="#reflectDam" />
 				<add stat="reflectSkillMagic" val="50" />
 				<add stat="vengeanceMdam" val="50" />
+			</effect>
+			<effect name="DamageShield">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">27</value>
+					<value level="6">30</value>
+					<value level="7">32</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

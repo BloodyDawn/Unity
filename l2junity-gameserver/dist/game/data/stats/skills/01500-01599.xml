@@ -4454,7 +4454,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VENGEANCE</slot>
@@ -4465,6 +4464,10 @@
 			<effect name="VampiricAttack">
 				<amount>8</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="DamageShield">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4489,7 +4492,6 @@
 		<isMagic>3</isMagic>
 		<for>
 			<effect name="Buff">
-				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VENGEANCE</slot>
@@ -4500,6 +4502,10 @@
 			<effect name="VampiricAttack">
 				<amount>8</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="DamageShield">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

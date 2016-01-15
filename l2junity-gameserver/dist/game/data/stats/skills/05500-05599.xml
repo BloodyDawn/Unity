@@ -468,11 +468,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="reflectDam" val="60" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="DamageShield">
+				<amount>60</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

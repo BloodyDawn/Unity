@@ -3946,7 +3946,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="reflectDam" val="50" />
+			</effect>
+			<effect name="DamageShield">
+				<amount>50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

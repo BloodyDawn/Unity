@@ -2443,7 +2443,7 @@
 			<effect name="AttackTrait">
 				<mul stat="pReuse" val="0.95" /> <!-- Decreases the skill's reuse time by 5% -->
 				<mul stat="mReuse" val="0.95" /> <!-- Decreases the skill's reuse time by 5% -->
-				<add stat="reflectDam" val="4" /> <!-- Reflects 4% of the damage received back to the enemy -->
+				<!-- Reflects 4% of the damage received back to the enemy -->
 				<PARALYZE>15</PARALYZE>
 				<SLEEP>15</SLEEP>
 				<SHOCK>15</SHOCK>
@@ -2452,6 +2452,10 @@
 				<SHOCK>15</SHOCK>
 				<SLEEP>15</SLEEP>
 				<PARALYZE>15</PARALYZE>
+			</effect>
+			<effect name="DamageShield">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

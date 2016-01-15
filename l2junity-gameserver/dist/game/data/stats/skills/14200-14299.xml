@@ -322,7 +322,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<add stat="reflectDam" val="600" />
+			</effect>
+			<effect name="DamageShield">
+				<amount>600</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

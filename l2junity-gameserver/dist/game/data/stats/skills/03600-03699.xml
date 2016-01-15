@@ -341,7 +341,6 @@
 				<add stat="darkRes" val="15" />
 				<mul stat="mReuse" val="0.95" />
 				<mul stat="pReuse" val="0.95" />
-				<add stat="reflectDam" val="4" />
 			</effect>
 			<effect name="AttackTrait">
 				<POISON>25</POISON>
@@ -356,6 +355,10 @@
 				<POISON>25</POISON>
 				<SLEEP>15</SLEEP>
 				<PARALYZE>15</PARALYZE>
+			</effect>
+			<effect name="DamageShield">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
