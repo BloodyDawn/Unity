@@ -176,8 +176,11 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="moveSpeed" val="0.5" />
-				<mul stat="pAtk" val="0.5" />
 				<mul stat="pDef" val="10" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -190,8 +193,11 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.3" />
-				<mul stat="pAtk" val="1.3" />
 				<mul stat="pDef" val="0.5" />
+			</effect>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -507,7 +513,10 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.5" />
-				<mul stat="pAtk" val="0.5" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -576,7 +585,10 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.5" />
-				<mul stat="pAtk" val="0.5" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -647,9 +659,12 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="mAtk" val="0.5" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -701,7 +716,14 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-30</value>
+					<value level="2">-40</value>
+					<value level="3">-50</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -903,7 +925,21 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+					<value level="5">-8</value>
+					<value level="6">-8</value>
+					<value level="7">-8</value>
+					<value level="8">-12</value>
+					<value level="9">-12</value>
+					<value level="10">-15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2378,7 +2414,23 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-17</value>
+					<value level="2">-20</value>
+					<value level="3">-20</value>
+					<value level="4">-23</value>
+					<value level="5">-23</value>
+					<value level="6">-23</value>
+					<value level="7">-23</value>
+					<value level="8">-23</value>
+					<value level="9">-23</value>
+					<value level="10">-23</value>
+					<value level="11">-23</value>
+					<value level="12">-23</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2707,13 +2759,20 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Grow">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">13</value>
+					<value level="2">18</value>
+					<value level="3">24</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2849,7 +2908,23 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-17</value>
+					<value level="2">-20</value>
+					<value level="3">-20</value>
+					<value level="4">-23</value>
+					<value level="5">-23</value>
+					<value level="6">-23</value>
+					<value level="7">-23</value>
+					<value level="8">-23</value>
+					<value level="9">-23</value>
+					<value level="10">-23</value>
+					<value level="11">-23</value>
+					<value level="12">-23</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2891,13 +2966,19 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

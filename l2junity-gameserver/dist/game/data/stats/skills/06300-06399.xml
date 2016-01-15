@@ -1144,7 +1144,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -130,12 +130,22 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtkMul">
-					<using kind="DUAL, DUALBLUNT" />
-				</mul>
 				<add stat="pAtk" val="#pAtk">
 					<using kind="DUAL, DUALBLUNT" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -197,12 +207,21 @@
 				<add stat="atkCountMax" val="#atkCountMax">
 					<using kind="POLE" />
 				</add>
-				<mul stat="pAtk" val="#pAtkMul">
-					<using kind="POLE" />
-				</mul>
 				<add stat="pAtk" val="#pAtkAdd">
 					<using kind="POLE" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -231,9 +250,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.45">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</mul>
 				<mul stat="cAtk" val="1.45">
 					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 				</mul>
@@ -243,6 +259,18 @@
 				<mul stat="pAtkSpd" val="0.85">
 					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>45</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+					<item> DUAL</item>
+					<item> DUALFIST</item>
+					<item> POLE</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -261,12 +289,21 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtkMul">
-					<using kind="DUALFIST" />
-				</mul>
 				<add stat="pAtk" val="#pAtkAdd">
 					<using kind="DUALFIST" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -289,9 +326,18 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+					<item> DUAL</item>
+					<item> DUALFIST</item>
+					<item> POLE</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -406,12 +452,19 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtkMul">
-					<using kind="POLE" />
-				</mul>
 				<add stat="pAtk" val="#pAtkAdd">
 					<using kind="POLE" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -812,15 +865,24 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#add">
-					<using kind="SWORD, BLUNT" />
-				</mul>
 				<mul stat="cAtk" val="#add">
 					<using kind="SWORD, BLUNT" />
 				</mul>
 				<mul stat="PhysicalMpConsumeRate" val="1.1">
 					<using kind="SWORD, BLUNT" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">50</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -832,12 +894,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.21">
-					<using kind="BLUNT" />
-				</mul>
 				<add stat="rCrit" val="60">
 					<using kind="BLUNT" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>21</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -934,9 +1000,6 @@
 		<reuseDelay>300000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.3">
-					<using kind="POLE" />
-				</mul>
 				<add stat="pAtkRange" val="80" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
@@ -964,6 +1027,13 @@
 				<skillLevel>1</skillLevel>
 				<allowWeapons>POLE</allowWeapons>
 				<isCritical>true</isCritical>
+			</effect>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1013,9 +1083,6 @@
 		<reuseDelay>300000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.3">
-					<using kind="DUALFIST" />
-				</mul>
 				<mul stat="cAtk" val="1.1">
 					<using kind="DUALFIST" />
 				</mul>
@@ -1045,6 +1112,13 @@
 				<skillLevel>1</skillLevel>
 				<allowWeapons>DUALFIST</allowWeapons>
 				<isCritical>true</isCritical>
+			</effect>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

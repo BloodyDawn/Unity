@@ -33,15 +33,25 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#power">
-					<using kind="BOW, CROSSBOW" />
-				</mul>
 				<mul stat="physicalSkillPower" val="#power">
 					<using kind="BOW, CROSSBOW" />
 				</mul>
 				<mul stat="defCritRate" val="#defCritRate">
 					<using kind="BOW, CROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -130,9 +140,6 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#power">
-					<using kind="BOW, CROSSBOW" />
-				</mul>
 				<mul stat="pvpPhysDmg" val="#power">
 					<using kind="BOW, CROSSBOW" />
 				</mul>
@@ -145,6 +152,19 @@
 				<mul stat="pvpMagicalDef" val="#power">
 					<using kind="BOW, CROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -162,9 +182,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#power">
-					<using kind="CROSSBOW" />
-				</mul>
 				<mul stat="pvpPhysDmg" val="#power">
 					<using kind="CROSSBOW" />
 				</mul>
@@ -174,6 +191,18 @@
 				<mul stat="pvpMagicalDmg" val="#power">
 					<using kind="CROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -194,11 +223,14 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.4" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="maxCp" val="1.2" />
+			</effect>
+			<effect name="PAtk">
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

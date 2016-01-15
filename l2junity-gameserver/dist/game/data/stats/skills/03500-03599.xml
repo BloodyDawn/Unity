@@ -341,11 +341,15 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="200" /> <!-- Breath Gauge increased +200 -->
-				<mul stat="pAtk" val="1.027" /> <!-- P. Atk. +2.7% -->
+				<!-- P. Atk. +2.7% -->
 				<mul stat="regMp" val="1.025" /> <!-- MP Regeneration +2.5% -->
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>20</POISON>
+			</effect>
+			<effect name="PAtk">
+				<amount>2.7</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -417,10 +421,14 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
-				<mul stat="pAtk" val="1.04" /> <!-- P. Atk. +4% -->
+				<!-- P. Atk. +4% -->
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>50</PARALYZE>
+			</effect>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -484,11 +492,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.04" /> <!-- P. Atk. +4% -->
+				<!-- P. Atk. +4% -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -500,11 +512,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.04" /> <!-- P. Atk. +4% -->
+				<!-- P. Atk. +4% -->
 				<add stat="accCombat" val="3.1" /> <!-- Accuracy +3.1 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -536,14 +552,19 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.08"> <!-- Archery P. Atk. +8% -->
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<add stat="maxMp" val="240" /> <!-- MP +240 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -782,9 +803,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Attack Speed +4% -->
-				<mul stat="pAtk" val="1.04" /> <!-- P. Atk +4% -->
+				<!-- P. Atk +4% -->
 				<add stat="maxMp" val="289" /> <!-- Maximum MP +289 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
+			</effect>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -818,7 +843,6 @@
 			<effect name="Buff">
 				<add stat="fireRes" val="15" />
 				<add stat="maxHp" val="445" />
-				<mul stat="pAtk" val="1.04" />
 				<mul stat="mAtk" val="1.08" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="pReuse" val="0.9" />
@@ -830,6 +854,10 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>40</SLEEP>
+			</effect>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

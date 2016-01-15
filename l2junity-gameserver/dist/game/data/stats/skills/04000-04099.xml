@@ -579,7 +579,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Grow">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -653,7 +660,14 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1096,7 +1110,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-17</value>
+					<value level="2">-20</value>
+					<value level="3">-23</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1914,7 +1935,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.77" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3274,7 +3298,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="moveSpeed" val="0.85" />
-				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3336,7 +3363,6 @@
 		<for>
 			<effect name="Grow">
 				<mul stat="moveSpeed" val="#runSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pDef" val="#pDef" />
 				<sub stat="rEvas" val="#rEvas" />
 				<add stat="accCombat" val="#accCombat" />
@@ -3349,6 +3375,14 @@
 				</amount>
 				<mode>PER</mode>
 				<heal>true</heal>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3670,7 +3704,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#pAtkSpd" />
@@ -3678,6 +3711,13 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

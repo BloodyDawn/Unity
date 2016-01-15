@@ -424,10 +424,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
 				<mul stat="mAtk" val="1.75" />
 				<mul stat="pAtkSpd" val="1.33" />
 				<add stat="moveSpeed" val="33" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1078,11 +1081,14 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="mAtk" val="1.1" />
 				<mul stat="MagicalMpConsumeRate" val="0" />
 				<mul stat="PhysicalMpConsumeRate" val="0" />
 				<mul stat="healEffect" val="1.1" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1796,10 +1802,13 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.35" />
 				<mul stat="mAtk" val="1.75" />
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="0.3" />
+			</effect>
+			<effect name="PAtk">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1970,10 +1979,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2091,7 +2103,10 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.77" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2118,8 +2133,11 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.77" />
 				<mul stat="mAtk" val="0.77" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2193,7 +2211,14 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#rate" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

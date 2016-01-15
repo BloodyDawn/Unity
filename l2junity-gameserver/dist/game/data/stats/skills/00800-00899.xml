@@ -117,7 +117,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.4" />
+			</effect>
+			<effect name="PAtk">
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1285,8 +1288,15 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1361,12 +1371,23 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.05">
-					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
-				</mul>
 				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>RAPIER</item>
+					<item>ANCIENTSWORD</item>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1391,12 +1412,16 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.05">
-					<using kind="BLUNT" />
-				</mul>
 			</effect>
 			<effect name="AttackTrait">
 				<SHOCK>8</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1421,12 +1446,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.05">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<add stat="pAtkRange" val="100">
 					<using kind="BOW,CROSSBOW" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1927,11 +1957,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="0.2" />
 				<mul stat="mAtk" val="0.2" />
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />
 				<mul stat="moveSpeed" val="0.2" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-80</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2531,7 +2564,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2796,7 +2832,10 @@
 		<trait>DISARM</trait>
 		<for>
 			<effect name="Disarm">
-				<mul stat="pAtk" val="0.6" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3712,12 +3751,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.08" />
 				<mul stat="pDef" val="1.18" />
 				<mul stat="pAtkSpd" val="1.2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

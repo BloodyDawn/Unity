@@ -271,11 +271,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
 				<mul stat="rCrit" val="0.1" />
 				<mul stat="cAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.03" />
 				<add stat="moveSpeed" val="5" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -45,10 +45,13 @@
 		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="mAtk" val="1.1" />
 				<mul stat="rCrit" val="0.1" />
 				<mul stat="cAtk" val="1.1" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

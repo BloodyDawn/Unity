@@ -854,11 +854,14 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.8" />
 				<mul stat="mAtk" val="0.8" />
 			</effect>
 			<effect name="BlockSkill">
 				<magicTypes>1</magicTypes>
+			</effect>
+			<effect name="PAtk">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -891,11 +894,14 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.8" />
 				<mul stat="mAtk" val="0.8" />
 			</effect>
 			<effect name="BlockSkill">
 				<magicTypes>1</magicTypes>
+			</effect>
+			<effect name="PAtk">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -928,11 +934,14 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.8" />
 				<mul stat="mAtk" val="0.8" />
 			</effect>
 			<effect name="BlockSkill">
 				<magicTypes>1</magicTypes>
+			</effect>
+			<effect name="PAtk">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1526,9 +1535,6 @@
 				<add stat="accCombat" val="10" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="moveSpeed" val="30" />
-				<mul stat="pAtk" val="1.1">
-					<player hp="60" />
-				</mul>
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1544,6 +1550,10 @@
 				<chance>100</chance>
 				<skillId>10285</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1574,9 +1584,6 @@
 				<add stat="accCombat" val="11" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="moveSpeed" val="30" />
-				<mul stat="pAtk" val="1.1">
-					<player hp="60" />
-				</mul>
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1592,6 +1599,10 @@
 				<chance>100</chance>
 				<skillId>10285</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1622,9 +1633,6 @@
 				<add stat="accCombat" val="13" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="moveSpeed" val="30" />
-				<mul stat="pAtk" val="1.1">
-					<player hp="60" />
-				</mul>
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1640,6 +1648,10 @@
 				<chance>100</chance>
 				<skillId>10285</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

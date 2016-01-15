@@ -1567,7 +1567,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.77" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

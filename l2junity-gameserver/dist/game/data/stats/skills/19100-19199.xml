@@ -510,9 +510,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#bonus">
-					<using kind="HEAVY" />
-				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>HEAVY</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -554,7 +563,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#bonus" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">9</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -697,9 +714,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#bonus">
-					<using kind="LIGHT" />
-				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>LIGHT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

@@ -1264,12 +1264,25 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.25">
-					<using kind="FIST,SWORD,DAGGER,DUALDAGGER,DUALFIST,DUAL,BLUNT,ANCIENTSWORD,RAPIER,ETC" />
-				</mul>
 				<mul stat="pAtk" val="1.15">
 					<using kind="BOW,POLE,CROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>25</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>FIST</item>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>DUALFIST</item>
+					<item>DUAL</item>
+					<item>BLUNT</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+					<item>ETC</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -2081,7 +2094,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

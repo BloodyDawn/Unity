@@ -1192,7 +1192,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Disarm">
-				<mul stat="pAtk" val="0.6" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

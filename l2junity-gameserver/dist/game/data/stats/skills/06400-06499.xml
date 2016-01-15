@@ -721,10 +721,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<mul stat="regHp" val="5" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -768,7 +773,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.19" />
+			</effect>
+			<effect name="PAtk">
+				<amount>19</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

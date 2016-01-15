@@ -5392,13 +5392,19 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="mDef" val="#mDef" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

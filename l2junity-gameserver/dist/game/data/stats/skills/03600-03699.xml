@@ -114,7 +114,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<add stat="mAtk" val="#mAtkAdd" />
@@ -143,6 +142,21 @@
 					<value level="10">50</value>
 				</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">220</value>
+					<value level="2">242</value>
+					<value level="3">266</value>
+					<value level="4">292</value>
+					<value level="5">322</value>
+					<value level="6">354</value>
+					<value level="7">389</value>
+					<value level="8">428</value>
+					<value level="9">471</value>
+					<value level="10">518</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -187,7 +201,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
-				<mul stat="pAtk" val="1.05" />
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -710,7 +727,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<add stat="mAtk" val="#mAtkAdd" />
@@ -739,6 +755,21 @@
 					<value level="10">50</value>
 				</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">220</value>
+					<value level="2">242</value>
+					<value level="3">266</value>
+					<value level="4">292</value>
+					<value level="5">322</value>
+					<value level="6">354</value>
+					<value level="7">389</value>
+					<value level="8">428</value>
+					<value level="9">471</value>
+					<value level="10">518</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -903,13 +934,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.066" /> <!-- P. Atk. +6.6% -->
+				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 				<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3638" levels="1" name="Dynasty Platinum Plate">
@@ -938,12 +973,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.066" /> <!-- Physical Attack Power +6.6% -->
+				<!-- Physical Attack Power +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 Increase -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Active Skills -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3640" levels="1" name="Dynasty Jewel Leather Armor">
@@ -993,12 +1032,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.066" /> <!-- P. Atk. +6.6% -->
+				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3643" levels="1" name="Dynasty Jewel Leather Armor">
@@ -1010,13 +1053,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.066" /> <!-- Physical Attack Power +6.6% -->
+				<!-- Physical Attack Power +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
 				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 				<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3644" levels="1" name="Dynasty Jewel Leather Armor">
@@ -1029,12 +1076,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.066" /> <!-- Atk. Spd. +6.6% -->
-				<mul stat="pAtk" val="1.0266" /> <!-- P. Atk. +2.66% -->
+				<!-- P. Atk. +2.66% -->
 				<mul stat="pDef" val="1.0266" /> <!-- P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3645" levels="1" name="Dynasty Silver Satin Tunic">
@@ -1085,10 +1136,14 @@
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<mul stat="pDef" val="1.033" /> <!-- P. Def. +3.3% -->
-				<mul stat="pAtk" val="1.033" /> <!-- P. Atk. +3.3% -->
+				<!-- P. Atk. +3.3% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>3.3</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3648" levels="1" name="Dynasty Silver Satin Tunic">

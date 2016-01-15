@@ -1859,7 +1859,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
 				<add stat="accCombat" val="4" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="moveSpeed" val="0.9" />
@@ -1867,6 +1866,10 @@
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1968,7 +1971,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="moveSpeed" val="0.8" />
@@ -1983,6 +1985,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 				<heal>true</heal>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2138,7 +2144,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="regMp" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -2149,6 +2154,10 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2179,7 +2188,6 @@
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -2188,6 +2196,10 @@
 				<add stat="accCombat" val="4" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2216,7 +2228,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -2232,6 +2243,10 @@
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2428,7 +2443,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -2442,6 +2456,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 				<heal>true</heal>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2536,13 +2554,16 @@
 		<trait>DEATH</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.9" />
 				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="mDef" val="0.7" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="rCrit" val="-0.3" />
 				<mul stat="cAtk" val="0.7" />
 				<sub stat="accCombat" val="6" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2695,8 +2716,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.25" />
 				<mul stat="mAtk" val="1.25" />
+			</effect>
+			<effect name="PAtk">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3346,7 +3370,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3439,7 +3470,14 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

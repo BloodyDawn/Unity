@@ -243,12 +243,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.054" /> <!-- P. Atk. +5.4% -->
+				<!-- P. Atk. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3415" levels="1" name="Dynasty Leather Armor">
@@ -260,13 +264,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.054" /> <!-- P. Atk +5.4% -->
+				<!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 				<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3416" levels="1" name="Dynasty Tunic">
@@ -339,12 +347,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.054" /> <!-- increase Atk. Spd. +5.4% -->
-				<mul stat="pAtk" val="1.0266" /> <!-- Increase P. Atk. +2.66% -->
+				<!-- Increase P. Atk. +2.66% -->
 				<mul stat="pDef" val="1.0266" /> <!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>2.66</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3421" levels="1" name="Ride Wolf">
@@ -495,8 +507,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.1" />
+			</effect>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

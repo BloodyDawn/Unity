@@ -345,13 +345,21 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pReuse" val="#reuse" />
 				<mul stat="mReuse" val="#reuse" />
 				<mul stat="regMp" val="#amount" />
 				<mul stat="regMp" val="#amount" />
 				<mul stat="maxMp" val="#amount" />
 				<mul stat="weightLimit" val="#amount" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">999900</value>
+					<value level="4">0</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -715,7 +723,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -867,13 +878,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
-				<mul stat="pAtk" val="1.08" />
 				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<add stat="moveSpeed" val="8" />
 				<sub stat="rEvas" val="4" />
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -898,7 +912,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1004,7 +1021,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="regMp" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -1015,6 +1031,10 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1043,7 +1063,6 @@
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -1052,6 +1071,10 @@
 				<add stat="accCombat" val="4" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1079,7 +1102,6 @@
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -1091,6 +1113,10 @@
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1117,7 +1143,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -1131,6 +1156,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 				<heal>true</heal>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1521,7 +1550,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
 				<mul stat="pDef" val="1.15" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1529,6 +1557,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>PA_UP;PD_UP</slot>
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1724,12 +1756,23 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.05">
-					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
-				</mul>
 				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>DUAL</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

@@ -304,7 +304,33 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-61</value>
+					<value level="2">-57</value>
+					<value level="3">-53</value>
+					<value level="4">-48</value>
+					<value level="5">-43</value>
+					<value level="6">-37</value>
+					<value level="7">-31</value>
+					<value level="8">-24</value>
+					<value level="9">-17</value>
+					<value level="10">-9</value>
+					<value level="11">0</value>
+					<value level="12">10</value>
+					<value level="13">21</value>
+					<value level="14">33</value>
+					<value level="15">46</value>
+					<value level="16">61</value>
+					<value level="17">77</value>
+					<value level="18">94</value>
+					<value level="19">114</value>
+					<value level="20">135</value>
+					<value level="21">159</value>
+					<value level="22">900</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -449,8 +475,38 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">38</value>
+					<value level="3">0</value>
+					<value level="4">38</value>
+					<value level="5">0</value>
+					<value level="6">38</value>
+					<value level="7">-13</value>
+					<value level="8">21</value>
+					<value level="9">122</value>
+					<value level="10">150</value>
+					<value level="11">0</value>
+					<value level="12">38</value>
+					<value level="13">16</value>
+					<value level="14">62</value>
+					<value level="15">16</value>
+					<value level="16">62</value>
+					<value level="17">16</value>
+					<value level="18">62</value>
+					<value level="19">16</value>
+					<value level="20">62</value>
+					<value level="21">8</value>
+					<value level="22">62</value>
+					<value level="23">-7</value>
+					<value level="24">62</value>
+					<value level="25">38</value>
+					<value level="26">62</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2449,8 +2505,24 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtkDef" />
 				<mul stat="pDef" val="#pAtkDef" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">30</value>
+					<value level="3">45</value>
+					<value level="4">60</value>
+					<value level="5">90</value>
+					<value level="6">120</value>
+					<value level="7">150</value>
+					<value level="8">180</value>
+					<value level="9">210</value>
+					<value level="10">240</value>
+					<value level="11">270</value>
+					<value level="12">300</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

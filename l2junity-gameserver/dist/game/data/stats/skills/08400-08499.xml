@@ -10,7 +10,7 @@
 		<for>
 			<effect name="DefenceTrait">
 				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
-				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power +5.57% -->
+				<!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -24,6 +24,10 @@
 				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8401" levels="1" name="Vorpal Leather Armor Set">
@@ -35,7 +39,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power + 5.57% -->
+				<!-- Atk. Power + 5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- Def. Power + 5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
@@ -48,6 +52,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8402" levels="1" name="Vorpal Robe Set">
@@ -82,7 +90,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
+				<!-- P. Atk. +6.59% -->
 				<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to damage magic +2% -->
 				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
@@ -99,6 +107,10 @@
 				<amount>3</amount>
 				<chance>30</chance>
 			</effect>
+			<effect name="PAtk">
+				<amount>6.59</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8404" levels="1" name="Elegia Leather Armor Set">
@@ -110,7 +122,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0659" /> <!-- Attack Power +6.59% -->
+				<!-- Attack Power +6.59% -->
 				<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
 				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
 				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
@@ -121,6 +133,10 @@
 				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>6.59</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8405" levels="1" name="Elegia Robe Set">
@@ -167,7 +183,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0426" /> <!-- Atk Power +4.26% -->
+				<!-- Atk Power +4.26% -->
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
@@ -180,6 +196,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8407" levels="1" name="Moirai Light Armor Set - PvP">
@@ -202,7 +222,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0426" /> <!-- P. Atk. +4.26% -->
+				<!-- P. Atk. +4.26% -->
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
 				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
@@ -215,6 +235,10 @@
 				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8408" levels="1" name="Moirai Robe Set - PvP">
@@ -272,7 +296,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
-				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power +5.57% -->
+				<!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -289,6 +313,10 @@
 				<SLEEP>50</SLEEP>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8410" levels="1" name="Vorpal Leather Armor Set - PvP">
@@ -311,7 +339,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power + 5.57% -->
+				<!-- Atk. Power + 5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- Def. Power + 5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
@@ -327,6 +355,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8411" levels="1" name="Vorpal Robe Set - PvP">
@@ -386,7 +418,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
+				<!-- P. Atk. +6.59% -->
 				<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to damage magic +2% -->
 				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
@@ -405,6 +437,10 @@
 			<effect name="VampiricAttack">
 				<amount>3</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>6.59</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -428,7 +464,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0659" /> <!-- Attack Power +6.59% -->
+				<!-- Attack Power +6.59% -->
 				<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
 				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
 				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
@@ -442,6 +478,10 @@
 				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>6.59</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8414" levels="1" name="Elegia Robe Set - PvP">
@@ -512,10 +552,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0125" />
 				<mul stat="pAtkSpd" val="1.01" />
 				<add stat="fireRes" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -528,13 +571,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0426" />
 				<mul stat="pAtkSpd" val="1.04" />
 				<add stat="waterRes" val="1" />
 				<add stat="fireRes" val="1" />
 				<add stat="windRes" val="1" />
 				<add stat="earthRes" val="1" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>4.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -547,10 +593,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0208" />
 				<mul stat="pAtkSpd" val="1.0167" />
 				<add stat="waterRes" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -563,10 +612,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0083" />
 				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="windRes" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -579,10 +631,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0083" />
 				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="earthRes" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -608,10 +663,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0125" />
 				<mul stat="regMp" val="1.01" />
 				<add stat="fireRes" val="3" />
 				<HOLD>5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -624,10 +682,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0426" />
 				<mul stat="regMp" val="1.04" />
 				<add stat="waterRes" val="3" />
 				<HOLD>5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>4.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -640,10 +701,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0208" />
 				<mul stat="regMp" val="1.0167" />
 				<add stat="waterRes" val="3" />
 				<HOLD>5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>2.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -656,10 +720,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0083" />
 				<mul stat="regMp" val="1.0067" />
 				<add stat="windRes" val="3" />
 				<HOLD>5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -672,10 +739,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0083" />
 				<mul stat="regMp" val="1.0067" />
 				<add stat="earthRes" val="3" />
 				<HOLD>5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -780,11 +850,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0062" />
 				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
 				<HOLD>10.5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -797,11 +870,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0557" />
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="531" />
 				<SLEEP>28</SLEEP>
 				<HOLD>28</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -814,11 +890,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0103" />
 				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
 				<HOLD>18</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>1.03</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -831,11 +910,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -848,11 +930,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -878,10 +963,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<add stat="maxMp" val="87" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -894,10 +982,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0557" />
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="regMp" val="1.05" />
 				<add stat="maxMp" val="347" />
+			</effect>
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -910,10 +1001,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0068" />
 				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<add stat="maxMp" val="145" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -926,10 +1020,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -942,10 +1039,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1444,11 +1544,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0062" />
 				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
 				<HOLD>10.5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1461,11 +1564,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0103" />
 				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
 				<HOLD>18</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>1.03</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1478,11 +1584,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1495,11 +1604,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1512,10 +1624,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<add stat="maxMp" val="87" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1528,10 +1643,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0068" />
 				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<add stat="maxMp" val="145" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1544,10 +1662,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1560,10 +1681,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

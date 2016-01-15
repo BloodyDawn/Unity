@@ -553,12 +553,15 @@
 				<percentage>80</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.9" />
 				<mul stat="pAtkSpd" val="0.95" />
 				<mul stat="mAtk" val="0.95" />
 				<sub stat="accCombat" val="3" />
 				<mul stat="rCrit" val="-0.1" />
 				<mul stat="cAtk" val="0.9" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1829,9 +1832,6 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.05">
-					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST,BLUNT,BOW,CROSSBOW" />
-				</mul>
 				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
 				</mul>
@@ -1841,6 +1841,23 @@
 			</effect>
 			<effect name="AttackTrait">
 				<SHOCK>8</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>RAPIER</item>
+					<item>ANCIENTSWORD</item>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+					<item>BLUNT</item>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

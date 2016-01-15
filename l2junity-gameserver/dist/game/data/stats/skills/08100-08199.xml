@@ -1253,12 +1253,16 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.04" /> <!-- P. Atk. +4% -->
+				<!-- P. Atk. +4% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<HOLD>70</HOLD>
 				<SLEEP>70</SLEEP>
+			</effect>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1282,12 +1286,16 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.04" /> <!-- P. Atk. +4% -->
+				<!-- P. Atk. +4% -->
 				<add stat="accCombat" val="3.1" /> <!-- Accuracy +3 -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1344,15 +1352,20 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.08"> <!-- Archery P. Atk. +8% -->
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<add stat="maxMp" val="240" /> <!-- MP +240 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

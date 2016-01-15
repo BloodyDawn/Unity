@@ -68,10 +68,18 @@
 			<effect name="Buff">
 				<mul stat="maxHp" val="#inc" />
 				<mul stat="maxCp" val="#inc" />
-				<mul stat="pAtk" val="#inc" />
 				<mul stat="pvePhysDmg" val="1.3" />
 				<mul stat="pvePhysSkillsDmg" val="1.3" />
 				<mul stat="pveMagicalDmg" val="1.3" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -350,7 +358,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<mul stat="pAtk" val="1.1" />
 				<add stat="pAtk" val="#pAtk">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
@@ -363,6 +370,10 @@
 				<add stat="skillCritical" val="1">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -644,12 +655,23 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 				<mul stat="physicalSkillPower" val="#physicalSkillPower">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -684,12 +706,23 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 				<mul stat="pReuse" val="#pReuse">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -724,12 +757,23 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

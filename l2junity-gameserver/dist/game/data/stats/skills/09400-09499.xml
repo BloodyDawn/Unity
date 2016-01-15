@@ -83,7 +83,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="2" />
+			</effect>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

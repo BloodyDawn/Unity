@@ -34,7 +34,6 @@
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
 				<add stat="pAtk" val="#pAtkAdd" />
-				<mul stat="pAtk" val="#pAtkMul" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mDef" val="#mDef" />
@@ -55,6 +54,26 @@
 					<value level="14">6</value>
 					<value level="15">7</value>
 				</power>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-100</value>
+					<value level="2">-100</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">5</value>
+					<value level="6">5</value>
+					<value level="7">5</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+					<value level="11">12</value>
+					<value level="12">14</value>
+					<value level="13">16</value>
+					<value level="14">18</value>
+					<value level="15">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -145,7 +164,14 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -327,7 +353,14 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2460,13 +2493,19 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="mDef" val="#mDef" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2600,7 +2639,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#rate" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

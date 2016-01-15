@@ -32,7 +32,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
+				<!-- P. Atk. +5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="531" /> <!-- Max HP +531 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -40,6 +40,10 @@
 				<mul stat="pvpPhysDef" val="1.05" />
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -63,7 +67,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
+				<!-- P. Atk. +5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="540" /> <!-- Max HP +540 -->
 				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
@@ -76,6 +80,10 @@
 				<HOLD>70</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8303" levels="1" name="Vesper Light Armor Set - PvP">
@@ -87,7 +95,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
+				<!-- P. Atk. +5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
 				<add stat="maxMp" val="347" /> <!-- Max MP by 347 -->
@@ -106,6 +114,10 @@
 				<skillId>5694</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8304" levels="1" name="Vesper Noble Light Armor Set - PvP">
@@ -117,7 +129,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
+				<!-- P. Atk. +5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5.57% -->
 				<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
@@ -139,6 +151,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>5.57</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8305" levels="1" name="Vesper Robe Set - PvP">
@@ -372,10 +388,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.9" />
 				<add stat="pAtk" val="150" />
 				<mul stat="mAtk" val="3" />
 				<add stat="mAtk" val="100" />
+			</effect>
+			<effect name="PAtk">
+				<amount>90</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -391,10 +410,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="3" />
 				<add stat="pAtk" val="300" />
 				<mul stat="mAtk" val="5" />
 				<add stat="mAtk" val="200" />
+			</effect>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -410,10 +432,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="4" />
 				<add stat="pAtk" val="400" />
 				<mul stat="mAtk" val="7" />
 				<add stat="mAtk" val="300" />
+			</effect>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -429,10 +454,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="5" />
 				<add stat="pAtk" val="450" />
 				<mul stat="mAtk" val="9" />
 				<add stat="mAtk" val="450" />
+			</effect>
+			<effect name="PAtk">
+				<amount>400</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -448,10 +476,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="6" />
 				<add stat="pAtk" val="500" />
 				<mul stat="mAtk" val="11" />
 				<add stat="mAtk" val="500" />
+			</effect>
+			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -467,10 +498,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="6" />
 				<add stat="pAtk" val="650" />
 				<mul stat="mAtk" val="13" />
 				<add stat="mAtk" val="1000" />
+			</effect>
+			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -486,10 +520,13 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="6" />
 				<add stat="pAtk" val="750" />
 				<mul stat="mAtk" val="13" />
 				<add stat="mAtk" val="1000" />
+			</effect>
+			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1775,7 +1812,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0426" /> <!-- Atk Power +4.26% -->
+				<!-- Atk Power +4.26% -->
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
@@ -1785,6 +1822,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8398" levels="1" name="Moirai Light Armor Set">
@@ -1796,7 +1837,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="pAtk" val="1.0426" /> <!-- P. Atk. +4.26% -->
+				<!-- P. Atk. +4.26% -->
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Atk. Spd. +4% -->
 				<mul stat="moveSpeed" val="1.03" /> <!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
@@ -1806,6 +1847,10 @@
 				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>4.26</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8399" levels="1" name="Moirai Robe Set">

@@ -246,7 +246,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="cAtk" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtk" val="1.2" />
@@ -257,6 +256,10 @@
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

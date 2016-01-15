@@ -1806,7 +1806,6 @@
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 				<add stat="mAtk" val="#mAtk" />
-				<mul stat="pAtk" val="1.45" />
 				<mul stat="mAtk" val="1.17" />
 				<mul stat="mAtkSpd" val="0.7">
 					<using kind="BOW,POLE" />
@@ -1814,6 +1813,10 @@
 				<sub stat="accCombat" val="8">
 					<using kind="BOW,POLE" />
 				</sub>
+			</effect>
+			<effect name="PAtk">
+				<amount>45</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1874,7 +1877,6 @@
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 				<add stat="mAtk" val="#mAtk" />
-				<mul stat="pAtk" val="1.45" />
 				<mul stat="mAtk" val="1.17" />
 				<mul stat="mAtkSpd" val="0.7">
 					<using kind="BOW,POLE" />
@@ -1883,6 +1885,10 @@
 					<using kind="BOW,POLE" />
 				</sub>
 				<add stat="absorbDamMana" val="10" />
+			</effect>
+			<effect name="PAtk">
+				<amount>45</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3323,7 +3329,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.12" />
+			</effect>
+			<effect name="PAtk">
+				<amount>12</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4867,9 +4876,6 @@
 				<add stat="accCombat" val="6">
 					<using kind="DUALFIST" />
 				</add>
-				<mul stat="pAtk" val="1.1">
-					<player hp="60" />
-				</mul>
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -4879,6 +4885,10 @@
 				<add stat="rCrit" val="300">
 					<player hp="30" />
 				</add>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

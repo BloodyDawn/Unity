@@ -1423,12 +1423,15 @@
 				<mul stat="maxMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mDef" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1461,11 +1464,14 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mDef" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 				<mul stat="moveSpeed" val="0.8" />
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1864,7 +1870,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1946,13 +1955,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
-				<mul stat="pAtk" val="1.08" />
 				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<add stat="moveSpeed" val="8" />
 				<sub stat="rEvas" val="4" />
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

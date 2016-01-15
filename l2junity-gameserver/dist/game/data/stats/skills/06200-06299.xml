@@ -477,7 +477,10 @@
 				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="pAtkSpd" val="0.9" />
-				<mul stat="pAtk" val="0.9" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1603,8 +1606,11 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
-				<mul stat="pAtk" val="1.15" />
 				<mul stat="pAtkSpd" val="1.15" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1731,10 +1737,13 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="3" />
 				<mul stat="mAtk" val="3" />
 				<mul stat="pAtkSpd" val="1.25" />
 				<mul stat="mAtkSpd" val="1.25" />
+			</effect>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1852,7 +1861,10 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

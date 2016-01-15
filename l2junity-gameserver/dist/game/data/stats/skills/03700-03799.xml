@@ -23,11 +23,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="383" />
-				<mul stat="pAtk" val="1.0827" />
 				<mul stat="regMp" val="1.0827" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>13</POISON>
+			</effect>
+			<effect name="PAtk">
+				<amount>8.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -41,11 +44,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="33" />
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>2</POISON>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -59,11 +65,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="33" />
-				<mul stat="pAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>3</POISON>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -77,11 +86,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="breath" val="50" />
-				<mul stat="pAtk" val="1.0062" />
 				<mul stat="regMp" val="1.0062" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>2</POISON>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -456,10 +468,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0724" />
-				<mul stat="pAtk" val="1.0724" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>20</PARALYZE>
+			</effect>
+			<effect name="PAtk">
+				<amount>7.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -473,10 +488,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0041" />
-				<mul stat="pAtk" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>5</PARALYZE>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -490,10 +508,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0041" />
-				<mul stat="pAtk" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>5</PARALYZE>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -507,10 +528,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0062" />
-				<mul stat="pAtk" val="1.0062" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>7.5</PARALYZE>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -524,10 +548,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0103" />
-				<mul stat="pAtk" val="1.0103" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>12.5</PARALYZE>
+			</effect>
+			<effect name="PAtk">
+				<amount>1.03</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -838,11 +865,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0041" />
 				<add stat="accCombat" val="0.31" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.33</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -855,11 +885,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0062" />
 				<add stat="accCombat" val="0.47" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>12.5</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -873,10 +906,13 @@
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="0.579" />
-				<mul stat="pAtk" val="1.0827" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>20.83</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>8.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -889,11 +925,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0062" />
 				<add stat="accCombat" val="0.47" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.33</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -906,14 +945,19 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0083">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<add stat="maxMp" val="40" />
 				<add stat="weightPenalty" val="960" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.33</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -928,12 +972,17 @@
 			<effect name="Buff">
 				<add stat="weightPenalty" val="8159" />
 				<add stat="maxMp" val="340" />
-				<mul stat="pAtk" val="1.0932">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>20.83</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>9.32</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -946,14 +995,19 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0083">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<add stat="maxMp" val="40" />
 				<add stat="weightPenalty" val="960" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.33</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -966,14 +1020,19 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0125">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<add stat="maxMp" val="60" />
 				<add stat="weightPenalty" val="1440" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>12.5</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>1.25</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1054,11 +1113,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.1708" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>29.16</SLEEP>
 				<HOLD>29.16</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>17.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1071,11 +1133,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0083" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>11.66</SLEEP>
 				<HOLD>11.66</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1088,11 +1153,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0083" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>11.66</SLEEP>
 				<HOLD>11.66</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1105,11 +1173,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0125" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>17.5</SLEEP>
 				<HOLD>17.5</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1143,11 +1214,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>11.66</SLEEP>
 				<HOLD>11.66</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1160,11 +1234,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.0041" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>11.66</SLEEP>
 				<HOLD>11.66</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1245,9 +1322,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0041" />
-				<mul stat="pAtk" val="1.0041" />
 				<add stat="maxMp" val="74" />
 				<add stat="weightPenalty" val="960" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1261,9 +1341,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0041" />
-				<mul stat="pAtk" val="1.0041" />
 				<add stat="maxMp" val="74" />
 				<add stat="weightPenalty" val="960" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1278,8 +1361,11 @@
 			<effect name="Buff">
 				<add stat="weightPenalty" val="8159" />
 				<add stat="maxMp" val="630" />
-				<mul stat="pAtk" val="1.058" />
 				<mul stat="pAtkSpd" val="1.058" />
+			</effect>
+			<effect name="PAtk">
+				<amount>5.8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1293,9 +1379,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.0062" />
-				<mul stat="pAtk" val="1.0062" />
 				<add stat="maxMp" val="111" />
 				<add stat="weightPenalty" val="1440" />
+			</effect>
+			<effect name="PAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

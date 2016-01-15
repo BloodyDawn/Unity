@@ -1881,7 +1881,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
@@ -1889,6 +1888,10 @@
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2155,11 +2158,14 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

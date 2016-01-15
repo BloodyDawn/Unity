@@ -1926,7 +1926,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.25" />
+			</effect>
+			<effect name="PAtk">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1953,7 +1956,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.2" />
+			</effect>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<selfEffects>

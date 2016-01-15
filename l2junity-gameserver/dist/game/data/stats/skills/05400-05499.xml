@@ -687,12 +687,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="0.05" />
 				<mul stat="mAtk" val="0.05" />
 				<sub stat="accCombat" val="50" />
 				<sub stat="rEvas" val="#avoid" />
 				<mul stat="pDef" val="#def" />
 				<mul stat="mDef" val="#def" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-95</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -974,7 +977,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
@@ -982,6 +984,10 @@
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

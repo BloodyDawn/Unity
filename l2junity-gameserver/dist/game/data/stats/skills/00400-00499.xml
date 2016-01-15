@@ -941,7 +941,21 @@
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtk" val="#debuff" />
-				<mul stat="pAtk" val="#debuff" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-15</value>
+					<value level="5">-15</value>
+					<value level="6">-20</value>
+					<value level="7">-20</value>
+					<value level="8">-25</value>
+					<value level="9">-25</value>
+					<value level="10">-30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1145,7 +1159,10 @@
 				<mul stat="pDef" val="#amount" />
 				<mul stat="mDef" val="#amount" />
 				<sub stat="accCombat" val="12" />
-				<mul stat="pAtk" val="0.55" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-45</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2779,8 +2796,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.085" />
 				<add stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="PAtk">
+				<amount>8.5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4087,7 +4107,10 @@
 		<trait>DISARM</trait>
 		<for>
 			<effect name="Disarm">
-				<mul stat="pAtk" val="0.6" />
+			</effect>
+			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

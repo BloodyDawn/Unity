@@ -427,9 +427,6 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#bonus">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 				<mul stat="pAtkSpd" val="#bonus">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
@@ -439,6 +436,20 @@
 				<mul stat="mDef" val="#bonus">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -456,9 +467,20 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -531,15 +553,26 @@
 		<reuseDelay>30000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 				<mul stat="pReuse" val="#pReuse">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 				<mul stat="defCritRate" val="#defCritRate">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

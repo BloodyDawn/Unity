@@ -35,7 +35,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="#base" />
 				<sub stat="DEX" val="#base" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
@@ -52,6 +51,15 @@
 					<value level="3">0</value>
 					<value level="4">70</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -76,7 +84,6 @@
 				<add stat="accCombat" val="#accCombat" />
 				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
@@ -95,6 +102,15 @@
 				</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13003" levels="4" name="Vesper Light Armor Set">
@@ -114,10 +130,18 @@
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base1" />
 				<add stat="DEX" val="#base" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="regMp" val="1.0557" />
 				<add stat="maxMp" val="#maxMp" />
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -143,7 +167,6 @@
 				<add stat="DEX" val="#base" />
 				<add stat="rCrit" val="#rCrit" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="regMp" val="1.0557" />
 				<add stat="maxMp" val="#maxMp" />
@@ -157,6 +180,15 @@
 				</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13005" levels="4" name="Vesper Robe Set">
@@ -386,7 +418,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="magicSuccRes" val="1.02" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
@@ -403,6 +434,15 @@
 				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">4.26</value>
+					<value level="3">4.26</value>
+					<value level="4">4.26</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13014" levels="4" name="Moirai Light Armor Set">
@@ -422,7 +462,6 @@
 				<add stat="DEX" val="#base" />
 				<sub stat="CON" val="#base" />
 				<mul stat="moveSpeed" val="1.03" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -438,6 +477,15 @@
 				</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">4.26</value>
+					<value level="3">4.26</value>
+					<value level="4">4.26</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13015" levels="4" name="Moirai Robe Set">
@@ -493,7 +541,6 @@
 			<effect name="Buff">
 				<sub stat="STR" val="#base" />
 				<add stat="CON" val="#base" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pDef" val="1.0847" />
 				<add stat="maxHp" val="#maxHp" />
 				<add stat="moveSpeed" val="#runSpd" />
@@ -525,6 +572,15 @@
 				</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13017" levels="4" name="Vorpal Leather Armor Set">
@@ -548,7 +604,6 @@
 				<add stat="STR" val="#base" />
 				<add stat="DEX" val="#base1" />
 				<sub stat="CON" val="#base2" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="#maxHp" />
 				<mul stat="moveSpeed" val="#runSpd" />
@@ -567,6 +622,15 @@
 				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5.57</value>
+					<value level="4">5.57</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13018" levels="4" name="Vorpal Robe Set">
@@ -629,7 +693,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base1" />
-				<mul stat="pAtk" val="#pAtk" />
 				<add stat="rCrit" val="#rCrit" />
 				<add stat="maxHp" val="550" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
@@ -668,6 +731,15 @@
 				</amount>
 				<chance>30</chance>
 			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">6.59</value>
+					<value level="3">6.59</value>
+					<value level="4">6.59</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13020" levels="4" name="Elegia Leather Armor Set">
@@ -691,7 +763,6 @@
 				<add stat="DEX" val="#base1" />
 				<mul stat="moveSpeed" val="1.03" />
 				<add stat="rCrit" val="#rCrit" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -707,6 +778,15 @@
 				</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">6.59</value>
+					<value level="3">6.59</value>
+					<value level="4">6.59</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13021" levels="4" name="Elegia Robe Set">
@@ -1828,7 +1908,6 @@
 				<add stat="rEvas" val="#rEvas" />
 				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -1843,6 +1922,15 @@
 					<value level="3">5</value>
 					<value level="4">5</value>
 				</SLEEP>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1865,7 +1953,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="1" />
 				<add stat="pAtk" val="155" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
@@ -1883,6 +1970,15 @@
 					<value level="3">5</value>
 					<value level="4">5</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1909,7 +2005,6 @@
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="pAtk" val="#pAtkAdd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -1924,6 +2019,15 @@
 					<value level="3">7</value>
 					<value level="4">7</value>
 				</SLEEP>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1954,7 +2058,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
@@ -1970,6 +2073,15 @@
 					<value level="3">7</value>
 					<value level="4">7</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1998,7 +2110,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -2013,6 +2124,15 @@
 					<value level="3">10</value>
 					<value level="4">10</value>
 				</SLEEP>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2043,7 +2163,6 @@
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="fireRes" val="#elements" />
@@ -2064,6 +2183,15 @@
 					<value level="3">20</value>
 					<value level="4">20</value>
 				</DERANGEMENT>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2091,7 +2219,6 @@
 				<add stat="rEvas" val="#rEvas" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="fireRes" val="#elements" />
@@ -2115,6 +2242,15 @@
 					<value level="4">2</value>
 				</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2145,7 +2281,6 @@
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<add stat="maxHp" val="#maxHp" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -2159,6 +2294,15 @@
 					<value level="3">10</value>
 					<value level="4">10</value>
 				</HOLD>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2188,7 +2332,6 @@
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="pAtk" val="#pAtk" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
 				<add stat="windRes" val="#elements" />
@@ -2201,6 +2344,15 @@
 					<value level="3">15</value>
 					<value level="4">15</value>
 				</SLEEP>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
