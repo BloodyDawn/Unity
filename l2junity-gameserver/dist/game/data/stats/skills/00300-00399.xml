@@ -2839,7 +2839,6 @@
 				<sub stat="cancelVuln" val="80" />
 				<set stat="debuffImmunity" val="1" />
 				<mul stat="healEffect" val="2" />
-				<add stat="mAtk" val="500" />
 				<add stat="mAtkSpd" val="100" />
 				<sub stat="mDef" val="25" />
 				<add stat="pAtkSpd" val="100" />
@@ -2848,6 +2847,10 @@
 				<add stat="moveSpeed" val="20" />
 			</effect>
 			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>500</amount>
 				<mode>DIFF</mode>
 			</effect>

@@ -1378,9 +1378,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtkAdd">
-					<using kind="BLUNT" />
-				</add>
 				<mul stat="mAtkSpd" val="#mAtkSpd">
 					<using kind="BLUNT" />
 				</mul>
@@ -1439,6 +1436,31 @@
 					<value level="17">40</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">57</value>
+					<value level="3">228</value>
+					<value level="4">436</value>
+					<value level="5">728</value>
+					<value level="6">834</value>
+					<value level="7">942</value>
+					<value level="8">1963</value>
+					<value level="9">2276</value>
+					<value level="10">2638</value>
+					<value level="11">2970</value>
+					<value level="12">3365</value>
+					<value level="13">3570</value>
+					<value level="14">3787</value>
+					<value level="15">4018</value>
+					<value level="16">4262</value>
+					<value level="17">4522</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>BLUNT</item>
 				</weaponType>

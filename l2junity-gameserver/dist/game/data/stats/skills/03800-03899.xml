@@ -835,7 +835,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="21.77" />
+			</effect>
+			<effect name="MAtk">
+				<amount>21.77</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1389,7 +1392,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">21.77</value>
+					<value level="2">27.63</value>
+					<value level="3">45.81</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1538,7 +1548,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">21.77</value>
+					<value level="2">27.63</value>
+					<value level="3">45.81</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

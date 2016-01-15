@@ -1865,10 +1865,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtk" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">30.76</value>
+					<value level="2">31.38</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1885,11 +1891,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtk" />
 				<mul stat="MagicalMpConsumeRate" val="1.15" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">153.28</value>
+					<value level="2">167.02</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1977,7 +1989,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">20.36</value>
+					<value level="2">22.51</value>
+					<value level="3">24.59</value>
+					<value level="4">26.53</value>
+					<value level="5">28.27</value>
+					<value level="6">29.7</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1998,8 +2020,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtk" />
 				<mul stat="MagicalMpConsumeRate" val="1.15" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">75.86</value>
+					<value level="2">87.22</value>
+					<value level="3">99.39</value>
+					<value level="4">112.26</value>
+					<value level="5">125.66</value>
+					<value level="6">139.41</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

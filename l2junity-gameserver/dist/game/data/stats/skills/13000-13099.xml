@@ -2649,7 +2649,6 @@
 				<add stat="MEN" val="-1" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
-				<add stat="mAtk" val="#mAtkAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -2673,6 +2672,15 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">184</value>
+					<value level="4">0</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2748,7 +2756,6 @@
 				<add stat="MEN" val="-2" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
-				<add stat="mAtk" val="#mAtkAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -2772,6 +2779,15 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">222</value>
+					<value level="4">0</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2849,7 +2865,6 @@
 				<add stat="MEN" val="-1" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
-				<add stat="mAtk" val="#mAtkAdd" />
 				<add stat="mCritPowerAdd" val="#mCritPowerAdd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
@@ -2874,6 +2889,15 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">256</value>
+					<value level="4">0</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2957,7 +2981,6 @@
 				<add stat="MEN" val="-2" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
-				<add stat="mAtk" val="#mAtkAdd" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -2989,6 +3012,15 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">267</value>
+					<value level="4">267</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13093" levels="4" name="Set Effect - R99 Rare Robe 2 Piece (Recovery Type)">
@@ -3014,7 +3046,6 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="regMp" val="#regMp" />
-				<add stat="mAtk" val="#mAtkAdd" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -3037,6 +3068,15 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">267</value>
+					<value level="4">267</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -332,7 +332,6 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<add stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="1.23" />
 				<add stat="mCritRate" val="6" />
 				<add stat="accCombat" val="4">
@@ -366,6 +365,21 @@
 				<weaponType>
 					<item>DUALBLUNT</item>
 				</weaponType>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">1079</value>
+					<value level="2">1252</value>
+					<value level="3">1451</value>
+					<value level="4">1633</value>
+					<value level="5">1850</value>
+					<value level="6">1963</value>
+					<value level="7">2083</value>
+					<value level="8">2210</value>
+					<value level="9">2344</value>
+					<value level="10">2478</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

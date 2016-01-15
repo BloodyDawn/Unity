@@ -296,7 +296,6 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="DamOverTime" ticks="5">
-				<add stat="mAtk" val="#mAtk" />
 				<mul stat="moveSpeed" val="0.7" />
 				<power>
 					<value level="1">6.45</value>
@@ -312,6 +311,23 @@
 					<value level="11">113.38</value>
 					<value level="12">123.15</value>
 				</power>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">9.16</value>
+					<value level="2">15.36</value>
+					<value level="3">27.82</value>
+					<value level="4">41.49</value>
+					<value level="5">61.66</value>
+					<value level="6">84.61</value>
+					<value level="7">111.26</value>
+					<value level="8">126.31</value>
+					<value level="9">142.73</value>
+					<value level="10">160.7</value>
+					<value level="11">180.46</value>
+					<value level="12">201.65</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
