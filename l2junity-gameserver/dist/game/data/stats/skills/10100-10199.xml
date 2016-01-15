@@ -34,7 +34,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
 				<add stat="waterRes" val="#elemRes" />
 				<add stat="fireRes" val="#elemRes" />
 				<add stat="windRes" val="#elemRes" />
@@ -62,6 +61,15 @@
 					<value level="4">30</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">70</value>
+					<value level="3">100</value>
+					<value level="4">120</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -100,7 +108,6 @@
 			<effect name="Buff">
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -122,6 +129,15 @@
 					<value level="4">30</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">65</value>
+					<value level="3">80</value>
+					<value level="4">100</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -317,12 +333,15 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.25" />
 				<add stat="fireRes" val="50" />
 				<add stat="waterRes" val="50" />
 				<add stat="windRes" val="50" />
 				<add stat="earthRes" val="50" />
 				<mul stat="debuffVuln" val="1.25" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -433,12 +452,15 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.2" />
 				<add stat="fireRes" val="40" />
 				<add stat="waterRes" val="40" />
 				<add stat="windRes" val="40" />
 				<add stat="earthRes" val="40" />
 				<mul stat="debuffVuln" val="1.2" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

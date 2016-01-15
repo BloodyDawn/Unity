@@ -1861,7 +1861,10 @@
 			<effect name="TransferDamage">
 				<add stat="transDamToPlayer" val="90" />
 				<add stat="pDef" val="3600" />
-				<add stat="mDef" val="2700" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2700</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2160,7 +2163,7 @@
 				<!-- pAtk +100% -->
 				<mul stat="pDef" val="2" /> <!-- pDef +100% -->
 				<!-- mAtk +100% -->
-				<mul stat="mDef" val="2" /> <!-- mDef +100% -->
+				<!-- mDef +100% -->
 				<transformationId>251</transformationId>
 			</effect>
 			<effect name="PAtk">
@@ -2168,6 +2171,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3737,8 +3744,16 @@
 		<for>
 			<effect name="ImmobileBuff">
 				<add stat="pDef" val="#pDef" />
-				<add stat="mDef" val="#mDef" />
 				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">800</value>
+					<value level="2">900</value>
+					<value level="3">1000</value>
+					<value level="4">1100</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4275,7 +4290,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mDef" val="44" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

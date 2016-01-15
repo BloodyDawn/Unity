@@ -826,11 +826,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0133" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>13.33</POISON>
 				<BLEED>13.33</BLEED>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>1.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -843,11 +846,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0133" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>13.33</POISON>
 				<BLEED>13.33</BLEED>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>1.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -873,11 +879,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0333" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>33.33</POISON>
 				<BLEED>33.33</BLEED>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3.33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -890,11 +899,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.02" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>20</POISON>
 				<BLEED>20</BLEED>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1235,7 +1247,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0827" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>29.16</SLEEP>
@@ -1244,6 +1255,10 @@
 			<effect name="VampiricAttack">
 				<amount>3</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>8.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

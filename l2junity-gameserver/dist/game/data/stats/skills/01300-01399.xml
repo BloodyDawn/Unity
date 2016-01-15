@@ -825,7 +825,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="mDef" val="4500" />
 				<sub stat="cancelVuln" val="80" />
 				<mul stat="maxCp" val="0.8" />
 				<mul stat="maxRecoverableCp" val="0.6" />
@@ -838,6 +837,10 @@
 			<effect name="Speed">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>4500</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1922,7 +1925,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1933,6 +1935,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2005,7 +2011,6 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
 				<mul stat="pDef" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
@@ -2024,6 +2029,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2182,7 +2191,6 @@
 				<mul stat="regMp" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
@@ -2199,6 +2207,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2232,7 +2244,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
 				<sub stat="debuffVuln" val="10" />
@@ -2247,6 +2258,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2278,7 +2293,6 @@
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -2300,6 +2314,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2505,7 +2523,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<add stat="accCombat" val="4" />
@@ -2525,6 +2542,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2584,7 +2605,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
@@ -2594,6 +2614,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>75</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2623,7 +2647,6 @@
 		<trait>DEATH</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.7" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="rCrit" val="-0.3" />
 				<mul stat="cAtk" val="0.7" />
@@ -2635,6 +2658,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2868,12 +2895,15 @@
 		<for>
 			<effect name="Mute">
 				<add stat="cancel" val="100" />
-				<mul stat="mDef" val="0.5" />
 				<mul stat="pDef" val="0.5" />
 				<sub stat="rEvas" val="16" />
 				<mul stat="rShld" val="0.5" />
 			</effect>
 			<effect name="PhysicalMute" />
+			<effect name="MagicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="1376" levels="1" name="Heroic Dread">
@@ -3122,13 +3152,16 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.85" />
 				<sub stat="waterRes" val="#vuln" />
 				<sub stat="fireRes" val="#vuln" />
 				<sub stat="windRes" val="#vuln" />
 				<sub stat="earthRes" val="#vuln" />
 				<sub stat="holyRes" val="#vuln" />
 				<sub stat="darkRes" val="#vuln" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

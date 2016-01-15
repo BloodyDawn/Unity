@@ -755,7 +755,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mDef" val="70" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

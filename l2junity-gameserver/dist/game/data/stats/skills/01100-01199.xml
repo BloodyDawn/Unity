@@ -1507,7 +1507,13 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">23</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -501,7 +501,10 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
-				<mul stat="mDef" val="0.9" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

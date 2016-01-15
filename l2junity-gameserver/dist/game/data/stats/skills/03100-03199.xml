@@ -2325,7 +2325,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">37</value>
+					<value level="2">40</value>
+					<value level="3">44</value>
+					<value level="4">48</value>
+					<value level="5">52</value>
+					<value level="6">56</value>
+					<value level="7">61</value>
+					<value level="8">65</value>
+					<value level="9">70</value>
+					<value level="10">77</value>
+					<value level="11">85</value>
+					<value level="12">94</value>
+					<value level="13">104</value>
+					<value level="14">115</value>
+					<value level="15">117</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3735,11 +3754,18 @@
 			<effect name="SilentMove">
 				<sub stat="rEvas" val="#rEvas" />
 				<mul stat="pDef" val="#amount" />
-				<mul stat="mDef" val="#amount" />
 				<sub stat="accCombat" val="12" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-45</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-45</value>
+					<value level="2">-30</value>
+					<value level="3">-15</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

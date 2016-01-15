@@ -725,7 +725,10 @@
 		<targetType>CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.33" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -891,7 +894,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
-				<mul stat="mDef" val="1.33" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>33</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2380,7 +2386,6 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
-				<mul stat="mDef" val="0.8" />
 				<sub stat="rEvas" val="10" />
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="regHp" val="0.5" />
@@ -2395,6 +2400,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2423,13 +2432,16 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
-				<mul stat="mDef" val="0.8" />
 				<sub stat="rEvas" val="10" />
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="regHp" val="0.1" />
 			</effect>
 			<effect name="Speed">
 				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2478,9 +2490,12 @@
 			<effect name="Debuff">
 				<sub stat="rEvas" val="5" />
 				<mul stat="pDef" val="0.9" />
-				<mul stat="mDef" val="0.9" />
 			</effect>
 			<effect name="Speed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2518,9 +2533,12 @@
 			<effect name="Debuff">
 				<sub stat="rEvas" val="10" />
 				<mul stat="pDef" val="0.8" />
-				<mul stat="mDef" val="0.8" />
 			</effect>
 			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>

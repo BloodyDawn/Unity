@@ -105,7 +105,6 @@
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
 				<sub stat="pDef" val="500" />
-				<mul stat="mDef" val="0.9" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -118,6 +117,10 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<targetType>SELF</targetType>
 				<chance>50</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -540,7 +543,6 @@
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
 				<sub stat="pDef" val="500" />
-				<mul stat="mDef" val="0.9" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -553,6 +555,10 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<targetType>SELF</targetType>
 				<chance>50</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

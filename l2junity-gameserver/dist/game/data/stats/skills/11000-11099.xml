@@ -100,9 +100,13 @@
 				<add stat="pDef" val="#pDef">
 					<using kind="MAGIC" />
 				</add>
-				<mul stat="mDef" val="1.10">
-					<using kind="MAGIC" />
-				</mul>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -127,9 +131,23 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<add stat="mDef" val="#mDef" />
 				<mul stat="magicSuccRes" val="1.35" />
 				<add stat="INT" val="2" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">862</value>
+					<value level="2">976</value>
+					<value level="3">1104</value>
+					<value level="4">1219</value>
+					<value level="5">1374</value>
+					<value level="6">1444</value>
+					<value level="7">1517</value>
+					<value level="8">1593</value>
+					<value level="9">1674</value>
+					<value level="10">1759</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2747,7 +2765,6 @@
 			<effect name="Debuff">
 				<mul stat="mCritRate" val="#mCritRate" />
 				<mul stat="pDef" val="1.20" />
-				<mul stat="mDef" val="1.20" />
 				<add stat="rEvas" val="2" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
@@ -2766,6 +2783,10 @@
 					<value level="1">20</value>
 					<value level="2">30</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2851,7 +2872,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.7" />
 				<mul stat="mAtkSpd" val="0.9" />
 				<mul stat="rCrit" val="-0.1" />
 				<mul stat="mCritRate" val="0.9" />
@@ -2864,6 +2884,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2941,7 +2965,6 @@
 				<percentage>25</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.7" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="0.92" />
 				<mul stat="rCrit" val="-0.08" />
@@ -2954,6 +2977,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

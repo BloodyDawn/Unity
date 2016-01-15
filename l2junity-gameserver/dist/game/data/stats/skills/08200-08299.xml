@@ -1143,9 +1143,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mDef" val="1.0062" />
 				<SLEEP>17.5</SLEEP>
 				<HOLD>17.5</HOLD>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

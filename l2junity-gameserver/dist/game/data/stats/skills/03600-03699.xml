@@ -130,8 +130,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 				<add stat="pDef" val="#pDefAdd" />
-				<mul stat="mDef" val="#mDef" />
-				<add stat="mDef" val="#mDefAdd" />
 				<mul stat="maxCp" val="#maxCp" />
 				<add stat="maxCp" val="#maxCpAdd" />
 				<mul stat="regCp" val="#regCp" />
@@ -225,6 +223,36 @@
 					<value level="8">16</value>
 					<value level="9">18</value>
 					<value level="10">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">206</value>
+					<value level="2">212</value>
+					<value level="3">218</value>
+					<value level="4">225</value>
+					<value level="5">231</value>
+					<value level="6">238</value>
+					<value level="7">245</value>
+					<value level="8">253</value>
+					<value level="9">260</value>
+					<value level="10">268</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">515</value>
+					<value level="2">530</value>
+					<value level="3">546</value>
+					<value level="4">562</value>
+					<value level="5">579</value>
+					<value level="6">597</value>
+					<value level="7">614</value>
+					<value level="8">633</value>
+					<value level="9">652</value>
+					<value level="10">671</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -453,9 +481,13 @@
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="mDef" val="14">
-					<using kind="LIGHT" />
-				</add>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -509,9 +541,13 @@
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="mDef" val="20">
-					<using kind="LIGHT" />
-				</add>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -564,9 +600,13 @@
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="mDef" val="24">
-					<using kind="LIGHT" />
-				</add>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>24</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -619,9 +659,13 @@
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="mDef" val="27">
-					<using kind="LIGHT" />
-				</add>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -676,9 +720,13 @@
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="mDef" val="33">
-					<using kind="LIGHT" />
-				</add>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -799,8 +847,6 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 				<add stat="pDef" val="#pDefAdd" />
-				<mul stat="mDef" val="#mDef" />
-				<add stat="mDef" val="#mDefAdd" />
 				<mul stat="maxCp" val="#maxCp" />
 				<add stat="maxCp" val="#maxCpAdd" />
 				<mul stat="regCp" val="#regCp" />
@@ -894,6 +940,36 @@
 					<value level="8">16</value>
 					<value level="9">18</value>
 					<value level="10">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">206</value>
+					<value level="2">212</value>
+					<value level="3">218</value>
+					<value level="4">225</value>
+					<value level="5">231</value>
+					<value level="6">238</value>
+					<value level="7">245</value>
+					<value level="8">253</value>
+					<value level="9">260</value>
+					<value level="10">268</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">515</value>
+					<value level="2">530</value>
+					<value level="3">546</value>
+					<value level="4">562</value>
+					<value level="5">579</value>
+					<value level="6">597</value>
+					<value level="7">614</value>
+					<value level="8">633</value>
+					<value level="9">652</value>
+					<value level="10">671</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1303,7 +1379,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.12" />
 				<add stat="maxMp" val="38" />
 				<add stat="darkRes" val="30" />
 				<add stat="maxHp" val="105" />
@@ -1314,6 +1389,10 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>10</DERANGEMENT>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>12</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1978,8 +2057,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0125" />
 				<add stat="weightPenalty" val="1440" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1992,8 +2074,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0083" />
 				<add stat="weightPenalty" val="960" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2007,7 +2092,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="11038" />
-				<mul stat="mDef" val="1.1708" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>17.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2020,8 +2108,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0083" />
 				<add stat="weightPenalty" val="960" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>0.83</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2061,7 +2152,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" />
-				<mul stat="mDef" val="1.1708" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>17.08</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

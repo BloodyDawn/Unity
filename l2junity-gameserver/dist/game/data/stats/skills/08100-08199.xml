@@ -1319,7 +1319,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="mDef" val="1.04" /> <!-- M. Def. +4% -->
+				<!-- M. Def. +4% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -1329,6 +1329,10 @@
 			<effect name="VampiricAttack">
 				<amount>3</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -456,7 +456,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
-				<mul stat="mDef" val="1.30" />
 			</effect>
 			<effect name="PAtk">
 				<amount>17</amount>
@@ -464,6 +463,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>79</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -507,7 +510,6 @@
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<!-- TODO: increases P. Def. upon evading a critical attack ??? -->
@@ -522,6 +524,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

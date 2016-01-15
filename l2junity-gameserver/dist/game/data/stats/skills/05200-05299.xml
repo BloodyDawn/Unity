@@ -673,7 +673,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="0.3" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-70</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1241,9 +1244,12 @@
 			<effect name="Buff">
 			</effect>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.15" />
 			</effect>
 			<effect name="MAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>

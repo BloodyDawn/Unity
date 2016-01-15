@@ -196,7 +196,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0526" /> <!-- M. Def. +5.26% -->
+				<!-- M. Def. +5.26% -->
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -270,8 +274,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0525" /> <!-- M. Def. +5.25% -->
+				<!-- M. Def. +5.25% -->
 				<add stat="weightPenalty" val="5795" /> <!-- Point at which a weight penalty is applied +5795 -->
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -478,11 +486,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<mul stat="mDef" val="1.08" /> <!-- M. Def. +8% -->
+				<!-- M. Def. +8% -->
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>80</POISON>
 				<BLEED>80</BLEED>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -556,7 +568,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.04" /> <!-- M. Def. +4% -->
+				<!-- M. Def. +4% -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
@@ -565,6 +577,10 @@
 			<effect name="VampiricAttack">
 				<amount>3</amount>
 				<chance>30</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -699,7 +715,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.0526" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

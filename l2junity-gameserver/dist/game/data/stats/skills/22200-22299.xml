@@ -248,7 +248,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -266,6 +265,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

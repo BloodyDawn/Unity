@@ -174,8 +174,22 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<add stat="mDef" val="#mDef" />
 				<mul stat="magicSuccRes" val="1.25" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">949</value>
+					<value level="2">1073</value>
+					<value level="3">1214</value>
+					<value level="4">1340</value>
+					<value level="5">1511</value>
+					<value level="6">1588</value>
+					<value level="7">1668</value>
+					<value level="8">1753</value>
+					<value level="9">1842</value>
+					<value level="10">1935</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1171,10 +1185,21 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="#def" />
-				<add stat="mDef" val="#def" />
 				<sub stat="cancelVuln" val="80" />
 				<add stat="reflectDam" val="#reflectDam" />
 				<set stat="damageCap" val="#damageCap" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">4000</value>
+					<value level="2">6000</value>
+					<value level="3">8000</value>
+					<value level="4">10000</value>
+					<value level="5">12000</value>
+					<value level="6">14000</value>
+					<value level="7">16000</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1261,11 +1286,20 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="#pDef" />
-				<add stat="mDef" val="#mDef" />
 				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
 			<effect name="TransferDamage">
 				<add stat="transDamToPlayer" val="90" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5000</value>
+					<value level="2">7000</value>
+					<value level="3">8000</value>
+					<value level="4">9000</value>
+					<value level="5">10000</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1502,12 +1536,7 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="#def">
-					<using kind="SWORD, BLUNT" />
-				</mul>
-				<mul stat="pDef" val="#def">
-					<using kind="SWORD, BLUNT" />
-				</mul>
+				<mul stat="pDef" val="#def" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD, BLUNT" />
 				</add>
@@ -1529,6 +1558,15 @@
 					<value level="4">30</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">70</value>
+					<value level="3">100</value>
+					<value level="4">120</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1846,11 +1884,14 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.15" />
 				<add stat="fireRes" val="30" />
 				<add stat="waterRes" val="30" />
 				<add stat="windRes" val="30" />
 				<add stat="earthRes" val="30" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1875,11 +1916,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.1" />
 				<add stat="fireRes" val="20" />
 				<add stat="waterRes" val="20" />
 				<add stat="windRes" val="20" />
 				<add stat="earthRes" val="20" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2845,7 +2889,6 @@
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="#debuffImmunity" />
 				<add stat="pDef" val="#pDef" />
-				<add stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="HealPercent">
 				<power>
@@ -2858,6 +2901,19 @@
 					<value level="7">6</value>
 					<value level="8">10</value>
 				</power>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">500</value>
+					<value level="6">500</value>
+					<value level="7">500</value>
+					<value level="8">500</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2906,13 +2962,16 @@
 		<isMagic>4</isMagic>
 		<for>
 			<effect name="Buff">
-				<add stat="mDef" val="1000" />
 				<add stat="darkRes" val="20" />
 				<add stat="holyRes" val="20" />
 				<add stat="waterRes" val="20" />
 				<add stat="fireRes" val="20" />
 				<add stat="windRes" val="20" />
 				<add stat="earthRes" val="20" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3029,7 +3088,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
@@ -3046,6 +3104,15 @@
 					<value level="3">3</value>
 					<value level="4">4</value>
 				</skillLevel>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3078,7 +3145,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3348,7 +3423,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
@@ -3365,6 +3439,15 @@
 					<value level="3">3</value>
 					<value level="4">4</value>
 				</skillLevel>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3397,8 +3480,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
 				<mul stat="healEffect" val="#healEffect" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4082,7 +4173,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
 				<mul stat="debuffVuln" val="#debuffVuln" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
@@ -4105,6 +4195,15 @@
 					<value level="4">30</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">70</value>
+					<value level="3">100</value>
+					<value level="4">120</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -4142,7 +4241,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#def" />
-				<mul stat="mDef" val="#def" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -4173,6 +4271,15 @@
 					<value level="4">30</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">65</value>
+					<value level="3">80</value>
+					<value level="4">100</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

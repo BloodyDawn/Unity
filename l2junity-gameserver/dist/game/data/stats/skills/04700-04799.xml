@@ -569,11 +569,28 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
 			<effect name="TargetMeProbability">
 				<chance>80</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-6</value>
+					<value level="2">-8</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-10</value>
+					<value level="7">-10</value>
+					<value level="8">-10</value>
+					<value level="9">-10</value>
+					<value level="10">-10</value>
+					<value level="11">-10</value>
+					<value level="12">-10</value>
+					<value level="13">-10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -691,11 +708,28 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
 			<effect name="TargetMeProbability">
 				<chance>40</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-6</value>
+					<value level="2">-8</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-10</value>
+					<value level="7">-10</value>
+					<value level="8">-10</value>
+					<value level="9">-10</value>
+					<value level="10">-10</value>
+					<value level="11">-10</value>
+					<value level="12">-10</value>
+					<value level="13">-10</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1133,12 +1167,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<mul stat="mDef" val="5" />
 				<mul stat="pDef" val="5" />
 				<mul stat="pAtkSpd" val="0.3" />
 			</effect>
 			<effect name="Speed">
 				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>400</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -6087,7 +6124,21 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas" />
-				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">6</value>
+					<value level="3">9</value>
+					<value level="4">12</value>
+					<value level="5">15</value>
+					<value level="6">18</value>
+					<value level="7">21</value>
+					<value level="8">24</value>
+					<value level="9">27</value>
+					<value level="10">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

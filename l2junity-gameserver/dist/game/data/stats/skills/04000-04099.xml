@@ -3743,7 +3743,6 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#pAtkSpd" />
 				<mul stat="pDef" val="#pDef" />
-				<mul stat="mDef" val="#mDef" />
 				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 			<effect name="PAtk">
@@ -3766,6 +3765,13 @@
 					<value level="2">8</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

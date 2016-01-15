@@ -153,12 +153,15 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<!-- Detonates Elemental Destruction -->
 				<dispel>BODY_DESTRUCTION</dispel>
 				<rate>100</rate>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -225,12 +228,15 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<!-- Detonates Elemental Destruction -->
 				<dispel>BODY_DESTRUCTION</dispel>
 				<rate>100</rate>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -297,12 +303,15 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<!-- Detonates Elemental Destruction -->
 				<dispel>BODY_DESTRUCTION</dispel>
 				<rate>100</rate>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -369,12 +378,15 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<!-- Detonates Elemental Destruction -->
 				<dispel>BODY_DESTRUCTION</dispel>
 				<rate>100</rate>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -441,12 +453,15 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<!-- Detonates Elemental Destruction -->
 				<dispel>BODY_DESTRUCTION</dispel>
 				<rate>100</rate>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -511,12 +526,15 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<!-- Detonates Elemental Destruction -->
 				<dispel>BODY_DESTRUCTION</dispel>
 				<rate>100</rate>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2018,13 +2036,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.50" />
 				<sub stat="fireRes" val="50" />
 				<sub stat="waterRes" val="50" />
 				<sub stat="windRes" val="50" />
 				<sub stat="earthRes" val="50" />
 				<sub stat="holyRes" val="50" />
 				<sub stat="darkRes" val="50" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2445,7 +2466,10 @@
 				<add stat="waterRes" val="20" />
 				<add stat="windRes" val="20" />
 				<add stat="earthRes" val="20" />
-				<mul stat="mDef" val="1.05" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

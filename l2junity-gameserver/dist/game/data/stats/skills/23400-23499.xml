@@ -886,7 +886,6 @@
 				<mul stat="mAtkSpd" val="1.05" />
 				<mul stat="mCritRate" val="1.1" />
 				<mul stat="pDef" val="1.2" />
-				<mul stat="mDef" val="1.2" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -911,6 +910,10 @@
 			</effect>
 			<effect name="MAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1380,10 +1383,17 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="#def" />
-				<add stat="mDef" val="#def" />
 				<sub stat="cancelVuln" val="80" />
 				<add stat="reflectDam" val="#reflectDam" />
 				<set stat="damageCap" val="#damageCap" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">4000</value>
+					<value level="2">6000</value>
+					<value level="3">8000</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

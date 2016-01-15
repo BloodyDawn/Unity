@@ -5400,7 +5400,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="#mDef" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -5426,6 +5425,13 @@
 					<value level="2">8</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -5625,13 +5631,16 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.85" />
 				<sub stat="waterRes" val="#vuln" />
 				<sub stat="fireRes" val="#vuln" />
 				<sub stat="windRes" val="#vuln" />
 				<sub stat="earthRes" val="#vuln" />
 				<sub stat="holyRes" val="#vuln" />
 				<sub stat="darkRes" val="#vuln" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -7689,8 +7698,14 @@
 		<for>
 			<effect name="ImmobilePetBuff">
 				<add stat="pDef" val="#pDef" />
-				<add stat="mDef" val="#mDef" />
 				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">1350</value>
+					<value level="2">2700</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

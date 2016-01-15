@@ -1324,7 +1324,6 @@
 			<effect name="TriggerSkillByDamage">
 				<!-- Battle Dash -->
 				<mul stat="pDef" val="#pDefMDef" />
-				<mul stat="mDef" val="#pDefMDef" />
 				<minDamage>1</minDamage>
 				<skillId>30523</skillId>
 				<skillLevel>
@@ -1342,6 +1341,14 @@
 					<value level="3">40</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1620,12 +1627,6 @@
 				<add stat="pDef" val="#pDef2">
 					<using kind="LIGHT" />
 				</add>
-				<mul stat="mDef" val="#mDef">
-					<using kind="LIGHT" />
-				</mul>
-				<add stat="mDef" val="#mDef2">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="rEvas" val="#rEvas">
 					<using kind="LIGHT" />
 				</add>
@@ -1635,6 +1636,56 @@
 				<mul stat="defMCritRate" val="#crit">
 					<using kind="LIGHT" />
 				</mul>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">3</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+					<value level="11">10</value>
+					<value level="12">10</value>
+					<value level="13">10</value>
+					<value level="14">10</value>
+					<value level="15">10</value>
+					<value level="16">10</value>
+					<value level="17">10</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">276</value>
+					<value level="8">949</value>
+					<value level="9">1073</value>
+					<value level="10">1214</value>
+					<value level="11">1340</value>
+					<value level="12">1511</value>
+					<value level="13">1588</value>
+					<value level="14">1668</value>
+					<value level="15">1753</value>
+					<value level="16">1842</value>
+					<value level="17">1935</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>

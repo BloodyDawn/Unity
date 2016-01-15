@@ -82,7 +82,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
-				<mul stat="mDef" val="1.15" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -527,7 +530,10 @@
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.1" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -557,7 +563,10 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
-				<mul stat="mDef" val="0.77" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

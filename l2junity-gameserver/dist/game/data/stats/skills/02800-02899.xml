@@ -1421,7 +1421,6 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="regHp" val="1.2" />
@@ -1437,6 +1436,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1468,7 +1471,6 @@
 				<mul stat="DanceMpConsumeRate" val="0.95" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="mDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="regMp" val="1.2" />
@@ -1483,6 +1485,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1969,7 +1975,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
@@ -1986,6 +1991,10 @@
 			<effect name="Speed">
 				<amount>8</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-16</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2435,7 +2444,6 @@
 				<mul stat="maxMp" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
 				<mul stat="pDef" val="1.1" />
-				<mul stat="mDef" val="1.1" />
 				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
 			<effect name="MaxHp">
@@ -2445,6 +2453,10 @@
 			<effect name="Speed">
 				<amount>10</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

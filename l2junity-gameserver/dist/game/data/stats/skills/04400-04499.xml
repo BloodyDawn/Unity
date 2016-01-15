@@ -474,7 +474,33 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-61</value>
+					<value level="2">-57</value>
+					<value level="3">-53</value>
+					<value level="4">-48</value>
+					<value level="5">-43</value>
+					<value level="6">-37</value>
+					<value level="7">-31</value>
+					<value level="8">-24</value>
+					<value level="9">-17</value>
+					<value level="10">-9</value>
+					<value level="11">0</value>
+					<value level="12">10</value>
+					<value level="13">21</value>
+					<value level="14">33</value>
+					<value level="15">46</value>
+					<value level="16">61</value>
+					<value level="17">77</value>
+					<value level="18">94</value>
+					<value level="19">114</value>
+					<value level="20">135</value>
+					<value level="21">159</value>
+					<value level="22">900</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2945,7 +2971,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mDef" val="0.8" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3270,7 +3299,23 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mDef" val="#mdef" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-17</value>
+					<value level="2">-20</value>
+					<value level="3">-20</value>
+					<value level="4">-23</value>
+					<value level="5">-23</value>
+					<value level="6">-23</value>
+					<value level="7">-23</value>
+					<value level="8">-23</value>
+					<value level="9">-23</value>
+					<value level="10">-23</value>
+					<value level="11">-23</value>
+					<value level="12">-23</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

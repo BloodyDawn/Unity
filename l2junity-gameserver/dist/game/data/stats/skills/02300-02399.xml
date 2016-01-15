@@ -1814,7 +1814,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.23" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>23</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2000,7 +2003,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
@@ -2017,6 +2019,10 @@
 			<effect name="Speed">
 				<amount>8</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-16</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

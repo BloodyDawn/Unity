@@ -1828,7 +1828,10 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.42" />
 				<mul stat="pDef" val="1.76" />
-				<mul stat="mDef" val="1.76" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>76</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1840,11 +1843,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="2.0" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BOW>50</BOW>
 				<BLEED>50</BLEED>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3220,7 +3226,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="2" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

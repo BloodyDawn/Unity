@@ -174,8 +174,11 @@
 		<for>
 			<effect name="ImmobileBuff">
 				<add stat="pDef" val="5000" />
-				<add stat="mDef" val="5000" />
 				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -198,7 +201,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
-				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

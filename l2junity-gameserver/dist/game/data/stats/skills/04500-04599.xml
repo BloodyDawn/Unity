@@ -329,10 +329,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="10" />
-				<mul stat="mDef" val="10" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>900</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -456,7 +459,10 @@
 		<for>
 			<effect name="Buff">
 				<add stat="reflectDam" val="100" />
-				<mul stat="mDef" val="10" />
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>900</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2808,7 +2814,6 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pDef" val="#pDef" />
-				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -2833,6 +2838,14 @@
 					<value level="3">8</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-16</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3029,7 +3042,6 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pDef" val="#pDef" />
-				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -3051,6 +3063,13 @@
 					<value level="2">8</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-16</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
