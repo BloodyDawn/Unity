@@ -340,9 +340,6 @@
 				<add stat="accCombat" val="3">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="rEvas" val="6">
-					<using kind="LIGHT" />
-				</add>
 				<mul stat="pAtkSpd" val="1.1">
 					<using kind="LIGHT" />
 				</mul>
@@ -370,6 +367,13 @@
 					<value level="9">2558</value>
 					<value level="10">2655</value>
 				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>6</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -2153,11 +2157,14 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.30" />
-				<add stat="rEvas" val="15" />
 			</effect>
 			<effect name="Speed">
 				<amount>35</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

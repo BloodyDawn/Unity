@@ -1855,7 +1855,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="#bonus" />
-				<add stat="rEvas" val="#bonus" />
 				<add stat="mEvas" val="#bonus" />
 				<mul stat="defCritDamage" val="1.3" />
 			</effect>
@@ -1870,6 +1869,13 @@
 				<amount>
 					<value level="1">34</value>
 					<value level="2">35</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

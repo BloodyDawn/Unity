@@ -482,12 +482,15 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="rEvas" val="2" />
 				<mul stat="defCritDamage" val="1.1" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2348,7 +2351,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="PhysicalDefence">
@@ -2358,6 +2360,14 @@
 					<value level="3">-30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2417,7 +2427,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="PhysicalDefence">
@@ -2427,6 +2436,14 @@
 					<value level="3">-30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2486,7 +2503,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="PhysicalDefence">
@@ -2496,6 +2512,14 @@
 					<value level="3">-30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2555,7 +2579,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="PhysicalDefence">
@@ -2565,6 +2588,14 @@
 					<value level="3">-30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2624,7 +2655,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="PhysicalDefence">
@@ -2634,6 +2664,14 @@
 					<value level="3">-30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2693,7 +2731,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="PhysicalDefence">
@@ -2703,6 +2740,14 @@
 					<value level="3">-30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

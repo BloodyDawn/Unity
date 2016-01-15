@@ -1464,15 +1464,23 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="#rEvas">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">39</value>
 					<value level="2">49</value>
 					<value level="3">59</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
 				</amount>
 				<mode>DIFF</mode>
 				<armorType>

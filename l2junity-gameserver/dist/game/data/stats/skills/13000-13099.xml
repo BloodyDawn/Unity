@@ -2210,7 +2210,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="DEX" val="1" />
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
@@ -2236,6 +2235,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2.3</value>
+					<value level="3">2.3</value>
+					<value level="4">2.3</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2310,7 +2318,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="2" />
 				<add stat="STR" val="-1" />
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="rCrit" val="#rCrit" />
@@ -2342,6 +2349,15 @@
 					<value level="2">0</value>
 					<value level="3">180</value>
 					<value level="4">180</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2.3</value>
+					<value level="3">2.3</value>
+					<value level="4">2.3</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -2430,7 +2446,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="3" />
 				<add stat="STR" val="-2" />
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -2457,6 +2472,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2.3</value>
+					<value level="3">2.3</value>
+					<value level="4">2.3</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2548,7 +2572,6 @@
 			<effect name="Buff">
 				<add stat="DEX" val="3" />
 				<add stat="STR" val="-1" />
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="healEffect" val="#healEffect" />
@@ -2583,6 +2606,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2.3</value>
+					<value level="3">2.3</value>
+					<value level="4">2.3</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2667,7 +2699,6 @@
 				<add stat="DEX" val="4" />
 				<add stat="STR" val="-2" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<add stat="rEvas" val="#rEvas" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="cAtkAdd" val="#cAtkAdd" />
@@ -2693,6 +2724,15 @@
 					<value level="4">7</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2.3</value>
+					<value level="3">2.3</value>
+					<value level="4">2.3</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

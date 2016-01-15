@@ -351,7 +351,6 @@
 		<for>
 			<effect name="Grow">
 				<add stat="accCombat" val="4" />
-				<add stat="rEvas" val="4" />
 				<mul stat="pAtkSpd" val="1.33" />
 				<mul stat="rCrit" val="0.3" />
 				<mul stat="mAtkSpd" val="#magical" />
@@ -374,6 +373,10 @@
 			<effect name="PhysicalDefence">
 				<amount>83</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1342,7 +1345,6 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1378,6 +1380,13 @@
 					<value level="2">-8</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2690,7 +2699,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -2726,6 +2734,13 @@
 					<value level="2">-8</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

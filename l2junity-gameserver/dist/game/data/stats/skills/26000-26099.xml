@@ -760,7 +760,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<sub stat="rEvas" val="4" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
@@ -783,6 +782,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-8</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

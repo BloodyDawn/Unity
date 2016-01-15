@@ -233,12 +233,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="1.72" /> <!-- Evacion +1.72 -->
+				<!-- Evacion +1.72 -->
 				<add stat="accCombat" val="1.72" /> <!-- Accuracy +1.72 -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalEvasion">
+				<amount>1.72</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3414" levels="1" name="Dynasty Leather Armor">
@@ -1419,7 +1423,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="1.1" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -871,7 +871,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="rEvas" val="2" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1086,7 +1089,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
-				<sub stat="rEvas" val="-2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -1107,6 +1109,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>--2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

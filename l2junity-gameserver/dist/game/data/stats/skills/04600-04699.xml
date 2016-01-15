@@ -4973,7 +4973,6 @@
 		<for>
 			<effect name="Debuff">
 				<sub stat="accCombat" val="4" />
-				<sub stat="rEvas" val="4" />
 				<mul stat="pAtkSpd" val="0.75" />
 				<mul stat="rCrit" val="-0.23" />
 			</effect>
@@ -4988,6 +4987,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-45</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

@@ -488,7 +488,6 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="rEvas" val="15" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-40</amount>
@@ -497,6 +496,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-40</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -755,7 +758,6 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="rEvas" val="15" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-40</amount>
@@ -764,6 +766,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-40</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1398,7 +1404,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
-				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -1415,6 +1420,15 @@
 					<value level="2">35</value>
 					<value level="3">36</value>
 					<value level="4">37</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">8</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1762,7 +1776,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1792,6 +1805,10 @@
 				<amount>-3</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11532" levels="1" name="Refreshing Sonata">
@@ -1820,7 +1837,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
 				<add stat="accCombat" val="4" />
-				<add stat="rEvas" val="3" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
 				<mul stat="mReuse" val="0.90" />
@@ -1835,6 +1851,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -3871,7 +3891,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
-				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -3888,6 +3907,15 @@
 					<value level="2">35</value>
 					<value level="3">36</value>
 					<value level="4">37</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">8</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

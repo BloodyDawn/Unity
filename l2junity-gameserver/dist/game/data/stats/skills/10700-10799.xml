@@ -420,9 +420,6 @@
 				<add stat="maxHp" val="4783">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="rEvas" val="14">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="regMp" val="6">
 					<using kind="LIGHT" />
 				</add>
@@ -445,6 +442,13 @@
 					<value level="9">2558</value>
 					<value level="10">2655</value>
 				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>14</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -1774,7 +1778,6 @@
 		<reuseDelay>900000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="#evas" />
 				<add stat="mEvas" val="#evas" />
 				<sub stat="cancelVuln" val="95" />
 			</effect>
@@ -1790,6 +1793,15 @@
 			<effect name="MagicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

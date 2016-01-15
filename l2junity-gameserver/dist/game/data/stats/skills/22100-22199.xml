@@ -582,7 +582,6 @@
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -607,6 +606,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-8</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -689,7 +692,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -697,6 +699,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1070,7 +1076,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="4" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1255,7 +1264,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
-				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -1276,6 +1284,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-8</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

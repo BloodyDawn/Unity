@@ -599,7 +599,6 @@
 				<power>121</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="rEvas" val="3" />
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
@@ -612,6 +611,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1902,9 +1905,6 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="regMp" val="2.0">
 					<using kind="MAGIC" />
 				</add>
@@ -1923,8 +1923,21 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		<effect name="PhysicalDefence">
-		<amount>5</amount><mode>PER</mode><armorType><item>LIGHT</item></armorType></effect></for>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+		</for>
 	</skill>
 	<skill id="5989" levels="1" name="Invincibility">
 		<abnormalLvl>1</abnormalLvl>

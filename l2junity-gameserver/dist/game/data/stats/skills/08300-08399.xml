@@ -145,7 +145,7 @@
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5.57% -->
 				<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
-				<add stat="rEvas" val="3" /> <!-- Increases Evasion by 3 -->
+				<!-- Increases Evasion by 3 -->
 				<add stat="cAtkAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -166,6 +166,10 @@
 			<effect name="PAtk">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

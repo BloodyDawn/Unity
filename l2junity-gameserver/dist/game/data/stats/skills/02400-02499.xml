@@ -306,7 +306,6 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.05" />
 				<mul stat="pAtkSpd" val="1.05" />
-				<sub stat="rEvas" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -327,6 +326,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -784,7 +787,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="4" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

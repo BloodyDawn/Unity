@@ -1485,7 +1485,6 @@
 				<mul stat="maxHp" val="#maxHpCpMp" />
 				<mul stat="maxCp" val="#maxHpCpMp" />
 				<mul stat="maxMp" val="#maxHpCpMp" />
-				<sub stat="rEvas" val="#evas" />
 				<sub stat="statSpeed" val="#speed" />
 			</effect>
 			<effect name="ShilensBreath" />
@@ -1508,6 +1507,16 @@
 					<value level="5">-50</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-0</value>
+					<value level="2">-0</value>
+					<value level="3">-15</value>
+					<value level="4">-30</value>
+					<value level="5">-30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

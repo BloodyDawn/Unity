@@ -258,7 +258,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="1.72" /> <!-- Evacion +1.72 -->
+				<!-- Evacion +1.72 -->
 				<add stat="accCombat" val="1.72" /> <!-- Accuracy +1.72 -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
@@ -278,6 +278,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalEvasion">
+				<amount>1.72</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8208" levels="1" name="Dynasty Leather Armor - PvP">
@@ -300,7 +304,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<add stat="rEvas" val="4.3" /> <!-- Evasion +4.3 -->
+				<!-- Evasion +4.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
@@ -310,6 +314,10 @@
 				<HOLD>13</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8209" levels="1" name="Dynasty Leather Armor - PvP">
@@ -818,7 +826,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<add stat="rEvas" val="5.3" /> <!-- Evasion +5.3 -->
+				<!-- Evasion +5.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -828,6 +836,10 @@
 				<HOLD>15</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalEvasion">
+				<amount>5.3</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8224" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1152,7 +1164,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="0.88" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.88</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2158,7 +2173,7 @@
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
 				<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
-				<add stat="rEvas" val="3" /> <!-- Increases Evasion by 3 -->
+				<!-- Increases Evasion by 3 -->
 				<add stat="cAtkAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
 				<PARALYZE>50</PARALYZE>
 			</effect>
@@ -2166,6 +2181,10 @@
 			<effect name="PAtk">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

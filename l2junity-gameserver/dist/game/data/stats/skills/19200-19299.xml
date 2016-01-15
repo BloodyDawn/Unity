@@ -27,7 +27,6 @@
 		<reuseDelay>900000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="8" />
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
@@ -36,6 +35,10 @@
 			<effect name="PhysicalDefence">
 				<amount>200</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

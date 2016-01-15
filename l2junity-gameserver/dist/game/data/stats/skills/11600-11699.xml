@@ -57,7 +57,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -84,6 +83,10 @@
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11602" levels="1" name="Frenzied Refreshing Sonata">
@@ -106,7 +109,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
 				<add stat="accCombat" val="4" />
-				<add stat="rEvas" val="3" />
 				<mul stat="PhysicalMpConsumeRate" val="1.10" /> <!-- Custom -->
 				<mul stat="MagicalMpConsumeRate" val="1.10" /> <!-- Custom -->
 				<mul stat="DanceMpConsumeRate" val="1.10" /> <!-- Custom -->
@@ -122,6 +124,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -315,7 +321,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -346,6 +351,10 @@
 				<amount>-3</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11609" levels="1" name="Refreshing Song">
@@ -368,7 +377,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
 				<add stat="accCombat" val="4" />
-				<add stat="rEvas" val="3" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
 				<mul stat="mReuse" val="0.90" />
@@ -383,6 +391,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -444,7 +456,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<sub stat="rEvas" val="4" />
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -475,6 +486,10 @@
 				<amount>-3</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="11612" levels="1" name="Refreshing Dance">
@@ -497,7 +512,6 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
 				<add stat="accCombat" val="4" />
-				<add stat="rEvas" val="3" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
 				<mul stat="mReuse" val="0.90" />
@@ -512,6 +526,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

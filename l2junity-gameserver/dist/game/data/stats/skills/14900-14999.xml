@@ -986,11 +986,14 @@
 		<reuseDelay>60000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="10" />
 				<add stat="regHp" val="10" />
 			</effect>
 			<effect name="Speed">
 				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

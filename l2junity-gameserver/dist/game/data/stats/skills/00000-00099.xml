@@ -6072,7 +6072,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -6081,6 +6080,14 @@
 					<value level="3">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-4</value>
+					<value level="3">-6</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

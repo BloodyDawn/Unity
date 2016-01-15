@@ -307,8 +307,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2" />
 				<mul stat="defCritRate" val="0.95" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -823,7 +826,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="4.3" /> <!-- Evasion +4.3 -->
+				<!-- Evasion +4.3 -->
 				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
@@ -833,6 +836,10 @@
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
 				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4.3</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

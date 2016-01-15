@@ -759,7 +759,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="rEvas" val="#pDef" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -770,6 +769,14 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-20</value>
+					<value level="3">-30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">-10</value>
 					<value level="2">-20</value>

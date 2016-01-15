@@ -510,12 +510,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>14</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -578,12 +582,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>20</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -645,12 +653,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>24</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -712,12 +724,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>27</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -781,12 +797,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>33</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -1300,7 +1320,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="5.3" /> <!-- Evasion +5.3 -->
+				<!-- Evasion +5.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -1309,6 +1329,10 @@
 				<HOLD>15</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="PhysicalEvasion">
+				<amount>5.3</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3641" levels="1" name="Dynasty Jewel Leather Armor">
@@ -1892,7 +1916,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="1.47" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.47</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1905,7 +1932,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="9.55" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>9.55</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1918,7 +1948,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="0.59" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.59</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1931,7 +1964,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="0.59" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.59</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

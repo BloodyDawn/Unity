@@ -656,7 +656,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="4" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -899,7 +902,6 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -920,6 +922,10 @@
 			<effect name="PhysicalDefence">
 				<amount>-8</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1815,7 +1821,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
@@ -1825,6 +1830,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

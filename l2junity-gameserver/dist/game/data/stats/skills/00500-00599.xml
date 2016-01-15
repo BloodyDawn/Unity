@@ -17,7 +17,6 @@
 			<effect name="MpConsumePerLevel" ticks="5">
 				<mul stat="pAtkSpd" val="#amount" />
 				<add stat="accCombat" val="#amount2" />
-				<sub stat="rEvas" val="#amount2" />
 				<power>0.4</power>
 			</effect>
 			<effect name="PAtk">
@@ -30,6 +29,13 @@
 			<effect name="PhysicalDefence">
 				<amount>-10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3005,7 +3011,10 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="3" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

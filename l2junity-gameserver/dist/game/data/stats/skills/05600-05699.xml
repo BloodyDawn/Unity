@@ -292,13 +292,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2"> <!-- evasion is increased by 2 -->
-					<using kind="LIGHT" />
-				</add>
 				<sub stat="defCritDamageAdd" val="86"> <!-- critical damage is decreased by 86 -->
 					<using kind="LIGHT" />
 				</sub>
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
 			</effect>
 		</for>
 	</skill>
@@ -3077,7 +3081,6 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -3114,6 +3117,13 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-4</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="5660" levels="5" name="Battleground Death Syndrome">
@@ -3140,7 +3150,6 @@
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="#val1" />
 				<mul stat="mAtkSpd" val="#val1" />
-				<sub stat="rEvas" val="#val2" />
 				<sub stat="accCombat" val="#val2" />
 			</effect>
 			<effect name="PAtk">
@@ -3162,6 +3171,16 @@
 					<value level="5">-40</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-9</value>
+					<value level="3">-13</value>
+					<value level="4">-17</value>
+					<value level="5">-21</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

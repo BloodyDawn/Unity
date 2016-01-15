@@ -1526,13 +1526,17 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="2">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>

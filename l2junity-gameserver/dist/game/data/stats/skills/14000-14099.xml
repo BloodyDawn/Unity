@@ -103,7 +103,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Armor Destruction -->
@@ -126,6 +125,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -547,7 +550,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="rEvas" val="4" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Armor Destruction -->
@@ -570,6 +572,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
