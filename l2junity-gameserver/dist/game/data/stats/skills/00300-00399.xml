@@ -997,14 +997,12 @@
 			<effect name="Lethal">
 				<halfLethal>5</halfLethal>
 			</effect>
-			<effect name="Speed">
-				<amount>40</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</for>
 		<!-- TODO : Move to effects after A3 skills rework -->
 		<selfEffects>
-			<effect name="Buff">
+			<effect name="Speed">
+				<amount>40</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</selfEffects>
 	</skill>
@@ -2519,13 +2517,11 @@
 				<power>2020</power>
 				<overHit>true</overHit>
 			</effect>
+		</for>
+		<selfEffects>
 			<effect name="PhysicalEvasion">
 				<amount>6</amount>
 				<mode>DIFF</mode>
-			</effect>
-		</for>
-		<selfEffects>
-			<effect name="Buff">
 			</effect>
 		</selfEffects>
 	</skill>
