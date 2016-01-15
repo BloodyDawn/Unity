@@ -1004,9 +1004,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="#dist">
-					<using kind="BOW" />
-				</add>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">400</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

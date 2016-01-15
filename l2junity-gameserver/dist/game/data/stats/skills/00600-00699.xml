@@ -1290,9 +1290,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="100">
-					<using kind="BOW" />
-				</add>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

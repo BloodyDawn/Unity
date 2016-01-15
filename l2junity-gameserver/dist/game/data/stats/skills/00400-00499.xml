@@ -2195,12 +2195,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="50">
-					<using kind="BOW" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>200</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>50</amount>
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>BOW</item>
@@ -4872,9 +4876,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="#pAtkRange">
-					<using kind="CROSSBOW" />
-				</add>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">400</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

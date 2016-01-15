@@ -3911,9 +3911,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<sub stat="pAtkRange" val="200">
-					<using kind="BOW,CROSSBOW" />
-				</sub>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

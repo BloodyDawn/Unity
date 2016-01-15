@@ -2554,9 +2554,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="50">
-					<using kind="BOW,CROSSBOW" />
-				</add>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

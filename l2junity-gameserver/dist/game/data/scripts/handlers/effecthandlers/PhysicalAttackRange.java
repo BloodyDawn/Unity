@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class PhysicalAttackRange extends AbstractStatEffect
+public class PhysicalAttackRange extends AbstractStatAddEffect
 {
 	public PhysicalAttackRange(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{

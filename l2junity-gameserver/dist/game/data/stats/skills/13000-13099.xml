@@ -1681,10 +1681,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="50" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

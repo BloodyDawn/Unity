@@ -1868,9 +1868,6 @@
 				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
 				</mul>
-				<add stat="pAtkRange" val="100">
-					<using kind="BOW,CROSSBOW" />
-				</add>
 			</effect>
 			<effect name="AttackTrait">
 				<SHOCK>8</SHOCK>
@@ -1888,6 +1885,14 @@
 					<item>DUAL</item>
 					<item>DUALFIST</item>
 					<item>BLUNT</item>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+				<weaponType>
 					<item>BOW</item>
 					<item>CROSSBOW</item>
 				</weaponType>

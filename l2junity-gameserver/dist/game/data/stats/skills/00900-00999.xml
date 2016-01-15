@@ -2100,9 +2100,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="200">
-					<using kind="BOW" />
-				</add>
 				<add stat="darkRes" val="50" />
 				<add stat="earthRes" val="50" />
 				<add stat="fireRes" val="50" />
@@ -2317,6 +2314,13 @@
 					<value level="47">0.0</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -3776,9 +3780,6 @@
 				<mul stat="rCrit" val="0.2">
 					<using kind="BOW" />
 				</mul>
-				<add stat="pAtkRange" val="200">
-					<using kind="BOW" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>199</amount>
@@ -3789,6 +3790,13 @@
 			</effect>
 			<effect name="Accuracy">
 				<amount>6</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>200</amount>
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>BOW</item>

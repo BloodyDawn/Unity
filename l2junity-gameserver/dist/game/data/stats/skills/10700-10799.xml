@@ -486,9 +486,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="500">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</add>
 				<mul stat="PhysicalMpConsumeRate" val="0.7">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
@@ -496,6 +493,15 @@
 			<effect name="MaxMp">
 				<amount>25</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>500</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>BOW</item>
 					<item> CROSSBOW</item>

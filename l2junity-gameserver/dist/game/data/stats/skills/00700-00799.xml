@@ -2180,9 +2180,6 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<add stat="pAtkRange" val="50">
-					<using kind="CROSSBOW,BOW" />
-				</add>
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Physical Pose -->
@@ -2199,6 +2196,14 @@
 			</effect>
 			<effect name="Accuracy">
 				<amount>8</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>50</amount>
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>CROSSBOW</item>
