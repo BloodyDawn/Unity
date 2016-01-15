@@ -209,7 +209,6 @@
 				<add stat="INT" val="#base" />
 				<sub stat="MEN" val="#base1" />
 				<add stat="WIT" val="#base" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="1.0557" />
 				<sub stat="cancel" val="#cancel" />
@@ -221,6 +220,15 @@
 					<value level="3">0</value>
 					<value level="4">50</value>
 				</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">8.47</value>
+					<value level="3">8.47</value>
+					<value level="4">8.47</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -246,7 +254,6 @@
 				<add stat="WIT" val="#base" />
 				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="1.0557" />
 				<sub stat="cancel" val="#cancel" />
@@ -260,6 +267,15 @@
 				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">8.47</value>
+					<value level="3">8.47</value>
+					<value level="4">8.47</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13007" levels="1" name="Vesper Heavy Armor Set - PvP">
@@ -504,7 +520,6 @@
 			<effect name="Buff">
 				<sub stat="MEN" val="#base" />
 				<add stat="WIT" val="#base" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -520,6 +535,15 @@
 				</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">8.11</value>
+					<value level="3">8.11</value>
+					<value level="4">8.11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13016" levels="4" name="Vorpal Heavy Armor Set">
@@ -655,7 +679,6 @@
 				<add stat="WIT" val="#base1" />
 				<add stat="moveSpeed" val="7" />
 				<add stat="maxMp" val="#maxMp" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="#regMp" />
 				<add stat="fireRes" val="#resist" />
@@ -672,6 +695,15 @@
 				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">8.7</value>
+					<value level="3">8.7</value>
+					<value level="4">8.7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13019" levels="4" name="Elegia Heavy Armor Set">
@@ -812,7 +844,6 @@
 				<add stat="WIT" val="#base" />
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="moveSpeed" val="7" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
@@ -830,6 +861,15 @@
 				</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="13022" levels="1" name="Moirai Heavy Armor Set - PvP">
@@ -2421,7 +2461,6 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -2436,6 +2475,15 @@
 					<value level="3">5</value>
 					<value level="4">5</value>
 				</SLEEP>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2461,7 +2509,6 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -2476,6 +2523,15 @@
 					<value level="3">5</value>
 					<value level="4">5</value>
 				</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2502,7 +2558,6 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="mAtk" val="#mAtkAdd" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -2517,6 +2572,15 @@
 					<value level="3">7</value>
 					<value level="4">7</value>
 				</SLEEP>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2543,7 +2607,6 @@
 				<add stat="maxMp" val="#maxMp" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="regMp" val="#regMp" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -2558,6 +2621,15 @@
 					<value level="3">7</value>
 					<value level="4">7</value>
 				</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2585,7 +2657,6 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="mAtk" val="#mAtkAdd" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -2600,6 +2671,15 @@
 					<value level="3">10</value>
 					<value level="4">10</value>
 				</SLEEP>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2628,7 +2708,6 @@
 				<add stat="maxMp" val="#maxMp" />
 				<mul stat="regMp" val="#regMp" />
 				<mul stat="mCritRate" val="#mCritRate" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -2643,6 +2722,15 @@
 					<value level="3">10</value>
 					<value level="4">10</value>
 				</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2671,7 +2759,6 @@
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="mAtk" val="#mAtkAdd" />
 				<add stat="mCritPowerAdd" val="#mCritPowerAdd" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
@@ -2686,6 +2773,15 @@
 					<value level="3">10</value>
 					<value level="4">10</value>
 				</SLEEP>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2713,7 +2809,6 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="regMp" val="#regMp" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="healEffect" val="#healEffect" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
@@ -2736,6 +2831,15 @@
 					<value level="3">15</value>
 					<value level="4">15</value>
 				</DERANGEMENT>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2762,7 +2866,6 @@
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="mAtk" val="#mAtkAdd" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -2784,6 +2887,15 @@
 					<value level="3">20</value>
 					<value level="4">20</value>
 				</DERANGEMENT>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2811,7 +2923,6 @@
 				<add stat="maxMp" val="#maxMp" />
 				<add stat="regMp" val="#regMp" />
 				<add stat="mAtk" val="#mAtkAdd" />
-				<mul stat="mAtk" val="#mAtk" />
 				<add stat="healEffect" val="#healEffectAdd" />
 				<add stat="fireRes" val="#elements" />
 				<add stat="waterRes" val="#elements" />
@@ -2825,6 +2936,15 @@
 					<value level="3">15</value>
 					<value level="4">15</value>
 				</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

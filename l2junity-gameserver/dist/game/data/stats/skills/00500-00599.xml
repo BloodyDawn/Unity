@@ -2143,11 +2143,15 @@
 			<effect name="Transformation">
 				<!-- pAtk +100% -->
 				<mul stat="pDef" val="2" /> <!-- pDef +100% -->
-				<mul stat="mAtk" val="2" /> <!-- mAtk +100% -->
+				<!-- mAtk +100% -->
 				<mul stat="mDef" val="2" /> <!-- mDef +100% -->
 				<transformationId>251</transformationId>
 			</effect>
 			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>

@@ -67,7 +67,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.087" /> <!-- M. Power +8.7% -->
+				<!-- M. Power +8.7% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -79,6 +79,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>8.7</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8403" levels="1" name="Elegia Heavy Armor Set">
@@ -148,7 +152,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.1" /> <!-- M. Power +10% -->
+				<!-- M. Power +10% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -161,6 +165,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8406" levels="1" name="Moirai Heavy Armor Set - PvP">
@@ -261,7 +269,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0811" /> <!-- M. Power +8.11% -->
+				<!-- M. Power +8.11% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<add stat="fireRes" val="5" /> <!-- resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- resistance to water attributes +5 -->
@@ -273,6 +281,10 @@
 				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>8.11</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8409" levels="1" name="Vorpal Heavy Armor Set - PvP">
@@ -381,7 +393,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.087" /> <!-- M. Power +8.7% -->
+				<!-- M. Power +8.7% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -396,6 +408,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>8.7</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8412" levels="1" name="Elegia Heavy Armor Set - PvP">
@@ -504,7 +520,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.1" /> <!-- M. Power +10% -->
+				<!-- M. Power +10% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- M. Spd. +15% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Bonus +5% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -520,6 +536,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8415" levels="5" name="Ring Ability: Drop Rate Up">
@@ -758,9 +778,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0062" />
 				<add stat="fireRes" val="5" />
 				<PARALYZE>5</PARALYZE>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -773,13 +796,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0811" /> <!-- M. Atk. +8.11% -->
+				<!-- M. Atk. +8.11% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Cast. Spd. +15% -->
 				<add stat="waterRes" val="1" />
 				<add stat="fireRes" val="1" />
 				<add stat="windRes" val="1" />
 				<add stat="earthRes" val="1" />
 				<PARALYZE>5</PARALYZE>
+			</effect>
+			<effect name="MAtk">
+				<amount>8.11</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -792,9 +819,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0103" />
 				<add stat="waterRes" val="5" />
 				<PARALYZE>5</PARALYZE>
+			</effect>
+			<effect name="MAtk">
+				<amount>1.03</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -807,9 +837,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0041" />
 				<add stat="windRes" val="5" />
 				<PARALYZE>5</PARALYZE>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -822,9 +855,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0041" />
 				<add stat="earthRes" val="5" />
 				<PARALYZE>5</PARALYZE>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1058,10 +1094,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
 				<SHOCK>7.5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1074,11 +1113,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0847" />
 				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="regMp" val="1.05" />
 				<sub stat="cancel" val="12" />
 				<SHOCK>20</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>8.47</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1091,10 +1133,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
 				<SHOCK>12.5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1107,10 +1152,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1123,10 +1171,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1700,10 +1751,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
 				<SHOCK>7.5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.41</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1716,10 +1770,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
 				<SHOCK>12.5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.67999999999999</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1732,10 +1789,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1748,10 +1808,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.27</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

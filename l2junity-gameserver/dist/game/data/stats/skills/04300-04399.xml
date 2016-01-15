@@ -356,11 +356,17 @@
 				<mul stat="pAtkSpd" val="1.33" />
 				<mul stat="rCrit" val="0.3" />
 				<mul stat="mDef" val="5" />
-				<mul stat="mAtk" val="#magical" />
 				<mul stat="mAtkSpd" val="#magical" />
 			</effect>
 			<effect name="PAtk">
 				<amount>83</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">50</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -722,7 +728,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.55" />
+			</effect>
+			<effect name="MAtk">
+				<amount>55</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1291,7 +1300,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mDef" val="#mDef" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
@@ -1303,6 +1311,13 @@
 				<amount>
 					<value level="1">5</value>
 					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">16</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1446,7 +1461,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">55</value>
+					<value level="2">65</value>
+					<value level="3">75</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2586,7 +2608,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="rEvas" val="#rEvas" />
@@ -2597,6 +2618,13 @@
 				<amount>
 					<value level="1">5</value>
 					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">16</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

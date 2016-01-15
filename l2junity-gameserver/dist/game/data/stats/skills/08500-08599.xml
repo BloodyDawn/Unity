@@ -1837,7 +1837,6 @@
 				<add stat="accCombat" val="4" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="mDef" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
@@ -1848,6 +1847,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1994,7 +1997,6 @@
 				<mul stat="regMp" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2005,6 +2007,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2037,7 +2043,6 @@
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2053,6 +2058,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

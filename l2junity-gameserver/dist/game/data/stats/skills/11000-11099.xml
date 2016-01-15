@@ -49,10 +49,13 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.17" />
 				<add stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="1.23" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
+			</effect>
+			<effect name="MAtk">
+				<amount>17</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -125,12 +128,16 @@
 		<operateType>P</operateType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.05">
-					<using kind="SIGIL" />
-				</mul>
 				<mul stat="regMp" val="1.20">
 					<using kind="SIGIL" />
 				</mul>
+			</effect>
+			<effect name="MAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -145,10 +152,13 @@
 		<for>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
-				<mul stat="mAtk" val="1.06" />
 				<mul stat="mAtkSpd" val="1.06" />
 				<mul stat="MagicalMpConsumeRate" val="0.94" />
 				<mul stat="mCritRate" val="1.06" />
+			</effect>
+			<effect name="MAtk">
+				<amount>6</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2714,7 +2724,6 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<mul stat="pDef" val="1.20" />
 				<mul stat="mDef" val="1.20" />
@@ -2730,6 +2739,13 @@
 				<minDamage>1</minDamage>
 				<skillId>5567</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2814,7 +2830,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 				<mul stat="mAtkSpd" val="0.9" />
 				<mul stat="rCrit" val="-0.1" />
@@ -2822,6 +2837,10 @@
 				<mul stat="pDef" val="0.9" />
 				<mul stat="moveSpeed" val="0.9" />
 				<sub stat="rEvas" val="6" />
+			</effect>
+			<effect name="MAtk">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2898,7 +2917,6 @@
 				<percentage>25</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="0.92" />
@@ -2906,6 +2924,10 @@
 				<mul stat="mCritRate" val="0.92" />
 				<mul stat="moveSpeed" val="0.92" />
 				<sub stat="accCombat" val="12" />
+			</effect>
+			<effect name="MAtk">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

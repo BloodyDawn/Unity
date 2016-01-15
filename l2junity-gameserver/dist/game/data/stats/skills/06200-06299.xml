@@ -1737,11 +1737,14 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="3" />
 				<mul stat="pAtkSpd" val="1.25" />
 				<mul stat="mAtkSpd" val="1.25" />
 			</effect>
 			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>200</amount>
 				<mode>PER</mode>
 			</effect>

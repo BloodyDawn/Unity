@@ -1320,11 +1320,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.2" />
 				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

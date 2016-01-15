@@ -109,7 +109,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.75" />
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -287,7 +290,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.16" />
 				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
@@ -297,6 +299,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1936,7 +1942,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
-				<mul stat="mAtk" val="#pmAtk" />
 				<mul stat="mAtkSpd" val="#pmAtkSpd" />
 				<mul stat="pAtkSpd" val="#pmAtkSpd" />
 				<mul stat="bonusExp" val="#bonusExp" />
@@ -1964,6 +1969,14 @@
 				</SHOCK>
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>
 					<value level="1">0</value>
 					<value level="2">15</value>

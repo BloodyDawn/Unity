@@ -546,7 +546,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.55" />
+			</effect>
+			<effect name="MAtk">
+				<amount>55</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1224,10 +1227,13 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.15" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.15" />
+			</effect>
+			<effect name="MAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

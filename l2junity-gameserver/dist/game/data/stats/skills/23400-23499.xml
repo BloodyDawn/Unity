@@ -884,7 +884,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
-				<mul stat="mAtk" val="1.1" />
 				<mul stat="mCritRate" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="mDef" val="1.2" />
@@ -909,6 +908,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;CASTING_TIME_DOWN</dispel>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

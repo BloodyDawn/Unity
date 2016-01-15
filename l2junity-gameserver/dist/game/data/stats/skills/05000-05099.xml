@@ -271,7 +271,6 @@
 		</trait>
 		<for>
 			<effect name="#effectname1">
-				<mul stat="mAtk" val="#attackAndSpeed" />
 				<mul stat="pAtkSpd" val="#attackAndSpeed" />
 				<mul stat="mAtkSpd" val="#attackAndSpeed" />
 				<add stat="moveSpeed" val="#attackAndSpeed" />
@@ -304,6 +303,16 @@
 				</power>
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">20</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>
 					<value level="1">0</value>
 					<value level="2">0</value>
@@ -2366,7 +2375,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkpAtkSpdmAtkmAtkSpd" />
-				<mul stat="mAtk" val="#pAtkpAtkSpdmAtkmAtkSpd" />
 				<mul stat="mAtkSpd" val="#pAtkpAtkSpdmAtkmAtkSpd" />
 				<sub stat="accCombat" val="#accCombatrEvas" />
 				<sub stat="rEvas" val="#accCombatrEvas" />
@@ -2375,6 +2383,26 @@
 				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-19</value>
+					<value level="3">-27</value>
+					<value level="4">-34</value>
+					<value level="5">-40</value>
+					<value level="6">-45</value>
+					<value level="7">-49</value>
+					<value level="8">-53</value>
+					<value level="9">-56</value>
+					<value level="10">-59</value>
+					<value level="11">-62</value>
+					<value level="12">-65</value>
+					<value level="13">-68</value>
+					<value level="14">-72</value>
+					<value level="15">-75</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>
 					<value level="1">-10</value>
 					<value level="2">-19</value>

@@ -373,13 +373,16 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.7" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
 				<add stat="moveSpeed" val="0.7" />
 				<mul stat="defCritRate" val="1.15" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
@@ -429,12 +432,15 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
 				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>

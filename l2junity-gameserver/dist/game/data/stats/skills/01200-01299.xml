@@ -5391,7 +5391,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mDef" val="#mDef" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
@@ -5403,6 +5402,13 @@
 				<amount>
 					<value level="1">5</value>
 					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">16</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

@@ -501,9 +501,12 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.60" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -761,9 +764,12 @@
 				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.6" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
@@ -958,7 +964,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -974,6 +979,15 @@
 					<value level="2">19</value>
 					<value level="3">21</value>
 					<value level="4">23</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">79</value>
+					<value level="2">83</value>
+					<value level="3">87</value>
+					<value level="4">91</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1040,7 +1054,6 @@
 				<mul stat="cAtk" val="1.20" />
 				<mul stat="pDef" val="1.20" />
 				<mul stat="pAtkSpd" val="1.20" />
-				<mul stat="mAtk" val="1.20" />
 				<mul stat="mDef" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="moveSpeed" val="#runSpd" />
@@ -1067,6 +1080,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1412,7 +1429,6 @@
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<add stat="moveSpeed" val="8" />
 			</effect>
@@ -1425,6 +1441,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1453,7 +1473,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.40" />
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
@@ -1475,6 +1494,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1581,7 +1604,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.16" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pDef" val="0.97" />
@@ -1602,6 +1624,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2122,7 +2148,6 @@
 			</effect>
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<add stat="moveSpeed" val="#runSpd" />
-				<mul stat="mAtk" val="0.2" />
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />
 				<add stat="pDef" val="#def" />
@@ -2130,6 +2155,10 @@
 				<transformationId>500;501;502;503;504</transformationId>
 			</effect>
 			<effect name="PAtk">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2157,11 +2186,14 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="2" />
 				<mul stat="pAtkSpd" val="2" />
 				<mul stat="mAtkSpd" val="2" />
 			</effect>
 			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2237,11 +2269,14 @@
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.5" />
-				<mul stat="mAtk" val="0.5" />
 				<mul stat="mDef" val="0.5" />
 				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3103,10 +3138,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#attack" />
 				<mul stat="physicalSkillPower" val="1.05" />
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">7</value>
@@ -3240,7 +3283,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -3256,6 +3298,15 @@
 					<value level="2">19</value>
 					<value level="3">21</value>
 					<value level="4">23</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">79</value>
+					<value level="2">83</value>
+					<value level="3">87</value>
+					<value level="4">91</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3314,7 +3365,6 @@
 				<mul stat="cAtk" val="1.20" />
 				<mul stat="pDef" val="1.20" />
 				<mul stat="pAtkSpd" val="1.20" />
-				<mul stat="mAtk" val="1.20" />
 				<mul stat="mDef" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="moveSpeed" val="#runSpd" />
@@ -3342,6 +3392,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3650,7 +3704,6 @@
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="1" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<add stat="moveSpeed" val="8" />
 			</effect>
@@ -3663,6 +3716,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3687,7 +3744,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.40" />
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
@@ -3709,6 +3765,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3764,7 +3824,6 @@
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
 				<mul stat="pDef" val="#attackDefense" />
-				<mul stat="mAtk" val="#attackDefense" />
 				<mul stat="mDef" val="#attackDefense" />
 				<mul stat="physicalSkillPower" val="1.05" />
 				<power>
@@ -3775,6 +3834,15 @@
 				</power>
 			</effect>
 			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">7</value>

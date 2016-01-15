@@ -2390,7 +2390,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.16" />
 				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
@@ -2400,6 +2399,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -1957,12 +1957,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="0.2" />
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />
 				<mul stat="moveSpeed" val="0.2" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-80</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2730,7 +2733,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.75" />
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3784,11 +3790,14 @@
 			<effect name="Buff">
 				<mul stat="regMp" val="1.2" />
 				<mul stat="moveSpeed" val="0.8" />
-				<mul stat="mAtk" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

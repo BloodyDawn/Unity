@@ -424,12 +424,15 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.75" />
 				<mul stat="pAtkSpd" val="1.33" />
 				<add stat="moveSpeed" val="33" />
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1081,12 +1084,15 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.1" />
 				<mul stat="MagicalMpConsumeRate" val="0" />
 				<mul stat="PhysicalMpConsumeRate" val="0" />
 				<mul stat="healEffect" val="1.1" />
 			</effect>
 			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1802,12 +1808,15 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.75" />
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="0.3" />
 			</effect>
 			<effect name="PAtk">
 				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1980,10 +1989,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.08" />
-				<mul stat="mAtk" val="1.08" />
 				<mul stat="mAtkSpd" val="1.08" />
 			</effect>
 			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2133,9 +2145,12 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.77" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>

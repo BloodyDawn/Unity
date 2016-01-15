@@ -827,7 +827,10 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.75" />
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -877,7 +880,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.16" />
 				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
@@ -887,6 +889,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1023,7 +1029,6 @@
 				<mul stat="regMp" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1034,6 +1039,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1065,7 +1074,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
@@ -1074,6 +1082,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1104,7 +1116,6 @@
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1116,6 +1127,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1145,7 +1160,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1159,6 +1173,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1587,7 +1605,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.75" />
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1595,6 +1612,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>MA_UP;MD_UP</slot>
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

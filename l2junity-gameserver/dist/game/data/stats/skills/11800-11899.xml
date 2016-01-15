@@ -727,7 +727,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
-				<mul stat="mAtk" val="1.79" />
 				<mul stat="mDef" val="1.30" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -738,6 +737,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>17</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>79</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1051,7 +1054,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="debuffVuln" val="0.9" />
@@ -1066,6 +1068,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1506,8 +1512,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

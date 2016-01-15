@@ -1390,12 +1390,16 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<mul stat="regMp" val="1.04" /> <!-- MP Regeneration +4% -->
-				<mul stat="mAtk" val="1.08" /> <!-- M. Atk. +8% -->
+				<!-- M. Atk. +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<HOLD>70</HOLD>
 				<SLEEP>70</SLEEP>
+			</effect>
+			<effect name="MAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

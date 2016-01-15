@@ -1143,12 +1143,18 @@
 		<targetType>TARGET_PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
 					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">15</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

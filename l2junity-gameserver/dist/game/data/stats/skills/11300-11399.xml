@@ -247,7 +247,10 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.79" />
+			</effect>
+			<effect name="MAtk">
+				<amount>79</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3288,8 +3291,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.30" />
 				<mul stat="mCritRate" val="1.30" />
+			</effect>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3352,8 +3358,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.30" />
 				<mul stat="mAtkSpd" val="1.30" />
+			</effect>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3410,8 +3419,11 @@
 		<isMagic>1</isMagic>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.30" />
 				<mul stat="mCritPower" val="1.30" />
+			</effect>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

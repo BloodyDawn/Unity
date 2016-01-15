@@ -1418,7 +1418,6 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
@@ -1431,6 +1430,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1460,7 +1463,6 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mDef" val="1.2" />
@@ -1471,6 +1473,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1954,7 +1960,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.16" />
 				<mul stat="mDef" val="0.84" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
@@ -1964,6 +1969,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1984,7 +1993,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.75" />
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -23,7 +23,6 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.5" />
 				<add stat="pDef" val="1800" />
 				<add stat="regHp" val="300" />
 				<mul stat="regMp" val="3" />
@@ -31,6 +30,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

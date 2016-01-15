@@ -540,7 +540,6 @@
 					<using kind="MAGIC" />
 				</add>
 				<mul stat="mDef" val="1.3" />
-				<mul stat="mAtk" val="1.3" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="fireRes" val="10" />
 				<add stat="waterRes" val="10" />
@@ -548,6 +547,10 @@
 				<add stat="earthRes" val="10" />
 				<sub stat="debuffVuln" val="25" />
 				<sub stat="cancelVuln" val="40" />
+			</effect>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -581,7 +584,6 @@
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -592,6 +594,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -2058,7 +2064,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">55</value>
+					<value level="2">65</value>
+					<value level="3">75</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2160,7 +2173,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.1" />
 				<mul stat="blowRate" val="1.1" />
 			</effect>
 			<effect name="PAtk">
@@ -2171,6 +2183,10 @@
 					<item>CROSSBOW</item>
 					<item>RAPIER</item>
 				</weaponType>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2750,8 +2766,11 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.25" />
 				<mul stat="MagicalMpConsumeRate" val="1.35" />
+			</effect>
+			<effect name="MAtk">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3221,7 +3240,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.1" />
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3451,8 +3473,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" />
-				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mCritRate" val="#mCritRate" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">75</value>
+					<value level="2">85</value>
+					<value level="3">95</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

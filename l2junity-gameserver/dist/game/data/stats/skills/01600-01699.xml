@@ -23,12 +23,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.5" />
-				<mul stat="mAtk" val="1.5" />
 				<mul stat="mCritRate" val="1.5" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 			</effect>
 			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>

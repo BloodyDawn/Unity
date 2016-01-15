@@ -132,11 +132,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.24" />
 				<add stat="mAtk" val="#mAtk" />
 				<mul stat="mCritRate" val="1.06" />
 				<add stat="INT" val="2" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
+			</effect>
+			<effect name="MAtk">
+				<amount>24</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

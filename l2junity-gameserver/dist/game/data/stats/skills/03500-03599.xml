@@ -57,8 +57,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.1025" /> <!-- M. Atk. +10.25% -->
+				<!-- M. Atk. +10.25% -->
 				<mul stat="regMp" val="0.95" /> <!-- MP Regeneration -5% -->
+			</effect>
+			<effect name="MAtk">
+				<amount>10.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -275,8 +279,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.1025" /> <!-- M. Atk. +10.25% -->
+				<!-- M. Atk. +10.25% -->
 				<mul stat="regMp" val="0.95" /> <!-- MP Regeneration -5% -->
+			</effect>
+			<effect name="MAtk">
+				<amount>10.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -577,11 +585,15 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.04" /> <!-- MP Regeneration +4% -->
-				<mul stat="mAtk" val="1.08" /> <!-- M. Atk. +8% -->
+				<!-- M. Atk. +8% -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
+			</effect>
+			<effect name="MAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -821,13 +833,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.17" /> <!-- M. Atk +17% -->
+				<!-- M. Atk +17% -->
 				<add stat="moveSpeed" val="7" /> <!-- Movement Speed +7 -->
 				<sub stat="cancel" val="50" /> <!-- Casting Cancel Probability -50% -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>17</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -843,7 +859,6 @@
 			<effect name="Buff">
 				<add stat="fireRes" val="15" />
 				<add stat="maxHp" val="445" />
-				<mul stat="mAtk" val="1.08" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="pReuse" val="0.9" />
 				<mul stat="mReuse" val="0.9" />
@@ -857,6 +872,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

@@ -1073,7 +1073,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
-				<mul stat="mAtk" val="1.1" />
 				<mul stat="mAtkSpd" val="1.05" />
 				<mul stat="moveSpeed" val="1.05" />
 				<mul stat="pDef" val="0.95" />
@@ -1082,6 +1081,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

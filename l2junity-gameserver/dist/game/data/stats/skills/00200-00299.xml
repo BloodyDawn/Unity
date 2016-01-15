@@ -1806,7 +1806,6 @@
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 				<add stat="mAtk" val="#mAtk" />
-				<mul stat="mAtk" val="1.17" />
 				<mul stat="mAtkSpd" val="0.7">
 					<using kind="BOW,POLE" />
 				</mul>
@@ -1816,6 +1815,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>45</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>17</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -1877,7 +1880,6 @@
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 				<add stat="mAtk" val="#mAtk" />
-				<mul stat="mAtk" val="1.17" />
 				<mul stat="mAtkSpd" val="0.7">
 					<using kind="BOW,POLE" />
 				</mul>
@@ -1888,6 +1890,10 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>45</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>17</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
@@ -3384,7 +3390,10 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.2" />
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

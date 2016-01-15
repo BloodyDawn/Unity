@@ -21,10 +21,13 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -320,9 +323,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -413,9 +419,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -505,10 +514,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
 				<mul stat="mDef" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mCritPower" val="1.2" />
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1469,9 +1481,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.1" />
 				<mul stat="mDef" val="1.2" />
 				<add stat="mCritRate" val="2" />
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

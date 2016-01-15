@@ -50,7 +50,14 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">55</value>
+					<value level="2">65</value>
+					<value level="3">75</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -367,7 +374,33 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">-85</value>
+					<value level="2">-82</value>
+					<value level="3">-78</value>
+					<value level="4">-73</value>
+					<value level="5">-68</value>
+					<value level="6">-61</value>
+					<value level="7">-53</value>
+					<value level="8">-43</value>
+					<value level="9">-31</value>
+					<value level="10">-17</value>
+					<value level="11">0</value>
+					<value level="12">21</value>
+					<value level="13">46</value>
+					<value level="14">77</value>
+					<value level="15">114</value>
+					<value level="16">159</value>
+					<value level="17">213</value>
+					<value level="18">279</value>
+					<value level="19">359</value>
+					<value level="20">455</value>
+					<value level="21">572</value>
+					<value level="22">9900</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

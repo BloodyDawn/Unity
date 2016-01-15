@@ -55,13 +55,17 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="50" /> <!-- Casting Cancel Probability -50% -->
-				<mul stat="mAtk" val="1.17" /> <!-- M. Atk +17% -->
+				<!-- M. Atk +17% -->
 				<add stat="moveSpeed" val="7" /> <!-- Movement Speed +7 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>17</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -464,7 +468,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<mul stat="mAtk" val="1.054" /> <!-- Increase M. Atk +5.4% -->
+				<!-- Increase M. Atk +5.4% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -483,6 +487,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>5.4</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8215" levels="1" name="Dynasty Leather Armor - PvP">
@@ -1071,7 +1079,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<mul stat="mAtk" val="1.066" /> <!-- M. Atk. +6.6% -->
+				<!-- M. Atk. +6.6% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -1090,6 +1098,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>6.6</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8233" levels="1" name="Zubei's Helmet">
@@ -1112,7 +1124,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="mAtk" val="1.0125" />
+			</effect>
+			<effect name="MAtk">
+				<amount>1.25</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1139,9 +1154,12 @@
 		<for>
 			<effect name="DefenceTrait">
 				<mul stat="regMp" val="1.0062" />
-				<mul stat="mAtk" val="1.0062" />
 				<SLEEP>17.5</SLEEP>
 				<HOLD>17.5</HOLD>
+			</effect>
+			<effect name="MAtk">
+				<amount>0.62</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2105,11 +2123,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0847" /> <!-- M. Atk. 8.47% -->
+				<!-- M. Atk. 8.47% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Speed 15% -->
 				<mul stat="regMp" val="1.0557" /> <!-- MP Recovery Rate by 5.57% -->
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
 				<SHOCK>50</SHOCK>
+			</effect>
+			<effect name="MAtk">
+				<amount>8.47</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2122,7 +2144,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="DefenceTrait">
-				<mul stat="mAtk" val="1.0847" /> <!-- M. Atk. 8.47% -->
+				<!-- M. Atk. 8.47% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Speed 15% -->
 				<mul stat="regMp" val="1.0557" /> <!-- MP Recovery Rate by 5.57% -->
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
@@ -2131,6 +2153,10 @@
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MAtk">
+				<amount>8.47</amount>
+				<mode>PER</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8289" levels="3" name="Special Ability: Focus">

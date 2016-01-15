@@ -466,7 +466,6 @@
 		<trait>DERANGEMENT</trait>
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.85" />
 				<mul stat="pDef" val="0.6" />
 				<mul stat="mDef" val="0.6" />
 				<mul stat="pAtkSpd" val="0.75" />
@@ -477,6 +476,10 @@
 				<mul stat="rCrit" val="0.1" />
 			</effect>
 			<effect name="PAtk">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
 				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
