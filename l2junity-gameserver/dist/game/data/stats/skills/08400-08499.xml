@@ -17,7 +17,7 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
+				<!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 7 -->
 				<BLEED>50</BLEED>
 				<SLEEP>50</SLEEP>
@@ -35,6 +35,10 @@
 			<effect name="PhysicalDefence">
 				<amount>8.47</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -347,7 +351,7 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
+				<!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 7 -->
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
@@ -368,6 +372,10 @@
 			<effect name="PhysicalDefence">
 				<amount>8.47</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

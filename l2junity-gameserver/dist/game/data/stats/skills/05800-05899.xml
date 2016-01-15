@@ -2397,7 +2397,6 @@
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="regHp" val="0.5" />
 				<mul stat="pAtkSpd" val="1.1" />
-				<add stat="accCombat" val="10" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 			</effect>
@@ -2419,6 +2418,10 @@
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

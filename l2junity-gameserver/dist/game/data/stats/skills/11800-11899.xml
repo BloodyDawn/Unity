@@ -852,7 +852,6 @@
 		<isMagic>22</isMagic>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="5" />
 				<add stat="mEvas" val="5" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
@@ -867,6 +866,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>

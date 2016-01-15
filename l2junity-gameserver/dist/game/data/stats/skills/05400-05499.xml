@@ -715,7 +715,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<sub stat="accCombat" val="50" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-95</amount>
@@ -744,6 +743,10 @@
 					<value level="1">-50</value>
 					<value level="2">-0</value>
 				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-50</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

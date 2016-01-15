@@ -2684,7 +2684,6 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
-				<sub stat="accCombat" val="12" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-50</amount>
@@ -2693,6 +2692,10 @@
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-12</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3803,7 +3806,6 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="0.3" />
 				<mul stat="mAtkSpd" val="0.3" />
-				<sub stat="accCombat" val="8" />
 			</effect>
 			<effect name="BlockSkill">
 				<magicTypes>1;2;3;4;5</magicTypes>
@@ -3815,6 +3817,10 @@
 			<effect name="MAtk">
 				<amount>-70</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

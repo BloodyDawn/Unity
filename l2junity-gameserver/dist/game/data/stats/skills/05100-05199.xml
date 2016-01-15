@@ -792,13 +792,18 @@
 		<targetType>AURA</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="10">
-					<using kind="BOW,CROSSBOW" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>20</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>BOW</item>
 					<item>CROSSBOW</item>
@@ -1950,7 +1955,26 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">4</value>
+					<value level="11">4</value>
+					<value level="12">5</value>
+					<value level="13">5</value>
+					<value level="14">6</value>
+					<value level="15">7</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3078,7 +3102,14 @@
 		<targetType>OWNER_PET</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

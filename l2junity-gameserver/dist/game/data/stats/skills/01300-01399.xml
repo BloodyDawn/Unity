@@ -390,7 +390,14 @@
 		<targetType>PARTY</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1780,9 +1787,12 @@
 				<power>139</power>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<sub stat="accCombat" val="6" />
 				<sub stat="holyRes" val="30" />
 				<power>12</power>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-6</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1890,7 +1900,6 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1910,6 +1919,10 @@
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1978,7 +1991,6 @@
 		<targetType>SERVITOR</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="cAtk" val="1.2">
 					<player behind="true" />
@@ -1993,6 +2005,10 @@
 				<chance>30</chance>
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -2024,7 +2040,6 @@
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<add stat="accCombat" val="4" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
@@ -2052,6 +2067,10 @@
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2265,7 +2284,6 @@
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
-				<add stat="accCombat" val="4" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
@@ -2287,6 +2305,10 @@
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2557,7 +2579,6 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<add stat="accCombat" val="4" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2584,6 +2605,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="1364" levels="1" name="Eye of Pa'agrio">
@@ -2608,7 +2633,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -2616,6 +2640,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>HIT_UP</slot>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2686,7 +2714,6 @@
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="rCrit" val="-0.3" />
 				<mul stat="cAtk" val="0.7" />
-				<sub stat="accCombat" val="6" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-10</amount>
@@ -2699,6 +2726,10 @@
 			<effect name="MagicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-6</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

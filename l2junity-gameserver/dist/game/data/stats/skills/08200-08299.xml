@@ -259,7 +259,7 @@
 		<for>
 			<effect name="Buff">
 				<!-- Evacion +1.72 -->
-				<add stat="accCombat" val="1.72" /> <!-- Accuracy +1.72 -->
+				<!-- Accuracy +1.72 -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -279,6 +279,10 @@
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PhysicalEvasion">
+				<amount>1.72</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>1.72</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -329,7 +333,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4.3" /> <!-- Accuracy +4.3 -->
+				<!-- Accuracy +4.3 -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 Effect -->
 				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 				<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
@@ -350,6 +354,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="Accuracy">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8210" levels="1" name="Dynasty Tunic - PvP">
@@ -851,7 +859,7 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="5.3" /> <!-- Accuracy +5.3 -->
+				<!-- Accuracy +5.3 -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
 				<add stat="regMp" val="1.066" /> <!-- MP Recovery +6.6% -->
@@ -872,6 +880,10 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="Accuracy">
+				<amount>5.3</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="8225" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -2119,7 +2131,7 @@
 				<!-- P. Atk. +5.57% -->
 				<!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="540" /> <!-- Max HP 540 -->
-				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
+				<!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 5 -->
 				<mul stat="magicSuccRes" val="1.01" /> <!-- Resistance to magic damage by 1% -->
 				<HOLD>70</HOLD>
@@ -2137,6 +2149,10 @@
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2293,11 +2309,15 @@
 		<for>
 			<effect name="AttackTrait">
 				<mul stat="cAtk" val="1.15" /> <!-- Increases critical attack power by 15% -->
-				<add stat="accCombat" val="2" /> <!-- Increases accuracy by 2 -->
+				<!-- Increases accuracy by 2 -->
 				<HOLD>30</HOLD>
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

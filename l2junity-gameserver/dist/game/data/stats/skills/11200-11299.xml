@@ -348,9 +348,6 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.23" />
 				<add stat="mCritRate" val="6" />
-				<add stat="accCombat" val="4">
-					<using kind="DUALBLUNT" />
-				</add>
 				<add stat="INT" val="2" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
@@ -394,6 +391,13 @@
 					<value level="10">2478</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUALBLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

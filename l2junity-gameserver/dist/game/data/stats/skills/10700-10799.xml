@@ -361,9 +361,6 @@
 				<mul stat="pAtkSpd" val="1.15">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
-				<add stat="accCombat" val="8">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</add>
 				<add stat="skillCritical" val="1">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
@@ -385,6 +382,15 @@
 					<value level="9">3610</value>
 					<value level="10">3830</value>
 				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>8</amount>
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>BOW</item>
@@ -2094,9 +2100,17 @@
 		<staticReuse>true</staticReuse>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat" />
 				<add stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">25</value>
+					<value level="2">30</value>
+					<value level="3">35</value>
+					<value level="4">40</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2231,7 +2245,10 @@
 		<isDebuff>true</isDebuff>
 		<for>
 			<effect name="Debuff">
-				<sub stat="accCombat" val="10" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 		<endEffects>

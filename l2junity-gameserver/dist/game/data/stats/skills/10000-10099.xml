@@ -1588,9 +1588,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="SWORD, BLUNT" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD, BLUNT" />
 				</mul>
@@ -1627,6 +1624,19 @@
 					<value level="4">120</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -4370,9 +4380,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="debuffVuln" val="#debuffVuln" />
-				<add stat="accCombat" val="#accCombat">
-					<using kind="SWORD,BLUNT" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD,BLUNT" />
 				</mul>
@@ -4410,6 +4417,19 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 		</for>
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
@@ -4445,9 +4465,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="SWORD,BLUNT" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD,BLUNT" />
 				</mul>
@@ -4493,6 +4510,19 @@
 					<value level="4">100</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

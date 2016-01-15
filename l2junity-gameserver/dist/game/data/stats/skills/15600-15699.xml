@@ -625,7 +625,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="5" />
 				<add stat="mEvas" val="5" />
 				<mul stat="defCritDamage" val="1.3" />
 			</effect>
@@ -641,6 +640,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -915,7 +918,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.1" />
-				<add stat="accCombat" val="2" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="mReuse" val="0.95" />
@@ -933,6 +935,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>

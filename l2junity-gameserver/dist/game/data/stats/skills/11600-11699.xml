@@ -108,7 +108,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
-				<add stat="accCombat" val="4" />
 				<mul stat="PhysicalMpConsumeRate" val="1.10" /> <!-- Custom -->
 				<mul stat="MagicalMpConsumeRate" val="1.10" /> <!-- Custom -->
 				<mul stat="DanceMpConsumeRate" val="1.10" /> <!-- Custom -->
@@ -128,6 +127,10 @@
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -376,7 +379,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
-				<add stat="accCombat" val="4" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
 				<mul stat="mReuse" val="0.90" />
@@ -395,6 +397,10 @@
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -511,7 +517,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
-				<add stat="accCombat" val="4" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
 				<mul stat="mReuse" val="0.90" />
@@ -530,6 +535,10 @@
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

@@ -463,9 +463,6 @@
 		</cond>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="BOW" />
-				</add>
 				<mul stat="rCrit" val="0.2">
 					<using kind="BOW" />
 				</mul>
@@ -483,6 +480,22 @@
 					<value level="6">177</value>
 					<value level="7">188</value>
 					<value level="8">199</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">6</value>
 				</amount>
 				<mode>DIFF</mode>
 				<weaponType>
@@ -723,12 +736,22 @@
 				<mul stat="cAtk" val="#cAtk">
 					<using kind="POLE" />
 				</mul>
-				<add stat="accCombat" val="#accCombat">
-					<using kind="POLE" />
-				</add>
 				<set stat="atkCountMax" val="1">
 					<using kind="POLE" />
 				</set>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -760,14 +783,21 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="LIGHT" />
-				</add>
 			</effect>
 			<effect name="Speed">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">10</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
 				</amount>
 				<mode>DIFF</mode>
 				<armorType>
@@ -1308,7 +1338,6 @@
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<mul stat="pAtkSpd" val="0.8" />
-				<sub stat="accCombat" val="4" />
 				<power>1</power>
 			</effect>
 			<effect name="Speed">
@@ -1322,6 +1351,10 @@
 			<effect name="PhysicalDefence">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1339,12 +1372,15 @@
 				<add stat="reflectSkillPhysic" val="30" />
 				<add stat="reflectSkillMagic" val="30" />
 				<mul stat="pAtkSpd" val="0.8" />
-				<sub stat="accCombat" val="4" />
 				<power>1</power>
 			</effect>
 			<effect name="Speed">
 				<amount>-10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2653,7 +2689,16 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2931,7 +2976,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="8" />
 				<sub stat="cancelVuln" val="80" />
 				<set stat="debuffImmunity" val="1" />
 				<mul stat="healEffect" val="2" />
@@ -2960,6 +3004,10 @@
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>-8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>8</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

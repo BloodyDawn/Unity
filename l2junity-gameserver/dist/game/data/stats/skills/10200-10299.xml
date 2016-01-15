@@ -171,9 +171,6 @@
 				<mul stat="pAtkSpd" val="1.25">
 					<using kind="BLUNT,POLE,SWORD" />
 				</mul>
-				<add stat="accCombat" val="8">
-					<using kind="BLUNT,POLE,SWORD" />
-				</add>
 				<add stat="atkCountMax" val="10">
 					<using kind="POLE" />
 				</add>
@@ -197,6 +194,15 @@
 					<value level="9">3667</value>
 					<value level="10">3890</value>
 				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BLUNT</item>
+					<item>POLE</item>
+					<item>SWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>8</amount>
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>BLUNT</item>
@@ -231,9 +237,6 @@
 				<mul stat="pAtkSpd" val="1.25">
 					<using kind="DUALFIST,DUALBLUNT,DUAL" />
 				</mul>
-				<add stat="accCombat" val="8">
-					<using kind="DUALFIST,DUALBLUNT,DUAL" />
-				</add>
 				<add stat="STR" val="2" />
 			</effect>
 			<effect name="PAtk">
@@ -253,6 +256,15 @@
 					<value level="9">3667</value>
 					<value level="10">3890</value>
 				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+					<item>DUALBLUNT</item>
+					<item>DUAL</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>8</amount>
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>DUALFIST</item>
@@ -337,9 +349,6 @@
 				<add stat="maxHp" val="5368">
 					<using kind="LIGHT" />
 				</add>
-				<add stat="accCombat" val="3">
-					<using kind="LIGHT" />
-				</add>
 				<mul stat="pAtkSpd" val="1.1">
 					<using kind="LIGHT" />
 				</mul>
@@ -374,6 +383,13 @@
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>6</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>3</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>LIGHT</item>
@@ -1446,7 +1462,6 @@
 			<effect name="Buff">
 				<add stat="debuffVuln" val="#debuffVuln" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<add stat="accCombat" val="#accCombat" />
 				<mul stat="cAtk" val="#cAtk" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
@@ -1489,6 +1504,15 @@
 					<value level="4">20</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+					<value level="3">13</value>
+					<value level="4">16</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2131,9 +2155,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="10" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="defCritDamage" val="0.6" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -2187,9 +2214,12 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="8" />
 				<add stat="rCrit" val="120" />
 				<mul stat="cAtk" val="1.3" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

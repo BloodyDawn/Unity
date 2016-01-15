@@ -522,7 +522,10 @@
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.35" />
 				<mul stat="rCrit" val="0.3" />
-				<add stat="accCombat" val="4" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1148,7 +1151,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

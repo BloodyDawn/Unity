@@ -741,9 +741,6 @@
 		<for>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="40" />
-				<add stat="accCombat" val="6">
-					<using kind="SWORD,BLUNT" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD,BLUNT" />
 				</mul>
@@ -771,6 +768,14 @@
 			<effect name="PhysicalDefence">
 				<amount>50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1196,7 +1201,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="SilentMove">
-				<sub stat="accCombat" val="12" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-45</amount>
@@ -1224,6 +1228,10 @@
 					<value level="2">-8</value>
 					<value level="3">-4</value>
 				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-12</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>
@@ -1296,7 +1304,21 @@
 		<targetType>ONE</targetType>
 		<for>
 			<effect name="Debuff">
-				<sub stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">-6</value>
+					<value level="2">-6</value>
+					<value level="3">-6</value>
+					<value level="4">-6</value>
+					<value level="5">-6</value>
+					<value level="6">-9</value>
+					<value level="7">-9</value>
+					<value level="8">-9</value>
+					<value level="9">-9</value>
+					<value level="10">-12</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1443,9 +1465,6 @@
 				<mul stat="pAtkSpd" val="0.9">
 					<using kind="BOW" />
 				</mul>
-				<add stat="accCombat" val="#accCombat">
-					<using kind="BOW" />
-				</add>
 				<mul stat="cAtk" val="1.2">
 					<using kind="BOW" />
 				</mul>
@@ -1460,6 +1479,22 @@
 					<value level="6">177</value>
 					<value level="7">188</value>
 					<value level="8">199</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
 				</amount>
 				<mode>DIFF</mode>
 				<weaponType>
@@ -1690,9 +1725,6 @@
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="80" />
 				<sub stat="cancelVuln" val="40" />
-				<add stat="accCombat" val="6">
-					<using kind="SWORD,BLUNT,POLE,DUALFIST" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD,BLUNT,POLE,DUALFIST" />
 				</mul>
@@ -1712,6 +1744,16 @@
 					<value level="3">30</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1783,10 +1825,18 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="POLE" />
-				</add>
 				<power>0.5</power>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -1883,15 +1933,19 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="6">
-					<using kind="DUALFIST" />
-				</add>
 				<add stat="rCrit" val="100">
 					<using kind="DUALFIST" />
 				</add>
 				<mul stat="cAtk" val="1.3">
 					<using kind="DUALFIST" />
 				</mul>
+			</effect>
+			<effect name="Accuracy">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

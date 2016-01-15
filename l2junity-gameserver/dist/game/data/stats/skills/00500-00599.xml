@@ -16,7 +16,6 @@
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<mul stat="pAtkSpd" val="#amount" />
-				<add stat="accCombat" val="#amount2" />
 				<power>0.4</power>
 			</effect>
 			<effect name="PAtk">
@@ -34,6 +33,13 @@
 				<amount>
 					<value level="1">-2</value>
 					<value level="2">-4</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1557,9 +1563,6 @@
 		</cond>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="CROSSBOW" />
-				</add>
 				<mul stat="rCrit" val="0.2">
 					<using kind="CROSSBOW" />
 				</mul>
@@ -1577,6 +1580,22 @@
 					<value level="6">177</value>
 					<value level="7">188</value>
 					<value level="8">199</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">6</value>
 				</amount>
 				<mode>DIFF</mode>
 				<weaponType>
@@ -3873,7 +3892,15 @@
 		<targetType>AREA</targetType>
 		<for>
 			<effect name="Debuff">
-				<sub stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">-6</value>
+					<value level="2">-7</value>
+					<value level="3">-8</value>
+					<value level="4">-9</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

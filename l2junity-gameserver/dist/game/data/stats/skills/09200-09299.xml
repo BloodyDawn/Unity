@@ -658,7 +658,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mEvas" val="5" />
-				<add stat="accCombat" val="5" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="Speed">
@@ -666,6 +665,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>

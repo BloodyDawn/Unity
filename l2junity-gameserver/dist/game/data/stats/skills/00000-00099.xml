@@ -6111,13 +6111,17 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="3">
-					<using kind="DUALFIST" />
-				</add>
 			</effect>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

@@ -39,9 +39,6 @@
 				<add stat="earthRes" val="#elemRes" />
 				<add stat="holyRes" val="#elemRes" />
 				<add stat="darkRes" val="#elemRes" />
-				<add stat="accCombat" val="#accCombat">
-					<using kind="SWORD,BLUNT" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD,BLUNT" />
 				</mul>
@@ -78,6 +75,19 @@
 					<value level="4">120</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -115,9 +125,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
-				<add stat="accCombat" val="#accCombat">
-					<using kind="SWORD,BLUNT" />
-				</add>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD,BLUNT" />
 				</mul>
@@ -154,6 +161,19 @@
 					<value level="4">100</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

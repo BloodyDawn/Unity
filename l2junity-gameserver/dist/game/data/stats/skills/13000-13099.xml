@@ -84,7 +84,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="#base" />
 				<sub stat="DEX" val="#base" />
-				<add stat="accCombat" val="#accCombat" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
@@ -124,6 +123,15 @@
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">4</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -591,7 +599,6 @@
 				<sub stat="STR" val="#base" />
 				<add stat="CON" val="#base" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="accCombat" val="#accCombat" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
@@ -640,6 +647,15 @@
 			<effect name="PhysicalDefence">
 				<amount>8.47</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

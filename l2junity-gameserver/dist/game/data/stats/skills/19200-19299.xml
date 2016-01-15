@@ -186,7 +186,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4" />
 				<add stat="accMagic" val="4" />
 			</effect>
 			<effect name="PAtk">
@@ -196,6 +195,10 @@
 			<effect name="MAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

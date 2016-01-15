@@ -94,12 +94,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="3.4" />
 				<add stat="darkRes" val="3.2" />
 				<add stat="maxMp" val="492" />
 				<mul stat="pAtkSpd" val="1.0477" />
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>3.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>3.4</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -653,7 +656,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="3.9" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -738,7 +744,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="3.9" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -962,7 +971,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="3.3" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -980,7 +992,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="3.3" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1024,12 +1039,15 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="0.31" />
 				<add stat="maxHp" val="82" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<add stat="darkRes" val="0.8" />
 			</effect>
 			<effect name="PhysicalEvasion">
+				<amount>0.31</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
 				<amount>0.31</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1062,7 +1080,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="3.7" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1386,7 +1407,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4.2" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>4.2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -1542,7 +1566,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4.2" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>4.2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

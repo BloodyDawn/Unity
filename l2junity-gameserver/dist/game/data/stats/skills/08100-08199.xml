@@ -1287,7 +1287,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +4% -->
-				<add stat="accCombat" val="3.1" /> <!-- Accuracy +3 -->
+				<!-- Accuracy +3 -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -1296,6 +1296,10 @@
 			<effect name="PAtk">
 				<amount>4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

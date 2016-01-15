@@ -1349,8 +1349,16 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#acc" />
 				<add stat="accMagic" val="#acc" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

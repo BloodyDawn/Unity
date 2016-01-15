@@ -476,7 +476,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<sub stat="accCombat" val="16" />
 				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="pAtkSpd" val="0.9" />
@@ -484,6 +483,10 @@
 			<effect name="PAtk">
 				<amount>-10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-16</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

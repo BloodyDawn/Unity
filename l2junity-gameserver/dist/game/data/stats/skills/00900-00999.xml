@@ -3032,15 +3032,25 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="SWORD,BLUNT,DUAL" />
-				</add>
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT,DUAL" />
 				</add>
 				<mul stat="cAtk" val="#cAtk">
 					<using kind="SWORD,BLUNT,DUAL" />
 				</mul>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DUAL</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -3709,9 +3719,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="ImmobileBuff">
-				<add stat="accCombat" val="6">
-					<using kind="BOW" />
-				</add>
 				<mul stat="rCrit" val="0.2">
 					<using kind="BOW" />
 				</mul>
@@ -3721,6 +3728,13 @@
 			</effect>
 			<effect name="PAtk">
 				<amount>199</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>6</amount>
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>BOW</item>

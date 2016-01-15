@@ -9,7 +9,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4" />
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
@@ -212,7 +215,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="2" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -228,6 +230,10 @@
 					<value level="2">2</value>
 					<value level="3">2</value>
 				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</for>

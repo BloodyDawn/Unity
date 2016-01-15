@@ -1557,7 +1557,6 @@
 			<effect name="Buff">
 				<add stat="debuffVuln" val="80" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<add stat="accCombat" val="10" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
@@ -1591,6 +1590,10 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Accuracy">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="14868" levels="1" name="Barton's Berserker Rage">
@@ -1615,7 +1618,6 @@
 			<effect name="Buff">
 				<add stat="debuffVuln" val="80" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<add stat="accCombat" val="11" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
@@ -1649,6 +1651,10 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Accuracy">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="14869" levels="1" name="Barton's Berserker Rage">
@@ -1673,7 +1679,6 @@
 			<effect name="Buff">
 				<add stat="debuffVuln" val="80" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<add stat="accCombat" val="13" />
 				<mul stat="cAtk" val="1.1" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
@@ -1706,6 +1711,10 @@
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>13</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>

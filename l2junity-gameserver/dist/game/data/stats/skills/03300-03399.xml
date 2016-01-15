@@ -853,13 +853,17 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="4.3" /> <!-- Accuracy +4.3 -->
+				<!-- Accuracy +4.3 -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 Effect -->
 				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 				<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="Accuracy">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</for>
 	</skill>
 	<skill id="3354" levels="1" name="Dynasty Tunic">

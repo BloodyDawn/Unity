@@ -1851,7 +1851,6 @@
 				<mul stat="rCrit" val="1.2" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<add stat="accCombat" val="4" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
@@ -1879,6 +1878,10 @@
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</for>
 	</skill>
