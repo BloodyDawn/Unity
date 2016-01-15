@@ -520,11 +520,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkRange" val="1.25" />
 				<mul stat="rCrit" val="0.25" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>

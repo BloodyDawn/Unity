@@ -1462,9 +1462,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkRange" val="0.5">
-					<using kind="BOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1484,6 +1481,13 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>-50</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>BOW</item>
