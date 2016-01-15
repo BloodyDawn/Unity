@@ -205,7 +205,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.4" />
-				<mul stat="blowRate" val="1.1" />
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>
@@ -3586,7 +3589,10 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="blowRate" val="1.1" />
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

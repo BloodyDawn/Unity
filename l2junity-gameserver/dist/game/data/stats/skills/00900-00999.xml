@@ -1306,7 +1306,6 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="blowRate" val="1.05" />
 			</effect>
 			<effect name="PAtk">
 				<amount>87.5</amount>
@@ -1314,6 +1313,10 @@
 				<weaponType>
 					<item>DUALDAGGER</item>
 				</weaponType>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

@@ -2249,7 +2249,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="blowRate" val="1.1" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2261,6 +2260,10 @@
 				</weaponType>
 			</effect>
 			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="FatalBlowRate">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>

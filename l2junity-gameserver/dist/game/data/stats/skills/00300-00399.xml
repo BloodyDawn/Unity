@@ -1987,13 +1987,17 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="-0.3" /> <!-- Decreases critical attack rate by 30% -->
-				<mul stat="blowRate" val="1.6" /> <!-- Increases blow land rate by 60% -->
+				<!-- Increases blow land rate by 60% -->
 				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical damage by 30% -->
 					<player front="true" />
 				</mul>
 				<mul stat="cAtk" val="1.9"> <!-- Increases rear critical damage by 90% -->
 					<player behind="true" />
 				</mul>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>60</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 	</skill>

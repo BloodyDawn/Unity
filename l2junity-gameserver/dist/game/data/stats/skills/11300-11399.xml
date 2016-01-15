@@ -3477,7 +3477,11 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="cAtk" val="1.30" /> <!-- Guessed -->
-				<mul stat="blowRate" val="1.30" /> <!-- Guessed -->
+				<!-- Guessed -->
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</for>
 		<selfEffects>

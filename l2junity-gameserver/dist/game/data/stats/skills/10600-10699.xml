@@ -43,9 +43,14 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="blowRate" val="1.2">
-					<using kind="DAGGER,DUALDAGGER" />
-				</mul>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -98,9 +103,6 @@
 				<add stat="cAtkAdd" val="304">
 					<using kind="DAGGER,DUALDAGGER" />
 				</add>
-				<mul stat="blowRate" val="1.15">
-					<using kind="DAGGER,DUALDAGGER" />
-				</mul>
 				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical attack rate by 30% -->
 					<player front="true" />
 				</mul>
@@ -122,6 +124,14 @@
 				<mul stat="cAtk" val="1.5"> <!-- Increase rear critical attack rate by 50% -->
 					<player behind="true" />
 				</mul>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -174,9 +184,14 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="blowRate" val="1.2">
-					<using kind="DAGGER,DUALDAGGER" />
-				</mul>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>
@@ -229,9 +244,6 @@
 				<add stat="cAtkAdd" val="608">
 					<using kind="DAGGER,DUALDAGGER" />
 				</add>
-				<mul stat="blowRate" val="1.05">
-					<using kind="DAGGER,DUALDAGGER" />
-				</mul>
 				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical attack rate by 30% -->
 					<player front="true" />
 				</mul>
@@ -253,6 +265,14 @@
 				<mul stat="cAtk" val="1.5"> <!-- Increase rear critical attack damage by 50% -->
 					<player behind="true" />
 				</mul>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
 			</effect>
 		</for>
 	</skill>

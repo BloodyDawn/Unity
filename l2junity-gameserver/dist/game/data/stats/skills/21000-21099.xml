@@ -397,11 +397,14 @@
 		<targetType>SELF</targetType>
 		<for>
 			<effect name="Buff">
-				<mul stat="blowRate" val="1.25" />
 				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</for>
