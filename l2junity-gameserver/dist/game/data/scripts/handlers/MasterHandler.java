@@ -142,8 +142,6 @@ import handlers.bypasshandlers.Loto;
 import handlers.bypasshandlers.Multisell;
 import handlers.bypasshandlers.NpcViewMod;
 import handlers.bypasshandlers.Observation;
-import handlers.bypasshandlers.OlympiadManagerLink;
-import handlers.bypasshandlers.OlympiadObservation;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
 import handlers.bypasshandlers.QuestLink;
@@ -404,8 +402,6 @@ public class MasterHandler
 			Multisell.class,
 			NpcViewMod.class,
 			Observation.class,
-			OlympiadObservation.class,
-			OlympiadManagerLink.class,
 			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,

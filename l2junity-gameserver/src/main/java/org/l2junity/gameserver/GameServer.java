@@ -33,7 +33,6 @@ import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.sql.impl.CharSummonTable;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.sql.impl.CrestTable;
-import org.l2junity.gameserver.data.sql.impl.NpcBufferTable;
 import org.l2junity.gameserver.data.sql.impl.OfflineTradersTable;
 import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
@@ -269,7 +268,6 @@ public class GameServer
 		StaticObjectData.getInstance();
 		ItemAuctionManager.getInstance();
 		CastleManager.getInstance().loadInstances();
-		NpcBufferTable.getInstance();
 		GrandBossManager.getInstance();
 		EventDroplist.getInstance();
 		

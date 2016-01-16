@@ -33,9 +33,7 @@ import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -581,15 +579,6 @@ public class Duel
 		
 		final List<Location> spawns = zone.getSpawns();
 		_duelInstance = InstanceManager.getInstance().createInstance(InstanceManager.getInstance().getInstanceTemplate(instanceId));
-		
-		// Remove Olympiad buffers
-		for (Npc buffer : _duelInstance.getNpcs())
-		{
-			if (buffer instanceof L2OlympiadManagerInstance)
-			{
-				buffer.decayMe();
-			}
-		}
 		
 		final Location spawn1 = spawns.get(Rnd.get(spawns.size() / 2));
 		for (PlayerInstance temp : _playerA.getParty().getMembers())
