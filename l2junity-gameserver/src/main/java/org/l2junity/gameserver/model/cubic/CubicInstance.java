@@ -127,7 +127,7 @@ public class CubicInstance
 							}
 							case TARGET:
 							{
-								WorldObject possibleTarget = skill.getTarget(_caster, _caster.getTarget(), false, false, false);
+								WorldObject possibleTarget = skill.getTarget(_caster, false, false, false);
 								if (possibleTarget.isCreature())
 								{
 									if (cubicSkill.validateConditions(this, _owner, (Creature) possibleTarget))

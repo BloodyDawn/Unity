@@ -81,6 +81,11 @@ public final class TriggerSkillBySkill extends AbstractEffect
 			return;
 		}
 		
+		if (!event.getTarget().isCreature())
+		{
+			return;
+		}
+		
 		if ((_chance < 100) && (Rnd.get(100) > _chance))
 		{
 			return;
@@ -93,7 +98,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 		}
 		else
 		{
-			final BuffInfo buffInfo = event.getTarget().getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+			final BuffInfo buffInfo = ((Creature) event.getTarget()).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
 			if (buffInfo != null)
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));

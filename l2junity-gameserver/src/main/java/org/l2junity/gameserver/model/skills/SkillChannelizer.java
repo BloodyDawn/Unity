@@ -162,7 +162,7 @@ public class SkillChannelizer implements Runnable
 				}
 				
 				final List<Creature> targetList = new ArrayList<>();
-				WorldObject target = skill.getTarget(_channelizer, _channelizer.getTarget(), false, false, false);
+				WorldObject target = skill.getTarget(_channelizer, false, false, false);
 				if (target != null)
 				{
 					skill.forEachTargetAffected(_channelizer, target, o ->

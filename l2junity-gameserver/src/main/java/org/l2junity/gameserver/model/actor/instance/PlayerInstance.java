@@ -8179,7 +8179,7 @@ public final class PlayerInstance extends Playable
 			setQueuedSkill(null, false, false);
 		}
 		
-		WorldObject target = skill.getTarget(this, getTarget(), forceUse, dontMove, false);
+		WorldObject target = skill.getTarget(this, forceUse, dontMove, false);
 		if (target == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -8254,7 +8254,7 @@ public final class PlayerInstance extends Playable
 		
 		// ************************************* Check Target *******************************************
 		// Create and set a L2Object containing the target of the skill
-		WorldObject target = skill.getTarget(this, getTarget(), forceUse, dontMove, false);
+		WorldObject target = skill.getTarget(this, forceUse, dontMove, false);
 		Location worldPosition = getCurrentSkillWorldPosition();
 		
 		if ((skill.getTargetType() == TargetType.GROUND) && (worldPosition == null))

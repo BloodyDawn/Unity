@@ -18,12 +18,16 @@
  */
 package org.l2junity.gameserver.model.skills;
 
+import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
+
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
 
+import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlEvent;
@@ -34,8 +38,12 @@ import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.character.FlyToLocationTask;
 import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
@@ -44,12 +52,15 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSkillSee;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.options.OptionsSkillHolder;
+import org.l2junity.gameserver.model.options.OptionsSkillType;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -311,18 +322,7 @@ public class SkillCaster implements Runnable
 		
 		try
 		{
-			Creature[] targets = skill.getTargetsAffected(_caster, target).stream().filter(WorldObject::isCreature).map(Creature.class::cast).collect(Collectors.toList()).toArray(new Creature[0]);
-			
-			// Escaping from under skill's radius and peace zone check. First version, not perfect in AoE skills.
-			int escapeRange = 0;
-			if (skill.getEffectRange() > escapeRange)
-			{
-				escapeRange = skill.getEffectRange();
-			}
-			else if ((skill.getCastRange() < 0) && (skill.getAffectRange() > 80))
-			{
-				escapeRange = skill.getAffectRange();
-			}
+			WorldObject[] targets = skill.getTargetsAffected(_caster, target).toArray(new WorldObject[0]);
 			
 			// Broadcast MagicSkillLaunched packet.
 			if (!skill.isToggle())
@@ -382,9 +382,217 @@ public class SkillCaster implements Runnable
 			}
 			
 			// Launch the magic skill in order to calculate its effects
-			_caster.callSkill(skill, item, targets);
+			try
+			{
+				// Check if the toggle skill effects are already in progress on the L2Character
+				if (skill.isToggle() && _caster.isAffectedBySkill(skill.getId()))
+				{
+					return;
+				}
+				
+				// Initial checks
+				for (WorldObject obj : targets)
+				{
+					if ((obj == null) || !obj.isCreature())
+					{
+						continue;
+					}
+					
+					final Creature creature = (Creature) obj;
+					// Check raid monster attack and check buffing characters who attack raid monsters.
+					Creature targetsAttackTarget = null;
+					Creature targetsCastTarget = null;
+					if (creature.hasAI())
+					{
+						targetsAttackTarget = creature.getAI().getAttackTarget();
+						targetsCastTarget = creature.getAI().getCastTarget();
+					}
+					
+					if (!Config.RAID_DISABLE_CURSE && ((creature.isRaid() && creature.giveRaidCurse() && (_caster.getLevel() > (creature.getLevel() + 8))) || (!skill.isBad() && (targetsAttackTarget != null) && targetsAttackTarget.isRaid() && targetsAttackTarget.giveRaidCurse() && targetsAttackTarget.getAttackByList().contains(creature) && (_caster.getLevel() > (targetsAttackTarget.getLevel() + 8))) || (!skill.isBad() && (targetsCastTarget != null) && targetsCastTarget.isRaid() && targetsCastTarget.giveRaidCurse() && targetsCastTarget.getAttackByList().contains(creature) && (_caster.getLevel() > (targetsCastTarget.getLevel() + 8)))))
+					{
+						final CommonSkill curse = skill.isMagic() ? CommonSkill.RAID_CURSE : CommonSkill.RAID_CURSE2;
+						Skill curseSkill = curse.getSkill();
+						if (curseSkill != null)
+						{
+							curseSkill.applyEffects(creature, _caster);
+						}
+						else
+						{
+							_log.warn("Skill ID " + curse.getId() + " level " + curse.getLevel() + " is missing in DP!");
+						}
+						return;
+					}
+					
+					// Static skills not trigger any chance skills
+					if (!skill.isStatic())
+					{
+						Weapon activeWeapon = _caster.getActiveWeaponItem();
+						// Launch weapon Special ability skill effect if available
+						if ((activeWeapon != null) && !creature.isDead())
+						{
+							activeWeapon.applyConditionalSkills(_caster, creature, skill, ItemSkillType.ON_MAGIC_SKILL);
+						}
+						
+						if (_caster.hasTriggerSkills())
+						{
+							for (OptionsSkillHolder holder : _caster.getTriggerSkills().values())
+							{
+								if ((skill.isMagic() && (holder.getSkillType() == OptionsSkillType.MAGIC)) || (skill.isPhysical() && (holder.getSkillType() == OptionsSkillType.ATTACK)))
+								{
+									if (Rnd.get(100) < holder.getChance())
+									{
+										_caster.makeTriggerCast(holder.getSkill(), creature, false);
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				// Launch the magic skill and calculate its effects
+				skill.activateSkill(_caster, item, targets);
+				
+				PlayerInstance player = _caster.getActingPlayer();
+				if (player != null)
+				{
+					for (WorldObject obj : targets)
+					{
+						// EVT_ATTACKED and PvPStatus
+						if (obj instanceof Creature)
+						{
+							if (skill.getEffectPoint() <= 0)
+							{
+								if ((obj.isPlayable() || obj.isTrap()) && skill.isBad())
+								{
+									// Casted on target_self but don't harm self
+									if (!obj.equals(_caster))
+									{
+										// Combat-mode check
+										if (obj.isPlayer())
+										{
+											obj.getActingPlayer().getAI().clientStartAutoAttack();
+										}
+										else if (obj.isSummon() && ((Creature) obj).hasAI())
+										{
+											PlayerInstance owner = ((Summon) obj).getOwner();
+											if (owner != null)
+											{
+												owner.getAI().clientStartAutoAttack();
+											}
+										}
+										
+										// attack of the own pet does not flag player
+										// triggering trap not flag trap owner
+										if ((player.getPet() != obj) && !player.hasServitor(obj.getObjectId()) && !_caster.isTrap() && !((skill.getEffectPoint() == 0) && (skill.getAffectRange() > 0)))
+										{
+											player.updatePvPStatus((Creature) obj);
+										}
+									}
+								}
+								else if (obj.isAttackable() && (skill.getEffectPoint() < 0))
+								{
+									// Add hate to the attackable, and put it in the attack list.
+									((Attackable) obj).addDamageHate(_caster, 0, -skill.getEffectPoint());
+									((Creature) obj).addAttackerToAttackByList(_caster);
+								}
+								
+								// notify target AI about the attack
+								if (((Creature) obj).hasAI() && !skill.hasEffectType(L2EffectType.HATE))
+								{
+									((Creature) obj).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, _caster);
+								}
+							}
+							else
+							{
+								if (obj.isPlayer())
+								{
+									// Casting non offensive skill on player with pvp flag set or with karma
+									if (!(obj.equals(_caster) || obj.equals(player)) && ((obj.getActingPlayer().getPvpFlag() > 0) || (obj.getActingPlayer().getReputation() < 0)))
+									{
+										player.updatePvPStatus();
+									}
+								}
+								else if (obj.isAttackable())
+								{
+									((Attackable) obj).reduceHate(_caster, skill.getEffectPoint());
+									player.updatePvPStatus();
+								}
+							}
+							
+							if (obj.isSummon())
+							{
+								((Summon) obj).updateAndBroadcastStatus(1);
+							}
+						}
+					}
+					
+					// Mobs in range 1000 see spell
+					World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob ->
+					{
+						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, _caster.isSummon(), targets), npcMob);
+						
+						// On Skill See logic
+						if (npcMob.isAttackable())
+						{
+							final Attackable attackable = (Attackable) npcMob;
+							
+							int skillEffectPoint = skill.getEffectPoint();
+							
+							if (player.hasSummon())
+							{
+								if (targets.length == 1)
+								{
+									if (CommonUtil.contains(targets, player.getPet()))
+									{
+										skillEffectPoint = 0;
+									}
+									for (Summon servitor : player.getServitors().values())
+									{
+										if (CommonUtil.contains(targets, servitor))
+										{
+											skillEffectPoint = 0;
+										}
+									}
+								}
+							}
+							
+							if (skillEffectPoint > 0)
+							{
+								if (attackable.hasAI() && (attackable.getAI().getIntention() == AI_INTENTION_ATTACK))
+								{
+									WorldObject npcTarget = attackable.getTarget();
+									for (WorldObject skillTarget : targets)
+									{
+										if ((npcTarget == skillTarget) || (npcMob == skillTarget))
+										{
+											Creature originalCaster = _caster.isSummon() ? _caster : player;
+											attackable.addDamageHate(originalCaster, 0, (skillEffectPoint * 150) / (attackable.getLevel() + 7));
+										}
+									}
+								}
+							}
+						}
+					});
+				}
+				// Notify AI
+				if (skill.isBad() && !skill.hasEffectType(L2EffectType.HATE))
+				{
+					for (WorldObject obj : targets)
+					{
+						if ((obj instanceof Creature) && ((Creature) obj).hasAI())
+						{
+							// notify target AI about the attack
+							((Creature) obj).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, _caster);
+						}
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				_log.warn(_caster + " callSkill() failed.", e);
+			}
 			
-			EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(_caster, skill, skill.isWithoutAction(), target, targets), _caster);
+			EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(_caster, target, skill, skill.isWithoutAction()), _caster);
 			
 			// Notify DP Scripts
 			_caster.notifyQuestEventSkillFinished(skill, target);

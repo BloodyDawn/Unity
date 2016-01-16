@@ -33,21 +33,24 @@ public class OnCreatureSkillFinishCast implements IBaseEvent
 	private final Creature _caster;
 	private final Skill _skill;
 	private final boolean _simultaneously;
-	private final Creature _target;
-	private final WorldObject[] _targets;
+	private final WorldObject _target;
 	
-	public OnCreatureSkillFinishCast(Creature caster, Skill skill, boolean simultaneously, Creature target, WorldObject[] targets)
+	public OnCreatureSkillFinishCast(Creature caster, WorldObject target, Skill skill, boolean simultaneously)
 	{
 		_caster = caster;
 		_skill = skill;
 		_simultaneously = simultaneously;
 		_target = target;
-		_targets = targets;
 	}
 	
 	public final Creature getCaster()
 	{
 		return _caster;
+	}
+	
+	public final WorldObject getTarget()
+	{
+		return _target;
 	}
 	
 	public Skill getSkill()
@@ -58,16 +61,6 @@ public class OnCreatureSkillFinishCast implements IBaseEvent
 	public boolean isSimultaneously()
 	{
 		return _simultaneously;
-	}
-	
-	public final Creature getTarget()
-	{
-		return _target;
-	}
-	
-	public WorldObject[] getTargets()
-	{
-		return _targets;
 	}
 	
 	@Override

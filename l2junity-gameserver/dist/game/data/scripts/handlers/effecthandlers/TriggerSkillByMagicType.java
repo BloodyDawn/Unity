@@ -67,6 +67,11 @@ public final class TriggerSkillByMagicType extends AbstractEffect
 	
 	public void onSkillUseEvent(OnCreatureSkillFinishCast event)
 	{
+		if (!event.getTarget().isCreature())
+		{
+			return;
+		}
+		
 		if (!CommonUtil.contains(_magicTypes, event.getSkill().getMagicType()))
 		{
 			return;
@@ -84,7 +89,7 @@ public final class TriggerSkillByMagicType extends AbstractEffect
 		}
 		else
 		{
-			final BuffInfo buffInfo = event.getTarget().getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+			final BuffInfo buffInfo = ((Creature) event.getTarget()).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
 			if (buffInfo != null)
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));

@@ -610,7 +610,7 @@ public abstract class Summon extends Playable
 		}
 		
 		// Get the target for the skill
-		WorldObject target = skill.getTarget(this, getTarget(), forceUse, dontMove, false);
+		WorldObject target = skill.getTarget(this, forceUse, dontMove, false);
 		
 		// Check the validity of the target
 		if (target == null)

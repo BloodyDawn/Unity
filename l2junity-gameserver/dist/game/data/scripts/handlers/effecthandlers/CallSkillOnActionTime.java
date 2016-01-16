@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -62,13 +63,12 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		final Skill skill = _skill.getSkill();
 		if (skill != null)
 		{
-			skill.forEachTargetAffected(info.getEffector(), info.getEffected(), target ->
+			final WorldObject target = skill.getTarget(info.getEffector(), info.getEffected(), false, false, false);
+			
+			if ((target != null) && target.isCreature())
 			{
-				if (target.isCreature() && skill.checkCondition(info.getEffector(), target))
-				{
-					info.getEffector().callSkill(skill, null, (Creature) target);
-				}
-			});
+				info.getEffector().makeTriggerCast(skill, (Creature) target);
+			}
 		}
 		else
 		{

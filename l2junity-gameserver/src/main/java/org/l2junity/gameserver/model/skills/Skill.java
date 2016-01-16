@@ -31,7 +31,6 @@ import java.util.function.Consumer;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.AttributeType;
@@ -50,7 +49,6 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -69,7 +67,6 @@ import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
-import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -1039,7 +1036,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isBad()
 	{
-		return (_effectPoint < 0) && (_targetType != TargetType.SELF);
+		return _effectPoint < 0;
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object)
@@ -1104,6 +1101,19 @@ public final class Skill implements IIdentifiable
 	 * @param dontMove if character pressed shift (dont move and pick target only if in range)
 	 * @param sendMessage send SystemMessageId packet if target is incorrect.
 	 * @return {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
+	 */
+	public WorldObject getTarget(Creature activeChar, boolean forceUse, boolean dontMove, boolean sendMessage)
+	{
+		return getTarget(activeChar, activeChar.getTarget(), forceUse, dontMove, sendMessage);
+	}
+	
+	/**
+	 * @param activeChar the character that requests getting the skill target.
+	 * @param seletedTarget the target that has been selected by this character to be checked.
+	 * @param forceUse if character pressed ctrl (force pick target)
+	 * @param dontMove if character pressed shift (dont move and pick target only if in range)
+	 * @param sendMessage send SystemMessageId packet if target is incorrect.
+	 * @return the selected {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
 	 */
 	public WorldObject getTarget(Creature activeChar, WorldObject seletedTarget, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
@@ -1178,99 +1188,6 @@ public final class Skill implements IIdentifiable
 			}
 		}
 		activeChar.sendMessage("Target affect scope of skill is not currently handled.");
-	}
-	
-	/**
-	 * Check if should be target added to the target list false if target is dead, target same as caster,<br>
-	 * target inside peace zone, target in the same party with caster, caster can see target Additional checks if not in PvP zones (arena, siege):<br>
-	 * target in not the same clan and alliance with caster, and usual skill PvP check. If TvT event is active - performing additional checks. Caution: distance is not checked.
-	 * @param caster
-	 * @param target
-	 * @param skill
-	 * @param sourceInArena
-	 * @return
-	 */
-	public static boolean checkForAreaOffensiveSkills(Creature caster, Creature target, Skill skill, boolean sourceInArena)
-	{
-		if ((target == null) || target.isDead() || (target == caster))
-		{
-			return false;
-		}
-		
-		final PlayerInstance player = caster.getActingPlayer();
-		final PlayerInstance targetPlayer = target.getActingPlayer();
-		if (player != null)
-		{
-			if (targetPlayer != null)
-			{
-				if ((targetPlayer == caster) || (targetPlayer == player))
-				{
-					return false;
-				}
-				
-				if (targetPlayer.inObserverMode())
-				{
-					return false;
-				}
-				
-				if (skill.isBad() && (player.getSiegeState() > 0) && player.isInsideZone(ZoneId.SIEGE) && (player.getSiegeState() == targetPlayer.getSiegeState()) && (player.getSiegeSide() == targetPlayer.getSiegeSide()))
-				{
-					return false;
-				}
-				
-				if (skill.isBad() && target.isInsideZone(ZoneId.PEACE))
-				{
-					return false;
-				}
-				
-				if (player.isInParty() && targetPlayer.isInParty())
-				{
-					// Same party
-					if (player.getParty().getLeaderObjectId() == targetPlayer.getParty().getLeaderObjectId())
-					{
-						return false;
-					}
-					
-					// Same command channel
-					if (player.getParty().isInCommandChannel() && (player.getParty().getCommandChannel() == targetPlayer.getParty().getCommandChannel()))
-					{
-						return false;
-					}
-				}
-				
-				if (!sourceInArena && !(targetPlayer.isInsideZone(ZoneId.PVP) && !targetPlayer.isInsideZone(ZoneId.SIEGE)))
-				{
-					if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
-					{
-						return false;
-					}
-					
-					if ((player.getClanId() != 0) && (player.getClanId() == targetPlayer.getClanId()))
-					{
-						return false;
-					}
-					
-					if (!player.checkPvpSkill(targetPlayer, skill))
-					{
-						return false;
-					}
-				}
-			}
-		}
-		else if (target.isAttackable() && caster.isAttackable())
-		{
-			return false;
-		}
-		else if ((caster instanceof FriendlyNpcInstance) && (target.isPlayable() || (target instanceof FriendlyNpcInstance)))
-		{
-			return false;
-		}
-		
-		if (!GeoData.getInstance().canSeeTarget(caster, target))
-		{
-			return false;
-		}
-		return true;
 	}
 	
 	/**
@@ -1480,7 +1397,7 @@ public final class Skill implements IIdentifiable
 	 * @param caster the caster
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, Creature... targets)
+	public void activateSkill(Creature caster, WorldObject... targets)
 	{
 		activateSkill(caster, null, targets);
 	}
@@ -1491,7 +1408,7 @@ public final class Skill implements IIdentifiable
 	 * @param item
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, ItemInstance item, Creature... targets)
+	public void activateSkill(Creature caster, ItemInstance item, WorldObject... targets)
 	{
 		activateSkill(caster, null, item, targets);
 	}
@@ -1501,7 +1418,7 @@ public final class Skill implements IIdentifiable
 	 * @param cubic the cubic
 	 * @param targets the targets
 	 */
-	public void activateSkill(CubicInstance cubic, Creature... targets)
+	public void activateSkill(CubicInstance cubic, WorldObject... targets)
 	{
 		activateSkill(cubic.getOwner(), cubic, null, targets);
 	}
@@ -1513,7 +1430,7 @@ public final class Skill implements IIdentifiable
 	 * @param item
 	 * @param targets the targets
 	 */
-	public final void activateSkill(Creature caster, CubicInstance cubic, ItemInstance item, Creature... targets)
+	public final void activateSkill(Creature caster, CubicInstance cubic, ItemInstance item, WorldObject... targets)
 	{
 		// TODO: replace with AI
 		switch (getId())
@@ -1552,8 +1469,14 @@ public final class Skill implements IIdentifiable
 			}
 			default:
 			{
-				for (Creature target : targets)
+				for (WorldObject targetObject : targets)
 				{
+					if (!targetObject.isCreature())
+					{
+						continue;
+					}
+					
+					Creature target = (Creature) targetObject;
 					if (Formulas.calcBuffDebuffReflection(target, this))
 					{
 						// if skill is reflected instant effects should be casted on target

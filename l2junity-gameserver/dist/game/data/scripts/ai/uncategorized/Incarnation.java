@@ -19,6 +19,7 @@
 package ai.uncategorized;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.events.EventType;
@@ -61,7 +62,7 @@ public final class Incarnation extends AbstractNpcAI
 		}
 	}
 	
-	public void onOffense(Npc npc, Creature attacker, Creature target)
+	public void onOffense(Npc npc, Creature attacker, WorldObject target)
 	{
 		if (attacker == target)
 		{

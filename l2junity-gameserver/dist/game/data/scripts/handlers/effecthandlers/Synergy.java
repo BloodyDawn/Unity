@@ -23,6 +23,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -104,13 +105,12 @@ public final class Synergy extends AbstractEffect
 			
 			if (partyBuffSkill != null)
 			{
-				partyBuffSkill.forEachTargetAffected(info.getEffector(), info.getEffected(), target ->
+				final WorldObject target = partyBuffSkill.getTarget(info.getEffector(), info.getEffected(), false, false, false);
+				
+				if ((target != null) && target.isCreature())
 				{
-					if (target.isCreature())
-					{
-						info.getEffector().callSkill(partyBuffSkill, null, (Creature) target);
-					}
-				});
+					info.getEffector().makeTriggerCast(partyBuffSkill, (Creature) target);
+				}
 			}
 			else
 			{
